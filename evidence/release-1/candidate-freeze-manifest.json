@@ -1,7 +1,7 @@
 {
   "manifest": "nrs-release-candidate-freeze",
   "manifest_version": "0.1.0",
-  "release_candidate_id": "03f1c8bc32b06d86a0169113799ab27cb8f737c3",
+  "release_candidate_id": "f4206ac3f85dc8f783d14d63413cff87ab2ed82b",
   "release_gate_definition_sha256": "092836ca774f89b53d726998c8548468ea28b9ac7e13304ddeaf4cf92f66e32b",
   "excluded_mutable_paths": {
     "exact": ["authority/release-1-gates.yaml", "generated/RELEASE-1-GATES.md"],
@@ -1367,7 +1367,7 @@
     },
     {
       "path": "generated/README.md",
-      "sha256": "79804e36d338493fd918a553d006ba8e60249133a0ba626a7828ec4fea127e3e"
+      "sha256": "9f2283d4f46a9215a1fc1bbf4bf97550ab9d1e3d360eebccb1f95163e1b01e3c"
     },
     {
       "path": "generated/REASON-CODES.md",
@@ -2191,7 +2191,7 @@
     },
     {
       "path": "tooling/src/lib/views.ts",
-      "sha256": "e63fe388c3cad4889c4960ec969d400631fb754ba37f98e352ef6d7d928d120f"
+      "sha256": "55a24f09bcecb3d749ee15266151cc00d9fafd3be0e8cde01011b27677dbcda7"
     },
     {
       "path": "tooling/src/link-audit.ts",
@@ -2371,7 +2371,7 @@
     },
     {
       "path": "tooling/tests/generation.test.ts",
-      "sha256": "51317c5c2f91fdf0ecbef1374c38496813bb8425121643ee61072fc35d9e74cf"
+      "sha256": "5482d0a1cc31ba73714fbcf7df5d0930ca486d070bc78492077ec8999a33b3f1"
     },
     {
       "path": "tooling/tests/jcs.test.ts",
