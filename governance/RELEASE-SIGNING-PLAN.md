@@ -1,6 +1,6 @@
 # Release Signing Plan (Release 1)
 
-**Status: implementation present; Release 1 C5 production issuance pending.**
+**Status: implementation present; Release 1 production issuance pending.**
 R1-14 requires release signing **before public publication**. The repository contains
 deterministic target preparation and independent signature verification
 (`pnpm release:signing:prepare` / `pnpm release:signing:verify`). Production signing
