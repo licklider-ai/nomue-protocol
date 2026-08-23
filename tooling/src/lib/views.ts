@@ -105,7 +105,6 @@ function buildReadme(hashOf: (rel: string) => string): string {
     header(
       [
         "authority/authority-manifest.yaml",
-        "authority/release-1-gates.yaml",
         "registries/requirements.yaml",
         "registries/vocabulary.yaml",
         "registries/public-checks.yaml",

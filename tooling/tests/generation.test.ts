@@ -25,6 +25,14 @@ describe("generated views", () => {
     }
   });
 
+  it("keeps the generated README independent of mutable release gate state", () => {
+    const views = buildGeneratedViews(loadViewSources());
+    const readme = views.get("generated/README.md") ?? "";
+    const gatesView = views.get("generated/RELEASE-1-GATES.md") ?? "";
+    expect(readme).not.toContain("authority/release-1-gates.yaml");
+    expect(gatesView).toContain("authority/release-1-gates.yaml");
+  });
+
   it("matches the files on disk exactly (clean generation)", () => {
     const views = buildGeneratedViews(loadViewSources());
     for (const [rel, content] of views) {
