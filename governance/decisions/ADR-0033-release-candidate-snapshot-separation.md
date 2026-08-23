@@ -1,6 +1,7 @@
 # ADR-0033: Release Candidate / Protocol Snapshot Separation
 
-**Status: Accepted** (Release 1 pre-freeze governance repair, 2026-08-19).
+**Status: Accepted** (Release 1 pre-freeze governance repair, 2026-08-19; Release 1
+pre-publication role clarification, 2026-08-24).
 
 ## Problem
 
@@ -25,9 +26,10 @@ write that hash into `CHARTER.md`. `CHARTER.md` is itself inside the hashed
 Protocol surface, so writing the hash changed the hash.
 
 Third, a git commit cannot contain its own final SHA as a field and keep that
-same SHA. Therefore `release_candidate_id` cannot be written _inside_ the
-candidate content commit that it identifies. Candidate content and the later
-release-control pin must be separate commits.
+same SHA. Therefore neither `release_candidate_id` nor the eventual tagged
+release-decision commit SHA can be written inside the commit that each value
+identifies. Candidate content, release-control pinning, release-source signing,
+and the later release decision must have explicit non-self-referential roles.
 
 The release process also needs to prevent non-authoritative but public candidate
 content - such as README or reference source - from changing while external
@@ -55,7 +57,7 @@ Protocol snapshot hash. Their exclusion from that hash does **not** mean they
 may drift during gate review; the candidate freeze below covers that wider
 release content.
 
-### 2. Candidate content commit and freeze manifest
+### 2. Candidate content commit C and release-control pin commit P
 
 The steward first chooses a clean, green **candidate content commit C** after all
 intended Release 1 public/content changes are complete.
@@ -76,7 +78,7 @@ Repository-internal/runtime directories skipped by the repository walker (`.git`
 checkout.
 
 The freeze manifest is written outside the candidate checkout first. A later
-**release-control commit** records both:
+**release-control pin commit P** records both:
 
 - `evidence/release-1/gate-index.json.release_candidate_id = C`; and
 - the freeze manifest at
@@ -85,9 +87,9 @@ The freeze manifest is written outside the candidate checkout first. A later
 This two-commit structure avoids a self-referential commit SHA while preserving
 an exact byte inventory of C.
 
-After that release-control commit, any change, addition, or removal in the
-frozen file set requires a new candidate content commit and new freeze manifest,
-and invalidates dependent evidence.
+After P, any change, addition, or removal in the frozen file set requires a new
+candidate content commit and new freeze manifest, and invalidates dependent
+evidence.
 
 ### 3. Candidate equivalence before publication
 
@@ -109,15 +111,21 @@ set and hashes only. Its snapshot hash does **not** include a source-commit
 identifier: a gate/evidence-only commit must not change the content address of
 otherwise byte-identical Protocol content.
 
-The candidate content commit and final release commit are instead recorded in
-detached release metadata and in archived source provenance.
+Candidate content commit C and the later **release source commit R** are recorded
+in detached signed release metadata and archived source provenance. R is the exact
+source tree used to create the signed `source-archive.tar.gz` and must remain
+candidate-equivalent to C.
+
+The later **release-decision commit D** is not a signing input. D records the
+completed R1-14 evidence and final release authorization after R-derived artifacts
+have been signed and verified. D is identified by the publication tag and by
+external publication metadata created after D exists.
 
 ### 5. Snapshot hash publication is detached
 
 The snapshot hash is never written into a file that participates in the snapshot
-hash. After all gates close and candidate equivalence passes, the steward
-generates the Protocol snapshot manifest and hash from the final release
-checkout.
+hash. After candidate equivalence passes at R, the steward generates the Protocol
+snapshot manifest and hash from R.
 
 The hash is distributed as detached release metadata alongside the
 manifest/source archive and in release notes or other publication channels.
@@ -127,18 +135,32 @@ to the snapshot hash.
 No self-referential hash field is added to `CHARTER.md`, any normative
 specification, registry, schema, or other snapshot-scoped artifact.
 
-### 6. Release tag
+### 6. Release source R, release decision D, and publication tag
 
-The Release 1 tag points to the final release commit: the commit containing the
-closed release-decision state after candidate-equivalence validation. Detached
-release metadata records:
+The Release 1 signing ceremony signs exactly the release artifacts generated from
+**R**, including the source archive of R and the Protocol snapshot manifest generated
+at R. Signed manifests identify C and R. They do not identify D.
 
-- the candidate content commit C;
-- the final release commit; and
-- the Protocol snapshot hash.
+After those artifacts verify, the steward creates **D**, which records the R1-14
+close evidence and final release authorization. D may record the already-existing C,
+P, and R SHAs. D cannot contain its own final SHA without becoming self-referential.
 
-The candidate freeze manifest records which wider public/repository content was
-held fixed while the gate evidence was produced.
+The Release 1 tag therefore identifies D **by role**: it points to the
+release-decision commit that introduces the final R1-14 close record and final
+release authorization. Source-controlled records do not embed D's exact SHA. After D
+exists, the annotated tag message and GitHub Release notes record D's exact SHA
+alongside C, P, R, and the Protocol snapshot hash.
+
+Because D may differ from R only in permitted release-state/evidence paths outside the
+Protocol snapshot, the signed Protocol snapshot manifest generated at R must also
+match the snapshot-scoped files in tagged D path-by-path and by SHA-256. This
+comparison is an independent release check in addition to cryptographic signature
+verification.
+
+GitHub's automatically generated source archive for the D tag is not the signed
+Release 1 source artifact. The separately attached `source-archive.tar.gz` generated
+from R is the signed source artifact, and publication metadata must state that
+boundary.
 
 ## Consequences
 
@@ -146,19 +168,23 @@ held fixed while the gate evidence was produced.
 - Gate/evidence commits do not perturb the Protocol content hash merely through
   their commit IDs.
 - Candidate identity has no impossible self-reference.
+- Tagged release-decision identity also has no impossible self-reference inside D.
 - Public-facing and reference content is genuinely frozen before gate evidence
   begins even though it is not Protocol authority.
 - Candidate equivalence does not require subprocess execution or git parsing.
-- The full release source can retain gate decisions and evidence without granting
-  them Protocol-semantic authority.
+- The signed source artifact has an explicit R identity distinct from tagged D.
+- A valid signature over stale snapshot metadata is insufficient; R and D snapshot
+  equivalence is checked independently.
+- The full tagged release source can retain final gate decisions and evidence without
+  granting them Protocol-semantic authority.
 - The snapshot hash has no self-reference cycle.
-- A content repair discovered after freeze causes an explicit new candidate
-  rather than being smuggled into the release during gate closure.
+- A content repair discovered after freeze causes an explicit new candidate rather
+  than being smuggled into the release during gate closure.
 
 ## Non-effects
 
 This decision changes no Record semantics, statistical semantics, Requirement
 ID, public check, interpretation bundle, conformance judgment, verifier
 verification behavior, or Release 1 gate criterion. It repairs only the
-mechanics connecting a frozen candidate, mutable release decisions, and an
-immutable Public Draft snapshot.
+mechanics connecting a frozen candidate, mutable release decisions, signed release
+source, and an immutable Public Draft snapshot.

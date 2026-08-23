@@ -4,7 +4,7 @@ import * as path from "node:path";
 
 export const RELEASE_CHECKSUMS_MANIFEST_ID = "nomue-release-checksums";
 export const RELEASE_SIGNING_TARGETS_MANIFEST_ID = "nomue-release-signing-targets";
-export const RELEASE_SIGNING_MANIFEST_VERSION = "1.0.0";
+export const RELEASE_SIGNING_MANIFEST_VERSION = "1.1.0";
 export const RELEASE_SIGNING_SUITE = "ecdsa-p256-sha256";
 
 export type ReleaseSigningRole = "source_archive" | "checksums" | "protocol_snapshot_manifest";
@@ -20,7 +20,7 @@ export interface ReleaseChecksumsManifest {
   manifest: typeof RELEASE_CHECKSUMS_MANIFEST_ID;
   manifest_version: string;
   candidate_content_commit: string;
-  final_release_commit: string;
+  release_source_commit: string;
   protocol_snapshot_hash: string;
   artifacts: ReleaseArtifactDigest[];
 }
@@ -38,7 +38,7 @@ export interface ReleaseSigningTargetsManifest {
   manifest_version: string;
   signature_suite: typeof RELEASE_SIGNING_SUITE;
   candidate_content_commit: string;
-  final_release_commit: string;
+  release_source_commit: string;
   protocol_snapshot_hash: string;
   targets: ReleaseSigningTarget[];
 }
@@ -47,7 +47,7 @@ export interface PrepareReleaseSigningInput {
   sourceArchivePath: string;
   snapshotManifestPath: string;
   candidateContentCommit: string;
-  finalReleaseCommit: string;
+  releaseSourceCommit: string;
   protocolSnapshotHash: string;
   outputDir: string;
 }
@@ -116,12 +116,16 @@ function targetFor(
  * Prepare the exact three targets required by R1-14. This function never
  * creates or accesses a private key and never shells out to a signer.
  * Production signing remains a deliberate steward operation in Cloud KMS.
+ *
+ * The signed manifests identify candidate content commit C and release source
+ * commit R. They deliberately do not carry the later release-decision commit D,
+ * which does not exist when these targets are prepared and is not a signing input.
  */
 export function prepareReleaseSigningBundle(
   input: PrepareReleaseSigningInput,
 ): ReleaseSigningTargetsManifest {
   assertCommit(input.candidateContentCommit, "candidateContentCommit");
-  assertCommit(input.finalReleaseCommit, "finalReleaseCommit");
+  assertCommit(input.releaseSourceCommit, "releaseSourceCommit");
   assertSnapshotHash(input.protocolSnapshotHash);
 
   if (!fs.existsSync(input.sourceArchivePath)) {
@@ -146,7 +150,7 @@ export function prepareReleaseSigningBundle(
     manifest: RELEASE_CHECKSUMS_MANIFEST_ID,
     manifest_version: RELEASE_SIGNING_MANIFEST_VERSION,
     candidate_content_commit: input.candidateContentCommit,
-    final_release_commit: input.finalReleaseCommit,
+    release_source_commit: input.releaseSourceCommit,
     protocol_snapshot_hash: input.protocolSnapshotHash,
     artifacts: [
       { role: "source_archive", file: archiveName, ...archiveDigest },
@@ -160,7 +164,7 @@ export function prepareReleaseSigningBundle(
     manifest_version: RELEASE_SIGNING_MANIFEST_VERSION,
     signature_suite: RELEASE_SIGNING_SUITE,
     candidate_content_commit: input.candidateContentCommit,
-    final_release_commit: input.finalReleaseCommit,
+    release_source_commit: input.releaseSourceCommit,
     protocol_snapshot_hash: input.protocolSnapshotHash,
     targets: [
       targetFor("source_archive", archiveName, input.outputDir),
@@ -191,7 +195,7 @@ function readTargetsManifest(bundleDir: string): ReleaseSigningTargetsManifest {
     throw new Error(`unsupported release signing suite: ${parsed.signature_suite}`);
   }
   assertCommit(parsed.candidate_content_commit, "candidate_content_commit");
-  assertCommit(parsed.final_release_commit, "final_release_commit");
+  assertCommit(parsed.release_source_commit, "release_source_commit");
   assertSnapshotHash(parsed.protocol_snapshot_hash);
   return parsed;
 }

@@ -30,7 +30,7 @@ function main(): void {
       sourceArchivePath: option(args, "--archive"),
       snapshotManifestPath: option(args, "--snapshot-manifest"),
       candidateContentCommit: option(args, "--candidate"),
-      finalReleaseCommit: option(args, "--release"),
+      releaseSourceCommit: option(args, "--release-source"),
       protocolSnapshotHash: option(args, "--snapshot-hash"),
       outputDir: option(args, "--out"),
     });
@@ -51,7 +51,7 @@ function main(): void {
 
   fail(
     "usage: release-signing <prepare|verify> ...\n" +
-      "  prepare --archive <tar.gz> --snapshot-manifest <json> --candidate <sha> --release <sha> --snapshot-hash <sha256:...> --out <dir>\n" +
+      "  prepare --archive <tar.gz> --snapshot-manifest <json> --candidate <sha> --release-source <sha> --snapshot-hash <sha256:...> --out <dir>\n" +
       "  verify --bundle <dir> --public-key <pem> [--expected-fingerprint <sha256:...>]",
   );
 }

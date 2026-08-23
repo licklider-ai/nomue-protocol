@@ -23,7 +23,7 @@ function makeFixture() {
     sourceArchivePath: archive,
     snapshotManifestPath: snapshot,
     candidateContentCommit: "1".repeat(40),
-    finalReleaseCommit: "2".repeat(40),
+    releaseSourceCommit: "2".repeat(40),
     protocolSnapshotHash: `sha256:${"3".repeat(64)}`,
     outputDir: bundle,
   });
@@ -40,6 +40,25 @@ function makeFixture() {
 }
 
 describe("Release 1 detached artifact signing", () => {
+  it("records candidate C and release source R without a self-referential D field", () => {
+    const fixture = makeFixture();
+    try {
+      const checksums = JSON.parse(
+        fs.readFileSync(path.join(fixture.bundle, "release-checksums.json"), "utf8"),
+      ) as Record<string, unknown>;
+      expect(checksums.manifest_version).toBe("1.1.0");
+      expect(checksums.candidate_content_commit).toBe("1".repeat(40));
+      expect(checksums.release_source_commit).toBe("2".repeat(40));
+      expect(checksums).not.toHaveProperty("final_release_commit");
+      expect(checksums).not.toHaveProperty("release_decision_commit");
+      expect(fixture.targets.release_source_commit).toBe("2".repeat(40));
+      expect(fixture.targets).not.toHaveProperty("final_release_commit");
+      expect(fixture.targets).not.toHaveProperty("release_decision_commit");
+    } finally {
+      fs.rmSync(fixture.root, { recursive: true, force: true });
+    }
+  });
+
   it("verifies all three R1-14 targets with an ECDSA P-256 / SHA-256 public key", () => {
     const fixture = makeFixture();
     try {
@@ -124,11 +143,21 @@ describe("Release 1 detached artifact signing", () => {
           sourceArchivePath: archive,
           snapshotManifestPath: snapshot,
           candidateContentCommit: "not-a-commit",
-          finalReleaseCommit: "2".repeat(40),
+          releaseSourceCommit: "2".repeat(40),
           protocolSnapshotHash: `sha256:${"3".repeat(64)}`,
           outputDir: path.join(root, "bundle"),
         }),
       ).toThrow(/candidateContentCommit/);
+      expect(() =>
+        prepareReleaseSigningBundle({
+          sourceArchivePath: archive,
+          snapshotManifestPath: snapshot,
+          candidateContentCommit: "1".repeat(40),
+          releaseSourceCommit: "not-a-commit",
+          protocolSnapshotHash: `sha256:${"3".repeat(64)}`,
+          outputDir: path.join(root, "bundle-2"),
+        }),
+      ).toThrow(/releaseSourceCommit/);
     } finally {
       fs.rmSync(root, { recursive: true, force: true });
     }

@@ -1,9 +1,16 @@
 # Release 1 Signing Runbook — GCP Cloud KMS
 
-**Status: operational runbook; production ceremony not yet executed.**
+**Status: operational runbook.**
 
 This runbook signs Release 1 distribution artifacts. It does **not** create a Record
 attestation key and does not grant CI access to signing material.
+
+Release 1 uses four commit roles defined by
+[RELEASE-POLICY.md](RELEASE-POLICY.md): candidate content commit **C**,
+release-control pin commit **P**, release source commit **R**, and release-decision
+commit **D**. The signed source archive is generated from R. The publication tag
+points to D after R1-14 closes. D is not a signing input and MUST NOT be required to
+contain its own SHA.
 
 ## 1. One-time release key ceremony
 
@@ -50,16 +57,21 @@ identity:
 
 `urn:nomue:release-key:g:2`.
 
-## 2. Prepare final Release 1 artifacts
+## 2. Establish release source commit R and prepare artifacts
 
-Do this only after candidate C is frozen/pinned, gate evidence is complete enough to
-know the final release-control commit, and candidate equivalence still holds.
+Do this only after candidate C is frozen and pinned by P, every non-signing gate is
+ready for final disposition, and candidate equivalence still holds.
 
-Create the final source archive outside the checkout and the detached Protocol
-snapshot manifest. Record:
+Select the exact **release source commit R**. R is the commit whose source tree is
+archived into the signed `source-archive.tar.gz`. R MUST remain candidate-equivalent
+to C: changes after C are limited to the release-state/evidence paths permitted by
+the candidate freeze model.
+
+Create the source archive from R outside the checkout and generate the detached
+Protocol snapshot manifest from a checkout at R. Record:
 
 - candidate content commit C;
-- final release commit R;
+- release source commit R;
 - one-line Protocol snapshot hash (`sha256:...`).
 
 Then prepare the signing bundle:
@@ -69,7 +81,7 @@ pnpm release:signing:prepare -- \
   --archive /path/to/nomue-protocol-release.tar.gz \
   --snapshot-manifest /path/to/protocol-snapshot-manifest.json \
   --candidate <40-hex-C> \
-  --release <40-hex-R> \
+  --release-source <40-hex-R> \
   --snapshot-hash sha256:<64-hex> \
   --out /path/to/release-signing-bundle
 ```
@@ -83,7 +95,8 @@ The bundle contains fixed filenames:
 
 The first three are the exact R1-14 signing targets. The targets manifest is detached
 operational metadata identifying their hashes, byte sizes, signature filenames and
-signature suite.
+signature suite. Both signed JSON manifests identify C and R. They do not identify D,
+because D does not yet exist and cannot contain its own eventual SHA.
 
 ## 3. Sign each target with Cloud KMS
 
@@ -113,6 +126,11 @@ Keep the Cloud Audit Logs identifiers for all three operations as Release 1 evid
 `gcloud` writes each detached ECDSA signature as base64 text; the underlying ECDSA
 signature is DER encoded.
 
+For the public audit-evidence copy, remove only fields explicitly classified as
+publication metadata that is not decision-bearing. For Release 1 this includes both
+`callerIp` and `callerSuppliedUserAgent`. Preserve the original audit response in the
+controlled issuance environment; do not commit it if it contains those fields.
+
 ## 4. Independently verify before gate close
 
 ```bash
@@ -126,18 +144,58 @@ Success requires all three target hashes/sizes and all three ECDSA P-256 / SHA-2
 signatures to verify. Any changed byte, wrong key, wrong fingerprint, missing
 signature, or missing target fails closed.
 
-Capture the JSON output in `evidence/release-1/gates/R1-14/` together with:
+Independently verify that the signed `protocol-snapshot-manifest.json` matches the
+snapshot-scoped files in a checkout at R, path by path and SHA-256 by SHA-256. This
+is distinct from signature verification: a valid signature over a stale manifest is
+not sufficient release evidence.
+
+Capture the verification output in `evidence/release-1/gates/R1-14/` together with:
 
 - release public key PEM;
 - key metadata / fingerprint record;
-- three KMS audit-log identifiers;
+- three KMS audit-log identifiers and the sanitized public audit-evidence copy;
 - the detached signing target manifest;
-- a relying-party walkthrough reproducing successful verification.
+- a relying-party walkthrough reproducing successful verification; and
+- the signed-snapshot-to-R tree equivalence result.
 
 Do not commit private key material. Cloud KMS private key bytes never leave KMS.
 
-## 5. Publication boundary
+## 5. Close R1-14 in release-decision commit D
 
-R1-14 closes only after the successful verification evidence above exists. A signed
-artifact does not itself authorize publication: every other applicable Release 1 gate,
-including the legal gate, must independently close before tag/publication.
+R1-14 closes only after the successful verification evidence above exists. Create a
+release-decision commit D that records the completed R1-14 evidence and final release
+authorization. D may record the already-known SHAs for C, P, and R.
+
+D MUST NOT contain a field that purports to contain D's own exact SHA. The close
+record instead defines the publication target by role:
+
+> The Release 1 tag points to the release-decision commit that introduces this final
+> R1-14 close record and final release authorization.
+
+After D exists, record D's exact SHA in the annotated tag message and GitHub Release
+notes. The tag MUST point to D.
+
+Before tagging, check out D and establish all three independently:
+
+1. candidate equivalence: D's frozen candidate surface still matches C;
+2. signature validity: all three signed targets produced from R verify; and
+3. Protocol snapshot equivalence: the signed snapshot manifest matches the
+   snapshot-scoped files in D path-by-path and by SHA-256.
+
+Because release-decision/evidence paths are outside the Protocol snapshot scope,
+items 1 and 3 can both hold at D when the release process has followed the permitted
+post-freeze mutation boundary.
+
+## 6. Publication boundary
+
+The annotated Release 1 tag points to D only after every applicable gate is closed and
+the checks above pass. GitHub Release notes MUST state that:
+
+- the attached `source-archive.tar.gz` generated from R is the cryptographically
+  signed Release 1 source artifact; and
+- GitHub's automatically generated source archive for the D tag is not one of the
+  three KMS-signed targets.
+
+The GitHub Release notes SHOULD list the exact SHAs for C, P, R, and D and the
+Protocol snapshot hash. These values are external publication metadata and do not
+create a self-reference inside D.

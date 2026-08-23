@@ -7,14 +7,47 @@
 - Every snapshot is **content-addressed**: its snapshot hash depends on the
   Protocol snapshot file set and file contents, not on a git commit identifier,
   release evidence, or mutable gate state.
-- Release 1 gate evidence is evaluated against one **candidate content commit**
-  whose full SHA is recorded by a later release-control commit.
-- Before that pin is recorded, a candidate-freeze manifest is generated at the
-  candidate content commit. It records both the frozen repository/public file
-  inventory and a hash of the Release 1 **gate definitions**.
-- For every published snapshot, the final source archive and release metadata
-  identify both the candidate content commit and final release commit alongside
-  the Protocol snapshot hash.
+- Release 1 gate evidence is evaluated against one **candidate content commit C**
+  whose full SHA is recorded by a later release-control pin commit P.
+- Before that pin is recorded, a candidate-freeze manifest is generated at C. It
+  records both the frozen repository/public file inventory and a hash of the
+  Release 1 **gate definitions**.
+- The source archive and signed release metadata identify the candidate content
+  commit C and the **release source commit R** alongside the Protocol snapshot
+  hash. The publication tag identifies the later **release-decision commit D** by
+  role, not by embedding D's own SHA inside D.
+
+### Release commit roles and self-reference boundary
+
+Release 1 uses four distinct commit roles:
+
+- **C — candidate content commit:** the frozen public/source content submitted to
+  release review.
+- **P — release-control pin commit:** records C in the gate index and stores C's
+  candidate-freeze manifest. P changes only release-control/evidence paths that
+  are excluded from the frozen candidate inventory.
+- **R — release source commit:** the exact source tree archived into the signed
+  `source-archive.tar.gz`. R contains the release-control/evidence state required
+  before the R1-14 signing ceremony and remains candidate-equivalent to C.
+- **D — release-decision commit:** records the completed R1-14 signing evidence
+  and final release decision after the signed artifacts for R have been verified.
+  The Release 1 tag points to D.
+
+D cannot contain its own git SHA without changing that SHA. Therefore no
+source-controlled close record, policy, manifest, or other file inside D may
+require D to contain its own exact commit identifier. Source-controlled release
+records define the tag target **by role**: the release tag MUST point to the
+release-decision commit that introduces the final R1-14 close record and final
+release authorization. After D exists, its exact SHA is recorded outside D in
+immutable publication metadata such as the annotated tag message and GitHub
+Release notes.
+
+C, P, and R SHAs may be recorded inside D because those commits already exist.
+The signed release manifests identify C and R only; D is not a signing input.
+GitHub-generated source archives for the D tag are therefore not the signed
+Release 1 source artifact. The signed source artifact is the separately attached
+`source-archive.tar.gz` generated from R, and release notes MUST state this
+boundary explicitly.
 
 ### Protocol snapshot scope
 
@@ -41,20 +74,19 @@ smuggled in during gate review.
 The release sequence deliberately avoids asking a git commit to contain its own
 SHA.
 
-1. The steward selects a clean, green **candidate content commit C** after all
+1. The steward selects a clean, green candidate content commit C after all
    intended Release 1 content changes are complete.
 2. While checked out at C, the steward runs
    `pnpm snapshot:manifest --candidate-freeze` and writes its output outside the
    checkout temporarily. The manifest identifies C from the checkout's source
    commit, freezes the repository/public file set and raw SHA-256 bytes, and
    records a hash of the gate-definition projection.
-3. A later release-control commit records both:
+3. A later release-control pin commit P records both:
    - `evidence/release-1/gate-index.json.release_candidate_id = C`; and
    - the generated inventory at
      `evidence/release-1/candidate-freeze-manifest.json`.
-4. Gate evidence begins only after that control commit exists and the candidate
-   check confirms that current frozen content and gate definitions still match
-   the inventory.
+4. Gate evidence begins only after P exists and the candidate check confirms that
+   current frozen content and gate definitions still match the inventory.
 
 The freeze manifest hashes all repository files visible to the release tooling
 except the tightly permitted mutable paths:
@@ -125,8 +157,10 @@ domain tag per
 
 The Protocol snapshot manifest deliberately contains no source-commit member;
 otherwise gate/evidence-only commits would perturb what is meant to be a content
-address for unchanged Protocol content. Candidate and final release commit IDs
-are carried by detached release metadata instead.
+address for unchanged Protocol content. Candidate content commit C and release
+source commit R are carried by detached signed release metadata instead. The
+release-decision commit D is identified by the publication tag and external
+release metadata after D exists.
 
 The snapshot hash is **detached release metadata**. It is never written into
 `CHARTER.md`, a normative specification, registry, schema, or any other file
@@ -154,6 +188,10 @@ close gate R1-07. The full release procedure is
   excluded from the freeze inventory do not invalidate the candidate by
   themselves; they are the expected mechanism for recording gate review against
   frozen candidate content.
+- R1-14 closes only after the signed artifacts generated from R have verified.
+  The final release-decision commit D records that close and the final release
+  authorization. The Release 1 tag MUST point to that role-defined D commit; D's
+  own SHA is recorded only after D exists, outside D itself.
 
 ## What Phase 0 is and is not
 
