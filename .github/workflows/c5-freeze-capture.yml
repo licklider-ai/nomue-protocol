@@ -3,6 +3,7 @@ name: C5 freeze capture
 on:
   push:
     branches: ["release1/c5-release-control-repair"]
+  pull_request:
 
 permissions:
   contents: read
