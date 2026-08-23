@@ -1,0 +1,85 @@
+name: C6 gate impact apply once
+
+on:
+  push:
+    branches: ["release1/c6-gate-refresh"]
+
+permissions:
+  contents: write
+
+jobs:
+  apply-impact:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: f83f452064a2169f977a8a4af87cc14a076c5eb6
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Apply C6 gate-impact disposition
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import YAML from 'yaml';
+
+          const review = 'evidence/release-1/decisions/2026-08-24-c3-to-c6-gate-impact-review.md';
+          const reopen = new Map([
+            ['R1-03', 'Candidate C6 changes normative EXPERIMENTAL approval wording; fresh C6 conformance/verifier/test evidence is required before reclose.'],
+            ['R1-07', 'Candidate C6 has a new freeze/public surface and repaired C/P/R/D release model; fresh C6 snapshot/equivalence/public-surface evidence is required before reclose.'],
+            ['R1-12', 'Candidate C6 changes LICENSE.md licensor/attribution presentation; fresh candidate-scoped confirmation of the adopted legal package is required before reclose.'],
+            ['R1-14', 'Prior production signatures bind Candidate C3 and its prior release source; Candidate C6 requires a fresh release-g2 signing ceremony against C6/R6.'],
+          ]);
+
+          const registryPath = 'authority/release-1-gates.yaml';
+          const registry = YAML.parse(fs.readFileSync(registryPath, 'utf8'));
+          registry.updated = '2026-08-24';
+          for (const gate of registry.gates) {
+            if (!reopen.has(gate.gate_id)) continue;
+            gate.state = 'open';
+            gate.decision = null;
+            gate.notes = `${String(gate.notes ?? '').trim()} Candidate C6 impact review: ${reopen.get(gate.gate_id)}`;
+          }
+          fs.writeFileSync(registryPath, YAML.stringify(registry), 'utf8');
+
+          const indexPath = 'evidence/release-1/gate-index.json';
+          const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+          if (index.release_candidate_id !== '03f1c8bc32b06d86a0169113799ab27cb8f737c3') {
+            throw new Error(`gate index candidate is not C6: ${index.release_candidate_id}`);
+          }
+          for (const gate of index.gates) {
+            gate.evidence = [...new Set([...(gate.evidence ?? []), review])];
+            if (reopen.has(gate.gate_id)) {
+              gate.state = 'open';
+              gate.decision = null;
+              gate.open_deviations = [reopen.get(gate.gate_id)];
+              gate.reviewed_by = [];
+              gate.decided_at = null;
+            }
+          }
+          fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + '\n', 'utf8');
+          NODE
+          pnpm generate
+          pnpm exec prettier --write \
+            authority/release-1-gates.yaml \
+            generated/RELEASE-1-GATES.md \
+            evidence/release-1/gate-index.json \
+            evidence/release-1/c3-to-c6-freeze-diff.json \
+            evidence/release-1/decisions/2026-08-24-c3-to-c6-gate-impact-review.md
+          pnpm snapshot:manifest --check-candidate
+          pnpm check
+      - name: Commit gate-impact state and replace operations branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "nomue release operations"
+          git config user.email "release-ops@users.noreply.github.com"
+          git add authority/release-1-gates.yaml generated/RELEASE-1-GATES.md evidence/release-1/
+          git commit -m "Release 1: apply C6 gate-impact disposition"
+          git push origin HEAD:refs/heads/release1/c6-gate-refresh --force
