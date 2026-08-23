@@ -48,12 +48,15 @@ jobs:
 
       - name: Generate and validate candidate freeze manifest
         shell: bash
+        env:
+          CANDIDATE_SHA: ${{ inputs.candidate_sha }}
+          FREEZE_MANIFEST: ${{ runner.temp }}/candidate-freeze-manifest.json
         run: |
           set -euo pipefail
-          pnpm snapshot:manifest --candidate-freeze > candidate-freeze-manifest.json
+          pnpm snapshot:manifest --candidate-freeze > "$FREEZE_MANIFEST"
           node - <<'NODE'
           const fs = require("fs");
-          const manifest = JSON.parse(fs.readFileSync("candidate-freeze-manifest.json", "utf8"));
+          const manifest = JSON.parse(fs.readFileSync(process.env.FREEZE_MANIFEST, "utf8"));
           const requested = process.env.CANDIDATE_SHA;
           if (manifest.release_candidate_id !== requested) {
             throw new Error(`candidate mismatch: ${manifest.release_candidate_id} != ${requested}`);
@@ -61,13 +64,14 @@ jobs:
           if (!Number.isInteger(manifest.frozen_file_count) || manifest.frozen_file_count < 1) {
             throw new Error("candidate freeze manifest has no frozen files");
           }
+          if (manifest.files.some((entry) => entry.path === "candidate-freeze-manifest.json")) {
+            throw new Error("freeze output leaked into candidate inventory");
+          }
           NODE
-        env:
-          CANDIDATE_SHA: ${{ inputs.candidate_sha }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: release1-candidate-freeze-${{ inputs.candidate_sha }}
-          path: candidate-freeze-manifest.json
+          path: ${{ runner.temp }}/candidate-freeze-manifest.json
           if-no-files-found: error
           retention-days: 90
