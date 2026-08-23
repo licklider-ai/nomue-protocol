@@ -9,7 +9,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -22,7 +23,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -37,7 +39,8 @@
         "evidence/release-1/candidate-C2-attestation-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
         "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
-        "evidence/release-1/gates/R1-03/c7-refresh-evidence.md"
+        "evidence/release-1/gates/R1-03/c7-refresh-evidence.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Release Steward"],
@@ -50,7 +53,8 @@
       "evidence": [
         "evidence/release-1/external-operator-op2-review.md",
         "evidence/release-1/decisions/2026-08-21-c2-external-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -63,7 +67,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -76,7 +81,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -91,11 +97,13 @@
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
         "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
-        "evidence/release-1/gates/R1-07/c7-refresh-evidence.md"
+        "evidence/release-1/gates/R1-07/c7-refresh-evidence.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md",
+        "evidence/release-1/gates/R1-07/c8-refresh-evidence.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Release Steward"],
-      "decided_at": "2026-08-23T23:34:26.636Z"
+      "decided_at": "2026-08-23T23:52:46.065Z"
     },
     {
       "gate_id": "R1-08",
@@ -104,7 +112,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -117,7 +126,8 @@
       "evidence": [
         "evidence/release-1/external-operator-op2-review.md",
         "evidence/release-1/decisions/2026-08-21-c2-external-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -131,7 +141,8 @@
         "evidence/release-1/canonical-cases/CC-R1-001-preregistration.md",
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -145,7 +156,8 @@
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/candidate-C2-attestation-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -161,7 +173,8 @@
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
         "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
-        "evidence/release-1/gates/R1-12/c7-candidate-confirmation.md"
+        "evidence/release-1/gates/R1-12/c7-candidate-confirmation.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO", "Release Steward"],
@@ -174,7 +187,8 @@
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [],
       "reviewed_by": ["Founder/CEO"],
@@ -195,10 +209,11 @@
         "evidence/release-1/gates/R1-14/hashes.sha256",
         "evidence/release-1/gates/R1-14/close-record.md",
         "evidence/release-1/decisions/2026-08-23-r1-14-steward-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
       "open_deviations": [
-        "Prior production signatures bind Candidate C3 and its prior release source; Candidate C7 requires a fresh release-g2 signing ceremony against C7/R7."
+        "Candidate C8 requires a fresh release-g2 production signing ceremony against C8 and release source R8."
       ],
       "reviewed_by": [],
       "decided_at": null

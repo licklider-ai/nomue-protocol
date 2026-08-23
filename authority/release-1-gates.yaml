@@ -169,7 +169,10 @@ gates:
       and repaired release-control mechanics; fresh C7
       freeze/equivalence/public-surface evidence is required before reclose. C7
       reclose: Candidate C7 freeze, detached 83-file Protocol snapshot, public
-      boundary, and candidate-equivalence evidence passed."
+      boundary, and candidate-equivalence evidence passed. C8 re-evaluation: the
+      C7-to-C8 frozen delta is one candidate-neutral operational status line;
+      the 608-file freeze, gate-definition projection, and Protocol snapshot are
+      otherwise unchanged. R1-07 remains pass."
   - gate_id: R1-08
     title: Independent numerical oracle and common-cause failure control
     purpose: Cross-check shipped numerical results against an independently
@@ -346,4 +349,5 @@ gates:
       approved R1-14 as pass on 2026-08-23. SLSA provenance remains reserved for
       R2. Candidate C7 impact review: Prior production signatures bind Candidate
       C3 and its prior release source; Candidate C7 requires a fresh release-g2
-      signing ceremony against C7/R7."
+      signing ceremony against C7/R7. Candidate C8 requires fresh production
+      signing against C8 and release source R8 before close."

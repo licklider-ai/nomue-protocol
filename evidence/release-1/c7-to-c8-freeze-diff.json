@@ -1,0 +1,11 @@
+{
+  "prior_candidate": "f4206ac3f85dc8f783d14d63413cff87ab2ed82b",
+  "candidate": "83d07d03f27cec0c245cf836c042e5378733b0a2",
+  "prior_frozen_file_count": 608,
+  "candidate_frozen_file_count": 608,
+  "gate_definition_sha256": "092836ca774f89b53d726998c8548468ea28b9ac7e13304ddeaf4cf92f66e32b",
+  "added": [],
+  "removed": [],
+  "changed": ["governance/RELEASE-SIGNING-PLAN.md"],
+  "disposition": "Candidate-neutral status wording only; no Protocol snapshot or release semantics change."
+}
