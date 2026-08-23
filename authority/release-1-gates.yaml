@@ -1,26 +1,20 @@
-# Release 1 gate registry - authoritative for whether Release 1 may happen.
-# Validated by schemas/meta/release-gates.schema.json.
-#
-# Gates begin open with a null decision and may be closed only after review against
-# one frozen Release 1 candidate, with evidence captured in evidence/release-1/.
-# There is no conditional pass.
-
 registry: nrs-release-1-gates
-registry_version: "0.2.0"
-updated: "2026-08-23"
-
+registry_version: 0.2.0
+updated: 2026-08-24
 gates:
   - gate_id: R1-01
     title: Verification depth and capability matrix
-    purpose: >-
-      Review the Release Candidate capability matrix stating exactly what each
-      verification level and check establishes, so that Release 1 cannot overclaim.
+    purpose: Review the Release Candidate capability matrix stating exactly what
+      each verification level and check establishes, so that Release 1 cannot
+      overclaim.
     applicability: Applies to every Release 1 candidate.
     state: closed
     decision: pass
     required_evidence:
-      - Release-candidate capability matrix covering every check intended to ship.
-      - Per-check depth analysis (what is recomputed, what is only cross-checked).
+      - Release-candidate capability matrix covering every check intended to
+        ship.
+      - Per-check depth analysis (what is recomputed, what is only
+        cross-checked).
       - Mapping from checks to Requirement IDs.
       - Adversarial review of overclaim risk in all public wording.
     blocking_categories:
@@ -30,17 +24,14 @@ gates:
       - NRS-VERIFY-0001
       - NRS-VERIFY-0002
       - NRS-VERIFY-0003
-    notes: >-
-      Evidence items 1-3 are generated from registries/public-checks.yaml at
+    notes: Evidence items 1-3 are generated from registries/public-checks.yaml at
       generated/PUBLIC-CHECKS.md and generated/PROFILE-CAPABILITY-MATRIX.md.
       Evidence item 4 is a steward review action. Historical close evidence from
       2026-08-13 remains under evidence/release-1/ but was invalidated for the
       current candidate state by the 2026-08-18 pre-release gate reset.
-
   - gate_id: R1-02
     title: Canonical-case differentiation against existing research-object systems
-    purpose: >-
-      Demonstrate, on concrete canonical cases, what nomue Record verifiably
+    purpose: Demonstrate, on concrete canonical cases, what nomue Record verifiably
       establishes that existing research-object systems do not.
     applicability: Applies to every Release 1 candidate.
     state: closed
@@ -52,25 +43,25 @@ gates:
     blocking_categories:
       - guarantee_boundary
     related_requirement_ids: []
-    notes: >-
-      Historical development evidence includes comparison/nomue-vs-wrroc-vs-bco.md
-      and examples/canonical-case-wetlab-01/. Release 1 still requires
-      rights-cleared canonical-case walkthroughs and honest overlap documentation
-      against the frozen candidate.
-
+    notes: Historical development evidence includes
+      comparison/nomue-vs-wrroc-vs-bco.md and
+      examples/canonical-case-wetlab-01/. Release 1 still requires
+      rights-cleared canonical-case walkthroughs and honest overlap
+      documentation against the frozen candidate.
   - gate_id: R1-03
     title: Implementation evidence for conformance, verification, and attestations
-    purpose: >-
-      Show working evidence that the conformance suite, verifier, and any test-only
-      attestation flows included in the candidate run as specified rather than
-      existing only on paper.
+    purpose: Show working evidence that the conformance suite, verifier, and any
+      test-only attestation flows included in the candidate run as specified
+      rather than existing only on paper.
     applicability: Applies to every Release 1 candidate.
-    state: closed
-    decision: pass
+    state: open
+    decision: null
     required_evidence:
-      - Conformance suite run logs against the fixtures frozen in the Release Candidate.
+      - Conformance suite run logs against the fixtures frozen in the Release
+        Candidate.
       - Verifier run logs over the Release 1 canonical cases.
-      - Attestation test-flow run logs for any test-only attestation material reviewed in Release 1.
+      - Attestation test-flow run logs for any test-only attestation material
+        reviewed in Release 1.
     blocking_categories:
       - core_semantics
       - evidence_integrity
@@ -80,17 +71,16 @@ gates:
       - NRS-VERIFY-0002
       - NRS-VERIFY-0003
       - NRS-VERIFY-0004
-    notes: >-
-      The earlier wording required runs against "released fixtures" even though all
-      gates must close before publication. The 2026-08-19 final scope audit removes
-      that circularity without weakening the gate: the fixtures and implementation
-      evidence are evaluated against the frozen Release Candidate that is intended
-      to become the release.
-
+    notes: 'The earlier wording required runs against "released fixtures" even
+      though all gates must close before publication. The 2026-08-19 final scope
+      audit removes that circularity without weakening the gate: the fixtures
+      and implementation evidence are evaluated against the frozen Release
+      Candidate that is intended to become the release. Candidate C7 impact
+      review: Candidate C7 changes normative EXPERIMENTAL approval wording;
+      fresh C7 conformance/verifier/test evidence is required before reclose.'
   - gate_id: R1-04
     title: External offline verification in clean environments
-    purpose: >-
-      Confirm that independent parties can verify Records offline, in clean
+    purpose: Confirm that independent parties can verify Records offline, in clean
       environments, without assistance from the authors.
     applicability: Applies to every Release 1 candidate.
     state: closed
@@ -104,17 +94,15 @@ gates:
       - guarantee_boundary
     related_requirement_ids:
       - NRS-SEC-0001
-    notes: >-
-      Development tooling and CI provide internal/cross-platform evidence but do
-      not substitute for the external-operator evidence required here. This gate
-      was closed for Candidate C2 after external clean-environment offline
+    notes: Development tooling and CI provide internal/cross-platform evidence but
+      do not substitute for the external-operator evidence required here. This
+      gate was closed for Candidate C2 after external clean-environment offline
       verification and explicit Founder/Steward review on 2026-08-21.
-
   - gate_id: R1-05
     title: Threat model and adversarial corpus
-    purpose: >-
-      Review the threat model and adversarial corpus intended to ship with Release 1
-      and confirm actual fail-closed behavior against the frozen candidate.
+    purpose: Review the threat model and adversarial corpus intended to ship with
+      Release 1 and confirm actual fail-closed behavior against the frozen
+      candidate.
     applicability: Applies to every Release 1 candidate.
     state: closed
     decision: pass
@@ -127,15 +115,13 @@ gates:
     related_requirement_ids:
       - NRS-SEC-0001
       - NRS-VERSION-0002
-    notes: >-
-      Historical evidence includes the threat model, hostile/resource fixtures,
-      schema-guided fuzzing, and input-hardening review. Those records are retained
-      but fresh candidate-scoped evidence is required after the 2026-08-18 reset.
-
+    notes: Historical evidence includes the threat model, hostile/resource fixtures,
+      schema-guided fuzzing, and input-hardening review. Those records are
+      retained but fresh candidate-scoped evidence is required after the
+      2026-08-18 reset.
   - gate_id: R1-06
     title: Canonical-case rights and epistemic integrity
-    purpose: >-
-      Confirm the rights to publish every canonical case and review the
+    purpose: Confirm the rights to publish every canonical case and review the
       epistemic integrity of every claim made about them.
     applicability: Applies to every Release 1 candidate.
     state: closed
@@ -149,20 +135,18 @@ gates:
       - guarantee_boundary
     related_requirement_ids:
       - NRS-VERIFY-0003
-    notes: >-
-      Existing synthetic development material is not silently relabeled as fresh
-      Release 1 evidence. Every Release 1 case is reviewed for rights/licensing and
-      epistemic integrity; cases involving real material require the corresponding
-      rights/consent evidence.
-
+    notes: Existing synthetic development material is not silently relabeled as
+      fresh Release 1 evidence. Every Release 1 case is reviewed for
+      rights/licensing and epistemic integrity; cases involving real material
+      require the corresponding rights/consent evidence.
   - gate_id: R1-07
     title: Immutable public surface and version authority
-    purpose: >-
-      Confirm that the candidate's Protocol snapshot is immutable and
-      content-addressed and that version authority is coherent before publication.
+    purpose: Confirm that the candidate's Protocol snapshot is immutable and
+      content-addressed and that version authority is coherent before
+      publication.
     applicability: Applies to every Release 1 candidate.
-    state: closed
-    decision: pass
+    state: open
+    decision: null
     required_evidence:
       - Content-addressed Protocol snapshot manifest with hashes.
       - Candidate-equivalence evidence under ADR-0033.
@@ -176,15 +160,15 @@ gates:
       - NRS-GOV-0003
       - NRS-GOV-0004
       - NRS-GOV-0007
-    notes: >-
-      ADR-0033 repaired the pre-Release-1 snapshot/candidate circularities. Gate
-      closure may update release-decision/evidence state but cannot change frozen
-      candidate content or gate definitions without a new candidate.
-
+    notes: "ADR-0033 repaired the pre-Release-1 snapshot/candidate circularities.
+      Gate closure may update release-decision/evidence state but cannot change
+      frozen candidate content or gate definitions without a new candidate.
+      Candidate C7 impact review: Candidate C7 has a new freeze/public surface
+      and repaired release-control mechanics; fresh C7
+      freeze/equivalence/public-surface evidence is required before reclose."
   - gate_id: R1-08
     title: Independent numerical oracle and common-cause failure control
-    purpose: >-
-      Cross-check shipped numerical results against an independently
+    purpose: Cross-check shipped numerical results against an independently
       implemented oracle and control common-cause failure between the verifier
       and the oracle.
     applicability: Applies to every Release 1 candidate that ships numerical checks.
@@ -198,15 +182,13 @@ gates:
       - guarantee_boundary
       - reproducibility
     related_requirement_ids: []
-    notes: >-
-      Historical independent-oracle evidence is retained. Fresh cross-check evidence
-      is generated against the exact numerical checks frozen for Release 1.
-
+    notes: Historical independent-oracle evidence is retained. Fresh cross-check
+      evidence is generated against the exact numerical checks frozen for
+      Release 1.
   - gate_id: R1-09
     title: Verifier provenance and rebuildability
-    purpose: >-
-      Confirm that the verifier source/package frozen for Release 1 can be rebuilt
-      independently with documented provenance before publication.
+    purpose: Confirm that the verifier source/package frozen for Release 1 can be
+      rebuilt independently with documented provenance before publication.
     applicability: Applies to every Release 1 candidate.
     state: closed
     decision: pass
@@ -220,16 +202,13 @@ gates:
     related_requirement_ids:
       - NRS-GOV-0001
       - NRS-GOV-0006
-    notes: >-
-      This gate requires an external/independent rebuild of the frozen candidate
-      verifier. Candidate C2 satisfied the requirement with a separate clean clone,
-      frozen install, deterministic regeneration, full check, verifier execution,
-      and explicit Founder/Steward review on 2026-08-21.
-
+    notes: This gate requires an external/independent rebuild of the frozen
+      candidate verifier. Candidate C2 satisfied the requirement with a separate
+      clean clone, frozen install, deterministic regeneration, full check,
+      verifier execution, and explicit Founder/Steward review on 2026-08-21.
   - gate_id: R1-10
     title: Canonical-case preregistration and failed-case disclosure
-    purpose: >-
-      Preregister canonical cases before evaluation and disclose failed cases
+    purpose: Preregister canonical cases before evaluation and disclose failed cases
       instead of silently dropping them.
     applicability: Applies to every Release 1 candidate.
     state: closed
@@ -241,49 +220,46 @@ gates:
       - guarantee_boundary
       - evidence_integrity
     related_requirement_ids: []
-    notes: >-
-      Preregistration must precede evaluation of every Release 1 canonical case.
-      Evidence is recorded under evidence/release-1/ so cases and failures can be
-      audited without changing the frozen Protocol/public candidate content.
-
+    notes: Preregistration must precede evaluation of every Release 1 canonical
+      case. Evidence is recorded under evidence/release-1/ so cases and failures
+      can be audited without changing the frozen Protocol/public candidate
+      content.
   - gate_id: R1-11
     title: Cryptosuite and trust semantics
-    purpose: >-
-      Establish the cryptosuite structure, trust semantics, and negative tests
-      required before any attestation ships.
-    applicability: >-
-      Required if Release 1 includes production attestation or any
-      "nomue-attested" claim. If Release 1 binds no attestation support, production
-      identity/key-lifecycle evidence is not applicable to this release; structural
-      cryptosuite/trust semantics and test-only negative paths may still be reviewed
-      as experimental specification material.
+    purpose: Establish the cryptosuite structure, trust semantics, and negative
+      tests required before any attestation ships.
+    applicability: Required if Release 1 includes production attestation or any
+      "nomue-attested" claim. If Release 1 binds no attestation support,
+      production identity/key-lifecycle evidence is not applicable to this
+      release; structural cryptosuite/trust semantics and test-only negative
+      paths may still be reviewed as experimental specification material.
     state: closed
     decision: pass
     required_evidence:
-      - Cryptosuite structure definition and rationale for any attestation material reviewed.
+      - Cryptosuite structure definition and rationale for any attestation
+        material reviewed.
       - Trust semantics definition (what an attestation does and does not claim).
-      - Negative test corpus and run logs for the experimental/test-only path if retained.
+      - Negative test corpus and run logs for the experimental/test-only path if
+        retained.
     blocking_categories:
       - security
       - core_semantics
     related_requirement_ids:
       - NRS-VERIFY-0004
-    notes: >-
-      The planned Release 1 support target declares attestation_support: none and
-      makes no production nomue-attested claim. A production trust-root key ceremony
-      is therefore not a Release 1 prerequisite. A future bundle that binds
-      attestation support reopens the full production identity/key-lifecycle boundary.
-      Historical 2026-08-13 conditional-close prose is retained in its evidence
-      records but is not a current gate decision.
-
+    notes: "The planned Release 1 support target declares attestation_support: none
+      and makes no production nomue-attested claim. A production trust-root key
+      ceremony is therefore not a Release 1 prerequisite. A future bundle that
+      binds attestation support reopens the full production
+      identity/key-lifecycle boundary. Historical 2026-08-13 conditional-close
+      prose is retained in its evidence records but is not a current gate
+      decision."
   - gate_id: R1-12
     title: Legal implementation boundary
-    purpose: >-
-      Confirm that licensing, patent, contribution, and trademark terms are in
-      place before public release.
+    purpose: Confirm that licensing, patent, contribution, and trademark terms are
+      in place before public release.
     applicability: Applies to every Release 1 candidate.
-    state: closed
-    decision: pass
+    state: open
+    decision: null
     required_evidence:
       - Specification license.
       - Verifier code license.
@@ -294,29 +270,33 @@ gates:
       - legal
       - rights
     related_requirement_ids: []
-    notes: >-
-      Trademark registration is resolved and no longer a required-evidence item.
-      The Release 1 legal package was adopted on 2026-08-20 in LICENSE.md; the
-      governance rationale and counsel boundary are recorded in
-      governance/LICENSING-PLAN.md and evidence/release-1/gates/R1-12/. Under the
-      2026-08-18 gate-reset rule, adoption resolves the pre-candidate legal-package
-      blocker but R1-12 remains open until candidate-scoped confirmation and steward
-      review against the final frozen Release Candidate.
-
+    notes: "Trademark registration is resolved and no longer a required-evidence
+      item. The Release 1 legal package was adopted on 2026-08-20 in LICENSE.md;
+      the governance rationale and counsel boundary are recorded in
+      governance/LICENSING-PLAN.md and evidence/release-1/gates/R1-12/. Under
+      the 2026-08-18 gate-reset rule, adoption resolves the pre-candidate
+      legal-package blocker but R1-12 remains open until candidate-scoped
+      confirmation and steward review against the final frozen Release
+      Candidate. Candidate C7 impact review: Candidate C7 changes LICENSE.md
+      licensor/attribution presentation; fresh candidate-scoped confirmation of
+      the adopted legal package is required before reclose."
   - gate_id: R1-13
     title: Relying-party interface documentation
-    purpose: >-
-      Confirm that the relying-party interface frozen for Release 1 accurately
-      explains how a human reviewer, agent, or CI system consumes a verification
-      report/refusal and reaches its own decision.
+    purpose: Confirm that the relying-party interface frozen for Release 1
+      accurately explains how a human reviewer, agent, or CI system consumes a
+      verification report/refusal and reaches its own decision.
     applicability: Applies to every Release 1 candidate.
     state: closed
     decision: pass
     required_evidence:
-      - Release-candidate relying-party interface section intended for publication.
-      - Review record confirming the section's claims match the candidate report/refusal schemas.
-      - Confirmation that the section adds no new normative field to the public contract beyond interpretive constraints on existing fields.
-      - Machine-readable CLI output mode and a documented, drift-tested exit-code contract.
+      - Release-candidate relying-party interface section intended for
+        publication.
+      - Review record confirming the section's claims match the candidate
+        report/refusal schemas.
+      - Confirmation that the section adds no new normative field to the public
+        contract beyond interpretive constraints on existing fields.
+      - Machine-readable CLI output mode and a documented, drift-tested
+        exit-code contract.
       - A CI-integration example demonstrating the interface end-to-end.
     blocking_categories:
       - core_semantics
@@ -325,24 +305,24 @@ gates:
       - NRS-VERIFY-0023
       - NRS-VERIFY-0024
       - NRS-VERIFY-0025
-    notes: >-
-      Candidate documentation is reviewed before publication; the gate does not
+    notes: Candidate documentation is reviewed before publication; the gate does not
       require the interface to have already been publicly released. Historical
       close evidence remains retained but is stale for the current candidate.
-
   - gate_id: R1-14
     title: Release signing
-    purpose: >-
-      Confirm that Release 1 artifacts are signed under a key lineage separate from
-      attestation identity, with documented verification and generation-managed key
-      custody before public publication.
+    purpose: Confirm that Release 1 artifacts are signed under a key lineage
+      separate from attestation identity, with documented verification and
+      generation-managed key custody before public publication.
     applicability: Applies to every Release 1 candidate.
-    state: closed
-    decision: pass
+    state: open
+    decision: null
     required_evidence:
-      - Release signing plan document (key separation, targets, verification procedure, key generation management).
-      - Signatures over the final release source/archive target, checksums/metadata target, and Protocol snapshot manifest.
-      - Relying-party signature verification walkthrough with successful verification evidence.
+      - Release signing plan document (key separation, targets, verification
+        procedure, key generation management).
+      - Signatures over the final release source/archive target,
+        checksums/metadata target, and Protocol snapshot manifest.
+      - Relying-party signature verification walkthrough with successful
+        verification evidence.
       - SLSA provenance explicitly reserved for R2 (recorded, not implemented).
     blocking_categories:
       - security
@@ -350,12 +330,14 @@ gates:
     related_requirement_ids:
       - NRS-ATTEST-0006
       - NRS-ATTEST-0008
-    notes: >-
-      Candidate C3 production signing used release-g2 (ECDSA P-256 / SHA-256) over
-      the exact source archive, release checksums, and Protocol snapshot manifest.
-      Positive verification passed for all three targets, negative verification
-      failed closed, and three Cloud KMS AsymmetricSign audit entries were captured.
-      PR #50 merged the redacted evidence at cc49ed7; final-head candidate-equivalence
-      and public-boundary checks passed in workflow run 32637780255. Founder/CEO,
-      acting as Release 1 Steward, approved R1-14 as pass on 2026-08-23. SLSA
-      provenance remains reserved for R2.
+    notes: "Candidate C3 production signing used release-g2 (ECDSA P-256 / SHA-256)
+      over the exact source archive, release checksums, and Protocol snapshot
+      manifest. Positive verification passed for all three targets, negative
+      verification failed closed, and three Cloud KMS AsymmetricSign audit
+      entries were captured. PR #50 merged the redacted evidence at cc49ed7;
+      final-head candidate-equivalence and public-boundary checks passed in
+      workflow run 32637780255. Founder/CEO, acting as Release 1 Steward,
+      approved R1-14 as pass on 2026-08-23. SLSA provenance remains reserved for
+      R2. Candidate C7 impact review: Prior production signatures bind Candidate
+      C3 and its prior release source; Candidate C7 requires a fresh release-g2
+      signing ceremony against C7/R7."
