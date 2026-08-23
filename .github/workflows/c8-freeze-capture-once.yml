@@ -1,0 +1,71 @@
+name: Candidate C8 freeze capture once
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  capture-c8-freeze:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 83d07d03f27cec0c245cf836c042e5378733b0a2
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate and capture C8 freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "83d07d03f27cec0c245cf836c042e5378733b0a2"
+          pnpm snapshot:manifest --check-public-boundary
+          pnpm check
+          mkdir -p "$RUNNER_TEMP/c8-freeze"
+          pnpm snapshot:manifest --candidate-freeze > "$RUNNER_TEMP/c8-freeze/candidate-freeze-manifest-c8.json"
+          pnpm snapshot:manifest --hash-only > "$RUNNER_TEMP/c8-freeze/protocol-snapshot-hash-c8.txt"
+          FREEZE_PATH="$RUNNER_TEMP/c8-freeze/candidate-freeze-manifest-c8.json" node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const oldFreeze = JSON.parse(fs.readFileSync('evidence/release-1/candidate-freeze-manifest.json', 'utf8'));
+          const nextFreeze = JSON.parse(fs.readFileSync(process.env.FREEZE_PATH, 'utf8'));
+          const oldCandidate = 'f4206ac3f85dc8f783d14d63413cff87ab2ed82b';
+          const nextCandidate = '83d07d03f27cec0c245cf836c042e5378733b0a2';
+          const gateDigest = '092836ca774f89b53d726998c8548468ea28b9ac7e13304ddeaf4cf92f66e32b';
+          if (oldFreeze.release_candidate_id !== oldCandidate) throw new Error('stored freeze is not C7');
+          if (nextFreeze.release_candidate_id !== nextCandidate) throw new Error('generated freeze is not C8');
+          if (oldFreeze.frozen_file_count !== 608 || nextFreeze.frozen_file_count !== 608) throw new Error('unexpected frozen file count');
+          if (oldFreeze.release_gate_definition_sha256 !== gateDigest || nextFreeze.release_gate_definition_sha256 !== gateDigest) throw new Error('gate-definition digest changed');
+          const a = new Map(oldFreeze.files.map((x) => [x.path, x.sha256]));
+          const b = new Map(nextFreeze.files.map((x) => [x.path, x.sha256]));
+          const added = [...b.keys()].filter((p) => !a.has(p)).sort();
+          const removed = [...a.keys()].filter((p) => !b.has(p)).sort();
+          const changed = [...b.keys()].filter((p) => a.has(p) && a.get(p) !== b.get(p)).sort();
+          if (added.length || removed.length || JSON.stringify(changed) !== JSON.stringify(['governance/RELEASE-SIGNING-PLAN.md'])) {
+            throw new Error(`unexpected C7-to-C8 frozen delta: added=${JSON.stringify(added)} removed=${JSON.stringify(removed)} changed=${JSON.stringify(changed)}`);
+          }
+          fs.writeFileSync('$RUNNER_TEMP/c8-freeze/c7-to-c8-freeze-diff.json', JSON.stringify({
+            prior_candidate: oldCandidate,
+            candidate: nextCandidate,
+            prior_frozen_file_count: oldFreeze.frozen_file_count,
+            candidate_frozen_file_count: nextFreeze.frozen_file_count,
+            gate_definition_sha256: gateDigest,
+            added,
+            removed,
+            changed,
+            disposition: 'Candidate-neutral status wording only; no Protocol snapshot or release semantics change.'
+          }, null, 2) + '\n');
+          NODE
+          test "$(cat "$RUNNER_TEMP/c8-freeze/protocol-snapshot-hash-c8.txt")" = "sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: c8-freeze-capture
+          path: ${{ runner.temp }}/c8-freeze/
+          if-no-files-found: error
+          retention-days: 90
