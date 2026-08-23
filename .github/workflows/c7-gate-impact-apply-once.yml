@@ -1,0 +1,93 @@
+name: C7 gate impact apply once
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-impact:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c62c3d0362394fc1f4c3962aa6d8c9b543187ad3
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Apply C7 gate-impact disposition
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import YAML from 'yaml';
+
+          const review = 'evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md';
+          const reopen = new Map([
+            ['R1-03', 'Candidate C7 changes normative EXPERIMENTAL approval wording; fresh C7 conformance/verifier/test evidence is required before reclose.'],
+            ['R1-07', 'Candidate C7 has a new freeze/public surface and repaired release-control mechanics; fresh C7 freeze/equivalence/public-surface evidence is required before reclose.'],
+            ['R1-12', 'Candidate C7 changes LICENSE.md licensor/attribution presentation; fresh candidate-scoped confirmation of the adopted legal package is required before reclose.'],
+            ['R1-14', 'Prior production signatures bind Candidate C3 and its prior release source; Candidate C7 requires a fresh release-g2 signing ceremony against C7/R7.'],
+          ]);
+
+          const registryPath = 'authority/release-1-gates.yaml';
+          const registry = YAML.parse(fs.readFileSync(registryPath, 'utf8'));
+          registry.updated = '2026-08-24';
+          for (const gate of registry.gates) {
+            if (!reopen.has(gate.gate_id)) continue;
+            gate.state = 'open';
+            gate.decision = null;
+            const prior = String(gate.notes ?? '').trim();
+            const suffix = `Candidate C7 impact review: ${reopen.get(gate.gate_id)}`;
+            gate.notes = prior.includes('Candidate C7 impact review:') ? prior : `${prior} ${suffix}`.trim();
+          }
+          fs.writeFileSync(registryPath, YAML.stringify(registry), 'utf8');
+
+          const indexPath = 'evidence/release-1/gate-index.json';
+          const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+          if (index.release_candidate_id !== 'f4206ac3f85dc8f783d14d63413cff87ab2ed82b') {
+            throw new Error(`gate index candidate is not C7: ${index.release_candidate_id}`);
+          }
+          for (const gate of index.gates) {
+            gate.evidence = [...new Set([...(gate.evidence ?? []), review])];
+            if (reopen.has(gate.gate_id)) {
+              gate.state = 'open';
+              gate.decision = null;
+              gate.open_deviations = [reopen.get(gate.gate_id)];
+              gate.reviewed_by = [];
+              gate.decided_at = null;
+            }
+          }
+          fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + '\n', 'utf8');
+          NODE
+
+          pnpm generate
+          pnpm exec prettier --write \
+            authority/release-1-gates.yaml \
+            generated/RELEASE-1-GATES.md \
+            evidence/release-1/gate-index.json \
+            evidence/release-1/c3-to-c7-freeze-diff.json \
+            evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md
+
+          pnpm snapshot:manifest --check-candidate
+          pnpm check
+
+          test -z "$(git diff --name-only -- generated/README.md)"
+      - name: Commit validated gate-impact state and replace operations branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "nomue release operations"
+          git config user.email "release-ops@users.noreply.github.com"
+          git add \
+            authority/release-1-gates.yaml \
+            generated/RELEASE-1-GATES.md \
+            evidence/release-1/
+          git commit -m "Release 1: apply C7 gate-impact disposition"
+          git push origin HEAD:refs/heads/release1/c7-gate-refresh --force
