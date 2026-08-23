@@ -1,7 +1,7 @@
 {
   "manifest": "nrs-release-candidate-freeze",
   "manifest_version": "0.1.0",
-  "release_candidate_id": "f4206ac3f85dc8f783d14d63413cff87ab2ed82b",
+  "release_candidate_id": "83d07d03f27cec0c245cf836c042e5378733b0a2",
   "release_gate_definition_sha256": "092836ca774f89b53d726998c8548468ea28b9ac7e13304ddeaf4cf92f66e32b",
   "excluded_mutable_paths": {
     "exact": ["authority/release-1-gates.yaml", "generated/RELEASE-1-GATES.md"],
@@ -1415,7 +1415,7 @@
     },
     {
       "path": "governance/RELEASE-SIGNING-PLAN.md",
-      "sha256": "5658ff2b455d4b9603f3410210482bc566ac905841c53faa4d3dcc064e398edf"
+      "sha256": "58296063b6d243ec3d83a67211707df74c90ffedae905ad3b83784257bcd6b59"
     },
     {
       "path": "governance/RELEASE-SIGNING-RUNBOOK.md",
