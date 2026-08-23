@@ -1,0 +1,90 @@
+name: C6 freeze and impact inventory
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  freeze-and-diff:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 03f1c8bc32b06d86a0169113799ab27cb8f737c3
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Generate exact C6 freeze outside checkout
+        shell: bash
+        env:
+          C6_FREEZE: ${{ runner.temp }}/candidate-freeze-C6.json
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "03f1c8bc32b06d86a0169113799ab27cb8f737c3"
+          pnpm snapshot:manifest --check-public-boundary
+          pnpm snapshot:manifest --candidate-freeze > "$C6_FREEZE"
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = process.env.C6_FREEZE;
+          const m = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (m.release_candidate_id !== '03f1c8bc32b06d86a0169113799ab27cb8f737c3') throw new Error('wrong C6 id');
+          if (m.files.some((e) => e.path === 'candidate-freeze-manifest.json')) throw new Error('freeze output self-included');
+          NODE
+      - name: Build C3 to C6 inventory diff and evidence-reference check
+        shell: bash
+        env:
+          C6_FREEZE: ${{ runner.temp }}/candidate-freeze-C6.json
+          DIFF_OUT: ${{ runner.temp }}/c3-to-c6-freeze-diff.json
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs = require('fs');
+          const priorPath = 'evidence/release-1/candidate-freeze-manifest.json';
+          const currentPath = process.env.C6_FREEZE;
+          const prior = JSON.parse(fs.readFileSync(priorPath, 'utf8'));
+          const current = JSON.parse(fs.readFileSync(currentPath, 'utf8'));
+          const p = new Map(prior.files.map((e) => [e.path, e.sha256]));
+          const c = new Map(current.files.map((e) => [e.path, e.sha256]));
+          const added = [...c.keys()].filter((x) => !p.has(x)).sort();
+          const removed = [...p.keys()].filter((x) => !c.has(x)).sort();
+          const changed = [...c.keys()].filter((x) => p.has(x) && p.get(x) !== c.get(x)).sort().map((path) => ({
+            path,
+            prior_sha256: p.get(path),
+            current_sha256: c.get(path),
+          }));
+          const gateIndex = JSON.parse(fs.readFileSync('evidence/release-1/gate-index.json', 'utf8'));
+          const evidenceRefs = [...new Set(gateIndex.gates.flatMap((g) => g.evidence || []))].sort();
+          const missingEvidenceRefs = evidenceRefs.filter((x) => !fs.existsSync(x));
+          const report = {
+            prior_candidate: prior.release_candidate_id,
+            current_candidate: current.release_candidate_id,
+            prior_gate_definition_sha256: prior.release_gate_definition_sha256,
+            current_gate_definition_sha256: current.release_gate_definition_sha256,
+            prior_frozen_file_count: prior.frozen_file_count,
+            current_frozen_file_count: current.frozen_file_count,
+            added,
+            removed,
+            changed,
+            unchanged_count: [...c.keys()].filter((x) => p.get(x) === c.get(x)).length,
+            gate_index_evidence_reference_count: evidenceRefs.length,
+            missing_gate_index_evidence_references: missingEvidenceRefs,
+          };
+          fs.writeFileSync(process.env.DIFF_OUT, JSON.stringify(report, null, 2) + '\n');
+          if (missingEvidenceRefs.length) throw new Error(`missing gate evidence refs: ${missingEvidenceRefs.join(', ')}`);
+          NODE
+          cp evidence/release-1/candidate-freeze-manifest.json "${{ runner.temp }}/candidate-freeze-C3.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: c6-freeze-impact-inventory
+          path: |
+            ${{ runner.temp }}/candidate-freeze-C6.json
+            ${{ runner.temp }}/candidate-freeze-C3.json
+            ${{ runner.temp }}/c3-to-c6-freeze-diff.json
+          if-no-files-found: error
+          retention-days: 14
