@@ -1,0 +1,47 @@
+name: C5 freeze capture
+
+on:
+  push:
+    branches: ["release1/c5-release-control-repair"]
+
+permissions:
+  contents: read
+
+jobs:
+  freeze-c5:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fd8bb98a59744f5c72d74a5a5a8070d98dd2b52f
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Confirm exact candidate and public boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "fd8bb98a59744f5c72d74a5a5a8070d98dd2b52f"
+          pnpm snapshot:manifest --check-public-boundary
+      - name: Generate candidate freeze manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm snapshot:manifest --candidate-freeze > candidate-freeze-manifest.json
+          node - <<'NODE'
+          const fs = require("fs");
+          const m = JSON.parse(fs.readFileSync("candidate-freeze-manifest.json", "utf8"));
+          if (m.release_candidate_id !== "fd8bb98a59744f5c72d74a5a5a8070d98dd2b52f") {
+            throw new Error(`unexpected candidate ${m.release_candidate_id}`);
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: c5-freeze-fd8bb98a
+          path: candidate-freeze-manifest.json
+          if-no-files-found: error
+          retention-days: 7
