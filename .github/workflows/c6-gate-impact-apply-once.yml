@@ -3,6 +3,7 @@ name: C6 gate impact apply once
 on:
   push:
     branches: ["release1/c6-gate-refresh"]
+  pull_request:
 
 permissions:
   contents: write
