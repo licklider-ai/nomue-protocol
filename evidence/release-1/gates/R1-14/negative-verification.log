@@ -1,0 +1,13 @@
+$ tsx tooling/src/release/release-signing-cli.ts verify "--bundle" "<tampered-signing-bundle>" "--public-key" "<release-g2-public-key.pem>" "--expected-fingerprint" "sha256:07d6ce902794edb9e94800407f93505c4c9cc01f150f4963c07c00966634b3fe"
+{
+  "ok": false,
+  "public_key_fingerprint": "sha256:07d6ce902794edb9e94800407f93505c4c9cc01f150f4963c07c00966634b3fe",
+  "verified_targets": [
+    "source_archive",
+    "checksums"
+  ],
+  "failures": [
+    "protocol_snapshot_manifest: sha256 mismatch (sha256:71f99718c98c93cf7d28eb35dd2b29c7a2cde84c184a111df5eb737ac4afb236 != sha256:e0e09c7d282b096f5d5a185df4ecfeb65bb53d5816c81b2be0efa220fe0ff375)"
+  ]
+}
+[ELIFECYCLE] Command failed with exit code 1.

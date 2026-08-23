@@ -1,0 +1,134 @@
+{
+  "phase": "phase-1",
+  "description": "Content pins for the Phase 1 vertical contract slice. Development evidence only; not Release 1 gate evidence.",
+  "artifacts": [
+    {
+      "path": "spec/core/record-envelope.md",
+      "sha256": "9984587171668941e1da5f6ffff16538934651b49d4ef85435d525f5cb4772b1"
+    },
+    {
+      "path": "spec/core/integrity-model.md",
+      "sha256": "14cbfdaf225056fa13ae59f27cfab29c403131d67cb1250d91bd7ac2ac2e06ec"
+    },
+    {
+      "path": "spec/verification/public-checks.md",
+      "sha256": "b815e17687fb72d3ae8171127b20c69c3ad44513279332709f6ad154e04634a8"
+    },
+    {
+      "path": "spec/verification/execution-outcome-model.md",
+      "sha256": "bc2e22b809966e4dc1e2942681a7da70b2ae0b0246d91c655730a5e36d04c602"
+    },
+    {
+      "path": "spec/verification/verification-report.md",
+      "sha256": "82d8967dd640d32573dcddcb3618a8ec1df191cdb792bbb081e64135aef28b97"
+    },
+    {
+      "path": "spec/versioning/interpretation-bundle.md",
+      "sha256": "9df130cfd52b00ed7d639b09073a54cd835da02d1ca44f11c06083779e1c763a"
+    },
+    {
+      "path": "spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md",
+      "sha256": "6524f738c98d3b2a66f25b2f124dd158c20e1b187a50ccd8bb2a5504035c4958"
+    },
+    {
+      "path": "spec/profiles/independent-two-group-continuous/welch-calculation.md",
+      "sha256": "4a579e1934d0fbde616b6c235080dde483e87ed4a78312bae6da210f7ef5a631"
+    },
+    {
+      "path": "canonicalization/record-canonicalization.md",
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a"
+    },
+    {
+      "path": "canonicalization/phase-1-numeric-model.md",
+      "sha256": "328b1ec418a617be14c3634fb720ab459cadd6892bba2ad615d935e0be7dd4cf"
+    },
+    {
+      "path": "canonicalization/numerical-comparison.md",
+      "sha256": "68d0f6ab27228a059aabbc6b3d37317c09ba5e982f2f2d1aca3a34886f6fda23"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "path": "registries/public-checks.yaml",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9"
+    },
+    {
+      "path": "registries/reason-codes.yaml",
+      "sha256": "1bbe75c9898eb2692a34aafff2b9dba7a5a8de2f48bfde7f0145e3d6e47bbe05"
+    },
+    {
+      "path": "registries/state-invariants.yaml",
+      "sha256": "7576b927d10196606a4e541258deb97647da114397d9f71cde6cc45e51b7cffb"
+    },
+    {
+      "path": "registries/public-contract-surfaces.yaml",
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a"
+    },
+    {
+      "path": "registries/interpretation-bundles.yaml",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290"
+    },
+    {
+      "path": "schemas/common/identifier.schema.json",
+      "sha256": "230796eae2baf7e3ebf5f75c9dcfe5b6afba3e320b152e7c848e38d06047b75c"
+    },
+    {
+      "path": "schemas/common/execution-outcome.schema.json",
+      "sha256": "39ec8d2ac254487c10486cd324e894bad0c7e43d334b9b533c7f4386374d7b37"
+    },
+    {
+      "path": "schemas/common/execution-outcome-0.2.schema.json",
+      "sha256": "36a1cd91fd3abb773fb279b613a4eedde4f583451690f7fec1695344cb37a78e"
+    },
+    {
+      "path": "schemas/profiles/itgc-minimal.schema.json",
+      "sha256": "5917cbc2d8de25e624bb1ea8dbced758fc66d794a6d05e3cb691c3f01351d699"
+    },
+    {
+      "path": "schemas/profiles/itgc-guarantee-0.2.schema.json",
+      "sha256": "60144b2c6c85009231a8d055aba2142b372c0f788f793b356a42c469c1de8510"
+    },
+    {
+      "path": "schemas/record/record.schema.json",
+      "sha256": "5b1006cf2724f0b4df914c0106a0d2d79b4bf3044d2ec08af67caaed34e2e67c"
+    },
+    {
+      "path": "schemas/record/record-0.2.schema.json",
+      "sha256": "78edefca1af368637f22051fbec4898df932f4378b912cd91c19ad8cc8a8cc9c"
+    },
+    {
+      "path": "schemas/reports/verification-report.schema.json",
+      "sha256": "b91f59e501242bc277a7723edadecb4a9cca00b03c4eec1e9d0882fd0f18051f"
+    },
+    {
+      "path": "schemas/reports/verification-report-0.2.schema.json",
+      "sha256": "c9fc5d15ba6a90ac5d1a348bcd1f8fd43fa93cfb70c7945ed5cf79fbe2bb27d8"
+    },
+    {
+      "path": "schemas/reports/verifier-refusal-0.2.schema.json",
+      "sha256": "45d345402cd72141ec57d4aba195bcc9278d724a31c7a0917dc6f11185b31aab"
+    },
+    {
+      "path": "schemas/reports/verifier-refusal-0.2-draft-2.schema.json",
+      "sha256": "0d10ef206e9fa1df4456be6889e2d078aae08630e608b15570a9ea187e78730b"
+    },
+    {
+      "path": "schemas/reports/verifier-refusal-0.2-draft-3.schema.json",
+      "sha256": "05cdaf9f96889f37b1f51c1d5dd0f1fabafc0bb48924e56abc9f2d1df62a5436"
+    },
+    {
+      "path": "schemas/routing/routing-envelope-0.2.schema.json",
+      "sha256": "313b80252d529cd1b32d0f5cc1fc71e705542e885284ecc3f3d6a463073e873a"
+    },
+    {
+      "path": "conformance/manifest.yaml",
+      "sha256": "4a009d86e1616be99fdcd15712818536507ed4c53af1c01f8bba309d97d408f3"
+    },
+    {
+      "path": "canonicalization/test-vectors/manifest.yaml",
+      "sha256": "bd4ee790eea371bfaebda34bde13de7ff69918eb94b100fda9b5320f50553165"
+    }
+  ]
+}

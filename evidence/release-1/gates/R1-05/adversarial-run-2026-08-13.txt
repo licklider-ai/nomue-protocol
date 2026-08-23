@@ -1,0 +1,4 @@
+$ tsx tooling/src/phase1/conformance-run.ts --include A2-R
+conformance:test (include A2-R*): OK (8 fixtures match their pinned expectations)
+$ tsx tooling/src/fuzz/schema-guided-fuzzer.ts "--seconds" "5" "--seed" "42"
+schema-guided-fuzzer: 21135 iterations in 10000ms, 0 unsafe outcome(s). Wrote evidence\development\fuzz-runs\run-seed-42.json

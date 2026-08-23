@@ -1,0 +1,32 @@
+correction_id: A2-B-004-numerical-contract-0.2.1
+classification: pre_release_correction
+fixture_id: A2-B-004
+purpose_unchanged: true
+purpose: A nearby unknown 0.2 bundle version is refused, never guessed.
+
+change_commit: f21597953e905984e86a61374370f9af4785a6cb
+change_reason: >-
+  urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1 became a supported successor
+  bundle; the fixture must continue to pin refusal of an unknown nearby version
+  without reusing the now-supported identifier.
+
+before:
+  interpretation_bundle_id: urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+  input_sha256: 4d5e00ff46dc32f6fc984f5bed05af2333fb7bb5197c7fd7956d344c93b71a39
+  expected:
+    cli_exit_code: 3
+    refusal_kind: unsupported_bundle
+    reason_codes: [NRS-UNSUPPORTED-BUNDLE]
+  git_object: 3e38e1fd6152033ef62624a80ef0a196229b462f:conformance/fixtures/verifier_behavior/A2-B-004.json
+
+after:
+  interpretation_bundle_id: urn:nomue:bundle:itgc-guarantee:0.2.2-draft.1
+  input_sha256: 8204708e562a36745cca774c528774a9894e86998106996ddc59381779f8b20d
+  expected:
+    cli_exit_code: 3
+    refusal_kind: unsupported_bundle
+    reason_codes: [NRS-UNSUPPORTED-BUNDLE]
+
+related_adr: governance/decisions/ADR-0016-exact-bundle-dispatch.md
+successor_dispatch_fixture: A2-1-V-001
+unsupported_nearby_fixture: A2-B-004

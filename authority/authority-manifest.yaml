@@ -1,0 +1,714 @@
+# Exhaustive target → artifact assignments for the nomue Protocol repository.
+# Prose authority model: AUTHORITY.md. Human-readable view: generated/AUTHORITY-INDEX.md.
+# Validated by schemas/meta/authority-manifest.schema.json.
+#
+# class: authoritative — carries authority only for explicitly assigned targets.
+# class: evidence — limited observation/decision authority only when assigned to
+#   an allowed evidence/decision target (see AUTHORITY.md).
+# informative / generated / reference — no authority. Unclassified artifacts have none.
+
+manifest: nrs-authority-manifest
+manifest_version: "0.1.0"
+updated: "2026-08-18"
+
+targets:
+  - target_id: mission-scope-non-goals
+    description: >-
+      Project mission, scope, non-goals, and non-claims for the nomue Protocol.
+    authoritative_artifacts:
+      - CHARTER.md
+
+  - target_id: authority-location-and-conflicts
+    description: >-
+      Location of nomue Protocol authority and how conflicts between
+      authoritative artifacts are handled.
+    authoritative_artifacts:
+      - AUTHORITY.md
+      - authority/authority-manifest.yaml
+
+  - target_id: normative-meaning
+    description: Normative Protocol meaning and guarantee boundaries.
+    authoritative_artifacts:
+      - spec/core/authority-and-governance.md
+      - spec/core/layer-boundary.md
+      - spec/core/verification-principles.md
+      - spec/core/versioning-principles.md
+      - spec/core/record-envelope.md
+      - spec/core/integrity-model.md
+      - spec/core/provenance-model.md
+      - spec/core/record-lifecycle.md
+      - spec/verification/public-checks.md
+      - spec/verification/execution-outcome-model.md
+      - spec/verification/verification-report.md
+      - spec/verification/relying-party-interface.md
+      - spec/emission/README.md
+      - spec/approval/README.md
+      - spec/attestation/README.md
+      - spec/versioning/interpretation-bundle.md
+      - spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+      - spec/profiles/independent-two-group-continuous/welch-calculation.md
+      - spec/profiles/independent-two-group-continuous/admissibility.md
+      - spec/profiles/independent-two-group-continuous/effect-estimate.md
+      - spec/profiles/independent-two-group-continuous/confidence-interval.md
+      - spec/profiles/independent-two-group-continuous/non-claims.md
+      - spec/verification/profile-admissibility-check.md
+      - spec/verification/welch-computability-check.md
+      - spec/verification/phase-2a-welch-recompute.md
+      - spec/verification/verifier-refusal.md
+      - spec/versioning/multi-bundle-dispatch.md
+      - spec/versioning/public-check-versioning.md
+      - canonicalization/record-canonicalization.md
+      - canonicalization/phase-1-numeric-model.md
+      - canonicalization/numerical-comparison.md
+
+  - target_id: requirement-ids
+    description: Requirement IDs, stability, and reference relations.
+    authoritative_artifacts:
+      - registries/requirements.yaml
+
+  - target_id: vocabulary
+    description: Term definitions.
+    authoritative_artifacts:
+      - registries/vocabulary.yaml
+
+  - target_id: stability-tiers
+    description: Stability tier definitions.
+    authoritative_artifacts:
+      - registries/stability-tiers.yaml
+
+  - target_id: public-contract-surfaces
+    description: Registered public contract surfaces, their status, scope, and change policy.
+    authoritative_artifacts:
+      - registries/public-contract-surfaces.yaml
+
+  - target_id: interpretation-bundles
+    description: Registered supported version combinations for interpreting Records.
+    authoritative_artifacts:
+      - registries/interpretation-bundles.yaml
+
+  - target_id: json-structure
+    description: >-
+      JSON structural surfaces declared as authoritative by the Protocol,
+      including registry meta-schemas.
+    authoritative_artifacts:
+      - schemas/record/record.schema.json
+      - schemas/record/record-0.2.schema.json
+      - schemas/profiles/itgc-minimal.schema.json
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+      - schemas/reports/verification-report.schema.json
+      - schemas/reports/verification-report-0.2.schema.json
+      - schemas/reports/verifier-refusal-0.2.schema.json
+      - schemas/reports/verifier-refusal-0.2-draft-2.schema.json
+      - schemas/routing/routing-envelope-0.2.schema.json
+      - schemas/common/identifier.schema.json
+      - schemas/common/execution-outcome.schema.json
+      - schemas/common/execution-outcome-0.2.schema.json
+      - schemas/meta/authority-manifest.schema.json
+      - schemas/meta/release-gates.schema.json
+      - schemas/meta/requirements-registry.schema.json
+      - schemas/meta/vocabulary-registry.schema.json
+      - schemas/meta/stability-tiers.schema.json
+      - schemas/meta/public-contract-surfaces.schema.json
+      - schemas/meta/interpretation-bundles.schema.json
+      - schemas/meta/public-checks-registry.schema.json
+      - schemas/meta/reason-codes-registry.schema.json
+      - schemas/meta/state-invariants-registry.schema.json
+      - schemas/meta/attestation-signature-suites.schema.json
+      - schemas/meta/lifecycle-operations.schema.json
+      - schemas/meta/attestation-trust-root.schema.json
+      - schemas/lifecycle/state-view-0.1.schema.json
+      - schemas/lifecycle/clarification-0.1.schema.json
+      - schemas/lifecycle/disclosure-notice-0.1.schema.json
+      - schemas/reports/verification-report-0.2-draft-2.schema.json
+      - schemas/reports/verification-report-0.2-draft-3.schema.json
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+
+  - target_id: public-checks
+    description: Public check identifiers, versions, evidence classes, and tolerance policy.
+    authoritative_artifacts:
+      - registries/public-checks.yaml
+
+  - target_id: reason-codes
+    description: Registered reason codes for check results.
+    authoritative_artifacts:
+      - registries/reason-codes.yaml
+
+  - target_id: state-invariants
+    description: Registered semantic state invariants.
+    authoritative_artifacts:
+      - registries/state-invariants.yaml
+
+  - target_id: attestation-signature-suites
+    description: >-
+      Attestation signature suite identifiers, algorithm identity, status, and
+      version/evolution metadata.
+    authoritative_artifacts:
+      - registries/attestation-signature-suites.yaml
+
+  - target_id: attestation-trust-root
+    description: >-
+      Pinned key generations, fingerprints, and validity metadata for the nomue
+      attestation trust root.
+    authoritative_artifacts:
+      - registries/attestation-trust-root.yaml
+
+  - target_id: lifecycle-operations
+    description: >-
+      Record lifecycle operations and declarative operation-precondition registry
+      semantics.
+    authoritative_artifacts:
+      - registries/lifecycle-operations.yaml
+
+  - target_id: conformance-judgment
+    description: >-
+      Expected conformance judgment for covered behavior: the fixture manifest
+      and the canonicalization/digest vector manifest.
+    authoritative_artifacts:
+      - conformance/manifest.yaml
+      - canonicalization/test-vectors/manifest.yaml
+
+  - target_id: phase-1-development-evidence
+    description: >-
+      Authoritative record of the generated Phase 1 development evidence state;
+      never authority for Protocol semantics or Release 1 closure.
+    authoritative_artifacts:
+      - evidence/development/phase-1/phase-1-manifest.json
+
+  - target_id: phase-2a-development-evidence
+    description: >-
+      Authoritative record of the generated Phase 2A development evidence state;
+      never authority for Protocol semantics or Release 1 closure.
+    authoritative_artifacts:
+      - evidence/development/phase-2a/phase-2a-manifest.json
+
+  - target_id: governance-process
+    description: RFC process, release policy, identifier policy, and contribution rules.
+    authoritative_artifacts:
+      - governance/RFC.md
+      - governance/RELEASE-POLICY.md
+      - governance/ID-POLICY.md
+      - governance/CONTRIBUTING.md
+      - governance/LICENSING-PLAN.md
+
+  - target_id: release-decision
+    description: >-
+      Current Release 1 gate registry and gate-index decision state only
+      (authority/release-1-gates.yaml and evidence/release-1/gate-index.json);
+      never authority for Protocol semantics.
+    authoritative_artifacts:
+      - authority/release-1-gates.yaml
+      - evidence/release-1/gate-index.json
+
+artifacts:
+  # Authoritative
+  - path: CHARTER.md
+    class: authoritative
+  - path: AUTHORITY.md
+    class: authoritative
+  - path: authority/authority-manifest.yaml
+    class: authoritative
+  - path: authority/release-1-gates.yaml
+    class: authoritative
+  - path: spec/core/authority-and-governance.md
+    class: authoritative
+    notes: Normative (NRS-GOV).
+  - path: spec/core/layer-boundary.md
+    class: authoritative
+    notes: Normative (NRS-CORE).
+  - path: spec/core/verification-principles.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, NRS-SEC).
+  - path: spec/core/versioning-principles.md
+    class: authoritative
+    notes: Normative (NRS-VERSION).
+  - path: registries/requirements.yaml
+    class: authoritative
+  - path: registries/vocabulary.yaml
+    class: authoritative
+  - path: registries/stability-tiers.yaml
+    class: authoritative
+  - path: registries/public-contract-surfaces.yaml
+    class: authoritative
+  - path: registries/interpretation-bundles.yaml
+    class: authoritative
+  - path: schemas/meta/authority-manifest.schema.json
+    class: authoritative
+  - path: schemas/meta/release-gates.schema.json
+    class: authoritative
+  - path: schemas/meta/requirements-registry.schema.json
+    class: authoritative
+  - path: schemas/meta/vocabulary-registry.schema.json
+    class: authoritative
+  - path: schemas/meta/stability-tiers.schema.json
+    class: authoritative
+  - path: schemas/meta/public-contract-surfaces.schema.json
+    class: authoritative
+  - path: schemas/meta/interpretation-bundles.schema.json
+    class: authoritative
+  - path: conformance/manifest.yaml
+    class: authoritative
+  - path: canonicalization/test-vectors/manifest.yaml
+    class: authoritative
+  - path: spec/core/record-envelope.md
+    class: authoritative
+    notes: Normative (NRS-CORE, Phase 1).
+  - path: spec/core/integrity-model.md
+    class: authoritative
+    notes: Normative (NRS-CORE, Phase 1).
+  - path: spec/core/provenance-model.md
+    class: authoritative
+    notes: Normative (NRS-PROV, Phase 2A hardening).
+  - path: spec/verification/public-checks.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, NRS-SEC, Phase 1).
+  - path: spec/verification/execution-outcome-model.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, Phase 1).
+  - path: spec/verification/verification-report.md
+    class: authoritative
+    notes: Normative (NRS-CORE, NRS-VERIFY, Phase 1).
+  - path: spec/verification/relying-party-interface.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, Phase 2A hardening).
+  - path: spec/core/record-lifecycle.md
+    class: authoritative
+    notes: >-
+      Normative (NRS-CORE-0013..0019, ADR-0028): lifecycle state
+      model v0 - intents CORE, axes/grammar/format STABLE-INTENT,
+      disclosure notice EXPERIMENTAL.
+  - path: spec/emission/README.md
+    class: authoritative
+    notes: >-
+      Normative (NRS-EMIT): binds two Requirement IDs, both
+      restatements of existing structural/integrity requirements; adds no
+      new field to the public contract.
+  - path: spec/approval/README.md
+    class: authoritative
+    notes: >-
+      Normative (NRS-APPROVE, EXPERIMENTAL first increment). Binds four
+      Requirement IDs; no registered Record bundle declares an
+      approval field, so this adds no field to the public contract yet.
+  - path: spec/attestation/README.md
+    class: authoritative
+    notes: >-
+      Normative (NRS-ATTEST, EXPERIMENTAL). Merge state is carried by git;
+      this authority manifest records only the current classification.
+  - path: spec/versioning/interpretation-bundle.md
+    class: authoritative
+    notes: Normative (NRS-VERSION, Phase 1).
+  - path: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    class: authoritative
+    notes: Normative (NRS-PROFILE-ITGC, Phase 1).
+  - path: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    class: authoritative
+    notes: Normative (NRS-PROFILE-ITGC, Phase 1).
+  - path: canonicalization/record-canonicalization.md
+    class: authoritative
+    notes: Normative (NRS-CANON, Phase 1).
+  - path: canonicalization/phase-1-numeric-model.md
+    class: authoritative
+    notes: Normative (NRS-CANON, Phase 1).
+  - path: canonicalization/numerical-comparison.md
+    class: authoritative
+    notes: Normative (NRS-CANON, Phase 1).
+  - path: registries/public-checks.yaml
+    class: authoritative
+  - path: registries/reason-codes.yaml
+    class: authoritative
+  - path: registries/state-invariants.yaml
+    class: authoritative
+  - path: registries/attestation-signature-suites.yaml
+    class: authoritative
+    notes: >-
+      Lists one adopted suite (Ed25519, ADR-0026).
+  - path: schemas/meta/attestation-signature-suites.schema.json
+    class: authoritative
+  - path: registries/lifecycle-operations.yaml
+    class: authoritative
+    notes: >-
+      Lifecycle operations and declarative preconditions
+      (NRS-CORE-0014/0017, ADR-0028; closed predicate vocabulary is the
+      NRS-VERIFY-0001 guard).
+  - path: schemas/meta/lifecycle-operations.schema.json
+    class: authoritative
+  - path: schemas/lifecycle/state-view-0.1.schema.json
+    class: authoritative
+    notes: Derived state projection format (EXPERIMENTAL artifact).
+  - path: schemas/lifecycle/clarification-0.1.schema.json
+    class: authoritative
+    notes: Structured needs_clarification shape (NRS-CORE-0018).
+  - path: schemas/lifecycle/disclosure-notice-0.1.schema.json
+    class: authoritative
+    notes: >-
+      Disclosure notice satellite artifact (NRS-CORE-0019, EXPERIMENTAL by
+      ADR-0028 ruling 3, managed separately from the CORE intents).
+  - path: registries/attestation-trust-root.yaml
+    class: authoritative
+    notes: >-
+      Trust root (NRS-ATTEST-0007/0008). keys is empty until the
+      steward's key ceremony commits the first generation; authoritative
+      class puts this file inside the content-addressed snapshot surface.
+  - path: schemas/meta/attestation-trust-root.schema.json
+    class: authoritative
+  - path: schemas/record/record.schema.json
+    class: authoritative
+  - path: schemas/profiles/itgc-minimal.schema.json
+    class: authoritative
+  - path: schemas/reports/verification-report.schema.json
+    class: authoritative
+  - path: schemas/common/identifier.schema.json
+    class: authoritative
+  - path: schemas/common/execution-outcome.schema.json
+    class: authoritative
+  - path: schemas/meta/public-checks-registry.schema.json
+    class: authoritative
+  - path: schemas/meta/reason-codes-registry.schema.json
+    class: authoritative
+  - path: schemas/meta/state-invariants-registry.schema.json
+    class: authoritative
+  - path: schemas/record/record-0.2.schema.json
+    class: authoritative
+  - path: schemas/profiles/itgc-guarantee-0.2.schema.json
+    class: authoritative
+  - path: schemas/reports/verification-report-0.2.schema.json
+    class: authoritative
+  - path: schemas/reports/verification-report-0.2-draft-2.schema.json
+    class: authoritative
+    notes: >-
+      Adds OPTIONAL attestations (NRS-ATTEST, first increment; merged by
+      the steward). Retained unmodified; superseded by draft-3.
+      Not loaded by reference/verifier/src/resources.ts's main pipeline.
+  - path: schemas/reports/verification-report-0.2-draft-3.schema.json
+    class: authoritative
+    notes: >-
+      Supersedes draft-2 additively: OPTIONAL rfc3161_timestamp
+      assertion member (NRS-ATTEST-0011, EXPERIMENTAL, never a validity
+      condition) and the inert-revocation comment alignment
+      (NRS-ATTEST-0009). Not loaded by the main pipeline.
+  - path: schemas/reports/verifier-refusal-0.2.schema.json
+    class: authoritative
+    notes: Superseded by verifier-refusal-0.2-draft-2 (ADR-0017); retained unmodified.
+  - path: schemas/reports/verifier-refusal-0.2-draft-2.schema.json
+    class: authoritative
+    notes: Superseded by verifier-refusal-0.2-draft-3 (ADR-0022); retained unmodified.
+  - path: schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    class: authoritative
+  - path: schemas/routing/routing-envelope-0.2.schema.json
+    class: authoritative
+  - path: schemas/common/execution-outcome-0.2.schema.json
+    class: authoritative
+  - path: spec/profiles/independent-two-group-continuous/admissibility.md
+    class: authoritative
+    notes: Normative (NRS-PROFILE-ITGC, Phase 2A).
+  - path: spec/profiles/independent-two-group-continuous/effect-estimate.md
+    class: authoritative
+    notes: Normative (NRS-PROFILE-ITGC, Phase 2A).
+  - path: spec/profiles/independent-two-group-continuous/confidence-interval.md
+    class: authoritative
+    notes: Normative (NRS-PROFILE-ITGC, Phase 2A).
+  - path: spec/profiles/independent-two-group-continuous/non-claims.md
+    class: authoritative
+    notes: Normative (NRS-CORE, Phase 2A).
+  - path: spec/verification/profile-admissibility-check.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, Phase 2A).
+  - path: spec/verification/phase-2a-welch-recompute.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, Phase 2A).
+  - path: spec/verification/verifier-refusal.md
+    class: authoritative
+    notes: Normative (NRS-CORE, NRS-VERIFY, NRS-SEC, Phase 2A).
+  - path: spec/versioning/multi-bundle-dispatch.md
+    class: authoritative
+    notes: Normative (NRS-VERSION, NRS-CORE, Phase 2A).
+  - path: spec/versioning/public-check-versioning.md
+    class: authoritative
+    notes: Normative (NRS-VERSION, Phase 2A).
+  - path: spec/verification/welch-computability-check.md
+    class: authoritative
+    notes: Normative (NRS-VERIFY, Phase 2A).
+  - path: governance/RFC.md
+    class: authoritative
+  - path: governance/RELEASE-POLICY.md
+    class: authoritative
+  - path: governance/ID-POLICY.md
+    class: authoritative
+  - path: governance/CONTRIBUTING.md
+    class: authoritative
+  - path: governance/LICENSING-PLAN.md
+    class: authoritative
+
+  # Evidence
+  - path: evidence/release-1/gate-index.json
+    class: evidence
+  - path: evidence/release-1/decisions/2026-08-18-pre-release-gate-reset.md
+    class: evidence
+  - path: evidence/development/phase-1/phase-1-manifest.json
+    class: evidence
+  - path: evidence/development/phase-1/requirement-traceability.json
+    class: evidence
+  - path: evidence/development/phase-1/public-surface-report.json
+    class: evidence
+  - path: evidence/development/phase-1/schema-validation-report.json
+    class: evidence
+  - path: evidence/development/phase-1/conformance-report.json
+    class: evidence
+  - path: evidence/development/phase-1/canonicalization-report.json
+    class: evidence
+  - path: evidence/development/phase-1/verifier-report.json
+    class: evidence
+  - path: evidence/development/phase-1/cross-platform-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/phase-2a-manifest.json
+    class: evidence
+  - path: evidence/development/phase-2a/requirement-traceability.json
+    class: evidence
+  - path: evidence/development/phase-2a/bundle-compatibility-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/admissibility-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/confidence-interval-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/refusal-schema-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/resource-limit-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/conformance-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/canonicalization-regression-report.json
+    class: evidence
+  - path: evidence/development/phase-2a/cross-platform-report.json
+    class: evidence
+
+  # Informative
+  - path: README.md
+    class: informative
+  - path: AGENTS.md
+    class: informative
+  - path: CLAUDE.md
+    class: informative
+  - path: PROTOCOL-ARCHITECTURE.md
+    class: informative
+    notes: Architecture map; no independent semantic authority.
+  - path: spec/README.md
+    class: informative
+  - path: spec/AGENTS.md
+    class: informative
+  - path: spec/consuming-layer-1.md
+    class: informative
+    notes: >-
+      Layer-2 consumer entry point. A map,
+      not an authority; every linked meaning stays owned by its normative
+      document.
+  - path: spec/core/scope-and-non-claims.md
+    class: informative
+    notes: Informative overview; binding guarantee boundaries and non-claims remain owned by CHARTER.md and the normative verification/profile artifacts.
+  - path: spec/profiles/README.md
+    class: informative
+  - path: spec/verification/README.md
+    class: informative
+  - path: spec/extensions/README.md
+    class: informative
+  - path: spec/versioning/README.md
+    class: informative
+  - path: schemas/README.md
+    class: informative
+  - path: conformance/README.md
+    class: informative
+  - path: conformance/expectations/phase-2a-expectations.yaml
+    class: informative
+    notes: Hand-authored pre-execution authoring input; conformance/manifest.yaml owns conformance judgment.
+  - path: conformance/expectations/phase-2a-021-expectations.yaml
+    class: informative
+    notes: Hand-authored pre-execution authoring input; conformance/manifest.yaml owns conformance judgment.
+  - path: conformance/expectations/routing-expectations.yaml
+    class: informative
+    notes: Hand-authored pre-execution authoring input; conformance/manifest.yaml owns conformance judgment.
+  - path: conformance/expectations/strict-json-expectations.yaml
+    class: informative
+    notes: Hand-authored pre-execution authoring input; conformance/manifest.yaml owns conformance judgment.
+  - path: conformance/AGENTS.md
+    class: informative
+  - path: examples/README.md
+    class: informative
+  - path: mappings/README.md
+    class: informative
+  - path: security/README.md
+    class: informative
+  - path: evidence/release-1/README.md
+    class: informative
+  - path: tooling/README.md
+    class: informative
+  - path: governance/decisions/ADR-0001-separate-layer-1-repository.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0002-authority-model.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0003-json-schema-primary-structure.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0004-public-language-english.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0005-phase-1-minimal-record-envelope.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0006-jcs-sha256-digest-projection.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0007-finite-binary64-numeric-model.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0008-welch-only-itgc-slice.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0009-verification-report-separation.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0010-stats-dependency-oracle-separation.md
+    class: informative
+    notes: Decision record.
+  - path: spec/profiles/independent-two-group-continuous/README.md
+    class: informative
+  - path: canonicalization/README.md
+    class: informative
+  - path: security/phase-1-verifier-security.md
+    class: informative
+  - path: security/phase-2a-resource-refusal.md
+    class: informative
+  - path: security/threat-model.md
+    class: informative
+  - path: tooling/r1-08-oracle/README.md
+    class: informative
+  - path: spec/profiles/independent-two-group-continuous/phase-2a-guarantee-profile.md
+    class: informative
+  - path: governance/NAME-USAGE-POLICY.md
+    class: informative
+    notes: Draft, not yet accepted per the RFC process; not binding.
+  - path: governance/SNAPSHOT-RUNBOOK.md
+    class: informative
+    notes: Procedural companion to RELEASE-POLICY.md.
+  - path: examples/itgc-guarantee-0.2/README.md
+    class: informative
+  - path: evidence/development/phase-2a/README.md
+    class: informative
+  - path: governance/decisions/ADR-0011-phase-2a-mean-difference-effect-estimate.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0012-standardized-effect-sizes-deferred.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0013-welch-mean-difference-95-ci.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0014-admissibility-computability-separation.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0015-versioned-verifier-refusal-artifact.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0016-exact-bundle-dispatch.md
+    class: informative
+    notes: Decision record (amended by ADR-0017).
+  - path: governance/decisions/ADR-0017-bundle-independent-routing.md
+    class: informative
+    notes: Decision record (duplicate-member residual resolved by ADR-0018).
+  - path: governance/decisions/ADR-0018-strict-jcs-input.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0019-binary64-input-authority.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0020-tail-safe-pvalue-comparison.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0021-tolerance-versioning-test-families.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0022-in-process-time-memory-bounds.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0023-snapshot-manifest-mechanism.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0024-s1-close-layer-i-cross-environment-deviation.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0025-s1-close-numerical-deviation.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0026-ed25519-adoption-pq-migration-path.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0027-canonicalization-hardening-revision.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0028-record-lifecycle-v0.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0029-domain-separated-digest-requirement-repair.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0030-authority-assignment-single-source.md
+    class: informative
+    notes: Decision record.
+  - path: governance/decisions/ADR-0031-nomue-ai-identifier-architecture.md
+    class: informative
+    notes: Decision record.
+  - path: examples/minimal-itgc-record/README.md
+    class: informative
+  - path: bindings/typescript/README.md
+    class: informative
+  - path: evidence/development/phase-1/README.md
+    class: informative
+
+  # Reference (non-authoritative implementation guidance)
+  - path: reference/README.md
+    class: reference
+  - path: reference/AGENTS.md
+    class: reference
+  - path: reference/stats-kernel/README.md
+    class: reference
+  - path: reference/verifier/README.md
+    class: reference
+
+  # Generated (non-authoritative, produced by pnpm generate)
+  - path: generated/README.md
+    class: generated
+  - path: generated/AUTHORITY-INDEX.md
+    class: generated
+  - path: generated/REQUIREMENTS.md
+    class: generated
+  - path: generated/VOCABULARY.md
+    class: generated
+  - path: generated/RELEASE-1-GATES.md
+    class: generated
+  - path: generated/PUBLIC-CHECKS.md
+    class: generated
+  - path: generated/REASON-CODES.md
+    class: generated
+  - path: generated/STATE-INVARIANTS.md
+    class: generated
+  - path: generated/PUBLIC-CONTRACT-SURFACES.md
+    class: generated
+  - path: generated/INTERPRETATION-BUNDLES.md
+    class: generated
+  - path: generated/PROFILE-CAPABILITY-MATRIX.md
+    class: generated
+  - path: bindings/typescript/generated/record.ts
+    class: generated
+  - path: bindings/typescript/generated/verification-report.ts
+    class: generated
+  - path: bindings/typescript/generated/record-0.2.ts
+    class: generated
+  - path: bindings/typescript/generated/verification-report-0.2.ts
+    class: generated
+  - path: bindings/typescript/generated/verifier-refusal-0.2.ts
+    class: generated
+  - path: bindings/typescript/generated/verifier-refusal-0.2-draft-2.ts
+    class: generated
+  - path: bindings/typescript/generated/verifier-refusal-0.2-draft-3.ts
+    class: generated
+  - path: bindings/typescript/generated/routing-envelope-0.2.ts
+    class: generated

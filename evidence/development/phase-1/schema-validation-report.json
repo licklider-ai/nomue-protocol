@@ -1,0 +1,20 @@
+{
+  "schemas": [
+    "urn:nomue:schema:common:execution-outcome:0.1.0-draft.1",
+    "urn:nomue:schema:common:execution-outcome:0.2.0-draft.1",
+    "urn:nomue:schema:common:identifier:0.1.0-draft.1",
+    "urn:nomue:schema:profile:itgc-guarantee:0.2.0-draft.1",
+    "urn:nomue:schema:profile:itgc-minimal:0.1.0-draft.1",
+    "urn:nomue:schema:record:0.1.0-draft.1",
+    "urn:nomue:schema:record:0.2.0-draft.1",
+    "urn:nomue:schema:routing-envelope:0.2.0-draft.1",
+    "urn:nomue:schema:verification-report:0.1.0-draft.1",
+    "urn:nomue:schema:verification-report:0.2.0-draft.1",
+    "urn:nomue:schema:verifier-refusal:0.2.0-draft.1",
+    "urn:nomue:schema:verifier-refusal:0.2.0-draft.2",
+    "urn:nomue:schema:verifier-refusal:0.2.0-draft.3"
+  ],
+  "compiled": true,
+  "reference_resolution": "all $refs resolved locally at compile time; nothing fetched",
+  "fixture_count": 132
+}

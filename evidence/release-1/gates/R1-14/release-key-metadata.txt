@@ -1,0 +1,25 @@
+Release 1 production release-signing key metadata
+Recorded: 2026-08-21 (UTC ceremony)
+
+GCP project: nomue-protocol
+Location: asia-northeast1
+Key ring: nomue-release
+Key: release-g2
+Key version: 1
+Algorithm: EC_SIGN_P256_SHA256
+Protection level: SOFTWARE
+State: ENABLED
+Release key identity: urn:nomue:release-key:g:2
+
+KMS resource:
+projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1
+
+createTime: 2026-08-21T05:16:18.377075660Z
+generateTime: 2026-08-21T05:16:18.474490420Z
+
+Source command:
+gcloud kms keys versions describe 1 \
+  --project nomue-protocol \
+  --key release-g2 \
+  --keyring nomue-release \
+  --location asia-northeast1

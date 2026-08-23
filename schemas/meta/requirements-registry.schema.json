@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:requirements-registry",
+  "title": "NRS requirement registry",
+  "description": "Meta-schema for registries/requirements.yaml. Normative wording lives only in the referenced documents, never here.",
+  "type": "object",
+  "required": ["registry", "registry_version", "updated", "namespaces", "requirements"],
+  "additionalProperties": false,
+  "properties": {
+    "registry": { "const": "nrs-requirements" },
+    "registry_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "updated": { "type": "string", "format": "date" },
+    "namespaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/namespace" }
+    },
+    "requirements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requirement" }
+    }
+  },
+  "$defs": {
+    "requirementId": {
+      "type": "string",
+      "pattern": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11})-[0-9]{4}$"
+    },
+    "repoPath": {
+      "type": "string",
+      "pattern": "^(?!\\.\\.)(?!.*\\.\\./)[A-Za-z0-9][A-Za-z0-9._/-]*$"
+    },
+    "namespace": {
+      "type": "object",
+      "required": ["prefix", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "prefix": {
+          "anyOf": [
+            {
+              "enum": [
+                "NRS-GOV",
+                "NRS-CORE",
+                "NRS-VERIFY",
+                "NRS-CANON",
+                "NRS-ATTEST",
+                "NRS-EXT",
+                "NRS-SEC",
+                "NRS-VERSION",
+                "NRS-INTEROP",
+                "NRS-PROV",
+                "NRS-EMIT",
+                "NRS-APPROVE"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^NRS-(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11}$"
+            }
+          ]
+        },
+        "description": { "type": "string", "minLength": 1 }
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "status",
+        "stability",
+        "document",
+        "anchor",
+        "testability",
+        "schema_refs",
+        "conformance_refs",
+        "public_surface_refs",
+        "introduced_in",
+        "supersedes",
+        "superseded_by",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/requirementId" },
+        "title": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["active", "deprecated", "withdrawn"] },
+        "stability": { "enum": ["CORE", "STABLE-INTENT", "EXPERIMENTAL"] },
+        "document": { "$ref": "#/$defs/repoPath" },
+        "anchor": { "$ref": "#/$defs/requirementId" },
+        "testability": {
+          "enum": ["automated", "human_review", "release_gate", "not_yet_testable"]
+        },
+        "schema_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/repoPath" }
+        },
+        "conformance_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "public_surface_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "introduced_in": { "type": "string", "minLength": 1 },
+        "supersedes": {
+          "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/requirementId" }]
+        },
+        "superseded_by": {
+          "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/requirementId" }]
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

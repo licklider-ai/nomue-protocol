@@ -1,0 +1,110 @@
+{
+  "$schema": "urn:nomue:schema:record:0.1.0-draft.1",
+  "record_type": "nomue-record",
+  "record_id": "urn:uuid:00000000-0000-4000-8000-000000000402",
+  "revision_id": "urn:uuid:00000000-0000-4000-8000-000000000403",
+  "created_at": "2026-08-09T00:00:00Z",
+  "profile_id": "urn:nomue:profile:itgc:0.1.0-draft.1",
+  "payload": {
+    "dataset": {
+      "dataset_id": "dataset-1",
+      "observations": [
+        {
+          "observation_id": "observation-1",
+          "experimental_unit_id": "unit-1",
+          "group_id": "group-a",
+          "outcome_value": 1
+        },
+        {
+          "observation_id": "observation-2",
+          "experimental_unit_id": "unit-2",
+          "group_id": "group-a",
+          "outcome_value": 2
+        },
+        {
+          "observation_id": "observation-3",
+          "experimental_unit_id": "unit-3",
+          "group_id": "group-a",
+          "outcome_value": 3
+        },
+        {
+          "observation_id": "observation-4",
+          "experimental_unit_id": "unit-4",
+          "group_id": "group-b",
+          "outcome_value": 4
+        },
+        {
+          "observation_id": "observation-5",
+          "experimental_unit_id": "unit-5",
+          "group_id": "group-b",
+          "outcome_value": 5
+        },
+        {
+          "observation_id": "observation-6",
+          "experimental_unit_id": "unit-6",
+          "group_id": "group-b",
+          "outcome_value": 6
+        }
+      ]
+    },
+    "design": {
+      "design_id": "design-1",
+      "dataset_id": "dataset-1",
+      "experimental_unit_type": "biological replicate",
+      "groups": [
+        {
+          "group_id": "group-a",
+          "label": "Control"
+        },
+        {
+          "group_id": "group-b",
+          "label": "Treatment"
+        }
+      ],
+      "group_order": [
+        "group-a",
+        "group-b"
+      ],
+      "outcome": {
+        "outcome_id": "outcome-1",
+        "label": "Synthetic continuous outcome",
+        "scale": "continuous"
+      },
+      "independence_declared": true
+    },
+    "analysis": {
+      "analysis_id": "analysis-1",
+      "design_id": "design-1",
+      "method_id": "urn:nomue:method:welch-two-sample-t:1",
+      "alternative": "two_sided"
+    },
+    "result": {
+      "result_id": "result-1",
+      "analysis_id": "analysis-1",
+      "group_summaries": [
+        {
+          "group_id": "group-a",
+          "n": 3,
+          "mean": 2,
+          "sample_variance": 1
+        },
+        {
+          "group_id": "group-b",
+          "n": 3,
+          "mean": 5,
+          "sample_variance": 1
+        }
+      ],
+      "mean_difference": -3,
+      "test_statistic": -3.6742346141747673,
+      "degrees_of_freedom": 4,
+      "p_value": 0.02131164112875673
+    }
+  },
+  "integrity": {
+    "canonicalization_id": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "digest_algorithm": "sha-256",
+    "digest_scope": "record_without_integrity",
+    "content_digest": "sha256:afa4f233821021bef091445bbb48ffa32acb73a4703b07ad6e2c8f0b9cc435d3"
+  }
+}

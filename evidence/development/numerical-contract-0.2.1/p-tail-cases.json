@@ -1,0 +1,41 @@
+{
+  "description": "P-value tail and boundary cases for 0.2.1 comparator (informative development evidence)",
+  "test_family": "numerical_tolerance_contract",
+  "cases": [
+    {
+      "label": "ts1_positive",
+      "oracle_p": 0.021311641128756727,
+      "comparator": "withinPValueTolerance021",
+      "relative_tolerance": 1e-10,
+      "zero_separation": true
+    },
+    {
+      "label": "near_1e-13_positive_vs_zero",
+      "oracle_p": 1e-13,
+      "actual_p": 0.0,
+      "old_abs_floor_would_pass": true,
+      "new_comparator_pass": false
+    },
+    {
+      "label": "near_1e-29_positive_vs_zero",
+      "oracle_p": 1e-29,
+      "actual_p": 0.0,
+      "old_abs_floor_would_pass": true,
+      "new_comparator_pass": false
+    },
+    {
+      "label": "deep_tail_positive_not_clamped",
+      "t": 200,
+      "df": 10,
+      "kernel_p": 2.400507459486285e-19,
+      "is_exact_zero": false
+    },
+    {
+      "label": "underflow_dataset",
+      "n_per_group": 70,
+      "kernel_p": 0.0,
+      "classification": "numerical_underflow",
+      "reason_code": "NRS-P-VALUE-UNDERFLOW"
+    }
+  ]
+}

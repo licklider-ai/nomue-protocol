@@ -1,0 +1,14 @@
+ready_for_close_attempt: true
+gate_index_modified: true
+r1_08_state: CLOSED
+failure_count: 0
+relation_failures: []
+offset_relation_failures: []
+third_oracle_hold_disposition: satisfied_by_acb_independent_lineage
+sut_replay_pass: true
+metamorphic_pass: true
+disposition_notes: >-
+  R1-08 closed with decision pass; R1-08_third_oracle_lineage resolved by acb
+  independent lineage; R live execution optional supplemental only.
+evidence_commit: 6c4de5c1ac693f300efa424d56d3fb89e344558d
+close_decision: pass

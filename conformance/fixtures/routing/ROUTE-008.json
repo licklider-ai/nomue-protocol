@@ -1,0 +1,18 @@
+{
+  "routing_invariance": {
+    "registry_order": "seeded_shuffle",
+    "probes": [
+      "conformance/fixtures/routing/S-001.json",
+      "conformance/fixtures/routing/ROUTE-001.json",
+      "conformance/fixtures/routing/ROUTE-002.json",
+      "conformance/fixtures/routing/ROUTE-003.json",
+      "conformance/fixtures/routing/ROUTE-004.json",
+      "conformance/fixtures/routing/ROUTE-005.json",
+      "conformance/fixtures/routing/ROUTE-006.json",
+      "conformance/fixtures/strict_json/JSON-DUP-002.json",
+      "conformance/fixtures/strict_json/JSON-DUP-003.json",
+      "conformance/fixtures/public_checks/V-001.json",
+      "conformance/fixtures/public_checks/A2-V-001.json"
+    ]
+  }
+}

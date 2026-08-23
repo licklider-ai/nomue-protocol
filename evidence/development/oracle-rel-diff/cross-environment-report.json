@@ -1,0 +1,75 @@
+{
+  "schema": "nrs-oracle-rel-diff-cross-environment-report",
+  "schema_version": "0.1.0",
+  "description": "Batch 2 D6 close evidence: five hosted CI environments compared via oracle-rel-diff-compare.ts on matrices downloaded from the c4ca2ac CI run.",
+  "source": {
+    "head_commit": "c4ca2ac",
+    "ci_workflow": "CI",
+    "ci_run_id": 31656773025,
+    "artifact_directory": "evidence/development/oracle-rel-diff/ci-run-c4ca2ac"
+  },
+  "environments": [
+    {
+      "artifact": "oracle-rel-diff-linux-x64",
+      "platform": "linux",
+      "arch": "x64",
+      "node": "v22.23.1",
+      "v8": "12.4.254.21-node.56",
+      "os_release": "6.17.0-1020-azure"
+    },
+    {
+      "artifact": "oracle-rel-diff-linux-x64-node24",
+      "platform": "linux",
+      "arch": "x64",
+      "node": "v24.18.0",
+      "v8": "13.6.233.17-node.50",
+      "os_release": "6.17.0-1020-azure"
+    },
+    {
+      "artifact": "oracle-rel-diff-linux-arm64",
+      "platform": "linux",
+      "arch": "arm64",
+      "node": "v22.23.1",
+      "v8": "12.4.254.21-node.56",
+      "os_release": "6.17.0-1020-azure"
+    },
+    {
+      "artifact": "oracle-rel-diff-windows-x64",
+      "platform": "win32",
+      "arch": "x64",
+      "node": "v22.23.2",
+      "v8": "12.4.254.21-node.56",
+      "os_release": "10.0.26100"
+    },
+    {
+      "artifact": "oracle-rel-diff-macos-arm64",
+      "platform": "darwin",
+      "arch": "arm64",
+      "node": "v22.23.1",
+      "v8": "12.4.254.21-node.56",
+      "os_release": "25.5.0"
+    }
+  ],
+  "compare": {
+    "tool": "tooling/src/evidence/oracle-rel-diff-compare.ts",
+    "matrix_paths": [
+      "ci-run-c4ca2ac/oracle-rel-diff-linux-x64/oracle-rel-diff.json",
+      "ci-run-c4ca2ac/oracle-rel-diff-linux-x64-node24/oracle-rel-diff.json",
+      "ci-run-c4ca2ac/oracle-rel-diff-linux-arm64/oracle-rel-diff.json",
+      "ci-run-c4ca2ac/oracle-rel-diff-windows-x64/oracle-rel-diff.json",
+      "ci-run-c4ca2ac/oracle-rel-diff-macos-arm64/oracle-rel-diff.json"
+    ],
+    "result": "bit_identical",
+    "differing_quantity_count": 0,
+    "stdout": "oracle-rel-diff-compare: kernel outputs bit-identical across 5 environments (linux-x64-nodev22.23.1, linux-x64-nodev24.18.0, linux-arm64-nodev22.23.1, win32-x64-nodev22.23.2, darwin-arm64-nodev22.23.1)"
+  },
+  "digest_pin_agreement": {
+    "mechanism": "Every CI validation job recomputed canonical forms, content digests, refusal kinds, reason codes, check execution/outcome, and verification semantic projections against the platform-neutral hashes pinned in conformance/manifest.yaml and canonicalization/test-vectors/manifest.yaml; all jobs on run 31656773025 succeeded.",
+    "ci_run_result": "success"
+  },
+  "s1_discussion_item_d6": {
+    "status": "closed",
+    "rule_applied": "a",
+    "conclusion": "Covered environments are bit-identical on live kernel outputs over the full oracle corpora (phase1, phase2a, tail, floor); cross-environment agreement is demonstrated by digest pin equality on the same CI run. No separate cross-environment numerical tolerance is adopted under rule (a)."
+  }
+}

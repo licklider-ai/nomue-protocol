@@ -1,0 +1,1 @@
+{"control":"line\nbreak\ttab\u0001end","quote":"a\"b\\c","text":"€ euro and Ω Unicode literal"}

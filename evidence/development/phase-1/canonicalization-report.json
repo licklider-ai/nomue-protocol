@@ -1,0 +1,12 @@
+{
+  "vector_count": 16,
+  "all_match": true,
+  "differential_implementation": "canonicalize (npm, pinned in pnpm-lock.yaml)",
+  "by_kind": {
+    "canonical": 9,
+    "digest_mismatch": 1,
+    "parse_error": 3,
+    "projection": 1,
+    "strict_rejection": 2
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nomue:schema:verification-report:0.2.0-draft.3",
+  "title": "Phase 2A nomue verification report (with optional attestations)",
+  "description": "Supersedes urn:nomue:schema:verification-report:0.2.0-draft.1 by adding an OPTIONAL attestations member (NRS-ATTEST-0002, first increment, DRAFT; merged to main - stale merge note corrected 2026-08-13, passive batch alpha, R-11). The draft.1 schema is retained unmodified as a historical artifact; adding attestations here is additive and does not change the meaning of conformance or verification_results. A separate artifact from the Record (NRS-CORE-0008), with no overall status, no VERIFIED value, no significance boolean, and no whole-record validity boolean; every result is inseparable from its check identifier, version, and scope. The guarantee boundary makes the non-claims explicit: scientific validity, declaration truth, distributional-model validity, causal interpretation, and standardized effect size are all not_asserted. attestations, when present, MUST NOT change the meaning of conformance or verification_results (NRS-VERIFY-0004, non-escalation) - this is a structural fact of this schema (attestations is not referenced by conformance or verification_results and adds no path that could mutate them), not something re-derived per report. The 0.2.0-draft.2 schema is retained unmodified; draft.3 adds only the OPTIONAL rfc3161_timestamp assertion member (NRS-ATTEST-0011, EXPERIMENTAL) and aligns the reserved revocation placeholder comment with the ratified v0 no-revocation rule (NRS-ATTEST-0009).",
+  "type": "object",
+  "required": [
+    "$schema",
+    "report_type",
+    "record_reference",
+    "interpretation_bundle_id",
+    "verifier",
+    "generated_at",
+    "conformance",
+    "verification_results",
+    "guarantee_boundary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "urn:nomue:schema:verification-report:0.2.0-draft.3"
+    },
+    "report_type": {
+      "const": "nomue-verification-report"
+    },
+    "record_reference": {
+      "$ref": "#/$defs/recordReference"
+    },
+    "interpretation_bundle_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "verifier": {
+      "$ref": "#/$defs/verifier"
+    },
+    "generated_at": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ",
+      "$comment": "Excluded from the verification semantic projection."
+    },
+    "conformance": {
+      "$ref": "urn:nomue:schema:common:execution-outcome:0.2.0-draft.1#/$defs/conformanceResult"
+    },
+    "verification_results": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:nomue:schema:common:execution-outcome:0.2.0-draft.1#/$defs/checkResult"
+      }
+    },
+    "guarantee_boundary": {
+      "$ref": "#/$defs/guaranteeBoundary"
+    },
+    "attestations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/attestation"
+      },
+      "$comment": "OPTIONAL (NRS-ATTEST-0002). Absent on every report produced by the current verifier pipeline, which does not yet attach attestations; present only where a downstream tool has attached one per attach-attestations.ts. Never read by conformance or verification_results."
+    }
+  },
+  "$defs": {
+    "recordReference": {
+      "type": "object",
+      "required": ["record_id", "revision_id", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "revision_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest",
+          "$comment": "The independently recomputed digest of the verified revision (NRS-VERIFY-0011)."
+        }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "required": ["name", "version", "source_commit"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "source_commit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      }
+    },
+    "guaranteeBoundary": {
+      "type": "object",
+      "required": [
+        "scientific_validity",
+        "declaration_truth",
+        "distributional_model_validity",
+        "causal_interpretation",
+        "standardized_effect_size"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scientific_validity": {
+          "const": "not_asserted"
+        },
+        "declaration_truth": {
+          "const": "not_asserted"
+        },
+        "distributional_model_validity": {
+          "const": "not_asserted"
+        },
+        "causal_interpretation": {
+          "const": "not_asserted"
+        },
+        "standardized_effect_size": {
+          "const": "not_asserted"
+        }
+      }
+    },
+    "signatureAlgorithm": {
+      "enum": ["urn:nomue:signature-suite:ed25519:1"],
+      "$comment": "Allow-listed only; no algorithm agility (NRS-ATTEST-0003). PROPOSED, not adopted - see registries/attestation-signature-suites.yaml and gate R1-11."
+    },
+    "attester": {
+      "type": "object",
+      "required": ["name", "key_id"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512,
+          "$comment": "Placeholder identifier only; key custody, distribution, and issuer-identity verification are explicitly open discussion items, not decided by this schema."
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "required": ["algorithm", "key_id", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "$ref": "#/$defs/signatureAlgorithm"
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]+=*$",
+          "$comment": "Base64-encoded raw signature bytes."
+        }
+      }
+    },
+    "verificationProcedure": {
+      "type": "object",
+      "required": ["check_id", "check_version", "outcome"],
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "pattern": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$"
+        },
+        "check_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "outcome": {
+          "enum": ["pass", "fail"],
+          "$comment": "The already-computed outcome of the named public check on the subject; the assertion attests to this, it does not recompute it."
+        }
+      }
+    },
+    "revocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revocation_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048,
+          "$comment": "Placeholder field only: no revocation distribution mechanism is defined yet (open discussion item)."
+        }
+      },
+      "$comment": "Reserved placeholder object, INERT by ratified decision: v0 has no revocation mechanism and this member never affects verification outcomes (NRS-ATTEST-0009)."
+    },
+    "assertion": {
+      "type": "object",
+      "required": [
+        "assertion_id",
+        "subject",
+        "scope",
+        "statement",
+        "verification_procedure",
+        "signature",
+        "signature_verification"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "assertion_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "subject": {
+          "$ref": "#/$defs/recordReference",
+          "$comment": "The specific Record revision this assertion is about (NRS-ATTEST-0002: attester/subject/scope/statement/signature)."
+        },
+        "scope": {
+          "$ref": "urn:nomue:schema:common:execution-outcome:0.2.0-draft.1#/$defs/scope",
+          "$comment": "Reuses the same scope shape as a public check result; an attestation is scoped exactly like a verification result is."
+        },
+        "statement": {
+          "const": "urn:nomue:attestation-statement:verification-procedure-executed:1",
+          "$comment": "The fixed statement text bound to this identifier is normative in spec/attestation/README.md (NRS-ATTEST-0001) and is not restated here."
+        },
+        "verification_procedure": {
+          "$ref": "#/$defs/verificationProcedure"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        },
+        "signature_verification": {
+          "$ref": "urn:nomue:schema:common:execution-outcome:0.2.0-draft.1#/$defs/checkResult",
+          "$comment": "The signature-verification result itself (depth-3 evidence, NRS-ATTEST-0004): a private, attester-key-dependent check whose result lives here, never in the report's own verification_results (NRS-ATTEST-0005)."
+        },
+        "revocation": {
+          "$ref": "#/$defs/revocation"
+        },
+        "rfc3161_timestamp": {
+          "type": "object",
+          "required": ["token"],
+          "additionalProperties": false,
+          "properties": {
+            "token": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+              "$comment": "Base64-encoded RFC 3161 TimeStampToken over the assertion's signing payload."
+            },
+            "tsa_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512,
+              "$comment": "Informative TSA identification; an identifier, never dereferenced (NRS-CORE-0004)."
+            }
+          },
+          "$comment": "OPTIONAL (NRS-ATTEST-0011, EXPERIMENTAL): never a v0 validity or conformance condition; absence carries no claim."
+        }
+      }
+    },
+    "attestation": {
+      "type": "object",
+      "required": ["attestation_id", "attester", "created_at", "assertions"],
+      "additionalProperties": false,
+      "properties": {
+        "attestation_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "attester": {
+          "$ref": "#/$defs/attester"
+        },
+        "created_at": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ"
+        },
+        "assertions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/assertion"
+          }
+        }
+      }
+    }
+  }
+}

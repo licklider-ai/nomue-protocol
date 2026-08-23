@@ -1,0 +1,17 @@
+{
+  "admissibility_fixtures": [
+    "A2-A-001",
+    "A2-A-002",
+    "A2-A-003",
+    "A2-A-004",
+    "A2-A-005",
+    "A2-A-006",
+    "A2-A-007",
+    "A2-A-008",
+    "A2-A-009"
+  ],
+  "gating": "computability and recomputation not_run with blocking reason codes",
+  "judgment_basis": "declared_record_structure",
+  "declaration_truth": "not_asserted",
+  "all_expectations_match": true
+}

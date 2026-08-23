@@ -1,0 +1,45 @@
+{
+  "registered_bundles": [
+    "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+    "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1",
+    "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+  ],
+  "dispatch": "exact bundle identifier only (NRS-VERSION-0005, NRS-VERSION-0007)",
+  "routing": "bundle-independent routing envelope validated before any bundle-specific schema (NRS-VERSION-0008); no default bundle; registry order non-normative",
+  "strict_input": "duplicate JSON member names and unpaired-surrogate strings rejected on the raw text before routing, canonicalization, or digest computation (NRS-CANON-0007/0008); no first-wins or last-wins semantics; no Unicode normalization",
+  "registry_order_invariance_fixtures": [
+    "ROUTE-007",
+    "ROUTE-008"
+  ],
+  "phase_1_regression_fixtures": 60,
+  "routing_fixtures": [
+    "S-001",
+    "ROUTE-001",
+    "ROUTE-002",
+    "ROUTE-003",
+    "ROUTE-004",
+    "ROUTE-005",
+    "ROUTE-006",
+    "ROUTE-007",
+    "ROUTE-008"
+  ],
+  "version_dispatch_fixtures": [
+    "A2-B-001",
+    "A2-B-002",
+    "A2-B-003",
+    "A2-B-004"
+  ],
+  "pinned_scope": "Phase 1 Record interpretation semantics and successful verification projections remain pinned (Record schema, bundle meaning, valid-Record digests, valid-Record semantic projections, Welch results).",
+  "corrected_scope": "Verifier-level refusal behavior received explicitly documented pre-release corrections under ADR-0015 (refusal kinds, parse-failure reason code, per-limit resource-refusal codes) and ADR-0017 (bundle-independent routing; no default bundle).",
+  "documented_corrections": [
+    "B-007 refusal reason codes gained the specific limit code (ADR-0015)",
+    "refusal kinds renamed and NRS-PARSE-FAILED introduced for non-JSON input (ADR-0015)",
+    "B-002..B-006 input pins refreshed for the verifier version-string advance (ADR-0015)",
+    "first-registered-bundle fallback removed; missing/non-string bundle declarations now yield routing refusals (ADR-0017)",
+    "S-001 reclassified structural->routing with unchanged input bytes; expectations corrected from conformance-fail exit 2 to routing refusal exit 3 (ADR-0017)",
+    "refusal schema advanced to 0.2.0-draft.2 adding routing_error; draft.1 retained and recorded superseded (ADR-0017)",
+    "B-002..B-006 input pins refreshed for the verifier version-string advance to 0.2.0-draft.2 (ADR-0017)",
+    "duplicate JSON member names and unpaired-surrogate strings now rejected before routing/JCS/digest; last-wins residual removed (ADR-0018)",
+    "B-002..B-006 input pins refreshed for the verifier version-string advance to 0.2.0-draft.3 (ADR-0018)"
+  ]
+}

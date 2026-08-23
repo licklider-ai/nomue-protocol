@@ -1,0 +1,2126 @@
+{
+  "corpus_version": "r1-08-canonical-oracle-corpus-v1",
+  "base_commit": "9c19636c6f42d9b8b98b88964f321d1a9118dfd4",
+  "cases": [
+    {
+      "case_id": "ordinary_balanced_df4_p0p02131164112875673",
+      "seed_id": "seed_balanced",
+      "class": "ordinary_balanced",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          },
+          {
+            "hex": "4008000000000000",
+            "decimal_label": "3",
+            "rational_n": "6755399441055744",
+            "rational_d": "2251799813685248",
+            "value": 3
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4010000000000000",
+            "decimal_label": "4",
+            "rational_n": "4503599627370496",
+            "rational_d": "1125899906842624",
+            "value": 4
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4018000000000000",
+            "decimal_label": "6",
+            "rational_n": "6755399441055744",
+            "rational_d": "1125899906842624",
+            "value": 6
+          }
+        ]
+      },
+      "input_manifest_sha256": "d5e5f76164ca64139de2c2f6d6dec318ca005e4dae801d13452ec8a9c1364987",
+      "exact_algebraic": {
+        "case_id": "ordinary_balanced_df4_p0p02131164112875673",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "2/1",
+        "mean_y": "5/1",
+        "sample_variance_x": "1/1",
+        "sample_variance_y": "1/1",
+        "mean_difference": "-3/1",
+        "variance_x_over_n_x": "1/3",
+        "variance_y_over_n_y": "1/3",
+        "se_squared": "2/3",
+        "welch_df_numerator": "4/9",
+        "welch_df_denominator": "1/9",
+        "welch_df": "4/1"
+      }
+    },
+    {
+      "case_id": "unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116",
+      "seed_id": "seed_unequal_n_var",
+      "class": "unequal_n_unequal_variance",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff199999999999a",
+            "decimal_label": "1.1",
+            "rational_n": "4953959590107546",
+            "rational_d": "4503599627370496",
+            "value": 1.1
+          },
+          {
+            "hex": "4002666666666666",
+            "decimal_label": "2.3",
+            "rational_n": "5179139571476070",
+            "rational_d": "2251799813685248",
+            "value": 2.3
+          },
+          {
+            "hex": "400d99999999999a",
+            "decimal_label": "3.7",
+            "rational_n": "8331659310635418",
+            "rational_d": "2251799813685248",
+            "value": 3.7
+          },
+          {
+            "hex": "4010666666666666",
+            "decimal_label": "4.1",
+            "rational_n": "4616189618054758",
+            "rational_d": "1125899906842624",
+            "value": 4.1
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4014cccccccccccd",
+            "decimal_label": "5.2",
+            "rational_n": "5854679515581645",
+            "rational_d": "1125899906842624",
+            "value": 5.2
+          },
+          {
+            "hex": "401f99999999999a",
+            "decimal_label": "7.9",
+            "rational_n": "8894609264056730",
+            "rational_d": "1125899906842624",
+            "value": 7.9
+          },
+          {
+            "hex": "4020333333333333",
+            "decimal_label": "8.1",
+            "rational_n": "4559894622712627",
+            "rational_d": "562949953421312",
+            "value": 8.1
+          }
+        ]
+      },
+      "input_manifest_sha256": "4420d0baadc1e6d99bc38ec8a51f5db72d0bbae6baa9a1200c82e34bea54e405",
+      "exact_algebraic": {
+        "case_id": "unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116",
+        "n_x": "4",
+        "n_y": "3",
+        "mean_x": "25220157913274777/9007199254740992",
+        "mean_y": "23869078025063629/3377699720527872",
+        "sample_variance_x": "38130930054865135473085239825969/20282409603651670423947251286016",
+        "sample_variance_y": "9976410223796163858555180920341/3802951800684688204490109616128",
+        "mean_difference": "-115292150460684701/27021597764222976",
+        "variance_x_over_n_x": "38130930054865135473085239825969/81129638414606681695789005144064",
+        "variance_y_over_n_y": "9976410223796163858555180920341/11408855402054064613470328848384",
+        "se_squared": "981668624816740706205298737335545/730166745731460135262101046296576",
+        "welch_df_numerator": "963673288949590827117753127150973880266990735941109098525920447025/533143476572070757658210015148581563614406420465279875724949323776",
+        "welch_df_denominator": "243092033757619017103889295095988970567446400006820101290898565435/533143476572070757658210015148581563614406420465279875724949323776",
+        "welch_df": "192734657789918165423550625430194776053398147188221819705184089405/48618406751523803420777859019197794113489280001364020258179713087"
+      }
+    },
+    {
+      "case_id": "minimum_n_per_group_df1p470588235294118_p0p1579634539490364",
+      "seed_id": "seed_n2",
+      "class": "minimum_n_per_group",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "400c000000000000",
+            "decimal_label": "3.5",
+            "rational_n": "7881299347898368",
+            "rational_d": "2251799813685248",
+            "value": 3.5
+          },
+          {
+            "hex": "4016000000000000",
+            "decimal_label": "5.5",
+            "rational_n": "6192449487634432",
+            "rational_d": "1125899906842624",
+            "value": 5.5
+          }
+        ]
+      },
+      "input_manifest_sha256": "83c58a33dff891374807cd121e53637109d9ce00286789c2d4d589d9898c38d9",
+      "exact_algebraic": {
+        "case_id": "minimum_n_per_group_df1p470588235294118_p0p1579634539490364",
+        "n_x": "2",
+        "n_y": "2",
+        "mean_x": "3/2",
+        "mean_y": "9/2",
+        "sample_variance_x": "1/2",
+        "sample_variance_y": "2/1",
+        "mean_difference": "-3/1",
+        "variance_x_over_n_x": "1/4",
+        "variance_y_over_n_y": "1/1",
+        "se_squared": "5/4",
+        "welch_df_numerator": "25/16",
+        "welch_df_denominator": "17/16",
+        "welch_df": "25/17"
+      }
+    },
+    {
+      "case_id": "one_group_variance_zero_df2_p0p07417990022744854",
+      "seed_id": "seed_one_var_zero",
+      "class": "one_group_variance_zero",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4018000000000000",
+            "decimal_label": "6",
+            "rational_n": "6755399441055744",
+            "rational_d": "1125899906842624",
+            "value": 6
+          },
+          {
+            "hex": "401c000000000000",
+            "decimal_label": "7",
+            "rational_n": "7881299347898368",
+            "rational_d": "1125899906842624",
+            "value": 7
+          },
+          {
+            "hex": "4020000000000000",
+            "decimal_label": "8",
+            "rational_n": "4503599627370496",
+            "rational_d": "562949953421312",
+            "value": 8
+          }
+        ]
+      },
+      "input_manifest_sha256": "7588da6f81d92364ed903443e4cc7b1b7b7cce6b94a0655b7ee13e65caedd9a1",
+      "exact_algebraic": {
+        "case_id": "one_group_variance_zero_df2_p0p07417990022744854",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "5/1",
+        "mean_y": "7/1",
+        "sample_variance_x": "0/1",
+        "sample_variance_y": "1/1",
+        "mean_difference": "-2/1",
+        "variance_x_over_n_x": "0/1",
+        "variance_y_over_n_y": "1/3",
+        "se_squared": "1/3",
+        "welch_df_numerator": "1/9",
+        "welch_df_denominator": "1/18",
+        "welch_df": "2/1"
+      }
+    },
+    {
+      "case_id": "both_groups_variance_zero_df_na_p_na",
+      "seed_id": "seed_both_var_zero",
+      "class": "both_groups_variance_zero",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          }
+        ]
+      },
+      "input_manifest_sha256": "a7aa61e4b01a696cc58e85de0b356a80c358e0193250243d186e473351a460a6",
+      "degenerate_expected": [
+        "ZERO_STANDARD_ERROR"
+      ],
+      "notes": "Welch SE is zero; numeric p-value must not pass.",
+      "exact_algebraic": {
+        "case_id": "both_groups_variance_zero_df_na_p_na",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "5/1",
+        "mean_y": "5/1",
+        "sample_variance_x": "0/1",
+        "sample_variance_y": "0/1",
+        "mean_difference": "0/1",
+        "variance_x_over_n_x": "0/1",
+        "variance_y_over_n_y": "0/1",
+        "se_squared": "0/1",
+        "welch_df_numerator": "SE_ZERO",
+        "welch_df_denominator": "SE_ZERO",
+        "welch_df": "SE_ZERO",
+        "degenerate": "SE_ZERO"
+      }
+    },
+    {
+      "case_id": "welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486",
+      "seed_id": "seed_df_low",
+      "class": "welch_df_near_lower_boundary",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "3ff199999999999a",
+            "decimal_label": "1.1",
+            "rational_n": "4953959590107546",
+            "rational_d": "4503599627370496",
+            "value": 1.1
+          },
+          {
+            "hex": "400199999999999a",
+            "decimal_label": "2.2",
+            "rational_n": "4953959590107546",
+            "rational_d": "2251799813685248",
+            "value": 2.2
+          }
+        ]
+      },
+      "input_manifest_sha256": "2c865218af5589208576e8a7b7dcc4042b59a172e6dda7cd3c592a3db538c6f6",
+      "notes": "n=2 per group yields low Welch df.",
+      "exact_algebraic": {
+        "case_id": "welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486",
+        "n_x": "2",
+        "n_y": "2",
+        "mean_x": "3/2",
+        "mean_y": "7430939385161319/4503599627370496",
+        "sample_variance_x": "1/2",
+        "sample_variance_y": "6135428905104631294035961535529/10141204801825835211973625643008",
+        "mean_difference": "-675539944105575/4503599627370496",
+        "variance_x_over_n_x": "1/4",
+        "variance_y_over_n_y": "6135428905104631294035961535529/20282409603651670423947251286016",
+        "se_squared": "11206031306017548900022774357033/20282409603651670423947251286016",
+        "welch_df_numerator": "125575137631445372682082455079663647880024791498738266556563089/411376139330301510538742295639337626245683966408394965837152256",
+        "welch_df_denominator": "63354496557737259165273926214255863611839793621614288894131857/411376139330301510538742295639337626245683966408394965837152256",
+        "welch_df": "125575137631445372682082455079663647880024791498738266556563089/63354496557737259165273926214255863611839793621614288894131857"
+      }
+    },
+    {
+      "case_id": "p_below_alpha_0p05_df4_p0p02131164112875673",
+      "seed_id": "seed_p_below_005",
+      "class": "p_below_alpha_0p05",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          },
+          {
+            "hex": "4008000000000000",
+            "decimal_label": "3",
+            "rational_n": "6755399441055744",
+            "rational_d": "2251799813685248",
+            "value": 3
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4010000000000000",
+            "decimal_label": "4",
+            "rational_n": "4503599627370496",
+            "rational_d": "1125899906842624",
+            "value": 4
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4018000000000000",
+            "decimal_label": "6",
+            "rational_n": "6755399441055744",
+            "rational_d": "1125899906842624",
+            "value": 6
+          }
+        ]
+      },
+      "input_manifest_sha256": "0fb7f1186d26a9bde7642639279dd589052e147ab9302c1be041f74fcdca867a",
+      "notes": "Same arithmetic data as balanced; p is about 0.0213.",
+      "exact_algebraic": {
+        "case_id": "p_below_alpha_0p05_df4_p0p02131164112875673",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "2/1",
+        "mean_y": "5/1",
+        "sample_variance_x": "1/1",
+        "sample_variance_y": "1/1",
+        "mean_difference": "-3/1",
+        "variance_x_over_n_x": "1/3",
+        "variance_y_over_n_y": "1/3",
+        "se_squared": "2/3",
+        "welch_df_numerator": "4/9",
+        "welch_df_denominator": "1/9",
+        "welch_df": "4/1"
+      }
+    },
+    {
+      "case_id": "p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181",
+      "seed_id": "seed_p_above_005",
+      "class": "p_above_alpha_0p05",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4024666666666666",
+            "decimal_label": "10.2",
+            "rational_n": "5742089524897382",
+            "rational_d": "562949953421312",
+            "value": 10.2
+          },
+          {
+            "hex": "4023333333333333",
+            "decimal_label": "9.6",
+            "rational_n": "5404319552844595",
+            "rational_d": "562949953421312",
+            "value": 9.6
+          },
+          {
+            "hex": "4025cccccccccccd",
+            "decimal_label": "10.9",
+            "rational_n": "6136154492292301",
+            "rational_d": "562949953421312",
+            "value": 10.9
+          },
+          {
+            "hex": "4024333333333333",
+            "decimal_label": "10.1",
+            "rational_n": "5685794529555251",
+            "rational_d": "562949953421312",
+            "value": 10.1
+          },
+          {
+            "hex": "402399999999999a",
+            "decimal_label": "9.8",
+            "rational_n": "5516909543528858",
+            "rational_d": "562949953421312",
+            "value": 9.8
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4025000000000000",
+            "decimal_label": "10.5",
+            "rational_n": "5910974510923776",
+            "rational_d": "562949953421312",
+            "value": 10.5
+          },
+          {
+            "hex": "4025cccccccccccd",
+            "decimal_label": "10.9",
+            "rational_n": "6136154492292301",
+            "rational_d": "562949953421312",
+            "value": 10.9
+          },
+          {
+            "hex": "4023cccccccccccd",
+            "decimal_label": "9.9",
+            "rational_n": "5573204538870989",
+            "rational_d": "562949953421312",
+            "value": 9.9
+          },
+          {
+            "hex": "4024cccccccccccd",
+            "decimal_label": "10.4",
+            "rational_n": "5854679515581645",
+            "rational_d": "562949953421312",
+            "value": 10.4
+          },
+          {
+            "hex": "4025666666666666",
+            "decimal_label": "10.7",
+            "rational_n": "6023564501608038",
+            "rational_d": "562949953421312",
+            "value": 10.7
+          }
+        ]
+      },
+      "input_manifest_sha256": "150b701c93a4de9543a4e5bb7a92da54e9f9a5391a0eaf8dd76b56f1d8b9e6ae",
+      "notes": "CI crosses zero; p is well above 0.05.",
+      "exact_algebraic": {
+        "case_id": "p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181",
+        "n_x": "5",
+        "n_y": "5",
+        "mean_x": "28485267643118387/2814749767106560",
+        "mean_y": "29498577559276749/2814749767106560",
+        "sample_variance_x": "782774245640931948158190008403/3169126500570573503741758013440",
+        "sample_variance_y": "450015963081021054725361311417/3169126500570573503741758013440",
+        "mean_difference": "-506654958079181/1407374883553280",
+        "variance_x_over_n_x": "782774245640931948158190008403/15845632502852867518708790067200",
+        "variance_y_over_n_y": "450015963081021054725361311417/15845632502852867518708790067200",
+        "se_squared": "61639510436097650144177565991/792281625142643375935439503360",
+        "welch_df_numerator": "3799429246801791124258229502629304263577212835089159812081/627710173538668076383578942320766641610235544446403451289600",
+        "welch_df_denominator": "407624943333234486990094582213797508803285287991565632579149/502168138830934461106863153856613313288188435557122761031680000",
+        "welch_df": "3039543397441432899406583602103443410861770268071327849664800/407624943333234486990094582213797508803285287991565632579149"
+      }
+    },
+    {
+      "case_id": "non_degenerate_small_p_df6_p0p0002571978168251656",
+      "seed_id": "seed_small_p",
+      "class": "non_degenerate_small_p",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          },
+          {
+            "hex": "4008000000000000",
+            "decimal_label": "3",
+            "rational_n": "6755399441055744",
+            "rational_d": "2251799813685248",
+            "value": 3
+          },
+          {
+            "hex": "4010000000000000",
+            "decimal_label": "4",
+            "rational_n": "4503599627370496",
+            "rational_d": "1125899906842624",
+            "value": 4
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4020000000000000",
+            "decimal_label": "8",
+            "rational_n": "4503599627370496",
+            "rational_d": "562949953421312",
+            "value": 8
+          },
+          {
+            "hex": "4022000000000000",
+            "decimal_label": "9",
+            "rational_n": "5066549580791808",
+            "rational_d": "562949953421312",
+            "value": 9
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4026000000000000",
+            "decimal_label": "11",
+            "rational_n": "6192449487634432",
+            "rational_d": "562949953421312",
+            "value": 11
+          }
+        ]
+      },
+      "input_manifest_sha256": "0d5ba4ae6c5312ccabe615723d7162801a7ea40e65cdfffb42edf4de16f5872c",
+      "notes": "Large mean difference; small but non-underflow p.",
+      "exact_algebraic": {
+        "case_id": "non_degenerate_small_p_df6_p0p0002571978168251656",
+        "n_x": "4",
+        "n_y": "4",
+        "mean_x": "5/2",
+        "mean_y": "19/2",
+        "sample_variance_x": "5/3",
+        "sample_variance_y": "5/3",
+        "mean_difference": "-7/1",
+        "variance_x_over_n_x": "5/12",
+        "variance_y_over_n_y": "5/12",
+        "se_squared": "5/6",
+        "welch_df_numerator": "25/36",
+        "welch_df_denominator": "25/216",
+        "welch_df": "6/1"
+      }
+    },
+    {
+      "case_id": "p_underflow_boundary_df138_p0_underflow",
+      "seed_id": "seed_underflow",
+      "class": "p_underflow_boundary",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4024051eb851eb85",
+            "decimal_label": "10.01",
+            "rational_n": "5635129033747333",
+            "rational_d": "562949953421312",
+            "value": 10.01
+          },
+          {
+            "hex": "40240a3d70a3d70a",
+            "decimal_label": "10.02",
+            "rational_n": "5640758533281546",
+            "rational_d": "562949953421312",
+            "value": 10.02
+          },
+          {
+            "hex": "40240f5c28f5c28f",
+            "decimal_label": "10.03",
+            "rational_n": "5646388032815759",
+            "rational_d": "562949953421312",
+            "value": 10.03
+          },
+          {
+            "hex": "4024147ae147ae14",
+            "decimal_label": "10.04",
+            "rational_n": "5652017532349972",
+            "rational_d": "562949953421312",
+            "value": 10.04
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          },
+          {
+            "hex": "0000000000000000",
+            "decimal_label": "0",
+            "rational_n": "0",
+            "rational_d": "1",
+            "value": 0
+          },
+          {
+            "hex": "3f847ae147ae147b",
+            "decimal_label": "0.01",
+            "rational_n": "5764607523034235",
+            "rational_d": "576460752303423488",
+            "value": 0.01
+          },
+          {
+            "hex": "3f947ae147ae147b",
+            "decimal_label": "0.02",
+            "rational_n": "5764607523034235",
+            "rational_d": "288230376151711744",
+            "value": 0.02
+          },
+          {
+            "hex": "3f9eb851eb851eb8",
+            "decimal_label": "0.03",
+            "rational_n": "8646911284551352",
+            "rational_d": "288230376151711744",
+            "value": 0.03
+          },
+          {
+            "hex": "3fa47ae147ae147b",
+            "decimal_label": "0.04",
+            "rational_n": "5764607523034235",
+            "rational_d": "144115188075855872",
+            "value": 0.04
+          }
+        ]
+      },
+      "input_manifest_sha256": "69e5c36406069db29a4a98c59fdbff9400af943e1942a31617c004ffd54d70bc",
+      "degenerate_expected": [
+        "NRS-P-VALUE-UNDERFLOW"
+      ],
+      "notes": "Large mean separation with tiny within-group spread yields binary64 p=0 (A2-1-V-002 pattern).",
+      "exact_algebraic": {
+        "case_id": "p_underflow_boundary_df138_p0_underflow",
+        "n_x": "70",
+        "n_y": "70",
+        "mean_x": "2820379266640773/281474976710656",
+        "mean_y": "57646075230342349/2882303761517117440",
+        "sample_variance_x": "1109194275199653438513527915/5466743213484239293954532573184",
+        "sample_variance_y": "1453843120389751746076602137491541/7165369664778062127372084934323732480",
+        "mean_difference": "28823037615171173171/2882303761517117440",
+        "variance_x_over_n_x": "31691265005704383957529369/10933486426968478587909065146368",
+        "variance_y_over_n_y": "207691874341393106582371733927363/71653696647780621273720849343237324800",
+        "se_squared": "138461249560925785762145402201921/23884565549260207091240283114412441600",
+        "welch_df_numerator": "19171517629972971100503875749850905328030144963497927475256090241/570472471476907538055154039241335385054161975980958513700152392873410560000",
+        "welch_df_denominator": "86271829334878369952267440913542364272645834484432744789986693769/354263404787159581132250658368869274118634587084175237007794635974387957760000",
+        "welch_df": "11905512448213215053412906840657412208706720022332212962134032039661/86271829334878369952267440913542364272645834484432744789986693769"
+      }
+    },
+    {
+      "case_id": "ci_crosses_zero_df7p456715903071217_p0p2353965847965181",
+      "seed_id": "seed_ci_crosses_zero",
+      "class": "ci_crosses_zero",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4024666666666666",
+            "decimal_label": "10.2",
+            "rational_n": "5742089524897382",
+            "rational_d": "562949953421312",
+            "value": 10.2
+          },
+          {
+            "hex": "4023333333333333",
+            "decimal_label": "9.6",
+            "rational_n": "5404319552844595",
+            "rational_d": "562949953421312",
+            "value": 9.6
+          },
+          {
+            "hex": "4025cccccccccccd",
+            "decimal_label": "10.9",
+            "rational_n": "6136154492292301",
+            "rational_d": "562949953421312",
+            "value": 10.9
+          },
+          {
+            "hex": "4024333333333333",
+            "decimal_label": "10.1",
+            "rational_n": "5685794529555251",
+            "rational_d": "562949953421312",
+            "value": 10.1
+          },
+          {
+            "hex": "402399999999999a",
+            "decimal_label": "9.8",
+            "rational_n": "5516909543528858",
+            "rational_d": "562949953421312",
+            "value": 9.8
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4025000000000000",
+            "decimal_label": "10.5",
+            "rational_n": "5910974510923776",
+            "rational_d": "562949953421312",
+            "value": 10.5
+          },
+          {
+            "hex": "4025cccccccccccd",
+            "decimal_label": "10.9",
+            "rational_n": "6136154492292301",
+            "rational_d": "562949953421312",
+            "value": 10.9
+          },
+          {
+            "hex": "4023cccccccccccd",
+            "decimal_label": "9.9",
+            "rational_n": "5573204538870989",
+            "rational_d": "562949953421312",
+            "value": 9.9
+          },
+          {
+            "hex": "4024cccccccccccd",
+            "decimal_label": "10.4",
+            "rational_n": "5854679515581645",
+            "rational_d": "562949953421312",
+            "value": 10.4
+          },
+          {
+            "hex": "4025666666666666",
+            "decimal_label": "10.7",
+            "rational_n": "6023564501608038",
+            "rational_d": "562949953421312",
+            "value": 10.7
+          }
+        ]
+      },
+      "input_manifest_sha256": "95859ab4dcbd2fb0c4ff5e690821da68bb910b7752b1a5552fe47d6d81fb2c14",
+      "exact_algebraic": {
+        "case_id": "ci_crosses_zero_df7p456715903071217_p0p2353965847965181",
+        "n_x": "5",
+        "n_y": "5",
+        "mean_x": "28485267643118387/2814749767106560",
+        "mean_y": "29498577559276749/2814749767106560",
+        "sample_variance_x": "782774245640931948158190008403/3169126500570573503741758013440",
+        "sample_variance_y": "450015963081021054725361311417/3169126500570573503741758013440",
+        "mean_difference": "-506654958079181/1407374883553280",
+        "variance_x_over_n_x": "782774245640931948158190008403/15845632502852867518708790067200",
+        "variance_y_over_n_y": "450015963081021054725361311417/15845632502852867518708790067200",
+        "se_squared": "61639510436097650144177565991/792281625142643375935439503360",
+        "welch_df_numerator": "3799429246801791124258229502629304263577212835089159812081/627710173538668076383578942320766641610235544446403451289600",
+        "welch_df_denominator": "407624943333234486990094582213797508803285287991565632579149/502168138830934461106863153856613313288188435557122761031680000",
+        "welch_df": "3039543397441432899406583602103443410861770268071327849664800/407624943333234486990094582213797508803285287991565632579149"
+      }
+    },
+    {
+      "case_id": "large_common_offset_ladder_base_df4_p0p1400659849120179",
+      "seed_id": "seed_offset_base",
+      "class": "large_common_offset_ladder_base",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "41cdcd6500800000",
+            "decimal_label": "1000000001",
+            "rational_n": "8388608008388608",
+            "rational_d": "8388608",
+            "value": 1000000001
+          },
+          {
+            "hex": "41cdcd6501800000",
+            "decimal_label": "1000000003",
+            "rational_n": "8388608025165824",
+            "rational_d": "8388608",
+            "value": 1000000003
+          },
+          {
+            "hex": "41cdcd6501000000",
+            "decimal_label": "1000000002",
+            "rational_n": "8388608016777216",
+            "rational_d": "8388608",
+            "value": 1000000002
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "41cdcd6501400000",
+            "decimal_label": "1000000002.5",
+            "rational_n": "8388608020971520",
+            "rational_d": "8388608",
+            "value": 1000000002.5
+          },
+          {
+            "hex": "41cdcd6502400000",
+            "decimal_label": "1000000004.5",
+            "rational_n": "8388608037748736",
+            "rational_d": "8388608",
+            "value": 1000000004.5
+          },
+          {
+            "hex": "41cdcd6501c00000",
+            "decimal_label": "1000000003.5",
+            "rational_n": "8388608029360128",
+            "rational_d": "8388608",
+            "value": 1000000003.5
+          }
+        ]
+      },
+      "input_manifest_sha256": "80abe54170a49dfaa42a4632e75f8781de3691ce1ca395b31723d5042b6715cf",
+      "exact_algebraic": {
+        "case_id": "large_common_offset_ladder_base_df4_p0p1400659849120179",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "1000000002/1",
+        "mean_y": "2000000007/2",
+        "sample_variance_x": "1/1",
+        "sample_variance_y": "1/1",
+        "mean_difference": "-3/2",
+        "variance_x_over_n_x": "1/3",
+        "variance_y_over_n_y": "1/3",
+        "se_squared": "2/3",
+        "welch_df_numerator": "4/9",
+        "welch_df_denominator": "1/9",
+        "welch_df": "4/1"
+      }
+    },
+    {
+      "case_id": "within_group_permutation_df3p964232287062296_p0p02154484911625116",
+      "seed_id": "seed_permutation",
+      "class": "within_group_permutation",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "3ff199999999999a",
+            "decimal_label": "1.1",
+            "rational_n": "4953959590107546",
+            "rational_d": "4503599627370496",
+            "value": 1.1
+          },
+          {
+            "hex": "4002666666666666",
+            "decimal_label": "2.3",
+            "rational_n": "5179139571476070",
+            "rational_d": "2251799813685248",
+            "value": 2.3
+          },
+          {
+            "hex": "400d99999999999a",
+            "decimal_label": "3.7",
+            "rational_n": "8331659310635418",
+            "rational_d": "2251799813685248",
+            "value": 3.7
+          },
+          {
+            "hex": "4010666666666666",
+            "decimal_label": "4.1",
+            "rational_n": "4616189618054758",
+            "rational_d": "1125899906842624",
+            "value": 4.1
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4020333333333333",
+            "decimal_label": "8.1",
+            "rational_n": "4559894622712627",
+            "rational_d": "562949953421312",
+            "value": 8.1
+          },
+          {
+            "hex": "4014cccccccccccd",
+            "decimal_label": "5.2",
+            "rational_n": "5854679515581645",
+            "rational_d": "1125899906842624",
+            "value": 5.2
+          },
+          {
+            "hex": "401f99999999999a",
+            "decimal_label": "7.9",
+            "rational_n": "8894609264056730",
+            "rational_d": "1125899906842624",
+            "value": 7.9
+          }
+        ]
+      },
+      "input_manifest_sha256": "9d2252d6812c9995729a2c1159d9350863e1dcce34cc66d059d5df6be241f28a",
+      "notes": "Permutation relation validated against seed_unequal_n_var order.",
+      "exact_algebraic": {
+        "case_id": "within_group_permutation_df3p964232287062296_p0p02154484911625116",
+        "n_x": "4",
+        "n_y": "3",
+        "mean_x": "25220157913274777/9007199254740992",
+        "mean_y": "23869078025063629/3377699720527872",
+        "sample_variance_x": "38130930054865135473085239825969/20282409603651670423947251286016",
+        "sample_variance_y": "9976410223796163858555180920341/3802951800684688204490109616128",
+        "mean_difference": "-115292150460684701/27021597764222976",
+        "variance_x_over_n_x": "38130930054865135473085239825969/81129638414606681695789005144064",
+        "variance_y_over_n_y": "9976410223796163858555180920341/11408855402054064613470328848384",
+        "se_squared": "981668624816740706205298737335545/730166745731460135262101046296576",
+        "welch_df_numerator": "963673288949590827117753127150973880266990735941109098525920447025/533143476572070757658210015148581563614406420465279875724949323776",
+        "welch_df_denominator": "243092033757619017103889295095988970567446400006820101290898565435/533143476572070757658210015148581563614406420465279875724949323776",
+        "welch_df": "192734657789918165423550625430194776053398147188221819705184089405/48618406751523803420777859019197794113489280001364020258179713087"
+      }
+    },
+    {
+      "case_id": "group_swap_df4_p0p02131164112875673",
+      "seed_id": "seed_swap",
+      "class": "group_swap",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4010000000000000",
+            "decimal_label": "4",
+            "rational_n": "4503599627370496",
+            "rational_d": "1125899906842624",
+            "value": 4
+          },
+          {
+            "hex": "4014000000000000",
+            "decimal_label": "5",
+            "rational_n": "5629499534213120",
+            "rational_d": "1125899906842624",
+            "value": 5
+          },
+          {
+            "hex": "4018000000000000",
+            "decimal_label": "6",
+            "rational_n": "6755399441055744",
+            "rational_d": "1125899906842624",
+            "value": 6
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "3ff0000000000000",
+            "decimal_label": "1",
+            "rational_n": "4503599627370496",
+            "rational_d": "4503599627370496",
+            "value": 1
+          },
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          },
+          {
+            "hex": "4008000000000000",
+            "decimal_label": "3",
+            "rational_n": "6755399441055744",
+            "rational_d": "2251799813685248",
+            "value": 3
+          }
+        ]
+      },
+      "input_manifest_sha256": "6f46f3b361e3ce406c906b4093d143aa3185a3a2d7cecf638ee54874a9908b68",
+      "notes": "Swapped groups vs seed_balanced.",
+      "exact_algebraic": {
+        "case_id": "group_swap_df4_p0p02131164112875673",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "5/1",
+        "mean_y": "2/1",
+        "sample_variance_x": "1/1",
+        "sample_variance_y": "1/1",
+        "mean_difference": "3/1",
+        "variance_x_over_n_x": "1/3",
+        "variance_y_over_n_y": "1/3",
+        "se_squared": "2/3",
+        "welch_df_numerator": "4/9",
+        "welch_df_denominator": "1/9",
+        "welch_df": "4/1"
+      }
+    },
+    {
+      "case_id": "exact_power_of_two_scaling_df4_p0p02131164112875673",
+      "seed_id": "seed_scale_pow2",
+      "class": "exact_power_of_two_scaling",
+      "group_x": {
+        "group_id": "x",
+        "values": [
+          {
+            "hex": "4000000000000000",
+            "decimal_label": "2",
+            "rational_n": "4503599627370496",
+            "rational_d": "2251799813685248",
+            "value": 2
+          },
+          {
+            "hex": "4010000000000000",
+            "decimal_label": "4",
+            "rational_n": "4503599627370496",
+            "rational_d": "1125899906842624",
+            "value": 4
+          },
+          {
+            "hex": "4018000000000000",
+            "decimal_label": "6",
+            "rational_n": "6755399441055744",
+            "rational_d": "1125899906842624",
+            "value": 6
+          }
+        ]
+      },
+      "group_y": {
+        "group_id": "y",
+        "values": [
+          {
+            "hex": "4020000000000000",
+            "decimal_label": "8",
+            "rational_n": "4503599627370496",
+            "rational_d": "562949953421312",
+            "value": 8
+          },
+          {
+            "hex": "4024000000000000",
+            "decimal_label": "10",
+            "rational_n": "5629499534213120",
+            "rational_d": "562949953421312",
+            "value": 10
+          },
+          {
+            "hex": "4028000000000000",
+            "decimal_label": "12",
+            "rational_n": "6755399441055744",
+            "rational_d": "562949953421312",
+            "value": 12
+          }
+        ]
+      },
+      "input_manifest_sha256": "d68dcb5158c75a5898ae4158bcd98d1240f3c9edf80bbf4d541fdc3d08d587c3",
+      "notes": "Exactly 2x seed_balanced; t, df, p invariant.",
+      "exact_algebraic": {
+        "case_id": "exact_power_of_two_scaling_df4_p0p02131164112875673",
+        "n_x": "3",
+        "n_y": "3",
+        "mean_x": "4/1",
+        "mean_y": "10/1",
+        "sample_variance_x": "4/1",
+        "sample_variance_y": "4/1",
+        "mean_difference": "-6/1",
+        "variance_x_over_n_x": "4/3",
+        "variance_y_over_n_y": "4/3",
+        "se_squared": "8/3",
+        "welch_df_numerator": "64/9",
+        "welch_df_denominator": "16/9",
+        "welch_df": "4/1"
+      }
+    }
+  ]
+}

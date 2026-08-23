@@ -1,0 +1,199 @@
+{
+  "$schema": "urn:nomue:schema:record:0.2.0-draft.1",
+  "record_type": "nomue-record",
+  "record_id": "urn:uuid:00000000-0000-4000-8000-000000009001",
+  "revision_id": "urn:uuid:00000000-0000-4000-8000-000000009002",
+  "created_at": "2026-08-13T00:00:00Z",
+  "interpretation_bundle_id": "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1",
+  "profile_id": "urn:nomue:profile:itgc:0.2.0-draft.1",
+  "payload": {
+    "dataset": {
+      "dataset_id": "dataset-1",
+      "observations": [
+        {
+          "observation_id": "observation-1",
+          "experimental_unit_id": "unit-1",
+          "group_id": "group-vehicle",
+          "outcome_value": 98.2
+        },
+        {
+          "observation_id": "observation-2",
+          "experimental_unit_id": "unit-2",
+          "group_id": "group-vehicle",
+          "outcome_value": 101.4
+        },
+        {
+          "observation_id": "observation-3",
+          "experimental_unit_id": "unit-3",
+          "group_id": "group-vehicle",
+          "outcome_value": 96.8
+        },
+        {
+          "observation_id": "observation-4",
+          "experimental_unit_id": "unit-4",
+          "group_id": "group-vehicle",
+          "outcome_value": 103.1
+        },
+        {
+          "observation_id": "observation-5",
+          "experimental_unit_id": "unit-5",
+          "group_id": "group-vehicle",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-6",
+          "experimental_unit_id": "unit-6",
+          "group_id": "group-vehicle",
+          "outcome_value": 97.3
+        },
+        {
+          "observation_id": "observation-7",
+          "experimental_unit_id": "unit-7",
+          "group_id": "group-vehicle",
+          "outcome_value": 100.9
+        },
+        {
+          "observation_id": "observation-8",
+          "experimental_unit_id": "unit-8",
+          "group_id": "group-vehicle",
+          "outcome_value": 102
+        },
+        {
+          "observation_id": "observation-9",
+          "experimental_unit_id": "unit-9",
+          "group_id": "group-treated",
+          "outcome_value": 61.4
+        },
+        {
+          "observation_id": "observation-10",
+          "experimental_unit_id": "unit-10",
+          "group_id": "group-treated",
+          "outcome_value": 58.9
+        },
+        {
+          "observation_id": "observation-11",
+          "experimental_unit_id": "unit-11",
+          "group_id": "group-treated",
+          "outcome_value": 65.2
+        },
+        {
+          "observation_id": "observation-12",
+          "experimental_unit_id": "unit-12",
+          "group_id": "group-treated",
+          "outcome_value": 60.1
+        },
+        {
+          "observation_id": "observation-13",
+          "experimental_unit_id": "unit-13",
+          "group_id": "group-treated",
+          "outcome_value": 63.7
+        },
+        {
+          "observation_id": "observation-14",
+          "experimental_unit_id": "unit-14",
+          "group_id": "group-treated",
+          "outcome_value": 57.8
+        },
+        {
+          "observation_id": "observation-15",
+          "experimental_unit_id": "unit-15",
+          "group_id": "group-treated",
+          "outcome_value": 62.5
+        },
+        {
+          "observation_id": "observation-16",
+          "experimental_unit_id": "unit-16",
+          "group_id": "group-treated",
+          "outcome_value": 59.6
+        }
+      ]
+    },
+    "design": {
+      "design_id": "design-1",
+      "dataset_id": "dataset-1",
+      "experimental_unit_type": "biological replicate",
+      "groups": [
+        {
+          "group_id": "group-vehicle",
+          "label": "Vehicle (DMSO 0.1%)"
+        },
+        {
+          "group_id": "group-treated",
+          "label": "Compound NM-114, 10 uM, 48h"
+        }
+      ],
+      "group_order": [
+        "group-vehicle",
+        "group-treated"
+      ],
+      "outcome": {
+        "outcome_id": "outcome-1",
+        "label": "Cell viability (% of vehicle control), CellTiter-Glo luminescence",
+        "scale": "continuous"
+      },
+      "declarations": {
+        "grouping_structure": "independent_groups",
+        "pairing": "none",
+        "repeated_measurements": "none",
+        "clustering": "none_declared"
+      },
+      "data_handling": {
+        "analysis_population": "all_record_observations",
+        "missing_outcomes": "none",
+        "transformation": "none",
+        "weighting": "none"
+      }
+    },
+    "analysis": {
+      "analysis_id": "analysis-1",
+      "design_id": "design-1",
+      "method_id": "urn:nomue:method:welch-two-sample-t:1",
+      "alternative": "two_sided",
+      "estimand": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "direction": "group_order_first_minus_second"
+      },
+      "confidence_level": 0.95
+    },
+    "result": {
+      "result_id": "result-1",
+      "analysis_id": "analysis-1",
+      "group_summaries": [
+        {
+          "group_id": "group-vehicle",
+          "n": 8,
+          "mean": 99.9,
+          "sample_variance": 5.331428571428574
+        },
+        {
+          "group_id": "group-treated",
+          "n": 8,
+          "mean": 61.15,
+          "sample_variance": 6.368571428571436
+        }
+      ],
+      "effect_estimate": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "estimate": 38.75000000000001,
+        "standard_error": 1.209338662244783,
+        "confidence_interval": {
+          "method_id": "urn:nomue:method:welch-satterthwaite-mean-difference-ci:1",
+          "confidence_level": 0.95,
+          "lower": 36.15431310783157,
+          "upper": 41.345686892168445
+        }
+      },
+      "test": {
+        "test_statistic": 32.042306435545505,
+        "degrees_of_freedom": 13.89084737675638,
+        "p_value": 2.021786645212439e-14
+      }
+    }
+  },
+  "integrity": {
+    "canonicalization_id": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "digest_algorithm": "sha-256",
+    "digest_scope": "record_without_integrity",
+    "content_digest": "sha256:7a8959a0904f399e26b014628fa5e9b9b4d47e972571b71276f7e1b02a631e62"
+  }
+}

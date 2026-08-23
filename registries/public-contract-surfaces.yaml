@@ -1,0 +1,443 @@
+# Public contract surface registry - authoritative for which parts of the
+# specification external parties may rely on across versions.
+# Validated by schemas/meta/public-contract-surfaces.schema.json.
+#
+# applies_to_bundle_ids lists the interpretation bundles a surface applies
+# to; Phase 1 and Phase 2A surfaces are never conflated. paths_resolve_in
+# names the schema file the declared paths are mechanically resolved against
+# by pnpm validate.
+
+registry: nrs-public-contract-surfaces
+registry_version: "0.5.0"
+updated: "2026-08-18"
+
+status_note: >-
+  Phase 1 issued the first candidate surfaces; Phase 2A adds the ITGC
+  guarantee surfaces. No surface is frozen: every entry is a candidate at
+  STABLE-INTENT stability, meaning the semantic intent is stable while field
+  layout can still change between Public Draft snapshots via a new schema
+  version. Field layout is deliberately not CORE.
+
+entries:
+  - surface_id: NRS-PCS-0001
+    title: Record envelope
+    paths:
+      - "$schema"
+      - record_type
+      - record_id
+      - revision_id
+      - created_at
+      - interpretation_bundle_id
+      - profile_id
+      - payload
+      - integrity
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-CORE-0003
+      - NRS-CORE-0007
+      - NRS-VERSION-0003
+    schema_refs:
+      - schemas/record/record.schema.json
+      - schemas/record/record-0.2.schema.json
+    notes: The envelope is field-identical across all registered bundles.
+
+  - surface_id: NRS-PCS-0002
+    title: Dataset and observation structure
+    paths:
+      - payload.dataset.dataset_id
+      - payload.dataset.observations[].observation_id
+      - payload.dataset.observations[].experimental_unit_id
+      - payload.dataset.observations[].group_id
+      - payload.dataset.observations[].outcome_value
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0002
+      - NRS-PROFILE-ITGC-0003
+      - NRS-PROFILE-ITGC-0013
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    notes: ""
+
+  - surface_id: NRS-PCS-0003
+    title: ITGC design declaration (Phase 1)
+    paths:
+      - payload.design.design_id
+      - payload.design.dataset_id
+      - payload.design.experimental_unit_type
+      - payload.design.groups[].group_id
+      - payload.design.groups[].label
+      - payload.design.group_order
+      - payload.design.outcome
+      - payload.design.independence_declared
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+      - NRS-PROFILE-ITGC-0005
+      - NRS-PROFILE-ITGC-0006
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    notes: >-
+      The 0.2 bundle replaces the independence_declared boolean with the
+      structured admissibility declarations (NRS-PCS-0009); the 0.1 surface
+      is preserved unchanged (NRS-CORE-0010).
+
+  - surface_id: NRS-PCS-0004
+    title: Welch analysis declaration
+    paths:
+      - payload.analysis.analysis_id
+      - payload.analysis.design_id
+      - payload.analysis.method_id
+      - payload.analysis.alternative
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0007
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    notes: >-
+      The 0.2 bundle extends the analysis with estimand and confidence-level
+      declarations (NRS-PCS-0010).
+
+  - surface_id: NRS-PCS-0005
+    title: Declared Welch result (Phase 1)
+    paths:
+      - payload.result.result_id
+      - payload.result.analysis_id
+      - payload.result.group_summaries[].group_id
+      - payload.result.group_summaries[].n
+      - payload.result.group_summaries[].mean
+      - payload.result.group_summaries[].sample_variance
+      - payload.result.mean_difference
+      - payload.result.test_statistic
+      - payload.result.degrees_of_freedom
+      - payload.result.p_value
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0012
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    notes: >-
+      The 0.2 bundle restructures the declared result into effect_estimate
+      and test objects (NRS-PCS-0010); the 0.1 surface is preserved.
+
+  - surface_id: NRS-PCS-0006
+    title: Integrity metadata
+    paths:
+      - integrity.canonicalization_id
+      - integrity.digest_algorithm
+      - integrity.digest_scope
+      - integrity.content_digest
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-CORE-0006
+      - NRS-CANON-0001
+      - NRS-CANON-0020
+      - NRS-CANON-0022
+    schema_refs:
+      - schemas/record/record.schema.json
+      - schemas/record/record-0.2.schema.json
+    notes: >-
+      All registered bundles pin the same JCS canonicalization. Record content
+      digests are domain-separated per NRS-CANON-0020; the exact procedure is
+      defined by the pinned canonicalization version and NRS-CANON-0022.
+
+  - surface_id: NRS-PCS-0007
+    title: Verification report (Phase 1)
+    paths:
+      - "$schema"
+      - report_type
+      - record_reference
+      - interpretation_bundle_id
+      - verifier
+      - generated_at
+      - conformance
+      - verification_results
+      - guarantee_boundary
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+    paths_resolve_in: schemas/reports/verification-report.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-CORE-0008
+      - NRS-VERIFY-0011
+    schema_refs:
+      - schemas/reports/verification-report.schema.json
+    notes: >-
+      The report carries no overall status and fixes
+      guarantee_boundary.scientific_validity to not_asserted. The 0.2 report
+      surface is NRS-PCS-0011.
+
+  - surface_id: NRS-PCS-0008
+    title: Public-check result object (Phase 1)
+    paths:
+      - verification_results[].check_id
+      - verification_results[].check_version
+      - verification_results[].execution
+      - verification_results[].outcome
+      - verification_results[].scope
+      - verification_results[].reason_codes
+      - verification_results[].evidence
+      - verification_results[].error
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+    paths_resolve_in: schemas/reports/verification-report.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-1
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-VERIFY-0010
+      - NRS-VERIFY-0012
+    schema_refs:
+      - schemas/common/execution-outcome.schema.json
+    notes: ""
+
+  - surface_id: NRS-PCS-0009
+    title: ITGC admissibility declarations
+    paths:
+      - payload.design.declarations.grouping_structure
+      - payload.design.declarations.pairing
+      - payload.design.declarations.repeated_measurements
+      - payload.design.declarations.clustering
+      - payload.design.data_handling.analysis_population
+      - payload.design.data_handling.missing_outcomes
+      - payload.design.data_handling.transformation
+      - payload.design.data_handling.weighting
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record-0.2.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-2a
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-CORE-0009
+      - NRS-PROFILE-ITGC-0019
+      - NRS-PROFILE-ITGC-0020
+      - NRS-PROFILE-ITGC-0021
+      - NRS-PROFILE-ITGC-0022
+      - NRS-PROFILE-ITGC-0023
+      - NRS-PROFILE-ITGC-0024
+      - NRS-PROFILE-ITGC-0025
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    notes: >-
+      Structurally readable unsupported values fail the profile-admissibility
+      check; an admissibility pass never asserts declaration truth. The 0.2.1
+      numerical-contract bundle reuses this same structural surface.
+
+  - surface_id: NRS-PCS-0010
+    title: Mean-difference effect estimate and confidence interval
+    paths:
+      - payload.analysis.estimand.kind
+      - payload.analysis.estimand.direction
+      - payload.analysis.confidence_level
+      - payload.result.effect_estimate.kind
+      - payload.result.effect_estimate.estimate
+      - payload.result.effect_estimate.standard_error
+      - payload.result.effect_estimate.confidence_interval.method_id
+      - payload.result.effect_estimate.confidence_interval.confidence_level
+      - payload.result.effect_estimate.confidence_interval.lower
+      - payload.result.effect_estimate.confidence_interval.upper
+      - payload.result.test.test_statistic
+      - payload.result.test.degrees_of_freedom
+      - payload.result.test.p_value
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/record/record-0.2.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-2a
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0015
+      - NRS-PROFILE-ITGC-0016
+      - NRS-PROFILE-ITGC-0017
+      - NRS-PROFILE-ITGC-0018
+      - NRS-PROFILE-ITGC-0026
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    notes: >-
+      The supported effect estimate is the unstandardized arithmetic mean
+      difference; no standardized effect size and no significance boolean
+      exist. The 0.2.1 numerical-contract bundle reuses this same structural
+      surface while versioning its numerical checks separately.
+
+  - surface_id: NRS-PCS-0011
+    title: Profile-admissibility and computability check results
+    paths:
+      - "$schema"
+      - report_type
+      - record_reference
+      - interpretation_bundle_id
+      - conformance
+      - verification_results[].check_id
+      - verification_results[].check_version
+      - verification_results[].execution
+      - verification_results[].outcome
+      - verification_results[].scope
+      - verification_results[].reason_codes
+      - verification_results[].evidence.unsupported_declarations
+      - guarantee_boundary.scientific_validity
+      - guarantee_boundary.declaration_truth
+      - guarantee_boundary.distributional_model_validity
+      - guarantee_boundary.causal_interpretation
+      - guarantee_boundary.standardized_effect_size
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/reports/verification-report-0.2.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-2a
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-VERIFY-0013
+      - NRS-VERIFY-0017
+      - NRS-CORE-0009
+    schema_refs:
+      - schemas/reports/verification-report-0.2.schema.json
+      - schemas/common/execution-outcome-0.2.schema.json
+    notes: >-
+      The 0.2.1 numerical-contract bundle reuses the same base Phase 2A report
+      structure; its changed numerical checks are identified by their own check
+      IDs and versions rather than a new report schema.
+
+  - surface_id: NRS-PCS-0012
+    title: Verifier refusal artifact
+    paths:
+      - "$schema"
+      - output_type
+      - refusal_kind
+      - reason_codes
+      - message
+      - verifier
+      - input_evidence
+      - generated_at
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-2a
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-CORE-0011
+      - NRS-VERIFY-0018
+      - NRS-SEC-0004
+      - NRS-SEC-0005
+      - NRS-CANON-0023
+    schema_refs:
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    notes: >-
+      The refusal is a verifier-level artifact, independent of any single
+      bundle; it carries no verification outcome and is never a partial
+      success. Draft.3 is the current verifier-output refusal schema: it
+      supersedes draft.2 by adding processing_timeout and memory_limit limit
+      categories (ADR-0022); draft.2 superseded draft.1 by adding routing_error
+      (ADR-0017). Older schema files are retained unmodified as historical
+      artifacts.
+
+  - surface_id: NRS-PCS-0013
+    title: Verifier routing envelope
+    paths:
+      - interpretation_bundle_id
+    applies_to_bundle_ids:
+      - "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1"
+      - "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1"
+    paths_resolve_in: schemas/routing/routing-envelope-0.2.schema.json
+    stability: STABLE-INTENT
+    status: candidate
+    introduced_in: phase-2a
+    change_policy:
+      breaking_change: requires a new schema version
+      silent_reinterpretation: prohibited
+    requirement_ids:
+      - NRS-VERSION-0007
+      - NRS-VERSION-0008
+    schema_refs:
+      - schemas/routing/routing-envelope-0.2.schema.json
+    notes: >-
+      Bundle-independent routing contract validated before any bundle is
+      selected: the JSON root must be an object carrying a string
+      interpretation_bundle_id. It is not a Record conformance schema, it
+      interprets no other field, and it never selects a default bundle;
+      listed for all registered bundles because routing precedes every bundle
+      equally.

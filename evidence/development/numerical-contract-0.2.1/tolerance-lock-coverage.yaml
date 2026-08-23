@@ -1,0 +1,106 @@
+coverage_version: "0.2.1-close-audit"
+check_version: urn:nomue:check:welch-recompute:0.2.1-draft.1
+registry_source: registries/public-checks.yaml
+runtime_source: reference/verifier/src/resources.ts
+
+fields:
+  - field: mean
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests:
+      - numerical-contract.test.ts#mean-2x
+      - numerical-contract.test.ts#mean-10x
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: sample_variance
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests: [numerical-contract.test.ts#sample_variance-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: estimate
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests: [numerical-contract.test.ts#estimate-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: standard_error
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests: [numerical-contract.test.ts#standard_error-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: test_statistic
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests: [numerical-contract.test.ts#test_statistic-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: degrees_of_freedom
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-12
+    boundary_tests: [numerical-contract.test.ts#degrees_of_freedom-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: p_value
+    comparison: p_value_021
+    abs_tolerance: 0.0
+    rel_tolerance: 1.0e-10
+    zero_separation: true
+    boundary_tests:
+      - numerical-contract.test.ts#p-exact
+      - numerical-contract.test.ts#p-2x
+      - numerical-contract.test.ts#p-10x
+      - numerical-contract.test.ts#p-100x-zero-separation
+      - numerical-contract.test.ts#p-abs-floor
+    mutation_2x: killed
+    mutation_10x: killed
+    mutation_100x: killed_on_zero_separation
+    abs_floor_restoration: killed
+
+  - field: critical_value
+    comparison: not_compared_in_recompute
+    note: >-
+      Critical value is reported in recomputed evidence only; welch-recompute
+      compares CI endpoints and method metadata, not critical_value directly.
+
+  - field: ci_lower
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-10
+    boundary_tests: [numerical-contract.test.ts#ci_lower-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: ci_upper
+    comparison: numeric
+    abs_tolerance: 1.0e-12
+    rel_tolerance: 1.0e-10
+    boundary_tests: [numerical-contract.test.ts#ci_upper-2x]
+    mutation_2x: killed
+    mutation_10x: killed
+
+  - field: n
+    comparison: exact
+    boundary_tests: [conformance A2-1-V-001]
+
+  - field: group_id
+    comparison: exact
+    boundary_tests: [conformance A2-1-V-001]
+
+legacy_regression:
+  fixture_id: A2-V-002
+  bundle: urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1
+  note: Pinned 0.2.0 behavior unchanged in phase-2a conformance suite

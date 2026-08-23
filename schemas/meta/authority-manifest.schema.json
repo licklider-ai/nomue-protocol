@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:authority-manifest",
+  "title": "NRS authority manifest",
+  "description": "Meta-schema for authority/authority-manifest.yaml.",
+  "type": "object",
+  "required": ["manifest", "manifest_version", "updated", "targets", "artifacts"],
+  "additionalProperties": false,
+  "properties": {
+    "manifest": { "const": "nrs-authority-manifest" },
+    "manifest_version": { "$ref": "#/$defs/semver" },
+    "updated": { "type": "string", "format": "date" },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/target" }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/artifact" }
+    }
+  },
+  "$defs": {
+    "semver": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "repoPath": {
+      "type": "string",
+      "description": "Repository-relative path; never absolute, never escaping the repository.",
+      "pattern": "^(?!\\.\\.)(?!.*\\.\\./)[A-Za-z0-9][A-Za-z0-9._/-]*$"
+    },
+    "target": {
+      "type": "object",
+      "required": ["target_id", "description", "authoritative_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "target_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "description": { "type": "string", "minLength": 1 },
+        "authoritative_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/repoPath" }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["path", "class"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "$ref": "#/$defs/repoPath" },
+        "class": {
+          "enum": ["authoritative", "informative", "generated", "reference", "evidence"]
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

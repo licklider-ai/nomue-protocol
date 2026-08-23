@@ -1,0 +1,11 @@
+{
+  "python": "3.11.9",
+  "scipy": "1.17.1",
+  "mpmath": "1.4.1",
+  "mpmath_working_precision_digits": 60,
+  "numpy": "2.3.3",
+  "os_family": "windows",
+  "node": "v22.20.0",
+  "kernel": "reference/stats-kernel (this repository)",
+  "note": "captured artifact; not part of the deterministic regeneration set. Re-captured 2026-08-13 (Batch 2 addendum U8) at unified 60-digit mpmath precision via tooling/oracle-capture/capture_oracle.py, replacing the 2026-08-10 50-digit capture; numpy differs from the original capture environment (2.4.6), recorded as observed."
+}

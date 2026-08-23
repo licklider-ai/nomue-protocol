@@ -1,0 +1,55 @@
+# Lifecycle operations registry - authoritative for the state-gated
+# operations and their declarative preconditions (NRS-CORE-0014/0017).
+# Validated by schemas/meta/lifecycle-operations.schema.json, whose
+# predicate vocabulary is CLOSED and contains no outcome-aggregating
+# predicate (NRS-VERIFY-0001 guard; pinned by tooling/tests/lifecycle.test.ts).
+#
+# A precondition is a conjunction: every listed {axis, predicate} must be
+# satisfied. Predicates read the state tuple only (NRS-CORE-0014).
+
+registry: nrs-lifecycle-operations
+registry_version: "0.1.0"
+updated: "2026-08-13"
+
+operations:
+  - operation: attest
+    preconditions:
+      - axis: check
+        predicate: all_completed
+      - axis: freshness
+        predicate: current
+      - axis: disclosure
+        predicate: not_withdrawn
+
+  - operation: approve
+    preconditions:
+      - axis: profile_eligibility
+        predicate: eligible
+      - axis: disclosure
+        predicate: not_withdrawn
+
+  - operation: supersede
+    preconditions:
+      - axis: disclosure
+        predicate: active
+
+  - operation: withdraw
+    preconditions:
+      - axis: disclosure
+        predicate: active
+
+  - operation: include_in_snapshot
+    preconditions:
+      - axis: verification
+        predicate: report_exists
+      - axis: freshness
+        predicate: current
+      - axis: disclosure
+        predicate: active
+
+  - operation: re_attest
+    preconditions:
+      - axis: verification
+        predicate: report_exists
+      - axis: disclosure
+        predicate: not_withdrawn

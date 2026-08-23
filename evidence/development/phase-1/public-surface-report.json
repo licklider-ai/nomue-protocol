@@ -1,0 +1,58 @@
+{
+  "surface_count": 13,
+  "surfaces": [
+    {
+      "surface_id": "NRS-PCS-0001",
+      "path_count": 9
+    },
+    {
+      "surface_id": "NRS-PCS-0002",
+      "path_count": 5
+    },
+    {
+      "surface_id": "NRS-PCS-0003",
+      "path_count": 8
+    },
+    {
+      "surface_id": "NRS-PCS-0004",
+      "path_count": 4
+    },
+    {
+      "surface_id": "NRS-PCS-0005",
+      "path_count": 10
+    },
+    {
+      "surface_id": "NRS-PCS-0006",
+      "path_count": 4
+    },
+    {
+      "surface_id": "NRS-PCS-0007",
+      "path_count": 9
+    },
+    {
+      "surface_id": "NRS-PCS-0008",
+      "path_count": 8
+    },
+    {
+      "surface_id": "NRS-PCS-0009",
+      "path_count": 8
+    },
+    {
+      "surface_id": "NRS-PCS-0010",
+      "path_count": 13
+    },
+    {
+      "surface_id": "NRS-PCS-0011",
+      "path_count": 17
+    },
+    {
+      "surface_id": "NRS-PCS-0012",
+      "path_count": 8
+    },
+    {
+      "surface_id": "NRS-PCS-0013",
+      "path_count": 1
+    }
+  ],
+  "note": "Path resolution against the pinned schemas is enforced by pnpm validate (phase1-cross-checks)."
+}

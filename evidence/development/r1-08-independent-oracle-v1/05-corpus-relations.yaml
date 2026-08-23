@@ -1,0 +1,35 @@
+corpus_version: r1-08-canonical-oracle-corpus-v1
+relations:
+  - transform: within_group_permutation
+    base_seed: seed_unequal_n_var
+    permuted_seed: seed_permutation
+    expected:
+      mean: exact_equal
+      variance: exact_equal
+      df: exact_equal
+      abs_t: exact_equal
+      p: exact_equal
+  - transform: group_swap
+    base_seed: seed_balanced
+    swapped_seed: seed_swap
+    expected:
+      mean_diff: negate
+      t: negate
+      df: exact_equal
+      p: exact_equal
+      ci: negate_and_reverse
+  - transform: multiply_by_power_of_two
+    base_seed: seed_balanced
+    scaled_seed: seed_scale_pow2
+    factor: 2
+    expected:
+      t: invariant
+      df: invariant
+      p: invariant
+      mean_diff: scale
+      ci: scale
+  - transform: add_common_offset
+    ladder: offset_ladder
+    expected:
+      mathematical_result: invariant
+      binary64_relation: verified_by_exact_rational_oracle

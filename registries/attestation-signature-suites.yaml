@@ -1,0 +1,40 @@
+# Attestation signature suite allow-list - authoritative for which
+# `signature.algorithm` values a conforming implementation accepts
+# (NRS-ATTEST-0003: allow-listed only, no algorithm agility).
+# Validated by schemas/meta/attestation-signature-suites.schema.json.
+#
+# `status: proposed` means exactly that: a technical proposal, not a review
+# decision. `status: adopted` records a ratified steward decision (see the
+# suite's rationale for the decision record). Adding or changing a suite is
+# only ever a versioned allow-list addition plus a spec-version transition
+# (NRS-ATTEST-0006); gate R1-11 itself remains a separate steward close.
+
+registry: nrs-attestation-signature-suites
+registry_version: "0.2.0"
+updated: "2026-08-13"
+
+suites:
+  - suite_id: "urn:nomue:signature-suite:ed25519:1"
+    algorithm: Ed25519
+    status: adopted
+    rationale: >-
+      RFC 8032 Ed25519: deterministic (no per-signature randomness
+      requirement that can fail unsafely), small fixed-size keys and
+      signatures, fast verification, and available natively in Node.js via
+      node:crypto since Node 12 - no third-party cryptography dependency is
+      required for the reference implementation. Proposed as the first
+      candidate precisely because it has few configurable parameters (no
+      curve choice, no hash choice, no padding scheme) to get wrong, which
+      matters for a first increment whose goal is a working, auditable
+      reference rather than maximum algorithm flexibility. ADOPTED
+      2026-08-13 by ratified steward decision (Batch 4, decision 1;
+      ADR-0026): the plain deterministic variant, not a
+      hedged/randomized variant - fault-injection attacks that motivate
+      hedging assume physical access to the signer, which is outside the
+      server-side (Cloud KMS) signing threat model; runtime algorithm
+      agility remains zero.
+    requirement_ids:
+      - NRS-ATTEST-0003
+      - NRS-ATTEST-0006
+    introduced_in: phase-2a-attestation-draft
+    superseded_by: null

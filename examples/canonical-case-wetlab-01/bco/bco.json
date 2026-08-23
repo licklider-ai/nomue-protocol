@@ -1,0 +1,102 @@
+{
+  "object_id": "https://example.invalid/bco/nomue-canonical-case-wetlab-01/1.0",
+  "spec_version": "https://w3id.org/ieee/ieee-2791-schema/2791object.json",
+  "etag": "99B579097CC38D4EF7B7FE67DD4D8D24D69C8709FAF13D310D350A4EE48EEF54",
+  "provenance_domain": {
+    "name": "Cell viability assay: Vehicle vs Compound NM-114 (synthetic canonical case)",
+    "version": "1.0",
+    "created": "2026-08-13T00:00:00Z",
+    "modified": "2026-08-20T09:45:00Z",
+    "contributors": [
+      {
+        "name": "nomue Protocol project",
+        "affiliation": "Licklider, Inc.",
+        "contribution": ["createdBy"]
+      }
+    ],
+    "license": "https://spdx.org/licenses/Apache-2.0.html"
+  },
+  "usability_domain": [
+    "Synthetic example, not a real experiment. It represents the same fixed cell-viability study used by the nomue Release 1 canonical case for format comparison only.",
+    "The analysis is a two-sided Welch two-sample t-test on independent biological replicates, with a continuous percent-of-control outcome and n=8 per group."
+  ],
+  "description_domain": {
+    "keywords": ["cell viability", "Welch t-test", "independent two-group", "synthetic example"],
+    "platform": ["nomue reference verifier"],
+    "pipeline_steps": [
+      {
+        "step_number": 0,
+        "name": "Welch two-sample t-test",
+        "description": "Recompute group summaries, the arithmetic mean difference, its Welch-Satterthwaite confidence interval, the test statistic, degrees of freedom, and two-sided p-value.",
+        "version": "0.2.0-draft.5",
+        "input_list": [
+          {
+            "filename": "dataset.csv",
+            "uri": "https://example.invalid/nomue/canonical-case-wetlab-01/dataset.csv"
+          }
+        ],
+        "output_list": [
+          {
+            "filename": "record.json",
+            "uri": "https://example.invalid/nomue/canonical-case-wetlab-01/record.json"
+          }
+        ]
+      }
+    ]
+  },
+  "execution_domain": {
+    "script": [],
+    "script_driver": "manual",
+    "software_prerequisites": [
+      {
+        "name": "nomue reference statistics kernel",
+        "version": "0.2.0-draft.5",
+        "uri": {
+          "uri": "https://github.com/licklider-ai/nomue-protocol"
+        }
+      }
+    ],
+    "external_data_endpoints": [],
+    "environment_variables": {}
+  },
+  "parametric_domain": [
+    {
+      "param": "alternative",
+      "value": "two_sided",
+      "step": "0"
+    },
+    {
+      "param": "confidence_level",
+      "value": "0.95",
+      "step": "0"
+    },
+    {
+      "param": "method_id",
+      "value": "urn:nomue:method:welch-two-sample-t:1",
+      "step": "0"
+    }
+  ],
+  "io_domain": {
+    "input_subdomain": [
+      {
+        "uri": {
+          "filename": "dataset.csv",
+          "uri": "https://example.invalid/nomue/canonical-case-wetlab-01/dataset.csv"
+        }
+      }
+    ],
+    "output_subdomain": [
+      {
+        "mediatype": "application/json",
+        "uri": {
+          "filename": "record.json",
+          "uri": "https://example.invalid/nomue/canonical-case-wetlab-01/record.json"
+        }
+      }
+    ]
+  },
+  "error_domain": {
+    "empirical_error": {},
+    "algorithmic_error": {}
+  }
+}

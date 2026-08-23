@@ -1,0 +1,93 @@
+{
+  "$schema": "urn:nomue:schema:verification-report:0.1.0-draft.1",
+  "report_type": "nomue-verification-report",
+  "record_reference": {
+    "record_id": "urn:uuid:00000000-0000-4000-8000-000000000202",
+    "revision_id": "urn:uuid:00000000-0000-4000-8000-000000000203",
+    "content_digest": "sha256:1c1a702a61687c5a03bb71971c6cfc3715c9a499f7bb14eb85238b44f7c66b8b"
+  },
+  "interpretation_bundle_id": "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+  "verifier": {
+    "name": "nomue-reference-verifier",
+    "version": "0.2.0-draft.5",
+    "source_commit": "0000000000000000000000000000000000000000"
+  },
+  "generated_at": "2026-08-09T00:00:00Z",
+  "conformance": {
+    "check_id": "urn:nomue:check:record-conformance:0.1.0-draft.1",
+    "execution": "completed",
+    "outcome": "pass",
+    "scope": {
+      "kind": "record",
+      "id": "urn:uuid:00000000-0000-4000-8000-000000000202"
+    },
+    "reason_codes": []
+  },
+  "verification_results": [
+    {
+      "check_id": "urn:nomue:check:record-integrity:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "scope": {
+        "kind": "record_revision",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000000203"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "declared_content_digest": "sha256:1c1a702a61687c5a03bb71971c6cfc3715c9a499f7bb14eb85238b44f7c66b8b",
+        "recomputed_content_digest": "sha256:1c1a702a61687c5a03bb71971c6cfc3715c9a499f7bb14eb85238b44f7c66b8b"
+      }
+    },
+    {
+      "check_id": "urn:nomue:check:itgc-preconditions:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "analysis",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000000203#analysis-1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "standard_error": 0.816496580927726
+      }
+    },
+    {
+      "check_id": "urn:nomue:check:welch-recompute:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "result",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000000203#result-1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "recomputed": {
+          "group_summaries": [
+            {
+              "group_id": "group-a",
+              "n": 3,
+              "mean": 2,
+              "sample_variance": 1
+            },
+            {
+              "group_id": "group-b",
+              "n": 3,
+              "mean": 5,
+              "sample_variance": 1
+            }
+          ],
+          "mean_difference": -3,
+          "test_statistic": -3.6742346141747673,
+          "degrees_of_freedom": 4,
+          "p_value": 0.02131164112875673
+        },
+        "p_value_clamped": false
+      }
+    }
+  ],
+  "guarantee_boundary": {
+    "scientific_validity": "not_asserted"
+  }
+}

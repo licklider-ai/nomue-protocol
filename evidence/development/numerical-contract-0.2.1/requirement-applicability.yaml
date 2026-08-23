@@ -1,0 +1,83 @@
+# Machine-readable applicability binding for numerical-contract-0.2.1.
+# Derived from registries/public-checks.yaml (requirement_ids per check) and
+# registries/interpretation-bundles.yaml (allowed_check_ids per bundle).
+# Not normative authority; the registries govern.
+
+binding_version: "0.2.1-close-audit"
+target_commit: f21597953e905984e86a61374370f9af4785a6cb
+successor_bundle_id: urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+legacy_bundle_id: urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1
+
+requirements:
+  - id: NRS-CANON-0009
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids: []
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-001, A2-1-V-003]
+    evidence_refs: [evidence/development/numerical-contract-0.2.1/ts1-exact-binary64.json]
+
+  - id: NRS-CANON-0010
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids: []
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-003]
+    evidence_refs: [evidence/development/numerical-contract-0.2.1/ts5-exact-binary64.json]
+
+  - id: NRS-CANON-0011
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids: []
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-002]
+    evidence_refs: []
+
+  - id: NRS-VERIFY-0019
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids:
+      - urn:nomue:check:welch-computability:0.2.1-draft.1
+      - urn:nomue:check:welch-recompute:0.2.1-draft.1
+    retroactive_to_0_2_0: false
+    note: >-
+      Kernel uses direct lower-tail evaluation for all bundles; normative
+      binding is version-scoped via public-check requirement_ids on 0.2.1 only.
+    conformance_refs: [A2-1-V-001]
+
+  - id: NRS-VERIFY-0020
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids:
+      - urn:nomue:check:welch-recompute:0.2.1-draft.1
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-001, A2-1-P-001, A2-1-P-002]
+
+  - id: NRS-VERIFY-0021
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids:
+      - urn:nomue:check:welch-computability:0.2.1-draft.1
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-002, A2-1-P-004]
+
+  - id: NRS-VERSION-0009
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids:
+      - urn:nomue:check:welch-recompute:0.2.1-draft.1
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-001]
+
+  - id: NRS-CORE-0012
+    applies_to_bundle_ids:
+      - urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+    applies_to_check_ids: []
+    retroactive_to_0_2_0: false
+    conformance_refs: [A2-1-V-001]
+    evidence_refs: [spec/verification/public-checks.md]
+
+retroactive_semantics_check:
+  welch_recompute_0_2_0_p_tolerance: unchanged
+  welch_computability_0_2_0_underflow: not_required
+  welch_recompute_0_2_0_zero_separation: not_required

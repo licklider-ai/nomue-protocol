@@ -1,0 +1,143 @@
+{
+  "schema": "nrs-oracle-floor-map",
+  "schema_version": "0.1.0",
+  "description": "Degradation-onset map of the adopted tail-evaluation path (kernel vs 60-digit mpmath oracle), tail + floor corpora ordered by true p magnitude. Applies the pre-fixed P_floor rule; adoption of the candidate value is a steward decision. Not gated on; not R1-08 evidence.",
+  "criterion": {
+    "rule": "P_floor = smallest p with max relative error over ALL quantities <= 1e-11 (10x margin under the 1e-10 contract p tolerance), rounded up to a power of ten",
+    "threshold": 1e-11,
+    "fixed_in_advance": true
+  },
+  "adoption": {
+    "status": "adopted",
+    "date": "2026-08-13",
+    "recorded_in": "governance/decisions/ADR-0025-s1-close-numerical-deviation.md",
+    "note": "The steward adopted the rule-derived value on 2026-08-13; this file still only applies the rule and decides nothing itself."
+  },
+  "p_floor_candidate": 1e-300,
+  "smallest_passing_dataset": "FLOOR_P_1E300",
+  "first_failing_dataset": "TAIL_UNDERFLOW",
+  "generated_by": "tooling/src/evidence/oracle-floor-map.ts",
+  "rows": [
+    {
+      "dataset": "TAIL_P_1E8",
+      "corpus": "tail",
+      "true_p_decimal_string": "0.00000000968189340756478420188368496803",
+      "true_p_binary64": 9.681893407564784e-9,
+      "kernel_p": 9.681893407564768e-9,
+      "p_rel_diff": 1.7087166274867766e-15,
+      "max_rel_diff_all_quantities": 1.7087166274867766e-15,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "TAIL_P_1E12",
+      "corpus": "tail",
+      "true_p_decimal_string": "1.00125638928654478396225230371e-12",
+      "true_p_binary64": 1.0012563892865448e-12,
+      "kernel_p": 1.0012563892865407e-12,
+      "p_rel_diff": 4.033899686382613e-15,
+      "max_rel_diff_all_quantities": 4.033899686382613e-15,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "TAIL_P_1E19",
+      "corpus": "tail",
+      "true_p_decimal_string": "1.0050338303267336766289977143e-19",
+      "true_p_binary64": 1.0050338303267337e-19,
+      "kernel_p": 1.0050338303267249e-19,
+      "p_rel_diff": 8.743044369372239e-15,
+      "max_rel_diff_all_quantities": 8.743044369372239e-15,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E30",
+      "corpus": "floor",
+      "true_p_decimal_string": "1.00323903414864885870191757314e-30",
+      "true_p_binary64": 1.0032390341486488e-30,
+      "kernel_p": 1.0032390341486483e-30,
+      "p_rel_diff": 5.237903492937113e-16,
+      "max_rel_diff_all_quantities": 1.0825000552070041e-14,
+      "worst_quantity": "p_value_vs_scipy",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E50",
+      "corpus": "floor",
+      "true_p_decimal_string": "9.94644465807829935235487689056e-51",
+      "true_p_binary64": 9.946444658078299e-51,
+      "kernel_p": 9.946444658078069e-51,
+      "p_rel_diff": 2.3150736343529197e-14,
+      "max_rel_diff_all_quantities": 2.3150736343529197e-14,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E100",
+      "corpus": "floor",
+      "true_p_decimal_string": "1.00528917367824545790101597974e-100",
+      "true_p_binary64": 1.0052891736782455e-100,
+      "kernel_p": 1.0052891736782708e-100,
+      "p_rel_diff": 2.5119659041879265e-14,
+      "max_rel_diff_all_quantities": 2.5119659041879265e-14,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E150",
+      "corpus": "floor",
+      "true_p_decimal_string": "9.99583506872138637215314731642e-151",
+      "true_p_binary64": 9.995835068721387e-151,
+      "kernel_p": 9.995835068721387e-151,
+      "p_rel_diff": 0,
+      "max_rel_diff_all_quantities": 8.143377315542084e-16,
+      "worst_quantity": "p_value_vs_scipy",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E200",
+      "corpus": "floor",
+      "true_p_decimal_string": "1.02452018304760773851872202622e-200",
+      "true_p_binary64": 1.0245201830476078e-200,
+      "kernel_p": 1.0245201830476075e-200,
+      "p_rel_diff": 2.831408856417581e-16,
+      "max_rel_diff_all_quantities": 4.2471132846263726e-16,
+      "worst_quantity": "p_value_vs_scipy",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E250",
+      "corpus": "floor",
+      "true_p_decimal_string": "9.99583506872138180114861960626e-251",
+      "true_p_binary64": 9.995835068721382e-251,
+      "kernel_p": 9.995835068721384e-251,
+      "p_rel_diff": 1.551296265686451e-16,
+      "max_rel_diff_all_quantities": 3.102592531372902e-16,
+      "worst_quantity": "p_value_vs_scipy",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "FLOOR_P_1E300",
+      "corpus": "floor",
+      "true_p_decimal_string": "1.02452018304760763496268636002e-300",
+      "true_p_binary64": 1.0245201830476076e-300,
+      "kernel_p": 1.024520183047608e-300,
+      "p_rel_diff": 4.854396933675389e-16,
+      "max_rel_diff_all_quantities": 4.854396933675389e-16,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": true
+    },
+    {
+      "dataset": "TAIL_UNDERFLOW",
+      "corpus": "tail",
+      "true_p_decimal_string": "1.10254477919468211161526880508e-308",
+      "true_p_binary64": 1.102544779194682e-308,
+      "kernel_p": 0,
+      "p_rel_diff": 1,
+      "max_rel_diff_all_quantities": 1,
+      "worst_quantity": "p_value_vs_mpmath",
+      "meets_criterion": false
+    }
+  ]
+}

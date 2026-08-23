@@ -1,0 +1,117 @@
+# Example: gate a pull request on nomue Record verification.
+#
+# Informative, non-normative (examples/README.md). This is a template for a
+# THIRD PARTY's own repository, not a workflow that runs in this one - copy
+# it, do not reference it via a `uses:` remote-workflow call, since this
+# repository is Layer 1 only and makes no commitment about hosting a
+# reusable Action.
+#
+# What this demonstrates:
+#   - installing this specification's public verifier from a pinned commit
+#     of this repository (no product dependency, no private repo),
+#   - running `pnpm nomue-record verify` against a Record file changed in
+#     the PR, in --format json mode (machine-readable, no human summary
+#     noise in the step log),
+#   - failing the PR check on any non-zero exit code EXCEPT distinguishing
+#     "verification correctly reported a failure" (exit 2, a real signal to
+#     act on) from "the tool itself could not run" (exit 5, a CI/setup
+#     problem) in the step summary, per the exit-code contract in
+#     spec/verification/relying-party-interface.md (NRS-VERIFY-0025) -
+#     this workflow does NOT invent its own status, it reads the documented
+#     one,
+#   - uploading the JSON report as a build artifact so a human reviewer can
+#     inspect the actual scoped results, not just a pass/fail badge
+#     (NRS-VERIFY-0024: no relying-party-side aggregation into a bare
+#     verdict the CI step's own green/red already implies more than it
+#     should).
+#
+# Replace RECORD_PATH and the pinned ref/commit before use.
+
+name: nomue Record verification gate
+
+on:
+  pull_request:
+    paths:
+      - "records/**/*.json" # adjust to wherever your repository keeps Records
+
+env:
+  RECORD_PATH: records/example-record.json
+  # Pin an exact commit of the nomue-record repository, not a moving branch:
+  # this specification has no Stable 1.0 compatibility promise yet
+  # (governance/RELEASE-POLICY.md), so a moving ref could silently change
+  # verifier behavior underneath a passing pipeline.
+  NOMUE_RECORD_REF: "REPLACE_WITH_PINNED_COMMIT_SHA"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v4
+
+      - name: Check out nomue-record at a pinned commit
+        uses: actions/checkout@v4
+        with:
+          repository: "REPLACE_WITH_OWNER/nomue-record"
+          ref: ${{ env.NOMUE_RECORD_REF }}
+          path: .nomue-record
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: .nomue-record/pnpm-lock.yaml
+
+      - name: Install the verifier's pinned dependencies
+        working-directory: .nomue-record
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify the Record (machine-readable output)
+        id: verify
+        working-directory: .nomue-record
+        run: |
+          set +e
+          pnpm nomue-record verify "${GITHUB_WORKSPACE}/${RECORD_PATH}" --format json > report.json
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          set -e
+
+      - name: Upload the verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nomue-verification-report
+          path: .nomue-record/report.json
+
+      # Exit-code contract (NRS-VERIFY-0025): 0 pass, 2 a report exists but
+      # failed (or a parse/canonicalization refusal - inspect output_type),
+      # 3/4 a refusal before any report could exist, 5 internal/usage error.
+      # This step reads that contract; it does not define its own.
+      - name: Interpret the result
+        if: always()
+        run: |
+          code="${{ steps.verify.outputs.exit_code }}"
+          case "$code" in
+            0)
+              echo "✅ Record verified: every applicable check outcome is pass." ;;
+            2)
+              output_type=$(jq -r '.output_type // .report_type // "unknown"' .nomue-record/report.json)
+              if [ "$output_type" = "nomue-verification-report" ]; then
+                echo "❌ Record verification produced a report, but at least one check failed. See the uploaded report.json for scoped results (NRS-VERIFY-0024: do not read this as one aggregate verdict)."
+              else
+                echo "❌ Record could not be parsed or canonicalized (refusal_kind: $(jq -r '.refusal_kind' .nomue-record/report.json)). This is a structural problem with the Record file, not a scientific-validity judgment."
+              fi
+              exit 1 ;;
+            3)
+              echo "❌ Record declares no supported interpretation bundle, or none at all (routing_error/unsupported_bundle). Nothing was interpreted."
+              exit 1 ;;
+            4)
+              echo "❌ Record exceeded a declared resource limit (resource_limit refusal, safe stop, not a crash)."
+              exit 1 ;;
+            5)
+              echo "⚠️ Verifier internal or usage error (exit 5) - this is a CI/tooling problem, not a finding about the Record. Investigate before treating this PR as blocked on content grounds."
+              exit 1 ;;
+            *)
+              echo "⚠️ Unrecognized exit code $code - the exit-code contract may have changed upstream; re-pin and re-check spec/verification/relying-party-interface.md."
+              exit 1 ;;
+          esac

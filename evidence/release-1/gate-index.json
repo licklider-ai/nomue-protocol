@@ -1,0 +1,188 @@
+{
+  "release_candidate_id": "8833ee02664903a69459fc178e4d2802f4241e0f",
+  "gate_registry_version": "0.2.0",
+  "gates": [
+    {
+      "gate_id": "R1-01",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-02",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-03",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/candidate-C2-attestation-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-04",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/external-operator-op2-review.md",
+        "evidence/release-1/decisions/2026-08-21-c2-external-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-21T06:56:00+09:00"
+    },
+    {
+      "gate_id": "R1-05",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-06",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-07",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-freeze-manifest.json",
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-08",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-09",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/external-operator-op2-review.md",
+        "evidence/release-1/decisions/2026-08-21-c2-external-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-21T06:56:00+09:00"
+    },
+    {
+      "gate_id": "R1-10",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/canonical-cases/CC-R1-001-preregistration.md",
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-11",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/candidate-C2-attestation-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-12",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/gates/R1-12/founder-legal-approval.md",
+        "evidence/release-1/gates/R1-12/legal-adoption-review.md",
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-13",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/candidate-C2-gate-review.md",
+        "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-20T21:12:00+09:00"
+    },
+    {
+      "gate_id": "R1-14",
+      "state": "closed",
+      "decision": "pass",
+      "evidence": [
+        "evidence/release-1/gates/R1-14/release-signing-ceremony.md",
+        "evidence/release-1/gates/R1-14/release-signing-targets.json",
+        "evidence/release-1/gates/R1-14/release-checksums.json",
+        "evidence/release-1/gates/R1-14/protocol-snapshot-manifest.json",
+        "evidence/release-1/gates/R1-14/positive-verification.log",
+        "evidence/release-1/gates/R1-14/negative-verification.log",
+        "evidence/release-1/gates/R1-14/kms-audit-entries-final.json",
+        "evidence/release-1/gates/R1-14/hashes.sha256",
+        "evidence/release-1/gates/R1-14/close-record.md",
+        "evidence/release-1/decisions/2026-08-23-r1-14-steward-approval.md"
+      ],
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO"],
+      "decided_at": "2026-08-23T20:53:00+09:00"
+    }
+  ]
+}

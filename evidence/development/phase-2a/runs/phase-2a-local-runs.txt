@@ -1,0 +1,169 @@
+Phase 2A local verification runs (captured artifact, 2026-08-10)
+
+All runs reflect the final Phase 2A state (76 conformance fixtures: 38
+Phase 1 regression + 38 Phase 2A; hand-authored A2 expectations). The
+totals include the post-review additions M-012, M-013, M-014, B-008,
+A2-C-002, and A2-R-008.
+
+Run A - Windows 11 (development host)
+  toolchain: Node v22.20.0, pnpm 11.7.0, tsx 4.23.11
+  pnpm check .................... green
+    format:check ................ OK
+    lint:markdown ............... 0 issues
+    typecheck (tsc 7.0.2) ....... OK
+    validate .................... OK (registries incl. public-checks
+                                  check_sets/depends_on, reason-code
+                                  applicability vs pinned fixtures, surface
+                                  path resolution per paths_resolve_in,
+                                  bundle tuple pinning per bundle, audits)
+    vitest ...................... 8 files, 73 tests passed
+    check:generated ............. 16 generated files match sources
+    schema:validate ............. 10 schemas compiled, references resolved
+    canonicalization:test ....... 13 vectors OK (differential vs independent JCS)
+    conformance:test ............ 76 fixtures match pinned expectations
+    verifier:example / :phase2a . OK / OK (incl. five not_asserted non-claims)
+    regression:phase1 ........... 38 fixtures OK (Phase 1 pins preserved)
+    conformance:phase2a ......... 38 fixtures OK
+    refusal:test ................ 8 refusal fixtures OK (schema-validated)
+    oracle:phase2a .............. 7 datasets vs captured SciPy/mpmath,
+                                  max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files match
+  CLI exit-code smoke test:
+    verify 2A example ........... exit 0
+    verify A2-A-001 (pairing) ... exit 2
+    verify A2-R-004 (string) .... exit 4
+    verify A2-B-004 (nearby) .... exit 3
+    verify A2-R-005 (malformed) . exit 2
+
+Run B - Linux x86_64 (WSL2 Ubuntu, kernel 6.6.87.2-microsoft)
+  toolchain: Node v22.20.0 (user-space tarball), pnpm 11.7.0 via corepack
+  working tree copied from the Windows host (node_modules and .git
+  excluded), pnpm install --frozen-lockfile from the public registry.
+    validate .................... OK (same scope as above)
+    canonicalization:test ....... 13 vectors OK -> canonical bytes and
+                                  content digests equal the pins
+    regression:phase1 ........... 38 fixtures OK -> Phase 1 digests and
+                                  semantic projections equal the pins
+    conformance:phase2a ......... 38 fixtures OK -> Phase 2A digests and
+                                  semantic projections equal the pins
+    verifier:example / :phase2a . OK / OK
+    oracle:phase2a .............. max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files byte-identical on Linux
+    vitest ...................... 8 files, 73 tests passed
+
+Cross-platform conclusion: both platforms recomputed canonical content,
+Phase 1 and Phase 2A content digests, refusal kinds, reason codes, check
+execution/outcome, and verification semantic projections against the same
+platform-neutral pins and matched; agreement between the platforms is
+established transitively. generated_at, verifier.source_commit, runtime
+duration, absolute paths, and process identity are excluded from comparison
+by construction.
+
+================================================================
+Bundle-routing repair runs (ADR-0017, captured 2026-08-10,
+after commit a02377f)
+
+State: first-registered-bundle fallback removed; routing family added
+(84 conformance fixtures: 37 Phase 1 regression + 38 Phase 2A + 9 routing
+[S-001 reclassified + ROUTE-001..008]); refusal schema 0.2.0-draft.2;
+verifier 0.2.0-draft.2; hand-authored routing expectations.
+
+Run C - Windows 11 (development host)
+  toolchain: Node v22.20.0, pnpm 11.7.0, tsx 4.23.11
+  pnpm check .................... green (exit 0)
+    format:check / lint:markdown  OK / 0 issues
+    typecheck ................... OK
+    validate .................... OK (incl. new bundle-routing-audit)
+    vitest ...................... 9 files, 82 tests passed
+    check:generated ............. 18 generated files match sources
+    schema:validate ............. 12 schemas compiled
+    canonicalization:test ....... 13 vectors OK
+    conformance:test ............ 84 fixtures match pinned expectations
+    regression:phase1 ........... 46 fixtures OK (excl. A2-*; incl. routing)
+    conformance:phase2a ......... 38 fixtures OK
+    refusal:test ................ 8 refusal fixtures OK (schema-validated)
+    oracle:phase2a .............. max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files match
+  CLI exit-code smoke test:
+    verify S-001 (missing id) ... exit 3 (routing_error)
+    verify ROUTE-001 ({}) ....... exit 3 (routing_error)
+    verify ROUTE-002 (number) ... exit 3 (routing_error)
+    verify ROUTE-006 (nearby 2A)  exit 3 (unsupported_bundle)
+    verify V-001 ................ exit 0
+
+Run D - Linux x86_64 (WSL2 Ubuntu)
+  toolchain: Node v22.20.0 (user-space tarball), pnpm 11.7.0 via corepack
+  working tree copied from the Windows host (node_modules and .git
+  excluded), pnpm install --frozen-lockfile.
+    validate .................... OK (incl. bundle-routing-audit)
+    canonicalization:test ....... 13 vectors OK
+    regression:phase1 ........... 46 fixtures OK (incl. routing family and
+                                  both registry-order invariance fixtures)
+    conformance:phase2a ......... 38 fixtures OK
+    verifier:example / :phase2a . OK / OK
+    oracle:phase2a .............. max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files byte-identical on Linux
+    vitest ...................... 9 files, 82 tests passed
+
+Repair cross-platform conclusion: refusal kind, reason codes, exit code,
+selected bundle (or no selection), and the Phase 1 / Phase 2A valid-Record
+semantic projections match the platform-neutral pins on both platforms;
+registry-order permutations (reversed, deterministically shuffled) produce
+identical outcomes on both platforms via ROUTE-007/ROUTE-008.
+
+================================================================
+Strict-JCS-input repair runs (ADR-0018, captured 2026-08-10,
+after commit ad9ff77)
+
+State: duplicate JSON member names and unpaired-surrogate strings rejected
+on the raw text before routing/JCS/digest (NRS-CANON-0007/0008); strict
+UTF-8 CLI decoding; one strict parse path for verify/canonicalize/digest;
+100 conformance fixtures (37 Phase 1 regression + 38 Phase 2A + 9 routing
++ 16 strict_json [JSON-DUP-001..011, JSON-UNI-001..005]); verifier
+0.2.0-draft.3; refusal schema unchanged at 0.2.0-draft.2; hand-authored
+strict-json expectations; independent differential classifier.
+
+Run E - Windows 11 (development host)
+  toolchain: Node v22.20.0, pnpm 11.7.0, tsx 4.23.11
+  pnpm check .................... green (exit 0)
+    validate .................... OK (incl. bundle-routing-audit and
+                                  strict-json-input-audit)
+    vitest ...................... 10 files, 95 tests passed (incl.
+                                  scanner/differential/priority suites)
+    check:generated ............. 18 generated files match sources
+    schema:validate ............. 12 schemas compiled
+    canonicalization:test ....... 13 vectors OK (unchanged)
+    conformance:test ............ 100 fixtures match pinned expectations
+    regression:phase1 ........... 62 fixtures OK (excl. A2-*)
+    conformance:phase2a ......... 38 fixtures OK
+    refusal:test ................ 8 refusal fixtures OK
+    oracle:phase2a .............. max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files match
+  CLI exit-code smoke test:
+    verify JSON-DUP-002 ......... exit 2 (parse_error, duplicate member)
+    verify JSON-DUP-004 ......... exit 2 (escaped-equivalent duplicate)
+    verify JSON-UNI-001 ......... exit 2 (lone surrogate)
+    verify JSON-UNI-004 ......... exit 0 (valid surrogate pair accepted)
+    verify JSON-DUP-010 ......... exit 0 (fake keys in values accepted)
+    canonicalize JSON-DUP-005 ... exit 2, no canonical bytes emitted
+    digest JSON-DUP-006 ......... exit 2, no digest emitted
+
+Run F - Linux x86_64 (WSL2 Ubuntu)
+  toolchain: Node v22.20.0 (user-space tarball), pnpm 11.7.0 via corepack
+  working tree copied from the Windows host (node_modules and .git
+  excluded), pnpm install --frozen-lockfile.
+    validate .................... OK (both audits included)
+    canonicalization:test ....... 13 vectors OK -> JCS vectors unchanged
+    regression:phase1 ........... 62 fixtures OK
+    conformance:phase2a ......... 38 fixtures OK
+    verifier:example / :phase2a . OK / OK
+    oracle:phase2a .............. max relative difference 8.96e-15
+    evidence:phase1/2a --check .. 8 + 10 files byte-identical on Linux
+    vitest ...................... 10 files, 95 tests passed
+
+Strict-input cross-platform conclusion: refusal kind, reason code, exit
+code, no-bundle-selection, report absence, digest absence, and the
+Phase 1 / Phase 2A valid digests and semantic projections match the
+platform-neutral pins on both platforms; the 13 JCS vectors and all valid
+pinned outputs are unchanged by the repair (the only pin refresh is
+B-002..B-006 for the verifier version-string advance to 0.2.0-draft.3).

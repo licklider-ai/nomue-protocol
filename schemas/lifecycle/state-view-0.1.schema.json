@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nomue:schema:state-view:0.1.0-draft.1",
+  "title": "nomue Record state view",
+  "description": "Derived lifecycle state projection (NRS-CORE-0013/0016, EXPERIMENTAL): the orthogonal axis tuple with truth-carrier pointers. Every value is recomputable from the cited carriers; nothing here is stored state, and no field aggregates check outcomes (NRS-VERIFY-0001).",
+  "type": "object",
+  "required": ["$schema", "view_type", "record_reference", "evaluated_at", "axes"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "urn:nomue:schema:state-view:0.1.0-draft.1"
+    },
+    "view_type": {
+      "const": "nomue-state-view"
+    },
+    "record_reference": {
+      "type": "object",
+      "required": ["record_id", "revision_id", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "evaluated_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$",
+      "$comment": "Explicit evaluation-time input (trust-root discipline); never an environment default."
+    },
+    "axes": {
+      "type": "object",
+      "required": [
+        "profile_eligibility",
+        "check",
+        "freshness",
+        "approval",
+        "verification",
+        "disclosure"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile_eligibility": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["eligible", "ineligible", "not_evaluated"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        },
+        "check": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["all_completed", "some_not_run", "some_error", "not_evaluated"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        },
+        "freshness": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["current", "stale", "not_evaluable"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        },
+        "approval": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["scope_consistent", "scope_mismatch", "absent"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["none", "report_exists", "nomue_attested"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        },
+        "disclosure": {
+          "type": "object",
+          "required": ["value", "carriers"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": ["active", "withdrawn", "superseded"]
+            },
+            "carriers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "$comment": "Truth-carrier pointers (check_id, assertion_id, notice id, artifact URN); the axis value is recomputable from exactly these."
+            }
+          }
+        }
+      }
+    }
+  }
+}

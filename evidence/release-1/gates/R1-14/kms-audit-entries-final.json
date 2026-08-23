@@ -1,0 +1,197 @@
+[
+  {
+    "insertId": "1ghomb5e13xk5",
+    "logName": "projects/nomue-protocol/logs/cloudaudit.googleapis.com%2Fdata_access",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "kobayashi@licklider.ai",
+        "principalSubject": "user:kobayashi@licklider.ai"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "cloudkms.cryptoKeyVersions.useToSign",
+          "permissionType": "DATA_READ",
+          "resource": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+          "resourceAttributes": {
+            "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+            "service": "google.cloud.kms",
+            "type": "cloudkms.googleapis.com/CryptoKey"
+          }
+        }
+      ],
+      "metadata": {},
+      "methodName": "AsymmetricSign",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.kms.v1.AsymmetricSignRequest",
+        "digest": {
+          "sha256": "71f99718c98c93cf7d28eb35dd2b29c7a2cde84c184a111df5eb737ac4afb236"
+        },
+        "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1"
+      },
+      "requestMetadata": {
+        "callerSuppliedUserAgent": "google-cloud-sdk gcloud/581.0.0 agent-name/cursor command/gcloud.kms.asymmetric-sign invocation-id/91eb9231b0b34be89df46b68658d5c74 environment/None environment-version/None client-os/WINDOWS client-os-ver/10.0.26200 client-pltf-arch/x86_64 interactive/False from-script/False python/3.14.6 term/dumb  (Windows NT 10.0.26200),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-21T07:14:37.442982346Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-northeast1"
+        ]
+      },
+      "resourceName": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1",
+      "serviceName": "cloudkms.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-21T07:14:39.096936701Z",
+    "resource": {
+      "labels": {
+        "crypto_key_id": "release-g2",
+        "crypto_key_version_id": "1",
+        "key_ring_id": "nomue-release",
+        "location": "asia-northeast1",
+        "project_id": "nomue-protocol"
+      },
+      "type": "cloudkms_cryptokeyversion"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-21T07:14:37.419815976Z"
+  },
+  {
+    "insertId": "16qdkhhdhq6x",
+    "logName": "projects/nomue-protocol/logs/cloudaudit.googleapis.com%2Fdata_access",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "kobayashi@licklider.ai",
+        "principalSubject": "user:kobayashi@licklider.ai"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "cloudkms.cryptoKeyVersions.useToSign",
+          "permissionType": "DATA_READ",
+          "resource": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+          "resourceAttributes": {
+            "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+            "service": "google.cloud.kms",
+            "type": "cloudkms.googleapis.com/CryptoKey"
+          }
+        }
+      ],
+      "metadata": {},
+      "methodName": "AsymmetricSign",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.kms.v1.AsymmetricSignRequest",
+        "digest": {
+          "sha256": "c958f799362c82dcbf02e7887044ffd357ff3726ee75212d5230d9d1d957a753"
+        },
+        "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1"
+      },
+      "requestMetadata": {
+        "callerSuppliedUserAgent": "google-cloud-sdk gcloud/581.0.0 agent-name/cursor command/gcloud.kms.asymmetric-sign invocation-id/b33c5fb8cb084d6f9872c1e2f7806761 environment/None environment-version/None client-os/WINDOWS client-os-ver/10.0.26200 client-pltf-arch/x86_64 interactive/False from-script/False python/3.14.6 term/dumb  (Windows NT 10.0.26200),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-21T07:14:35.241158275Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-northeast1"
+        ]
+      },
+      "resourceName": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1",
+      "serviceName": "cloudkms.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-21T07:14:36.248981809Z",
+    "resource": {
+      "labels": {
+        "crypto_key_id": "release-g2",
+        "crypto_key_version_id": "1",
+        "key_ring_id": "nomue-release",
+        "location": "asia-northeast1",
+        "project_id": "nomue-protocol"
+      },
+      "type": "cloudkms_cryptokeyversion"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-21T07:14:35.218701188Z"
+  },
+  {
+    "insertId": "1hbdwj1e110g1",
+    "logName": "projects/nomue-protocol/logs/cloudaudit.googleapis.com%2Fdata_access",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "kobayashi@licklider.ai",
+        "principalSubject": "user:kobayashi@licklider.ai"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "cloudkms.cryptoKeyVersions.useToSign",
+          "permissionType": "DATA_READ",
+          "resource": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+          "resourceAttributes": {
+            "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2",
+            "service": "google.cloud.kms",
+            "type": "cloudkms.googleapis.com/CryptoKey"
+          }
+        }
+      ],
+      "metadata": {},
+      "methodName": "AsymmetricSign",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.kms.v1.AsymmetricSignRequest",
+        "digest": {
+          "sha256": "f45a8d2afd964f0dc7d224f0c00d38cc8b0b6d7ad8f06e82768bad1b84ff567b"
+        },
+        "name": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1"
+      },
+      "requestMetadata": {
+        "callerSuppliedUserAgent": "google-cloud-sdk gcloud/581.0.0 agent-name/cursor command/gcloud.kms.asymmetric-sign invocation-id/6606583d772e46339a6e3e3d3b751212 environment/None environment-version/None client-os/WINDOWS client-os-ver/10.0.26200 client-pltf-arch/x86_64 interactive/False from-script/False python/3.14.6 term/dumb  (Windows NT 10.0.26200),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-08-21T07:14:32.898662530Z"
+        }
+      },
+      "resourceLocation": {
+        "currentLocations": [
+          "asia-northeast1"
+        ]
+      },
+      "resourceName": "projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1",
+      "serviceName": "cloudkms.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-08-21T07:14:32.999514924Z",
+    "resource": {
+      "labels": {
+        "crypto_key_id": "release-g2",
+        "crypto_key_version_id": "1",
+        "key_ring_id": "nomue-release",
+        "location": "asia-northeast1",
+        "project_id": "nomue-protocol"
+      },
+      "type": "cloudkms_cryptokeyversion"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-08-21T07:14:32.882079804Z"
+  }
+]

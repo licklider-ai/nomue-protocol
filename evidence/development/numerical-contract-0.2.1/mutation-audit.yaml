@@ -1,0 +1,86 @@
+audit_version: "0.2.1-close-audit"
+suite: tooling/tests/numerical-contract.test.ts
+result: all_mutations_killed
+
+mutations:
+  - field: p_value
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: p-2x
+
+  - field: p_value
+    mutation: rel_tolerance_10x
+    status: killed
+    killing_test: p-10x
+
+  - field: p_value
+    mutation: rel_tolerance_100x_on_zero_separation
+    status: killed
+    killing_test: p-100x-zero-separation
+
+  - field: p_value
+    mutation: abs_floor_1e-12_restoration
+    status: killed
+    killing_test: p-abs-floor
+
+  - field: mean
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: mean-2x
+
+  - field: mean
+    mutation: rel_tolerance_10x
+    status: killed
+    killing_test: mean-10x
+
+  - field: standard_error
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: standard_error-2x
+
+  - field: sample_variance
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: sample_variance-2x
+
+  - field: estimate
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: estimate-2x
+
+  - field: test_statistic
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: test_statistic-2x
+
+  - field: degrees_of_freedom
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: degrees_of_freedom-2x
+
+  - field: ci_lower
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: ci_lower-2x
+
+  - field: ci_upper
+    mutation: rel_tolerance_2x
+    status: killed
+    killing_test: ci_upper-2x
+
+  - field: p_underflow
+    mutation: underflow_guard_removal
+    status: killed
+    killing_test: AR-005 / A2-1-V-002
+
+  - field: p_underflow
+    mutation: treat_as_clamped
+    status: killed
+    killing_test: underflow path (C)
+
+  - field: p_value
+    mutation: zero_separation_removal
+    status: killed
+    killing_test: separates positive p from zero
+
+survived: []

@@ -1,0 +1,155 @@
+# Routing fixture expectations - HAND-AUTHORED AUTHORING TABLE (NON-AUTHORITATIVE).
+#
+# These expectations were written from the specification and registries
+# (spec/versioning/multi-bundle-dispatch.md, spec/verification/
+# verifier-refusal.md, registries/reason-codes.yaml,
+# registries/interpretation-bundles.yaml) BEFORE the corrected verifier ran.
+# The authoring script tooling/src/phase1/author-routing.ts READS this file
+# and asserts the implementation against it; it never writes or overwrites
+# this file.
+#
+# S-001 correction (ADR-0017): S-001's INPUT BYTES are unchanged from Phase
+# 1 (the authoring script asserts the historical input hash), but its
+# expectations are corrected from "evaluated against the first registered
+# bundle's schema, conformance fail, exit 2" to "routing refusal, exit 3":
+# the first-registered-bundle fallback contradicted exact bundle dispatch
+# and was removed. This is a pre-release verifier-level correction; Phase 1
+# Record interpretation semantics and successful verification projections
+# remain pinned.
+#
+# ROUTE-007/ROUTE-008 are registry-order invariance fixtures: the probe set
+# is replayed against a permuted interpretation-bundle registry and every
+# outcome must be identical to the canonical order (registry order has no
+# semantic meaning; there is no default bundle).
+
+manifest: nrs-routing-fixture-expectations
+updated: "2026-08-10"
+
+fixtures:
+  S-001:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      Missing interpretation_bundle_id on a full Record-shaped document:
+      routing refuses before any Record schema runs; no bundle is selected.
+      Reclassified from structural with unchanged input bytes (ADR-0017).
+    requirement_ids: [NRS-VERSION-0003, NRS-VERSION-0007, NRS-VERSION-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: routing_error
+      refusal_reason_codes: [NRS-BUNDLE-ID-MISSING]
+
+  ROUTE-001:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      Empty JSON object: interpretation_bundle_id is missing entirely; a
+      routing refusal is emitted, no bundle is selected, and no verification
+      report exists.
+    requirement_ids: [NRS-VERSION-0003, NRS-VERSION-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: routing_error
+      refusal_reason_codes: [NRS-BUNDLE-ID-MISSING]
+
+  ROUTE-002:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      interpretation_bundle_id is a number: present but not a string; a
+      routing refusal is emitted and no bundle is selected.
+    requirement_ids: [NRS-VERSION-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: routing_error
+      refusal_reason_codes: [NRS-BUNDLE-ID-INVALID]
+
+  ROUTE-003:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      interpretation_bundle_id is null: present but not a string; a routing
+      refusal is emitted and no bundle is selected.
+    requirement_ids: [NRS-VERSION-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: routing_error
+      refusal_reason_codes: [NRS-BUNDLE-ID-INVALID]
+
+  ROUTE-004:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      Well-formed but unregistered bundle identifier: exact registry lookup
+      fails, an unsupported-bundle refusal is emitted, and no bundle is
+      selected.
+    requirement_ids: [NRS-VERSION-0005, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: unsupported_bundle
+      refusal_reason_codes: [NRS-UNSUPPORTED-BUNDLE]
+      refusal_declared_bundle_id: "urn:nomue:bundle:never-registered:1.0.0"
+
+  ROUTE-005:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      Nearby unknown Phase 1 version (itgc-minimal:0.1.1-draft.1): refused
+      as unsupported; never dispatched to the Phase 1 bundle by version
+      proximity.
+    requirement_ids: [NRS-VERSION-0005, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: unsupported_bundle
+      refusal_reason_codes: [NRS-UNSUPPORTED-BUNDLE]
+      refusal_declared_bundle_id: "urn:nomue:bundle:itgc-minimal:0.1.1-draft.1"
+
+  ROUTE-006:
+    family: routing
+    classification: routing_refusal
+    purpose: >-
+      Nearby unknown Phase 2A version (itgc-guarantee:0.2.0-draft.2):
+      refused as unsupported; never dispatched to the Phase 2A bundle by
+      version proximity.
+    requirement_ids: [NRS-VERSION-0005, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 3
+      refusal_kind: unsupported_bundle
+      refusal_reason_codes: [NRS-UNSUPPORTED-BUNDLE]
+      refusal_declared_bundle_id: "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.2"
+
+  ROUTE-007:
+    family: routing
+    classification: routing_invariance
+    purpose: >-
+      Registry entries reversed: every routing outcome (missing, invalid,
+      unknown, and both exact identifiers) is identical to the canonical
+      registry order; exact Phase 1 and Phase 2A identifiers still select
+      their own bundles and nothing else selects any bundle.
+    requirement_ids: [NRS-VERSION-0007]
+    expected:
+      kind: routing_invariance
+      cli_exit_code: null
+      registry_order: reversed
+      outcomes_identical: true
+
+  ROUTE-008:
+    family: routing
+    classification: routing_invariance
+    purpose: >-
+      Registry entries deterministically shuffled: every routing outcome is
+      identical to the canonical registry order (registry order carries no
+      semantic meaning).
+    requirement_ids: [NRS-VERSION-0007]
+    expected:
+      kind: routing_invariance
+      cli_exit_code: null
+      registry_order: seeded_shuffle
+      outcomes_identical: true

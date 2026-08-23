@@ -1,0 +1,1086 @@
+# Reason code registry - authoritative for the reason codes carried by
+# failed, indeterminate, not-run, or errored results (NRS-VERIFY-0012).
+#
+# applicable_check_ids semantics: EVERY check whose result may carry the code,
+# including not_run results that inherit the codes of the gating failure
+# (conformance failures propagate onto the not_run verification checks; a
+# precondition failure propagates onto the not_run Welch recomputation).
+# Tooling cross-checks the conformance manifest's pinned expectations against
+# these lists; a code appearing on a check outside its list fails validation.
+# Validated by schemas/meta/reason-codes-registry.schema.json.
+
+registry: nrs-reason-codes
+registry_version: "0.9.0"
+updated: "2026-08-18"
+
+codes:
+  - id: NRS-DUPLICATE-JSON-MEMBER
+    title: Duplicate JSON object member name
+    category: structural
+    description: >-
+      A JSON object at any depth (including objects inside arrays) declares
+      the same member name more than once, compared after JSON string escape
+      decoding - even when the values are identical. The input is rejected
+      before bundle selection, schema validation, canonicalization, or
+      digest computation; no first-wins or last-wins semantics are applied
+      (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CANON-0007
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Emit each object member name exactly once; duplicate member names have
+      no interoperable meaning under RFC 8785 JCS processing.
+    introduced_in: phase-2a
+
+  - id: NRS-INVALID-UNICODE-STRING
+    title: JSON string is not a valid Unicode scalar-value sequence
+    category: structural
+    description: >-
+      A JSON string (object member name or string value, at any depth)
+      decodes to a code-unit sequence containing an unpaired surrogate. The
+      input is rejected before bundle selection, schema validation,
+      canonicalization, or digest computation; nothing is replaced,
+      normalized, or discarded (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CANON-0008
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Encode astral characters as correctly paired surrogate escapes (or
+      literal UTF-8); well-paired surrogates are accepted unchanged.
+    introduced_in: phase-2a
+
+  - id: NRS-NEGATIVE-ZERO-NUMBER
+    title: Negative-zero number token rejected
+    category: structural
+    description: >-
+      A number token whose numeric value is negative zero (-0, -0.0, -0e5,
+      and equivalents) was found at the lexical stage. This specification
+      rejects -0 input as a MUST (NRS-CANON-0015, raising RFC 8785 Erratum
+      7920's SHOULD) instead of letting JCS silently serialize it to 0; the
+      input is rejected before bundle selection, schema validation,
+      canonicalization, or digest computation (appears only in verifier
+      refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CANON-0015
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Emit 0 where zero is meant; the profile assigns no distinct meaning
+      to negative zero (NRS-CANON-0004) and the input form must say what
+      the canonical form will say.
+    introduced_in: canonicalization-hardening
+
+  - id: NRS-BUNDLE-ID-MISSING
+    title: Interpretation bundle identifier is missing
+    category: bundle
+    description: >-
+      No interpretation_bundle_id could be read from the input (the field is
+      absent, or the JSON root is not an object). Routing fails closed: no
+      bundle is selected, no default bundle exists, and the input is not
+      interpreted (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-VERSION-0003
+      - NRS-VERSION-0007
+      - NRS-VERSION-0008
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Declare interpretation_bundle_id at the top level; a verifier never
+      substitutes a default bundle.
+    introduced_in: phase-2a
+
+  - id: NRS-BUNDLE-ID-INVALID
+    title: Interpretation bundle identifier is not a string
+    category: bundle
+    description: >-
+      interpretation_bundle_id is present but is not a JSON string (for
+      example a number or null). Routing fails closed: no bundle is
+      selected and the input is not interpreted (appears only in verifier
+      refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-VERSION-0003
+      - NRS-VERSION-0007
+      - NRS-VERSION-0008
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Declare interpretation_bundle_id as a string; a verifier never coerces
+      other JSON types into a bundle selection.
+    introduced_in: phase-2a
+
+  - id: NRS-SCHEMA-INVALID
+    title: Record fails schema validation
+    category: structural
+    description: >-
+      The document does not parse as JSON or does not validate against the
+      Record schema pinned by the interpretation bundle.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-CORE-0003
+      - NRS-CORE-0007
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Validate the Record against the pinned schema and correct the reported
+      structural violations.
+    introduced_in: phase-1
+
+  - id: NRS-SEMANTIC-CONFORMANCE-FAILED
+    title: Record fails semantic conformance
+    category: semantic
+    description: >-
+      The Record is structurally valid but violates a registered state
+      invariant; specific codes accompany this general code.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0005
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Inspect the accompanying specific reason codes and correct the
+      violated invariants.
+    introduced_in: phase-1
+
+  - id: NRS-UNSUPPORTED-BUNDLE
+    title: Interpretation bundle not supported
+    category: bundle
+    description: >-
+      The declared interpretation bundle is not in the verifier's supported
+      set; the Record is not interpreted (fail closed).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-VERSION-0002
+      - NRS-VERSION-0003
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Use a verifier that supports the declared bundle; the verifier never
+      guesses compatibility with a nearby version.
+    introduced_in: phase-1
+
+  - id: NRS-DIGEST-MISMATCH
+    title: Recomputed digest differs from declared digest
+    category: integrity
+    description: >-
+      The independently recomputed content digest of the digest projection
+      does not equal integrity.content_digest.
+    applicable_check_ids:
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0006
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Recompute and re-declare the content digest after any content change; a
+      content change requires a new revision identifier.
+    introduced_in: phase-1
+
+  - id: NRS-GROUP-COUNT-NOT-TWO
+    title: Declared group count is not two
+    category: semantic
+    description: >-
+      The Phase 1 ITGC profile requires exactly two declared groups.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+    stability: EXPERIMENTAL
+    remediation_hint: Declare exactly two groups.
+    introduced_in: phase-1
+
+  - id: NRS-DUPLICATE-OBSERVATION-ID
+    title: Observation identifier is not unique
+    category: semantic
+    description: >-
+      Two or more observations share an observation_id.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0002
+    stability: EXPERIMENTAL
+    remediation_hint: Give every observation a unique observation_id.
+    introduced_in: phase-1
+
+  - id: NRS-DUPLICATE-EXPERIMENTAL-UNIT
+    title: Experimental unit appears in more than one observation
+    category: semantic
+    description: >-
+      An experimental_unit_id occurs in more than one observation, which
+      contradicts the declared independent two-group design.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0003
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Bind each experimental unit to exactly one observation.
+    introduced_in: phase-1
+
+  - id: NRS-UNKNOWN-GROUP
+    title: Observation references an undeclared group
+    category: semantic
+    description: >-
+      An observation's group_id does not resolve to a declared design group.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+    stability: EXPERIMENTAL
+    remediation_hint: Reference only group_ids declared in design.groups.
+    introduced_in: phase-1
+
+  - id: NRS-GROUP-SIZE-BELOW-TWO
+    title: Group has fewer than two observations
+    category: semantic
+    description: >-
+      A declared group contains fewer than two observations; the sample
+      variance denominator n minus one requires at least two.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0004
+    stability: EXPERIMENTAL
+    remediation_hint: Provide at least two observations per group.
+    introduced_in: phase-1
+
+  - id: NRS-INDEPENDENCE-NOT-DECLARED
+    title: Independence is not declared
+    category: semantic
+    description: >-
+      The design does not declare independent groups
+      (independence_declared is not true).
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Declare independence explicitly if the design is independent; the
+      Phase 1 profile supports no other design.
+    introduced_in: phase-1
+
+  - id: NRS-UNSUPPORTED-METHOD
+    title: Declared method is not supported
+    category: semantic
+    description: >-
+      The declared analysis method is not the Phase 1 Welch two-sample
+      t-test; no silent method switch occurs.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0007
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Declare method urn:nomue:method:welch-two-sample-t:1 or use a future
+      profile that supports the intended method.
+    introduced_in: phase-1
+
+  - id: NRS-UNSUPPORTED-ALTERNATIVE
+    title: Declared alternative is not supported
+    category: semantic
+    description: >-
+      The declared alternative hypothesis is not two_sided, the only
+      alternative supported by the Phase 1 profile.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0007
+    stability: EXPERIMENTAL
+    remediation_hint: Declare the two_sided alternative.
+    introduced_in: phase-1
+
+  - id: NRS-NON-FINITE-NUMERIC-VALUE
+    title: Numeric value outside the finite binary64 domain
+    category: structural
+    description: >-
+      A numeric value is missing, non-numeric, or outside the finite IEEE 754
+      binary64 domain required by the Phase 1 numeric model.
+    applicable_check_ids:
+      - "urn:nomue:check:record-conformance:0.1.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.1.0-draft.1"
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:record-conformance:0.2.0-draft.1"
+      - "urn:nomue:check:record-integrity:0.2.0-draft.1"
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-CANON-0003
+      - NRS-PROFILE-ITGC-0013
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Provide finite numeric values; the Phase 1 profile has no missing-value
+      policy.
+    introduced_in: phase-1
+
+  - id: NRS-ZERO-STANDARD-ERROR
+    title: Standard error is zero
+    category: precondition
+    description: >-
+      The unpooled standard error is zero, so the Welch statistic is
+      undefined; the precondition check fails and recomputation does not run.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0014
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      This is a property of the data under the supported method; no automatic
+      method change is applied, and no whole-record judgment is implied.
+    introduced_in: phase-1
+
+  - id: NRS-DECLARED-RESULT-MISMATCH
+    title: Declared result differs from recomputed result
+    category: comparison
+    description: >-
+      One or more declared result quantities differ from the recomputed
+      values beyond the tolerance policy of the applicable check version.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0009
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Recompute the declared result with the published Welch definition; the
+      evidence object names each mismatched quantity.
+    introduced_in: phase-1
+
+  - id: NRS-CANONICALIZATION-FAILED
+    title: Canonicalization or digest computation failed
+    category: integrity
+    description: >-
+      The digest projection could not be canonicalized or hashed; the result
+      is fail closed with no inferred or partial digest.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CANON-0005
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Ensure the Record content stays within the Phase 1 numeric model and
+      JCS-serializable JSON.
+    introduced_in: phase-1
+
+  - id: NRS-INTERNAL-VERIFIER-ERROR
+    title: Verifier internal error
+    category: internal
+    description: >-
+      The verifier encountered an unexpected internal failure; results are
+      not trustworthy and the run exits with the internal-error code.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-VERIFY-0010
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Report the failure against the reference verifier; do not interpret
+      partial output as a verification result.
+    introduced_in: phase-1
+
+  - id: NRS-PAIRING-NOT-SUPPORTED
+    title: Paired observations are not supported
+    category: admissibility
+    description: >-
+      The design declares paired observations; the ITGC profile supports only
+      independent groups.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0019
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Paired designs are outside the ITGC guarantee boundary; no automatic
+      method change is applied, and no whole-record judgment is implied.
+    introduced_in: phase-2a
+
+  - id: NRS-REPEATED-MEASURES-NOT-SUPPORTED
+    title: Repeated measurements are not supported
+    category: admissibility
+    description: >-
+      The design declares repeated measurements; the ITGC profile requires
+      one observation per experimental unit.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0020
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Repeated-measure designs are outside the ITGC guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-CLUSTERING-NOT-SUPPORTED
+    title: Clustered experimental units are not supported
+    category: admissibility
+    description: >-
+      The design declares clustered experimental units; the ITGC profile
+      assumes unclustered independent units.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0021
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Clustered designs are outside the ITGC guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-WEIGHTING-NOT-SUPPORTED
+    title: Weighted analysis is not supported
+    category: admissibility
+    description: >-
+      The Record declares a weighted analysis; the ITGC profile supports only
+      unweighted analysis.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0022
+    stability: EXPERIMENTAL
+    remediation_hint: Weighted analyses are outside the ITGC guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-TRANSFORMATION-NOT-SUPPORTED
+    title: Outcome transformation is not supported
+    category: admissibility
+    description: >-
+      The Record declares an outcome transformation; the ITGC profile
+      operates on untransformed declared outcomes only.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0023
+    stability: EXPERIMENTAL
+    remediation_hint: Transformed outcomes are outside the ITGC guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-SUBSET-ANALYSIS-NOT-SUPPORTED
+    title: Subset or exclusion analysis is not supported
+    category: admissibility
+    description: >-
+      The Record declares an analyzed population smaller than the represented
+      observations; the ITGC profile requires all Record observations to be
+      analyzed.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0024
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Subset and exclusion analyses are outside the ITGC guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-MISSING-OUTCOMES-NOT-SUPPORTED
+    title: Missing outcomes are not supported
+    category: admissibility
+    description: >-
+      The Record declares missing outcomes; the ITGC profile applies no
+      implicit missingness policy and rejects the declaration.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0025
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Records with declared missing outcomes are outside the ITGC guarantee
+      boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-UNSUPPORTED-ESTIMAND
+    title: Declared estimand is not supported
+    category: admissibility
+    description: >-
+      The declared estimand is not the unstandardized arithmetic mean
+      difference in group-order direction.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0015
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Declare the unstandardized arithmetic mean difference
+      (group_order_first_minus_second); other estimands are outside the ITGC
+      guarantee boundary.
+    introduced_in: phase-2a
+
+  - id: NRS-CONFIDENCE-LEVEL-MISMATCH
+    title: Confidence level differs from the supported level
+    category: admissibility
+    description: >-
+      A declared confidence level differs from the check-version-owned
+      two-sided 0.95 level, either in the analysis declaration
+      (admissibility) or in the declared confidence interval (comparison).
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0016
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      The supported confidence level is exactly 0.95 and is owned by the
+      check version; a Record cannot choose another level.
+    introduced_in: phase-2a
+
+  - id: NRS-STANDARD-ERROR-MISMATCH
+    title: Declared standard error differs from the recomputed value
+    category: comparison
+    description: >-
+      The declared mean-difference standard error differs from the
+      recomputed Welch standard error beyond tolerance.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0017
+      - NRS-VERIFY-0016
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Recompute the standard error as sqrt(v1/n1 + v2/n2) from the declared
+      observations.
+    introduced_in: phase-2a
+
+  - id: NRS-CONFIDENCE-INTERVAL-MISMATCH
+    title: Declared confidence interval differs from the recomputed interval
+    category: comparison
+    description: >-
+      A declared confidence-interval endpoint or method differs from the
+      recomputed Welch-Satterthwaite 95% interval beyond the applicable
+      policy.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0018
+      - NRS-VERIFY-0015
+      - NRS-VERIFY-0016
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Recompute the interval with the declared Welch standard error,
+      Welch-Satterthwaite degrees of freedom, and two-sided Student t
+      critical value.
+    introduced_in: phase-2a
+
+  - id: NRS-CONFIDENCE-INTERVAL-ORDER-INVALID
+    title: Confidence-interval endpoints are reversed
+    category: comparison
+    description: >-
+      The declared confidence interval has lower greater than upper.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0018
+    stability: EXPERIMENTAL
+    remediation_hint: Declare the interval with lower <= upper.
+    introduced_in: phase-2a
+
+  - id: NRS-CRITICAL-VALUE-CALCULATION-FAILED
+    title: Critical value computation failed
+    category: computability
+    description: >-
+      The Student t critical value could not be computed as a finite number;
+      the computation fails closed with no fallback to a normal
+      approximation.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0018
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      This is a property of the data under the supported method; no silent
+      approximation is applied.
+    introduced_in: phase-2a
+
+  - id: NRS-NUMERICAL-COMPUTABILITY-FAILED
+    title: Supported quantities are not numerically computable
+    category: computability
+    description: >-
+      One or more supported quantities (variance, standard error, degrees of
+      freedom, critical value, p-value, confidence-interval endpoint) cannot
+      be computed as finite numbers from the Record observations.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0013
+      - NRS-VERIFY-0017
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      The accompanying specific code identifies the failing quantity;
+      recomputation does not run.
+    introduced_in: phase-2a
+
+  - id: NRS-P-VALUE-UNDERFLOW
+    title: P-value numerical underflow
+    category: computability
+    description: >-
+      A finite test statistic and positive degrees of freedom produced a
+      numerical p-value of zero in binary64 evaluation. This is numerical
+      underflow, not the exact tail probability. The recomputation check does
+      not run.
+    applicable_check_ids:
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0021
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      The tail probability is too small to represent as a positive binary64
+      value under the supported evaluation path; do not declare exact zero.
+    introduced_in: numerical-contract-0.2.1
+
+  - id: NRS-PARSE-FAILED
+    title: Input is not parseable JSON
+    category: structural
+    description: >-
+      The input could not be parsed as JSON (malformed or truncated); no
+      Record was interpreted and no identifier is fabricated.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CORE-0011
+    stability: EXPERIMENTAL
+    remediation_hint: Provide well-formed JSON.
+    introduced_in: phase-2a
+
+  - id: NRS-FILE-SIZE-LIMIT-EXCEEDED
+    title: Input exceeds the file-size limit
+    category: resource
+    description: >-
+      The input exceeds the declared Phase limits for file size; the
+      verifier refuses safely (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0003
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: Stay within the documented file-size limit.
+    introduced_in: phase-2a
+
+  - id: NRS-NESTING-LIMIT-EXCEEDED
+    title: Input exceeds the nesting-depth limit
+    category: resource
+    description: >-
+      The input exceeds the declared JSON nesting-depth limit; the verifier
+      refuses safely (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0003
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: Stay within the documented nesting-depth limit.
+    introduced_in: phase-2a
+
+  - id: NRS-OBSERVATION-LIMIT-EXCEEDED
+    title: Input exceeds the observation-count limit
+    category: resource
+    description: >-
+      The input exceeds the declared observation-count limit; the verifier
+      refuses safely (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0003
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: Stay within the documented observation-count limit.
+    introduced_in: phase-2a
+
+  - id: NRS-STRING-LIMIT-EXCEEDED
+    title: Input exceeds the string-length limit
+    category: resource
+    description: >-
+      The input exceeds the declared per-string length limit; the verifier
+      refuses safely (appears only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0003
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: Stay within the documented string-length limit.
+    introduced_in: phase-2a
+
+  - id: NRS-RESOURCE-LIMIT-EXCEEDED
+    title: Input exceeds a declared resource limit
+    category: resource
+    description: >-
+      The input exceeds a declared Phase 1 limit (size, nesting depth,
+      observation count, or string length); the verifier refuses safely.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0003
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Stay within the limits documented in
+      security/phase-1-verifier-security.md; partial verification is never
+      reported as success.
+    introduced_in: phase-1
+
+  - id: NRS-TIMEOUT-LIMIT-EXCEEDED
+    title: Processing exceeded the in-process time budget
+    category: resource
+    description: >-
+      Verification of this input did not complete within the declared
+      processing-time budget, checked in-process at pipeline checkpoints; the
+      verifier refuses safely rather than continuing indefinitely (appears
+      only in verifier refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0006
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Stay within the input-shape limits documented in
+      security/threat-model.md; a well-formed input within the declared size,
+      depth, and observation limits is not expected to approach this budget.
+    introduced_in: phase-2a
+
+  - id: NRS-MEMORY-LIMIT-EXCEEDED
+    title: Processing exceeded the in-process heap budget
+    category: resource
+    description: >-
+      Verification of this input caused heap usage to exceed the declared
+      memory budget, checked in-process at pipeline checkpoints; the verifier
+      refuses safely rather than continuing (appears only in verifier
+      refusal artifacts).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-SEC-0006
+      - NRS-SEC-0005
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Stay within the input-shape limits documented in
+      security/threat-model.md; a well-formed input within the declared size,
+      depth, and observation limits is not expected to approach this budget.
+    introduced_in: phase-2a
+
+  # ------------------------- Attestation first increment (DRAFT, EXPERIMENTAL)
+
+  - id: NRS-SIGNATURE-NOT-YET-VERIFIED
+    title: Signature has not yet been verified
+    category: attestation
+    description: >-
+      Placeholder execution state on an assertion produced by signAssertion
+      before any call to verifyAssertionSignature; a signer is not a
+      verifier (NRS-ATTEST-0004). Never appears on a report that has been
+      through verifyAssertionSignature.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0004
+    stability: EXPERIMENTAL
+    remediation_hint: Call verifyAssertionSignature against the actual public key.
+    introduced_in: phase-2a-attestation-draft
+
+  - id: NRS-SIGNATURE-ALGORITHM-NOT-ALLOWED
+    title: Signature algorithm is not on the allow-list
+    category: attestation
+    description: >-
+      The assertion's signature.algorithm is not a member of
+      registries/attestation-signature-suites.yaml; no algorithm agility
+      (NRS-ATTEST-0003) - an unlisted algorithm is refused, never
+      negotiated or inferred.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0003
+    stability: EXPERIMENTAL
+    remediation_hint: Use an allow-listed signature suite.
+    introduced_in: phase-2a-attestation-draft
+
+  - id: NRS-SIGNATURE-INVALID
+    title: Signature does not verify against the assertion content
+    category: attestation
+    description: >-
+      Cryptographic verification of the assertion's signature against the
+      supplied public key and the recomputed JCS-canonical signing payload
+      failed.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0004
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Re-sign with the correct private key over the exact unsigned
+      assertion content; do not modify a signed assertion's content.
+    introduced_in: phase-2a-attestation-draft
+
+  - id: NRS-SIGNATURE-VERIFICATION-ERROR
+    title: Signature verification could not run
+    category: attestation
+    description: >-
+      Signature verification raised an error (for example a malformed
+      public key or malformed base64 signature value) rather than
+      producing a pass/fail outcome; reported as execution error, never as
+      a partial or fabricated verification result.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0004
+    stability: EXPERIMENTAL
+    remediation_hint: Supply a well-formed public key and a well-formed signature value.
+    introduced_in: phase-2a-attestation-draft
+
+  - id: NRS-SIGNATURE-KEY-NOT-PINNED
+    title: Signature key is not pinned in the trust root
+    category: attestation
+    description: >-
+      The assertion's signature.key_id matches no key pinned in
+      registries/attestation-trust-root.yaml, so even a cryptographically
+      valid signature does not make the assertion nomue-attested
+      (NRS-ATTEST-0007). Reported as an explicit failed
+      signature_verification result, never silently accepted or dropped.
+      With the pre-ceremony empty trust root, every assertion fails this
+      way by construction.
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0007
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Only assertions signed by a key committed to the trust root by the
+      steward's key ceremony qualify; verify the key_id against the
+      published trust root and its multi-channel fingerprints.
+    introduced_in: sig-infra-decisions
+
+  - id: NRS-SIGNATURE-KEY-OUTSIDE-VALIDITY
+    title: Signature key is pinned but outside its validity window
+    category: attestation
+    description: >-
+      The assertion's signature.key_id is pinned in the trust root, but
+      the supplied evaluation time falls outside that key generation's
+      declared validity interval (NRS-ATTEST-0008) - for example a
+      superseded generation after its valid_until, as bounded during a
+      compromise response (security/KEY-COMPROMISE-RUNBOOK.md).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-ATTEST-0007
+      - NRS-ATTEST-0008
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Check the key generation's validity window in the trust root; a
+      re-attestation under the current generation may be available for
+      affected Records.
+    introduced_in: sig-infra-decisions
+
+  # ------------------------- Approval first increment (DRAFT, EXPERIMENTAL)
+
+  - id: NRS-APPROVAL-ABSENT
+    title: No approval element is present to check
+    category: approval
+    description: >-
+      The approval-scope check (reference/verifier/src/approval.ts,
+      NRS-APPROVE-0004) was run with a null approval - there is nothing to
+      check. This is reported as an execution: not_run result, never
+      silently treated as a pass, since approval is an optional element and
+      its absence is a legitimate, distinct case. applicable_check_ids is
+      empty because urn:nomue:check:approval-scope:0.1.0-draft.1 is not a
+      registries/public-checks.yaml entry in this increment - it is not
+      wired into any registered bundle, the same reason the attestation
+      first increment's signature reason codes also carry an empty list
+      (DRAFT: EXPERIMENTAL).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-APPROVE-0004
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Not an error to remediate: attach an approval element only when one is
+      actually being asserted.
+    introduced_in: phase-2a-approval-draft
+
+  - id: NRS-APPROVAL-SCOPE-MISMATCH
+    title: Approval scope does not identify the checked record
+    category: approval
+    description: >-
+      An approval element's scope.id matches neither the record_id nor the
+      revision_id it was checked against (reference/verifier/src/approval.ts,
+      NRS-APPROVE-0004) - the approval cannot be attributed to this record
+      revision. applicable_check_ids is empty for the same reason as
+      NRS-APPROVAL-ABSENT above (DRAFT: EXPERIMENTAL).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-APPROVE-0004
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Set the approval's scope.id to the record_id or revision_id of the
+      record it actually approves.
+    introduced_in: phase-2a-approval-draft
+
+  - id: NRS-T-SQUARED-OVERFLOW
+    title: Squared test statistic overflows the tail-evaluation intermediate
+    category: computability
+    description: >-
+      The adopted tail-evaluation path forms t^2 as an intermediate (the
+      regularized-incomplete-beta argument is df / (df + t^2)), and for
+      this input t^2 is not representable as a finite binary64 value. The
+      evaluation would otherwise silently collapse to an endpoint
+      probability (0 or 1); the kernel refuses instead
+      (NRS-VERIFY-0026, Batch 3 V3 safety fix). Carried by the failing
+      computability/precondition check and propagated onto the not_run
+      recomputation check.
+    applicable_check_ids:
+      - "urn:nomue:check:itgc-preconditions:0.1.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.1.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.0-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.0-draft.1"
+      - "urn:nomue:check:welch-computability:0.2.1-draft.1"
+      - "urn:nomue:check:welch-recompute:0.2.1-draft.1"
+    requirement_ids:
+      - NRS-VERIFY-0026
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      The between-group separation is so extreme relative to the standard
+      error that |t| exceeds about 1.34e154; no tail probability is
+      evaluable under the supported path. Check the data for unit or
+      magnitude errors.
+    introduced_in: s1-close
+
+  - id: NRS-LIFECYCLE-PRECONDITION-NOT-MET
+    title: Lifecycle operation precondition not met
+    category: precondition
+    description: >-
+      A state-gated lifecycle operation was refused because one or more
+      declarative preconditions (registries/lifecycle-operations.yaml,
+      NRS-CORE-0014/0017) evaluated to violated on the state tuple. This
+      is an operation-level refusal result naming every violated
+      {axis, predicate}; it is not a verifier refusal artifact (input
+      processing is unaffected), and missing-information cases yield a
+      structured needs_clarification instead (NRS-CORE-0015).
+    applicable_check_ids: []
+    requirement_ids:
+      - NRS-CORE-0014
+      - NRS-CORE-0017
+    stability: EXPERIMENTAL
+    remediation_hint: >-
+      Bring the named axes to the required values (for example refresh the
+      verification report, or use an active revision) and retry; the state
+      view lists each axis's truth-carrier.
+    introduced_in: record-lifecycle-v0

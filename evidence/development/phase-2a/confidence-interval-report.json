@@ -1,0 +1,25 @@
+{
+  "valid_ci_fixtures": [
+    "A2-V-001",
+    "A2-V-002",
+    "A2-V-003",
+    "A2-V-004",
+    "A2-V-005",
+    "A2-V-006"
+  ],
+  "mismatch_fixtures": [
+    "A2-P-001",
+    "A2-P-002",
+    "A2-P-003",
+    "A2-P-004",
+    "A2-P-005",
+    "A2-P-006",
+    "A2-P-007",
+    "A2-P-008",
+    "A2-P-009"
+  ],
+  "confidence_level": 0.95,
+  "ci_method": "urn:nomue:method:welch-satterthwaite-mean-difference-ci:1",
+  "oracle_max_relative_difference": 8.961148474652801e-15,
+  "standardized_effect_size": "not_asserted"
+}

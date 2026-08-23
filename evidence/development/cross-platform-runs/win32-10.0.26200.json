@@ -1,0 +1,86 @@
+{
+  "schema": "nrs-platform-run-export",
+  "schema_version": "0.1.0",
+  "platform": {
+    "platform": "win32",
+    "os_release": "10.0.26200",
+    "node_version": "v22.20.0",
+    "arch": "x64"
+  },
+  "oracle_results": {
+    "A2V001_unequal_n_var": {
+      "standard_error": 1.1595018087284057,
+      "test_statistic": -3.6797412772868414,
+      "degrees_of_freedom": 3.9642322870622957,
+      "p_value": 0.021544849116251163,
+      "critical_value": 2.7863525924725843,
+      "ci_lower": -7.49744753739371,
+      "ci_upper": -1.035885795939623
+    },
+    "A2V002_negative_diff": {
+      "standard_error": 0.816496580927726,
+      "test_statistic": -3.6742346141747673,
+      "degrees_of_freedom": 4,
+      "p_value": 0.02131164112875673,
+      "critical_value": 2.776445105197794,
+      "ci_lower": -5.266957935527519,
+      "ci_upper": -0.7330420644724809
+    },
+    "A2V003_ci_crosses_zero_equal_n": {
+      "standard_error": 0.27892651361962706,
+      "test_statistic": -1.2906625308877324,
+      "degrees_of_freedom": 7.456715903071217,
+      "p_value": 0.23539658479651815,
+      "critical_value": 2.335578809576075,
+      "ci_lower": -1.011454854638933,
+      "ci_upper": 0.29145485463893406
+    },
+    "A2V004_one_variance_zero": {
+      "standard_error": 0.5773502691896257,
+      "test_statistic": -3.464101615137755,
+      "degrees_of_freedom": 2,
+      "p_value": 0.07417990022744854,
+      "critical_value": 4.302652729749462,
+      "ci_lower": -4.48413771175033,
+      "ci_upper": 0.4841377117503298
+    },
+    "A2V005_min_n2": {
+      "standard_error": 1.118033988749895,
+      "test_statistic": -2.6832815729997477,
+      "degrees_of_freedom": 1.4705882352941178,
+      "p_value": 0.15796345394903638,
+      "critical_value": 6.188114940769252,
+      "ci_lower": -9.918522830071067,
+      "ci_upper": 3.9185228300710673
+    },
+    "A2V006_large_magnitude": {
+      "standard_error": 0.816496580927726,
+      "test_statistic": -1.8371173070873836,
+      "degrees_of_freedom": 4,
+      "p_value": 0.14006598491201788,
+      "critical_value": 2.776445105197794,
+      "ci_lower": -3.766957935527519,
+      "ci_upper": 0.7669579355275191
+    },
+    "EX2_example": {
+      "standard_error": 0.17088007490635054,
+      "test_statistic": -5.852057359806531,
+      "degrees_of_freedom": 8,
+      "p_value": 0.00038188621617164174,
+      "critical_value": 2.306004135204165,
+      "ci_lower": -1.3940501593580419,
+      "ci_upper": -0.6059498406419581
+    }
+  },
+  "canonicalization_hashes": {
+    "key-ordering": "sha256:a2d31b6c74ede011657132b950aaa91d28b904997e3f364aa055d71aaa967986",
+    "unicode": "sha256:9797b38fc03beae373abdc1640e58850137bc476fae9da3be5081b004dad3f31",
+    "whitespace": "sha256:8baa73198470c7bb4c3ce142a8fd651affc0310d878bb9bd159e37a573fb4874",
+    "exponent-representation": "sha256:e64a3af3ec59b4f113f9ec79db844b3474792770907b2ae1b084599f55cbb787",
+    "decimal-representation": "sha256:45f0e7fc959c74e49ba17453cc4335859f5d0beed179020b0d443d4d0c0cc14a",
+    "zero": "sha256:405aa26abb7a06b7ffe1011a1cb3f6c572e73843351b7274ac62684fe17f906a",
+    "negative-zero": "sha256:89164a4ab3deb96de2502217ec6d7ed884bd37fef1ba8924c6e4934c071e59ed",
+    "nested-objects": "sha256:2297431a33a75cb740cc387967d3de89819082c934725ee59b639a434ec5a466",
+    "arrays": "sha256:8348832871c02d95479315421ddf41712b2f4659b42fad22d427e7b9cb7b03ab"
+  }
+}

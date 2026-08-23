@@ -1,0 +1,16 @@
+decision_version: "0.2.1-draft.1"
+target_commit: 3e38e1fd6152033ef62624a80ef0a196229b462f
+field_specific: true
+no_global_eta: true
+welch_recompute_0_2_1:
+  check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+  p_value:
+    absolute: 0.0
+    relative: 1.0e-10
+    zero_separation: true
+  other_fields_maintained_from_0_2_0: true
+mutation_lock:
+  suite: tooling/tests/numerical-contract.test.ts
+  families:
+    - numerical_algorithm_regression
+    - numerical_tolerance_contract

@@ -1,0 +1,381 @@
+{
+  "schema": "nrs-oracle-deviation-summary",
+  "schema_version": "0.1.0",
+  "description": "Per-quantity max/p95 relative differences of the reference kernel vs captured SciPy/mpmath oracle values, aggregated per corpus. Input for discussion item S1; no tolerance is decided here. Not R1-08 evidence (that gate closed on a separate disjoint-lineage oracle).",
+  "percentile_method": "nearest-rank (ceil(0.95*n)); equals the maximum for these small corpora",
+  "generated_by": "tooling/src/evidence/oracle-deviation-summary.ts",
+  "corpora": {
+    "phase1": [
+      {
+        "quantity": "mean_1",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "V001"
+      },
+      {
+        "quantity": "sample_variance_1",
+        "n_datasets": 4,
+        "max_rel_diff": 1.6012832085939782e-16,
+        "p95_rel_diff": 1.6012832085939782e-16,
+        "max_dataset": "EXAMPLE"
+      },
+      {
+        "quantity": "mean_2",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "V001"
+      },
+      {
+        "quantity": "sample_variance_2",
+        "n_datasets": 4,
+        "max_rel_diff": 1.2245106889248034e-16,
+        "p95_rel_diff": 1.2245106889248034e-16,
+        "max_dataset": "EXAMPLE"
+      },
+      {
+        "quantity": "mean_difference",
+        "n_datasets": 4,
+        "max_rel_diff": 2.3373116307898026e-16,
+        "p95_rel_diff": 2.3373116307898026e-16,
+        "max_dataset": "EXAMPLE"
+      },
+      {
+        "quantity": "standard_error",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "V001"
+      },
+      {
+        "quantity": "test_statistic_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 2.0905550764187558e-16,
+        "p95_rel_diff": 2.0905550764187558e-16,
+        "max_dataset": "EXAMPLE"
+      },
+      {
+        "quantity": "test_statistic_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 2.4136980096464816e-16,
+        "p95_rel_diff": 2.4136980096464816e-16,
+        "max_dataset": "V002"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 1.50661376378762e-16,
+        "p95_rel_diff": 1.50661376378762e-16,
+        "max_dataset": "EXAMPLE"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 1.1202401314862304e-16,
+        "p95_rel_diff": 1.1202401314862304e-16,
+        "max_dataset": "V002"
+      },
+      {
+        "quantity": "p_value_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 8.139793014983106e-16,
+        "p95_rel_diff": 8.139793014983106e-16,
+        "max_dataset": "V001"
+      },
+      {
+        "quantity": "p_value_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 3.2239189049977966e-15,
+        "p95_rel_diff": 3.2239189049977966e-15,
+        "max_dataset": "EXAMPLE"
+      }
+    ],
+    "phase2a": [
+      {
+        "quantity": "mean_1",
+        "n_datasets": 7,
+        "max_rel_diff": 1.7552933195654646e-16,
+        "p95_rel_diff": 1.7552933195654646e-16,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "sample_variance_1",
+        "n_datasets": 7,
+        "max_rel_diff": 1.1810883240693154e-16,
+        "p95_rel_diff": 1.1810883240693154e-16,
+        "max_dataset": "A2V001_unequal_n_var"
+      },
+      {
+        "quantity": "mean_2",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "A2V001_unequal_n_var"
+      },
+      {
+        "quantity": "sample_variance_2",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "A2V001_unequal_n_var"
+      },
+      {
+        "quantity": "mean_difference",
+        "n_datasets": 7,
+        "max_rel_diff": 4.934324553889568e-15,
+        "p95_rel_diff": 4.934324553889568e-15,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "standard_error",
+        "n_datasets": 7,
+        "max_rel_diff": 1.9901711927951946e-16,
+        "p95_rel_diff": 1.9901711927951946e-16,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "test_statistic_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 5.16117729331552e-15,
+        "p95_rel_diff": 5.16117729331552e-15,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "test_statistic_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 2.4136980096464816e-16,
+        "p95_rel_diff": 2.4136980096464816e-16,
+        "max_dataset": "A2V001_unequal_n_var"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 2.382224108429044e-16,
+        "p95_rel_diff": 2.382224108429044e-16,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 1.1202401314862304e-16,
+        "p95_rel_diff": 1.1202401314862304e-16,
+        "max_dataset": "A2V001_unequal_n_var"
+      },
+      {
+        "quantity": "p_value_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 1.0542530536683633e-15,
+        "p95_rel_diff": 1.0542530536683633e-15,
+        "max_dataset": "A2V005_min_n2"
+      },
+      {
+        "quantity": "p_value_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 8.961148474652801e-15,
+        "p95_rel_diff": 8.961148474652801e-15,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      },
+      {
+        "quantity": "critical_value_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 5.741188896466843e-16,
+        "p95_rel_diff": 5.741188896466843e-16,
+        "max_dataset": "A2V005_min_n2"
+      },
+      {
+        "quantity": "critical_value_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 7.703181500335762e-16,
+        "p95_rel_diff": 7.703181500335762e-16,
+        "max_dataset": "EX2_example"
+      },
+      {
+        "quantity": "ci_lower",
+        "n_datasets": 7,
+        "max_rel_diff": 5.372846954633231e-16,
+        "p95_rel_diff": 5.372846954633231e-16,
+        "max_dataset": "A2V005_min_n2"
+      },
+      {
+        "quantity": "ci_upper",
+        "n_datasets": 7,
+        "max_rel_diff": 1.5236981054929352e-15,
+        "p95_rel_diff": 1.5236981054929352e-15,
+        "max_dataset": "A2V003_ci_crosses_zero_equal_n"
+      }
+    ],
+    "tail": [
+      {
+        "quantity": "mean_1",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "TAIL_P_1E8"
+      },
+      {
+        "quantity": "sample_variance_1",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "TAIL_P_1E8"
+      },
+      {
+        "quantity": "mean_2",
+        "n_datasets": 4,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "TAIL_P_1E8"
+      },
+      {
+        "quantity": "sample_variance_2",
+        "n_datasets": 4,
+        "max_rel_diff": 1.3877787807814062e-16,
+        "p95_rel_diff": 1.3877787807814062e-16,
+        "max_dataset": "TAIL_P_1E19"
+      },
+      {
+        "quantity": "mean_difference",
+        "n_datasets": 4,
+        "max_rel_diff": 1.850371707708594e-16,
+        "p95_rel_diff": 1.850371707708594e-16,
+        "max_dataset": "TAIL_P_1E8"
+      },
+      {
+        "quantity": "standard_error",
+        "n_datasets": 4,
+        "max_rel_diff": 1.3877787807814452e-16,
+        "p95_rel_diff": 1.3877787807814452e-16,
+        "max_dataset": "TAIL_P_1E12"
+      },
+      {
+        "quantity": "test_statistic_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 2.9605947323337496e-16,
+        "p95_rel_diff": 2.9605947323337496e-16,
+        "max_dataset": "TAIL_P_1E8"
+      },
+      {
+        "quantity": "test_statistic_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 1.869849304631843e-16,
+        "p95_rel_diff": 1.869849304631843e-16,
+        "max_dataset": "TAIL_P_1E12"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 2.2204460492503126e-16,
+        "p95_rel_diff": 2.2204460492503126e-16,
+        "max_dataset": "TAIL_P_1E12"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 2.2204460492503126e-16,
+        "p95_rel_diff": 2.2204460492503126e-16,
+        "max_dataset": "TAIL_P_1E12"
+      },
+      {
+        "quantity": "p_value_vs_scipy",
+        "n_datasets": 4,
+        "max_rel_diff": 3.428814733425223e-15,
+        "p95_rel_diff": 3.428814733425223e-15,
+        "max_dataset": "TAIL_P_1E12"
+      },
+      {
+        "quantity": "p_value_vs_mpmath",
+        "n_datasets": 4,
+        "max_rel_diff": 1,
+        "p95_rel_diff": 1,
+        "max_dataset": "TAIL_UNDERFLOW"
+      }
+    ],
+    "floor": [
+      {
+        "quantity": "mean_1",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "sample_variance_1",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "mean_2",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "sample_variance_2",
+        "n_datasets": 7,
+        "max_rel_diff": 1.3877787807814457e-16,
+        "p95_rel_diff": 1.3877787807814457e-16,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "mean_difference",
+        "n_datasets": 7,
+        "max_rel_diff": 0,
+        "p95_rel_diff": 0,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "standard_error",
+        "n_datasets": 7,
+        "max_rel_diff": 1.3877787807814452e-16,
+        "p95_rel_diff": 1.3877787807814452e-16,
+        "max_dataset": "FLOOR_P_1E50"
+      },
+      {
+        "quantity": "test_statistic_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 2.175987323867941e-16,
+        "p95_rel_diff": 2.175987323867941e-16,
+        "max_dataset": "FLOOR_P_1E50"
+      },
+      {
+        "quantity": "test_statistic_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 1.3454063635694207e-16,
+        "p95_rel_diff": 1.3454063635694207e-16,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 2.2204460492503126e-16,
+        "p95_rel_diff": 2.2204460492503126e-16,
+        "max_dataset": "FLOOR_P_1E50"
+      },
+      {
+        "quantity": "degrees_of_freedom_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 2.2204460492503126e-16,
+        "p95_rel_diff": 2.2204460492503126e-16,
+        "max_dataset": "FLOOR_P_1E30"
+      },
+      {
+        "quantity": "p_value_vs_scipy",
+        "n_datasets": 7,
+        "max_rel_diff": 1.388523866636523e-14,
+        "p95_rel_diff": 1.388523866636523e-14,
+        "max_dataset": "FLOOR_P_1E100"
+      },
+      {
+        "quantity": "p_value_vs_mpmath",
+        "n_datasets": 7,
+        "max_rel_diff": 2.5119659041879265e-14,
+        "p95_rel_diff": 2.5119659041879265e-14,
+        "max_dataset": "FLOOR_P_1E100"
+      }
+    ]
+  }
+}

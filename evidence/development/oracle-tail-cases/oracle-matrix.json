@@ -1,0 +1,390 @@
+{
+  "description": "Tail-case corpus (Batch 2 addendum U8): extreme small-p Welch datasets (target magnitudes ~1e-8, ~1e-12, ~1e-19, and the underflow boundary) comparing the reference kernel's tail evaluation against mpmath at 60 digits. The TAIL_UNDERFLOW row intentionally exceeds every comparison tolerance: the kernel's p zeroes at the algorithm floor of the adopted tail-evaluation path (intermediate underflow in the incomplete-beta evaluation - the true value ~1.1e-308 is itself a representable binary64 subnormal, recorded as a decimal string). This is the observation, not a regression. Input for discussion item S1. Not R1-08 closure evidence.",
+  "oracles": {
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1 (60 decimal digits)",
+    "r": "unavailable in the development environment"
+  },
+  "tolerances_reference": "canonicalization/numerical-comparison.md (p-value: abs 1e-12 / rel 1e-10; others abs/rel 1e-12); the tail corpus is recorded against these bounds but not gated on them",
+  "generated_by": "tooling/src/evidence/oracle-matrix-generate.ts",
+  "captured_from": "evidence/development/oracle-tail-cases/python-output.json",
+  "max_rel_diff": 1,
+  "datasets": {
+    "TAIL_P_1E8": {
+      "data": {
+        "g1": [
+          1,
+          1.1,
+          0.9,
+          1.05,
+          0.95
+        ],
+        "g2": [
+          2.2,
+          2.3,
+          2.1,
+          2.25,
+          2.15
+        ]
+      },
+      "comparisons": {
+        "mean_1": {
+          "kernel": 1,
+          "oracle": 1,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_1": {
+          "kernel": 0.0062500000000000056,
+          "oracle": 0.0062500000000000056,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_2": {
+          "kernel": 2.2,
+          "oracle": 2.2,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_2": {
+          "kernel": 0.006249999999999989,
+          "oracle": 0.006249999999999989,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_difference": {
+          "kernel": -1.2000000000000002,
+          "oracle": -1.2,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 1.850371707708594e-16
+        },
+        "standard_error": {
+          "kernel": 0.04999999999999999,
+          "oracle": 0.04999999999999999,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 0
+        },
+        "test_statistic_vs_mpmath": {
+          "kernel": -24.00000000000001,
+          "oracle": -24.000000000000004,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 2.9605947323337496e-16
+        },
+        "test_statistic_vs_scipy": {
+          "kernel": -24.00000000000001,
+          "oracle": -24.00000000000001,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "degrees_of_freedom_vs_mpmath": {
+          "kernel": 7.999999999999999,
+          "oracle": 8,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1.1102230246251565e-16
+        },
+        "degrees_of_freedom_vs_scipy": {
+          "kernel": 7.999999999999999,
+          "oracle": 7.999999999999999,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "p_value_vs_scipy": {
+          "kernel": 9.681893407564768e-9,
+          "oracle": 9.681893407564775e-9,
+          "oracle_source": "scipy",
+          "rel_diff": 6.834866509947113e-16
+        },
+        "p_value_vs_mpmath": {
+          "kernel": 9.681893407564768e-9,
+          "oracle": 9.681893407564784e-9,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1.7087166274867766e-15
+        }
+      },
+      "kernel_p_value_clamped": false,
+      "p_value_mpmath_str": "0.00000000968189340756478420188368496803"
+    },
+    "TAIL_P_1E12": {
+      "data": {
+        "g1": [
+          1,
+          1.1,
+          0.9,
+          1.05,
+          0.95
+        ],
+        "g2": [
+          4.8,
+          4.9,
+          4.7,
+          4.85,
+          4.75
+        ]
+      },
+      "comparisons": {
+        "mean_1": {
+          "kernel": 1,
+          "oracle": 1,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_1": {
+          "kernel": 0.0062500000000000056,
+          "oracle": 0.0062500000000000056,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_2": {
+          "kernel": 4.8,
+          "oracle": 4.8,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_2": {
+          "kernel": 0.00625,
+          "oracle": 0.00625,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_difference": {
+          "kernel": -3.8,
+          "oracle": -3.8,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "standard_error": {
+          "kernel": 0.05000000000000002,
+          "oracle": 0.05000000000000001,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1.3877787807814452e-16
+        },
+        "test_statistic_vs_mpmath": {
+          "kernel": -75.99999999999997,
+          "oracle": -75.99999999999999,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1.869849304631843e-16
+        },
+        "test_statistic_vs_scipy": {
+          "kernel": -75.99999999999997,
+          "oracle": -75.99999999999999,
+          "oracle_source": "scipy",
+          "rel_diff": 1.869849304631843e-16
+        },
+        "degrees_of_freedom_vs_mpmath": {
+          "kernel": 8.000000000000002,
+          "oracle": 8,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 2.2204460492503126e-16
+        },
+        "degrees_of_freedom_vs_scipy": {
+          "kernel": 8.000000000000002,
+          "oracle": 8,
+          "oracle_source": "scipy",
+          "rel_diff": 2.2204460492503126e-16
+        },
+        "p_value_vs_scipy": {
+          "kernel": 1.0012563892865407e-12,
+          "oracle": 1.0012563892865442e-12,
+          "oracle_source": "scipy",
+          "rel_diff": 3.428814733425223e-15
+        },
+        "p_value_vs_mpmath": {
+          "kernel": 1.0012563892865407e-12,
+          "oracle": 1.0012563892865448e-12,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 4.033899686382613e-15
+        }
+      },
+      "kernel_p_value_clamped": false,
+      "p_value_mpmath_str": "1.00125638928654478396225230371e-12"
+    },
+    "TAIL_P_1E19": {
+      "data": {
+        "g1": [
+          1,
+          1.1,
+          0.9,
+          1.05,
+          0.95
+        ],
+        "g2": [
+          29.5,
+          29.6,
+          29.4,
+          29.55,
+          29.45
+        ]
+      },
+      "comparisons": {
+        "mean_1": {
+          "kernel": 1,
+          "oracle": 1,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_1": {
+          "kernel": 0.0062500000000000056,
+          "oracle": 0.0062500000000000056,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_2": {
+          "kernel": 29.5,
+          "oracle": 29.5,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_2": {
+          "kernel": 0.006250000000000178,
+          "oracle": 0.006250000000000177,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 1.3877787807814062e-16
+        },
+        "mean_difference": {
+          "kernel": -28.5,
+          "oracle": -28.5,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "standard_error": {
+          "kernel": 0.05000000000000037,
+          "oracle": 0.050000000000000364,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1.3877787807814353e-16
+        },
+        "test_statistic_vs_mpmath": {
+          "kernel": -569.9999999999958,
+          "oracle": -569.9999999999958,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 0
+        },
+        "test_statistic_vs_scipy": {
+          "kernel": -569.9999999999958,
+          "oracle": -569.9999999999958,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "degrees_of_freedom_vs_mpmath": {
+          "kernel": 8.000000000000002,
+          "oracle": 8,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 2.2204460492503126e-16
+        },
+        "degrees_of_freedom_vs_scipy": {
+          "kernel": 8.000000000000002,
+          "oracle": 8.000000000000002,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "p_value_vs_scipy": {
+          "kernel": 1.0050338303267249e-19,
+          "oracle": 1.0050338303267248e-19,
+          "oracle_source": "scipy",
+          "rel_diff": 1.19767731087292e-16
+        },
+        "p_value_vs_mpmath": {
+          "kernel": 1.0050338303267249e-19,
+          "oracle": 1.0050338303267337e-19,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 8.743044369372239e-15
+        }
+      },
+      "kernel_p_value_clamped": false,
+      "p_value_mpmath_str": "1.0050338303267336766289977143e-19"
+    },
+    "TAIL_UNDERFLOW": {
+      "data": {
+        "g1": [
+          1,
+          1.1,
+          0.9,
+          1.05,
+          0.95
+        ],
+        "g2": [
+          5.4e+75,
+          5.4e+75,
+          5.4e+75,
+          5.4e+75,
+          5.4e+75
+        ]
+      },
+      "comparisons": {
+        "mean_1": {
+          "kernel": 1,
+          "oracle": 1,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_1": {
+          "kernel": 0.0062500000000000056,
+          "oracle": 0.0062500000000000056,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_2": {
+          "kernel": 5.4e+75,
+          "oracle": 5.4e+75,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "sample_variance_2": {
+          "kernel": 0,
+          "oracle": 0,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "mean_difference": {
+          "kernel": -5.4e+75,
+          "oracle": -5.4e+75,
+          "oracle_source": "python_exact_fraction",
+          "rel_diff": 0
+        },
+        "standard_error": {
+          "kernel": 0.03535533905932739,
+          "oracle": 0.03535533905932739,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 0
+        },
+        "test_statistic_vs_mpmath": {
+          "kernel": -1.527350647362942e+77,
+          "oracle": -1.527350647362942e+77,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 0
+        },
+        "test_statistic_vs_scipy": {
+          "kernel": -1.527350647362942e+77,
+          "oracle": -1.527350647362942e+77,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "degrees_of_freedom_vs_mpmath": {
+          "kernel": 4,
+          "oracle": 4,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 0
+        },
+        "degrees_of_freedom_vs_scipy": {
+          "kernel": 4,
+          "oracle": 4,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "p_value_vs_scipy": {
+          "kernel": 0,
+          "oracle": 0,
+          "oracle_source": "scipy",
+          "rel_diff": 0
+        },
+        "p_value_vs_mpmath": {
+          "kernel": 0,
+          "oracle": 1.102544779194682e-308,
+          "oracle_source": "mpmath_60_digits",
+          "rel_diff": 1
+        }
+      },
+      "kernel_p_value_clamped": false,
+      "p_value_mpmath_str": "1.10254477919468211161526880508e-308"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "nrs-cross-platform-deviation-report",
+  "schema_version": "0.1.0",
+  "status": "insufficient_runs",
+  "runs_found": ["win32-10.0.26200.json"],
+  "note": "Real cross-platform deviation data requires export-platform-run.ts output from at least two different operating systems. Not fabricated here."
+}

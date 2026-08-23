@@ -1,0 +1,160 @@
+name: Release 1 candidate internal evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_control_ref:
+        description: "Release-control commit/ref that pins candidate C"
+        required: true
+        type: string
+      candidate_sha:
+        description: "Exact 40-hex candidate content commit C"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-internal-evidence:
+    name: candidate internal evidence only
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Validate requested candidate identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "${{ inputs.candidate_sha }}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "candidate_sha must be an exact lowercase 40-hex commit" >&2
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_control_ref }}
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Confirm release-control pin matches requested candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          PINNED=$(node -e 'const fs=require("fs"); const x=JSON.parse(fs.readFileSync("evidence/release-1/gate-index.json","utf8")); process.stdout.write(String(x.release_candidate_id ?? ""));')
+          test "$PINNED" = "${{ inputs.candidate_sha }}" || {
+            echo "gate-index candidate mismatch: pinned=$PINNED requested=${{ inputs.candidate_sha }}" >&2
+            exit 1
+          }
+          git cat-file -e "${{ inputs.candidate_sha }}^{commit}"
+
+      - name: Candidate equivalence and public boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm snapshot:manifest --check-public-boundary
+          pnpm snapshot:manifest --check-candidate
+
+      - name: Prepare evidence directory
+        run: mkdir -p candidate-evidence
+
+      - name: Environment manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm exec tsx tooling/src/evidence/env-report.ts candidate-evidence/environment.json
+          git rev-parse HEAD > candidate-evidence/release-control-ref.txt
+          printf '%s\n' '${{ inputs.candidate_sha }}' > candidate-evidence/candidate-content-commit.txt
+
+      - name: Registry and authority validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm validate 2>&1 | tee candidate-evidence/validate.log
+
+      - name: Conformance suites
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm conformance:test 2>&1 | tee candidate-evidence/conformance-phase1.log
+          pnpm conformance:phase2a 2>&1 | tee candidate-evidence/conformance-phase2a.log
+          pnpm conformance:phase2a-021 2>&1 | tee candidate-evidence/conformance-021.log
+
+      - name: Reference verifier tests and Release 1 canonical case
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm verifier:test 2>&1 | tee candidate-evidence/verifier-tests.log
+          pnpm nomue-record verify examples/canonical-case-release1-wetlab-01/record.json --format json > candidate-evidence/canonical-case-cc-r1-001.json
+
+      - name: Threat and adversarial rerun
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm refusal:test 2>&1 | tee candidate-evidence/refusal-adversarial.log
+          pnpm fuzz 2>&1 | tee candidate-evidence/schema-fuzz.log
+
+      - name: Independent numerical oracle rerun
+        shell: bash
+        env:
+          NOMUE_ORACLE_CANDIDATE_COMMIT: ${{ inputs.candidate_sha }}
+          NOMUE_ORACLE_EVIDENCE_DIR: candidate-evidence/oracle-r1-08
+        run: |
+          set -euo pipefail
+          python -m venv tooling/r1-08-oracle/.venv
+          tooling/r1-08-oracle/.venv/bin/python -m pip install \
+            -r evidence/development/r1-08-independent-oracle-v1/environment/requirements.txt
+          pnpm oracle:r1-08 2>&1 | tee candidate-evidence/oracle-r1-08.log
+          test -f candidate-evidence/oracle-r1-08/02-sut-component-lineage.yaml
+          test -f candidate-evidence/oracle-r1-08/09-sut-replay-matrix.yaml
+          test -f candidate-evidence/oracle-r1-08/10-common-cause-analysis.md
+          test -f candidate-evidence/oracle-r1-08/13-r1-08-readiness.yaml
+
+      - name: Internal offline API-interception check
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm evidence:offline-verification 2>&1 | tee candidate-evidence/offline-internal.log
+          cp evidence/development/offline-verification/run-log.json candidate-evidence/offline-internal-run-log.json
+
+      - name: Relying-party and release-signing contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm exec vitest run tooling/tests/exit-code-contract.test.ts tooling/tests/release-signing.test.ts 2>&1 | tee candidate-evidence/relying-party-and-signing-tests.log
+
+      - name: Detached Protocol snapshot identity for comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm snapshot:manifest --hash-only | tee candidate-evidence/protocol-snapshot-hash.txt
+
+      - name: Internal-evidence scope notice
+        shell: bash
+        run: |
+          cat > candidate-evidence/INTERNAL-EVIDENCE-NOTICE.txt <<'EOF'
+          This artifact is candidate-scoped INTERNAL execution evidence only.
+          It does not satisfy R1-04 external clean-environment operator independence,
+          does not satisfy R1-09 independent rebuild independence, does not replace
+          R1-12 candidate-scoped legal confirmation, and does not close any Release 1
+          gate by itself.
+          The offline check here is application-level Node API interception, not
+          OS-level network isolation evidence.
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release1-candidate-internal-evidence-${{ inputs.candidate_sha }}
+          path: candidate-evidence/
+          if-no-files-found: error
+          retention-days: 90

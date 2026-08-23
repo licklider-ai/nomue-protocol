@@ -1,0 +1,12 @@
+{
+  "strategy": "pinned-expectation equality: every platform recomputes canonical forms, content digests, and verification semantic projections and compares them with the platform-neutral hashes pinned in the conformance and vector manifests; matching pins on two platforms implies cross-platform agreement.",
+  "pinned_semantic_projection_hashes": 71,
+  "pinned_canonicalization_vectors": 16,
+  "excluded_from_comparison": [
+    "generated_at",
+    "verifier.source_commit",
+    "absolute paths",
+    "runtime timing"
+  ],
+  "note": "This file is platform-neutral by construction; per-platform run logs live under runs/ and are not part of the regeneration set."
+}

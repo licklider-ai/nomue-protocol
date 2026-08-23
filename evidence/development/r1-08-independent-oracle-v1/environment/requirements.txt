@@ -1,0 +1,3 @@
+# Isolated R1-08 oracle Python dependencies (repo-local venv only).
+python-flint==0.6.0
+mpmath==1.3.0

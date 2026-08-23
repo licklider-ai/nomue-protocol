@@ -1,0 +1,94 @@
+{
+  "$schema": "urn:nomue:schema:verification-report:0.1.0-draft.1",
+  "report_type": "nomue-verification-report",
+  "record_reference": {
+    "record_id": "urn:uuid:00000000-0000-4000-8000-000000001802",
+    "revision_id": "urn:uuid:00000000-0000-4000-8000-000000001803",
+    "content_digest": "sha256:4190f4c0de9272e9ab407b5ae6b7b973dc2b72ba13f4218ad41b7556f63de543"
+  },
+  "interpretation_bundle_id": "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+  "verifier": {
+    "name": "nomue-reference-verifier",
+    "version": "0.2.0-draft.5",
+    "source_commit": "0000000000000000000000000000000000000000"
+  },
+  "generated_at": "2026-08-09T00:00:00Z",
+  "conformance": {
+    "check_id": "urn:nomue:check:record-conformance:0.1.0-draft.1",
+    "execution": "completed",
+    "outcome": "pass",
+    "scope": {
+      "kind": "record",
+      "id": "urn:uuid:00000000-0000-4000-8000-000000001802"
+    },
+    "reason_codes": []
+  },
+  "verification_results": [
+    {
+      "check_id": "urn:nomue:check:record-integrity:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "record_revision",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000001803"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "declared_content_digest": "sha256:4190f4c0de9272e9ab407b5ae6b7b973dc2b72ba13f4218ad41b7556f63de543",
+        "recomputed_content_digest": "sha256:4190f4c0de9272e9ab407b5ae6b7b973dc2b72ba13f4218ad41b7556f63de543"
+      }
+    },
+    {
+      "check_id": "urn:nomue:check:itgc-preconditions:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "analysis",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000001803#analysis-1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "standard_error": 0.22360679774997896
+      }
+    },
+    {
+      "check_id": "urn:nomue:check:welch-recompute:0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "result",
+        "id": "urn:uuid:00000000-0000-4000-8000-000000001803#result-1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "recomputed": {
+          "group_summaries": [
+            {
+              "group_id": "group-a",
+              "n": 4,
+              "mean": 12.1,
+              "sample_variance": 0.08666666666666652
+            },
+            {
+              "group_id": "group-b",
+              "n": 4,
+              "mean": 14,
+              "sample_variance": 0.11333333333333347
+            }
+          ],
+          "mean_difference": -1.9000000000000004,
+          "test_statistic": -8.497058314499203,
+          "degrees_of_freedom": 5.895196506550217,
+          "p_value": 0.00015974224138586541
+        },
+        "p_value_clamped": false
+      }
+    }
+  ],
+  "guarantee_boundary": {
+    "scientific_validity": "not_asserted"
+  }
+}

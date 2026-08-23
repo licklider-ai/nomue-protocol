@@ -1,0 +1,26 @@
+extracted_from: pnpm-lock.yaml
+target_commit: 3e38e1fd6152033ef62624a80ef0a196229b462f
+packages:
+  - name: "@stdlib/stats-base-dists-t-cdf"
+    version: "0.2.3"
+    integrity: sha512-Y6LUuwknLaewhjnJgMwcZuiD4adx1hzEkbnnrwlqh7Qz+CFyh1D5Ov7ZoyHkcs5djAZcOTaVbn8Ktc+EQ6A7mA=
+    license: Apache-2.0
+    role: kernel two-sided p-value CDF
+    oracle_independent: false
+  - name: "@stdlib/stats-base-dists-t-quantile"
+    version: "0.2.3"
+    integrity: sha512-HT6cfDL8EKt7H5rpA5x4YHOfXNAOyxToijTBiQSEvHoGnRoULcc0RFm+KF3kI85HP55AVkg6/KIuukdpRICxUg=
+    license: Apache-2.0
+    role: kernel CI critical value
+    oracle_independent: false
+  - name: "@stdlib/math-base-special-betainc"
+    version: "0.2.3"
+    integrity: sha512-yTGYcCptTWVFxL9hv4Uc221kb7tULU5JkRp5oklPhZmg2uj/eRIvaGYtYvzuTnEU2HpdgWcTVwdDaWsG68F6NQ=
+    license: Apache-2.0 AND BSL-1.0
+    role: betainc kernel shared by t-cdf and t-quantile
+    oracle_independent: false
+shared_ancestry_risk: >-
+  stdlib betainc lineage is not an independent oracle; SciPy may share
+  Boost-related numerical paths. See ADR-0010 and ADR-0019.
+source_repository: https://github.com/stdlib-js/stdlib
+note: package versions were not changed in this writeback

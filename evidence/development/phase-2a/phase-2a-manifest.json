@@ -1,0 +1,110 @@
+{
+  "phase": "phase-2a",
+  "description": "Content pins for the Phase 2A ITGC guarantee slice. Development evidence only; not Release 1 gate evidence.",
+  "artifacts": [
+    {
+      "path": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "sha256": "685bceb8ce7e788ab655c18bef11e31113341296599c3ac25b2b8538eb99b885"
+    },
+    {
+      "path": "spec/profiles/independent-two-group-continuous/effect-estimate.md",
+      "sha256": "f4dcc9a372322065dffa015313343155503ae4808233361929db1806cd142d22"
+    },
+    {
+      "path": "spec/profiles/independent-two-group-continuous/confidence-interval.md",
+      "sha256": "d9c036ac5589db8bb38c1fab62361cb5ef456f1815b55cbe011210d47142a7e9"
+    },
+    {
+      "path": "spec/profiles/independent-two-group-continuous/non-claims.md",
+      "sha256": "f2d7f67c99b19ac7567f70476681eb5d8c3c899f8d924b2a6efd2df5f6dc07d4"
+    },
+    {
+      "path": "spec/verification/profile-admissibility-check.md",
+      "sha256": "c25582d093a8a448d1e918698f8e1859268bd1427af8491062968006736accc5"
+    },
+    {
+      "path": "spec/verification/phase-2a-welch-recompute.md",
+      "sha256": "afb2efc5abdf69dc554e6386d29313edd56bda0871415d53661725b2621a6156"
+    },
+    {
+      "path": "spec/verification/verifier-refusal.md",
+      "sha256": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83"
+    },
+    {
+      "path": "spec/versioning/multi-bundle-dispatch.md",
+      "sha256": "ce67cb6b42caa1b7592b9e6b97542e359e855a111839677c1d011dc0c827a67e"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "path": "registries/public-checks.yaml",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9"
+    },
+    {
+      "path": "registries/reason-codes.yaml",
+      "sha256": "1bbe75c9898eb2692a34aafff2b9dba7a5a8de2f48bfde7f0145e3d6e47bbe05"
+    },
+    {
+      "path": "registries/state-invariants.yaml",
+      "sha256": "7576b927d10196606a4e541258deb97647da114397d9f71cde6cc45e51b7cffb"
+    },
+    {
+      "path": "registries/public-contract-surfaces.yaml",
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a"
+    },
+    {
+      "path": "registries/interpretation-bundles.yaml",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290"
+    },
+    {
+      "path": "schemas/record/record-0.2.schema.json",
+      "sha256": "78edefca1af368637f22051fbec4898df932f4378b912cd91c19ad8cc8a8cc9c"
+    },
+    {
+      "path": "schemas/profiles/itgc-guarantee-0.2.schema.json",
+      "sha256": "60144b2c6c85009231a8d055aba2142b372c0f788f793b356a42c469c1de8510"
+    },
+    {
+      "path": "schemas/reports/verification-report-0.2.schema.json",
+      "sha256": "c9fc5d15ba6a90ac5d1a348bcd1f8fd43fa93cfb70c7945ed5cf79fbe2bb27d8"
+    },
+    {
+      "path": "schemas/reports/verifier-refusal-0.2.schema.json",
+      "sha256": "45d345402cd72141ec57d4aba195bcc9278d724a31c7a0917dc6f11185b31aab"
+    },
+    {
+      "path": "schemas/reports/verifier-refusal-0.2-draft-2.schema.json",
+      "sha256": "0d10ef206e9fa1df4456be6889e2d078aae08630e608b15570a9ea187e78730b"
+    },
+    {
+      "path": "schemas/routing/routing-envelope-0.2.schema.json",
+      "sha256": "313b80252d529cd1b32d0f5cc1fc71e705542e885284ecc3f3d6a463073e873a"
+    },
+    {
+      "path": "schemas/common/execution-outcome-0.2.schema.json",
+      "sha256": "36a1cd91fd3abb773fb279b613a4eedde4f583451690f7fec1695344cb37a78e"
+    },
+    {
+      "path": "canonicalization/record-canonicalization.md",
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a"
+    },
+    {
+      "path": "conformance/manifest.yaml",
+      "sha256": "4a009d86e1616be99fdcd15712818536507ed4c53af1c01f8bba309d97d408f3"
+    },
+    {
+      "path": "conformance/expectations/phase-2a-expectations.yaml",
+      "sha256": "2e2e897a7e435f52f677c1dc2bcb06cf7ca254e4ccc34cd8dacb5a7a568984af"
+    },
+    {
+      "path": "conformance/expectations/routing-expectations.yaml",
+      "sha256": "3db984f13bd15317214bdf6f37da0cfb0fe6a4f890a0a37a0f87ba63eb5ea469"
+    },
+    {
+      "path": "conformance/expectations/strict-json-expectations.yaml",
+      "sha256": "202f578fd34729c1c2c1edfbd6a631aeb96f0a5b56ade0d695b690527d7d49ac"
+    }
+  ]
+}

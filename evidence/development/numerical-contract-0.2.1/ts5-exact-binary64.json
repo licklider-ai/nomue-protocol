@@ -1,0 +1,25 @@
+{
+  "suite_id": "TS5",
+  "description": "Large-offset stress (A2-V-006 family); alternate decimal tokens with identical binary64 bits",
+  "parsed_group_a": [
+    { "token": "1000000001", "binary64_hex": "41cdcd6500800000", "value": 1000000001.0 },
+    { "token": "1000000003", "binary64_hex": "41cdcd6501800000", "value": 1000000003.0 },
+    { "token": "1000000002", "binary64_hex": "41cdcd6501000000", "value": 1000000002.0 }
+  ],
+  "parsed_group_b": [
+    { "token": "1000000002.5", "binary64_hex": "41cdcd6501400000", "value": 1000000002.5 },
+    { "token": "1000000004.5", "binary64_hex": "41cdcd6502400000", "value": 1000000004.5 },
+    { "token": "1000000003.5", "binary64_hex": "41cdcd6501c00000", "value": 1000000003.5 }
+  ],
+  "kernel": {
+    "mean_difference": -1.5,
+    "standard_error": 0.816496580927726,
+    "test_statistic": -1.8371173070873836,
+    "degrees_of_freedom": 4,
+    "p_value": 0.14006598491201788,
+    "ci_lower": -3.766957935527519,
+    "ci_upper": 0.7669579355275191
+  },
+  "source_decimal_fidelity_not_asserted": true,
+  "research_hold": false
+}

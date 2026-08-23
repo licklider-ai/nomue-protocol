@@ -1,0 +1,78 @@
+base_commit: 9c19636c6f42d9b8b98b88964f321d1a9118dfd4
+components:
+  - component_id: summary_mean
+    package: nomue-record/reference
+    version: 9c19636c6f42d9b8b98b88964f321d1a9118dfd4
+    source_path: reference/stats-kernel/src/kernel.ts
+    source_sha256: 8249205603040e9f1dd8256920e2495fe6edbeaf9c78a879e66ca0658476cf91
+    algorithm: Kahan-Neumaier compensated summation
+    ancestor_algorithm_or_paper: Kahan (1965); Neumaier summation
+    arithmetic_model: IEEE754_binary64
+    precision_model: binary64
+    validation_model: exact_rational_crosscheck
+    relationship_to:
+      R_pt: independent
+      SciPy_stdtr: independent
+      Boost_ibeta: independent
+      Arb: independent
+    status: VERIFIED_FROM_SOURCE
+  - component_id: sample_variance
+    package: nomue-record/reference
+    version: 9c19636c6f42d9b8b98b88964f321d1a9118dfd4
+    source_path: reference/stats-kernel/src/kernel.ts
+    source_sha256: 8249205603040e9f1dd8256920e2495fe6edbeaf9c78a879e66ca0658476cf91
+    algorithm: two-pass compensated squared deviations, n-1 denominator
+    ancestor_algorithm_or_paper: standard textbook two-pass; not Welford
+    arithmetic_model: IEEE754_binary64
+    precision_model: binary64
+    validation_model: exact_rational_crosscheck
+    relationship_to:
+      R_pt: independent
+      SciPy_stdtr: independent
+      Boost_ibeta: independent
+      Arb: independent
+    status: VERIFIED_FROM_SOURCE
+  - component_id: t_cdf
+    package: "@stdlib/stats-base-dists-t-cdf"
+    version: 0.2.3
+    source_path: "@stdlib+stats-base-dists-t-cdf@0.2.3/node_modules/@stdlib/stats-b\
+      ase-dists-t-cdf/lib/main.js"
+    source_sha256: 3b6f7bb73363466beea0925613b2c8178768461da6c046e325ab502958657011
+    algorithm: Student t CDF via regularized incomplete beta (tail selection)
+    ancestor_algorithm_or_paper: Boost Math beta.hpp (John Maddock 2006) ported to JS
+    arithmetic_model: IEEE754_binary64
+    precision_model: binary64
+    validation_model: not_oracle_shared_lineage
+    relationship_to:
+      R_pt: possibly_shared_TOMS708_family
+      SciPy_stdtr: possibly_shared_Boost_path
+      Boost_ibeta: ported_from_Boost
+      Arb: independent_acb_enclosure
+    status: VERIFIED_FROM_SOURCE
+  - component_id: t_quantile
+    package: "@stdlib/stats-base-dists-t-quantile"
+    version: 0.2.3
+    source_path: "@stdlib+stats-base-dists-t-quantile@0.2.3/node_modules/@stdlib/st\
+      ats-base-dists-t-quantile/lib/main.js"
+    source_sha256: 16e3881c60f5e592bd8317521c67ce3cb351917dab1fb98c9274b27365fcd789
+    algorithm: inverse incomplete beta via kernel-betaincinv (Halley/Temme)
+    ancestor_algorithm_or_paper: Boost ibeta_inverse.hpp (Maddock 2006) ported to JS
+    arithmetic_model: IEEE754_binary64
+    precision_model: binary64
+    validation_model: acb_quantile_route_Q2
+    relationship_to:
+      R_pt: NOT_algorithmically_independent_if_R_qt_Hill396
+      SciPy_stdtr: possibly_shared_Boost_path
+      Boost_ibeta: ported_from_Boost_ibeta_inverse
+      Arb: independent_acb_enclosure
+    status: VERIFIED_FROM_SOURCE
+    quantile_route: Q2_acb_adaptive_bracket
+    r_qt_independence: NOT_ESTABLISHED_R_UNAVAILABLE
+source_file_hashes:
+  t_cdf: 3b6f7bb73363466beea0925613b2c8178768461da6c046e325ab502958657011
+  t_quantile: 16e3881c60f5e592bd8317521c67ce3cb351917dab1fb98c9274b27365fcd789
+  betainc: d9593ac4b85101fd7700700f11412b5f532bf22d2a3ddcdb439139a6f7d46d82
+  kernel_betainc: 79d0305d802536e246c7fc820788e17a6badc43a95e727bb1b0fb42eabb03b1d
+  kernel_betaincinv: a4d457e53e41b35a6e232c56878a84978aa9e3c025001add1a12e60dc014fb65
+  stats_kernel: 8249205603040e9f1dd8256920e2495fe6edbeaf9c78a879e66ca0658476cf91
+  stats_tdist: dea980acb7687382305d5467ece7db0758041f41f2cd1f3daa33f69bf6177089

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nomue:schema:disclosure-notice:0.1.0-draft.1",
+  "title": "nomue disclosure notice",
+  "description": "Withdrawal/supersession satellite artifact (NRS-CORE-0019, EXPERIMENTAL): the Disclosure axis truth-carrier. Append-only; a supersession names the superseding revision. Never a mutation of the immutable Record.",
+  "type": "object",
+  "required": ["$schema", "notice_type", "notice_kind", "subject", "issued_at"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "urn:nomue:schema:disclosure-notice:0.1.0-draft.1"
+    },
+    "notice_type": {
+      "const": "nomue-disclosure-notice"
+    },
+    "notice_kind": {
+      "enum": ["withdrawal", "supersession"]
+    },
+    "subject": {
+      "type": "object",
+      "required": ["record_id", "revision_id", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "superseded_by": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "Superseding revision_id; required for supersession, absent for withdrawal (enforced by allOf)."
+    },
+    "issued_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$"
+    },
+    "statement": {
+      "type": "string",
+      "maxLength": 2048
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "notice_kind": {
+            "const": "supersession"
+          }
+        }
+      },
+      "then": {
+        "required": ["superseded_by"]
+      },
+      "else": {
+        "not": {
+          "required": ["superseded_by"]
+        }
+      }
+    }
+  ]
+}

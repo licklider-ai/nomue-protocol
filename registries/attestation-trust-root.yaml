@@ -1,0 +1,28 @@
+# Attestation trust root - authoritative for WHICH public keys make a
+# signature "nomue-attested" (NRS-ATTEST-0007) and for key-generation
+# transitions (NRS-ATTEST-0008). Validated by
+# schemas/meta/attestation-trust-root.schema.json.
+#
+# Classified authoritative in authority/authority-manifest.yaml, so this
+# file is part of the content-addressed snapshot surface: the snapshot
+# manifest (NRS-VERSION-0001) covers it, making "which keys count" a
+# versioned, hash-anchored fact rather than an out-of-band claim.
+#
+# keys is EMPTY by design: no production key exists yet. The first
+# generation is added by the steward's key ceremony
+# (governance/KEY-CEREMONY-RUNBOOK.md); until then, trust-root evaluation
+# fails closed and nothing is nomue-attested. Entries are append-only:
+# a generation leaves service by status: superseded + superseded_by,
+# never by deletion (NRS-ATTEST-0008).
+
+registry: nrs-attestation-trust-root
+registry_version: "0.1.0"
+updated: "2026-08-13"
+
+fingerprint_method: >-
+  sha256 over the DER-encoded SubjectPublicKeyInfo (SPKI) of the public
+  key, rendered as "sha256:" followed by lowercase hexadecimal. Computable
+  from the PEM alone (openssl pkey -pubin -outform DER | sha256sum) and
+  via pnpm trust-root:fingerprint.
+
+keys: []

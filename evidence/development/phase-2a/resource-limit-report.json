@@ -1,0 +1,17 @@
+{
+  "limits": {
+    "file_size_bytes": 5242880,
+    "nesting_depth": 64,
+    "observations": 10000,
+    "string_length_code_units": 16384
+  },
+  "fixtures": {
+    "file_size": "A2-R-001",
+    "nesting_depth": "A2-R-002",
+    "observation_count": "A2-R-003",
+    "string_length": "A2-R-004",
+    "malformed_json": "A2-R-005",
+    "truncated_json": "A2-R-006"
+  },
+  "behavior": "safe refusal; no code execution; no external access; no partial success"
+}

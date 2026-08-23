@@ -1,0 +1,445 @@
+{
+  "total_requirements": 139,
+  "phase_2a_added": 39,
+  "requirements": [
+    {
+      "id": "NRS-CANON-0007",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "canonicalization/record-canonicalization.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "JSON-DUP-001",
+        "JSON-DUP-002",
+        "JSON-DUP-003",
+        "JSON-DUP-004",
+        "JSON-DUP-005",
+        "JSON-DUP-006",
+        "JSON-DUP-007",
+        "JSON-DUP-008",
+        "JSON-DUP-009",
+        "JSON-DUP-010",
+        "JSON-DUP-011"
+      ]
+    },
+    {
+      "id": "NRS-CANON-0008",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "canonicalization/record-canonicalization.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "JSON-UNI-001",
+        "JSON-UNI-002",
+        "JSON-UNI-003",
+        "JSON-UNI-004",
+        "JSON-UNI-005"
+      ]
+    },
+    {
+      "id": "NRS-SEC-0006",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/public-checks.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-CORE-0009",
+      "stability": "CORE",
+      "testability": "release_gate",
+      "document": "spec/profiles/independent-two-group-continuous/non-claims.md",
+      "schema_refs": [
+        "schemas/reports/verification-report-0.2.schema.json"
+      ],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-CORE-0010",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/versioning/multi-bundle-dispatch.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-B-001"
+      ]
+    },
+    {
+      "id": "NRS-CORE-0011",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/verification/verifier-refusal.md",
+      "schema_refs": [
+        "schemas/reports/verifier-refusal-0.2-draft-3.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-R-005"
+      ]
+    },
+    {
+      "id": "NRS-VERSION-0005",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/versioning/multi-bundle-dispatch.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-B-004"
+      ]
+    },
+    {
+      "id": "NRS-VERSION-0006",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/versioning/multi-bundle-dispatch.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-B-001"
+      ]
+    },
+    {
+      "id": "NRS-VERSION-0007",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/versioning/multi-bundle-dispatch.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "ROUTE-004",
+        "ROUTE-005",
+        "ROUTE-006",
+        "ROUTE-007",
+        "ROUTE-008"
+      ]
+    },
+    {
+      "id": "NRS-VERSION-0008",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/versioning/multi-bundle-dispatch.md",
+      "schema_refs": [
+        "schemas/routing/routing-envelope-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "ROUTE-001",
+        "ROUTE-002",
+        "ROUTE-003",
+        "S-001"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0015",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/effect-estimate.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-008",
+        "A2-P-007"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0016",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/confidence-interval.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-009",
+        "A2-P-004"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0017",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/confidence-interval.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-P-001"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0018",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/confidence-interval.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-P-002",
+        "A2-P-003",
+        "A2-P-006"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0019",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-001"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0020",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-002"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0021",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-003"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0022",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-004"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0023",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-005"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0024",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-006"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0025",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/admissibility.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-A-007"
+      ]
+    },
+    {
+      "id": "NRS-PROFILE-ITGC-0026",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/profiles/independent-two-group-continuous/effect-estimate.md",
+      "schema_refs": [
+        "schemas/profiles/itgc-guarantee-0.2.schema.json",
+        "schemas/reports/verification-report-0.2.schema.json"
+      ],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-VERIFY-0013",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/verification/profile-admissibility-check.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-A-001"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0014",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/phase-2a-welch-recompute.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-V-001"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0015",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/phase-2a-welch-recompute.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-V-003"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0016",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/phase-2a-welch-recompute.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-P-008",
+        "A2-P-009"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0017",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/verification/profile-admissibility-check.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "A2-A-001"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0018",
+      "stability": "STABLE-INTENT",
+      "testability": "automated",
+      "document": "spec/verification/verifier-refusal.md",
+      "schema_refs": [
+        "schemas/reports/verifier-refusal-0.2-draft-3.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-R-001",
+        "A2-R-008"
+      ]
+    },
+    {
+      "id": "NRS-SEC-0004",
+      "stability": "CORE",
+      "testability": "automated",
+      "document": "spec/verification/verifier-refusal.md",
+      "schema_refs": [
+        "schemas/reports/verifier-refusal-0.2-draft-3.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-R-001"
+      ]
+    },
+    {
+      "id": "NRS-SEC-0005",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/verifier-refusal.md",
+      "schema_refs": [
+        "schemas/reports/verifier-refusal-0.2-draft-3.schema.json"
+      ],
+      "conformance_refs": [
+        "A2-R-004"
+      ]
+    },
+    {
+      "id": "NRS-VERIFY-0022",
+      "stability": "EXPERIMENTAL",
+      "testability": "human_review",
+      "document": "spec/verification/relying-party-interface.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-VERIFY-0028",
+      "stability": "EXPERIMENTAL",
+      "testability": "human_review",
+      "document": "spec/verification/relying-party-interface.md",
+      "schema_refs": [
+        "schemas/common/execution-outcome.schema.json"
+      ],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-VERIFY-0023",
+      "stability": "EXPERIMENTAL",
+      "testability": "human_review",
+      "document": "spec/verification/relying-party-interface.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-VERIFY-0024",
+      "stability": "EXPERIMENTAL",
+      "testability": "human_review",
+      "document": "spec/verification/relying-party-interface.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-VERIFY-0025",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/verification/relying-party-interface.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-PROV-0001",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/core/provenance-model.md",
+      "schema_refs": [],
+      "conformance_refs": [
+        "M-012",
+        "M-013"
+      ]
+    },
+    {
+      "id": "NRS-PROV-0002",
+      "stability": "EXPERIMENTAL",
+      "testability": "not_yet_testable",
+      "document": "spec/core/provenance-model.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    },
+    {
+      "id": "NRS-EMIT-0001",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/emission/README.md",
+      "schema_refs": [
+        "schemas/record/record.schema.json",
+        "schemas/record/record-0.2.schema.json"
+      ],
+      "conformance_refs": [
+        "E-001",
+        "E-002",
+        "E-004",
+        "E-005"
+      ]
+    },
+    {
+      "id": "NRS-EMIT-0002",
+      "stability": "EXPERIMENTAL",
+      "testability": "automated",
+      "document": "spec/emission/README.md",
+      "schema_refs": [],
+      "conformance_refs": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+holds:
+  - id: R1-08_third_oracle_lineage
+    status: open
+    description: >-
+      Independent third implementation (R/MPFR/Arb) without stdlib/Boost shared
+      ancestry required before R1-08 can close.
+  - id: arb_mpfr_interval_enclosure
+    status: open
+    description: >-
+      Extreme-tail interval enclosure evidence is not a universal binary64 input
+      proof; domain-boundary evidence remains informative only.
+  - id: domain_boundary_not_normative
+    status: active
+    description: >-
+      numerical_domain_boundary_evidence test family does not define Record
+      conformance rejection rules.

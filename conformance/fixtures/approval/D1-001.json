@@ -1,0 +1,20 @@
+{
+  "approval": {
+    "approval_id": "urn:uuid:00000000-0000-4000-8000-0000000000d1",
+    "approver": {
+      "name": "Example Approver",
+      "approver_id": "urn:nomue:approver:example:1"
+    },
+    "scope": {
+      "kind": "record_revision",
+      "id": "urn:nomue:revision:example:approval-draft-0001"
+    },
+    "timestamp": "2026-08-13T00:00:00Z",
+    "statement": "urn:nomue:approval-statement:content-reviewed-responsibility-accepted:1"
+  },
+  "record_reference": {
+    "record_id": "urn:nomue:record:example:approval-draft-0001",
+    "revision_id": "urn:nomue:revision:example:approval-draft-0001",
+    "content_digest": "sha256:abababababababababababababababababababababababababababababababab"
+  }
+}

@@ -1,0 +1,2 @@
+$ tsx tooling/src/release/snapshot-manifest-cli.ts "--hash-only"
+sha256:e32f6e469c26da0f387358dfa81e05308f1f82aedcbc9b54b4d2aad5f1c6f2b1

@@ -1,0 +1,10 @@
+# Note: machine-local repository root path redacted as <repo-root> (private-dependency audit).
+
+ RUN  v4.1.10 <repo-root>
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  15:36:58
+   Duration  1.48s (transform 251ms, setup 0ms, import 990ms, tests 251ms, environment 0ms)
+

@@ -1,0 +1,154 @@
+# Canonicalization and digest test vectors.
+# Authored via tooling/src/phase1/author-vectors.ts: every canonical
+# expectation is cross-checked against the independent `canonicalize`
+# npm package before being written, so expected values never come from
+# the reference canonicalizer alone. Record content digests (expected_digest)
+# are domain-separated per NRS-CANON-0020/0022: SHA-256 of the fixed
+# `nomue/record-content/v1` tag plus LF, followed by the UTF-8 bytes of the
+# RFC 8785 JCS canonical form. Executed by pnpm canonicalization:test.
+
+manifest: nrs-canonicalization-vectors
+manifest_version: "0.1.0"
+updated: "2026-08-10"
+
+vectors:
+  - vector_id: key-ordering
+    kind: canonical
+    purpose: >-
+      Member names sort by UTF-16 code units regardless of input order.
+    input: inputs/key-ordering.json
+    input_sha256: "bdd9983de5f0160953828705733574958f84b94cc33ccfc184a1fc09379bed7b"
+    expected_canonical: expected/key-ordering.canonical.txt
+    expected_digest: "sha256:9a14bb91a73cd8d92238d2a2459a586d688693d6140c93ef1d4a1478f05825ca"
+
+  - vector_id: unicode
+    kind: canonical
+    purpose: >-
+      Non-ASCII characters stay literal; mandated control characters use short or \u00xx escapes.
+    input: inputs/unicode.json
+    input_sha256: "e3dfbb7085593fb6ae0dad2cccdee4b94b37ea18c0953b9ae67a868a3cb14be3"
+    expected_canonical: expected/unicode.canonical.txt
+    expected_digest: "sha256:9dfd340f268c87779d40e8847852e10ef0f775ce04416903086d13f3425bde95"
+
+  - vector_id: whitespace
+    kind: canonical
+    purpose: >-
+      Insignificant whitespace in the input does not affect the canonical form.
+    input: inputs/whitespace.json
+    input_sha256: "1b865d10ebe9ad0932bb2780e69fe09352af86d036884735c6ed50b45461859d"
+    expected_canonical: expected/whitespace.canonical.txt
+    expected_digest: "sha256:52af288529b15987dcfba006ef2857955f4792b317b09b71af0181dce0681a98"
+
+  - vector_id: exponent-representation
+    kind: canonical
+    purpose: >-
+      Numbers serialize in shortest ECMAScript round-trip form.
+    input: inputs/exponent-representation.json
+    input_sha256: "88c585c354ca2dd75165a5a7f96bf272310c6289831dbc3616a7446088e13d2b"
+    expected_canonical: expected/exponent-representation.canonical.txt
+    expected_digest: "sha256:d8a163563ffa0d73872094526345e937a07f96a6fc123fb989195adb5d381d41"
+
+  - vector_id: decimal-representation
+    kind: canonical
+    purpose: >-
+      Decimal notation normalizes to shortest round-trip form.
+    input: inputs/decimal-representation.json
+    input_sha256: "df3cd112a5edb39cfdc94ab93373ad91ad93b5a17c86ad4c16fe7ee2881ea9c1"
+    expected_canonical: expected/decimal-representation.canonical.txt
+    expected_digest: "sha256:e31be9be5ddbb488d775b3c794882e2b29dc8703eea834373b642409a9c21b9b"
+
+  - vector_id: zero
+    kind: canonical
+    purpose: >-
+      All zero spellings canonicalize to 0.
+    input: inputs/zero.json
+    input_sha256: "e1e1c6c5f83834289fa74052ee2bf4139de38b77c4c067ce89e020298b552fc0"
+    expected_canonical: expected/zero.canonical.txt
+    expected_digest: "sha256:57a5935a6edaf6a74a2e0684c95bb2de55ba807c30cc188c8333090624dff24d"
+
+  - vector_id: negative-zero
+    kind: strict_rejection
+    purpose: >-
+      Negative zero input is REJECTED at the lexical stage (NRS-CANON-0015, Batch 5: Erratum 7920 SHOULD raised to MUST) - it is never silently normalized to 0. Reclassified from kind canonical in the pre-release canonicalization revision (ADR-0027).
+    input: inputs/negative-zero.txt
+    input_sha256: "2426563e2e9a9e76cb641dc44b2b9b8ae49a056ecdf582c48ef1366b6346bbf4"
+    expected_strict_error: NEGATIVE_ZERO_NUMBER
+
+  - vector_id: negative-zero-exponent
+    kind: strict_rejection
+    purpose: >-
+      Exponent spellings of negative zero (-0e5, -0.00E+2) are rejected the same way (NRS-CANON-0015).
+    input: inputs/negative-zero-exponent.txt
+    input_sha256: "9dad7fc9027a914c6fa94a789f3e7926ec8bf295d3690307591c79c6805a5464"
+    expected_strict_error: NEGATIVE_ZERO_NUMBER
+
+  - vector_id: numeric-endpoints
+    kind: canonical
+    purpose: >-
+      Binary64 endpoint values round-trip in shortest form: max double, min normal, min subnormal, and the 1e+/-308 neighborhood (Batch 5 checklist item 11).
+    input: inputs/numeric-endpoints.json
+    input_sha256: "3ec92e0195dd0b20a5668427c290f9fb43dcfa5dd7056791a26123a3498bf9ef"
+    expected_canonical: expected/numeric-endpoints.canonical.txt
+    expected_digest: "sha256:ca4b2bac200f56c52494d884fc217c90565b77dc1056279f86d80f86b6e06b92"
+
+  - vector_id: nested-objects
+    kind: canonical
+    purpose: >-
+      Nested objects canonicalize recursively with sorted members.
+    input: inputs/nested-objects.json
+    input_sha256: "e0d11cc4982d9cf2ed367761e58579fd67aa3367960ba6d4639c928d12e12f1a"
+    expected_canonical: expected/nested-objects.canonical.txt
+    expected_digest: "sha256:054069e113e37bfac83ef9fcee940f58778039b45c4a3a057d125c75791a5e08"
+
+  - vector_id: arrays
+    kind: canonical
+    purpose: >-
+      Array element order is preserved; only objects sort.
+    input: inputs/arrays.json
+    input_sha256: "073ec2eb32d0804f1f3f510da8081c0a836899e092ee47abb3c00fccd44797b4"
+    expected_canonical: expected/arrays.canonical.txt
+    expected_digest: "sha256:696e14beac17de974bca30481cb3f96a4c8758df784a8050668e51c377b75301"
+
+  - vector_id: integrity-exclusion
+    kind: projection
+    purpose: >-
+      The digest projection excludes exactly the integrity member (NRS-CORE-0006).
+    input: inputs/integrity-exclusion.json
+    input_sha256: "108e699f918517e2b8137383c919c424cfdb67118a40d24b010f191a7cae88d4"
+    expected_canonical: expected/integrity-exclusion.canonical.txt
+    expected_digest: "sha256:f1cc8653eec6c72d66d19c7c1d028b57f4f26892f926fc7a1797200d8985a7e7"
+
+  - vector_id: invalid-nan-token
+    kind: parse_error
+    purpose: >-
+      A raw NaN token is not JSON and is a parse error.
+    input: inputs/invalid-nan-token.txt
+    input_sha256: "159f99e03ec6dfb7edcad87bac613ac97a235493ad8b79b33cfa4002fb4477f8"
+    expected_parse_error: true
+
+  - vector_id: invalid-infinity-token
+    kind: parse_error
+    purpose: >-
+      A raw Infinity token is not JSON and is a parse error.
+    input: inputs/invalid-infinity-token.txt
+    input_sha256: "a77d1d4b3feddf6c1ee5854af8f5448d142b4712efa8cb5892c23fa8e5742bd4"
+    expected_parse_error: true
+
+  - vector_id: bom-rejected
+    kind: parse_error
+    purpose: >-
+      A UTF-8 BOM before the JSON text is not JSON and is a parse error (Batch 5 checklist item 12); nothing strips it silently.
+    input: inputs/bom-rejected.txt
+    input_sha256: "e3170108e7583c4ad52e05763a606c1dceef76c81a8e1503dde511b5ca764f81"
+    expected_parse_error: true
+
+  - vector_id: digest-mismatch
+    kind: digest_mismatch
+    purpose: >-
+      A declared digest differing from the recomputed digest of the projection is detected.
+    input: inputs/digest-mismatch.json
+    input_sha256: "26160e5408d8bbde9e6197a2362c712f3d92578bfda78b1c8c34c7ea9604c43b"
+    expected_canonical: expected/digest-mismatch.canonical.txt
+    expected_digest: "sha256:8714992ff84edd873be00486b78247eb7821bd1ac3b984673858b10f00a8272f"
+    declared_digest: "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+    expected_mismatch: true

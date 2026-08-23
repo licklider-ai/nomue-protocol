@@ -1,0 +1,58 @@
+{
+  "V001": {
+    "n1": 3,
+    "mean1": 2,
+    "var1": 1,
+    "n2": 3,
+    "mean2": 5,
+    "var2": 1,
+    "mean_difference": -3,
+    "standard_error": 0.816496580927726,
+    "test_statistic": -3.6742346141747673,
+    "degrees_of_freedom": 4,
+    "p_value": 0.02131164112875673,
+    "p_value_clamped": false
+  },
+  "V002": {
+    "n1": 4,
+    "mean1": 2.8,
+    "var1": 1.88,
+    "n2": 3,
+    "mean2": 7.066666666666666,
+    "var2": 2.623333333333333,
+    "mean_difference": -4.266666666666667,
+    "standard_error": 1.1595018087284057,
+    "test_statistic": -3.6797412772868414,
+    "degrees_of_freedom": 3.9642322870622957,
+    "p_value": 0.021544849116251163,
+    "p_value_clamped": false
+  },
+  "V003": {
+    "n1": 3,
+    "mean1": 2.5e-7,
+    "var1": 2.25e-14,
+    "n2": 3,
+    "mean2": 6.65e-7,
+    "var2": 1.6725e-14,
+    "mean_difference": -4.15e-7,
+    "standard_error": 1.1434596626029271e-7,
+    "test_statistic": -3.629336596406996,
+    "degrees_of_freedom": 3.915135727014435,
+    "p_value": 0.023003313280706792,
+    "p_value_clamped": false
+  },
+  "EXAMPLE": {
+    "n1": 4,
+    "mean1": 12.1,
+    "var1": 0.08666666666666652,
+    "n2": 4,
+    "mean2": 14,
+    "var2": 0.11333333333333347,
+    "mean_difference": -1.9000000000000004,
+    "standard_error": 0.22360679774997896,
+    "test_statistic": -8.497058314499203,
+    "degrees_of_freedom": 5.895196506550217,
+    "p_value": 0.00015974224138586541,
+    "p_value_clamped": false
+  }
+}

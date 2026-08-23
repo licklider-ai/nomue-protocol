@@ -1,0 +1,426 @@
+# State invariant registry - authoritative for the semantic invariants that
+# conformance and verification evaluate beyond schema validation.
+# Validated by schemas/meta/state-invariants-registry.schema.json.
+
+registry: nrs-state-invariants
+registry_version: "0.1.0"
+updated: "2026-08-10"
+
+invariants:
+  - invariant_id: bundle-supported
+    title: Interpretation bundle is supported
+    scope: record
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-VERSION-0002
+      - NRS-VERSION-0003
+    machine_testable: true
+    failure_reason_code: NRS-UNSUPPORTED-BUNDLE
+    notes: Evaluated before any other interpretation; fail closed.
+
+  - invariant_id: numeric-domain-finite
+    title: Numeric values are within the finite binary64 domain
+    scope: record
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CANON-0003
+      - NRS-PROFILE-ITGC-0013
+    machine_testable: true
+    failure_reason_code: NRS-NON-FINITE-NUMERIC-VALUE
+    notes: >-
+      JSON.parse can overflow large literals to infinity; such values are
+      outside the numeric model. Because no digest projection exists for
+      them, the reference verifier refuses safely (NRS-NON-FINITE-NUMERIC-VALUE
+      with NRS-CANONICALIZATION-FAILED) before a report is produced; the
+      semantic evaluation of this invariant is retained as defense in depth.
+
+  - invariant_id: dataset-ref-resolves
+    title: Design references the declared dataset
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CORE-0003
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: design.dataset_id equals the declared dataset's dataset_id.
+
+  - invariant_id: design-ref-resolves
+    title: Analysis references the declared design
+    scope: analysis
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CORE-0003
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: analysis.design_id equals the declared design's design_id.
+
+  - invariant_id: analysis-ref-resolves
+    title: Result references the declared analysis
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CORE-0003
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: >-
+      result.analysis_id equals the declared analysis's analysis_id. In the
+      single-analysis Phase 1 model this coincides with
+      result-references-analysis and is evaluated under that invariant's
+      identifier; the two diverge once a Record can carry more than one
+      analysis.
+
+  - invariant_id: exactly-two-groups
+    title: Exactly two groups are declared
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+    machine_testable: true
+    failure_reason_code: NRS-GROUP-COUNT-NOT-TWO
+    notes: Also enforced structurally by the profile schema.
+
+  - invariant_id: group-order-permutation
+    title: group_order is a permutation of the declared groups
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0006
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: >-
+      Each declared group_id appears exactly once in group_order; schema alone
+      cannot fully express this, so it is a semantic invariant.
+
+  - invariant_id: observation-ids-unique
+    title: Observation identifiers are unique
+    scope: record
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0002
+    machine_testable: true
+    failure_reason_code: NRS-DUPLICATE-OBSERVATION-ID
+    notes: ""
+
+  - invariant_id: experimental-unit-ids-unique
+    title: Experimental-unit identifiers are unique
+    scope: record
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0003
+    machine_testable: true
+    failure_reason_code: NRS-DUPLICATE-EXPERIMENTAL-UNIT
+    notes: One observation per experimental unit in Phase 1.
+
+  - invariant_id: observation-group-resolves
+    title: Every observation references a declared group
+    scope: record
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+    machine_testable: true
+    failure_reason_code: NRS-UNKNOWN-GROUP
+    notes: ""
+
+  - invariant_id: group-min-size
+    title: Each group has at least two observations
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0004
+    machine_testable: true
+    failure_reason_code: NRS-GROUP-SIZE-BELOW-TWO
+    notes: ""
+
+  - invariant_id: independence-declared
+    title: Independence is declared
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0005
+    machine_testable: true
+    failure_reason_code: NRS-INDEPENDENCE-NOT-DECLARED
+    notes: >-
+      The declaration's truth is not verified; its presence and structural
+      consistency are.
+
+  - invariant_id: method-is-welch
+    title: Declared method is the Welch two-sample t-test
+    scope: analysis
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0007
+    machine_testable: true
+    failure_reason_code: NRS-UNSUPPORTED-METHOD
+    notes: ""
+
+  - invariant_id: alternative-two-sided
+    title: Declared alternative is two-sided
+    scope: analysis
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0007
+    machine_testable: true
+    failure_reason_code: NRS-UNSUPPORTED-ALTERNATIVE
+    notes: ""
+
+  - invariant_id: result-summaries-match-group-order
+    title: Result group summaries follow group_order
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0006
+      - NRS-PROFILE-ITGC-0012
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: >-
+      group_summaries[i].group_id equals group_order[i]; the declared mean
+      difference direction follows group_order.
+
+  - invariant_id: result-references-analysis
+    title: Result is bound to the declared analysis
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0012
+    machine_testable: true
+    failure_reason_code: NRS-SEMANTIC-CONFORMANCE-FAILED
+    notes: >-
+      In the single-analysis Phase 1 model this coincides with
+      analysis-ref-resolves; it is registered separately because the two
+      diverge once a Record can carry more than one analysis.
+
+  # ------------------------------------------------------------- Phase 2A
+
+  - invariant_id: admissibility-declarations-present
+    title: Admissibility declarations are present
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CORE-0003
+    machine_testable: true
+    failure_reason_code: NRS-SCHEMA-INVALID
+    notes: >-
+      The 0.2 design carries complete declarations and data_handling blocks;
+      absence is a schema failure.
+
+  - invariant_id: pairing-none
+    title: Pairing is none
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0019
+    machine_testable: true
+    failure_reason_code: NRS-PAIRING-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: repeated-measurements-none
+    title: Repeated measurements are none
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0020
+    machine_testable: true
+    failure_reason_code: NRS-REPEATED-MEASURES-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: clustering-none-declared
+    title: Clustering is none_declared
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0021
+    machine_testable: true
+    failure_reason_code: NRS-CLUSTERING-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: analysis-population-complete
+    title: Analysis population is all Record observations
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0024
+    machine_testable: true
+    failure_reason_code: NRS-SUBSET-ANALYSIS-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: missing-outcomes-none
+    title: Missing outcomes are none
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0025
+    machine_testable: true
+    failure_reason_code: NRS-MISSING-OUTCOMES-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: transformation-none
+    title: Transformation is none
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0023
+    machine_testable: true
+    failure_reason_code: NRS-TRANSFORMATION-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: weighting-none
+    title: Weighting is none
+    scope: design
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0022
+    machine_testable: true
+    failure_reason_code: NRS-WEIGHTING-NOT-SUPPORTED
+    notes: Evaluated by the profile-admissibility check.
+
+  - invariant_id: estimand-supported
+    title: Estimand kind is supported
+    scope: analysis
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0015
+    machine_testable: true
+    failure_reason_code: NRS-UNSUPPORTED-ESTIMAND
+    notes: >-
+      The unstandardized arithmetic mean difference in group-order direction
+      is the only supported estimand.
+
+  - invariant_id: confidence-level-supported
+    title: Confidence level is 0.95
+    scope: analysis
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0016
+    machine_testable: true
+    failure_reason_code: NRS-CONFIDENCE-LEVEL-MISMATCH
+    notes: >-
+      The level is owned by the check version; the Record declares the
+      required 0.95 and cannot choose another level.
+
+  - invariant_id: effect-direction-group-order
+    title: Effect-estimate direction follows group_order
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0006
+      - NRS-PROFILE-ITGC-0015
+    machine_testable: true
+    failure_reason_code: NRS-DECLARED-RESULT-MISMATCH
+    notes: >-
+      A sign-flipped declared estimate fails the recompute comparison.
+
+  - invariant_id: standard-error-finite-positive
+    title: Standard error is finite and positive
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0017
+    machine_testable: true
+    failure_reason_code: NRS-NUMERICAL-COMPUTABILITY-FAILED
+    notes: >-
+      Recomputed by the computability check; a zero standard error carries
+      NRS-ZERO-STANDARD-ERROR.
+
+  - invariant_id: ci-order-valid
+    title: Confidence interval lower <= upper
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0018
+    machine_testable: true
+    failure_reason_code: NRS-CONFIDENCE-INTERVAL-ORDER-INVALID
+    notes: >-
+      Deliberately not a schema constraint so reversed endpoints reach the
+      comparison check with a specific reason code.
+
+  - invariant_id: ci-level-matches-analysis
+    title: Declared CI level matches the analysis confidence level
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0016
+    machine_testable: true
+    failure_reason_code: NRS-CONFIDENCE-LEVEL-MISMATCH
+    notes: >-
+      Both declared levels equal the check-owned 0.95 for an admissible,
+      comparable Record.
+
+  - invariant_id: ci-method-supported
+    title: Declared CI method is supported
+    scope: result
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0018
+    machine_testable: true
+    failure_reason_code: NRS-CONFIDENCE-INTERVAL-MISMATCH
+    notes: >-
+      The supported method is
+      urn:nomue:method:welch-satterthwaite-mean-difference-ci:1, compared
+      exactly by the recompute check.
+
+  - invariant_id: dependent-checks-gated
+    title: Dependent checks do not run after failed admissibility
+    scope: report
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-VERIFY-0017
+    machine_testable: true
+    failure_reason_code: null
+    notes: >-
+      Computability and recomputation are not_run with the blocking reason
+      codes when admissibility fails; enforced by the dependency propagation
+      rule in the public-check registry.
+
+  - invariant_id: refusal-carries-no-outcome
+    title: Refusal object has no verification outcome
+    scope: verifier
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-CORE-0011
+      - NRS-SEC-0004
+    machine_testable: true
+    failure_reason_code: null
+    notes: >-
+      The refusal schema declares no outcome, status, or validity member; a
+      violating output would be schema-invalid (NRS-VERIFY-0018).
+
+  - invariant_id: phase1-bundle-results-pinned
+    title: Phase 1 bundle results remain pinned
+    scope: verifier
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-VERSION-0006
+      - NRS-CORE-0010
+    machine_testable: true
+    failure_reason_code: null
+    notes: >-
+      The Phase 1 conformance manifest pins the 0.1 bundle's results; the
+      regression suite fails on any drift, and corrections require an
+      explicit decision record.
+
+  - invariant_id: execution-outcome-valid
+    title: Execution and outcome combinations are valid
+    scope: report
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-VERIFY-0010
+    machine_testable: true
+    failure_reason_code: null
+    notes: >-
+      completed requires outcome; not_run and error forbid outcome and
+      require reason codes; error additionally requires an error object.
+      Enforced by the report schema; a violating report is schema-invalid
+      rather than carrying a reason code itself.
+
+  - invariant_id: overall-verified-prohibited
+    title: Overall VERIFIED-style status is prohibited
+    scope: report
+    stability: EXPERIMENTAL
+    requirement_ids:
+      - NRS-VERIFY-0001
+    machine_testable: true
+    failure_reason_code: null
+    notes: >-
+      The report schema declares no overall status, no VERIFIED value, and no
+      whole-record validity boolean; the closed report surface rejects any
+      such property, and tooling audits for reintroduction.

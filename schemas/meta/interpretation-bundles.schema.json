@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:interpretation-bundles",
+  "title": "NRS interpretation bundle registry",
+  "description": "Meta-schema for registries/interpretation-bundles.yaml. A bundle pins schema, canonicalization, profile, public-check, and attestation-support state (NRS-VERSION-0004).",
+  "type": "object",
+  "required": [
+    "registry",
+    "registry_version",
+    "updated",
+    "verifier_output_contract",
+    "entry_order_semantics",
+    "status_note",
+    "entries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "registry": { "const": "nrs-interpretation-bundles" },
+    "registry_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "updated": { "type": "string", "format": "date" },
+    "verifier_output_contract": {
+      "type": "object",
+      "required": [
+        "verifier_output_protocol_version",
+        "routing_envelope",
+        "verification_report",
+        "verifier_refusal"
+      ],
+      "additionalProperties": false,
+      "$comment": "The verification report belongs to the interpreted bundle; the routing envelope and the refusal are bundle-independent verifier-level output contracts (routing runs before any bundle is selected, and parse failures and pre-dispatch refusals cannot depend on a bundle). No default-bundle member exists or is permitted here.",
+      "properties": {
+        "verifier_output_protocol_version": { "type": "string", "minLength": 1 },
+        "routing_envelope": {
+          "type": "object",
+          "required": ["selected_by", "bundle_independent", "schema_ref"],
+          "additionalProperties": false,
+          "properties": {
+            "selected_by": { "const": "verifier_output_protocol" },
+            "bundle_independent": { "const": true },
+            "schema_ref": { "$ref": "#/$defs/repoPath" }
+          }
+        },
+        "verification_report": {
+          "type": "object",
+          "required": ["selected_by", "bundle_independent"],
+          "additionalProperties": false,
+          "properties": {
+            "selected_by": { "const": "interpretation_bundle" },
+            "bundle_independent": { "const": false }
+          }
+        },
+        "verifier_refusal": {
+          "type": "object",
+          "required": ["selected_by", "bundle_independent", "schema_ref"],
+          "additionalProperties": false,
+          "properties": {
+            "selected_by": { "const": "verifier_output_protocol" },
+            "bundle_independent": { "const": true },
+            "schema_ref": { "$ref": "#/$defs/repoPath" },
+            "supersedes": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["schema_id", "schema_ref", "status", "note"],
+                "additionalProperties": false,
+                "properties": {
+                  "schema_id": { "type": "string", "pattern": "^urn:nomue:schema:" },
+                  "schema_ref": { "$ref": "#/$defs/repoPath" },
+                  "status": { "const": "superseded" },
+                  "note": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "entry_order_semantics": {
+      "const": "none",
+      "$comment": "Registry order is non-normative (NRS-VERSION-0007). Members such as default_bundle_id, first_bundle, or fallback_bundle are prohibited by additionalProperties: false at every level of this meta-schema."
+    },
+    "status_note": { "type": "string", "minLength": 1 },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/bundle" }
+    }
+  },
+  "$defs": {
+    "requirementId": {
+      "type": "string",
+      "pattern": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$"
+    },
+    "repoPath": {
+      "type": "string",
+      "pattern": "^(?!\\.\\.)(?!.*\\.\\./)[A-Za-z0-9][A-Za-z0-9._/-]*$"
+    },
+    "bundle": {
+      "type": "object",
+      "required": [
+        "bundle_id",
+        "title",
+        "status",
+        "public_release",
+        "spec_version",
+        "schema_version",
+        "canonicalization_version",
+        "profile_id",
+        "public_check_set_version",
+        "attestation_support",
+        "allowed_check_ids",
+        "schema_refs",
+        "conformance_manifest_ref",
+        "requirement_ids",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bundle_id": {
+          "type": "string",
+          "pattern": "^urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+$"
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["EXPERIMENTAL", "SUPPORTED", "WITHDRAWN"] },
+        "public_release": { "type": "boolean" },
+        "spec_version": { "type": "string", "minLength": 1 },
+        "schema_version": { "type": "string", "minLength": 1 },
+        "canonicalization_version": {
+          "type": "string",
+          "pattern": "^urn:nomue:canonicalization:[a-z0-9-]+:[A-Za-z0-9.-]+$"
+        },
+        "profile_id": {
+          "type": "string",
+          "pattern": "^urn:nomue:profile:[a-z0-9-]+:[A-Za-z0-9.-]+$"
+        },
+        "public_check_set_version": { "type": "string", "minLength": 1 },
+        "attestation_support": {
+          "const": "none",
+          "$comment": "No attestation procedure version exists in Phase 1; values beyond none arrive only with a real attestation procedure (gate R1-11)."
+        },
+        "allowed_check_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$" }
+        },
+        "schema_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/repoPath" }
+        },
+        "conformance_manifest_ref": { "$ref": "#/$defs/repoPath" },
+        "requirement_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/requirementId" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

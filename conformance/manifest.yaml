@@ -1,0 +1,3738 @@
+# Conformance suite manifest - authoritative for covered behavior.
+# Fixture files and expected results are pinned here (input_sha256,
+# expected reason codes, exit codes, semantic projection hashes).
+# Authored via tooling/src/phase1/author-fixtures.ts, which asserts every
+# declared expectation against the reference verifier before writing;
+# declared numeric values are cross-checked against independent oracles
+# (see evidence/development/phase-1/oracle/), and pinned reason codes are
+# cross-checked against the reason-code registry's applicable_check_ids
+# by pnpm validate.
+#
+# Known Phase 1 limitation (recorded, not hidden): non-numeric
+# expectations (execution states, projection hashes) originate from the
+# reference verifier at authoring time and pin behavior rather than
+# independently derive it; see the independent review record under
+# evidence/development/phase-1/reviews/ and gates R1-03 / R1-08.
+manifest: nrs-conformance
+manifest_version: 0.4.0
+updated: 2026-08-10
+suite_status: phase-2a
+families:
+  - family: structural
+    status: active
+    fixtures:
+      - fixture_id: S-002
+        classification: structural_invalid
+        purpose: An unknown top-level property is rejected by the closed Phase 1
+          surface.
+        input: conformance/fixtures/structural/S-002.json
+        input_sha256: cf7509bd691308d7f61d8e686e5000d782ad91c815283c4db52748653e5d77ba
+        requirement_ids:
+          - NRS-CORE-0007
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+          semantic_projection_hash: sha256:4281b69c7bf1441be2024df45bfda69ff4841fc253ce41f97af91c07a067cedc
+      - fixture_id: S-003
+        classification: structural_invalid
+        purpose: A string outcome_value violates the numeric model structurally.
+        input: conformance/fixtures/structural/S-003.json
+        input_sha256: d86c72136cf00961b9b5716b0606f43aa10aff0c37fa7017cfaf97b3154713b3
+        requirement_ids:
+          - NRS-CANON-0003
+          - NRS-PROFILE-ITGC-0013
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+          semantic_projection_hash: sha256:96315a5cfec69459c1fc318e030c6a5e47d413ffc67cf3739b0688c8473e0a66
+      - fixture_id: S-004
+        classification: structural_invalid
+        purpose: A created_at timestamp with a numeric offset (non-Z) is rejected.
+        input: conformance/fixtures/structural/S-004.json
+        input_sha256: d7a4d042f56baed4dd26d382de4a377b09ccdb98bd3a1f36b4833ff05a6c3eb7
+        requirement_ids:
+          - NRS-CORE-0003
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+          semantic_projection_hash: sha256:cb6f511790b2a9179d2171ba4e1dcaf9b519a30a56d835319f868ba17119396b
+    requirement_ids:
+      - NRS-CORE-0003
+      - NRS-CORE-0007
+    normative_scope: Structural conformance of Record documents to the pinned Record schema.
+    phase_introduced: phase-1
+  - family: semantic
+    status: active
+    fixtures:
+      - fixture_id: M-001
+        classification: semantic_invalid
+        purpose: Only one declared group.
+        input: conformance/fixtures/semantic/M-001.json
+        input_sha256: 3b0a11a4fb35989d477c778d380fc44dc7b0f324e26621527a824c32dc3c28ca
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0001
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+              - NRS-GROUP-COUNT-NOT-TWO
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+                - NRS-GROUP-COUNT-NOT-TWO
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+                - NRS-GROUP-COUNT-NOT-TWO
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+                - NRS-GROUP-COUNT-NOT-TWO
+          semantic_projection_hash: sha256:0f7eb996a007abc24fa8a9efb1eadb865fdac9cfa21ceba8a0f4c9ba02a7c535
+      - fixture_id: M-002
+        classification: semantic_invalid
+        purpose: Duplicate observation_id.
+        input: conformance/fixtures/semantic/M-002.json
+        input_sha256: 8334ab25ddc8f6f3eef57bdf2f53eeac143d66ffcba99e714992032a8e8611f7
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0002
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-DUPLICATE-OBSERVATION-ID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-OBSERVATION-ID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-OBSERVATION-ID
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-OBSERVATION-ID
+          semantic_projection_hash: sha256:5bc2d0c9e332eb8bcec5d590752a995b8c2ca5e8ef93b7b856cc612992105137
+      - fixture_id: M-003
+        classification: semantic_invalid
+        purpose: One experimental unit appears in two observations.
+        input: conformance/fixtures/semantic/M-003.json
+        input_sha256: cfe6bafa5ceb8fbcaabc2aa5bdaa558b93ec279a2c7562bc0c1a917d784e20f2
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0003
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-DUPLICATE-EXPERIMENTAL-UNIT
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-EXPERIMENTAL-UNIT
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-EXPERIMENTAL-UNIT
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-DUPLICATE-EXPERIMENTAL-UNIT
+          semantic_projection_hash: sha256:6427fc5d581592582a9501d92a41ef483f6dafbdea20ce213e830260847a0203
+      - fixture_id: M-004
+        classification: semantic_invalid
+        purpose: An observation references an undeclared group.
+        input: conformance/fixtures/semantic/M-004.json
+        input_sha256: 6ef773c110b4d1cf30f527c5ca96d937ef31c7f69eb7e90ec9546a6c540a6d68
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0001
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-UNKNOWN-GROUP
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNKNOWN-GROUP
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNKNOWN-GROUP
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNKNOWN-GROUP
+          semantic_projection_hash: sha256:9cd04766a5d0cc71e44f45f1017c215dd74d4e5d841df05dfb2ef953045006ac
+      - fixture_id: M-005
+        classification: semantic_invalid
+        purpose: A group with a single observation is below the minimum group size.
+        input: conformance/fixtures/semantic/M-005.json
+        input_sha256: 9d7d7db3073e542fa2bfc36a6ecfd24c0b1b44a7294762a3fe324124d9e605e8
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0004
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-GROUP-SIZE-BELOW-TWO
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-SIZE-BELOW-TWO
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-SIZE-BELOW-TWO
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-SIZE-BELOW-TWO
+          semantic_projection_hash: sha256:3578f92ecf4b47cc43206616eb1a56805f4420324002019ab26d32eda4f5116e
+      - fixture_id: M-006
+        classification: semantic_invalid
+        purpose: group_order is not a permutation of the declared groups.
+        input: conformance/fixtures/semantic/M-006.json
+        input_sha256: 9587fd96f04ec96e4201fdb97624c23ec6152a8a61f882d63dffdce2b3832dc5
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0006
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+          semantic_projection_hash: sha256:ec2bc0f69ae06a5ad90fa0aa8b62f5a719287647ed11714cac0b78367895d8d9
+      - fixture_id: M-007
+        classification: semantic_invalid
+        purpose: Independence is not declared.
+        input: conformance/fixtures/semantic/M-007.json
+        input_sha256: ba42a0b7aa103eaefc93f68e4ef2881e96082d224bdda72028000b765c4ffd88
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0005
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-INDEPENDENCE-NOT-DECLARED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-INDEPENDENCE-NOT-DECLARED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-INDEPENDENCE-NOT-DECLARED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-INDEPENDENCE-NOT-DECLARED
+          semantic_projection_hash: sha256:0578a3c782b683e267391b5c8c645683773b90374841f9ee3faa323498bc1f2d
+      - fixture_id: M-008
+        classification: semantic_invalid
+        purpose: An unsupported method is declared; no silent method switch occurs.
+        input: conformance/fixtures/semantic/M-008.json
+        input_sha256: dbc9903b1fca03f1ea1e63a44b2d77dbe052f8aebc30f2ba6b07e06b2dfdfdb4
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0007
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-UNSUPPORTED-METHOD
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-METHOD
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-METHOD
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-METHOD
+          semantic_projection_hash: sha256:bfa34dc9b449102ce8a01497f74d09650898630a59836220329f4a3675dea1a0
+      - fixture_id: M-009
+        classification: semantic_invalid
+        purpose: An unsupported alternative is declared.
+        input: conformance/fixtures/semantic/M-009.json
+        input_sha256: 77e497dc3b76f9a6e2b52c3f8c5a2e5e3a25ed6175918a4b1580fc9218627e3f
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0007
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-UNSUPPORTED-ALTERNATIVE
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-ALTERNATIVE
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-ALTERNATIVE
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-UNSUPPORTED-ALTERNATIVE
+          semantic_projection_hash: sha256:c024782f071a24d8782f1582a9b98c6ee919a986e8f6a3b2be6bf2f4c5870f71
+      - fixture_id: M-010
+        classification: semantic_invalid
+        purpose: The result references an unknown analysis.
+        input: conformance/fixtures/semantic/M-010.json
+        input_sha256: f687a4a37389567093ed2f7c54f1e45b5a046b8529d14f46fb0cda44c144f54f
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0012
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+          semantic_projection_hash: sha256:8d11b7994d78e72d6bdedb8f45009a5cfb9f107f8d5b849ff9a00a675548a0be
+      - fixture_id: M-012
+        classification: semantic_invalid
+        purpose: The design references an unknown dataset.
+        input: conformance/fixtures/semantic/M-012.json
+        input_sha256: e01eef5a6dd4f4603b5c93c22fb26b1fb7e96ee6d382271bb450712f8a928688
+        requirement_ids:
+          - NRS-CORE-0003
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+          semantic_projection_hash: sha256:a36e4bd4aaa9e2de18bd7072839e39185e68ffb95a45af4d7eb934b167954022
+      - fixture_id: M-013
+        classification: semantic_invalid
+        purpose: The analysis references an unknown design.
+        input: conformance/fixtures/semantic/M-013.json
+        input_sha256: 0db9dfe84f6ecb29c71cf85b187b604a5d1109a13e7809fed4afa30ceab55bf5
+        requirement_ids:
+          - NRS-CORE-0003
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+          semantic_projection_hash: sha256:72e2ddfbaf56b90f1c06c0d14bca1b1fbc23bc9f8f2e774e28b3f75dfed1f727
+      - fixture_id: M-014
+        classification: semantic_invalid
+        purpose: Two declared groups share a group_id; the semantic exactly-two-groups
+          path is exercised (schema alone cannot see the duplicate).
+        input: conformance/fixtures/semantic/M-014.json
+        input_sha256: 79d0e69af90cf124d3b9359dfff94949109a720dfaf9997e7a6a28cb37aab4c5
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0001
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+              - NRS-GROUP-COUNT-NOT-TWO
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-COUNT-NOT-TWO
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-COUNT-NOT-TWO
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+                - NRS-GROUP-COUNT-NOT-TWO
+          semantic_projection_hash: sha256:ba42b2073c135c3931a1344547176ec32a4d1dd879bb61e8e08a37fba4ef3c4f
+      - fixture_id: M-011
+        classification: semantic_invalid
+        purpose: Result group summaries do not follow group_order.
+        input: conformance/fixtures/semantic/M-011.json
+        input_sha256: c2709973250a0d0cd51107ae697a324232c8f56444195d5de8da978b164c6aeb
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0006
+          - NRS-PROFILE-ITGC-0012
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SEMANTIC-CONFORMANCE-FAILED
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SEMANTIC-CONFORMANCE-FAILED
+          semantic_projection_hash: sha256:3fba01d9cef974172aa538ccc67086abd7dbfd87a78607895a28065dd9d670c4
+    requirement_ids:
+      - NRS-PROFILE-ITGC-0001
+      - NRS-PROFILE-ITGC-0002
+      - NRS-PROFILE-ITGC-0003
+      - NRS-PROFILE-ITGC-0004
+      - NRS-PROFILE-ITGC-0005
+      - NRS-PROFILE-ITGC-0006
+      - NRS-PROFILE-ITGC-0007
+    normative_scope: Registered state invariants beyond schema validity.
+    phase_introduced: phase-1
+  - family: canonicalization
+    status: active
+    fixtures: []
+    requirement_ids:
+      - NRS-CANON-0001
+      - NRS-CANON-0020
+      - NRS-CANON-0022
+      - NRS-CANON-0004
+      - NRS-CANON-0005
+    normative_scope: JCS canonical form and domain-separated SHA-256 digests of the Phase 1 digest projection.
+    phase_introduced: phase-1
+    notes: Vectors live in canonicalization/test-vectors/manifest.yaml (single
+      authority) and run via pnpm canonicalization:test; no record-level
+      fixtures are duplicated here.
+  - family: public_checks
+    status: active
+    fixtures:
+      - fixture_id: V-001
+        classification: valid
+        purpose: Minimal balanced ITGC Record; every check passes.
+        input: conformance/fixtures/public_checks/V-001.json
+        input_sha256: 0435be4360d1b237e4dd4a6fe0d6cc125d3ea61e17067398a113947fe1762032
+        requirement_ids:
+          - NRS-CORE-0003
+          - NRS-PROFILE-ITGC-0006
+          - NRS-VERIFY-0008
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:682d8e857923cb462b217de230d37074fef00c0095b77d36f8814bab37510294
+      - fixture_id: V-002
+        classification: valid
+        purpose: Unequal group sizes and unequal variances; every check passes.
+        input: conformance/fixtures/public_checks/V-002.json
+        input_sha256: 9a0f151f5a20d1d1023bbd66ec0290086d6371713c32fdc4fd5053ccdadab387
+        requirement_ids:
+          - NRS-VERIFY-0008
+          - NRS-PROFILE-ITGC-0010
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:b30daf4b49b99ea9e3c52d340d74ed5f1dd766b10bd6046aa077e693b3e76b5b
+      - fixture_id: V-003
+        classification: valid
+        purpose: Valid Record whose numbers exercise nontrivial decimal and exponent
+          serialization under JCS.
+        input: conformance/fixtures/public_checks/V-003.json
+        input_sha256: f18af900df775ffae927ec1c6588664c5df2ce96f9e6ae3af50e36f7913f7749
+        requirement_ids:
+          - NRS-CANON-0001
+          - NRS-CANON-0003
+          - NRS-VERIFY-0008
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:7f8ffc8e3fb9e05063959e55cfff3d4d71e994979aa807fc926d686433e26219
+      - fixture_id: I-001
+        classification: integrity_invalid
+        purpose: The declared content digest does not match the recomputed digest.
+        input: conformance/fixtures/public_checks/I-001.json
+        input_sha256: b889a9958d826ab1c5ca5b6100c4e865e3c004239bbf304d61550fe6dae88218
+        requirement_ids:
+          - NRS-VERIFY-0006
+          - NRS-CANON-0022
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DIGEST-MISMATCH
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:93b0985152ef2a3600917699759d2338e9d99364fca3805156bba8ff70ac56ff
+      - fixture_id: I-002
+        classification: integrity_invalid
+        purpose: Content changed after digest declaration without a digest update.
+        input: conformance/fixtures/public_checks/I-002.json
+        input_sha256: 383fdaff69d1722c2250872456a6c1525abe45bfbb5163f548dcc718df27b421
+        requirement_ids:
+          - NRS-VERIFY-0006
+          - NRS-CORE-0005
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DIGEST-MISMATCH
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:2a577fcc8bebf2f8c7f2456d6ab57b00860e6adac1878ea47e47ded3b78d2e40
+      - fixture_id: P-001
+        classification: public_check_invalid
+        purpose: Declared mean differs from the recomputed value beyond tolerance.
+        input: conformance/fixtures/public_checks/P-001.json
+        input_sha256: aac96c9b08340d843736cb9c46974c1661807c9c25cac2b60420bdfb3721ec65
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0008
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:c45a220d57879ad71abec1cdbaeb984de188379f97248b484cf97702ba064113
+      - fixture_id: P-002
+        classification: public_check_invalid
+        purpose: Declared sample variance differs from the recomputed value beyond
+          tolerance.
+        input: conformance/fixtures/public_checks/P-002.json
+        input_sha256: ba426c634c8990f78651fd4a10e5497c3e919c2b82ce2a3f9cadc17f7776167e
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0008
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:a02e4c62fdbe9de49a84785beb5b74de72b69393656fce3e90195bf91a1ffe4a
+      - fixture_id: P-003
+        classification: public_check_invalid
+        purpose: Declared test statistic differs from the recomputed value beyond
+          tolerance.
+        input: conformance/fixtures/public_checks/P-003.json
+        input_sha256: 5febfd8840bbb8a91509901a2223de93b573673a82ff151e0c6b9b0fb48aa8ae
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0009
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:398fd6d7ce373cb869adcde38c9cf8f460e1d414cefa2bc521c7210522ecc62c
+      - fixture_id: P-004
+        classification: public_check_invalid
+        purpose: Declared degrees of freedom differs from the recomputed value beyond
+          tolerance.
+        input: conformance/fixtures/public_checks/P-004.json
+        input_sha256: 7ef6abab89dc6ba8019acaf6dde9223b258ed8c820a51005680bd8a9942e3528
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0010
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:37104a8ec462f360bcbe73f0ee1e7199941a8c73b7984d3a66a515b2264243cd
+      - fixture_id: P-005
+        classification: public_check_invalid
+        purpose: Declared p-value differs from the recomputed value beyond tolerance.
+        input: conformance/fixtures/public_checks/P-005.json
+        input_sha256: a6c7d969dd099d570b93790db31954412fa8c8444f5037c151965472c4cb5bd3
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0011
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:9a758065076b990466531fb1f878a52374ae4bb4cfe2a046c28953e86ca0b0d6
+      - fixture_id: P-007
+        classification: public_check_invalid
+        purpose: Declared mean difference (group-order sign) differs from the recomputed
+          value beyond tolerance.
+        input: conformance/fixtures/public_checks/P-007.json
+        input_sha256: 4d9377e98d2df928615b28601234493b249bca8b6f629a9ca96faa5d2d84d292
+        requirement_ids:
+          - NRS-VERIFY-0009
+          - NRS-PROFILE-ITGC-0006
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:6709247e3d09c29379396a0dd883fc55f33f96e52651f8c98c25f26ab98ee35a
+      - fixture_id: P-006
+        classification: public_check_precondition
+        purpose: "Zero standard error: the precondition check fails and Welch
+          recomputation does not run."
+        input: conformance/fixtures/public_checks/P-006.json
+        input_sha256: 6286e6dae8e5f9fbe829a1c8d5aba45c7134e693fceb61f7f5a5c124a38dbf69
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0014
+          - NRS-VERIFY-0007
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-ZERO-STANDARD-ERROR
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-ZERO-STANDARD-ERROR
+          semantic_projection_hash: sha256:1a30ba7a373b1ac3575803c90d8279284e19ab7ab0b6524c6ad4ee9fdc549242
+      - fixture_id: A2-V-001
+        classification: valid
+        purpose: Unequal group sizes and unequal variances with a 95% confidence
+          interval; every check passes.
+        input: conformance/fixtures/public_checks/A2-V-001.json
+        input_sha256: 5c7d950d070aa179e41b1cc90a09b2ee6b79af448edef7581ac78d13576daf18
+        requirement_ids:
+          - NRS-VERIFY-0014
+          - NRS-PROFILE-ITGC-0017
+          - NRS-PROFILE-ITGC-0018
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:54f917fa974331af4eb4ad7fd8a339ec917a983cc3bbbc30b53bae591683ed46
+      - fixture_id: A2-V-002
+        classification: valid
+        purpose: Negative mean difference with a fully negative confidence interval.
+        input: conformance/fixtures/public_checks/A2-V-002.json
+        input_sha256: 2bbcee69f9c7218a76d1deb55f9d2c5a95b0df9c0c972c430c2b939a1c23c172
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0015
+          - NRS-PROFILE-ITGC-0018
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:3cf5e5dc66a7ba99930c00d2aab22255baeb1217a3f82a03bcb260605c77edbb
+      - fixture_id: A2-V-003
+        classification: valid
+        purpose: Confidence interval crossing zero; no significance boolean exists
+          anywhere.
+        input: conformance/fixtures/public_checks/A2-V-003.json
+        input_sha256: cbfb44a67ffd485006de3d24b71ed0fd8addc9d4ac8d4fcf6c5e3072192a8ab3
+        requirement_ids:
+          - NRS-VERIFY-0015
+          - NRS-PROFILE-ITGC-0016
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:c276f3b279f557c3336535575222a3479e8cb5fc0642663c63867f6ee5a2d468
+      - fixture_id: A2-V-004
+        classification: valid
+        purpose: One group variance zero, the other positive; the standard error stays
+          positive and everything passes.
+        input: conformance/fixtures/public_checks/A2-V-004.json
+        input_sha256: 1c14807abef2a526fa2790c34c7ec69f652af8b8b078686bae93f7bafb1b581a
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0017
+          - NRS-VERIFY-0014
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:f8c8d188a17af308fb08fc7cccc7d5ecdc774fcedc0e8278768eed13e43c3175
+      - fixture_id: A2-V-005
+        classification: valid
+        purpose: Minimum group size n=2 in both groups.
+        input: conformance/fixtures/public_checks/A2-V-005.json
+        input_sha256: f09d3164f935e580cdab90cbc0c1b3cc7700c6db3195ae2b6ad718749271dd63
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0004
+          - NRS-VERIFY-0014
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:8dfc7a8fe84a17fbcfd2c51cb48be249bf5bc513e13e15dc4261575fbf0c0371
+      - fixture_id: A2-V-006
+        classification: valid
+        purpose: Large-magnitude observations with a small group difference (numerical
+          stability).
+        input: conformance/fixtures/public_checks/A2-V-006.json
+        input_sha256: e6d7c04ba736ae47af5445e95fbbd2259c01776df784a00600f1c89c0cb07656
+        requirement_ids:
+          - NRS-VERIFY-0014
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:684d122aadb6b9a9f7f1c13c875ea3494324353bce666aba5d975eb93a4fd054
+      - fixture_id: A2-A-001
+        classification: admissibility_failure
+        purpose: Pairing declared present; admissibility fails and dependent checks are
+          gated.
+        input: conformance/fixtures/public_checks/A2-A-001.json
+        input_sha256: 8daa63824e12e52d6a9cd45244e180fe04dfcea4cc6046a8f38deb613647990c
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0019
+          - NRS-VERIFY-0013
+          - NRS-VERIFY-0017
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-PAIRING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-PAIRING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-PAIRING-NOT-SUPPORTED
+          semantic_projection_hash: sha256:59777ff667f6658e5a5103e9896bea240c9f85076862e988f3d4528962f312bf
+      - fixture_id: A2-A-002
+        classification: admissibility_failure
+        purpose: Repeated measurements declared present.
+        input: conformance/fixtures/public_checks/A2-A-002.json
+        input_sha256: a3a45fce99bb49819dc55990b28e050b6cfa03b514203c0b662cbe8b9edc4bb2
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0020
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-REPEATED-MEASURES-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-REPEATED-MEASURES-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-REPEATED-MEASURES-NOT-SUPPORTED
+          semantic_projection_hash: sha256:7b38057cf93efefc2d1bd0a51ab9aef261a1508085289ca0a110be3a1973caa3
+      - fixture_id: A2-A-003
+        classification: admissibility_failure
+        purpose: Clustering declared present.
+        input: conformance/fixtures/public_checks/A2-A-003.json
+        input_sha256: 5e8451ddeb87921c412f2501c729b3aab8fccedd465219e70ae576bed4ab93db
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0021
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-CLUSTERING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-CLUSTERING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-CLUSTERING-NOT-SUPPORTED
+          semantic_projection_hash: sha256:0e47a781f0fb20810206960ee852f5af188a012a3c83fa22ab1179fe9a411b95
+      - fixture_id: A2-A-004
+        classification: admissibility_failure
+        purpose: Weighting declared present.
+        input: conformance/fixtures/public_checks/A2-A-004.json
+        input_sha256: 65cbe4b56897306e4559ee985616ec670daa116e5a3c24db025ec301aab9c4a7
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0022
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-WEIGHTING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-WEIGHTING-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-WEIGHTING-NOT-SUPPORTED
+          semantic_projection_hash: sha256:db0dc324bf21e274bf9f076a660fb442afd42007a1f823ab52b87e93e5721912
+      - fixture_id: A2-A-005
+        classification: admissibility_failure
+        purpose: Outcome transformation declared present.
+        input: conformance/fixtures/public_checks/A2-A-005.json
+        input_sha256: 05b45868d8cc047f4d40b2307045b097999052c687b3f7d83199a82cf1dcf42a
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0023
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-TRANSFORMATION-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-TRANSFORMATION-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-TRANSFORMATION-NOT-SUPPORTED
+          semantic_projection_hash: sha256:bd91e687f7ebc50bf53db8c74ee4b87e0b78122c127444a1e9dc32d73a95b87c
+      - fixture_id: A2-A-006
+        classification: admissibility_failure
+        purpose: Subset or exclusions declared present.
+        input: conformance/fixtures/public_checks/A2-A-006.json
+        input_sha256: ce85a227cf919140b4fbcee814602c797b8b2fcc606923d32d45f59d01d617e5
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0024
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-SUBSET-ANALYSIS-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SUBSET-ANALYSIS-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SUBSET-ANALYSIS-NOT-SUPPORTED
+          semantic_projection_hash: sha256:380375c004bd70f320ecbb6715b90d7fbba350270374463cf77b9ac2940c9d54
+      - fixture_id: A2-A-007
+        classification: admissibility_failure
+        purpose: Missing outcomes declared present.
+        input: conformance/fixtures/public_checks/A2-A-007.json
+        input_sha256: 95d90b933b4c6a406861c28dea4ba151f338794096ff4d4d6511c2d1d0dc142f
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0025
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-MISSING-OUTCOMES-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-MISSING-OUTCOMES-NOT-SUPPORTED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-MISSING-OUTCOMES-NOT-SUPPORTED
+          semantic_projection_hash: sha256:3b196bcd677b52d03a6582031fff74ddb932fd6857add36421c48b393fb54d0d
+      - fixture_id: A2-A-008
+        classification: admissibility_failure
+        purpose: Unsupported estimand declared.
+        input: conformance/fixtures/public_checks/A2-A-008.json
+        input_sha256: c4db036b5bb38b9bdfe0c5cc01449363f6b42a9ce2c4b8d3739cc066a6aac247
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0015
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-UNSUPPORTED-ESTIMAND
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-UNSUPPORTED-ESTIMAND
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-UNSUPPORTED-ESTIMAND
+          semantic_projection_hash: sha256:5e02798e53f7f61f3e7e200fd264841953b5a69b0e60475c52312d99fb7d95b5
+      - fixture_id: A2-A-009
+        classification: admissibility_failure
+        purpose: Analysis confidence level is not 0.95.
+        input: conformance/fixtures/public_checks/A2-A-009.json
+        input_sha256: 485432f8990f2f4bddc52b6547953876e48ef2fa9035fb88c7adcc6f1ceea591
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-CONFIDENCE-LEVEL-MISMATCH
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-CONFIDENCE-LEVEL-MISMATCH
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-CONFIDENCE-LEVEL-MISMATCH
+          semantic_projection_hash: sha256:53ee2c6da2d57a7743e57c92a27d5fd2334bcf5f2b67d8abc5e5ad2493926164
+      - fixture_id: A2-P-001
+        classification: mismatch
+        purpose: Declared standard error differs from the recomputed value.
+        input: conformance/fixtures/public_checks/A2-P-001.json
+        input_sha256: 0bea4d37e7c7ad7f151527004a9f139c99be9da346357a00daf67971efd5b695
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0017
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-STANDARD-ERROR-MISMATCH
+          semantic_projection_hash: sha256:de31b310ffa7c356854769e200acefb9fdc6f32fd74297db48e41196a0cf71f4
+      - fixture_id: A2-P-002
+        classification: mismatch
+        purpose: Declared confidence-interval lower endpoint differs beyond tolerance.
+        input: conformance/fixtures/public_checks/A2-P-002.json
+        input_sha256: 2f5043118314e47ae740bc8e16db09c76c658de3634ee998d3cce7d52a61163b
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0018
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-MISMATCH
+          semantic_projection_hash: sha256:b52d4013375c3c180ed4bd22407494adc786fb67577c93b0c6c002a84bd0e593
+      - fixture_id: A2-P-003
+        classification: mismatch
+        purpose: Declared confidence-interval upper endpoint differs beyond tolerance.
+        input: conformance/fixtures/public_checks/A2-P-003.json
+        input_sha256: e037cbaf2a4e4695c3381f89b4be5ec2151acbad92505b83ac07de982cc47969
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0018
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-MISMATCH
+          semantic_projection_hash: sha256:08a0b52bc438e8507d846b90236dd45f3c031185fbf608163613559e34f48836
+      - fixture_id: A2-P-004
+        classification: mismatch
+        purpose: Declared confidence-interval level is not the check-owned 0.95.
+        input: conformance/fixtures/public_checks/A2-P-004.json
+        input_sha256: d849699f6a81e51d06867e399157fb023449ce495ef93f11bd82b4e290cbecee
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0016
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-LEVEL-MISMATCH
+          semantic_projection_hash: sha256:5697e2a128055fe7de901851be6b2209433897564c77ccfe2b179f9a20a984c1
+      - fixture_id: A2-P-005
+        classification: mismatch
+        purpose: Declared confidence-interval method is not the supported method.
+        input: conformance/fixtures/public_checks/A2-P-005.json
+        input_sha256: 04fc7ea1ec187bff1630ddc4b39bfc2be99e89ee68005167457ed3530264d4fe
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0018
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-MISMATCH
+          semantic_projection_hash: sha256:3808cc61f529d7b1b7041fb2507411749abd986aaf1fc3f474e18b43bf2c2505
+      - fixture_id: A2-P-006
+        classification: mismatch
+        purpose: Confidence-interval endpoints reversed (lower > upper).
+        input: conformance/fixtures/public_checks/A2-P-006.json
+        input_sha256: 419d412a967b086c8cdf5a68ec820c4ce54bd775a2abb3a7524ecec4eee0249c
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0018
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-ORDER-INVALID
+          semantic_projection_hash: sha256:6cc5da4a9709b4cfdfb0a890be24473f25586819de8708349c4025fcdb0c96e3
+      - fixture_id: A2-P-007
+        classification: mismatch
+        purpose: Effect-estimate direction flipped (second minus first group).
+        input: conformance/fixtures/public_checks/A2-P-007.json
+        input_sha256: 7b11ebb004a42a4bf0e3c1e40fab68a89580aff453be4cfba306d9b643204163
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0015
+          - NRS-PROFILE-ITGC-0006
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:3c7e170b79694e47f8035196ab4e2213cd08daf5519f03b206c694a5b6abbfbb
+      - fixture_id: A2-P-008
+        classification: mismatch
+        purpose: Test result correct but confidence interval wrong (CI-only mismatch is
+          detected).
+        input: conformance/fixtures/public_checks/A2-P-008.json
+        input_sha256: 48d126b020065c2efb16698b1ae23ae16b9b1376b2a952539f59374d251278de
+        requirement_ids:
+          - NRS-VERIFY-0016
+          - NRS-PROFILE-ITGC-0018
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+                - NRS-CONFIDENCE-INTERVAL-MISMATCH
+          semantic_projection_hash: sha256:20771e6c26946b55a02a94ce9ddcaae0852b7483b5f21a1d5ccd80c62c1f0fa9
+      - fixture_id: A2-P-009
+        classification: mismatch
+        purpose: Confidence interval correct but p-value wrong (p-only mismatch is
+          detected).
+        input: conformance/fixtures/public_checks/A2-P-009.json
+        input_sha256: df85bb9fe090db5fbf5ebe48b66b82896bb7f4207792243f2cd76b947cf045fc
+        requirement_ids:
+          - NRS-VERIFY-0016
+          - NRS-PROFILE-ITGC-0011
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:25ef34bd4bedf57ac367d51271c573e15dc3e5e599527c8368724a31666f5fab
+      - fixture_id: A2-C-001
+        classification: computability_failure
+        purpose: Zero total standard error; computability fails and recomputation is not
+          run.
+        input: conformance/fixtures/public_checks/A2-C-001.json
+        input_sha256: da679e64016f5647cdbe451f9a2b1ba9e6de81daefd8d0af056d3409f8fec653
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0014
+          - NRS-VERIFY-0013
+          - NRS-VERIFY-0017
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-ZERO-STANDARD-ERROR
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-ZERO-STANDARD-ERROR
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+          semantic_projection_hash: sha256:537a7063f32e186bf0e6d8b7b57dc69941f4a8f860ebb12fad80960d1c085e68
+      - fixture_id: A2-C-002
+        classification: computability_failure
+        purpose: Finite-but-extreme observations overflow the variance; computability
+          fails as a data property, never as an internal verifier error.
+        input: conformance/fixtures/public_checks/A2-C-002.json
+        input_sha256: 15e22d9e7db6c188b8381c9f3e8f864bb9bc04a364191c43d6c7eebcea11e9d4
+        requirement_ids:
+          - NRS-CANON-0003
+          - NRS-VERIFY-0013
+          - NRS-VERIFY-0017
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+          semantic_projection_hash: sha256:03230ca3c55774f76cb891c7061a96d6dc8b59a1ab784087075c65a19c70409f
+    requirement_ids:
+      - NRS-VERIFY-0006
+      - NRS-VERIFY-0007
+      - NRS-VERIFY-0008
+      - NRS-VERIFY-0009
+      - NRS-PROFILE-ITGC-0014
+    normative_scope: Execution and expected results of the Phase 1 public checks.
+    phase_introduced: phase-1
+  - family: numerical_contract
+    status: active
+    fixtures:
+      - fixture_id: A2-1-V-001
+        classification: valid
+        purpose: TS1 ordinary baseline passes under the 0.2.1 p comparator (parsed
+          binary64 authority).
+        input: conformance/fixtures/numerical_contract/A2-1-V-001.json
+        input_sha256: 6dc0f4e026f601944241d449562731dbf125214f02ce073f412a6318a7a26ac1
+        requirement_ids:
+          - NRS-CANON-0009
+          - NRS-VERIFY-0014
+          - NRS-VERIFY-0019
+          - NRS-VERIFY-0020
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:e177663a7615c562e1751cf2ead8bf367855f3a7d862e822d95f0abb8a593892
+      - fixture_id: A2-1-V-002
+        classification: valid
+        purpose: Deep-tail Welch data yields binary64 p=0; computability fails closed as
+          numerical underflow.
+        input: conformance/fixtures/numerical_contract/A2-1-V-002.json
+        input_sha256: 623be0f1473e330871070f7f881e989fda38873eba427dc5869db23b1cf0e796
+        requirement_ids:
+          - NRS-VERIFY-0021
+          - NRS-VERIFY-0017
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-P-VALUE-UNDERFLOW
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-P-VALUE-UNDERFLOW
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+          semantic_projection_hash: sha256:0595c984446454aa0f072f74b5f09ffa31bda3a7170353bbe5970c2e3d49f9e0
+      - fixture_id: A2-1-V-003
+        classification: valid
+        purpose: TS5 large-offset stress passes with unchanged Welch formulas under
+          0.2.1 tolerances.
+        input: conformance/fixtures/numerical_contract/A2-1-V-003.json
+        input_sha256: 08b364005388a1b11db34a3060612e01581084f649d11285164f0ac186e81536
+        requirement_ids:
+          - NRS-CANON-0009
+          - NRS-VERIFY-0014
+          - NRS-VERIFY-0016
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:b5f96c7dfa04ac60b0f5359d0f88b33882cec0b85d6f6e376bc2214c174b2264
+      - fixture_id: A2-1-P-001
+        classification: invalid_declared_result
+        purpose: Declared p=0 against a positive recomputed p fails zero separation
+          (P021-P-003).
+        input: conformance/fixtures/numerical_contract/A2-1-P-001.json
+        input_sha256: 2abdbfe1e9050a5a4c30bbdf77714d7f681620027e8bc05d3c29db2ecc2ab8ec
+        requirement_ids:
+          - NRS-VERIFY-0020
+          - NRS-VERIFY-0014
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:36c40889af58ce05f4cdd95f13a68ed6c81d4b90a77493ec6e20c4aada641df6
+      - fixture_id: A2-1-P-002
+        classification: invalid_declared_result
+        purpose: Positive declared p outside 0.2.1 relative tolerance fails recompute
+          (P021-P-002).
+        input: conformance/fixtures/numerical_contract/A2-1-P-002.json
+        input_sha256: 5612eb77c8db225cf0abbb1f0dec06e4bae305432f12180b562744986874dc33
+        requirement_ids:
+          - NRS-VERIFY-0020
+          - NRS-VERIFY-0014
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:93c521264e38e251ed35f2bb1745f904db35cceef19eb1a7d8e1cac1fbdd8da2
+      - fixture_id: A2-1-P-004
+        classification: invalid_declared_result
+        purpose: Declared positive p on underflow data fails computability before
+          recompute (P021-P-004).
+        input: conformance/fixtures/numerical_contract/A2-1-P-004.json
+        input_sha256: 13a67b9e46502bc833dde30bc7d84466ee4dfeb636789e2caef2ef18c779a886
+        requirement_ids:
+          - NRS-VERIFY-0021
+          - NRS-VERIFY-0017
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-P-VALUE-UNDERFLOW
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-P-VALUE-UNDERFLOW
+                - NRS-NUMERICAL-COMPUTABILITY-FAILED
+          semantic_projection_hash: sha256:bda1bef71805515abf72190c0d89d4054e91368bb10dd847744627224efde397
+    requirement_ids:
+      - NRS-CANON-0009
+      - NRS-CANON-0010
+      - NRS-CANON-0011
+      - NRS-VERIFY-0019
+      - NRS-VERIFY-0020
+      - NRS-VERIFY-0021
+      - NRS-VERSION-0009
+      - NRS-CORE-0012
+    normative_scope: "Successor bundle urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+      numerical contract: parsed binary64 authority, tail-safe p evaluation,
+      zero separation, and underflow fail-closed behavior."
+    phase_introduced: phase-2a
+    notes: Machine gates (algorithm regression and tolerance contract lock) live in
+      tooling/tests/numerical-contract.test.ts. Domain-boundary evidence is
+      informative only (evidence/development/numerical-contract-0.2.1/).
+      Expectations are hand-authored in
+      conformance/expectations/phase-2a-021-expectations.yaml.
+  - family: strict_json
+    status: active
+    fixtures:
+      - fixture_id: JSON-DUP-001
+        classification: strict_json_refusal
+        purpose: "Top-level interpretation_bundle_id duplicated with the same value:
+          rejected before routing; no bundle selected, no report, no digest."
+        input: conformance/fixtures/strict_json/JSON-DUP-001.json
+        input_sha256: ff491135d4e7e80e5a845dac25f5df9543ac95d56bf7782f24bbadefbb4c446f
+        requirement_ids:
+          - NRS-CANON-0007
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-002
+        classification: strict_json_refusal
+        purpose: "interpretation_bundle_id declared twice, Phase 1 id followed by Phase
+          2A id: rejected before routing; neither bundle is selected and no
+          last-wins dispatch occurs."
+        input: conformance/fixtures/strict_json/JSON-DUP-002.json
+        input_sha256: f36bf7df60155523c9c3ac51a6329bca7d04cd54956f42a0257d3a9c289e6d70
+        requirement_ids:
+          - NRS-CANON-0007
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-003
+        classification: strict_json_refusal
+        purpose: "interpretation_bundle_id declared twice, Phase 2A id followed by Phase
+          1 id (member order reversed relative to JSON-DUP-002): rejected
+          identically; no first-wins dispatch occurs."
+        input: conformance/fixtures/strict_json/JSON-DUP-003.json
+        input_sha256: 670a8aceb726d76998d2ae86f53db998c2664b31301aee36e5e83a8460f6c2a5
+        requirement_ids:
+          - NRS-CANON-0007
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-004
+        classification: strict_json_refusal
+        purpose: "Literal and escaped-equivalent spellings of interpretation_bundle_id
+          in one object: member names are compared after escape decoding, so
+          this is a duplicate and is rejected."
+        input: conformance/fixtures/strict_json/JSON-DUP-004.json
+        input_sha256: 76a516835e9969a871bdc8be175d658635a8f41f4c707f757cbcbaeffd6610a7
+        requirement_ids:
+          - NRS-CANON-0007
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-005
+        classification: strict_json_refusal
+        purpose: "Nested duplicate result.p_value inside an otherwise valid Record:
+          rejected; no result value is chosen and no report exists."
+        input: conformance/fixtures/strict_json/JSON-DUP-005.json
+        input_sha256: 90cdeb33dfb5252df088c0b0586de849f41d06b0238b91fcbb51e6adc61d008b
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-006
+        classification: strict_json_refusal
+        purpose: "Nested duplicate integrity.content_digest: rejected; no digest
+          declaration is chosen and no digest is computed."
+        input: conformance/fixtures/strict_json/JSON-DUP-006.json
+        input_sha256: e8a4766ca410bcf111f89cc4f418fd6d3f1d8021c93138424a813e3436b40e99
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-007
+        classification: strict_json_refusal
+        purpose: "Duplicate member inside an observation object within the observations
+          array: objects inside arrays are covered."
+        input: conformance/fixtures/strict_json/JSON-DUP-007.json
+        input_sha256: 83f1ac0147e052ce7038d86e8bb0cb0988c3b7337ee52798bdbde790e0b91dca
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-008
+        classification: strict_json_refusal
+        purpose: "Nested duplicate member with byte-identical values: value equality
+          does not legitimize a duplicate; rejected."
+        input: conformance/fixtures/strict_json/JSON-DUP-008.json
+        input_sha256: 057aa8e3993efcd7cdb5ef7a5eeca73aa917edb787c63547ff5b9119a12fe3ea
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-009
+        classification: strict_json_refusal
+        purpose: "Duplicate member in an object irrelevant to routing (design.outcome
+          scale): eligibility is global, not routing-scoped; rejected."
+        input: conformance/fixtures/strict_json/JSON-DUP-009.json
+        input_sha256: 6628ecbc5ce623582e5d15b0a28b9c4efc2bb8a0868d9af22a4d0bbc1c267788
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-DUPLICATE-JSON-MEMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-DUP-010
+        classification: strict_json_valid
+        purpose: 'Member-name-like text inside a string VALUE (a label containing
+          ''"interpretation_bundle_id": ...'' twice): NOT a duplicate; the
+          Record verifies as an ordinary valid Phase 1 Record.'
+        input: conformance/fixtures/strict_json/JSON-DUP-010.json
+        input_sha256: 44af2ae82aed9db7cfc54e2435e4c6e7a793229fc533c89da6d141fbf3c8f248
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:ffd16bb8943f5b05b1a34a0de786cfd01f35d7c25e77a11d2076ed859a0927e6
+      - fixture_id: JSON-DUP-011
+        classification: strict_json_valid
+        purpose: "Escaped quotes, backslashes, braces, brackets, colons, and commas
+          inside string values: no false positive; the Record verifies."
+        input: conformance/fixtures/strict_json/JSON-DUP-011.json
+        input_sha256: 960f4442c6eae8819d5444763551f8adde950ef0037ce8981c12f19565a87b99
+        requirement_ids:
+          - NRS-CANON-0007
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:dcf1649e61138da73c7cdb70574228cfe08d08bb1bf49e27ff3ffb6cb2debb59
+      - fixture_id: JSON-UNI-001
+        classification: strict_json_refusal
+        purpose: "Lone high surrogate escape in a string value: not a Unicode
+          scalar-value sequence; rejected without replacement or normalization."
+        input: conformance/fixtures/strict_json/JSON-UNI-001.json
+        input_sha256: 03c7e4ed0bb7098c4e2dece41e8c7dec91507385cc9e89e7c52bc998263fb874
+        requirement_ids:
+          - NRS-CANON-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-INVALID-UNICODE-STRING
+          refusal_schema_valid: true
+      - fixture_id: JSON-UNI-002
+        classification: strict_json_refusal
+        purpose: "Lone low surrogate escape in a string value: rejected."
+        input: conformance/fixtures/strict_json/JSON-UNI-002.json
+        input_sha256: bc601607e9eccd6719d7b194a45183d5ddb7a9fa2b1e598a51ae7b5863e7cbac
+        requirement_ids:
+          - NRS-CANON-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-INVALID-UNICODE-STRING
+          refusal_schema_valid: true
+      - fixture_id: JSON-UNI-003
+        classification: strict_json_refusal
+        purpose: "Lone surrogate escape in an object MEMBER NAME: names are covered
+          exactly like values; rejected."
+        input: conformance/fixtures/strict_json/JSON-UNI-003.json
+        input_sha256: 62376d39d428ca328510da6d616d1c4bc98d029010248ab09ee1fd4566e89aae
+        requirement_ids:
+          - NRS-CANON-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-INVALID-UNICODE-STRING
+          refusal_schema_valid: true
+      - fixture_id: JSON-UNI-004
+        classification: strict_json_valid
+        purpose: "Correctly paired surrogate escapes (an astral emoji) in a label: a
+          valid scalar-value sequence is accepted unchanged and the Record
+          verifies."
+        input: conformance/fixtures/strict_json/JSON-UNI-004.json
+        input_sha256: f1ec7d6afd285566b06a0fb3b73036e1dec553caa00fb9d8ce03a58176699f40
+        requirement_ids:
+          - NRS-CANON-0008
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:b53d3588e7c69b3931fef0cde2eb42d69081cf46233a54e4862fd2435b668b27
+      - fixture_id: JSON-UNI-005
+        classification: strict_json_valid
+        purpose: "NFC and NFD spellings of the same text in one label: neither is
+          normalized, they remain distinct code-point sequences (asserted
+          against the canonical form at authoring time), and the Record
+          verifies."
+        input: conformance/fixtures/strict_json/JSON-UNI-005.json
+        input_sha256: 2e5cbff57e89bd141f54ed4abc0e8b63b439af19badb68ace9114720f69107af
+        requirement_ids:
+          - NRS-CANON-0008
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:b8501b95b1e67b6437b2b96132f824dd40b3a9108804d3e71b195e4234627e6a
+      - fixture_id: JSON-NEG-001
+        classification: strict_json_refusal
+        purpose: "A bare -0 number token is rejected at the lexical stage
+          (NRS-CANON-0015, Batch 5: RFC 8785 Erratum 7920's SHOULD raised to
+          this specification's MUST) - never silently normalized to 0 by JCS."
+        input: conformance/fixtures/strict_json/JSON-NEG-001.json
+        input_sha256: 961993d7f66a8d1b288c660e57a43a47153b959e6059c7270121a74bc736d164
+        requirement_ids:
+          - NRS-CANON-0015
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-NEGATIVE-ZERO-NUMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-NEG-002
+        classification: strict_json_refusal
+        purpose: A -0.0 outcome value nested inside an otherwise valid Record's
+          observations is rejected the same way; nesting position does not
+          matter (NRS-CANON-0015).
+        input: conformance/fixtures/strict_json/JSON-NEG-002.json
+        input_sha256: 5c1a7de39534aabdfc452e459cc2d922fccdee3f8f5d333ece6665c33eab9e9a
+        requirement_ids:
+          - NRS-CANON-0015
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-NEGATIVE-ZERO-NUMBER
+          refusal_schema_valid: true
+      - fixture_id: JSON-NEG-003
+        classification: strict_json_refusal
+        purpose: Exponent spellings of negative zero (-0e5) are numerically negative
+          zero and are rejected identically (NRS-CANON-0015); detection is by
+          token value, not by spelling.
+        input: conformance/fixtures/strict_json/JSON-NEG-003.json
+        input_sha256: 5897e4e4c8a9c4a232b5b235c82070c8689ae66181ff5b02feec8e6a3867aebd
+        requirement_ids:
+          - NRS-CANON-0015
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-NEGATIVE-ZERO-NUMBER
+          refusal_schema_valid: true
+    requirement_ids:
+      - NRS-CANON-0007
+      - NRS-CANON-0008
+    normative_scope: "Strict JCS input eligibility: duplicate object member names
+      and non-scalar Unicode strings are rejected on the raw text before
+      routing, canonicalization, or digest computation."
+    phase_introduced: phase-2a
+    notes: Expectations are hand-authored in
+      conformance/expectations/strict-json-expectations.yaml (ADR-0018).
+      Acceptance fixtures pin the absence of false positives (fake keys in
+      string values, escaped punctuation, paired surrogates, NFC/NFD kept
+      distinct).
+  - family: routing
+    status: active
+    fixtures:
+      - fixture_id: S-001
+        classification: routing_refusal
+        purpose: "Missing interpretation_bundle_id on a full Record-shaped document:
+          routing refuses before any Record schema runs; no bundle is selected.
+          Reclassified from structural with unchanged input bytes (ADR-0017)."
+        input: conformance/fixtures/routing/S-001.json
+        input_sha256: 480282507229c7f048c3a423f4a5f594e62b0c9f2a83c38551d9a93c2199168c
+        requirement_ids:
+          - NRS-VERSION-0003
+          - NRS-VERSION-0007
+          - NRS-VERSION-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: routing_error
+          refusal_reason_codes:
+            - NRS-BUNDLE-ID-MISSING
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-001
+        classification: routing_refusal
+        purpose: "Empty JSON object: interpretation_bundle_id is missing entirely; a
+          routing refusal is emitted, no bundle is selected, and no verification
+          report exists."
+        input: conformance/fixtures/routing/ROUTE-001.json
+        input_sha256: ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356
+        requirement_ids:
+          - NRS-VERSION-0003
+          - NRS-VERSION-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: routing_error
+          refusal_reason_codes:
+            - NRS-BUNDLE-ID-MISSING
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-002
+        classification: routing_refusal
+        purpose: "interpretation_bundle_id is a number: present but not a string; a
+          routing refusal is emitted and no bundle is selected."
+        input: conformance/fixtures/routing/ROUTE-002.json
+        input_sha256: 4a601e8bb2ad182f05047b9d8ba052fade1186902c7528ad5a4cac155f6f719c
+        requirement_ids:
+          - NRS-VERSION-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: routing_error
+          refusal_reason_codes:
+            - NRS-BUNDLE-ID-INVALID
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-003
+        classification: routing_refusal
+        purpose: "interpretation_bundle_id is null: present but not a string; a routing
+          refusal is emitted and no bundle is selected."
+        input: conformance/fixtures/routing/ROUTE-003.json
+        input_sha256: 5dcab122f473350b1ea83c6b82dffb56d9771370652585b6e26317097c920e68
+        requirement_ids:
+          - NRS-VERSION-0008
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: routing_error
+          refusal_reason_codes:
+            - NRS-BUNDLE-ID-INVALID
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-004
+        classification: routing_refusal
+        purpose: "Well-formed but unregistered bundle identifier: exact registry lookup
+          fails, an unsupported-bundle refusal is emitted, and no bundle is
+          selected."
+        input: conformance/fixtures/routing/ROUTE-004.json
+        input_sha256: 1c3308341dec79aedff35d47e979f1d5d72c97821b93100869c4db5112aba0a2
+        requirement_ids:
+          - NRS-VERSION-0005
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_declared_bundle_id: urn:nomue:bundle:never-registered:1.0.0
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-005
+        classification: routing_refusal
+        purpose: "Nearby unknown Phase 1 version (itgc-minimal:0.1.1-draft.1): refused
+          as unsupported; never dispatched to the Phase 1 bundle by version
+          proximity."
+        input: conformance/fixtures/routing/ROUTE-005.json
+        input_sha256: 450b7904be12ea7ff34270e85eb8a9d33dcdb4afe3de9978357769fd02478676
+        requirement_ids:
+          - NRS-VERSION-0005
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_declared_bundle_id: urn:nomue:bundle:itgc-minimal:0.1.1-draft.1
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-006
+        classification: routing_refusal
+        purpose: "Nearby unknown Phase 2A version (itgc-guarantee:0.2.0-draft.2):
+          refused as unsupported; never dispatched to the Phase 2A bundle by
+          version proximity."
+        input: conformance/fixtures/routing/ROUTE-006.json
+        input_sha256: 169317349a08bca1f60e8d13fef7711939f128837621388f7acf2813037d1bd4
+        requirement_ids:
+          - NRS-VERSION-0005
+          - NRS-VERSION-0007
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_declared_bundle_id: urn:nomue:bundle:itgc-guarantee:0.2.0-draft.2
+          refusal_schema_valid: true
+      - fixture_id: ROUTE-007
+        classification: routing_invariance
+        purpose: "Registry entries reversed: every routing outcome (missing, invalid,
+          unknown, and both exact identifiers) is identical to the canonical
+          registry order; exact Phase 1 and Phase 2A identifiers still select
+          their own bundles and nothing else selects any bundle."
+        input: conformance/fixtures/routing/ROUTE-007.json
+        input_sha256: a98698df25f59a254e1d1022ff4a9bae52fdc00c1eaf619429a375e2e63da62b
+        requirement_ids:
+          - NRS-VERSION-0007
+        expected:
+          kind: routing_invariance
+          cli_exit_code: null
+          outcomes_identical: true
+      - fixture_id: ROUTE-008
+        classification: routing_invariance
+        purpose: "Registry entries deterministically shuffled: every routing outcome is
+          identical to the canonical registry order (registry order carries no
+          semantic meaning)."
+        input: conformance/fixtures/routing/ROUTE-008.json
+        input_sha256: b980d71f982cd1e27f965f9f9046906c8b42e46650edf9601d3c6e30c8b81447
+        requirement_ids:
+          - NRS-VERSION-0007
+        expected:
+          kind: routing_invariance
+          cli_exit_code: null
+          outcomes_identical: true
+    requirement_ids:
+      - NRS-VERSION-0003
+      - NRS-VERSION-0005
+      - NRS-VERSION-0007
+      - NRS-VERSION-0008
+    normative_scope: "Bundle-independent routing: envelope validation, exact
+      registry dispatch, no default bundle, registry-order invariance."
+    phase_introduced: phase-2a
+    notes: S-001 was reclassified from structural to routing as a documented
+      pre-release correction (ADR-0017); its input bytes are unchanged.
+      Expectations are hand-authored in
+      conformance/expectations/routing-expectations.yaml.
+  - family: attestation
+    status: reserved
+    fixtures: []
+    requirement_ids: []
+    normative_scope: Attestation structure and trust semantics exist as EXPERIMENTAL
+      specification material, but this conformance family is reserved because no
+      registered Release 1 bundle declares attestation support.
+    phase_introduced: attestation-experimental
+  - family: verifier_behavior
+    status: active
+    fixtures:
+      - fixture_id: B-001
+        classification: behavior
+        purpose: An unsupported interpretation bundle is refused without interpretation.
+        input: conformance/fixtures/verifier_behavior/B-001.json
+        input_sha256: 0b52d08c4161f1d633dadb673a7ad2911a9890b50fbffbf97d0b9e665bbf91ea
+        requirement_ids:
+          - NRS-VERSION-0002
+          - NRS-VERSION-0003
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+      - fixture_id: B-008
+        classification: behavior
+        purpose: A numeric literal that parses to infinity (1e999) fails closed as a
+          canonicalization refusal, evidencing the finite-binary64 domain and
+          JCS fail-closed rules.
+        input: conformance/fixtures/verifier_behavior/B-008.json
+        input_sha256: daad153800ae74371fba03121a340e533cc96ae9b7719a63adbf0bc845a9489c
+        requirement_ids:
+          - NRS-CANON-0003
+          - NRS-CANON-0005
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: canonicalization_failure
+          refusal_reason_codes:
+            - NRS-NON-FINITE-NUMERIC-VALUE
+            - NRS-CANONICALIZATION-FAILED
+      - fixture_id: B-007
+        classification: behavior
+        purpose: Input beyond the nesting-depth limit triggers a safe refusal.
+        input: conformance/fixtures/verifier_behavior/B-007.json
+        input_sha256: 9ac1fae95540cf2a076d07477931fd1bfec7f42f8bee891c693e323ab9120da5
+        requirement_ids:
+          - NRS-SEC-0003
+        expected:
+          kind: refusal
+          cli_exit_code: 4
+          refusal_kind: resource_limit
+          refusal_reason_codes:
+            - NRS-RESOURCE-LIMIT-EXCEEDED
+            - NRS-NESTING-LIMIT-EXCEEDED
+      - fixture_id: B-009
+        classification: behavior
+        purpose: "Hostile URI-shaped record_id and revision_id (a
+          path-traversal-look-alike http URI and a javascript: pseudo-scheme)
+          are accepted as opaque identifiers under the generic uri pattern,
+          never dereferenced, and verification completes and passes exactly as
+          it would with ordinary identifiers (NRS-CORE-0004, NRS-SEC-0001). This
+          is part of the published adversarial corpus
+          (security/threat-model.md)."
+        input: conformance/fixtures/verifier_behavior/B-009.json
+        input_sha256: 9ae60c3aba223afe9b1e8b3c247f4e0307d433c999089c27f3a78d3b9d646dde
+        requirement_ids:
+          - NRS-CORE-0004
+          - NRS-SEC-0001
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:78b1024c497e683be97b0a29e7631a7bd88460949d3881786a5fe00b8d43cc25
+      - fixture_id: B-010
+        classification: behavior
+        purpose: Tiny within-group variance times an extreme between-group difference
+          makes t^2 overflow binary64 (|t| ~ 1.8e155). The kernel refuses
+          explicitly (NRS-VERIFY-0026, Batch 3 V3) instead of letting the tail
+          evaluation silently collapse to an endpoint probability; preconditions
+          fail with NRS-T-SQUARED-OVERFLOW and recomputation does not run. The
+          constant group value is a power of two (2^505) so its recomputed mean
+          is exact and the group variance is exactly zero - keeping the overflow
+          in t^2, not in an upstream variance intermediate. Part of the
+          published adversarial corpus (security/threat-model.md).
+        input: conformance/fixtures/verifier_behavior/B-010.json
+        input_sha256: 0ce44facdf83d72d043705109c9d189151bd6a1232707c3e7b1059acd0679385
+        requirement_ids:
+          - NRS-VERIFY-0026
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-T-SQUARED-OVERFLOW
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-T-SQUARED-OVERFLOW
+          semantic_projection_hash: sha256:adaef688584db523ddac9fa5e7ee668b276b8e5a6df46d0fc7fbbd3ba51c41da
+      - fixture_id: B-011
+        classification: behavior
+        purpose: "Second point of the extreme-|t| series (|t| ~ 2.4e161, ordinary-scale
+          first group, constant group at 2^532): the same explicit
+          NRS-T-SQUARED-OVERFLOW refusal path, confirming the guard does not
+          depend on the small-variance construction of B-010. Part of the
+          published adversarial corpus (security/threat-model.md)."
+        input: conformance/fixtures/verifier_behavior/B-011.json
+        input_sha256: e12ce715a5f51cf28ec081ca218c94cc829cc79c2da7633d6af09391cdb9dc88
+        requirement_ids:
+          - NRS-VERIFY-0026
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-T-SQUARED-OVERFLOW
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-T-SQUARED-OVERFLOW
+          semantic_projection_hash: sha256:69694ab881303d82b0cca1486e081a1e110240a14dfcb46a9accbb1b34c32e94
+      - fixture_id: B-002
+        classification: report_schema_invalid
+        purpose: The report schema rejects an overall_status property.
+        input: conformance/fixtures/verifier_behavior/B-002.json
+        input_sha256: ebfbf3eca7603fc61d1b24161e9d5d6a8f416dc78002eb121d76956df2c13c73
+        requirement_ids:
+          - NRS-VERIFY-0001
+        expected:
+          kind: report_schema
+          schema_valid: false
+          cli_exit_code: null
+      - fixture_id: B-003
+        classification: report_schema_invalid
+        purpose: The report schema rejects a VERIFIED property.
+        input: conformance/fixtures/verifier_behavior/B-003.json
+        input_sha256: 7e93a584017ef38a3b997f12865231d9d30613a9a813eae46dd7e60639587682
+        requirement_ids:
+          - NRS-VERIFY-0001
+        expected:
+          kind: report_schema
+          schema_valid: false
+          cli_exit_code: null
+      - fixture_id: B-004
+        classification: report_schema_invalid
+        purpose: A not_run result with an outcome is invalid.
+        input: conformance/fixtures/verifier_behavior/B-004.json
+        input_sha256: c448dfb8098442fa128012806b498260ad516fc66686ab098bef085867dc2906
+        requirement_ids:
+          - NRS-VERIFY-0010
+        expected:
+          kind: report_schema
+          schema_valid: false
+          cli_exit_code: null
+      - fixture_id: B-005
+        classification: report_schema_invalid
+        purpose: A completed result without an outcome is invalid.
+        input: conformance/fixtures/verifier_behavior/B-005.json
+        input_sha256: 4fa72df675fe5a67b9dc49727ce7c2da91395f0b8528fc61f14fb8e365e25d01
+        requirement_ids:
+          - NRS-VERIFY-0010
+        expected:
+          kind: report_schema
+          schema_valid: false
+          cli_exit_code: null
+      - fixture_id: B-006
+        classification: report_schema_invalid
+        purpose: An errored result without an error object is invalid.
+        input: conformance/fixtures/verifier_behavior/B-006.json
+        input_sha256: 0c104500859cd99cae1142506f7ee812cc05020c04116299c10b578efcbd07f2
+        requirement_ids:
+          - NRS-VERIFY-0010
+          - NRS-VERIFY-0012
+        expected:
+          kind: report_schema
+          schema_valid: false
+          cli_exit_code: null
+      - fixture_id: A2-R-001
+        classification: refusal
+        purpose: Input beyond the 5 MiB file-size limit triggers a safe refusal.
+        input: conformance/fixtures/verifier_behavior/A2-R-001.json
+        input_sha256: d29575a4d82ace0cf60636bece3ea6206a7bfc7140741c627e7c72994a18b047
+        requirement_ids:
+          - NRS-SEC-0003
+          - NRS-SEC-0004
+          - NRS-SEC-0005
+          - NRS-VERIFY-0018
+        expected:
+          kind: refusal
+          cli_exit_code: 4
+          refusal_kind: resource_limit
+          limit_category: file_size
+          refusal_reason_codes:
+            - NRS-RESOURCE-LIMIT-EXCEEDED
+            - NRS-FILE-SIZE-LIMIT-EXCEEDED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-002
+        classification: refusal
+        purpose: Input beyond the nesting-depth limit triggers a safe refusal.
+        input: conformance/fixtures/verifier_behavior/A2-R-002.json
+        input_sha256: 9ac1fae95540cf2a076d07477931fd1bfec7f42f8bee891c693e323ab9120da5
+        requirement_ids:
+          - NRS-SEC-0003
+          - NRS-SEC-0005
+        expected:
+          kind: refusal
+          cli_exit_code: 4
+          refusal_kind: resource_limit
+          limit_category: nesting_depth
+          refusal_reason_codes:
+            - NRS-RESOURCE-LIMIT-EXCEEDED
+            - NRS-NESTING-LIMIT-EXCEEDED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-003
+        classification: refusal
+        purpose: Input beyond the observation-count limit triggers a safe refusal.
+        input: conformance/fixtures/verifier_behavior/A2-R-003.json
+        input_sha256: ab4c5ed3186be847bd2954065ec02d54c0b3ab023090bdb1ea0a6816084f3918
+        requirement_ids:
+          - NRS-SEC-0003
+          - NRS-SEC-0005
+        expected:
+          kind: refusal
+          cli_exit_code: 4
+          refusal_kind: resource_limit
+          limit_category: observation_count
+          refusal_reason_codes:
+            - NRS-RESOURCE-LIMIT-EXCEEDED
+            - NRS-OBSERVATION-LIMIT-EXCEEDED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-004
+        classification: refusal
+        purpose: Input beyond the string-length limit triggers a safe refusal.
+        input: conformance/fixtures/verifier_behavior/A2-R-004.json
+        input_sha256: 1f419b47b6e2a0336493ff48a419926e1acbf70049882d11f5fa4b64e82d0f53
+        requirement_ids:
+          - NRS-SEC-0003
+          - NRS-SEC-0005
+        expected:
+          kind: refusal
+          cli_exit_code: 4
+          refusal_kind: resource_limit
+          limit_category: string_length
+          refusal_reason_codes:
+            - NRS-RESOURCE-LIMIT-EXCEEDED
+            - NRS-STRING-LIMIT-EXCEEDED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-005
+        classification: refusal
+        purpose: Malformed JSON is refused with a parse-error refusal; nothing is
+          fabricated.
+        input: conformance/fixtures/verifier_behavior/A2-R-005.json
+        input_sha256: 498ad05f8cd4278bb716f573a13e1bd5ff82ec8f623411f48ca43afc8961136f
+        requirement_ids:
+          - NRS-CORE-0011
+          - NRS-VERIFY-0018
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-PARSE-FAILED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-006
+        classification: refusal
+        purpose: Truncated JSON is refused with a parse-error refusal.
+        input: conformance/fixtures/verifier_behavior/A2-R-006.json
+        input_sha256: b042028ebfeaf6160c34e1e5f792f0d4fe3439a1372d05f92eac3f330d236852
+        requirement_ids:
+          - NRS-CORE-0011
+          - NRS-VERIFY-0018
+        expected:
+          kind: refusal
+          cli_exit_code: 2
+          refusal_kind: parse_error
+          refusal_reason_codes:
+            - NRS-PARSE-FAILED
+          refusal_schema_valid: true
+      - fixture_id: A2-R-007
+        classification: refusal
+        purpose: An unsupported bundle produces a schema-conformant refusal with the
+          declared bundle identifier.
+        input: conformance/fixtures/verifier_behavior/A2-R-007.json
+        input_sha256: f54a5da815c859ada74f8cb1c8b7ecc0233807a65b9f7d09010e84cc5ada46d7
+        requirement_ids:
+          - NRS-VERSION-0002
+          - NRS-VERIFY-0018
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_schema_valid: true
+      - fixture_id: A2-R-008
+        classification: refusal
+        purpose: A hostile non-URI bundle identifier is refused with a schema-conformant
+          refusal; the identifier is omitted, never echoed, fabricated, or
+          truncated.
+        input: conformance/fixtures/verifier_behavior/A2-R-008.json
+        input_sha256: 95c900c3ea581e5215051d5743f84e3f8af079081e8cc415a55d1aa1144827ce
+        requirement_ids:
+          - NRS-VERIFY-0018
+          - NRS-SEC-0004
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_schema_valid: true
+      - fixture_id: A2-B-001
+        classification: version_dispatch
+        purpose: The Phase 1 bundle still produces its pinned Phase 1 result (input is
+          the pinned V-001 fixture).
+        input: conformance/fixtures/public_checks/V-001.json
+        input_sha256: 0435be4360d1b237e4dd4a6fe0d6cc125d3ea61e17067398a113947fe1762032
+        requirement_ids:
+          - NRS-CORE-0010
+          - NRS-VERSION-0006
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.1.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:682d8e857923cb462b217de230d37074fef00c0095b77d36f8814bab37510294
+      - fixture_id: A2-B-002
+        classification: version_dispatch
+        purpose: A Phase 2A-shaped Record declaring the Phase 1 bundle identifier is
+          rejected by the 0.1 schema.
+        input: conformance/fixtures/verifier_behavior/A2-B-002.json
+        input_sha256: 4ef9d5ea154aec21bc39c9da6863f4cec45cb092c2a9c0f858204490dd9fd636
+        requirement_ids:
+          - NRS-VERSION-0005
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.1.0-draft.1
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+          semantic_projection_hash: sha256:451beffa091feeea2237ace5dda6182850b65d7241d173d68c1fe07b4e56461b
+      - fixture_id: A2-B-003
+        classification: version_dispatch
+        purpose: A Phase 1-shaped Record declaring the Phase 2A bundle identifier is
+          rejected by the 0.2 schema.
+        input: conformance/fixtures/verifier_behavior/A2-B-003.json
+        input_sha256: b38721cbafe92a7f6c58faa3b10c33984eb0d2b06750d1ace823d8d730864cf1
+        requirement_ids:
+          - NRS-VERSION-0005
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-computability:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:welch-recompute:0.2.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes:
+                - NRS-SCHEMA-INVALID
+          semantic_projection_hash: sha256:8c7124994802b83535f3a95202fb5982de4c90cb05197d066639cefae2a0d7d0
+      - fixture_id: A2-B-004
+        classification: version_dispatch
+        purpose: A nearby unknown 0.2 bundle version is refused, never guessed.
+        input: conformance/fixtures/verifier_behavior/A2-B-004.json
+        input_sha256: 003d3c25d8c2a3e74f493090a21a3e9acc42fd5bf823f6af5bd9da318b207685
+        requirement_ids:
+          - NRS-VERSION-0005
+          - NRS-VERSION-0002
+        expected:
+          kind: refusal
+          cli_exit_code: 3
+          refusal_kind: unsupported_bundle
+          refusal_reason_codes:
+            - NRS-UNSUPPORTED-BUNDLE
+          refusal_schema_valid: true
+    requirement_ids:
+      - NRS-VERIFY-0001
+      - NRS-VERIFY-0010
+      - NRS-VERSION-0002
+      - NRS-SEC-0003
+      - NRS-CORE-0004
+      - NRS-SEC-0001
+    normative_scope: "Required verifier behavior: fail-closed bundle handling,
+      execution/outcome invariants, prohibited overall status, safe refusal, and
+      the adversarial corpus of hostile-but-well-formed inputs
+      (security/threat-model.md) that must verify inertly rather than be
+      dereferenced."
+    phase_introduced: phase-1
+  - family: emitter
+    status: active
+    fixtures:
+      - fixture_id: E-001
+        classification: emitter_valid
+        purpose: "An independently-resealed, schema-valid Record with a correctly
+          (independently) computed digest. Baseline: an emitter that gets both
+          NRS-EMIT-0001 and NRS-EMIT-0004 right produces exactly this."
+        input: conformance/fixtures/emitter/E-001.json
+        input_sha256: 0435be4360d1b237e4dd4a6fe0d6cc125d3ea61e17067398a113947fe1762032
+        requirement_ids:
+          - NRS-EMIT-0001
+          - NRS-EMIT-0004
+        independent_verification:
+          schema_valid: true
+          method: AJV against schemas/record/record.schema.json
+            (tooling/src/phase1/schemas.ts)
+          digest_matches: true
+          digest_method: independent fixed record-content domain tag + `canonicalize` JCS + node:crypto SHA-256
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+      - fixture_id: E-002
+        classification: emitter_invalid_unknown_field
+        purpose: "An emitted Record adds a field the pinned schema does not declare.
+          additionalProperties: false in schemas/record/record.schema.json makes
+          this schema-invalid independent of any verifier - reading that one
+          schema file is sufficient to predict this fixture's outcome."
+        input: conformance/fixtures/emitter/E-002.json
+        input_sha256: a04e2d5e26ffcfe3c3411b1fbdb01112cd8b229992cdeddb33b889e6889e2a05
+        requirement_ids:
+          - NRS-EMIT-0001
+        independent_verification:
+          schema_valid: false
+          method: AJV against schemas/record/record.schema.json
+            (tooling/src/phase1/schemas.ts)
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: &a1
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a1
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a1
+      - fixture_id: E-003
+        classification: emitter_invalid_digest_mismatch
+        purpose: An emitted Record's declared content_digest was not recomputed after
+          being set to an arbitrary (but syntactically valid) sha256 value.
+          Independent JCS canonicalization plus SHA-256 disagrees with the
+          declared value - NRS-EMIT-0004 violated, checkable without this
+          repository's verifier.
+        input: conformance/fixtures/emitter/E-003.json
+        input_sha256: ff50b9dfdeacd00b407290b052f2d03cc119ab9dd06ee6f39e621f086e041248
+        requirement_ids:
+          - NRS-EMIT-0004
+        independent_verification:
+          schema_valid: true
+          digest_matches: false
+          independently_recomputed_digest: sha256:1c1a702a61687c5a03bb71971c6cfc3715c9a499f7bb14eb85238b44f7c66b8b
+          declared_digest: sha256:abababababababababababababababababababababababababababababababab
+          digest_method: independent fixed record-content domain tag + `canonicalize` JCS + node:crypto SHA-256
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DIGEST-MISMATCH
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+      - fixture_id: E-004
+        classification: emitter_invalid_missing_required_field
+        purpose: An emitted Record omits created_at, a field the schema's own `required`
+          array declares mandatory - schema-invalid independent of any verifier.
+        input: conformance/fixtures/emitter/E-004.json
+        input_sha256: c01db9ed60b2cb069500042cf452ea565cf3aad53f330a6707c3634f1931bd1a
+        requirement_ids:
+          - NRS-EMIT-0001
+        independent_verification:
+          schema_valid: false
+          method: AJV against schemas/record/record.schema.json
+            (tooling/src/phase1/schemas.ts)
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: &a2
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a2
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a2
+      - fixture_id: E-005
+        classification: emitter_invalid_non_utc_timestamp
+        purpose: An emitted Record declares created_at with a numeric UTC offset
+          (+09:00) instead of a trailing Z.
+          schemas/common/identifier.schema.json's rfc3339UtcZ pattern requires Z
+          - schema-invalid independent of any verifier.
+        input: conformance/fixtures/emitter/E-005.json
+        input_sha256: e3aec3c32c6e8deda0fe1678acdebe6b3ca09315439a42fdf5565350e8272cf2
+        requirement_ids:
+          - NRS-EMIT-0001
+        independent_verification:
+          schema_valid: false
+          method: AJV against schemas/common/identifier.schema.json's rfc3339UtcZ pattern
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance:
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-SCHEMA-INVALID
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: &a3
+                - NRS-SCHEMA-INVALID
+            - check_id: urn:nomue:check:itgc-preconditions:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a3
+            - check_id: urn:nomue:check:welch-recompute:0.1.0-draft.1
+              execution: not_run
+              outcome: null
+              reason_codes: *a3
+    requirement_ids:
+      - NRS-EMIT-0001
+      - NRS-EMIT-0004
+    normative_scope: Emitter conformance restated as explicit Requirement IDs
+      (NRS-EMIT-0001 schema validity, NRS-EMIT-0004 domain-separated digest
+      correctness); still judged by the same underlying structural/integrity
+      behavior as any other Record, but E-family fixtures exist and their
+      expected values are computed independently of the reference verifier
+      (author-emitter-fixtures.ts) rather than from its output, unlike this
+      suite's other non-numeric expectations. See spec/emission/README.md.
+    phase_introduced: phase-2a
+    notes: "Batch 2 U3 (2026-08-13): moved from no dedicated fixtures to
+      E-001..E-005. Expected schema-validity and digest values are asserted via
+      a fresh AJV instance and an independent JCS/SHA-256 computation before the
+      reference verifier is even invoked; the reference verifier is then run
+      only as a consistency check, closing the audit's G5 finding for this
+      family specifically."
+  - family: lifecycle
+    status: active
+    fixtures:
+      - fixture_id: LC-001
+        classification: lifecycle_projection
+        purpose: "Fully-populated happy path: fresh report over the same record,
+          consistent approval, no notices. Every axis lands on its best value
+          except verification, which is report_exists (nomue_attested requires a
+          pinned trust-root key; the repository trust root is empty
+          pre-ceremony, and that path is unit-tested with generated keys
+          instead)."
+        input: conformance/fixtures/lifecycle/LC-001.json
+        input_sha256: 573707c790d5e65137c56df12b8ad16feccc118e0be82a17369bfbbb119e4c8f
+        requirement_ids:
+          - NRS-CORE-0013
+          - NRS-CORE-0016
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: eligible
+            check: all_completed
+            freshness: current
+            approval: scope_consistent
+            verification: report_exists
+            disclosure: active
+      - fixture_id: LC-002
+        classification: lifecycle_projection
+        purpose: "Bare record, no satellite artifacts: not-run/not-evaluable values
+          everywhere, never fabricated ones - absence is reported as absence
+          (NRS-CORE-0016)."
+        input: conformance/fixtures/lifecycle/LC-002.json
+        input_sha256: f332e2e6f36938701cfb2ef1f73645f528ba4cd044cf07706a37aa3f86fc1de5
+        requirement_ids:
+          - NRS-CORE-0016
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: not_evaluated
+            check: not_evaluated
+            freshness: not_evaluable
+            approval: absent
+            verification: none
+            disclosure: active
+      - fixture_id: LC-003
+        classification: lifecycle_projection
+        purpose: "Inadmissible record (A2-A-001) with its real report:
+          profile_eligibility=ineligible from the completed-fail admissibility
+          check; dependent checks not_run gives check=some_not_run. No aggregate
+          verdict exists anywhere in the view (NRS-VERIFY-0001)."
+        input: conformance/fixtures/lifecycle/LC-003.json
+        input_sha256: 55877ec5e6fdce1fd3a39eb2954e5e34232006ee8c816cc6deba8d326cd4536d
+        requirement_ids:
+          - NRS-CORE-0016
+          - NRS-VERIFY-0001
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: ineligible
+            check: some_not_run
+            freshness: current
+            approval: absent
+            verification: report_exists
+            disclosure: active
+      - fixture_id: LC-004
+        classification: lifecycle_projection
+        purpose: "Freshness=stale: the report is a real report of a DIFFERENT record
+          (content digest and revision mismatch), so it no longer speaks about
+          this record."
+        input: conformance/fixtures/lifecycle/LC-004.json
+        input_sha256: caf914942b07779914e70aa196fcd9326f4b1b27b9956a3f70211b94bee66979
+        requirement_ids:
+          - NRS-CORE-0016
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: eligible
+            check: all_completed
+            freshness: stale
+            approval: absent
+            verification: report_exists
+            disclosure: active
+      - fixture_id: LC-005
+        classification: lifecycle_projection
+        purpose: "Approval scope mismatch surfaces as approval=scope_mismatch (carrier:
+          the D1 check)."
+        input: conformance/fixtures/lifecycle/LC-005.json
+        input_sha256: 5c0c945982d60a9d5c090b60583d5822295b151b3a0768796937657db35b7952
+        requirement_ids:
+          - NRS-CORE-0016
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: eligible
+            check: all_completed
+            freshness: current
+            approval: scope_mismatch
+            verification: report_exists
+            disclosure: active
+      - fixture_id: LC-006
+        classification: lifecycle_projection
+        purpose: A withdrawal notice for this revision makes disclosure=withdrawn
+          (NRS-CORE-0019).
+        input: conformance/fixtures/lifecycle/LC-006.json
+        input_sha256: 78bebce30d211e8b98826e2b136d01e507904a9bbbc62e22bd60b3a9507986cc
+        requirement_ids:
+          - NRS-CORE-0016
+          - NRS-CORE-0019
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: eligible
+            check: all_completed
+            freshness: current
+            approval: absent
+            verification: report_exists
+            disclosure: withdrawn
+      - fixture_id: LC-007
+        classification: lifecycle_projection
+        purpose: A supersession notice for this revision makes disclosure=superseded;
+          the superseding revision is named in the notice (NRS-CORE-0019).
+        input: conformance/fixtures/lifecycle/LC-007.json
+        input_sha256: 673f577349828a9431ab47cd1089b2cf5ad53ee02bce7ce979c562ea45e97a91
+        requirement_ids:
+          - NRS-CORE-0016
+          - NRS-CORE-0019
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: eligible
+            check: all_completed
+            freshness: current
+            approval: absent
+            verification: report_exists
+            disclosure: superseded
+      - fixture_id: LC-008
+        classification: lifecycle_projection
+        purpose: "Unknown-extension interaction as DEFINED behavior: the closed surface
+          makes conformance fail, every check not_run - so the projection
+          reports profile_eligibility=not_evaluated (the admissibility check did
+          not complete), check=some_not_run, verification=report_exists. Partial
+          verification never silently upgrades any axis."
+        input: conformance/fixtures/lifecycle/LC-008.json
+        input_sha256: 6100c749e6413f1c3c24a59e70beff3508cbdaa2acc8bffe2e6d5be5901ee156
+        requirement_ids:
+          - NRS-CORE-0016
+          - NRS-CORE-0007
+        expected:
+          kind: lifecycle_check
+          axes:
+            profile_eligibility: not_evaluated
+            check: some_not_run
+            freshness: current
+            approval: absent
+            verification: report_exists
+            disclosure: active
+      - fixture_id: LC-020
+        classification: lifecycle_operation
+        purpose: "attest allowed: all preconditions (check=all_completed,
+          freshness=current, not withdrawn) satisfied."
+        input: conformance/fixtures/lifecycle/LC-020.json
+        input_sha256: 2ca4db384320d7dd9c7e206ab94082041c77dee9ed1e13576f84ab18c1ed838a
+        requirement_ids:
+          - NRS-CORE-0014
+          - NRS-CORE-0017
+        expected:
+          kind: lifecycle_check
+          decision:
+            result: allowed
+      - fixture_id: LC-021
+        classification: lifecycle_operation
+        purpose: "attest refused on stale freshness: an explicit refusal naming the
+          violated predicate, carrying NRS-LIFECYCLE-PRECONDITION-NOT-MET (Z3
+          negative, connected to the refusal taxonomy via the registered reason
+          code)."
+        input: conformance/fixtures/lifecycle/LC-021.json
+        input_sha256: 5d5f2238f31638ed1496a71ab0faf8d112e89fcd5b73c1bffb17bf061492354d
+        requirement_ids:
+          - NRS-CORE-0014
+          - NRS-CORE-0017
+        expected:
+          kind: lifecycle_check
+          decision:
+            result: refused
+            reason_codes:
+              - NRS-LIFECYCLE-PRECONDITION-NOT-MET
+            violated:
+              - axis: freshness
+                predicate: current
+      - fixture_id: LC-022
+        classification: lifecycle_operation
+        purpose: approve refused on a withdrawn revision (disclosure=withdrawn violates
+          not_withdrawn).
+        input: conformance/fixtures/lifecycle/LC-022.json
+        input_sha256: 60fcdb1e41601bffc12f41da250965a08c7b75c89477ca8c2cdc83689c6f780d
+        requirement_ids:
+          - NRS-CORE-0014
+          - NRS-CORE-0017
+          - NRS-CORE-0019
+        expected:
+          kind: lifecycle_check
+          decision:
+            result: refused
+            reason_codes:
+              - NRS-LIFECYCLE-PRECONDITION-NOT-MET
+            violated:
+              - axis: disclosure
+                predicate: not_withdrawn
+      - fixture_id: LC-023
+        classification: lifecycle_operation
+        purpose: "attest with no report at all: structured needs_clarification
+          (NRS-CORE-0015/0018) enumerating BOTH missing evaluations (check and
+          freshness) with expected forms - never a bare failure, never a silent
+          pass."
+        input: conformance/fixtures/lifecycle/LC-023.json
+        input_sha256: 2dd8f7d0b19e054a0029889096027c4104bdba23aae7b200eb02abb48c12bb4d
+        requirement_ids:
+          - NRS-CORE-0015
+          - NRS-CORE-0018
+        expected:
+          kind: lifecycle_check
+          decision:
+            result: needs_clarification
+            missing_whats:
+              - verification report
+              - verification report (freshness inputs)
+    requirement_ids:
+      - NRS-CORE-0013
+      - NRS-CORE-0014
+      - NRS-CORE-0015
+      - NRS-CORE-0016
+      - NRS-CORE-0017
+      - NRS-CORE-0018
+      - NRS-CORE-0019
+    normative_scope: "Record lifecycle state model v0
+      (spec/core/record-lifecycle.md, ADR-0028): state as a derived projection
+      over the artifact graph (six orthogonal axes), declarative operation
+      preconditions from the closed-vocabulary registry, structured
+      needs_clarification, and disclosure notices. LC fixtures are
+      projection/operation inputs replayed by a dedicated lifecycle_check kind,
+      not Records."
+    phase_introduced: record-lifecycle-v0
+    notes: "LC-001..008
+      cover the per-axis {valid/failing/not-run/out-of-scope} matrix including
+      the unknown-extension interaction as defined behavior (LC-008);
+      LC-020..023 cover allowed/refused
+      (NRS-LIFECYCLE-PRECONDITION-NOT-MET)/needs_clarification. The
+      nomue_attested verification value requires a pinned trust-root key and is
+      unit-tested with generated keys (tooling/tests/lifecycle.test.ts) rather
+      than fixture-pinned against an empty trust root."
+  - family: approval
+    status: active
+    fixtures:
+      - fixture_id: D1-001
+        classification: approval_present_scope_matches
+        purpose: "An approval element is present and its scope.id matches the checked
+          record's revision_id: checkApprovalScope reports a completed pass."
+        input: conformance/fixtures/approval/D1-001.json
+        input_sha256: b508a773f8d517844810e6b9b36f54c64e9d202827790c233db28082c0aed7f9
+        requirement_ids:
+          - NRS-APPROVE-0002
+          - NRS-APPROVE-0004
+        expected:
+          kind: approval_check
+          approval_result:
+            check_id: urn:nomue:check:approval-scope:0.1.0-draft.1
+            execution: completed
+            outcome: pass
+            reason_codes: []
+      - fixture_id: D1-002
+        classification: approval_absent
+        purpose: "No approval element is present (null). checkApprovalScope reports
+          execution: not_run with NRS-APPROVAL-ABSENT, never a silent pass,
+          since approval is optional and absence is a legitimate, distinct
+          case."
+        input: conformance/fixtures/approval/D1-002.json
+        input_sha256: cbb322f5bfe0209be43c46851c64b9cff0ac1fcfd02905c4d0a743dd235b09e5
+        requirement_ids:
+          - NRS-APPROVE-0002
+          - NRS-APPROVE-0004
+        expected:
+          kind: approval_check
+          approval_result:
+            check_id: urn:nomue:check:approval-scope:0.1.0-draft.1
+            execution: not_run
+            outcome: null
+            reason_codes:
+              - NRS-APPROVAL-ABSENT
+      - fixture_id: D1-003
+        classification: approval_scope_mismatch
+        purpose: "An approval element is present but its scope.id names neither the
+          record_id nor the revision_id of the record it is checked against:
+          checkApprovalScope reports a completed fail with
+          NRS-APPROVAL-SCOPE-MISMATCH."
+        input: conformance/fixtures/approval/D1-003.json
+        input_sha256: 4e2303553f3122be6965855d9cc8765d322d56494903114e90cee6005d5a78cf
+        requirement_ids:
+          - NRS-APPROVE-0002
+          - NRS-APPROVE-0004
+        expected:
+          kind: approval_check
+          approval_result:
+            check_id: urn:nomue:check:approval-scope:0.1.0-draft.1
+            execution: completed
+            outcome: fail
+            reason_codes:
+              - NRS-APPROVAL-SCOPE-MISMATCH
+    requirement_ids:
+      - NRS-APPROVE-0002
+      - NRS-APPROVE-0004
+    normative_scope: "Human-approval first increment (draft): the minimal
+      approval element shape (approver/scope/timestamp/statement) and
+      scope-consistency checking. D1-family fixtures are not Records - there is
+      no registered bundle whose schema declares an approval field yet - so
+      expected values are computed by calling checkApprovalScope
+      (reference/verifier/src/approval.ts) directly, replayed through a
+      dedicated approval_check fixture kind in the shared conformance runner.
+      See spec/approval/README.md."
+    phase_introduced: phase-2a-approval-draft
+    notes: "D1-001
+      approval-present (scope matches, pass), D1-002 approval-absent (execution:
+      not_run, NRS-APPROVAL-ABSENT), D1-003 approval-scope-mismatch (fail,
+      NRS-APPROVAL-SCOPE-MISMATCH). Whether approval requires a signature, and
+      how it attaches to a Record's schema, are open discussion items not
+      resolved by this increment."

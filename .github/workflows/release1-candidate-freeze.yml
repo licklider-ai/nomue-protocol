@@ -1,0 +1,73 @@
+name: Release 1 candidate freeze
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: "Exact 40-hex candidate content commit"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-freeze:
+    name: candidate freeze manifest
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Validate requested candidate identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "${{ inputs.candidate_sha }}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "candidate_sha must be an exact lowercase 40-hex commit" >&2
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.candidate_sha }}
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Confirm checkout and public boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ inputs.candidate_sha }}"
+          pnpm snapshot:manifest --check-public-boundary
+
+      - name: Generate and validate candidate freeze manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm snapshot:manifest --candidate-freeze > candidate-freeze-manifest.json
+          node - <<'NODE'
+          const fs = require("fs");
+          const manifest = JSON.parse(fs.readFileSync("candidate-freeze-manifest.json", "utf8"));
+          const requested = process.env.CANDIDATE_SHA;
+          if (manifest.release_candidate_id !== requested) {
+            throw new Error(`candidate mismatch: ${manifest.release_candidate_id} != ${requested}`);
+          }
+          if (!Number.isInteger(manifest.frozen_file_count) || manifest.frozen_file_count < 1) {
+            throw new Error("candidate freeze manifest has no frozen files");
+          }
+          NODE
+        env:
+          CANDIDATE_SHA: ${{ inputs.candidate_sha }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release1-candidate-freeze-${{ inputs.candidate_sha }}
+          path: candidate-freeze-manifest.json
+          if-no-files-found: error
+          retention-days: 90

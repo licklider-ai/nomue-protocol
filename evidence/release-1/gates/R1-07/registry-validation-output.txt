@@ -1,0 +1,5 @@
+$ tsx tooling/src/validate.ts
+validate: OK - registries, traceability, normative lint, authority,
+gates, conformance manifest, links, private-dependency audit,
+phase-1 schemas, cross-checks, code-path audits, and the snapshot
+manifest mechanism are clean.

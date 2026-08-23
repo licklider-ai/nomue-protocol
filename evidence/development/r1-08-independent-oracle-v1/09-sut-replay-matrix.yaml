@@ -1,0 +1,1635 @@
+rows:
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: mean_x
+    sut_value: 2
+    reference: 2
+    reference_kind: exact_rational
+    contract_tolerance: &a1
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: sample_variance_x
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: &a2
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: mean_y
+    sut_value: 5
+    reference: 5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: sample_variance_y
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: mean_difference
+    sut_value: -3
+    reference: -3
+    reference_kind: exact_rational
+    contract_tolerance: &a3
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: standard_error
+    sut_value: 0.816496580927726
+    reference: 0.816496580927726
+    reference_kind: arb_enclosure
+    contract_tolerance: &a4
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: test_statistic
+    sut_value: -3.6742346141747673
+    reference: -3.6742346141747673
+    reference_kind: arb_enclosure
+    contract_tolerance: &a5
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: degrees_of_freedom
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: &a6
+      absolute: 1e-12
+      relative: 1e-12
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: p_value
+    sut_value: 0.02131164112875673
+    reference: 0.021311641128756727
+    reference_kind: arb_enclosure
+    contract_tolerance: &a7
+      absolute: 0
+      relative: 1e-10
+    abs_deviation: 3.469446951953614e-18
+    relative_deviation: 1.627958602996621e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: critical_value
+    sut_value: 2.776445105197794
+    reference: 2.7764451052062213
+    reference_kind: arb_enclosure
+    contract_tolerance: &a8
+      absolute: 1e-12
+      relative: 1e-10
+    abs_deviation: 8.427480935324638e-12
+    relative_deviation: 3.03534938238899e-12
+    ulp_distance: 18977
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: ci_lower
+    sut_value: -5.266957935527519
+    reference: -5.2669579355344
+    reference_kind: arb_enclosure
+    contract_tolerance: &a9
+      absolute: 1e-12
+      relative: 1e-10
+    abs_deviation: 6.88071821741687e-12
+    relative_deviation: 1.3063932352667885e-12
+    ulp_distance: 7747
+    verdict: PASS
+  - case_id: ordinary_balanced_df4_p0p02131164112875673
+    field: ci_upper
+    sut_value: -0.7330420644724809
+    reference: -0.7330420644655998
+    reference_kind: arb_enclosure
+    contract_tolerance: &a10
+      absolute: 1e-12
+      relative: 1e-10
+    abs_deviation: 6.881051284324258e-12
+    relative_deviation: 9.386980117267989e-12
+    ulp_distance: 61979
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: mean_x
+    sut_value: 2.8
+    reference: 2.8
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: sample_variance_x
+    sut_value: 1.88
+    reference: 1.8799999999999997
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 1.1810883240693154e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: mean_y
+    sut_value: 7.066666666666666
+    reference: 7.066666666666666
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: sample_variance_y
+    sut_value: 2.623333333333333
+    reference: 2.6233333333333326
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 4.440892098500626e-16
+    relative_deviation: 1.692843239580925e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: mean_difference
+    sut_value: -4.266666666666667
+    reference: -4.266666666666667
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: standard_error
+    sut_value: 1.1595018087284057
+    reference: 1.1595018087284055
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 1.9150000737691098e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: test_statistic
+    sut_value: -3.6797412772868414
+    reference: -3.6797412772868423
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 8.881784197001252e-16
+    relative_deviation: 2.4136980096464816e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: degrees_of_freedom
+    sut_value: 3.9642322870622957
+    reference: 3.964232287062296
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 4.440892098500626e-16
+    relative_deviation: 1.1202401314862304e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: p_value
+    sut_value: 0.021544849116251163
+    reference: 0.02154484911625115
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.3877787807814457e-17
+    relative_deviation: 6.441348339425833e-16
+    ulp_distance: 4
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: critical_value
+    sut_value: 2.7863525924725843
+    reference: 2.786352592462208
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 1.0376144388146713e-11
+    relative_deviation: 3.723916497925704e-12
+    ulp_distance: 23365
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: ci_lower
+    sut_value: -7.49744753739371
+    reference: -7.497447537381679
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 1.2031264873257896e-11
+    relative_deviation: 1.6047147796969111e-12
+    ulp_distance: 13546
+    verdict: PASS
+  - case_id: unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116
+    field: ci_upper
+    sut_value: -1.035885795939623
+    reference: -1.0358857959516548
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 1.2031708962467746e-11
+    relative_deviation: 1.1614899064635182e-11
+    ulp_distance: 54186
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: mean_x
+    sut_value: 1.5
+    reference: 1.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: sample_variance_x
+    sut_value: 0.5
+    reference: 0.5
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: mean_y
+    sut_value: 4.5
+    reference: 4.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: sample_variance_y
+    sut_value: 2
+    reference: 2
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: mean_difference
+    sut_value: -3
+    reference: -3
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: standard_error
+    sut_value: 1.118033988749895
+    reference: 1.118033988749895
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: test_statistic
+    sut_value: -2.6832815729997477
+    reference: -2.6832815729997477
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: degrees_of_freedom
+    sut_value: 1.4705882352941178
+    reference: 1.4705882352941178
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: p_value
+    sut_value: 0.15796345394903638
+    reference: 0.1579634539490363
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 8.326672684688674e-17
+    relative_deviation: 5.271265268341817e-16
+    ulp_distance: 3
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: critical_value
+    sut_value: 6.188114940769252
+    reference: 6.188114940654486
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 1.1476597450155168e-10
+    relative_deviation: 1.854619308142408e-11
+    ulp_distance: 129215
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: ci_lower
+    sut_value: -9.918522830071067
+    reference: -9.918522829942754
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 1.283133599372377e-10
+    relative_deviation: 1.2936740897365895e-11
+    ulp_distance: 72234
+    verdict: PASS
+  - case_id: minimum_n_per_group_df1p470588235294118_p0p1579634539490364
+    field: ci_upper
+    sut_value: 3.9185228300710673
+    reference: 3.9185228299427544
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 1.2831291584802784e-10
+    relative_deviation: 3.2745226048791636e-11
+    ulp_distance: 288935
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: mean_x
+    sut_value: 5
+    reference: 5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: sample_variance_x
+    sut_value: 0
+    reference: 0
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: mean_y
+    sut_value: 7
+    reference: 7
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: sample_variance_y
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: mean_difference
+    sut_value: -2
+    reference: -2
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: standard_error
+    sut_value: 0.5773502691896257
+    reference: 0.5773502691896257
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: test_statistic
+    sut_value: -3.464101615137755
+    reference: -3.464101615137755
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: degrees_of_freedom
+    sut_value: 2
+    reference: 2
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: p_value
+    sut_value: 0.07417990022744854
+    reference: 0.07417990022744853
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.3877787807814457e-17
+    relative_deviation: 1.8708285890467275e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: critical_value
+    sut_value: 4.302652729749462
+    reference: 4.302652729675174
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 7.428813120213817e-11
+    relative_deviation: 1.7265658157465077e-11
+    ulp_distance: 83641
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: ci_lower
+    sut_value: -4.48413771175033
+    reference: -4.484137711707439
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 4.289102406573875e-11
+    relative_deviation: 9.565055050237684e-12
+    ulp_distance: 48291
+    verdict: PASS
+  - case_id: one_group_variance_zero_df2_p0p07417990022744854
+    field: ci_upper
+    sut_value: 0.4841377117503298
+    reference: 0.4841377117074395
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 4.289030242077274e-11
+    relative_deviation: 8.859112062497479e-11
+    ulp_distance: 772643
+    verdict: PASS
+  - case_id: both_groups_variance_zero_df_na_p_na
+    field: degenerate
+    sut_value: ZERO_STANDARD_ERROR
+    reference: null
+    reference_kind: contract
+    verdict: DEGENERATE_EXPECTED
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: mean_x
+    sut_value: 1.5
+    reference: 1.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: sample_variance_x
+    sut_value: 0.5
+    reference: 0.5
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: mean_y
+    sut_value: 1.6500000000000001
+    reference: 1.6500000000000001
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: sample_variance_y
+    sut_value: 0.6050000000000001
+    reference: 0.605
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 1.1102230246251565e-16
+    relative_deviation: 1.835079379545713e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: mean_difference
+    sut_value: -0.15000000000000013
+    reference: -0.15000000000000013
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: standard_error
+    sut_value: 0.7433034373659253
+    reference: 0.7433034373659253
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: test_statistic
+    sut_value: -0.2018018381988939
+    reference: -0.2018018381988939
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: degrees_of_freedom
+    sut_value: 1.9821029990665961
+    reference: 1.9821029990665961
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: p_value
+    sut_value: 0.8588845634329486
+    reference: 0.8588845634329487
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.1102230246251565e-16
+    relative_deviation: 1.2926335760275068e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: critical_value
+    sut_value: 4.340097567940366
+    reference: 4.340097567997873
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 5.750688814032401e-11
+    relative_deviation: 1.3250137177642406e-11
+    ulp_distance: 64747
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: ci_lower
+    sut_value: -3.376009440753567
+    reference: -3.3760094407963117
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 4.274491871569808e-11
+    relative_deviation: 1.2661374165356503e-11
+    ulp_distance: 96253
+    verdict: PASS
+  - case_id: welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486
+    field: ci_upper
+    sut_value: 3.076009440753566
+    reference: 3.0760094407963114
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 4.274536280490793e-11
+    relative_deviation: 1.3896369184693428e-11
+    ulp_distance: 96254
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: mean_x
+    sut_value: 2
+    reference: 2
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: sample_variance_x
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: mean_y
+    sut_value: 5
+    reference: 5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: sample_variance_y
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: mean_difference
+    sut_value: -3
+    reference: -3
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: standard_error
+    sut_value: 0.816496580927726
+    reference: 0.816496580927726
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: test_statistic
+    sut_value: -3.6742346141747673
+    reference: -3.6742346141747673
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: degrees_of_freedom
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: p_value
+    sut_value: 0.02131164112875673
+    reference: 0.021311641128756727
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 3.469446951953614e-18
+    relative_deviation: 1.627958602996621e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: critical_value
+    sut_value: 2.776445105197794
+    reference: 2.7764451052062213
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 8.427480935324638e-12
+    relative_deviation: 3.03534938238899e-12
+    ulp_distance: 18977
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: ci_lower
+    sut_value: -5.266957935527519
+    reference: -5.2669579355344
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 6.88071821741687e-12
+    relative_deviation: 1.3063932352667885e-12
+    ulp_distance: 7747
+    verdict: PASS
+  - case_id: p_below_alpha_0p05_df4_p0p02131164112875673
+    field: ci_upper
+    sut_value: -0.7330420644724809
+    reference: -0.7330420644655998
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 6.881051284324258e-12
+    relative_deviation: 9.386980117267989e-12
+    ulp_distance: 61979
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: mean_x
+    sut_value: 10.120000000000001
+    reference: 10.12
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 1.7763568394002505e-15
+    relative_deviation: 1.7552933195654646e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: sample_variance_x
+    sut_value: 0.2470000000000001
+    reference: 0.24700000000000005
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 5.551115123125783e-17
+    relative_deviation: 2.247415029605579e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: mean_y
+    sut_value: 10.48
+    reference: 10.48
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: sample_variance_y
+    sut_value: 0.14199999999999988
+    reference: 0.14199999999999982
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 5.551115123125783e-17
+    relative_deviation: 3.9092360022012586e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: mean_difference
+    sut_value: -0.35999999999999943
+    reference: -0.36000000000000015
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 7.216449660063518e-16
+    relative_deviation: 2.0045693500176427e-15
+    ulp_distance: 13
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: standard_error
+    sut_value: 0.27892651361962706
+    reference: 0.27892651361962684
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 7.960684771180778e-16
+    ulp_distance: 4
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: test_statistic
+    sut_value: -1.2906625308877324
+    reference: -1.2906625308877362
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 3.774758283725532e-15
+    relative_deviation: 2.9246671328788007e-15
+    ulp_distance: 17
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: degrees_of_freedom
+    sut_value: 7.456715903071217
+    reference: 7.456715903071217
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: p_value
+    sut_value: 0.23539658479651815
+    reference: 0.23539658479651696
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.1934897514720433e-15
+    relative_deviation: 5.070123479079875e-15
+    ulp_distance: 43
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: critical_value
+    sut_value: 2.335578809576075
+    reference: 2.3355788095796015
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 3.5265124154193472e-12
+    relative_deviation: 1.5099094070193721e-12
+    ulp_distance: 7941
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: ci_lower
+    sut_value: -1.011454854638933
+    reference: -1.0114548546399167
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 9.836575998178887e-13
+    relative_deviation: 9.725175526178832e-13
+    ulp_distance: 4430
+    verdict: PASS
+  - case_id: p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181
+    field: ci_upper
+    sut_value: 0.29145485463893406
+    reference: 0.2914548546399164
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 9.823253321883385e-13
+    relative_deviation: 3.3704202093390127e-12
+    ulp_distance: 17696
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: mean_x
+    sut_value: 2.5
+    reference: 2.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: sample_variance_x
+    sut_value: 1.6666666666666667
+    reference: 1.6666666666666667
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: mean_y
+    sut_value: 9.5
+    reference: 9.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: sample_variance_y
+    sut_value: 1.6666666666666667
+    reference: 1.6666666666666667
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: mean_difference
+    sut_value: -7
+    reference: -7
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: standard_error
+    sut_value: 0.9128709291752769
+    reference: 0.9128709291752769
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: test_statistic
+    sut_value: -7.6681158050723255
+    reference: -7.6681158050723255
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: degrees_of_freedom
+    sut_value: 6
+    reference: 6
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: p_value
+    sut_value: 0.00025719781682516564
+    reference: 0.0002571978168251657
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 5.421010862427522e-20
+    relative_deviation: 2.1077204034404928e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: critical_value
+    sut_value: 2.4469118511449692
+    reference: 2.4469118511187844
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 2.6184832080389242e-11
+    relative_deviation: 1.0701175062001815e-11
+    ulp_distance: 58963
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: ci_lower
+    sut_value: -9.233714695164705
+    reference: -9.233714695140801
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 2.390443398780917e-11
+    relative_deviation: 2.5888209433552113e-12
+    ulp_distance: 13457
+    verdict: PASS
+  - case_id: non_degenerate_small_p_df6_p0p0002571978168251656
+    field: ci_upper
+    sut_value: -4.766285304835295
+    reference: -4.766285304859198
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 2.390354580938947e-11
+    relative_deviation: 5.015131130530511e-12
+    ulp_distance: 26913
+    verdict: PASS
+  - case_id: p_underflow_boundary_df138_p0_underflow
+    field: p_underflow
+    sut_value: 0
+    reference: null
+    reference_kind: contract
+    verdict: DEGENERATE_EXPECTED
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: mean_x
+    sut_value: 10.120000000000001
+    reference: 10.12
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 1.7763568394002505e-15
+    relative_deviation: 1.7552933195654646e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: sample_variance_x
+    sut_value: 0.2470000000000001
+    reference: 0.24700000000000005
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 5.551115123125783e-17
+    relative_deviation: 2.247415029605579e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: mean_y
+    sut_value: 10.48
+    reference: 10.48
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: sample_variance_y
+    sut_value: 0.14199999999999988
+    reference: 0.14199999999999982
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 5.551115123125783e-17
+    relative_deviation: 3.9092360022012586e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: mean_difference
+    sut_value: -0.35999999999999943
+    reference: -0.36000000000000015
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 7.216449660063518e-16
+    relative_deviation: 2.0045693500176427e-15
+    ulp_distance: 13
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: standard_error
+    sut_value: 0.27892651361962706
+    reference: 0.27892651361962684
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 7.960684771180778e-16
+    ulp_distance: 4
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: test_statistic
+    sut_value: -1.2906625308877324
+    reference: -1.2906625308877362
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 3.774758283725532e-15
+    relative_deviation: 2.9246671328788007e-15
+    ulp_distance: 17
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: degrees_of_freedom
+    sut_value: 7.456715903071217
+    reference: 7.456715903071217
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: p_value
+    sut_value: 0.23539658479651815
+    reference: 0.23539658479651696
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.1934897514720433e-15
+    relative_deviation: 5.070123479079875e-15
+    ulp_distance: 43
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: critical_value
+    sut_value: 2.335578809576075
+    reference: 2.3355788095796015
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 3.5265124154193472e-12
+    relative_deviation: 1.5099094070193721e-12
+    ulp_distance: 7941
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: ci_lower
+    sut_value: -1.011454854638933
+    reference: -1.0114548546399167
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 9.836575998178887e-13
+    relative_deviation: 9.725175526178832e-13
+    ulp_distance: 4430
+    verdict: PASS
+  - case_id: ci_crosses_zero_df7p456715903071217_p0p2353965847965181
+    field: ci_upper
+    sut_value: 0.29145485463893406
+    reference: 0.2914548546399164
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 9.823253321883385e-13
+    relative_deviation: 3.3704202093390127e-12
+    ulp_distance: 17696
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: mean_x
+    sut_value: 1000000002
+    reference: 1000000002
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: sample_variance_x
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: mean_y
+    sut_value: 1000000003.5
+    reference: 1000000003.5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: sample_variance_y
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: mean_difference
+    sut_value: -1.5
+    reference: -1.5
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: standard_error
+    sut_value: 0.816496580927726
+    reference: 0.816496580927726
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: test_statistic
+    sut_value: -1.8371173070873836
+    reference: -1.8371173070873836
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: degrees_of_freedom
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: p_value
+    sut_value: 0.14006598491201788
+    reference: 0.14006598491201783
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 5.551115123125783e-17
+    relative_deviation: 3.9632142854760224e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: critical_value
+    sut_value: 2.776445105197794
+    reference: 2.7764451052062213
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 8.427480935324638e-12
+    relative_deviation: 3.03534938238899e-12
+    ulp_distance: 18977
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: ci_lower
+    sut_value: -3.766957935527519
+    reference: -3.7669579355344003
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 6.88116230662672e-12
+    relative_deviation: 1.8267159932197445e-12
+    ulp_distance: 15495
+    verdict: PASS
+  - case_id: large_common_offset_ladder_base_df4_p0p1400659849120179
+    field: ci_upper
+    sut_value: 0.7669579355275191
+    reference: 0.7669579355344002
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 6.881051284324258e-12
+    relative_deviation: 8.971875725530743e-12
+    ulp_distance: 61979
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: mean_x
+    sut_value: 2.8
+    reference: 2.8
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: sample_variance_x
+    sut_value: 1.88
+    reference: 1.8799999999999997
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 1.1810883240693154e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: mean_y
+    sut_value: 7.066666666666666
+    reference: 7.066666666666666
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: sample_variance_y
+    sut_value: 2.623333333333333
+    reference: 2.6233333333333326
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 4.440892098500626e-16
+    relative_deviation: 1.692843239580925e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: mean_difference
+    sut_value: -4.266666666666667
+    reference: -4.266666666666667
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: standard_error
+    sut_value: 1.1595018087284057
+    reference: 1.1595018087284055
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 2.220446049250313e-16
+    relative_deviation: 1.9150000737691098e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: test_statistic
+    sut_value: -3.6797412772868414
+    reference: -3.6797412772868423
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 8.881784197001252e-16
+    relative_deviation: 2.4136980096464816e-16
+    ulp_distance: 2
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: degrees_of_freedom
+    sut_value: 3.9642322870622957
+    reference: 3.964232287062296
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 4.440892098500626e-16
+    relative_deviation: 1.1202401314862304e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: p_value
+    sut_value: 0.021544849116251163
+    reference: 0.02154484911625115
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 1.3877787807814457e-17
+    relative_deviation: 6.441348339425833e-16
+    ulp_distance: 4
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: critical_value
+    sut_value: 2.7863525924725843
+    reference: 2.786352592462208
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 1.0376144388146713e-11
+    relative_deviation: 3.723916497925704e-12
+    ulp_distance: 23365
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: ci_lower
+    sut_value: -7.49744753739371
+    reference: -7.497447537381679
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 1.2031264873257896e-11
+    relative_deviation: 1.6047147796969111e-12
+    ulp_distance: 13546
+    verdict: PASS
+  - case_id: within_group_permutation_df3p964232287062296_p0p02154484911625116
+    field: ci_upper
+    sut_value: -1.035885795939623
+    reference: -1.0358857959516548
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 1.2031708962467746e-11
+    relative_deviation: 1.1614899064635182e-11
+    ulp_distance: 54186
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: mean_x
+    sut_value: 5
+    reference: 5
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: sample_variance_x
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: mean_y
+    sut_value: 2
+    reference: 2
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: sample_variance_y
+    sut_value: 1
+    reference: 1
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: mean_difference
+    sut_value: 3
+    reference: 3
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: standard_error
+    sut_value: 0.816496580927726
+    reference: 0.816496580927726
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: test_statistic
+    sut_value: 3.6742346141747673
+    reference: 3.6742346141747673
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: degrees_of_freedom
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: p_value
+    sut_value: 0.02131164112875673
+    reference: 0.021311641128756727
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 3.469446951953614e-18
+    relative_deviation: 1.627958602996621e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: critical_value
+    sut_value: 2.776445105197794
+    reference: 2.7764451052062213
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 8.427480935324638e-12
+    relative_deviation: 3.03534938238899e-12
+    ulp_distance: 18977
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: ci_lower
+    sut_value: 0.7330420644724809
+    reference: 0.7330420644655998
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 6.881051284324258e-12
+    relative_deviation: 9.386980117267989e-12
+    ulp_distance: 61979
+    verdict: PASS
+  - case_id: group_swap_df4_p0p02131164112875673
+    field: ci_upper
+    sut_value: 5.266957935527519
+    reference: 5.2669579355344
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 6.88071821741687e-12
+    relative_deviation: 1.3063932352667885e-12
+    ulp_distance: 7747
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: mean_x
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: sample_variance_x
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: mean_y
+    sut_value: 10
+    reference: 10
+    reference_kind: exact_rational
+    contract_tolerance: *a1
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: sample_variance_y
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a2
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: mean_difference
+    sut_value: -6
+    reference: -6
+    reference_kind: exact_rational
+    contract_tolerance: *a3
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: standard_error
+    sut_value: 1.632993161855452
+    reference: 1.632993161855452
+    reference_kind: arb_enclosure
+    contract_tolerance: *a4
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: test_statistic
+    sut_value: -3.6742346141747673
+    reference: -3.6742346141747673
+    reference_kind: arb_enclosure
+    contract_tolerance: *a5
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: degrees_of_freedom
+    sut_value: 4
+    reference: 4
+    reference_kind: exact_rational
+    contract_tolerance: *a6
+    abs_deviation: 0
+    relative_deviation: 0
+    ulp_distance: 0
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: p_value
+    sut_value: 0.02131164112875673
+    reference: 0.021311641128756727
+    reference_kind: arb_enclosure
+    contract_tolerance: *a7
+    abs_deviation: 3.469446951953614e-18
+    relative_deviation: 1.627958602996621e-16
+    ulp_distance: 1
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: critical_value
+    sut_value: 2.776445105197794
+    reference: 2.7764451052062213
+    reference_kind: arb_enclosure
+    contract_tolerance: *a8
+    abs_deviation: 8.427480935324638e-12
+    relative_deviation: 3.03534938238899e-12
+    ulp_distance: 18977
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: ci_lower
+    sut_value: -10.533915871055038
+    reference: -10.5339158710688
+    reference_kind: arb_enclosure
+    contract_tolerance: *a9
+    abs_deviation: 1.376143643483374e-11
+    relative_deviation: 1.3063932352667885e-12
+    ulp_distance: 7747
+    verdict: PASS
+  - case_id: exact_power_of_two_scaling_df4_p0p02131164112875673
+    field: ci_upper
+    sut_value: -1.4660841289449618
+    reference: -1.4660841289311994
+    reference_kind: arb_enclosure
+    contract_tolerance: *a10
+    abs_deviation: 1.376232461325344e-11
+    relative_deviation: 9.387131571472112e-12
+    ulp_distance: 61980
+    verdict: PASS
+offset_ladder:
+  steps:
+    - offset: 0
+      sut_variance_x: 1
+      sut_variance_y: 1
+      naive_variance_x: 1
+      naive_variance_y: 1
+      exact_variance_x: 1/1
+      exact_variance_y: 1/1
+      sut_t: -1.8371173070873836
+      sut_df: 4
+      sut_p: 0.14006598491201788
+      sut_passes_contract: true
+    - offset: 1000000000
+      sut_variance_x: 1
+      sut_variance_y: 1
+      naive_variance_x: 0
+      naive_variance_y: 0
+      exact_variance_x: 1/1
+      exact_variance_y: 1/1
+      sut_t: -1.8371173070873836
+      sut_df: 4
+      sut_p: 0.14006598491201788
+      sut_passes_contract: true
+    - offset: 10000000000
+      sut_variance_x: 1
+      sut_variance_y: 1
+      naive_variance_x: -32768
+      naive_variance_y: 0
+      exact_variance_x: 1/1
+      exact_variance_y: 1/1
+      sut_t: -1.8371173070873836
+      sut_df: 4
+      sut_p: 0.14006598491201788
+      sut_passes_contract: true
+  relation_checks:
+    - relation: add_common_offset
+      status: pass
+      detail: offset 1000000000
+    - relation: add_common_offset
+      status: pass
+      detail: offset 10000000000

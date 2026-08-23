@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:state-invariants-registry",
+  "title": "NRS state invariant registry",
+  "description": "Meta-schema for registries/state-invariants.yaml.",
+  "type": "object",
+  "required": ["registry", "registry_version", "updated", "invariants"],
+  "additionalProperties": false,
+  "properties": {
+    "registry": { "const": "nrs-state-invariants" },
+    "registry_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "updated": { "type": "string", "format": "date" },
+    "invariants": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/invariant" }
+    }
+  },
+  "$defs": {
+    "requirementId": {
+      "type": "string",
+      "pattern": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$"
+    },
+    "invariant": {
+      "type": "object",
+      "required": [
+        "invariant_id",
+        "title",
+        "scope",
+        "stability",
+        "requirement_ids",
+        "machine_testable",
+        "failure_reason_code",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "invariant_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "scope": { "enum": ["record", "design", "analysis", "result", "report", "verifier"] },
+        "stability": { "enum": ["CORE", "STABLE-INTENT", "EXPERIMENTAL"] },
+        "requirement_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/requirementId" }
+        },
+        "machine_testable": { "type": "boolean" },
+        "failure_reason_code": {
+          "anyOf": [{ "type": "null" }, { "type": "string", "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$" }]
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

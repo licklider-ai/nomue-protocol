@@ -1,0 +1,523 @@
+{
+  "results": [
+    {
+      "case_id": "ordinary_balanced_df4_p0p02131164112875673",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.816496580927726,
+        "upper": 0.816496580927726,
+        "mid": 0.816496580927726
+      },
+      "test_statistic": {
+        "lower": -3.6742346141747673,
+        "upper": -3.6742346141747673,
+        "mid": -3.6742346141747673
+      },
+      "p_value": {
+        "lower": 0.021311641128756727,
+        "upper": 0.021311641128756727,
+        "mid": 0.021311641128756727
+      },
+      "critical_value": {
+        "lower": 2.7764451052062213,
+        "upper": 2.7764451052062213,
+        "mid": 2.7764451052062213
+      },
+      "ci_lower": {
+        "lower": -5.2669579355344,
+        "upper": -5.2669579355344,
+        "mid": -5.2669579355344
+      },
+      "ci_upper": {
+        "lower": -0.7330420644655998,
+        "upper": -0.7330420644655998,
+        "mid": -0.7330420644655998
+      },
+      "mpmath_witness_p_100dps": 0.021311641128756723,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "unequal_n_unequal_variance_df3p964232287062296_p0p02154484911625116",
+      "prec": 128,
+      "standard_error": {
+        "lower": 1.1595018087284055,
+        "upper": 1.1595018087284055,
+        "mid": 1.1595018087284055
+      },
+      "test_statistic": {
+        "lower": -3.6797412772868423,
+        "upper": -3.6797412772868423,
+        "mid": -3.6797412772868423
+      },
+      "p_value": {
+        "lower": 0.02154484911625115,
+        "upper": 0.02154484911625115,
+        "mid": 0.02154484911625115
+      },
+      "critical_value": {
+        "lower": 2.786352592462208,
+        "upper": 2.786352592462208,
+        "mid": 2.786352592462208
+      },
+      "ci_lower": {
+        "lower": -7.497447537381679,
+        "upper": -7.497447537381679,
+        "mid": -7.497447537381679
+      },
+      "ci_upper": {
+        "lower": -1.0358857959516548,
+        "upper": -1.0358857959516548,
+        "mid": -1.0358857959516548
+      },
+      "mpmath_witness_p_100dps": 0.02154484911625115,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "minimum_n_per_group_df1p470588235294118_p0p1579634539490364",
+      "prec": 128,
+      "standard_error": {
+        "lower": 1.118033988749895,
+        "upper": 1.118033988749895,
+        "mid": 1.118033988749895
+      },
+      "test_statistic": {
+        "lower": -2.6832815729997477,
+        "upper": -2.6832815729997477,
+        "mid": -2.6832815729997477
+      },
+      "p_value": {
+        "lower": 0.1579634539490363,
+        "upper": 0.1579634539490363,
+        "mid": 0.1579634539490363
+      },
+      "critical_value": {
+        "lower": 6.188114940654486,
+        "upper": 6.188114940654486,
+        "mid": 6.188114940654486
+      },
+      "ci_lower": {
+        "lower": -9.918522829942754,
+        "upper": -9.918522829942754,
+        "mid": -9.918522829942754
+      },
+      "ci_upper": {
+        "lower": 3.9185228299427544,
+        "upper": 3.9185228299427544,
+        "mid": 3.9185228299427544
+      },
+      "mpmath_witness_p_100dps": 0.1579634539490363,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "one_group_variance_zero_df2_p0p07417990022744854",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.5773502691896257,
+        "upper": 0.5773502691896257,
+        "mid": 0.5773502691896257
+      },
+      "test_statistic": {
+        "lower": -3.464101615137755,
+        "upper": -3.464101615137755,
+        "mid": -3.464101615137755
+      },
+      "p_value": {
+        "lower": 0.07417990022744853,
+        "upper": 0.07417990022744853,
+        "mid": 0.07417990022744853
+      },
+      "critical_value": {
+        "lower": 4.302652729675174,
+        "upper": 4.302652729675174,
+        "mid": 4.302652729675174
+      },
+      "ci_lower": {
+        "lower": -4.484137711707439,
+        "upper": -4.484137711707439,
+        "mid": -4.484137711707439
+      },
+      "ci_upper": {
+        "lower": 0.4841377117074395,
+        "upper": 0.4841377117074395,
+        "mid": 0.4841377117074395
+      },
+      "mpmath_witness_p_100dps": 0.07417990022744853,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "welch_df_near_lower_boundary_df1p982102999066596_p0p8588845634329486",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.7433034373659253,
+        "upper": 0.7433034373659253,
+        "mid": 0.7433034373659253
+      },
+      "test_statistic": {
+        "lower": -0.2018018381988939,
+        "upper": -0.2018018381988939,
+        "mid": -0.2018018381988939
+      },
+      "p_value": {
+        "lower": 0.8588845634329487,
+        "upper": 0.8588845634329487,
+        "mid": 0.8588845634329487
+      },
+      "critical_value": {
+        "lower": 4.340097567997873,
+        "upper": 4.340097567997873,
+        "mid": 4.340097567997873
+      },
+      "ci_lower": {
+        "lower": -3.3760094407963117,
+        "upper": -3.3760094407963117,
+        "mid": -3.3760094407963117
+      },
+      "ci_upper": {
+        "lower": 3.0760094407963114,
+        "upper": 3.0760094407963114,
+        "mid": 3.0760094407963114
+      },
+      "mpmath_witness_p_100dps": 0.8588845634329487,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "p_below_alpha_0p05_df4_p0p02131164112875673",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.816496580927726,
+        "upper": 0.816496580927726,
+        "mid": 0.816496580927726
+      },
+      "test_statistic": {
+        "lower": -3.6742346141747673,
+        "upper": -3.6742346141747673,
+        "mid": -3.6742346141747673
+      },
+      "p_value": {
+        "lower": 0.021311641128756727,
+        "upper": 0.021311641128756727,
+        "mid": 0.021311641128756727
+      },
+      "critical_value": {
+        "lower": 2.7764451052062213,
+        "upper": 2.7764451052062213,
+        "mid": 2.7764451052062213
+      },
+      "ci_lower": {
+        "lower": -5.2669579355344,
+        "upper": -5.2669579355344,
+        "mid": -5.2669579355344
+      },
+      "ci_upper": {
+        "lower": -0.7330420644655998,
+        "upper": -0.7330420644655998,
+        "mid": -0.7330420644655998
+      },
+      "mpmath_witness_p_100dps": 0.021311641128756723,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "p_above_alpha_0p05_df7p456715903071217_p0p2353965847965181",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.27892651361962684,
+        "upper": 0.27892651361962684,
+        "mid": 0.27892651361962684
+      },
+      "test_statistic": {
+        "lower": -1.2906625308877362,
+        "upper": -1.2906625308877362,
+        "mid": -1.2906625308877362
+      },
+      "p_value": {
+        "lower": 0.23539658479651696,
+        "upper": 0.23539658479651696,
+        "mid": 0.23539658479651696
+      },
+      "critical_value": {
+        "lower": 2.3355788095796015,
+        "upper": 2.3355788095796015,
+        "mid": 2.3355788095796015
+      },
+      "ci_lower": {
+        "lower": -1.0114548546399167,
+        "upper": -1.0114548546399167,
+        "mid": -1.0114548546399167
+      },
+      "ci_upper": {
+        "lower": 0.2914548546399164,
+        "upper": 0.2914548546399164,
+        "mid": 0.2914548546399164
+      },
+      "mpmath_witness_p_100dps": 0.23539658479651696,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "non_degenerate_small_p_df6_p0p0002571978168251656",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.9128709291752769,
+        "upper": 0.9128709291752769,
+        "mid": 0.9128709291752769
+      },
+      "test_statistic": {
+        "lower": -7.6681158050723255,
+        "upper": -7.6681158050723255,
+        "mid": -7.6681158050723255
+      },
+      "p_value": {
+        "lower": 0.0002571978168251657,
+        "upper": 0.0002571978168251657,
+        "mid": 0.0002571978168251657
+      },
+      "critical_value": {
+        "lower": 2.4469118511187844,
+        "upper": 2.4469118511187844,
+        "mid": 2.4469118511187844
+      },
+      "ci_lower": {
+        "lower": -9.233714695140801,
+        "upper": -9.233714695140801,
+        "mid": -9.233714695140801
+      },
+      "ci_upper": {
+        "lower": -4.766285304859198,
+        "upper": -4.766285304859198,
+        "mid": -4.766285304859198
+      },
+      "mpmath_witness_p_100dps": 0.00025719781682516564,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "p_underflow_boundary_df138_p0_underflow",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.0024077170617142893,
+        "upper": 0.0024077170617142893,
+        "mid": 0.0024077170617142893
+      },
+      "test_statistic": {
+        "lower": 4153.311931460925,
+        "upper": 4153.311931460925,
+        "mid": 4153.311931460925
+      },
+      "p_value": {
+        "lower": 0,
+        "upper": 0,
+        "mid": 0
+      },
+      "critical_value": {
+        "lower": 1.9773035420221277,
+        "upper": 1.9773035420221277,
+        "mid": 1.9773035420221277
+      },
+      "ci_lower": {
+        "lower": 9.995239212525684,
+        "upper": 9.995239212525684,
+        "mid": 9.995239212525684
+      },
+      "ci_upper": {
+        "lower": 10.004760787474313,
+        "upper": 10.004760787474313,
+        "mid": 10.004760787474313
+      },
+      "mpmath_witness_p_100dps": 0,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "ci_crosses_zero_df7p456715903071217_p0p2353965847965181",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.27892651361962684,
+        "upper": 0.27892651361962684,
+        "mid": 0.27892651361962684
+      },
+      "test_statistic": {
+        "lower": -1.2906625308877362,
+        "upper": -1.2906625308877362,
+        "mid": -1.2906625308877362
+      },
+      "p_value": {
+        "lower": 0.23539658479651696,
+        "upper": 0.23539658479651696,
+        "mid": 0.23539658479651696
+      },
+      "critical_value": {
+        "lower": 2.3355788095796015,
+        "upper": 2.3355788095796015,
+        "mid": 2.3355788095796015
+      },
+      "ci_lower": {
+        "lower": -1.0114548546399167,
+        "upper": -1.0114548546399167,
+        "mid": -1.0114548546399167
+      },
+      "ci_upper": {
+        "lower": 0.2914548546399164,
+        "upper": 0.2914548546399164,
+        "mid": 0.2914548546399164
+      },
+      "mpmath_witness_p_100dps": 0.23539658479651696,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "large_common_offset_ladder_base_df4_p0p1400659849120179",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.816496580927726,
+        "upper": 0.816496580927726,
+        "mid": 0.816496580927726
+      },
+      "test_statistic": {
+        "lower": -1.8371173070873836,
+        "upper": -1.8371173070873836,
+        "mid": -1.8371173070873836
+      },
+      "p_value": {
+        "lower": 0.14006598491201783,
+        "upper": 0.14006598491201783,
+        "mid": 0.14006598491201783
+      },
+      "critical_value": {
+        "lower": 2.7764451052062213,
+        "upper": 2.7764451052062213,
+        "mid": 2.7764451052062213
+      },
+      "ci_lower": {
+        "lower": -3.7669579355344003,
+        "upper": -3.7669579355344003,
+        "mid": -3.7669579355344003
+      },
+      "ci_upper": {
+        "lower": 0.7669579355344002,
+        "upper": 0.7669579355344002,
+        "mid": 0.7669579355344002
+      },
+      "mpmath_witness_p_100dps": 0.14006598491201783,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "within_group_permutation_df3p964232287062296_p0p02154484911625116",
+      "prec": 128,
+      "standard_error": {
+        "lower": 1.1595018087284055,
+        "upper": 1.1595018087284055,
+        "mid": 1.1595018087284055
+      },
+      "test_statistic": {
+        "lower": -3.6797412772868423,
+        "upper": -3.6797412772868423,
+        "mid": -3.6797412772868423
+      },
+      "p_value": {
+        "lower": 0.02154484911625115,
+        "upper": 0.02154484911625115,
+        "mid": 0.02154484911625115
+      },
+      "critical_value": {
+        "lower": 2.786352592462208,
+        "upper": 2.786352592462208,
+        "mid": 2.786352592462208
+      },
+      "ci_lower": {
+        "lower": -7.497447537381679,
+        "upper": -7.497447537381679,
+        "mid": -7.497447537381679
+      },
+      "ci_upper": {
+        "lower": -1.0358857959516548,
+        "upper": -1.0358857959516548,
+        "mid": -1.0358857959516548
+      },
+      "mpmath_witness_p_100dps": 0.02154484911625115,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "group_swap_df4_p0p02131164112875673",
+      "prec": 128,
+      "standard_error": {
+        "lower": 0.816496580927726,
+        "upper": 0.816496580927726,
+        "mid": 0.816496580927726
+      },
+      "test_statistic": {
+        "lower": 3.6742346141747673,
+        "upper": 3.6742346141747673,
+        "mid": 3.6742346141747673
+      },
+      "p_value": {
+        "lower": 0.021311641128756727,
+        "upper": 0.021311641128756727,
+        "mid": 0.021311641128756727
+      },
+      "critical_value": {
+        "lower": 2.7764451052062213,
+        "upper": 2.7764451052062213,
+        "mid": 2.7764451052062213
+      },
+      "ci_lower": {
+        "lower": 0.7330420644655998,
+        "upper": 0.7330420644655998,
+        "mid": 0.7330420644655998
+      },
+      "ci_upper": {
+        "lower": 5.2669579355344,
+        "upper": 5.2669579355344,
+        "mid": 5.2669579355344
+      },
+      "mpmath_witness_p_100dps": 0.021311641128756723,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    },
+    {
+      "case_id": "exact_power_of_two_scaling_df4_p0p02131164112875673",
+      "prec": 128,
+      "standard_error": {
+        "lower": 1.632993161855452,
+        "upper": 1.632993161855452,
+        "mid": 1.632993161855452
+      },
+      "test_statistic": {
+        "lower": -3.6742346141747673,
+        "upper": -3.6742346141747673,
+        "mid": -3.6742346141747673
+      },
+      "p_value": {
+        "lower": 0.021311641128756727,
+        "upper": 0.021311641128756727,
+        "mid": 0.021311641128756727
+      },
+      "critical_value": {
+        "lower": 2.7764451052062213,
+        "upper": 2.7764451052062213,
+        "mid": 2.7764451052062213
+      },
+      "ci_lower": {
+        "lower": -10.5339158710688,
+        "upper": -10.5339158710688,
+        "mid": -10.5339158710688
+      },
+      "ci_upper": {
+        "lower": -1.4660841289311994,
+        "upper": -1.4660841289311994,
+        "mid": -1.4660841289311994
+      },
+      "mpmath_witness_p_100dps": 0.021311641128756723,
+      "oracle_kind": "acb_incomplete_beta_enclosure",
+      "package": "python-flint"
+    }
+  ],
+  "oracle_kind": "acb_incomplete_beta_enclosure"
+}

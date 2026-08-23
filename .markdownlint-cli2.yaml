@@ -1,0 +1,17 @@
+globs:
+  - "**/*.md"
+ignores:
+  - "node_modules/**"
+  - "generated/**"
+  - "LICENSE.md"
+config:
+  default: true
+  # Line length is governed by Prettier's print width for prose; long tables and
+  # normative clauses are allowed to exceed a fixed character limit.
+  MD013: false
+  # Inline HTML is required for stable requirement anchors (<a id="NRS-..."></a>).
+  MD033: false
+  # Some informative fragments (e.g. AGENTS pointers) do not start with a heading.
+  MD041: false
+  MD024:
+    siblings_only: true

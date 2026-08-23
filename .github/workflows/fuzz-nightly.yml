@@ -1,0 +1,41 @@
+# Nightly schema-guided fuzz run (Batch 2 U5, gate R1-05 evidence).
+# Authored in the same batch that added tooling/src/fuzz/schema-guided-fuzzer.ts;
+# not triggered by the agent that authored it - a `schedule:` trigger only
+# fires once this workflow is on the default branch of a repository
+# actually hosted with GitHub Actions enabled, a remote-infrastructure
+# state this repository's agent tooling does not create autonomously.
+#
+# A fuzz-report artifact is uploaded on every run (not only on failure), so
+# a "0 unsafe outcomes" night is preserved as evidence too, not only
+# findings.
+name: Nightly fuzz
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # 03:17 UTC daily; an arbitrary off-peak minute, not tied to any other schedule
+  workflow_dispatch: {} # allows a manual run from the Actions UI without waiting for the schedule
+
+jobs:
+  fuzz:
+    name: Schema-guided fuzz (nightly)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Run the fuzzer
+        env:
+          FUZZ_BUDGET_MS: "300000" # 5 minutes; longer than the 10-15s smoke runs used during authoring
+          FUZZ_SEED: ${{ github.run_number }} # a different, still-logged seed each run, not the same fixed seed every night
+        run: pnpm exec tsx tooling/src/fuzz/schema-guided-fuzzer.ts
+      - name: Upload fuzz report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-report-${{ github.run_number }}
+          path: evidence/development/fuzz-runs/*.json

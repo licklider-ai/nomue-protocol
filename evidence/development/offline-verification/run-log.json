@@ -1,0 +1,41 @@
+{
+  "schema": "nrs-offline-verification-run-log",
+  "schema_version": "0.1.0",
+  "generated_at_note": "Deliberately omitted (a live timestamp would break reproducibility of this evidence file's own hash); see the accompanying README for when this was produced.",
+  "method": "Application-level Node API interception (node:http/https/net/dns/tls request-and-connect functions, plus global fetch/XMLHttpRequest/WebSocket, monkey-patched to throw before any other module is imported), not OS-level network isolation or packet capture.",
+  "scope_limitation": "This proves no instrumented Node API was invoked; it does not prove no syscall of any kind reached the network (a native addon or a future dependency's own compiled networking code would not be intercepted). Genuine OS-level network-namespace/firewall isolation with packet-level capture was not attempted in this environment: it requires modifying system/security settings, which this agent does not do autonomously.",
+  "fixtures_run": [
+    {
+      "fixture": "conformance/fixtures/public_checks/V-001.json",
+      "exit_code": 0,
+      "output_type": "nomue-verification-report"
+    },
+    {
+      "fixture": "conformance/fixtures/public_checks/A2-V-001.json",
+      "exit_code": 0,
+      "output_type": "nomue-verification-report"
+    },
+    {
+      "fixture": "conformance/fixtures/verifier_behavior/B-001.json",
+      "exit_code": 3,
+      "output_type": "nomue-verifier-refusal"
+    },
+    {
+      "fixture": "conformance/fixtures/verifier_behavior/B-007.json",
+      "exit_code": 4,
+      "output_type": "nomue-verifier-refusal"
+    },
+    {
+      "fixture": "conformance/fixtures/verifier_behavior/B-009.json",
+      "exit_code": 0,
+      "output_type": "nomue-verification-report"
+    },
+    {
+      "fixture": "conformance/fixtures/emitter/E-003.json",
+      "exit_code": 2,
+      "output_type": "nomue-verification-report"
+    }
+  ],
+  "network_call_attempts": [],
+  "result": "zero_network_calls_detected"
+}

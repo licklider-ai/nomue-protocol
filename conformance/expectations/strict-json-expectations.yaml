@@ -1,0 +1,295 @@
+# Strict JCS input eligibility fixture expectations - HAND-AUTHORED AUTHORING TABLE
+# (NON-AUTHORITATIVE; derived from NRS-CANON-0007/0008 and ADR-0018).
+#
+# These expectations were written from the specification and registries
+# (canonicalization/record-canonicalization.md, spec/verification/
+# verifier-refusal.md, registries/reason-codes.yaml) BEFORE the corrected
+# verifier ran. The authoring script tooling/src/phase1/author-strict-json.ts
+# READS this file and asserts the implementation against it; it never
+# writes or overwrites this file.
+#
+# Refusal fixtures pin: parse_error kind, the specific eligibility reason
+# code, exit 2, refusal-schema validity, and the absence of any
+# verification report (no bundle selected, no digest computed - digests
+# and reports only exist downstream of the strict input gate). Duplicates
+# are rejected regardless of position (top level, nested, inside arrays),
+# value equality, member order, or escaped-equivalent spelling; no
+# first-wins or last-wins semantics exist.
+#
+# Acceptance fixtures (JSON-DUP-010/011, JSON-UNI-004/005) pin the absence
+# of false positives: member-name-like text and escaped quotes/braces
+# inside string VALUES, correctly paired surrogates, and NFC/NFD strings
+# (kept distinct, never normalized) all verify as ordinary valid Phase 1
+# Records.
+
+manifest: nrs-strict-json-fixture-expectations
+updated: "2026-08-10"
+
+fixtures:
+  JSON-DUP-001:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Top-level interpretation_bundle_id duplicated with the same value:
+      rejected before routing; no bundle selected, no report, no digest.
+    requirement_ids: [NRS-CANON-0007, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-002:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      interpretation_bundle_id declared twice, Phase 1 id followed by Phase
+      2A id: rejected before routing; neither bundle is selected and no
+      last-wins dispatch occurs.
+    requirement_ids: [NRS-CANON-0007, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-003:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      interpretation_bundle_id declared twice, Phase 2A id followed by
+      Phase 1 id (member order reversed relative to JSON-DUP-002): rejected
+      identically; no first-wins dispatch occurs.
+    requirement_ids: [NRS-CANON-0007, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-004:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Literal and escaped-equivalent spellings of interpretation_bundle_id
+      in one object: member names are compared after escape decoding, so
+      this is a duplicate and is rejected.
+    requirement_ids: [NRS-CANON-0007, NRS-VERSION-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-005:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Nested duplicate result.p_value inside an otherwise valid Record:
+      rejected; no result value is chosen and no report exists.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-006:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Nested duplicate integrity.content_digest: rejected; no digest
+      declaration is chosen and no digest is computed.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-007:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Duplicate member inside an observation object within the observations
+      array: objects inside arrays are covered.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-008:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Nested duplicate member with byte-identical values: value equality
+      does not legitimize a duplicate; rejected.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-009:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Duplicate member in an object irrelevant to routing (design.outcome
+      scale): eligibility is global, not routing-scoped; rejected.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-DUPLICATE-JSON-MEMBER]
+
+  JSON-DUP-010:
+    family: strict_json
+    classification: strict_json_valid
+    purpose: >-
+      Member-name-like text inside a string VALUE (a label containing
+      '"interpretation_bundle_id": ...' twice): NOT a duplicate; the Record
+      verifies as an ordinary valid Phase 1 Record.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-preconditions-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+
+  JSON-DUP-011:
+    family: strict_json
+    classification: strict_json_valid
+    purpose: >-
+      Escaped quotes, backslashes, braces, brackets, colons, and commas
+      inside string values: no false positive; the Record verifies.
+    requirement_ids: [NRS-CANON-0007]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-preconditions-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+
+  JSON-UNI-001:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Lone high surrogate escape in a string value: not a Unicode
+      scalar-value sequence; rejected without replacement or normalization.
+    requirement_ids: [NRS-CANON-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-INVALID-UNICODE-STRING]
+
+  JSON-UNI-002:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Lone low surrogate escape in a string value: rejected.
+    requirement_ids: [NRS-CANON-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-INVALID-UNICODE-STRING]
+
+  JSON-UNI-003:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Lone surrogate escape in an object MEMBER NAME: names are covered
+      exactly like values; rejected.
+    requirement_ids: [NRS-CANON-0008]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-INVALID-UNICODE-STRING]
+
+  JSON-UNI-004:
+    family: strict_json
+    classification: strict_json_valid
+    purpose: >-
+      Correctly paired surrogate escapes (an astral emoji) in a label: a
+      valid scalar-value sequence is accepted unchanged and the Record
+      verifies.
+    requirement_ids: [NRS-CANON-0008]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-preconditions-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+
+  JSON-UNI-005:
+    family: strict_json
+    classification: strict_json_valid
+    purpose: >-
+      NFC and NFD spellings of the same text in one label: neither is
+      normalized, they remain distinct code-point sequences (asserted
+      against the canonical form at authoring time), and the Record
+      verifies.
+    requirement_ids: [NRS-CANON-0008]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-preconditions-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute-0.1: { execution: completed, outcome: pass, reason_codes: [] }
+
+  JSON-NEG-001:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      A bare -0 number token is rejected at the lexical stage
+      (NRS-CANON-0015, Batch 5: RFC 8785 Erratum 7920's SHOULD raised to
+      this specification's MUST) - never silently normalized to 0 by JCS.
+    requirement_ids: [NRS-CANON-0015]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-NEGATIVE-ZERO-NUMBER]
+
+  JSON-NEG-002:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      A -0.0 outcome value nested inside an otherwise valid Record's
+      observations is rejected the same way; nesting position does not
+      matter (NRS-CANON-0015).
+    requirement_ids: [NRS-CANON-0015]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-NEGATIVE-ZERO-NUMBER]
+
+  JSON-NEG-003:
+    family: strict_json
+    classification: strict_json_refusal
+    purpose: >-
+      Exponent spellings of negative zero (-0e5) are numerically negative
+      zero and are rejected identically (NRS-CANON-0015); detection is by
+      token value, not by spelling.
+    requirement_ids: [NRS-CANON-0015]
+    expected:
+      kind: refusal
+      cli_exit_code: 2
+      refusal_kind: parse_error
+      refusal_reason_codes: [NRS-NEGATIVE-ZERO-NUMBER]

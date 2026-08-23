@@ -1,0 +1,32 @@
+adoption_version: "0.2.1-draft.1"
+audit_source:
+  bundle_id: nomue-record-numerical-contract-final-reconciliation
+  target_commit: 3e38e1fd6152033ef62624a80ef0a196229b462f
+  manifest: audit-manifest.json
+adopted_normative:
+  - parsed_binary64_authority
+  - source_decimal_non_claim
+  - tail_safe_p_evaluation
+  - positive_p_zero_separation
+  - p_underflow_fail_closed
+  - field_specific_tolerance
+  - resource_limit_not_accuracy_guarantee
+adopted_informative:
+  - domain_boundary_evidence_family
+  - dependency_provenance_notes
+evidence_only:
+  - ts1_ts5_exact_reproduction
+  - scipy_mpmath_live_oracle
+rejected:
+  - fixed_mu_sigma_threshold
+  - fixed_sigma_threshold
+  - fixed_abs_x_threshold
+  - decimal_intent_as_kernel_oracle
+  - welford_automatic_replacement
+  - automatic_centering
+  - automatic_scaling
+  - global_eta_tolerance
+  - p_absolute_floor_1e-12
+research_hold:
+  - R1-08_third_oracle_lineage
+  - arb_mpfr_interval_enclosure

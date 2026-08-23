@@ -1,0 +1,25 @@
+{
+  "suite_id": "TS1",
+  "description": "Ordinary baseline (A2-V-002 equivalent); parsed IEEE 754 binary64 authority",
+  "parsed_group_a": [
+    { "token": "1", "binary64_hex": "3ff0000000000000", "value": 1.0 },
+    { "token": "2", "binary64_hex": "4000000000000000", "value": 2.0 },
+    { "token": "3", "binary64_hex": "4008000000000000", "value": 3.0 }
+  ],
+  "parsed_group_b": [
+    { "token": "4", "binary64_hex": "4010000000000000", "value": 4.0 },
+    { "token": "5", "binary64_hex": "4014000000000000", "value": 5.0 },
+    { "token": "6", "binary64_hex": "4018000000000000", "value": 6.0 }
+  ],
+  "kernel": {
+    "mean_difference": -3,
+    "standard_error": 0.816496580927726,
+    "test_statistic": -3.6742346141747673,
+    "degrees_of_freedom": 4,
+    "p_value": 0.02131164112875673,
+    "ci_lower": -5.266957935527519,
+    "ci_upper": -0.7330420644724809
+  },
+  "mpmath_110_p_value": "0.021311641128756727",
+  "research_hold": false
+}

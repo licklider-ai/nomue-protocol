@@ -1,0 +1,15 @@
+oracle_status: preliminary_evidence_only
+r1_08_gate: open
+stdlib_lineage_not_independent_oracle: true
+live_oracles:
+  mpmath:
+    version: "1.4.1"
+    role: high-precision reference for TS1/TS5 reproduction
+  scipy:
+    version: "1.17.1"
+    role: live Welch comparison; shares lineage caveats with stdlib
+  r:
+    available: false
+    note: Rscript not on audit host; third-oracle evidence deferred
+third_oracle_required_for_r1_08_close: true
+does_not_auto_pass_r1_08: true

@@ -1,0 +1,2685 @@
+# Requirement ID registry - authoritative for Requirement IDs, stability,
+# testability, and references. The normative wording of each requirement lives
+# only in the referenced document; this registry never duplicates it.
+# Governed by governance/ID-POLICY.md; validated by schemas/meta/requirements-registry.schema.json.
+
+registry: nrs-requirements
+registry_version: "0.2.0"
+updated: "2026-08-18"
+
+namespaces:
+  - prefix: NRS-GOV
+    description: Governance and authority requirements.
+  - prefix: NRS-CORE
+    description: Core Record semantics and layer-boundary requirements.
+  - prefix: NRS-VERIFY
+    description: Verification semantics and verifier behavior requirements.
+  - prefix: NRS-CANON
+    description: Canonicalization requirements (active as of Phase 1).
+  - prefix: NRS-ATTEST
+    description: Attestation requirements (active as EXPERIMENTAL; see spec/attestation/README.md).
+  - prefix: NRS-EXT
+    description: Extension mechanism requirements (reserved; none issued in Phase 0).
+  - prefix: NRS-SEC
+    description: Security requirements.
+  - prefix: NRS-VERSION
+    description: Versioning and snapshot requirements.
+  - prefix: NRS-INTEROP
+    description: Interoperability requirements (reserved; none issued in Phase 0).
+  - prefix: NRS-PROV
+    description: >-
+      Provenance requirements: tracing a Record's input, execution, output,
+      and relationships to other artifacts (active as of Phase 2A hardening;
+      see spec/core/provenance-model.md).
+  - prefix: NRS-EMIT
+    description: >-
+      Emitter conformance requirements: what a third-party Record-producer
+      must satisfy, with expectations derived from schema/algorithm
+      specifications rather than reference-verifier behavior (active as of
+      Phase 2A hardening; see spec/emission/README.md).
+  - prefix: NRS-APPROVE
+    description: >-
+      Human-approval requirements: the approval statement, the minimal
+      approver/scope/timestamp/statement element shape, and scope-consistency
+      checking (active as of Phase 2A hardening, first increment, draft; see
+      spec/approval/README.md).
+  - prefix: NRS-PROFILE-ITGC
+    description: >-
+      Independent Two-Group Continuous Profile requirements (active as of
+      Phase 1).
+
+requirements:
+  - id: NRS-GOV-0001
+    title: Self-contained public authority
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0001
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Mechanically supported today by the private-dependency audit
+      (tooling/src/private-dependency-audit.ts); full release-time review under
+      gates R1-07 and R1-09.
+
+  - id: NRS-GOV-0002
+    title: Generated artifacts are non-authoritative
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0002
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Mechanically supported today by the authority-manifest validation and the
+      clean-generation check (pnpm check:generated).
+
+  - id: NRS-GOV-0003
+    title: Authority conflicts block release
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0003
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Mechanically supported today by pnpm validate, which fails on detected
+      cross-artifact conflicts; release-time review under gate R1-07.
+
+  - id: NRS-GOV-0004
+    title: Identifiers are immutable
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0004
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Tombstone and supersession rules are defined in governance/ID-POLICY.md;
+      historical-diff checking is future work.
+
+  - id: NRS-GOV-0005
+    title: Normative language requires a Requirement ID
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0005
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Mechanically supported today by the normative lint
+      (tooling/src/normative-lint.ts).
+
+  - id: NRS-GOV-0006
+    title: Reference implementations are non-normative
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0006
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Release-time review under gates R1-03 and R1-09; no reference
+      implementation exists in Phase 0.
+
+  - id: NRS-GOV-0007
+    title: Public normative language
+    status: active
+    stability: CORE
+    document: spec/core/authority-and-governance.md
+    anchor: NRS-GOV-0007
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Reviewed at release time as part of the public-surface review (gate R1-07).
+
+  - id: NRS-CORE-0001
+    title: Layer 1 contract boundary
+    status: active
+    stability: CORE
+    document: spec/core/layer-boundary.md
+    anchor: NRS-CORE-0001
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes testable once the Record schema and conformance suite exist
+      (Phase 1 and later).
+
+  - id: NRS-CORE-0002
+    title: Finalized facts versus interaction protocol
+    status: active
+    stability: CORE
+    document: spec/core/layer-boundary.md
+    anchor: NRS-CORE-0002
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes testable once finalized-fact representations are defined in a
+      later phase.
+
+  - id: NRS-VERIFY-0001
+    title: No overall VERIFIED status
+    status: active
+    stability: CORE
+    document: spec/core/verification-principles.md
+    anchor: NRS-VERIFY-0001
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report.schema.json
+    conformance_refs:
+      - B-002
+      - B-003
+    public_surface_refs:
+      - NRS-PCS-0007
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Covered in Phase 1 by report-schema fixtures B-002/B-003 and the
+      prohibited-overall-status tooling audit; release-time review under gate
+      R1-01.
+
+  - id: NRS-VERIFY-0002
+    title: Scope-bound verification output
+    status: active
+    stability: CORE
+    document: spec/core/verification-principles.md
+    anchor: NRS-VERIFY-0002
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes automated once the verification-result representation is defined;
+      release-time review under gate R1-01.
+
+  - id: NRS-VERIFY-0003
+    title: Scientific validity is not asserted
+    status: active
+    stability: CORE
+    document: spec/core/verification-principles.md
+    anchor: NRS-VERIFY-0003
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes automated once the verification-result representation is defined;
+      release-time review under gates R1-01 and R1-06.
+
+  - id: NRS-VERIFY-0004
+    title: Attestation non-escalation
+    status: active
+    stability: CORE
+    document: spec/core/verification-principles.md
+    anchor: NRS-VERIFY-0004
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes automated once attestation semantics are defined; release-time
+      review under gate R1-11.
+
+  - id: NRS-SEC-0001
+    title: Offline-by-default verification
+    status: active
+    stability: CORE
+    document: spec/core/verification-principles.md
+    anchor: NRS-SEC-0001
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Becomes testable once a verifier exists; verified in clean environments
+      under gate R1-04.
+
+  - id: NRS-VERSION-0001
+    title: Immutable public snapshots
+    status: active
+    stability: CORE
+    document: spec/core/versioning-principles.md
+    anchor: NRS-VERSION-0001
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The actual publication decision is reviewed at release time under
+      gate R1-07 (immutable public surface and version authority). The
+      content-addressing mechanism itself is mechanically demonstrable
+      today via `pnpm snapshot:manifest` / `pnpm validate`
+      (tooling/src/release/snapshot-manifest.ts, ADR-0023) - running it does
+      not publish a snapshot or close the gate.
+
+  - id: NRS-VERSION-0002
+    title: Unsupported interpretation tuples fail closed
+    status: active
+    stability: CORE
+    document: spec/core/versioning-principles.md
+    anchor: NRS-VERSION-0002
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - B-001
+    public_surface_refs: []
+    introduced_in: phase-0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Covered in Phase 1 by verifier-behavior fixture B-001 (unsupported
+      bundle fails closed with exit code 3).
+
+  # ---------------------------------------------------------------- Phase 1
+
+  - id: NRS-CORE-0003
+    title: Minimal Record envelope
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/record-envelope.md
+    anchor: NRS-CORE-0003
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+    conformance_refs:
+      - V-001
+      - S-004
+      - M-012
+      - M-013
+    public_surface_refs:
+      - NRS-PCS-0001
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      S-001 was reclassified from a structural fixture to a routing fixture
+      (ADR-0017): a missing interpretation_bundle_id now yields a routing
+      refusal before any Record schema runs, so it no longer evidences
+      schema validation.
+
+  - id: NRS-CORE-0004
+    title: Identifiers are not locators
+    status: active
+    stability: CORE
+    document: spec/core/record-envelope.md
+    anchor: NRS-CORE-0004
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by the external-URI dereference code-path audit in the
+      repository tooling; no fetch path exists in the reference verifier.
+
+  - id: NRS-CORE-0005
+    title: Revision immutability
+    status: active
+    stability: CORE
+    document: spec/core/record-envelope.md
+    anchor: NRS-CORE-0005
+    testability: release_gate
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Publisher-side rule; automated cross-revision checking requires revision
+      lineage, which Phase 1 does not represent.
+
+  - id: NRS-CORE-0006
+    title: Integrity exclusion
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/integrity-model.md
+    anchor: NRS-CORE-0006
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+    conformance_refs:
+      - I-001
+      - I-002
+    public_surface_refs:
+      - NRS-PCS-0006
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Also covered by the integrity-exclusion canonicalization test vector.
+
+  - id: NRS-CORE-0007
+    title: Closed Phase 1 surface
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/record-envelope.md
+    anchor: NRS-CORE-0007
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+    conformance_refs:
+      - S-002
+    public_surface_refs:
+      - NRS-PCS-0001
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CORE-0008
+    title: Verification report separation
+    status: active
+    stability: STABLE-INTENT
+    document: spec/verification/verification-report.md
+    anchor: NRS-CORE-0008
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report.schema.json
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0007
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The reference verifier writes reports to stdout only; the
+      record-write-path audit and verifier tests cover non-mutation.
+
+  - id: NRS-CANON-0001
+    title: JCS canonicalization
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0001
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0006
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Covered by canonicalization/test-vectors and a differential test against
+      an independent existing JCS implementation.
+
+  - id: NRS-CANON-0002
+    title: SHA-256 content digest
+    status: withdrawn
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0002
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: NRS-CANON-0022
+    notes: >-
+      Withdrawn after ADR-0029 because its untagged wording conflicted with the
+      domain-separated digest adopted by ADR-0027 / NRS-CANON-0020. Covered by
+      digest test vectors in canonicalization/test-vectors under NRS-CANON-0022.
+
+  - id: NRS-CANON-0003
+    title: Finite binary64 numeric domain
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/phase-1-numeric-model.md
+    anchor: NRS-CANON-0003
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - S-003
+      - B-008
+      - A2-C-002
+    public_surface_refs:
+      - NRS-PCS-0002
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Raw NaN/Infinity tokens are JSON parse errors; the invalid non-JSON
+      numeric token canonicalization vector covers the parser path; B-008
+      covers overflow-to-infinity literals and A2-C-002 covers
+      finite-but-extreme values overflowing intermediate quantities.
+
+  - id: NRS-CANON-0004
+    title: Signed zero not preserved
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/phase-1-numeric-model.md
+    anchor: NRS-CANON-0004
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Covered by the negative-zero canonicalization test vector.
+
+  - id: NRS-CANON-0005
+    title: Canonicalization failure is closed
+    status: active
+    stability: CORE
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0005
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - B-008
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Covered by fixture B-008 (a 1e999 literal parses to infinity and fails
+      closed as a canonicalization refusal) and canonicalizer unit tests.
+
+  - id: NRS-CANON-0006
+    title: Tolerance authority
+    status: active
+    stability: CORE
+    document: canonicalization/numerical-comparison.md
+    anchor: NRS-CANON-0006
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+    conformance_refs:
+      - P-001
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The Record schema declares no tolerance fields (closed surface), and
+      tolerances live in registries/public-checks.yaml only.
+
+  - id: NRS-CANON-0007
+    title: Unique JSON member names
+    status: active
+    stability: CORE
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0007
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - JSON-DUP-001
+      - JSON-DUP-002
+      - JSON-DUP-003
+      - JSON-DUP-004
+      - JSON-DUP-005
+      - JSON-DUP-006
+      - JSON-DUP-007
+      - JSON-DUP-008
+      - JSON-DUP-009
+      - JSON-DUP-010
+      - JSON-DUP-011
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Introduced by ADR-0018 (strict JCS input): duplicate member names are
+      rejected on the raw text before routing, schema validation,
+      canonicalization, or digest computation; no first-wins or last-wins
+      semantics exist.
+
+  - id: NRS-CANON-0008
+    title: Unicode-valid JSON strings
+    status: active
+    stability: CORE
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0008
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - JSON-UNI-001
+      - JSON-UNI-002
+      - JSON-UNI-003
+      - JSON-UNI-004
+      - JSON-UNI-005
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Introduced by ADR-0018: unpaired surrogate code units are rejected on
+      the raw text; correctly paired surrogates are accepted, and no Unicode
+      normalization is performed (NFC and NFD stay distinct).
+
+  - id: NRS-VERSION-0003
+    title: Interpretation bundle declaration
+    status: active
+    stability: CORE
+    document: spec/versioning/interpretation-bundle.md
+    anchor: NRS-VERSION-0003
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+    conformance_refs:
+      - S-001
+      - B-001
+    public_surface_refs:
+      - NRS-PCS-0001
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERSION-0004
+    title: Bundle version pinning
+    status: active
+    stability: STABLE-INTENT
+    document: spec/versioning/interpretation-bundle.md
+    anchor: NRS-VERSION-0004
+    testability: automated
+    schema_refs:
+      - schemas/meta/interpretation-bundles.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by the interpretation-bundle registry meta-schema and the
+      bundle tuple validation in the repository tooling.
+
+  - id: NRS-PROFILE-ITGC-0001
+    title: Exactly two groups
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0001
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-001
+      - M-014
+    public_surface_refs:
+      - NRS-PCS-0003
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0002
+    title: Unique observation identity
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0002
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-002
+    public_surface_refs:
+      - NRS-PCS-0002
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0003
+    title: Unique experimental-unit binding
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0003
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-003
+    public_surface_refs:
+      - NRS-PCS-0002
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0004
+    title: Minimum group size
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0004
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-005
+    public_surface_refs:
+      - NRS-PCS-0003
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0005
+    title: Declared independence
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0005
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-007
+    public_surface_refs:
+      - NRS-PCS-0003
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0006
+    title: Group-order direction
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0006
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-006
+      - M-011
+      - P-007
+      - V-001
+    public_surface_refs:
+      - NRS-PCS-0003
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0007
+    title: Welch-only method
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0007
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-008
+      - M-009
+    public_surface_refs:
+      - NRS-PCS-0004
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0008
+    title: Sample variance definition
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    anchor: NRS-PROFILE-ITGC-0008
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-002
+    public_surface_refs:
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0009
+    title: Welch statistic definition
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    anchor: NRS-PROFILE-ITGC-0009
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-003
+    public_surface_refs:
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0010
+    title: Welch degrees of freedom
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    anchor: NRS-PROFILE-ITGC-0010
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-004
+    public_surface_refs:
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0011
+    title: Two-sided p-value
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    anchor: NRS-PROFILE-ITGC-0011
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-005
+    public_surface_refs:
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0012
+    title: Required declared result
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0012
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - M-011
+      - V-001
+    public_surface_refs:
+      - NRS-PCS-0005
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0013
+    title: Unsupported missing values
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0013
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-minimal.schema.json
+    conformance_refs:
+      - S-003
+    public_surface_refs:
+      - NRS-PCS-0002
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      JSON cannot express NaN or infinity; a missing or non-numeric
+      outcome_value fails schema validation, and no missingness policy exists.
+
+  - id: NRS-PROFILE-ITGC-0014
+    title: Zero standard-error handling
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/profiles/independent-two-group-continuous/phase-1-minimal-profile.md
+    anchor: NRS-PROFILE-ITGC-0014
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-006
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0005
+    title: Conformance and verification separation
+    status: active
+    stability: CORE
+    document: spec/verification/public-checks.md
+    anchor: NRS-VERIFY-0005
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report.schema.json
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0007
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The report schema separates the conformance section from
+      verification_results structurally.
+
+  - id: NRS-VERIFY-0006
+    title: Independent integrity recomputation
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-VERIFY-0006
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - I-001
+      - I-002
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0007
+    title: Profile precondition check
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-VERIFY-0007
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-006
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0008
+    title: Welch result recomputation
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-VERIFY-0008
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - V-001
+      - V-002
+      - V-003
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0009
+    title: Declared-result comparison
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-VERIFY-0009
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - P-001
+      - P-002
+      - P-003
+      - P-004
+      - P-005
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0010
+    title: Execution and outcome invariant
+    status: active
+    stability: CORE
+    document: spec/verification/execution-outcome-model.md
+    anchor: NRS-VERIFY-0010
+    testability: automated
+    schema_refs:
+      - schemas/common/execution-outcome.schema.json
+    conformance_refs:
+      - B-004
+      - B-005
+      - B-006
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0011
+    title: Exact Record reference
+    status: active
+    stability: CORE
+    document: spec/verification/verification-report.md
+    anchor: NRS-VERIFY-0011
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report.schema.json
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0007
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0012
+    title: Reason-code requirement
+    status: active
+    stability: STABLE-INTENT
+    document: spec/verification/verification-report.md
+    anchor: NRS-VERIFY-0012
+    testability: automated
+    schema_refs:
+      - schemas/common/execution-outcome.schema.json
+    conformance_refs:
+      - B-004
+      - B-006
+    public_surface_refs:
+      - NRS-PCS-0008
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-SEC-0002
+    title: No Record-supplied code execution
+    status: active
+    stability: CORE
+    document: spec/verification/public-checks.md
+    anchor: NRS-SEC-0002
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by the Record-supplied execution-surface audit in the
+      repository tooling; the verifier has no execution path.
+
+  - id: NRS-SEC-0003
+    title: Bounded Phase 1 input
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-SEC-0003
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - B-007
+    public_surface_refs: []
+    introduced_in: phase-1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Limits are experimental; values are documented in
+      security/phase-1-verifier-security.md.
+
+  - id: NRS-SEC-0006
+    title: Bounded processing time and memory
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/public-checks.md
+    anchor: NRS-SEC-0006
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Checked in-process at pipeline checkpoints via
+      reference/verifier/src/limits.ts (startProcessingBudget,
+      checkProcessingBudget), not by an external test harness. Proven by
+      unit tests with an injected clock/heap reader
+      (tooling/tests/verifier.test.ts), not by a black-box conformance
+      fixture: constructing an input within the NRS-SEC-0003 size, depth,
+      and observation ceilings that genuinely takes 5s or allocates 512MiB
+      is not achievable, so conformance_refs is empty by design rather than
+      omission. Values and rationale are documented in
+      security/threat-model.md.
+
+  # ---------------------------------------------------------------- Phase 2A
+
+  - id: NRS-CORE-0009
+    title: Declaration truth is not asserted
+    status: active
+    stability: CORE
+    document: spec/profiles/independent-two-group-continuous/non-claims.md
+    anchor: NRS-CORE-0009
+    testability: release_gate
+    schema_refs:
+      - schemas/reports/verification-report-0.2.schema.json
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0009
+      - NRS-PCS-0011
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The 0.2 report fixes declaration_truth to not_asserted structurally;
+      the interpretation boundary itself is reviewed with the public wording
+      under gates R1-01 and R1-06.
+
+  - id: NRS-CORE-0010
+    title: Versioned surface preservation
+    status: active
+    stability: CORE
+    document: spec/versioning/multi-bundle-dispatch.md
+    anchor: NRS-CORE-0010
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-B-001
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The Phase 1 regression suite pins the 0.1 bundle's behavior; drift
+      fails validation.
+
+  - id: NRS-CORE-0011
+    title: Verifier refusal separation
+    status: active
+    stability: STABLE-INTENT
+    document: spec/verification/verifier-refusal.md
+    anchor: NRS-CORE-0011
+    testability: automated
+    schema_refs:
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    conformance_refs:
+      - A2-R-005
+    public_surface_refs:
+      - NRS-PCS-0012
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERSION-0005
+    title: Explicit bundle dispatch
+    status: active
+    stability: CORE
+    document: spec/versioning/multi-bundle-dispatch.md
+    anchor: NRS-VERSION-0005
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-B-004
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERSION-0006
+    title: Prior bundle regression preservation
+    status: active
+    stability: STABLE-INTENT
+    document: spec/versioning/multi-bundle-dispatch.md
+    anchor: NRS-VERSION-0006
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-B-001
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERSION-0007
+    title: No default bundle fallback
+    status: active
+    stability: CORE
+    document: spec/versioning/multi-bundle-dispatch.md
+    anchor: NRS-VERSION-0007
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - ROUTE-004
+      - ROUTE-005
+      - ROUTE-006
+      - ROUTE-007
+      - ROUTE-008
+    public_surface_refs:
+      - NRS-PCS-0013
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Introduced by ADR-0017, which removed the reference verifier's
+      first-registered-bundle schema fallback for bundle-less Records.
+
+  - id: NRS-VERSION-0008
+    title: Bundle-independent routing validation
+    status: active
+    stability: STABLE-INTENT
+    document: spec/versioning/multi-bundle-dispatch.md
+    anchor: NRS-VERSION-0008
+    testability: automated
+    schema_refs:
+      - schemas/routing/routing-envelope-0.2.schema.json
+    conformance_refs:
+      - ROUTE-001
+      - ROUTE-002
+      - ROUTE-003
+      - S-001
+    public_surface_refs:
+      - NRS-PCS-0013
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The routing envelope validates only what exact dispatch needs (object
+      root, string interpretation_bundle_id); it is not a Record conformance
+      schema (ADR-0017).
+
+  - id: NRS-PROFILE-ITGC-0015
+    title: Supported effect estimand
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/effect-estimate.md
+    anchor: NRS-PROFILE-ITGC-0015
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-008
+      - A2-P-007
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0016
+    title: Supported confidence level
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/confidence-interval.md
+    anchor: NRS-PROFILE-ITGC-0016
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-009
+      - A2-P-004
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0017
+    title: Welch standard error
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/confidence-interval.md
+    anchor: NRS-PROFILE-ITGC-0017
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-P-001
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0018
+    title: Welch mean-difference confidence interval
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/confidence-interval.md
+    anchor: NRS-PROFILE-ITGC-0018
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-P-002
+      - A2-P-003
+      - A2-P-006
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0019
+    title: Unpaired design boundary
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0019
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-001
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0020
+    title: Repeated-measure boundary
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0020
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-002
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0021
+    title: Clustering boundary
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0021
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-003
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0022
+    title: Unweighted-analysis boundary
+    status: active
+    stability: STABLE-INTENT
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0022
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-004
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0023
+    title: Untransformed-outcome boundary
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0023
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-005
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0024
+    title: Complete represented analysis population
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0024
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-006
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0025
+    title: No supported missingness policy
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/profiles/independent-two-group-continuous/admissibility.md
+    anchor: NRS-PROFILE-ITGC-0025
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+    conformance_refs:
+      - A2-A-007
+    public_surface_refs:
+      - NRS-PCS-0009
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-PROFILE-ITGC-0026
+    title: Standardized effect size not asserted
+    status: active
+    stability: CORE
+    document: spec/profiles/independent-two-group-continuous/effect-estimate.md
+    anchor: NRS-PROFILE-ITGC-0026
+    testability: automated
+    schema_refs:
+      - schemas/profiles/itgc-guarantee-0.2.schema.json
+      - schemas/reports/verification-report-0.2.schema.json
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      The result schema fixes effect_estimate.kind to the mean difference,
+      the report fixes standardized_effect_size to not_asserted, and the
+      overall-status/effect-size audits scan for leakage.
+
+  - id: NRS-VERIFY-0013
+    title: Admissibility and computability separation
+    status: active
+    stability: CORE
+    document: spec/verification/profile-admissibility-check.md
+    anchor: NRS-VERIFY-0013
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-A-001
+    public_surface_refs:
+      - NRS-PCS-0011
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0014
+    title: Mean-difference effect recomputation
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/phase-2a-welch-recompute.md
+    anchor: NRS-VERIFY-0014
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-V-001
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0015
+    title: Confidence-interval recomputation
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/phase-2a-welch-recompute.md
+    anchor: NRS-VERIFY-0015
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-V-003
+    public_surface_refs:
+      - NRS-PCS-0010
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0016
+    title: Effect-result comparison
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/phase-2a-welch-recompute.md
+    anchor: NRS-VERIFY-0016
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-P-008
+      - A2-P-009
+    public_surface_refs:
+      - NRS-PCS-0011
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0017
+    title: Unsupported profile propagation
+    status: active
+    stability: CORE
+    document: spec/verification/profile-admissibility-check.md
+    anchor: NRS-VERIFY-0017
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-A-001
+    public_surface_refs:
+      - NRS-PCS-0011
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0018
+    title: Refusal output validity
+    status: active
+    stability: STABLE-INTENT
+    document: spec/verification/verifier-refusal.md
+    anchor: NRS-VERIFY-0018
+    testability: automated
+    schema_refs:
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    conformance_refs:
+      - A2-R-001
+      - A2-R-008
+    public_surface_refs:
+      - NRS-PCS-0012
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-SEC-0004
+    title: No partial success on safety refusal
+    status: active
+    stability: CORE
+    document: spec/verification/verifier-refusal.md
+    anchor: NRS-SEC-0004
+    testability: automated
+    schema_refs:
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    conformance_refs:
+      - A2-R-001
+    public_surface_refs:
+      - NRS-PCS-0012
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-SEC-0005
+    title: Resource-limit refusal evidence
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/verifier-refusal.md
+    anchor: NRS-SEC-0005
+    testability: automated
+    schema_refs:
+      - schemas/reports/verifier-refusal-0.2-draft-3.schema.json
+    conformance_refs:
+      - A2-R-004
+    public_surface_refs:
+      - NRS-PCS-0012
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CANON-0009
+    title: Parsed binary64 numeric authority
+    status: active
+    stability: CORE
+    document: canonicalization/phase-1-numeric-model.md
+    anchor: NRS-CANON-0009
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-001
+      - A2-1-V-003
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CANON-0010
+    title: Source-decimal fidelity not asserted
+    status: active
+    stability: CORE
+    document: canonicalization/phase-1-numeric-model.md
+    anchor: NRS-CANON-0010
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-003
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CANON-0011
+    title: Versioned numerical domain restrictions
+    status: active
+    stability: CORE
+    document: canonicalization/phase-1-numeric-model.md
+    anchor: NRS-CANON-0011
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-002
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CANON-0012
+    title: Decimal oracle reference record
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/numerical-comparison.md
+    anchor: NRS-CANON-0012
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: s1-close
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 3 V4 (S1 option D formalization): decimal-string oracle records
+      with mandatory algorithm/implementation/version/precision
+      declaration. Formalizes the p_value_mpmath_str captures already held
+      under evidence/development/. No public check or conformance behavior
+      changes; testability becomes automated if a future check version
+      consumes the reference layer.
+
+  - id: NRS-CANON-0013
+    title: Comparison against a decimal oracle reference
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/numerical-comparison.md
+    anchor: NRS-CANON-0013
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: s1-close
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 3 V4: round-to-nearest conversion of the reference decimal
+      string to binary64, then the declared tolerance; magnitudes below the
+      smallest positive subnormal are not comparable rather than equal to
+      zero. No public check consumes this rule yet.
+
+  - id: NRS-VERIFY-0019
+    title: Tail-safe two-sided p-value evaluation
+    status: active
+    stability: CORE
+    document: spec/profiles/independent-two-group-continuous/welch-calculation.md
+    anchor: NRS-VERIFY-0019
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-001
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-VERIFY-0020
+    title: Positive p-value and zero are distinct
+    status: active
+    stability: CORE
+    document: canonicalization/numerical-comparison.md
+    anchor: NRS-VERIFY-0020
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-001
+      - A2-1-P-001
+      - A2-1-P-002
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Scoped to urn:nomue:check:welch-recompute:0.2.1-draft.1 only; does not
+      alter welch-recompute:0.2.0-draft.1 tolerance semantics.
+
+  - id: NRS-VERIFY-0021
+    title: P-value underflow is not exact probability zero
+    status: active
+    stability: CORE
+    document: spec/verification/welch-computability-check.md
+    anchor: NRS-VERIFY-0021
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-002
+      - A2-1-P-004
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Scoped to urn:nomue:check:welch-computability:0.2.1-draft.1 only; does not
+      require underflow handling on welch-computability:0.2.0-draft.1.
+
+  - id: NRS-VERIFY-0022
+    title: not_run is absence of evidence, not a verdict
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/relying-party-interface.md
+    anchor: NRS-VERIFY-0022
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Constrains a relying party's interpretation, not verifier behavior;
+      this repository's tooling has no relying party to test, so review
+      (not automation) is the correct testability tier, not merely the
+      current one. Tracked by gate R1-13.
+
+  - id: NRS-VERIFY-0028
+    title: indeterminate is not a pass surrogate
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/relying-party-interface.md
+    anchor: NRS-VERIFY-0028
+    testability: human_review
+    schema_refs:
+      - schemas/common/execution-outcome.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Constrains a relying party's interpretation of the schema-permitted
+      indeterminate outcome; the v0 reference verifier does not emit it.
+
+  - id: NRS-VERIFY-0023
+    title: not_asserted is not evidence for or against the claim
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/relying-party-interface.md
+    anchor: NRS-VERIFY-0023
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Extends NRS-VERIFY-0003's not_asserted/unknown/passed three-way
+      distinction from scientific_validity to every guarantee_boundary
+      field, from the relying party's side. Tracked by gate R1-13.
+
+  - id: NRS-VERIFY-0024
+    title: No relying-party-side aggregation into an overall verdict
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/relying-party-interface.md
+    anchor: NRS-VERIFY-0024
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Closes the loophole where a relying party silently reconstructs the
+      overall status NRS-VERIFY-0001 forbids the verifier from emitting.
+      Tracked by gate R1-13.
+
+  - id: NRS-VERIFY-0025
+    title: Exit-code contract
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/relying-party-interface.md
+    anchor: NRS-VERIFY-0025
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Makes the reference implementation's existing exit-code behavior
+      (reference/verifier/README.md) a cross-implementation requirement.
+      Drift-tested in tooling/tests/exit-code-contract.test.ts against
+      REFUSAL_EXIT_CODES and both bundle pipelines' report exit-code logic.
+      Tracked by gate R1-13.
+
+  - id: NRS-VERIFY-0026
+    title: Squared-test-statistic overflow is an explicit refusal, never a silent endpoint
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/verification/welch-computability-check.md
+    anchor: NRS-VERIFY-0026
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - B-010
+      - B-011
+    public_surface_refs: []
+    introduced_in: s1-close
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 3 V3 safety fix implementing a ratified S1 decision: when t^2
+      (the incomplete-beta argument's intermediate) overflows binary64, the
+      kernel refuses (StatsKernelError T_SQUARED_OVERFLOW) and every
+      pipeline reports NRS-T-SQUARED-OVERFLOW instead of silently
+      returning an endpoint probability. EXPERIMENTAL because the RFC/tier
+      promotion process has not run; the semantics themselves were ratified
+      under S1 (see the S1-close ADR).
+
+  - id: NRS-VERSION-0009
+    title: Numerical comparison changes require versioning
+    status: active
+    stability: CORE
+    document: spec/versioning/public-check-versioning.md
+    anchor: NRS-VERSION-0009
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-001
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: ""
+
+  - id: NRS-CORE-0012
+    title: Resource limit is not a numerical guarantee
+    status: active
+    stability: CORE
+    document: spec/verification/public-checks.md
+    anchor: NRS-CORE-0012
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - A2-1-V-001
+    public_surface_refs: []
+    introduced_in: numerical-contract-0.2.1
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Resource-limit semantics are normative in spec/verification/public-checks.md;
+      covered at family scope in conformance/manifest.yaml numerical_contract.
+
+  # ------------------------------------------------------- Phase 2A hardening
+
+  - id: NRS-PROV-0001
+    title: Intra-Record provenance chain
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/core/provenance-model.md
+    anchor: NRS-PROV-0001
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - M-012
+      - M-013
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Names existing enforced structure (dataset/design/analysis/result
+      reference resolution, already required by NRS-CORE-0003) as this
+      specification's provenance model; adds no new field.
+
+  - id: NRS-PROV-0002
+    title: Extra-Record provenance is out of phase
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/core/provenance-model.md
+    anchor: NRS-PROV-0002
+    testability: not_yet_testable
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      A scope-boundary statement, not a schema-testable claim - there is no
+      field asserting or denying extra-Record provenance to check. Resolves
+      the audit finding that "provenance" was scope-listed in CHARTER.md
+      with no dedicated normative document, unlike attestation/extensions
+      which are silent in the same way but explicitly declared reserved.
+
+  # -------------------------------------------------------------- Batch 2 U3
+
+  - id: NRS-EMIT-0001
+    title: Emitted Record schema validity
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/emission/README.md
+    anchor: NRS-EMIT-0001
+    testability: automated
+    schema_refs:
+      - schemas/record/record.schema.json
+      - schemas/record/record-0.2.schema.json
+    conformance_refs:
+      - E-001
+      - E-002
+      - E-004
+      - E-005
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      A restatement of the existing structural-conformance requirement,
+      named so the emitter conformance family has an explicit Requirement
+      ID. E-family expected values are computed with a fresh AJV instance
+      against the raw schema files (tooling/src/phase1/schemas.ts), not
+      derived from reference verifier output.
+
+  - id: NRS-EMIT-0002
+    title: Emitted Record digest correctness
+    status: withdrawn
+    stability: EXPERIMENTAL
+    document: spec/emission/README.md
+    anchor: NRS-EMIT-0002
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a
+    supersedes: null
+    superseded_by: NRS-EMIT-0004
+    notes: >-
+      Withdrawn after ADR-0029 because its untagged wording conflicted with the
+      domain-separated digest defined by NRS-CANON-0022. A restatement of the
+      existing integrity requirement (NRS-VERIFY-0006, NRS-CORE-0006).
+      E-family expected digests are now bound to NRS-EMIT-0004.
+
+  # ------------------------- Attestation first increment (DRAFT, EXPERIMENTAL)
+
+  - id: NRS-ATTEST-0001
+    title: The attestation statement
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0001
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-attestation-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Fixed statement wording bound to statement identifier
+      urn:nomue:attestation-statement:verification-procedure-executed:1;
+      the identifier binding is schema-enforced (const), the wording itself
+      is reviewed, not machine-checked. DRAFT: merged to main for review.
+      The first increment did not itself adopt signing algorithm, trust-root,
+      key-generation, revocation, or timestamp policy; subsequent ratified
+      signature-infrastructure decisions did so under NRS-ATTEST-0006 through
+      NRS-ATTEST-0011. Issuer identity verification remains outside the v0
+      guarantee.
+
+  - id: NRS-ATTEST-0002
+    title: Assertion shape
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0002
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report-0.2-draft-3.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-attestation-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      In the draft.3 report schema, the enclosing $defs/attestation requires
+      attester and assertions, while $defs/assertion binds the assertion-local
+      subject, scope, statement, verification procedure, signature, and
+      signature-verification fields. Proven by tooling/tests/attestation.test.ts
+      (unit tests, not conformance fixtures, in this draft increment). DRAFT:
+      EXPERIMENTAL.
+
+  - id: NRS-ATTEST-0003
+    title: Signature algorithm allow-list, no algorithm agility
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0003
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report-0.2-draft-3.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-attestation-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by the closed $defs/signatureAlgorithm enum (currently one
+      member, Ed25519, status "adopted" in
+      registries/attestation-signature-suites.yaml); proven by
+      tooling/tests/attestation.test.ts. DRAFT: EXPERIMENTAL.
+
+  - id: NRS-ATTEST-0004
+    title: Signature verification is depth-3, non-recomputable evidence
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0004
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-attestation-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      A depth-classification statement (spec/verification/public-checks.md);
+      not itself machine-checked. DRAFT: EXPERIMENTAL.
+
+  - id: NRS-ATTEST-0005
+    title: Attestation-derived results never enter verification_results
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0005
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report-0.2-draft-3.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-attestation-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Structural schema fact in draft.3 (verification_results draws only from
+      the public checkResult definition; attestations is a disjoint sibling
+      field) plus NRS-VERIFY-0004 non-escalation; proven by
+      tooling/tests/attestation.test.ts, which asserts byte-identical
+      conformance/verification_results before and after attaching an
+      attestation (B5 non-promotion) and that no attestation-derived
+      result ever appears in verification_results. DRAFT: EXPERIMENTAL.
+
+  - id: NRS-CANON-0014
+    title: Lexical-stage duplicate detection, emitter and verifier alike
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0014
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - JSON-DUP-001
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E1': fixes the detection STAGE (raw-text pre-scan or dedicated lexer, never the parsed value) for NRS-CANON-0007's duplicate prohibition, for emitter and verifier alike; implemented by reference/verifier/src/strict-json.ts.
+
+  - id: NRS-CANON-0015
+    title: Negative zero input is rejected
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0015
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - JSON-NEG-001
+      - JSON-NEG-002
+      - JSON-NEG-003
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E1': Erratum 7920 SHOULD raised to MUST; reason code NRS-NEGATIVE-ZERO-NUMBER; golden vectors negative-zero / negative-zero-exponent reclassified to strict_rejection (ADR-0027).
+
+  - id: NRS-CANON-0016
+    title: Canonical bytes are the storage and exchange form; ingress gate
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0016
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E2': implemented by reference/verifier/src/ingress.ts (canonicalize-then-compare, rejects non-canonical bytes, never rewrites); proven by unit test in tooling/tests/canonicalization-hardening.test.ts.
+
+  - id: NRS-CANON-0017
+    title: Verify-stage digest comparison and idempotency; re-canonicalization is never the only path
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0017
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E2': idempotency is asserted for every canonical golden vector by the vector runner and at authoring time; the stored-bytes digest comparison is the integrity check's existing path.
+
+  - id: NRS-VERIFY-0027
+    title: Verified bytes are the bytes handed onward
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-VERIFY-0027
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E2', DSSE discipline verbatim: the ingress gate returns the ORIGINAL input on acceptance; negative unit test pins that non-canonical input is rejected, never re-serialized. The Matrix Canonical JSON operational history is cited informatively.
+
+  - id: NRS-CANON-0018
+    title: The signing and digest target is the text as given
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0018
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - JSON-UNI-005
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E3': no Unicode normalization anywhere in the digest/signing input, aligned with RFC 8785 section 3.1's negative requirement; NFC/NFD distinctness pinned by fixture.
+
+  - id: NRS-CANON-0019
+    title: Identifier-domain boundary declaration
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0019
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E3': v0 identifier-domain field set is empty in practice (attester identity binds to the key fingerprint); future identifier-domain fields require an explicit PRECIS-style profile decision before entering any schema.
+
+  - id: NRS-CANON-0020
+    title: Digest contexts are domain-separated
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0020
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E4 (ADR-0027, pre-release destructive revision): record-content and snapshot-manifest tag prefixes plus DSSE PAE for assertions; context-swap and legacy-digest negative tests in tooling/tests/canonicalization-hardening.test.ts.
+
+  - id: NRS-CANON-0021
+    title: The digest algorithm is a declared field, fixed at SHA-256, changed only by spec-version transition
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0021
+    testability: human_review
+    schema_refs:
+      - schemas/record/record.schema.json
+      - schemas/record/record-0.2.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 E5: integrity.digest_algorithm is the algorithm identity field (const sha-256); algorithm and canonicalization version are separate version axes.
+
+  - id: NRS-CANON-0022
+    title: Domain-separated SHA-256 Record content digest
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0022
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - I-001
+    public_surface_refs:
+      - NRS-PCS-0006
+    introduced_in: digest-domain-separation-repair
+    supersedes: NRS-CANON-0002
+    superseded_by: null
+    notes: >-
+      ADR-0029 successor to NRS-CANON-0002: explicit domain-separated Record
+      content digest formula aligned with ADR-0027 / NRS-CANON-0020.
+
+  - id: NRS-CANON-0023
+    title: Pre-routing rejection priority
+    status: active
+    stability: EXPERIMENTAL
+    document: canonicalization/record-canonicalization.md
+    anchor: NRS-CANON-0023
+    testability: automated
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs:
+      - NRS-PCS-0012
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Formalizes the already-normative pre-routing rejection order that
+      previously lacked its own Requirement ID. Covered by the strict-JSON
+      priority unit tests and the versioned verifier-refusal surface.
+
+  - id: NRS-EMIT-0003
+    title: No Reference or Transform indirection in emitted material
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/emission/README.md
+    anchor: NRS-EMIT-0003
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: canonicalization-hardening
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 5 checklist item 9: zero signing indirection - no by-reference targets, no transform chains; the specification defines no such mechanism and emitters must not emulate one.
+
+  - id: NRS-EMIT-0004
+    title: Emitted Record domain-separated digest correctness
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/emission/README.md
+    anchor: NRS-EMIT-0004
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - E-001
+      - E-003
+    public_surface_refs: []
+    introduced_in: digest-domain-separation-repair
+    supersedes: NRS-EMIT-0002
+    superseded_by: null
+    notes: >-
+      ADR-0029 successor to NRS-EMIT-0002: emitted Records must satisfy
+      NRS-CANON-0022. E-family expected digests are computed with an
+      independent fixed record-content domain tag, the `canonicalize` npm
+      package, and node:crypto directly.
+
+  - id: NRS-CORE-0013
+    title: State is orthogonal axes, never a single enum
+    status: active
+    stability: CORE
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0013
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - LC-001
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 6 skeleton intent 1 (ADR-0028: CORE immediately per the ratified mixed-placement decision). No axis or combination is an overall verdict (NRS-VERIFY-0001); pinned in the negative by the closed predicate vocabulary test in tooling/tests/lifecycle.test.ts.
+
+  - id: NRS-CORE-0014
+    title: Preconditions are declaratively machine-decidable
+    status: active
+    stability: CORE
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0014
+    testability: automated
+    schema_refs:
+      - schemas/meta/lifecycle-operations.schema.json
+    conformance_refs:
+      - LC-020
+      - LC-021
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 6 skeleton intent 2: preconditions are registry data ({axis, predicate} conjunctions) decidable from the state tuple alone; evaluated by evaluateOperation (reference/verifier/src/lifecycle.ts).
+
+  - id: NRS-CORE-0015
+    title: Insufficiency is structured
+    status: active
+    stability: CORE
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0015
+    testability: automated
+    schema_refs:
+      - schemas/lifecycle/clarification-0.1.schema.json
+    conformance_refs:
+      - LC-023
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 6 skeleton intent 3: needs_clarification is a schema-bound shape (what is missing + expected form), never free text only.
+
+  - id: NRS-CORE-0016
+    title: Axis set and value domains
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0016
+    testability: automated
+    schema_refs:
+      - schemas/lifecycle/state-view-0.1.schema.json
+    conformance_refs:
+      - LC-001
+      - LC-002
+      - LC-003
+      - LC-004
+      - LC-005
+      - LC-006
+      - LC-007
+      - LC-008
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Six axes (Execution excluded as Layer 2 session semantics); state is a derived projection with one truth-carrier per axis; the check axis is execution-level only.
+
+  - id: NRS-CORE-0017
+    title: Precondition grammar and registry
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0017
+    testability: automated
+    schema_refs:
+      - schemas/meta/lifecycle-operations.schema.json
+    conformance_refs:
+      - LC-021
+      - LC-022
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Closed predicate vocabulary in registries/lifecycle-operations.yaml; violation is refused with NRS-LIFECYCLE-PRECONDITION-NOT-MET (operation-level result, not a verifier refusal artifact).
+
+  - id: NRS-CORE-0018
+    title: Clarification format
+    status: active
+    stability: STABLE-INTENT
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0018
+    testability: automated
+    schema_refs:
+      - schemas/lifecycle/clarification-0.1.schema.json
+    conformance_refs:
+      - LC-023
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      missing[] entries carry what/why/expected_form (schema_ref | enum | free_text marker); the conversational protocol that answers them is Layer 2 (NRS-CORE-0002).
+
+  - id: NRS-CORE-0019
+    title: Disclosure notice artifact
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/core/record-lifecycle.md
+    anchor: NRS-CORE-0019
+    testability: automated
+    schema_refs:
+      - schemas/lifecycle/disclosure-notice-0.1.schema.json
+    conformance_refs:
+      - LC-006
+      - LC-007
+      - LC-022
+    public_surface_refs: []
+    introduced_in: record-lifecycle-v0
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      New satellite artifact TYPE, EXPERIMENTAL by ruling 3 (ADR-0028), managed separately from the CORE intents. Append-only; supersession names the superseding revision; never a mutation of the immutable Record.
+
+  # --------------- Signature infrastructure decisions (Batch 4, ratified)
+
+  - id: NRS-ATTEST-0006
+    title: Algorithm change only by versioned allow-list addition plus spec-version transition
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0006
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 4 decision 1 (ADR-0026): the PQ migration path (ML-DSA,
+      SLH-DSA reserved informatively) is an ordinary registry addition
+      under this rule; runtime algorithm agility stays zero
+      (NRS-ATTEST-0003).
+
+  - id: NRS-ATTEST-0007
+    title: Only trust-root-pinned keys produce nomue-attested
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0007
+    testability: automated
+    schema_refs:
+      - schemas/meta/attestation-trust-root.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 4 decisions 2-3: implemented by
+      verifyAssertionAsNomueAttested (reference/verifier/src/attestation.ts)
+      against registries/attestation-trust-root.yaml; proven by unit tests
+      (unpinned key fails NRS-SIGNATURE-KEY-NOT-PINNED even when
+      cryptographically valid). The trust root is authoritative-class and
+      therefore inside the content-addressed snapshot surface.
+
+  - id: NRS-ATTEST-0008
+    title: Key generation transitions
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0008
+    testability: automated
+    schema_refs:
+      - schemas/meta/attestation-trust-root.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Append-only generations, supersession never deletion, explicit
+      overlapping validity windows; structurally enforced by the trust
+      root meta-schema and the pnpm validate cross-checks (fingerprint
+      re-derivation, adopted-suite reference, supersession discipline).
+
+  - id: NRS-ATTEST-0009
+    title: v0 has no revocation mechanism
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0009
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 4 decision 4: compromise response is operational
+      (generation supersession + security/KEY-COMPROMISE-RUNBOOK.md), not
+      protocol revocation; the schema's reserved revocation placeholder is
+      inert (draft-3 comment aligned).
+
+  - id: NRS-ATTEST-0010
+    title: Transparency logs are a detection layer, never a validity condition
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0010
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 4 decision 4 design principle, fixed now so a future log
+      adoption cannot quietly become a verification dependency.
+
+  - id: NRS-ATTEST-0011
+    title: Optional RFC 3161 timestamp field
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/attestation/README.md
+    anchor: NRS-ATTEST-0011
+    testability: automated
+    schema_refs:
+      - schemas/reports/verification-report-0.2-draft-3.schema.json
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: sig-infra-decisions
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Batch 4 decision 6 (LTV): optional, never a v0 validity or
+      conformance condition; Records are timestamped detached over
+      content_digest (closed envelope unchanged). Actual stamping is
+      best-effort steward operation per the ceremony runbook's
+      timestamping section.
+
+  # ------------------------- Approval first increment (DRAFT, EXPERIMENTAL)
+
+  - id: NRS-APPROVE-0001
+    title: The approval statement
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/approval/README.md
+    anchor: NRS-APPROVE-0001
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-approval-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Fixed statement wording (given verbatim by the requester, in Japanese,
+      not translated) bound to statement identifier
+      urn:nomue:approval-statement:content-reviewed-responsibility-accepted:1;
+      the identifier binding is type-enforced (TypeScript literal type) in
+      reference/verifier/src/approval.ts, the wording itself is reviewed,
+      not machine-checked. DRAFT: merged to main for review; does not
+      adopt signature requirement, implementation shape, or issuer policy.
+
+  - id: NRS-APPROVE-0002
+    title: Approval shape
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/approval/README.md
+    anchor: NRS-APPROVE-0002
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - D1-001
+      - D1-002
+      - D1-003
+    public_surface_refs: []
+    introduced_in: phase-2a-approval-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by the Approval interface in
+      reference/verifier/src/approval.ts and exercised by every D1 fixture
+      through checkApprovalScope; no JSON Schema exists for this shape in
+      this increment (no registered Record bundle declares an approval
+      field - see spec/approval/README.md's "Record-envelope attachment
+      mechanism" open discussion item). DRAFT: EXPERIMENTAL.
+
+  - id: NRS-APPROVE-0003
+    title: v0 is an unsigned placeholder
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/approval/README.md
+    anchor: NRS-APPROVE-0003
+    testability: human_review
+    schema_refs: []
+    conformance_refs: []
+    public_surface_refs: []
+    introduced_in: phase-2a-approval-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      A structural-absence statement (the Approval interface carries no
+      signature field); not itself machine-checked. Whether a future
+      increment requires a signature is an open discussion item, not
+      decided here. DRAFT: EXPERIMENTAL.
+
+  - id: NRS-APPROVE-0004
+    title: Scope consistency is a semantic check outcome, not a schema failure
+    status: active
+    stability: EXPERIMENTAL
+    document: spec/approval/README.md
+    anchor: NRS-APPROVE-0004
+    testability: automated
+    schema_refs: []
+    conformance_refs:
+      - D1-001
+      - D1-002
+      - D1-003
+    public_surface_refs: []
+    introduced_in: phase-2a-approval-draft
+    supersedes: null
+    superseded_by: null
+    notes: >-
+      Enforced by reference/verifier/src/approval.ts's checkApprovalScope
+      and exercised by the D1 fixture family through a dedicated
+      approval_check fixture kind in the shared conformance runner
+      (tooling/src/phase1/conformance.ts); reason codes NRS-APPROVAL-ABSENT
+      and NRS-APPROVAL-SCOPE-MISMATCH (registries/reason-codes.yaml).
+      DRAFT: EXPERIMENTAL.

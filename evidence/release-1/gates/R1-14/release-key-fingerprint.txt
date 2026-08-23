@@ -1,0 +1,12 @@
+Release 1 production release-signing public key fingerprint
+Recorded: 2026-08-21 (UTC ceremony)
+
+Release key identity: urn:nomue:release-key:g:2
+Public key file: release-g2.pem
+SPKI-SHA-256 fingerprint: sha256:07d6ce902794edb9e94800407f93505c4c9cc01f150f4963c07c00966634b3fe
+
+Computed by:
+pnpm trust-root:fingerprint --pem release-g2.pem
+
+Cross-check:
+KMS get-public-key fingerprint matched the steward-held PEM exactly.

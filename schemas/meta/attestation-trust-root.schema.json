@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:attestation-trust-root",
+  "title": "NRS attestation trust root",
+  "description": "Meta-schema for registries/attestation-trust-root.yaml: the pinned public keys that make a signature nomue-attested (NRS-ATTEST-0007) and their generation transitions (NRS-ATTEST-0008). keys may be empty (pre-ceremony state); entries are append-only and leave service by supersession, never deletion.",
+  "type": "object",
+  "required": ["registry", "registry_version", "updated", "fingerprint_method", "keys"],
+  "additionalProperties": false,
+  "properties": {
+    "registry": { "const": "nrs-attestation-trust-root" },
+    "registry_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "updated": { "type": "string", "format": "date" },
+    "fingerprint_method": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "Human-readable statement of the fingerprint computation; the reference implementation pins SHA-256 over DER-encoded SPKI, lowercase hex with a sha256: prefix."
+    },
+    "keys": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/key" }
+    }
+  },
+  "$defs": {
+    "key": {
+      "type": "object",
+      "required": [
+        "key_id",
+        "generation",
+        "suite_id",
+        "public_key_pem",
+        "fingerprint",
+        "valid_from",
+        "valid_until",
+        "status",
+        "superseded_by"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key_id": {
+          "type": "string",
+          "pattern": "^urn:nomue:attestation-key:[a-z0-9-]+:[0-9]+$",
+          "$comment": "Opaque identifier carried by signature.key_id; the trailing number is the generation."
+        },
+        "generation": { "type": "integer", "minimum": 1 },
+        "suite_id": {
+          "type": "string",
+          "pattern": "^urn:nomue:signature-suite:[a-z0-9-]+:[0-9]+$",
+          "$comment": "Must reference an adopted suite in registries/attestation-signature-suites.yaml (cross-checked by pnpm validate)."
+        },
+        "public_key_pem": {
+          "type": "string",
+          "pattern": "^-----BEGIN PUBLIC KEY-----",
+          "$comment": "SPKI PEM as exported by the custody platform (Cloud KMS get-public-key)."
+        },
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "valid_from": { "type": "string", "format": "date-time" },
+        "valid_until": {
+          "anyOf": [{ "type": "null" }, { "type": "string", "format": "date-time" }],
+          "$comment": "null = open-ended until superseded; overlapping windows across generations are legitimate during transitions (NRS-ATTEST-0008)."
+        },
+        "status": { "enum": ["active", "superseded"] },
+        "superseded_by": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^urn:nomue:attestation-key:[a-z0-9-]+:[0-9]+$" }
+          ]
+        }
+      }
+    }
+  }
+}

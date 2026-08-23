@@ -1,0 +1,122 @@
+# Phase 2A 0.2.1 successor bundle expectations - HAND-AUTHORED AUTHORING TABLE (NON-AUTHORITATIVE).
+#
+# Expectations for urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1 fixtures
+# (A2-1-*). Written from the numerical-contract steward decisions and
+# registries before verifier execution. The authoring script
+# tooling/src/phase2a/author-fixtures-021.ts asserts the implementation
+# against this file and never overwrites it.
+#
+# Check keys map to urn:nomue:check:<key>:0.2.1-draft.1 for Welch checks
+# and urn:nomue:check:<key>:0.2.0-draft.1 for reused integrity/admissibility.
+
+manifest: nrs-phase-2a-021-fixture-expectations
+updated: "2026-08-10"
+
+fixtures:
+  A2-1-V-001:
+    family: numerical_contract
+    classification: valid
+    purpose: TS1 ordinary baseline passes under the 0.2.1 p comparator (parsed binary64 authority).
+    requirement_ids: [NRS-CANON-0009, NRS-VERIFY-0014, NRS-VERIFY-0019, NRS-VERIFY-0020]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute: { execution: completed, outcome: pass, reason_codes: [] }
+
+  A2-1-V-002:
+    family: numerical_contract
+    classification: valid
+    purpose: Deep-tail Welch data yields binary64 p=0; computability fails closed as numerical underflow.
+    requirement_ids: [NRS-VERIFY-0021, NRS-VERIFY-0017]
+    expected:
+      kind: record
+      cli_exit_code: 2
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability:
+          execution: completed
+          outcome: fail
+          reason_codes: [NRS-P-VALUE-UNDERFLOW, NRS-NUMERICAL-COMPUTABILITY-FAILED]
+        welch-recompute:
+          execution: not_run
+          outcome: null
+          reason_codes: [NRS-P-VALUE-UNDERFLOW, NRS-NUMERICAL-COMPUTABILITY-FAILED]
+
+  A2-1-V-003:
+    family: numerical_contract
+    classification: valid
+    purpose: TS5 large-offset stress passes with unchanged Welch formulas under 0.2.1 tolerances.
+    requirement_ids: [NRS-CANON-0009, NRS-VERIFY-0014, NRS-VERIFY-0016]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute: { execution: completed, outcome: pass, reason_codes: [] }
+
+  A2-1-P-001:
+    family: numerical_contract
+    classification: invalid_declared_result
+    purpose: Declared p=0 against a positive recomputed p fails zero separation (P021-P-003).
+    requirement_ids: [NRS-VERIFY-0020, NRS-VERIFY-0014]
+    expected:
+      kind: record
+      cli_exit_code: 2
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute:
+          execution: completed
+          outcome: fail
+          reason_codes: [NRS-DECLARED-RESULT-MISMATCH]
+
+  A2-1-P-002:
+    family: numerical_contract
+    classification: invalid_declared_result
+    purpose: Positive declared p outside 0.2.1 relative tolerance fails recompute (P021-P-002).
+    requirement_ids: [NRS-VERIFY-0020, NRS-VERIFY-0014]
+    expected:
+      kind: record
+      cli_exit_code: 2
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute:
+          execution: completed
+          outcome: fail
+          reason_codes: [NRS-DECLARED-RESULT-MISMATCH]
+
+  A2-1-P-004:
+    family: numerical_contract
+    classification: invalid_declared_result
+    purpose: Declared positive p on underflow data fails computability before recompute (P021-P-004).
+    requirement_ids: [NRS-VERIFY-0021, NRS-VERIFY-0017]
+    expected:
+      kind: record
+      cli_exit_code: 2
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability:
+          execution: completed
+          outcome: fail
+          reason_codes: [NRS-P-VALUE-UNDERFLOW, NRS-NUMERICAL-COMPUTABILITY-FAILED]
+        welch-recompute:
+          execution: not_run
+          outcome: null
+          reason_codes: [NRS-P-VALUE-UNDERFLOW, NRS-NUMERICAL-COMPUTABILITY-FAILED]

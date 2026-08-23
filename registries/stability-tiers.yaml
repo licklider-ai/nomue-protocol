@@ -1,0 +1,53 @@
+# Stability tier registry - authoritative for the meaning of stability tiers.
+# Validated by schemas/meta/stability-tiers.schema.json.
+
+registry: nrs-stability-tiers
+registry_version: "0.2.0"
+updated: "2026-08-20"
+
+tiers:
+  - tier: CORE
+    summary: >-
+      The trunk of nomue Record meaning: guarantee boundaries and
+      interoperability boundaries.
+    compatibility: >-
+      A compatibility-breaking change requires a specification version
+      transition; it is never applied in place.
+    rfc_min_discussion_days: 60
+    approval: >-
+      Explicit approval by named stewards is required, following the public RFC
+      process.
+    notes: >-
+      CORE covers compatibility-critical authority, Record/layer-boundary, and
+      verification-semantics invariants. Per-requirement tier assignments live in
+      registries/requirements.yaml; the public RFC process in governance/RFC.md
+      governs changes.
+
+  - tier: STABLE-INTENT
+    summary: >-
+      Material whose semantic intent is stable while its expression, field
+      placement, or implementation approach can still change during the Public
+      Draft period.
+    compatibility: >-
+      Semantic intent is preserved; representation and placement can change
+      between Public Draft snapshots.
+    rfc_min_discussion_days: 30
+    approval: >-
+      Public RFC process.
+    notes: >-
+      STABLE-INTENT covers requirements whose semantic intent is stable while
+      representation may still evolve. Per-requirement tier assignments live in
+      registries/requirements.yaml.
+
+  - tier: EXPERIMENTAL
+    summary: >-
+      Material under active learning, evaluation, or attempted falsification.
+    compatibility: >-
+      No compatibility guarantee of any kind.
+    rfc_min_discussion_days: 7
+    approval: >-
+      Public RFC process.
+    notes: >-
+      EXPERIMENTAL covers requirements still under active learning or attempted
+      falsification and carries no compatibility guarantee. Per-requirement tier
+      assignments live in registries/requirements.yaml.

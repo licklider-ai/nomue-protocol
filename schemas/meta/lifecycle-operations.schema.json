@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:lifecycle-operations",
+  "title": "NRS lifecycle operations registry",
+  "description": "Meta-schema for registries/lifecycle-operations.yaml (NRS-CORE-0017). The predicate vocabulary is CLOSED per axis and deliberately contains NO outcome-aggregating predicate - the NRS-VERIFY-0001 guard, pinned by tooling/tests/lifecycle.test.ts.",
+  "type": "object",
+  "required": ["registry", "registry_version", "updated", "operations"],
+  "additionalProperties": false,
+  "properties": {
+    "registry": {
+      "const": "nrs-lifecycle-operations"
+    },
+    "registry_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["operation", "preconditions"],
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "enum": [
+              "attest",
+              "approve",
+              "supersede",
+              "withdraw",
+              "include_in_snapshot",
+              "re_attest"
+            ]
+          },
+          "preconditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["axis", "predicate"],
+              "additionalProperties": false,
+              "properties": {
+                "axis": {
+                  "enum": [
+                    "profile_eligibility",
+                    "check",
+                    "freshness",
+                    "approval",
+                    "verification",
+                    "disclosure"
+                  ]
+                },
+                "predicate": {
+                  "enum": [
+                    "eligible",
+                    "all_completed",
+                    "current",
+                    "scope_consistent",
+                    "report_exists",
+                    "nomue_attested",
+                    "not_withdrawn",
+                    "active"
+                  ],
+                  "$comment": "CLOSED vocabulary; no all_checks_pass or any outcome aggregate exists, and adding one requires a spec-version transition (NRS-VERIFY-0001 guard)."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

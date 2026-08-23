@@ -1,0 +1,48 @@
+Phase 1 local verification runs (captured artifact, 2026-08-10)
+
+All runs below reflect the final Phase 1 state, after the independent-review
+fixes (34 conformance fixtures, reason-code applicability cross-check).
+
+Run A - Windows 11 (development host)
+  toolchain: Node v22.20.0, pnpm 11.7.0, tsx 4.23.11
+  pnpm check .................. green
+    format:check .............. OK
+    lint:markdown ............. 63 files, 0 issues
+    typecheck (tsc 7.0.2) ..... OK
+    validate .................. OK (registries, traceability, normative lint,
+                                authority, gates, conformance manifest, links,
+                                private-dependency audit, phase-1 schemas,
+                                cross-checks incl. reason-code applicability,
+                                code-path audits)
+    vitest .................... 8 files, 66 tests passed
+    check:generated ........... 12 generated files match sources
+    schema:validate ........... 5 schemas compiled, references resolved
+    canonicalization:test ..... 13 vectors OK (differential vs independent JCS)
+    conformance:test .......... 34 fixtures match pinned expectations
+    verifier:example .......... OK
+    evidence:phase1 --check ... 8 files match
+  CLI exit-code smoke test:
+    verify example ............ exit 0
+    verify P-006 (zero SE) .... exit 2
+    verify B-001 (bad bundle) . exit 3
+    verify B-007 (deep nest) .. exit 4
+
+Run B - Linux x86_64 (WSL2 Ubuntu, kernel 6.6.87.2-microsoft)
+  toolchain: Node v22.20.0 (user-space tarball), pnpm 11.7.0 via corepack
+  working tree copied from the Windows host (node_modules and .git excluded),
+  pnpm install --frozen-lockfile from the public registry.
+    validate .................. OK (same scope as above)
+    canonicalization:test ..... 13 vectors OK -> canonical bytes and content
+                                digests equal the platform-neutral pins
+    conformance:test .......... 34 fixtures OK -> verification semantic
+                                projection hashes equal the platform-neutral pins
+    verifier:example .......... OK
+    evidence:phase1 --check ... 8 files byte-identical on Linux
+    vitest .................... 8 files, 66 tests passed
+
+Cross-platform conclusion: both platforms recomputed canonical content,
+content digests, reason codes, check execution/outcome, and verification
+semantic projections against the same pinned hashes and matched; agreement
+between the platforms is therefore established transitively. generated_at,
+verifier.source_commit, absolute paths, and runtime timing are excluded from
+comparison by construction.

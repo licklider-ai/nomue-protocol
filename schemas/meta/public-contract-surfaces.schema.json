@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:nrs:meta:public-contract-surfaces",
+  "title": "NRS public contract surface registry",
+  "description": "Meta-schema for registries/public-contract-surfaces.yaml. Phase 1 issues candidate surfaces; none is frozen.",
+  "type": "object",
+  "required": ["registry", "registry_version", "updated", "status_note", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "registry": { "const": "nrs-public-contract-surfaces" },
+    "registry_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "updated": { "type": "string", "format": "date" },
+    "status_note": { "type": "string", "minLength": 1 },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/surface" }
+    }
+  },
+  "$defs": {
+    "requirementId": {
+      "type": "string",
+      "pattern": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$"
+    },
+    "repoPath": {
+      "type": "string",
+      "pattern": "^(?!\\.\\.)(?!.*\\.\\./)[A-Za-z0-9][A-Za-z0-9._/-]*$"
+    },
+    "surface": {
+      "type": "object",
+      "required": [
+        "surface_id",
+        "title",
+        "paths",
+        "applies_to_bundle_ids",
+        "paths_resolve_in",
+        "stability",
+        "status",
+        "introduced_in",
+        "change_policy",
+        "requirement_ids",
+        "schema_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "surface_id": { "type": "string", "pattern": "^NRS-PCS-[0-9]{4}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "applies_to_bundle_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+$" }
+        },
+        "paths_resolve_in": {
+          "$ref": "#/$defs/repoPath",
+          "$comment": "Schema file the declared paths are mechanically resolved against."
+        },
+        "stability": { "enum": ["CORE", "STABLE-INTENT", "EXPERIMENTAL"] },
+        "status": { "enum": ["candidate", "frozen", "withdrawn"] },
+        "introduced_in": { "type": "string", "minLength": 1 },
+        "change_policy": {
+          "type": "object",
+          "required": ["breaking_change", "silent_reinterpretation"],
+          "additionalProperties": false,
+          "properties": {
+            "breaking_change": { "const": "requires a new schema version" },
+            "silent_reinterpretation": { "const": "prohibited" }
+          }
+        },
+        "requirement_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/requirementId" }
+        },
+        "schema_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/repoPath" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

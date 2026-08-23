@@ -1,0 +1,5 @@
+r1_08_gate: authority/release-1-gates.yaml
+adr_oracle_separation: governance/decisions/ADR-0010-stats-dependency-oracle-separation.md
+numerical_contract: urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1
+tolerance_authority: registries/public-checks.yaml welch-recompute:0.2.1-draft.1
+comparison_policy: canonicalization/numerical-comparison.md

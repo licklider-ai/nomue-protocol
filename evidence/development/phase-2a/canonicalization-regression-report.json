@@ -1,0 +1,6 @@
+{
+  "vector_count": 16,
+  "all_match": true,
+  "canonicalization_version": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+  "note": "Phase 2A reuses the Phase 1 canonicalization unchanged; Phase 1 content digests are preserved."
+}

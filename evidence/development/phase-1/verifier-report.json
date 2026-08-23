@@ -1,0 +1,24 @@
+{
+  "example": "examples/minimal-itgc-record/record.json",
+  "exit_code": 0,
+  "content_digest": "sha256:4190f4c0de9272e9ab407b5ae6b7b973dc2b72ba13f4218ad41b7556f63de543",
+  "semantic_projection_hash": "sha256:4379ec06c27d08606d46418cdc3fc088d792014c5c8a1642646239543068df5e",
+  "canonical_content_sha256": "b7a8588d48da8f0e15c03b26c8461a42b0f1ecc767213fbb73dbd45c27b14e6a",
+  "checks": [
+    {
+      "check_id": "urn:nomue:check:record-integrity:0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass"
+    },
+    {
+      "check_id": "urn:nomue:check:itgc-preconditions:0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass"
+    },
+    {
+      "check_id": "urn:nomue:check:welch-recompute:0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass"
+    }
+  ]
+}

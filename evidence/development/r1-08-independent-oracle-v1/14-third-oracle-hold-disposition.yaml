@@ -1,0 +1,15 @@
+hold_id: R1-08_third_oracle_lineage
+authority_class: development_research_hold
+source: evidence/development/numerical-contract-0.2.1/research-holds.yaml
+status: resolved
+disposition: satisfied_by_acb_independent_lineage
+evidence_commit: 6c4de5c1ac693f300efa424d56d3fb89e344558d
+resolved_at: "2026-08-11"
+rationale: >-
+  The hold requires an independent third implementation (R/MPFR/Arb) without
+  stdlib/Boost shared ancestry. The R1-08 evidence bundle establishes python-flint
+  FLINT/acb incomplete-beta enclosures (Arb lineage) disjoint from the SUT
+  @stdlib Boost-port betainc path. p-value, quantile (Q2 adaptive bracket), and
+  CI enclosures were executed; SUT replay recorded zero failures. R live qt is
+  optional supplemental evidence only; no normative requirement mandates R execution.
+r_live_execution: optional_supplemental

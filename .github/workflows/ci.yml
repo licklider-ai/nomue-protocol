@@ -1,0 +1,218 @@
+# CI for the authority artifacts, the Phase 1 slice, and the Phase 2A ITGC
+# guarantee profile. This workflow does not evaluate or pass any Release 1
+# gate.
+#
+# Cross-platform agreement: canonical forms, Phase 1 and Phase 2A content
+# digests, refusal kinds, reason codes, check execution/outcome, and
+# verification semantic projections are pinned as platform-neutral hashes in
+# the conformance and vector manifests; every validation job recomputes and
+# compares against the same pins, which makes cross-OS/arch agreement
+# transitive. generated_at, runtime duration, absolute paths, environment
+# paths, and process identity are excluded from comparison by construction.
+# The oracle comparison replays the kernel against captured SciPy/mpmath
+# outputs and needs no Python environment on any runner.
+#
+# Batch 2 addendum U4 additions:
+# - Every job starts with an environment report (process.versions,
+#   process.arch) uploaded as an artifact, and ends by uploading a
+#   per-environment kernel-vs-oracle rel_diff matrix
+#   (tooling/src/evidence/oracle-rel-diff-matrix.ts). When a cross-platform
+#   pin mismatch appears, downloading two matrices and running
+#   tooling/src/evidence/oracle-rel-diff-compare.ts pinpoints WHICH quantity
+#   diverged. Artifacts stay in CI; nothing commits back to the repository.
+# - validate-linux-arm64 (ubuntu-24.04-arm) extends the OS matrix to a
+#   second CPU architecture.
+# - check-node24 runs the FULL pnpm check on Node 24 to surface V8
+#   version differences against the Node 22 baseline used everywhere else.
+#
+# As before, this workflow is authored in-repo but its runs happen only when
+# the repository is hosted with Actions enabled - runner execution is not
+# something the authoring environment triggers or verifies. The
+# validate-macos job (macos-latest, arm64 since the GitHub macOS 14 image)
+# still does not commit cross-platform evidence back to
+# evidence/development/cross-platform-runs/ - CI artifacts are the
+# collection mechanism for now.
+name: CI
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+
+jobs:
+  check-linux:
+    name: Full check (Linux x64)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Environment report (process.versions, arch)
+        run: pnpm exec tsx tooling/src/evidence/env-report.ts env-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: env-report-linux-x64
+          path: env-report.json
+      - name: Full check (format, lint, typecheck, validate, tests, generated diff, Phase 1 regression, Phase 2A suite, oracle comparison, example and refusal verification, evidence diffs)
+        run: pnpm check
+      - name: Oracle rel_diff matrix (this environment vs captured oracles)
+        run: pnpm exec tsx tooling/src/evidence/oracle-rel-diff-matrix.ts oracle-rel-diff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-rel-diff-linux-x64
+          path: oracle-rel-diff.json
+
+  check-node24:
+    name: Full check (Linux x64, Node 24)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Environment report (process.versions, arch)
+        run: pnpm exec tsx tooling/src/evidence/env-report.ts env-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: env-report-linux-x64-node24
+          path: env-report.json
+      - name: Full check on Node 24 (V8 version-difference probe against the Node 22 baseline)
+        run: pnpm check
+      - name: Oracle rel_diff matrix (this environment vs captured oracles)
+        run: pnpm exec tsx tooling/src/evidence/oracle-rel-diff-matrix.ts oracle-rel-diff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-rel-diff-linux-x64-node24
+          path: oracle-rel-diff.json
+
+  validate-windows:
+    name: Phase 1 + 2A validation (Windows x64)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Environment report (process.versions, arch)
+        run: pnpm exec tsx tooling/src/evidence/env-report.ts env-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: env-report-windows-x64
+          path: env-report.json
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Registry, schema, and audit validation
+        run: pnpm validate
+      - name: Canonicalization and digest vectors
+        run: pnpm canonicalization:test
+      - name: Phase 1 regression (pinned results, semantic projection hashes)
+        run: pnpm regression:phase1
+      - name: Phase 2A conformance (admissibility, mismatches, dispatch, projections)
+        run: pnpm conformance:phase2a
+      - name: Resource and refusal fixtures
+        run: pnpm refusal:test
+      - name: Examples (Phase 1 and Phase 2A)
+        run: pnpm verifier:example && pnpm verifier:example:phase2a
+      - name: Oracle comparison (captured SciPy/mpmath outputs)
+        run: pnpm oracle:phase2a
+      - name: Oracle rel_diff matrix (this environment vs captured oracles)
+        run: pnpm exec tsx tooling/src/evidence/oracle-rel-diff-matrix.ts oracle-rel-diff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-rel-diff-windows-x64
+          path: oracle-rel-diff.json
+
+  validate-macos:
+    name: Phase 1 + 2A validation (macOS arm64)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Environment report (process.versions, arch)
+        run: pnpm exec tsx tooling/src/evidence/env-report.ts env-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: env-report-macos-arm64
+          path: env-report.json
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Registry, schema, and audit validation
+        run: pnpm validate
+      - name: Canonicalization and digest vectors
+        run: pnpm canonicalization:test
+      - name: Phase 1 regression (pinned results, semantic projection hashes)
+        run: pnpm regression:phase1
+      - name: Phase 2A conformance (admissibility, mismatches, dispatch, projections)
+        run: pnpm conformance:phase2a
+      - name: Resource and refusal fixtures
+        run: pnpm refusal:test
+      - name: Examples (Phase 1 and Phase 2A)
+        run: pnpm verifier:example && pnpm verifier:example:phase2a
+      - name: Oracle comparison (captured SciPy/mpmath outputs)
+        run: pnpm oracle:phase2a
+      - name: Oracle rel_diff matrix (this environment vs captured oracles)
+        run: pnpm exec tsx tooling/src/evidence/oracle-rel-diff-matrix.ts oracle-rel-diff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-rel-diff-macos-arm64
+          path: oracle-rel-diff.json
+
+  validate-linux-arm64:
+    name: Phase 1 + 2A validation (Linux arm64)
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Environment report (process.versions, arch)
+        run: pnpm exec tsx tooling/src/evidence/env-report.ts env-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: env-report-linux-arm64
+          path: env-report.json
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Registry, schema, and audit validation
+        run: pnpm validate
+      - name: Canonicalization and digest vectors
+        run: pnpm canonicalization:test
+      - name: Phase 1 regression (pinned results, semantic projection hashes)
+        run: pnpm regression:phase1
+      - name: Phase 2A conformance (admissibility, mismatches, dispatch, projections)
+        run: pnpm conformance:phase2a
+      - name: Resource and refusal fixtures
+        run: pnpm refusal:test
+      - name: Examples (Phase 1 and Phase 2A)
+        run: pnpm verifier:example && pnpm verifier:example:phase2a
+      - name: Oracle comparison (captured SciPy/mpmath outputs)
+        run: pnpm oracle:phase2a
+      - name: Oracle rel_diff matrix (this environment vs captured oracles)
+        run: pnpm exec tsx tooling/src/evidence/oracle-rel-diff-matrix.ts oracle-rel-diff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oracle-rel-diff-linux-arm64
+          path: oracle-rel-diff.json
