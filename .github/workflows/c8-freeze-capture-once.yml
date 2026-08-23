@@ -31,8 +31,9 @@ jobs:
           mkdir -p "$RUNNER_TEMP/c8-freeze"
           pnpm snapshot:manifest --candidate-freeze > "$RUNNER_TEMP/c8-freeze/candidate-freeze-manifest-c8.json"
           pnpm snapshot:manifest --hash-only > "$RUNNER_TEMP/c8-freeze/protocol-snapshot-hash-c8.txt"
-          FREEZE_PATH="$RUNNER_TEMP/c8-freeze/candidate-freeze-manifest-c8.json" node --input-type=module - <<'NODE'
+          FREEZE_PATH="$RUNNER_TEMP/c8-freeze/candidate-freeze-manifest-c8.json" OUT_DIR="$RUNNER_TEMP/c8-freeze" node --input-type=module - <<'NODE'
           import fs from 'node:fs';
+          import path from 'node:path';
           const oldFreeze = JSON.parse(fs.readFileSync('evidence/release-1/candidate-freeze-manifest.json', 'utf8'));
           const nextFreeze = JSON.parse(fs.readFileSync(process.env.FREEZE_PATH, 'utf8'));
           const oldCandidate = 'f4206ac3f85dc8f783d14d63413cff87ab2ed82b';
@@ -50,7 +51,7 @@ jobs:
           if (added.length || removed.length || JSON.stringify(changed) !== JSON.stringify(['governance/RELEASE-SIGNING-PLAN.md'])) {
             throw new Error(`unexpected C7-to-C8 frozen delta: added=${JSON.stringify(added)} removed=${JSON.stringify(removed)} changed=${JSON.stringify(changed)}`);
           }
-          fs.writeFileSync('$RUNNER_TEMP/c8-freeze/c7-to-c8-freeze-diff.json', JSON.stringify({
+          fs.writeFileSync(path.join(process.env.OUT_DIR, 'c7-to-c8-freeze-diff.json'), JSON.stringify({
             prior_candidate: oldCandidate,
             candidate: nextCandidate,
             prior_frozen_file_count: oldFreeze.frozen_file_count,
