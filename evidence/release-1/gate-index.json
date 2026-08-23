@@ -30,19 +30,18 @@
     },
     {
       "gate_id": "R1-03",
-      "state": "open",
-      "decision": null,
+      "state": "closed",
+      "decision": "pass",
       "evidence": [
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/candidate-C2-attestation-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/gates/R1-03/c7-refresh-evidence.md"
       ],
-      "open_deviations": [
-        "Candidate C7 changes normative EXPERIMENTAL approval wording; fresh C7 conformance/verifier/test evidence is required before reclose."
-      ],
-      "reviewed_by": [],
-      "decided_at": null
+      "open_deviations": [],
+      "reviewed_by": ["Release Steward"],
+      "decided_at": "2026-08-23T23:34:26.636Z"
     },
     {
       "gate_id": "R1-04",
@@ -85,19 +84,18 @@
     },
     {
       "gate_id": "R1-07",
-      "state": "open",
-      "decision": null,
+      "state": "closed",
+      "decision": "pass",
       "evidence": [
         "evidence/release-1/candidate-freeze-manifest.json",
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/gates/R1-07/c7-refresh-evidence.md"
       ],
-      "open_deviations": [
-        "Candidate C7 has a new freeze/public surface and repaired release-control mechanics; fresh C7 freeze/equivalence/public-surface evidence is required before reclose."
-      ],
-      "reviewed_by": [],
-      "decided_at": null
+      "open_deviations": [],
+      "reviewed_by": ["Release Steward"],
+      "decided_at": "2026-08-23T23:34:26.636Z"
     },
     {
       "gate_id": "R1-08",
@@ -155,20 +153,19 @@
     },
     {
       "gate_id": "R1-12",
-      "state": "open",
-      "decision": null,
+      "state": "closed",
+      "decision": "pass",
       "evidence": [
         "evidence/release-1/gates/R1-12/founder-legal-approval.md",
         "evidence/release-1/gates/R1-12/legal-adoption-review.md",
         "evidence/release-1/candidate-C2-gate-review.md",
         "evidence/release-1/decisions/2026-08-20-c2-internal-gate-approval.md",
-        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md"
+        "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
+        "evidence/release-1/gates/R1-12/c7-candidate-confirmation.md"
       ],
-      "open_deviations": [
-        "Candidate C7 changes LICENSE.md licensor/attribution presentation; fresh candidate-scoped confirmation of the adopted legal package is required before reclose."
-      ],
-      "reviewed_by": [],
-      "decided_at": null
+      "open_deviations": [],
+      "reviewed_by": ["Founder/CEO", "Release Steward"],
+      "decided_at": "2026-08-23T23:34:26.636Z"
     },
     {
       "gate_id": "R1-13",

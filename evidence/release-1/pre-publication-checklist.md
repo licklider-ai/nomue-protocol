@@ -37,6 +37,8 @@ repository-root `LICENSE.md` now contains the specification/code licenses,
 Protocol Patent Grant, and contribution boundary, and the review/risk-acceptance
 record is preserved under `evidence/release-1/gates/R1-12/`.
 
-R1-12 nevertheless remains `open` with a null current decision until candidate
-freeze/pin because the 2026-08-18 gate-reset decision requires all Release 1
-gates to be reviewed and closed only against the final frozen candidate.
+R1-12 was reclosed for Candidate C7 after candidate-scoped confirmation that
+the C3-to-C7 LICENSE changes are limited to public presentation of the Licensor,
+copyright, and suggested attribution. The adopted legal architecture and the
+recorded residual-risk boundary are unchanged; no outside-counsel approval is
+claimed.

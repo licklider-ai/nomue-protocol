@@ -54,8 +54,8 @@ gates:
       test-only attestation flows included in the candidate run as specified
       rather than existing only on paper.
     applicability: Applies to every Release 1 candidate.
-    state: open
-    decision: null
+    state: closed
+    decision: pass
     required_evidence:
       - Conformance suite run logs against the fixtures frozen in the Release
         Candidate.
@@ -77,7 +77,9 @@ gates:
       and implementation evidence are evaluated against the frozen Release
       Candidate that is intended to become the release. Candidate C7 impact
       review: Candidate C7 changes normative EXPERIMENTAL approval wording;
-      fresh C7 conformance/verifier/test evidence is required before reclose.'
+      fresh C7 conformance/verifier/test evidence is required before reclose. C7
+      reclose: Candidate C7 fresh conformance, verifier, and experimental
+      approval/attestation fixture evidence passed.'
   - gate_id: R1-04
     title: External offline verification in clean environments
     purpose: Confirm that independent parties can verify Records offline, in clean
@@ -145,8 +147,8 @@ gates:
       content-addressed and that version authority is coherent before
       publication.
     applicability: Applies to every Release 1 candidate.
-    state: open
-    decision: null
+    state: closed
+    decision: pass
     required_evidence:
       - Content-addressed Protocol snapshot manifest with hashes.
       - Candidate-equivalence evidence under ADR-0033.
@@ -165,7 +167,9 @@ gates:
       frozen candidate content or gate definitions without a new candidate.
       Candidate C7 impact review: Candidate C7 has a new freeze/public surface
       and repaired release-control mechanics; fresh C7
-      freeze/equivalence/public-surface evidence is required before reclose."
+      freeze/equivalence/public-surface evidence is required before reclose. C7
+      reclose: Candidate C7 freeze, detached 83-file Protocol snapshot, public
+      boundary, and candidate-equivalence evidence passed."
   - gate_id: R1-08
     title: Independent numerical oracle and common-cause failure control
     purpose: Cross-check shipped numerical results against an independently
@@ -258,8 +262,8 @@ gates:
     purpose: Confirm that licensing, patent, contribution, and trademark terms are
       in place before public release.
     applicability: Applies to every Release 1 candidate.
-    state: open
-    decision: null
+    state: closed
+    decision: pass
     required_evidence:
       - Specification license.
       - Verifier code license.
@@ -279,7 +283,9 @@ gates:
       confirmation and steward review against the final frozen Release
       Candidate. Candidate C7 impact review: Candidate C7 changes LICENSE.md
       licensor/attribution presentation; fresh candidate-scoped confirmation of
-      the adopted legal package is required before reclose."
+      the adopted legal package is required before reclose. C7 reclose:
+      Candidate C7 retains the adopted legal package; C3-to-C7 LICENSE changes
+      are public presentation only and no outside-counsel approval is claimed."
   - gate_id: R1-13
     title: Relying-party interface documentation
     purpose: Confirm that the relying-party interface frozen for Release 1
