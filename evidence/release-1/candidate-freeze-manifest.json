@@ -1,13 +1,13 @@
 {
   "manifest": "nrs-release-candidate-freeze",
   "manifest_version": "0.1.0",
-  "release_candidate_id": "8833ee02664903a69459fc178e4d2802f4241e0f",
+  "release_candidate_id": "03f1c8bc32b06d86a0169113799ab27cb8f737c3",
   "release_gate_definition_sha256": "092836ca774f89b53d726998c8548468ea28b9ac7e13304ddeaf4cf92f66e32b",
   "excluded_mutable_paths": {
     "exact": ["authority/release-1-gates.yaml", "generated/RELEASE-1-GATES.md"],
     "prefixes": ["evidence/release-1/"]
   },
-  "frozen_file_count": 615,
+  "frozen_file_count": 608,
   "files": [
     {
       "path": ".editorconfig",
@@ -28,6 +28,10 @@
     {
       "path": ".github/workflows/release1-candidate-evidence.yml",
       "sha256": "41b19043a7f55b837dcdcaa935027a7bbb9a62223f8c6562f9c0528c810ca90a"
+    },
+    {
+      "path": ".github/workflows/release1-candidate-freeze.yml",
+      "sha256": "7dc78226cc80ae63f2454e2667c90f3157f30dee0d66f281ff3aafcd9ed21e50"
     },
     {
       "path": ".gitignore",
@@ -63,7 +67,7 @@
     },
     {
       "path": "LICENSE.md",
-      "sha256": "c70ec7f1b3f48c47889b9933b6fb2958ae67f61d2ecc0f48055d89774360040c"
+      "sha256": "27d64b12af8b6f05097783cc3070baa7d3f801fb3642be488706f80f76b6a638"
     },
     {
       "path": "PROTOCOL-ARCHITECTURE.md",
@@ -71,7 +75,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "4bc9f1dc1f2484393cbebe1049810d8a761418499dc75dc06fd83e6dc5530d54"
+      "sha256": "1259305eba50d2ab114e630a1c3c92167c3d66ddd2ab38964687824a23ff002b"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "d5df945afae3d26224bb760b144853e01da1044666eea471becdc4badd11fb75"
     },
     {
       "path": "authority/authority-manifest.yaml",
@@ -167,7 +175,7 @@
     },
     {
       "path": "canonicalization/test-vectors/expected/unicode.canonical.txt",
-      "sha256": "9797b38fc03beae373abdc1640e58850137bc476fae9da3be5081b004dad3f31"
+      "sha256": "e2c7a349ab3379ba27f8de72b192bba4459ebc36f3729b64df90ee4aa246d35f"
     },
     {
       "path": "canonicalization/test-vectors/expected/whitespace.canonical.txt",
@@ -235,7 +243,7 @@
     },
     {
       "path": "canonicalization/test-vectors/inputs/unicode.json",
-      "sha256": "395c9ec83505ee83ce7d325313ed4c7cf6ab828f9e685f9469e2a8b7a1e70c58"
+      "sha256": "e3dfbb7085593fb6ae0dad2cccdee4b94b37ea18c0953b9ae67a868a3cb14be3"
     },
     {
       "path": "canonicalization/test-vectors/inputs/whitespace.json",
@@ -247,23 +255,15 @@
     },
     {
       "path": "canonicalization/test-vectors/manifest.yaml",
-      "sha256": "bde3983b0429cde774df1ff3e7997582d024a871fc2fd864036d2a5d0bf7d856"
+      "sha256": "bd4ee790eea371bfaebda34bde13de7ff69918eb94b100fda9b5320f50553165"
     },
     {
       "path": "comparison/README.md",
-      "sha256": "2391bd78d5074a6dea87d04692748cf87cd70e8e912cb4fef4c076efb3203da8"
-    },
-    {
-      "path": "comparison/galaxy-execution-checklist.md",
-      "sha256": "e238e76ed9d2e4b7f1e2eb857157ee35389f92fadaeeefb6e59273d768f9ade2"
-    },
-    {
-      "path": "comparison/galaxy-pre-prediction.md",
-      "sha256": "f588d9d9d169125e28c33391250a193d2da57e1f3d7d1832d775ea846369a810"
+      "sha256": "192b8e644969ec64a23c10bd1760d8aa5c6a3c1a292c3dc9d4d82f5e6b388de3"
     },
     {
       "path": "comparison/nomue-vs-wrroc-vs-bco.md",
-      "sha256": "ace6752ae115bf3f580e18675b4820b9e4880430915a12505e78468a56c6b8e7"
+      "sha256": "d5ad91fcfcd497beb14b342c2c65aa1ad0a36570202f8b53342ffa09368133c5"
     },
     {
       "path": "conformance/AGENTS.md",
@@ -1047,7 +1047,7 @@
     },
     {
       "path": "evidence/development/phase-1/phase-1-manifest.json",
-      "sha256": "59f1735b6337b29dd300934421a88a6795acb7eac9a4c7d642f54b9aab4f8cd9"
+      "sha256": "681890ad4695527f394a641402aeacd158f5fafdaebb2694787d8f0946cf3e22"
     },
     {
       "path": "evidence/development/phase-1/public-surface-report.json",
@@ -1222,16 +1222,12 @@
       "sha256": "4bb862d6f8962777114e67b57820afecda7b88a251fe51c822355534699feec1"
     },
     {
-      "path": "evidence/development/v0-public-checks-s6/check-reclassification-as-is.md",
-      "sha256": "7f469eeb9b2d4608028b50037b4a9601483c6ff739a6403d52207fbc90cd0cac"
-    },
-    {
       "path": "evidence/research/README.md",
       "sha256": "9df252e5a41125e6da32a2a594a42d6d37aff9a96dbc18ea70f052571142a980"
     },
     {
       "path": "evidence/research/SANITIZE-CHECKLIST.md",
-      "sha256": "3a474d065e37e2543c60e67939cd276b301b23e93a31920e90ca5d3a9b0b1800"
+      "sha256": "5c706b4ca93ce3dfed1e823f45050ca0e7dd95fd21eb6c55b2192216a9ac6eb3"
     },
     {
       "path": "examples/README.md",
@@ -1371,7 +1367,7 @@
     },
     {
       "path": "generated/README.md",
-      "sha256": "eb35600b51314c79d8b902503aae3450872e5765b32c3dbd013ce2d2cd32a149"
+      "sha256": "79804e36d338493fd918a553d006ba8e60249133a0ba626a7828ec4fea127e3e"
     },
     {
       "path": "generated/REASON-CODES.md",
@@ -1415,15 +1411,15 @@
     },
     {
       "path": "governance/RELEASE-POLICY.md",
-      "sha256": "65efe22d7fce3e83a8fd6f32ff3e0ee5a5df56ed5dedb8d46f83a660750dd3fd"
+      "sha256": "df6f65e2700c7b09f0b1e1d39be044d129cc339524d6f4f8f09db78418432387"
     },
     {
       "path": "governance/RELEASE-SIGNING-PLAN.md",
-      "sha256": "12b3368cb8645dddf39e43f6057d99a6f8d7ed7f597b818674d9c2148f0063a9"
+      "sha256": "5658ff2b455d4b9603f3410210482bc566ac905841c53faa4d3dcc064e398edf"
     },
     {
       "path": "governance/RELEASE-SIGNING-RUNBOOK.md",
-      "sha256": "32ee99641fcb2b441cc3bfa5d8f85d5a3196140af56c7b3343ef5016b3df3abe"
+      "sha256": "b5548aa39ed69526da7a18e1e7894d984b7df0751763cd5e631bb0b25392a938"
     },
     {
       "path": "governance/RFC.md",
@@ -1431,7 +1427,7 @@
     },
     {
       "path": "governance/SNAPSHOT-RUNBOOK.md",
-      "sha256": "598b7da5fa62989b82b9a5bd8ce0997277d03ededf27945524540b9e85c5ed0b"
+      "sha256": "65cb1b184c5dd17070ca8fea14b4d5225cdfa1a7e3fbac56216d2b4c205c90c8"
     },
     {
       "path": "governance/decisions/ADR-0001-separate-layer-1-repository.md",
@@ -1531,7 +1527,7 @@
     },
     {
       "path": "governance/decisions/ADR-0025-s1-close-numerical-deviation.md",
-      "sha256": "e9a0ed990801b41ab9f3973d3ce5af2c64cb41f5ad8ea82d0d452a90593d5a1f"
+      "sha256": "00541f43095d582c85d741f2610bef54e771a05b622eb30fc567175278b29d78"
     },
     {
       "path": "governance/decisions/ADR-0026-ed25519-adoption-pq-migration-path.md",
@@ -1563,15 +1559,11 @@
     },
     {
       "path": "governance/decisions/ADR-0033-release-candidate-snapshot-separation.md",
-      "sha256": "6115cfaadc5c2199a45460b7524a5c4b73951018115b427d8b2e7eb7c67eb870"
-    },
-    {
-      "path": "governance/drafts/2026-08-13-passive-batch-alpha-consultations.md",
-      "sha256": "edd6851e9e1bad38722bb42c59fb923993d1192d685bca07a8ddb2abe4564e12"
+      "sha256": "cdb568734048417af0dfc4ffdeaf0d34b4ebb258a2d5be5bc4e49b449cc76f4d"
     },
     {
       "path": "governance/drafts/2026-08-13-passive-batch-alpha-ledger.md",
-      "sha256": "b8d907ead1faf640790c807acc94be9e402ebade67e7ca69d49e51699d9eca87"
+      "sha256": "f8f0e55d85b68ec88be684f626a24a6b74ec92dfd7629f95aea1026a9b5ef233"
     },
     {
       "path": "governance/drafts/p1a-paired-t-l1-design.md",
@@ -1623,7 +1615,7 @@
     },
     {
       "path": "reference/verifier/src/approval.ts",
-      "sha256": "7e1901740cb60d1601f93890b2953672f06bda414e8949613fd35c44084c6f20"
+      "sha256": "b2353a26dccf5cdc186733932ddbf1009eee2fed548a803df0a57038431405fb"
     },
     {
       "path": "reference/verifier/src/attestation.ts",
@@ -1883,7 +1875,7 @@
     },
     {
       "path": "security/INPUT-HARDENING-LEDGER.md",
-      "sha256": "a1ab2e2c73b1df24c02e24209b9f98d238ad24dcb9a45096942c8113d541feb3"
+      "sha256": "ede79c9adcea0077890bdbb8a008c60065e195dfe30764d531bdb6a4043399c3"
     },
     {
       "path": "security/KEY-COMPROMISE-RUNBOOK.md",
@@ -1915,7 +1907,7 @@
     },
     {
       "path": "spec/approval/README.md",
-      "sha256": "16031d1bf21a66bd3802047cf771c3e559ec7c01a8896c3a25af06d6d3c2dd04"
+      "sha256": "4b07773ac3b514838b2f47510d2b6983438fc4a83339b2322567a5fe320ec038"
     },
     {
       "path": "spec/attestation/README.md",
@@ -2007,7 +1999,7 @@
     },
     {
       "path": "spec/verification/README.md",
-      "sha256": "79533deede2849a74a1f3101cd547b59a67e9370601fa7f73ca596a01c0ed244"
+      "sha256": "eaac94a5d064343c2fb33e61af3288c01f6091f3d22e8e60411ebfdf4026a176"
     },
     {
       "path": "spec/verification/execution-outcome-model.md",
@@ -2056,26 +2048,6 @@
     {
       "path": "spec/versioning/public-check-versioning.md",
       "sha256": "5a286306bfbed1ed415178296ddc50f996eaca895ee4e9ffd749acc9c77b02c5"
-    },
-    {
-      "path": "templates/DRAFT-discrepancy-protocol-agreement.md",
-      "sha256": "417d2ad49156c7da806d7ffb7c6dd13ecd1c516969c00ad36d8fcc47c1f3a610"
-    },
-    {
-      "path": "templates/FORM-B-internal-corpus-preregistration-template.md",
-      "sha256": "a3bd702179a790fd7978a1a384e46cbc34535b25c8e3bfdd2575c7a17724ace9"
-    },
-    {
-      "path": "templates/README.md",
-      "sha256": "e11b7ae99be256fb083940f21e6960dacf6e688074f0d2243997d96bc43dd95b"
-    },
-    {
-      "path": "templates/S2-S3-paper-intake-sheet.md",
-      "sha256": "c2f2ab93ce40ab381b3576f82ecf0be011c53edec695e0b56bf5afe477d44181"
-    },
-    {
-      "path": "templates/S2-preregistration-template.md",
-      "sha256": "619bdc1ecfd34bd6576162abdc5809f99e99aec04cb33bfe60fb8c502b9a9c81"
     },
     {
       "path": "tooling/README.md",
@@ -2259,7 +2231,7 @@
     },
     {
       "path": "tooling/src/phase1/author-vectors.ts",
-      "sha256": "80c29c502fead58ccced18ebdbc1998337d253548ca13a5eee0780c4a36a4789"
+      "sha256": "c15bdb254e49ed4162fbac6a6b258cee96b7baf962e52e2794bbed4a80e9cee7"
     },
     {
       "path": "tooling/src/phase1/bindings.ts",
@@ -2359,11 +2331,11 @@
     },
     {
       "path": "tooling/src/release/release-signing-cli.ts",
-      "sha256": "da30035949a12be22af537705e80fb5d12b5468cc5df182b818ab8b08daa8062"
+      "sha256": "c6ceef6f27b967f01337824b0184a5984135408f235885fe59dd8bc85650dcd3"
     },
     {
       "path": "tooling/src/release/release-signing.ts",
-      "sha256": "7e11a6129c3c99e308c74c186e2228cc6bd581b78a1b231a544ee2e746a59329"
+      "sha256": "cf942bd4b761b4c049f9a6b417f896d4f05c13fefb1aa57ecb9030c29c2aa6b6"
     },
     {
       "path": "tooling/src/release/snapshot-manifest-cli.ts",
@@ -2379,7 +2351,7 @@
     },
     {
       "path": "tooling/src/validate.ts",
-      "sha256": "fccd6e12cf71d6d7a141a600a48075c490722859c673533943cd9b13e0eaab68"
+      "sha256": "81301ec3e74add09f1a947905ac21617aea02b844fe609eacf31e6c451ce6607"
     },
     {
       "path": "tooling/tests/attestation.test.ts",
@@ -2403,7 +2375,7 @@
     },
     {
       "path": "tooling/tests/jcs.test.ts",
-      "sha256": "5ecd7ebf072d6d9d0619d1b3123bbf875c49b8fcc97f566f04ceeb76214d27a3"
+      "sha256": "8f88c99228b403d7357f1aee0579111fa62fcc9d3e409d255f8a666f6c5fd58f"
     },
     {
       "path": "tooling/tests/kernel.test.ts",
@@ -2439,7 +2411,7 @@
     },
     {
       "path": "tooling/tests/release-signing.test.ts",
-      "sha256": "cacff6e955be1c1dd2670dad1db89f297b2beb297f1755d0f513c173a1f906ec"
+      "sha256": "c1d93c2967969eae89d1bcecdb88145fcad06482e10fa02702034c36082e9e08"
     },
     {
       "path": "tooling/tests/requirements.test.ts",
