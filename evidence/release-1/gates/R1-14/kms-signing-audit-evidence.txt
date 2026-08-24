@@ -1,0 +1,19 @@
+R1-14 Production Signing — KMS audit evidence
+Recorded: 2026-08-24 UTC
+
+Candidate C: 83d07d03f27cec0c245cf836c042e5378733b0a2
+Release source R: 47eeafb0b2b096658cacf219bf5af867b687c6a7
+Release key: urn:nomue:release-key:g:2
+KMS key version: projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1
+Signer principal: kobayashi@licklider.ai
+Signing window: 2026-08-24T00:48:47Z through 2026-08-24T00:49:25Z
+
+The audit query returned six AsymmetricSign records: three historical C3 records and three current C8/R records. The checked-in public JSON contains only the three records whose request SHA-256 digests equal the three fixed C8/R signing targets.
+
+Publication hygiene: callerIp and callerSuppliedUserAgent are removed from the checked-in public copy. Target digest, insertId, timestamp, principal, key resource, permission, and success status are retained unchanged.
+
+source_archive: 21e9c564a37b15e26785d8240c2e4c37291322b71f163f12ba36bfb0bdca968e | insertId 77x31ye2g36b | 2026-08-24T00:49:20.324096818Z
+checksums: 7fbee72e9eb75587485840304f16b0372fccaea0417f97b0523281e0baae3d3b | insertId 1sdff3ad2xbn | 2026-08-24T00:49:23.063963430Z
+protocol_snapshot_manifest: 167ee1daa4bed7e01b5274891ee75200a83bcb9accf17fd7afd0b56a264d929e | insertId 1grf714e2cdlq | 2026-08-24T00:49:24.663920576Z
+
+Result: PASS (3/3 signing operations matched by exact target digest).

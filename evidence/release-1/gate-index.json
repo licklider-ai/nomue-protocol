@@ -196,21 +196,31 @@
     },
     {
       "gate_id": "R1-14",
-      "state": "open",
-      "decision": null,
+      "state": "closed",
+      "decision": "pass",
       "evidence": [
         "evidence/release-1/gates/R1-14/release-g2.pem",
         "evidence/release-1/gates/R1-14/release-key-fingerprint.txt",
         "evidence/release-1/gates/R1-14/release-key-metadata.txt",
         "evidence/release-1/gates/R1-14/pre-signing-state.md",
+        "evidence/release-1/gates/R1-14/release-signing-ceremony.md",
+        "evidence/release-1/gates/R1-14/release-signing-targets.json",
+        "evidence/release-1/gates/R1-14/release-checksums.json",
+        "evidence/release-1/gates/R1-14/protocol-snapshot-manifest.json",
+        "evidence/release-1/gates/R1-14/positive-verification.log",
+        "evidence/release-1/gates/R1-14/negative-verification.log",
+        "evidence/release-1/gates/R1-14/snapshot-equivalence-r.log",
+        "evidence/release-1/gates/R1-14/kms-audit-entries-final.json",
+        "evidence/release-1/gates/R1-14/kms-signing-audit-evidence.txt",
+        "evidence/release-1/gates/R1-14/hashes.sha256",
+        "evidence/release-1/gates/R1-14/close-record.md",
+        "evidence/release-1/decisions/2026-08-24-r1-14-final-steward-decision.md",
         "evidence/release-1/decisions/2026-08-24-c3-to-c7-gate-impact-review.md",
         "evidence/release-1/decisions/2026-08-24-c7-to-c8-gate-impact-review.md"
       ],
-      "open_deviations": [
-        "Candidate C8 requires a fresh release-g2 production signing ceremony against Candidate C8 and the final release source commit R."
-      ],
-      "reviewed_by": [],
-      "decided_at": null
+      "open_deviations": [],
+      "reviewed_by": ["Release Steward"],
+      "decided_at": "2026-08-24T01:10:13.279Z"
     }
   ]
 }
