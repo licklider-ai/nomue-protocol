@@ -1,0 +1,97 @@
+name: Release 1 unsigned signing bundle capture once
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  capture-signing-bundle:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 47eeafb0b2b096658cacf219bf5af867b687c6a7
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Verify exact release-source R
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "47eeafb0b2b096658cacf219bf5af867b687c6a7"
+          pnpm snapshot:manifest --check-public-boundary
+          pnpm snapshot:manifest --check-candidate
+          pnpm check
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const idx=JSON.parse(fs.readFileSync('evidence/release-1/gate-index.json','utf8'));
+          if(idx.release_candidate_id!=='83d07d03f27cec0c245cf836c042e5378733b0a2') throw new Error('Candidate C8 is not pinned');
+          const open=idx.gates.filter((g)=>g.state!=='closed'||g.decision!=='pass');
+          if(open.length!==1||open[0].gate_id!=='R1-14'||open[0].state!=='open'||open[0].decision!==null){
+            throw new Error(`expected only R1-14 open/null, got ${JSON.stringify(open.map((g)=>({id:g.gate_id,state:g.state,decision:g.decision})))}`);
+          }
+          NODE
+      - name: Build exact unsigned signing package from R
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/release1-signing-package"
+          INPUT="$RUNNER_TEMP/release1-signing-inputs"
+          mkdir -p "$OUT" "$INPUT"
+
+          git archive --format=tar.gz --output="$INPUT/source-archive.tar.gz" 47eeafb0b2b096658cacf219bf5af867b687c6a7
+          pnpm snapshot:manifest > "$INPUT/protocol-snapshot-manifest.json"
+          SNAPSHOT_HASH="$(pnpm snapshot:manifest --hash-only)"
+          test "$SNAPSHOT_HASH" = "sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06"
+
+          pnpm release:signing:prepare -- \
+            --archive "$INPUT/source-archive.tar.gz" \
+            --snapshot-manifest "$INPUT/protocol-snapshot-manifest.json" \
+            --candidate 83d07d03f27cec0c245cf836c042e5378733b0a2 \
+            --release-source 47eeafb0b2b096658cacf219bf5af867b687c6a7 \
+            --snapshot-hash "$SNAPSHOT_HASH" \
+            --out "$OUT/release-signing-bundle"
+
+          cp evidence/release-1/gates/R1-14/release-g2.pem "$OUT/release-g2.pem"
+          cp evidence/release-1/gates/R1-14/release-key-fingerprint.txt "$OUT/release-key-fingerprint.txt"
+          cp evidence/release-1/gates/R1-14/release-key-metadata.txt "$OUT/release-key-metadata.txt"
+
+          cat > "$OUT/IDENTITIES.txt" <<'EOF'
+          Candidate C: 83d07d03f27cec0c245cf836c042e5378733b0a2
+          Pin P: bed7823a011dc452989b9bbae94bd6b44aabb4bc
+          Release source R: 47eeafb0b2b096658cacf219bf5af867b687c6a7
+          Protocol snapshot: sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06
+          Release key: urn:nomue:release-key:g:2
+          KMS: projects/nomue-protocol/locations/asia-northeast1/keyRings/nomue-release/cryptoKeys/release-g2/cryptoKeyVersions/1
+          EOF
+
+          sha256sum \
+            "$OUT/release-signing-bundle/source-archive.tar.gz" \
+            "$OUT/release-signing-bundle/release-checksums.json" \
+            "$OUT/release-signing-bundle/protocol-snapshot-manifest.json" \
+            "$OUT/release-signing-bundle/release-signing-targets.json" \
+            "$OUT/release-g2.pem" > "$OUT/unsigned-package-sha256.txt"
+
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const checks=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/release1-signing-package/release-signing-bundle/release-checksums.json','utf8'));
+          const targets=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/release1-signing-package/release-signing-bundle/release-signing-targets.json','utf8'));
+          if(checks.manifest_version!=='1.1.0'||targets.manifest_version!=='1.1.0') throw new Error('signing manifests are not v1.1.0');
+          if(checks.candidate_content_commit!=='83d07d03f27cec0c245cf836c042e5378733b0a2'||checks.release_source_commit!=='47eeafb0b2b096658cacf219bf5af867b687c6a7') throw new Error('checksums identities mismatch');
+          if(targets.candidate_content_commit!=='83d07d03f27cec0c245cf836c042e5378733b0a2'||targets.release_source_commit!=='47eeafb0b2b096658cacf219bf5af867b687c6a7') throw new Error('targets identities mismatch');
+          if('final_release_commit' in checks||'final_release_commit' in targets) throw new Error('legacy final_release_commit field present');
+          if(targets.targets.length!==3) throw new Error('expected exactly three signing targets');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release1-c8-r-unsigned-signing-package
+          path: ${{ runner.temp }}/release1-signing-package/
+          if-no-files-found: error
+          retention-days: 90
