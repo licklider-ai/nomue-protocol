@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/release-1-gates.yaml (sha256:ce99cf0d715514d7953697652c5561b49b4d385e44c0024f2f8110aa577015a4)
+- authority/release-1-gates.yaml (sha256:a49b97a4c7218f80317a9a6cee9c31a05ce56b86749b117dddf1b052ceef1861)
 
 Generation command: pnpm generate
 -->

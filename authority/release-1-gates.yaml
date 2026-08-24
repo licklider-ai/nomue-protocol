@@ -350,4 +350,7 @@ gates:
       R2. Candidate C7 impact review: Prior production signatures bind Candidate
       C3 and its prior release source; Candidate C7 requires a fresh release-g2
       signing ceremony against C7/R7. Candidate C8 requires fresh production
-      signing against C8 and release source R8 before close."
+      signing against C8 and release source R8 before close. Pre-signing
+      cleanup: superseded Candidate C3 ceremony outputs were removed from the
+      current release-source tree. The release-g2 public key and key metadata
+      remain valid; fresh C8/R production signing evidence is required."
