@@ -1,0 +1,7 @@
+Release 1 C8/R negative signature verification
+Target: protocol-snapshot-manifest.json
+Method: one-byte change to a copied signed target; original signature and public key retained.
+Verifier exit code: 1
+Observed failure class: SHA-256 mismatch on the tampered Protocol snapshot target.
+Production target modified: no
+Result: PASS (tampered copy rejected)

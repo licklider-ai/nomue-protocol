@@ -1,0 +1,21 @@
+{
+  "manifest": "nomue-release-checksums",
+  "manifest_version": "1.1.0",
+  "candidate_content_commit": "83d07d03f27cec0c245cf836c042e5378733b0a2",
+  "release_source_commit": "47eeafb0b2b096658cacf219bf5af867b687c6a7",
+  "protocol_snapshot_hash": "sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06",
+  "artifacts": [
+    {
+      "role": "source_archive",
+      "file": "source-archive.tar.gz",
+      "sha256": "sha256:21e9c564a37b15e26785d8240c2e4c37291322b71f163f12ba36bfb0bdca968e",
+      "size": 819811
+    },
+    {
+      "role": "protocol_snapshot_manifest",
+      "file": "protocol-snapshot-manifest.json",
+      "sha256": "sha256:167ee1daa4bed7e01b5274891ee75200a83bcb9accf17fd7afd0b56a264d929e",
+      "size": 13141
+    }
+  ]
+}

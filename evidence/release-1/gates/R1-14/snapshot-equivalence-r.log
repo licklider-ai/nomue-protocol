@@ -1,0 +1,8 @@
+Release 1 signed Protocol snapshot to release-source R equivalence
+Candidate C: 83d07d03f27cec0c245cf836c042e5378733b0a2
+Release source R: 47eeafb0b2b096658cacf219bf5af867b687c6a7
+Signed Protocol snapshot hash: sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06
+Matched paths: 83/83
+Missing paths: 0
+Digest mismatches: 0
+Result: PASS

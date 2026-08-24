@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/release-1-gates.yaml (sha256:a49b97a4c7218f80317a9a6cee9c31a05ce56b86749b117dddf1b052ceef1861)
+- authority/release-1-gates.yaml (sha256:65a81c1ba2cdf46a22ba425bb18e90abdad3c8c5775e69f1dba8cf63b4280f79)
 
 Generation command: pnpm generate
 -->
@@ -30,4 +30,4 @@ Registry version: 0.2.0 (updated 2026-08-24)
 | R1-11 | Cryptosuite and trust semantics | closed | pass | security, core_semantics |
 | R1-12 | Legal implementation boundary | closed | pass | legal, rights |
 | R1-13 | Relying-party interface documentation | closed | pass | core_semantics |
-| R1-14 | Release signing | open | - | security, evidence_integrity |
+| R1-14 | Release signing | closed | pass | security, evidence_integrity |

@@ -323,8 +323,8 @@ gates:
       separate from attestation identity, with documented verification and
       generation-managed key custody before public publication.
     applicability: Applies to every Release 1 candidate.
-    state: open
-    decision: null
+    state: closed
+    decision: pass
     required_evidence:
       - Release signing plan document (key separation, targets, verification
         procedure, key generation management).
@@ -339,18 +339,11 @@ gates:
     related_requirement_ids:
       - NRS-ATTEST-0006
       - NRS-ATTEST-0008
-    notes: "Candidate C3 production signing used release-g2 (ECDSA P-256 / SHA-256)
-      over the exact source archive, release checksums, and Protocol snapshot
-      manifest. Positive verification passed for all three targets, negative
-      verification failed closed, and three Cloud KMS AsymmetricSign audit
-      entries were captured. PR #50 merged the redacted evidence at cc49ed7;
-      final-head candidate-equivalence and public-boundary checks passed in
-      workflow run 32637780255. Founder/CEO, acting as Release 1 Steward,
-      approved R1-14 as pass on 2026-08-23. SLSA provenance remains reserved for
-      R2. Candidate C7 impact review: Prior production signatures bind Candidate
-      C3 and its prior release source; Candidate C7 requires a fresh release-g2
-      signing ceremony against C7/R7. Candidate C8 requires fresh production
-      signing against C8 and release source R8 before close. Pre-signing
-      cleanup: superseded Candidate C3 ceremony outputs were removed from the
-      current release-source tree. The release-g2 public key and key metadata
-      remain valid; fresh C8/R production signing evidence is required."
+    notes: Candidate C8 production signing completed on 2026-08-24 using release-g2
+      (ECDSA P-256 / SHA-256). The exact R source archive, release checksums,
+      and Protocol snapshot manifest retained their fixed hashes and sizes; all
+      three signatures verified; a tampered copy was rejected; signed-snapshot
+      equivalence passed 83/83; and three current Cloud KMS AsymmetricSign audit
+      entries matched the three target digests. The public audit copy removes
+      callerIp and callerSuppliedUserAgent. SLSA provenance remains reserved for
+      R2.
