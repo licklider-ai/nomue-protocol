@@ -463,24 +463,28 @@ Independent numerical evidence should include:
 
 ## Proposed implementation sequence
 
-1. complete adversarial-review repairs on this design draft and merge the informative
-   checkpoint;
-2. adopt one governance decision covering the successor `contract` identity family,
-   direct `analysis.contract_id` binding, legacy `method_id` coexistence, and the
-   scalable capability-scoped Requirement-ID namespace grammar;
+Architecture prerequisites 1 and 2 are complete: the informative checkpoint was
+reviewed, and ADR-0032 adopted the `contract` family, direct
+`analysis.contract_id` binding, legacy `method_id` coexistence, and the extensible
+capability-scoped Requirement-ID grammar. These decisions did not issue a paired-t
+identifier or Requirement ID.
+
+The remaining sequence is:
+
+1. open and decide the public paired-t vertical-slice RFC;
+2. ratify the capability namespace tokens and permanent identifier spellings;
 3. issue the normative paired-design Profile and paired-t Analysis Contract with the
    new Requirement-ID grammar;
-4. mint the owned HTTPS Contract/Profile identifiers;
-5. define the successor schema and positive/negative structural fixtures, including
+4. define the successor schema and positive/negative structural fixtures, including
    complete-pair and repeated-measurement consistency rules;
-6. define Profile admissibility and computability reason codes;
-7. derive/verify the bounded integer-df numerical procedure and certified 95%
+5. define Profile admissibility and computability reason codes;
+6. derive/verify the bounded integer-df numerical procedure and certified 95%
    critical-value table;
-8. issue the Public Check and quantity-specific comparison semantics, explicitly
+7. issue the Public Check and quantity-specific comparison semantics, explicitly
    stating the hierarchical guarantee class and validated-vs-bounded evidence scope;
-9. add independent oracle evidence and conformance vectors;
-10. implement the reference verifier on the new exact bundle;
-11. evaluate L2/L3 maturity and publication-ready boundary separately.
+8. add independent oracle evidence and conformance vectors;
+9. implement the reference verifier on the new exact bundle;
+10. evaluate L2/L3 maturity and publication-ready boundary separately.
 
 No current Welch bundle, schema, check, or result meaning changes as part of this
 draft.
