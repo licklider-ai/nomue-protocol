@@ -24,6 +24,9 @@ verifier. The candidate Record schema reuses the existing legacy JCS canonicaliz
 and common-identifier schema by exact identifier. Reuse is not aliasing, and no HTTPS
 replacement is proposed for either legacy identifier.
 
+Every candidate token, spelling, field, and fixture disposition remains replaceable
+until ratification. Updating this draft PR is not issuance.
+
 Numerical fields in the fixture Record are illustrative payload values only. The
 fixture manifest asserts schema validity and non-numerical relationship outcomes; it
 does not assert any p-value, interval endpoint, tolerance, or supported numerical
