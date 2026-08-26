@@ -1,8 +1,12 @@
 # Release 2 Steward Ratification Package
 
-**Status: Informative decision-preparation package.** Nothing in this file issues an
-identifier, allocates a Requirement namespace, freezes a numerical contract, opens a
-public RFC window, or authorizes publication.
+**Status: Informative decision-preparation package; public review open.** The
+Release 2 RFC review is recorded in
+<https://github.com/licklider-ai/nomue-protocol/issues/25>. It opened at
+`2026-08-26T20:52:54Z`, and its earliest decision timestamp is
+`2026-09-25T20:52:54Z`. Nothing in this file issues an identifier, allocates a
+Requirement namespace, freezes a numerical contract, registers support, or
+authorizes publication.
 
 ## Completed reversible groundwork
 
@@ -22,16 +26,22 @@ public RFC window, or authorizes publication.
 
 ## Ratification sequence
 
-The items below should be decided in order. A later item does not become eligible
-merely because an earlier item is approved.
+The items below should be decided in order. Inputs and candidate implementations for
+later items may be prepared in parallel during public review, but preparation does
+not make an item approved, issue permanent meaning, or authorize authoritative
+landing.
 
 ### R2-D1 — RFC scope and discussion opening
 
-Decision: whether to open the paired-t vertical-slice RFC with STABLE-INTENT as the
+Disposition: **OPENED**. The paired-t vertical-slice RFC has STABLE-INTENT as the
 highest affected tier and a 30-day minimum discussion window.
 
-Approval authorizes public discussion only. It does not authorize identifier minting
-or authoritative implementation.
+The discussion is <https://github.com/licklider-ai/nomue-protocol/issues/25>. The
+window opened at `2026-08-26T20:52:54Z`; the earliest decision timestamp is
+`2026-09-25T20:52:54Z`.
+
+Opening authorizes public review and candidate development only. It does not
+authorize identifier minting, registered support, or authoritative landing.
 
 ### R2-D2 — Requirement namespace allocation
 
@@ -97,8 +107,9 @@ Inputs required before approval:
 - a numerical reviewer disposition independent of the implementation authoring
   context.
 
-This is the hard stop for the current implementation batch. No Public Check or
-expected numeric conformance value is frozen before R2-D5 approval.
+This is the hard stop for authoritative numerical meaning, not for candidate
+development. A candidate Public Check and expected conformance values may be
+prepared and tested, but none is frozen or issued before R2-D5 approval.
 
 ### R2-D6 — Release Candidate scope
 
@@ -116,14 +127,16 @@ Inputs required before approval:
 
 ## Current stop condition
 
-Work may continue on disposable spike refactoring, validator hardening, fixture/oracle
-tool scaffolding that pins no expectations, and RFC discussion repairs. Work stops
-before:
+Work may continue on the complete candidate change set in public draft branches,
+including normative text, validators, schemas, fixtures, oracle evidence, candidate
+expectations, Public Check definitions, and reference verifier code. Candidate
+identifiers stay marked unissued, and candidate verifier paths do not register or
+claim support. Work stops before authoritative landing that would:
 
-- registering a capability namespace;
-- inserting a permanent HTTPS identifier into an authoritative artifact;
-- changing a schema or public contract surface;
-- adding a supported interpretation bundle;
-- adding a normative paired-t clause or Requirement ID;
-- pinning a numerical tolerance, critical value, support bound, or expected result;
-- declaring a Release 2 candidate.
+- register a capability namespace;
+- issue a permanent HTTPS identifier in an authoritative artifact;
+- change an authoritative schema or public contract surface;
+- add a supported interpretation bundle;
+- issue a normative paired-t clause or Requirement ID;
+- freeze a numerical tolerance, critical value, support bound, or expected result;
+- declare a Release 2 candidate.
