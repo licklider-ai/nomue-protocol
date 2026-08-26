@@ -93,7 +93,7 @@ remain coupled as required by `AUTHORITY.md`.
 | -------------- | --------------- | ---------------- |
 | EXPERIMENTAL   | 7 days          | 7 days           |
 | STABLE-INTENT  | 30 days         | 14 days          |
-| CORE           | 60 days         | 30 days           |
+| CORE           | 60 days         | 30 days          |
 
 Fourteen days provides two full calendar weeks for STABLE-INTENT review. The IETF
 standards process uses a two-week minimum Last Call for its ordinary working-group
