@@ -1,9 +1,15 @@
 # Draft RFC: Continuous Feedback and Bounded Public Review
 
-**Status: Informative RFC draft being prepared for public review.** This file
-does not change `governance/RFC.md`, the stability-tier registry, or any current
-discussion window. The public discussion issue and exact review timestamps will
-be recorded before this draft is merged.
+**Status: Public review open.** This remains an informative proposal and does
+not change `governance/RFC.md`, the stability-tier registry, or any current
+discussion window.
+
+- Discussion: <https://github.com/licklider-ai/nomue-protocol/issues/26>
+- Opened: `2026-08-26T20:53:12Z` (`2026-08-27T05:53:12+09:00`)
+- Earliest decision: `2026-10-25T20:53:12Z`
+  (`2026-10-26T05:53:12+09:00`)
+- Highest affected tier: CORE
+- Current applicable minimum: 60 calendar days
 
 ## Summary
 
