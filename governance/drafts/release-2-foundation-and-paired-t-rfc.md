@@ -1,9 +1,20 @@
 # Draft RFC: Release 2 Foundation and Paired-t Vertical Slice
 
-**Status: Informative RFC draft; public discussion has not started.** This draft
-does not issue identifiers, Requirement IDs, schemas, Public Checks, conformance
-expectations, or supported bundles. Approval and the applicable public-discussion
-window are required before an authoritative implementation batch starts.
+**Status: Public review open.** This remains an informative proposal and does
+not issue identifiers, Requirement IDs, schemas, Public Checks, conformance
+expectations, or supported bundles.
+
+- Discussion: <https://github.com/licklider-ai/nomue-protocol/issues/25>
+- Opened: `2026-08-26T20:52:54Z` (`2026-08-27T05:52:54+09:00`)
+- Earliest decision: `2026-09-25T20:52:54Z`
+  (`2026-09-26T05:52:54+09:00`)
+- Highest affected tier: STABLE-INTENT
+- Current applicable minimum: 30 calendar days
+
+Candidate implementation may proceed in public draft branches during review after
+the applicable Research Gate has been satisfied. A decision after the minimum
+window is required before permanent meaning is issued, support is registered, or
+the authoritative change set lands.
 
 ## Summary
 
@@ -58,6 +69,19 @@ classes together:
 10. authority-manifest assignments and regenerated views.
 
 No item in this list is changed by this draft.
+
+## Candidate development during review
+
+The review window is not a development freeze. Candidate normative text, namespace
+tokens, exact identifier spellings, schemas, fixtures, independent oracle artifacts,
+Public Check definitions, and reference implementation code may be prepared and
+tested in public draft branches. Candidate identifiers remain explicitly unissued,
+and candidate verifier paths do not register or claim Protocol support.
+
+Editorial clarification, implementation progress, and additional evidence that
+preserve the reviewed semantic scope do not restart the review window. A material
+scope expansion or semantic change restarts it. Until a final decision is recorded,
+no candidate work may land as the authoritative Release 2 change set.
 
 ## Semantic scope
 
@@ -146,8 +170,10 @@ CORE clause must change rather than merely receive an additive implementation, t
 RFC is reclassified to CORE before decision.
 
 Under the current tier registry, the highest presently proposed tier is
-STABLE-INTENT, so the minimum public-discussion window is 30 days. This draft does not
-start that window.
+STABLE-INTENT, so the minimum public-discussion window is 30 days. The window opened
+at `2026-08-26T20:52:54Z`; a decision may be recorded no earlier than
+`2026-09-25T20:52:54Z`. There is no participation quorum. Zero external comments
+will be recorded as such and will not be described as community consensus.
 
 ## Alternatives rejected by this proposal
 
@@ -162,8 +188,9 @@ start that window.
 
 ## Decision requested
 
-The steward is asked to approve only the scope and public-discussion opening for this
-RFC. Permanent identifier spellings, namespace tokens, schema/bundle versions,
-support bounds, critical values, tolerances, and Release 2 publication scope are
-separate ratification items in
-`governance/drafts/release-2-steward-ratification-package.md`.
+At or after the earliest decision timestamp, the steward is asked to accept, revise,
+defer, or reject the reviewed scope with recorded rationale. Permanent identifier
+spellings, namespace tokens, schema/bundle versions, support bounds, critical values,
+tolerances, and Release 2 publication scope remain separate ratification items in
+`governance/drafts/release-2-steward-ratification-package.md`; candidate preparation
+for those items may proceed during review without issuing them.
