@@ -37,6 +37,18 @@ function spelling(candidate: UnissuedIdentifierCandidate): string {
   return `https://nomue.ai/id/${candidate.family}/${candidate.name}/${candidate.revision}`;
 }
 
+function isRepositorySchemaPath(value: string): boolean {
+  const segments = value.split("/");
+  if (segments.length < 2 || segments[0] !== "schemas") return false;
+  if (segments.some((segment) => segment === "" || segment === "." || segment === "..")) {
+    return false;
+  }
+  if (segments.slice(1, -1).some((segment) => !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(segment))) {
+    return false;
+  }
+  return /^[A-Za-z0-9][A-Za-z0-9._-]*\.schema\.json$/.test(segments.at(-1) ?? "");
+}
+
 function checkCandidate(
   errors: string[],
   label: string,
@@ -79,7 +91,7 @@ export function validateInterpretationBundleVNextSpike(
   if (candidate.schemas.length === 0) errors.push("at least one schema binding is required");
   candidate.schemas.forEach((entry, index) => {
     checkCandidate(errors, `schemas[${index}].identifier`, entry.identifier, "schema");
-    if (!/^schemas\/[A-Za-z0-9][A-Za-z0-9._/-]*\.schema\.json$/.test(entry.repositoryPath)) {
+    if (!isRepositorySchemaPath(entry.repositoryPath)) {
       errors.push(`schemas[${index}].repositoryPath is not a repository schema path`);
     }
   });

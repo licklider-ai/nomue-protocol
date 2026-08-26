@@ -91,6 +91,67 @@ describe("non-authoritative paired-t spike", () => {
     expect(outcome).toMatchObject({ ok: false, error: "INCOMPLETE_PAIR" });
   });
 
+  it("rejects an unrecognized repeated-measurements declaration at runtime", () => {
+    const outcome = computePairedTSpike({
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "typo" as never,
+      observations,
+    });
+    expect(outcome).toMatchObject({
+      ok: false,
+      error: "INVALID_REPEATED_MEASUREMENTS_DECLARATION",
+    });
+  });
+
+  it.each(["none", "within_pair_only"] as const)(
+    "rejects reuse of one experimental unit across pairs under %s",
+    (repeatedMeasurements) => {
+      const unit = (pairId: string, member: "first" | "second"): string => {
+        if (repeatedMeasurements === "within_pair_only") return "reused-unit";
+        if (member === "first") return "reused-unit";
+        return `${pairId}-other-unit`;
+      };
+      const outcome = computePairedTSpike({
+        conditionOrder: ["before", "after"],
+        repeatedMeasurements,
+        observations: [
+          {
+            observationId: "b1",
+            experimentalUnitId: unit("p1", "first"),
+            pairId: "p1",
+            conditionId: "before",
+            outcomeValue: 2,
+          },
+          {
+            observationId: "a1",
+            experimentalUnitId: unit("p1", "second"),
+            pairId: "p1",
+            conditionId: "after",
+            outcomeValue: 1,
+          },
+          {
+            observationId: "b2",
+            experimentalUnitId: unit("p2", "first"),
+            pairId: "p2",
+            conditionId: "before",
+            outcomeValue: 4,
+          },
+          {
+            observationId: "a2",
+            experimentalUnitId: unit("p2", "second"),
+            pairId: "p2",
+            conditionId: "after",
+            outcomeValue: 2,
+          },
+        ],
+      });
+      expect(outcome).toMatchObject({
+        ok: false,
+        error: "EXPERIMENTAL_UNIT_REUSED_ACROSS_PAIRS",
+      });
+    },
+  );
+
   it("fails closed when all paired differences are identical", () => {
     const outcome = computePairedTSpike({
       conditionOrder: ["before", "after"],
@@ -127,5 +188,43 @@ describe("non-authoritative paired-t spike", () => {
       ],
     });
     expect(outcome).toMatchObject({ ok: false, error: "ZERO_DIFFERENCE_VARIANCE" });
+  });
+
+  it("does not misreport binary64 variance collapse as identical differences", () => {
+    const outcome = computePairedTSpike({
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "none",
+      observations: [
+        {
+          observationId: "b1",
+          experimentalUnitId: "u1",
+          pairId: "p1",
+          conditionId: "before",
+          outcomeValue: Number.MIN_VALUE,
+        },
+        {
+          observationId: "a1",
+          experimentalUnitId: "u2",
+          pairId: "p1",
+          conditionId: "after",
+          outcomeValue: 0,
+        },
+        {
+          observationId: "b2",
+          experimentalUnitId: "u3",
+          pairId: "p2",
+          conditionId: "before",
+          outcomeValue: 0,
+        },
+        {
+          observationId: "a2",
+          experimentalUnitId: "u4",
+          pairId: "p2",
+          conditionId: "after",
+          outcomeValue: 0,
+        },
+      ],
+    });
+    expect(outcome).toMatchObject({ ok: false, error: "NON_FINITE_INTERMEDIATE" });
   });
 });

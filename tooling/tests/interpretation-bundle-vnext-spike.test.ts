@@ -44,4 +44,16 @@ describe("Interpretation Bundle vNext non-authoritative spike", () => {
     invalid.status = "supported" as never;
     expect(validateInterpretationBundleVNextSpike(invalid).ok).toBe(false);
   });
+
+  it.each([
+    "schemas/a/../../outside.schema.json",
+    "schemas/a//outside.schema.json",
+    "schemas/a/./outside.schema.json",
+  ])("rejects an unsafe repository schema path: %s", (repositoryPath) => {
+    const invalid = structuredClone(BASE);
+    invalid.schemas[0]!.repositoryPath = repositoryPath;
+    const result = validateInterpretationBundleVNextSpike(invalid);
+    expect(result.ok).toBe(false);
+    expect(result.errors.join("\n")).toContain("is not a repository schema path");
+  });
 });

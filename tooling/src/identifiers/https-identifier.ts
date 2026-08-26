@@ -40,12 +40,13 @@ export type HttpsIdentifierValidation =
   | { ok: false; errors: HttpsIdentifierErrorCode[] };
 
 const KEBAB_CASE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const VISIBLE_ASCII_SEGMENT = /^[\x21-\x7e]+$/;
+const RFC3986_PATH_SEGMENT_WITHOUT_PERCENT_ENCODING = /^[-A-Za-z0-9._~!$&'()*+,;=:@]+$/;
 
 /**
  * Validate the canonical lexical form fixed by ADR-0031 and the recognized
  * family set extended by ADR-0032. Revision-family policy remains separate;
- * this function only enforces a non-empty visible-ASCII path token.
+ * this function only enforces one non-empty RFC 3986 path segment without
+ * percent-encoding.
  */
 export function validateProtocolHttpsIdentifier(value: unknown): HttpsIdentifierValidation {
   if (typeof value !== "string") return { ok: false, errors: ["NOT_STRING"] };
@@ -71,10 +72,9 @@ export function validateProtocolHttpsIdentifier(value: unknown): HttpsIdentifier
   if (KEBAB_CASE.test(family) && !recognized) errors.push("UNRECOGNIZED_FAMILY");
   if (!KEBAB_CASE.test(name)) errors.push("INVALID_NAME");
   if (
-    !VISIBLE_ASCII_SEGMENT.test(revision) ||
+    !RFC3986_PATH_SEGMENT_WITHOUT_PERCENT_ENCODING.test(revision) ||
     revision === "." ||
-    revision === ".." ||
-    /[/?#%]/.test(revision)
+    revision === ".."
   ) {
     errors.push("INVALID_REVISION");
   }

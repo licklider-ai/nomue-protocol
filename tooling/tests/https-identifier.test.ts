@@ -28,6 +28,9 @@ describe("ADR-0031/ADR-0032 HTTPS identifier minting validator", () => {
     "https://nomue.ai/id/Schema/record/1",
     "https://nomue.ai/id/schema/Record/1",
     "https://nomue.ai/id/not-adopted/example/1",
+    "https://nomue.ai/id/contract/paired-t/bad\\revision",
+    'https://nomue.ai/id/contract/paired-t/bad"revision',
+    "https://nomue.ai/id/contract/paired-t/bad<revision",
   ])("rejects non-canonical or unrecognized spelling: %s", (value) => {
     expect(validateProtocolHttpsIdentifier(value).ok).toBe(false);
     expect(isProtocolHttpsIdentifier(value)).toBe(false);

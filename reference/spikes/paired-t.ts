@@ -25,12 +25,14 @@ export interface PairedTSpikeInput {
 
 export type PairedTSpikeErrorCode =
   | "INVALID_CONDITION_ORDER"
+  | "INVALID_REPEATED_MEASUREMENTS_DECLARATION"
   | "DUPLICATE_OBSERVATION_ID"
   | "NON_FINITE_OUTCOME"
   | "UNKNOWN_CONDITION"
   | "INCOMPLETE_PAIR"
   | "DUPLICATE_PAIR_CONDITION"
   | "EXPERIMENTAL_UNIT_DECLARATION_MISMATCH"
+  | "EXPERIMENTAL_UNIT_REUSED_ACROSS_PAIRS"
   | "PAIR_COUNT_BELOW_TWO"
   | "ZERO_DIFFERENCE_VARIANCE"
   | "NON_FINITE_INTERMEDIATE";
@@ -72,8 +74,12 @@ export function computePairedTSpike(input: PairedTSpikeInput): PairedTSpikeOutco
   ) {
     return fail("INVALID_CONDITION_ORDER");
   }
+  if (input.repeatedMeasurements !== "none" && input.repeatedMeasurements !== "within_pair_only") {
+    return fail("INVALID_REPEATED_MEASUREMENTS_DECLARATION");
+  }
 
   const observationIds = new Set<string>();
+  const experimentalUnitPairs = new Map<string, string>();
   const pairs = new Map<string, PairMembers>();
   for (const observation of input.observations) {
     if (observationIds.has(observation.observationId)) {
@@ -89,6 +95,14 @@ export function computePairedTSpike(input: PairedTSpikeInput): PairedTSpikeOutco
         observationId: observation.observationId,
       });
     }
+    const existingPairId = experimentalUnitPairs.get(observation.experimentalUnitId);
+    if (existingPairId !== undefined && existingPairId !== observation.pairId) {
+      return fail("EXPERIMENTAL_UNIT_REUSED_ACROSS_PAIRS", {
+        pairId: observation.pairId,
+        observationId: observation.observationId,
+      });
+    }
+    experimentalUnitPairs.set(observation.experimentalUnitId, observation.pairId);
 
     const members = pairs.get(observation.pairId) ?? {};
     const key = observation.conditionId === firstCondition ? "first" : "second";
@@ -121,13 +135,16 @@ export function computePairedTSpike(input: PairedTSpikeInput): PairedTSpikeOutco
   }
 
   const nPairs = differences.length;
+  if (differences.every((value) => value === differences[0])) {
+    return fail("ZERO_DIFFERENCE_VARIANCE");
+  }
   const meanDifference = differences.reduce((sum, value) => sum + value, 0) / nPairs;
   const centeredSumSquares = differences.reduce(
     (sum, value) => sum + (value - meanDifference) ** 2,
     0,
   );
   const sampleVarianceDifference = centeredSumSquares / (nPairs - 1);
-  if (sampleVarianceDifference === 0) return fail("ZERO_DIFFERENCE_VARIANCE");
+  if (sampleVarianceDifference === 0) return fail("NON_FINITE_INTERMEDIATE");
   const standardError = Math.sqrt(sampleVarianceDifference / nPairs);
   const testStatistic = meanDifference / standardError;
   if (

@@ -10,9 +10,10 @@
 
 import { createHash, createPublicKey, verify as verifyDetachedSignature } from "node:crypto";
 import * as fs from "node:fs";
+import { parse as parseYaml } from "yaml";
 import { jcsCanonicalize } from "../../../reference/verifier/src/jcs.js";
 import { DIGEST_DOMAIN_TAGS, sha256HexOfUtf8 } from "../../../reference/verifier/src/digest.js";
-import { absPath, exists, loadJson, loadYaml, readText, type Issue } from "../lib/repo.js";
+import { absPath, type Issue } from "../lib/repo.js";
 import {
   RELEASE1_BUNDLE_ENTRY_SHA256,
   RELEASE1_CHECK_ENTRY_SHA256,
@@ -29,6 +30,7 @@ import {
   type CandidateFreezeManifest,
   type SnapshotManifest,
 } from "./snapshot-manifest.js";
+import { releasePublicKeyFingerprint } from "./release-signing.js";
 
 const RELEASE_EVIDENCE_DIR = "evidence/release-1/gates/R1-14";
 const RELEASE_CHECKSUMS_PATH = `${RELEASE_EVIDENCE_DIR}/release-checksums.json`;
@@ -37,6 +39,20 @@ const PUBLIC_KEY_PATH = `${RELEASE_EVIDENCE_DIR}/release-g2.pem`;
 const CANDIDATE_FREEZE_PATH = "evidence/release-1/candidate-freeze-manifest.json";
 const EXPECTED_SNAPSHOT_HASH =
   "sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06";
+const EXPECTED_RELEASE_KEY_FINGERPRINT =
+  "sha256:07d6ce902794edb9e94800407f93505c4c9cc01f150f4963c07c00966634b3fe";
+const EXPECTED_CANDIDATE_FREEZE_SHA256 =
+  "sha256:41bd4861d544aeef6fff63f27086aa8e4a2ac97de6a37bb86a9709a8afd9a1d2";
+
+export interface Release1HistorySource {
+  exists(path: string): boolean;
+  readBytes(path: string): Uint8Array;
+}
+
+const REPOSITORY_SOURCE: Release1HistorySource = {
+  exists: (path) => fs.existsSync(absPath(path)),
+  readBytes: (path) => fs.readFileSync(absPath(path)),
+};
 
 interface ReleaseChecksums {
   manifest: string;
@@ -85,13 +101,26 @@ function sha256(bytes: Uint8Array): string {
   return `sha256:${createHash("sha256").update(bytes).digest("hex")}`;
 }
 
+function sourceText(source: Release1HistorySource, path: string): string {
+  return Buffer.from(source.readBytes(path)).toString("utf8");
+}
+
+function sourceJson<T>(source: Release1HistorySource, path: string): T {
+  return JSON.parse(sourceText(source, path)) as T;
+}
+
+function sourceYaml<T>(source: Release1HistorySource, path: string): T {
+  return parseYaml(sourceText(source, path)) as T;
+}
+
 function signatureIsValid(
+  source: Release1HistorySource,
   targetPath: string,
   signaturePath: string,
   publicKeyPem: string,
 ): boolean {
-  const target = fs.readFileSync(absPath(targetPath));
-  const signature = Buffer.from(readText(signaturePath).trim(), "base64");
+  const target = source.readBytes(targetPath);
+  const signature = Buffer.from(sourceText(source, signaturePath).trim(), "base64");
   return verifyDetachedSignature("sha256", target, createPublicKey(publicKeyPem), signature);
 }
 
@@ -133,16 +162,22 @@ function checkEntryFingerprints<T extends Record<string, unknown>>(
 }
 
 /** Validate the immutable parts of the published Release 1 history. */
-export function checkRelease1HistoricalIntegrity(): Issue[] {
+export function checkRelease1HistoricalIntegrity(
+  source: Release1HistorySource = REPOSITORY_SOURCE,
+): Issue[] {
   const issues: Issue[] = [];
   let checksums: ReleaseChecksums;
   let snapshot: PublishedSnapshotManifest;
   let freeze: CandidateFreezeManifest;
+  let freezeBytes: Uint8Array;
+  let publicKey: string;
 
   try {
-    checksums = loadJson<ReleaseChecksums>(RELEASE_CHECKSUMS_PATH);
-    snapshot = loadJson<PublishedSnapshotManifest>(SNAPSHOT_PATH);
-    freeze = loadJson<CandidateFreezeManifest>(CANDIDATE_FREEZE_PATH);
+    checksums = sourceJson<ReleaseChecksums>(source, RELEASE_CHECKSUMS_PATH);
+    snapshot = sourceJson<PublishedSnapshotManifest>(source, SNAPSHOT_PATH);
+    freezeBytes = source.readBytes(CANDIDATE_FREEZE_PATH);
+    freeze = JSON.parse(Buffer.from(freezeBytes).toString("utf8")) as CandidateFreezeManifest;
+    publicKey = sourceText(source, PUBLIC_KEY_PATH);
   } catch (error) {
     return [
       {
@@ -152,10 +187,34 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     ];
   }
 
-  const publicKey = readText(PUBLIC_KEY_PATH);
+  try {
+    const fingerprint = releasePublicKeyFingerprint(publicKey);
+    if (fingerprint !== EXPECTED_RELEASE_KEY_FINGERPRINT) {
+      issues.push({
+        check: "release-1-history",
+        file: PUBLIC_KEY_PATH,
+        message: `Release 1 signing-key fingerprint changed (${EXPECTED_RELEASE_KEY_FINGERPRINT} != ${fingerprint})`,
+      });
+    }
+  } catch (error) {
+    issues.push({
+      check: "release-1-history",
+      file: PUBLIC_KEY_PATH,
+      message: `Release 1 signing key could not be fingerprinted: ${String(error)}`,
+    });
+  }
+  const freezeSha256 = sha256(freezeBytes);
+  if (freezeSha256 !== EXPECTED_CANDIDATE_FREEZE_SHA256) {
+    issues.push({
+      check: "release-1-history",
+      file: CANDIDATE_FREEZE_PATH,
+      message: `Release 1 candidate-freeze evidence bytes changed (${EXPECTED_CANDIDATE_FREEZE_SHA256} != ${freezeSha256})`,
+    });
+  }
+
   for (const target of [RELEASE_CHECKSUMS_PATH, SNAPSHOT_PATH]) {
     try {
-      if (!signatureIsValid(target, `${target}.sig`, publicKey)) {
+      if (!signatureIsValid(source, target, `${target}.sig`, publicKey)) {
         issues.push({
           check: "release-1-history",
           file: target,
@@ -210,7 +269,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
   const snapshotArtifact = checksums.artifacts.find(
     (artifact) => artifact.role === "protocol_snapshot_manifest",
   );
-  const snapshotBytes = fs.readFileSync(absPath(SNAPSHOT_PATH));
+  const snapshotBytes = source.readBytes(SNAPSHOT_PATH);
   if (
     snapshotArtifact === undefined ||
     snapshotArtifact.sha256 !== sha256(snapshotBytes) ||
@@ -231,7 +290,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
   }
 
   for (const entry of snapshot.files.filter((item) => item.path.startsWith("schemas/"))) {
-    if (!exists(entry.path)) {
+    if (!source.exists(entry.path)) {
       issues.push({
         check: "release-1-history",
         file: entry.path,
@@ -239,7 +298,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
       });
       continue;
     }
-    const actual = snapshotTextSha256(readText(entry.path));
+    const actual = snapshotTextSha256(sourceText(source, entry.path));
     if (actual !== entry.sha256) {
       issues.push({
         check: "release-1-history",
@@ -255,7 +314,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
       item.path.startsWith("canonicalization/test-vectors/inputs/") ||
       item.path.startsWith("canonicalization/test-vectors/expected/"),
   )) {
-    if (!exists(entry.path)) {
+    if (!source.exists(entry.path)) {
       issues.push({
         check: "release-1-history",
         file: entry.path,
@@ -263,9 +322,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
       });
       continue;
     }
-    const actual = createHash("sha256")
-      .update(fs.readFileSync(absPath(entry.path)))
-      .digest("hex");
+    const actual = createHash("sha256").update(source.readBytes(entry.path)).digest("hex");
     if (actual !== entry.sha256) {
       issues.push({
         check: "release-1-history",
@@ -275,7 +332,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     }
   }
 
-  const bundles = loadYaml<BundleRegistry>("registries/interpretation-bundles.yaml");
+  const bundles = sourceYaml<BundleRegistry>(source, "registries/interpretation-bundles.yaml");
   checkEntryFingerprints(
     issues,
     "registries/interpretation-bundles.yaml",
@@ -284,7 +341,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     bundles.entries,
     (entry) => entry.bundle_id,
   );
-  const checks = loadYaml<CheckRegistry>("registries/public-checks.yaml");
+  const checks = sourceYaml<CheckRegistry>(source, "registries/public-checks.yaml");
   checkEntryFingerprints(
     issues,
     "registries/public-checks.yaml",
@@ -293,7 +350,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     checks.checks,
     (entry) => entry.check_id,
   );
-  const surfaces = loadYaml<SurfaceRegistry>("registries/public-contract-surfaces.yaml");
+  const surfaces = sourceYaml<SurfaceRegistry>(source, "registries/public-contract-surfaces.yaml");
   checkEntryFingerprints(
     issues,
     "registries/public-contract-surfaces.yaml",
@@ -302,7 +359,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     surfaces.entries,
     (entry) => entry.surface_id,
   );
-  const vectors = loadYaml<VectorManifest>("canonicalization/test-vectors/manifest.yaml");
+  const vectors = sourceYaml<VectorManifest>(source, "canonicalization/test-vectors/manifest.yaml");
   checkEntryFingerprints(
     issues,
     "canonicalization/test-vectors/manifest.yaml",
@@ -311,7 +368,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     vectors.vectors,
     (entry) => entry.vector_id,
   );
-  const conformance = loadYaml<ConformanceManifest>("conformance/manifest.yaml");
+  const conformance = sourceYaml<ConformanceManifest>(source, "conformance/manifest.yaml");
   checkEntryFingerprints(
     issues,
     "conformance/manifest.yaml",
@@ -320,7 +377,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     conformance.families.flatMap((family) => family.fixtures),
     (entry) => entry.fixture_id,
   );
-  const reasonCodes = loadYaml<ReasonCodeRegistry>("registries/reason-codes.yaml");
+  const reasonCodes = sourceYaml<ReasonCodeRegistry>(source, "registries/reason-codes.yaml");
   checkEntryFingerprints(
     issues,
     "registries/reason-codes.yaml",
@@ -330,7 +387,7 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
     (entry) => entry.id,
     ({ applicable_check_ids: _applicableCheckIds, ...meaning }) => meaning,
   );
-  const requirements = loadYaml<RequirementRegistry>("registries/requirements.yaml");
+  const requirements = sourceYaml<RequirementRegistry>(source, "registries/requirements.yaml");
   checkEntryFingerprints(
     issues,
     "registries/requirements.yaml",
