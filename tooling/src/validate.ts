@@ -54,6 +54,7 @@ import { runPhase1Audits } from "./phase1/audits.js";
 import { runPhase1CrossChecks } from "./phase1/registry-cross-checks.js";
 import { compilePhase1Schemas } from "./phase1/schemas.js";
 import { checkSnapshotManifestMechanism } from "./release/snapshot-manifest.js";
+import { checkRelease1HistoricalIntegrity } from "./release/release-1-history.js";
 
 function schemaValidationIssues(): Issue[] {
   const issues: Issue[] = [];
@@ -223,10 +224,13 @@ function main(): void {
   issues.push(...runPhase1CrossChecks(requirements));
   issues.push(...runPhase1Audits());
 
-  // Snapshot manifest mechanism (NRS-VERSION-0001, gate R1-07): not a
-  // drift check against a frozen expectation (no Public Draft exists yet),
-  // but proof that the content-addressed snapshot manifest and hash can be
-  // produced right now against the current authoritative file set.
+  // Successor work is additive: signed Release 1 evidence, released schemas,
+  // fixture inputs, and issued repository identifiers remain historical facts.
+  issues.push(...checkRelease1HistoricalIntegrity());
+
+  // Snapshot manifest mechanism (NRS-VERSION-0001, gate R1-07): prove that a
+  // deterministic successor snapshot can be produced from the current
+  // authoritative file set. Release 1 drift is checked separately above.
   const snapshotCheck = checkSnapshotManifestMechanism();
   if (!snapshotCheck.ok) {
     issues.push({
