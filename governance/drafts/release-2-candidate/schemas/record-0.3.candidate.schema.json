@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/record/0.3.0-draft.1",
+  "$comment": "UNISSUED non-authoritative candidate for RFC issue 25. Presence here does not issue this identifier or register support.",
+  "title": "Release 2 paired-t nomue Record candidate",
+  "type": "object",
+  "required": [
+    "$schema",
+    "record_type",
+    "record_id",
+    "revision_id",
+    "created_at",
+    "interpretation_bundle_id",
+    "profile_id",
+    "payload",
+    "integrity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "const": "https://nomue.ai/id/schema/record/0.3.0-draft.1" },
+    "record_type": { "const": "nomue-record" },
+    "record_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "revision_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "created_at": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ"
+    },
+    "interpretation_bundle_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri",
+      "$comment": "Exact supported-bundle dispatch remains a pre-schema operation; this candidate does not register its bundle identifier."
+    },
+    "profile_id": {
+      "const": "https://nomue.ai/id/profile/paired-two-condition-continuous/0.1.0-draft.1"
+    },
+    "payload": {
+      "$ref": "https://nomue.ai/id/schema/paired-two-condition-continuous/0.1.0-draft.1"
+    },
+    "integrity": { "$ref": "#/$defs/integrity" }
+  },
+  "$defs": {
+    "integrity": {
+      "type": "object",
+      "required": ["canonicalization_id", "digest_algorithm", "digest_scope", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "canonicalization_id": {
+          "const": "urn:nomue:canonicalization:jcs:0.2.0-draft.1"
+        },
+        "digest_algorithm": { "const": "sha-256" },
+        "digest_scope": { "const": "record_without_integrity" },
+        "content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        }
+      }
+    }
+  }
+}

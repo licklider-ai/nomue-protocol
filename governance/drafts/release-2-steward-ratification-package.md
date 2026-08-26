@@ -21,6 +21,11 @@ authorizes publication.
   differences, mean, sample variance, standard error, t statistic, and integer
   degrees of freedom. It does not compute p-values or confidence intervals and does
   not define tolerances or support bounds.
+- A machine-readable Release 2 candidate surface under `release-2-candidate/`
+  proposes unissued Requirement namespace tokens and first IDs, exact unissued HTTPS
+  identifier spellings and bundle roles, closed Record/Profile schemas, and
+  hand-authored structural/relationship fixtures. The candidate is not loaded by the
+  reference verifier or any authoritative registry.
 - The proposed Release 2 scope is captured in
   `release-2-foundation-and-paired-t-rfc.md`.
 
@@ -55,7 +60,11 @@ Inputs required before approval:
 - confirmation that each token is scoped to exactly one enduring meaning;
 - the exact first Requirement IDs and their normative anchors.
 
-No candidate token is selected in this package.
+The non-authoritative candidate in
+`release-2-candidate/requirement-namespaces.json` proposes `PT` for the Contract and
+`PTCC` for the Profile, together with contiguous first Requirement candidates and
+future anchors. These values remain unissued and are inputs to the later decision,
+not a disposition of R2-D2.
 
 ### R2-D3 — Permanent Protocol identifiers
 
@@ -72,7 +81,11 @@ Inputs required before approval:
   that defines its meaning;
 - explicit legacy coexistence and non-alias statement.
 
-No valid permanent spelling is selected in this package.
+The non-authoritative candidate in
+`release-2-candidate/protocol-identifiers.json` proposes exact spellings, semantic
+owners, versioning policies, legacy reuse, and bundle-role bindings. Every entry is
+marked `unissued`; the candidate creates no `method` alias and does not dispose
+R2-D3.
 
 ### R2-D4 — Successor schema and bundle surface
 
@@ -89,6 +102,11 @@ Inputs required before approval:
   conformance, and verifier output;
 - migration matrix proving Release 1 exact dispatch is unchanged;
 - public-contract-surface version-impact table.
+
+The first closed Record/Profile schema candidates and their hand-authored fixtures
+are under `release-2-candidate/schemas/` and `release-2-candidate/fixtures/`. They are
+outside the authoritative schema and conformance directories. Output schemas, the
+migration matrix, and the version-impact table remain open R2-D4 inputs.
 
 ### R2-D5 — Numerical contract freeze
 

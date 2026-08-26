@@ -1,0 +1,187 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "identifiers": [
+    {
+      "key": "paired_t_contract",
+      "role": "analysis_contract",
+      "state": "unissued",
+      "family": "contract",
+      "name": "paired-t",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/contract/paired-t/0.1.0-draft.1",
+      "semantic_owner": "The future paired-t Analysis Contract specification.",
+      "versioning_policy": "A meaning-breaking Contract change receives a new revision and does not reinterpret this spelling."
+    },
+    {
+      "key": "paired_profile",
+      "role": "profile",
+      "state": "unissued",
+      "family": "profile",
+      "name": "paired-two-condition-continuous",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/profile/paired-two-condition-continuous/0.1.0-draft.1",
+      "semantic_owner": "The future paired two-condition continuous Profile specification.",
+      "versioning_policy": "A meaning-breaking Profile change receives a new revision and does not reinterpret this spelling."
+    },
+    {
+      "key": "record_schema",
+      "role": "record_schema",
+      "state": "unissued",
+      "family": "schema",
+      "name": "record",
+      "revision": "0.3.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/schema/record/0.3.0-draft.1",
+      "semantic_owner": "The future closed Release 2 Record JSON Schema.",
+      "versioning_policy": "Breaking Record-shape changes receive a new schema revision; legacy Record schemas remain unchanged."
+    },
+    {
+      "key": "profile_schema",
+      "role": "profile_schema",
+      "state": "unissued",
+      "family": "schema",
+      "name": "paired-two-condition-continuous",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/schema/paired-two-condition-continuous/0.1.0-draft.1",
+      "semantic_owner": "The future paired two-condition continuous payload JSON Schema.",
+      "versioning_policy": "Breaking payload-shape changes receive a new schema revision."
+    },
+    {
+      "key": "execution_outcome_schema",
+      "role": "execution_outcome_schema",
+      "state": "unissued",
+      "family": "schema",
+      "name": "execution-outcome",
+      "revision": "0.3.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1",
+      "semantic_owner": "The future Release 2 scoped check-result JSON Schema.",
+      "versioning_policy": "The schema changes when its check-result or paired-result evidence surface changes incompatibly."
+    },
+    {
+      "key": "verification_report_schema",
+      "role": "verification_report_schema",
+      "state": "unissued",
+      "family": "schema",
+      "name": "verification-report",
+      "revision": "0.3.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/schema/verification-report/0.3.0-draft.1",
+      "semantic_owner": "The future bundle-selected Release 2 verification-report JSON Schema.",
+      "versioning_policy": "The schema changes when its report surface changes incompatibly; it never introduces an overall verdict."
+    },
+    {
+      "key": "paired_t_bundle",
+      "role": "interpretation_bundle",
+      "state": "unissued",
+      "family": "bundle",
+      "name": "paired-t",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/bundle/paired-t/0.1.0-draft.1",
+      "semantic_owner": "The future interpretation-bundle registry entry that pins the complete paired-t combination.",
+      "versioning_policy": "Any change to a pinned schema, Profile, Contract, canonicalization, or Public Check set receives a successor bundle revision."
+    },
+    {
+      "key": "record_conformance_check",
+      "role": "public_check",
+      "state": "unissued",
+      "family": "check",
+      "name": "record-conformance",
+      "revision": "0.3.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/check/record-conformance/0.3.0-draft.1",
+      "semantic_owner": "The future Public Check entry for Release 2 Record structural conformance.",
+      "versioning_policy": "The check revision changes with the selected schema or its conformance procedure."
+    },
+    {
+      "key": "record_integrity_check",
+      "role": "public_check",
+      "state": "unissued",
+      "family": "check",
+      "name": "record-integrity",
+      "revision": "0.3.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1",
+      "semantic_owner": "The future Public Check entry for integrity recomputation on the successor Record surface.",
+      "versioning_policy": "The check revision changes when its selected Record projection or digest procedure changes."
+    },
+    {
+      "key": "paired_profile_admissibility_check",
+      "role": "public_check",
+      "state": "unissued",
+      "family": "check",
+      "name": "paired-profile-admissibility",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-profile-admissibility/0.1.0-draft.1",
+      "semantic_owner": "The future Public Check entry for paired Profile declarations and relationships.",
+      "versioning_policy": "A change to admissibility semantics or reason-code mapping receives a successor check revision."
+    },
+    {
+      "key": "paired_t_computability_check",
+      "role": "public_check",
+      "state": "unissued",
+      "family": "check",
+      "name": "paired-t-computability",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-t-computability/0.1.0-draft.1",
+      "semantic_owner": "The future Public Check entry for paired-t computability and bounded numerical refusal.",
+      "versioning_policy": "Support bounds and computability behavior are versioned by this check and require a successor revision when changed."
+    },
+    {
+      "key": "paired_t_recompute_check",
+      "role": "public_check",
+      "state": "unissued",
+      "family": "check",
+      "name": "paired-t-recompute",
+      "revision": "0.1.0-draft.1",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.1",
+      "semantic_owner": "The future Public Check entry for paired-t recomputation and declared-result comparison.",
+      "versioning_policy": "The operation graph, quantity-specific tolerances, or compared result set change only through a successor check revision."
+    }
+  ],
+  "legacy_coexistence": {
+    "aliases_created": false,
+    "new_method_identifier_for_paired_t": false,
+    "reused_exact_bindings": [
+      {
+        "role": "canonicalization",
+        "identifier": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+        "reason": "The successor surface reuses the existing canonicalization meaning unchanged; no duplicate HTTPS alias is proposed."
+      },
+      {
+        "role": "common_identifier_schema",
+        "identifier": "urn:nomue:schema:common:identifier:0.1.0-draft.1",
+        "reason": "The existing instance-identifier scalar definitions are reused unchanged."
+      },
+      {
+        "role": "routing_envelope",
+        "identifier": "urn:nomue:schema:routing-envelope:0.2.0-draft.1",
+        "reason": "Routing remains verifier-output-protocol selected and bundle independent."
+      },
+      {
+        "role": "verifier_refusal",
+        "identifier": "urn:nomue:schema:verifier-refusal:0.2.0-draft.3",
+        "reason": "Pre-dispatch refusal remains verifier-output-protocol selected and bundle independent."
+      }
+    ]
+  },
+  "bundle_binding": {
+    "state": "unissued",
+    "bundle_key": "paired_t_bundle",
+    "profile_key": "paired_profile",
+    "analysis_contract_keys": ["paired_t_contract"],
+    "schema_keys": [
+      "record_schema",
+      "profile_schema",
+      "execution_outcome_schema",
+      "verification_report_schema"
+    ],
+    "canonicalization_identifier": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "public_check_keys": [
+      "record_conformance_check",
+      "record_integrity_check",
+      "paired_profile_admissibility_check",
+      "paired_t_computability_check",
+      "paired_t_recompute_check"
+    ],
+    "conformance_manifest_state": "candidate_not_registered",
+    "verifier_support_state": "candidate_not_registered"
+  }
+}

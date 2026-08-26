@@ -1,0 +1,123 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "source": "governance/drafts/release-2-candidate/fixtures/valid-complete-pairs.json",
+  "entries": [
+    {
+      "candidate_key": "valid-within-pair-repeated-measures",
+      "mutations": [],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": []
+    },
+    {
+      "candidate_key": "valid-distinct-unit-matched-pairs",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/design/declarations/repeated_measurements",
+          "value": "none"
+        },
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/1/experimental_unit_id",
+          "value": "unit-1-after"
+        },
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/3/experimental_unit_id",
+          "value": "unit-2-after"
+        },
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/5/experimental_unit_id",
+          "value": "unit-3-after"
+        }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": []
+    },
+    {
+      "candidate_key": "schema-rejects-extra-property",
+      "mutations": [{ "operation": "add", "path": "/payload/unexpected", "value": true }],
+      "expected_schema_valid": false,
+      "expected_relationship_codes": []
+    },
+    {
+      "candidate_key": "schema-rejects-non-numeric-outcome",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/0/outcome_value",
+          "value": "2"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_relationship_codes": []
+    },
+    {
+      "candidate_key": "relationship-rejects-incomplete-pair",
+      "mutations": [{ "operation": "remove", "path": "/payload/dataset/observations/5" }],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": ["INCOMPLETE_PAIR"]
+    },
+    {
+      "candidate_key": "relationship-rejects-duplicate-pair-condition",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/1/condition_id",
+          "value": "before"
+        }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": ["DUPLICATE_PAIR_CONDITION", "INCOMPLETE_PAIR"]
+    },
+    {
+      "candidate_key": "relationship-rejects-unit-reuse-across-pairs",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/2/experimental_unit_id",
+          "value": "unit-1"
+        }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": [
+        "EXPERIMENTAL_UNIT_DECLARATION_MISMATCH",
+        "EXPERIMENTAL_UNIT_REUSED_ACROSS_PAIRS"
+      ]
+    },
+    {
+      "candidate_key": "relationship-rejects-undeclared-pair-independence",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/design/declarations/pair_independence",
+          "value": "not_declared"
+        }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": ["PAIR_INDEPENDENCE_NOT_DECLARED"]
+    },
+    {
+      "candidate_key": "relationship-rejects-pair-count-mismatch",
+      "mutations": [
+        { "operation": "replace", "path": "/payload/result/pair_summary/n_pairs", "value": 2 }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": ["PAIR_SUMMARY_COUNT_MISMATCH"]
+    },
+    {
+      "candidate_key": "relationship-rejects-duplicate-observation-id",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/payload/dataset/observations/1/observation_id",
+          "value": "before-1"
+        }
+      ],
+      "expected_schema_valid": true,
+      "expected_relationship_codes": ["DUPLICATE_OBSERVATION_ID"]
+    }
+  ]
+}
