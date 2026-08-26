@@ -40,4 +40,3 @@ describe("ADR-0031/ADR-0032 HTTPS identifier minting validator", () => {
     expect(isProtocolHttpsIdentifier(encoded)).toBe(false);
   });
 });
-

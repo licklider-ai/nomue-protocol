@@ -127,4 +127,3 @@ before:
 - adding a normative paired-t clause or Requirement ID;
 - pinning a numerical tolerance, critical value, support bound, or expected result;
 - declaring a Release 2 candidate.
-

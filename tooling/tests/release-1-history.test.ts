@@ -6,4 +6,3 @@ describe("Release 1 historical integrity", () => {
     expect(checkRelease1HistoricalIntegrity()).toEqual([]);
   });
 });
-

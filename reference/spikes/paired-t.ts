@@ -83,10 +83,7 @@ export function computePairedTSpike(input: PairedTSpikeInput): PairedTSpikeOutco
     if (!Number.isFinite(observation.outcomeValue)) {
       return fail("NON_FINITE_OUTCOME", { observationId: observation.observationId });
     }
-    if (
-      observation.conditionId !== firstCondition &&
-      observation.conditionId !== secondCondition
-    ) {
+    if (observation.conditionId !== firstCondition && observation.conditionId !== secondCondition) {
       return fail("UNKNOWN_CONDITION", {
         pairId: observation.pairId,
         observationId: observation.observationId,
@@ -156,4 +153,3 @@ export function computePairedTSpike(input: PairedTSpikeInput): PairedTSpikeOutco
     },
   };
 }
-

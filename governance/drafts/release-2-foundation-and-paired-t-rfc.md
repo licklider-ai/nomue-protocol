@@ -167,4 +167,3 @@ RFC. Permanent identifier spellings, namespace tokens, schema/bundle versions,
 support bounds, critical values, tolerances, and Release 2 publication scope are
 separate ratification items in
 `governance/drafts/release-2-steward-ratification-package.md`.
-

@@ -48,7 +48,8 @@ function checkCandidate(
     errors.push(`${label} must use the ${family} family, got ${candidate.family}`);
   }
   const validation = validateProtocolHttpsIdentifier(spelling(candidate));
-  if (!validation.ok) errors.push(`${label} has invalid candidate parts: ${validation.errors.join(", ")}`);
+  if (!validation.ok)
+    errors.push(`${label} has invalid candidate parts: ${validation.errors.join(", ")}`);
 }
 
 /**
@@ -96,4 +97,3 @@ export function validateInterpretationBundleVNextSpike(
   }
   return { ok: errors.length === 0, errors };
 }
-

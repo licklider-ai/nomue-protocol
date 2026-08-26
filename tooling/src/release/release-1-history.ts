@@ -85,7 +85,11 @@ function sha256(bytes: Uint8Array): string {
   return `sha256:${createHash("sha256").update(bytes).digest("hex")}`;
 }
 
-function signatureIsValid(targetPath: string, signaturePath: string, publicKeyPem: string): boolean {
+function signatureIsValid(
+  targetPath: string,
+  signaturePath: string,
+  publicKeyPem: string,
+): boolean {
   const target = fs.readFileSync(absPath(targetPath));
   const signature = Buffer.from(readText(signaturePath).trim(), "base64");
   return verifyDetachedSignature("sha256", target, createPublicKey(publicKeyPem), signature);
@@ -259,7 +263,9 @@ export function checkRelease1HistoricalIntegrity(): Issue[] {
       });
       continue;
     }
-    const actual = createHash("sha256").update(fs.readFileSync(absPath(entry.path))).digest("hex");
+    const actual = createHash("sha256")
+      .update(fs.readFileSync(absPath(entry.path)))
+      .digest("hex");
     if (actual !== entry.sha256) {
       issues.push({
         check: "release-1-history",

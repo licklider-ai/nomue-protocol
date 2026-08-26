@@ -5,12 +5,48 @@ import {
 } from "../../reference/spikes/paired-t.js";
 
 const observations: PairedObservationSpike[] = [
-  { observationId: "a2", experimentalUnitId: "u2", pairId: "p2", conditionId: "after", outcomeValue: 3 },
-  { observationId: "b1", experimentalUnitId: "u1", pairId: "p1", conditionId: "before", outcomeValue: 2 },
-  { observationId: "a3", experimentalUnitId: "u3", pairId: "p3", conditionId: "after", outcomeValue: 1 },
-  { observationId: "a1", experimentalUnitId: "u1", pairId: "p1", conditionId: "after", outcomeValue: 1 },
-  { observationId: "b3", experimentalUnitId: "u3", pairId: "p3", conditionId: "before", outcomeValue: 4 },
-  { observationId: "b2", experimentalUnitId: "u2", pairId: "p2", conditionId: "before", outcomeValue: 5 },
+  {
+    observationId: "a2",
+    experimentalUnitId: "u2",
+    pairId: "p2",
+    conditionId: "after",
+    outcomeValue: 3,
+  },
+  {
+    observationId: "b1",
+    experimentalUnitId: "u1",
+    pairId: "p1",
+    conditionId: "before",
+    outcomeValue: 2,
+  },
+  {
+    observationId: "a3",
+    experimentalUnitId: "u3",
+    pairId: "p3",
+    conditionId: "after",
+    outcomeValue: 1,
+  },
+  {
+    observationId: "a1",
+    experimentalUnitId: "u1",
+    pairId: "p1",
+    conditionId: "after",
+    outcomeValue: 1,
+  },
+  {
+    observationId: "b3",
+    experimentalUnitId: "u3",
+    pairId: "p3",
+    conditionId: "before",
+    outcomeValue: 4,
+  },
+  {
+    observationId: "b2",
+    experimentalUnitId: "u2",
+    pairId: "p2",
+    conditionId: "before",
+    outcomeValue: 5,
+  },
 ];
 
 describe("non-authoritative paired-t spike", () => {

@@ -45,4 +45,3 @@ describe("Interpretation Bundle vNext non-authoritative spike", () => {
     expect(validateInterpretationBundleVNextSpike(invalid).ok).toBe(false);
   });
 });
-
