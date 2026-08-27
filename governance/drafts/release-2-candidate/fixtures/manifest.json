@@ -40,6 +40,7 @@
       "candidate_key": "schema-rejects-extra-property",
       "mutations": [{ "operation": "add", "path": "/payload/unexpected", "value": true }],
       "expected_schema_valid": false,
+      "expected_schema_keyword": "additionalProperties",
       "expected_relationship_codes": []
     },
     {
@@ -52,6 +53,7 @@
         }
       ],
       "expected_schema_valid": false,
+      "expected_schema_keyword": "type",
       "expected_relationship_codes": []
     },
     {

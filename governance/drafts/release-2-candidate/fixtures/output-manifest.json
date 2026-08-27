@@ -1,0 +1,112 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "source": "governance/drafts/release-2-candidate/fixtures/valid-verification-report.json",
+  "entries": [
+    {
+      "candidate_key": "valid-closed-paired-t-report",
+      "mutations": [],
+      "expected_schema_valid": true
+    },
+    {
+      "candidate_key": "report-rejects-overall-status",
+      "mutations": [{ "operation": "add", "path": "/overall_status", "value": "VERIFIED" }],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "additionalProperties"
+    },
+    {
+      "candidate_key": "report-rejects-significance-boolean",
+      "mutations": [
+        {
+          "operation": "add",
+          "path": "/verification_results/3/evidence/significant",
+          "value": true
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "additionalProperties"
+    },
+    {
+      "candidate_key": "report-rejects-attestations",
+      "mutations": [{ "operation": "add", "path": "/attestations", "value": [] }],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "additionalProperties"
+    },
+    {
+      "candidate_key": "report-rejects-check-version-mismatch",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/verification_results/3/check_version",
+          "value": "0.1.0-draft.2"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "const"
+    },
+    {
+      "candidate_key": "report-rejects-unbound-check",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/verification_results/3/check_id",
+          "value": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.2"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "const"
+    },
+    {
+      "candidate_key": "report-rejects-missing-bound-check",
+      "mutations": [{ "operation": "remove", "path": "/verification_results/3" }],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "minItems"
+    },
+    {
+      "candidate_key": "report-rejects-duplicate-bound-check",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/verification_results/3/check_id",
+          "value": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1"
+        },
+        {
+          "operation": "replace",
+          "path": "/verification_results/3/check_version",
+          "value": "0.3.0-draft.1"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "const"
+    },
+    {
+      "candidate_key": "report-rejects-outcome-on-not-run",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/verification_results/2/execution",
+          "value": "not_run"
+        },
+        {
+          "operation": "add",
+          "path": "/verification_results/2/reason_codes/0",
+          "value": "NRS-CANDIDATE-PRECONDITION-NOT-MET"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "not"
+    },
+    {
+      "candidate_key": "report-rejects-reasonless-failure",
+      "mutations": [
+        {
+          "operation": "replace",
+          "path": "/verification_results/2/outcome",
+          "value": "fail"
+        }
+      ],
+      "expected_schema_valid": false,
+      "expected_schema_keyword": "minItems"
+    }
+  ]
+}

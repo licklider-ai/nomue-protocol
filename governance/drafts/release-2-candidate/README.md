@@ -11,10 +11,17 @@ crossing the current ratification stop:
 - `requirement-namespaces.json` proposes collision-checked namespace tokens and the
   first unissued Requirement IDs and future anchors;
 - `protocol-identifiers.json` proposes exact unissued HTTPS spellings, semantic
-  owners, versioning policies, legacy coexistence, and a bundle binding;
-- `schemas/` contains closed successor Record and Profile schema candidates;
-- `fixtures/` contains hand-authored candidate examples with expected schema and
-  relationship outcomes; and
+  owners, versioning policies, legacy coexistence, and an exact candidate bundle
+  binding, including future schema paths and an explicitly ordered Public Check set;
+- `schemas/` contains closed successor Record, Profile, execution-outcome, and
+  verification-report schema candidates;
+- `fixtures/` contains hand-authored candidate Record and report examples with
+  expected schema and non-numerical relationship outcomes;
+- `exact-dispatch-migration-matrix.json` pins the unchanged current routes and
+  demonstrates that the unissued candidate and nearby spellings remain unsupported;
+- `public-contract-surface-impact.json` classifies every existing surface as reused
+  or intentionally non-applicable and proposes six contiguous, unissued successor
+  surface candidates; and
 - `tooling/src/spikes/release-2-candidate.ts` validates the candidate manifests and
   the pair relationships that JSON Schema cannot express.
 
@@ -27,10 +34,15 @@ replacement is proposed for either legacy identifier.
 Every candidate token, spelling, field, and fixture disposition remains replaceable
 until ratification. Updating this draft PR is not issuance.
 
-Numerical fields in the fixture Record are illustrative payload values only. The
-fixture manifest asserts schema validity and non-numerical relationship outcomes; it
-does not assert any p-value, interval endpoint, tolerance, or supported numerical
-domain.
+Numerical fields in the fixture Record and report are illustrative payload values
+only. The fixture manifests assert structural validity, closed output shape, and
+non-numerical relationship outcomes; they do not assert any p-value, interval
+endpoint, tolerance, or supported numerical domain.
+
+The report candidate retains the scoped execution/outcome model and the five
+explicit `not_asserted` guarantee-boundary fields. It has no overall status,
+significance boolean, whole-Record validity boolean, or attestation member. The
+candidate bundle explicitly declares `attestation_support: none`.
 
 This increment does not implement Student-t tails, confidence-interval critical
 values, numerical tolerances, support bounds, Public Check execution, or bundle

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/verification-report/0.3.0-draft.1",
+  "$comment": "UNISSUED non-authoritative candidate for RFC issue 25. Presence here does not issue this identifier, register support, or define conformance judgment.",
+  "title": "Release 2 paired-t verification report candidate",
+  "description": "Closed bundle-selected report candidate. It has no overall status, VERIFIED value, whole-record validity boolean, significance boolean, or attestation member. Every result remains scoped to an exact candidate Public Check identity and version.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "report_type",
+    "record_reference",
+    "interpretation_bundle_id",
+    "verifier",
+    "generated_at",
+    "conformance",
+    "verification_results",
+    "guarantee_boundary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "https://nomue.ai/id/schema/verification-report/0.3.0-draft.1"
+    },
+    "report_type": { "const": "nomue-verification-report" },
+    "record_reference": { "$ref": "#/$defs/recordReference" },
+    "interpretation_bundle_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "verifier": { "$ref": "#/$defs/verifier" },
+    "generated_at": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ",
+      "$comment": "Excluded from the verification semantic projection."
+    },
+    "conformance": {
+      "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/conformanceResult"
+    },
+    "verification_results": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/checkResult"
+            },
+            {
+              "type": "object",
+              "required": ["check_id", "check_version"],
+              "properties": {
+                "check_id": {
+                  "const": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1"
+                },
+                "check_version": { "const": "0.3.0-draft.1" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/checkResult"
+            },
+            {
+              "type": "object",
+              "required": ["check_id", "check_version"],
+              "properties": {
+                "check_id": {
+                  "const": "https://nomue.ai/id/check/paired-profile-admissibility/0.1.0-draft.1"
+                },
+                "check_version": { "const": "0.1.0-draft.1" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/checkResult"
+            },
+            {
+              "type": "object",
+              "required": ["check_id", "check_version"],
+              "properties": {
+                "check_id": {
+                  "const": "https://nomue.ai/id/check/paired-t-computability/0.1.0-draft.1"
+                },
+                "check_version": { "const": "0.1.0-draft.1" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/checkResult"
+            },
+            {
+              "type": "object",
+              "required": ["check_id", "check_version"],
+              "properties": {
+                "check_id": {
+                  "const": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.1"
+                },
+                "check_version": { "const": "0.1.0-draft.1" }
+              }
+            }
+          ]
+        }
+      ],
+      "items": {
+        "$ref": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1#/$defs/checkResult"
+      }
+    },
+    "guarantee_boundary": { "$ref": "#/$defs/guaranteeBoundary" }
+  },
+  "$defs": {
+    "recordReference": {
+      "type": "object",
+      "required": ["record_id", "revision_id", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "revision_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "required": ["name", "version", "source_commit"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "version": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "source_commit": { "type": "string", "minLength": 1, "maxLength": 256 }
+      }
+    },
+    "guaranteeBoundary": {
+      "type": "object",
+      "required": [
+        "scientific_validity",
+        "declaration_truth",
+        "distributional_model_validity",
+        "causal_interpretation",
+        "standardized_effect_size"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scientific_validity": { "const": "not_asserted" },
+        "declaration_truth": { "const": "not_asserted" },
+        "distributional_model_validity": { "const": "not_asserted" },
+        "causal_interpretation": { "const": "not_asserted" },
+        "standardized_effect_size": { "const": "not_asserted" }
+      }
+    }
+  }
+}

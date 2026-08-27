@@ -1,0 +1,259 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_bundle_key": "paired_t_bundle",
+  "legacy_registry_change_before_ratification": "none",
+  "reused_existing_surfaces": [
+    {
+      "surface_id": "NRS-PCS-0001",
+      "action_after_ratification": "extend_bundle_application",
+      "candidate_schema_key": "record_schema",
+      "meaning_change": "none",
+      "schema_version_impact": "new_record_schema_0.3"
+    },
+    {
+      "surface_id": "NRS-PCS-0006",
+      "action_after_ratification": "extend_bundle_application",
+      "candidate_schema_key": "record_schema",
+      "meaning_change": "none",
+      "schema_version_impact": "new_record_schema_0.3"
+    },
+    {
+      "surface_id": "NRS-PCS-0012",
+      "action_after_ratification": "extend_bundle_application",
+      "candidate_schema_key": null,
+      "meaning_change": "none",
+      "schema_version_impact": "none_bundle_independent_refusal_reuse"
+    },
+    {
+      "surface_id": "NRS-PCS-0013",
+      "action_after_ratification": "extend_bundle_application",
+      "candidate_schema_key": null,
+      "meaning_change": "none",
+      "schema_version_impact": "none_bundle_independent_routing_reuse"
+    }
+  ],
+  "new_surface_candidates": [
+    {
+      "candidate_surface_id": "NRS-PCS-0014",
+      "state": "unissued",
+      "title": "Paired dataset and explicit pair structure",
+      "paths": [
+        "payload.dataset.dataset_id",
+        "payload.dataset.observations[].observation_id",
+        "payload.dataset.observations[].experimental_unit_id",
+        "payload.dataset.observations[].pair_id",
+        "payload.dataset.observations[].condition_id",
+        "payload.dataset.observations[].outcome_value"
+      ],
+      "candidate_schema_key": "record_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": [
+        "NRS-PROFILE-PTCC-0001",
+        "NRS-PROFILE-PTCC-0002",
+        "NRS-PROFILE-PTCC-0003",
+        "NRS-PROFILE-PTCC-0005"
+      ],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    },
+    {
+      "candidate_surface_id": "NRS-PCS-0015",
+      "state": "unissued",
+      "title": "Paired design and admissibility declarations",
+      "paths": [
+        "payload.design.design_id",
+        "payload.design.dataset_id",
+        "payload.design.experimental_unit_type",
+        "payload.design.conditions[].condition_id",
+        "payload.design.conditions[].label",
+        "payload.design.condition_order",
+        "payload.design.outcome",
+        "payload.design.declarations.grouping_structure",
+        "payload.design.declarations.pair_independence",
+        "payload.design.declarations.repeated_measurements",
+        "payload.design.declarations.clustering",
+        "payload.design.data_handling.analysis_population",
+        "payload.design.data_handling.missing_outcomes",
+        "payload.design.data_handling.transformation",
+        "payload.design.data_handling.weighting"
+      ],
+      "candidate_schema_key": "record_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": [
+        "NRS-PROFILE-PTCC-0001",
+        "NRS-PROFILE-PTCC-0004",
+        "NRS-PROFILE-PTCC-0005",
+        "NRS-PROFILE-PTCC-0006"
+      ],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    },
+    {
+      "candidate_surface_id": "NRS-PCS-0016",
+      "state": "unissued",
+      "title": "Paired-t Analysis Contract declaration",
+      "paths": [
+        "payload.analysis.analysis_id",
+        "payload.analysis.design_id",
+        "payload.analysis.contract_id",
+        "payload.analysis.alternative",
+        "payload.analysis.model.paired_difference_distribution",
+        "payload.analysis.estimand.kind",
+        "payload.analysis.estimand.direction",
+        "payload.analysis.confidence_level"
+      ],
+      "candidate_schema_key": "record_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": [
+        "NRS-CONTRACT-PT-0001",
+        "NRS-CONTRACT-PT-0002",
+        "NRS-CONTRACT-PT-0003",
+        "NRS-CONTRACT-PT-0004",
+        "NRS-CONTRACT-PT-0006"
+      ],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    },
+    {
+      "candidate_surface_id": "NRS-PCS-0017",
+      "state": "unissued",
+      "title": "Declared paired-t result",
+      "paths": [
+        "payload.result.result_id",
+        "payload.result.analysis_id",
+        "payload.result.pair_summary.n_pairs",
+        "payload.result.pair_summary.mean_difference",
+        "payload.result.pair_summary.sample_variance_difference",
+        "payload.result.effect_estimate.kind",
+        "payload.result.effect_estimate.estimate",
+        "payload.result.effect_estimate.standard_error",
+        "payload.result.effect_estimate.confidence_interval.confidence_level",
+        "payload.result.effect_estimate.confidence_interval.lower",
+        "payload.result.effect_estimate.confidence_interval.upper",
+        "payload.result.test.test_statistic",
+        "payload.result.test.degrees_of_freedom",
+        "payload.result.test.p_value"
+      ],
+      "candidate_schema_key": "record_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": [
+        "NRS-CONTRACT-PT-0002",
+        "NRS-CONTRACT-PT-0003",
+        "NRS-CONTRACT-PT-0005",
+        "NRS-CONTRACT-PT-0006"
+      ],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    },
+    {
+      "candidate_surface_id": "NRS-PCS-0018",
+      "state": "unissued",
+      "title": "Release 2 paired-t verification report",
+      "paths": [
+        "$schema",
+        "report_type",
+        "record_reference",
+        "interpretation_bundle_id",
+        "verifier",
+        "generated_at",
+        "conformance",
+        "verification_results",
+        "guarantee_boundary.scientific_validity",
+        "guarantee_boundary.declaration_truth",
+        "guarantee_boundary.distributional_model_validity",
+        "guarantee_boundary.causal_interpretation",
+        "guarantee_boundary.standardized_effect_size"
+      ],
+      "candidate_schema_key": "verification_report_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/verification-report-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": [
+        "NRS-CORE-0008",
+        "NRS-CORE-0009",
+        "NRS-VERIFY-0001",
+        "NRS-VERIFY-0002",
+        "NRS-VERIFY-0003",
+        "NRS-VERIFY-0011"
+      ],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    },
+    {
+      "candidate_surface_id": "NRS-PCS-0019",
+      "state": "unissued",
+      "title": "Release 2 scoped Public Check result object",
+      "paths": [
+        "verification_results[].check_id",
+        "verification_results[].check_version",
+        "verification_results[].execution",
+        "verification_results[].outcome",
+        "verification_results[].scope",
+        "verification_results[].reason_codes",
+        "verification_results[].evidence",
+        "verification_results[].error"
+      ],
+      "candidate_schema_key": "verification_report_schema",
+      "candidate_schema_path": "governance/drafts/release-2-candidate/schemas/verification-report-0.3.candidate.schema.json",
+      "stability": "EXPERIMENTAL",
+      "candidate_requirement_ids": ["NRS-VERIFY-0005", "NRS-VERIFY-0010", "NRS-VERIFY-0012"],
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      }
+    }
+  ],
+  "non_applicable_preserved_surfaces": [
+    {
+      "surface_id": "NRS-PCS-0002",
+      "reason": "The legacy independent-group observation surface uses group_id rather than explicit pair and condition identities."
+    },
+    {
+      "surface_id": "NRS-PCS-0003",
+      "reason": "The Phase 1 ITGC design declaration is owned by the independent-group Profile."
+    },
+    {
+      "surface_id": "NRS-PCS-0004",
+      "reason": "The Welch declaration carries legacy method_id rather than successor Contract identity."
+    },
+    {
+      "surface_id": "NRS-PCS-0005",
+      "reason": "The Phase 1 Welch result uses independent-group summaries and remains legacy-only."
+    },
+    {
+      "surface_id": "NRS-PCS-0007",
+      "reason": "The Phase 1 report schema remains bound only to the Phase 1 bundle."
+    },
+    {
+      "surface_id": "NRS-PCS-0008",
+      "reason": "The Phase 1 Public Check result schema remains bound only to the Phase 1 check set."
+    },
+    {
+      "surface_id": "NRS-PCS-0009",
+      "reason": "The ITGC admissibility declarations describe an unpaired independent-group design."
+    },
+    {
+      "surface_id": "NRS-PCS-0010",
+      "reason": "The ITGC mean-difference surface has independent-group semantics and does not cover paired differences."
+    },
+    {
+      "surface_id": "NRS-PCS-0011",
+      "reason": "The Phase 2A check-result surface is bound to ITGC and Welch checks rather than the paired Profile and Contract."
+    }
+  ]
+}

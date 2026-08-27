@@ -23,9 +23,10 @@ authorizes publication.
   not define tolerances or support bounds.
 - A machine-readable Release 2 candidate surface under `release-2-candidate/`
   proposes unissued Requirement namespace tokens and first IDs, exact unissued HTTPS
-  identifier spellings and bundle roles, closed Record/Profile schemas, and
-  hand-authored structural/relationship fixtures. The candidate is not loaded by the
-  reference verifier or any authoritative registry.
+  identifier spellings and bundle roles, closed Record/Profile/output schemas,
+  hand-authored structural/relationship fixtures, a Release 1 exact-dispatch
+  migration matrix, and a public-contract-surface impact table. The candidate is not
+  loaded by the reference verifier or any authoritative registry.
 - The proposed Release 2 scope is captured in
   `release-2-foundation-and-paired-t-rfc.md`.
 
@@ -103,10 +104,13 @@ Inputs required before approval:
 - migration matrix proving Release 1 exact dispatch is unchanged;
 - public-contract-surface version-impact table.
 
-The first closed Record/Profile schema candidates and their hand-authored fixtures
-are under `release-2-candidate/schemas/` and `release-2-candidate/fixtures/`. They are
-outside the authoritative schema and conformance directories. Output schemas, the
-migration matrix, and the version-impact table remain open R2-D4 inputs.
+The complete structural decision-preparation candidate is under
+`release-2-candidate/`: four closed schema candidates, Record/report fixtures, exact
+future bundle-schema paths, an explicitly ordered check set, an attestation-support
+value of `none`, the Release 1 migration matrix, and the version-impact table. These files are
+outside the authoritative schema, conformance, registry, and specification
+directories. They make the R2-D4 choices reviewable but do not approve them, issue
+their candidate IDs, or dispose R2-D4.
 
 ### R2-D5 — Numerical contract freeze
 

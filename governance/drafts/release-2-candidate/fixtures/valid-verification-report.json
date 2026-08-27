@@ -1,0 +1,107 @@
+{
+  "$schema": "https://nomue.ai/id/schema/verification-report/0.3.0-draft.1",
+  "report_type": "nomue-verification-report",
+  "record_reference": {
+    "record_id": "urn:example:record:paired-t-candidate",
+    "revision_id": "urn:example:revision:paired-t-candidate:1",
+    "content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/paired-t/0.1.0-draft.1",
+  "verifier": {
+    "name": "candidate-verifier",
+    "version": "unissued",
+    "source_commit": "candidate-only"
+  },
+  "generated_at": "2026-08-27T00:00:00Z",
+  "conformance": {
+    "check_id": "https://nomue.ai/id/check/record-conformance/0.3.0-draft.1",
+    "execution": "completed",
+    "outcome": "pass",
+    "scope": {
+      "kind": "record",
+      "id": "urn:example:record:paired-t-candidate"
+    },
+    "reason_codes": []
+  },
+  "verification_results": [
+    {
+      "check_id": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1",
+      "check_version": "0.3.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "record_revision",
+        "id": "urn:example:revision:paired-t-candidate:1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "declared_content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "recomputed_content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/paired-profile-admissibility/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "record",
+        "id": "urn:example:record:paired-t-candidate"
+      },
+      "reason_codes": []
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/paired-t-computability/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "analysis",
+        "id": "urn:example:revision:paired-t-candidate:1#analysis-1"
+      },
+      "reason_codes": []
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "result",
+        "id": "urn:example:revision:paired-t-candidate:1#result-1"
+      },
+      "reason_codes": [],
+      "evidence": {
+        "recomputed": {
+          "pair_summary": {
+            "n_pairs": 3,
+            "mean_difference": 2,
+            "sample_variance_difference": 1
+          },
+          "effect_estimate": {
+            "kind": "arithmetic_mean_paired_difference",
+            "estimate": 2,
+            "standard_error": 0.5773502691896257,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.484137711719546,
+              "upper": 4.484137711719546
+            }
+          },
+          "test": {
+            "test_statistic": 3.464101615137755,
+            "degrees_of_freedom": 2,
+            "p_value": 0.07417990022744853
+          }
+        }
+      }
+    }
+  ],
+  "guarantee_boundary": {
+    "scientific_validity": "not_asserted",
+    "declaration_truth": "not_asserted",
+    "distributional_model_validity": "not_asserted",
+    "causal_interpretation": "not_asserted",
+    "standardized_effect_size": "not_asserted"
+  }
+}

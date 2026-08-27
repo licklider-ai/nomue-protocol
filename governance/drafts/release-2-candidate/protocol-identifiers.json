@@ -166,6 +166,11 @@
     "state": "unissued",
     "bundle_key": "paired_t_bundle",
     "profile_key": "paired_profile",
+    "candidate_versions": {
+      "spec_version": "0.3.0-draft.1",
+      "schema_version": "0.3.0-draft.1",
+      "public_check_set_version": "0.1.0-draft.1"
+    },
     "analysis_contract_keys": ["paired_t_contract"],
     "schema_keys": [
       "record_schema",
@@ -181,7 +186,43 @@
       "paired_t_computability_check",
       "paired_t_recompute_check"
     ],
+    "public_check_order_semantics": "ordered_as_listed",
+    "schema_bindings": [
+      {
+        "role": "record",
+        "schema_key": "record_schema",
+        "candidate_path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+        "future_authoritative_path": "schemas/record/record-0.3.schema.json"
+      },
+      {
+        "role": "profile",
+        "schema_key": "profile_schema",
+        "candidate_path": "governance/drafts/release-2-candidate/schemas/paired-two-condition-continuous-0.1.candidate.schema.json",
+        "future_authoritative_path": "schemas/profiles/paired-two-condition-continuous-0.1.schema.json"
+      },
+      {
+        "role": "execution_outcome",
+        "schema_key": "execution_outcome_schema",
+        "candidate_path": "governance/drafts/release-2-candidate/schemas/execution-outcome-0.3.candidate.schema.json",
+        "future_authoritative_path": "schemas/common/execution-outcome-0.3.schema.json"
+      },
+      {
+        "role": "verification_report",
+        "schema_key": "verification_report_schema",
+        "candidate_path": "governance/drafts/release-2-candidate/schemas/verification-report-0.3.candidate.schema.json",
+        "future_authoritative_path": "schemas/reports/verification-report-0.3.schema.json"
+      }
+    ],
+    "legacy_schema_bindings": [
+      {
+        "role": "common_identifier",
+        "reuse_role": "common_identifier_schema",
+        "repository_path": "schemas/common/identifier.schema.json"
+      }
+    ],
+    "attestation_support": "none",
     "conformance_manifest_state": "candidate_not_registered",
+    "future_conformance_manifest_path": "conformance/manifest.yaml",
     "verifier_support_state": "candidate_not_registered"
   }
 }
