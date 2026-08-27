@@ -1,0 +1,74 @@
+name: Release 2 paired-t candidate evidence
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/release2-paired-t-evidence.yml"
+      - "governance/drafts/release-2-candidate/numerical/**"
+      - "tooling/r2-paired-t-evidence/**"
+      - "tooling/src/spikes/paired-t-certificate-candidate.ts"
+      - "tooling/src/spikes/validate-paired-t-evidence-bundle.ts"
+
+permissions:
+  contents: read
+
+jobs:
+  pilot-evidence:
+    name: non-authoritative pilot evidence
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install the pinned Arb/FLINT binding
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv tooling/r2-paired-t-evidence/.venv
+          tooling/r2-paired-t-evidence/.venv/bin/python -m pip install \
+            --only-binary=:all: \
+            -r tooling/r2-paired-t-evidence/requirements.txt
+
+      - name: Generate the non-authoritative pilot bundle
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$NOMUE_GENERATOR_COMMIT"
+          tooling/r2-paired-t-evidence/.venv/bin/python \
+            tooling/r2-paired-t-evidence/generate_certificates.py \
+            --cases tooling/r2-paired-t-evidence/cases.json \
+            --output candidate-evidence/release-2-paired-t
+
+      - name: Validate manifest, provenance, coverage, and certificates
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t:validate \
+            candidate-evidence/release-2-paired-t \
+            "$NOMUE_GENERATOR_COMMIT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-2-paired-t-pilot-${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate-evidence/release-2-paired-t/
+          if-no-files-found: error
+          retention-days: 90

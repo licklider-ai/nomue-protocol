@@ -71,6 +71,15 @@ prototype output into a complete certificate. The Arb/FLINT evidence still needs
 be regenerated in an environment that has the pinned dependency and made available
 as a complete reproducible bundle.
 
+`tooling/r2-paired-t-evidence/` now supplies a pinned, fail-closed pilot generator
+and a dedicated CI artifact route. Its current corpus exercises three p-value
+certificates, two fixed-95-percent critical-value certificates, and four boundary
+probes. The generated bundle is hash-bound to the generator commit, copied generator,
+environment, case manifest, and raw oracle output, then passed through the candidate
+certificate validator. This establishes that the evidence route is executable; it
+does not establish table completeness or change either closure field from
+`incomplete`.
+
 For a certified binary64 critical value `t_c`, table lookup has zero reproduction
 error. Its truth error is different: correct rounding establishes the absolute bound
 `|t_c - t_true| <= 0.5 * ULP(t_c)`. The interval endpoint truth ledger must propagate
