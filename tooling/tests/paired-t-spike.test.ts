@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   computePairedTSpike,
+  pairwiseSum,
   type PairedObservationSpike,
 } from "../../reference/spikes/paired-t.js";
 
@@ -50,6 +51,12 @@ const observations: PairedObservationSpike[] = [
 ];
 
 describe("non-authoritative paired-t spike", () => {
+  it("pins the G4 pairwise reduction tree rather than a left fold", () => {
+    const values = [1e16, 1, -1e16, 1];
+    expect(pairwiseSum(values)).toBe(0);
+    expect(values.reduce((sum, value) => sum + value, 0)).toBe(1);
+  });
+
   it("constructs explicit pairs independent of observation order", () => {
     const outcome = computePairedTSpike({
       conditionOrder: ["before", "after"],
@@ -58,6 +65,10 @@ describe("non-authoritative paired-t spike", () => {
     });
     expect(outcome.ok).toBe(true);
     if (!outcome.ok) return;
+    expect(outcome.result.operationGraph).toBe("g4-pairwise-two-pass-candidate");
+    expect(outcome.result.sqrtReproducibility).toBe(
+      "native-sqrt-no-cross-runtime-bit-identity-claim",
+    );
     expect(outcome.result.pairIds).toEqual(["p1", "p2", "p3"]);
     expect(outcome.result.differences).toEqual([1, 2, 3]);
     expect(outcome.result.nPairs).toBe(3);
@@ -225,6 +236,85 @@ describe("non-authoritative paired-t spike", () => {
         },
       ],
     });
-    expect(outcome).toMatchObject({ ok: false, error: "NON_FINITE_INTERMEDIATE" });
+    expect(outcome).toMatchObject({ ok: false, error: "VARIANCE_UNDERFLOW" });
+  });
+
+  it("distinguishes exact unequal differences erased by binary64 subtraction", () => {
+    const outcome = computePairedTSpike({
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "none",
+      observations: [
+        {
+          observationId: "b1",
+          experimentalUnitId: "u1",
+          pairId: "p1",
+          conditionId: "before",
+          outcomeValue: 1,
+        },
+        {
+          observationId: "a1",
+          experimentalUnitId: "u2",
+          pairId: "p1",
+          conditionId: "after",
+          outcomeValue: 2 ** -54,
+        },
+        {
+          observationId: "b2",
+          experimentalUnitId: "u3",
+          pairId: "p2",
+          conditionId: "before",
+          outcomeValue: 1,
+        },
+        {
+          observationId: "a2",
+          experimentalUnitId: "u4",
+          pairId: "p2",
+          conditionId: "after",
+          outcomeValue: 2 ** -55,
+        },
+      ],
+    });
+    expect(outcome).toMatchObject({
+      ok: false,
+      error: "DIFFERENCE_VARIANCE_ERASED_BY_ROUNDING",
+    });
+  });
+
+  it("classifies finite-input subtraction overflow at the difference stage", () => {
+    const outcome = computePairedTSpike({
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "none",
+      observations: [
+        {
+          observationId: "b1",
+          experimentalUnitId: "u1",
+          pairId: "p1",
+          conditionId: "before",
+          outcomeValue: Number.MAX_VALUE,
+        },
+        {
+          observationId: "a1",
+          experimentalUnitId: "u2",
+          pairId: "p1",
+          conditionId: "after",
+          outcomeValue: -Number.MAX_VALUE,
+        },
+        {
+          observationId: "b2",
+          experimentalUnitId: "u3",
+          pairId: "p2",
+          conditionId: "before",
+          outcomeValue: 1,
+        },
+        {
+          observationId: "a2",
+          experimentalUnitId: "u4",
+          pairId: "p2",
+          conditionId: "after",
+          outcomeValue: 0,
+        },
+      ],
+    });
+    expect(outcome).toMatchObject({ ok: false, error: "DIFFERENCE_OVERFLOW", pairId: "p1" });
   });
 });

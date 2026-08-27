@@ -21,7 +21,10 @@ crossing the current ratification stop:
   demonstrates that the unissued candidate and nearby spellings remain unsupported;
 - `public-contract-surface-impact.json` classifies every existing surface as reused
   or intentionally non-applicable and proposes six contiguous, unissued successor
-  surface candidates; and
+  surface candidates;
+- `numerical/` records the approved candidate-development direction for the G4
+  pairwise algebra graph, explicit computability classes, certificate-bundle closure
+  rules, and the numerical decisions that remain deliberately unfrozen; and
 - `tooling/src/spikes/release-2-candidate.ts` validates the candidate manifests and
   the pair relationships that JSON Schema cannot express.
 
@@ -44,6 +47,8 @@ explicit `not_asserted` guarantee-boundary fields. It has no overall status,
 significance boolean, whole-Record validity boolean, or attestation member. The
 candidate bundle explicitly declares `attestation_support: none`.
 
-This increment does not implement Student-t tails, confidence-interval critical
-values, numerical tolerances, support bounds, Public Check execution, or bundle
-dispatch. Those remain gated by R2-D5 and the final Release 2 decision.
+This increment does not implement a runtime Student-t tail, freeze confidence-
+interval critical values, select numerical tolerances or support bounds, execute a
+Public Check, or dispatch the candidate bundle. The numerical directory and
+certificate validator make the next R2-D5 evidence increment fail closed; they do
+not dispose R2-D5 or supply an oracle result.

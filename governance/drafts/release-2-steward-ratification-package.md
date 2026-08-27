@@ -114,6 +114,12 @@ their candidate IDs, or dispose R2-D4.
 
 ### R2-D5 — Numerical contract freeze
 
+Candidate-development disposition: **APPROVED on 2026-08-27** for the bounded work
+recorded under `release-2-candidate/numerical/`. This selects the G4 pairwise
+two-pass graph for candidate testing, exact-dyadic classification of parsed
+binary64 differences, explicit representational failure classes, and strict
+certificate-bundle closure rules. It is not the final R2-D5 disposition.
+
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,
 and quantity-specific comparison tolerances.
@@ -132,6 +138,12 @@ Inputs required before approval:
 This is the hard stop for authoritative numerical meaning, not for candidate
 development. A candidate Public Check and expected conformance values may be
 prepared and tested, but none is frozen or issued before R2-D5 approval.
+
+The current readiness record deliberately leaves the supported domain, critical-
+value table, and all comparison tolerances unset. It also marks the p-value and
+critical-value evidence as incomplete until exact enclosure/cell data, executed
+secondary and low-df closed-form paths, dependency failure behavior, boundary cases,
+and complete provenance hashes are present.
 
 ### R2-D6 — Release Candidate scope
 
