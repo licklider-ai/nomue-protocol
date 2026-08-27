@@ -117,6 +117,24 @@ describe("non-authoritative paired-t certificate bundle checks", () => {
     );
   });
 
+  it("rejects vacuous independent probability enclosures", () => {
+    const secondary = pCertificate();
+    secondary.secondary.enclosure = { lower: "0/1", upper: "1/1" };
+    expect(validatePValueCertificateCandidate(secondary)).toContain(
+      "p secondary: probability enclosure cannot be the vacuous [0, 1] interval",
+    );
+
+    const closedForm = pCertificate();
+    closedForm.closed_form = {
+      method: "df1-cauchy-tail",
+      enclosure: { lower: "0/1", upper: "1/1" },
+      overlap_with_primary: true,
+    };
+    expect(validatePValueCertificateCandidate(closedForm)).toContain(
+      "p closed form: probability enclosure cannot be the vacuous [0, 1] interval",
+    );
+  });
+
   it("recomputes exact x from the binary64 statistic and integer df", () => {
     const candidate = pCertificate();
     candidate.input.exact_x_numerator = "2";

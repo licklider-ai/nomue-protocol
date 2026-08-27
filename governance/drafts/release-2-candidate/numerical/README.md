@@ -24,10 +24,12 @@ The binary64 procedure then performs one binary64 subtraction. These two levels 
 not interchangeable. In particular, different exact differences can round to the
 same binary64 difference.
 
-The G4 candidate uses a fixed pairwise reduction tree for the mean and for the sum
-of squared centered deviations. It then divides by `n - 1`, divides by `n`, applies
-the host native square root, and divides the mean by the standard error. Fused
-multiply-add and implicit extended intermediates are outside this candidate graph.
+The G4 candidate uses a fixed recursive reduction tree for the mean and for the sum
+of squared centered deviations. Each non-leaf range is split after `floor(n / 2)`
+items, recursively, so the tree is defined for non-power-of-two pair counts as well
+as powers of two. It then divides by `n - 1`, divides by `n`, applies the host native
+square root, and divides the mean by the standard error. Fused multiply-add and
+implicit extended intermediates are outside this candidate graph.
 
 The graph does not claim cross-runtime bit identity after native square root. The
 basic operation order remains pinned, while the square-root and downstream

@@ -246,6 +246,22 @@ function validateProbabilityInterval(
   }
 }
 
+function validateNonVacuousProbabilityInterval(
+  label: string,
+  interval: ExactIntervalCandidate,
+  errors: string[],
+): void {
+  validateProbabilityInterval(label, interval, errors);
+  const values = intervalValues(interval);
+  if (
+    values !== undefined &&
+    compareRationals(values[0], { numerator: 0n, denominator: 1n }) === 0 &&
+    compareRationals(values[1], { numerator: 1n, denominator: 1n }) === 0
+  ) {
+    errors.push(`${label}: probability enclosure cannot be the vacuous [0, 1] interval`);
+  }
+}
+
 function intervalValues(interval: ExactIntervalCandidate): [Rational, Rational] | undefined {
   const lower = parseCanonicalRational(interval.lower);
   const upper = parseCanonicalRational(interval.upper);
@@ -429,7 +445,7 @@ export function validatePValueCertificateCandidate(
   }
   validateEscalation("p primary", certificate.primary.escalation, errors);
   validateProbabilityInterval("p primary", certificate.primary.enclosure, errors);
-  validateProbabilityInterval("p secondary", certificate.secondary.enclosure, errors);
+  validateNonVacuousProbabilityInterval("p secondary", certificate.secondary.enclosure, errors);
   if (certificate.secondary.method !== "rigorous-density-quadrature-with-analytic-tail-bound") {
     errors.push("p secondary: method is not the candidate method-distinct path");
   }
@@ -449,7 +465,11 @@ export function validatePValueCertificateCandidate(
     errors.push("p certificate closed-form evidence is only defined for df=1 or df=2");
   }
   if (certificate.closed_form !== null) {
-    validateProbabilityInterval("p closed form", certificate.closed_form.enclosure, errors);
+    validateNonVacuousProbabilityInterval(
+      "p closed form",
+      certificate.closed_form.enclosure,
+      errors,
+    );
     if (
       !certificate.closed_form.overlap_with_primary ||
       !intervalsOverlap(certificate.primary.enclosure, certificate.closed_form.enclosure)

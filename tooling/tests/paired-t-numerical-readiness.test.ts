@@ -38,6 +38,29 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
+    const candidate = loadReadiness();
+    (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "numerical readiness: keys are incomplete or contain an undeclared item",
+    );
+
+    const nested = loadReadiness();
+    (nested.operation_graph as unknown as Record<string, unknown>).oracle =
+      "scipy_r_boost_agreement";
+    expect(validatePairedTNumericalReadinessCandidate(nested)).toContain(
+      "operation graph: keys are incomplete or contain an undeclared item",
+    );
+  });
+
+  it("pins every operation-graph stage", () => {
+    const candidate = loadReadiness();
+    candidate.operation_graph.standard_error_path = "fma_fast_path" as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "operation graph does not match the approved candidate direction",
+    );
+  });
+
   it("rejects a native-sqrt cross-runtime bit-identity claim", () => {
     const candidate = loadReadiness();
     candidate.operation_graph.native_sqrt_cross_runtime_bit_identity_claimed = true as never;

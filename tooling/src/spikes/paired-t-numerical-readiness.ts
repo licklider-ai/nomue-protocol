@@ -3,6 +3,7 @@
 export interface PairedTNumericalReadinessCandidate {
   status: "non_authoritative_candidate";
   issuance: "unissued";
+  review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25";
   candidate_development_disposition: "approved";
   final_r2_d5_disposition: "pending_public_review_and_evidence_closure";
   numerical_contract_frozen: false;
@@ -12,8 +13,11 @@ export interface PairedTNumericalReadinessCandidate {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
     difference_target: "exact_difference_of_parsed_binary64_operands";
-    mean_reduction: "fixed_pairwise_tree";
-    variance_path: "two_pass_center_square_fixed_pairwise_tree_divide_n_minus_one";
+    binary64_difference_stage: "one_subtraction_per_canonical_pair";
+    mean_reduction: "fixed_recursive_floor_half_split_tree";
+    variance_path: "two_pass_center_square_fixed_recursive_floor_half_split_tree_divide_n_minus_one";
+    standard_error_path: "sample_variance_divide_n_then_native_sqrt";
+    test_statistic_path: "mean_divide_standard_error";
     fma_allowed: false;
     implicit_extended_precision_allowed: false;
     native_sqrt_cross_runtime_bit_identity_claimed: false;
@@ -26,11 +30,15 @@ export interface PairedTNumericalReadinessCandidate {
   };
   p_value_enclosure_evidence: {
     closure: "incomplete";
+    primary_path: "arb_regularized_incomplete_beta_exact_rational_input";
+    secondary_path: "rigorous_density_quadrature_with_analytic_tail_bound";
     certificate_validator: string;
     known_closure_items: string[];
   };
   fixed_95_critical_value_evidence: {
     closure: "incomplete";
+    primary_path: "arb_forward_probability_midpoint_bracketing";
+    secondary_path: "rigorous_quantile_enclosure";
     certificate_validator: string;
     known_closure_items: string[];
   };
@@ -95,6 +103,68 @@ const REQUIRED_PROHIBITIONS = [
   "authoritative_public_check_or_bundle_support",
 ] as const;
 
+const TOP_LEVEL_KEYS = [
+  "status",
+  "issuance",
+  "review_issue",
+  "candidate_development_disposition",
+  "final_r2_d5_disposition",
+  "numerical_contract_frozen",
+  "supported_domain",
+  "comparison_tolerances",
+  "operation_graph",
+  "refusal_classes",
+  "p_value_enclosure_evidence",
+  "fixed_95_critical_value_evidence",
+  "required_boundary_cases",
+  "prohibited_claims_before_final_r2_d5",
+] as const;
+
+const OPERATION_GRAPH_KEYS = [
+  "candidate_key",
+  "selection_state",
+  "difference_target",
+  "binary64_difference_stage",
+  "mean_reduction",
+  "variance_path",
+  "standard_error_path",
+  "test_statistic_path",
+  "fma_allowed",
+  "implicit_extended_precision_allowed",
+  "native_sqrt_cross_runtime_bit_identity_claimed",
+] as const;
+
+const REFUSAL_CLASS_KEYS = [
+  "contract_computability",
+  "binary64_computability",
+  "scope",
+  "recompute_mismatch",
+] as const;
+
+const EVIDENCE_KEYS = [
+  "closure",
+  "primary_path",
+  "secondary_path",
+  "certificate_validator",
+  "known_closure_items",
+] as const;
+
+function requireExactKeys(
+  label: string,
+  actual: object,
+  expected: readonly string[],
+  errors: string[],
+): void {
+  const actualKeys = Object.keys(actual).sort();
+  const expectedKeys = [...expected].sort();
+  if (
+    actualKeys.length !== expectedKeys.length ||
+    actualKeys.some((value, index) => value !== expectedKeys[index])
+  ) {
+    errors.push(`${label}: keys are incomplete or contain an undeclared item`);
+  }
+}
+
 function requireExactSet(
   label: string,
   actual: readonly string[],
@@ -113,8 +183,26 @@ export function validatePairedTNumericalReadinessCandidate(
   candidate: PairedTNumericalReadinessCandidate,
 ): string[] {
   const errors: string[] = [];
+  requireExactKeys("numerical readiness", candidate, TOP_LEVEL_KEYS, errors);
+  requireExactKeys("operation graph", candidate.operation_graph, OPERATION_GRAPH_KEYS, errors);
+  requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
+  requireExactKeys(
+    "p-value evidence readiness",
+    candidate.p_value_enclosure_evidence,
+    EVIDENCE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "critical-value evidence readiness",
+    candidate.fixed_95_critical_value_evidence,
+    EVIDENCE_KEYS,
+    errors,
+  );
   if (candidate.status !== "non_authoritative_candidate" || candidate.issuance !== "unissued") {
     errors.push("numerical readiness must remain non-authoritative and unissued");
+  }
+  if (candidate.review_issue !== "https://github.com/licklider-ai/nomue-protocol/issues/25") {
+    errors.push("numerical readiness must remain bound to the open Release 2 review");
   }
   if (candidate.candidate_development_disposition !== "approved") {
     errors.push("candidate-development disposition is not recorded");
@@ -135,8 +223,12 @@ export function validatePairedTNumericalReadinessCandidate(
     graph.candidate_key !== "g4-pairwise-two-pass" ||
     graph.selection_state !== "selected_for_candidate_testing" ||
     graph.difference_target !== "exact_difference_of_parsed_binary64_operands" ||
-    graph.mean_reduction !== "fixed_pairwise_tree" ||
-    graph.variance_path !== "two_pass_center_square_fixed_pairwise_tree_divide_n_minus_one"
+    graph.binary64_difference_stage !== "one_subtraction_per_canonical_pair" ||
+    graph.mean_reduction !== "fixed_recursive_floor_half_split_tree" ||
+    graph.variance_path !==
+      "two_pass_center_square_fixed_recursive_floor_half_split_tree_divide_n_minus_one" ||
+    graph.standard_error_path !== "sample_variance_divide_n_then_native_sqrt" ||
+    graph.test_statistic_path !== "mean_divide_standard_error"
   ) {
     errors.push("operation graph does not match the approved candidate direction");
   }
@@ -160,6 +252,18 @@ export function validatePairedTNumericalReadinessCandidate(
     REQUIRED_BINARY64_COMPUTABILITY,
     errors,
   );
+  requireExactSet(
+    "scope refusals",
+    candidate.refusal_classes.scope,
+    ["operation_stage_predicate_outside_validated_scope"],
+    errors,
+  );
+  requireExactSet(
+    "recompute mismatches",
+    candidate.refusal_classes.recompute_mismatch,
+    ["declared_result_differs_from_candidate_recomputation"],
+    errors,
+  );
 
   if (
     candidate.p_value_enclosure_evidence.closure !== "incomplete" ||
@@ -168,6 +272,17 @@ export function validatePairedTNumericalReadinessCandidate(
     errors.push("certificate evidence cannot be marked closed by this readiness increment");
   }
   const expectedValidator = "tooling/src/spikes/paired-t-certificate-candidate.ts";
+  if (
+    candidate.p_value_enclosure_evidence.primary_path !==
+      "arb_regularized_incomplete_beta_exact_rational_input" ||
+    candidate.p_value_enclosure_evidence.secondary_path !==
+      "rigorous_density_quadrature_with_analytic_tail_bound" ||
+    candidate.fixed_95_critical_value_evidence.primary_path !==
+      "arb_forward_probability_midpoint_bracketing" ||
+    candidate.fixed_95_critical_value_evidence.secondary_path !== "rigorous_quantile_enclosure"
+  ) {
+    errors.push("certificate readiness paths do not match the approved evidence directions");
+  }
   if (
     candidate.p_value_enclosure_evidence.certificate_validator !== expectedValidator ||
     candidate.fixed_95_critical_value_evidence.certificate_validator !== expectedValidator

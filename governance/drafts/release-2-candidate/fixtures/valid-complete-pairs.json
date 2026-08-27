@@ -107,8 +107,8 @@
         "standard_error": 0.5773502691896257,
         "confidence_interval": {
           "confidence_level": 0.95,
-          "lower": -0.484137711719546,
-          "upper": 4.484137711719546
+          "lower": -0.4841377117503307,
+          "upper": 4.48413771175033
         }
       },
       "test": {

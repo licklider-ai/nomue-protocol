@@ -128,23 +128,21 @@ function dyadicsEqual(first: ExactDyadic, second: ExactDyadic): boolean {
   );
 }
 
-/** Fixed pairwise reduction used by the G4 candidate operation graph. */
+/** Fixed recursive floor(n/2) split reduction used by the G4 candidate graph. */
 export function pairwiseSum(values: readonly number[]): number {
   if (values.length === 0) return 0;
-  let level = [...values];
-  while (level.length > 1) {
-    const next: number[] = [];
-    for (let index = 0; index < level.length; index += 2) {
-      const left = level[index];
-      if (left === undefined) throw new Error("pairwise reduction lost its left operand");
-      const right = level[index + 1];
-      next.push(right === undefined ? left : left + right);
+
+  const sumRange = (start: number, end: number): number => {
+    if (end - start === 1) {
+      const value = values[start];
+      if (value === undefined) throw new Error("pairwise reduction lost its leaf operand");
+      return value;
     }
-    level = next;
-  }
-  const result = level[0];
-  if (result === undefined) throw new Error("pairwise reduction produced no result");
-  return result;
+    const middle = start + Math.floor((end - start) / 2);
+    return sumRange(start, middle) + sumRange(middle, end);
+  };
+
+  return sumRange(0, values.length);
 }
 
 function fail(

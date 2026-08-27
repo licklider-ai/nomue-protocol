@@ -57,6 +57,13 @@ describe("non-authoritative paired-t spike", () => {
     expect(values.reduce((sum, value) => sum + value, 0)).toBe(1);
   });
 
+  it("pins the G4 recursive floor-half split for a non-power-of-two count", () => {
+    const values = [0.1, 0.2, 0.3];
+    expect(pairwiseSum(values)).toBe(0.1 + (0.2 + 0.3));
+    expect(pairwiseSum(values)).toBe(0.6);
+    expect((values[0] ?? 0) + (values[1] ?? 0) + (values[2] ?? 0)).toBe(0.6000000000000001);
+  });
+
   it("constructs explicit pairs independent of observation order", () => {
     const outcome = computePairedTSpike({
       conditionOrder: ["before", "after"],
