@@ -18,6 +18,8 @@ Check version, or table df ceiling.
 The review bundle contains:
 
 - `repository/`: the exact Git checkout under review;
+- `repository.gitbundle`: a portable Git bundle containing the reviewed commit;
+- `REPOSITORY-COMMIT.txt`: the expected full commit identity;
 - `pilot-evidence/`: one output of the pinned generator;
 - `research-inputs/`: the prior Student-t enclosure investigation and D5
   adjudication report;
@@ -28,8 +30,10 @@ Before reviewing:
 
 1. Verify every `MANIFEST.sha256` entry.
 2. Confirm `pilot-evidence/MANIFEST.sha256` independently.
-3. Confirm the repository Git head equals the generator commit recorded in every
-   certificate and in `pilot-evidence/environment.json`.
+3. Clone `repository.gitbundle`, confirm its Git head equals
+   `REPOSITORY-COMMIT.txt`, compare its tracked tree with `repository/`, and confirm
+   that commit equals the generator commit recorded in every certificate and in
+   `pilot-evidence/environment.json`.
 4. Confirm the copied generator, case manifest, requirements, environment, and raw
    output hashes match every certificate provenance field.
 5. Record the exact Python, python-flint, and FLINT versions actually used for the
