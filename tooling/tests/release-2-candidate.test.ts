@@ -1,7 +1,7 @@
 import { Ajv2020, type ValidateFunction } from "ajv/dist/2020.js";
 import { describe, expect, it } from "vitest";
 import { loadRequirements } from "../src/lib/load.js";
-import { loadJson, loadYaml, readText } from "../src/lib/repo.js";
+import { exists, loadJson, loadYaml, readText } from "../src/lib/repo.js";
 import { loadVerifierResources } from "../../reference/verifier/src/resources.js";
 import { routeParsedInput, verifyRecordText } from "../../reference/verifier/src/verify.js";
 import {
@@ -286,14 +286,38 @@ describe("Release 2 non-authoritative candidate surface", () => {
       $id: string;
       $defs: { analysis: { properties: { contract_id: { const: string } } } };
     }>(`${CANDIDATE_ROOT}/schemas/paired-two-condition-continuous-0.1.candidate.schema.json`);
-    const executionOutcomeSchema = loadJson<{ $id: string }>(
-      `${CANDIDATE_ROOT}/schemas/execution-outcome-0.3.candidate.schema.json`,
-    );
+    const executionOutcomeSchema = loadJson<{
+      $id: string;
+      $defs: {
+        verificationCheckIdentity: {
+          oneOf: Array<{
+            properties: {
+              check_id: { const: string };
+              check_version: { const: string };
+            };
+          }>;
+        };
+        conformanceResult: { properties: { check_id: { const: string } } };
+      };
+    }>(`${CANDIDATE_ROOT}/schemas/execution-outcome-0.3.candidate.schema.json`);
     const reportSchema = loadJson<{
       $id: string;
       properties: {
         conformance: { $ref: string };
-        verification_results: { items: { $ref: string } };
+        verification_results: {
+          items: { $ref: string };
+          prefixItems: Array<{
+            allOf: [
+              { $ref: string },
+              {
+                properties: {
+                  check_id: { const: string };
+                  check_version: { const: string };
+                };
+              },
+            ];
+          }>;
+        };
       };
     }>(`${CANDIDATE_ROOT}/schemas/verification-report-0.3.candidate.schema.json`);
     expect(recordSchema.$id).toBe(byKey.get("record_schema"));
@@ -309,6 +333,31 @@ describe("Release 2 non-authoritative candidate surface", () => {
     expect(reportSchema.properties.verification_results.items.$ref).toContain(
       executionOutcomeSchema.$id,
     );
+    const publicChecks = candidate.bundle_binding.public_check_keys.map((key) => {
+      const check = candidate.identifiers.find((identifier) => identifier.key === key);
+      if (check === undefined) throw new Error(`candidate Public Check ${key} is missing`);
+      return { check_id: check.candidate_spelling, check_version: check.revision };
+    });
+    const [conformanceCheck, ...verificationChecks] = publicChecks;
+    expect(executionOutcomeSchema.$defs.conformanceResult.properties.check_id.const).toBe(
+      conformanceCheck?.check_id,
+    );
+    const executionOutcomeChecks = executionOutcomeSchema.$defs.verificationCheckIdentity.oneOf.map(
+      (entry) => ({
+        check_id: entry.properties.check_id.const,
+        check_version: entry.properties.check_version.const,
+      }),
+    );
+    expect(
+      [...executionOutcomeChecks].sort((a, b) => a.check_id.localeCompare(b.check_id)),
+    ).toEqual([...verificationChecks].sort((a, b) => a.check_id.localeCompare(b.check_id)));
+    const orderedReportChecks = reportSchema.properties.verification_results.prefixItems.map(
+      (entry) => ({
+        check_id: entry.allOf[1].properties.check_id.const,
+        check_version: entry.allOf[1].properties.check_version.const,
+      }),
+    );
+    expect(orderedReportChecks).toEqual(verificationChecks);
     for (const binding of candidate.bundle_binding.schema_bindings) {
       const schema = loadJson<{ $id: string }>(binding.candidate_path);
       expect(schema.$id, binding.role).toBe(byKey.get(binding.schema_key));
@@ -320,6 +369,19 @@ describe("Release 2 non-authoritative candidate surface", () => {
     expect(loadJson<{ $id: string }>(String(commonBinding?.repository_path)).$id).toBe(
       commonReuse?.identifier,
     );
+  });
+
+  it("keeps unissued future schema paths unoccupied and legacy reuse paths present", () => {
+    const candidate = loadJson<ProtocolIdentifierCandidateFile>(
+      `${CANDIDATE_ROOT}/protocol-identifiers.json`,
+    );
+    expect(candidate.issuance).toBe("unissued");
+    for (const binding of candidate.bundle_binding.schema_bindings) {
+      expect(exists(binding.future_authoritative_path), binding.role).toBe(false);
+    }
+    for (const binding of candidate.bundle_binding.legacy_schema_bindings) {
+      expect(exists(binding.repository_path), binding.role).toBe(true);
+    }
   });
 
   it("keeps fixture mutation operations strict and array-add insertion-based", () => {
