@@ -54,12 +54,14 @@
   "fixed_95_critical_value_evidence": {
     "closure": "incomplete",
     "primary_path": "arb_forward_probability_midpoint_bracketing",
-    "secondary_path": "rigorous_quantile_enclosure",
+    "secondary_path": "rigorous_density_quadrature_or_executed_low_df_closed_form",
     "certificate_validator": "tooling/src/spikes/paired-t-certificate-candidate.ts",
     "known_closure_items": [
       "emit_exact_midpoint_and_tail_enclosure_endpoints",
       "execute_and_assert_df1_and_df2_closed_form_paths",
       "bind_each_table_cell_to_generator_environment_and_output_hashes",
+      "bind_ordered_research_seed_to_a_table_level_content_hash",
+      "keep_research_seed_coverage_separate_from_runtime_support",
       "separate_zero_reproduction_error_from_half_ulp_truth_error"
     ]
   },

@@ -104,6 +104,22 @@ function criticalCertificate(): CriticalValueCertificateCandidate {
   };
 }
 
+function lowDfCriticalCertificate(): CriticalValueCertificateCandidate {
+  const candidate = criticalCertificate();
+  candidate.input.degrees_of_freedom = 2;
+  candidate.secondary = {
+    method: "rigorous-low-df-closed-form",
+    quantile_enclosure: { lower: "2/1", upper: "2/1" },
+    projects_to_same_candidate: true,
+  };
+  candidate.closed_form = {
+    method: "df2-algebraic-sqrt",
+    quantile_enclosure: { lower: "2/1", upper: "2/1" },
+    projects_to_same_candidate: true,
+  };
+  return candidate;
+}
+
 describe("non-authoritative paired-t certificate bundle checks", () => {
   it("accepts a fully linked structural p-certificate example", () => {
     expect(validatePValueCertificateCandidate(pCertificate())).toEqual([]);
@@ -218,6 +234,18 @@ describe("non-authoritative paired-t certificate bundle checks", () => {
     candidate.input.degrees_of_freedom = 2;
     expect(validateCriticalValueCertificateCandidate(candidate)).toContain(
       "critical-value df=2 requires the algebraic-sqrt closed-form path",
+    );
+  });
+
+  it("accepts the executed low-df closed form as the critical secondary route", () => {
+    expect(validateCriticalValueCertificateCandidate(lowDfCriticalCertificate())).toEqual([]);
+  });
+
+  it("cross-binds the low-df secondary and closed-form enclosures", () => {
+    const candidate = lowDfCriticalCertificate();
+    candidate.secondary.quantile_enclosure = { lower: "3/2", upper: "3/2" };
+    expect(validateCriticalValueCertificateCandidate(candidate)).toContain(
+      "critical low-df secondary path must be the executed closed-form enclosure",
     );
   });
 

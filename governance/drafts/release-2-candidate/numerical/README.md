@@ -11,12 +11,12 @@ structural validator test is not an oracle result.
 
 ## Candidate four-layer separation
 
-| Layer               | Candidate responsibility                                                                                                      | Current state                                                    |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here |
-| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                   |
-| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Format validator added; evidence repair remains open             |
-| Comparison policy   | Quantity-specific recomputation and truth-error ledgers                                                                       | No tolerance is selected                                         |
+| Layer               | Candidate responsibility                                                                                                      | Current state                                                     |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here  |
+| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                    |
+| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Nine-cell research seed generated; complete evidence remains open |
+| Comparison policy   | Quantity-specific recomputation and truth-error ledgers                                                                       | No tolerance is selected                                          |
 
 The secondary oracle path is method-distinct but not library-independent. It
 shares Arb ball arithmetic with the primary and closed-form paths, so their
@@ -70,19 +70,30 @@ structure without calculating the statistical quantity. It requires:
 
 This closes the earlier test-harness holes in which overlap could be forced true,
 closed-form paths were labels rather than executed evidence, and summary JSON lacked
-the exact cells needed for independent verification. It does not convert the prior
-prototype output into a complete certificate. The Arb/FLINT evidence still needs to
-be regenerated in an environment that has the pinned dependency and made available
-as a complete reproducible bundle.
+the exact cells needed for independent verification. The dedicated CI route now
+regenerates a reproducible candidate bundle with the pinned Arb/FLINT dependency.
+That bundle is an evidence artifact for the explicit research seed, not a complete
+critical-value table or an authoritative numerical contract.
 
 `tooling/r2-paired-t-evidence/` now supplies a pinned, fail-closed pilot generator
 and a dedicated CI artifact route. Its current corpus exercises three p-value
-certificates, two fixed-95-percent critical-value certificates, and four boundary
-probes. The generated bundle is hash-bound to the generator commit, copied generator,
-environment, case manifest, and raw oracle output, then passed through the candidate
-certificate validator. This establishes that the evidence route is executable; it
-does not establish table completeness or change either closure field from
-`incomplete`.
+certificates, nine fixed-95-percent critical-value certificates at the explicit
+research-seed degrees of freedom `1, 2, 4, 5, 6, 10, 30, 100, 1000`, and six
+boundary probes. The generated bundle is hash-bound to the generator commit, copied
+generator, environment, case manifest, and raw oracle output, then passed through
+the candidate certificate validator. A separate table manifest also binds the
+ordered df/binary64 cells, the complete certificate bundle, and each individual
+certificate.
+
+The missing degrees of freedom are deliberate. The manifest records that the seed
+is not contiguous runtime support and leaves `supported_df_max` null. For df greater
+than 2, the secondary critical-value route uses segmented rigorous density
+quadrature and expands its finite endpoint until the analytic tail bound is below a
+case-derived evidence ceiling. For df=1 and df=2, the executed closed form is the
+secondary route. The evidence ceiling is only a proof-construction condition; it is
+not a runtime tolerance or supported-domain predicate. This increment establishes
+that the expanded evidence route is executable. It does not establish table
+completeness or change either closure field from `incomplete`.
 
 For a certified binary64 critical value `t_c`, table lookup has zero reproduction
 error. Its truth error is different: correct rounding establishes the absolute bound
@@ -98,7 +109,8 @@ not multiply the ULP by `|t_c|` a second time.
   refused;
 - the runtime Student-t tail procedure and its branch boundary;
 - all quantity-specific comparison tolerances;
-- the complete critical-value table and its content hash; and
+- the complete critical-value table and its final content hash (the current hash
+  binds only the explicit research seed); and
 - the final reason-code spellings and authoritative Public Check revision.
 
 Support will be expressed as machine-testable operation-stage predicates plus a

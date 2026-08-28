@@ -8,6 +8,7 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { isDeepStrictEqual } from "node:util";
 
 import {
@@ -27,7 +28,7 @@ interface CriticalEntry {
   certificate: CriticalValueCertificateCandidate;
 }
 
-interface CertificateBundle {
+export interface CertificateBundle {
   status: string;
   artifact_kind: string;
   scope: string;
@@ -37,14 +38,52 @@ interface CertificateBundle {
   boundary_probe_case_ids: string[];
 }
 
-interface CaseManifest {
+export interface CaseManifest {
   status: string;
+  fixed_95_critical_value_table: {
+    table_key: string;
+    coverage_kind: string;
+    ordered_degrees_of_freedom: number[];
+    contiguous_runtime_support_claimed: boolean;
+    supported_df_max: null;
+  };
   p_value_certificates: Array<{ case_id: string }>;
-  fixed_95_critical_value_certificates: Array<{ case_id: string }>;
+  fixed_95_critical_value_certificates: Array<{
+    case_id: string;
+    degrees_of_freedom: number;
+    candidate_binary64_hex: string;
+  }>;
   boundary_probes: Array<{
     case_id: string;
     expected_projection_class: string;
     expected_projected_binary64_hex?: string;
+  }>;
+}
+
+export interface CriticalTableManifest {
+  status: string;
+  artifact_kind: string;
+  scope: string;
+  generator_commit: string;
+  table_key: string;
+  target: {
+    confidence_level: string;
+    two_sided_tail_probability: string;
+    target_format: string;
+    rounding_mode: string;
+  };
+  coverage: {
+    kind: string;
+    ordered_degrees_of_freedom: number[];
+    contiguous_runtime_support_claimed: boolean;
+    supported_df_max: null;
+  };
+  table_content_sha256: string;
+  certificate_bundle_sha256: string;
+  cells: Array<{
+    degrees_of_freedom: number;
+    candidate_binary64_hex: string;
+    certificate_sha256: string;
   }>;
 }
 
@@ -64,7 +103,7 @@ interface RawOutput {
     case_id: string;
     input: unknown;
     primary: unknown;
-    secondary: { quantile_enclosure: unknown };
+    secondary: { method: string; quantile_enclosure: unknown };
     closed_form: null | { method: string; quantile_enclosure: unknown };
     projection: ProjectionLike;
   }>;
@@ -107,6 +146,7 @@ interface ProjectionLike {
 const EXPECTED_FILES = [
   "cases.json",
   "certificates.json",
+  "critical-value-table-manifest.json",
   "environment.json",
   "generator.py",
   "raw-oracle-output.json",
@@ -115,9 +155,14 @@ const EXPECTED_FILES = [
 const HASH = /^[0-9a-f]{64}$/;
 const COMMIT = /^[0-9a-f]{40}$/;
 const ZERO_BINARY64_HEX = new Set(["0000000000000000", "8000000000000000"]);
+const TABLE_SCOPE = "explicit_research_seed_only_not_runtime_support_or_r2_d5_closure";
 
 function sha256(file: string): string {
   return createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+}
+
+function sha256Bytes(value: string): string {
+  return createHash("sha256").update(value).digest("hex");
 }
 
 function readJson<T>(file: string): T {
@@ -132,6 +177,40 @@ function sameSet(actual: string[], expected: string[]): boolean {
   const left = sorted(actual);
   const right = sorted(expected);
   return left.length === right.length && left.every((value, index) => value === right[index]);
+}
+
+function sameOrder<T>(actual: readonly T[], expected: readonly T[]): boolean {
+  return (
+    actual.length === expected.length && actual.every((value, index) => value === expected[index])
+  );
+}
+
+function hasExactKeys(value: object, expected: readonly string[]): boolean {
+  return sameSet(Object.keys(value), [...expected]);
+}
+
+function sortJson(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(sortJson);
+  if (typeof value !== "object" || value === null) return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([key, child]) => [key, sortJson(child)]),
+  );
+}
+
+function stableJson(value: unknown): string {
+  return `${JSON.stringify(sortJson(value), null, 2)}\n`;
+}
+
+function criticalTableContent(cases: CaseManifest): string {
+  const lines = ["nomue-paired-t-fixed-95-table-v1", "two-sided-tail-target=1/20"];
+  lines.push(
+    ...cases.fixed_95_critical_value_certificates.map(
+      (entry) => `df=${entry.degrees_of_freedom};binary64=${entry.candidate_binary64_hex}`,
+    ),
+  );
+  return `${lines.join("\n")}\n`;
 }
 
 function sameProvenance(actual: Provenance, expected: Provenance): boolean {
@@ -275,6 +354,146 @@ function validateCaseCoverage(
   }
 }
 
+export function validateCriticalTableManifest(
+  bundleDir: string,
+  expectedCommit: string,
+  cases: CaseManifest,
+  certificates: CertificateBundle,
+  table: CriticalTableManifest,
+  errors: string[],
+): void {
+  const topKeys = [
+    "status",
+    "artifact_kind",
+    "scope",
+    "generator_commit",
+    "table_key",
+    "target",
+    "coverage",
+    "table_content_sha256",
+    "certificate_bundle_sha256",
+    "cells",
+  ];
+  const targetKeys = [
+    "confidence_level",
+    "two_sided_tail_probability",
+    "target_format",
+    "rounding_mode",
+  ];
+  const coverageKeys = [
+    "kind",
+    "ordered_degrees_of_freedom",
+    "contiguous_runtime_support_claimed",
+    "supported_df_max",
+  ];
+  const cellKeys = ["degrees_of_freedom", "candidate_binary64_hex", "certificate_sha256"];
+  if (!hasExactKeys(table, topKeys)) {
+    errors.push("critical table manifest keys are incomplete or contain an undeclared item");
+  }
+  if (!hasExactKeys(table.target, targetKeys)) {
+    errors.push("critical table target keys are incomplete or contain an undeclared item");
+  }
+  if (!hasExactKeys(table.coverage, coverageKeys)) {
+    errors.push("critical table coverage keys are incomplete or contain an undeclared item");
+  }
+  if (table.cells.some((cell) => !hasExactKeys(cell, cellKeys))) {
+    errors.push("critical table cell keys are incomplete or contain an undeclared item");
+  }
+
+  if (
+    table.status !== "non_authoritative_candidate" ||
+    table.artifact_kind !== "paired-t-fixed-95-critical-value-table-evidence-manifest" ||
+    table.scope !== TABLE_SCOPE ||
+    table.generator_commit !== expectedCommit
+  ) {
+    errors.push("critical table manifest identity or non-authoritative scope is not pinned");
+  }
+  if (
+    table.target.confidence_level !== "19/20" ||
+    table.target.two_sided_tail_probability !== "1/20" ||
+    table.target.target_format !== "binary64" ||
+    table.target.rounding_mode !== "roundTiesToEven"
+  ) {
+    errors.push("critical table target is not the fixed-95 binary64 candidate target");
+  }
+
+  const definition = cases.fixed_95_critical_value_table;
+  if (
+    definition.table_key !== "research-seed-v1" ||
+    definition.coverage_kind !== "explicit_research_seed_not_runtime_support" ||
+    definition.contiguous_runtime_support_claimed !== false ||
+    definition.supported_df_max !== null
+  ) {
+    errors.push("case manifest critical table definition overclaims runtime support");
+  }
+  if (
+    table.table_key !== definition.table_key ||
+    table.coverage.kind !== definition.coverage_kind ||
+    table.coverage.contiguous_runtime_support_claimed !== false ||
+    table.coverage.supported_df_max !== null
+  ) {
+    errors.push("critical table coverage does not match the non-supporting research seed");
+  }
+
+  const caseDf = cases.fixed_95_critical_value_certificates.map(
+    (entry) => entry.degrees_of_freedom,
+  );
+  const certificateDf = certificates.fixed_95_critical_value_certificates.map(
+    (entry) => entry.certificate.input.degrees_of_freedom,
+  );
+  const cellDf = table.cells.map((entry) => entry.degrees_of_freedom);
+  if (
+    !sameOrder(definition.ordered_degrees_of_freedom, caseDf) ||
+    !sameOrder(caseDf, certificateDf) ||
+    !sameOrder(certificateDf, cellDf) ||
+    !sameOrder(table.coverage.ordered_degrees_of_freedom, caseDf)
+  ) {
+    errors.push("critical table df order or declared coverage is incomplete");
+  }
+  if (
+    caseDf.some(
+      (df, index) => !Number.isSafeInteger(df) || df < 1 || (index > 0 && df <= caseDf[index - 1]!),
+    )
+  ) {
+    errors.push("critical table df values must be positive, unique, and increasing");
+  }
+
+  const expectedContentHash = `sha256:${sha256Bytes(criticalTableContent(cases))}`;
+  if (table.table_content_sha256 !== expectedContentHash) {
+    errors.push("critical table content hash does not bind the ordered df/hex cells");
+  }
+  const expectedBundleHash = `sha256:${sha256(path.join(bundleDir, "certificates.json"))}`;
+  if (table.certificate_bundle_sha256 !== expectedBundleHash) {
+    errors.push("critical table manifest does not bind certificates.json");
+  }
+
+  for (let index = 0; index < cases.fixed_95_critical_value_certificates.length; index += 1) {
+    const caseEntry = cases.fixed_95_critical_value_certificates[index];
+    const certificateEntry = certificates.fixed_95_critical_value_certificates[index];
+    const cell = table.cells[index];
+    if (caseEntry === undefined || certificateEntry === undefined || cell === undefined) continue;
+    if (caseEntry.case_id !== `critical-df${caseEntry.degrees_of_freedom}`) {
+      errors.push(`${caseEntry.case_id}: critical table case id does not match its df`);
+    }
+    if (
+      certificateEntry.case_id !== caseEntry.case_id ||
+      certificateEntry.certificate.input.candidate_binary64_hex !==
+        caseEntry.candidate_binary64_hex ||
+      cell.candidate_binary64_hex !== caseEntry.candidate_binary64_hex
+    ) {
+      errors.push(`${caseEntry.case_id}: critical table cell is not bound across artifacts`);
+    }
+    const expectedCertificateHash = `sha256:${sha256Bytes(
+      stableJson(certificateEntry.certificate),
+    )}`;
+    if (!HASH.test(cell.certificate_sha256.replace(/^sha256:/, ""))) {
+      errors.push(`${caseEntry.case_id}: critical table certificate hash is malformed`);
+    } else if (cell.certificate_sha256 !== expectedCertificateHash) {
+      errors.push(`${caseEntry.case_id}: critical table cell does not bind its certificate`);
+    }
+  }
+}
+
 function validateRawBindings(
   certificates: CertificateBundle,
   raw: RawOutput,
@@ -320,6 +539,7 @@ function validateRawBindings(
     if (
       !isDeepStrictEqual(trace.input, certificate.input) ||
       !isDeepStrictEqual(trace.primary, certificate.primary) ||
+      trace.secondary.method !== certificate.secondary.method ||
       !isDeepStrictEqual(
         trace.secondary.quantile_enclosure,
         certificate.secondary.quantile_enclosure,
@@ -348,7 +568,7 @@ function validateRawBindings(
   }
 }
 
-function validateBundle(bundleDir: string, expectedCommit: string): string[] {
+export function validateBundle(bundleDir: string, expectedCommit: string): string[] {
   const errors: string[] = [];
   if (!COMMIT.test(expectedCommit) || /^0+$/.test(expectedCommit)) {
     return ["expected generator commit must be a nonzero full lowercase Git SHA"];
@@ -360,6 +580,9 @@ function validateBundle(bundleDir: string, expectedCommit: string): string[] {
 
   const cases = readJson<CaseManifest>(path.join(bundleDir, "cases.json"));
   const certificates = readJson<CertificateBundle>(path.join(bundleDir, "certificates.json"));
+  const criticalTable = readJson<CriticalTableManifest>(
+    path.join(bundleDir, "critical-value-table-manifest.json"),
+  );
   const raw = readJson<RawOutput>(path.join(bundleDir, "raw-oracle-output.json"));
   const environment = readJson<Environment>(path.join(bundleDir, "environment.json"));
   if (
@@ -421,23 +644,34 @@ function validateBundle(bundleDir: string, expectedCommit: string): string[] {
     }
   }
   validateCaseCoverage(cases, certificates, raw, errors);
+  validateCriticalTableManifest(
+    bundleDir,
+    expectedCommit,
+    cases,
+    certificates,
+    criticalTable,
+    errors,
+  );
   validateRawBindings(certificates, raw, errors);
   return errors;
 }
 
-const [bundleArgument, expectedCommit] = process.argv.slice(2);
-if (bundleArgument === undefined || expectedCommit === undefined) {
-  console.error(
-    "usage: tsx tooling/src/spikes/validate-paired-t-evidence-bundle.ts <bundle-dir> <generator-commit>",
+const invokedPath = process.argv[1];
+if (invokedPath !== undefined && path.resolve(invokedPath) === fileURLToPath(import.meta.url)) {
+  const [bundleArgument, expectedCommit] = process.argv.slice(2);
+  if (bundleArgument === undefined || expectedCommit === undefined) {
+    console.error(
+      "usage: tsx tooling/src/spikes/validate-paired-t-evidence-bundle.ts <bundle-dir> <generator-commit>",
+    );
+    process.exit(2);
+  }
+  const bundleDir = path.resolve(bundleArgument);
+  const errors = validateBundle(bundleDir, expectedCommit);
+  if (errors.length > 0) {
+    for (const error of errors) console.error(`release-2-paired-t-evidence: ${error}`);
+    process.exit(1);
+  }
+  console.log(
+    `release-2-paired-t-evidence: OK (${bundleDir}; manifest, provenance, case coverage, critical table, and certificate structure)`,
   );
-  process.exit(2);
 }
-const bundleDir = path.resolve(bundleArgument);
-const errors = validateBundle(bundleDir, expectedCommit);
-if (errors.length > 0) {
-  for (const error of errors) console.error(`release-2-paired-t-evidence: ${error}`);
-  process.exit(1);
-}
-console.log(
-  `release-2-paired-t-evidence: OK (${bundleDir}; manifest, provenance, case coverage, and certificate structure)`,
-);

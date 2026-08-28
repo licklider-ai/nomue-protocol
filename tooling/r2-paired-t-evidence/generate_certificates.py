@@ -41,6 +41,11 @@ INITIAL_PRECISION_BITS = 96
 P_PRECISION_CEILING_BITS = 8192
 CRITICAL_PRECISION_CEILING_BITS = 4096
 SECONDARY_PRECISION_BITS = 384
+TABLE_SCOPE = "explicit_research_seed_only_not_runtime_support_or_r2_d5_closure"
+
+
+class PrecisionRetry(RuntimeError):
+    """Signal that a rigorous enclosure needs more working precision."""
 
 
 def canonical_fraction(value: Fraction) -> str:
@@ -202,7 +207,10 @@ def p_closed_form_ball(df: int, statistic: Fraction, precision_bits: int) -> tup
 
 
 def secondary_p_interval(
-    df: int, statistic: Fraction, precision_bits: int
+    df: int,
+    statistic: Fraction,
+    precision_bits: int,
+    tail_bound_ceiling: Fraction | None = None,
 ) -> tuple[tuple[Fraction, Fraction], dict[str, Any]]:
     """Enclose two-sided p by finite rigorous quadrature plus a tail bound."""
 
@@ -224,28 +232,58 @@ def secondary_p_interval(
     df_complex = acb(df)
     exponent = acb(fmpq(-(df + 1), 2))
 
+    def analytic_tail_bound(limit: Fraction) -> tuple[arb, Fraction]:
+        tail_ball = (
+            2
+            * normalizer
+            * ((arb(fmpq(df - 1, 2)) * arb(df).log()).exp())
+            * (arb_from_fraction(limit) ** (-df))
+        )
+        try:
+            _, upper = arb_bounds(tail_ball)
+        except ValueError as exc:
+            raise PrecisionRetry(
+                "analytic tail bound did not produce a finite enclosure"
+            ) from exc
+        return tail_ball, upper
+
+    tail, tail_upper = analytic_tail_bound(upper_limit)
+    expansion_count = 0
+    while tail_bound_ceiling is not None and tail_upper > tail_bound_ceiling:
+        if expansion_count >= 64:
+            raise RuntimeError("analytic tail bound did not reach its evidence ceiling")
+        upper_limit *= 2
+        tail, tail_upper = analytic_tail_bound(upper_limit)
+        expansion_count += 1
+
     def density(value: acb, analytic: bool) -> acb:
         base = 1 + value * value / df_complex
         return normalizer_complex * (exponent * base.log(analytic=analytic)).exp()
 
-    integral = acb.integral(
-        density,
-        acb_from_fraction(lower_limit),
-        acb_from_fraction(upper_limit),
-        rel_tol=2.0 ** (-(precision_bits - 24)),
-        abs_tol=2.0 ** (-(precision_bits - 24)),
-    )
+    segment_endpoints = [lower_limit]
+    while segment_endpoints[-1] < upper_limit:
+        current = segment_endpoints[-1]
+        next_endpoint = min(upper_limit, max(current + 1, current * 2))
+        segment_endpoints.append(next_endpoint)
+    tolerance_exponent = min(precision_bits - 24, 1020)
+    relative_tolerance = math.ldexp(1.0, -tolerance_exponent)
+    absolute_tolerance = relative_tolerance / len(segment_endpoints)
+    integral = acb(0)
+    for segment_lower, segment_upper in zip(segment_endpoints, segment_endpoints[1:]):
+        integral += acb.integral(
+            density,
+            acb_from_fraction(segment_lower),
+            acb_from_fraction(segment_upper),
+            rel_tol=relative_tolerance,
+            abs_tol=absolute_tolerance,
+        )
     if not integral.imag.contains(0):
         raise RuntimeError("quadrature imaginary enclosure does not contain zero")
-    integral_lower, integral_upper = arb_bounds(integral.real)
+    try:
+        integral_lower, integral_upper = arb_bounds(integral.real)
+    except ValueError as exc:
+        raise PrecisionRetry("quadrature did not produce a finite real enclosure") from exc
 
-    tail = (
-        2
-        * normalizer
-        * ((arb(fmpq(df - 1, 2)) * arb(df).log()).exp())
-        * (arb_from_fraction(upper_limit) ** (-df))
-    )
-    _, tail_upper = arb_bounds(tail)
     result_lower = max(Fraction(0), 2 * integral_lower)
     result_upper = min(Fraction(1), 2 * integral_upper + tail_upper)
     if result_lower > result_upper:
@@ -255,8 +293,17 @@ def secondary_p_interval(
             canonical_fraction(lower_limit),
             canonical_fraction(upper_limit),
         ],
+        "integration_segment_endpoints": [
+            canonical_fraction(endpoint) for endpoint in segment_endpoints
+        ],
         "finite_integral_real_enclosure": interval_json((integral_lower, integral_upper)),
         "tail_bound_upper": canonical_fraction(tail_upper),
+        "tail_bound_ceiling": (
+            canonical_fraction(tail_bound_ceiling)
+            if tail_bound_ceiling is not None
+            else None
+        ),
+        "upper_limit_expansion_count": expansion_count,
         "imaginary_part_contains_zero": True,
         "precision_bits": precision_bits,
     }
@@ -409,30 +456,6 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
     inset = (cell_upper - cell_lower) / 1024
     secondary_lower_point = cell_lower + inset
     secondary_upper_point = cell_upper - inset
-    secondary_precision = SECONDARY_PRECISION_BITS
-    secondary_lower_tail: tuple[Fraction, Fraction] | None = None
-    secondary_upper_tail: tuple[Fraction, Fraction] | None = None
-    secondary_lower_trace: dict[str, Any] | None = None
-    secondary_upper_trace: dict[str, Any] | None = None
-    while secondary_precision <= CRITICAL_PRECISION_CEILING_BITS:
-        secondary_lower_tail, secondary_lower_trace = secondary_p_interval(
-            df, secondary_lower_point, secondary_precision
-        )
-        secondary_upper_tail, secondary_upper_trace = secondary_p_interval(
-            df, secondary_upper_point, secondary_precision
-        )
-        if secondary_lower_tail[0] > target and secondary_upper_tail[1] < target:
-            break
-        secondary_precision *= 2
-    if (
-        secondary_lower_tail is None
-        or secondary_upper_tail is None
-        or secondary_lower_tail[0] <= target
-        or secondary_upper_tail[1] >= target
-    ):
-        raise RuntimeError(f"{case['case_id']}: secondary quadrature bracket did not close")
-
-    quantile_bounds = (secondary_lower_point, secondary_upper_point)
     projection = {
         "target_format": "binary64",
         "rounding_mode": "roundTiesToEven",
@@ -459,6 +482,76 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
             "precision_bits": SECONDARY_PRECISION_BITS,
         }
 
+    secondary_precision = SECONDARY_PRECISION_BITS
+    secondary_trace: dict[str, Any]
+    if closed is not None:
+        quantile_bounds = closed_bounds
+        secondary_method = "rigorous-low-df-closed-form"
+        secondary_trace = {
+            "method": secondary_method,
+            "closed_form_method": closed_method,
+            "precision_bits": SECONDARY_PRECISION_BITS,
+            "quantile_enclosure": interval_json(quantile_bounds),
+        }
+    else:
+        inset_lower_primary = primary_tail_interval(df, secondary_lower_point, precision)
+        inset_upper_primary = primary_tail_interval(df, secondary_upper_point, precision)
+        secondary_margin = min(
+            inset_lower_primary[0] - target,
+            target - inset_upper_primary[1],
+        )
+        if secondary_margin <= 0:
+            raise RuntimeError(
+                f"{case['case_id']}: primary inset bracket did not establish a positive margin"
+            )
+        tail_bound_ceiling = secondary_margin / 4
+        secondary_lower_tail: tuple[Fraction, Fraction] | None = None
+        secondary_upper_tail: tuple[Fraction, Fraction] | None = None
+        secondary_lower_trace: dict[str, Any] | None = None
+        secondary_upper_trace: dict[str, Any] | None = None
+        while secondary_precision <= CRITICAL_PRECISION_CEILING_BITS:
+            try:
+                secondary_lower_tail, secondary_lower_trace = secondary_p_interval(
+                    df,
+                    secondary_lower_point,
+                    secondary_precision,
+                    tail_bound_ceiling,
+                )
+                secondary_upper_tail, secondary_upper_trace = secondary_p_interval(
+                    df,
+                    secondary_upper_point,
+                    secondary_precision,
+                    tail_bound_ceiling,
+                )
+            except PrecisionRetry:
+                secondary_precision *= 2
+                continue
+            if secondary_lower_tail[0] > target and secondary_upper_tail[1] < target:
+                break
+            secondary_precision *= 2
+        if (
+            secondary_lower_tail is None
+            or secondary_upper_tail is None
+            or secondary_lower_tail[0] <= target
+            or secondary_upper_tail[1] >= target
+        ):
+            raise RuntimeError(f"{case['case_id']}: secondary quadrature bracket did not close")
+        quantile_bounds = (secondary_lower_point, secondary_upper_point)
+        secondary_method = "rigorous-density-quadrature"
+        secondary_trace = {
+            "method": secondary_method,
+            "precision_bits": secondary_precision,
+            "tail_bound_ceiling": canonical_fraction(tail_bound_ceiling),
+            "tail_bound_ceiling_basis": "one-quarter-of-primary-inset-bracket-margin",
+            "lower_test_point": canonical_fraction(secondary_lower_point),
+            "upper_test_point": canonical_fraction(secondary_upper_point),
+            "tail_at_lower_test_point": interval_json(secondary_lower_tail),
+            "tail_at_upper_test_point": interval_json(secondary_upper_tail),
+            "lower_trace": secondary_lower_trace,
+            "upper_trace": secondary_upper_trace,
+            "quantile_enclosure": interval_json(quantile_bounds),
+        }
+
     certificate = {
         "status": "non_authoritative_candidate",
         "artifact_kind": "paired-t-fixed-95-critical-value-certificate",
@@ -481,7 +574,7 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
             "tail_at_cell_upper": interval_json(upper_tail),
         },
         "secondary": {
-            "method": "rigorous-density-quadrature",
+            "method": secondary_method,
             "quantile_enclosure": interval_json(quantile_bounds),
             "projects_to_same_candidate": True,
         },
@@ -492,16 +585,7 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
         "case_id": case["case_id"],
         "input": certificate["input"],
         "primary": certificate["primary"],
-        "secondary": {
-            "precision_bits": secondary_precision,
-            "lower_test_point": canonical_fraction(secondary_lower_point),
-            "upper_test_point": canonical_fraction(secondary_upper_point),
-            "tail_at_lower_test_point": interval_json(secondary_lower_tail),
-            "tail_at_upper_test_point": interval_json(secondary_upper_tail),
-            "lower_trace": secondary_lower_trace,
-            "upper_trace": secondary_upper_trace,
-            "quantile_enclosure": interval_json(quantile_bounds),
-        },
+        "secondary": secondary_trace,
         "closed_form": closed_trace,
         "projection": projection,
         "candidate_exact": canonical_fraction(candidate_fraction),
@@ -591,6 +675,80 @@ def prefixed_hash(path: Path) -> str:
     return SHA256_PREFIX + sha256_file(path)
 
 
+def validate_case_manifest(cases: dict[str, Any]) -> None:
+    expected_keys = {
+        "status",
+        "fixed_95_critical_value_table",
+        "p_value_certificates",
+        "fixed_95_critical_value_certificates",
+        "boundary_probes",
+    }
+    if set(cases) != expected_keys:
+        raise SystemExit("case manifest keys are incomplete or contain an undeclared item")
+    if cases.get("status") != "non_authoritative_candidate":
+        raise SystemExit("case manifest must remain non-authoritative")
+
+    table = cases["fixed_95_critical_value_table"]
+    expected_table_keys = {
+        "table_key",
+        "coverage_kind",
+        "ordered_degrees_of_freedom",
+        "contiguous_runtime_support_claimed",
+        "supported_df_max",
+    }
+    if not isinstance(table, dict) or set(table) != expected_table_keys:
+        raise SystemExit("critical-value table definition is malformed")
+    if (
+        table["table_key"] != "research-seed-v1"
+        or table["coverage_kind"] != "explicit_research_seed_not_runtime_support"
+        or table["contiguous_runtime_support_claimed"] is not False
+        or table["supported_df_max"] is not None
+    ):
+        raise SystemExit("critical-value table definition overclaims runtime support")
+
+    ordered_df = table["ordered_degrees_of_freedom"]
+    if (
+        not isinstance(ordered_df, list)
+        or not ordered_df
+        or any(not isinstance(value, int) or isinstance(value, bool) or value < 1 for value in ordered_df)
+        or ordered_df != sorted(set(ordered_df))
+    ):
+        raise SystemExit("critical-value table df set must be positive, unique, and increasing")
+
+    critical_cases = cases["fixed_95_critical_value_certificates"]
+    if not isinstance(critical_cases, list):
+        raise SystemExit("critical-value certificate cases must be an array")
+    critical_df = [entry.get("degrees_of_freedom") for entry in critical_cases]
+    if critical_df != ordered_df:
+        raise SystemExit("critical-value certificate cases do not exactly cover the table df set")
+    for entry in critical_cases:
+        df = entry["degrees_of_freedom"]
+        if entry.get("case_id") != f"critical-df{df}":
+            raise SystemExit("critical-value case id does not match its df")
+        candidate_hex = entry.get("candidate_binary64_hex")
+        if not isinstance(candidate_hex, str) or float_from_hex(candidate_hex) <= 0:
+            raise SystemExit("critical-value table candidate must be positive finite binary64 hex")
+
+    all_case_ids = [
+        entry.get("case_id")
+        for key in ("p_value_certificates", "fixed_95_critical_value_certificates", "boundary_probes")
+        for entry in cases[key]
+    ]
+    if any(not isinstance(value, str) or not value for value in all_case_ids):
+        raise SystemExit("every evidence case requires a nonempty case id")
+    if len(all_case_ids) != len(set(all_case_ids)):
+        raise SystemExit("evidence case ids must be unique across the case manifest")
+
+
+def critical_table_content_bytes(critical_cases: list[dict[str, Any]]) -> bytes:
+    lines = ["nomue-paired-t-fixed-95-table-v1", "two-sided-tail-target=1/20"]
+    lines.extend(
+        f"df={case['degrees_of_freedom']};binary64={case['candidate_binary64_hex']}"
+        for case in critical_cases
+    )
+    return ("\n".join(lines) + "\n").encode()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cases", required=True, type=Path)
@@ -607,8 +765,7 @@ def main() -> None:
     requirements_path = source_path.with_name("requirements.txt")
     cases_path = args.cases.resolve()
     cases = json.loads(cases_path.read_text())
-    if cases.get("status") != "non_authoritative_candidate":
-        raise SystemExit("case manifest must remain non-authoritative")
+    validate_case_manifest(cases)
 
     output = args.output.resolve()
     if output.exists():
@@ -679,9 +836,55 @@ def main() -> None:
     }
     write_json(output / "certificates.json", certificates)
 
+    table_definition = cases["fixed_95_critical_value_table"]
+    critical_cases = cases["fixed_95_critical_value_certificates"]
+    critical_entries_by_df = {
+        entry["certificate"]["input"]["degrees_of_freedom"]: entry
+        for entry in critical_certificates
+    }
+    table_manifest = {
+        "status": "non_authoritative_candidate",
+        "artifact_kind": "paired-t-fixed-95-critical-value-table-evidence-manifest",
+        "scope": TABLE_SCOPE,
+        "generator_commit": args.generator_commit,
+        "table_key": table_definition["table_key"],
+        "target": {
+            "confidence_level": "19/20",
+            "two_sided_tail_probability": "1/20",
+            "target_format": "binary64",
+            "rounding_mode": "roundTiesToEven",
+        },
+        "coverage": {
+            "kind": table_definition["coverage_kind"],
+            "ordered_degrees_of_freedom": table_definition["ordered_degrees_of_freedom"],
+            "contiguous_runtime_support_claimed": table_definition[
+                "contiguous_runtime_support_claimed"
+            ],
+            "supported_df_max": table_definition["supported_df_max"],
+        },
+        "table_content_sha256": SHA256_PREFIX
+        + sha256_bytes(critical_table_content_bytes(critical_cases)),
+        "certificate_bundle_sha256": prefixed_hash(output / "certificates.json"),
+        "cells": [
+            {
+                "degrees_of_freedom": case["degrees_of_freedom"],
+                "candidate_binary64_hex": case["candidate_binary64_hex"],
+                "certificate_sha256": SHA256_PREFIX
+                + sha256_bytes(
+                    json_bytes(
+                        critical_entries_by_df[case["degrees_of_freedom"]]["certificate"]
+                    )
+                ),
+            }
+            for case in critical_cases
+        ],
+    }
+    write_json(output / "critical-value-table-manifest.json", table_manifest)
+
     manifested = [
         "cases.json",
         "certificates.json",
+        "critical-value-table-manifest.json",
         "environment.json",
         "generator.py",
         "raw-oracle-output.json",
@@ -692,7 +895,7 @@ def main() -> None:
     print(
         f"generated {len(p_certificates)} p-value certificates, "
         f"{len(critical_certificates)} critical-value certificates, and "
-        f"{len(boundary_traces)} boundary probes in {output}"
+        f"{len(boundary_traces)} boundary probes with a table-level evidence manifest in {output}"
     )
 
 

@@ -91,7 +91,8 @@ export interface CriticalValueCertificateCandidate {
     tail_at_cell_upper: ExactIntervalCandidate;
   };
   secondary: {
-    method: "rigorous-quantile-enclosure" | "rigorous-density-quadrature";
+    method:
+      "rigorous-quantile-enclosure" | "rigorous-density-quadrature" | "rigorous-low-df-closed-form";
     quantile_enclosure: ExactIntervalCandidate;
     projects_to_same_candidate: true;
   };
@@ -553,7 +554,8 @@ export function validateCriticalValueCertificateCandidate(
   }
   if (
     certificate.secondary.method !== "rigorous-quantile-enclosure" &&
-    certificate.secondary.method !== "rigorous-density-quadrature"
+    certificate.secondary.method !== "rigorous-density-quadrature" &&
+    certificate.secondary.method !== "rigorous-low-df-closed-form"
   ) {
     errors.push("critical secondary: method is not a recognized independent route");
   }
@@ -578,6 +580,20 @@ export function validateCriticalValueCertificateCandidate(
     if (!certificate.closed_form.projects_to_same_candidate) {
       errors.push("critical closed form: independent projection must match the candidate");
     }
+  }
+  if (
+    (df === 1 || df === 2) &&
+    (certificate.secondary.method !== "rigorous-low-df-closed-form" ||
+      certificate.closed_form === null ||
+      certificate.secondary.quantile_enclosure.lower !==
+        certificate.closed_form.quantile_enclosure.lower ||
+      certificate.secondary.quantile_enclosure.upper !==
+        certificate.closed_form.quantile_enclosure.upper)
+  ) {
+    errors.push("critical low-df secondary path must be the executed closed-form enclosure");
+  }
+  if (df > 2 && certificate.secondary.method === "rigorous-low-df-closed-form") {
+    errors.push("critical low-df secondary path cannot be used above df=2");
   }
   validateProjectionCell(certificate.projection, errors);
   validateProvenance(certificate.provenance, errors);
