@@ -18,6 +18,10 @@ structural validator test is not an oracle result.
 | Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Format validator added; evidence repair remains open             |
 | Comparison policy   | Quantity-specific recomputation and truth-error ledgers                                                                       | No tolerance is selected                                         |
 
+The secondary oracle path is method-distinct but not library-independent. It
+shares Arb ball arithmetic with the primary and closed-form paths, so their
+agreement supplies only weak independence against shared-library defects.
+
 The exact mathematical difference for one pair is the subtraction of the two parsed
 binary64 operands after each operand is lifted to its exact dyadic-rational value.
 The binary64 procedure then performs one binary64 subtraction. These two levels are

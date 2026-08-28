@@ -88,6 +88,10 @@ def float_to_hex(value: float) -> str:
     return struct.pack(">d", value).hex()
 
 
+def is_zero_binary64_hex(value: str) -> bool:
+    return float_from_hex(value) == 0.0
+
+
 def float_to_fraction(value: float) -> Fraction:
     if not math.isfinite(value):
         raise ValueError("only finite binary64 values have exact rational lifts")
@@ -282,7 +286,7 @@ def certify_p_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]
         precision *= 2
     if primary_bounds is None or projection is None:
         raise RuntimeError(f"{case['case_id']}: primary path did not isolate a binary64 cell")
-    if projection["projected_binary64_hex"] == "0000000000000000":
+    if is_zero_binary64_hex(projection["projected_binary64_hex"]):
         raise RuntimeError(f"{case['case_id']}: a positive-p certificate cannot project to zero")
 
     secondary_bounds, secondary_trace = secondary_p_interval(
@@ -561,7 +565,7 @@ def boundary_probe(case: dict[str, Any]) -> dict[str, Any]:
         "projection": projection,
         "certificate_disposition": (
             "positive_binary64_projection_requires_secondary_evidence"
-            if projection["projected_binary64_hex"] != "0000000000000000"
+            if not is_zero_binary64_hex(projection["projected_binary64_hex"])
             else "positive_mathematical_tail_not_representable_as_positive_binary64"
         ),
     }

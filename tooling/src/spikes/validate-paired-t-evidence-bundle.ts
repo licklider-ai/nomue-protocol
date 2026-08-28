@@ -114,6 +114,7 @@ const EXPECTED_FILES = [
 ] as const;
 const HASH = /^[0-9a-f]{64}$/;
 const COMMIT = /^[0-9a-f]{40}$/;
+const ZERO_BINARY64_HEX = new Set(["0000000000000000", "8000000000000000"]);
 
 function sha256(file: string): string {
   return createHash("sha256").update(fs.readFileSync(file)).digest("hex");
@@ -203,7 +204,11 @@ function verifySourceCopies(bundleDir: string, errors: string[]): void {
   ];
   for (const [bundleName, repoPath] of repoSources) {
     const bundlePath = path.join(bundleDir, bundleName);
-    if (!fs.existsSync(bundlePath) || !fs.existsSync(repoPath)) continue;
+    if (!fs.existsSync(repoPath)) {
+      errors.push(`repository source is missing: ${repoPath}`);
+      continue;
+    }
+    if (!fs.existsSync(bundlePath)) continue;
     if (sha256(bundlePath) !== sha256(repoPath)) {
       errors.push(`${bundleName} does not match the repository source`);
     }
@@ -261,7 +266,7 @@ function validateCaseCoverage(
       errors.push(`${expected.case_id}: boundary projection value is not pinned`);
     }
     if (
-      actual.projection.projected_binary64_hex === "0000000000000000" &&
+      ZERO_BINARY64_HEX.has(actual.projection.projected_binary64_hex) &&
       actual.certificate_disposition !==
         "positive_mathematical_tail_not_representable_as_positive_binary64"
     ) {

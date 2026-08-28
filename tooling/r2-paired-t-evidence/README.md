@@ -16,6 +16,10 @@ rational value. It then produces a small pilot bundle containing:
   t, and df=2 at maximum finite t; and
 - hashes binding the generator, environment, and raw oracle output.
 
+The secondary route is method-distinct, not library-independent. It shares Arb
+ball arithmetic with the primary and closed-form routes, so agreement between
+these routes provides only weak independence against shared-library defects.
+
 The committed `cases.json` is deliberately a pilot corpus. A successful run proves
 only that this evidence route works for those cases. The numerical readiness file
 therefore remains `incomplete`; table completeness, the support domain, runtime
