@@ -7,6 +7,15 @@
   "numerical_contract_frozen": false,
   "supported_domain": null,
   "comparison_tolerances": null,
+  "support_domain_predicate_candidate": {
+    "closure": "incomplete",
+    "artifact": "governance/drafts/release-2-candidate/numerical/support-domain-candidate.json",
+    "boundary_corpus": "governance/drafts/release-2-candidate/numerical/support-domain-boundary-cases.json",
+    "validator": "tooling/src/spikes/paired-t-support-domain-candidate.ts",
+    "execution_surface": "reference/spikes/paired-t.ts",
+    "runtime_support_enabled": false,
+    "final_reason_codes_frozen": false
+  },
   "operation_graph": {
     "candidate_key": "g4-pairwise-two-pass",
     "selection_state": "selected_for_candidate_testing",
@@ -69,6 +78,12 @@
     "exact_zero_difference_variance",
     "difference_variance_erased_by_rounding",
     "finite_input_difference_overflow",
+    "mean_accumulation_overflow",
+    "centering_overflow",
+    "squared_deviation_overflow",
+    "variance_accumulation_overflow",
+    "variance_underflow",
+    "standard_error_squared_underflow",
     "p_rounds_to_one",
     "small_positive_normal_p",
     "small_positive_subnormal_p",

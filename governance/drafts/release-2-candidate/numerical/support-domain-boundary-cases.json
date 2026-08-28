@@ -1,0 +1,97 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "source": "governance/drafts/release-2-candidate/numerical/support-domain-candidate.json",
+  "numeric_values_are_binary64_inputs": true,
+  "cases": [
+    {
+      "case_key": "fewer-than-two-pairs",
+      "expected_spike_error": "PAIR_COUNT_BELOW_TWO",
+      "pairs": [[1, 0]]
+    },
+    {
+      "case_key": "difference-overflow",
+      "expected_spike_error": "DIFFERENCE_OVERFLOW",
+      "pairs": [
+        [1.7976931348623157e308, -1.7976931348623157e308],
+        [1, 0]
+      ]
+    },
+    {
+      "case_key": "exact-zero-difference-variance",
+      "expected_spike_error": "ZERO_DIFFERENCE_VARIANCE",
+      "pairs": [
+        [2, 1],
+        [4, 3]
+      ]
+    },
+    {
+      "case_key": "difference-variance-erased-by-rounding",
+      "expected_spike_error": "DIFFERENCE_VARIANCE_ERASED_BY_ROUNDING",
+      "pairs": [
+        [1, 5.551115123125783e-17],
+        [1, 2.7755575615628914e-17]
+      ]
+    },
+    {
+      "case_key": "mean-accumulation-overflow",
+      "expected_spike_error": "MEAN_ACCUMULATION_OVERFLOW",
+      "pairs": [
+        [1.7976931348623157e308, 0],
+        [8.988465674311579e307, 0],
+        [4.4942328371557893e307, 0]
+      ]
+    },
+    {
+      "case_key": "centering-overflow",
+      "expected_spike_error": "CENTERING_OVERFLOW",
+      "pairs": [
+        [1.7976931348623157e308, 0],
+        [-1.7976931348623157e308, 0],
+        [1.7976931348623157e308, 0]
+      ]
+    },
+    {
+      "case_key": "squared-deviation-overflow",
+      "expected_spike_error": "SQUARED_DEVIATION_OVERFLOW",
+      "pairs": [
+        [1e200, 0],
+        [-1e200, 0]
+      ]
+    },
+    {
+      "case_key": "variance-accumulation-overflow",
+      "expected_spike_error": "VARIANCE_ACCUMULATION_OVERFLOW",
+      "pairs": [
+        [1e154, 0],
+        [-1e154, 0]
+      ]
+    },
+    {
+      "case_key": "variance-underflow",
+      "expected_spike_error": "VARIANCE_UNDERFLOW",
+      "pairs": [
+        [5e-324, 0],
+        [0, 0]
+      ]
+    },
+    {
+      "case_key": "standard-error-squared-underflow",
+      "expected_spike_error": "STANDARD_ERROR_SQUARED_UNDERFLOW",
+      "pairs": [
+        [0, 0],
+        [0, 0],
+        [4.445517498970155e-162, 0]
+      ]
+    },
+    {
+      "case_key": "ordinary-passing-algebra-example",
+      "expected_spike_error": null,
+      "pairs": [
+        [1, 0],
+        [2, 0],
+        [3, 0]
+      ]
+    }
+  ]
+}

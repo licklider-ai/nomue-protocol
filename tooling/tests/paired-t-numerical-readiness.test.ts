@@ -38,6 +38,14 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("keeps the operation-stage support candidate incomplete and non-runtime", () => {
+    const candidate = loadReadiness();
+    candidate.support_domain_predicate_candidate.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "support-domain predicate candidate must remain incomplete and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
