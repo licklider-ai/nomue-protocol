@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/execution-outcome/0.3.0-draft.1",
+  "$comment": "UNISSUED non-authoritative candidate for RFC issue 25. Presence here does not issue this identifier, define reason codes, freeze numerical behavior, or register support.",
+  "title": "Release 2 paired-t execution/outcome candidate",
+  "description": "Closed candidate definitions for scoped paired-t check results. The shape carries no overall status, significance boolean, tolerance, critical-value table, or support bound.",
+  "$defs": {
+    "reasonCode": {
+      "type": "string",
+      "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["kind", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["record", "record_revision", "analysis", "result"] },
+        "id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        }
+      }
+    },
+    "errorObject": {
+      "type": "object",
+      "required": ["error_type", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "error_type": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "message": { "type": "string", "minLength": 1, "maxLength": 4096 }
+      }
+    },
+    "pairSummary": {
+      "type": "object",
+      "required": ["n_pairs", "mean_difference", "sample_variance_difference"],
+      "additionalProperties": false,
+      "properties": {
+        "n_pairs": { "type": "integer", "minimum": 2, "maximum": 9007199254740991 },
+        "mean_difference": { "type": "number" },
+        "sample_variance_difference": { "type": "number", "minimum": 0 }
+      }
+    },
+    "pairedEffectEstimate": {
+      "type": "object",
+      "required": ["kind", "estimate", "standard_error", "confidence_interval"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "arithmetic_mean_paired_difference" },
+        "estimate": { "type": "number" },
+        "standard_error": { "type": "number", "minimum": 0 },
+        "confidence_interval": {
+          "type": "object",
+          "required": ["confidence_level", "lower", "upper"],
+          "additionalProperties": false,
+          "properties": {
+            "confidence_level": { "const": 0.95 },
+            "lower": { "type": "number" },
+            "upper": { "type": "number" }
+          }
+        }
+      }
+    },
+    "pairedTest": {
+      "type": "object",
+      "required": ["test_statistic", "degrees_of_freedom", "p_value"],
+      "additionalProperties": false,
+      "properties": {
+        "test_statistic": { "type": "number" },
+        "degrees_of_freedom": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "p_value": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "recomputedPairedTResult": {
+      "type": "object",
+      "required": ["pair_summary", "effect_estimate", "test"],
+      "additionalProperties": false,
+      "properties": {
+        "pair_summary": { "$ref": "#/$defs/pairSummary" },
+        "effect_estimate": { "$ref": "#/$defs/pairedEffectEstimate" },
+        "test": { "$ref": "#/$defs/pairedTest" }
+      }
+    },
+    "mismatch": {
+      "type": "object",
+      "required": ["quantity", "declared", "recomputed"],
+      "additionalProperties": false,
+      "properties": {
+        "quantity": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "declared": { "anyOf": [{ "type": "number" }, { "type": "string" }] },
+        "recomputed": { "anyOf": [{ "type": "number" }, { "type": "string" }] }
+      }
+    },
+    "unsupportedDeclaration": {
+      "type": "object",
+      "required": ["declaration", "declared", "supported"],
+      "additionalProperties": false,
+      "properties": {
+        "declaration": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "declared": {
+          "anyOf": [{ "type": "string", "maxLength": 1024 }, { "type": "number" }]
+        },
+        "supported": { "type": "string", "minLength": 1, "maxLength": 1024 }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "declared_content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        },
+        "recomputed_content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        },
+        "recomputed": { "$ref": "#/$defs/recomputedPairedTResult" },
+        "mismatches": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/mismatch" }
+        },
+        "unsupported_declarations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/unsupportedDeclaration" }
+        }
+      }
+    },
+    "executionOutcomeInvariant": {
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": { "execution": { "const": "completed" } },
+            "required": ["execution"]
+          },
+          "then": {
+            "type": "object",
+            "required": ["outcome"],
+            "not": { "type": "object", "required": ["error"] }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": { "execution": { "const": "not_run" } },
+            "required": ["execution"]
+          },
+          "then": {
+            "type": "object",
+            "properties": { "reason_codes": { "type": "array", "minItems": 1 } },
+            "not": {
+              "anyOf": [
+                { "type": "object", "required": ["outcome"] },
+                { "type": "object", "required": ["error"] }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": { "execution": { "const": "error" } },
+            "required": ["execution"]
+          },
+          "then": {
+            "type": "object",
+            "required": ["error"],
+            "properties": { "reason_codes": { "type": "array", "minItems": 1 } },
+            "not": { "type": "object", "required": ["outcome"] }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "execution": { "const": "completed" },
+              "outcome": { "enum": ["fail", "indeterminate"] }
+            },
+            "required": ["execution", "outcome"]
+          },
+          "then": {
+            "type": "object",
+            "properties": { "reason_codes": { "type": "array", "minItems": 1 } }
+          }
+        }
+      ]
+    },
+    "verificationCheckIdentity": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "check_id": {
+              "const": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1"
+            },
+            "check_version": { "const": "0.3.0-draft.1" }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "check_id": {
+              "const": "https://nomue.ai/id/check/paired-profile-admissibility/0.1.0-draft.1"
+            },
+            "check_version": { "const": "0.1.0-draft.1" }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "check_id": {
+              "const": "https://nomue.ai/id/check/paired-t-computability/0.1.0-draft.1"
+            },
+            "check_version": { "const": "0.1.0-draft.1" }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "check_id": {
+              "const": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.1"
+            },
+            "check_version": { "const": "0.1.0-draft.1" }
+          }
+        }
+      ]
+    },
+    "checkResult": {
+      "type": "object",
+      "required": ["check_id", "check_version", "execution", "scope", "reason_codes"],
+      "additionalProperties": false,
+      "properties": {
+        "check_id": { "type": "string" },
+        "check_version": { "type": "string" },
+        "execution": { "enum": ["completed", "not_run", "error"] },
+        "outcome": { "enum": ["pass", "fail", "indeterminate"] },
+        "scope": { "$ref": "#/$defs/scope" },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/reasonCode" }
+        },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "error": { "$ref": "#/$defs/errorObject" }
+      },
+      "allOf": [
+        { "$ref": "#/$defs/executionOutcomeInvariant" },
+        { "$ref": "#/$defs/verificationCheckIdentity" }
+      ]
+    },
+    "conformanceResult": {
+      "type": "object",
+      "required": ["check_id", "execution", "scope", "reason_codes"],
+      "additionalProperties": false,
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/record-conformance/0.3.0-draft.1"
+        },
+        "execution": { "enum": ["completed", "not_run", "error"] },
+        "outcome": { "enum": ["pass", "fail", "indeterminate"] },
+        "scope": { "$ref": "#/$defs/scope" },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/reasonCode" }
+        },
+        "error": { "$ref": "#/$defs/errorObject" }
+      },
+      "allOf": [{ "$ref": "#/$defs/executionOutcomeInvariant" }]
+    }
+  }
+}

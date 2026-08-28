@@ -123,9 +123,12 @@ binds at least:
   bundle semantics;
 - conformance-manifest and verifier-output protocol bindings.
 
-The current non-authoritative shape spike is
-`tooling/src/spikes/interpretation-bundle-vnext.ts`. It uses identifier components
-marked `unissued` and cannot register support.
+The current concrete, non-authoritative candidate surface is
+`governance/drafts/release-2-candidate/`. Its machine-readable bundle binding uses
+identifiers marked `unissued`, records exact candidate and future schema paths, and
+cannot register support. The earlier
+`tooling/src/spikes/interpretation-bundle-vnext.ts` remains only an exploratory shape
+spike and is not the current identifier or canonicalization proposal.
 
 ## Numerical contract and oracle gate
 

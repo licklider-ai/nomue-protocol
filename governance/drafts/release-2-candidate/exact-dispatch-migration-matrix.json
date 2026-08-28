@@ -1,0 +1,81 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_bundle": {
+    "bundle_key": "paired_t_bundle",
+    "candidate_spelling": "https://nomue.ai/id/bundle/paired-t/0.1.0-draft.1",
+    "current_registry_state": "not_registered",
+    "current_verifier_state": "not_supported",
+    "current_exact_dispatch_outcome": {
+      "decision": "refused",
+      "kind": "unsupported_bundle",
+      "reason_code": "NRS-UNSUPPORTED-BUNDLE"
+    },
+    "post_ratification_dispatch_policy": "exact_identifier_only",
+    "legacy_shape_fallback": false
+  },
+  "legacy_bundle_preservation": [
+    {
+      "bundle_id": "urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+      "expected_current_route": "selected",
+      "record_schema_path": "schemas/record/record.schema.json",
+      "record_schema_id": "urn:nomue:schema:record:0.1.0-draft.1",
+      "profile_schema_path": "schemas/profiles/itgc-minimal.schema.json",
+      "profile_schema_id": "urn:nomue:schema:profile:itgc-minimal:0.1.0-draft.1",
+      "verification_report_schema_path": "schemas/reports/verification-report.schema.json",
+      "verification_report_schema_id": "urn:nomue:schema:verification-report:0.1.0-draft.1",
+      "meaning_change": "none"
+    },
+    {
+      "bundle_id": "urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1",
+      "expected_current_route": "selected",
+      "record_schema_path": "schemas/record/record-0.2.schema.json",
+      "record_schema_id": "urn:nomue:schema:record:0.2.0-draft.1",
+      "profile_schema_path": "schemas/profiles/itgc-guarantee-0.2.schema.json",
+      "profile_schema_id": "urn:nomue:schema:profile:itgc-guarantee:0.2.0-draft.1",
+      "verification_report_schema_path": "schemas/reports/verification-report-0.2.schema.json",
+      "verification_report_schema_id": "urn:nomue:schema:verification-report:0.2.0-draft.1",
+      "meaning_change": "none"
+    },
+    {
+      "bundle_id": "urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1",
+      "expected_current_route": "selected",
+      "record_schema_path": "schemas/record/record-0.2.schema.json",
+      "record_schema_id": "urn:nomue:schema:record:0.2.0-draft.1",
+      "profile_schema_path": "schemas/profiles/itgc-guarantee-0.2.schema.json",
+      "profile_schema_id": "urn:nomue:schema:profile:itgc-guarantee:0.2.0-draft.1",
+      "verification_report_schema_path": "schemas/reports/verification-report-0.2.schema.json",
+      "verification_report_schema_id": "urn:nomue:schema:verification-report:0.2.0-draft.1",
+      "meaning_change": "none"
+    }
+  ],
+  "unsupported_exact_match_probes": [
+    {
+      "case": "candidate-before-registration",
+      "declared_bundle_id": "https://nomue.ai/id/bundle/paired-t/0.1.0-draft.1",
+      "expected_decision": "refused",
+      "expected_kind": "unsupported_bundle",
+      "expected_reason_code": "NRS-UNSUPPORTED-BUNDLE"
+    },
+    {
+      "case": "nearby-candidate-revision",
+      "declared_bundle_id": "https://nomue.ai/id/bundle/paired-t/0.1.0-draft.2",
+      "expected_decision": "refused",
+      "expected_kind": "unsupported_bundle",
+      "expected_reason_code": "NRS-UNSUPPORTED-BUNDLE"
+    },
+    {
+      "case": "superseded-shape-spike-name",
+      "declared_bundle_id": "https://nomue.ai/id/bundle/paired-t-l1/0.1.0-draft.1",
+      "expected_decision": "refused",
+      "expected_kind": "unsupported_bundle",
+      "expected_reason_code": "NRS-UNSUPPORTED-BUNDLE"
+    }
+  ],
+  "cross_shape_policy": {
+    "candidate_record_with_legacy_bundle": "legacy_bundle_schema_only",
+    "legacy_record_with_candidate_bundle_after_support": "candidate_bundle_schema_only",
+    "fallback_between_legacy_and_candidate_shapes": false
+  }
+}

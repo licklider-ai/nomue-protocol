@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/paired-two-condition-continuous/0.1.0-draft.1",
+  "$comment": "UNISSUED non-authoritative candidate for RFC issue 25. Presence here does not issue this identifier or register support.",
+  "title": "Paired two-condition continuous payload candidate",
+  "type": "object",
+  "required": ["dataset", "design", "analysis", "result"],
+  "additionalProperties": false,
+  "properties": {
+    "dataset": { "$ref": "#/$defs/dataset" },
+    "design": { "$ref": "#/$defs/design" },
+    "analysis": { "$ref": "#/$defs/analysis" },
+    "result": { "$ref": "#/$defs/result" }
+  },
+  "$defs": {
+    "localId": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+    },
+    "label": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/label"
+    },
+    "dataset": {
+      "type": "object",
+      "required": ["dataset_id", "observations"],
+      "additionalProperties": false,
+      "properties": {
+        "dataset_id": { "$ref": "#/$defs/localId" },
+        "observations": {
+          "type": "array",
+          "minItems": 4,
+          "items": { "$ref": "#/$defs/observation" }
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "experimental_unit_id",
+        "pair_id",
+        "condition_id",
+        "outcome_value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "observation_id": { "$ref": "#/$defs/localId" },
+        "experimental_unit_id": { "$ref": "#/$defs/localId" },
+        "pair_id": { "$ref": "#/$defs/localId" },
+        "condition_id": { "$ref": "#/$defs/localId" },
+        "outcome_value": { "type": "number" }
+      }
+    },
+    "design": {
+      "type": "object",
+      "required": [
+        "design_id",
+        "dataset_id",
+        "experimental_unit_type",
+        "conditions",
+        "condition_order",
+        "outcome",
+        "declarations",
+        "data_handling"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "design_id": { "$ref": "#/$defs/localId" },
+        "dataset_id": { "$ref": "#/$defs/localId" },
+        "experimental_unit_type": { "$ref": "#/$defs/label" },
+        "conditions": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/condition" }
+        },
+        "condition_order": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/localId" }
+        },
+        "outcome": { "$ref": "#/$defs/outcome" },
+        "declarations": { "$ref": "#/$defs/declarations" },
+        "data_handling": { "$ref": "#/$defs/dataHandling" }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": ["condition_id", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "condition_id": { "$ref": "#/$defs/localId" },
+        "label": { "$ref": "#/$defs/label" }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["outcome_id", "label", "scale"],
+      "additionalProperties": false,
+      "properties": {
+        "outcome_id": { "$ref": "#/$defs/localId" },
+        "label": { "$ref": "#/$defs/label" },
+        "scale": { "const": "continuous" }
+      }
+    },
+    "declarations": {
+      "type": "object",
+      "required": [
+        "grouping_structure",
+        "pair_independence",
+        "repeated_measurements",
+        "clustering"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "grouping_structure": { "const": "paired_two_condition" },
+        "pair_independence": { "enum": ["declared", "not_declared"] },
+        "repeated_measurements": { "enum": ["none", "within_pair_only"] },
+        "clustering": { "enum": ["none_declared", "present"] }
+      }
+    },
+    "dataHandling": {
+      "type": "object",
+      "required": ["analysis_population", "missing_outcomes", "transformation", "weighting"],
+      "additionalProperties": false,
+      "properties": {
+        "analysis_population": {
+          "enum": ["all_record_observations", "subset_or_exclusions_present"]
+        },
+        "missing_outcomes": { "enum": ["none", "present"] },
+        "transformation": { "enum": ["none", "present"] },
+        "weighting": { "enum": ["none", "present"] }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "analysis_id",
+        "design_id",
+        "contract_id",
+        "alternative",
+        "model",
+        "estimand",
+        "confidence_level"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "analysis_id": { "$ref": "#/$defs/localId" },
+        "design_id": { "$ref": "#/$defs/localId" },
+        "contract_id": {
+          "const": "https://nomue.ai/id/contract/paired-t/0.1.0-draft.1"
+        },
+        "alternative": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "model": {
+          "type": "object",
+          "required": ["paired_difference_distribution"],
+          "additionalProperties": false,
+          "properties": {
+            "paired_difference_distribution": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            }
+          }
+        },
+        "estimand": {
+          "type": "object",
+          "required": ["kind", "direction"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "type": "string", "minLength": 1, "maxLength": 128 },
+            "direction": { "type": "string", "minLength": 1, "maxLength": 128 }
+          }
+        },
+        "confidence_level": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": ["result_id", "analysis_id", "pair_summary", "effect_estimate", "test"],
+      "additionalProperties": false,
+      "properties": {
+        "result_id": { "$ref": "#/$defs/localId" },
+        "analysis_id": { "$ref": "#/$defs/localId" },
+        "pair_summary": { "$ref": "#/$defs/pairSummary" },
+        "effect_estimate": { "$ref": "#/$defs/effectEstimate" },
+        "test": { "$ref": "#/$defs/testResult" }
+      }
+    },
+    "pairSummary": {
+      "type": "object",
+      "required": ["n_pairs", "mean_difference", "sample_variance_difference"],
+      "additionalProperties": false,
+      "properties": {
+        "n_pairs": { "type": "integer", "minimum": 2, "maximum": 9007199254740991 },
+        "mean_difference": { "type": "number" },
+        "sample_variance_difference": { "type": "number", "minimum": 0 }
+      }
+    },
+    "effectEstimate": {
+      "type": "object",
+      "required": ["kind", "estimate", "standard_error", "confidence_interval"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "arithmetic_mean_paired_difference" },
+        "estimate": { "type": "number" },
+        "standard_error": { "type": "number", "minimum": 0 },
+        "confidence_interval": {
+          "type": "object",
+          "required": ["confidence_level", "lower", "upper"],
+          "additionalProperties": false,
+          "properties": {
+            "confidence_level": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "exclusiveMaximum": 1
+            },
+            "lower": { "type": "number" },
+            "upper": { "type": "number" }
+          }
+        }
+      }
+    },
+    "testResult": {
+      "type": "object",
+      "required": ["test_statistic", "degrees_of_freedom", "p_value"],
+      "additionalProperties": false,
+      "properties": {
+        "test_statistic": { "type": "number" },
+        "degrees_of_freedom": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "p_value": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

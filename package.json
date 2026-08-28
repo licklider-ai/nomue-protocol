@@ -33,6 +33,7 @@
     "verifier:example:phase2a": "tsx tooling/src/phase2a/verifier-example-2a.ts",
     "oracle:phase2a": "tsx tooling/src/phase2a/oracle-check.ts",
     "oracle:r1-08": "tsx tooling/r1-08-oracle/src/run.ts",
+    "evidence:r2-paired-t:validate": "node --import tsx tooling/src/spikes/validate-paired-t-evidence-bundle.ts",
     "evidence:phase2a": "tsx tooling/src/phase2a/evidence-phase2a.ts",
     "snapshot:manifest": "tsx tooling/src/release/snapshot-manifest-cli.ts",
     "release:signing:prepare": "tsx tooling/src/release/release-signing-cli.ts prepare",

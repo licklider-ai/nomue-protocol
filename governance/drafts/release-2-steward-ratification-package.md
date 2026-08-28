@@ -21,6 +21,12 @@ authorizes publication.
   differences, mean, sample variance, standard error, t statistic, and integer
   degrees of freedom. It does not compute p-values or confidence intervals and does
   not define tolerances or support bounds.
+- A machine-readable Release 2 candidate surface under `release-2-candidate/`
+  proposes unissued Requirement namespace tokens and first IDs, exact unissued HTTPS
+  identifier spellings and bundle roles, closed Record/Profile/output schemas,
+  hand-authored structural/relationship fixtures, a Release 1 exact-dispatch
+  migration matrix, and a public-contract-surface impact table. The candidate is not
+  loaded by the reference verifier or any authoritative registry.
 - The proposed Release 2 scope is captured in
   `release-2-foundation-and-paired-t-rfc.md`.
 
@@ -55,7 +61,11 @@ Inputs required before approval:
 - confirmation that each token is scoped to exactly one enduring meaning;
 - the exact first Requirement IDs and their normative anchors.
 
-No candidate token is selected in this package.
+The non-authoritative candidate in
+`release-2-candidate/requirement-namespaces.json` proposes `PT` for the Contract and
+`PTCC` for the Profile, together with contiguous first Requirement candidates and
+future anchors. These values remain unissued and are inputs to the later decision,
+not a disposition of R2-D2.
 
 ### R2-D3 — Permanent Protocol identifiers
 
@@ -72,7 +82,11 @@ Inputs required before approval:
   that defines its meaning;
 - explicit legacy coexistence and non-alias statement.
 
-No valid permanent spelling is selected in this package.
+The non-authoritative candidate in
+`release-2-candidate/protocol-identifiers.json` proposes exact spellings, semantic
+owners, versioning policies, legacy reuse, and bundle-role bindings. Every entry is
+marked `unissued`; the candidate creates no `method` alias and does not dispose
+R2-D3.
 
 ### R2-D4 — Successor schema and bundle surface
 
@@ -90,7 +104,21 @@ Inputs required before approval:
 - migration matrix proving Release 1 exact dispatch is unchanged;
 - public-contract-surface version-impact table.
 
+The complete structural decision-preparation candidate is under
+`release-2-candidate/`: four closed schema candidates, Record/report fixtures, exact
+future bundle-schema paths, an explicitly ordered check set, an attestation-support
+value of `none`, the Release 1 migration matrix, and the version-impact table. These files are
+outside the authoritative schema, conformance, registry, and specification
+directories. They make the R2-D4 choices reviewable but do not approve them, issue
+their candidate IDs, or dispose R2-D4.
+
 ### R2-D5 — Numerical contract freeze
+
+Candidate-development disposition: **APPROVED on 2026-08-27** for the bounded work
+recorded under `release-2-candidate/numerical/`. This selects the G4 pairwise
+two-pass graph for candidate testing, exact-dyadic classification of parsed
+binary64 differences, explicit representational failure classes, and strict
+certificate-bundle closure rules. It is not the final R2-D5 disposition.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,
@@ -110,6 +138,12 @@ Inputs required before approval:
 This is the hard stop for authoritative numerical meaning, not for candidate
 development. A candidate Public Check and expected conformance values may be
 prepared and tested, but none is frozen or issued before R2-D5 approval.
+
+The current readiness record deliberately leaves the supported domain, critical-
+value table, and all comparison tolerances unset. It also marks the p-value and
+critical-value evidence as incomplete until exact enclosure/cell data, executed
+secondary and low-df closed-form paths, dependency failure behavior, boundary cases,
+and complete provenance hashes are present.
 
 ### R2-D6 — Release Candidate scope
 

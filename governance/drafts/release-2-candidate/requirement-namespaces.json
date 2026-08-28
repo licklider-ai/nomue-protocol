@@ -1,0 +1,109 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "namespaces": [
+    {
+      "kind": "contract",
+      "token": "PT",
+      "prefix": "NRS-CONTRACT-PT",
+      "meaning": "Requirements owned by the two-sided paired-t Analysis Contract.",
+      "mnemonic_rationale": "PT is the short, direct mnemonic for paired t within the Contract namespace.",
+      "first_requirements": [
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0001",
+          "state": "unissued",
+          "title": "Paired-t statistical operation",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0001"
+        },
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0002",
+          "state": "unissued",
+          "title": "Declared paired-difference direction",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0002"
+        },
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0003",
+          "state": "unissued",
+          "title": "Arithmetic mean paired-difference estimand",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0003"
+        },
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0004",
+          "state": "unissued",
+          "title": "Two-sided alternative and normal-difference model declaration",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0004"
+        },
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0005",
+          "state": "unissued",
+          "title": "Paired-t mathematical computability boundary",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0005"
+        },
+        {
+          "candidate_id": "NRS-CONTRACT-PT-0006",
+          "state": "unissued",
+          "title": "Fixed 95 percent mean paired-difference confidence interval target",
+          "future_document": "spec/contracts/paired-t/paired-t-contract.md",
+          "future_anchor": "NRS-CONTRACT-PT-0006"
+        }
+      ]
+    },
+    {
+      "kind": "profile",
+      "token": "PTCC",
+      "prefix": "NRS-PROFILE-PTCC",
+      "meaning": "Requirements owned by the paired two-condition continuous Profile.",
+      "mnemonic_rationale": "PTCC abbreviates paired two-condition continuous and remains reusable by a later non-t Contract.",
+      "first_requirements": [
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0001",
+          "state": "unissued",
+          "title": "Exactly two declared conditions and explicit order",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0001"
+        },
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0002",
+          "state": "unissued",
+          "title": "Explicit pair membership without inferred pairing",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0002"
+        },
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0003",
+          "state": "unissued",
+          "title": "Complete one-to-one pair structure",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0003"
+        },
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0004",
+          "state": "unissued",
+          "title": "Declared independence across pairs",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0004"
+        },
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0005",
+          "state": "unissued",
+          "title": "Repeated-measurement and experimental-unit consistency",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0005"
+        },
+        {
+          "candidate_id": "NRS-PROFILE-PTCC-0006",
+          "state": "unissued",
+          "title": "No implicit exclusion, missingness, transformation, or weighting",
+          "future_document": "spec/profiles/paired-two-condition-continuous/profile.md",
+          "future_anchor": "NRS-PROFILE-PTCC-0006"
+        }
+      ]
+    }
+  ]
+}
