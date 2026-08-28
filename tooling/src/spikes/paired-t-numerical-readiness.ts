@@ -9,6 +9,15 @@ export interface PairedTNumericalReadinessCandidate {
   numerical_contract_frozen: false;
   supported_domain: null;
   comparison_tolerances: null;
+  support_domain_predicate_candidate: {
+    closure: "incomplete";
+    artifact: "governance/drafts/release-2-candidate/numerical/support-domain-candidate.json";
+    boundary_corpus: "governance/drafts/release-2-candidate/numerical/support-domain-boundary-cases.json";
+    validator: "tooling/src/spikes/paired-t-support-domain-candidate.ts";
+    execution_surface: "reference/spikes/paired-t.ts";
+    runtime_support_enabled: false;
+    final_reason_codes_frozen: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -68,6 +77,12 @@ const REQUIRED_BOUNDARIES = [
   "exact_zero_difference_variance",
   "difference_variance_erased_by_rounding",
   "finite_input_difference_overflow",
+  "mean_accumulation_overflow",
+  "centering_overflow",
+  "squared_deviation_overflow",
+  "variance_accumulation_overflow",
+  "variance_underflow",
+  "standard_error_squared_underflow",
   "p_rounds_to_one",
   "small_positive_normal_p",
   "small_positive_subnormal_p",
@@ -114,6 +129,7 @@ const TOP_LEVEL_KEYS = [
   "numerical_contract_frozen",
   "supported_domain",
   "comparison_tolerances",
+  "support_domain_predicate_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -134,6 +150,16 @@ const OPERATION_GRAPH_KEYS = [
   "fma_allowed",
   "implicit_extended_precision_allowed",
   "native_sqrt_cross_runtime_bit_identity_claimed",
+] as const;
+
+const SUPPORT_DOMAIN_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "boundary_corpus",
+  "validator",
+  "execution_surface",
+  "runtime_support_enabled",
+  "final_reason_codes_frozen",
 ] as const;
 
 const REFUSAL_CLASS_KEYS = [
@@ -187,6 +213,12 @@ export function validatePairedTNumericalReadinessCandidate(
   const errors: string[] = [];
   requireExactKeys("numerical readiness", candidate, TOP_LEVEL_KEYS, errors);
   requireExactKeys("operation graph", candidate.operation_graph, OPERATION_GRAPH_KEYS, errors);
+  requireExactKeys(
+    "support-domain predicate candidate",
+    candidate.support_domain_predicate_candidate,
+    SUPPORT_DOMAIN_CANDIDATE_KEYS,
+    errors,
+  );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
   requireExactKeys(
     "p-value evidence readiness",
@@ -218,6 +250,21 @@ export function validatePairedTNumericalReadinessCandidate(
     candidate.comparison_tolerances !== null
   ) {
     errors.push("numerical support and tolerances must remain unfrozen");
+  }
+
+  const supportCandidate = candidate.support_domain_predicate_candidate;
+  if (
+    supportCandidate.closure !== "incomplete" ||
+    supportCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/support-domain-candidate.json" ||
+    supportCandidate.boundary_corpus !==
+      "governance/drafts/release-2-candidate/numerical/support-domain-boundary-cases.json" ||
+    supportCandidate.validator !== "tooling/src/spikes/paired-t-support-domain-candidate.ts" ||
+    supportCandidate.execution_surface !== "reference/spikes/paired-t.ts" ||
+    supportCandidate.runtime_support_enabled !== false ||
+    supportCandidate.final_reason_codes_frozen !== false
+  ) {
+    errors.push("support-domain predicate candidate must remain incomplete and non-runtime");
   }
 
   const graph = candidate.operation_graph;

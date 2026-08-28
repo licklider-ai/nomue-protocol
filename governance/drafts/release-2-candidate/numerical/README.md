@@ -9,6 +9,29 @@ The machine-readable checkpoint is `evidence-readiness.json`. It deliberately ma
 the p-value and fixed-95-percent critical-value evidence as incomplete. A passing
 structural validator test is not an oracle result.
 
+## Operation-stage support-domain candidate
+
+`support-domain-candidate.json` is the first machine-readable support-domain
+structure. It is not a supported-domain claim. It orders only the predicates that
+the current G4 feasibility spike can execute, binds each predicate to its candidate
+failure class and boundary fixture, and keeps runtime support disabled.
+
+`support-domain-boundary-cases.json` exercises every active refusal predicate plus
+one ordinary algebra example through `reference/spikes/paired-t.ts`. The corpus
+pins exact stage classification for candidate testing; it does not establish a
+neighborhood, a rectangular numerical bound, or complete validated scope.
+
+The final support expression remains a conjunction of operation-stage predicates,
+a declared validation corpus, and an oracle-enclosure predicate. The latter two
+parts remain incomplete. Confidence-interval endpoint representability and p-value
+target-format projection are also deferred because the critical-value table,
+endpoint truth ledger, and runtime Student-t tail procedure are not ratified.
+
+No blanket subnormal refusal is active. The condition-number and cross-graph
+disagreement observations remain diagnostics rather than runtime gates. No `df`
+ceiling, statistic bound, tolerance, final table hash, or public refusal-code
+spelling is introduced by this increment.
+
 ## Candidate four-layer separation
 
 | Layer               | Candidate responsibility                                                                                                      | Current state                                                     |
