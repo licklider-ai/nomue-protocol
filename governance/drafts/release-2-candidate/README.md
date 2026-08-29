@@ -24,7 +24,8 @@ crossing the current ratification stop:
   surface candidates;
 - `numerical/` records the approved candidate-development direction for the G4
   pairwise algebra graph, explicit computability classes, certificate-bundle closure
-  rules, and the numerical decisions that remain deliberately unfrozen; and
+  rules, an exact-bit comparison and target-format projection decision candidate,
+  and the numerical decisions that remain deliberately unfrozen; and
 - `tooling/src/spikes/release-2-candidate.ts` validates the candidate manifests and
   the pair relationships that JSON Schema cannot express.
 
@@ -48,7 +49,9 @@ significance boolean, whole-Record validity boolean, or attestation member. The
 candidate bundle explicitly declares `attestation_support: none`.
 
 This increment does not implement a runtime Student-t tail, freeze confidence-
-interval critical values, select numerical tolerances or support bounds, execute a
-Public Check, or dispatch the candidate bundle. The numerical directory and
-certificate validator make the next R2-D5 evidence increment fail closed; they do
-not dispose R2-D5 or supply an oracle result.
+interval critical values, select a supported domain or mathematical-truth error
+bound, execute a Public Check, or dispatch the candidate bundle. Exact binary64
+identity is only the selected candidate rule for reproducing the pinned graph; it is
+not a claim of mathematical accuracy or cross-platform closure. The numerical
+directory and certificate validator make the next R2-D5 evidence increment fail
+closed; they do not dispose R2-D5 or supply an oracle result.

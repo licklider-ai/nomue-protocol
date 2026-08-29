@@ -120,6 +120,14 @@ two-pass graph for candidate testing, exact-dyadic classification of parsed
 binary64 differences, explicit representational failure classes, and strict
 certificate-bundle closure rules. It is not the final R2-D5 disposition.
 
+The next non-authoritative checkpoint separates graph reproduction, mathematical-
+truth error, and target-format projection. It selects exact binary64 identity for
+candidate graph-reproduction tests and a normal-only p-value projection candidate,
+while keeping runtime support disabled. The `df = 200` value is an evidence-
+evaluation target, not a supported maximum. The runtime series graph, subnormal
+first-failure ordering, truth bounds, platform matrix, complete critical-value
+table, and final reason-code spellings remain open.
+
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,
 and quantity-specific comparison tolerances.
