@@ -15,6 +15,10 @@ supported Protocol meaning.
 Several independently closed Contracts may later share a publication train, but a
 shared publication does not merge their semantic or evidence obligations.
 
+Research planning is intentionally broader and may run far ahead of this
+implementation roadmap. See the [Protocol Research Frontier Map](research-frontier-map.md).
+Its research bands do not change current capability, RFC, or release ordering.
+
 ## Current work
 
 - **Paired two-condition continuous / paired t** — Release 2 public review and
