@@ -128,4 +128,12 @@ describe("Release 2 paired-t numerical-contract decision candidate", () => {
       "numerical-contract candidate: keys are incomplete or contain an undeclared item",
     );
   });
+
+  it("rejects non-JSON values recursively for programmatic callers", () => {
+    const candidate = loadCandidate();
+    (candidate.research_handoff as Record<string, unknown>).__hidden = undefined;
+    expect(validatePairedTNumericalContractCandidate(candidate)).toContain(
+      "research handoff: value or order differs from the candidate checkpoint",
+    );
+  });
 });

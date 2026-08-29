@@ -1,0 +1,61 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-runtime-series-evaluation-1",
+  "selection_state": "evaluation_only_not_runtime_selected",
+  "runtime_support_enabled": false,
+  "correct_rounding_claimed": false,
+  "degrees_of_freedom_evaluation": {
+    "minimum": 1,
+    "maximum_target": 200,
+    "supported_maximum": null,
+    "contiguous_runtime_support_claimed": false
+  },
+  "normalization_constant_source": {
+    "kind": "per_case_arb_certified_inverse_beta_binary64",
+    "runtime_table_selected": false,
+    "final_content_hash": null
+  },
+  "operation_graph": {
+    "statistic_symmetry": "absolute_value_after_negative_zero_rejection",
+    "branch_boundary_candidate": "absolute_t_less_than_or_equal_to_one",
+    "df1_path": "positive_series_without_host_atan",
+    "df2_path": "cancellation_resistant_algebraic_closed_form",
+    "df_greater_than_two_path": "positive_incomplete_beta_series",
+    "integer_power": "right_to_left_binary_exponentiation_with_pinned_multiply_order",
+    "central_result": "one_minus_positive_central_probability",
+    "lower_tail_result": "positive_lower_tail_probability",
+    "fma_allowed": false,
+    "implicit_extended_precision_allowed": false
+  },
+  "stopping_rule": {
+    "graph_stop": "next_positive_term_no_longer_changes_binary64_sum",
+    "iteration_cap_candidate": "40_times_df_plus_64",
+    "lower_tail_mathematical_remainder_candidate": "next_term_over_one_minus_x",
+    "central_mathematical_remainder_candidate": "next_term_over_one_minus_ratio_ceiling",
+    "binary64_roundoff_included_in_remainder": false,
+    "cap_is_supported_resource_bound": false
+  },
+  "evidence_ledgers": {
+    "graph_reproduction": "exact_binary64_bits",
+    "mathematical_truth": "arb_enclosure_and_ulp_observation_in_separate_evidence_bundle",
+    "truncation": "positive_series_analytic_remainder_candidate",
+    "target_projection": "normal_only_policy_candidate_not_runtime"
+  },
+  "held_decisions": [
+    "runtime_inverse_beta_constant_table",
+    "final_supported_degrees_of_freedom_maximum",
+    "truth_error_bound",
+    "one_cell_projection_boundary_margin",
+    "supported_platform_matrix",
+    "final_runtime_refusal_codes"
+  ],
+  "prohibited_claims": [
+    "supported_runtime_student_t_procedure",
+    "correctly_rounded_runtime_p_value",
+    "complete_operation_graph_truth_bound",
+    "supported_df_max",
+    "authoritative_public_check_or_bundle"
+  ]
+}

@@ -65,11 +65,20 @@ minimum subnormal. This projection is not connected to the verifier because the
 runtime Student-t tail and its boundary evidence remain incomplete.
 
 An integer-df ceiling of `200` is only the next evidence-evaluation target. It is not
-a supported `df` maximum. A rigorously stopped positive-term series is the selected
-runtime family for continued development, while a host `atan`, `2 * (1 - CDF)`, and
-an unbounded continued fraction are excluded from the candidate bit contract. The
-complete series graph, branch boundary, iteration evidence, and platform matrix are
-still held decisions.
+a supported `df` maximum. `runtime-series-candidate.json` and
+`tooling/src/spikes/paired-t-runtime-series-candidate.ts` now make one positive-term
+series graph executable for independent evaluation. The graph uses the exact
+binary64 `|t| <= 1` branch, positive central and lower-tail expansions, a positive
+df=1 series without host `atan`, and a cancellation-resistant df=2 algebraic path.
+A host `atan`, `2 * (1 - CDF)`, and an unbounded continued fraction remain excluded.
+
+This executable graph is not yet selected as the runtime procedure in
+`numerical-contract-candidate.json`. Its inverse-beta constants are supplied per
+evidence case rather than by a runtime table, the stop rule's binary64 roundoff is
+not discharged by the mathematical series remainder, and its truth-error and
+platform ledgers remain incomplete. The separate Arb evidence generator records the
+correctly rounded truth and truncation enclosure without converting their ULP
+distance into a tolerance.
 
 Research also supports stage-specific scrutiny of subnormal algebra intermediates,
 but activating a sample-variance refusal would change the reviewed first-failure

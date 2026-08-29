@@ -26,6 +26,18 @@
     "supported_degrees_of_freedom_max": null,
     "runtime_support_enabled": false
   },
+  "runtime_series_evaluation_candidate": {
+    "closure": "incomplete",
+    "artifact": "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json",
+    "execution_surface": "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
+    "evidence_generator": "tooling/r2-paired-t-runtime-series/generate_evidence.py",
+    "evidence_validator": "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts",
+    "degrees_of_freedom_max_evaluation_target": 200,
+    "supported_degrees_of_freedom_max": null,
+    "runtime_constant_table_selected": false,
+    "truth_error_bound_complete": false,
+    "runtime_support_enabled": false
+  },
   "operation_graph": {
     "candidate_key": "g4-pairwise-two-pass",
     "selection_state": "selected_for_candidate_testing",
