@@ -12,6 +12,18 @@ Thank you for your interest in the nomue Protocol.
   that do not alter Protocol normative meaning, requirements, interpretation, or
   conformance behavior may be accepted under the applicable repository license.
 
+## Scientific capability requests
+
+Requests for a new scientific capability are welcome as public discussion. A useful
+request states the research design, target estimand, required declarations, intended
+outputs, refusal or non-computability conditions, important open questions, and what
+an independent verifier should be able to check.
+
+Open the request as an issue. The stewards route externally grounded semantic choices
+through the Research Gate in [RFC.md](RFC.md) and, when a public-contract change is
+ready, through the normal RFC process. A request does not itself create Protocol
+meaning, registered support, an identifier, or a release commitment.
+
 ## External normative contributions
 
 External **normative contributions are not accepted without a separate written
