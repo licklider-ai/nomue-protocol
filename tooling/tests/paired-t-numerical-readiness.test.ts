@@ -46,6 +46,20 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("keeps the numerical-contract decision candidate incomplete and non-runtime", () => {
+    const candidate = loadReadiness();
+    candidate.numerical_contract_decision_candidate.supported_degrees_of_freedom_max = 200 as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "numerical-contract decision candidate must remain incomplete and non-runtime",
+    );
+
+    const runtime = loadReadiness();
+    runtime.numerical_contract_decision_candidate.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(runtime)).toContain(
+      "numerical-contract decision candidate must remain incomplete and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;

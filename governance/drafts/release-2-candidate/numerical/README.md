@@ -3,7 +3,7 @@
 **Status: non-authoritative, unissued, and not numerically frozen.** The Steward has
 approved this direction for continued candidate development. That approval does not
 complete R2-D5, end the open RFC review, issue a Public Check, register a supported
-bundle, or select numerical bounds and tolerances.
+bundle, or select final support bounds and mathematical-truth error bounds.
 
 The machine-readable checkpoint is `evidence-readiness.json`. It deliberately marks
 the p-value and fixed-95-percent critical-value evidence as incomplete. A passing
@@ -23,14 +23,60 @@ neighborhood, a rectangular numerical bound, or complete validated scope.
 
 The final support expression remains a conjunction of operation-stage predicates,
 a declared validation corpus, and an oracle-enclosure predicate. The latter two
-parts remain incomplete. Confidence-interval endpoint representability and p-value
-target-format projection are also deferred because the critical-value table,
-endpoint truth ledger, and runtime Student-t tail procedure are not ratified.
+parts remain incomplete. Confidence-interval endpoint representability remains
+deferred. The p-value target-format classifier is now executable candidate tooling,
+but its activation remains deferred because the runtime Student-t tail procedure and
+boundary evidence are not ratified.
 
 No blanket subnormal refusal is active. The condition-number and cross-graph
 disagreement observations remain diagnostics rather than runtime gates. No `df`
-ceiling, statistic bound, tolerance, final table hash, or public refusal-code
+support ceiling, statistic bound, tolerance, final table hash, or public refusal-code
 spelling is introduced by this increment.
+
+## Numerical-contract decision candidate
+
+`numerical-contract-candidate.json` records the bounded disposition of three
+independent research handoffs without making a private repository a Protocol
+dependency. Claims from those handoffs cannot close R2-D5 until the relevant result
+is reproduced by reviewable material in this repository. The fact/finding/decision
+separation is recorded in
+`../reviews/d5-runtime-projection-tolerance-research-adjudication.md`.
+
+The candidate separates three ledgers that must not be collapsed:
+
+1. reproduction of the pinned binary64 operation graph;
+2. error relative to the mathematical target; and
+3. projection of a positive mathematical probability into the target format.
+
+For the first ledger, exact binary64 bit identity is selected for candidate testing.
+This is not a zero-valued accuracy tolerance: it asks whether a declared result is
+the output of the pinned operation graph. Mathematical truth still requires its own
+oracle and analytic error ledger. The helper in
+`tooling/src/spikes/paired-t-numerical-contract-candidate.ts` rejects non-finite
+values and negative zero before comparing the bits.
+
+The same helper makes the proposed normal-only p-value format classification
+executable. A positive normal binary64 value and a projected value of `1` are
+candidate format successes. The classifier does not prove that either projection is
+correct; that remains the oracle ledger's job. A positive subnormal, positive tail
+that projects to `+0`, negative zero, or an invalid probability receives a distinct
+candidate classification. It never clamps a positive tail to zero or substitutes the
+minimum subnormal. This projection is not connected to the verifier because the
+runtime Student-t tail and its boundary evidence remain incomplete.
+
+An integer-df ceiling of `200` is only the next evidence-evaluation target. It is not
+a supported `df` maximum. A rigorously stopped positive-term series is the selected
+runtime family for continued development, while a host `atan`, `2 * (1 - CDF)`, and
+an unbounded continued fraction are excluded from the candidate bit contract. The
+complete series graph, branch boundary, iteration evidence, and platform matrix are
+still held decisions.
+
+Research also supports stage-specific scrutiny of subnormal algebra intermediates,
+but activating a sample-variance refusal would change the reviewed first-failure
+order for the existing standard-error-squared underflow witness. This increment
+therefore leaves the PR #29 operation-stage predicates unchanged until that ordering
+has its own witness and review. It does not turn the research observation into a
+blanket subnormal refusal.
 
 ## Candidate four-layer separation
 
@@ -39,7 +85,7 @@ spelling is introduced by this increment.
 | Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here  |
 | Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                    |
 | Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Nine-cell research seed generated; complete evidence remains open |
-| Comparison policy   | Quantity-specific recomputation and truth-error ledgers                                                                       | No tolerance is selected                                          |
+| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Bit identity selected for candidate testing; truth bounds open    |
 
 The secondary oracle path is method-distinct but not library-independent. It
 shares Arb ball arithmetic with the primary and closed-form paths, so their
@@ -58,10 +104,10 @@ as powers of two. It then divides by `n - 1`, divides by `n`, applies the host n
 square root, and divides the mean by the standard error. Fused multiply-add and
 implicit extended intermediates are outside this candidate graph.
 
-The graph does not claim cross-runtime bit identity after native square root. The
-basic operation order remains pinned, while the square-root and downstream
-quantities require an oracle-derived comparison policy unless a later decision
-selects a canonical software square root.
+The graph does not yet claim a closed cross-runtime platform matrix after native
+square root. Exact bit comparison is the candidate contract once an implementation
+has satisfied the eventual platform predicate; it is not evidence that every
+unexamined runtime already produces those bits.
 
 ## Failure classification
 
@@ -126,12 +172,14 @@ not multiply the ULP by `|t_c|` a second time.
 
 ## Items intentionally still open
 
-- the maximum supported pair count or integer degrees of freedom;
+- the maximum supported pair count or integer degrees of freedom (`200` is only an
+  evidence target);
 - the supported input, variance, standard-error, statistic, and p-value domain;
 - whether any subnormal stage is supported through target-format-aware evidence or
   refused;
-- the runtime Student-t tail procedure and its branch boundary;
-- all quantity-specific comparison tolerances;
+- the complete runtime Student-t series graph, branch boundary, and iteration
+  evidence;
+- the mathematical-truth error bounds and supported-platform predicate;
 - the complete critical-value table and its final content hash (the current hash
   binds only the explicit research seed); and
 - the final reason-code spellings and authoritative Public Check revision.

@@ -18,6 +18,16 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
     final_reason_codes_frozen: false;
   };
+  numerical_contract_decision_candidate: {
+    closure: "incomplete";
+    artifact: "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json";
+    validator: "tooling/src/spikes/paired-t-numerical-contract-candidate.ts";
+    result_comparison: "exact_binary64_bit_identity_candidate";
+    probability_projection: "normal_only_candidate_not_runtime";
+    degrees_of_freedom_max_evaluation_target: 200;
+    supported_degrees_of_freedom_max: null;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -130,6 +140,7 @@ const TOP_LEVEL_KEYS = [
   "supported_domain",
   "comparison_tolerances",
   "support_domain_predicate_candidate",
+  "numerical_contract_decision_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -160,6 +171,17 @@ const SUPPORT_DOMAIN_CANDIDATE_KEYS = [
   "execution_surface",
   "runtime_support_enabled",
   "final_reason_codes_frozen",
+] as const;
+
+const NUMERICAL_CONTRACT_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "validator",
+  "result_comparison",
+  "probability_projection",
+  "degrees_of_freedom_max_evaluation_target",
+  "supported_degrees_of_freedom_max",
+  "runtime_support_enabled",
 ] as const;
 
 const REFUSAL_CLASS_KEYS = [
@@ -219,6 +241,12 @@ export function validatePairedTNumericalReadinessCandidate(
     SUPPORT_DOMAIN_CANDIDATE_KEYS,
     errors,
   );
+  requireExactKeys(
+    "numerical-contract decision candidate",
+    candidate.numerical_contract_decision_candidate,
+    NUMERICAL_CONTRACT_CANDIDATE_KEYS,
+    errors,
+  );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
   requireExactKeys(
     "p-value evidence readiness",
@@ -265,6 +293,21 @@ export function validatePairedTNumericalReadinessCandidate(
     supportCandidate.final_reason_codes_frozen !== false
   ) {
     errors.push("support-domain predicate candidate must remain incomplete and non-runtime");
+  }
+
+  const contractCandidate = candidate.numerical_contract_decision_candidate;
+  if (
+    contractCandidate.closure !== "incomplete" ||
+    contractCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json" ||
+    contractCandidate.validator !== "tooling/src/spikes/paired-t-numerical-contract-candidate.ts" ||
+    contractCandidate.result_comparison !== "exact_binary64_bit_identity_candidate" ||
+    contractCandidate.probability_projection !== "normal_only_candidate_not_runtime" ||
+    contractCandidate.degrees_of_freedom_max_evaluation_target !== 200 ||
+    contractCandidate.supported_degrees_of_freedom_max !== null ||
+    contractCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push("numerical-contract decision candidate must remain incomplete and non-runtime");
   }
 
   const graph = candidate.operation_graph;

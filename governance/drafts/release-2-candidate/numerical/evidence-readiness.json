@@ -16,6 +16,16 @@
     "runtime_support_enabled": false,
     "final_reason_codes_frozen": false
   },
+  "numerical_contract_decision_candidate": {
+    "closure": "incomplete",
+    "artifact": "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json",
+    "validator": "tooling/src/spikes/paired-t-numerical-contract-candidate.ts",
+    "result_comparison": "exact_binary64_bit_identity_candidate",
+    "probability_projection": "normal_only_candidate_not_runtime",
+    "degrees_of_freedom_max_evaluation_target": 200,
+    "supported_degrees_of_freedom_max": null,
+    "runtime_support_enabled": false
+  },
   "operation_graph": {
     "candidate_key": "g4-pairwise-two-pass",
     "selection_state": "selected_for_candidate_testing",

@@ -225,7 +225,7 @@ const EXPECTED_DEFERRED_PREDICATES = [
     state: "deferred",
     failure_class: "scope",
     readiness_key: "operation_stage_predicate_outside_validated_scope",
-    blocked_by: "runtime_student_t_tail_procedure_unselected",
+    blocked_by: "runtime_student_t_tail_procedure_and_boundary_evidence_incomplete",
   },
   {
     predicate_key: "validated_corpus_membership",
@@ -244,10 +244,10 @@ const EXPECTED_DEFERRED_PREDICATES = [
 ] as const;
 
 const EXPECTED_UNSELECTED_POLICIES = [
-  "subnormal_intermediate_support_or_refusal",
-  "runtime_student_t_tail_procedure_and_branch_boundary",
+  "subnormal_intermediate_first_failure_order_and_activation",
+  "complete_runtime_student_t_series_graph_and_branch_boundary",
   "critical_value_table_extent_and_final_content_hash",
-  "quantity_specific_comparison_tolerances",
+  "mathematical_truth_error_bounds_and_platform_predicate",
   "final_public_refusal_code_spellings",
 ] as const;
 

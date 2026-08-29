@@ -1,0 +1,85 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-numerical-contract-draft-1",
+  "decision_state": "candidate_testing_only",
+  "numerical_contract_frozen": false,
+  "runtime_support_enabled": false,
+  "final_reason_codes_frozen": false,
+  "research_handoff": {
+    "independent_passes_received": [
+      "student_t_runtime_procedure",
+      "binary64_target_projection",
+      "tolerance_contract"
+    ],
+    "protocol_reproduction_state": "partial",
+    "private_repository_dependency": false,
+    "unreproduced_claims_can_close_r2_d5": false
+  },
+  "ledger_separation": {
+    "operation_graph_reproduction": "exact_binary64_bits_after_strict_json_parsing",
+    "mathematical_truth_error": "oracle_enclosure_and_analytic_error_bound",
+    "target_format_projection": "separate_probability_representability_policy",
+    "fixture_role": "reproduction_anchor_not_truth_anchor"
+  },
+  "selected_candidate_directions": {
+    "operation_graph": "g4_pairwise_two_pass_fixed_recursive_floor_half_split",
+    "result_comparison": "exact_binary64_bit_identity",
+    "comparison_tolerance": null,
+    "student_t_tail_family": "rigorously_stopped_positive_term_series",
+    "df1_transcendental_policy": "no_host_atan",
+    "continued_fraction_role": "non_normative_divergence_probe_only",
+    "p_value_target_format": "positive_normal_binary64_or_one",
+    "p_value_subnormal_policy": "candidate_refusal",
+    "p_value_zero_policy": "refuse_positive_tail_not_representable",
+    "intermediate_subnormal_policy": "stage_specific_not_blanket",
+    "confidence_interval_endpoint_collapse": "candidate_refusal",
+    "condition_number_kappa": "diagnostic_only"
+  },
+  "executable_candidate_surface": {
+    "validator": "tooling/src/spikes/paired-t-numerical-contract-candidate.ts",
+    "comparison": "finite_non_negative_zero_binary64_bit_identity",
+    "probability_projection": "positive_normal_or_one_else_classified_refusal",
+    "sample_variance": "reviewed_operation_stage_predicate_unchanged",
+    "standard_error_squared": "reviewed_operation_stage_predicate_unchanged"
+  },
+  "evidence_targets": {
+    "degrees_of_freedom_min": 1,
+    "degrees_of_freedom_max_evaluation_target": 200,
+    "supported_degrees_of_freedom_max": null,
+    "critical_value_table_state": "incomplete",
+    "critical_value_table_final_content_hash": null,
+    "tail_series_iteration_cap_candidate": "40_times_df_plus_64",
+    "tail_series_remainder_bound_candidate": "next_term_times_x_over_one_minus_x"
+  },
+  "held_decisions": [
+    "degrees_of_freedom_max_final_selection",
+    "runtime_tail_branch_boundary_and_complete_operation_graph",
+    "kappa_gate_or_direct_truth_bound",
+    "supported_platform_matrix",
+    "one_cell_boundary_refusal_margin",
+    "subnormal_intermediate_first_failure_order_and_activation",
+    "confidence_interval_sign_stability_bound",
+    "complete_critical_value_table_and_final_content_hash",
+    "final_public_refusal_code_spellings"
+  ],
+  "rejected_directions": [
+    "two_times_one_minus_cdf",
+    "cross_library_majority_as_oracle",
+    "generic_cross_implementation_ulp_tolerance",
+    "host_atan_in_df1_bit_contract",
+    "continued_fraction_without_a_rigorous_truncation_bound",
+    "clamp_positive_tail_to_zero",
+    "replace_positive_tail_with_minimum_subnormal",
+    "blanket_refusal_of_every_subnormal_input"
+  ],
+  "prohibited_claims_before_final_r2_d5": [
+    "supported_df_max",
+    "complete_runtime_student_t_tail_procedure",
+    "complete_critical_value_table",
+    "closed_platform_reproducibility_matrix",
+    "authoritative_comparison_contract",
+    "issued_public_check_or_supported_bundle"
+  ]
+}
