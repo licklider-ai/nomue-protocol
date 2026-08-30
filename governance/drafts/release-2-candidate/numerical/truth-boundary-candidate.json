@@ -1,0 +1,52 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-truth-boundary-evidence-1",
+  "decision_state": "evidence_generation_only",
+  "runtime_support_enabled": false,
+  "truth_error_bound_complete": false,
+  "truth_error_evidence": {
+    "oracle": "arb_regularized_incomplete_beta_exact_binary64_input",
+    "graph_reference": "paired_t_d5_runtime_series_evaluation_1",
+    "pointwise_measure": "exact_nonnegative_binary64_ulp_distance_to_certified_correct_rounding",
+    "global_bound_selected": false,
+    "global_bound_ulp": null,
+    "finite_corpus_maximum_is_a_guarantee": false
+  },
+  "projection_margin_form": {
+    "target_format": "binary64_round_ties_to_even",
+    "candidate_supported_classes": ["positive_normal", "rounded_one"],
+    "future_bound_input": "future_selected_nonnegative_integer_truth_error_bound_ulp",
+    "stability_condition": "distance_to_nearest_policy_class_transition_strictly_greater_than_truth_error_bound",
+    "future_bound_ulp": null,
+    "runtime_predicate_activated": false
+  },
+  "boundary_search": {
+    "manifest": "tooling/r2-paired-t-runtime-series/truth-boundary-cases.json",
+    "generator": "tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py",
+    "validator": "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts",
+    "transition_families": [
+      "rounded_one_to_positive_normal",
+      "positive_normal_to_positive_subnormal",
+      "positive_subnormal_to_zero"
+    ],
+    "adjacent_binary64_statistics_required": true,
+    "contiguous_input_domain_claimed": false
+  },
+  "held_decisions": [
+    "global_truth_error_bound_ulp",
+    "runtime_inverse_beta_constant_table",
+    "final_supported_degrees_of_freedom_maximum",
+    "supported_platform_matrix",
+    "final_runtime_refusal_codes"
+  ],
+  "prohibited_claims": [
+    "finite_corpus_maximum_as_global_truth_bound",
+    "runtime_projection_margin_without_selected_truth_bound",
+    "supported_runtime_student_t_procedure",
+    "correctly_rounded_runtime_p_value",
+    "supported_df_max",
+    "authoritative_public_check_or_bundle"
+  ]
+}

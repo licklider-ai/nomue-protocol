@@ -11,6 +11,9 @@ on:
       - "tooling/src/spikes/paired-t-runtime-series-candidate.ts"
       - "tooling/src/spikes/probe-paired-t-runtime-series-evidence.ts"
       - "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts"
+      - "tooling/src/spikes/paired-t-truth-boundary-candidate.ts"
+      - "tooling/src/spikes/probe-paired-t-truth-boundary-evidence.ts"
+      - "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts"
       - "package.json"
 
 permissions:
@@ -79,9 +82,47 @@ jobs:
             candidate-evidence/release-2-paired-t-runtime-series \
             "$NOMUE_GENERATOR_COMMIT"
 
+      - name: Generate pointwise truth and projection-boundary evidence
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          tooling/r2-paired-t-runtime-series/.venv/bin/python \
+            tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py \
+            --cases tooling/r2-paired-t-runtime-series/truth-boundary-cases.json \
+            --output candidate-evidence/release-2-paired-t-truth-boundary
+
+      - name: Validate truth and projection-boundary evidence
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-truth-boundary:validate \
+            candidate-evidence/release-2-paired-t-truth-boundary \
+            "$NOMUE_GENERATOR_COMMIT"
+
+      - name: Reject coherent truth-boundary evidence mutations
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-truth-boundary:probe \
+            candidate-evidence/release-2-paired-t-truth-boundary \
+            "$NOMUE_GENERATOR_COMMIT"
+
       - uses: actions/upload-artifact@v4
         with:
           name: release-2-paired-t-runtime-series-${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate-evidence/release-2-paired-t-runtime-series/
+          if-no-files-found: error
+          retention-days: 90
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-2-paired-t-truth-boundary-${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate-evidence/release-2-paired-t-truth-boundary/
           if-no-files-found: error
           retention-days: 90

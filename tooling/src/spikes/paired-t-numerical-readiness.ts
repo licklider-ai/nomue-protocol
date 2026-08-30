@@ -40,6 +40,18 @@ export interface PairedTNumericalReadinessCandidate {
     truth_error_bound_complete: false;
     runtime_support_enabled: false;
   };
+  truth_boundary_evidence_candidate: {
+    closure: "incomplete";
+    artifact: "governance/drafts/release-2-candidate/numerical/truth-boundary-candidate.json";
+    boundary_manifest: "tooling/r2-paired-t-runtime-series/truth-boundary-cases.json";
+    evidence_generator: "tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py";
+    evidence_validator: "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts";
+    pointwise_truth_error_certified: true;
+    global_truth_error_bound_ulp: null;
+    projection_margin_runtime_activated: false;
+    supported_degrees_of_freedom_max: null;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -154,6 +166,7 @@ const TOP_LEVEL_KEYS = [
   "support_domain_predicate_candidate",
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
+  "truth_boundary_evidence_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -207,6 +220,19 @@ const RUNTIME_SERIES_CANDIDATE_KEYS = [
   "supported_degrees_of_freedom_max",
   "runtime_constant_table_selected",
   "truth_error_bound_complete",
+  "runtime_support_enabled",
+] as const;
+
+const TRUTH_BOUNDARY_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "boundary_manifest",
+  "evidence_generator",
+  "evidence_validator",
+  "pointwise_truth_error_certified",
+  "global_truth_error_bound_ulp",
+  "projection_margin_runtime_activated",
+  "supported_degrees_of_freedom_max",
   "runtime_support_enabled",
 ] as const;
 
@@ -277,6 +303,12 @@ export function validatePairedTNumericalReadinessCandidate(
     "runtime-series evaluation candidate",
     candidate.runtime_series_evaluation_candidate,
     RUNTIME_SERIES_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "truth-boundary evidence candidate",
+    candidate.truth_boundary_evidence_candidate,
+    TRUTH_BOUNDARY_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
@@ -360,6 +392,28 @@ export function validatePairedTNumericalReadinessCandidate(
     runtimeSeriesCandidate.runtime_support_enabled !== false
   ) {
     errors.push("runtime-series evaluation candidate must remain incomplete and non-runtime");
+  }
+
+  const truthBoundaryCandidate = candidate.truth_boundary_evidence_candidate;
+  if (
+    truthBoundaryCandidate.closure !== "incomplete" ||
+    truthBoundaryCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/truth-boundary-candidate.json" ||
+    truthBoundaryCandidate.boundary_manifest !==
+      "tooling/r2-paired-t-runtime-series/truth-boundary-cases.json" ||
+    truthBoundaryCandidate.evidence_generator !==
+      "tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py" ||
+    truthBoundaryCandidate.evidence_validator !==
+      "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts" ||
+    truthBoundaryCandidate.pointwise_truth_error_certified !== true ||
+    truthBoundaryCandidate.global_truth_error_bound_ulp !== null ||
+    truthBoundaryCandidate.projection_margin_runtime_activated !== false ||
+    truthBoundaryCandidate.supported_degrees_of_freedom_max !== null ||
+    truthBoundaryCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "truth-boundary evidence candidate must remain pointwise, incomplete, and non-runtime",
+    );
   }
 
   const graph = candidate.operation_graph;

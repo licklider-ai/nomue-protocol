@@ -40,6 +40,22 @@ the mathematical positive-series truncation interval and the exact-input
 regularized-incomplete-beta result. The recorded ULP distance is an observation,
 not a tolerance.
 
+## Projection-transition evidence
+
+`generate_truth_boundary_evidence.py` performs a separate monotone search over
+non-negative finite binary64 statistics. For the selected df seed, it locates the
+two adjacent input cells on each available transition from rounded one to positive
+normal, positive normal to positive subnormal, and positive subnormal to zero. Arb
+certifies the correctly rounded mathematical probability on both sides, while the
+TypeScript graph is reproduced independently and its exact pointwise ULP distance
+is recorded.
+
+This establishes boundary witnesses, not a global error bound. The companion
+candidate records only the future margin form: after a non-negative integer truth-
+error bound `B` is separately proved and selected, a supported projection class is
+stable only when its graph cell is more than `B` cells from the nearest rejected
+class. `B` remains null and the predicate is not connected to runtime support.
+
 ## Deliberate incompleteness
 
 The inverse-beta value is supplied per case from an Arb-certified binary64 cell.
@@ -62,6 +78,15 @@ NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
   --output /tmp/nomue-r2-paired-t-runtime-series-output
 pnpm evidence:r2-paired-t-runtime-series:validate \
   /tmp/nomue-r2-paired-t-runtime-series-output \
+  <full-40-hex-checkout-commit>
+
+NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
+  /tmp/nomue-r2-paired-t-runtime-series/bin/python \
+  tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py \
+  --cases tooling/r2-paired-t-runtime-series/truth-boundary-cases.json \
+  --output /tmp/nomue-r2-paired-t-truth-boundary
+pnpm evidence:r2-paired-t-truth-boundary:validate \
+  /tmp/nomue-r2-paired-t-truth-boundary \
   <full-40-hex-checkout-commit>
 ```
 
