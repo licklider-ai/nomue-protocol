@@ -1,0 +1,41 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "implementation_commit": "973cc01ba666a9b3b5870b1d32849f00502aaa97",
+  "recorded_at_utc": "2026-08-30T05:34:00Z",
+  "runs": [
+    {
+      "name": "CI",
+      "run_id": 33294943495,
+      "run_number": 108,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33294943495"
+    },
+    {
+      "name": "Release 2 paired-t candidate evidence",
+      "run_id": 33294943539,
+      "run_number": 16,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33294943539"
+    },
+    {
+      "name": "Release 2 paired-t runtime-series candidate evidence",
+      "run_id": 33294943502,
+      "run_number": 8,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33294943502"
+    }
+  ],
+  "truth_boundary_artifact": {
+    "artifact_id": 9727109684,
+    "name": "release-2-paired-t-truth-boundary-973cc01ba666a9b3b5870b1d32849f00502aaa97",
+    "archive_sha256": "cd80d95c44e88915ad7872dc505e95f3279f3c33b0bf0457ebfa6692bd38f343",
+    "retention_expires_at": "2026-11-28T05:33:06Z"
+  },
+  "notes": [
+    "This file is metadata only; reviewers must rerun the checks.",
+    "The evidence directory is the unpacked truth-boundary artifact named above."
+  ]
+}
