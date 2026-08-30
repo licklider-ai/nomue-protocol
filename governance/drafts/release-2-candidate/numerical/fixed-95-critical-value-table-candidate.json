@@ -1,0 +1,45 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-fixed-95-critical-value-table-evaluation-1",
+  "selection_state": "evidence_evaluation_only_not_table_selected",
+  "runtime_support_enabled": false,
+  "final_table_selected": false,
+  "degrees_of_freedom_evaluation": {
+    "minimum": 1,
+    "maximum_target": 200,
+    "entry_count": 200,
+    "contiguous_evidence_coverage_claimed": true,
+    "supported_maximum": null
+  },
+  "target": {
+    "confidence_level": "19/20",
+    "two_sided_tail_probability": "1/20",
+    "target_format": "binary64",
+    "rounding_mode": "roundTiesToEven"
+  },
+  "evidence_surface": {
+    "generator": "tooling/r2-paired-t-evidence/generate_critical_value_table_evidence.py",
+    "certificate_core": "tooling/r2-paired-t-evidence/generate_certificates.py",
+    "validator": "tooling/src/spikes/validate-paired-t-critical-value-table-evidence.ts",
+    "mutation_probe": "tooling/src/spikes/probe-paired-t-critical-value-table-evidence.ts",
+    "table_content_hash": null,
+    "independent_review_complete": false
+  },
+  "held_decisions": [
+    "final_table_selection",
+    "final_table_content_hash",
+    "final_supported_degrees_of_freedom_maximum",
+    "confidence_interval_endpoint_truth_ledger",
+    "supported_platform_matrix",
+    "runtime_support_activation"
+  ],
+  "prohibited_claims": [
+    "supported_fixed_95_critical_value_table",
+    "supported_df_max",
+    "complete_confidence_interval_truth_bound",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete"
+  ]
+}
