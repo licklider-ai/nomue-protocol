@@ -28,6 +28,18 @@ export interface PairedTNumericalReadinessCandidate {
     supported_degrees_of_freedom_max: null;
     runtime_support_enabled: false;
   };
+  runtime_series_evaluation_candidate: {
+    closure: "incomplete";
+    artifact: "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json";
+    execution_surface: "tooling/src/spikes/paired-t-runtime-series-candidate.ts";
+    evidence_generator: "tooling/r2-paired-t-runtime-series/generate_evidence.py";
+    evidence_validator: "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts";
+    degrees_of_freedom_max_evaluation_target: 200;
+    supported_degrees_of_freedom_max: null;
+    runtime_constant_table_selected: false;
+    truth_error_bound_complete: false;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -141,6 +153,7 @@ const TOP_LEVEL_KEYS = [
   "comparison_tolerances",
   "support_domain_predicate_candidate",
   "numerical_contract_decision_candidate",
+  "runtime_series_evaluation_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -181,6 +194,19 @@ const NUMERICAL_CONTRACT_CANDIDATE_KEYS = [
   "probability_projection",
   "degrees_of_freedom_max_evaluation_target",
   "supported_degrees_of_freedom_max",
+  "runtime_support_enabled",
+] as const;
+
+const RUNTIME_SERIES_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "execution_surface",
+  "evidence_generator",
+  "evidence_validator",
+  "degrees_of_freedom_max_evaluation_target",
+  "supported_degrees_of_freedom_max",
+  "runtime_constant_table_selected",
+  "truth_error_bound_complete",
   "runtime_support_enabled",
 ] as const;
 
@@ -247,6 +273,12 @@ export function validatePairedTNumericalReadinessCandidate(
     NUMERICAL_CONTRACT_CANDIDATE_KEYS,
     errors,
   );
+  requireExactKeys(
+    "runtime-series evaluation candidate",
+    candidate.runtime_series_evaluation_candidate,
+    RUNTIME_SERIES_CANDIDATE_KEYS,
+    errors,
+  );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
   requireExactKeys(
     "p-value evidence readiness",
@@ -308,6 +340,26 @@ export function validatePairedTNumericalReadinessCandidate(
     contractCandidate.runtime_support_enabled !== false
   ) {
     errors.push("numerical-contract decision candidate must remain incomplete and non-runtime");
+  }
+
+  const runtimeSeriesCandidate = candidate.runtime_series_evaluation_candidate;
+  if (
+    runtimeSeriesCandidate.closure !== "incomplete" ||
+    runtimeSeriesCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json" ||
+    runtimeSeriesCandidate.execution_surface !==
+      "tooling/src/spikes/paired-t-runtime-series-candidate.ts" ||
+    runtimeSeriesCandidate.evidence_generator !==
+      "tooling/r2-paired-t-runtime-series/generate_evidence.py" ||
+    runtimeSeriesCandidate.evidence_validator !==
+      "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts" ||
+    runtimeSeriesCandidate.degrees_of_freedom_max_evaluation_target !== 200 ||
+    runtimeSeriesCandidate.supported_degrees_of_freedom_max !== null ||
+    runtimeSeriesCandidate.runtime_constant_table_selected !== false ||
+    runtimeSeriesCandidate.truth_error_bound_complete !== false ||
+    runtimeSeriesCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push("runtime-series evaluation candidate must remain incomplete and non-runtime");
   }
 
   const graph = candidate.operation_graph;

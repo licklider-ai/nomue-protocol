@@ -60,6 +60,15 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("keeps the runtime-series evaluation separate from runtime support", () => {
+    const candidate = loadReadiness();
+    candidate.runtime_series_evaluation_candidate.supported_degrees_of_freedom_max = 200 as never;
+    candidate.runtime_series_evaluation_candidate.runtime_constant_table_selected = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "runtime-series evaluation candidate must remain incomplete and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
@@ -72,6 +81,14 @@ describe("Release 2 numerical evidence readiness", () => {
       "scipy_r_boost_agreement";
     expect(validatePairedTNumericalReadinessCandidate(nested)).toContain(
       "operation graph: keys are incomplete or contain an undeclared item",
+    );
+
+    const runtimeSeries = loadReadiness();
+    (runtimeSeries.runtime_series_evaluation_candidate as unknown as Record<string, unknown>)[
+      "comparison_tolerance"
+    ] = 4;
+    expect(validatePairedTNumericalReadinessCandidate(runtimeSeries)).toContain(
+      "runtime-series evaluation candidate: keys are incomplete or contain an undeclared item",
     );
   });
 

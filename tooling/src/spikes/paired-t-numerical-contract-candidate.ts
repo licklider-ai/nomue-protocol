@@ -141,18 +141,39 @@ const EXPECTED_PROHIBITED_CLAIMS = [
   "issued_public_check_or_supported_bundle",
 ] as const;
 
-function canonicalize(value: unknown): unknown {
-  if (Array.isArray(value)) return value.map(canonicalize);
+function canonicalize(value: unknown, ancestors = new Set<object>()): unknown {
+  if (
+    value === undefined ||
+    typeof value === "bigint" ||
+    typeof value === "function" ||
+    typeof value === "symbol" ||
+    (typeof value === "number" && !Number.isFinite(value))
+  ) {
+    throw new TypeError("candidate checkpoint contains a value outside strict JSON");
+  }
   if (typeof value !== "object" || value === null) return value;
+  if (ancestors.has(value)) throw new TypeError("candidate checkpoint contains a cycle");
+  const nextAncestors = new Set(ancestors).add(value);
+  if (Array.isArray(value)) {
+    return value.map((entry) => canonicalize(entry, nextAncestors));
+  }
+  const prototype = Object.getPrototypeOf(value) as object | null;
+  if (prototype !== Object.prototype && prototype !== null) {
+    throw new TypeError("candidate checkpoint contains a non-JSON object");
+  }
   return Object.fromEntries(
     Object.entries(value)
       .sort(([first], [second]) => (first < second ? -1 : first > second ? 1 : 0))
-      .map(([key, entry]) => [key, canonicalize(entry)]),
+      .map(([key, entry]) => [key, canonicalize(entry, nextAncestors)]),
   );
 }
 
 function equalCheckpointValue(actual: unknown, expected: unknown): boolean {
-  return JSON.stringify(canonicalize(actual)) === JSON.stringify(canonicalize(expected));
+  try {
+    return JSON.stringify(canonicalize(actual)) === JSON.stringify(canonicalize(expected));
+  } catch {
+    return false;
+  }
 }
 
 function hasExactKeys(actual: object, expected: readonly string[]): boolean {

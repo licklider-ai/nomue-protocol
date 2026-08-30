@@ -48,10 +48,11 @@ explicit `not_asserted` guarantee-boundary fields. It has no overall status,
 significance boolean, whole-Record validity boolean, or attestation member. The
 candidate bundle explicitly declares `attestation_support: none`.
 
-This increment does not implement a runtime Student-t tail, freeze confidence-
-interval critical values, select a supported domain or mathematical-truth error
-bound, execute a Public Check, or dispatch the candidate bundle. Exact binary64
-identity is only the selected candidate rule for reproducing the pinned graph; it is
-not a claim of mathematical accuracy or cross-platform closure. The numerical
-directory and certificate validator make the next R2-D5 evidence increment fail
-closed; they do not dispose R2-D5 or supply an oracle result.
+The numerical directory now includes an executable Student-t series evaluation
+candidate and a separate Arb evidence route. Neither is a supported runtime tail.
+This increment does not freeze confidence-interval critical values, select a
+supported domain or mathematical-truth error bound, execute a Public Check, or
+dispatch the candidate bundle. Exact binary64 identity is only the selected
+candidate rule for reproducing a pinned graph; it is not a claim of mathematical
+accuracy or cross-platform closure. The numerical validators make R2-D5 evidence
+fail closed; they do not dispose R2-D5 or authorize support.
