@@ -5,6 +5,11 @@ investigation produces Research Gate input. It does not select Protocol fields,
 schemas, identifiers, method defaults, implementation behavior, or a release
 change.
 
+**Current disposition:** both isolated passes are complete. The
+[`reconciled result`](2026-08-30-independent-research-result.md) is accepted as
+dual-pass, source-bounded FND-1 input with disposition `NARROW`. The full FND-1
+Research Gate remains open, and no Protocol adoption is authorized.
+
 ## Active execution mode
 
 The original FND-1 scientific question set below remains in force. Its earlier

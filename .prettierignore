@@ -22,6 +22,7 @@ evidence/development/oracle-deviation-summary/summary.md
 evidence/development/oracle-floor-map/*.json
 evidence/development/oracle-floor-map/floor-map.md
 evidence/development/r1-08-independent-oracle-v1/*.json
+evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md
 examples/itgc-guarantee-0.2/record.json
 examples/itgc-guarantee-0.2/expected-verification.json
 examples/itgc-guarantee-0.2/canonical-content.json
