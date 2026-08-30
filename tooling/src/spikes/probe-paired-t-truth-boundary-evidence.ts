@@ -39,6 +39,18 @@ function mutateEvidence(bundlePath: string, mutate: (value: JsonObject) => void)
   rebuildManifest(bundlePath);
 }
 
+function mutateEnvironment(bundlePath: string, mutate: (value: JsonObject) => void): void {
+  const environmentPath = path.join(bundlePath, "environment.json");
+  const environment = readJson(environmentPath);
+  mutate(environment);
+  writeJson(environmentPath, environment);
+  const evidencePath = path.join(bundlePath, "truth-boundary-evidence.json");
+  const evidence = readJson(evidencePath);
+  evidence.environment_hash = `sha256:${sha256(environmentPath)}`;
+  writeJson(evidencePath, evidence);
+  rebuildManifest(bundlePath);
+}
+
 export function runPairedTTruthBoundaryMutationProbes(
   sourceBundle: string,
   expectedCommit: string,
@@ -131,6 +143,45 @@ export function runPairedTTruthBoundaryMutationProbes(
         rebuildManifest(bundle);
       },
     ],
+    [
+      "inverse beta enclosure and cell",
+      (bundle) =>
+        mutateEvidence(bundle, (value) => {
+          const inverse = value.transitions[0].inverse_beta_constant;
+          inverse.arb_enclosure = { lower: "999/1", upper: "1000/1" };
+          inverse.projection.cell_lower = "0/1";
+          inverse.projection.cell_upper = "0/1";
+          inverse.projection.strict_containment = false;
+        }),
+    ],
+    [
+      "graph remainder",
+      (bundle) =>
+        mutateEvidence(
+          bundle,
+          (value) =>
+            (value.transitions[0].left.graph.positive_series_remainder_contribution_candidate_binary64_hex =
+              "3ff0000000000000"),
+        ),
+    ],
+    [
+      "truth precision history",
+      (bundle) =>
+        mutateEvidence(
+          bundle,
+          (value) => (value.transitions[0].left.truth.precision_history_bits = ["not-a-precision"]),
+        ),
+    ],
+    [
+      "graph projection class",
+      (bundle) =>
+        mutateEvidence(bundle, (value) => {
+          value.transitions[0].left.graph.projection_class = "fabricated";
+          value.transitions[0].left.graph_truth_projection_class_agree = false;
+          value.graph_truth_projection_class_disagreement_endpoint_count += 1;
+        }),
+    ],
+    ["flint version", (bundle) => mutateEnvironment(bundle, (value) => (value.flint = "999.0.0"))],
   ];
 
   const temporaryRoot = mkdtempSync(path.join(os.tmpdir(), "nomue-r2-truth-boundary-mutations-"));

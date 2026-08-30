@@ -155,7 +155,7 @@ export function evaluateProjectionMarginCandidate(
   value: number,
   truthErrorBoundUlp: bigint,
 ): ProjectionMarginCandidateResult {
-  if (truthErrorBoundUlp < 0) {
+  if (typeof truthErrorBoundUlp !== "bigint" || truthErrorBoundUlp < 0n) {
     return {
       status: "candidate_refusal",
       classification: "invalid_candidate_input",

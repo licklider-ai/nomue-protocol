@@ -11,6 +11,7 @@ import {
 const HEX64 = /^[0-9a-f]{16}$/u;
 const COMMIT = /^[0-9a-f]{40}$/u;
 const HASH = /^([0-9a-f]{64})  ([A-Za-z0-9._-]+)$/u;
+const PYTHON_312 = /^3\.12\.[0-9]+$/u;
 const SCOPE = "selected_df_projection_transition_search_not_protocol_support";
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const sourceMappings = {
@@ -45,6 +46,7 @@ const MANIFEST_KEYS = [
   "supported_degrees_of_freedom_max",
   "runtime_support_claimed",
 ] as const;
+const ENVIRONMENT_KEYS = ["status", "python", "python_flint", "flint", "platform"] as const;
 const EVIDENCE_KEYS = [
   "status",
   "scope",
@@ -133,6 +135,10 @@ function exactKeys(value: object, expected: readonly string[]): boolean {
   return actual.length === wanted.length && actual.every((entry, index) => entry === wanted[index]);
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
 function parseJson<T>(filePath: string, errors: string[]): T | undefined {
   try {
     return JSON.parse(readFileSync(filePath, "utf8")) as T;
@@ -179,9 +185,9 @@ function bitsToRational(bits: bigint): Rational | undefined {
 }
 
 function roundingCell(binary64Hex: string): [Rational, Rational] | undefined {
-  if (!HEX64.test(binary64Hex)) return undefined;
+  if (typeof binary64Hex !== "string" || !HEX64.test(binary64Hex)) return undefined;
   const bits = BigInt(`0x${binary64Hex}`);
-  if (bits > 0x3ff0_0000_0000_0000n) return undefined;
+  if (bits > 0x7fef_ffff_ffff_ffffn) return undefined;
   const value = bitsToRational(bits);
   const down =
     bits === 0n ? { numerator: -1n, denominator: 1n << 1074n } : bitsToRational(bits - 1n);
@@ -195,10 +201,16 @@ function equalRational(first: Rational, second: Rational): boolean {
 }
 
 function floatFromHex(value: string): number | undefined {
-  if (!HEX64.test(value)) return undefined;
+  if (typeof value !== "string" || !HEX64.test(value)) return undefined;
   const buffer = Buffer.from(value, "hex");
   const result = buffer.readDoubleBE(0);
   return Number.isFinite(result) ? result : undefined;
+}
+
+function floatToHex(value: number): string {
+  const buffer = Buffer.allocUnsafe(8);
+  buffer.writeDoubleBE(value, 0);
+  return buffer.toString("hex");
 }
 
 function projectionClass(value: number): string {
@@ -208,10 +220,14 @@ function projectionClass(value: number): string {
   return "normal";
 }
 
-function validateProjection(label: string, truth: Endpoint["truth"], errors: string[]): void {
-  const projection = truth.projection;
-  const enclosureLower = parseRational(truth.enclosure.lower);
-  const enclosureUpper = parseRational(truth.enclosure.upper);
+function validateEnclosureProjection(
+  label: string,
+  enclosure: { lower: string; upper: string },
+  projection: Projection,
+  errors: string[],
+): number | undefined {
+  const enclosureLower = parseRational(enclosure.lower);
+  const enclosureUpper = parseRational(enclosure.upper);
   const cellLower = parseRational(projection.cell_lower);
   const cellUpper = parseRational(projection.cell_upper);
   const expectedCell = roundingCell(projection.binary64_hex);
@@ -228,14 +244,41 @@ function validateProjection(label: string, truth: Endpoint["truth"], errors: str
     !equalRational(cellUpper, expectedCell[1]) ||
     compare(cellLower, enclosureLower) >= 0 ||
     compare(enclosureUpper, cellUpper) >= 0 ||
-    compare(enclosureLower, enclosureUpper) > 0 ||
+    compare(enclosureLower, enclosureUpper) > 0
+  ) {
+    errors.push(`${label}: enclosure or projection cell is invalid`);
+    return undefined;
+  }
+  return projected;
+}
+
+function validPrecisionHistory(value: unknown): value is number[] {
+  return (
+    Array.isArray(value) &&
+    value.length > 0 &&
+    value.every(
+      (entry, index) =>
+        Number.isInteger(entry) && entry === 128 * 2 ** index && entry >= 128 && entry <= 8192,
+    )
+  );
+}
+
+function validateTruthProjection(
+  label: string,
+  truth: Endpoint["truth"],
+  errors: string[],
+): number | undefined {
+  const projected = validateEnclosureProjection(label, truth.enclosure, truth.projection, errors);
+  if (projected === undefined) return undefined;
+  if (
+    projected > 1 ||
     truth.projection_class !== projectionClass(projected) ||
     truth.method !== "arb_regularized_incomplete_beta_exact_binary64_input" ||
-    !Array.isArray(truth.precision_history_bits) ||
-    truth.precision_history_bits.length === 0
+    !validPrecisionHistory(truth.precision_history_bits)
   ) {
-    errors.push(`${label}: truth enclosure or projection cell is invalid`);
+    errors.push(`${label}: truth method, class, or precision history is invalid`);
   }
+  return projected;
 }
 
 function validateEndpoint(
@@ -246,13 +289,14 @@ function validateEndpoint(
   expectedTruthClass: string,
   errors: string[],
 ): { distance: number; disagreement: boolean } | undefined {
-  validateProjection(label, endpoint.truth, errors);
+  const truthProjection = validateTruthProjection(label, endpoint.truth, errors);
   const statistic = floatFromHex(endpoint.test_statistic_binary64_hex);
   const exactStatistic = parseRational(endpoint.test_statistic_exact);
   const lifted = HEX64.test(endpoint.test_statistic_binary64_hex)
     ? bitsToRational(BigInt(`0x${endpoint.test_statistic_binary64_hex}`))
     : undefined;
   if (
+    truthProjection === undefined ||
     statistic === undefined ||
     exactStatistic === undefined ||
     lifted === undefined ||
@@ -275,8 +319,11 @@ function validateEndpoint(
   if (
     result.branch !== graph["branch"] ||
     result.pValueBinary64Hex !== graph["p_value_binary64_hex"] ||
+    projectionClass(result.pValue) !== graph["projection_class"] ||
     result.iterations !== graph["iterations"] ||
     result.iterationCap !== graph["iteration_cap"] ||
+    floatToHex(result.positiveSeriesRemainderContributionCandidate) !==
+      graph["positive_series_remainder_contribution_candidate_binary64_hex"] ||
     graph["runtime_support_claimed"] !== false ||
     graph["correct_rounding_claimed"] !== false
   ) {
@@ -284,7 +331,12 @@ function validateEndpoint(
   }
   const graphHex = graph["p_value_binary64_hex"];
   const truthHex = endpoint.truth.projection.binary64_hex;
-  if (typeof graphHex !== "string" || !HEX64.test(graphHex)) {
+  if (
+    typeof graphHex !== "string" ||
+    !HEX64.test(graphHex) ||
+    typeof truthHex !== "string" ||
+    !HEX64.test(truthHex)
+  ) {
     errors.push(`${label}: graph projection is not binary64 hex`);
     return undefined;
   }
@@ -384,9 +436,14 @@ export function validatePairedTTruthBoundaryEvidenceBundle(
     errors.push("truth-boundary evidence keys are incomplete or contain an undeclared item");
   }
   if (
+    !exactKeys(environment, ENVIRONMENT_KEYS) ||
     environment["status"] !== "non_authoritative_candidate" ||
+    typeof environment["python"] !== "string" ||
+    !PYTHON_312.test(environment["python"]) ||
     environment["python_flint"] !== "0.9.0" ||
-    typeof environment["flint"] !== "string"
+    environment["flint"] !== "3.6.0" ||
+    typeof environment["platform"] !== "string" ||
+    environment["platform"].length === 0
   ) {
     errors.push("environment does not contain the pinned candidate dependency identity");
   }
@@ -453,18 +510,44 @@ export function validatePairedTTruthBoundaryEvidenceBundle(
   let disagreements = 0;
   for (const [index, expected] of expectedIdentities.entries()) {
     const transition = transitions[index];
-    if (transition === undefined) continue;
+    if (!isRecord(transition)) {
+      errors.push(`transition ${index}: identity or adjacency is invalid`);
+      continue;
+    }
     const [caseId, df, leftClass, rightClass] = expected;
-    const left = transition["left"] as Endpoint;
-    const right = transition["right"] as Endpoint;
+    const leftValue = transition["left"];
+    const rightValue = transition["right"];
+    if (!isRecord(leftValue) || !isRecord(rightValue)) {
+      errors.push(`transition ${index}: identity or adjacency is invalid`);
+      continue;
+    }
+    const left = leftValue as unknown as Endpoint;
+    const right = rightValue as unknown as Endpoint;
+    const leftTruth = left.truth;
+    const rightTruth = right.truth;
+    if (
+      !isRecord(leftTruth) ||
+      !isRecord(rightTruth) ||
+      !isRecord(leftTruth.enclosure) ||
+      !isRecord(rightTruth.enclosure) ||
+      !isRecord(leftTruth.projection) ||
+      !isRecord(rightTruth.projection) ||
+      !isRecord(left.graph) ||
+      !isRecord(right.graph)
+    ) {
+      errors.push(`transition ${index}: endpoint structure is invalid`);
+      continue;
+    }
     if (
       !exactKeys(transition, TRANSITION_KEYS) ||
       !exactKeys(left, ENDPOINT_KEYS) ||
       !exactKeys(right, ENDPOINT_KEYS) ||
-      !exactKeys(left.truth, TRUTH_KEYS) ||
-      !exactKeys(right.truth, TRUTH_KEYS) ||
-      !exactKeys(left.truth.projection, PROJECTION_KEYS) ||
-      !exactKeys(right.truth.projection, PROJECTION_KEYS) ||
+      !exactKeys(leftTruth, TRUTH_KEYS) ||
+      !exactKeys(rightTruth, TRUTH_KEYS) ||
+      !exactKeys(leftTruth.enclosure, INTERVAL_KEYS) ||
+      !exactKeys(rightTruth.enclosure, INTERVAL_KEYS) ||
+      !exactKeys(leftTruth.projection, PROJECTION_KEYS) ||
+      !exactKeys(rightTruth.projection, PROJECTION_KEYS) ||
       !exactKeys(left.graph, GRAPH_KEYS) ||
       !exactKeys(right.graph, GRAPH_KEYS) ||
       transition["case_id"] !== caseId ||
@@ -475,17 +558,34 @@ export function validatePairedTTruthBoundaryEvidenceBundle(
       errors.push(`transition ${index}: identity or adjacency is invalid`);
       continue;
     }
-    const inverse = transition["inverse_beta_constant"] as Record<string, unknown>;
-    const inverseProjection = inverse["projection"] as Projection;
-    const inverseBeta = floatFromHex(inverseProjection.binary64_hex);
+    const inverseValue = transition["inverse_beta_constant"];
+    if (!isRecord(inverseValue)) {
+      errors.push(`${caseId}: inverse-beta binding is invalid`);
+      continue;
+    }
+    const inverse = inverseValue;
+    const inverseEnclosure = inverse["arb_enclosure"];
+    const inverseProjectionValue = inverse["projection"];
     if (
       !exactKeys(inverse, INVERSE_KEYS) ||
-      !exactKeys(inverse["arb_enclosure"] as object, INTERVAL_KEYS) ||
-      !exactKeys(inverseProjection, PROJECTION_KEYS) ||
-      inverseBeta === undefined ||
+      !isRecord(inverseEnclosure) ||
+      !exactKeys(inverseEnclosure, INTERVAL_KEYS) ||
+      !isRecord(inverseProjectionValue) ||
+      !exactKeys(inverseProjectionValue, PROJECTION_KEYS) ||
       inverse["definition"] !== "one_over_beta_df_over_two_one_half"
     ) {
       errors.push(`${caseId}: inverse-beta binding is invalid`);
+      continue;
+    }
+    const inverseProjection = inverseProjectionValue as unknown as Projection;
+    const inverseBeta = validateEnclosureProjection(
+      `${caseId} inverse beta`,
+      inverseEnclosure as { lower: string; upper: string },
+      inverseProjection,
+      errors,
+    );
+    if (inverseBeta === undefined || inverseBeta <= 0) {
+      errors.push(`${caseId}: inverse-beta projection is not positive and certified`);
       continue;
     }
     if (

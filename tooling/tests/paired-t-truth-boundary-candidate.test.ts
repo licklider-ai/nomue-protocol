@@ -55,6 +55,30 @@ describe("paired-t truth-boundary candidate", () => {
     });
   });
 
+  it("rejects programmatic bound values outside non-negative bigint", () => {
+    for (const invalid of [
+      0,
+      -0,
+      0.5,
+      Number.NaN,
+      Number.POSITIVE_INFINITY,
+      undefined,
+      null,
+      "0",
+    ]) {
+      expect(evaluateProjectionMarginCandidate(0.5, invalid as never)).toMatchObject({
+        status: "candidate_refusal",
+        classification: "invalid_candidate_input",
+        runtimeSupportClaimed: false,
+      });
+    }
+    expect(evaluateProjectionMarginCandidate(0.5, -1n)).toMatchObject({
+      status: "candidate_refusal",
+      classification: "invalid_candidate_input",
+      runtimeSupportClaimed: false,
+    });
+  });
+
   it("rejects a finite-corpus observation promoted to a global bound", () => {
     const promoted = loadCandidate();
     promoted.truth_error_evidence.global_bound_selected = true;
