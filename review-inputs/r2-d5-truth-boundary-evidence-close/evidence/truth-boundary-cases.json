@@ -1,0 +1,28 @@
+{
+  "status": "non_authoritative_candidate",
+  "scope": "selected_df_projection_transition_search_not_protocol_support",
+  "degrees_of_freedom": [1, 2, 3, 10, 30, 100, 200],
+  "transition_families": [
+    {
+      "transition_key": "rounded_one_to_positive_normal",
+      "left_class": "rounded_one",
+      "right_class": "normal",
+      "excluded_degrees_of_freedom": []
+    },
+    {
+      "transition_key": "positive_normal_to_positive_subnormal",
+      "left_class": "normal",
+      "right_class": "subnormal",
+      "excluded_degrees_of_freedom": []
+    },
+    {
+      "transition_key": "positive_subnormal_to_zero",
+      "left_class": "subnormal",
+      "right_class": "zero",
+      "excluded_degrees_of_freedom": [1]
+    }
+  ],
+  "contiguous_input_domain_claimed": false,
+  "supported_degrees_of_freedom_max": null,
+  "runtime_support_claimed": false
+}

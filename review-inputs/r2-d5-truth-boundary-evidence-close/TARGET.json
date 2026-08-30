@@ -1,0 +1,17 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "pull_request": 34,
+  "repaired_implementation_commit": "78c96328aeeee153aa6df92e01ee45bc1111fe4f",
+  "repaired_implementation_tree": "7bdd03fb6b1ce65f82c765274d485bbd41ff4546",
+  "original_reviewed_commit": "973cc01ba666a9b3b5870b1d32849f00502aaa97",
+  "original_review_record_commit": "48ec887eb5d602a2058f6bcd773a5127a1989c3c",
+  "expected_repair_delta": {
+    "files": 4,
+    "additions": 203,
+    "deletions": 28
+  },
+  "review_scope": "close_blocker_1_and_should_fix_1_only",
+  "production_status": "non_authoritative_candidate",
+  "public_review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "review_input_directory": "review-inputs/r2-d5-truth-boundary-evidence-close"
+}
