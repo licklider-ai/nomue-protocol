@@ -137,10 +137,11 @@ not a global guarantee. The derivation and its candidate-bound implementation pa
 independent adversarial review, including close-only review of the accepted repairs.
 The two candidate runtime evaluation entrypoints now also share a closed two-field
 input parser. Eleven reason-code spellings for the already reviewed operation-stage
-failures are recorded as unissued candidates; ten support-dependent mappings and the
-final reason-code freeze remain open. The final truth-error predicate, supported
-platform matrix, supported df range, subnormal first-failure ordering, and final
-critical-value table selection also remain open.
+failures are recorded as unissued candidates. The parser and partial inventory passed
+independent adversarial review as non-authoritative decision-preparation material;
+ten support-dependent mappings and the final reason-code freeze remain open. The
+final truth-error predicate, supported platform matrix, supported df range, subnormal
+first-failure ordering, and final critical-value table selection also remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

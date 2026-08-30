@@ -103,9 +103,10 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   runtime_input_reason_code_candidate: {
-    closure: "incomplete";
+    closure: "reviewed_candidate_input_contract_and_partial_inventory";
     artifact: "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json";
     validator: "tooling/src/spikes/paired-t-runtime-input-reason-code-candidate.ts";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-runtime-input-reason-code-adversarial-review-disposition.md";
     input_contract: "exact_own_data_keys_candidate";
     selected_operation_stage_reason_code_candidate_count: 11;
     deferred_reason_code_decision_count: 10;
@@ -357,6 +358,7 @@ const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
   "closure",
   "artifact",
   "validator",
+  "review_disposition",
   "input_contract",
   "selected_operation_stage_reason_code_candidate_count",
   "deferred_reason_code_decision_count",
@@ -659,11 +661,14 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const runtimeInputReasonCodeCandidate = candidate.runtime_input_reason_code_candidate;
   if (
-    runtimeInputReasonCodeCandidate.closure !== "incomplete" ||
+    runtimeInputReasonCodeCandidate.closure !==
+      "reviewed_candidate_input_contract_and_partial_inventory" ||
     runtimeInputReasonCodeCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json" ||
     runtimeInputReasonCodeCandidate.validator !==
       "tooling/src/spikes/paired-t-runtime-input-reason-code-candidate.ts" ||
+    runtimeInputReasonCodeCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-runtime-input-reason-code-adversarial-review-disposition.md" ||
     runtimeInputReasonCodeCandidate.input_contract !== "exact_own_data_keys_candidate" ||
     runtimeInputReasonCodeCandidate.selected_operation_stage_reason_code_candidate_count !== 11 ||
     runtimeInputReasonCodeCandidate.deferred_reason_code_decision_count !== 10 ||
@@ -671,7 +676,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     runtimeInputReasonCodeCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "runtime input/reason-code candidate must remain incomplete, unissued, and non-runtime",
+      "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
     );
   }
 

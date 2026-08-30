@@ -61,8 +61,10 @@ non-authoritative candidate proof engineering. None is a supported runtime tail,
 selected truth-error predicate, or a final runtime-table selection. A separate
 runtime-input and reason-code checkpoint now gives both candidate evaluation
 entrypoints the same closed two-field input shape and proposes unissued spellings
-only for the eleven already reviewed operation-stage failures. Ten support-dependent
-reason-code decisions remain explicitly deferred.
+only for the eleven already reviewed operation-stage failures. The input contract
+and this partial inventory passed independent adversarial review as non-authoritative
+decision-preparation material. Ten support-dependent reason-code decisions remain
+explicitly deferred.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

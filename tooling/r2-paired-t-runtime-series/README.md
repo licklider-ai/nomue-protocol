@@ -117,8 +117,9 @@ unselected pending platform and supported-domain decisions. It does not turn the
 evidence points or `df = 1..200` table cells into contiguous input support.
 The table-integration and truth-error entrypoints now share an exact-own-key input
 parser. The adjacent reason-code inventory proposes spellings only for reviewed
-operation-stage failures; it neither freezes those spellings nor fills mappings that
-depend on the still-open support decisions.
+operation-stage failures. The parser and partial inventory passed independent
+adversarial review; that review neither freezes those spellings nor fills mappings
+that depend on the still-open support decisions.
 
 ## Local run
 

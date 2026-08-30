@@ -112,12 +112,19 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the closed input shape without freezing the partial reason-code inventory", () => {
+  it("records the reviewed input shape without freezing the partial reason-code inventory", () => {
     const candidate = loadReadiness();
     candidate.runtime_input_reason_code_candidate.final_reason_codes_frozen = true as never;
     candidate.runtime_input_reason_code_candidate.deferred_reason_code_decision_count = 0 as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "runtime input/reason-code candidate must remain incomplete, unissued, and non-runtime",
+      "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
+    );
+
+    const wrongReview = loadReadiness();
+    wrongReview.runtime_input_reason_code_candidate.review_disposition =
+      "governance/drafts/release-2-candidate/reviews/other.md" as never;
+    expect(validatePairedTNumericalReadinessCandidate(wrongReview)).toContain(
+      "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
     );
   });
 

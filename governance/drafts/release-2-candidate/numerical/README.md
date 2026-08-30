@@ -202,7 +202,10 @@ policy, confidence-interval endpoint truth, and the supported-platform predicate
 Candidate-input rejection, missing candidate table data, and proof-graph divergence
 are classified as input-processing, candidate-configuration, or implementation-
 invariant failures rather than Record-caused Public Check reasons. Final reason codes
-remain unfrozen and runtime support remains disabled.
+remain unfrozen and runtime support remains disabled. The shared input contract and
+partial operation-stage inventory passed independent adversarial review as
+non-authoritative decision-preparation material; the disposition is recorded in
+`../reviews/d5-runtime-input-reason-code-adversarial-review-disposition.md`.
 
 ## Candidate four-layer separation
 
