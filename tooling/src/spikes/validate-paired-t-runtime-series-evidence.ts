@@ -159,8 +159,13 @@ function sha256(value: Buffer): string {
   return `sha256:${createHash("sha256").update(value).digest("hex")}`;
 }
 
-function parseJson<T>(filePath: string): T {
-  return JSON.parse(readFileSync(filePath, "utf8")) as T;
+function parseJson<T>(filePath: string, errors: string[]): T | undefined {
+  try {
+    return JSON.parse(readFileSync(filePath, "utf8")) as T;
+  } catch {
+    errors.push(`${path.basename(filePath)}: not valid JSON`);
+    return undefined;
+  }
 }
 
 function exactKeys(actual: object, expected: readonly string[]): boolean {
@@ -332,12 +337,19 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
       errors.push(`${copyName}: bundled source differs from repository`);
   }
 
-  const manifest = parseJson<RuntimeSeriesCaseManifest>(path.join(bundlePath, "cases.json"));
+  const manifest = parseJson<RuntimeSeriesCaseManifest>(
+    path.join(bundlePath, "cases.json"),
+    errors,
+  );
   const evidence = parseJson<RuntimeSeriesEvidence>(
     path.join(bundlePath, "runtime-series-evidence.json"),
+    errors,
   );
   const environmentPath = path.join(bundlePath, "environment.json");
-  const environment = parseJson<Record<string, unknown>>(environmentPath);
+  const environment = parseJson<Record<string, unknown>>(environmentPath, errors);
+  if (manifest === undefined || evidence === undefined || environment === undefined) {
+    return errors;
+  }
   if (!exactKeys(manifest, CASE_MANIFEST_KEYS)) {
     errors.push("case manifest keys are incomplete or contain an undeclared item");
   }
