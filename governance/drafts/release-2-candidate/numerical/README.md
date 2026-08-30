@@ -172,12 +172,12 @@ blanket subnormal refusal.
 
 ## Candidate four-layer separation
 
-| Layer               | Candidate responsibility                                                                                                      | Current state                                                     |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here  |
-| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                    |
-| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Nine-cell research seed generated; complete evidence remains open |
-| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Input-specific proof candidate pending independent review         |
+| Layer               | Candidate responsibility                                                                                                      | Current state                                                           |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here        |
+| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                          |
+| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Contiguous 200-cell critical-value candidate pending independent review |
+| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Input-specific proof candidate pending independent review               |
 
 The secondary oracle path is method-distinct but not library-independent. It
 shares Arb ball arithmetic with the primary and closed-form paths, so their
@@ -246,15 +246,23 @@ the candidate certificate validator. A separate table manifest also binds the
 ordered df/binary64 cells, the complete certificate bundle, and each individual
 certificate.
 
-The missing degrees of freedom are deliberate. The manifest records that the seed
-is not contiguous runtime support and leaves `supported_df_max` null. For df greater
+The missing degrees of freedom in the pilot are deliberate. Its manifest records
+that the seed is not contiguous runtime support and leaves `supported_df_max` null.
+For df greater
 than 2, the secondary critical-value route uses segmented rigorous density
 quadrature and expands its finite endpoint until the analytic tail bound is below a
 case-derived evidence ceiling. For df=1 and df=2, the executed closed form is the
 secondary route. The evidence ceiling is only a proof-construction condition; it is
-not a runtime tolerance or supported-domain predicate. This increment establishes
-that the expanded evidence route is executable. It does not establish table
-completeness or change either closure field from `incomplete`.
+not a runtime tolerance or supported-domain predicate.
+
+The separate `fixed-95-critical-value-table-candidate.json` checkpoint now drives a
+contiguous `df = 1..200` evidence generator. It rigorously searches binary64 cell
+midpoints, cross-checks all nine pilot cells, reuses the primary and method-distinct
+secondary certificates, and emits a hash-bound table artifact. Its validator and
+coherent mutation probes are part of the dedicated evidence workflow. This closes
+the implementation gap for a reviewable table candidate, but independent review,
+final table selection, a final content hash, endpoint truth, support, and issuance
+remain open. The readiness closure therefore remains `incomplete`.
 
 For a certified binary64 critical value `t_c`, table lookup has zero reproduction
 error. Its truth error is different: correct rounding establishes the absolute bound
@@ -273,8 +281,8 @@ not multiply the ULP by `|t_c|` a second time.
   iteration-cap evidence;
 - the final reviewed mathematical-truth error predicate or bound and the supported-
   platform predicate (the input-specific candidate is not selected for runtime);
-- the complete critical-value table and its final content hash (the current hash
-  binds only the explicit research seed); and
+- independent review and final selection of the critical-value table and its final
+  content hash (the contiguous candidate hash remains evidence-local); and
 - the final reason-code spellings and authoritative Public Check revision.
 
 Support will be expressed as machine-testable operation-stage predicates plus a

@@ -453,9 +453,6 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
     ):
         raise RuntimeError(f"{case['case_id']}: primary midpoint bracket did not close")
 
-    inset = (cell_upper - cell_lower) / 1024
-    secondary_lower_point = cell_lower + inset
-    secondary_upper_point = cell_upper - inset
     projection = {
         "target_format": "binary64",
         "rounding_mode": "roundTiesToEven",
@@ -494,15 +491,29 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
             "quantile_enclosure": interval_json(quantile_bounds),
         }
     else:
-        inset_lower_primary = primary_tail_interval(df, secondary_lower_point, precision)
-        inset_upper_primary = primary_tail_interval(df, secondary_upper_point, precision)
-        secondary_margin = min(
-            inset_lower_primary[0] - target,
-            target - inset_upper_primary[1],
-        )
+        inset_divisor = 1024
+        secondary_margin = Fraction(0)
+        while inset_divisor <= 1 << 40:
+            inset = (cell_upper - cell_lower) / inset_divisor
+            secondary_lower_point = cell_lower + inset
+            secondary_upper_point = cell_upper - inset
+            inset_lower_primary = primary_tail_interval(
+                df, secondary_lower_point, precision
+            )
+            inset_upper_primary = primary_tail_interval(
+                df, secondary_upper_point, precision
+            )
+            secondary_margin = min(
+                inset_lower_primary[0] - target,
+                target - inset_upper_primary[1],
+            )
+            if secondary_margin > 0:
+                break
+            inset_divisor *= 2
         if secondary_margin <= 0:
             raise RuntimeError(
-                f"{case['case_id']}: primary inset bracket did not establish a positive margin"
+                f"{case['case_id']}: adaptive primary inset bracket did not establish "
+                "a positive margin"
             )
         tail_bound_ceiling = secondary_margin / 4
         secondary_lower_tail: tuple[Fraction, Fraction] | None = None
@@ -543,6 +554,7 @@ def certify_critical_case(case: dict[str, Any]) -> tuple[dict[str, Any], dict[st
             "precision_bits": secondary_precision,
             "tail_bound_ceiling": canonical_fraction(tail_bound_ceiling),
             "tail_bound_ceiling_basis": "one-quarter-of-primary-inset-bracket-margin",
+            "rounding_cell_inset_divisor": inset_divisor,
             "lower_test_point": canonical_fraction(secondary_lower_point),
             "upper_test_point": canonical_fraction(secondary_upper_point),
             "tail_at_lower_test_point": interval_json(secondary_lower_tail),

@@ -34,6 +34,8 @@
     "oracle:phase2a": "tsx tooling/src/phase2a/oracle-check.ts",
     "oracle:r1-08": "tsx tooling/r1-08-oracle/src/run.ts",
     "evidence:r2-paired-t:validate": "node --import tsx tooling/src/spikes/validate-paired-t-evidence-bundle.ts",
+    "evidence:r2-paired-t-critical-value-table:validate": "node --import tsx tooling/src/spikes/validate-paired-t-critical-value-table-evidence.ts",
+    "evidence:r2-paired-t-critical-value-table:probe": "node --import tsx tooling/src/spikes/probe-paired-t-critical-value-table-evidence.ts",
     "evidence:r2-paired-t-runtime-series:validate": "node --import tsx tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts",
     "evidence:r2-paired-t-runtime-series:probe": "node --import tsx tooling/src/spikes/probe-paired-t-runtime-series-evidence.ts",
     "evidence:r2-paired-t-runtime-inverse-beta-table:validate": "node --import tsx tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts",

@@ -8,14 +8,17 @@ on:
       - "governance/drafts/release-2-candidate/numerical/**"
       - "tooling/r2-paired-t-evidence/**"
       - "tooling/src/spikes/paired-t-certificate-candidate.ts"
+      - "tooling/src/spikes/probe-paired-t-critical-value-table-evidence.ts"
+      - "tooling/src/spikes/validate-paired-t-critical-value-table-evidence.ts"
       - "tooling/src/spikes/validate-paired-t-evidence-bundle.ts"
+      - "package.json"
 
 permissions:
   contents: read
 
 jobs:
-  pilot-evidence:
-    name: non-authoritative pilot evidence
+  paired-t-evidence:
+    name: non-authoritative paired-t evidence
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -66,9 +69,46 @@ jobs:
             candidate-evidence/release-2-paired-t \
             "$NOMUE_GENERATOR_COMMIT"
 
+      - name: Generate contiguous fixed-95 critical-value table evidence
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          tooling/r2-paired-t-evidence/.venv/bin/python \
+            tooling/r2-paired-t-evidence/generate_critical_value_table_evidence.py \
+            --output candidate-evidence/release-2-paired-t-critical-value-table
+
+      - name: Validate critical-value table certificates and provenance
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-critical-value-table:validate \
+            candidate-evidence/release-2-paired-t-critical-value-table \
+            "$NOMUE_GENERATOR_COMMIT"
+
+      - name: Reject coherent critical-value table mutations
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-critical-value-table:probe \
+            candidate-evidence/release-2-paired-t-critical-value-table \
+            "$NOMUE_GENERATOR_COMMIT"
+
       - uses: actions/upload-artifact@v4
         with:
           name: release-2-paired-t-pilot-${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate-evidence/release-2-paired-t/
+          if-no-files-found: error
+          retention-days: 90
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-2-paired-t-critical-value-table-${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate-evidence/release-2-paired-t-critical-value-table/
           if-no-files-found: error
           retention-days: 90

@@ -43,6 +43,28 @@ claiming that a numerically unresolved quadrature interval is independent eviden
 certificate bundle, and every certificate hash. It explicitly records
 `contiguous_runtime_support_claimed: false` and `supported_df_max: null`.
 
+## Contiguous critical-value table evidence candidate
+
+`generate_critical_value_table_evidence.py` extends only the evidence coverage to
+every integer `df` from `1` through `200`. For each df, it performs a monotone
+binary search over binary64 rounding-cell upper midpoints. Arb must strictly prove
+each search predicate. The first cell whose upper midpoint is above the mathematical
+quantile is then passed to the existing certificate core for the primary midpoint
+bracket and the method-distinct secondary route.
+
+The generator cross-checks every overlapping cell against the committed nine-cell
+research seed. Its table manifest binds the ordered 200 cells, all individual
+certificate hashes, the complete certificate bundle, the raw traces, the pinned
+environment, and the copied source files. The dedicated validator also rejects
+coherently rehashed promotion, cell, inequality, provenance, source, and dependency
+mutations.
+
+The contiguous range is an evidence-evaluation target, not contiguous Protocol
+support. `supported_degrees_of_freedom_max` and the checkpoint's table hash remain
+null; runtime support, final table selection, confidence-interval endpoint truth,
+R2-D5 completion, and issuance all remain prohibited. Independent review of the
+generated artifact is still required.
+
 ## Local run
 
 Create a disposable virtual environment and install the exact dependency:
@@ -57,6 +79,17 @@ NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
   --output /tmp/nomue-r2-paired-t-evidence-output
 pnpm evidence:r2-paired-t:validate \
   /tmp/nomue-r2-paired-t-evidence-output \
+  <full-40-hex-checkout-commit>
+
+NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
+  /tmp/nomue-r2-paired-t-evidence/bin/python \
+  tooling/r2-paired-t-evidence/generate_critical_value_table_evidence.py \
+  --output /tmp/nomue-r2-paired-t-critical-value-table
+pnpm evidence:r2-paired-t-critical-value-table:validate \
+  /tmp/nomue-r2-paired-t-critical-value-table \
+  <full-40-hex-checkout-commit>
+pnpm evidence:r2-paired-t-critical-value-table:probe \
+  /tmp/nomue-r2-paired-t-critical-value-table \
   <full-40-hex-checkout-commit>
 ```
 
