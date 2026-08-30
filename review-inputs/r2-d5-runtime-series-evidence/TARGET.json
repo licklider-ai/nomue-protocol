@@ -1,0 +1,18 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "pull_request": 33,
+  "implementation_commit": "2f2672fe45704d9860d52247862a13fb1dd30ca4",
+  "implementation_tree": "a2cdd126b0dabbfda0cf04b60c67d32bca67050a",
+  "base_commit": "e64342522977ca4eea473b0915953cf32b0bdf27",
+  "expected_delta": {
+    "files": 18,
+    "additions": 2321,
+    "deletions": 16
+  },
+  "review_type": "independent_adversarial_numerical_increment",
+  "permissible_go_scope": "draft_candidate_decision_input_only",
+  "candidate_state": "non_authoritative_candidate",
+  "runtime_support_enabled": false,
+  "public_review_issue": 25,
+  "public_review_state": "open"
+}

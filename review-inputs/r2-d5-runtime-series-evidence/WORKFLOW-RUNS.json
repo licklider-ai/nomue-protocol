@@ -1,0 +1,29 @@
+{
+  "implementation_commit": "2f2672fe45704d9860d52247862a13fb1dd30ca4",
+  "runs": [
+    {
+      "id": 33279606478,
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33279606478",
+      "name": "CI",
+      "run_number": 100,
+      "conclusion": "success",
+      "jobs": 5
+    },
+    {
+      "id": 33279606457,
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33279606457",
+      "name": "Release 2 paired-t runtime-series candidate evidence",
+      "run_number": 1,
+      "conclusion": "success",
+      "artifact_id": 9722581283,
+      "artifact_sha256": "7ac85c25c05f15abeedd18bc387c2432328e501ee953d513e551baa29b561fd5"
+    },
+    {
+      "id": 33279606551,
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/33279606551",
+      "name": "Release 2 paired-t candidate evidence",
+      "run_number": 9,
+      "conclusion": "success"
+    }
+  ]
+}
