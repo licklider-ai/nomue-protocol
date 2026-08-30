@@ -15,9 +15,10 @@ is frozen:
   linking.
 
 The two investigations are deliberately separated. They may run in parallel,
-but each is assigned to a different model or investigator and a separate
-authoring context. Neither investigator uses the other investigation's result
-as evidence.
+but each runs in a reviewer context independent of the package-authoring
+context. Separate investigators or models are preferred. If one external
+investigator handles both packages, the work uses isolated contexts and neither
+investigation has access to the other result.
 
 Release 2, its candidate work, paired-t procedures, and t-family numerical
 contracts are outside both investigations. Nothing in this package changes the
