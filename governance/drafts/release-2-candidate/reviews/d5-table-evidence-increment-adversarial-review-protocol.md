@@ -1,4 +1,4 @@
-# Release 2 D5 Table-Evidence Increment Adversarial Review Prompt
+# Release 2 D5 Table-Evidence Increment Adversarial Review Protocol
 
 ## Assignment
 

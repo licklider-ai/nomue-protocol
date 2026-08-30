@@ -1,4 +1,4 @@
-# Release 2 D5 runtime-table integration adversarial review prompt
+# Release 2 D5 runtime-table integration adversarial review protocol
 
 ## Assignment
 
