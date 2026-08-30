@@ -1,0 +1,10 @@
+62b4965bc365757dc952e37583a198e5d05325fc24f30ec4267ad91437efcef1  ./README.md
+207ff38c69e98d0b57f220958daeff722ccc4d5a9708f057f5ec41e3495b6afd  ./REVIEW-PROMPT.md
+0095e49a750a858d788445c3d7f6e26ade942083830dc3414386fd0a95fdd1a9  ./TARGET.json
+aeddd28e5428d413601426f4ac28631123e1cf91d6b3fa735112efa57ff9d958  ./evidence/MANIFEST.sha256
+577f027013cace18f58be9e1042b4435da5cc2040dc887e023f5148c405c7144  ./evidence/cases.json
+6519842771620179dc45ce3cd46aa58daff626e113692a03936457d206b2a419  ./evidence/environment.json
+3a6e2bf057f26fa58043a666f81b1297065093be5182b2476c8fc9ff612743db  ./evidence/generator.py
+0daa13f74273956ef17fe5f12245ae5cc6bec7711316956d3bab222b4d803a09  ./evidence/runtime-series-candidate.json
+d8af8c4fd89bd3fd8c679aa35d83257084107da359d2fea40855d83759bb5610  ./evidence/runtime-series-candidate.ts
+6c4ef5946efe36638dc7cb08c9adc17bb09eb8c5466a4b28bc9549105adea515  ./evidence/runtime-series-evidence.json

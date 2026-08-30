@@ -1,0 +1,20 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "pull_request": 33,
+  "repair_commit": "bafffea8e7ca6f9bfb2036bfa53aaaf9219950d7",
+  "repair_tree": "684d26d5066602a9897663197f51d316221b1a94",
+  "reviewed_parent": "2f2672fe45704d9860d52247862a13fb1dd30ca4",
+  "expected_repair_delta": {
+    "files": 3,
+    "additions": 151,
+    "deletions": 4
+  },
+  "original_review_input_commit": "80768e3765177086fee5d41d463be1d6f04e5b4d",
+  "original_verdict": "GO",
+  "blockers": 0,
+  "should_fix": 0,
+  "nice_to_have": 1,
+  "close_scope": "NTH-1 malformed JSON structured rejection and disposition fidelity",
+  "public_review_issue": 25,
+  "public_review_state": "open"
+}
