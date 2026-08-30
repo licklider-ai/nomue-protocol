@@ -75,15 +75,49 @@ Both are accepted for immediate follow-up in repair commit
 The repair does not change the generator, certificate core, cases, checkpoint,
 200 reviewed cells, evidence-local content hash, numerical method, supported
 domain, runtime graph, or authority state. It therefore requires only an
-independent close-only review of this bounded repair. That close review is not
-yet recorded here.
+independent close-only review of this bounded repair. The close review below
+records it as closed.
+
+## Close-only review
+
+- Review-input commit: `943a36fc82cacf163a20d49d58aff6e2e9988a27`
+- Independent review-result commit: `ca68deadae3ccd6cc24f1bb49f4ac97ec5babd52`
+- Review type: external, independent, close-only review of N1
+- Verdict: **CLOSED**
+- New findings: none
+- Additional primary-source research requested: none
+
+The close reviewer confirmed the exact repair tree, its single baseline parent,
+and the declared four-file `+70/-2` delta. The README now states the validator's
+semantic boundary without implying that standalone validation proves the
+recorded numerical enclosures true.
+
+The reviewer inspected and directly exercised the positive-finite binary64
+comparison. Strictly decreasing sequences passed; equal, increasing, reversed,
+invalid, non-finite, negative, zero, malformed, mixed-case, and non-string inputs
+did not pass as a valid decreasing table. A separate 200,000-pair randomized
+positive-finite ordering check found no bit-order and numerical-order mismatch.
+
+Starting from a valid regenerated bundle, the reviewer made the df 150 cell
+equal to the df 149 cell and rebuilt the table and manifest hashes in the
+repository byte formats. The validator rejected it with the exact dedicated
+monotonicity error. A counterfactual rejection without that error confirmed that
+the probe cannot pass on an unrelated validator failure.
+
+The full 200-cell bundle regenerated and validated with the pinned environment,
+all 21 bundled mutations were rejected without an uncaught exception, and the
+ordered-cell hash remained
+`24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0`.
+The full repository check passed in a fresh exact checkout and left a clean
+worktree. The authoritative snapshot, reviewed numerical content, checkpoint,
+Release 1, and every held authority state remained unchanged.
 
 ## Disposition
 
 The fixed-95 critical-value table is accepted as independently reviewed,
 non-authoritative candidate evidence. The original `GO` approved PR #47's merge
-in that limited state. The accepted nice-to-have repair remains separate and is
-not closed until its close-only review is recorded.
+in that limited state. The accepted nice-to-have repair is independently closed
+and may merge without reopening the original 200-cell numerical review.
 
 This disposition does not select a final critical-value table or final content
 hash, establish Protocol support for `df = 1..200` or any supported df maximum,
