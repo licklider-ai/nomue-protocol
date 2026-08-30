@@ -23,7 +23,10 @@ investigation has access to the other result.
 FND-1 now uses two isolated passes with different jobs: a Genspark
 primary-source pass and a Claude Code repository-analysis pass. Neither pass
 sees the other result before reconciliation. The FND-1 entry point defines the
-active execution mode and preserves the original scientific question set.
+active execution mode and preserves the original scientific question set. Both
+passes and their source-bounded reconciliation are now complete; the disposition
+is `NARROW`, the full FND-1 Research Gate remains open, and no Protocol adoption
+is authorized.
 
 Release 2, its candidate work, paired-t procedures, and t-family numerical
 contracts are outside both investigations. Nothing in this package changes the

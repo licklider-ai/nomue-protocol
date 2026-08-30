@@ -4,6 +4,9 @@ ignores:
   - "node_modules/**"
   - "generated/**"
   - "LICENSE.md"
+  # Verbatim external-investigator intake; formatting issues remain visible in
+  # the steward reconciliation without altering the supplied source bytes.
+  - "evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md"
 config:
   default: true
   # Line length is governed by Prettier's print width for prose; long tables and

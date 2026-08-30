@@ -556,16 +556,22 @@ artifacts:
     notes: Genspark primary-source commission for the isolated FND-1 source pass.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md
     class: informative
-    notes: Placeholder for verbatim intake of the isolated Genspark FND-1 result.
+    notes: >-
+      Verbatim intake of the isolated Genspark FND-1 primary-source result;
+      source-bounded and not a Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-prompt.md
     class: informative
     notes: Claude Code commission for the isolated FND-1 repository-analysis pass.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-result.md
     class: informative
-    notes: Placeholder for the isolated Claude Code FND-1 repository result.
+    notes: >-
+      Completed isolated FND-1 repository-analysis result; source-bounded and
+      not a Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md
     class: informative
-    notes: Placeholder for the reconciled FND-1 result after both isolated passes.
+    notes: >-
+      Dual-pass source-bounded FND-1 reconciliation; disposition NARROW; the
+      full Research Gate remains open and no Protocol adoption is authorized.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
