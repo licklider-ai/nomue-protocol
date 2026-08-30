@@ -1,7 +1,7 @@
-# Agent Instructions - nomue Record Repository
+# Repository Contribution Instructions - nomue Record Repository
 
-These instructions apply to any AI agent or human contributor working in this
-repository.
+These instructions apply to every contributor and repository process working in
+this repository.
 
 ## Read first, in this order
 
@@ -18,10 +18,18 @@ repository.
 
 - All public artifacts (documents, registries, schemas, code, commit messages)
   are written in English.
+- New or materially revised public artifacts use neutral, professional,
+  role-based language. This includes filenames, titles, research and review
+  commissions, reports, provenance notes, examples, branch names, commit
+  messages, and pull-request text. They do not identify or imply the software,
+  service, provider, or mechanism used to draft, review, or operate on them.
+  They also do not make a false claim of human authorship. When provenance is
+  needed, record the contributor role, review scope, independence boundary,
+  inspected sources, date, and immutable commit or content hash.
 - Any branch that may be pushed to a public remote uses a neutral,
   task-oriented name. Name it after the research topic, review scope,
-  governance task, repair, or optional date; never include the identity of an
-  AI system, model, vendor, agent, assistant, or automation tool.
+  governance task, repair, or optional date; never include the identity of the
+  software, service, provider, or mechanism used to create or review it.
 - Never read, copy from, link to, or depend on private product repositories.
   No private paths, private package dependencies, submodules, subtrees, or
   symlinks outside this repository. The private-dependency audit enforces this.
@@ -40,8 +48,8 @@ repository.
   consensus, apply the research gate in [governance/RFC.md](governance/RFC.md).
   Disposable exploratory spikes use the RFC carve-out until promoted. Statistical
   and numerical methodology being promoted into design or implementation requires
-  an independent primary-source review by a separate LLM/model first; model memory
-  or a second pass in the authoring context is not enough.
+  an independent primary-source review by a separate investigator first; memory or
+  a second pass in the authoring context is not enough.
 - A public-surface change records its schema-version impact in
   [registries/public-contract-surfaces.yaml](registries/public-contract-surfaces.yaml);
   breaking changes require a new schema version, and silent reinterpretation
