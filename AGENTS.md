@@ -18,6 +18,10 @@ repository.
 
 - All public artifacts (documents, registries, schemas, code, commit messages)
   are written in English.
+- Any branch that may be pushed to a public remote uses a neutral,
+  task-oriented name. Name it after the research topic, review scope,
+  governance task, repair, or optional date; never include the identity of an
+  AI system, model, vendor, agent, assistant, or automation tool.
 - Never read, copy from, link to, or depend on private product repositories.
   No private paths, private package dependencies, submodules, subtrees, or
   symlinks outside this repository. The private-dependency audit enforces this.
