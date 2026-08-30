@@ -79,13 +79,13 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("keeps the reviewed table connection separate from final runtime selection", () => {
+  it("records the reviewed table connection separately from final runtime selection", () => {
     const candidate = loadReadiness();
     candidate.runtime_table_integration_candidate.runtime_table_selected = true as never;
     candidate.runtime_table_integration_candidate.final_content_hash = candidate
       .runtime_table_integration_candidate.reviewed_evidence_table_content_hash as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "runtime-table integration candidate must remain review-pending and non-runtime",
+      "runtime-table integration candidate must remain reviewed candidate integration and non-runtime",
     );
   });
 

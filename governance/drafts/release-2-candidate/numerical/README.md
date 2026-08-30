@@ -99,8 +99,11 @@ performs an exact integer-df lookup and passes that binary64 value to the existi
 series graph. The checked-in candidate table retains its original non-support and
 non-selection metadata, while the wrapper reports the evidence-local content hash
 and explicitly reports that no runtime table has been selected. This connection is
-pending its own independent review and does not close the graph's stopping-rule,
-truth-error, projection-margin, or platform decisions.
+accepted as a reviewed non-authoritative candidate integration. The review
+disposition is recorded in
+`../reviews/d5-runtime-table-integration-adversarial-review-disposition.md`. The
+review does not close the graph's stopping-rule, truth-error, projection-margin, or
+platform decisions.
 
 `truth-boundary-candidate.json` keeps the next step equally narrow. Its generator
 searches selected df values for adjacent binary64 statistics that straddle each

@@ -57,10 +57,11 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   runtime_table_integration_candidate: {
-    closure: "incomplete_pending_independent_review";
+    closure: "reviewed_candidate_integration";
     artifact: "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json";
     execution_surface: "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts";
     candidate_table: "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md";
     reviewed_evidence_table_content_hash: "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
     degrees_of_freedom_minimum: 1;
     degrees_of_freedom_max_evaluation_target: 200;
@@ -279,6 +280,7 @@ const RUNTIME_TABLE_INTEGRATION_CANDIDATE_KEYS = [
   "artifact",
   "execution_surface",
   "candidate_table",
+  "review_disposition",
   "reviewed_evidence_table_content_hash",
   "degrees_of_freedom_minimum",
   "degrees_of_freedom_max_evaluation_target",
@@ -503,13 +505,15 @@ export function validatePairedTNumericalReadinessCandidate(
 
   const runtimeTableIntegrationCandidate = candidate.runtime_table_integration_candidate;
   if (
-    runtimeTableIntegrationCandidate.closure !== "incomplete_pending_independent_review" ||
+    runtimeTableIntegrationCandidate.closure !== "reviewed_candidate_integration" ||
     runtimeTableIntegrationCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json" ||
     runtimeTableIntegrationCandidate.execution_surface !==
       "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts" ||
     runtimeTableIntegrationCandidate.candidate_table !==
       "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json" ||
+    runtimeTableIntegrationCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md" ||
     runtimeTableIntegrationCandidate.reviewed_evidence_table_content_hash !==
       "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08" ||
     runtimeTableIntegrationCandidate.degrees_of_freedom_minimum !== 1 ||
@@ -522,7 +526,9 @@ export function validatePairedTNumericalReadinessCandidate(
     runtimeTableIntegrationCandidate.truth_error_bound_complete !== false ||
     runtimeTableIntegrationCandidate.runtime_support_enabled !== false
   ) {
-    errors.push("runtime-table integration candidate must remain review-pending and non-runtime");
+    errors.push(
+      "runtime-table integration candidate must remain reviewed candidate integration and non-runtime",
+    );
   }
 
   const truthBoundaryCandidate = candidate.truth_boundary_evidence_candidate;

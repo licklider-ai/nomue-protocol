@@ -76,6 +76,8 @@ its content hash and closed non-runtime metadata, then looks up the exact intege
 cell before calling the existing series graph. This is an evaluation connection,
 not final table selection. The original runtime-series evidence path continues to
 receive constants per case so its reviewed reproduction contract remains unchanged.
+The table-to-graph connection passed independent adversarial review as a
+non-authoritative candidate integration with no findings.
 
 ## Deliberate incompleteness
 
