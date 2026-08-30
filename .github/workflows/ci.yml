@@ -114,6 +114,8 @@ jobs:
           path: env-report.json
       - name: Typecheck
         run: pnpm typecheck
+      - name: Supported-execution candidate trace and exact-verifier corpus
+        run: pnpm exec vitest run tooling/tests/paired-t-supported-execution-candidate.test.ts
       - name: Registry, schema, and audit validation
         run: pnpm validate
       - name: Canonicalization and digest vectors
@@ -155,6 +157,8 @@ jobs:
           path: env-report.json
       - name: Typecheck
         run: pnpm typecheck
+      - name: Supported-execution candidate trace and exact-verifier corpus
+        run: pnpm exec vitest run tooling/tests/paired-t-supported-execution-candidate.test.ts
       - name: Registry, schema, and audit validation
         run: pnpm validate
       - name: Canonicalization and digest vectors
@@ -196,6 +200,8 @@ jobs:
           path: env-report.json
       - name: Typecheck
         run: pnpm typecheck
+      - name: Supported-execution candidate trace and exact-verifier corpus
+        run: pnpm exec vitest run tooling/tests/paired-t-supported-execution-candidate.test.ts
       - name: Registry, schema, and audit validation
         run: pnpm validate
       - name: Canonicalization and digest vectors

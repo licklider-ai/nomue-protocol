@@ -140,8 +140,14 @@ input parser. Eleven reason-code spellings for the already reviewed operation-st
 failures are recorded as unissued candidates. The parser and partial inventory passed
 independent adversarial review as non-authoritative decision-preparation material;
 ten support-dependent mappings and the final reason-code freeze remain open. The
-final truth-error predicate, supported platform matrix, supported df range, subnormal
-first-failure ordering, and final critical-value table selection also remain open.
+supported-execution predicate now has a tail-only implementation candidate: one
+immutable actual trace supplies both the returned value and proof inputs, and every
+traced ordinary arithmetic and square-root result is checked exactly. This does not
+yet select a platform. Independent implementation review, an exact runtime/build
+allowlist, controlled-process enforcement, a supported trace resource bound, and
+complete per-tuple admission evidence remain open. The final truth-error predicate,
+supported df range, subnormal first-failure ordering, and final critical-value table
+selection also remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

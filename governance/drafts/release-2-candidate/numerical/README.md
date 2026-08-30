@@ -182,19 +182,50 @@ editions. Node build identifiers and support tiers do not, however, attest to ac
 floating-point state or the behavior of a particular invocation. V8 source also
 shows that denormal-flush controls are concrete mutable process/thread state.
 
-The adjudicated next direction is therefore a supported execution predicate rather
-than a platform-name matrix alone. A later candidate will combine an exact
-runtime/build/platform allowlist, a restricted execution profile, startup and
-per-invocation diagnostics, one immutable trace of the computation actually
-returned, exact dyadic verification of every ordinary arithmetic result, exact
-rounding-cell verification of every executed square root, and cross-platform
-admission evidence. A native floating-point register guard remains optional
-hardening under the current non-malicious pinned-runtime threat model.
+The adjudicated direction is therefore a supported execution predicate rather than
+a platform-name matrix alone. `supported-execution-predicate-candidate.json` and
+`tooling/src/spikes/paired-t-supported-execution-candidate.ts` now implement the
+first non-authoritative predicate candidate. They leave the previously reviewed
+runtime-series and truth-error source files unchanged. The new evaluator instead
+produces the returned p-value, branch, iteration disposition, series remainder, and
+truth-error proof inputs from one operation trace.
 
-The research closure does not select any platform tuple or activate support. It is
-limited to the table-connected tail graph that accepts `(df, t)`; the upstream G4
-data-to-statistic graph still needs separate closure. The commission, independent
-results, and disposition are recorded in
+Each trace node binds its unique sequence and operation label, operand source
+sequences, operand bits, and result bits. The trace header also binds the input
+bits, reviewed inverse-beta table hash and cell, runtime identity, branch,
+iteration count, cap, proof gamma indices and exact-rational bound inputs,
+remainder, and returned p-value. Nodes and their containing trace are frozen before
+return. A digest covers the full ordered representation. The validator reconstructs
+the proof indices and bounds independently from the trace before acceptance.
+The evaluator verifies the completed trace before reporting a candidate success;
+mutated, malformed, incomplete, reordered, duplicated, unbound, or over-limit
+traces fail closed.
+
+For `+`, `-`, `*`, and `/`, the verifier lifts each actual binary64 operand to its
+exact signed dyadic rational, calculates the exact operation with `BigInt`, and
+reconstructs the roundTiesToEven binary64 result, including normal, subnormal,
+signed-zero, and overflow boundaries. Every executed square root is checked by
+strict exact-rational rounding-cell containment. Absolute-value and maximum
+selections are also bit-bound. Integer loop control uses safe integers or `BigInt`
+and is kept separate from the binary64 roundoff ledger. The 100,000-node ceiling is
+an evaluation limit for review, not a selected supported resource bound.
+
+Hard-coded binary64 and intrinsic-identity sentinels run at module startup and
+before and after every evaluated invocation. They are diagnostics, not a substitute
+for the trace proof. The candidate reports the exact current Node, V8, OS, and
+architecture identity but contains no allowlist entries. It also records the
+required exclusions for a controlled process profile without claiming that an
+ordinary library call can enforce them. The successful result therefore says only
+that the arithmetic execution was verified; `supportedExecutionPredicateSatisfied`,
+platform support, domain support, and runtime support remain false.
+
+Neither the research closure nor this implementation selects a platform tuple or
+activates support. The implementation still needs independent adversarial review,
+selection of an exact runtime/build/platform allowlist and controlled-process
+enforcement, selection of a supported trace resource bound, and complete admission
+evidence for every proposed tuple. It is limited to the table-connected tail graph
+that accepts `(df, t)`; the upstream G4 data-to-statistic graph still needs separate
+closure. The commission, independent results, and disposition are recorded in
 `../reviews/d5-supported-platform-primary-source-research-commission.md` and
 `../reviews/d5-supported-platform-primary-source-research-disposition.md`.
 

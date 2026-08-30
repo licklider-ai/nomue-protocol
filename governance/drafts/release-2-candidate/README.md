@@ -65,6 +65,14 @@ only for the eleven already reviewed operation-stage failures. The input contrac
 and this partial inventory passed independent adversarial review as non-authoritative
 decision-preparation material. Ten support-dependent reason-code decisions remain
 explicitly deferred.
+The supported-execution research is now followed by a separate candidate evaluator
+that derives the returned tail value and its proof inputs from one immutable trace.
+It exactly rechecks every traced binary64 arithmetic primitive and square root and
+adds startup plus per-invocation diagnostics. The existing reviewed graph and proof
+sources remain unchanged. The candidate intentionally contains no selected runtime
+allowlist, does not yet enforce the controlled process profile, and has no complete
+cross-platform admission corpus; consequently it cannot claim a supported
+execution, platform, domain, or runtime.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

@@ -128,6 +128,22 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the trace implementation without selecting an execution profile or platform", () => {
+    const candidate = loadReadiness();
+    candidate.supported_execution_predicate_candidate.exact_runtime_allowlist_selected =
+      true as never;
+    candidate.supported_execution_predicate_candidate.controlled_process_profile_enforced =
+      true as never;
+    candidate.supported_execution_predicate_candidate.cross_platform_admission_evidence_complete =
+      true as never;
+    candidate.supported_execution_predicate_candidate.supported_execution_predicate_selected =
+      true as never;
+    candidate.supported_execution_predicate_candidate.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "supported-execution predicate candidate must remain incomplete, unreviewed, unselected, and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
@@ -194,6 +210,17 @@ describe("Release 2 numerical evidence readiness", () => {
     )["supported"] = true;
     expect(validatePairedTNumericalReadinessCandidate(runtimeInputReasonCode)).toContain(
       "runtime input/reason-code candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const supportedExecution = loadReadiness();
+    (
+      supportedExecution.supported_execution_predicate_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["supported"] = true;
+    expect(validatePairedTNumericalReadinessCandidate(supportedExecution)).toContain(
+      "supported-execution predicate candidate: keys are incomplete or contain an undeclared item",
     );
   });
 
