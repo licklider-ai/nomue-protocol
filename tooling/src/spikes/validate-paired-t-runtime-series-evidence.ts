@@ -9,6 +9,11 @@ import {
   type CandidateProbabilityProjection,
 } from "./paired-t-numerical-contract-candidate.js";
 import { evaluatePairedTRuntimeSeriesCandidate } from "./paired-t-runtime-series-candidate.js";
+import {
+  evaluatePairedTTruthErrorSupportCandidate,
+  validatePairedTTruthErrorSupportCheckpoint,
+  type PairedTTruthErrorSupportCheckpoint,
+} from "./paired-t-truth-error-support-candidate.js";
 
 const SCOPE = "explicit_runtime_series_evaluation_corpus_not_protocol_support";
 const COMMIT = /^[0-9a-f]{40}$/;
@@ -22,6 +27,8 @@ const EXPECTED_FILES = [
   "runtime-series-candidate.json",
   "runtime-series-candidate.ts",
   "runtime-series-evidence.json",
+  "truth-error-support-candidate.json",
+  "truth-error-support-candidate.ts",
 ] as const;
 const CASE_MANIFEST_KEYS = [
   "status",
@@ -329,6 +336,10 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
     "runtime-series-candidate.ts": "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
     "runtime-series-candidate.json":
       "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json",
+    "truth-error-support-candidate.ts":
+      "tooling/src/spikes/paired-t-truth-error-support-candidate.ts",
+    "truth-error-support-candidate.json":
+      "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
   } as const;
   for (const [copyName, repositoryPath] of Object.entries(sourceMappings)) {
     const copy = readFileSync(path.join(bundlePath, copyName));
@@ -347,9 +358,19 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
   );
   const environmentPath = path.join(bundlePath, "environment.json");
   const environment = parseJson<Record<string, unknown>>(environmentPath, errors);
-  if (manifest === undefined || evidence === undefined || environment === undefined) {
+  const truthErrorSupportCheckpoint = parseJson<PairedTTruthErrorSupportCheckpoint>(
+    path.join(bundlePath, "truth-error-support-candidate.json"),
+    errors,
+  );
+  if (
+    manifest === undefined ||
+    evidence === undefined ||
+    environment === undefined ||
+    truthErrorSupportCheckpoint === undefined
+  ) {
     return errors;
   }
+  errors.push(...validatePairedTTruthErrorSupportCheckpoint(truthErrorSupportCheckpoint));
   if (!exactKeys(manifest, CASE_MANIFEST_KEYS)) {
     errors.push("case manifest keys are incomplete or contain an undeclared item");
   }
@@ -411,6 +432,9 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
     errors.push("case manifest contains a duplicate case identifier");
   }
 
+  let truthErrorSupportAccepted = 0;
+  const truthErrorSupportRefusals = new Map<string, number>();
+  let highErrorWitnessSeen = false;
   for (const [index, declaredCase] of manifest.cases.entries()) {
     if (!exactKeys(declaredCase, CASE_INPUT_KEYS)) {
       errors.push(`case ${index}: manifest case keys are incomplete or contain an undeclared item`);
@@ -529,6 +553,48 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
     ) {
       errors.push(`${declaredCase.case_id}: recorded ULP observation is inconsistent`);
     }
+    const truthErrorSupport = evaluatePairedTTruthErrorSupportCandidate({
+      degreesOfFreedom: declaredCase.degrees_of_freedom,
+      testStatistic: statistic,
+    });
+    if (truthErrorSupport.ok) {
+      truthErrorSupportAccepted += 1;
+      if (ulpDistance > BigInt(truthErrorSupport.proof.candidateTruthErrorBoundUlp)) {
+        errors.push(`${declaredCase.case_id}: certified truth error exceeds the candidate bound`);
+      }
+    } else {
+      truthErrorSupportRefusals.set(
+        truthErrorSupport.classification,
+        (truthErrorSupportRefusals.get(truthErrorSupport.classification) ?? 0) + 1,
+      );
+    }
+    if (declaredCase.case_id === "df197-high-error-scout-witness") {
+      highErrorWitnessSeen = true;
+      if (
+        declaredCase.degrees_of_freedom !== 197 ||
+        declaredCase.test_statistic_binary64_hex !== "4049333333333333" ||
+        graph.p_value_binary64_hex !== "284f4ce6230625df" ||
+        actualCase.mathematical_truth.projection.binary64_hex !== "284f4ce623062755" ||
+        ulpDistance !== 374n ||
+        !truthErrorSupport.ok ||
+        truthErrorSupport.proof.candidateTruthErrorBoundUlp !== 2978
+      ) {
+        errors.push("df197-high-error-scout-witness: certified pointwise binding is invalid");
+      }
+    }
+  }
+  if (!highErrorWitnessSeen) {
+    errors.push("runtime-series evidence is missing df197-high-error-scout-witness");
+  }
+  if (
+    truthErrorSupportAccepted !== 16 ||
+    truthErrorSupportRefusals.get("truth_error_proof_precondition_failed") !== 3 ||
+    truthErrorSupportRefusals.get("projection_margin_not_established") !== 1 ||
+    [...truthErrorSupportRefusals.values()].reduce((total, count) => total + count, 0) !== 4
+  ) {
+    errors.push(
+      "truth-error support dispositions differ from the closed 20-case evaluation corpus",
+    );
   }
   return errors;
 }

@@ -184,6 +184,30 @@ export function runPairedTRuntimeSeriesEvidenceMutationProbes(
       },
     ],
     [
+      "truth-error source-copy forgery",
+      (bundle) => {
+        const sourcePath = path.join(bundle, "truth-error-support-candidate.ts");
+        writeFileSync(sourcePath, `${readFileSync(sourcePath, "utf8")}\n// forged\n`);
+        const evidencePath = path.join(bundle, "runtime-series-evidence.json");
+        const evidence = readJson(evidencePath);
+        evidence.source_hashes["truth-error-support-candidate.ts"] = `sha256:${sha256(sourcePath)}`;
+        writeJson(evidencePath, evidence);
+        rebuildManifest(bundle);
+      },
+    ],
+    [
+      "truth-error checkpoint promotion",
+      (bundle) => {
+        const checkpointPath = path.join(bundle, "truth-error-support-candidate.json");
+        const checkpoint = readJson(checkpointPath);
+        checkpoint.runtime_support_enabled = true;
+        checkpoint.supported_domain_claimed = true;
+        checkpoint.truth_error_bound_selected = true;
+        writeJson(checkpointPath, checkpoint);
+        rebuildManifest(bundle);
+      },
+    ],
+    [
       "symlink source",
       (bundle) => {
         const sourcePath = path.join(bundle, "generator.py");

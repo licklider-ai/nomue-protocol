@@ -292,6 +292,19 @@ function loadBundledTable(): {
 
 const BUNDLED_TABLE = loadBundledTable();
 
+/**
+ * Resolve one already-validated candidate table cell for later candidate-only
+ * proof instrumentation. Returning a fresh object prevents callers from
+ * mutating the module-level table state.
+ */
+export function lookupReviewedInverseBetaCandidateCell(
+  degreesOfFreedom: number,
+): { value: number; hex: string } | undefined {
+  if (BUNDLED_TABLE.errors.length > 0) return undefined;
+  const entry = BUNDLED_TABLE.entries.get(degreesOfFreedom);
+  return entry === undefined ? undefined : { ...entry };
+}
+
 /** Execute the existing graph with the exact reviewed candidate table cell for df. */
 export function evaluatePairedTRuntimeSeriesWithCandidateTable(
   input: PairedTRuntimeTableIntegrationInput,

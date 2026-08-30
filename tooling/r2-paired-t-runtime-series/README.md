@@ -51,11 +51,34 @@ TypeScript graph is reproduced independently and its exact pointwise ULP distanc
 is recorded.
 
 This establishes boundary witnesses, not a global error bound. The companion
-candidate records only the future margin form: after a non-negative integer truth-
-error bound `B` is separately proved and selected, a supported projection class is
+candidate records the margin form: after a non-negative integer truth-error bound
+`B` is proved for an evaluated input and selected, a supported projection class is
 stable only when its graph cell is more than `B` cells from the nearest projection-
-class transition, including the supported normal-to-rounded-one transition. `B`
-remains null and the predicate is not connected to runtime support.
+class transition, including the supported normal-to-rounded-one transition. The
+boundary artifact's global `B` remains null and no predicate is connected to runtime
+support.
+
+## Input-specific truth-error candidate
+
+The runtime-series bundle now copies and binds
+`paired-t-truth-error-support-candidate.ts` and its closed checkpoint. The validator
+replays every evidence case through that evaluator and compares each accepted
+input-specific bound with the separately Arb-certified correctly rounded truth.
+
+The candidate re-indexes exact worst-direction normal binary64 roundoff composition
+into conservative gamma envelopes, checks native square-root rounding cells at
+runtime, and adds the positive-series remainder. Its bound arithmetic and final ULP
+ceiling are exact rational calculations; displayed relative bounds are rounded
+upward. It refuses a minimum-normal intermediate, any subnormal or non-finite
+derived positive intermediate, a failed square-root cell, or an insufficient
+projection margin.
+
+The 20-case manifest includes the `df = 197`, input-bits `4049333333333333`
+high-error witness. The graph-to-truth distance is 374 ULP and its input-specific
+candidate bound is 2,978 ULP. Across the manifest, 16 cases satisfy the candidate
+predicate, three fail a proof precondition, and one fails the projection-margin
+test. These counts are regression expectations for the evidence corpus, not a
+supported-domain coverage claim.
 
 ## Contiguous inverse-beta table evidence
 
@@ -89,6 +112,9 @@ only the separate inverse-beta table evidence covers every integer df.
 `supported_degrees_of_freedom_max` remains null throughout.
 Normal, rounded-one, subnormal, and zero projections are all observed; no projection
 class is activated as runtime support by this tooling.
+The input-specific proof candidate remains pending independent review and platform
+selection. It does not turn the 20 evidence points or `df = 1..200` table cells into
+contiguous input support.
 
 ## Local run
 
@@ -130,6 +156,7 @@ fallback when the pinned Arb/FLINT dependency is missing.
 
 Independent review must attack the two positive expansions, branch predicate,
 df=2 algebra, exact inverse-beta projection, Python/TypeScript graph identity,
-stopping index, remainder enclosure, extreme-tail rescaling, projection classes,
-provenance bindings, and authority boundary. A successful run advances candidate
-engineering only; it does not close R2-D5.
+stopping index, roundoff gamma-index composition, exact bound arithmetic, square-root
+rounding-cell proof, remainder enclosure, extreme-tail rescaling, ULP conversion,
+projection classes, provenance bindings, and authority boundary. A successful run
+advances candidate engineering only; it does not close R2-D5.

@@ -18,6 +18,10 @@ function createBundle(): string {
     "runtime-series-candidate.json":
       "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json",
     "runtime-series-candidate.ts": "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
+    "truth-error-support-candidate.json":
+      "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
+    "truth-error-support-candidate.ts":
+      "tooling/src/spikes/paired-t-truth-error-support-candidate.ts",
   } as const;
   for (const [copyName, sourcePath] of Object.entries(sourceMappings)) {
     copyFileSync(path.join(repositoryRoot, sourcePath), path.join(directory, copyName));

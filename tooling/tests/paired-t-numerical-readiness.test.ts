@@ -98,6 +98,18 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the input-specific proof candidate without selecting it for runtime", () => {
+    const candidate = loadReadiness();
+    candidate.truth_error_support_closure_candidate.input_specific_bound_selected_for_runtime =
+      true as never;
+    candidate.truth_error_support_closure_candidate.supported_domain_claimed = true as never;
+    candidate.truth_error_support_closure_candidate.candidate_high_error_witness_bound_ulp =
+      374 as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "truth-error support closure candidate must remain review-pending, unselected, and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
@@ -145,6 +157,14 @@ describe("Release 2 numerical evidence readiness", () => {
     ] = true;
     expect(validatePairedTNumericalReadinessCandidate(integration)).toContain(
       "runtime-table integration candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const truthErrorSupport = loadReadiness();
+    (truthErrorSupport.truth_error_support_closure_candidate as unknown as Record<string, unknown>)[
+      "global_bound"
+    ] = 374;
+    expect(validatePairedTNumericalReadinessCandidate(truthErrorSupport)).toContain(
+      "truth-error support closure candidate: keys are incomplete or contain an undeclared item",
     );
   });
 
