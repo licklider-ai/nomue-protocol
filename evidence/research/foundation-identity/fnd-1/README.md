@@ -10,6 +10,19 @@ change.
 dual-pass, source-bounded FND-1 input with disposition `NARROW`. The full FND-1
 Research Gate remains open, and no Protocol adoption is authorized.
 
+## Active follow-up: multiplicity primary-text closure
+
+The next bounded investigation addresses only `FND1-H01`, `FND1-H02`, and
+`FND1-H03` from the reconciled result:
+
+| Stage                        | Commission                                                                                                                 | Result                                                                                                             |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Original-paper investigation | [`2026-08-30-multiplicity-primary-text-closure-commission.md`](2026-08-30-multiplicity-primary-text-closure-commission.md) | [`2026-08-30-multiplicity-primary-text-closure-result.md`](2026-08-30-multiplicity-primary-text-closure-result.md) |
+| Repository close review      | [`2026-08-30-multiplicity-close-review-commission.md`](2026-08-30-multiplicity-close-review-commission.md)                 | [`2026-08-30-multiplicity-close-review-result.md`](2026-08-30-multiplicity-close-review-result.md)                 |
+
+Neither stage authorizes Protocol adoption. The non-clinical vocabulary hold
+and every other FND-1 hold remain outside this closure package.
+
 ## Active execution mode
 
 The original FND-1 scientific question set below remains in force. Its earlier
