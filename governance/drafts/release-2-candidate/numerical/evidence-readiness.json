@@ -84,10 +84,11 @@
     "runtime_support_enabled": false
   },
   "truth_error_support_closure_candidate": {
-    "closure": "incomplete_pending_independent_review",
+    "closure": "reviewed_candidate_proof",
     "artifact": "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
     "execution_surface": "tooling/src/spikes/paired-t-truth-error-support-candidate.ts",
     "evidence_manifest": "tooling/r2-paired-t-runtime-series/cases.json",
+    "review_disposition": "governance/drafts/release-2-candidate/reviews/d5-truth-error-support-closure-adversarial-review-disposition.md",
     "candidate_bound_form": "input_specific_normal_binary64_roundoff_plus_positive_series_remainder",
     "candidate_bound_arithmetic": "exact_rational_with_exact_integer_ulp_ceiling",
     "certified_high_error_witness_case_id": "df197-high-error-scout-witness",

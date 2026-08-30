@@ -56,8 +56,9 @@ passed independent adversarial review as a non-authoritative candidate integrati
 It now also contains a fail-closed input-specific truth-error and projection-margin
 candidate. That evaluator reproduces the unchanged graph, derives its bound with
 exact rational arithmetic, and refuses inputs outside its proof preconditions. Its
-analytic derivation still requires independent review. None is a supported runtime
-tail, a selected truth-error predicate, or a final runtime-table selection.
+analytic derivation and accepted repairs passed independent adversarial review as
+non-authoritative candidate proof engineering. None is a supported runtime tail, a
+selected truth-error predicate, or a final runtime-table selection.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

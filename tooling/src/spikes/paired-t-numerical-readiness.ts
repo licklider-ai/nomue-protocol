@@ -86,10 +86,11 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   truth_error_support_closure_candidate: {
-    closure: "incomplete_pending_independent_review";
+    closure: "reviewed_candidate_proof";
     artifact: "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json";
     execution_surface: "tooling/src/spikes/paired-t-truth-error-support-candidate.ts";
     evidence_manifest: "tooling/r2-paired-t-runtime-series/cases.json";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-truth-error-support-closure-adversarial-review-disposition.md";
     candidate_bound_form: "input_specific_normal_binary64_roundoff_plus_positive_series_remainder";
     candidate_bound_arithmetic: "exact_rational_with_exact_integer_ulp_ceiling";
     certified_high_error_witness_case_id: "df197-high-error-scout-witness";
@@ -328,6 +329,7 @@ const TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS = [
   "artifact",
   "execution_surface",
   "evidence_manifest",
+  "review_disposition",
   "candidate_bound_form",
   "candidate_bound_arithmetic",
   "certified_high_error_witness_case_id",
@@ -599,13 +601,15 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const truthErrorSupportCandidate = candidate.truth_error_support_closure_candidate;
   if (
-    truthErrorSupportCandidate.closure !== "incomplete_pending_independent_review" ||
+    truthErrorSupportCandidate.closure !== "reviewed_candidate_proof" ||
     truthErrorSupportCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json" ||
     truthErrorSupportCandidate.execution_surface !==
       "tooling/src/spikes/paired-t-truth-error-support-candidate.ts" ||
     truthErrorSupportCandidate.evidence_manifest !==
       "tooling/r2-paired-t-runtime-series/cases.json" ||
+    truthErrorSupportCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-truth-error-support-closure-adversarial-review-disposition.md" ||
     truthErrorSupportCandidate.candidate_bound_form !==
       "input_specific_normal_binary64_roundoff_plus_positive_series_remainder" ||
     truthErrorSupportCandidate.candidate_bound_arithmetic !==
@@ -621,7 +625,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     truthErrorSupportCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "truth-error support closure candidate must remain review-pending, unselected, and non-runtime",
+      "truth-error support closure candidate must remain reviewed candidate proof, unselected, and non-runtime",
     );
   }
 
