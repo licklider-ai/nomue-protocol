@@ -53,8 +53,9 @@ is recorded.
 This establishes boundary witnesses, not a global error bound. The companion
 candidate records only the future margin form: after a non-negative integer truth-
 error bound `B` is separately proved and selected, a supported projection class is
-stable only when its graph cell is more than `B` cells from the nearest rejected
-class. `B` remains null and the predicate is not connected to runtime support.
+stable only when its graph cell is more than `B` cells from the nearest projection-
+class transition, including the supported normal-to-rounded-one transition. `B`
+remains null and the predicate is not connected to runtime support.
 
 ## Deliberate incompleteness
 

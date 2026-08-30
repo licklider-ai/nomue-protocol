@@ -34,7 +34,7 @@ describe("paired-t truth-boundary candidate", () => {
     const minimumNormal = 2 ** -1022;
     expect(evaluateProjectionMarginCandidate(minimumNormal, 0n)).toMatchObject({
       status: "candidate_stable_for_supplied_bound",
-      cellsToNearestRejectedClass: 1n,
+      cellsToNearestClassTransition: 1n,
     });
     expect(evaluateProjectionMarginCandidate(minimumNormal, 1n)).toMatchObject({
       status: "candidate_refusal",

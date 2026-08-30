@@ -24,7 +24,7 @@ export type ProjectionMarginCandidateResult =
   | {
       status: "candidate_stable_for_supplied_bound";
       projectionClass: "supported_positive_normal" | "supported_rounded_one";
-      cellsToNearestRejectedClass: bigint;
+      cellsToNearestClassTransition: bigint;
       suppliedTruthErrorBoundUlp: bigint;
       runtimeSupportClaimed: false;
     }
@@ -34,7 +34,7 @@ export type ProjectionMarginCandidateResult =
         | "projection_class_not_selected_for_support"
         | "projection_margin_not_larger_than_supplied_bound"
         | "invalid_candidate_input";
-      cellsToNearestRejectedClass?: bigint;
+      cellsToNearestClassTransition?: bigint;
       suppliedTruthErrorBoundUlp?: bigint;
       runtimeSupportClaimed: false;
     };
@@ -178,17 +178,17 @@ export function evaluateProjectionMarginCandidate(
       runtimeSupportClaimed: false,
     };
   }
-  const cellsToNearestRejectedClass =
+  const cellsToNearestClassTransition =
     projection === "supported_rounded_one"
       ? 1n
       : bits - MAX_SUBNORMAL_BITS < ONE_BITS - bits
         ? bits - MAX_SUBNORMAL_BITS
         : ONE_BITS - bits;
-  if (cellsToNearestRejectedClass <= truthErrorBoundUlp) {
+  if (cellsToNearestClassTransition <= truthErrorBoundUlp) {
     return {
       status: "candidate_refusal",
       classification: "projection_margin_not_larger_than_supplied_bound",
-      cellsToNearestRejectedClass,
+      cellsToNearestClassTransition,
       suppliedTruthErrorBoundUlp: truthErrorBoundUlp,
       runtimeSupportClaimed: false,
     };
@@ -196,7 +196,7 @@ export function evaluateProjectionMarginCandidate(
   return {
     status: "candidate_stable_for_supplied_bound",
     projectionClass: projection,
-    cellsToNearestRejectedClass,
+    cellsToNearestClassTransition,
     suppliedTruthErrorBoundUlp: truthErrorBoundUlp,
     runtimeSupportClaimed: false,
   };

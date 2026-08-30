@@ -90,7 +90,8 @@ forbidden from becoming a global truth-error guarantee.
 The candidate also records the form of a future projection margin without choosing
 its size. If a later proof supplies a global non-negative integer truth-error bound
 `B`, a normal or rounded-one graph result is class-stable only when its cell is more
-than `B` cells from the nearest rejected class. `B` remains null, the predicate is
+than `B` cells from the nearest projection-class transition. This deliberately
+includes the supported normal-to-rounded-one transition. `B` remains null, the predicate is
 not activated, and neither the selected df seed nor its boundary cases constitute
 Protocol support.
 
