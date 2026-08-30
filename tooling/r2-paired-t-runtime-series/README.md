@@ -57,12 +57,27 @@ stable only when its graph cell is more than `B` cells from the nearest projecti
 class transition, including the supported normal-to-rounded-one transition. `B`
 remains null and the predicate is not connected to runtime support.
 
+## Contiguous inverse-beta table evidence
+
+`generate_inverse_beta_table_evidence.py` evaluates all integer degrees of freedom
+from `1` through `200` for the runtime-series normalization constant
+`1 / B(df / 2, 1 / 2)`. Arb supplies the primary gamma-ratio enclosure. A separate
+exact-rational route uses `C(df + 2) = C(df) * (df + 1) / df`; the odd sequence is
+anchored by a rigorously bounded Machin series for `1 / pi`, and the even sequence is
+anchored by the exact value `1 / 2`.
+
+The generated table is contiguous evidence, not contiguous Protocol support. Its
+hash is evidence-local until independent review and the later R2-D5 table-selection
+decision. The existing runtime-series spike continues to receive constants per
+evidence case and does not load this table.
+
 ## Deliberate incompleteness
 
-The inverse-beta value is supplied per case from an Arb-certified binary64 cell.
-No runtime table or final table hash is selected. The corpus ends at the existing
-`df = 200` evidence target, but it does not claim contiguous df coverage and
-`supported_degrees_of_freedom_max` remains null.
+The executable runtime-series cases still receive inverse-beta values per case.
+No runtime table or final table hash is selected. The runtime-series and boundary
+corpora end at the existing `df = 200` evidence target without claiming contiguous
+coverage; only the separate inverse-beta table evidence covers every integer df.
+`supported_degrees_of_freedom_max` remains null throughout.
 Normal, rounded-one, subnormal, and zero projections are all observed; no projection
 class is activated as runtime support by this tooling.
 
@@ -88,6 +103,14 @@ NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
   --output /tmp/nomue-r2-paired-t-truth-boundary
 pnpm evidence:r2-paired-t-truth-boundary:validate \
   /tmp/nomue-r2-paired-t-truth-boundary \
+  <full-40-hex-checkout-commit>
+
+NOMUE_GENERATOR_COMMIT=<full-40-hex-checkout-commit> \
+  /tmp/nomue-r2-paired-t-runtime-series/bin/python \
+  tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py \
+  --output /tmp/nomue-r2-paired-t-inverse-beta-table
+pnpm evidence:r2-paired-t-runtime-inverse-beta-table:validate \
+  /tmp/nomue-r2-paired-t-inverse-beta-table \
   <full-40-hex-checkout-commit>
 ```
 

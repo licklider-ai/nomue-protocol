@@ -11,6 +11,8 @@ on:
       - "tooling/src/spikes/paired-t-runtime-series-candidate.ts"
       - "tooling/src/spikes/probe-paired-t-runtime-series-evidence.ts"
       - "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts"
+      - "tooling/src/spikes/probe-paired-t-runtime-inverse-beta-table-evidence.ts"
+      - "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts"
       - "tooling/src/spikes/paired-t-truth-boundary-candidate.ts"
       - "tooling/src/spikes/probe-paired-t-truth-boundary-evidence.ts"
       - "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts"
@@ -82,6 +84,36 @@ jobs:
             candidate-evidence/release-2-paired-t-runtime-series \
             "$NOMUE_GENERATOR_COMMIT"
 
+      - name: Generate the contiguous inverse-beta table evidence
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          tooling/r2-paired-t-runtime-series/.venv/bin/python \
+            tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py \
+            --output candidate-evidence/release-2-paired-t-runtime-inverse-beta-table
+
+      - name: Validate the inverse-beta table certificates and provenance
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-runtime-inverse-beta-table:validate \
+            candidate-evidence/release-2-paired-t-runtime-inverse-beta-table \
+            "$NOMUE_GENERATOR_COMMIT"
+
+      - name: Reject coherent inverse-beta table mutations
+        shell: bash
+        env:
+          NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-runtime-inverse-beta-table:probe \
+            candidate-evidence/release-2-paired-t-runtime-inverse-beta-table \
+            "$NOMUE_GENERATOR_COMMIT"
+
       - name: Generate pointwise truth and projection-boundary evidence
         shell: bash
         env:
@@ -117,6 +149,13 @@ jobs:
         with:
           name: release-2-paired-t-runtime-series-${{ github.event.pull_request.head.sha || github.sha }}
           path: candidate-evidence/release-2-paired-t-runtime-series/
+          if-no-files-found: error
+          retention-days: 90
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-2-paired-t-runtime-inverse-beta-table-${{ github.event.pull_request.head.sha || github.sha }}
+          path: candidate-evidence/release-2-paired-t-runtime-inverse-beta-table/
           if-no-files-found: error
           retention-days: 90
 

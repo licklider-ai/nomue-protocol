@@ -69,6 +69,16 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("keeps the contiguous inverse-beta table as review-pending evidence", () => {
+    const candidate = loadReadiness();
+    candidate.runtime_inverse_beta_table_evidence_candidate.runtime_table_selected = true as never;
+    candidate.runtime_inverse_beta_table_evidence_candidate.final_content_hash =
+      "sha256:future" as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "runtime inverse-beta table evidence candidate must remain review-pending and non-runtime",
+    );
+  });
+
   it("keeps pointwise truth evidence separate from a global bound and runtime margin", () => {
     const candidate = loadReadiness();
     candidate.truth_boundary_evidence_candidate.global_truth_error_bound_ulp = 236 as never;
@@ -106,6 +116,17 @@ describe("Release 2 numerical evidence readiness", () => {
     ] = 236;
     expect(validatePairedTNumericalReadinessCandidate(truthBoundary)).toContain(
       "truth-boundary evidence candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const inverseBetaTable = loadReadiness();
+    (
+      inverseBetaTable.runtime_inverse_beta_table_evidence_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["supported"] = true;
+    expect(validatePairedTNumericalReadinessCandidate(inverseBetaTable)).toContain(
+      "runtime inverse-beta table evidence candidate: keys are incomplete or contain an undeclared item",
     );
   });
 
