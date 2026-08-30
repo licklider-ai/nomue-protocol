@@ -572,6 +572,22 @@ artifacts:
     notes: >-
       Dual-pass source-bounded FND-1 reconciliation; disposition NARROW; the
       full Research Gate remains open and no Protocol adoption is authorized.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-commission.md
+    class: informative
+    notes: >-
+      Bounded original-paper closure commission for FND1-H01 through FND1-H03;
+      not a Protocol-adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md
+    class: informative
+    notes: Placeholder for the bounded original-paper closure result.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-commission.md
+    class: informative
+    notes: >-
+      Close-only repository review commission for the multiplicity primary-text
+      result; not a Protocol-adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md
+    class: informative
+    notes: Placeholder for the multiplicity primary-text close-review result.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.

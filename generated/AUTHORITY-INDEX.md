@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:0a4ce4bfcb5d5ebcd55e26b548051796434c8427c37bbbf700a98a6c3cc0a131)
+- authority/authority-manifest.yaml (sha256:916d79592f76703b581711dde49751529b5e96fc38dd9a7f3d9c744c9f7926b4)
 
 Generation command: pnpm generate
 -->
@@ -176,6 +176,10 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-prompt.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/README.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-source-bounded-steward-disposition.md` | informative |
