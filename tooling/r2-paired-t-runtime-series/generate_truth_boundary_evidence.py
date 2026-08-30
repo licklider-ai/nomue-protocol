@@ -15,6 +15,7 @@ import math
 import os
 import platform
 import shutil
+import sys
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -22,6 +23,14 @@ from typing import Any
 import flint
 
 import generate_evidence as runtime
+
+
+# Extreme-tail Arb enclosure endpoints can require more than Python's default
+# 4,300 decimal digits. They are evidence values that must be serialized exactly,
+# so refusing only because of the interpreter's denial-of-service guard would make
+# the bounded transition search depend on an unrelated host default.
+if hasattr(sys, "set_int_max_str_digits"):
+    sys.set_int_max_str_digits(0)
 
 
 SCOPE = "selected_df_projection_transition_search_not_protocol_support"
