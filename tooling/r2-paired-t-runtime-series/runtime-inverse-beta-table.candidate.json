@@ -1,0 +1,815 @@
+{
+  "status": "non_authoritative_candidate",
+  "scope": "contiguous_df_1_200_inverse_beta_table_evidence_not_protocol_support",
+  "candidate_key": "paired-t-d5-runtime-inverse-beta-table-evaluation-1",
+  "target_format": "binary64_round_ties_to_even",
+  "degrees_of_freedom_minimum": 1,
+  "degrees_of_freedom_maximum_evaluation_target": 200,
+  "entry_count": 200,
+  "contiguous_evidence_coverage_claimed": true,
+  "supported_degrees_of_freedom_max": null,
+  "runtime_support_claimed": false,
+  "final_table_selected": false,
+  "entries": [
+    {
+      "degrees_of_freedom": 1,
+      "inverse_beta_binary64_hex": "3fd45f306dc9c883"
+    },
+    {
+      "degrees_of_freedom": 2,
+      "inverse_beta_binary64_hex": "3fe0000000000000"
+    },
+    {
+      "degrees_of_freedom": 3,
+      "inverse_beta_binary64_hex": "3fe45f306dc9c883"
+    },
+    {
+      "degrees_of_freedom": 4,
+      "inverse_beta_binary64_hex": "3fe8000000000000"
+    },
+    {
+      "degrees_of_freedom": 5,
+      "inverse_beta_binary64_hex": "3feb2995e7b7b604"
+    },
+    {
+      "degrees_of_freedom": 6,
+      "inverse_beta_binary64_hex": "3fee000000000000"
+    },
+    {
+      "degrees_of_freedom": 7,
+      "inverse_beta_binary64_hex": "3ff04c26be3b06cf"
+    },
+    {
+      "degrees_of_freedom": 8,
+      "inverse_beta_binary64_hex": "3ff1800000000000"
+    },
+    {
+      "degrees_of_freedom": 9,
+      "inverse_beta_binary64_hex": "3ff2a02c471ee336"
+    },
+    {
+      "degrees_of_freedom": 10,
+      "inverse_beta_binary64_hex": "3ff3b00000000000"
+    },
+    {
+      "degrees_of_freedom": 11,
+      "inverse_beta_binary64_hex": "3ff4b1f84f05e003"
+    },
+    {
+      "degrees_of_freedom": 12,
+      "inverse_beta_binary64_hex": "3ff5a80000000000"
+    },
+    {
+      "degrees_of_freedom": 13,
+      "inverse_beta_binary64_hex": "3ff6939a84c09749"
+    },
+    {
+      "degrees_of_freedom": 14,
+      "inverse_beta_binary64_hex": "3ff7760000000000"
+    },
+    {
+      "degrees_of_freedom": 15,
+      "inverse_beta_binary64_hex": "3ff850304031de00"
+    },
+    {
+      "degrees_of_freedom": 16,
+      "inverse_beta_binary64_hex": "3ff9230000000000"
+    },
+    {
+      "degrees_of_freedom": 17,
+      "inverse_beta_binary64_hex": "3ff9ef22669b9777"
+    },
+    {
+      "degrees_of_freedom": 18,
+      "inverse_beta_binary64_hex": "3ffab53000000000"
+    },
+    {
+      "degrees_of_freedom": 19,
+      "inverse_beta_binary64_hex": "3ffb75abf42c4606"
+    },
+    {
+      "degrees_of_freedom": 20,
+      "inverse_beta_binary64_hex": "3ffc310800000000"
+    },
+    {
+      "degrees_of_freedom": 21,
+      "inverse_beta_binary64_hex": "3ffce7a787c2d072"
+    },
+    {
+      "degrees_of_freedom": 22,
+      "inverse_beta_binary64_hex": "3ffd99e200000000"
+    },
+    {
+      "degrees_of_freedom": 23,
+      "inverse_beta_binary64_hex": "3ffe4804d75e6077"
+    },
+    {
+      "degrees_of_freedom": 24,
+      "inverse_beta_binary64_hex": "3ffef25500000000"
+    },
+    {
+      "degrees_of_freedom": 25,
+      "inverse_beta_binary64_hex": "3fff99102ea54345"
+    },
+    {
+      "degrees_of_freedom": 26,
+      "inverse_beta_binary64_hex": "40001e36f0000000"
+    },
+    {
+      "degrees_of_freedom": 27,
+      "inverse_beta_binary64_hex": "40006e50184174e6"
+    },
+    {
+      "degrees_of_freedom": 28,
+      "inverse_beta_binary64_hex": "4000bcea48000000"
+    },
+    {
+      "degrees_of_freedom": 29,
+      "inverse_beta_binary64_hex": "40010a1a2c1df47d"
+    },
+    {
+      "degrees_of_freedom": 30,
+      "inverse_beta_binary64_hex": "400155f2a6000000"
+    },
+    {
+      "degrees_of_freedom": 31,
+      "inverse_beta_binary64_hex": "4001a08501801767"
+    },
+    {
+      "degrees_of_freedom": 32,
+      "inverse_beta_binary64_hex": "4001e9e123000000"
+    },
+    {
+      "degrees_of_freedom": 33,
+      "inverse_beta_binary64_hex": "40023215aef7d618"
+    },
+    {
+      "degrees_of_freedom": 34,
+      "inverse_beta_binary64_hex": "400279302c180000"
+    },
+    {
+      "degrees_of_freedom": 35,
+      "inverse_beta_binary64_hex": "4002bf3d20e050f1"
+    },
+    {
+      "degrees_of_freedom": 36,
+      "inverse_beta_binary64_hex": "400304482d640000"
+    },
+    {
+      "degrees_of_freedom": 37,
+      "inverse_beta_binary64_hex": "4003485c21d0c849"
+    },
+    {
+      "degrees_of_freedom": 38,
+      "inverse_beta_binary64_hex": "40038b8312350000"
+    },
+    {
+      "degrees_of_freedom": 39,
+      "inverse_beta_binary64_hex": "4003cdc667eb2e90"
+    },
+    {
+      "degrees_of_freedom": 40,
+      "inverse_beta_binary64_hex": "40040f2ef1008000"
+    },
+    {
+      "degrees_of_freedom": 41,
+      "inverse_beta_binary64_hex": "40044fc4eddd8517"
+    },
+    {
+      "degrees_of_freedom": 42,
+      "inverse_beta_binary64_hex": "40048f901d6d5000"
+    },
+    {
+      "degrees_of_freedom": 43,
+      "inverse_beta_binary64_hex": "4004ce97c7f5a78e"
+    },
+    {
+      "degrees_of_freedom": 44,
+      "inverse_beta_binary64_hex": "40050ce2c8cb5800"
+    },
+    {
+      "degrees_of_freedom": 45,
+      "inverse_beta_binary64_hex": "40054a779707463e"
+    },
+    {
+      "degrees_of_freedom": 46,
+      "inverse_beta_binary64_hex": "4005875c4d5b9a00"
+    },
+    {
+      "degrees_of_freedom": 47,
+      "inverse_beta_binary64_hex": "4005c396b123e167"
+    },
+    {
+      "degrees_of_freedom": 48,
+      "inverse_beta_binary64_hex": "4005ff2c38c75500"
+    },
+    {
+      "degrees_of_freedom": 49,
+      "inverse_beta_binary64_hex": "40063a2211813d59"
+    },
+    {
+      "degrees_of_freedom": 50,
+      "inverse_beta_binary64_hex": "4006747d24a0d170"
+    },
+    {
+      "degrees_of_freedom": 51,
+      "inverse_beta_binary64_hex": "4006ae421c4fa1de"
+    },
+    {
+      "degrees_of_freedom": 52,
+      "inverse_beta_binary64_hex": "4006e77567ebb6e8"
+    },
+    {
+      "degrees_of_freedom": 53,
+      "inverse_beta_binary64_hex": "4007201b4000e146"
+    },
+    {
+      "degrees_of_freedom": 54,
+      "inverse_beta_binary64_hex": "40075837a9eb530a"
+    },
+    {
+      "degrees_of_freedom": 55,
+      "inverse_beta_binary64_hex": "40078fce7b2c5e48"
+    },
+    {
+      "degrees_of_freedom": 56,
+      "inverse_beta_binary64_hex": "4007c6e35c7929e9"
+    },
+    {
+      "degrees_of_freedom": 57,
+      "inverse_beta_binary64_hex": "4007fd79cc8a4411"
+    },
+    {
+      "degrees_of_freedom": 58,
+      "inverse_beta_binary64_hex": "4008339522b22f3b"
+    },
+    {
+      "degrees_of_freedom": 59,
+      "inverse_beta_binary64_hex": "400869389140573a"
+    },
+    {
+      "degrees_of_freedom": 60,
+      "inverse_beta_binary64_hex": "40089e6727b541b3"
+    },
+    {
+      "degrees_of_freedom": 61,
+      "inverse_beta_binary64_hex": "4008d323d4cc4759"
+    },
+    {
+      "degrees_of_freedom": 62,
+      "inverse_beta_binary64_hex": "40090771685ead76"
+    },
+    {
+      "degrees_of_freedom": 63,
+      "inverse_beta_binary64_hex": "40093b5295238fdd"
+    },
+    {
+      "degrees_of_freedom": 64,
+      "inverse_beta_binary64_hex": "40096ec9f24fb042"
+    },
+    {
+      "degrees_of_freedom": 65,
+      "inverse_beta_binary64_hex": "4009a1d9fd17ef9b"
+    },
+    {
+      "degrees_of_freedom": 66,
+      "inverse_beta_binary64_hex": "4009d4851a18ef03"
+    },
+    {
+      "degrees_of_freedom": 67,
+      "inverse_beta_binary64_hex": "400a06cd96a616bd"
+    },
+    {
+      "degrees_of_freedom": 68,
+      "inverse_beta_binary64_hex": "400a38b5aa0209e8"
+    },
+    {
+      "degrees_of_freedom": 69,
+      "inverse_beta_binary64_hex": "400a6a3f76825bdb"
+    },
+    {
+      "degrees_of_freedom": 70,
+      "inverse_beta_binary64_hex": "400a9b6d0aa02fb3"
+    },
+    {
+      "degrees_of_freedom": 71,
+      "inverse_beta_binary64_hex": "400acc4061f74337"
+    },
+    {
+      "degrees_of_freedom": 72,
+      "inverse_beta_binary64_hex": "400afcbb6634c2ab"
+    },
+    {
+      "degrees_of_freedom": 73,
+      "inverse_beta_binary64_hex": "400b2cdfeff723b6"
+    },
+    {
+      "degrees_of_freedom": 74,
+      "inverse_beta_binary64_hex": "400b5cafc7a028ed"
+    },
+    {
+      "degrees_of_freedom": 75,
+      "inverse_beta_binary64_hex": "400b8c2ca61a162c"
+    },
+    {
+      "degrees_of_freedom": 76,
+      "inverse_beta_binary64_hex": "400bbb58359106e2"
+    },
+    {
+      "degrees_of_freedom": 77,
+      "inverse_beta_binary64_hex": "400bea34122142d7"
+    },
+    {
+      "degrees_of_freedom": 78,
+      "inverse_beta_binary64_hex": "400c18c1ca7b5b30"
+    },
+    {
+      "degrees_of_freedom": 79,
+      "inverse_beta_binary64_hex": "400c4702e07ec8b2"
+    },
+    {
+      "degrees_of_freedom": 80,
+      "inverse_beta_binary64_hex": "400c74f8c9cbb4f8"
+    },
+    {
+      "degrees_of_freedom": 81,
+      "inverse_beta_binary64_hex": "400ca2a4f04c8a6d"
+    },
+    {
+      "degrees_of_freedom": 82,
+      "inverse_beta_binary64_hex": "400cd008b2b7da6f"
+    },
+    {
+      "degrees_of_freedom": 83,
+      "inverse_beta_binary64_hex": "400cfd25650b1d85"
+    },
+    {
+      "degrees_of_freedom": 84,
+      "inverse_beta_binary64_hex": "400d29fc50fec73e"
+    },
+    {
+      "degrees_of_freedom": 85,
+      "inverse_beta_binary64_hex": "400d568eb6741de0"
+    },
+    {
+      "degrees_of_freedom": 86,
+      "inverse_beta_binary64_hex": "400d82ddcbdd3d6d"
+    },
+    {
+      "degrees_of_freedom": 87,
+      "inverse_beta_binary64_hex": "400daeeabe9fa5c1"
+    },
+    {
+      "degrees_of_freedom": 88,
+      "inverse_beta_binary64_hex": "400ddab6b371ac47"
+    },
+    {
+      "degrees_of_freedom": 89,
+      "inverse_beta_binary64_hex": "400e0642c6b3233f"
+    },
+    {
+      "degrees_of_freedom": 90,
+      "inverse_beta_binary64_hex": "400e31900cc18299"
+    },
+    {
+      "degrees_of_freedom": 91,
+      "inverse_beta_binary64_hex": "400e5c9f9247d8db"
+    },
+    {
+      "degrees_of_freedom": 92,
+      "inverse_beta_binary64_hex": "400e87725c8ac579"
+    },
+    {
+      "degrees_of_freedom": 93,
+      "inverse_beta_binary64_hex": "400eb20969b0b97b"
+    },
+    {
+      "degrees_of_freedom": 94,
+      "inverse_beta_binary64_hex": "400edc65b106b6ec"
+    },
+    {
+      "degrees_of_freedom": 95,
+      "inverse_beta_binary64_hex": "400f06882341c3bc"
+    },
+    {
+      "degrees_of_freedom": 96,
+      "inverse_beta_binary64_hex": "400f3071aabd410a"
+    },
+    {
+      "degrees_of_freedom": 97,
+      "inverse_beta_binary64_hex": "400f5a232bb6549d"
+    },
+    {
+      "degrees_of_freedom": 98,
+      "inverse_beta_binary64_hex": "400f839d84848f0d"
+    },
+    {
+      "degrees_of_freedom": 99,
+      "inverse_beta_binary64_hex": "400face18dcff67a"
+    },
+    {
+      "degrees_of_freedom": 100,
+      "inverse_beta_binary64_hex": "400fd5f01ac49af5"
+    },
+    {
+      "degrees_of_freedom": 101,
+      "inverse_beta_binary64_hex": "400ffec9f943d759"
+    },
+    {
+      "degrees_of_freedom": 102,
+      "inverse_beta_binary64_hex": "401013b7f909af89"
+    },
+    {
+      "degrees_of_freedom": 103,
+      "inverse_beta_binary64_hex": "401027f164851ba2"
+    },
+    {
+      "degrees_of_freedom": 104,
+      "inverse_beta_binary64_hex": "40103c119e9ddbec"
+    },
+    {
+      "degrees_of_freedom": 105,
+      "inverse_beta_binary64_hex": "401050190490578d"
+    },
+    {
+      "degrees_of_freedom": 106,
+      "inverse_beta_binary64_hex": "40106407f15f607f"
+    },
+    {
+      "degrees_of_freedom": 107,
+      "inverse_beta_binary64_hex": "401077debde70cce"
+    },
+    {
+      "degrees_of_freedom": 108,
+      "inverse_beta_binary64_hex": "40108b9dc0eec46d"
+    },
+    {
+      "degrees_of_freedom": 109,
+      "inverse_beta_binary64_hex": "40109f454f3a8e1f"
+    },
+    {
+      "degrees_of_freedom": 110,
+      "inverse_beta_binary64_hex": "4010b2d5bb9ba510"
+    },
+    {
+      "degrees_of_freedom": 111,
+      "inverse_beta_binary64_hex": "4010c64f57006073"
+    },
+    {
+      "degrees_of_freedom": 112,
+      "inverse_beta_binary64_hex": "4010d9b2708375b0"
+    },
+    {
+      "degrees_of_freedom": 113,
+      "inverse_beta_binary64_hex": "4010ecff557a9d49"
+    },
+    {
+      "degrees_of_freedom": 114,
+      "inverse_beta_binary64_hex": "401100365184a22b"
+    },
+    {
+      "degrees_of_freedom": 115,
+      "inverse_beta_binary64_hex": "40111357ae96e2a4"
+    },
+    {
+      "degrees_of_freedom": 116,
+      "inverse_beta_binary64_hex": "40112663b50a49c4"
+    },
+    {
+      "degrees_of_freedom": 117,
+      "inverse_beta_binary64_hex": "4011395aaba7c7ac"
+    },
+    {
+      "degrees_of_freedom": 118,
+      "inverse_beta_binary64_hex": "40114c3cd7b44ed1"
+    },
+    {
+      "degrees_of_freedom": 119,
+      "inverse_beta_binary64_hex": "40115f0a7cfc5bfa"
+    },
+    {
+      "degrees_of_freedom": 120,
+      "inverse_beta_binary64_hex": "401171c3dddf0e66"
+    },
+    {
+      "degrees_of_freedom": 121,
+      "inverse_beta_binary64_hex": "401184693b58d538"
+    },
+    {
+      "degrees_of_freedom": 122,
+      "inverse_beta_binary64_hex": "401196fad50db70d"
+    },
+    {
+      "degrees_of_freedom": 123,
+      "inverse_beta_binary64_hex": "4011a978e953384e"
+    },
+    {
+      "degrees_of_freedom": 124,
+      "inverse_beta_binary64_hex": "4011bbe3b539e49e"
+    },
+    {
+      "degrees_of_freedom": 125,
+      "inverse_beta_binary64_hex": "4011ce3b74967f87"
+    },
+    {
+      "degrees_of_freedom": 126,
+      "inverse_beta_binary64_hex": "4011e080620ae045"
+    },
+    {
+      "degrees_of_freedom": 127,
+      "inverse_beta_binary64_hex": "4011f2b2b70e7c73"
+    },
+    {
+      "degrees_of_freedom": 128,
+      "inverse_beta_binary64_hex": "401204d2abf6a519"
+    },
+    {
+      "degrees_of_freedom": 129,
+      "inverse_beta_binary64_hex": "401216e077fe7966"
+    },
+    {
+      "degrees_of_freedom": 130,
+      "inverse_beta_binary64_hex": "401228dc514e9263"
+    },
+    {
+      "degrees_of_freedom": 131,
+      "inverse_beta_binary64_hex": "40123ac66d046a77"
+    },
+    {
+      "degrees_of_freedom": 132,
+      "inverse_beta_binary64_hex": "40124c9eff3983c2"
+    },
+    {
+      "degrees_of_freedom": 133,
+      "inverse_beta_binary64_hex": "40125e663b0a4feb"
+    },
+    {
+      "degrees_of_freedom": 134,
+      "inverse_beta_binary64_hex": "4012701c529cdc07"
+    },
+    {
+      "degrees_of_freedom": 135,
+      "inverse_beta_binary64_hex": "401281c17727430c"
+    },
+    {
+      "degrees_of_freedom": 136,
+      "inverse_beta_binary64_hex": "40129355d8f5e922"
+    },
+    {
+      "degrees_of_freedom": 137,
+      "inverse_beta_binary64_hex": "4012a4d9a771821f"
+    },
+    {
+      "degrees_of_freedom": 138,
+      "inverse_beta_binary64_hex": "4012b64d1124e533"
+    },
+    {
+      "degrees_of_freedom": 139,
+      "inverse_beta_binary64_hex": "4012c7b043c2afeb"
+    },
+    {
+      "degrees_of_freedom": 140,
+      "inverse_beta_binary64_hex": "4012d9036c2aba57"
+    },
+    {
+      "degrees_of_freedom": 141,
+      "inverse_beta_binary64_hex": "4012ea46b66f5e4e"
+    },
+    {
+      "degrees_of_freedom": 142,
+      "inverse_beta_binary64_hex": "4012fb7a4dda9371"
+    },
+    {
+      "degrees_of_freedom": 143,
+      "inverse_beta_binary64_hex": "40130c9e5cf2e1b2"
+    },
+    {
+      "degrees_of_freedom": 144,
+      "inverse_beta_binary64_hex": "40131db30d802beb"
+    },
+    {
+      "degrees_of_freedom": 145,
+      "inverse_beta_binary64_hex": "40132eb88890540f"
+    },
+    {
+      "degrees_of_freedom": 146,
+      "inverse_beta_binary64_hex": "40133faef67bba72"
+    },
+    {
+      "degrees_of_freedom": 147,
+      "inverse_beta_binary64_hex": "401350967ee9997e"
+    },
+    {
+      "degrees_of_freedom": 148,
+      "inverse_beta_binary64_hex": "4013616f48d43f3a"
+    },
+    {
+      "degrees_of_freedom": 149,
+      "inverse_beta_binary64_hex": "401372397a8d25db"
+    },
+    {
+      "degrees_of_freedom": 150,
+      "inverse_beta_binary64_hex": "401382f539c0eca1"
+    },
+    {
+      "degrees_of_freedom": 151,
+      "inverse_beta_binary64_hex": "401393a2ab7b3223"
+    },
+    {
+      "degrees_of_freedom": 152,
+      "inverse_beta_binary64_hex": "4013a441f42a5131"
+    },
+    {
+      "degrees_of_freedom": 153,
+      "inverse_beta_binary64_hex": "4013b4d337a3014e"
+    },
+    {
+      "degrees_of_freedom": 154,
+      "inverse_beta_binary64_hex": "4013c5569923dbd5"
+    },
+    {
+      "degrees_of_freedom": 155,
+      "inverse_beta_binary64_hex": "4013d5cc3b58c6c0"
+    },
+    {
+      "degrees_of_freedom": 156,
+      "inverse_beta_binary64_hex": "4013e634405e45fd"
+    },
+    {
+      "degrees_of_freedom": 157,
+      "inverse_beta_binary64_hex": "4013f68ec9c4b437"
+    },
+    {
+      "degrees_of_freedom": 158,
+      "inverse_beta_binary64_hex": "401406dbf89363f9"
+    },
+    {
+      "degrees_of_freedom": 159,
+      "inverse_beta_binary64_hex": "4014171bed4ba9f3"
+    },
+    {
+      "degrees_of_freedom": 160,
+      "inverse_beta_binary64_hex": "4014274ec7ebd12a"
+    },
+    {
+      "degrees_of_freedom": 161,
+      "inverse_beta_binary64_hex": "40143774a7f1f9e9"
+    },
+    {
+      "degrees_of_freedom": 162,
+      "inverse_beta_binary64_hex": "4014478dac5ee412"
+    },
+    {
+      "degrees_of_freedom": 163,
+      "inverse_beta_binary64_hex": "40145799f3b8a599"
+    },
+    {
+      "degrees_of_freedom": 164,
+      "inverse_beta_binary64_hex": "401467999c0d4dc6"
+    },
+    {
+      "degrees_of_freedom": 165,
+      "inverse_beta_binary64_hex": "4014778cc2f575ed"
+    },
+    {
+      "degrees_of_freedom": 166,
+      "inverse_beta_binary64_hex": "401487738596c033"
+    },
+    {
+      "degrees_of_freedom": 167,
+      "inverse_beta_binary64_hex": "4014974e00a644fe"
+    },
+    {
+      "degrees_of_freedom": 168,
+      "inverse_beta_binary64_hex": "4014a71c506aefa0"
+    },
+    {
+      "degrees_of_freedom": 169,
+      "inverse_beta_binary64_hex": "4014b6de90bfcac6"
+    },
+    {
+      "degrees_of_freedom": 170,
+      "inverse_beta_binary64_hex": "4014c694dd163d3d"
+    },
+    {
+      "degrees_of_freedom": 171,
+      "inverse_beta_binary64_hex": "4014d63f50783786"
+    },
+    {
+      "degrees_of_freedom": 172,
+      "inverse_beta_binary64_hex": "4014e5de058a52af"
+    },
+    {
+      "degrees_of_freedom": 173,
+      "inverse_beta_binary64_hex": "4014f571168de104"
+    },
+    {
+      "degrees_of_freedom": 174,
+      "inverse_beta_binary64_hex": "401504f89d62f0ee"
+    },
+    {
+      "degrees_of_freedom": 175,
+      "inverse_beta_binary64_hex": "40151474b38a4280"
+    },
+    {
+      "degrees_of_freedom": 176,
+      "inverse_beta_binary64_hex": "401523e57227301c"
+    },
+    {
+      "degrees_of_freedom": 177,
+      "inverse_beta_binary64_hex": "4015334af2018a90"
+    },
+    {
+      "degrees_of_freedom": 178,
+      "inverse_beta_binary64_hex": "401542a54b87691c"
+    },
+    {
+      "degrees_of_freedom": 179,
+      "inverse_beta_binary64_hex": "401551f496ceedb2"
+    },
+    {
+      "degrees_of_freedom": 180,
+      "inverse_beta_binary64_hex": "40156138eb97fdd6"
+    },
+    {
+      "degrees_of_freedom": 181,
+      "inverse_beta_binary64_hex": "40157072614df074"
+    },
+    {
+      "degrees_of_freedom": 182,
+      "inverse_beta_binary64_hex": "40157fa10f093106"
+    },
+    {
+      "degrees_of_freedom": 183,
+      "inverse_beta_binary64_hex": "40158ec50b90d853"
+    },
+    {
+      "degrees_of_freedom": 184,
+      "inverse_beta_binary64_hex": "40159dde6d5c3b23"
+    },
+    {
+      "degrees_of_freedom": 185,
+      "inverse_beta_binary64_hex": "4015aced4a946f30"
+    },
+    {
+      "degrees_of_freedom": 186,
+      "inverse_beta_binary64_hex": "4015bbf1b915c697"
+    },
+    {
+      "degrees_of_freedom": 187,
+      "inverse_beta_binary64_hex": "4015caebce714220"
+    },
+    {
+      "degrees_of_freedom": 188,
+      "inverse_beta_binary64_hex": "4015d9db9fedfa95"
+    },
+    {
+      "degrees_of_freedom": 189,
+      "inverse_beta_binary64_hex": "4015e8c1428a8173"
+    },
+    {
+      "degrees_of_freedom": 190,
+      "inverse_beta_binary64_hex": "4015f79ccafe3931"
+    },
+    {
+      "degrees_of_freedom": 191,
+      "inverse_beta_binary64_hex": "4016066e4dbaa55a"
+    },
+    {
+      "degrees_of_freedom": 192,
+      "inverse_beta_binary64_hex": "40161535deecb2c2"
+    },
+    {
+      "degrees_of_freedom": 193,
+      "inverse_beta_binary64_hex": "401623f3927df7fa"
+    },
+    {
+      "degrees_of_freedom": 194,
+      "inverse_beta_binary64_hex": "401632a77c15ee5b"
+    },
+    {
+      "degrees_of_freedom": 195,
+      "inverse_beta_binary64_hex": "40164151af1b23b5"
+    },
+    {
+      "degrees_of_freedom": 196,
+      "inverse_beta_binary64_hex": "40164ff23eb46507"
+    },
+    {
+      "degrees_of_freedom": 197,
+      "inverse_beta_binary64_hex": "40165e893dc9e240"
+    },
+    {
+      "degrees_of_freedom": 198,
+      "inverse_beta_binary64_hex": "40166d16bf064b6b"
+    },
+    {
+      "degrees_of_freedom": 199,
+      "inverse_beta_binary64_hex": "40167b9ad4d7e74c"
+    },
+    {
+      "degrees_of_freedom": 200,
+      "inverse_beta_binary64_hex": "40168a159171a3b8"
+    }
+  ]
+}

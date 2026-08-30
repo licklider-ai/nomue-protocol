@@ -69,13 +69,23 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("keeps the contiguous inverse-beta table as review-pending evidence", () => {
+  it("records the contiguous inverse-beta table as reviewed, non-runtime evidence", () => {
     const candidate = loadReadiness();
     candidate.runtime_inverse_beta_table_evidence_candidate.runtime_table_selected = true as never;
     candidate.runtime_inverse_beta_table_evidence_candidate.final_content_hash =
       "sha256:future" as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "runtime inverse-beta table evidence candidate must remain review-pending and non-runtime",
+      "runtime inverse-beta table evidence candidate must remain reviewed evidence and non-runtime",
+    );
+  });
+
+  it("keeps the reviewed table connection separate from final runtime selection", () => {
+    const candidate = loadReadiness();
+    candidate.runtime_table_integration_candidate.runtime_table_selected = true as never;
+    candidate.runtime_table_integration_candidate.final_content_hash = candidate
+      .runtime_table_integration_candidate.reviewed_evidence_table_content_hash as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "runtime-table integration candidate must remain review-pending and non-runtime",
     );
   });
 
@@ -127,6 +137,14 @@ describe("Release 2 numerical evidence readiness", () => {
     )["supported"] = true;
     expect(validatePairedTNumericalReadinessCandidate(inverseBetaTable)).toContain(
       "runtime inverse-beta table evidence candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const integration = loadReadiness();
+    (integration.runtime_table_integration_candidate as unknown as Record<string, unknown>)[
+      "supported"
+    ] = true;
+    expect(validatePairedTNumericalReadinessCandidate(integration)).toContain(
+      "runtime-table integration candidate: keys are incomplete or contain an undeclared item",
     );
   });
 
