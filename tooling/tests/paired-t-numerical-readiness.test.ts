@@ -69,6 +69,15 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("keeps pointwise truth evidence separate from a global bound and runtime margin", () => {
+    const candidate = loadReadiness();
+    candidate.truth_boundary_evidence_candidate.global_truth_error_bound_ulp = 236 as never;
+    candidate.truth_boundary_evidence_candidate.projection_margin_runtime_activated = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "truth-boundary evidence candidate must remain pointwise, incomplete, and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
@@ -89,6 +98,14 @@ describe("Release 2 numerical evidence readiness", () => {
     ] = 4;
     expect(validatePairedTNumericalReadinessCandidate(runtimeSeries)).toContain(
       "runtime-series evaluation candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const truthBoundary = loadReadiness();
+    (truthBoundary.truth_boundary_evidence_candidate as unknown as Record<string, unknown>)[
+      "tolerance"
+    ] = 236;
+    expect(validatePairedTNumericalReadinessCandidate(truthBoundary)).toContain(
+      "truth-boundary evidence candidate: keys are incomplete or contain an undeclared item",
     );
   });
 

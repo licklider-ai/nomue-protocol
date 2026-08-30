@@ -38,6 +38,18 @@
     "truth_error_bound_complete": false,
     "runtime_support_enabled": false
   },
+  "truth_boundary_evidence_candidate": {
+    "closure": "incomplete",
+    "artifact": "governance/drafts/release-2-candidate/numerical/truth-boundary-candidate.json",
+    "boundary_manifest": "tooling/r2-paired-t-runtime-series/truth-boundary-cases.json",
+    "evidence_generator": "tooling/r2-paired-t-runtime-series/generate_truth_boundary_evidence.py",
+    "evidence_validator": "tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts",
+    "pointwise_truth_error_certified": true,
+    "global_truth_error_bound_ulp": null,
+    "projection_margin_runtime_activated": false,
+    "supported_degrees_of_freedom_max": null,
+    "runtime_support_enabled": false
+  },
   "operation_graph": {
     "candidate_key": "g4-pairwise-two-pass",
     "selection_state": "selected_for_candidate_testing",

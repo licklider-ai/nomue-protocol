@@ -80,6 +80,21 @@ platform ledgers remain incomplete. The separate Arb evidence generator records 
 correctly rounded truth and truncation enclosure without converting their ULP
 distance into a tolerance.
 
+`truth-boundary-candidate.json` keeps the next step equally narrow. Its generator
+searches selected df values for adjacent binary64 statistics that straddle each
+target-format class transition and certifies the mathematical projection on both
+sides. The evidence records exact pointwise graph-to-truth ULP distances and class
+disagreements. A finite search maximum remains an observation and is mechanically
+forbidden from becoming a global truth-error guarantee.
+
+The candidate also records the form of a future projection margin without choosing
+its size. If a later proof supplies a global non-negative integer truth-error bound
+`B`, a normal or rounded-one graph result is class-stable only when its cell is more
+than `B` cells from the nearest projection-class transition. This deliberately
+includes the supported normal-to-rounded-one transition. `B` remains null, the predicate is
+not activated, and neither the selected df seed nor its boundary cases constitute
+Protocol support.
+
 Research also supports stage-specific scrutiny of subnormal algebra intermediates,
 but activating a sample-variance refusal would change the reviewed first-failure
 order for the existing standard-error-squared underflow witness. This increment
@@ -188,7 +203,8 @@ not multiply the ULP by `|t_c|` a second time.
   refused;
 - the complete runtime Student-t series graph, branch boundary, and iteration
   evidence;
-- the mathematical-truth error bounds and supported-platform predicate;
+- the global mathematical-truth error bound and supported-platform predicate (the
+  current boundary evidence is pointwise only);
 - the complete critical-value table and its final content hash (the current hash
   binds only the explicit research seed); and
 - the final reason-code spellings and authoritative Public Check revision.
