@@ -135,9 +135,13 @@ transition. A certified `df = 197` witness records an observed 374-ULP graph-to-
 distance under a 2,978-ULP input-specific candidate bound. The finite observation is
 not a global guarantee. The derivation and its candidate-bound implementation passed
 independent adversarial review, including close-only review of the accepted repairs.
-The final truth-error predicate, supported platform matrix, supported df range,
-subnormal first-failure ordering, final critical-value table selection, and final
-reason-code spellings remain open.
+The two candidate runtime evaluation entrypoints now also share a closed two-field
+input parser. Eleven reason-code spellings for the already reviewed operation-stage
+failures are recorded as unissued candidates. The parser and partial inventory passed
+independent adversarial review as non-authoritative decision-preparation material;
+ten support-dependent mappings and the final reason-code freeze remain open. The
+final truth-error predicate, supported platform matrix, supported df range, subnormal
+first-failure ordering, and final critical-value table selection also remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

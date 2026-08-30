@@ -17,6 +17,7 @@ import {
   RUNTIME_SERIES_EVALUATION_DF_MIN,
   type PairedTRuntimeSeriesCandidateResult,
 } from "./paired-t-runtime-series-candidate.js";
+import { parsePairedTCandidateEvaluationInput } from "./paired-t-runtime-input-reason-code-candidate.js";
 
 export const REVIEWED_INVERSE_BETA_TABLE_CONTENT_HASH =
   "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
@@ -309,28 +310,16 @@ export function lookupReviewedInverseBetaCandidateCell(
 export function evaluatePairedTRuntimeSeriesWithCandidateTable(
   input: unknown,
 ): PairedTRuntimeTableIntegrationCandidateResult {
-  let df: unknown;
-  let testStatistic: unknown;
-  try {
-    if (!isRecord(input)) {
-      return {
-        ok: false,
-        status: "non_authoritative_candidate_refusal",
-        classification: "invalid_candidate_input",
-      };
-    }
-    df = input["degreesOfFreedom"];
-    testStatistic = input["testStatistic"];
-  } catch {
+  const candidateInput = parsePairedTCandidateEvaluationInput(input);
+  if (candidateInput === undefined) {
     return {
       ok: false,
       status: "non_authoritative_candidate_refusal",
       classification: "invalid_candidate_input",
     };
   }
+  const { degreesOfFreedom: df, testStatistic } = candidateInput;
   if (
-    typeof df !== "number" ||
-    typeof testStatistic !== "number" ||
     !Number.isInteger(df) ||
     df < RUNTIME_SERIES_EVALUATION_DF_MIN ||
     !Number.isFinite(testStatistic) ||

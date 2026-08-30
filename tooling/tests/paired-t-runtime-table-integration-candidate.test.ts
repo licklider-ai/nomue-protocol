@@ -144,4 +144,20 @@ describe("paired-t runtime table integration candidate", () => {
       });
     }
   });
+
+  it("rejects undeclared or inherited input fields", () => {
+    for (const input of [
+      { degreesOfFreedom: 3, testStatistic: 1, extra: true },
+      Object.create({ degreesOfFreedom: 3, testStatistic: 1 }) as object,
+      Object.assign(Object.create({ extra: true }) as object, {
+        degreesOfFreedom: 3,
+        testStatistic: 1,
+      }),
+    ]) {
+      expect(evaluatePairedTRuntimeSeriesWithCandidateTable(input)).toMatchObject({
+        ok: false,
+        classification: "invalid_candidate_input",
+      });
+    }
+  });
 });

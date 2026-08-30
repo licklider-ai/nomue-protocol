@@ -100,6 +100,17 @@
     "supported_domain_claimed": false,
     "runtime_support_enabled": false
   },
+  "runtime_input_reason_code_candidate": {
+    "closure": "reviewed_candidate_input_contract_and_partial_inventory",
+    "artifact": "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json",
+    "validator": "tooling/src/spikes/paired-t-runtime-input-reason-code-candidate.ts",
+    "review_disposition": "governance/drafts/release-2-candidate/reviews/d5-runtime-input-reason-code-adversarial-review-disposition.md",
+    "input_contract": "exact_own_data_keys_candidate",
+    "selected_operation_stage_reason_code_candidate_count": 11,
+    "deferred_reason_code_decision_count": 10,
+    "final_reason_codes_frozen": false,
+    "runtime_support_enabled": false
+  },
   "operation_graph": {
     "candidate_key": "g4-pairwise-two-pass",
     "selection_state": "selected_for_candidate_testing",
