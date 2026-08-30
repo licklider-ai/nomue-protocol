@@ -20,6 +20,11 @@ context. Separate investigators or models are preferred. If one external
 investigator handles both packages, the work uses isolated contexts and neither
 investigation has access to the other result.
 
+FND-1 now uses two isolated passes with different jobs: a Genspark
+primary-source pass and a Claude Code repository-analysis pass. Neither pass
+sees the other result before reconciliation. The FND-1 entry point defines the
+active execution mode and preserves the original scientific question set.
+
 Release 2, its candidate work, paired-t procedures, and t-family numerical
 contracts are outside both investigations. Nothing in this package changes the
 current Release 2 scope or investigation line.
@@ -36,17 +41,19 @@ Shared inputs:
 - [`2026-08-30-counterexample-corpus-v1.md`](2026-08-30-counterexample-corpus-v1.md)
 - [`2026-08-30-common-response-template-v1.md`](2026-08-30-common-response-template-v1.md)
 
-No archive or out-of-repository attachment is required. A reviewer starts from
-the assigned entry point, performs the primary-source investigation, replaces
-only the assigned result placeholder, runs the repository checks named in the
-entry point, commits the result on a reviewer-owned branch, and pushes that
-branch for adjudication.
+No archive or out-of-repository attachment is required. Each pass starts from
+its assigned entry point. The Genspark pass returns one Markdown report for
+verbatim intake. The Claude Code pass replaces only its assigned result
+placeholder, runs the named repository checks, commits on a reviewer-owned
+branch, and pushes that branch for reconciliation.
 
 ## Independence and branch discipline
 
-Each reviewer branches from the exact commit containing this package. The FND-1
-reviewer changes only the FND-1 result file; the FND-2 reviewer changes only the
-FND-2 result file. Input files remain unchanged during the investigation.
+Each repository-operating reviewer branches from the exact commit containing
+its commission. The FND-1 Claude Code reviewer changes only the Claude Code
+pass-result file; the FND-2 reviewer changes only the FND-2 result file. Input
+files remain unchanged during the investigation. Genspark does not claim a
+repository operation; its returned Markdown is taken in separately.
 
 If prior nomue conclusions, earlier research packages, adjudication records, or
 the other investigation's result are automatically visible, the investigator

@@ -550,10 +550,22 @@ artifacts:
     notes: Non-normative reporting structure for independent research results.
   - path: evidence/research/foundation-identity/fnd-1/README.md
     class: informative
-    notes: Independent FND-1 research commission; not an adoption decision.
+    notes: Dual-pass independent FND-1 research commission; not an adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-prompt.md
+    class: informative
+    notes: Genspark primary-source commission for the isolated FND-1 source pass.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md
+    class: informative
+    notes: Placeholder for verbatim intake of the isolated Genspark FND-1 result.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-prompt.md
+    class: informative
+    notes: Claude Code commission for the isolated FND-1 repository-analysis pass.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-result.md
+    class: informative
+    notes: Placeholder for the isolated Claude Code FND-1 repository result.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md
     class: informative
-    notes: Placeholder for the independent FND-1 research result.
+    notes: Placeholder for the reconciled FND-1 result after both isolated passes.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
