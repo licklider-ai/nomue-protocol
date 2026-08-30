@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:b7c7b8eb8cd1f9f3d93a62ab74cd952b04535a17f263adc3b69ca65cd0d2dc94)
+- authority/authority-manifest.yaml (sha256:0d8b6446194cd9b6467b14fd8ebdca951fbd4675980b81f79cd1e301f58b2b6f)
 
 Generation command: pnpm generate
 -->
@@ -167,6 +167,13 @@ Non-authoritative view of the authority manifest.
 | `mappings/README.md` | informative |
 | `security/README.md` | informative |
 | `evidence/release-1/README.md` | informative |
+| `evidence/research/foundation-identity/README.md` | informative |
+| `evidence/research/foundation-identity/2026-08-30-counterexample-corpus-v1.md` | informative |
+| `evidence/research/foundation-identity/2026-08-30-common-response-template-v1.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/README.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/README.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
 | `tooling/README.md` | informative |
 | `governance/decisions/ADR-0001-separate-layer-1-repository.md` | informative |
 | `governance/decisions/ADR-0002-authority-model.md` | informative |

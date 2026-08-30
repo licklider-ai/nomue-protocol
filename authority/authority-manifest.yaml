@@ -537,6 +537,29 @@ artifacts:
     class: informative
   - path: evidence/release-1/README.md
     class: informative
+  - path: evidence/research/foundation-identity/README.md
+    class: informative
+    notes: >-
+      Entry point for independent FND-1 and FND-2 foundational research;
+      research input only, with no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/2026-08-30-counterexample-corpus-v1.md
+    class: informative
+    notes: Gold-label-free counterexample corpus for independent research.
+  - path: evidence/research/foundation-identity/2026-08-30-common-response-template-v1.md
+    class: informative
+    notes: Non-normative reporting structure for independent research results.
+  - path: evidence/research/foundation-identity/fnd-1/README.md
+    class: informative
+    notes: Independent FND-1 research commission; not an adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md
+    class: informative
+    notes: Placeholder for the independent FND-1 research result.
+  - path: evidence/research/foundation-identity/fnd-2/README.md
+    class: informative
+    notes: Independent FND-2 research commission; not an adoption decision.
+  - path: evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md
+    class: informative
+    notes: Placeholder for the independent FND-2 research result.
   - path: tooling/README.md
     class: informative
   - path: governance/decisions/ADR-0001-separate-layer-1-repository.md
