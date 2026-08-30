@@ -172,6 +172,32 @@ therefore leaves the PR #29 operation-stage predicates unchanged until that orde
 has its own witness and review. It does not turn the research observation into a
 blanket subnormal refusal.
 
+## Supported execution predicate research
+
+Independent primary-source investigation and separate adjudication have now closed
+the research question needed to design the supported-platform predicate. Current
+ECMAScript specifies the observable roundTiesToEven binary64 semantics required by
+the tail graph, including correctly rounded `Math.sqrt` in the 2025 and 2026
+editions. Node build identifiers and support tiers do not, however, attest to active
+floating-point state or the behavior of a particular invocation. V8 source also
+shows that denormal-flush controls are concrete mutable process/thread state.
+
+The adjudicated next direction is therefore a supported execution predicate rather
+than a platform-name matrix alone. A later candidate will combine an exact
+runtime/build/platform allowlist, a restricted execution profile, startup and
+per-invocation diagnostics, one immutable trace of the computation actually
+returned, exact dyadic verification of every ordinary arithmetic result, exact
+rounding-cell verification of every executed square root, and cross-platform
+admission evidence. A native floating-point register guard remains optional
+hardening under the current non-malicious pinned-runtime threat model.
+
+The research closure does not select any platform tuple or activate support. It is
+limited to the table-connected tail graph that accepts `(df, t)`; the upstream G4
+data-to-statistic graph still needs separate closure. The commission, independent
+results, and disposition are recorded in
+`../reviews/d5-supported-platform-primary-source-research-commission.md` and
+`../reviews/d5-supported-platform-primary-source-research-disposition.md`.
+
 ## Runtime input and reason-code candidate
 
 `runtime-input-reason-code-candidate.json` addresses one candidate-tooling input
