@@ -67,11 +67,38 @@ semantic validation when any parsed document is unavailable. Dedicated tests
 cover all three malformed inputs. This repair requires only a close-only review;
 it does not restart public review issue #25.
 
+## Close-only review
+
+- Repair commit: `bafffea8e7ca6f9bfb2036bfa53aaaf9219950d7`
+- Repair tree: `684d26d5066602a9897663197f51d316221b1a94`
+- Close-review input: `a9dc518a4079140daad1a0a7f6506968a893f60c`
+- Review type: external, independent, close-only review of the single accepted
+  nice-to-have finding
+- Verdict: **CLOSED**
+- Repair-induced regressions: none
+- External research requested: none
+
+The close reviewer verified each malformed JSON input independently, all three
+pairwise combinations, and all three inputs corrupted together. Every probe
+returned exit status one, reported every available `<file>: not valid JSON`
+error without a stack trace, and stopped before semantic dereferencing of an
+unavailable document. The valid bundle still passed, the existing twenty
+coherent mutations remained rejected, the three dedicated regression tests
+passed, and the full repository check passed from a clean clone.
+
+The close review also confirmed that the repair changes only JSON parse failure
+handling, its tests, and this review record. It does not change the numerical
+graph, evidence generator, evidence bytes, maturity state, identifiers,
+registries, schemas, conformance fixtures, reference verifier, or Release 1.
+The original independent `GO` disposition therefore remains valid without
+restarting public review issue #25.
+
 ## Disposition
 
 The runtime-series evidence candidate is accepted as independently reviewed
-candidate work. It may remain Draft and proceed as an input to the next bounded
-D5 decision after the local repair receives close-only confirmation.
+candidate work. Its only review finding is closed, so this candidate may be
+merged as non-authoritative development evidence and proceed as an input to the
+next bounded D5 decision.
 
 This disposition does not establish correct rounding, a mathematical-truth
 error bound, a projection-boundary margin, a supported domain or df ceiling,
