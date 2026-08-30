@@ -53,7 +53,11 @@ candidate, a separate Arb evidence route, pointwise target-format transition
 evidence, and a hash-bound evaluation connection to the independently reviewed
 contiguous inverse-beta candidate table. The table-to-graph connection has also
 passed independent adversarial review as a non-authoritative candidate integration.
-None is a supported runtime tail or a final runtime-table selection.
+It now also contains a fail-closed input-specific truth-error and projection-margin
+candidate. That evaluator reproduces the unchanged graph, derives its bound with
+exact rational arithmetic, and refuses inputs outside its proof preconditions. Its
+analytic derivation still requires independent review. None is a supported runtime
+tail, a selected truth-error predicate, or a final runtime-table selection.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

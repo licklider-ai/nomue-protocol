@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import { evaluatePairedTRuntimeSeriesCandidate } from "../src/spikes/paired-t-runtime-series-candidate.js";
 import {
   evaluatePairedTRuntimeSeriesWithCandidateTable,
+  lookupReviewedInverseBetaCandidateCell,
   REVIEWED_INVERSE_BETA_TABLE_CONTENT_HASH,
   validatePairedTRuntimeInverseBetaLookupTableCandidate,
   validatePairedTRuntimeTableIntegrationCheckpoint,
@@ -104,6 +105,24 @@ describe("paired-t runtime table integration candidate", () => {
     }
   });
 
+  it("returns a fresh exact reviewed cell for proof instrumentation", () => {
+    const expected = loadEntries().get(197);
+    const first = lookupReviewedInverseBetaCandidateCell(197);
+    expect(first).toEqual({
+      value: floatFromHex(expected?.inverse_beta_binary64_hex ?? ""),
+      hex: expected?.inverse_beta_binary64_hex,
+    });
+    if (first === undefined) throw new Error("reviewed df=197 table cell is unavailable");
+    first.value = 0;
+    first.hex = "0000000000000000";
+    expect(lookupReviewedInverseBetaCandidateCell(197)).toEqual({
+      value: floatFromHex(expected?.inverse_beta_binary64_hex ?? ""),
+      hex: expected?.inverse_beta_binary64_hex,
+    });
+    expect(lookupReviewedInverseBetaCandidateCell(0)).toBeUndefined();
+    expect(lookupReviewedInverseBetaCandidateCell(201)).toBeUndefined();
+  });
+
   it("preserves the evaluation boundary and input refusals", () => {
     expect(
       evaluatePairedTRuntimeSeriesWithCandidateTable({
@@ -117,5 +136,12 @@ describe("paired-t runtime table integration candidate", () => {
         testStatistic: -0,
       }),
     ).toMatchObject({ ok: false, classification: "invalid_candidate_input" });
+    for (const input of [null, undefined, [], {}, "invalid"]) {
+      expect(() => evaluatePairedTRuntimeSeriesWithCandidateTable(input)).not.toThrow();
+      expect(evaluatePairedTRuntimeSeriesWithCandidateTable(input)).toMatchObject({
+        ok: false,
+        classification: "invalid_candidate_input",
+      });
+    }
   });
 });

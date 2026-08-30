@@ -146,6 +146,13 @@
       "blocked_by": "runtime_student_t_tail_procedure_and_boundary_evidence_incomplete"
     },
     {
+      "predicate_key": "truth_error_and_projection_margin_support",
+      "state": "deferred",
+      "failure_class": "scope",
+      "readiness_key": "operation_stage_predicate_outside_validated_scope",
+      "blocked_by": "closure_candidate_independent_review_platform_and_final_selection_pending"
+    },
+    {
       "predicate_key": "validated_corpus_membership",
       "state": "deferred",
       "failure_class": "scope",

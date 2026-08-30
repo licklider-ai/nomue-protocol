@@ -8,7 +8,11 @@ on:
       - "governance/drafts/release-2-candidate/numerical/**"
       - "tooling/r2-paired-t-runtime-series/**"
       - "tooling/src/spikes/paired-t-numerical-contract-candidate.ts"
+      - "tooling/src/spikes/paired-t-numerical-readiness.ts"
       - "tooling/src/spikes/paired-t-runtime-series-candidate.ts"
+      - "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts"
+      - "tooling/src/spikes/paired-t-support-domain-candidate.ts"
+      - "tooling/src/spikes/paired-t-truth-error-support-candidate.ts"
       - "tooling/src/spikes/probe-paired-t-runtime-series-evidence.ts"
       - "tooling/src/spikes/validate-paired-t-runtime-series-evidence.ts"
       - "tooling/src/spikes/probe-paired-t-runtime-inverse-beta-table-evidence.ts"
@@ -64,7 +68,7 @@ jobs:
             --cases tooling/r2-paired-t-runtime-series/cases.json \
             --output candidate-evidence/release-2-paired-t-runtime-series
 
-      - name: Validate provenance, graph identity, and enclosures
+      - name: Validate provenance, graph identity, truth bounds, and enclosures
         shell: bash
         env:
           NOMUE_GENERATOR_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}

@@ -92,6 +92,11 @@
       "test_statistic_binary64_hex": "4000000000000000"
     },
     {
+      "case_id": "df197-high-error-scout-witness",
+      "degrees_of_freedom": 197,
+      "test_statistic_binary64_hex": "4049333333333333"
+    },
+    {
       "case_id": "df200-above-branch",
       "degrees_of_freedom": 200,
       "test_statistic_binary64_hex": "3ff0000000000001"

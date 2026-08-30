@@ -452,6 +452,10 @@ def main() -> None:
         / "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
         "runtime-series-candidate.json": repository_root
         / "governance/drafts/release-2-candidate/numerical/runtime-series-candidate.json",
+        "truth-error-support-candidate.ts": repository_root
+        / "tooling/src/spikes/paired-t-truth-error-support-candidate.ts",
+        "truth-error-support-candidate.json": repository_root
+        / "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
     }
     cases_document = json.loads(arguments.cases.read_text())
     cases = validate_cases_document(cases_document)

@@ -85,6 +85,22 @@ export interface PairedTNumericalReadinessCandidate {
     supported_degrees_of_freedom_max: null;
     runtime_support_enabled: false;
   };
+  truth_error_support_closure_candidate: {
+    closure: "incomplete_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json";
+    execution_surface: "tooling/src/spikes/paired-t-truth-error-support-candidate.ts";
+    evidence_manifest: "tooling/r2-paired-t-runtime-series/cases.json";
+    candidate_bound_form: "input_specific_normal_binary64_roundoff_plus_positive_series_remainder";
+    candidate_bound_arithmetic: "exact_rational_with_exact_integer_ulp_ceiling";
+    certified_high_error_witness_case_id: "df197-high-error-scout-witness";
+    certified_high_error_witness_ulp: 374;
+    candidate_high_error_witness_bound_ulp: 2978;
+    global_truth_error_bound_ulp: null;
+    input_specific_bound_selected_for_runtime: false;
+    supported_degrees_of_freedom_max: null;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -202,6 +218,7 @@ const TOP_LEVEL_KEYS = [
   "runtime_inverse_beta_table_evidence_candidate",
   "runtime_table_integration_candidate",
   "truth_boundary_evidence_candidate",
+  "truth_error_support_closure_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -306,6 +323,23 @@ const TRUTH_BOUNDARY_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "execution_surface",
+  "evidence_manifest",
+  "candidate_bound_form",
+  "candidate_bound_arithmetic",
+  "certified_high_error_witness_case_id",
+  "certified_high_error_witness_ulp",
+  "candidate_high_error_witness_bound_ulp",
+  "global_truth_error_bound_ulp",
+  "input_specific_bound_selected_for_runtime",
+  "supported_degrees_of_freedom_max",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
 const REFUSAL_CLASS_KEYS = [
   "contract_computability",
   "binary64_computability",
@@ -337,6 +371,10 @@ function requireExactKeys(
   }
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
 function requireExactSet(
   label: string,
   actual: readonly string[],
@@ -351,7 +389,7 @@ function requireExactSet(
   }
 }
 
-export function validatePairedTNumericalReadinessCandidate(
+function validatePairedTNumericalReadinessCandidateInternal(
   candidate: PairedTNumericalReadinessCandidate,
 ): string[] {
   const errors: string[] = [];
@@ -391,6 +429,12 @@ export function validatePairedTNumericalReadinessCandidate(
     "truth-boundary evidence candidate",
     candidate.truth_boundary_evidence_candidate,
     TRUTH_BOUNDARY_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "truth-error support closure candidate",
+    candidate.truth_error_support_closure_candidate,
+    TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
@@ -553,6 +597,34 @@ export function validatePairedTNumericalReadinessCandidate(
     );
   }
 
+  const truthErrorSupportCandidate = candidate.truth_error_support_closure_candidate;
+  if (
+    truthErrorSupportCandidate.closure !== "incomplete_pending_independent_review" ||
+    truthErrorSupportCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json" ||
+    truthErrorSupportCandidate.execution_surface !==
+      "tooling/src/spikes/paired-t-truth-error-support-candidate.ts" ||
+    truthErrorSupportCandidate.evidence_manifest !==
+      "tooling/r2-paired-t-runtime-series/cases.json" ||
+    truthErrorSupportCandidate.candidate_bound_form !==
+      "input_specific_normal_binary64_roundoff_plus_positive_series_remainder" ||
+    truthErrorSupportCandidate.candidate_bound_arithmetic !==
+      "exact_rational_with_exact_integer_ulp_ceiling" ||
+    truthErrorSupportCandidate.certified_high_error_witness_case_id !==
+      "df197-high-error-scout-witness" ||
+    truthErrorSupportCandidate.certified_high_error_witness_ulp !== 374 ||
+    truthErrorSupportCandidate.candidate_high_error_witness_bound_ulp !== 2978 ||
+    truthErrorSupportCandidate.global_truth_error_bound_ulp !== null ||
+    truthErrorSupportCandidate.input_specific_bound_selected_for_runtime !== false ||
+    truthErrorSupportCandidate.supported_degrees_of_freedom_max !== null ||
+    truthErrorSupportCandidate.supported_domain_claimed !== false ||
+    truthErrorSupportCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "truth-error support closure candidate must remain review-pending, unselected, and non-runtime",
+    );
+  }
+
   const graph = candidate.operation_graph;
   if (
     graph.candidate_key !== "g4-pairwise-two-pass" ||
@@ -645,4 +717,16 @@ export function validatePairedTNumericalReadinessCandidate(
     errors,
   );
   return errors;
+}
+
+export function validatePairedTNumericalReadinessCandidate(candidate: unknown): string[] {
+  const malformed = ["numerical readiness candidate is not a structurally valid object"];
+  if (!isRecord(candidate)) return malformed;
+  try {
+    return validatePairedTNumericalReadinessCandidateInternal(
+      candidate as unknown as PairedTNumericalReadinessCandidate,
+    );
+  } catch {
+    return malformed;
+  }
 }

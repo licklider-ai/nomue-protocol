@@ -292,12 +292,45 @@ function loadBundledTable(): {
 
 const BUNDLED_TABLE = loadBundledTable();
 
+/**
+ * Resolve one already-validated candidate table cell for later candidate-only
+ * proof instrumentation. Returning a fresh object prevents callers from
+ * mutating the module-level table state.
+ */
+export function lookupReviewedInverseBetaCandidateCell(
+  degreesOfFreedom: number,
+): { value: number; hex: string } | undefined {
+  if (BUNDLED_TABLE.errors.length > 0) return undefined;
+  const entry = BUNDLED_TABLE.entries.get(degreesOfFreedom);
+  return entry === undefined ? undefined : { ...entry };
+}
+
 /** Execute the existing graph with the exact reviewed candidate table cell for df. */
 export function evaluatePairedTRuntimeSeriesWithCandidateTable(
-  input: PairedTRuntimeTableIntegrationInput,
+  input: unknown,
 ): PairedTRuntimeTableIntegrationCandidateResult {
-  const { degreesOfFreedom: df, testStatistic } = input;
+  let df: unknown;
+  let testStatistic: unknown;
+  try {
+    if (!isRecord(input)) {
+      return {
+        ok: false,
+        status: "non_authoritative_candidate_refusal",
+        classification: "invalid_candidate_input",
+      };
+    }
+    df = input["degreesOfFreedom"];
+    testStatistic = input["testStatistic"];
+  } catch {
+    return {
+      ok: false,
+      status: "non_authoritative_candidate_refusal",
+      classification: "invalid_candidate_input",
+    };
+  }
   if (
+    typeof df !== "number" ||
+    typeof testStatistic !== "number" ||
     !Number.isInteger(df) ||
     df < RUNTIME_SERIES_EVALUATION_DF_MIN ||
     !Number.isFinite(testStatistic) ||

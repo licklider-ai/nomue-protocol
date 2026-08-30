@@ -228,6 +228,13 @@ const EXPECTED_DEFERRED_PREDICATES = [
     blocked_by: "runtime_student_t_tail_procedure_and_boundary_evidence_incomplete",
   },
   {
+    predicate_key: "truth_error_and_projection_margin_support",
+    state: "deferred",
+    failure_class: "scope",
+    readiness_key: "operation_stage_predicate_outside_validated_scope",
+    blocked_by: "closure_candidate_independent_review_platform_and_final_selection_pending",
+  },
+  {
     predicate_key: "validated_corpus_membership",
     state: "deferred",
     failure_class: "scope",
@@ -282,6 +289,10 @@ function requireExactKeys(
   }
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
 function requireExactOrderedValue(
   label: string,
   actual: unknown,
@@ -302,7 +313,7 @@ function requireExactOrderedValue(
   }
 }
 
-export function validatePairedTSupportDomainCandidate(
+function validatePairedTSupportDomainCandidateInternal(
   candidate: PairedTSupportDomainCandidate,
 ): string[] {
   const errors: string[] = [];
@@ -379,7 +390,19 @@ export function validatePairedTSupportDomainCandidate(
   return errors;
 }
 
-export function validatePairedTSupportBoundaryCorpus(
+export function validatePairedTSupportDomainCandidate(candidate: unknown): string[] {
+  const malformed = ["support-domain candidate is not a structurally valid object"];
+  if (!isRecord(candidate)) return malformed;
+  try {
+    return validatePairedTSupportDomainCandidateInternal(
+      candidate as unknown as PairedTSupportDomainCandidate,
+    );
+  } catch {
+    return malformed;
+  }
+}
+
+function validatePairedTSupportBoundaryCorpusInternal(
   corpus: PairedTSupportBoundaryCorpus,
 ): string[] {
   const errors: string[] = [];
@@ -426,4 +449,16 @@ export function validatePairedTSupportBoundaryCorpus(
     if (!seen.has(caseKey)) errors.push(`support boundary corpus is missing ${caseKey}`);
   }
   return errors;
+}
+
+export function validatePairedTSupportBoundaryCorpus(corpus: unknown): string[] {
+  const malformed = ["support boundary corpus is not a structurally valid object"];
+  if (!isRecord(corpus)) return malformed;
+  try {
+    return validatePairedTSupportBoundaryCorpusInternal(
+      corpus as unknown as PairedTSupportBoundaryCorpus,
+    );
+  } catch {
+    return malformed;
+  }
 }

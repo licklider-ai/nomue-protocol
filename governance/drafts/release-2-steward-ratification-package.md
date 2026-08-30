@@ -124,9 +124,19 @@ The next non-authoritative checkpoint separates graph reproduction, mathematical
 truth error, and target-format projection. It selects exact binary64 identity for
 candidate graph-reproduction tests and a normal-only p-value projection candidate,
 while keeping runtime support disabled. The `df = 200` value is an evidence-
-evaluation target, not a supported maximum. The runtime series graph, subnormal
-first-failure ordering, truth bounds, platform matrix, complete critical-value
-table, and final reason-code spellings remain open.
+evaluation target, not a supported maximum. The contiguous inverse-beta table and
+its unchanged connection to the runtime-series graph have passed independent
+adversarial review as non-authoritative candidate evidence and integration.
+
+The current follow-on adds an exact-rational, input-specific truth-error and
+projection-margin evaluator. It fails closed when the positive graph leaves its
+normal-arithmetic proof preconditions or when the derived bound reaches a projection
+transition. A certified `df = 197` witness records an observed 374-ULP graph-to-truth
+distance under a 2,978-ULP input-specific candidate bound. The finite observation is
+not a global guarantee, and the derivation remains pending independent review. The
+final truth-error predicate, supported platform matrix, supported df range,
+subnormal first-failure ordering, complete critical-value table, and final reason-
+code spellings remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

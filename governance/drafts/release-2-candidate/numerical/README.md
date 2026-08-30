@@ -24,9 +24,11 @@ neighborhood, a rectangular numerical bound, or complete validated scope.
 The final support expression remains a conjunction of operation-stage predicates,
 a declared validation corpus, and an oracle-enclosure predicate. The latter two
 parts remain incomplete. Confidence-interval endpoint representability remains
-deferred. The p-value target-format classifier is now executable candidate tooling,
-but its activation remains deferred because the runtime Student-t tail procedure and
-boundary evidence are not ratified.
+deferred. The p-value target-format classifier and an input-specific truth-error and
+projection-margin evaluator are now executable candidate tooling. Their activation
+remains deferred because the analytic derivation awaits independent review, the
+supported platform predicate is not selected, and the runtime Student-t tail
+procedure and boundary evidence are not ratified.
 
 No blanket subnormal refusal is active. The condition-number and cross-graph
 disagreement observations remain diagnostics rather than runtime gates. No `df`
@@ -113,12 +115,53 @@ disagreements. A finite search maximum remains an observation and is mechanicall
 forbidden from becoming a global truth-error guarantee.
 
 The candidate also records the form of a future projection margin without choosing
-its size. If a later proof supplies a global non-negative integer truth-error bound
-`B`, a normal or rounded-one graph result is class-stable only when its cell is more
-than `B` cells from the nearest projection-class transition. This deliberately
-includes the supported normal-to-rounded-one transition. `B` remains null, the predicate is
-not activated, and neither the selected df seed nor its boundary cases constitute
-Protocol support.
+its size. If a later proof supplies a non-negative integer truth-error bound `B` for
+an evaluated input, a normal or rounded-one graph result is class-stable only when
+its cell is more than `B` cells from the nearest projection-class transition. This
+deliberately includes the supported normal-to-rounded-one transition. The boundary
+checkpoint's global `B` remains null, the predicate is not activated, and neither
+the selected df seed nor its boundary cases constitute Protocol support.
+
+## Truth-error and supported-domain closure candidate
+
+`truth-error-support-closure-candidate.json` and
+`tooling/src/spikes/paired-t-truth-error-support-candidate.ts` instantiate that
+margin form with a conservative, input-specific proof candidate. The evaluator
+replays the already reviewed table-connected graph and requires exact agreement in
+branch, iteration count, cap, and p-value bits. It does not change the graph result.
+
+For positive operations whose rounded results are strictly above the minimum normal
+binary64 value, it uses the standard round-to-nearest envelope
+`gamma(k) = k*u/(1-k*u)`, where `u = 2^-53`. At each multiplication, division,
+positive addition, and square root, the worst upper and lower compositions are
+calculated exactly and re-indexed to the smallest `gamma(k)` that contains both.
+Native square-root results are accepted only when exact rational midpoint checks
+establish that the squared input lies strictly inside the returned root's rounding
+cell. The strict minimum-normal rule deliberately refuses the boundary cell where
+the exact result could be subnormal.
+
+At series termination, the unchanged graph has observed that adding the next
+positive term does not change the sum. The candidate combines that observation with
+the tracked sum and term gamma indices and the existing geometric tail bounds:
+multiplier `2` on the central branch and `df + 1` on the lower-tail branch. Every gamma,
+remainder, relative-error, and final integer-ULP calculation is performed as an
+exact rational. Displayed relative bounds are rounded upward. For relative error
+`E < 1/2`, the graph-to-correctly-rounded-truth distance is conservatively bounded
+by `ceil(2^54 * E + 1)` cells. No corpus maximum enters this derivation.
+
+The newly pinned `df = 197`, `t = 50.4` binary64 witness has graph bits
+`284f4ce6230625df`, Arb-certified truth bits `284f4ce623062755`, and an observed
+distance of 374 ULP. The input-specific candidate bound is 2,978 ULP and its
+projection margin is larger. The runtime-series corpus has 20 cases: 16 satisfy the
+candidate predicate, three refuse because proof preconditions fail, and one refuses
+because the projection margin is not established. All accepted cases have an
+Arb-certified pointwise distance no larger than their derived candidate bound.
+
+These results are candidate evidence, not an independently reviewed derivation, a
+selected runtime bound, a complete validation corpus, a supported platform matrix,
+or a supported domain. The readiness checkpoint therefore remains
+`incomplete_pending_independent_review`; the support-domain artifact lists this
+predicate as deferred and keeps runtime support disabled.
 
 Research also supports stage-specific scrutiny of subnormal algebra intermediates,
 but activating a sample-variance refusal would change the reviewed first-failure
@@ -134,7 +177,7 @@ blanket subnormal refusal.
 | Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here  |
 | Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                    |
 | Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Nine-cell research seed generated; complete evidence remains open |
-| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Bit identity selected for candidate testing; truth bounds open    |
+| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Input-specific proof candidate pending independent review         |
 
 The secondary oracle path is method-distinct but not library-independent. It
 shares Arb ball arithmetic with the primary and closed-form paths, so their
@@ -228,8 +271,8 @@ not multiply the ULP by `|t_c|` a second time.
   refused;
 - closure of the complete runtime Student-t operation graph, stopping rule, and
   iteration-cap evidence;
-- the global mathematical-truth error bound and supported-platform predicate (the
-  current boundary evidence is pointwise only);
+- the final reviewed mathematical-truth error predicate or bound and the supported-
+  platform predicate (the input-specific candidate is not selected for runtime);
 - the complete critical-value table and its final content hash (the current hash
   binds only the explicit research seed); and
 - the final reason-code spellings and authoritative Public Check revision.

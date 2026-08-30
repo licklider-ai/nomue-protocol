@@ -1,0 +1,63 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-truth-error-support-closure-evaluation-1",
+  "decision_state": "candidate_testing_pending_independent_review",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "truth_error_bound_selected": false,
+  "proof_model": {
+    "kind": "input_specific_normal_binary64_roundoff_plus_positive_series_remainder",
+    "unit_roundoff": "2^-53",
+    "basic_operation_model": "round_to_nearest_ties_to_even_normal_results",
+    "roundoff_composition": "exact_worst_direction_reindexed_to_smallest_covering_gamma",
+    "square_root_model": "runtime_exact_rounding_cell_verification",
+    "inverse_beta_model": "reviewed_correctly_rounded_candidate_table_cell",
+    "series_remainder": "a_posteriori_positive_geometric_upper_bound",
+    "bound_arithmetic": "exact_rational_with_exact_integer_ulp_ceiling",
+    "reported_relative_bounds": "least_binary64_not_below_exact_rational",
+    "finite_corpus_maximum_is_a_bound": false
+  },
+  "evaluation_domain": {
+    "degrees_of_freedom_minimum": 1,
+    "degrees_of_freedom_maximum_evaluation_target": 200,
+    "supported_degrees_of_freedom_maximum": null,
+    "test_statistic_input": "nonnegative_finite_binary64_after_negative_zero_rejection",
+    "selected_projection_classes": ["positive_normal", "rounded_one"],
+    "positive_graph_intermediates_must_be_strictly_above_minimum_normal": true,
+    "projection_margin_rule": "cells_to_nearest_class_transition_strictly_greater_than_input_specific_bound",
+    "runtime_support_claimed": false
+  },
+  "certified_pointwise_witness": {
+    "evidence_case_id": "df197-high-error-scout-witness",
+    "degrees_of_freedom": 197,
+    "test_statistic_binary64_hex": "4049333333333333",
+    "graph_p_value_binary64_hex": "284f4ce6230625df",
+    "correctly_rounded_truth_binary64_hex": "284f4ce623062755",
+    "graph_to_truth_ulp_distance": 374,
+    "candidate_roundoff_gamma_index": 1290,
+    "candidate_accumulated_sum_gamma_index": 196,
+    "candidate_next_term_gamma_index": 210,
+    "candidate_series_remainder_multiplier": 198,
+    "candidate_input_specific_bound_ulp": 2978,
+    "included_in_runtime_series_evidence_manifest": true,
+    "finite_pointwise_fact_not_global_bound": true
+  },
+  "closure_state": {
+    "analytic_derivation_review": "pending_independent_review",
+    "supported_platform_matrix": "pending",
+    "final_supported_degrees_of_freedom_maximum": null,
+    "final_reason_codes_frozen": false,
+    "global_constant_truth_error_bound_selected": false,
+    "input_specific_bound_selected_for_runtime": false
+  },
+  "prohibited_claims": [
+    "finite_corpus_maximum_as_global_truth_bound",
+    "review_candidate_bound_as_selected_runtime_bound",
+    "supported_df_max",
+    "supported_runtime_student_t_procedure",
+    "correctly_rounded_runtime_p_value_for_every_input",
+    "authoritative_public_check_or_bundle"
+  ]
+}
