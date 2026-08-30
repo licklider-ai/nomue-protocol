@@ -115,6 +115,10 @@ class is activated as runtime support by this tooling.
 The input-specific proof candidate passed independent adversarial review, but remains
 unselected pending platform and supported-domain decisions. It does not turn the 20
 evidence points or `df = 1..200` table cells into contiguous input support.
+The table-integration and truth-error entrypoints now share an exact-own-key input
+parser. The adjacent reason-code inventory proposes spellings only for reviewed
+operation-stage failures; it neither freezes those spellings nor fills mappings that
+depend on the still-open support decisions.
 
 ## Local run
 

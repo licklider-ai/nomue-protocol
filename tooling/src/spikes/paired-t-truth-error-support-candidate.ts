@@ -11,6 +11,7 @@ import {
   evaluatePairedTRuntimeSeriesWithCandidateTable,
   lookupReviewedInverseBetaCandidateCell,
 } from "./paired-t-runtime-table-integration-candidate.js";
+import { parsePairedTCandidateEvaluationInput } from "./paired-t-runtime-input-reason-code-candidate.js";
 import { binary64Hex } from "./paired-t-numerical-contract-candidate.js";
 import { evaluateProjectionMarginCandidate } from "./paired-t-truth-boundary-candidate.js";
 
@@ -754,35 +755,11 @@ function refusal(
   };
 }
 
-function parseCandidateInput(
-  input: unknown,
-): { degreesOfFreedom: number; testStatistic: number } | undefined {
-  if (typeof input !== "object" || input === null || Array.isArray(input)) return undefined;
-  try {
-    const keys = Object.keys(input);
-    if (
-      keys.length !== 2 ||
-      !keys.includes("degreesOfFreedom") ||
-      !keys.includes("testStatistic")
-    ) {
-      return undefined;
-    }
-    const candidate = input as Record<string, unknown>;
-    const degreesOfFreedom = candidate["degreesOfFreedom"];
-    const testStatistic = candidate["testStatistic"];
-    return typeof degreesOfFreedom === "number" && typeof testStatistic === "number"
-      ? { degreesOfFreedom, testStatistic }
-      : undefined;
-  } catch {
-    return undefined;
-  }
-}
-
 /** Evaluate the non-authoritative per-input truth-error/support predicate candidate. */
 export function evaluatePairedTTruthErrorSupportCandidate(
   input: unknown,
 ): PairedTTruthErrorSupportCandidateResult {
-  const candidateInput = parseCandidateInput(input);
+  const candidateInput = parsePairedTCandidateEvaluationInput(input);
   if (candidateInput === undefined) {
     return refusal("runtime_graph_refusal", { graphClassification: "invalid_candidate_input" });
   }

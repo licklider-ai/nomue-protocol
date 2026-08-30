@@ -112,6 +112,15 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the closed input shape without freezing the partial reason-code inventory", () => {
+    const candidate = loadReadiness();
+    candidate.runtime_input_reason_code_candidate.final_reason_codes_frozen = true as never;
+    candidate.runtime_input_reason_code_candidate.deferred_reason_code_decision_count = 0 as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "runtime input/reason-code candidate must remain incomplete, unissued, and non-runtime",
+    );
+  });
+
   it("rejects undeclared checkpoint keys instead of carrying hidden claims", () => {
     const candidate = loadReadiness();
     (candidate as unknown as Record<string, unknown>).supported_df_max = 30;
@@ -167,6 +176,17 @@ describe("Release 2 numerical evidence readiness", () => {
     ] = 374;
     expect(validatePairedTNumericalReadinessCandidate(truthErrorSupport)).toContain(
       "truth-error support closure candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const runtimeInputReasonCode = loadReadiness();
+    (
+      runtimeInputReasonCode.runtime_input_reason_code_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["supported"] = true;
+    expect(validatePairedTNumericalReadinessCandidate(runtimeInputReasonCode)).toContain(
+      "runtime input/reason-code candidate: keys are incomplete or contain an undeclared item",
     );
   });
 

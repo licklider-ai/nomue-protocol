@@ -102,6 +102,16 @@ export interface PairedTNumericalReadinessCandidate {
     supported_domain_claimed: false;
     runtime_support_enabled: false;
   };
+  runtime_input_reason_code_candidate: {
+    closure: "incomplete";
+    artifact: "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json";
+    validator: "tooling/src/spikes/paired-t-runtime-input-reason-code-candidate.ts";
+    input_contract: "exact_own_data_keys_candidate";
+    selected_operation_stage_reason_code_candidate_count: 11;
+    deferred_reason_code_decision_count: 10;
+    final_reason_codes_frozen: false;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -220,6 +230,7 @@ const TOP_LEVEL_KEYS = [
   "runtime_table_integration_candidate",
   "truth_boundary_evidence_candidate",
   "truth_error_support_closure_candidate",
+  "runtime_input_reason_code_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -342,6 +353,17 @@ const TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "validator",
+  "input_contract",
+  "selected_operation_stage_reason_code_candidate_count",
+  "deferred_reason_code_decision_count",
+  "final_reason_codes_frozen",
+  "runtime_support_enabled",
+] as const;
+
 const REFUSAL_CLASS_KEYS = [
   "contract_computability",
   "binary64_computability",
@@ -437,6 +459,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "truth-error support closure candidate",
     candidate.truth_error_support_closure_candidate,
     TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "runtime input/reason-code candidate",
+    candidate.runtime_input_reason_code_candidate,
+    RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
@@ -626,6 +654,24 @@ function validatePairedTNumericalReadinessCandidateInternal(
   ) {
     errors.push(
       "truth-error support closure candidate must remain reviewed candidate proof, unselected, and non-runtime",
+    );
+  }
+
+  const runtimeInputReasonCodeCandidate = candidate.runtime_input_reason_code_candidate;
+  if (
+    runtimeInputReasonCodeCandidate.closure !== "incomplete" ||
+    runtimeInputReasonCodeCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json" ||
+    runtimeInputReasonCodeCandidate.validator !==
+      "tooling/src/spikes/paired-t-runtime-input-reason-code-candidate.ts" ||
+    runtimeInputReasonCodeCandidate.input_contract !== "exact_own_data_keys_candidate" ||
+    runtimeInputReasonCodeCandidate.selected_operation_stage_reason_code_candidate_count !== 11 ||
+    runtimeInputReasonCodeCandidate.deferred_reason_code_decision_count !== 10 ||
+    runtimeInputReasonCodeCandidate.final_reason_codes_frozen !== false ||
+    runtimeInputReasonCodeCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "runtime input/reason-code candidate must remain incomplete, unissued, and non-runtime",
     );
   }
 

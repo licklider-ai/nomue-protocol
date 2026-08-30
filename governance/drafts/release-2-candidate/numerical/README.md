@@ -172,6 +172,38 @@ therefore leaves the PR #29 operation-stage predicates unchanged until that orde
 has its own witness and review. It does not turn the research observation into a
 blanket subnormal refusal.
 
+## Runtime input and reason-code candidate
+
+`runtime-input-reason-code-candidate.json` addresses one candidate-tooling input
+asymmetry without selecting numerical support. The table-integration and truth-error
+entrypoints now share one parser that accepts exactly two own enumerable data
+properties, `degreesOfFreedom` and `testStatistic`. Extra or symbolic keys,
+inherited required properties, accessors, and custom object prototypes receive a
+structured candidate refusal; accessors are not invoked. Valid plain and
+null-prototype data objects produce the same fresh two-field input and enter the
+unchanged reviewed graph.
+
+The same checkpoint proposes one unissued reason-code spelling for each of the ten
+reviewed active operation-stage predicates and the reviewed defensive
+`NON_FINITE_INTERMEDIATE` postcondition. These eleven mappings preserve the existing
+predicate order, failure class, readiness key, and future paired-t computability
+check owner. The checkpoint claims only this reviewed numerical subset, not a
+complete Release 2 reason-code inventory; Profile, Record-validation, and
+declared-result comparison codes are outside this increment. It also records that the
+runtime graph's non-finite classification delegates to the reviewed postcondition
+and that a truth-error wrapper refusal delegates to its underlying graph
+classification. The
+candidate spellings do not add anything to the authoritative reason-code registry.
+
+Ten decisions remain unmapped because their public meaning depends on work that is
+still open: final supported df, the supported iteration resource bound, selection of
+the truth-error and projection predicates, subnormal projection and intermediate
+policy, confidence-interval endpoint truth, and the supported-platform predicate.
+Candidate-input rejection, missing candidate table data, and proof-graph divergence
+are classified as input-processing, candidate-configuration, or implementation-
+invariant failures rather than Record-caused Public Check reasons. Final reason codes
+remain unfrozen and runtime support remains disabled.
+
 ## Candidate four-layer separation
 
 | Layer               | Candidate responsibility                                                                                                      | Current state                                                         |
@@ -285,7 +317,8 @@ not multiply the ULP by `|t_c|` a second time.
   platform predicate (the input-specific candidate is not selected for runtime);
 - independent review and final selection of the critical-value table and its final
   content hash (the contiguous candidate hash remains evidence-local); and
-- the final reason-code spellings and authoritative Public Check revision.
+- the ten support-dependent reason-code decisions, final reason-code freeze, and
+  authoritative Public Check revision.
 
 Support will be expressed as machine-testable operation-stage predicates plus a
 declared validation corpus and oracle claim. It will not be inferred from a single
