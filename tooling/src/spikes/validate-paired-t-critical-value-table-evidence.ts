@@ -316,6 +316,28 @@ function exactBinary64Rational(hex: string): string | undefined {
   return `${numerator}/${denominator}`;
 }
 
+export function arePositiveFiniteBinary64HexesStrictlyDecreasing(
+  values: readonly unknown[],
+): boolean {
+  let previousBits: bigint | undefined;
+  for (const value of values) {
+    if (typeof value !== "string" || !HEX64.test(value)) return false;
+    const bits = BigInt(`0x${value}`);
+    const exponentBits = Number((bits >> 52n) & 0x7ffn);
+    const fractionBits = bits & ((1n << 52n) - 1n);
+    if (
+      bits >> 63n === 1n ||
+      exponentBits === 0x7ff ||
+      (exponentBits === 0 && fractionBits === 0n)
+    ) {
+      return false;
+    }
+    if (previousBits !== undefined && bits >= previousBits) return false;
+    previousBits = bits;
+  }
+  return true;
+}
+
 function validQuadratureTrace(value: unknown): boolean {
   return (
     isRecord(value) &&
@@ -725,6 +747,13 @@ export function validatePairedTCriticalValueTableEvidenceBundle(
   }
 
   if (cellRecords.length === DF_MAX) {
+    if (
+      !arePositiveFiniteBinary64HexesStrictlyDecreasing(
+        cellRecords.map((cell) => cell["critical_value_binary64_hex"]),
+      )
+    ) {
+      errors.push("critical-value table cells must be strictly decreasing as df increases");
+    }
     if (table["table_content_sha256"] !== sha256(tableContent(cellRecords))) {
       errors.push("critical-value table content hash does not bind the ordered cells");
     }

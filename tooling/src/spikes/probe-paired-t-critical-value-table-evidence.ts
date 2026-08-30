@@ -158,7 +158,7 @@ export function runPairedTCriticalValueTableMutationProbes(
     throw new Error(`baseline critical-value table bundle is invalid:\n${baseline.join("\n")}`);
   }
 
-  const probes: Array<[string, (bundlePath: string) => void]> = [
+  const probes: Array<[string, (bundlePath: string) => void, string?]> = [
     [
       "runtime support claim",
       (bundle) => {
@@ -219,6 +219,17 @@ export function runPairedTCriticalValueTableMutationProbes(
         writeJson(tablePath, table);
         finalize(bundle);
       },
+    ],
+    [
+      "nondecreasing critical-value cells",
+      (bundle) => {
+        const tablePath = path.join(bundle, "fixed-95-critical-value-table.json");
+        const table = readJson(tablePath);
+        table.cells[149].critical_value_binary64_hex = table.cells[148].critical_value_binary64_hex;
+        writeJson(tablePath, table);
+        finalize(bundle);
+      },
+      "critical-value table cells must be strictly decreasing as df increases",
     ],
     [
       "duplicate df",
@@ -382,7 +393,7 @@ export function runPairedTCriticalValueTableMutationProbes(
 
   const temporaryRoot = mkdtempSync(path.join(os.tmpdir(), "nomue-r2-critical-table-mutations-"));
   try {
-    for (const [label, mutate] of probes) {
+    for (const [label, mutate, expectedError] of probes) {
       const bundlePath = path.join(temporaryRoot, label.replaceAll(" ", "-"));
       cpSync(sourceBundle, bundlePath, { recursive: true });
       mutate(bundlePath);
@@ -393,6 +404,9 @@ export function runPairedTCriticalValueTableMutationProbes(
         throw new Error(`${label}: validator threw instead of returning errors`, { cause: error });
       }
       if (errors.length === 0) throw new Error(`${label}: mutation was accepted`);
+      if (expectedError !== undefined && !errors.includes(expectedError)) {
+        throw new Error(`${label}: expected validator error was not reported: ${expectedError}`);
+      }
     }
   } finally {
     rmSync(temporaryRoot, { recursive: true, force: true });
