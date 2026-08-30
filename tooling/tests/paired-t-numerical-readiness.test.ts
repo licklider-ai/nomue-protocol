@@ -98,15 +98,17 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the input-specific proof candidate without selecting it for runtime", () => {
+  it("records the reviewed input-specific proof without selecting it for runtime", () => {
     const candidate = loadReadiness();
     candidate.truth_error_support_closure_candidate.input_specific_bound_selected_for_runtime =
       true as never;
     candidate.truth_error_support_closure_candidate.supported_domain_claimed = true as never;
     candidate.truth_error_support_closure_candidate.candidate_high_error_witness_bound_ulp =
       374 as never;
+    candidate.truth_error_support_closure_candidate.review_disposition =
+      "governance/drafts/release-2-candidate/reviews/other.md" as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "truth-error support closure candidate must remain review-pending, unselected, and non-runtime",
+      "truth-error support closure candidate must remain reviewed candidate proof, unselected, and non-runtime",
     );
   });
 

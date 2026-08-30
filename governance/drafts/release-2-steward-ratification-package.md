@@ -133,10 +133,11 @@ projection-margin evaluator. It fails closed when the positive graph leaves its
 normal-arithmetic proof preconditions or when the derived bound reaches a projection
 transition. A certified `df = 197` witness records an observed 374-ULP graph-to-truth
 distance under a 2,978-ULP input-specific candidate bound. The finite observation is
-not a global guarantee, and the derivation remains pending independent review. The
-final truth-error predicate, supported platform matrix, supported df range,
-subnormal first-failure ordering, complete critical-value table, and final reason-
-code spellings remain open.
+not a global guarantee. The derivation and its candidate-bound implementation passed
+independent adversarial review, including close-only review of the accepted repairs.
+The final truth-error predicate, supported platform matrix, supported df range,
+subnormal first-failure ordering, final critical-value table selection, and final
+reason-code spellings remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

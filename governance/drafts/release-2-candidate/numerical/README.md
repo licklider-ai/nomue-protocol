@@ -25,10 +25,10 @@ The final support expression remains a conjunction of operation-stage predicates
 a declared validation corpus, and an oracle-enclosure predicate. The latter two
 parts remain incomplete. Confidence-interval endpoint representability remains
 deferred. The p-value target-format classifier and an input-specific truth-error and
-projection-margin evaluator are now executable candidate tooling. Their activation
-remains deferred because the analytic derivation awaits independent review, the
-supported platform predicate is not selected, and the runtime Student-t tail
-procedure and boundary evidence are not ratified.
+projection-margin evaluator are now independently reviewed candidate tooling. Their
+activation remains deferred because the supported platform predicate is not
+selected, the input-specific proof is not selected for runtime, and the runtime
+Student-t tail procedure and boundary evidence are not ratified.
 
 No blanket subnormal refusal is active. The condition-number and cross-graph
 disagreement observations remain diagnostics rather than runtime gates. No `df`
@@ -157,11 +157,13 @@ candidate predicate, three refuse because proof preconditions fail, and one refu
 because the projection margin is not established. All accepted cases have an
 Arb-certified pointwise distance no larger than their derived candidate bound.
 
-These results are candidate evidence, not an independently reviewed derivation, a
-selected runtime bound, a complete validation corpus, a supported platform matrix,
-or a supported domain. The readiness checkpoint therefore remains
-`incomplete_pending_independent_review`; the support-domain artifact lists this
-predicate as deferred and keeps runtime support disabled.
+The derivation and its repairs passed independent adversarial review as a
+non-authoritative input-specific proof candidate. This is not a selected runtime
+bound, a complete validation corpus, a supported platform matrix, or a supported
+domain. The readiness checkpoint records `reviewed_candidate_proof`; the
+support-domain artifact still lists the predicate as deferred and keeps runtime
+support disabled. The review disposition is recorded in
+`../reviews/d5-truth-error-support-closure-adversarial-review-disposition.md`.
 
 Research also supports stage-specific scrutiny of subnormal algebra intermediates,
 but activating a sample-variance refusal would change the reviewed first-failure
@@ -172,12 +174,12 @@ blanket subnormal refusal.
 
 ## Candidate four-layer separation
 
-| Layer               | Candidate responsibility                                                                                                      | Current state                                                           |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here        |
-| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                          |
-| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Contiguous 200-cell critical-value candidate pending independent review |
-| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Input-specific proof candidate pending independent review               |
+| Layer               | Candidate responsibility                                                                                                      | Current state                                                         |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Mathematical target | Paired differences, mean, sample variance, standard error, Student-t statistic, two-sided tail, and fixed 95 percent interval | Defined by the existing informative P1-A design; not issued here      |
+| Binary64 procedure  | Canonical pair order, G4 pairwise two-pass algebra, explicit operation-stage failures                                         | Selected for candidate testing                                        |
+| Oracle certificate  | Exact-rational input, Arb enclosure, a method-distinct secondary path, target-format-aware projection, provenance             | Independently reviewed 200-cell candidate; final selection open       |
+| Comparison policy   | Exact graph reproduction, separate mathematical-truth error, and target-format projection                                     | Independently reviewed input-specific proof candidate; selection open |
 
 The secondary oracle path is method-distinct but not library-independent. It
 shares Arb ball arithmetic with the primary and closed-form paths, so their

@@ -121,26 +121,58 @@ evidence case, generator, checkpoint JSON, selected bound, supported df, platfor
 state, or authority state. PR #46's merge commit has the same tree as the repair
 commit.
 
-## Close-only review state
+## Close-only review
 
-The repair remains pending the independent, bounded close-only review specified in
-`d5-truth-error-support-closure-repair-close-review-protocol.md`. Until that review
-returns `CLOSED` and its result is recorded here:
+- Review-input commit: `1234b8a256b01455c984f4ebcd35a45b8ab114a1`
+- Independent review-result commit: `8783491dbf168d177faa30238349d1c7fc9663af`
+- Review type: external, independent, close-only review of S1 and N1-N3 plus the
+  supplemental hostile-input findings
+- Verdict: **CLOSED**
+- New findings: zero blockers, zero should-fix items, and one nice-to-have item
+- Additional primary-source research requested: none
 
-- the independent candidate-scoped `GO` remains the basis for PR #46's merge;
-- none of the four finding closures is treated as independently established;
-- `analytic_derivation_review` remains `pending_independent_review`; and
-- the readiness entry remains `incomplete_pending_independent_review`.
+The review-result commit is a direct child of the review-input commit and adds only
+`review-inputs/r2-d5-truth-error-support-repair-close/REVIEW-RESULT.md`. The reviewer
+confirmed the repair commit, tree, single parent, ten-file `+326/-35` delta, and the
+byte-identical PR #46 merge tree in a detached fresh clone.
 
-The close review must verify the repair boundary and numerical invariance. It does
-not need to repeat the completed derivation or select any final numerical policy.
+The filesystem battery covered 26 damaged-bundle and malformed-shape cases. Every
+case returned a structured, nonempty error list without an exception or stack trace;
+the original directory-for-file `EISDIR` reproducer is contained, while the closed
+file set and manifest, source, commit, and checkpoint bindings remain enforced.
+
+Reviewer-owned instrumentation forced both bound-formation failure and graph-replay
+divergence. They returned `truth_error_bound_not_finite` and
+`proof_graph_reproduction_mismatch`, respectively, with both support claims false
+and no projection-margin fall-through. Distinct square-root counts matched an
+independent path derivation for all 1,234 accepted corpus cases, the df-two tail
+regression reports one check, and one-cell root perturbations still refuse.
+
+The two evaluators handled 58 hostile calls without throwing or leaking a claim, and
+the three candidate validators handled 90 hostile calls with deterministic errors.
+A 1,380-input original-to-repair comparison found no non-permitted difference; the
+only differences were seven df-two tail square-root counts corrected from two to
+one. The regenerated 20-case bundle retained its 16/3/1 dispositions, rejected all
+22 mutations, and preserved the df 197 374-cell observation under its 2,978-cell
+candidate bound. The inverse-beta table and authoritative snapshot hashes remained
+unchanged, the full repository check passed, and issue #25 remained open.
+
+The one new nice-to-have observation, C1, notes that the truth-error evaluator now
+requires exactly two own input keys while the table-integration evaluator retains
+its previously reviewed, type-checked acceptance of extra or inherited fields. This
+is not a regression, throw, value change, or support-claim leak. It is deferred to a
+later input-contract and final-reason-code increment; changing another reviewed
+surface solely for stylistic symmetry would add a new review loop without advancing
+R2-D5 closure.
 
 ## Disposition
 
-The truth-error and support-closure implementation is accepted only as merged,
-non-authoritative candidate engineering under the independent review's limited
-`GO`. The repair is plausibly sufficient by inspection and regression coverage, but
-its findings are not yet independently closed.
+The truth-error and support-closure implementation is accepted as independently
+reviewed, non-authoritative candidate proof engineering. The original `GO` approved
+PR #46's merge in that limited state, and its S1 and N1-N3 repairs plus the
+supplemental hostile-input repairs are independently closed. The readiness summary
+may record `reviewed_candidate_proof` while every selection and support field remains
+unset.
 
 This disposition does not select an input-specific or global truth-error bound,
 activate a projection-margin predicate, establish a supported domain or supported

@@ -112,9 +112,9 @@ only the separate inverse-beta table evidence covers every integer df.
 `supported_degrees_of_freedom_max` remains null throughout.
 Normal, rounded-one, subnormal, and zero projections are all observed; no projection
 class is activated as runtime support by this tooling.
-The input-specific proof candidate remains pending independent review and platform
-selection. It does not turn the 20 evidence points or `df = 1..200` table cells into
-contiguous input support.
+The input-specific proof candidate passed independent adversarial review, but remains
+unselected pending platform and supported-domain decisions. It does not turn the 20
+evidence points or `df = 1..200` table cells into contiguous input support.
 
 ## Local run
 
