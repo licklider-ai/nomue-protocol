@@ -22,7 +22,7 @@ interface TrackedPositive {
   value: number;
   gammaIndex: number;
   failures: string[];
-  sqrtChecks: number;
+  sqrtChecks: ReadonlySet<string>;
 }
 
 interface Rational {
@@ -44,6 +44,12 @@ interface ProofReplay {
   proofFailures: string[];
   sqrtRoundingCellChecks: number;
 }
+
+interface ProofReplayFailure {
+  failureClassification: "proof_graph_reproduction_mismatch" | "truth_error_bound_not_finite";
+}
+
+type ProofReplayResult = ProofReplay | ProofReplayFailure;
 
 export interface PairedTTruthErrorSupportCheckpoint {
   status: string;
@@ -386,7 +392,7 @@ function composedGammaIndex(
 }
 
 function exact(value: number): TrackedPositive {
-  return { value, gammaIndex: 0, failures: [], sqrtChecks: 0 };
+  return { value, gammaIndex: 0, failures: [], sqrtChecks: new Set() };
 }
 
 function rounded(
@@ -395,7 +401,7 @@ function rounded(
   label: string,
   inputs: readonly TrackedPositive[],
   extraValid = true,
-  sqrtChecks = 0,
+  sqrtCheckLabel?: string,
 ): TrackedPositive {
   const failures = unique(inputs.flatMap((entry) => entry.failures));
   // Equality is refused too: a rounded minimum-normal result can have an exact
@@ -408,8 +414,15 @@ function rounded(
     value,
     gammaIndex: gammaIndex ?? 0,
     failures: unique(failures),
-    sqrtChecks: inputs.reduce((total, entry) => total + entry.sqrtChecks, 0) + sqrtChecks,
+    sqrtChecks: new Set([
+      ...inputs.flatMap((entry) => [...entry.sqrtChecks]),
+      ...(sqrtCheckLabel === undefined ? [] : [sqrtCheckLabel]),
+    ]),
   };
+}
+
+function countSqrtChecks(inputs: readonly TrackedPositive[]): number {
+  return new Set(inputs.flatMap((entry) => [...entry.sqrtChecks])).size;
 }
 
 function multiply(first: TrackedPositive, second: TrackedPositive, label: string): TrackedPositive {
@@ -451,7 +464,7 @@ function squareRoot(value: TrackedPositive, label: string): TrackedPositive {
     label,
     [value],
     sqrtCellStrictlyContainsInput(value.value, root),
-    1,
+    label,
   );
 }
 
@@ -549,7 +562,7 @@ function replayWithProof(
   degreesOfFreedom: number,
   testStatistic: number,
   inverseBeta: number,
-): ProofReplay | undefined {
+): ProofReplayResult {
   const df = degreesOfFreedom;
   const absoluteT = Math.abs(testStatistic);
   const cap = 40 * df + 64;
@@ -580,7 +593,9 @@ function replayWithProof(
       const quotient = divide(t, root, "df2_central_quotient");
       const pValue = 1 - quotient.value;
       const bound = centralComplementRelativeBound(pValue, quotient);
-      if (bound === undefined) return undefined;
+      if (bound === undefined) {
+        return { failureClassification: "truth_error_bound_not_finite" };
+      }
       return {
         branch: "df2-central-closed-form",
         pValue,
@@ -593,7 +608,7 @@ function replayWithProof(
         nextTermGammaIndex: 0,
         seriesRemainderMultiplier: 0,
         proofFailures: quotient.failures,
-        sqrtRoundingCellChecks: quotient.sqrtChecks,
+        sqrtRoundingCellChecks: quotient.sqrtChecks.size,
       };
     }
     const reciprocal = divide(exact(1), t, "df2_tail_reciprocal");
@@ -605,7 +620,9 @@ function replayWithProof(
     const denominator = multiply(root, rootPlusOne, "df2_tail_denominator");
     const p = divide(scaled, denominator, "df2_tail_probability");
     const relative = gamma(p.gammaIndex);
-    if (relative === undefined) return undefined;
+    if (relative === undefined) {
+      return { failureClassification: "truth_error_bound_not_finite" };
+    }
     return {
       branch: "df2-tail-closed-form",
       pValue: p.value,
@@ -618,7 +635,7 @@ function replayWithProof(
       nextTermGammaIndex: 0,
       seriesRemainderMultiplier: 0,
       proofFailures: p.failures,
-      sqrtRoundingCellChecks: p.sqrtChecks,
+      sqrtRoundingCellChecks: p.sqrtChecks.size,
     };
   }
 
@@ -647,7 +664,9 @@ function replayWithProof(
         const core = multiply(prefactor, sum, "central_probability_core");
         const pValue = 1 - core.value;
         const bound = centralComplementRelativeBound(pValue, core, sum, nextTerm);
-        if (bound === undefined) return undefined;
+        if (bound === undefined) {
+          return { failureClassification: "truth_error_bound_not_finite" };
+        }
         return {
           branch: "central-complement-positive-series",
           pValue,
@@ -660,17 +679,13 @@ function replayWithProof(
           nextTermGammaIndex: nextTerm.gammaIndex,
           seriesRemainderMultiplier: 2,
           proofFailures: unique([...core.failures, ...nextSum.failures, ...nextTerm.failures]),
-          sqrtRoundingCellChecks: Math.max(
-            core.sqrtChecks,
-            nextSum.sqrtChecks,
-            nextTerm.sqrtChecks,
-          ),
+          sqrtRoundingCellChecks: countSqrtChecks([core, nextSum, nextTerm]),
         };
       }
       term = nextTerm;
       sum = nextSum;
     }
-    return undefined;
+    return { failureClassification: "proof_graph_reproduction_mismatch" };
   }
 
   const reciprocal = divide(exact(1), t, "tail_reciprocal");
@@ -701,7 +716,9 @@ function replayWithProof(
     if (nextSum.value === sum.value) {
       const core = multiply(prefactor, sum, "tail_probability_core");
       const bound = lowerTailRelativeBound(core, sum, nextTerm, df + 1);
-      if (bound === undefined) return undefined;
+      if (bound === undefined) {
+        return { failureClassification: "truth_error_bound_not_finite" };
+      }
       return {
         branch: "lower-tail-positive-series",
         pValue: core.value,
@@ -714,13 +731,13 @@ function replayWithProof(
         nextTermGammaIndex: nextTerm.gammaIndex,
         seriesRemainderMultiplier: df + 1,
         proofFailures: unique([...core.failures, ...nextSum.failures, ...nextTerm.failures]),
-        sqrtRoundingCellChecks: Math.max(core.sqrtChecks, nextSum.sqrtChecks, nextTerm.sqrtChecks),
+        sqrtRoundingCellChecks: countSqrtChecks([core, nextSum, nextTerm]),
       };
     }
     term = nextTerm;
     sum = nextSum;
   }
-  return undefined;
+  return { failureClassification: "proof_graph_reproduction_mismatch" };
 }
 
 function refusal(
@@ -737,12 +754,39 @@ function refusal(
   };
 }
 
+function parseCandidateInput(
+  input: unknown,
+): { degreesOfFreedom: number; testStatistic: number } | undefined {
+  if (typeof input !== "object" || input === null || Array.isArray(input)) return undefined;
+  try {
+    const keys = Object.keys(input);
+    if (
+      keys.length !== 2 ||
+      !keys.includes("degreesOfFreedom") ||
+      !keys.includes("testStatistic")
+    ) {
+      return undefined;
+    }
+    const candidate = input as Record<string, unknown>;
+    const degreesOfFreedom = candidate["degreesOfFreedom"];
+    const testStatistic = candidate["testStatistic"];
+    return typeof degreesOfFreedom === "number" && typeof testStatistic === "number"
+      ? { degreesOfFreedom, testStatistic }
+      : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 /** Evaluate the non-authoritative per-input truth-error/support predicate candidate. */
-export function evaluatePairedTTruthErrorSupportCandidate(input: {
-  degreesOfFreedom: number;
-  testStatistic: number;
-}): PairedTTruthErrorSupportCandidateResult {
-  const graph = evaluatePairedTRuntimeSeriesWithCandidateTable(input);
+export function evaluatePairedTTruthErrorSupportCandidate(
+  input: unknown,
+): PairedTTruthErrorSupportCandidateResult {
+  const candidateInput = parseCandidateInput(input);
+  if (candidateInput === undefined) {
+    return refusal("runtime_graph_refusal", { graphClassification: "invalid_candidate_input" });
+  }
+  const graph = evaluatePairedTRuntimeSeriesWithCandidateTable(candidateInput);
   if (!graph.ok) {
     return refusal(
       graph.classification === "candidate_constant_table_unavailable"
@@ -751,11 +795,18 @@ export function evaluatePairedTTruthErrorSupportCandidate(input: {
       { graphClassification: graph.classification },
     );
   }
-  const tableCell = lookupReviewedInverseBetaCandidateCell(input.degreesOfFreedom);
+  const tableCell = lookupReviewedInverseBetaCandidateCell(candidateInput.degreesOfFreedom);
   if (tableCell === undefined) return refusal("candidate_constant_table_unavailable");
-  const replay = replayWithProof(input.degreesOfFreedom, input.testStatistic, tableCell.value);
+  const replayResult = replayWithProof(
+    candidateInput.degreesOfFreedom,
+    candidateInput.testStatistic,
+    tableCell.value,
+  );
+  if ("failureClassification" in replayResult) {
+    return refusal(replayResult.failureClassification);
+  }
+  const replay = replayResult;
   if (
-    replay === undefined ||
     replay.branch !== graph.branch ||
     replay.iterations !== graph.iterations ||
     replay.iterationCap !== graph.iterationCap ||

@@ -184,6 +184,20 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("contains hostile top-level and nested shapes in the validation result", () => {
+    for (const candidate of [null, undefined, [], {}, "invalid"]) {
+      expect(() => validatePairedTNumericalReadinessCandidate(candidate)).not.toThrow();
+      expect(validatePairedTNumericalReadinessCandidate(candidate).length).toBeGreaterThan(0);
+    }
+
+    const malformedNested = loadReadiness();
+    malformedNested.operation_graph = null as never;
+    expect(() => validatePairedTNumericalReadinessCandidate(malformedNested)).not.toThrow();
+    expect(validatePairedTNumericalReadinessCandidate(malformedNested)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+  });
+
   it("keeps every required evidence repair and boundary case explicit", () => {
     const candidate = loadReadiness();
     candidate.required_boundary_cases.pop();

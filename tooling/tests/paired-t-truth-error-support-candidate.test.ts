@@ -142,6 +142,49 @@ describe("paired-t truth-error/support closure candidate", () => {
     }
   });
 
+  it("returns a structured refusal for hostile raw input shapes", () => {
+    const throwingProxy = new Proxy(
+      {},
+      {
+        ownKeys() {
+          throw new Error("hostile key enumeration");
+        },
+      },
+    );
+    for (const input of [
+      null,
+      undefined,
+      "invalid",
+      1,
+      [],
+      {},
+      { degreesOfFreedom: 3, testStatistic: "1" },
+      { degreesOfFreedom: 3, testStatistic: 1, undeclared: true },
+      throwingProxy,
+    ]) {
+      expect(() => evaluatePairedTTruthErrorSupportCandidate(input)).not.toThrow();
+      expect(evaluatePairedTTruthErrorSupportCandidate(input)).toMatchObject({
+        ok: false,
+        classification: "runtime_graph_refusal",
+        graphClassification: "invalid_candidate_input",
+        runtimeSupportClaimed: false,
+        supportedDomainClaimed: false,
+      });
+    }
+  });
+
+  it("counts each verified square root once when it feeds multiple operations", () => {
+    const result = evaluatePairedTTruthErrorSupportCandidate({
+      degreesOfFreedom: 2,
+      testStatistic: 2,
+    });
+    expect(result).toMatchObject({
+      ok: true,
+      branch: "df2-tail-closed-form",
+      proof: { sqrtRoundingCellChecks: 1, sqrtRoundingCellsVerified: true },
+    });
+  });
+
   it("refuses a rounded-one result whose nonzero error budget reaches the class boundary", () => {
     expect(
       evaluatePairedTTruthErrorSupportCandidate({

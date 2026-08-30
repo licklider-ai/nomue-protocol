@@ -312,7 +312,45 @@ function expectedProjectionClass(value: string): CandidateProbabilityProjection 
   return undefined;
 }
 
-export function validatePairedTRuntimeSeriesEvidenceBundle(
+function preflightEvidenceBundle(bundlePath: unknown): string[] {
+  if (typeof bundlePath !== "string" || bundlePath.length === 0) {
+    return ["evidence bundle path must be a nonempty string"];
+  }
+  let root: ReturnType<typeof lstatSync>;
+  try {
+    root = lstatSync(bundlePath);
+  } catch {
+    return ["evidence bundle cannot be read"];
+  }
+  if (root.isSymbolicLink()) return ["evidence bundle root must not be a symlink"];
+  if (!root.isDirectory()) return ["evidence bundle root must be a directory"];
+
+  let entries: string[];
+  try {
+    entries = readdirSync(bundlePath).sort();
+  } catch {
+    return ["evidence bundle cannot be read"];
+  }
+  const errors: string[] = [];
+  if (entries.join("\n") !== [...EXPECTED_FILES].sort().join("\n")) {
+    errors.push("bundle file set differs from the closed evidence surface");
+  }
+  for (const entry of entries) {
+    try {
+      const file = lstatSync(path.join(bundlePath, entry));
+      if (file.isSymbolicLink()) {
+        errors.push(`${entry}: symlinks are not allowed in the evidence bundle`);
+      } else if (!file.isFile()) {
+        errors.push(`${entry}: evidence bundle entries must be regular files`);
+      }
+    } catch {
+      errors.push(`${entry}: cannot be read`);
+    }
+  }
+  return errors;
+}
+
+function validatePairedTRuntimeSeriesEvidenceBundleInternal(
   bundlePath: string,
   expectedCommit: string,
 ): string[] {
@@ -597,6 +635,22 @@ export function validatePairedTRuntimeSeriesEvidenceBundle(
     );
   }
   return errors;
+}
+
+export function validatePairedTRuntimeSeriesEvidenceBundle(
+  bundlePath: unknown,
+  expectedCommit: unknown,
+): string[] {
+  if (typeof expectedCommit !== "string" || !COMMIT.test(expectedCommit)) {
+    return ["expected commit is not a full lowercase git hash"];
+  }
+  const preflightErrors = preflightEvidenceBundle(bundlePath);
+  if (preflightErrors.length > 0) return preflightErrors;
+  try {
+    return validatePairedTRuntimeSeriesEvidenceBundleInternal(bundlePath as string, expectedCommit);
+  } catch {
+    return ["runtime-series evidence bundle cannot be read or is structurally invalid"];
+  }
 }
 
 const invokedPath = process.argv[1];

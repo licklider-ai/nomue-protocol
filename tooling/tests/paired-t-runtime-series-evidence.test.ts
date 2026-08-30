@@ -1,4 +1,4 @@
-import { copyFileSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -55,4 +55,41 @@ describe("paired-t runtime-series evidence validator", () => {
       expect(errors).toContain(`${fileName}: not valid JSON`);
     });
   }
+
+  it("returns a stable validation error for a missing bundle root", () => {
+    const parent = mkdtempSync(path.join(tmpdir(), "nomue-runtime-series-evidence-parent-"));
+    temporaryDirectories.push(parent);
+    const missing = path.join(parent, "missing");
+    expect(() =>
+      validatePairedTRuntimeSeriesEvidenceBundle(missing, EXPECTED_COMMIT),
+    ).not.toThrow();
+    expect(validatePairedTRuntimeSeriesEvidenceBundle(missing, EXPECTED_COMMIT)).toEqual([
+      "evidence bundle cannot be read",
+    ]);
+  });
+
+  it("rejects a directory where a regular bundle file is required", () => {
+    const bundlePath = createBundle();
+    const candidatePath = path.join(bundlePath, "truth-error-support-candidate.ts");
+    rmSync(candidatePath);
+    mkdirSync(candidatePath);
+
+    expect(() =>
+      validatePairedTRuntimeSeriesEvidenceBundle(bundlePath, EXPECTED_COMMIT),
+    ).not.toThrow();
+    expect(validatePairedTRuntimeSeriesEvidenceBundle(bundlePath, EXPECTED_COMMIT)).toContain(
+      "truth-error-support-candidate.ts: evidence bundle entries must be regular files",
+    );
+  });
+
+  it("contains valid-JSON shape errors instead of throwing", () => {
+    const bundlePath = createBundle();
+    writeFileSync(path.join(bundlePath, "runtime-series-evidence.json"), "{}\n");
+
+    const errors = validatePairedTRuntimeSeriesEvidenceBundle(bundlePath, EXPECTED_COMMIT);
+    expect(errors.length).toBeGreaterThan(0);
+    expect(errors).toContain(
+      "runtime-series evidence bundle cannot be read or is structurally invalid",
+    );
+  });
 });

@@ -136,5 +136,12 @@ describe("paired-t runtime table integration candidate", () => {
         testStatistic: -0,
       }),
     ).toMatchObject({ ok: false, classification: "invalid_candidate_input" });
+    for (const input of [null, undefined, [], {}, "invalid"]) {
+      expect(() => evaluatePairedTRuntimeSeriesWithCandidateTable(input)).not.toThrow();
+      expect(evaluatePairedTRuntimeSeriesWithCandidateTable(input)).toMatchObject({
+        ok: false,
+        classification: "invalid_candidate_input",
+      });
+    }
   });
 });

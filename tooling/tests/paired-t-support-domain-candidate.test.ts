@@ -57,6 +57,27 @@ describe("Release 2 paired-t operation-stage support-domain candidate", () => {
     expect(validatePairedTSupportBoundaryCorpus(loadCorpus())).toEqual([]);
   });
 
+  it("contains hostile candidate and corpus shapes in validation results", () => {
+    for (const value of [null, undefined, [], {}, "invalid"]) {
+      expect(() => validatePairedTSupportDomainCandidate(value)).not.toThrow();
+      expect(validatePairedTSupportDomainCandidate(value).length).toBeGreaterThan(0);
+      expect(() => validatePairedTSupportBoundaryCorpus(value)).not.toThrow();
+      expect(validatePairedTSupportBoundaryCorpus(value).length).toBeGreaterThan(0);
+    }
+
+    const malformedCandidate = loadCandidate();
+    malformedCandidate.composition = null as never;
+    expect(validatePairedTSupportDomainCandidate(malformedCandidate)).toEqual([
+      "support-domain candidate is not a structurally valid object",
+    ]);
+
+    const malformedCorpus = loadCorpus();
+    malformedCorpus.cases = null as never;
+    expect(validatePairedTSupportBoundaryCorpus(malformedCorpus)).toEqual([
+      "support boundary corpus is not a structurally valid object",
+    ]);
+  });
+
   it("executes every active boundary fixture at its declared first failure", () => {
     for (const boundaryCase of loadCorpus().cases) {
       const outcome = computePairedTSpike({

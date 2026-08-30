@@ -307,10 +307,30 @@ export function lookupReviewedInverseBetaCandidateCell(
 
 /** Execute the existing graph with the exact reviewed candidate table cell for df. */
 export function evaluatePairedTRuntimeSeriesWithCandidateTable(
-  input: PairedTRuntimeTableIntegrationInput,
+  input: unknown,
 ): PairedTRuntimeTableIntegrationCandidateResult {
-  const { degreesOfFreedom: df, testStatistic } = input;
+  let df: unknown;
+  let testStatistic: unknown;
+  try {
+    if (!isRecord(input)) {
+      return {
+        ok: false,
+        status: "non_authoritative_candidate_refusal",
+        classification: "invalid_candidate_input",
+      };
+    }
+    df = input["degreesOfFreedom"];
+    testStatistic = input["testStatistic"];
+  } catch {
+    return {
+      ok: false,
+      status: "non_authoritative_candidate_refusal",
+      classification: "invalid_candidate_input",
+    };
+  }
   if (
+    typeof df !== "number" ||
+    typeof testStatistic !== "number" ||
     !Number.isInteger(df) ||
     df < RUNTIME_SERIES_EVALUATION_DF_MIN ||
     !Number.isFinite(testStatistic) ||

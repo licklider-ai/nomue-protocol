@@ -371,6 +371,10 @@ function requireExactKeys(
   }
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
 function requireExactSet(
   label: string,
   actual: readonly string[],
@@ -385,7 +389,7 @@ function requireExactSet(
   }
 }
 
-export function validatePairedTNumericalReadinessCandidate(
+function validatePairedTNumericalReadinessCandidateInternal(
   candidate: PairedTNumericalReadinessCandidate,
 ): string[] {
   const errors: string[] = [];
@@ -713,4 +717,16 @@ export function validatePairedTNumericalReadinessCandidate(
     errors,
   );
   return errors;
+}
+
+export function validatePairedTNumericalReadinessCandidate(candidate: unknown): string[] {
+  const malformed = ["numerical readiness candidate is not a structurally valid object"];
+  if (!isRecord(candidate)) return malformed;
+  try {
+    return validatePairedTNumericalReadinessCandidateInternal(
+      candidate as unknown as PairedTNumericalReadinessCandidate,
+    );
+  } catch {
+    return malformed;
+  }
 }
