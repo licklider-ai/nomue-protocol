@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  arePositiveFiniteBinary64HexesStrictlyDecreasing,
   validatePairedTCriticalValueTableCandidate,
   validatePairedTCriticalValueTableEvidenceBundle,
 } from "../src/spikes/validate-paired-t-critical-value-table-evidence.js";
@@ -74,6 +75,24 @@ describe("paired-t fixed-95 critical-value table candidate", () => {
 });
 
 describe("paired-t fixed-95 critical-value table evidence validator", () => {
+  it("requires positive finite table cells to decrease strictly with df", () => {
+    expect(
+      arePositiveFiniteBinary64HexesStrictlyDecreasing([
+        "4008000000000000",
+        "4000000000000000",
+        "3ff0000000000000",
+      ]),
+    ).toBe(true);
+    expect(
+      arePositiveFiniteBinary64HexesStrictlyDecreasing(["4008000000000000", "4008000000000000"]),
+    ).toBe(false);
+    expect(
+      arePositiveFiniteBinary64HexesStrictlyDecreasing(["4000000000000000", "4008000000000000"]),
+    ).toBe(false);
+    expect(arePositiveFiniteBinary64HexesStrictlyDecreasing(["0000000000000000"])).toBe(false);
+    expect(arePositiveFiniteBinary64HexesStrictlyDecreasing(["7ff0000000000000"])).toBe(false);
+  });
+
   for (const fileName of [
     "fixed-95-critical-value-table-candidate.json",
     "environment.json",

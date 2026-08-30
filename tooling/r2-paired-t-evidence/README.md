@@ -59,6 +59,12 @@ environment, and the copied source files. The dedicated validator also rejects
 coherently rehashed promotion, cell, inequality, provenance, source, and dependency
 mutations.
 
+The validator proves byte binding, structure, authority posture, cross-df monotonicity,
+and the internal exact-rational consistency of recorded claims. It does not execute the
+rigorous numerical methods or establish cell-level mathematical truth for an externally
+supplied bundle; that truth requires regeneration from the pinned source and independent
+numerical review.
+
 The contiguous range is an evidence-evaluation target, not contiguous Protocol
 support. `supported_degrees_of_freedom_max` and the checkpoint's table hash remain
 null; runtime support, final table selection, confidence-interval endpoint truth,
