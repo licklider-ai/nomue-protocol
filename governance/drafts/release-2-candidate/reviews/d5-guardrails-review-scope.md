@@ -19,7 +19,7 @@ The product diff contains 10 files and 1,465 insertions / 14 deletions:
 - `tooling/tests/paired-t-numerical-readiness.test.ts`
 - `tooling/tests/paired-t-spike.test.ts`
 
-The review prompt and this scope note were prepared after the product head. They are
+The review protocol and this scope note were prepared after the product head. They are
 review instructions, not part of the product diff under review.
 
 The complete repository snapshot in the bundle is the product head. Research files

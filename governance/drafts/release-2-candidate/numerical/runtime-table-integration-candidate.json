@@ -1,0 +1,46 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-runtime-table-integration-evaluation-1",
+  "selection_state": "evaluation_only_not_runtime_selected",
+  "runtime_support_enabled": false,
+  "correct_rounding_claimed": false,
+  "table_connection": {
+    "source": "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json",
+    "reviewed_evidence_target_commit": "5d58990e8cb25920bda791d0f0308ab29dcea3fb",
+    "reviewed_evidence_table_content_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+    "degrees_of_freedom_minimum": 1,
+    "degrees_of_freedom_maximum_evaluation_target": 200,
+    "entry_count": 200,
+    "connected_to_runtime_series_candidate": true,
+    "runtime_table_selected": false,
+    "final_table_content_hash": null,
+    "supported_degrees_of_freedom_max": null
+  },
+  "operation_graph": {
+    "execution_surface": "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts",
+    "series_surface": "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
+    "inverse_beta_input": "lookup_by_exact_integer_df_before_existing_series_graph",
+    "existing_series_graph_changed": false,
+    "per_case_evidence_reproduction_path_preserved": true
+  },
+  "held_decisions": [
+    "final_runtime_inverse_beta_table_selection_and_hash",
+    "final_supported_degrees_of_freedom_maximum",
+    "complete_runtime_tail_operation_graph",
+    "iteration_cap_supported_resource_bound",
+    "global_truth_error_bound_ulp",
+    "one_cell_projection_boundary_margin",
+    "supported_platform_matrix",
+    "final_runtime_refusal_codes"
+  ],
+  "prohibited_claims": [
+    "supported_runtime_inverse_beta_table",
+    "supported_runtime_student_t_procedure",
+    "supported_df_max",
+    "complete_operation_graph_truth_bound",
+    "correctly_rounded_runtime_p_value",
+    "authoritative_public_check_or_bundle"
+  ]
+}

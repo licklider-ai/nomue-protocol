@@ -1,4 +1,4 @@
-# Release 2 D5 Evidence Generator Adversarial Review Prompt
+# Release 2 D5 Evidence Generator Adversarial Review Protocol
 
 ## Assignment
 

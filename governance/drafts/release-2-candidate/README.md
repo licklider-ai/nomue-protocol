@@ -49,8 +49,11 @@ significance boolean, whole-Record validity boolean, or attestation member. The
 candidate bundle explicitly declares `attestation_support: none`.
 
 The numerical directory now includes an executable Student-t series evaluation
-candidate, a separate Arb evidence route, and pointwise target-format transition
-evidence. None is a supported runtime tail.
+candidate, a separate Arb evidence route, pointwise target-format transition
+evidence, and a hash-bound evaluation connection to the independently reviewed
+contiguous inverse-beta candidate table. The table-to-graph connection has also
+passed independent adversarial review as a non-authoritative candidate integration.
+None is a supported runtime tail or a final runtime-table selection.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

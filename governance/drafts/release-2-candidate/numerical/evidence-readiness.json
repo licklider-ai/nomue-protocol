@@ -39,10 +39,12 @@
     "runtime_support_enabled": false
   },
   "runtime_inverse_beta_table_evidence_candidate": {
-    "closure": "incomplete_pending_independent_review",
+    "closure": "reviewed_candidate_evidence",
     "artifact": "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json",
     "evidence_generator": "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py",
     "evidence_validator": "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts",
+    "review_disposition": "governance/drafts/release-2-candidate/reviews/d5-runtime-inverse-beta-table-evidence-adversarial-review-disposition.md",
+    "reviewed_table_content_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
     "degrees_of_freedom_minimum": 1,
     "degrees_of_freedom_max_evaluation_target": 200,
     "entry_count": 200,
@@ -50,6 +52,23 @@
     "runtime_table_selected": false,
     "final_content_hash": null,
     "supported_degrees_of_freedom_max": null,
+    "runtime_support_enabled": false
+  },
+  "runtime_table_integration_candidate": {
+    "closure": "reviewed_candidate_integration",
+    "artifact": "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json",
+    "execution_surface": "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts",
+    "candidate_table": "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json",
+    "review_disposition": "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md",
+    "reviewed_evidence_table_content_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+    "degrees_of_freedom_minimum": 1,
+    "degrees_of_freedom_max_evaluation_target": 200,
+    "entry_count": 200,
+    "candidate_table_connected": true,
+    "runtime_table_selected": false,
+    "final_content_hash": null,
+    "supported_degrees_of_freedom_max": null,
+    "truth_error_bound_complete": false,
     "runtime_support_enabled": false
   },
   "truth_boundary_evidence_candidate": {

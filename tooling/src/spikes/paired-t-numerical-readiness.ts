@@ -41,10 +41,12 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   runtime_inverse_beta_table_evidence_candidate: {
-    closure: "incomplete_pending_independent_review";
+    closure: "reviewed_candidate_evidence";
     artifact: "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json";
     evidence_generator: "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py";
     evidence_validator: "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-runtime-inverse-beta-table-evidence-adversarial-review-disposition.md";
+    reviewed_table_content_hash: "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
     degrees_of_freedom_minimum: 1;
     degrees_of_freedom_max_evaluation_target: 200;
     entry_count: 200;
@@ -52,6 +54,23 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_table_selected: false;
     final_content_hash: null;
     supported_degrees_of_freedom_max: null;
+    runtime_support_enabled: false;
+  };
+  runtime_table_integration_candidate: {
+    closure: "reviewed_candidate_integration";
+    artifact: "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json";
+    execution_surface: "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts";
+    candidate_table: "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md";
+    reviewed_evidence_table_content_hash: "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
+    degrees_of_freedom_minimum: 1;
+    degrees_of_freedom_max_evaluation_target: 200;
+    entry_count: 200;
+    candidate_table_connected: true;
+    runtime_table_selected: false;
+    final_content_hash: null;
+    supported_degrees_of_freedom_max: null;
+    truth_error_bound_complete: false;
     runtime_support_enabled: false;
   };
   truth_boundary_evidence_candidate: {
@@ -181,6 +200,7 @@ const TOP_LEVEL_KEYS = [
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
   "runtime_inverse_beta_table_evidence_candidate",
+  "runtime_table_integration_candidate",
   "truth_boundary_evidence_candidate",
   "operation_graph",
   "refusal_classes",
@@ -243,6 +263,8 @@ const RUNTIME_INVERSE_BETA_TABLE_CANDIDATE_KEYS = [
   "artifact",
   "evidence_generator",
   "evidence_validator",
+  "review_disposition",
+  "reviewed_table_content_hash",
   "degrees_of_freedom_minimum",
   "degrees_of_freedom_max_evaluation_target",
   "entry_count",
@@ -250,6 +272,24 @@ const RUNTIME_INVERSE_BETA_TABLE_CANDIDATE_KEYS = [
   "runtime_table_selected",
   "final_content_hash",
   "supported_degrees_of_freedom_max",
+  "runtime_support_enabled",
+] as const;
+
+const RUNTIME_TABLE_INTEGRATION_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "execution_surface",
+  "candidate_table",
+  "review_disposition",
+  "reviewed_evidence_table_content_hash",
+  "degrees_of_freedom_minimum",
+  "degrees_of_freedom_max_evaluation_target",
+  "entry_count",
+  "candidate_table_connected",
+  "runtime_table_selected",
+  "final_content_hash",
+  "supported_degrees_of_freedom_max",
+  "truth_error_bound_complete",
   "runtime_support_enabled",
 ] as const;
 
@@ -339,6 +379,12 @@ export function validatePairedTNumericalReadinessCandidate(
     "runtime inverse-beta table evidence candidate",
     candidate.runtime_inverse_beta_table_evidence_candidate,
     RUNTIME_INVERSE_BETA_TABLE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "runtime-table integration candidate",
+    candidate.runtime_table_integration_candidate,
+    RUNTIME_TABLE_INTEGRATION_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -432,13 +478,17 @@ export function validatePairedTNumericalReadinessCandidate(
 
   const inverseBetaTableCandidate = candidate.runtime_inverse_beta_table_evidence_candidate;
   if (
-    inverseBetaTableCandidate.closure !== "incomplete_pending_independent_review" ||
+    inverseBetaTableCandidate.closure !== "reviewed_candidate_evidence" ||
     inverseBetaTableCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json" ||
     inverseBetaTableCandidate.evidence_generator !==
       "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py" ||
     inverseBetaTableCandidate.evidence_validator !==
       "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts" ||
+    inverseBetaTableCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-runtime-inverse-beta-table-evidence-adversarial-review-disposition.md" ||
+    inverseBetaTableCandidate.reviewed_table_content_hash !==
+      "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08" ||
     inverseBetaTableCandidate.degrees_of_freedom_minimum !== 1 ||
     inverseBetaTableCandidate.degrees_of_freedom_max_evaluation_target !== 200 ||
     inverseBetaTableCandidate.entry_count !== 200 ||
@@ -449,7 +499,35 @@ export function validatePairedTNumericalReadinessCandidate(
     inverseBetaTableCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "runtime inverse-beta table evidence candidate must remain review-pending and non-runtime",
+      "runtime inverse-beta table evidence candidate must remain reviewed evidence and non-runtime",
+    );
+  }
+
+  const runtimeTableIntegrationCandidate = candidate.runtime_table_integration_candidate;
+  if (
+    runtimeTableIntegrationCandidate.closure !== "reviewed_candidate_integration" ||
+    runtimeTableIntegrationCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json" ||
+    runtimeTableIntegrationCandidate.execution_surface !==
+      "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts" ||
+    runtimeTableIntegrationCandidate.candidate_table !==
+      "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json" ||
+    runtimeTableIntegrationCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md" ||
+    runtimeTableIntegrationCandidate.reviewed_evidence_table_content_hash !==
+      "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08" ||
+    runtimeTableIntegrationCandidate.degrees_of_freedom_minimum !== 1 ||
+    runtimeTableIntegrationCandidate.degrees_of_freedom_max_evaluation_target !== 200 ||
+    runtimeTableIntegrationCandidate.entry_count !== 200 ||
+    runtimeTableIntegrationCandidate.candidate_table_connected !== true ||
+    runtimeTableIntegrationCandidate.runtime_table_selected !== false ||
+    runtimeTableIntegrationCandidate.final_content_hash !== null ||
+    runtimeTableIntegrationCandidate.supported_degrees_of_freedom_max !== null ||
+    runtimeTableIntegrationCandidate.truth_error_bound_complete !== false ||
+    runtimeTableIntegrationCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "runtime-table integration candidate must remain reviewed candidate integration and non-runtime",
     );
   }
 

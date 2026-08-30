@@ -1,4 +1,4 @@
-# Release 2 paired-t D5 numerical guardrails adversarial review
+# Release 2 paired-t D5 numerical guardrails adversarial review protocol
 
 ## Assignment
 

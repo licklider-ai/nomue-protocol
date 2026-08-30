@@ -67,16 +67,25 @@ anchored by a rigorously bounded Machin series for `1 / pi`, and the even sequen
 anchored by the exact value `1 / 2`.
 
 The generated table is contiguous evidence, not contiguous Protocol support. Its
-hash is evidence-local until independent review and the later R2-D5 table-selection
-decision. The existing runtime-series spike continues to receive constants per
-evidence case and does not load this table.
+evidence-local hash and all 200 cells passed independent adversarial review. The
+later R2-D5 table-selection decision remains open.
+
+`runtime-inverse-beta-table.candidate.json` is the exact byte-for-byte reviewed
+table. `tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts` verifies
+its content hash and closed non-runtime metadata, then looks up the exact integer-df
+cell before calling the existing series graph. This is an evaluation connection,
+not final table selection. The original runtime-series evidence path continues to
+receive constants per case so its reviewed reproduction contract remains unchanged.
+The table-to-graph connection passed independent adversarial review as a
+non-authoritative candidate integration with no findings.
 
 ## Deliberate incompleteness
 
-The executable runtime-series cases still receive inverse-beta values per case.
-No runtime table or final table hash is selected. The runtime-series and boundary
-corpora end at the existing `df = 200` evidence target without claiming contiguous
-coverage; only the separate inverse-beta table evidence covers every integer df.
+The executable runtime-series evidence cases still receive inverse-beta values per
+case. The separate integration wrapper uses the reviewed table, but no final runtime
+table or final table hash is selected. The runtime-series and boundary corpora end
+at the existing `df = 200` evidence target without claiming contiguous coverage;
+only the separate inverse-beta table evidence covers every integer df.
 `supported_degrees_of_freedom_max` remains null throughout.
 Normal, rounded-one, subnormal, and zero projections are all observed; no projection
 class is activated as runtime support by this tooling.

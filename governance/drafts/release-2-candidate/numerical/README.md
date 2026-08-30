@@ -73,12 +73,13 @@ df=1 series without host `atan`, and a cancellation-resistant df=2 algebraic pat
 A host `atan`, `2 * (1 - CDF)`, and an unbounded continued fraction remain excluded.
 
 This executable graph is not yet selected as the runtime procedure in
-`numerical-contract-candidate.json`. Its inverse-beta constants are supplied per
-evidence case rather than by a selected runtime table, the stop rule's binary64
-roundoff is not discharged by the mathematical series remainder, and its truth-error
-and platform ledgers remain incomplete. The separate Arb evidence generator records
-the correctly rounded truth and truncation enclosure without converting their ULP
-distance into a tolerance.
+`numerical-contract-candidate.json`. The PR #33 evidence-reproduction path continues
+to receive its inverse-beta constants per evidence case. A separate integration
+wrapper now looks up the exact reviewed candidate-table cell before entering the
+unchanged graph. The stop rule's binary64 roundoff is not discharged by the
+mathematical series remainder, and the truth-error and platform ledgers remain
+incomplete. The separate Arb evidence generator records the correctly rounded truth
+and truncation enclosure without converting their ULP distance into a tolerance.
 
 `runtime-inverse-beta-table-candidate.json` adds the next evidence-only checkpoint:
 a contiguous `df = 1..200` candidate table for the normalization constant
@@ -87,9 +88,22 @@ and by a method-distinct exact-rational route. Even degrees of freedom use the e
 recurrence from `df = 2`; odd degrees of freedom use the same recurrence from
 `df = 1` together with an alternating Machin-series enclosure of pi. The validator
 recomputes the exact secondary certificates and binary64 rounding cells. The
-generated table and its content hash remain workflow evidence pending independent
-review; they are not selected runtime constants, a supported df range, or a final
-table hash.
+generated table and its content hash passed independent adversarial review. They
+remain reviewed workflow evidence rather than selected runtime constants, a
+supported df range, or a final table hash. The review disposition is recorded in
+`../reviews/d5-runtime-inverse-beta-table-evidence-adversarial-review-disposition.md`.
+
+`runtime-table-integration-candidate.json` binds the exact reviewed table bytes to
+`tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts`. The wrapper
+performs an exact integer-df lookup and passes that binary64 value to the existing
+series graph. The checked-in candidate table retains its original non-support and
+non-selection metadata, while the wrapper reports the evidence-local content hash
+and explicitly reports that no runtime table has been selected. This connection is
+accepted as a reviewed non-authoritative candidate integration. The review
+disposition is recorded in
+`../reviews/d5-runtime-table-integration-adversarial-review-disposition.md`. The
+review does not close the graph's stopping-rule, truth-error, projection-margin, or
+platform decisions.
 
 `truth-boundary-candidate.json` keeps the next step equally narrow. Its generator
 searches selected df values for adjacent binary64 statistics that straddle each
@@ -212,8 +226,8 @@ not multiply the ULP by `|t_c|` a second time.
 - the supported input, variance, standard-error, statistic, and p-value domain;
 - whether any subnormal stage is supported through target-format-aware evidence or
   refused;
-- the complete runtime Student-t series graph, branch boundary, and iteration
-  evidence;
+- closure of the complete runtime Student-t operation graph, stopping rule, and
+  iteration-cap evidence;
 - the global mathematical-truth error bound and supported-platform predicate (the
   current boundary evidence is pointwise only);
 - the complete critical-value table and its final content hash (the current hash
