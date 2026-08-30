@@ -1,9 +1,35 @@
-# FND-1 Independent Research Instructions
+# FND-1 Dual-Pass Independent Research Commission
 
 **Status: informative research commission; non-normative; not adopted.** The
 investigation produces Research Gate input. It does not select Protocol fields,
 schemas, identifiers, method defaults, implementation behavior, or a release
 change.
+
+## Active execution mode
+
+The original FND-1 scientific question set below remains in force. Its earlier
+single-investigator repository procedure is superseded by two isolated passes:
+
+| Pass                             | Entry point                                                                                                    | Assigned result                                                                                                |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Genspark primary-source research | [`2026-08-30-genspark-primary-source-prompt.md`](2026-08-30-genspark-primary-source-prompt.md)                 | [`2026-08-30-genspark-primary-source-result.md`](2026-08-30-genspark-primary-source-result.md)                 |
+| Claude Code repository analysis  | [`2026-08-30-claude-code-repository-analysis-prompt.md`](2026-08-30-claude-code-repository-analysis-prompt.md) | [`2026-08-30-claude-code-repository-analysis-result.md`](2026-08-30-claude-code-repository-analysis-result.md) |
+
+The two prompts use the same numbered report sections and table columns so that
+their findings can be compared mechanically. During the initial passes, neither
+investigator reads the other pass result, the FND-2 result, or prior nomue
+adjudication material.
+
+Genspark performs the external primary-source investigation and returns one
+complete Markdown report. It does not claim a repository write. Claude Code
+performs the repository, corpus, authority, and representation analysis on a
+reviewer-owned branch and changes only its assigned result file.
+
+After both passes are complete, the steward compares them, preserves material
+disagreement, and records a separate FND-1 disposition. Neither pass alone
+replaces the final
+[`2026-08-30-independent-research-result.md`](2026-08-30-independent-research-result.md)
+or authorizes Protocol adoption.
 
 ## Assignment
 
@@ -12,7 +38,11 @@ expertise in statistical methodology, estimands, multiplicity, and research
 design. Attempt to break or narrow the candidate hypotheses. Do not search for
 support merely to justify a nomue proposal.
 
-### Repository operation
+### Superseded single-pass repository procedure
+
+The steps in this subsection are retained as provenance for the original
+commission. They are not the active execution instructions. Investigators use
+only the pass-specific entry points above.
 
 1. Start from the exact repository commit containing this instruction and record
    its full SHA in the result.
@@ -184,6 +214,10 @@ and from any possible future nomue convention. Preserve material disagreement
 rather than resolving it by vote.
 
 ## Required result content
+
+The requirements below govern the final reconciled FND-1 research result. Each
+initial pass instead follows the aligned report contract embedded in its own
+entry point. Neither initial investigator edits the final result file.
 
 Complete the common template, including:
 

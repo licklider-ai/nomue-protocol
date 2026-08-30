@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:94beff4a8960a9fe046954a642145db167c71eace472ff588b7e4c70e863861b)
+- authority/authority-manifest.yaml (sha256:bb2d2525913f54fe07f5fd2a7709d957b654ae098f8bb48f1260352b3b91f9a9)
 
 Generation command: pnpm generate
 -->
@@ -171,6 +171,10 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/2026-08-30-counterexample-corpus-v1.md` | informative |
 | `evidence/research/foundation-identity/2026-08-30-common-response-template-v1.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/README.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-prompt.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-prompt.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/README.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
