@@ -74,11 +74,22 @@ A host `atan`, `2 * (1 - CDF)`, and an unbounded continued fraction remain exclu
 
 This executable graph is not yet selected as the runtime procedure in
 `numerical-contract-candidate.json`. Its inverse-beta constants are supplied per
-evidence case rather than by a runtime table, the stop rule's binary64 roundoff is
-not discharged by the mathematical series remainder, and its truth-error and
-platform ledgers remain incomplete. The separate Arb evidence generator records the
-correctly rounded truth and truncation enclosure without converting their ULP
+evidence case rather than by a selected runtime table, the stop rule's binary64
+roundoff is not discharged by the mathematical series remainder, and its truth-error
+and platform ledgers remain incomplete. The separate Arb evidence generator records
+the correctly rounded truth and truncation enclosure without converting their ULP
 distance into a tolerance.
+
+`runtime-inverse-beta-table-candidate.json` adds the next evidence-only checkpoint:
+a contiguous `df = 1..200` candidate table for the normalization constant
+`1 / B(df / 2, 1 / 2)`. Each cell must be isolated by an Arb gamma-ratio enclosure
+and by a method-distinct exact-rational route. Even degrees of freedom use the exact
+recurrence from `df = 2`; odd degrees of freedom use the same recurrence from
+`df = 1` together with an alternating Machin-series enclosure of pi. The validator
+recomputes the exact secondary certificates and binary64 rounding cells. The
+generated table and its content hash remain workflow evidence pending independent
+review; they are not selected runtime constants, a supported df range, or a final
+table hash.
 
 `truth-boundary-candidate.json` keeps the next step equally narrow. Its generator
 searches selected df values for adjacent binary64 statistics that straddle each

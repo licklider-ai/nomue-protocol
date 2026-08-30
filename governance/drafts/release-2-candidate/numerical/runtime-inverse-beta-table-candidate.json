@@ -1,0 +1,45 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-runtime-inverse-beta-table-evaluation-1",
+  "selection_state": "evidence_evaluation_only_not_runtime_selected",
+  "runtime_support_enabled": false,
+  "final_table_selected": false,
+  "degrees_of_freedom_evaluation": {
+    "minimum": 1,
+    "maximum_target": 200,
+    "entry_count": 200,
+    "contiguous_evidence_coverage_claimed": true,
+    "supported_maximum": null
+  },
+  "constant_definition": {
+    "expression": "one_over_beta_df_over_two_one_half",
+    "target_format": "binary64_round_ties_to_even",
+    "primary_certificate": "arb_gamma_ratio_exact_integer_df",
+    "secondary_certificate": "exact_even_recurrence_or_machin_pi_odd_recurrence",
+    "recurrence": "constant_df_plus_two_equals_constant_df_times_df_plus_one_over_df"
+  },
+  "evidence_surface": {
+    "generator": "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py",
+    "validator": "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts",
+    "mutation_probe": "tooling/src/spikes/probe-paired-t-runtime-inverse-beta-table-evidence.ts",
+    "table_content_hash": null,
+    "independent_review_complete": false
+  },
+  "held_decisions": [
+    "runtime_table_selection",
+    "final_table_content_hash",
+    "final_supported_degrees_of_freedom_maximum",
+    "global_truth_error_bound_ulp",
+    "supported_platform_matrix",
+    "runtime_support_activation"
+  ],
+  "prohibited_claims": [
+    "supported_runtime_inverse_beta_table",
+    "supported_df_max",
+    "complete_operation_graph_truth_bound",
+    "correctly_rounded_runtime_p_value",
+    "authoritative_public_check_or_bundle"
+  ]
+}

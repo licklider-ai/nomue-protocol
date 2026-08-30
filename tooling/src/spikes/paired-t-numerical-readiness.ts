@@ -40,6 +40,20 @@ export interface PairedTNumericalReadinessCandidate {
     truth_error_bound_complete: false;
     runtime_support_enabled: false;
   };
+  runtime_inverse_beta_table_evidence_candidate: {
+    closure: "incomplete_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json";
+    evidence_generator: "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py";
+    evidence_validator: "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts";
+    degrees_of_freedom_minimum: 1;
+    degrees_of_freedom_max_evaluation_target: 200;
+    entry_count: 200;
+    contiguous_evidence_coverage_claimed: true;
+    runtime_table_selected: false;
+    final_content_hash: null;
+    supported_degrees_of_freedom_max: null;
+    runtime_support_enabled: false;
+  };
   truth_boundary_evidence_candidate: {
     closure: "incomplete";
     artifact: "governance/drafts/release-2-candidate/numerical/truth-boundary-candidate.json";
@@ -166,6 +180,7 @@ const TOP_LEVEL_KEYS = [
   "support_domain_predicate_candidate",
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
+  "runtime_inverse_beta_table_evidence_candidate",
   "truth_boundary_evidence_candidate",
   "operation_graph",
   "refusal_classes",
@@ -220,6 +235,21 @@ const RUNTIME_SERIES_CANDIDATE_KEYS = [
   "supported_degrees_of_freedom_max",
   "runtime_constant_table_selected",
   "truth_error_bound_complete",
+  "runtime_support_enabled",
+] as const;
+
+const RUNTIME_INVERSE_BETA_TABLE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "evidence_generator",
+  "evidence_validator",
+  "degrees_of_freedom_minimum",
+  "degrees_of_freedom_max_evaluation_target",
+  "entry_count",
+  "contiguous_evidence_coverage_claimed",
+  "runtime_table_selected",
+  "final_content_hash",
+  "supported_degrees_of_freedom_max",
   "runtime_support_enabled",
 ] as const;
 
@@ -303,6 +333,12 @@ export function validatePairedTNumericalReadinessCandidate(
     "runtime-series evaluation candidate",
     candidate.runtime_series_evaluation_candidate,
     RUNTIME_SERIES_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "runtime inverse-beta table evidence candidate",
+    candidate.runtime_inverse_beta_table_evidence_candidate,
+    RUNTIME_INVERSE_BETA_TABLE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -392,6 +428,29 @@ export function validatePairedTNumericalReadinessCandidate(
     runtimeSeriesCandidate.runtime_support_enabled !== false
   ) {
     errors.push("runtime-series evaluation candidate must remain incomplete and non-runtime");
+  }
+
+  const inverseBetaTableCandidate = candidate.runtime_inverse_beta_table_evidence_candidate;
+  if (
+    inverseBetaTableCandidate.closure !== "incomplete_pending_independent_review" ||
+    inverseBetaTableCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json" ||
+    inverseBetaTableCandidate.evidence_generator !==
+      "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py" ||
+    inverseBetaTableCandidate.evidence_validator !==
+      "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts" ||
+    inverseBetaTableCandidate.degrees_of_freedom_minimum !== 1 ||
+    inverseBetaTableCandidate.degrees_of_freedom_max_evaluation_target !== 200 ||
+    inverseBetaTableCandidate.entry_count !== 200 ||
+    inverseBetaTableCandidate.contiguous_evidence_coverage_claimed !== true ||
+    inverseBetaTableCandidate.runtime_table_selected !== false ||
+    inverseBetaTableCandidate.final_content_hash !== null ||
+    inverseBetaTableCandidate.supported_degrees_of_freedom_max !== null ||
+    inverseBetaTableCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "runtime inverse-beta table evidence candidate must remain review-pending and non-runtime",
+    );
   }
 
   const truthBoundaryCandidate = candidate.truth_boundary_evidence_candidate;

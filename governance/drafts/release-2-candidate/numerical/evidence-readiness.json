@@ -38,6 +38,20 @@
     "truth_error_bound_complete": false,
     "runtime_support_enabled": false
   },
+  "runtime_inverse_beta_table_evidence_candidate": {
+    "closure": "incomplete_pending_independent_review",
+    "artifact": "governance/drafts/release-2-candidate/numerical/runtime-inverse-beta-table-candidate.json",
+    "evidence_generator": "tooling/r2-paired-t-runtime-series/generate_inverse_beta_table_evidence.py",
+    "evidence_validator": "tooling/src/spikes/validate-paired-t-runtime-inverse-beta-table-evidence.ts",
+    "degrees_of_freedom_minimum": 1,
+    "degrees_of_freedom_max_evaluation_target": 200,
+    "entry_count": 200,
+    "contiguous_evidence_coverage_claimed": true,
+    "runtime_table_selected": false,
+    "final_content_hash": null,
+    "supported_degrees_of_freedom_max": null,
+    "runtime_support_enabled": false
+  },
   "truth_boundary_evidence_candidate": {
     "closure": "incomplete",
     "artifact": "governance/drafts/release-2-candidate/numerical/truth-boundary-candidate.json",
