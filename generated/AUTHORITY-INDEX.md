@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:0d8b6446194cd9b6467b14fd8ebdca951fbd4675980b81f79cd1e301f58b2b6f)
+- authority/authority-manifest.yaml (sha256:94beff4a8960a9fe046954a642145db167c71eace472ff588b7e4c70e863861b)
 
 Generation command: pnpm generate
 -->
@@ -174,6 +174,7 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-independent-research-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/README.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/2026-08-30-source-bounded-steward-disposition.md` | informative |
 | `tooling/README.md` | informative |
 | `governance/decisions/ADR-0001-separate-layer-1-repository.md` | informative |
 | `governance/decisions/ADR-0002-authority-model.md` | informative |
