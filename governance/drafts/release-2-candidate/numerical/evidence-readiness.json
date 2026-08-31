@@ -100,6 +100,25 @@
     "supported_domain_claimed": false,
     "runtime_support_enabled": false
   },
+  "tail_numerical_selection_candidate": {
+    "closure": "selection_candidate_pending_independent_review",
+    "artifact": "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json",
+    "validator": "tooling/src/spikes/paired-t-tail-numerical-selection-candidate.ts",
+    "review_protocol": "governance/drafts/release-2-candidate/reviews/d5-tail-numerical-selection-adversarial-review-protocol.md",
+    "selected_bound_form": "input_specific_normal_binary64_roundoff_plus_positive_series_remainder",
+    "input_specific_bound_selected_for_tail_numerical_contract": true,
+    "global_constant_bound_required_for_tail_numerical_closure": false,
+    "global_constant_truth_error_bound_selected": false,
+    "projection_margin_rule": "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound",
+    "projection_margin_runtime_activated": false,
+    "independent_selection_review_complete": false,
+    "m2_closed": false,
+    "supported_degrees_of_freedom_max": null,
+    "supported_platform_matrix": "pending",
+    "supported_execution_predicate_selected": false,
+    "supported_domain_claimed": false,
+    "runtime_support_enabled": false
+  },
   "runtime_input_reason_code_candidate": {
     "closure": "reviewed_candidate_input_contract_and_partial_inventory",
     "artifact": "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json",
