@@ -600,6 +600,36 @@ artifacts:
       Bounded steward disposition accepting FND1-H01 through FND1-H03 as
       NARROW_AND_CLOSE; the full FND-1 Research Gate remains open and no
       Protocol adoption is authorized.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-source-closure-commission.md
+    class: informative
+    notes: >-
+      Bounded two-pass source-closure commission for FND1-H04; no
+      Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-primary-source-result.md
+    class: informative
+    notes: >-
+      Pending non-clinical estimand primary-source result placeholder; no
+      findings or decisions.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-repository-analysis-result.md
+    class: informative
+    notes: >-
+      Pending non-clinical estimand repository-analysis result placeholder; no
+      findings or decisions.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
+    class: informative
+    notes: >-
+      Bounded two-pass commission for the retained all-pairs and unequal-size
+      successor-source requirement; no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md
+    class: informative
+    notes: >-
+      Pending all-pairs successor primary-source result placeholder; no findings
+      or decisions.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md
+    class: informative
+    notes: >-
+      Pending all-pairs successor repository-analysis result placeholder; no
+      findings or decisions.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
@@ -613,6 +643,21 @@ artifacts:
     notes: >-
       Steward intake disposition for the source-bounded FND-2 result; the full
       Research Gate remains deferred.
+  - path: evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-source-completion-commission.md
+    class: informative
+    notes: >-
+      Bounded two-pass source-completion commission for FND-2 HOLD-01 through
+      HOLD-04; no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-primary-source-result.md
+    class: informative
+    notes: >-
+      Pending FND-2 analysis-data primary-source result placeholder; no findings
+      or decisions.
+  - path: evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-repository-analysis-result.md
+    class: informative
+    notes: >-
+      Pending FND-2 analysis-data repository-analysis result placeholder; no
+      findings or decisions.
   - path: tooling/README.md
     class: informative
   - path: governance/decisions/ADR-0001-separate-layer-1-repository.md

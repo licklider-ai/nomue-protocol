@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:a71a4727913bedff556bbc170eeb9a4441e3214ec4d26e3278fdaa03c6f6eb84)
+- authority/authority-manifest.yaml (sha256:893c48e844dcb5f1a690fde2faac904f6c48119251de783ddec649388f3d146b)
 
 Generation command: pnpm generate
 -->
@@ -181,9 +181,18 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-multiplicity-steward-disposition.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-source-closure-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-primary-source-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-repository-analysis-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/README.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-source-bounded-steward-disposition.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-source-completion-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-primary-source-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-2/2026-08-31-analysis-data-repository-analysis-result.md` | informative |
 | `tooling/README.md` | informative |
 | `governance/decisions/ADR-0001-separate-layer-1-repository.md` | informative |
 | `governance/decisions/ADR-0002-authority-model.md` | informative |
