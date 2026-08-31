@@ -26,8 +26,23 @@ function floatFromHex(value: string): number {
 }
 
 describe("paired-t truth-error/support closure candidate", () => {
-  it("keeps the proof candidate non-authoritative and pending independent review", () => {
+  it("keeps the independently reviewed proof candidate non-authoritative and unselected", () => {
     expect(validatePairedTTruthErrorSupportCheckpoint(loadCheckpoint())).toEqual([]);
+    expect(loadCheckpoint()).toMatchObject({
+      decision_state:
+        "independently_reviewed_candidate_proof_pending_bound_selection_platform_and_support",
+      truth_error_bound_selected: false,
+      runtime_support_enabled: false,
+      supported_domain_claimed: false,
+      closure_state: {
+        analytic_derivation_review: "closed",
+        supported_platform_matrix: "pending",
+        final_supported_degrees_of_freedom_maximum: null,
+        final_reason_codes_frozen: false,
+        global_constant_truth_error_bound_selected: false,
+        input_specific_bound_selected_for_runtime: false,
+      },
+    });
 
     const promoted = loadCheckpoint();
     promoted.runtime_support_enabled = true;

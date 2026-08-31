@@ -122,7 +122,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-truth-error-support-closure-evaluation-1",
-  decision_state: "candidate_testing_pending_independent_review",
+  decision_state:
+    "independently_reviewed_candidate_proof_pending_bound_selection_platform_and_support",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   truth_error_bound_selected: false,
@@ -165,7 +166,7 @@ const EXPECTED_CHECKPOINT = {
     finite_pointwise_fact_not_global_bound: true,
   },
   closure_state: {
-    analytic_derivation_review: "pending_independent_review",
+    analytic_derivation_review: "closed",
     supported_platform_matrix: "pending",
     final_supported_degrees_of_freedom_maximum: null,
     final_reason_codes_frozen: false,
