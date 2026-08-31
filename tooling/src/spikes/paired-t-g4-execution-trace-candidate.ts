@@ -208,7 +208,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-g4-actual-execution-trace-evaluation-1",
-  decision_state: "implementation_candidate_pending_independent_review_and_error_closure",
+  decision_state:
+    "reviewed_implementation_candidate_pending_truth_bound_tail_ci_resource_and_support_selection",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   scope: {
@@ -236,7 +237,7 @@ const EXPECTED_CHECKPOINT = {
     every_recorded_node_verified_before_candidate_acceptance: true,
   },
   closure_state: {
-    implementation: "implemented_pending_independent_adversarial_review",
+    implementation: "implemented_and_independently_reviewed",
     g4_mathematical_truth_error_bound: "pending",
     tail_trace_composition: "pending",
     confidence_interval_trace_composition: "pending",

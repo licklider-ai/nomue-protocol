@@ -128,11 +128,9 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the G4 trace implementation without selecting a bound or support", () => {
+  it("records the reviewed G4 trace without selecting a bound, composition, or support", () => {
     const candidate = loadReadiness();
     candidate.g4_actual_execution_trace_candidate.maximum_values_are_supported_resource_bounds =
-      true as never;
-    candidate.g4_actual_execution_trace_candidate.independent_adversarial_review_complete =
       true as never;
     candidate.g4_actual_execution_trace_candidate.mathematical_truth_error_bound_complete =
       true as never;
@@ -142,7 +140,16 @@ describe("Release 2 numerical evidence readiness", () => {
     candidate.g4_actual_execution_trace_candidate.supported_domain_claimed = true as never;
     candidate.g4_actual_execution_trace_candidate.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "G4 actual-execution trace candidate must remain incomplete, unreviewed, unbounded, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, unbounded, uncomposed, and non-runtime",
+    );
+
+    const missingReview = loadReadiness();
+    missingReview.g4_actual_execution_trace_candidate.independent_adversarial_review_complete =
+      false as never;
+    missingReview.g4_actual_execution_trace_candidate.review_disposition =
+      "governance/drafts/release-2-candidate/reviews/other.md" as never;
+    expect(validatePairedTNumericalReadinessCandidate(missingReview)).toContain(
+      "G4 actual-execution trace candidate must remain reviewed, unbounded, uncomposed, and non-runtime",
     );
   });
 

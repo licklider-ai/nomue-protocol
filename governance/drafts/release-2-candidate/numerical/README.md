@@ -193,13 +193,22 @@ trace verifier re-executes the deterministic schedule from the trace-bound canon
 input, checks every primitive, and requires exact structural, source, result, and
 digest agreement. Returned values are then read from that same verified trace.
 
-The current ceilings of 201 pairs and 2,048 trace nodes are evidence-evaluation
-limits only. They are mechanically marked as not being supported resource bounds.
-This increment ends at `(mean, sample variance, standard error, t, df)`: it does not
+The implementation has completed its bounded independent adversarial-review cycle.
+The initial review found exactly two refusal-classification blockers: a later pair
+could preempt an earlier `DIFFERENCE_OVERFLOW`, and non-root reduction overflow could
+be misclassified as primitive-verification failure. The accepted repair restored the
+reference graph's first-failure order and graph-level overflow classifications. A
+fixed close-only review returned `CLOSED` with no repair-induced findings. The
+bounded disposition is recorded in
+`../reviews/d5-g4-execution-trace-adversarial-review-disposition.md`.
+
+The current ceilings of 201 pairs and 2,048 trace nodes remain evidence-evaluation
+limits only and are mechanically marked as not being supported resource bounds. The
+candidate ends at `(mean, sample variance, standard error, t, df)`: it does not
 compose the G4 trace with the Student-t tail trace or confidence-interval endpoints,
-and it supplies no G4 mathematical-truth error bound. Independent adversarial review
-also remains pending. Consequently the candidate makes no supported-execution,
-platform, domain, runtime, Public Check, bundle, or Release 2 completion claim.
+and it supplies no G4 mathematical-truth error bound. The reviewed status therefore
+closes only the implementation-review requirement. It makes no supported-execution,
+platform, domain, runtime, Public Check, bundle, R2-D5, or Release 2 completion claim.
 
 ## Supported execution predicate research
 
@@ -256,8 +265,9 @@ not cross-platform admission. Selection of an exact runtime/build/platform allow
 controlled-process enforcement, selection of a supported trace resource bound, and
 complete admission evidence for every proposed tuple remain open. The candidate is
 limited to the table-connected tail graph that accepts `(df, t)`; the upstream G4
-data-to-statistic graph still needs separate closure. The commission, research
-disposition, and implementation-review disposition are recorded in
+data-to-statistic graph now has its own reviewed actual-execution trace candidate,
+but the two traces are not yet composed. The commission, research disposition, and
+implementation-review disposition are recorded in
 `../reviews/d5-supported-platform-primary-source-research-commission.md`,
 `../reviews/d5-supported-platform-primary-source-research-disposition.md`, and
 `../reviews/d5-supported-execution-predicate-adversarial-review-disposition.md`.

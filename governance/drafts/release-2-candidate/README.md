@@ -71,11 +71,15 @@ from one immutable actual-execution trace. Every recorded binary64 arithmetic or
 square-root node is checked by the same exact primitive verifier used by the
 reviewed tail-only candidate, and the verifier reconstructs the fixed recursive
 schedule and result from the trace-bound paired observations. The existing G4
-reference graph remains unchanged. The 201-pair and 2,048-node ceilings are review
-evaluation limits, not supported resource bounds. Independent review, a G4
-mathematical-truth error bound, and composition with the tail and interval paths all
-remain pending; the candidate therefore claims no supported execution, platform,
-domain, or runtime.
+reference graph remains unchanged. The implementation's independent adversarial
+review found two refusal-classification blockers; the bounded repair closed both in
+a fixed close-only review with no additional findings. The candidate is therefore
+recorded as independently reviewed, unissued, non-authoritative decision-preparation
+material. The 201-pair and 2,048-node ceilings remain review evaluation limits, not
+supported resource bounds. A G4 mathematical-truth error bound and composition with
+the tail and interval paths remain pending; the candidate therefore claims no
+supported execution, platform, domain, or runtime. The bounded disposition is in
+`reviews/d5-g4-execution-trace-adversarial-review-disposition.md`.
 The supported-execution research is now followed by a separate candidate evaluator
 that derives the returned tail value and its proof inputs from one immutable trace.
 It exactly rechecks every traced binary64 arithmetic primitive and square root and
