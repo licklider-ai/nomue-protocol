@@ -114,9 +114,10 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   g4_actual_execution_trace_candidate: {
-    closure: "incomplete_implementation_candidate";
+    closure: "reviewed_g4_actual_execution_trace_candidate";
     artifact: "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json";
     execution_surface: "tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-g4-execution-trace-adversarial-review-disposition.md";
     trace_format: "paired-t-g4-actual-execution-trace-v1";
     maximum_pairs_evaluation_candidate: 201;
     maximum_trace_nodes_evaluation_candidate: 2048;
@@ -124,7 +125,7 @@ export interface PairedTNumericalReadinessCandidate {
     existing_reference_graph_unchanged: true;
     exact_primitive_verifier_reused: true;
     same_trace_result_values: true;
-    independent_adversarial_review_complete: false;
+    independent_adversarial_review_complete: true;
     mathematical_truth_error_bound_complete: false;
     tail_trace_composition_complete: false;
     confidence_interval_trace_composition_complete: false;
@@ -409,6 +410,7 @@ const G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS = [
   "closure",
   "artifact",
   "execution_surface",
+  "review_disposition",
   "trace_format",
   "maximum_pairs_evaluation_candidate",
   "maximum_trace_nodes_evaluation_candidate",
@@ -772,11 +774,13 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const g4TraceCandidate = candidate.g4_actual_execution_trace_candidate;
   if (
-    g4TraceCandidate.closure !== "incomplete_implementation_candidate" ||
+    g4TraceCandidate.closure !== "reviewed_g4_actual_execution_trace_candidate" ||
     g4TraceCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json" ||
     g4TraceCandidate.execution_surface !==
       "tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts" ||
+    g4TraceCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-g4-execution-trace-adversarial-review-disposition.md" ||
     g4TraceCandidate.trace_format !== "paired-t-g4-actual-execution-trace-v1" ||
     g4TraceCandidate.maximum_pairs_evaluation_candidate !== 201 ||
     g4TraceCandidate.maximum_trace_nodes_evaluation_candidate !== 2048 ||
@@ -784,7 +788,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     g4TraceCandidate.existing_reference_graph_unchanged !== true ||
     g4TraceCandidate.exact_primitive_verifier_reused !== true ||
     g4TraceCandidate.same_trace_result_values !== true ||
-    g4TraceCandidate.independent_adversarial_review_complete !== false ||
+    g4TraceCandidate.independent_adversarial_review_complete !== true ||
     g4TraceCandidate.mathematical_truth_error_bound_complete !== false ||
     g4TraceCandidate.tail_trace_composition_complete !== false ||
     g4TraceCandidate.confidence_interval_trace_composition_complete !== false ||
@@ -792,7 +796,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     g4TraceCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "G4 actual-execution trace candidate must remain incomplete, unreviewed, unbounded, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, unbounded, uncomposed, and non-runtime",
     );
   }
 
