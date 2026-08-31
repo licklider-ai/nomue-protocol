@@ -122,7 +122,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-truth-error-support-closure-evaluation-1",
-  decision_state: "candidate_testing_pending_independent_review",
+  decision_state:
+    "independently_reviewed_candidate_proof_pending_bound_selection_platform_and_support",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   truth_error_bound_selected: false,
@@ -165,7 +166,7 @@ const EXPECTED_CHECKPOINT = {
     finite_pointwise_fact_not_global_bound: true,
   },
   closure_state: {
-    analytic_derivation_review: "pending_independent_review",
+    analytic_derivation_review: "closed",
     supported_platform_matrix: "pending",
     final_supported_degrees_of_freedom_maximum: null,
     final_reason_codes_frozen: false,
@@ -871,15 +872,56 @@ function canonicalizeJson(value: unknown, ancestors = new Set<object>()): unknow
   if (ancestors.has(value)) throw new TypeError("truth-error support checkpoint contains a cycle");
   const nextAncestors = new Set(ancestors).add(value);
   if (Array.isArray(value)) {
-    return value.map((entry) => canonicalizeJson(entry, nextAncestors));
+    const keys = Reflect.ownKeys(value);
+    if (keys.some((key) => typeof key === "symbol")) {
+      throw new TypeError("truth-error support checkpoint contains symbol keys");
+    }
+    const lengthDescriptor = Object.getOwnPropertyDescriptor(value, "length");
+    if (
+      lengthDescriptor === undefined ||
+      !("value" in lengthDescriptor) ||
+      typeof lengthDescriptor.value !== "number" ||
+      !Number.isSafeInteger(lengthDescriptor.value) ||
+      lengthDescriptor.value < 0
+    ) {
+      throw new TypeError("truth-error support checkpoint contains an invalid array length");
+    }
+    const length = lengthDescriptor.value;
+    if (keys.length !== length + 1) {
+      throw new TypeError("truth-error support checkpoint contains a sparse or extended array");
+    }
+    const descriptors = Object.getOwnPropertyDescriptors(value);
+    const result: unknown[] = [];
+    for (let index = 0; index < length; index += 1) {
+      const descriptor = descriptors[String(index)];
+      if (descriptor === undefined || !descriptor.enumerable || !("value" in descriptor)) {
+        throw new TypeError("truth-error support checkpoint contains a non-JSON array entry");
+      }
+      result.push(canonicalizeJson(descriptor.value, nextAncestors));
+    }
+    return result;
   }
   if (Object.getPrototypeOf(value) !== Object.prototype) {
     throw new TypeError("truth-error support checkpoint contains a non-JSON object");
   }
+  const keys = Reflect.ownKeys(value);
+  if (keys.some((key) => typeof key === "symbol")) {
+    throw new TypeError("truth-error support checkpoint contains symbol keys");
+  }
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  const entries: [string, unknown][] = [];
+  for (const key of keys) {
+    if (typeof key !== "string") {
+      throw new TypeError("truth-error support checkpoint contains a non-string key");
+    }
+    const descriptor = descriptors[key];
+    if (descriptor === undefined || !descriptor.enumerable || !("value" in descriptor)) {
+      throw new TypeError("truth-error support checkpoint contains hidden or accessor data");
+    }
+    entries.push([key, canonicalizeJson(descriptor.value, nextAncestors)]);
+  }
   return Object.fromEntries(
-    Object.entries(value)
-      .sort(([first], [second]) => (first < second ? -1 : first > second ? 1 : 0))
-      .map(([key, entry]) => [key, canonicalizeJson(entry, nextAncestors)]),
+    entries.sort(([first], [second]) => (first < second ? -1 : first > second ? 1 : 0)),
   );
 }
 

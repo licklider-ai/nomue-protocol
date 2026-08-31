@@ -26,8 +26,23 @@ function floatFromHex(value: string): number {
 }
 
 describe("paired-t truth-error/support closure candidate", () => {
-  it("keeps the proof candidate non-authoritative and pending independent review", () => {
+  it("keeps the independently reviewed proof candidate non-authoritative and unselected", () => {
     expect(validatePairedTTruthErrorSupportCheckpoint(loadCheckpoint())).toEqual([]);
+    expect(loadCheckpoint()).toMatchObject({
+      decision_state:
+        "independently_reviewed_candidate_proof_pending_bound_selection_platform_and_support",
+      truth_error_bound_selected: false,
+      runtime_support_enabled: false,
+      supported_domain_claimed: false,
+      closure_state: {
+        analytic_derivation_review: "closed",
+        supported_platform_matrix: "pending",
+        final_supported_degrees_of_freedom_maximum: null,
+        final_reason_codes_frozen: false,
+        global_constant_truth_error_bound_selected: false,
+        input_specific_bound_selected_for_runtime: false,
+      },
+    });
 
     const promoted = loadCheckpoint();
     promoted.runtime_support_enabled = true;
@@ -36,6 +51,49 @@ describe("paired-t truth-error/support closure candidate", () => {
     expect(validatePairedTTruthErrorSupportCheckpoint(promoted)).toContain(
       "truth-error support checkpoint differs from the closed non-runtime candidate",
     );
+  });
+
+  it("rejects hidden, symbol, accessor, proxy, and cyclic checkpoint shapes without invoking getters", () => {
+    const hidden = loadCheckpoint() as PairedTTruthErrorSupportCheckpoint & {
+      hidden_runtime_support?: boolean;
+    };
+    Object.defineProperty(hidden, "hidden_runtime_support", {
+      value: true,
+      enumerable: false,
+      configurable: true,
+    });
+    expect(validatePairedTTruthErrorSupportCheckpoint(hidden)).not.toEqual([]);
+
+    const withSymbol = loadCheckpoint() as PairedTTruthErrorSupportCheckpoint & {
+      [key: symbol]: unknown;
+    };
+    withSymbol[Symbol("runtime_support")] = true;
+    expect(validatePairedTTruthErrorSupportCheckpoint(withSymbol)).not.toEqual([]);
+
+    let getterCalls = 0;
+    const accessor = loadCheckpoint();
+    Object.defineProperty(accessor, "runtime_support_enabled", {
+      enumerable: true,
+      configurable: true,
+      get() {
+        getterCalls += 1;
+        return false;
+      },
+    });
+    expect(validatePairedTTruthErrorSupportCheckpoint(accessor)).not.toEqual([]);
+    expect(getterCalls).toBe(0);
+
+    const throwingProxy = new Proxy(loadCheckpoint(), {
+      ownKeys() {
+        throw new Error("hostile ownKeys");
+      },
+    });
+    expect(() => validatePairedTTruthErrorSupportCheckpoint(throwingProxy)).not.toThrow();
+    expect(validatePairedTTruthErrorSupportCheckpoint(throwingProxy)).not.toEqual([]);
+
+    const cyclic = loadCheckpoint() as PairedTTruthErrorSupportCheckpoint & { cycle?: unknown };
+    cyclic.cycle = cyclic;
+    expect(validatePairedTTruthErrorSupportCheckpoint(cyclic)).not.toEqual([]);
   });
 
   it("contains the independently certified 374-ULP witness without treating it as a bound", () => {
