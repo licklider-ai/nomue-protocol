@@ -5,6 +5,27 @@ investigation produces Research Gate input. It does not select Protocol fields,
 schemas, identifiers, transport standards, missing-data defaults,
 implementation behavior, or a release change.
 
+**Current disposition:** the completed source-bounded investigation is accepted
+with disposition `DEFER`; see
+[`2026-08-30-source-bounded-steward-disposition.md`](2026-08-30-source-bounded-steward-disposition.md).
+The full FND-2 Research Gate remains open and no Protocol adoption is
+authorized.
+
+## Active bounded source-completion follow-up
+
+The
+[`analysis-data source-completion commission`](2026-08-31-analysis-data-source-completion-commission.md)
+reopens only `HOLD-01` through `HOLD-04` for two isolated passes:
+
+| Pass                                                    | Pending result                                                                                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| External primary-source investigation                   | [`2026-08-31-analysis-data-primary-source-result.md`](2026-08-31-analysis-data-primary-source-result.md)           |
+| Repository, standard-model, and representation analysis | [`2026-08-31-analysis-data-repository-analysis-result.md`](2026-08-31-analysis-data-repository-analysis-result.md) |
+
+`HOLD-05` remains open and outside this package. The historical source-bounded
+disposition is not rewritten; later reconciliation records whether the new
+evidence closes, narrows, or preserves each reopened hold.
+
 ## Assignment
 
 Act as an independent primary-source investigator and adversarial reviewer with

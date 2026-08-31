@@ -28,6 +28,20 @@ passes and their source-bounded reconciliation are now complete; the disposition
 is `NARROW`, the full FND-1 Research Gate remains open, and no Protocol adoption
 is authorized.
 
+Three bounded source-completion follow-ups are now commissioned. Each uses an
+external primary-source pass and a separate repository-analysis pass, with
+reconciliation only after both results are frozen:
+
+| Topic                           | Commission                                                                                                                                 | Open boundary                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| Non-clinical estimand structure | [`fnd-1/2026-08-31-nonclinical-estimand-source-closure-commission.md`](fnd-1/2026-08-31-nonclinical-estimand-source-closure-commission.md) | `FND1-H04`                                             |
+| All-pairs successor sources     | [`fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md`](fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md)   | Retained all-pairs and unequal-size source requirement |
+| Analysis-data source completion | [`fnd-2/2026-08-31-analysis-data-source-completion-commission.md`](fnd-2/2026-08-31-analysis-data-source-completion-commission.md)         | FND-2 `HOLD-01` through `HOLD-04`                      |
+
+The commissions create research work only. Their pending result placeholders
+record no findings or decisions, and none of the follow-ups authorizes Protocol
+adoption.
+
 Release 2, its candidate work, paired-t procedures, and t-family numerical
 contracts are outside both investigations. Nothing in this package changes the
 current Release 2 scope or investigation line.
@@ -49,6 +63,10 @@ its assigned entry point. The Genspark pass returns one Markdown report for
 verbatim intake. The Claude Code pass replaces only its assigned result
 placeholder, runs the named repository checks, commits on a reviewer-owned
 branch, and pushes that branch for reconciliation.
+
+The newer source-completion follow-ups use role-based pass names and the same
+operating pattern without naming the drafting or review mechanism in their
+public artifacts.
 
 ## Independence and branch discipline
 

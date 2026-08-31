@@ -15,6 +15,20 @@ closes `FND1-H01` through `FND1-H03` in narrowed form. `FND1-H04` through
 `FND1-H08` and the all-pairs successor-source requirement remain open. The full
 FND-1 Research Gate remains open, and no Protocol adoption is authorized.
 
+## Active bounded source-closure follow-ups
+
+Two independent, role-based packages now address the source questions that can
+advance before corpus expansion or schema design:
+
+| Follow-up                                    | Commission                                                                                                                     | Primary-source result                                                                                                  | Repository-analysis result                                                                                                       |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Non-clinical estimand structure (`FND1-H04`) | [`2026-08-31-nonclinical-estimand-source-closure-commission.md`](2026-08-31-nonclinical-estimand-source-closure-commission.md) | [`2026-08-31-nonclinical-estimand-primary-source-result.md`](2026-08-31-nonclinical-estimand-primary-source-result.md) | [`2026-08-31-nonclinical-estimand-repository-analysis-result.md`](2026-08-31-nonclinical-estimand-repository-analysis-result.md) |
+| All-pairs and unequal-size successor sources | [`2026-08-31-all-pairs-successor-source-closure-commission.md`](2026-08-31-all-pairs-successor-source-closure-commission.md)   | [`2026-08-31-all-pairs-successor-primary-source-result.md`](2026-08-31-all-pairs-successor-primary-source-result.md)   | [`2026-08-31-all-pairs-successor-repository-analysis-result.md`](2026-08-31-all-pairs-successor-repository-analysis-result.md)   |
+
+Each package keeps its two passes blind until both outputs are frozen. The
+result files are pending placeholders and create no hold closure. `FND1-H05`
+through `FND1-H08` remain outside these source-closure packages.
+
 ## Completed follow-up: multiplicity primary-text closure
 
 This bounded investigation addressed only `FND1-H01`, `FND1-H02`, and
@@ -32,7 +46,7 @@ hold closures. Neither stage nor the disposition authorizes Protocol adoption.
 The non-clinical vocabulary hold and every other FND-1 hold remain outside this
 closure package.
 
-## Active execution mode
+## Completed original execution mode
 
 The original FND-1 scientific question set below remains in force. Its earlier
 single-investigator repository procedure is superseded by two isolated passes:
