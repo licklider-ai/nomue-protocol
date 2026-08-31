@@ -49,8 +49,16 @@ result retained in
 `../../../../review-inputs/r2-d5-g4-tail-trace-composition-candidate/REVIEW-RESULT.md`.
 The review returned `GO` with no findings after 291 reviewer-owned checks. The bounded
 disposition is recorded in
-`d5-g4-tail-trace-composition-adversarial-review-disposition.md`. This closes only the
+`d5-g4-tail-trace-composition-adversarial-review-disposition.md`. This closes the
 actual-execution composition review requirement: raw paired observations are bound
-through the verified G4 trace to the verified tail trace and returned p-value. It does
-not establish a G4 mathematical-truth error bound, confidence-interval composition,
-supported execution, platform, domain, runtime, R2-D5 completion, or Release 2.
+through the verified G4 trace to the verified tail trace and returned p-value.
+
+The separate G4 mathematical-truth error candidate was reviewed under
+`d5-g4-truth-error-adversarial-review-protocol.md`. Its independent result is retained
+in `../../../../review-inputs/r2-d5-g4-truth-error-candidate/REVIEW-RESULT.md`. The
+review returned `GO` with no findings after 568 reviewer checks using an independently
+constructed exact-arithmetic oracle. The bounded disposition is recorded in
+`d5-g4-truth-error-adversarial-review-disposition.md`. This closes only the G4
+truth-error readiness requirement for the trace-bound algebraic quantities. It does
+not close Student-t tail numerical truth, confidence-interval composition, supported
+execution, platform, domain, runtime, R2-D5, or Release 2.

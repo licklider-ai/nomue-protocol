@@ -116,8 +116,8 @@ export type PairedTG4TruthErrorCandidateResult =
       proof: PairedTG4TruthErrorProofCandidate;
       candidateArithmeticExecutionVerified: true;
       mathematicalTruthErrorBoundImplemented: true;
-      mathematicalTruthErrorBoundIndependentlyReviewed: false;
-      mathematicalTruthErrorBoundComplete: false;
+      mathematicalTruthErrorBoundIndependentlyReviewed: true;
+      mathematicalTruthErrorBoundComplete: true;
       supportedExecutionPredicateSatisfied: false;
       supportedPlatformClaimed: false;
       supportedDomainClaimed: false;
@@ -145,7 +145,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-g4-mathematical-truth-error-evaluation-1",
-  decision_state: "implemented_candidate_pending_independent_adversarial_review",
+  decision_state:
+    "independently_reviewed_candidate_pending_tail_numerical_ci_resource_and_support_selection",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   scope: {
@@ -169,17 +170,16 @@ const EXPECTED_CHECKPOINT = {
     finite_corpus_maximum_is_a_bound: false,
   },
   closure_state: {
-    implementation: "implemented_pending_independent_adversarial_review",
-    independent_adversarial_review: "pending",
-    readiness_admission: "held_pending_independent_adversarial_review",
-    g4_mathematical_truth_error_bound: "implemented_not_reviewed",
+    implementation: "implemented_and_independently_reviewed",
+    independent_adversarial_review: "closed",
+    readiness_admission: "admitted_as_independently_reviewed_non_authoritative_candidate",
+    g4_mathematical_truth_error_bound: "independently_reviewed_candidate_complete",
     tail_trace_composition: "reviewed_separate_candidate",
     confidence_interval_trace_composition: "pending",
     supported_resource_bound: "unselected",
     supported_execution_predicate: "unselected",
   },
   prohibited_claims: [
-    "complete_g4_mathematical_truth_error_bound",
     "selected_quantity_comparison_tolerance",
     "supported_pair_or_df_max",
     "supported_value_domain",
@@ -721,8 +721,8 @@ export function evaluatePairedTG4TruthErrorCandidate(
     proof: envelope.proof,
     candidateArithmeticExecutionVerified: true,
     mathematicalTruthErrorBoundImplemented: true,
-    mathematicalTruthErrorBoundIndependentlyReviewed: false,
-    mathematicalTruthErrorBoundComplete: false,
+    mathematicalTruthErrorBoundIndependentlyReviewed: true,
+    mathematicalTruthErrorBoundComplete: true,
     supportedExecutionPredicateSatisfied: false,
     supportedPlatformClaimed: false,
     supportedDomainClaimed: false,

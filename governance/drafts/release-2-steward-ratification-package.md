@@ -154,9 +154,16 @@ tail trace by an independently reviewed composition candidate. The composition
 starts from raw paired observations, re-verifies both nested traces, requires the
 exact G4 test-statistic binary64 bits and integer df at the handoff, and returns the
 p-value from the verified tail trace. The composition review returned `GO` with no
-findings after 291 reviewer-owned checks. This closes the actual-execution
-composition review requirement only. The G4 mathematical-truth error ledger and
-confidence-interval trace composition remain open.
+findings after 291 reviewer-owned checks.
+
+The separate G4 mathematical-truth error candidate has also completed independent
+adversarial review. A separately constructed exact-arithmetic oracle confirmed the
+trace-bound paired differences, exact mean, exact-mean sample variance, standard-
+error enclosure, signed test-statistic enclosure, and exact absolute-error bounds.
+The review returned `GO` with no findings after 568 reviewer checks. This closes the
+G4 mathematical-truth error readiness requirement for those algebraic quantities
+only. Student-t tail numerical truth and confidence-interval trace composition remain
+open, as do support, runtime, tolerances, and the final R2-D5 disposition.
 
 The supported-execution predicate has a tail-only implementation candidate: one
 immutable actual trace supplies both the returned value and proof inputs, and every

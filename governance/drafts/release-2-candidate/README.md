@@ -83,12 +83,16 @@ immutable composition candidate. That composition starts from raw paired
 observations, re-verifies both nested traces, requires exact bit-level equality of
 the G4 test statistic and integer df at the tail handoff, and binds the returned
 p-value to the verified tail outcome. Its independent adversarial review returned
-`GO` with no findings after 291 reviewer-owned checks. This closes only the actual-
-execution composition review requirement. A G4 mathematical-truth error bound and
-confidence-interval composition remain pending, so the candidate still claims no
-supported execution, platform, domain, or runtime. The bounded dispositions are in
-`reviews/d5-g4-execution-trace-adversarial-review-disposition.md` and
-`reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md`.
+`GO` with no findings after 291 reviewer-owned checks. The actual-execution composition review requirement is closed. The separate G4
+mathematical-truth error candidate has also passed independent adversarial review
+against an independently constructed exact-rational oracle. Its bounded disposition
+closes the G4 truth-error readiness requirement for the trace-bound algebraic
+quantities only. Student-t tail numerical truth and confidence-interval composition
+remain pending, so the candidate still claims no supported execution, platform,
+domain, or runtime. The bounded dispositions are in
+`reviews/d5-g4-execution-trace-adversarial-review-disposition.md`,
+`reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md`, and
+`reviews/d5-g4-truth-error-adversarial-review-disposition.md`.
 
 The supported-execution research is followed by a separate candidate evaluator that
 derives the returned tail value and its proof inputs from one immutable trace. It
