@@ -204,6 +204,140 @@ describe("R2-D5 G4 actual-execution trace candidate", () => {
     }
   });
 
+  it("preserves per-pair first-failure order when a later pair is structurally invalid", () => {
+    const overflowPair: PairedObservationSpike[] = [
+      {
+        observationId: "before-overflow",
+        experimentalUnitId: "before-overflow-unit",
+        pairId: "p-000",
+        conditionId: "before",
+        outcomeValue: Number.MAX_VALUE,
+      },
+      {
+        observationId: "after-overflow",
+        experimentalUnitId: "after-overflow-unit",
+        pairId: "p-000",
+        conditionId: "after",
+        outcomeValue: -Number.MAX_VALUE,
+      },
+    ];
+    const incomplete: PairedTSpikeInput = {
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "none",
+      observations: [
+        ...overflowPair,
+        {
+          observationId: "before-incomplete",
+          experimentalUnitId: "before-incomplete-unit",
+          pairId: "p-900",
+          conditionId: "before",
+          outcomeValue: 1,
+        },
+      ],
+    };
+    expect(computePairedTSpike(incomplete)).toEqual({
+      ok: false,
+      error: "DIFFERENCE_OVERFLOW",
+      pairId: "p-000",
+    });
+    expect(evaluatePairedTG4ExecutionTraceCandidate(incomplete)).toMatchObject({
+      ok: false,
+      classification: "g4_graph_refusal",
+      graphClassification: "DIFFERENCE_OVERFLOW",
+      pairId: "p-000",
+    });
+
+    const declarationMismatch: PairedTSpikeInput = {
+      conditionOrder: ["before", "after"],
+      repeatedMeasurements: "within_pair_only",
+      observations: [
+        { ...overflowPair[0]!, experimentalUnitId: "overflow-unit" },
+        { ...overflowPair[1]!, experimentalUnitId: "overflow-unit" },
+        {
+          observationId: "before-mismatch",
+          experimentalUnitId: "mismatch-unit-a",
+          pairId: "p-900",
+          conditionId: "before",
+          outcomeValue: 3,
+        },
+        {
+          observationId: "after-mismatch",
+          experimentalUnitId: "mismatch-unit-b",
+          pairId: "p-900",
+          conditionId: "after",
+          outcomeValue: 1,
+        },
+      ],
+    };
+    expect(computePairedTSpike(declarationMismatch)).toEqual({
+      ok: false,
+      error: "DIFFERENCE_OVERFLOW",
+      pairId: "p-000",
+    });
+    expect(evaluatePairedTG4ExecutionTraceCandidate(declarationMismatch)).toMatchObject({
+      ok: false,
+      classification: "g4_graph_refusal",
+      graphClassification: "DIFFERENCE_OVERFLOW",
+      pairId: "p-000",
+    });
+  });
+
+  it("classifies root and non-root reduction overflow as reviewed graph refusals", () => {
+    const magnitude = 1.2e154;
+    const cases = [
+      {
+        label: "mean non-root",
+        input: inputFromPairs([
+          [1, 0],
+          [Number.MAX_VALUE, 0],
+          [Number.MAX_VALUE / 2, 0],
+        ]),
+        expected: "MEAN_ACCUMULATION_OVERFLOW",
+      },
+      {
+        label: "mean root",
+        input: inputFromPairs([
+          [Number.MAX_VALUE, 0],
+          [Number.MAX_VALUE / 2, 0],
+        ]),
+        expected: "MEAN_ACCUMULATION_OVERFLOW",
+      },
+      {
+        label: "variance non-root",
+        input: inputFromPairs([
+          [magnitude, 0],
+          [-magnitude, 0],
+          [magnitude, 0],
+          [-magnitude, 1],
+        ]),
+        expected: "VARIANCE_ACCUMULATION_OVERFLOW",
+      },
+      {
+        label: "variance root",
+        input: inputFromPairs([
+          [magnitude, 0],
+          [-magnitude, 0],
+        ]),
+        expected: "VARIANCE_ACCUMULATION_OVERFLOW",
+      },
+    ] as const;
+
+    for (const testCase of cases) {
+      expect(computePairedTSpike(testCase.input), testCase.label).toMatchObject({
+        ok: false,
+        error: testCase.expected,
+      });
+      expect(
+        evaluatePairedTG4ExecutionTraceCandidate(testCase.input),
+        testCase.label,
+      ).toMatchObject({
+        ok: false,
+        classification: "g4_graph_refusal",
+        graphClassification: testCase.expected,
+      });
+    }
+  });
+
   it("canonicalizes observation order without changing the bound trace", () => {
     const input = inputFromPairs([
       [3, 1],

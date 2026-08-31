@@ -158,7 +158,12 @@ interface TrackedValue {
 
 interface ParsedInputSuccess {
   ok: true;
-  input: PairedTG4ExecutionTraceInputCandidate;
+  conditionOrder: readonly [string, string];
+  repeatedMeasurements: "none" | "within_pair_only";
+  pairs: readonly {
+    pairId: string;
+    members: PairMembers;
+  }[];
 }
 
 interface ParsedInputFailure {
@@ -253,6 +258,11 @@ const EXPECTED_CHECKPOINT = {
 
 class TraceResourceLimitError extends Error {}
 class PrimitiveVerificationError extends Error {}
+class GraphRefusalError extends Error {
+  constructor(readonly graphClassification: PairedTSpikeErrorCode) {
+    super(graphClassification);
+  }
+}
 
 function ownDataRecord(
   value: unknown,
@@ -457,40 +467,11 @@ function parseCandidateInput(candidate: unknown): ParsedInput {
   }
   if (pairIds.length < 2) return failure("PAIR_COUNT_BELOW_TWO");
 
-  const canonicalPairs: CanonicalPair[] = [];
-  for (const pairId of pairIds) {
-    const members = pairs.get(pairId);
-    if (members?.first === undefined || members.second === undefined) {
-      return failure("INCOMPLETE_PAIR", { pairId });
-    }
-    const sameUnit = members.first.experimentalUnitId === members.second.experimentalUnitId;
-    if (
-      (repeatedMeasurements === "within_pair_only" && !sameUnit) ||
-      (repeatedMeasurements === "none" && sameUnit)
-    ) {
-      return failure("EXPERIMENTAL_UNIT_DECLARATION_MISMATCH", { pairId });
-    }
-    canonicalPairs.push({
-      pair_id: pairId,
-      first: {
-        observation_id: members.first.observationId,
-        experimental_unit_id: members.first.experimentalUnitId,
-        outcome_binary64_hex: numberHex(members.first.outcomeValue),
-      },
-      second: {
-        observation_id: members.second.observationId,
-        experimental_unit_id: members.second.experimentalUnitId,
-        outcome_binary64_hex: numberHex(members.second.outcomeValue),
-      },
-    });
-  }
   return {
     ok: true,
-    input: {
-      condition_order: [firstCondition, secondCondition],
-      repeated_measurements: repeatedMeasurements,
-      pairs: canonicalPairs,
-    },
+    conditionOrder: [firstCondition, secondCondition],
+    repeatedMeasurements,
+    pairs: pairIds.map((pairId) => ({ pairId, members: pairs.get(pairId)! })),
   };
 }
 
@@ -544,13 +525,16 @@ function pairwiseSum(
   recorder: TraceRecorder,
   values: readonly TrackedValue[],
   label: string,
+  overflowClassification: PairedTSpikeErrorCode,
 ): TrackedValue {
   const sumRange = (start: number, end: number): TrackedValue => {
     if (end - start === 1) return values[start]!;
     const middle = start + Math.floor((end - start) / 2);
     const left = sumRange(start, middle);
     const right = sumRange(middle, end);
-    return recorder.record(`${label}:${start}:${end}`, "add", [left, right]);
+    const result = recorder.record(`${label}:${start}:${end}`, "add", [left, right]);
+    if (!Number.isFinite(result.value)) throw new GraphRefusalError(overflowClassification);
+    return result;
   };
   return sumRange(0, values.length);
 }
@@ -584,24 +568,53 @@ function candidateInputFromTraceInput(
   };
 }
 
-function executeParsedInput(input: PairedTG4ExecutionTraceInputCandidate): ExecutionResult {
+function executeParsedInput(parsed: ParsedInputSuccess): ExecutionResult {
   const recorder = new TraceRecorder();
   try {
+    const canonicalPairs: CanonicalPair[] = [];
     const differences: TrackedValue[] = [];
     const exactDifferences: string[] = [];
-    for (const [index, pair] of input.pairs.entries()) {
-      const first = numberFromHex(pair.first.outcome_binary64_hex);
-      const second = numberFromHex(pair.second.outcome_binary64_hex);
+    for (const [index, { pairId, members }] of parsed.pairs.entries()) {
+      if (members.first === undefined || members.second === undefined) {
+        return failure("INCOMPLETE_PAIR", { pairId });
+      }
+      const sameUnit = members.first.experimentalUnitId === members.second.experimentalUnitId;
+      if (
+        (parsed.repeatedMeasurements === "within_pair_only" && !sameUnit) ||
+        (parsed.repeatedMeasurements === "none" && sameUnit)
+      ) {
+        return failure("EXPERIMENTAL_UNIT_DECLARATION_MISMATCH", { pairId });
+      }
+      const first = members.first.outcomeValue;
+      const second = members.second.outcomeValue;
       exactDifferences.push(normalizeExactDifference(first, second));
       const difference = recorder.record(`difference:${index}`, "subtract", [
         constant(first),
         constant(second),
       ]);
       if (!Number.isFinite(difference.value)) {
-        return failure("DIFFERENCE_OVERFLOW", { pairId: pair.pair_id });
+        return failure("DIFFERENCE_OVERFLOW", { pairId });
       }
       differences.push(difference);
+      canonicalPairs.push({
+        pair_id: pairId,
+        first: {
+          observation_id: members.first.observationId,
+          experimental_unit_id: members.first.experimentalUnitId,
+          outcome_binary64_hex: numberHex(first),
+        },
+        second: {
+          observation_id: members.second.observationId,
+          experimental_unit_id: members.second.experimentalUnitId,
+          outcome_binary64_hex: numberHex(second),
+        },
+      });
     }
+    const input: PairedTG4ExecutionTraceInputCandidate = {
+      condition_order: [parsed.conditionOrder[0], parsed.conditionOrder[1]],
+      repeated_measurements: parsed.repeatedMeasurements,
+      pairs: canonicalPairs,
+    };
     if (exactDifferences.every((value) => value === exactDifferences[0])) {
       return failure("ZERO_DIFFERENCE_VARIANCE");
     }
@@ -609,8 +622,12 @@ function executeParsedInput(input: PairedTG4ExecutionTraceInputCandidate): Execu
       return failure("DIFFERENCE_VARIANCE_ERASED_BY_ROUNDING");
     }
 
-    const differenceSum = pairwiseSum(recorder, differences, "difference_sum");
-    if (!Number.isFinite(differenceSum.value)) return failure("MEAN_ACCUMULATION_OVERFLOW");
+    const differenceSum = pairwiseSum(
+      recorder,
+      differences,
+      "difference_sum",
+      "MEAN_ACCUMULATION_OVERFLOW",
+    );
     const meanDifference = recorder.record("mean_difference", "divide", [
       differenceSum,
       constant(differences.length),
@@ -628,10 +645,12 @@ function executeParsedInput(input: PairedTG4ExecutionTraceInputCandidate): Execu
     if (squared.some((value) => !Number.isFinite(value.value))) {
       return failure("SQUARED_DEVIATION_OVERFLOW");
     }
-    const centeredSumSquares = pairwiseSum(recorder, squared, "centered_sum_squares");
-    if (!Number.isFinite(centeredSumSquares.value)) {
-      return failure("VARIANCE_ACCUMULATION_OVERFLOW");
-    }
+    const centeredSumSquares = pairwiseSum(
+      recorder,
+      squared,
+      "centered_sum_squares",
+      "VARIANCE_ACCUMULATION_OVERFLOW",
+    );
     const sampleVariance = recorder.record("sample_variance", "divide", [
       centeredSumSquares,
       constant(differences.length - 1),
@@ -662,6 +681,9 @@ function executeParsedInput(input: PairedTG4ExecutionTraceInputCandidate): Execu
       testStatistic,
     };
   } catch (error) {
+    if (error instanceof GraphRefusalError) {
+      return failure(error.graphClassification);
+    }
     if (error instanceof TraceResourceLimitError) {
       return { ok: false, classification: "execution_trace_resource_bound_exceeded" };
     }
@@ -682,7 +704,7 @@ function executeParsedInput(input: PairedTG4ExecutionTraceInputCandidate): Execu
 
 function executeCandidate(candidate: unknown): ExecutionResult {
   const parsed = parseCandidateInput(candidate);
-  return parsed.ok ? executeParsedInput(parsed.input) : parsed;
+  return parsed.ok ? executeParsedInput(parsed) : parsed;
 }
 
 function tracePayload(trace: PairedTG4ExecutionTraceCandidate): unknown {
