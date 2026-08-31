@@ -580,8 +580,9 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md
     class: informative
     notes: >-
-      Source-access-incomplete original-paper investigation; FND1-H01 through
-      FND1-H03 remain open and the result is not ready for close review.
+      Completed original-paper investigation with NARROW_AND_CLOSE dispositions
+      for FND1-H01 through FND1-H03; ready for close-only review and not a
+      Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-commission.md
     class: informative
     notes: >-
