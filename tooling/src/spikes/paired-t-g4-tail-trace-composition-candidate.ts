@@ -96,7 +96,7 @@ export type PairedTG4TailCompositionCandidateResult =
         truthErrorBoundSelected: false;
       };
       tailTraceCompositionImplemented: true;
-      tailTraceCompositionIndependentlyReviewed: false;
+      tailTraceCompositionIndependentlyReviewed: true;
       g4MathematicalTruthErrorBoundComplete: false;
       confidenceIntervalCompositionComplete: false;
       supportedExecutionPredicateSatisfied: false;
@@ -114,7 +114,7 @@ export type PairedTG4TailCompositionCandidateResult =
       tailGraphClassification?: string;
       compositionErrors?: string[];
       tailTraceCompositionImplemented: true;
-      tailTraceCompositionIndependentlyReviewed: false;
+      tailTraceCompositionIndependentlyReviewed: true;
       g4MathematicalTruthErrorBoundComplete: false;
       confidenceIntervalCompositionComplete: false;
       supportedExecutionPredicateSatisfied: false;
@@ -128,7 +128,7 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-g4-tail-trace-composition-evaluation-1",
-  decision_state: "implementation_candidate_pending_independent_review_and_g4_truth_bound",
+  decision_state: "independently_reviewed_composition_candidate_pending_g4_truth_bound",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   scope: {
@@ -152,20 +152,19 @@ const EXPECTED_CHECKPOINT = {
     mutation_disposition: "fail_closed",
   },
   readiness_admission: {
-    evidence_readiness_changed_by_this_increment: false,
-    admission_state: "held_pending_independent_adversarial_review",
+    evidence_readiness_changed_by_this_increment: true,
+    admission_state: "admitted_as_independently_reviewed_non_authoritative_candidate",
   },
   closure_state: {
-    implementation: "implemented_pending_independent_adversarial_review",
+    implementation: "independently_reviewed_candidate",
     g4_mathematical_truth_error_bound: "pending",
-    tail_trace_composition_review: "pending",
+    tail_trace_composition_review: "closed",
     confidence_interval_trace_composition: "pending",
     supported_resource_bound: "unselected",
     supported_execution_predicate: "unselected",
   },
   prohibited_claims: [
     "complete_g4_mathematical_truth_error_bound",
-    "reviewed_end_to_end_p_value_trace",
     "complete_confidence_interval_trace",
     "supported_pair_or_df_max",
     "supported_value_domain",
@@ -502,7 +501,7 @@ function refusal(
     status: "non_authoritative_g4_tail_composition_evaluation",
     classification,
     tailTraceCompositionImplemented: true,
-    tailTraceCompositionIndependentlyReviewed: false,
+    tailTraceCompositionIndependentlyReviewed: true,
     g4MathematicalTruthErrorBoundComplete: false,
     confidenceIntervalCompositionComplete: false,
     supportedExecutionPredicateSatisfied: false,
@@ -584,7 +583,7 @@ export function evaluatePairedTG4TailTraceCompositionCandidate(
       truthErrorBoundSelected: false,
     },
     tailTraceCompositionImplemented: true,
-    tailTraceCompositionIndependentlyReviewed: false,
+    tailTraceCompositionIndependentlyReviewed: true,
     g4MathematicalTruthErrorBoundComplete: false,
     confidenceIntervalCompositionComplete: false,
     supportedExecutionPredicateSatisfied: false,
@@ -634,7 +633,7 @@ function canonicalizeJson(value: unknown, ancestors = new Set<object>()): unknow
   return Object.fromEntries(entries);
 }
 
-/** Fail-closed exact checkpoint validator for the unreviewed composition candidate. */
+/** Fail-closed exact checkpoint validator for the independently reviewed composition candidate. */
 export function validatePairedTG4TailCompositionCheckpoint(candidate: unknown): string[] {
   try {
     return JSON.stringify(canonicalizeJson(candidate)) ===

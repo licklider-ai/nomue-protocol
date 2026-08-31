@@ -65,25 +65,35 @@ only for the eleven already reviewed operation-stage failures. The input contrac
 and this partial inventory passed independent adversarial review as non-authoritative
 decision-preparation material. Ten support-dependent reason-code decisions remain
 explicitly deferred.
-A separate upstream G4 candidate now derives the paired differences, mean
-difference, sample variance, standard error, test statistic, and degrees of freedom
-from one immutable actual-execution trace. Every recorded binary64 arithmetic or
-square-root node is checked by the same exact primitive verifier used by the
-reviewed tail-only candidate, and the verifier reconstructs the fixed recursive
-schedule and result from the trace-bound paired observations. The existing G4
-reference graph remains unchanged. The implementation's independent adversarial
-review found two refusal-classification blockers; the bounded repair closed both in
-a fixed close-only review with no additional findings. The candidate is therefore
-recorded as independently reviewed, unissued, non-authoritative decision-preparation
-material. The 201-pair and 2,048-node ceilings remain review evaluation limits, not
-supported resource bounds. A G4 mathematical-truth error bound and composition with
-the tail and interval paths remain pending; the candidate therefore claims no
-supported execution, platform, domain, or runtime. The bounded disposition is in
-`reviews/d5-g4-execution-trace-adversarial-review-disposition.md`.
-The supported-execution research is now followed by a separate candidate evaluator
-that derives the returned tail value and its proof inputs from one immutable trace.
-It exactly rechecks every traced binary64 arithmetic primitive and square root and
-adds startup plus per-invocation diagnostics. The existing reviewed graph and proof
+
+A separate upstream G4 candidate derives the paired differences, mean difference,
+sample variance, standard error, test statistic, and degrees of freedom from one
+immutable actual-execution trace. Every recorded binary64 arithmetic or square-root
+node is checked by the same exact primitive verifier used by the reviewed tail-only
+candidate, and the verifier reconstructs the fixed recursive schedule and result
+from the trace-bound paired observations. The existing G4 reference graph remains
+unchanged. The implementation's independent adversarial review found two refusal-
+classification blockers; the bounded repair closed both in a fixed close-only review
+with no additional findings. The G4 trace is therefore recorded as independently
+reviewed, unissued, non-authoritative decision-preparation material. The 201-pair and
+2,048-node ceilings remain review evaluation limits, not supported resource bounds.
+
+The G4 trace is now connected to the reviewed Student-t tail trace by a separate
+immutable composition candidate. That composition starts from raw paired
+observations, re-verifies both nested traces, requires exact bit-level equality of
+the G4 test statistic and integer df at the tail handoff, and binds the returned
+p-value to the verified tail outcome. Its independent adversarial review returned
+`GO` with no findings after 291 reviewer-owned checks. This closes only the actual-
+execution composition review requirement. A G4 mathematical-truth error bound and
+confidence-interval composition remain pending, so the candidate still claims no
+supported execution, platform, domain, or runtime. The bounded dispositions are in
+`reviews/d5-g4-execution-trace-adversarial-review-disposition.md` and
+`reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md`.
+
+The supported-execution research is followed by a separate candidate evaluator that
+derives the returned tail value and its proof inputs from one immutable trace. It
+exactly rechecks every traced binary64 arithmetic primitive and square root and adds
+startup plus per-invocation diagnostics. The existing reviewed graph and proof
 sources remain unchanged. The tail-only implementation passed independent
 adversarial review as an unissued, non-authoritative candidate. A close-only Section
 H supplement also reproduced the platform-neutral trace and proof projection across
@@ -93,6 +103,7 @@ selected runtime allowlist, does not yet enforce the controlled process profile,
 has no complete cross-platform admission corpus; consequently it cannot claim a
 supported execution, platform, domain, or runtime. The bounded disposition is in
 `reviews/d5-supported-execution-predicate-adversarial-review-disposition.md`.
+
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected
