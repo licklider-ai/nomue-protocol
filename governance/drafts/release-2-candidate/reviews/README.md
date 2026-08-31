@@ -33,3 +33,9 @@ schedule, exact binary64 primitives, trace binding, graph invariance, resource
 ceilings, readiness state, and authority boundary. A successful review can approve
 only the non-authoritative candidate; it cannot establish mathematical-truth error,
 tail or confidence-interval composition, support, or Release 2 completion.
+
+The initial G4 trace review found two refusal-classification blockers. Their bounded
+repair is commissioned for close-only review in
+`d5-g4-execution-trace-repair-close-review-protocol.md`. That review may close only
+the per-pair first-failure ordering and non-root reduction-overflow classification;
+it cannot expand the original candidate or its maturity claims.
