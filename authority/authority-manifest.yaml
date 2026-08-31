@@ -590,7 +590,10 @@ artifacts:
       result; not a Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md
     class: informative
-    notes: Placeholder for the multiplicity primary-text close-review result.
+    notes: >-
+      Independent close-only review result; GO with C-01 through C-12 passing
+      and no findings; ready for bounded steward disposition and not a
+      Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
