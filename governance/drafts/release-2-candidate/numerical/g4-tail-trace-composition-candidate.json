@@ -1,0 +1,53 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-g4-tail-trace-composition-evaluation-1",
+  "decision_state": "implementation_candidate_pending_independent_review_and_g4_truth_bound",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "scope": {
+    "input": "explicit_paired_binary64_observations",
+    "upstream_g4_trace_format": "paired-t-g4-actual-execution-trace-v1",
+    "tail_trace_format": "paired-t-supported-execution-trace-v1",
+    "output": "g4_result_p_value_tail_proof_and_composition_binding",
+    "existing_g4_implementation_changed": false,
+    "existing_tail_implementation_changed": false,
+    "g4_mathematical_truth_error_bound_included": false,
+    "confidence_interval_endpoints_included": false
+  },
+  "composition": {
+    "format": "paired-t-g4-tail-trace-composition-v1",
+    "execution_order": "verified_g4_trace_then_verified_tail_trace",
+    "handoff": "g4_test_statistic_bits_and_df_equal_tail_trace_input",
+    "binds": "g4_trace_digest_tail_trace_digest_g4_test_statistic_source_and_bits_df_tail_input_bits_p_value_bits_and_source",
+    "both_nested_traces_reverified_before_acceptance": true,
+    "returned_p_value_source": "verified_tail_trace",
+    "mutation_disposition": "fail_closed"
+  },
+  "readiness_admission": {
+    "evidence_readiness_changed_by_this_increment": false,
+    "admission_state": "held_pending_independent_adversarial_review"
+  },
+  "closure_state": {
+    "implementation": "implemented_pending_independent_adversarial_review",
+    "g4_mathematical_truth_error_bound": "pending",
+    "tail_trace_composition_review": "pending",
+    "confidence_interval_trace_composition": "pending",
+    "supported_resource_bound": "unselected",
+    "supported_execution_predicate": "unselected"
+  },
+  "prohibited_claims": [
+    "complete_g4_mathematical_truth_error_bound",
+    "reviewed_end_to_end_p_value_trace",
+    "complete_confidence_interval_trace",
+    "supported_pair_or_df_max",
+    "supported_value_domain",
+    "selected_supported_platform",
+    "selected_supported_execution_predicate",
+    "runtime_support",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete"
+  ]
+}
