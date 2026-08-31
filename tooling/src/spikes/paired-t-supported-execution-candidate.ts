@@ -285,7 +285,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-supported-execution-predicate-evaluation-1",
-  decision_state: "implementation_candidate_pending_independent_review_and_matrix_evidence",
+  decision_state:
+    "reviewed_implementation_candidate_pending_resource_allowlist_profile_and_matrix_evidence",
   runtime_support_enabled: false,
   supported_platform_selected: false,
   supported_execution_predicate_selected: false,
@@ -346,7 +347,7 @@ const EXPECTED_CHECKPOINT = {
     non_malicious_pinned_runtime_threat_model: true,
   },
   closure_state: {
-    implementation: "implemented_pending_independent_adversarial_review",
+    implementation: "implemented_and_independently_reviewed",
     exact_runtime_allowlist: "pending",
     controlled_process_profile_enforcement: "pending",
     trace_resource_bound_selection: "pending",
@@ -361,7 +362,6 @@ const EXPECTED_CHECKPOINT = {
     research_disposition:
       "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md",
     superseding_open_conditions: [
-      "independent_implementation_review",
       "supported_trace_resource_bound_selection",
       "exact_runtime_build_platform_allowlist_selection",
       "controlled_process_profile_enforcement",

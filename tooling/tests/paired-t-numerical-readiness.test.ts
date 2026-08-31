@@ -128,7 +128,7 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the trace implementation without selecting an execution profile or platform", () => {
+  it("records the reviewed trace implementation without selecting a profile or platform", () => {
     const candidate = loadReadiness();
     candidate.supported_execution_predicate_candidate.exact_runtime_allowlist_selected =
       true as never;
@@ -140,7 +140,18 @@ describe("Release 2 numerical evidence readiness", () => {
       true as never;
     candidate.supported_execution_predicate_candidate.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "supported-execution predicate candidate must remain incomplete, unreviewed, unselected, and non-runtime",
+      "supported-execution predicate candidate must remain reviewed, tail-only, unselected, and non-runtime",
+    );
+
+    const missingReview = loadReadiness();
+    missingReview.supported_execution_predicate_candidate.independent_adversarial_review_complete =
+      false as never;
+    missingReview.supported_execution_predicate_candidate.section_h_cross_runner_review_complete =
+      false as never;
+    missingReview.supported_execution_predicate_candidate.review_disposition =
+      "governance/drafts/release-2-candidate/reviews/other.md" as never;
+    expect(validatePairedTNumericalReadinessCandidate(missingReview)).toContain(
+      "supported-execution predicate candidate must remain reviewed, tail-only, unselected, and non-runtime",
     );
   });
 

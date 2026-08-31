@@ -220,14 +220,18 @@ that the arithmetic execution was verified; `supportedExecutionPredicateSatisfie
 platform support, domain support, and runtime support remain false.
 
 Neither the research closure nor this implementation selects a platform tuple or
-activates support. The implementation still needs independent adversarial review,
-selection of an exact runtime/build/platform allowlist and controlled-process
-enforcement, selection of a supported trace resource bound, and complete admission
-evidence for every proposed tuple. It is limited to the table-connected tail graph
-that accepts `(df, t)`; the upstream G4 data-to-statistic graph still needs separate
-closure. The commission, independent results, and disposition are recorded in
-`../reviews/d5-supported-platform-primary-source-research-commission.md` and
-`../reviews/d5-supported-platform-primary-source-research-disposition.md`.
+activates support. The implementation passed independent adversarial review, and a
+close-only Section H supplement reproduced the platform-neutral trace and proof
+projection across a fixed five-runner set. Those results close the candidate review,
+not cross-platform admission. Selection of an exact runtime/build/platform allowlist,
+controlled-process enforcement, selection of a supported trace resource bound, and
+complete admission evidence for every proposed tuple remain open. The candidate is
+limited to the table-connected tail graph that accepts `(df, t)`; the upstream G4
+data-to-statistic graph still needs separate closure. The commission, research
+disposition, and implementation-review disposition are recorded in
+`../reviews/d5-supported-platform-primary-source-research-commission.md`,
+`../reviews/d5-supported-platform-primary-source-research-disposition.md`, and
+`../reviews/d5-supported-execution-predicate-adversarial-review-disposition.md`.
 
 ## Runtime input and reason-code candidate
 
