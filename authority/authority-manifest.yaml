@@ -594,6 +594,12 @@ artifacts:
       Independent close-only review result; GO with C-01 through C-12 passing
       and no findings; ready for bounded steward disposition and not a
       Protocol-adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-08-31-multiplicity-steward-disposition.md
+    class: informative
+    notes: >-
+      Bounded steward disposition accepting FND1-H01 through FND1-H03 as
+      NARROW_AND_CLOSE; the full FND-1 Research Gate remains open and no
+      Protocol adoption is authorized.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
