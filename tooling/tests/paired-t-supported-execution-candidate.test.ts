@@ -70,6 +70,15 @@ describe("paired-t supported-execution predicate candidate", () => {
       "supported-execution checkpoint differs from the closed non-runtime candidate",
     );
 
+    const staleReviewState = cloneCheckpoint();
+    staleReviewState.decision_state =
+      "implementation_candidate_pending_independent_review_and_matrix_evidence";
+    staleReviewState.closure_state["implementation"] =
+      "implemented_pending_independent_adversarial_review";
+    expect(validatePairedTSupportedExecutionCheckpoint(staleReviewState)).toContain(
+      "supported-execution checkpoint differs from the closed non-runtime candidate",
+    );
+
     const fabricatedMatrix = cloneCheckpoint();
     fabricatedMatrix.runtime_allowlist["entries"] = [
       { runtime: process.version, platform: process.platform, architecture: process.arch },

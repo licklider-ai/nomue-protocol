@@ -16,3 +16,11 @@ adjudication, and bounded disposition are recorded in
 `d5-supported-platform-primary-source-research-disposition.md`. Closing that
 research authorizes only a later non-authoritative implementation candidate; it does
 not select or certify a runtime platform.
+
+The resulting tail-only implementation review, its Section H cross-runner
+supplement, and their bounded disposition are recorded in
+`../../../../review-inputs/r2-d5-supported-execution-predicate/` and
+`d5-supported-execution-predicate-adversarial-review-disposition.md`. The review
+closes the implementation-candidate review requirement only. It does not populate
+the runtime allowlist, enforce the controlled-process profile, complete per-tuple
+admission evidence, or select a supported execution predicate.

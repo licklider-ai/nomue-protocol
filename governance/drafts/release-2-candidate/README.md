@@ -69,10 +69,15 @@ The supported-execution research is now followed by a separate candidate evaluat
 that derives the returned tail value and its proof inputs from one immutable trace.
 It exactly rechecks every traced binary64 arithmetic primitive and square root and
 adds startup plus per-invocation diagnostics. The existing reviewed graph and proof
-sources remain unchanged. The candidate intentionally contains no selected runtime
-allowlist, does not yet enforce the controlled process profile, and has no complete
-cross-platform admission corpus; consequently it cannot claim a supported
-execution, platform, domain, or runtime.
+sources remain unchanged. The tail-only implementation passed independent
+adversarial review as an unissued, non-authoritative candidate. A close-only Section
+H supplement also reproduced the platform-neutral trace and proof projection across
+the fixed five-runner set, with retained cold and warmed manifests. That finite review
+evidence is not a complete admission matrix. The candidate intentionally contains no
+selected runtime allowlist, does not yet enforce the controlled process profile, and
+has no complete cross-platform admission corpus; consequently it cannot claim a
+supported execution, platform, domain, or runtime. The bounded disposition is in
+`reviews/d5-supported-execution-predicate-adversarial-review-disposition.md`.
 This increment does not freeze confidence-interval critical values, select a
 supported domain or mathematical-truth error bound, execute a Public Check, or
 dispatch the candidate bundle. Exact binary64 identity is only the selected

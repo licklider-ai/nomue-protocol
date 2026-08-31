@@ -114,10 +114,12 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   supported_execution_predicate_candidate: {
-    closure: "incomplete_implementation_candidate";
+    closure: "reviewed_tail_only_implementation_candidate";
     artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json";
     execution_surface: "tooling/src/spikes/paired-t-supported-execution-candidate.ts";
     primary_source_disposition: "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md";
+    review_disposition: "governance/drafts/release-2-candidate/reviews/d5-supported-execution-predicate-adversarial-review-disposition.md";
+    section_h_review_supplement: "review-inputs/r2-d5-supported-execution-predicate/REVIEW-SUPPLEMENT-H.md";
     trace_format: "paired-t-supported-execution-trace-v1";
     maximum_trace_nodes_candidate: 100000;
     exact_primitive_verifier_implemented: true;
@@ -125,7 +127,8 @@ export interface PairedTNumericalReadinessCandidate {
     exact_runtime_allowlist_selected: false;
     controlled_process_profile_enforced: false;
     cross_platform_admission_evidence_complete: false;
-    independent_adversarial_review_complete: false;
+    independent_adversarial_review_complete: true;
+    section_h_cross_runner_review_complete: true;
     supported_execution_predicate_selected: false;
     runtime_support_enabled: false;
   };
@@ -388,6 +391,8 @@ const SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS = [
   "artifact",
   "execution_surface",
   "primary_source_disposition",
+  "review_disposition",
+  "section_h_review_supplement",
   "trace_format",
   "maximum_trace_nodes_candidate",
   "exact_primitive_verifier_implemented",
@@ -396,6 +401,7 @@ const SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS = [
   "controlled_process_profile_enforced",
   "cross_platform_admission_evidence_complete",
   "independent_adversarial_review_complete",
+  "section_h_cross_runner_review_complete",
   "supported_execution_predicate_selected",
   "runtime_support_enabled",
 ] as const;
@@ -722,13 +728,17 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const supportedExecutionCandidate = candidate.supported_execution_predicate_candidate;
   if (
-    supportedExecutionCandidate.closure !== "incomplete_implementation_candidate" ||
+    supportedExecutionCandidate.closure !== "reviewed_tail_only_implementation_candidate" ||
     supportedExecutionCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json" ||
     supportedExecutionCandidate.execution_surface !==
       "tooling/src/spikes/paired-t-supported-execution-candidate.ts" ||
     supportedExecutionCandidate.primary_source_disposition !==
       "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md" ||
+    supportedExecutionCandidate.review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-supported-execution-predicate-adversarial-review-disposition.md" ||
+    supportedExecutionCandidate.section_h_review_supplement !==
+      "review-inputs/r2-d5-supported-execution-predicate/REVIEW-SUPPLEMENT-H.md" ||
     supportedExecutionCandidate.trace_format !== "paired-t-supported-execution-trace-v1" ||
     supportedExecutionCandidate.maximum_trace_nodes_candidate !== 100000 ||
     supportedExecutionCandidate.exact_primitive_verifier_implemented !== true ||
@@ -736,12 +746,13 @@ function validatePairedTNumericalReadinessCandidateInternal(
     supportedExecutionCandidate.exact_runtime_allowlist_selected !== false ||
     supportedExecutionCandidate.controlled_process_profile_enforced !== false ||
     supportedExecutionCandidate.cross_platform_admission_evidence_complete !== false ||
-    supportedExecutionCandidate.independent_adversarial_review_complete !== false ||
+    supportedExecutionCandidate.independent_adversarial_review_complete !== true ||
+    supportedExecutionCandidate.section_h_cross_runner_review_complete !== true ||
     supportedExecutionCandidate.supported_execution_predicate_selected !== false ||
     supportedExecutionCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "supported-execution predicate candidate must remain incomplete, unreviewed, unselected, and non-runtime",
+      "supported-execution predicate candidate must remain reviewed, tail-only, unselected, and non-runtime",
     );
   }
 

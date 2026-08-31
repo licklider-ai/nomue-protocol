@@ -143,7 +143,8 @@ ten support-dependent mappings and the final reason-code freeze remain open. The
 supported-execution predicate now has a tail-only implementation candidate: one
 immutable actual trace supplies both the returned value and proof inputs, and every
 traced ordinary arithmetic and square-root result is checked exactly. This does not
-yet select a platform. Independent implementation review, an exact runtime/build
+yet select a platform. The implementation's independent adversarial review and its
+bounded Section H cross-runner supplement are complete. An exact runtime/build
 allowlist, controlled-process enforcement, a supported trace resource bound, and
 complete per-tuple admission evidence remain open. The final truth-error predicate,
 supported df range, subnormal first-failure ordering, and final critical-value table
