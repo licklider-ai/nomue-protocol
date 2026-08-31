@@ -121,6 +121,17 @@ operation-stage failures. The parser and partial inventory passed independent
 adversarial review; that review neither freezes those spellings nor fills mappings
 that depend on the still-open support decisions.
 
+`tooling/src/spikes/paired-t-supported-execution-candidate.ts` is a separate
+tail-only implementation candidate. It does not alter the evidence-bound graph or
+truth-error source copies. It constructs the returned result and proof inputs from
+one frozen operation trace, checks ordinary arithmetic through exact dyadic
+roundTiesToEven reconstruction, checks square roots by exact rounding cells, and
+binds the trace to the reviewed table cell and runtime identity. Startup and
+per-invocation sentinels are diagnostic only. The evaluator always leaves the
+supported-execution predicate false because the exact runtime allowlist,
+controlled-process enforcement, supported trace resource bound, independent
+review, and cross-platform admission evidence remain open.
+
 ## Local run
 
 ```bash

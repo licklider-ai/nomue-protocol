@@ -1,0 +1,103 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-supported-execution-predicate-evaluation-1",
+  "decision_state": "implementation_candidate_pending_independent_review_and_matrix_evidence",
+  "runtime_support_enabled": false,
+  "supported_platform_selected": false,
+  "supported_execution_predicate_selected": false,
+  "scope": {
+    "execution_surface": "tooling/src/spikes/paired-t-supported-execution-candidate.ts",
+    "input": "table_connected_tail_graph_degrees_of_freedom_and_test_statistic_only",
+    "upstream_g4_data_to_statistic_graph_included": false,
+    "existing_reviewed_graph_or_proof_source_changed": false,
+    "candidate_table_content_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08"
+  },
+  "execution_trace": {
+    "format": "paired-t-supported-execution-trace-v1",
+    "value_and_proof_source": "one_actual_immutable_trace",
+    "binds": "input_bits_table_identity_operation_labels_operand_bits_result_bits_branch_iterations_proof_inputs_and_returned_value",
+    "maximum_node_count_candidate": 100000,
+    "maximum_node_count_is_supported_resource_bound": false,
+    "integer_control_arithmetic": "exact_safe_integer_or_bigint_not_part_of_binary64_roundoff_ledger",
+    "mutation_disposition": "fail_closed"
+  },
+  "exact_primitive_verifier": {
+    "ordinary_operations": ["add", "subtract", "multiply", "divide"],
+    "ordinary_method": "exact_dyadic_operands_bigint_round_ties_to_even",
+    "square_root_method": "exact_binary64_rounding_cell_strict_containment",
+    "exact_selectors": ["absolute", "maximum"],
+    "verifier_result_used_before_candidate_acceptance": true,
+    "finite_cross_platform_corpus_is_universal_proof": false
+  },
+  "diagnostics": {
+    "startup": "hard_coded_binary64_and_intrinsic_identity_sentinels",
+    "per_invocation": "pre_and_post_hard_coded_binary64_and_intrinsic_identity_sentinels",
+    "sentinel_vector_count": 9,
+    "sentinel_vectors": [
+      "add_next:3ff0000000000001",
+      "add_subnormal:0000000000000002",
+      "subtract:3feffffffffffffe",
+      "multiply_subnormal:0000000000000001",
+      "divide_tie_to_zero:0000000000000000",
+      "divide_tenth:3fb999999999999a",
+      "sqrt_two:3ff6a09e667f3bcd",
+      "negative_zero:Object.is(-1*0,-0)",
+      "intrinsic_and_runtime_identity:unchanged"
+    ],
+    "proof_role": "diagnostic_only_not_a_substitute_for_trace_verification",
+    "mutation_disposition": "fail_closed"
+  },
+  "runtime_allowlist": {
+    "selection_state": "held_pending_exact_release_build_and_platform_evidence",
+    "entries": [],
+    "current_process_identity_reported": true,
+    "process_identity_alone_establishes_support": false
+  },
+  "controlled_process_profile": {
+    "candidate_profile_key": "paired-t-tail-pure-js-single-invocation-profile-1",
+    "selection_state": "contract_drafted_enforcement_held",
+    "required_exclusions": [
+      "unreviewed_native_addons",
+      "wasi",
+      "worker_threads",
+      "user_callbacks_during_evaluation",
+      "runtime_intrinsic_replacement"
+    ],
+    "enforced_by_this_candidate": false,
+    "non_malicious_pinned_runtime_threat_model": true
+  },
+  "closure_state": {
+    "implementation": "implemented_pending_independent_adversarial_review",
+    "exact_runtime_allowlist": "pending",
+    "controlled_process_profile_enforcement": "pending",
+    "trace_resource_bound_selection": "pending",
+    "cross_platform_admission_evidence": "pending",
+    "public_reason_code": "unissued",
+    "supported_execution_predicate": "unselected"
+  },
+  "blocker_transition": {
+    "historical_checkpoint": "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json",
+    "historical_blocker": "independent_primary_source_platform_review",
+    "research_disposition": "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md",
+    "superseding_open_conditions": [
+      "independent_implementation_review",
+      "supported_trace_resource_bound_selection",
+      "exact_runtime_build_platform_allowlist_selection",
+      "controlled_process_profile_enforcement",
+      "complete_cross_platform_admission_evidence"
+    ],
+    "historical_checkpoint_rewritten": false
+  },
+  "prohibited_claims": [
+    "selected_supported_platform",
+    "selected_supported_execution_predicate",
+    "supported_runtime_student_t_procedure",
+    "supported_df_max",
+    "complete_upstream_g4_execution_predicate",
+    "issued_unsupported_platform_reason_code",
+    "authoritative_public_check_or_bundle",
+    "release_2_complete"
+  ]
+}

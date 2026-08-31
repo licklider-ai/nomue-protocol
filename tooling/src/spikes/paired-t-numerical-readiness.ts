@@ -113,6 +113,22 @@ export interface PairedTNumericalReadinessCandidate {
     final_reason_codes_frozen: false;
     runtime_support_enabled: false;
   };
+  supported_execution_predicate_candidate: {
+    closure: "incomplete_implementation_candidate";
+    artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json";
+    execution_surface: "tooling/src/spikes/paired-t-supported-execution-candidate.ts";
+    primary_source_disposition: "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md";
+    trace_format: "paired-t-supported-execution-trace-v1";
+    maximum_trace_nodes_candidate: 100000;
+    exact_primitive_verifier_implemented: true;
+    same_trace_value_and_proof: true;
+    exact_runtime_allowlist_selected: false;
+    controlled_process_profile_enforced: false;
+    cross_platform_admission_evidence_complete: false;
+    independent_adversarial_review_complete: false;
+    supported_execution_predicate_selected: false;
+    runtime_support_enabled: false;
+  };
   operation_graph: {
     candidate_key: "g4-pairwise-two-pass";
     selection_state: "selected_for_candidate_testing";
@@ -232,6 +248,7 @@ const TOP_LEVEL_KEYS = [
   "truth_boundary_evidence_candidate",
   "truth_error_support_closure_candidate",
   "runtime_input_reason_code_candidate",
+  "supported_execution_predicate_candidate",
   "operation_graph",
   "refusal_classes",
   "p_value_enclosure_evidence",
@@ -366,6 +383,23 @@ const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "execution_surface",
+  "primary_source_disposition",
+  "trace_format",
+  "maximum_trace_nodes_candidate",
+  "exact_primitive_verifier_implemented",
+  "same_trace_value_and_proof",
+  "exact_runtime_allowlist_selected",
+  "controlled_process_profile_enforced",
+  "cross_platform_admission_evidence_complete",
+  "independent_adversarial_review_complete",
+  "supported_execution_predicate_selected",
+  "runtime_support_enabled",
+] as const;
+
 const REFUSAL_CLASS_KEYS = [
   "contract_computability",
   "binary64_computability",
@@ -467,6 +501,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "runtime input/reason-code candidate",
     candidate.runtime_input_reason_code_candidate,
     RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "supported-execution predicate candidate",
+    candidate.supported_execution_predicate_candidate,
+    SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys("refusal classes", candidate.refusal_classes, REFUSAL_CLASS_KEYS, errors);
@@ -677,6 +717,31 @@ function validatePairedTNumericalReadinessCandidateInternal(
   ) {
     errors.push(
       "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
+    );
+  }
+
+  const supportedExecutionCandidate = candidate.supported_execution_predicate_candidate;
+  if (
+    supportedExecutionCandidate.closure !== "incomplete_implementation_candidate" ||
+    supportedExecutionCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json" ||
+    supportedExecutionCandidate.execution_surface !==
+      "tooling/src/spikes/paired-t-supported-execution-candidate.ts" ||
+    supportedExecutionCandidate.primary_source_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md" ||
+    supportedExecutionCandidate.trace_format !== "paired-t-supported-execution-trace-v1" ||
+    supportedExecutionCandidate.maximum_trace_nodes_candidate !== 100000 ||
+    supportedExecutionCandidate.exact_primitive_verifier_implemented !== true ||
+    supportedExecutionCandidate.same_trace_value_and_proof !== true ||
+    supportedExecutionCandidate.exact_runtime_allowlist_selected !== false ||
+    supportedExecutionCandidate.controlled_process_profile_enforced !== false ||
+    supportedExecutionCandidate.cross_platform_admission_evidence_complete !== false ||
+    supportedExecutionCandidate.independent_adversarial_review_complete !== false ||
+    supportedExecutionCandidate.supported_execution_predicate_selected !== false ||
+    supportedExecutionCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "supported-execution predicate candidate must remain incomplete, unreviewed, unselected, and non-runtime",
     );
   }
 
