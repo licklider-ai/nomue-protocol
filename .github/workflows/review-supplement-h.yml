@@ -1,0 +1,88 @@
+# Review-only evidence workflow for Section H of the R2-D5 supported-execution
+# candidate review supplement. It runs only on the dedicated reviewer branch,
+# verifies on every runner that the implementation is byte-identical to the
+# pinned review-input commit, executes the reviewer-owned harness under
+# review-inputs/r2-d5-supported-execution-predicate/supplement-h/ in cold and
+# hot modes, and compares the captured execution traces across runners.
+#
+# This workflow is additive review evidence collection: it changes no existing
+# workflow, implementation, governance, readiness, or authority file; it
+# evaluates or passes no release gate; and it selects no supported platform,
+# runtime allowlist, execution profile, or resource bound.
+name: Review supplement H
+
+on:
+  push:
+    branches: ["review/r2-d5-supported-execution-b4bf419"]
+  workflow_dispatch:
+
+env:
+  REVIEW_INPUT_COMMIT: e8fd88e2f9a421274fc1644d8b4b0f03fe303f6b
+
+jobs:
+  trace-matrix:
+    name: Trace capture (${{ matrix.label }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: linux-x64-node22, os: ubuntu-latest, node: 22 }
+          - { label: linux-x64-node24, os: ubuntu-latest, node: 24 }
+          - { label: windows-x64-node22, os: windows-latest, node: 22 }
+          - { label: macos-arm64-node22, os: macos-latest, node: 22 }
+          - { label: linux-arm64-node22, os: ubuntu-24.04-arm, node: 22 }
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify implementation bytes match the review-input commit
+        run: |
+          git fetch --depth=1 origin "$REVIEW_INPUT_COMMIT"
+          changed="$(git diff --name-only "$REVIEW_INPUT_COMMIT" HEAD)"
+          echo "paths changed since review-input commit:"
+          echo "$changed"
+          bad="$(echo "$changed" | grep -v -e '^review-inputs/' -e '^\.github/workflows/review-supplement-h\.yml$' || true)"
+          if [ -n "$bad" ]; then
+            echo "unexpected non-review path changed since review-input commit:"
+            echo "$bad"
+            exit 1
+          fi
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Cold pass (first evaluation of every case in a fresh process)
+        run: node --import tsx review-inputs/r2-d5-supported-execution-predicate/supplement-h/harness.mts cold cold.json
+      - name: Hot passes (fresh process; two uncaptured warm-up passes, then three captured passes)
+        run: node --allow-natives-syntax --import tsx review-inputs/r2-d5-supported-execution-predicate/supplement-h/harness.mts hot hot.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: supplement-h-${{ matrix.label }}
+          path: |
+            cold.json
+            hot.json
+
+  compare:
+    name: Cross-runner comparison
+    needs: trace-matrix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          path: manifests
+          pattern: supplement-h-*
+      - name: Section H comparisons (cold versus hot, determinism, cross-runner projections)
+        run: node review-inputs/r2-d5-supported-execution-predicate/supplement-h/compare.mjs manifests comparison.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: supplement-h-comparison
+          path: comparison.json
