@@ -139,25 +139,34 @@ The two candidate runtime evaluation entrypoints now also share a closed two-fie
 input parser. Eleven reason-code spellings for the already reviewed operation-stage
 failures are recorded as unissued candidates. The parser and partial inventory passed
 independent adversarial review as non-authoritative decision-preparation material;
-ten support-dependent mappings and the final reason-code freeze remain open. The
-upstream G4 paired-data graph also has an actual-execution trace implementation
-candidate. It leaves the reviewed reference graph unchanged, derives the algebraic
-result from one immutable trace, and exactly checks every recorded binary64
-primitive before returning a candidate result. Its independent adversarial review
-found exactly two refusal-classification blockers, and the accepted bounded repair
-closed both under a fixed close-only review with no repair-induced findings. The G4
-trace is therefore recorded as independently reviewed, unissued, non-authoritative
-decision-preparation material. Its pair and node ceilings remain evaluation limits
-only. The G4 mathematical-truth error ledger and composition with the tail and
-confidence-interval traces remain open. The supported-execution predicate now has a
-tail-only implementation candidate: one immutable actual trace supplies both the
-returned value and proof inputs, and every traced ordinary arithmetic and square-root
-result is checked exactly. This does not yet select a platform. The implementation's
-independent adversarial review and its bounded Section H cross-runner supplement are
-complete. An exact runtime/build allowlist, controlled-process enforcement, a
-supported trace resource bound, and complete per-tuple admission evidence remain
-open. The final truth-error predicate, supported df range, subnormal first-failure
-ordering, and final critical-value table selection also remain open.
+ten support-dependent mappings and the final reason-code freeze remain open.
+
+The upstream G4 paired-data graph has an independently reviewed actual-execution
+trace candidate. It leaves the reviewed reference graph unchanged, derives the
+algebraic result from one immutable trace, and exactly checks every recorded
+binary64 primitive before returning a candidate result. Its initial independent
+review found exactly two refusal-classification blockers, and the accepted bounded
+repair closed both under a fixed close-only review with no repair-induced findings.
+Its pair and node ceilings remain evaluation limits only.
+
+That reviewed G4 trace is now connected to the reviewed table-connected Student-t
+tail trace by an independently reviewed composition candidate. The composition
+starts from raw paired observations, re-verifies both nested traces, requires the
+exact G4 test-statistic binary64 bits and integer df at the handoff, and returns the
+p-value from the verified tail trace. The composition review returned `GO` with no
+findings after 291 reviewer-owned checks. This closes the actual-execution
+composition review requirement only. The G4 mathematical-truth error ledger and
+confidence-interval trace composition remain open.
+
+The supported-execution predicate has a tail-only implementation candidate: one
+immutable actual trace supplies both the returned value and proof inputs, and every
+traced ordinary arithmetic and square-root result is checked exactly. This does not
+yet select a platform. The implementation's independent adversarial review and its
+bounded Section H cross-runner supplement are complete. An exact runtime/build
+allowlist, controlled-process enforcement, a supported trace resource bound, and
+complete per-tuple admission evidence remain open. The final truth-error predicate,
+supported df range, subnormal first-failure ordering, and final critical-value table
+selection also remain open.
 
 Decision: the supported sample-size/value/t-statistic domain, operation graph,
 Student-t tail procedure, fixed-95-percent critical-value table, failure boundaries,

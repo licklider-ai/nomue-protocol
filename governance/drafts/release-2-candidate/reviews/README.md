@@ -40,6 +40,17 @@ That review returned `CLOSED` with no repair-induced findings. The combined boun
 disposition is recorded in
 `d5-g4-execution-trace-adversarial-review-disposition.md`. This completes the G4
 implementation-candidate review requirement only. It does not establish a G4
-mathematical-truth error bound, compose the G4 and Student-t tail traces, complete
-confidence-interval composition, select resource or platform support, close R2-D5,
-or authorize Release 2.
+mathematical-truth error bound, complete confidence-interval composition, select
+resource or platform support, close R2-D5, or authorize Release 2.
+
+The G4-to-Student-t tail composition candidate was reviewed under
+`d5-g4-tail-trace-composition-adversarial-review-protocol.md`, with the independent
+result retained in
+`../../../../review-inputs/r2-d5-g4-tail-trace-composition-candidate/REVIEW-RESULT.md`.
+The review returned `GO` with no findings after 291 reviewer-owned checks. The bounded
+disposition is recorded in
+`d5-g4-tail-trace-composition-adversarial-review-disposition.md`. This closes only the
+actual-execution composition review requirement: raw paired observations are bound
+through the verified G4 trace to the verified tail trace and returned p-value. It does
+not establish a G4 mathematical-truth error bound, confidence-interval composition,
+supported execution, platform, domain, runtime, R2-D5 completion, or Release 2.

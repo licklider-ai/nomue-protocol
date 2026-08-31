@@ -75,7 +75,7 @@ function recomputeCompositionHash(composition: Record<string, unknown>): void {
 }
 
 describe("R2-D5 G4-to-tail trace composition candidate", () => {
-  it("pins an unissued, unreviewed, non-runtime checkpoint without readiness admission", () => {
+  it("pins an independently reviewed, unissued, non-runtime checkpoint with bounded readiness admission", () => {
     expect(validatePairedTG4TailCompositionCheckpoint(loadCheckpoint())).toEqual([]);
 
     const promoted = cloneCheckpoint();
@@ -84,10 +84,16 @@ describe("R2-D5 G4-to-tail trace composition candidate", () => {
     promoted.closure_state["supported_execution_predicate"] = "selected";
     expect(validatePairedTG4TailCompositionCheckpoint(promoted).length).toBeGreaterThan(0);
 
-    const fabricatedReview = cloneCheckpoint();
-    fabricatedReview.readiness_admission["admission_state"] = "admitted";
-    fabricatedReview.closure_state["tail_trace_composition_review"] = "closed";
-    expect(validatePairedTG4TailCompositionCheckpoint(fabricatedReview).length).toBeGreaterThan(0);
+    const demotedReview = cloneCheckpoint();
+    demotedReview.readiness_admission["admission_state"] =
+      "held_pending_independent_adversarial_review";
+    demotedReview.closure_state["tail_trace_composition_review"] = "pending";
+    expect(validatePairedTG4TailCompositionCheckpoint(demotedReview).length).toBeGreaterThan(0);
+
+    const fabricatedTruth = cloneCheckpoint();
+    fabricatedTruth.closure_state["g4_mathematical_truth_error_bound"] = "complete";
+    fabricatedTruth.closure_state["confidence_interval_trace_composition"] = "complete";
+    expect(validatePairedTG4TailCompositionCheckpoint(fabricatedTruth).length).toBeGreaterThan(0);
   });
 
   it("binds raw paired observations through the verified G4 trace to the verified tail trace", () => {
@@ -101,7 +107,7 @@ describe("R2-D5 G4-to-tail trace composition candidate", () => {
     expect(result).toMatchObject({
       ok: true,
       tailTraceCompositionImplemented: true,
-      tailTraceCompositionIndependentlyReviewed: false,
+      tailTraceCompositionIndependentlyReviewed: true,
       g4MathematicalTruthErrorBoundComplete: false,
       confidenceIntervalCompositionComplete: false,
       supportedExecutionPredicateSatisfied: false,
@@ -248,7 +254,7 @@ describe("R2-D5 G4-to-tail trace composition candidate", () => {
       g4Classification: "g4_graph_refusal",
       g4GraphClassification: "ZERO_DIFFERENCE_VARIANCE",
       tailTraceCompositionImplemented: true,
-      tailTraceCompositionIndependentlyReviewed: false,
+      tailTraceCompositionIndependentlyReviewed: true,
       supportedDomainClaimed: false,
       runtimeSupportClaimed: false,
     });
