@@ -140,6 +140,12 @@ input parser. Eleven reason-code spellings for the already reviewed operation-st
 failures are recorded as unissued candidates. The parser and partial inventory passed
 independent adversarial review as non-authoritative decision-preparation material;
 ten support-dependent mappings and the final reason-code freeze remain open. The
+upstream G4 paired-data graph now also has an actual-execution trace implementation
+candidate. It leaves the reviewed reference graph unchanged, derives the algebraic
+result from one immutable trace, and exactly checks every recorded binary64
+primitive before returning a candidate result. Its pair and node ceilings are
+evaluation limits only. Independent review, the G4 mathematical-truth error ledger,
+and composition with the tail and confidence-interval traces remain open. The
 supported-execution predicate now has a tail-only implementation candidate: one
 immutable actual trace supplies both the returned value and proof inputs, and every
 traced ordinary arithmetic and square-root result is checked exactly. This does not

@@ -128,6 +128,24 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the G4 trace implementation without selecting a bound or support", () => {
+    const candidate = loadReadiness();
+    candidate.g4_actual_execution_trace_candidate.maximum_values_are_supported_resource_bounds =
+      true as never;
+    candidate.g4_actual_execution_trace_candidate.independent_adversarial_review_complete =
+      true as never;
+    candidate.g4_actual_execution_trace_candidate.mathematical_truth_error_bound_complete =
+      true as never;
+    candidate.g4_actual_execution_trace_candidate.tail_trace_composition_complete = true as never;
+    candidate.g4_actual_execution_trace_candidate.confidence_interval_trace_composition_complete =
+      true as never;
+    candidate.g4_actual_execution_trace_candidate.supported_domain_claimed = true as never;
+    candidate.g4_actual_execution_trace_candidate.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
+      "G4 actual-execution trace candidate must remain incomplete, unreviewed, unbounded, and non-runtime",
+    );
+  });
+
   it("records the reviewed trace implementation without selecting a profile or platform", () => {
     const candidate = loadReadiness();
     candidate.supported_execution_predicate_candidate.exact_runtime_allowlist_selected =
@@ -221,6 +239,14 @@ describe("Release 2 numerical evidence readiness", () => {
     )["supported"] = true;
     expect(validatePairedTNumericalReadinessCandidate(runtimeInputReasonCode)).toContain(
       "runtime input/reason-code candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const g4Trace = loadReadiness();
+    (g4Trace.g4_actual_execution_trace_candidate as unknown as Record<string, unknown>)[
+      "supported"
+    ] = true;
+    expect(validatePairedTNumericalReadinessCandidate(g4Trace)).toContain(
+      "G4 actual-execution trace candidate: keys are incomplete or contain an undeclared item",
     );
 
     const supportedExecution = loadReadiness();

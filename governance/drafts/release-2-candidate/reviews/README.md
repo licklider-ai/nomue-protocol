@@ -24,3 +24,18 @@ supplement, and their bounded disposition are recorded in
 closes the implementation-candidate review requirement only. It does not populate
 the runtime allowlist, enforce the controlled-process profile, complete per-tuple
 admission evidence, or select a supported execution predicate.
+
+The upstream G4 paired-data actual-execution trace candidate is commissioned for
+independent adversarial review in
+`d5-g4-execution-trace-candidate-adversarial-review-protocol.md`. The protocol
+requires separate verification of the closed input contract, deterministic G4
+schedule, exact binary64 primitives, trace binding, graph invariance, resource
+ceilings, readiness state, and authority boundary. A successful review can approve
+only the non-authoritative candidate; it cannot establish mathematical-truth error,
+tail or confidence-interval composition, support, or Release 2 completion.
+
+The initial G4 trace review found two refusal-classification blockers. Their bounded
+repair is commissioned for close-only review in
+`d5-g4-execution-trace-repair-close-review-protocol.md`. That review may close only
+the per-pair first-failure ordering and non-root reduction-overflow classification;
+it cannot expand the original candidate or its maturity claims.
