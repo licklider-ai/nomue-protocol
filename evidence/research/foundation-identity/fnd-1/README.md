@@ -5,14 +5,19 @@ investigation produces Research Gate input. It does not select Protocol fields,
 schemas, identifiers, method defaults, implementation behavior, or a release
 change.
 
-**Current disposition:** both isolated passes are complete. The
-[`reconciled result`](2026-08-30-independent-research-result.md) is accepted as
-dual-pass, source-bounded FND-1 input with disposition `NARROW`. The full FND-1
-Research Gate remains open, and no Protocol adoption is authorized.
+**Current disposition:** both isolated passes and the bounded multiplicity
+primary-text follow-up are complete. The
+[`reconciled result`](2026-08-30-independent-research-result.md) remains
+accepted as dual-pass, source-bounded FND-1 input with disposition `NARROW`.
+The
+[`multiplicity steward disposition`](2026-08-31-multiplicity-steward-disposition.md)
+closes `FND1-H01` through `FND1-H03` in narrowed form. `FND1-H04` through
+`FND1-H08` and the all-pairs successor-source requirement remain open. The full
+FND-1 Research Gate remains open, and no Protocol adoption is authorized.
 
-## Active follow-up: multiplicity primary-text closure
+## Completed follow-up: multiplicity primary-text closure
 
-The next bounded investigation addresses only `FND1-H01`, `FND1-H02`, and
+This bounded investigation addressed only `FND1-H01`, `FND1-H02`, and
 `FND1-H03` from the reconciled result:
 
 | Stage                        | Commission                                                                                                                 | Result                                                                                                             |
@@ -20,8 +25,12 @@ The next bounded investigation addresses only `FND1-H01`, `FND1-H02`, and
 | Original-paper investigation | [`2026-08-30-multiplicity-primary-text-closure-commission.md`](2026-08-30-multiplicity-primary-text-closure-commission.md) | [`2026-08-30-multiplicity-primary-text-closure-result.md`](2026-08-30-multiplicity-primary-text-closure-result.md) |
 | Repository close review      | [`2026-08-30-multiplicity-close-review-commission.md`](2026-08-30-multiplicity-close-review-commission.md)                 | [`2026-08-30-multiplicity-close-review-result.md`](2026-08-30-multiplicity-close-review-result.md)                 |
 
-Neither stage authorizes Protocol adoption. The non-clinical vocabulary hold
-and every other FND-1 hold remain outside this closure package.
+The
+[`steward disposition`](2026-08-31-multiplicity-steward-disposition.md)
+accepts the reviewed source-bounded findings and records the three narrowed
+hold closures. Neither stage nor the disposition authorizes Protocol adoption.
+The non-clinical vocabulary hold and every other FND-1 hold remain outside this
+closure package.
 
 ## Active execution mode
 
