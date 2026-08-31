@@ -65,6 +65,17 @@ only for the eleven already reviewed operation-stage failures. The input contrac
 and this partial inventory passed independent adversarial review as non-authoritative
 decision-preparation material. Ten support-dependent reason-code decisions remain
 explicitly deferred.
+A separate upstream G4 candidate now derives the paired differences, mean
+difference, sample variance, standard error, test statistic, and degrees of freedom
+from one immutable actual-execution trace. Every recorded binary64 arithmetic or
+square-root node is checked by the same exact primitive verifier used by the
+reviewed tail-only candidate, and the verifier reconstructs the fixed recursive
+schedule and result from the trace-bound paired observations. The existing G4
+reference graph remains unchanged. The 201-pair and 2,048-node ceilings are review
+evaluation limits, not supported resource bounds. Independent review, a G4
+mathematical-truth error bound, and composition with the tail and interval paths all
+remain pending; the candidate therefore claims no supported execution, platform,
+domain, or runtime.
 The supported-execution research is now followed by a separate candidate evaluator
 that derives the returned tail value and its proof inputs from one immutable trace.
 It exactly rechecks every traced binary64 arithmetic primitive and square root and

@@ -1,0 +1,52 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-g4-actual-execution-trace-evaluation-1",
+  "decision_state": "implementation_candidate_pending_independent_review_and_error_closure",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "scope": {
+    "input": "explicit_paired_binary64_observations",
+    "output": "mean_difference_sample_variance_standard_error_test_statistic_and_df",
+    "operation_graph": "g4_pairwise_two_pass_fixed_recursive_floor_half_split",
+    "student_t_tail_included": false,
+    "confidence_interval_endpoints_included": false,
+    "existing_reference_graph_changed": false
+  },
+  "execution_trace": {
+    "format": "paired-t-g4-actual-execution-trace-v1",
+    "canonical_pair_order": "ascending_pair_id_code_unit_order",
+    "difference_direction": "first_condition_minus_second_condition",
+    "value_source": "one_actual_immutable_trace",
+    "maximum_pairs_evaluation_candidate": 201,
+    "maximum_node_count_evaluation_candidate": 2048,
+    "maximum_values_are_supported_resource_bounds": false,
+    "mutation_disposition": "fail_closed"
+  },
+  "exact_primitive_verifier": {
+    "source": "tooling/src/spikes/paired-t-supported-execution-candidate.ts",
+    "ordinary_operations": ["add", "subtract", "multiply", "divide"],
+    "square_root_method": "exact_binary64_rounding_cell_strict_containment",
+    "every_recorded_node_verified_before_candidate_acceptance": true
+  },
+  "closure_state": {
+    "implementation": "implemented_pending_independent_adversarial_review",
+    "g4_mathematical_truth_error_bound": "pending",
+    "tail_trace_composition": "pending",
+    "confidence_interval_trace_composition": "pending",
+    "supported_resource_bound": "unselected",
+    "supported_execution_predicate": "unselected"
+  },
+  "prohibited_claims": [
+    "supported_pair_or_df_max",
+    "supported_value_domain",
+    "complete_g4_mathematical_truth_error_bound",
+    "complete_end_to_end_p_value_trace",
+    "complete_confidence_interval_trace",
+    "selected_supported_platform",
+    "selected_supported_execution_predicate",
+    "authoritative_public_check_or_bundle",
+    "release_2_complete"
+  ]
+}

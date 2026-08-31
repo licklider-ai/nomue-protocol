@@ -172,6 +172,35 @@ therefore leaves the PR #29 operation-stage predicates unchanged until that orde
 has its own witness and review. It does not turn the research observation into a
 blanket subnormal refusal.
 
+## G4 actual-execution trace candidate
+
+`g4-execution-trace-candidate.json` and
+`tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts` apply the actual-trace
+pattern to the upstream G4 paired-data graph. They do not replace or modify
+`reference/spikes/paired-t.ts`. The candidate accepts the same explicit paired
+observations, performs the same canonical pair ordering and fixed recursive
+floor-half reductions, and binds the paired differences, mean difference, sample
+variance, standard error, test statistic, and integer degrees of freedom to one
+immutable trace.
+
+Each node records its unique sequence, deterministic operation label, operand source
+sequences, operand binary64 bits, and result bits. Pair subtraction, both pairwise
+sums, mean division, centering, squaring, sample-variance division, standard-error
+division and square root, and the final t division are all traced. The candidate
+reuses the exact binary64 primitive verifier from the independently reviewed
+tail-only supported-execution candidate. Before reporting a candidate success, the
+trace verifier re-executes the deterministic schedule from the trace-bound canonical
+input, checks every primitive, and requires exact structural, source, result, and
+digest agreement. Returned values are then read from that same verified trace.
+
+The current ceilings of 201 pairs and 2,048 trace nodes are evidence-evaluation
+limits only. They are mechanically marked as not being supported resource bounds.
+This increment ends at `(mean, sample variance, standard error, t, df)`: it does not
+compose the G4 trace with the Student-t tail trace or confidence-interval endpoints,
+and it supplies no G4 mathematical-truth error bound. Independent adversarial review
+also remains pending. Consequently the candidate makes no supported-execution,
+platform, domain, runtime, Public Check, bundle, or Release 2 completion claim.
+
 ## Supported execution predicate research
 
 Independent primary-source investigation and separate adjudication have now closed

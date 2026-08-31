@@ -113,6 +113,24 @@ export interface PairedTNumericalReadinessCandidate {
     final_reason_codes_frozen: false;
     runtime_support_enabled: false;
   };
+  g4_actual_execution_trace_candidate: {
+    closure: "incomplete_implementation_candidate";
+    artifact: "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json";
+    execution_surface: "tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts";
+    trace_format: "paired-t-g4-actual-execution-trace-v1";
+    maximum_pairs_evaluation_candidate: 201;
+    maximum_trace_nodes_evaluation_candidate: 2048;
+    maximum_values_are_supported_resource_bounds: false;
+    existing_reference_graph_unchanged: true;
+    exact_primitive_verifier_reused: true;
+    same_trace_result_values: true;
+    independent_adversarial_review_complete: false;
+    mathematical_truth_error_bound_complete: false;
+    tail_trace_composition_complete: false;
+    confidence_interval_trace_composition_complete: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   supported_execution_predicate_candidate: {
     closure: "reviewed_tail_only_implementation_candidate";
     artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json";
@@ -251,6 +269,7 @@ const TOP_LEVEL_KEYS = [
   "truth_boundary_evidence_candidate",
   "truth_error_support_closure_candidate",
   "runtime_input_reason_code_candidate",
+  "g4_actual_execution_trace_candidate",
   "supported_execution_predicate_candidate",
   "operation_graph",
   "refusal_classes",
@@ -386,6 +405,25 @@ const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "execution_surface",
+  "trace_format",
+  "maximum_pairs_evaluation_candidate",
+  "maximum_trace_nodes_evaluation_candidate",
+  "maximum_values_are_supported_resource_bounds",
+  "existing_reference_graph_unchanged",
+  "exact_primitive_verifier_reused",
+  "same_trace_result_values",
+  "independent_adversarial_review_complete",
+  "mathematical_truth_error_bound_complete",
+  "tail_trace_composition_complete",
+  "confidence_interval_trace_composition_complete",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
 const SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS = [
   "closure",
   "artifact",
@@ -507,6 +545,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "runtime input/reason-code candidate",
     candidate.runtime_input_reason_code_candidate,
     RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "G4 actual-execution trace candidate",
+    candidate.g4_actual_execution_trace_candidate,
+    G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -723,6 +767,32 @@ function validatePairedTNumericalReadinessCandidateInternal(
   ) {
     errors.push(
       "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
+    );
+  }
+
+  const g4TraceCandidate = candidate.g4_actual_execution_trace_candidate;
+  if (
+    g4TraceCandidate.closure !== "incomplete_implementation_candidate" ||
+    g4TraceCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json" ||
+    g4TraceCandidate.execution_surface !==
+      "tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts" ||
+    g4TraceCandidate.trace_format !== "paired-t-g4-actual-execution-trace-v1" ||
+    g4TraceCandidate.maximum_pairs_evaluation_candidate !== 201 ||
+    g4TraceCandidate.maximum_trace_nodes_evaluation_candidate !== 2048 ||
+    g4TraceCandidate.maximum_values_are_supported_resource_bounds !== false ||
+    g4TraceCandidate.existing_reference_graph_unchanged !== true ||
+    g4TraceCandidate.exact_primitive_verifier_reused !== true ||
+    g4TraceCandidate.same_trace_result_values !== true ||
+    g4TraceCandidate.independent_adversarial_review_complete !== false ||
+    g4TraceCandidate.mathematical_truth_error_bound_complete !== false ||
+    g4TraceCandidate.tail_trace_composition_complete !== false ||
+    g4TraceCandidate.confidence_interval_trace_composition_complete !== false ||
+    g4TraceCandidate.supported_domain_claimed !== false ||
+    g4TraceCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "G4 actual-execution trace candidate must remain incomplete, unreviewed, unbounded, and non-runtime",
     );
   }
 
