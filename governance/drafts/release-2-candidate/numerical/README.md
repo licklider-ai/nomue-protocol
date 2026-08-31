@@ -213,10 +213,18 @@ binds the returned p-value to the verified tail outcome. Its independent adversa
 review returned `GO` with no findings; the bounded disposition is recorded in
 `../reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md`.
 
-This closes only the actual-execution composition review requirement. The candidate
-still supplies no G4 mathematical-truth error bound, and confidence-interval trace
-composition remains pending. It makes no supported-execution, platform, domain,
-runtime, Public Check, bundle, R2-D5, or Release 2 completion claim.
+The actual-execution composition review requirement is closed. A separate
+`g4-truth-error-candidate.json` now binds exact truth intervals and exact-rational
+absolute-error bounds to the verified G4 trace. Its independent adversarial review
+used a separately constructed exact-arithmetic oracle and returned `GO` with no
+findings after 568 reviewer checks. The bounded disposition is recorded in
+`../reviews/d5-g4-truth-error-adversarial-review-disposition.md`.
+
+This closes the G4 mathematical-truth error readiness requirement for the trace-bound
+paired differences, mean, sample variance, standard error, and test statistic only.
+Student-t tail numerical truth and confidence-interval trace composition remain
+pending. The candidate makes no supported-execution, platform, domain, runtime,
+Public Check, bundle, R2-D5, or Release 2 completion claim.
 
 ## Supported execution predicate research
 

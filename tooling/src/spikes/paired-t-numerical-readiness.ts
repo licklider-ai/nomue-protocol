@@ -126,7 +126,9 @@ export interface PairedTNumericalReadinessCandidate {
     exact_primitive_verifier_reused: true;
     same_trace_result_values: true;
     independent_adversarial_review_complete: true;
-    mathematical_truth_error_bound_complete: false;
+    mathematical_truth_error_artifact: "governance/drafts/release-2-candidate/numerical/g4-truth-error-candidate.json";
+    mathematical_truth_error_review_disposition: "governance/drafts/release-2-candidate/reviews/d5-g4-truth-error-adversarial-review-disposition.md";
+    mathematical_truth_error_bound_complete: true;
     tail_trace_composition_artifact: "governance/drafts/release-2-candidate/numerical/g4-tail-trace-composition-candidate.json";
     tail_trace_composition_review_disposition: "governance/drafts/release-2-candidate/reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md";
     tail_trace_composition_complete: true;
@@ -421,6 +423,8 @@ const G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS = [
   "exact_primitive_verifier_reused",
   "same_trace_result_values",
   "independent_adversarial_review_complete",
+  "mathematical_truth_error_artifact",
+  "mathematical_truth_error_review_disposition",
   "mathematical_truth_error_bound_complete",
   "tail_trace_composition_artifact",
   "tail_trace_composition_review_disposition",
@@ -793,7 +797,11 @@ function validatePairedTNumericalReadinessCandidateInternal(
     g4TraceCandidate.exact_primitive_verifier_reused !== true ||
     g4TraceCandidate.same_trace_result_values !== true ||
     g4TraceCandidate.independent_adversarial_review_complete !== true ||
-    g4TraceCandidate.mathematical_truth_error_bound_complete !== false ||
+    g4TraceCandidate.mathematical_truth_error_artifact !==
+      "governance/drafts/release-2-candidate/numerical/g4-truth-error-candidate.json" ||
+    g4TraceCandidate.mathematical_truth_error_review_disposition !==
+      "governance/drafts/release-2-candidate/reviews/d5-g4-truth-error-adversarial-review-disposition.md" ||
+    g4TraceCandidate.mathematical_truth_error_bound_complete !== true ||
     g4TraceCandidate.tail_trace_composition_artifact !==
       "governance/drafts/release-2-candidate/numerical/g4-tail-trace-composition-candidate.json" ||
     g4TraceCandidate.tail_trace_composition_review_disposition !==
@@ -804,7 +812,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     g4TraceCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "G4 actual-execution trace candidate must remain reviewed, unbounded, tail-composed, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
     );
   }
 

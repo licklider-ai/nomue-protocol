@@ -128,12 +128,16 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the reviewed G4 trace and tail composition without selecting a bound or support", () => {
+  it("records reviewed G4 truth and tail composition without selecting support", () => {
     const candidate = loadReadiness();
     candidate.g4_actual_execution_trace_candidate.maximum_values_are_supported_resource_bounds =
       true as never;
     candidate.g4_actual_execution_trace_candidate.mathematical_truth_error_bound_complete =
-      true as never;
+      false as never;
+    candidate.g4_actual_execution_trace_candidate.mathematical_truth_error_artifact =
+      "governance/drafts/release-2-candidate/numerical/other.json" as never;
+    candidate.g4_actual_execution_trace_candidate.mathematical_truth_error_review_disposition =
+      "governance/drafts/release-2-candidate/reviews/other.md" as never;
     candidate.g4_actual_execution_trace_candidate.tail_trace_composition_complete = false as never;
     candidate.g4_actual_execution_trace_candidate.tail_trace_composition_artifact =
       "governance/drafts/release-2-candidate/numerical/other.json" as never;
@@ -144,7 +148,7 @@ describe("Release 2 numerical evidence readiness", () => {
     candidate.g4_actual_execution_trace_candidate.supported_domain_claimed = true as never;
     candidate.g4_actual_execution_trace_candidate.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "G4 actual-execution trace candidate must remain reviewed, unbounded, tail-composed, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
     );
 
     const missingReview = loadReadiness();
@@ -153,7 +157,7 @@ describe("Release 2 numerical evidence readiness", () => {
     missingReview.g4_actual_execution_trace_candidate.review_disposition =
       "governance/drafts/release-2-candidate/reviews/other.md" as never;
     expect(validatePairedTNumericalReadinessCandidate(missingReview)).toContain(
-      "G4 actual-execution trace candidate must remain reviewed, unbounded, tail-composed, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
     );
   });
 

@@ -104,16 +104,19 @@ function recomputeEnvelopeHash(envelope: MutableEnvelope): void {
 }
 
 describe("R2-D5 G4 mathematical-truth error candidate", () => {
-  it("pins an unissued, review-pending, non-runtime checkpoint", () => {
+  it("pins an unissued, independently reviewed, non-runtime checkpoint", () => {
     expect(validatePairedTG4TruthErrorCheckpoint(loadCheckpoint())).toEqual([]);
 
     const promoted = cloneCheckpoint();
     promoted.runtime_support_enabled = true;
     promoted.supported_domain_claimed = true;
-    promoted.closure_state["independent_adversarial_review"] = "complete";
-    promoted.closure_state["readiness_admission"] = "admitted";
-    promoted.closure_state["g4_mathematical_truth_error_bound"] = "complete";
     expect(validatePairedTG4TruthErrorCheckpoint(promoted).length).toBeGreaterThan(0);
+
+    const demoted = cloneCheckpoint();
+    demoted.closure_state["independent_adversarial_review"] = "pending";
+    demoted.closure_state["readiness_admission"] = "held_pending_independent_adversarial_review";
+    demoted.closure_state["g4_mathematical_truth_error_bound"] = "implemented_not_reviewed";
+    expect(validatePairedTG4TruthErrorCheckpoint(demoted).length).toBeGreaterThan(0);
 
     const selected = cloneCheckpoint();
     selected.closure_state["supported_resource_bound"] = "selected";
@@ -139,8 +142,8 @@ describe("R2-D5 G4 mathematical-truth error candidate", () => {
       ok: true,
       candidateArithmeticExecutionVerified: true,
       mathematicalTruthErrorBoundImplemented: true,
-      mathematicalTruthErrorBoundIndependentlyReviewed: false,
-      mathematicalTruthErrorBoundComplete: false,
+      mathematicalTruthErrorBoundIndependentlyReviewed: true,
+      mathematicalTruthErrorBoundComplete: true,
       supportedExecutionPredicateSatisfied: false,
       supportedPlatformClaimed: false,
       supportedDomainClaimed: false,
@@ -338,8 +341,8 @@ describe("R2-D5 G4 mathematical-truth error candidate", () => {
     expect(result).toMatchObject({
       ok: true,
       mathematicalTruthErrorBoundImplemented: true,
-      mathematicalTruthErrorBoundIndependentlyReviewed: false,
-      mathematicalTruthErrorBoundComplete: false,
+      mathematicalTruthErrorBoundIndependentlyReviewed: true,
+      mathematicalTruthErrorBoundComplete: true,
       supportedDomainClaimed: false,
       runtimeSupportClaimed: false,
     });
