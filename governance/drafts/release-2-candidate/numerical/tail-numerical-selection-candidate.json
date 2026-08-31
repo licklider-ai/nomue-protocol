@@ -1,0 +1,69 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-tail-numerical-selection-1",
+  "decision_state": "input_specific_bound_selection_candidate_pending_independent_review",
+  "m2_closed": false,
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "truth_error_contract": {
+    "selected_bound_form": "input_specific_normal_binary64_roundoff_plus_positive_series_remainder",
+    "input_specific_bound_selected_for_tail_numerical_contract": true,
+    "global_constant_bound_required_for_tail_numerical_closure": false,
+    "global_constant_truth_error_bound_selected": false,
+    "finite_corpus_maximum_is_a_bound": false,
+    "bound_arithmetic": "exact_rational_with_exact_integer_ulp_ceiling",
+    "proof_artifact": "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
+    "proof_review_disposition": "governance/drafts/release-2-candidate/reviews/d5-truth-error-support-closure-adversarial-review-disposition.md"
+  },
+  "graph_and_table_binding": {
+    "runtime_graph": "tooling/src/spikes/paired-t-runtime-table-integration-candidate.ts",
+    "reviewed_inverse_beta_table_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+    "table_integration_review": "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md",
+    "supported_execution_surface": "tooling/src/spikes/paired-t-supported-execution-candidate.ts",
+    "supported_execution_review": "governance/drafts/release-2-candidate/reviews/d5-supported-execution-predicate-adversarial-review-disposition.md",
+    "one_actual_immutable_trace_required": true,
+    "exact_primitive_verification_required": true,
+    "supported_execution_predicate_selected": false
+  },
+  "series_closure": {
+    "non_series_branches": "reviewed_exact_zero_and_df2_closed_form_proof_paths",
+    "termination_observation": "next_sum_binary64_bits_equal_current_sum_binary64_bits_before_iteration_cap",
+    "central_remainder": "next_term_times_two_relative_to_accumulated_sum",
+    "lower_tail_remainder": "next_term_times_df_plus_one_relative_to_accumulated_sum",
+    "remainder_kind": "a_posteriori_positive_geometric_upper_bound",
+    "iteration_cap_failure": "fail_closed_refusal",
+    "iteration_cap_selected_as_supported_resource_bound": false
+  },
+  "projection_contract": {
+    "target_format": "binary64_round_ties_to_even",
+    "selected_projection_classes": ["positive_normal", "rounded_one"],
+    "stability_condition": "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound",
+    "zero_subnormal_invalid_or_insufficient_margin": "fail_closed_refusal",
+    "projection_margin_runtime_activated": false
+  },
+  "failure_semantics": {
+    "table_trace_proof_or_projection_precondition_failure": "fail_closed_refusal_without_support_claim",
+    "final_public_reason_codes_frozen": false,
+    "correctly_rounded_p_value_claim_requires_all_selected_conditions": true
+  },
+  "closure_state": {
+    "independent_selection_review": "pending",
+    "supported_degrees_of_freedom_maximum": null,
+    "supported_platform_matrix": "pending",
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false
+  },
+  "prohibited_claims": [
+    "finite_corpus_maximum_as_global_truth_bound",
+    "global_constant_truth_error_bound_selected",
+    "supported_df_max",
+    "selected_supported_platform_or_execution_predicate",
+    "supported_runtime_student_t_procedure",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete"
+  ]
+}
