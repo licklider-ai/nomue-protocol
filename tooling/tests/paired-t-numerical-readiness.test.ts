@@ -52,6 +52,48 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records Group 1 selection while keeping review, support, and runtime open", () => {
+    const candidate = loadReadiness();
+    expect(candidate.candidate_supported_scope_resource_bounds).toEqual({
+      closure: "selection_pending_independent_review",
+      artifact:
+        "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+      corpus:
+        "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json",
+      validator: "tooling/src/spikes/paired-t-candidate-supported-scope-resource-bounds.ts",
+      selected_pair_count_minimum: 2,
+      selected_pair_count_maximum: 201,
+      selected_degrees_of_freedom_minimum: 1,
+      selected_degrees_of_freedom_maximum: 200,
+      candidate_tail_table_content_hash:
+        "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+      candidate_fixed_95_table_content_hash:
+        "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0",
+      selected_g4_trace_node_maximum: 1008,
+      selected_tail_trace_node_maximum: 100000,
+      selected_tail_iteration_cap_maximum: 8064,
+      selected_ci_specific_trace_node_maximum: 3,
+      selected_combined_primitive_trace_node_maximum: 101011,
+      selection_made_by_this_increment: true,
+      independent_review: "pending",
+      group_1_complete: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+    });
+    expect(candidate.supported_domain).toBeNull();
+    expect(candidate.numerical_contract_frozen).toBe(false);
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
+
+    const promoted = loadReadiness();
+    promoted.candidate_supported_scope_resource_bounds.independent_review = "complete" as never;
+    promoted.candidate_supported_scope_resource_bounds.group_1_complete = true as never;
+    promoted.candidate_supported_scope_resource_bounds.supported_domain_claimed = true as never;
+    promoted.candidate_supported_scope_resource_bounds.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
+      "candidate supported-scope/resource bounds must remain selected for independent review without support or runtime promotion",
+    );
+  });
+
   it("keeps the numerical-contract decision candidate incomplete and non-runtime", () => {
     const candidate = loadReadiness();
     candidate.numerical_contract_decision_candidate.supported_degrees_of_freedom_max = 200 as never;
@@ -301,6 +343,17 @@ describe("Release 2 numerical evidence readiness", () => {
       "scipy_r_boost_agreement";
     expect(validatePairedTNumericalReadinessCandidate(nested)).toContain(
       "operation graph: keys are incomplete or contain an undeclared item",
+    );
+
+    const candidateScopeResource = loadReadiness();
+    (
+      candidateScopeResource.candidate_supported_scope_resource_bounds as unknown as Record<
+        string,
+        unknown
+      >
+    )["authoritative_supported_df_max"] = 200;
+    expect(validatePairedTNumericalReadinessCandidate(candidateScopeResource)).toContain(
+      "candidate supported-scope/resource bounds: keys are incomplete or contain an undeclared item",
     );
 
     const runtimeSeries = loadReadiness();

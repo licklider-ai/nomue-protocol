@@ -34,6 +34,50 @@ reviewed pointwise candidate form. Finite evidence and evaluation values remain
 ineligible for promotion to global or supported bounds. Independent review is defined
 by `../reviews/d5-r2-d5-closure-gap-adversarial-review-protocol.md`.
 
+## Candidate scope and resource-bound selection
+
+`candidate-supported-scope-resource-bounds-candidate.json` is the first successor
+increment for the ordered closure-gap inventory. It selects a candidate Group 1
+scope and resource envelope for exact-head independent review. It does not establish
+an authoritative supported domain, activate runtime support, choose a platform, or
+complete Group 1 before that review.
+
+The pair-count candidate is `2..201`, with the exact paired-t relation
+`df = n_pairs - 1`, so the candidate df range is `1..200`. The selection is based on
+the complete reviewed `df = 1..200` extents of both the tail and fixed-95 table
+candidates joined to that relation. It is not a promotion of the largest value in a
+finite corpus. Parsed outcomes must be finite binary64 values after strict ingress;
+negative zero is outside the candidate scope. No scalar magnitude box is selected.
+The numerical scope remains the conjunction of the reviewed operation-stage
+predicates, same-trace truth checks, and strict pointwise projection margin.
+
+The G4 primitive trace has the reviewed exact size `5 * n_pairs + 3`, selecting a
+maximum of `1,008` at 201 pairs. The older 2,048-node value remains an evaluation
+ceiling, not the selected bound. The tail candidate deliberately selects the existing
+reviewed fail-closed 100,000-node ceiling and the iteration cap `40 * df + 64`, whose
+maximum is `8,064`; 100,000 is a design ceiling, not the observed 72,567-node corpus
+maximum. The confidence-interval trace contributes exactly three specific primitive
+nodes. The component envelope is therefore `1,008 + 100,000 + 3 = 101,011` primitive
+nodes. Reaching a cap or exceeding a selected ceiling fails closed without a support
+claim.
+
+`candidate-supported-scope-resource-corpus.json` binds the reviewed operation-stage,
+tail-truth, and projection-transition corpora; exercises every pair count from 2
+through 201; checks the known 5,182-iteration/72,567-node witness at its resource
+edge; and declares permutation, direction, sign, exact power-of-two scale, and common
+translation metamorphisms. This finite corpus is executable review material, not a
+domain definition or universal proof. Inputs outside it still require the same
+per-input operation, trace, truth, and projection checks.
+
+The successor also records the closure-gap review's editorial clarification without
+rewriting the reviewed predecessor: the historical label
+`closure_candidate_independent_review_platform_and_final_selection_pending` appears
+literally in `support-domain-candidate.json`, while
+`truth-error-support-closure-candidate.json` is the later checkpoint that resolved
+the numerical part of that dependency. Group 2 graph/oracle selection, platform
+admission, final reason codes, Public Check/bundle issuance, R2-D5, and Release 2 all
+remain open.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain
@@ -457,8 +501,8 @@ not multiply the ULP by `|t_c|` a second time.
 
 ## Items intentionally still open
 
-- the maximum supported pair count or integer degrees of freedom (`200` is only an
-  evidence target);
+- the authoritative maximum supported pair count or integer degrees of freedom
+  (`201` pairs / `df = 200` is only the Group 1 candidate pending review);
 - the supported input, variance, standard-error, statistic, and p-value domain;
 - whether any subnormal stage is supported through target-format-aware evidence or
   refused;

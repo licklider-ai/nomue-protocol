@@ -18,6 +18,28 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
     final_reason_codes_frozen: false;
   };
+  candidate_supported_scope_resource_bounds: {
+    closure: "selection_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json";
+    corpus: "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json";
+    validator: "tooling/src/spikes/paired-t-candidate-supported-scope-resource-bounds.ts";
+    selected_pair_count_minimum: 2;
+    selected_pair_count_maximum: 201;
+    selected_degrees_of_freedom_minimum: 1;
+    selected_degrees_of_freedom_maximum: 200;
+    candidate_tail_table_content_hash: "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
+    candidate_fixed_95_table_content_hash: "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0";
+    selected_g4_trace_node_maximum: 1008;
+    selected_tail_trace_node_maximum: 100000;
+    selected_tail_iteration_cap_maximum: 8064;
+    selected_ci_specific_trace_node_maximum: 3;
+    selected_combined_primitive_trace_node_maximum: 101011;
+    selection_made_by_this_increment: true;
+    independent_review: "pending";
+    group_1_complete: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   numerical_contract_decision_candidate: {
     closure: "incomplete";
     artifact: "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json";
@@ -323,6 +345,7 @@ const TOP_LEVEL_KEYS = [
   "supported_domain",
   "comparison_tolerances",
   "support_domain_predicate_candidate",
+  "candidate_supported_scope_resource_bounds",
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
   "runtime_inverse_beta_table_evidence_candidate",
@@ -364,6 +387,29 @@ const SUPPORT_DOMAIN_CANDIDATE_KEYS = [
   "execution_surface",
   "runtime_support_enabled",
   "final_reason_codes_frozen",
+] as const;
+
+const CANDIDATE_SUPPORTED_SCOPE_RESOURCE_BOUND_KEYS = [
+  "closure",
+  "artifact",
+  "corpus",
+  "validator",
+  "selected_pair_count_minimum",
+  "selected_pair_count_maximum",
+  "selected_degrees_of_freedom_minimum",
+  "selected_degrees_of_freedom_maximum",
+  "candidate_tail_table_content_hash",
+  "candidate_fixed_95_table_content_hash",
+  "selected_g4_trace_node_maximum",
+  "selected_tail_trace_node_maximum",
+  "selected_tail_iteration_cap_maximum",
+  "selected_ci_specific_trace_node_maximum",
+  "selected_combined_primitive_trace_node_maximum",
+  "selection_made_by_this_increment",
+  "independent_review",
+  "group_1_complete",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
 ] as const;
 
 const NUMERICAL_CONTRACT_CANDIDATE_KEYS = [
@@ -688,6 +734,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     errors,
   );
   requireExactKeys(
+    "candidate supported-scope/resource bounds",
+    candidate.candidate_supported_scope_resource_bounds,
+    CANDIDATE_SUPPORTED_SCOPE_RESOURCE_BOUND_KEYS,
+    errors,
+  );
+  requireExactKeys(
     "numerical-contract decision candidate",
     candidate.numerical_contract_decision_candidate,
     NUMERICAL_CONTRACT_CANDIDATE_KEYS,
@@ -799,6 +851,39 @@ function validatePairedTNumericalReadinessCandidateInternal(
     supportCandidate.final_reason_codes_frozen !== false
   ) {
     errors.push("support-domain predicate candidate must remain incomplete and non-runtime");
+  }
+
+  const candidateScopeResource = candidate.candidate_supported_scope_resource_bounds;
+  if (
+    candidateScopeResource.closure !== "selection_pending_independent_review" ||
+    candidateScopeResource.artifact !==
+      "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json" ||
+    candidateScopeResource.corpus !==
+      "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json" ||
+    candidateScopeResource.validator !==
+      "tooling/src/spikes/paired-t-candidate-supported-scope-resource-bounds.ts" ||
+    candidateScopeResource.selected_pair_count_minimum !== 2 ||
+    candidateScopeResource.selected_pair_count_maximum !== 201 ||
+    candidateScopeResource.selected_degrees_of_freedom_minimum !== 1 ||
+    candidateScopeResource.selected_degrees_of_freedom_maximum !== 200 ||
+    candidateScopeResource.candidate_tail_table_content_hash !==
+      "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08" ||
+    candidateScopeResource.candidate_fixed_95_table_content_hash !==
+      "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0" ||
+    candidateScopeResource.selected_g4_trace_node_maximum !== 1008 ||
+    candidateScopeResource.selected_tail_trace_node_maximum !== 100000 ||
+    candidateScopeResource.selected_tail_iteration_cap_maximum !== 8064 ||
+    candidateScopeResource.selected_ci_specific_trace_node_maximum !== 3 ||
+    candidateScopeResource.selected_combined_primitive_trace_node_maximum !== 101011 ||
+    candidateScopeResource.selection_made_by_this_increment !== true ||
+    candidateScopeResource.independent_review !== "pending" ||
+    candidateScopeResource.group_1_complete !== false ||
+    candidateScopeResource.supported_domain_claimed !== false ||
+    candidateScopeResource.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "candidate supported-scope/resource bounds must remain selected for independent review without support or runtime promotion",
+    );
   }
 
   const contractCandidate = candidate.numerical_contract_decision_candidate;
