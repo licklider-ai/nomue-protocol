@@ -160,8 +160,8 @@ describe("paired-t CI endpoint mathematical-truth candidate", () => {
     expect(result).toMatchObject({
       candidateArithmeticExecutionVerified: true,
       confidenceIntervalEndpointTruthImplemented: true,
-      confidenceIntervalEndpointTruthIndependentlyReviewed: false,
-      confidenceIntervalEndpointTruthComplete: false,
+      confidenceIntervalEndpointTruthIndependentlyReviewed: true,
+      confidenceIntervalEndpointTruthComplete: true,
       supportedDomainClaimed: false,
       runtimeSupportClaimed: false,
     });
@@ -242,6 +242,7 @@ describe("paired-t CI endpoint mathematical-truth candidate", () => {
       ok: false,
       classification: "ci_stage_refusal",
       ciClassification: "confidence_interval_endpoint_collapse",
+      confidenceIntervalEndpointTruthIndependentlyReviewed: true,
       confidenceIntervalEndpointTruthComplete: false,
       runtimeSupportClaimed: false,
     });
@@ -285,21 +286,31 @@ describe("paired-t CI endpoint mathematical-truth candidate", () => {
     expect(verifyPairedTCIEndpointTruthCandidate(cycle).ok).toBe(false);
   });
 
-  it("keeps review, M3, support, runtime, and reason-code promotions unselected", () => {
-    expect(validatePairedTCIEndpointTruthCheckpoint(loadCheckpoint())).toEqual([]);
+  it("records reviewed M3 closure while rejecting demotion and support promotion", () => {
+    const checkpoint = loadCheckpoint();
+    expect(validatePairedTCIEndpointTruthCheckpoint(checkpoint)).toEqual([]);
+    expect(checkpoint).toMatchObject({
+      decision_state: "independently_reviewed_endpoint_truth_error_selected_for_m3",
+      closure_state: {
+        implementation: "independently_reviewed_complete",
+        m3c_actual_execution_trace: "independently_reviewed_complete",
+        endpoint_truth_error_ledger: "independently_reviewed_complete",
+        m3_closed: true,
+        supported_execution_predicate: "unselected",
+        supported_domain: false,
+        runtime_support: false,
+      },
+    });
 
-    const m3 = loadCheckpoint();
-    ((m3.closure_state as Record<string, unknown>).m3_closed as unknown) = true;
-    expect(validatePairedTCIEndpointTruthCheckpoint(m3)).not.toEqual([]);
+    const demoted = loadCheckpoint();
+    (demoted.closure_state as Record<string, unknown>).m3_closed = false;
+    (demoted.closure_state as Record<string, unknown>).endpoint_truth_error_ledger =
+      "pending_independent_review";
+    expect(validatePairedTCIEndpointTruthCheckpoint(demoted)).not.toEqual([]);
 
     const runtime = loadCheckpoint();
     runtime.runtime_support_enabled = true;
     expect(validatePairedTCIEndpointTruthCheckpoint(runtime)).not.toEqual([]);
-
-    const reviewed = loadCheckpoint();
-    (reviewed.closure_state as Record<string, unknown>).endpoint_truth_error_ledger =
-      "independently_reviewed_complete";
-    expect(validatePairedTCIEndpointTruthCheckpoint(reviewed)).not.toEqual([]);
 
     const hidden = loadCheckpoint();
     Object.defineProperty(hidden, "supported_df_max", { value: 200, enumerable: false });

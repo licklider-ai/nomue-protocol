@@ -22,17 +22,17 @@ describe("Release 2 numerical evidence readiness", () => {
     expect(validatePairedTNumericalReadinessCandidate(loadReadiness())).toEqual([]);
   });
 
-  it("keeps p-value evidence reviewed while critical-value evidence remains open", () => {
+  it("records p-value and fixed-95 critical-value evidence as reviewed complete", () => {
     const demoted = loadReadiness();
     demoted.p_value_enclosure_evidence.closure = "incomplete" as never;
     expect(validatePairedTNumericalReadinessCandidate(demoted)).toContain(
-      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
+      "p-value and fixed-95 critical-value evidence must remain reviewed complete after M3 closure",
     );
 
-    const promoted = loadReadiness();
-    promoted.fixed_95_critical_value_evidence.closure = "closed" as never;
-    expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
-      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
+    const criticalDemoted = loadReadiness();
+    criticalDemoted.fixed_95_critical_value_evidence.closure = "incomplete" as never;
+    expect(validatePairedTNumericalReadinessCandidate(criticalDemoted)).toContain(
+      "p-value and fixed-95 critical-value evidence must remain reviewed complete after M3 closure",
     );
   });
 
@@ -176,7 +176,7 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records reviewed G4 truth and tail composition without selecting support", () => {
+  it("records reviewed G4 truth, tail, and confidence-interval composition without support", () => {
     const candidate = loadReadiness();
     candidate.g4_actual_execution_trace_candidate.maximum_values_are_supported_resource_bounds =
       true as never;
@@ -192,11 +192,14 @@ describe("Release 2 numerical evidence readiness", () => {
     candidate.g4_actual_execution_trace_candidate.tail_trace_composition_review_disposition =
       "governance/drafts/release-2-candidate/reviews/other.md" as never;
     candidate.g4_actual_execution_trace_candidate.confidence_interval_trace_composition_complete =
-      true as never;
+      false as never;
+    candidate.g4_actual_execution_trace_candidate.confidence_interval_endpoint_truth_complete =
+      false as never;
+    candidate.g4_actual_execution_trace_candidate.m3_closed = false as never;
     candidate.g4_actual_execution_trace_candidate.supported_domain_claimed = true as never;
     candidate.g4_actual_execution_trace_candidate.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail/CI-composed, unbounded, and non-runtime",
     );
 
     const missingReview = loadReadiness();
@@ -205,7 +208,57 @@ describe("Release 2 numerical evidence readiness", () => {
     missingReview.g4_actual_execution_trace_candidate.review_disposition =
       "governance/drafts/release-2-candidate/reviews/other.md" as never;
     expect(validatePairedTNumericalReadinessCandidate(missingReview)).toContain(
-      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail/CI-composed, unbounded, and non-runtime",
+    );
+  });
+
+  it("binds the selected #108 endpoint-truth candidate and rejects the #110 alternative", () => {
+    const candidate = loadReadiness();
+    expect(candidate.confidence_interval_numerical_closure_candidate).toMatchObject({
+      closure: "reviewed_m3_confidence_interval_numerical_closure",
+      fixed_95_table_selection_candidate_key:
+        "paired-t-d5-fixed-95-critical-value-table-selected-candidate-1",
+      confidence_interval_execution_trace_candidate_key:
+        "paired-t-d5-ci-actual-execution-trace-candidate-1",
+      selected_endpoint_truth_candidate_key:
+        "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1",
+      selected_endpoint_truth_candidate_commit: "ba3d81e62f8f77884628c59c4b27d1c5ff3cb340",
+      not_selected_alternative_pr: "https://github.com/licklider-ai/nomue-protocol/pull/110",
+      not_selected_alternative_candidate_key:
+        "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1",
+      not_selected_alternative_candidate_commit: "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80",
+      not_selected_alternative_merged: false,
+      global_confidence_interval_error_constant_selected: false,
+      m3_closed: true,
+      supported_degrees_of_freedom_max: null,
+      supported_execution_predicate_selected: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+      final_reason_codes_frozen: false,
+      public_check_or_bundle_issued: false,
+    });
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
+
+    const substituted = loadReadiness();
+    substituted.confidence_interval_numerical_closure_candidate.selected_endpoint_truth_candidate_key =
+      "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1" as never;
+    substituted.confidence_interval_numerical_closure_candidate.selected_endpoint_truth_candidate_commit =
+      "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80" as never;
+    substituted.confidence_interval_numerical_closure_candidate.not_selected_alternative_merged =
+      true as never;
+    expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
+      "confidence-interval numerical closure must bind the selected reviewed M3 chain without support or runtime promotion",
+    );
+
+    const promoted = loadReadiness();
+    promoted.confidence_interval_numerical_closure_candidate.global_confidence_interval_error_constant_selected =
+      true as never;
+    promoted.confidence_interval_numerical_closure_candidate.supported_degrees_of_freedom_max =
+      200 as never;
+    promoted.confidence_interval_numerical_closure_candidate.runtime_support_enabled =
+      true as never;
+    expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
+      "confidence-interval numerical closure must bind the selected reviewed M3 chain without support or runtime promotion",
     );
   });
 
@@ -321,6 +374,17 @@ describe("Release 2 numerical evidence readiness", () => {
     ] = true;
     expect(validatePairedTNumericalReadinessCandidate(g4Trace)).toContain(
       "G4 actual-execution trace candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const ciClosure = loadReadiness();
+    (
+      ciClosure.confidence_interval_numerical_closure_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["second_selected_candidate"] = true;
+    expect(validatePairedTNumericalReadinessCandidate(ciClosure)).toContain(
+      "confidence-interval numerical closure candidate: keys are incomplete or contain an undeclared item",
     );
 
     const supportedExecution = loadReadiness();

@@ -127,35 +127,37 @@ describe("paired-t fixed-95 CI actual-execution trace candidate", () => {
     });
   });
 
-  it("pins the unreviewed CI trace checkpoint and fails closed on hostile shapes", () => {
+  it("pins the reviewed M3 CI trace checkpoint and fails closed on hostile shapes", () => {
     const checkpoint = loadCheckpoint();
     expect(validatePairedTCIExecutionCheckpoint(checkpoint)).toEqual([]);
     expect(checkpoint).toMatchObject({
-      decision_state:
-        "actual_execution_trace_candidate_pending_independent_review_and_endpoint_truth_closure",
+      decision_state: "independently_reviewed_actual_execution_trace_admitted_to_m3",
       runtime_support_enabled: false,
       supported_domain_claimed: false,
       closure_state: {
-        actual_execution_trace: "implemented_pending_independent_review",
-        confidence_interval_endpoint_truth_ledger: "pending",
+        actual_execution_trace: "independently_reviewed_complete",
+        confidence_interval_endpoint_truth_ledger: "independently_reviewed_separate_candidate",
         supported_execution_predicate: "unselected",
         supported_domain: false,
         runtime_support: false,
         final_reason_codes_frozen: false,
-        m3_closed: false,
+        m3_closed: true,
       },
     });
+
+    const demoted = loadCheckpoint();
+    demoted.closure_state.actual_execution_trace = "implemented_pending_independent_review";
+    demoted.closure_state.confidence_interval_endpoint_truth_ledger = "pending";
+    demoted.closure_state.m3_closed = false;
+    expect(validatePairedTCIExecutionCheckpoint(demoted)).not.toEqual([]);
 
     const promoted = loadCheckpoint();
     promoted.runtime_support_enabled = true;
     promoted.supported_domain_claimed = true;
-    promoted.closure_state.actual_execution_trace = "complete";
-    promoted.closure_state.confidence_interval_endpoint_truth_ledger = "complete";
     promoted.closure_state.supported_execution_predicate = "selected";
     promoted.closure_state.supported_domain = true;
     promoted.closure_state.runtime_support = true;
     promoted.closure_state.final_reason_codes_frozen = true;
-    promoted.closure_state.m3_closed = true;
     expect(validatePairedTCIExecutionCheckpoint(promoted)).not.toEqual([]);
 
     const hidden = loadCheckpoint();

@@ -3,8 +3,8 @@
   "issuance": "unissued",
   "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
   "candidate_key": "paired-t-d5-fixed-95-critical-value-evidence-review-sync-1",
-  "decision_state": "reviewed_evidence_synchronization_candidate_pending_independent_review",
-  "m3_closed": false,
+  "decision_state": "independently_reviewed_evidence_synchronization_admitted_to_m3",
+  "m3_closed": true,
   "evidence_review": {
     "review_disposition": "governance/drafts/release-2-candidate/reviews/d5-critical-value-table-evidence-adversarial-review-disposition.md",
     "reviewed_implementation": "19139d51aad108125ef9854c304c698ce9b15ade",
@@ -28,13 +28,14 @@
   "semantic_boundary": {
     "table_lookup_reproduction_error": "zero_only_after_exact_selected_table_bytes",
     "critical_value_truth_quantization_bound": "absolute_half_ulp_of_correctly_rounded_cell",
-    "confidence_interval_endpoint_truth_ledger_complete": false,
+    "confidence_interval_endpoint_truth_ledger_complete": true,
     "two_route_independence": "method_distinct_shared_arb_flint_common_cause"
   },
   "closure_state": {
     "review_ledger_synchronized": true,
-    "final_table_selection": "unselected",
-    "confidence_interval_trace_composition": "incomplete",
+    "final_table_selection": "exact_reviewed_content_selected_for_candidate_ci_work_only",
+    "confidence_interval_trace_composition": "independently_reviewed_complete",
+    "confidence_interval_endpoint_truth_ledger": "independently_reviewed_complete",
     "supported_platform_matrix": "pending",
     "supported_execution_predicate": "unselected",
     "supported_domain": false,
@@ -45,7 +46,7 @@
     "final_fixed_95_table_selected",
     "final_critical_value_table_content_hash",
     "supported_df_max",
-    "complete_confidence_interval_truth_bound",
+    "global_confidence_interval_error_constant",
     "supported_platform_or_execution_predicate",
     "supported_runtime_paired_t",
     "final_reason_codes_frozen",

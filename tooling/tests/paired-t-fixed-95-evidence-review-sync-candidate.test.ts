@@ -19,13 +19,14 @@ function nested(candidate: Record<string, unknown>, key: string): Record<string,
 }
 
 describe("paired-t fixed-95 critical-value evidence review sync", () => {
-  it("records reviewed evidence without selecting a final table or closing M3", () => {
+  it("admits reviewed fixed-95 evidence to M3 without selecting a final Protocol table", () => {
     const candidate = loadCheckpoint();
     expect(validatePairedTFixed95EvidenceReviewSyncCandidate(candidate)).toEqual([]);
     expect(candidate).toMatchObject({
       status: "non_authoritative_candidate",
       issuance: "unissued",
-      m3_closed: false,
+      decision_state: "independently_reviewed_evidence_synchronization_admitted_to_m3",
+      m3_closed: true,
       evidence_review: {
         original_verdict: "GO",
         repair_verdict: "CLOSED",
@@ -38,12 +39,13 @@ describe("paired-t fixed-95 critical-value evidence review sync", () => {
         supported_degrees_of_freedom_maximum: null,
       },
       semantic_boundary: {
-        confidence_interval_endpoint_truth_ledger_complete: false,
+        confidence_interval_endpoint_truth_ledger_complete: true,
       },
       closure_state: {
         review_ledger_synchronized: true,
-        final_table_selection: "unselected",
-        confidence_interval_trace_composition: "incomplete",
+        final_table_selection: "exact_reviewed_content_selected_for_candidate_ci_work_only",
+        confidence_interval_trace_composition: "independently_reviewed_complete",
+        confidence_interval_endpoint_truth_ledger: "independently_reviewed_complete",
         supported_execution_predicate: "unselected",
         supported_domain: false,
         runtime_support: false,
@@ -52,7 +54,7 @@ describe("paired-t fixed-95 critical-value evidence review sync", () => {
     });
   });
 
-  it("rejects review/hash substitution and premature table, support, CI, or release promotion", () => {
+  it("rejects review/hash substitution, M3 demotion, and support or release promotion", () => {
     const wrongReview = loadCheckpoint();
     nested(wrongReview, "evidence_review").review_result_commit = "0".repeat(40);
     expect(validatePairedTFixed95EvidenceReviewSyncCandidate(wrongReview)).not.toEqual([]);
@@ -62,16 +64,20 @@ describe("paired-t fixed-95 critical-value evidence review sync", () => {
       `sha256:${"0".repeat(64)}`;
     expect(validatePairedTFixed95EvidenceReviewSyncCandidate(wrongHash)).not.toEqual([]);
 
+    const demoted = loadCheckpoint();
+    demoted.m3_closed = false;
+    nested(demoted, "semantic_boundary").confidence_interval_endpoint_truth_ledger_complete = false;
+    nested(demoted, "closure_state").confidence_interval_trace_composition = "incomplete";
+    expect(validatePairedTFixed95EvidenceReviewSyncCandidate(demoted)).not.toEqual([]);
+
     const promoted = loadCheckpoint();
-    promoted.m3_closed = true;
     const review = nested(promoted, "evidence_review");
     review.final_table_selected = true;
     review.final_content_hash = review.reviewed_ordered_cell_content_hash;
     review.supported_degrees_of_freedom_maximum = 200;
-    nested(promoted, "semantic_boundary").confidence_interval_endpoint_truth_ledger_complete = true;
     const closure = nested(promoted, "closure_state");
     closure.final_table_selection = "selected";
-    closure.confidence_interval_trace_composition = "complete";
+    closure.confidence_interval_trace_composition = "supported";
     closure.supported_platform_matrix = "selected";
     closure.supported_execution_predicate = "selected";
     closure.supported_domain = true;

@@ -117,8 +117,7 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-ci-actual-execution-trace-candidate-1",
-  decision_state:
-    "actual_execution_trace_candidate_pending_independent_review_and_endpoint_truth_closure",
+  decision_state: "independently_reviewed_actual_execution_trace_admitted_to_m3",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   scope: {
@@ -149,17 +148,17 @@ const EXPECTED_CHECKPOINT = {
     supported_degrees_of_freedom_maximum: null,
   },
   closure_state: {
-    actual_execution_trace: "implemented_pending_independent_review",
-    confidence_interval_endpoint_truth_ledger: "pending",
+    actual_execution_trace: "independently_reviewed_complete",
+    confidence_interval_endpoint_truth_ledger: "independently_reviewed_separate_candidate",
     supported_platform_matrix: "pending",
     supported_execution_predicate: "unselected",
     supported_domain: false,
     runtime_support: false,
     final_reason_codes_frozen: false,
-    m3_closed: false,
+    m3_closed: true,
   },
   prohibited_claims: [
-    "complete_confidence_interval_truth_bound",
+    "global_confidence_interval_error_constant",
     "supported_df_max",
     "supported_platform_or_execution_predicate",
     "supported_runtime_paired_t",
@@ -513,8 +512,8 @@ export function validatePairedTCIExecutionCheckpoint(candidate: unknown): string
   try {
     return isDeepStrictEqual(strictJsonCopy(candidate), EXPECTED_CHECKPOINT)
       ? []
-      : ["CI execution checkpoint differs from the pending-review candidate"];
+      : ["CI execution checkpoint differs from the reviewed M3 candidate"];
   } catch {
-    return ["CI execution checkpoint differs from the pending-review candidate"];
+    return ["CI execution checkpoint differs from the reviewed M3 candidate"];
   }
 }

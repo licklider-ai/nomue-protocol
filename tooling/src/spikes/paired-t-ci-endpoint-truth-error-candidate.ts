@@ -121,8 +121,8 @@ export type PairedTCIEndpointTruthCandidateResult =
       proof: PairedTCIEndpointTruthProofCandidate;
       candidateArithmeticExecutionVerified: true;
       confidenceIntervalEndpointTruthImplemented: true;
-      confidenceIntervalEndpointTruthIndependentlyReviewed: false;
-      confidenceIntervalEndpointTruthComplete: false;
+      confidenceIntervalEndpointTruthIndependentlyReviewed: true;
+      confidenceIntervalEndpointTruthComplete: true;
       supportedExecutionPredicateSatisfied: false;
       supportedPlatformClaimed: false;
       supportedDomainClaimed: false;
@@ -137,7 +137,7 @@ export type PairedTCIEndpointTruthCandidateResult =
       proofErrors?: string[];
       candidateArithmeticExecutionVerified: false;
       confidenceIntervalEndpointTruthImplemented: false;
-      confidenceIntervalEndpointTruthIndependentlyReviewed: false;
+      confidenceIntervalEndpointTruthIndependentlyReviewed: true;
       confidenceIntervalEndpointTruthComplete: false;
       supportedExecutionPredicateSatisfied: false;
       supportedPlatformClaimed: false;
@@ -150,7 +150,7 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1",
-  decision_state: "endpoint_truth_error_candidate_pending_independent_review_and_m3_integration",
+  decision_state: "independently_reviewed_endpoint_truth_error_selected_for_m3",
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   scope: {
@@ -180,10 +180,10 @@ const EXPECTED_CHECKPOINT = {
     supported_degrees_of_freedom_maximum: null,
   },
   closure_state: {
-    implementation: "implemented_pending_independent_review",
-    m3c_actual_execution_trace: "independently_reviewed_separate_candidate",
-    endpoint_truth_error_ledger: "pending_independent_review",
-    m3_closed: false,
+    implementation: "independently_reviewed_complete",
+    m3c_actual_execution_trace: "independently_reviewed_complete",
+    endpoint_truth_error_ledger: "independently_reviewed_complete",
+    m3_closed: true,
     supported_platform_matrix: "pending",
     supported_execution_predicate: "unselected",
     supported_domain: false,
@@ -634,7 +634,7 @@ function refusal(
     ...detail,
     candidateArithmeticExecutionVerified: false,
     confidenceIntervalEndpointTruthImplemented: false,
-    confidenceIntervalEndpointTruthIndependentlyReviewed: false,
+    confidenceIntervalEndpointTruthIndependentlyReviewed: true,
     confidenceIntervalEndpointTruthComplete: false,
     supportedExecutionPredicateSatisfied: false,
     supportedPlatformClaimed: false,
@@ -684,8 +684,8 @@ export function evaluatePairedTCIEndpointTruthCandidate(
     proof: envelope.proof,
     candidateArithmeticExecutionVerified: true,
     confidenceIntervalEndpointTruthImplemented: true,
-    confidenceIntervalEndpointTruthIndependentlyReviewed: false,
-    confidenceIntervalEndpointTruthComplete: false,
+    confidenceIntervalEndpointTruthIndependentlyReviewed: true,
+    confidenceIntervalEndpointTruthComplete: true,
     supportedExecutionPredicateSatisfied: false,
     supportedPlatformClaimed: false,
     supportedDomainClaimed: false,
