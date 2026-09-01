@@ -36,15 +36,15 @@ function mutableCheckpoint(): Record<string, any> {
 }
 
 describe("paired-t p-value enclosure evidence closure candidate", () => {
-  it("pins one unissued artifact receipt while keeping p evidence and M2 open", () => {
+  it("records reviewed p evidence and M2 closure without selecting support", () => {
     const candidate = loadCheckpoint();
     expect(validatePairedTPValueEnclosureEvidenceClosureCandidate(candidate)).toEqual([]);
     expect(candidate).toMatchObject({
       status: "non_authoritative_candidate",
       issuance: "unissued",
-      decision_state: "fixed_evidence_artifact_pending_independent_numerical_review",
-      p_value_enclosure_evidence_closed: false,
-      m2_closed: false,
+      decision_state: "independently_reviewed_p_value_enclosure_evidence",
+      p_value_enclosure_evidence_closed: true,
+      m2_closed: true,
       source_evidence: {
         generator_commit: "98da47599053d3e29a2c42f274ffc9c239621ded",
         workflow_run_id: 33452181213,
@@ -53,8 +53,8 @@ describe("paired-t p-value enclosure evidence closure candidate", () => {
           "sha256:cf092f0b3bfd4cdb8a32e5fb9864f564390dd0027f847b591be1262c134d1299",
       },
       closure_state: {
-        independent_numerical_review: "pending",
-        readiness_admission: "held_pending_independent_numerical_review",
+        independent_numerical_review: "complete",
+        readiness_admission: "admitted",
         supported_degrees_of_freedom_maximum: null,
         supported_platform_matrix: "pending",
         supported_execution_predicate: "unselected",
@@ -144,11 +144,11 @@ describe("paired-t p-value enclosure evidence closure candidate", () => {
     expect(validatePairedTPValueEnclosureEvidenceClosureCandidate(cyclic)).not.toEqual([]);
   });
 
-  it("does not alter the current numerical-readiness incompleteness", () => {
+  it("matches the aggregate reviewed M2 readiness state", () => {
     const readiness = loadReadiness();
     expect(validatePairedTNumericalReadinessCandidate(readiness)).toEqual([]);
-    expect(readiness.p_value_enclosure_evidence.closure).toBe("incomplete");
+    expect(readiness.p_value_enclosure_evidence.closure).toBe("reviewed_complete");
     expect(readiness.p_value_enclosure_evidence.known_closure_items).toHaveLength(6);
-    expect(readiness.tail_numerical_selection_candidate.m2_closed).toBe(false);
+    expect(readiness.tail_numerical_selection_candidate.m2_closed).toBe(true);
   });
 });

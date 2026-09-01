@@ -20,9 +20,9 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-p-value-enclosure-evidence-closure-1",
-  decision_state: "fixed_evidence_artifact_pending_independent_numerical_review",
-  p_value_enclosure_evidence_closed: false,
-  m2_closed: false,
+  decision_state: "independently_reviewed_p_value_enclosure_evidence",
+  p_value_enclosure_evidence_closed: true,
+  m2_closed: true,
   source_evidence: {
     generator_commit: "98da47599053d3e29a2c42f274ffc9c239621ded",
     workflow_run_id: 33452181213,
@@ -65,13 +65,13 @@ const EXPECTED_CHECKPOINT = {
   },
   closure_items: {
     secondary_overlap_success_path: {
-      evidence_status: "present_pending_independent_review",
+      evidence_status: "reviewed_closed",
       certified_p_value_case_count: 3,
       generator_disjoint_primary_secondary_behavior: "raise",
       validator_requires_declared_and_exact_enclosure_overlap: true,
     },
     exact_enclosure_endpoints_and_rounding_cells: {
-      evidence_status: "present_pending_independent_review",
+      evidence_status: "reviewed_closed",
       certified_p_value_case_count: 3,
       boundary_probe_count: 6,
       rounding_mode: "roundTiesToEven",
@@ -79,35 +79,35 @@ const EXPECTED_CHECKPOINT = {
       strict_rounding_cell_containment: true,
     },
     df1_df2_closed_form_paths: {
-      evidence_status: "present_pending_independent_review",
+      evidence_status: "reviewed_closed",
       p_value_df1_method: "df1-cauchy-tail",
       p_value_df2_method: "df2-closed-form-tail",
       df1_max_finite_t_closed_form_present: true,
       df2_max_finite_t_closed_form_present: true,
     },
     missing_oracle_dependency_fail_closed: {
-      evidence_status: "source_and_negative_reproduction_pending_independent_review",
+      evidence_status: "reviewed_closed",
       required_dependency: "python-flint==0.9.0",
       missing_dependency_exit_nonzero: true,
       fallback_oracle_path: false,
     },
     df1_df2_max_finite_t_cases: {
-      evidence_status: "present_pending_independent_review",
+      evidence_status: "reviewed_closed",
       case_ids: ["df1-max-finite-t", "df2-max-finite-t"],
       df1_expected_projection_class: "subnormal",
       df2_expected_projection_class: "zero",
     },
     generator_environment_and_output_hashes: {
-      evidence_status: "present_pending_independent_review",
+      evidence_status: "reviewed_closed",
       manifest_binds_complete_closed_file_set: true,
       certificate_provenance_binds_generator_environment_and_raw_output: true,
       workflow_binds_generator_commit: true,
     },
   },
   closure_state: {
-    independent_numerical_review: "pending",
-    readiness_admission: "held_pending_independent_numerical_review",
-    p_value_enclosure_evidence: "closure_candidate_not_closed",
+    independent_numerical_review: "complete",
+    readiness_admission: "admitted",
+    p_value_enclosure_evidence: "reviewed_complete",
     tail_numerical_selection: "reviewed_separate_increment",
     supported_degrees_of_freedom_maximum: null,
     supported_platform_matrix: "pending",
@@ -199,8 +199,8 @@ export function validatePairedTPValueEnclosureEvidenceClosureCandidate(
     return JSON.stringify(canonicalizeJson(candidate)) ===
       JSON.stringify(canonicalizeJson(EXPECTED_CHECKPOINT))
       ? []
-      : ["p-value evidence closure checkpoint differs from the pending-review candidate"];
+      : ["p-value evidence closure checkpoint differs from the reviewed M2 candidate"];
   } catch {
-    return ["p-value evidence closure checkpoint differs from the pending-review candidate"];
+    return ["p-value evidence closure checkpoint differs from the reviewed M2 candidate"];
   }
 }
