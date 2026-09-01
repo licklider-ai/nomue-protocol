@@ -33,6 +33,17 @@ artifacts and follow-up commissions create no hold closure without a recorded
 steward disposition. `FND1-H05` through `FND1-H08` remain outside these
 source-closure packages.
 
+The non-clinical estimand package now has both frozen results. The
+[`primary-source result`](2026-08-31-nonclinical-estimand-primary-source-result.md)
+and
+[`repository-analysis result`](2026-08-31-nonclinical-estimand-repository-analysis-result.md)
+each report `NARROW` and keep `FND1-H04` open. The
+[`reconciliation candidate`](2026-09-01-nonclinical-estimand-source-reconciliation.md)
+rejects one universal event-or-missing-outcome attribute, records a narrower
+bearer-explicit candidate structure, and preserves an exact primary-source
+completion requirement. It creates no Protocol-adoption authority and does not
+close the FND-1 Research Gate.
+
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
 and

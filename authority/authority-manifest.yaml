@@ -608,13 +608,21 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-primary-source-result.md
     class: informative
     notes: >-
-      Pending non-clinical estimand primary-source result placeholder; no
-      findings or decisions.
+      Completed non-clinical estimand primary-source result; disposition
+      NARROW with FND1-H04 kept open for reconciliation and source completion;
+      no Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-nonclinical-estimand-repository-analysis-result.md
     class: informative
     notes: >-
-      Pending non-clinical estimand repository-analysis result placeholder; no
-      findings or decisions.
+      Completed non-clinical estimand repository-analysis result; disposition
+      NARROW with FND1-H04 kept open and no public-surface repair or
+      Protocol-adoption decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation.md
+    class: informative
+    notes: >-
+      Steward reconciliation candidate for the non-clinical estimand passes;
+      proposes a narrowed bearer-explicit structure while keeping FND1-H04
+      open for primary-source completion and authorizes no Protocol adoption.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
