@@ -26,6 +26,42 @@ jobs:
             governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-error-adversarial-review-protocol.md \
             tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts \
             tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
+      - name: Diagnose M3-D success-path refusals
+        shell: bash
+        run: |
+          cat > tooling/tmp-m3d-diagnostic.ts <<'TS'
+          import { evaluatePairedTCIEndpointTruthCandidate } from "./src/spikes/paired-t-ci-endpoint-truth-error-candidate.js";
+
+          function inputFromDifferences(differences: readonly number[]) {
+            return {
+              conditionOrder: ["first", "second"] as const,
+              repeatedMeasurements: "none" as const,
+              observations: differences.flatMap((difference, index) => [
+                {
+                  observationId: `diag-${index}-first`,
+                  experimentalUnitId: `diag-unit-${index}-first`,
+                  pairId: `diag-p${index.toString().padStart(3, "0")}`,
+                  conditionId: "first",
+                  outcomeValue: difference,
+                },
+                {
+                  observationId: `diag-${index}-second`,
+                  experimentalUnitId: `diag-unit-${index}-second`,
+                  pairId: `diag-p${index.toString().padStart(3, "0")}`,
+                  conditionId: "second",
+                  outcomeValue: 0,
+                },
+              ]),
+            };
+          }
+
+          for (const differences of [[1, 2, 3], [-1, -2, -4], [1, 2, 3, 5]]) {
+            const result = evaluatePairedTCIEndpointTruthCandidate(inputFromDifferences(differences));
+            console.log(JSON.stringify(result.ok ? { ok: true } : result, null, 2));
+          }
+          TS
+          pnpm exec tsx tooling/tmp-m3d-diagnostic.ts
+          rm tooling/tmp-m3d-diagnostic.ts
       - name: Validate repaired candidate before materialization
         run: pnpm check
       - name: Rebuild feature branch as one direct-child commit
