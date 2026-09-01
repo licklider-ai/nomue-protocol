@@ -4,7 +4,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   materialize:
@@ -38,16 +38,11 @@ jobs:
           tooling/tests/paired-t-tail-numerical-selection-candidate.test.ts
           tooling/tests/paired-t-p-value-enclosure-evidence-closure-candidate.test.ts
           tooling/tests/paired-t-numerical-readiness.test.ts
-      - uses: actions/upload-artifact@v4
-        with:
-          name: m2-integration-materialized
-          path: |
-            governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json
-            tooling/src/spikes/paired-t-tail-numerical-selection-candidate.ts
-            tooling/tests/paired-t-tail-numerical-selection-candidate.test.ts
-            governance/drafts/release-2-candidate/numerical/p-value-enclosure-evidence-closure-candidate.json
-            tooling/src/spikes/paired-t-p-value-enclosure-evidence-closure-candidate.ts
-            tooling/tests/paired-t-p-value-enclosure-evidence-closure-candidate.test.ts
-            governance/drafts/release-2-candidate/numerical/evidence-readiness.json
-            tooling/src/spikes/paired-t-numerical-readiness.ts
-            tooling/tests/paired-t-numerical-readiness.test.ts
+      - run: |
+          rm .tmp-m2-integration-sync.mjs
+          rm .github/workflows/tmp-m2-integration-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Record reviewed M2 tail numerical closure"
+          git push origin HEAD:${{ github.head_ref }}
