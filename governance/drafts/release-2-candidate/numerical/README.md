@@ -5,9 +5,11 @@ approved this direction for continued candidate development. That approval does 
 complete R2-D5, end the open RFC review, issue a Public Check, register a supported
 bundle, or select final support bounds and mathematical-truth error bounds.
 
-The machine-readable checkpoint is `evidence-readiness.json`. It deliberately marks
-the p-value and fixed-95-percent critical-value evidence as incomplete. A passing
-structural validator test is not an oracle result.
+The machine-readable checkpoint is `evidence-readiness.json`. It now records the
+p-value and fixed-95-percent critical-value evidence as independently reviewed and
+complete for candidate readiness, together with the reviewed M3 confidence-interval
+numerical closure. These are evidence and candidate-integration results, not support
+or issuance decisions. A passing structural validator test is not an oracle result.
 
 ## Operation-stage support-domain candidate
 
@@ -221,10 +223,14 @@ findings after 568 reviewer checks. The bounded disposition is recorded in
 `../reviews/d5-g4-truth-error-adversarial-review-disposition.md`.
 
 This closes the G4 mathematical-truth error readiness requirement for the trace-bound
-paired differences, mean, sample variance, standard error, and test statistic only.
-Student-t tail numerical truth and confidence-interval trace composition remain
-pending. The candidate makes no supported-execution, platform, domain, runtime,
-Public Check, bundle, R2-D5, or Release 2 completion claim.
+paired differences, mean, sample variance, standard error, and test statistic. The
+subsequent reviewed M2 integration closes Student-t tail numerical readiness, and the
+reviewed M3 integration closes the fixed-95 confidence-interval numerical readiness
+chain using PR #108 as its sole endpoint-truth candidate. Their truth-error
+guarantees remain input-specific, and the milestones remain unissued and
+non-authoritative. They do not select a global error constant, supported execution,
+platform, df range, domain, runtime, Public Check, bundle, final R2-D5 disposition,
+or Release 2 completion.
 
 ## Supported execution predicate research
 

@@ -160,10 +160,13 @@ The separate G4 mathematical-truth error candidate has also completed independen
 adversarial review. A separately constructed exact-arithmetic oracle confirmed the
 trace-bound paired differences, exact mean, exact-mean sample variance, standard-
 error enclosure, signed test-statistic enclosure, and exact absolute-error bounds.
-The review returned `GO` with no findings after 568 reviewer checks. This closes the
-G4 mathematical-truth error readiness requirement for those algebraic quantities
-only. Student-t tail numerical truth and confidence-interval trace composition remain
-open, as do support, runtime, tolerances, and the final R2-D5 disposition.
+The review returned `GO` with no findings after 568 reviewer checks. The subsequent
+reviewed M2 integration closes Student-t tail numerical readiness, and the reviewed
+M3 integration closes the fixed-95 confidence-interval numerical readiness chain
+using PR #108 as its sole endpoint-truth candidate. These are non-authoritative
+candidate milestones whose truth-error guarantees remain input-specific. Support,
+platform, execution, runtime, tolerances, final reason codes, Public Check/bundle,
+and the final R2-D5 disposition remain open.
 
 The supported-execution predicate has a tail-only implementation candidate: one
 immutable actual trace supplies both the returned value and proof inputs, and every
@@ -194,11 +197,12 @@ This is the hard stop for authoritative numerical meaning, not for candidate
 development. A candidate Public Check and expected conformance values may be
 prepared and tested, but none is frozen or issued before R2-D5 approval.
 
-The current readiness record deliberately leaves the supported domain, critical-
-value table, and all comparison tolerances unset. It also marks the p-value and
-critical-value evidence as incomplete until exact enclosure/cell data, executed
-secondary and low-df closed-form paths, dependency failure behavior, boundary cases,
-and complete provenance hashes are present.
+The current readiness record now marks the p-value and fixed-95 critical-value
+evidence as independently reviewed and complete for candidate readiness and records
+the M3 confidence-interval numerical closure. It still leaves the final Protocol
+critical-value table, supported domain and df range, execution/platform predicate,
+runtime activation, and all final comparison tolerances unset. The completed finite
+evidence and input-specific proofs do not establish a global or supported bound.
 
 ### R2-D6 — Release Candidate scope
 
