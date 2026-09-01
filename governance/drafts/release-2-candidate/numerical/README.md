@@ -11,6 +11,29 @@ complete for candidate readiness, together with the reviewed M3 confidence-inter
 numerical closure. These are evidence and candidate-integration results, not support
 or issuance decisions. A passing structural validator test is not an oracle result.
 
+## R2-D5 closure-gap checkpoint
+
+`r2-d5-closure-gap-candidate.json` is a source-bound dependency inventory for the
+work remaining after M2 and M3 closure. It does not replace the aggregate readiness
+checkpoint, alter an earlier review result, or close R2-D5. It distinguishes old
+dependency labels that were resolved by the reviewed M2/M3 and platform-research
+work from the support-dependent conditions that remain open.
+
+The remaining work is ordered as candidate scope and resource bounds, runtime
+numerical-contract and full-trace-predicate selection, supported-execution admission,
+final reason-code inventory, and final exact-head R2-D5 review and Steward
+disposition. This ordering prevents admission evidence from being collected against
+an incomplete graph and prevents public reason codes from being frozen before their
+support boundaries exist.
+
+The checkpoint selects none of those outputs. The runtime allowlist is empty, the
+controlled-process profile is unenforced, comparison tolerances and supported bounds
+remain null, support and runtime remain false, and Public Check and bundle issuance
+remain separate later work. A global truth-error constant is not required for the
+reviewed pointwise candidate form. Finite evidence and evaluation values remain
+ineligible for promotion to global or supported bounds. Independent review is defined
+by `../reviews/d5-r2-d5-closure-gap-adversarial-review-protocol.md`.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain
@@ -439,12 +462,12 @@ not multiply the ULP by `|t_c|` a second time.
 - the supported input, variance, standard-error, statistic, and p-value domain;
 - whether any subnormal stage is supported through target-format-aware evidence or
   refused;
-- closure of the complete runtime Student-t operation graph, stopping rule, and
-  iteration-cap evidence;
-- the final reviewed mathematical-truth error predicate or bound and the supported-
-  platform predicate (the input-specific candidate is not selected for runtime);
-- independent review and final selection of the critical-value table and its final
-  content hash (the contiguous candidate hash remains evidence-local); and
+- final runtime selection of the reviewed Student-t operation graph, stopping rule,
+  input-specific mathematical-truth predicate, and supported resource boundary;
+- full-graph supported-execution composition, exact runtime/build/platform admission,
+  and controlled-process enforcement;
+- final Protocol selection of the reviewed critical-value table bytes and content
+  hash (the M3 selection remains limited to candidate confidence-interval work); and
 - the ten support-dependent reason-code decisions, final reason-code freeze, and
   authoritative Public Check revision.
 
