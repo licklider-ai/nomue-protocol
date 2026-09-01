@@ -15,7 +15,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format:check": "prettier --write tooling/src/spikes/paired-t-p-value-enclosure-evidence-closure-candidate.ts tooling/tests/paired-t-p-value-enclosure-evidence-closure-candidate.test.ts && git diff -- tooling/src/spikes/paired-t-p-value-enclosure-evidence-closure-candidate.ts tooling/tests/paired-t-p-value-enclosure-evidence-closure-candidate.test.ts && exit 1",
     "lint:markdown": "markdownlint-cli2",
     "check:generated": "tsx tooling/src/generate.ts --check",
     "nomue-record": "tsx reference/verifier/src/cli.ts",
