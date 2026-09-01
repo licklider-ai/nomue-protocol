@@ -1,0 +1,363 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-r2-d5-closure-gap-checkpoint-1",
+  "decision_state": "closure_gap_dependency_inventory_pending_independent_review",
+  "independent_review": "pending",
+  "final_r2_d5_disposition": "pending_public_review_and_evidence_closure",
+  "r2_d5_complete": false,
+  "source_snapshot": {
+    "repository_commit": "5c265b79ff36e6920bb0998a50d5aed376087412",
+    "repository_tree": "681aa3a728dfece8e3d93e87aaa3cf9285fbe5a8",
+    "binding_algorithm": "git_blob_sha1",
+    "bindings": [
+      {
+        "role": "steward_decision_boundary",
+        "path": "governance/drafts/release-2-steward-ratification-package.md",
+        "blob": "80ad7729a66a1ae16303d8c3b1da1954629b0315"
+      },
+      {
+        "role": "aggregate_numerical_readiness",
+        "path": "governance/drafts/release-2-candidate/numerical/evidence-readiness.json",
+        "blob": "7a42fad0ed2f1655c26901e3093571afdd84ea32"
+      },
+      {
+        "role": "m2_tail_numerical_closure_review",
+        "path": "review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md",
+        "blob": "9e19c355f544949ea277b786b4ed1a77eb7c1d6a"
+      },
+      {
+        "role": "m3_confidence_interval_closure_review",
+        "path": "review-inputs/r2-d5-m3-confidence-interval-closure/REVIEW-RESULT.md",
+        "blob": "2024fc5456313155ae5adc6a5a80b413987cd2ad"
+      },
+      {
+        "role": "numerical_contract_decision_candidate",
+        "path": "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json",
+        "blob": "6b88617f3d89cc25eee466270226f697ea6f6b06"
+      },
+      {
+        "role": "support_domain_candidate",
+        "path": "governance/drafts/release-2-candidate/numerical/support-domain-candidate.json",
+        "blob": "c7b6fcb6a2b0033b528bdf9aace5c554958c7769"
+      },
+      {
+        "role": "supported_execution_candidate",
+        "path": "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json",
+        "blob": "23cc96bab77f1be18be9861dc639246225d91124"
+      },
+      {
+        "role": "supported_platform_research_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md",
+        "blob": "6015f45bccd10ba603d82527c408297ac45a05de"
+      },
+      {
+        "role": "supported_execution_review_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-supported-execution-predicate-adversarial-review-disposition.md",
+        "blob": "a95cf905dbd915f0061a57cac7f75e136373def7"
+      },
+      {
+        "role": "truth_error_support_candidate",
+        "path": "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
+        "blob": "f3ade9fe6ece6d28d4d73d1c494169efc0d0c67c"
+      },
+      {
+        "role": "truth_error_support_review_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-truth-error-support-closure-adversarial-review-disposition.md",
+        "blob": "23e595b9eba2bea71f721621f045876293d9fb6c"
+      },
+      {
+        "role": "runtime_input_reason_code_candidate",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json",
+        "blob": "89a4babdd8c2fb3eb3accde681d30d726017f21d"
+      },
+      {
+        "role": "runtime_input_reason_code_review_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-runtime-input-reason-code-adversarial-review-disposition.md",
+        "blob": "a507f8c45d58b674591b9be83d954d66fc2cbb58"
+      }
+    ]
+  },
+  "rfc_boundary": {
+    "state": "open",
+    "public_review_window": "open",
+    "opened_at": "2026-08-26T20:52:54Z",
+    "earliest_decision_at": "2026-09-25T20:52:54Z",
+    "authoritative_decision_allowed_by_this_checkpoint": false
+  },
+  "completed_candidate_readiness": [
+    {
+      "ordinal": 1,
+      "readiness_key": "g4_algebraic_actual_trace_and_mathematical_truth",
+      "state": "independently_reviewed_complete",
+      "boundary": "candidate_readiness_only"
+    },
+    {
+      "ordinal": 2,
+      "readiness_key": "student_t_tail_numerical_m2",
+      "state": "closed",
+      "boundary": "input_specific_same_trace_candidate_contract_not_runtime_support"
+    },
+    {
+      "ordinal": 3,
+      "readiness_key": "fixed_95_confidence_interval_numerical_m3",
+      "state": "closed",
+      "boundary": "candidate_ci_work_only_not_final_protocol_table_or_runtime_support"
+    },
+    {
+      "ordinal": 4,
+      "readiness_key": "p_value_and_fixed_95_oracle_evidence",
+      "state": "independently_reviewed_complete_for_candidate_readiness",
+      "boundary": "finite_evidence_not_supported_domain"
+    },
+    {
+      "ordinal": 5,
+      "readiness_key": "tail_only_supported_execution_implementation",
+      "state": "independently_reviewed_complete",
+      "boundary": "implementation_review_only_not_predicate_selection_or_platform_admission"
+    },
+    {
+      "ordinal": 6,
+      "readiness_key": "runtime_input_parser_and_operation_stage_reason_inventory",
+      "state": "independently_reviewed_complete",
+      "boundary": "eleven_unissued_candidates_with_ten_support_dependent_decisions_open"
+    }
+  ],
+  "m3_d_candidate_disposition": {
+    "selected": {
+      "pull_request": 108,
+      "candidate_key": "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1",
+      "reviewed_commit": "ba3d81e62f8f77884628c59c4b27d1c5ff3cb340",
+      "role": "sole_m3_d_candidate"
+    },
+    "not_selected_alternative": {
+      "pull_request": 110,
+      "candidate_key": "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1",
+      "reviewed_commit": "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80",
+      "merged": false,
+      "selected": false,
+      "implementation_paths_present": false
+    }
+  },
+  "historical_dependency_label_classification": [
+    {
+      "ordinal": 1,
+      "source_checkpoint": "support-domain-candidate.json",
+      "historical_label": "critical_value_table_and_endpoint_truth_ledger_unratified",
+      "current_classification": "resolved_by_reviewed_m3_closure",
+      "remaining_condition": "final_protocol_table_domain_and_runtime_selection"
+    },
+    {
+      "ordinal": 2,
+      "source_checkpoint": "support-domain-candidate.json",
+      "historical_label": "runtime_student_t_tail_procedure_and_boundary_evidence_incomplete",
+      "current_classification": "tail_numerical_readiness_resolved_by_reviewed_m2_closure",
+      "remaining_condition": "runtime_contract_selection_and_supported_execution_admission"
+    },
+    {
+      "ordinal": 3,
+      "source_checkpoint": "support-domain-candidate.json",
+      "historical_label": "p_value_and_critical_value_evidence_closure_incomplete",
+      "current_classification": "oracle_evidence_readiness_resolved",
+      "remaining_condition": "proposed_domain_corpus_boundary_and_metamorphic_coverage"
+    },
+    {
+      "ordinal": 4,
+      "source_checkpoint": "truth-error-support-closure-candidate.json",
+      "historical_label": "closure_candidate_independent_review_platform_and_final_selection_pending",
+      "current_classification": "independent_review_resolved_other_conditions_open",
+      "remaining_condition": "runtime_contract_selection_and_supported_execution_admission"
+    },
+    {
+      "ordinal": 5,
+      "source_checkpoint": "runtime-input-reason-code-candidate.json",
+      "historical_label": "independent_primary_source_platform_review",
+      "current_classification": "research_resolved_and_superseded",
+      "remaining_condition": "resource_bound_allowlist_process_enforcement_and_per_tuple_admission"
+    }
+  ],
+  "ordered_remaining_decision_groups": [
+    {
+      "ordinal": 1,
+      "decision_group": "candidate_supported_scope_and_resource_bounds",
+      "state": "open",
+      "depends_on": [],
+      "required_outputs": [
+        "maximum_pair_count_or_equivalent_operation_stage_scope",
+        "input_value_intermediate_and_test_statistic_predicates_or_bounds",
+        "integer_degrees_of_freedom_range",
+        "g4_tail_and_confidence_interval_trace_resource_bounds",
+        "validated_corpus_versus_domain_bounded_guarantee_statement",
+        "proposed_domain_boundary_and_metamorphic_corpus"
+      ],
+      "selection_made_by_this_checkpoint": false
+    },
+    {
+      "ordinal": 2,
+      "decision_group": "runtime_numerical_contract_and_full_trace_predicate",
+      "state": "open",
+      "depends_on": ["candidate_supported_scope_and_resource_bounds"],
+      "required_outputs": [
+        "complete_g4_tail_and_confidence_interval_operation_graph",
+        "final_protocol_fixed_95_table_bytes_and_content_hash",
+        "runtime_selection_of_same_trace_input_specific_tail_truth_and_projection_contract",
+        "confidence_interval_pointwise_truth_error_and_collapse_policy",
+        "stage_specific_subnormal_intermediate_and_projection_policies",
+        "quantity_specific_comparison_rules_and_tolerances",
+        "full_graph_supported_execution_predicate_composition"
+      ],
+      "global_truth_error_constant_required": false,
+      "selection_made_by_this_checkpoint": false
+    },
+    {
+      "ordinal": 3,
+      "decision_group": "supported_execution_admission",
+      "state": "open",
+      "depends_on": [
+        "candidate_supported_scope_and_resource_bounds",
+        "runtime_numerical_contract_and_full_trace_predicate"
+      ],
+      "required_outputs": [
+        "exact_runtime_build_platform_allowlist",
+        "enforced_controlled_process_profile",
+        "cold_and_optimized_evidence_for_every_proposed_tuple",
+        "admission_evidence_bound_to_selected_domain_graph_and_resources",
+        "selected_supported_execution_predicate"
+      ],
+      "selection_made_by_this_checkpoint": false
+    },
+    {
+      "ordinal": 4,
+      "decision_group": "final_reason_code_inventory",
+      "state": "open",
+      "depends_on": [
+        "candidate_supported_scope_and_resource_bounds",
+        "runtime_numerical_contract_and_full_trace_predicate",
+        "supported_execution_admission"
+      ],
+      "required_outputs": [
+        "retain_or_revise_eleven_reviewed_operation_stage_candidates",
+        "resolve_ten_support_dependent_reason_decisions",
+        "complete_profile_record_comparison_and_runtime_reason_inventory",
+        "freeze_and_issue_only_with_the_final_authoritative_change_set"
+      ],
+      "selection_made_by_this_checkpoint": false
+    },
+    {
+      "ordinal": 5,
+      "decision_group": "final_r2_d5_review_and_disposition",
+      "state": "open",
+      "depends_on": [
+        "candidate_supported_scope_and_resource_bounds",
+        "runtime_numerical_contract_and_full_trace_predicate",
+        "supported_execution_admission",
+        "final_reason_code_inventory"
+      ],
+      "required_outputs": [
+        "synchronize_current_candidate_checkpoints_without_rewriting_durable_review_results",
+        "complete_selected_domain_oracle_boundary_and_metamorphic_evidence",
+        "independent_exact_head_numerical_review",
+        "steward_disposition_no_earlier_than_the_rfc_earliest_decision"
+      ],
+      "selection_made_by_this_checkpoint": false
+    }
+  ],
+  "post_r2_d5_separate_work": [
+    "public_check_and_supported_bundle_issuance",
+    "r2_d6_release_candidate_scope_decision",
+    "authoritative_registry_specification_schema_and_conformance_landing",
+    "release_2_publication"
+  ],
+  "historical_artifact_policy": {
+    "durable_review_results_rewritten": false,
+    "earlier_candidate_checkpoints_rewritten_by_this_increment": false,
+    "historical_labels_are_current_blockers": false,
+    "future_selection_increment_must_synchronize_live_candidate_checkpoints": true
+  },
+  "non_promotions": {
+    "numerical_contract_frozen": false,
+    "supported_pair_count_maximum": null,
+    "supported_input_value_bound": null,
+    "supported_test_statistic_bound": null,
+    "supported_degrees_of_freedom_maximum": null,
+    "supported_trace_resource_bound": null,
+    "supported_platform_matrix": "pending",
+    "runtime_allowlist_entries": [],
+    "controlled_process_profile_enforced": false,
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "input_specific_tail_truth_error_contract_selected_for_runtime": false,
+    "final_protocol_fixed_95_table_selected": false,
+    "final_protocol_fixed_95_table_content_hash": null,
+    "global_student_t_truth_error_constant": null,
+    "global_confidence_interval_error_constant": null,
+    "comparison_tolerances": null,
+    "final_reason_codes_frozen": false,
+    "public_check": "unissued",
+    "supported_bundle": "unissued",
+    "r2_d5": "incomplete",
+    "release_2": "incomplete"
+  },
+  "finite_observations_not_bounds": [
+    {
+      "value": 200,
+      "unit": "degrees_of_freedom_or_table_cells",
+      "role": "evidence_coverage_and_evaluation_target_only",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 201,
+      "unit": "pairs",
+      "role": "g4_evaluation_ceiling_only",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 2048,
+      "unit": "g4_trace_nodes",
+      "role": "evaluation_ceiling_only",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 100000,
+      "unit": "tail_trace_nodes",
+      "role": "evaluation_ceiling_only",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 374,
+      "unit": "binary64_cells",
+      "role": "observed_pointwise_graph_to_truth_distance",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 2978,
+      "unit": "binary64_cells",
+      "role": "one_input_specific_candidate_bound",
+      "eligible_as_global_or_supported_bound": false
+    },
+    {
+      "value": 5182,
+      "unit": "iterations",
+      "role": "one_finite_evidence_observation",
+      "eligible_as_global_or_supported_bound": false
+    }
+  ],
+  "prohibited_claims": [
+    "selected_supported_pair_or_value_bound",
+    "selected_supported_df_max",
+    "selected_supported_trace_resource_bound",
+    "selected_supported_platform_or_runtime_allowlist",
+    "enforced_controlled_process_profile",
+    "selected_supported_execution_predicate",
+    "selected_supported_domain_or_runtime",
+    "selected_final_protocol_fixed_95_table_or_hash",
+    "selected_global_student_t_or_confidence_interval_error_constant",
+    "selected_runtime_input_specific_truth_error_contract",
+    "frozen_comparison_tolerances_or_reason_codes",
+    "issued_public_check_or_supported_bundle",
+    "completed_r2_d5_or_rfc_review",
+    "completed_release_2"
+  ]
+}
