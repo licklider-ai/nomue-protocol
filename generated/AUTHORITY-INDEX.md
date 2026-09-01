@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:f56d714ed080c74e4903f163a1fadccbdfcf181eb12666f6cc8d448874b358e4)
+- authority/authority-manifest.yaml (sha256:343a257bede0df03ff040705bd600fe34984df522be8ac3db405f270b747e8fc)
 
 Generation command: pnpm generate
 -->
