@@ -39,7 +39,11 @@ artifacts themselves are not repository contents. The completion result reports
 `NARROW`: the mathematical and guarantee subclaims can be narrowed and closed,
 while a historical-attribution residual remains open. The
 [`reconciliation candidate`](2026-09-01-all-pairs-successor-source-reconciliation.md)
-records the proposed cross-pass disposition. Neither result nor reconciliation
+records the proposed cross-pass disposition. Its
+[`close-only review commission`](2026-09-01-all-pairs-successor-source-reconciliation-close-review-commission.md)
+and
+[`result placeholder`](2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md)
+bound the next handoff. Neither result, reconciliation, nor review commission
 creates Protocol-adoption authority.
 
 ## Completed follow-up: multiplicity primary-text closure
