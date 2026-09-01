@@ -12,8 +12,11 @@ accepted as dual-pass, source-bounded FND-1 input with disposition `NARROW`.
 The
 [`multiplicity steward disposition`](2026-08-31-multiplicity-steward-disposition.md)
 closes `FND1-H01` through `FND1-H03` in narrowed form. `FND1-H04` through
-`FND1-H08` and the all-pairs successor-source requirement remain open. The full
-FND-1 Research Gate remains open, and no Protocol adoption is authorized.
+`FND1-H08` remain open. The
+[`all-pairs successor-source steward disposition`](2026-09-01-all-pairs-successor-source-steward-disposition.md)
+narrows and closes the named mathematical and lineage subclaims while keeping
+an exact historical-attribution residual open. The full FND-1 Research Gate
+remains open, and no Protocol adoption is authorized.
 
 ## Active bounded source-closure follow-ups
 
@@ -44,9 +47,11 @@ records the proposed cross-pass disposition. The
 and its
 [`completed result`](2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md)
 record `GO`, with all twelve closure checks passing, no blocker or should-fix
-finding, and two non-blocking observations. Steward disposition remains the
-next handoff. Neither result, reconciliation, review, nor review commission
-creates Protocol-adoption authority.
+finding, and two non-blocking observations. The
+[`steward disposition`](2026-09-01-all-pairs-successor-source-steward-disposition.md)
+accepts the source-bounded reconciliation, narrows and closes its named
+subclaims, and keeps only the historical-attribution residual open. None of
+these records creates Protocol-adoption authority.
 
 ## Completed follow-up: multiplicity primary-text closure
 
