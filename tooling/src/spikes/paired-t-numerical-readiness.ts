@@ -19,7 +19,7 @@ export interface PairedTNumericalReadinessCandidate {
     final_reason_codes_frozen: false;
   };
   candidate_supported_scope_resource_bounds: {
-    closure: "selection_pending_independent_review";
+    closure: "reviewed_group_1_candidate_selection";
     artifact: "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json";
     corpus: "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json";
     validator: "tooling/src/spikes/paired-t-candidate-supported-scope-resource-bounds.ts";
@@ -35,8 +35,13 @@ export interface PairedTNumericalReadinessCandidate {
     selected_ci_specific_trace_node_maximum: 3;
     selected_combined_primitive_trace_node_maximum: 101011;
     selection_made_by_this_increment: true;
-    independent_review: "pending";
-    group_1_complete: false;
+    independent_review: "complete";
+    group_1_complete: true;
+    reviewed_candidate_head: "000705ccc3b29d3ef449c5c050e7dba4723a3cab";
+    reviewed_candidate_tree: "66446cb02e01adc23d55c45ee97c89b83179a8bb";
+    review_result: "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md";
+    review_result_blob: "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910";
+    review_preservation_merge: "8aac3c192b972d679308c230efc0cb3b4eff41cf";
     supported_domain_claimed: false;
     runtime_support_enabled: false;
   };
@@ -408,6 +413,11 @@ const CANDIDATE_SUPPORTED_SCOPE_RESOURCE_BOUND_KEYS = [
   "selection_made_by_this_increment",
   "independent_review",
   "group_1_complete",
+  "reviewed_candidate_head",
+  "reviewed_candidate_tree",
+  "review_result",
+  "review_result_blob",
+  "review_preservation_merge",
   "supported_domain_claimed",
   "runtime_support_enabled",
 ] as const;
@@ -855,7 +865,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const candidateScopeResource = candidate.candidate_supported_scope_resource_bounds;
   if (
-    candidateScopeResource.closure !== "selection_pending_independent_review" ||
+    candidateScopeResource.closure !== "reviewed_group_1_candidate_selection" ||
     candidateScopeResource.artifact !==
       "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json" ||
     candidateScopeResource.corpus !==
@@ -876,13 +886,20 @@ function validatePairedTNumericalReadinessCandidateInternal(
     candidateScopeResource.selected_ci_specific_trace_node_maximum !== 3 ||
     candidateScopeResource.selected_combined_primitive_trace_node_maximum !== 101011 ||
     candidateScopeResource.selection_made_by_this_increment !== true ||
-    candidateScopeResource.independent_review !== "pending" ||
-    candidateScopeResource.group_1_complete !== false ||
+    candidateScopeResource.independent_review !== "complete" ||
+    candidateScopeResource.group_1_complete !== true ||
+    candidateScopeResource.reviewed_candidate_head !== "000705ccc3b29d3ef449c5c050e7dba4723a3cab" ||
+    candidateScopeResource.reviewed_candidate_tree !== "66446cb02e01adc23d55c45ee97c89b83179a8bb" ||
+    candidateScopeResource.review_result !==
+      "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md" ||
+    candidateScopeResource.review_result_blob !== "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910" ||
+    candidateScopeResource.review_preservation_merge !==
+      "8aac3c192b972d679308c230efc0cb3b4eff41cf" ||
     candidateScopeResource.supported_domain_claimed !== false ||
     candidateScopeResource.runtime_support_enabled !== false
   ) {
     errors.push(
-      "candidate supported-scope/resource bounds must remain selected for independent review without support or runtime promotion",
+      "candidate supported-scope/resource bounds must bind the preserved exact-head review and close only Group 1 without support or runtime promotion",
     );
   }
 

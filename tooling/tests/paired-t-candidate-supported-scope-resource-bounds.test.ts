@@ -175,10 +175,24 @@ describe("R2-D5 candidate supported scope and resource bounds", () => {
       status: "non_authoritative_candidate",
       issuance: "unissued",
       decision_group: "candidate_supported_scope_and_resource_bounds",
-      decision_state: "candidate_scope_and_resource_bounds_selected_pending_independent_review",
-      independent_review: "pending",
+      decision_state: "independently_reviewed_candidate_scope_and_resource_bounds",
+      independent_review: "complete",
       selection_made_by_this_checkpoint: true,
-      group_1_complete: false,
+      group_1_complete: true,
+      independent_review_binding: {
+        verdict: "GO",
+        blocker_count: 0,
+        should_fix_count: 0,
+        nice_to_have_count: 0,
+        reviewed_candidate_head: "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+        reviewed_candidate_tree: "66446cb02e01adc23d55c45ee97c89b83179a8bb",
+        review_commit: "b3ad38ea36ea66573033133ee94889508f72308f",
+        review_commit_parent: "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+        review_result:
+          "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
+        review_result_blob: "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910",
+        preservation_merge: "8aac3c192b972d679308c230efc0cb3b4eff41cf",
+      },
       supported_domain_claimed: false,
       runtime_support_enabled: false,
       historical_label_clarification: {
@@ -188,12 +202,25 @@ describe("R2-D5 candidate supported scope and resource bounds", () => {
           "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
         previous_closure_gap_checkpoint_rewritten: false,
       },
+      downstream_dependency_state: {
+        runtime_numerical_contract_and_full_trace_predicate: "next_open_after_group_1_closure",
+        supported_execution_admission: "blocked_by_group_2",
+        final_reason_code_inventory: "blocked_by_groups_2_and_3",
+        final_r2_d5_review_and_disposition: "blocked_by_groups_2_through_4_and_rfc_window",
+      },
     });
 
     for (const binding of checkpoint.source_snapshot.bindings as MutableJson[]) {
       const bytes = readFileSync(path.join(repositoryRoot, binding.path as string));
       expect(gitBlobSha1(bytes), binding.role as string).toBe(binding.blob);
     }
+
+    const reviewResultBytes = readFileSync(
+      path.join(repositoryRoot, checkpoint.independent_review_binding.review_result as string),
+    );
+    expect(gitBlobSha1(reviewResultBytes)).toBe(
+      checkpoint.independent_review_binding.review_result_blob,
+    );
 
     const tailTableBytes = readFileSync(
       path.join(
@@ -462,8 +489,34 @@ describe("R2-D5 candidate supported scope and resource bounds", () => {
         value.finite_observations_not_selection_bases[2].promoted_to_resource_bound = true;
       },
       (value) => {
-        value.group_1_complete = true;
-        value.independent_review = "complete";
+        value.group_1_complete = false;
+        value.independent_review = "pending";
+      },
+      (value) => {
+        value.independent_review_binding.verdict = "NO-GO";
+        value.independent_review_binding.blocker_count = 1;
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_head = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_tree = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_commit = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_commit_parent = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_result =
+          "review-inputs/substituted/REVIEW-RESULT.md";
+      },
+      (value) => {
+        value.independent_review_binding.review_result_blob = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.preservation_merge = "0".repeat(40);
       },
       (value) => {
         value.supported_domain_claimed = true;

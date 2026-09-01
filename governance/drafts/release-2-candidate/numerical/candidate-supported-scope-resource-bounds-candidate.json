@@ -6,10 +6,23 @@
   "review_protocol": "governance/drafts/release-2-candidate/reviews/d5-candidate-supported-scope-resource-bounds-adversarial-review-protocol.md",
   "expected_review_result": "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
   "decision_group": "candidate_supported_scope_and_resource_bounds",
-  "decision_state": "candidate_scope_and_resource_bounds_selected_pending_independent_review",
-  "independent_review": "pending",
+  "decision_state": "independently_reviewed_candidate_scope_and_resource_bounds",
+  "independent_review": "complete",
   "selection_made_by_this_checkpoint": true,
-  "group_1_complete": false,
+  "group_1_complete": true,
+  "independent_review_binding": {
+    "verdict": "GO",
+    "blocker_count": 0,
+    "should_fix_count": 0,
+    "nice_to_have_count": 0,
+    "reviewed_candidate_head": "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+    "reviewed_candidate_tree": "66446cb02e01adc23d55c45ee97c89b83179a8bb",
+    "review_commit": "b3ad38ea36ea66573033133ee94889508f72308f",
+    "review_commit_parent": "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+    "review_result": "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
+    "review_result_blob": "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910",
+    "preservation_merge": "8aac3c192b972d679308c230efc0cb3b4eff41cf"
+  },
   "supported_domain_claimed": false,
   "runtime_support_enabled": false,
   "numerical_contract_frozen": false,
@@ -245,10 +258,10 @@
     "clarification_carried_by_this_successor_increment": true
   },
   "downstream_dependency_state": {
-    "runtime_numerical_contract_and_full_trace_predicate": "open_after_group_1_review",
-    "supported_execution_admission": "blocked_by_groups_1_and_2",
-    "final_reason_code_inventory": "blocked_by_groups_1_through_3",
-    "final_r2_d5_review_and_disposition": "blocked_by_groups_1_through_4_and_rfc_window"
+    "runtime_numerical_contract_and_full_trace_predicate": "next_open_after_group_1_closure",
+    "supported_execution_admission": "blocked_by_group_2",
+    "final_reason_code_inventory": "blocked_by_groups_2_and_3",
+    "final_r2_d5_review_and_disposition": "blocked_by_groups_2_through_4_and_rfc_window"
   },
   "non_promotions": {
     "authoritative_supported_pair_or_df_bound": false,
