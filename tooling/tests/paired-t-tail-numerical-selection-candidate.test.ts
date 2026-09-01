@@ -126,4 +126,39 @@ describe("paired-t tail numerical selection candidate", () => {
     cyclic.cycle = cyclic;
     expect(validatePairedTTailNumericalSelectionCandidate(cyclic)).not.toEqual([]);
   });
+
+  it("rejects reviewer-owned weakening and substitution mutations", () => {
+    const table = loadCheckpoint();
+    table.graph_and_table_binding.reviewed_inverse_beta_table_hash = "sha256:deadbeef";
+    expect(validatePairedTTailNumericalSelectionCandidate(table)).not.toEqual([]);
+
+    const trace = loadCheckpoint();
+    trace.graph_and_table_binding.one_actual_immutable_trace_required = false;
+    trace.graph_and_table_binding.exact_primitive_verification_required = false;
+    expect(validatePairedTTailNumericalSelectionCandidate(trace)).not.toEqual([]);
+
+    const termination = loadCheckpoint();
+    termination.series_closure.termination_observation = "iteration_cap_reached";
+    termination.series_closure.central_remainder = "next_term_only";
+    termination.series_closure.lower_tail_remainder = "next_term_only";
+    expect(validatePairedTTailNumericalSelectionCandidate(termination)).not.toEqual([]);
+
+    const margin = loadCheckpoint();
+    margin.projection_contract.stability_condition = "non_strict_margin";
+    margin.projection_contract.zero_subnormal_invalid_or_insufficient_margin = "accept";
+    expect(validatePairedTTailNumericalSelectionCandidate(margin)).not.toEqual([]);
+
+    const global = loadCheckpoint();
+    global.truth_error_contract.global_constant_bound_required_for_tail_numerical_closure = true;
+    expect(validatePairedTTailNumericalSelectionCandidate(global)).not.toEqual([]);
+
+    const support = loadCheckpoint();
+    support.closure_state.independent_selection_review = "complete";
+    support.closure_state.supported_degrees_of_freedom_maximum = 200;
+    support.closure_state.supported_platform_matrix = "selected";
+    support.closure_state.supported_execution_predicate = "selected";
+    support.closure_state.supported_domain = true;
+    support.closure_state.runtime_support = true;
+    expect(validatePairedTTailNumericalSelectionCandidate(support)).not.toEqual([]);
+  });
 });
