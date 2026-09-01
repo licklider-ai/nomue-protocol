@@ -1,0 +1,56 @@
+name: Temporary M3-D formatter materializer
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Format bounded M3-D files
+        run: |
+          pnpm exec prettier --write \
+            governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json \
+            governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-error-adversarial-review-protocol.md \
+            tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts \
+            tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
+      - name: Validate repaired candidate before materialization
+        run: pnpm check
+      - name: Rebuild feature branch as one direct-child commit
+        shell: bash
+        env:
+          BASE: 90e3ab6d086737b0ae754951c3e4f1b404b126be
+          FEATURE: r2-d5/ci-endpoint-truth-error-candidate
+          EXPECTED_FEATURE_HEAD: e32c89d8b02cd7f5437b593cef045db597d46a9b
+        run: |
+          set -euo pipefail
+          current="$(git ls-remote origin "refs/heads/$FEATURE" | cut -f1)"
+          test "$current" = "$EXPECTED_FEATURE_HEAD"
+          git fetch --no-tags --depth=1 origin "$BASE"
+          git read-tree "$BASE"
+          git add -- \
+            governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json \
+            governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-error-adversarial-review-protocol.md \
+            tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts \
+            tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
+          tree="$(git write-tree)"
+          git config user.name "R2 review materializer"
+          git config user.email "noreply@licklider.ai"
+          commit="$(printf '%s\n' 'Add CI endpoint mathematical-truth candidate' | git commit-tree "$tree" -p "$BASE")"
+          git push \
+            --force-with-lease="refs/heads/$FEATURE:$EXPECTED_FEATURE_HEAD" \
+            origin "$commit:refs/heads/$FEATURE"
+          echo "materialized_commit=$commit"
+          echo "materialized_tree=$tree"
