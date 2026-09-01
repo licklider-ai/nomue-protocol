@@ -623,13 +623,15 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md
     class: informative
     notes: >-
-      Pending all-pairs successor primary-source result placeholder; no findings
-      or decisions.
+      Completed access-limited all-pairs successor primary-source result;
+      disposition DEFER with the successor-source requirement kept open; no
+      Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md
     class: informative
     notes: >-
-      Pending all-pairs successor repository-analysis result placeholder; no
-      findings or decisions.
+      Completed all-pairs successor repository-analysis result; disposition
+      DEFER with no live public-surface misattribution found; no
+      Protocol-adoption decision.
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-commission.md
     class: informative
     notes: >-
@@ -639,8 +641,26 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md
     class: informative
     notes: >-
-      Pending all-pairs source-supplied completion result placeholder; no
-      findings or decisions.
+      Completed source-supplied primary-text result; disposition NARROW with
+      mathematical and guarantee subclaims narrowed and closed while the
+      historical-attribution residual remains open; no Protocol-adoption
+      decision.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation.md
+    class: informative
+    notes: >-
+      Steward reconciliation candidate for the all-pairs successor-source
+      passes; proposes a narrowed-open historical-attribution residual and no
+      Protocol adoption.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-commission.md
+    class: informative
+    notes: >-
+      Close-only review commission for the all-pairs successor-source
+      reconciliation candidate; no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md
+    class: informative
+    notes: >-
+      Pending close-only review result placeholder for the all-pairs
+      successor-source reconciliation; no findings or decisions.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
