@@ -659,8 +659,10 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md
     class: informative
     notes: >-
-      Pending close-only review result placeholder for the all-pairs
-      successor-source reconciliation; no findings or decisions.
+      Completed close-only review of the all-pairs successor-source
+      reconciliation: GO, all twelve checks passed, no blocker or should-fix
+      finding, two non-blocking observations, and no Protocol-adoption
+      authority.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
