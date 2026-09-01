@@ -1,0 +1,36 @@
+name: Temporary M3-D independent review
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-review:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Format reviewer-only instrumentation in workspace
+        run: |
+          pnpm exec prettier --write \
+            tooling/tests/reviewer-paired-t-ci-endpoint-truth-adversarial.test.ts \
+            tooling/reviewer/m3d-emit-corpus.ts
+      - name: Production M3-D focused suite
+        run: pnpm exec vitest run tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
+      - name: Reviewer structural/adversarial battery
+        run: pnpm exec vitest run tooling/tests/reviewer-paired-t-ci-endpoint-truth-adversarial.test.ts
+      - name: Emit exact candidate corpus
+        run: pnpm exec tsx tooling/reviewer/m3d-emit-corpus.ts m3d-review-corpus.json
+      - name: Independent Python Fraction oracle
+        run: python3 tooling/reviewer/m3d_fraction_oracle.py m3d-review-corpus.json .
+      - name: Typecheck candidate plus reviewer instrumentation
+        run: pnpm typecheck
