@@ -4,7 +4,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   materialize:
@@ -45,7 +45,34 @@ jobs:
             tooling/tests/paired-t-ci-execution-trace-candidate.test.ts \
             governance/drafts/release-2-candidate/reviews/d5-ci-execution-trace-adversarial-review-protocol.md \
             governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json
-      - run: pnpm typecheck
+      - name: Validate repaired candidate before materialization
+        run: pnpm check
+      - name: Rebuild feature branch as one direct-child commit
+        shell: bash
+        env:
+          BASE: 2d11edf5c1bf676d0cd1f3d663055b44ffc7752a
+          FEATURE: r2-d5/ci-actual-execution-trace
+          EXPECTED_FEATURE_HEAD: 1cf2d36f6a3300987ad3b13a8e785295f723bf49
+        run: |
+          set -euo pipefail
+          current="$(git ls-remote origin "refs/heads/$FEATURE" | cut -f1)"
+          test "$current" = "$EXPECTED_FEATURE_HEAD"
+          git fetch --no-tags --depth=1 origin "$BASE"
+          git read-tree "$BASE"
+          git add -- \
+            governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json \
+            governance/drafts/release-2-candidate/reviews/d5-ci-execution-trace-adversarial-review-protocol.md \
+            tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts \
+            tooling/tests/paired-t-ci-execution-trace-candidate.test.ts
+          tree="$(git write-tree)"
+          git config user.name "R2 review materializer"
+          git config user.email "noreply@licklider.ai"
+          commit="$(printf '%s\n' 'Add confidence-interval actual-execution trace candidate' | git commit-tree "$tree" -p "$BASE")"
+          git push \
+            --force-with-lease="refs/heads/$FEATURE:$EXPECTED_FEATURE_HEAD" \
+            origin "$commit:refs/heads/$FEATURE"
+          echo "materialized_commit=$commit"
+          echo "materialized_tree=$tree"
       - uses: actions/upload-artifact@v4
         with:
           name: m3c-repaired-${{ github.event.pull_request.head.sha || github.sha }}
