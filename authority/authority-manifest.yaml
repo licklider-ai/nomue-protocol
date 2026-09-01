@@ -631,8 +631,10 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation-close-review-result.md
     class: informative
     notes: >-
-      Pending close-only review result placeholder for the non-clinical
-      estimand reconciliation; no findings or Protocol-adoption authority.
+      Completed close-only review of the non-clinical estimand reconciliation:
+      GO, all twelve checks passed, no blocker or should-fix finding, two
+      non-direction-changing observations, FND1-H04 kept open, and no
+      Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-

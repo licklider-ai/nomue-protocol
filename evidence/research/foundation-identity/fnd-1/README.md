@@ -45,9 +45,11 @@ completion requirement. It creates no Protocol-adoption authority and does not
 close the FND-1 Research Gate. The
 [`close-only review commission`](2026-09-01-nonclinical-estimand-source-reconciliation-close-review-commission.md)
 and its
-[`pending result`](2026-09-01-nonclinical-estimand-source-reconciliation-close-review-result.md)
-fix the next review boundary; they do not close `FND1-H04` or authorize any
-Protocol change.
+[`completed result`](2026-09-01-nonclinical-estimand-source-reconciliation-close-review-result.md)
+record `GO`, with all twelve checks passing, no blocker or should-fix finding,
+and two non-direction-changing observations. The review makes the
+reconciliation eligible for a bounded steward disposition; it does not close
+`FND1-H04` or authorize any Protocol change.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
