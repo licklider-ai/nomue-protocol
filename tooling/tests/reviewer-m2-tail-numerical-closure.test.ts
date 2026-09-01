@@ -6,7 +6,10 @@ import { validatePairedTNumericalReadinessCandidate } from "../src/spikes/paired
 import { validatePairedTPValueEnclosureEvidenceClosureCandidate } from "../src/spikes/paired-t-p-value-enclosure-evidence-closure-candidate.js";
 import { validatePairedTTailNumericalSelectionCandidate } from "../src/spikes/paired-t-tail-numerical-selection-candidate.js";
 
-const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const repositoryRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
 const numericalRoot = path.join(
   repositoryRoot,
   "governance/drafts/release-2-candidate/numerical",
@@ -112,15 +115,15 @@ describe("reviewer-owned M2 tail numerical closure battery", () => {
   it("keeps fixed-95, CI, support, runtime, and final reason codes open", () => {
     const readiness = loadJson("evidence-readiness.json");
     expect(readiness.fixed_95_critical_value_evidence.closure).toBe("incomplete");
-    expect(readiness.g4_actual_execution_trace_candidate.confidence_interval_trace_composition_complete).toBe(
-      false,
-    );
+    expect(
+      readiness.g4_actual_execution_trace_candidate.confidence_interval_trace_composition_complete,
+    ).toBe(false);
     expect(readiness.supported_domain).toBeNull();
     expect(readiness.comparison_tolerances).toBeNull();
     expect(readiness.numerical_contract_frozen).toBe(false);
-    expect(readiness.supported_execution_predicate_candidate.supported_execution_predicate_selected).toBe(
-      false,
-    );
+    expect(
+      readiness.supported_execution_predicate_candidate.supported_execution_predicate_selected,
+    ).toBe(false);
     expect(readiness.supported_execution_predicate_candidate.runtime_support_enabled).toBe(false);
     expect(readiness.runtime_input_reason_code_candidate.final_reason_codes_frozen).toBe(false);
   });
