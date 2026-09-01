@@ -650,9 +650,10 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-result.md
     class: informative
     notes: >-
-      Pending primary-source completion result for FND1-H04; supplies no
-      evidence and creates no Protocol-adoption authority until completed and
-      reviewed.
+      Completed source-bounded primary-source result for FND1-H04; disposition
+      DEFER with FND1-H04 kept open, residual acquisition requirements
+      preserved, direct-evidence claims subject to bounded independent review,
+      and no Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-

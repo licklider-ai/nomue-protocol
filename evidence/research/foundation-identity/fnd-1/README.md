@@ -54,14 +54,17 @@ reconciliation eligible for a bounded steward disposition; it does not close
 accepts the narrowed reconciliation as source-bounded research input while
 keeping the exact primary-source completion requirement and `FND1-H04` open.
 
-The next bounded stage is the
+The bounded
 [`primary-source completion commission`](2026-09-01-nonclinical-estimand-primary-source-completion-commission.md)
 and its
-[`pending result`](2026-09-01-nonclinical-estimand-primary-source-completion-result.md).
-This stage directly targets the retained non-ICH target-quantity,
-outcome-existence, censoring, detection-limit, and non-clinical terminal-event
-source requirements. The pending package does not change the `KEEP_OPEN`
-disposition or authorize Protocol adoption.
+[`completed result`](2026-09-01-nonclinical-estimand-primary-source-completion-result.md)
+directly target the retained non-ICH target-quantity, outcome-existence,
+censoring, detection-limit, and non-clinical terminal-event source
+requirements. The result reports `DEFER` and keeps `FND1-H04` open:
+`H04-S1` is only partially met, `H04-S2` is met, `H04-S3` is reported as
+met with an unpaginated-rendition caveat, and `H04-S4` remains not verifiable.
+Its direct-evidence and pinpoint claims remain subject to bounded independent
+review. Neither the package nor the result authorizes Protocol adoption.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
