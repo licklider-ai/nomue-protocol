@@ -33,10 +33,14 @@ source-closure packages.
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
 and
-[`result placeholder`](2026-09-01-all-pairs-successor-source-supplied-completion-result.md)
+[`completed result`](2026-09-01-all-pairs-successor-source-supplied-completion-result.md)
 for primary texts acquired after its initial access-limited pass. The source
-artifacts themselves are not repository contents. This continuation may narrow
-the retained source requirement but creates no Protocol-adoption authority.
+artifacts themselves are not repository contents. The completion result reports
+`NARROW`: the mathematical and guarantee subclaims can be narrowed and closed,
+while a historical-attribution residual remains open. The
+[`reconciliation candidate`](2026-09-01-all-pairs-successor-source-reconciliation.md)
+records the proposed cross-pass disposition. Neither result nor reconciliation
+creates Protocol-adoption authority.
 
 ## Completed follow-up: multiplicity primary-text closure
 
