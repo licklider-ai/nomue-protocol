@@ -19,11 +19,12 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Apply bounded TypeScript repairs
+      - name: Apply bounded TypeScript and fixture repairs
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
+
           p = Path('tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts')
           s = p.read_text()
           old = 'classification?: PairedTCIExecutionCandidateResult["classification"]'
@@ -36,6 +37,15 @@ jobs:
           if old not in s:
               raise SystemExit('withoutHash annotation target not found')
           s = s.replace(old, new, 1)
+          p.write_text(s)
+
+          p = Path('tooling/tests/paired-t-ci-execution-trace-candidate.test.ts')
+          s = p.read_text()
+          target = 'experimentalUnitId: `u${index}`,'
+          if s.count(target) != 2:
+              raise SystemExit('experimental-unit fixture targets not found exactly twice')
+          s = s.replace(target, 'experimentalUnitId: `u${index}-first`,', 1)
+          s = s.replace(target, 'experimentalUnitId: `u${index}-second`,', 1)
           p.write_text(s)
           PY
       - name: Format bounded candidate files
