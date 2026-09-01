@@ -1,0 +1,132 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-candidate-supported-scope-resource-corpus-1",
+  "scope": "group_1_boundary_and_metamorphic_evaluation_not_protocol_support",
+  "source_corpora": [
+    {
+      "corpus_key": "reviewed_g4_operation_stage_boundaries",
+      "path": "governance/drafts/release-2-candidate/numerical/support-domain-boundary-cases.json",
+      "expected_case_count": 11,
+      "role": "first_failure_order_and_one_ordinary_success"
+    },
+    {
+      "corpus_key": "reviewed_tail_truth_cases",
+      "path": "tooling/r2-paired-t-runtime-series/cases.json",
+      "expected_case_count": 20,
+      "role": "branch_projection_truth_and_high_error_witness_coverage"
+    },
+    {
+      "corpus_key": "reviewed_projection_transition_search",
+      "path": "tooling/r2-paired-t-runtime-series/truth-boundary-cases.json",
+      "expected_degrees_of_freedom": [1, 2, 3, 10, 30, 100, 200],
+      "expected_transition_families": [
+        "rounded_one_to_positive_normal",
+        "positive_normal_to_positive_subnormal",
+        "positive_subnormal_to_zero"
+      ],
+      "role": "projection_class_adjacency_evidence_not_a_rectangular_domain"
+    }
+  ],
+  "generated_pair_df_sweep": {
+    "pair_count_minimum": 2,
+    "pair_count_maximum": 201,
+    "degrees_of_freedom_relation": "n_pairs_minus_one",
+    "difference_construction": "symmetric_small_integers_with_exact_zero_mean",
+    "second_condition_value": 1024,
+    "expected_tail_branch": "exact-zero",
+    "expected_p_value_binary64_hex": "3ff0000000000000",
+    "expected_g4_trace_node_formula": "5_times_n_pairs_plus_3",
+    "expected_ci_specific_trace_nodes": 3,
+    "every_pair_count_inclusive_is_exercised": true
+  },
+  "resource_boundary_cases": [
+    {
+      "case_key": "minimum-pair-and-df",
+      "n_pairs": 2,
+      "degrees_of_freedom": 1,
+      "expected_g4_trace_nodes": 13,
+      "expected_disposition": "within_candidate_resource_envelope"
+    },
+    {
+      "case_key": "maximum-pair-and-df",
+      "n_pairs": 201,
+      "degrees_of_freedom": 200,
+      "expected_g4_trace_nodes": 1008,
+      "expected_disposition": "within_candidate_resource_envelope"
+    },
+    {
+      "case_key": "pair-count-above-candidate-maximum",
+      "n_pairs": 202,
+      "degrees_of_freedom": 201,
+      "expected_disposition": "outside_candidate_scope"
+    },
+    {
+      "case_key": "tail-heavy-reviewed-witness",
+      "degrees_of_freedom": 200,
+      "test_statistic_binary64_hex": "3ff0000000000001",
+      "expected_iterations": 5182,
+      "expected_iteration_cap": 8064,
+      "expected_tail_trace_nodes": 72567,
+      "expected_disposition": "within_candidate_resource_envelope"
+    },
+    {
+      "case_key": "tail-node-limit-immediately-below-witness",
+      "degrees_of_freedom": 200,
+      "test_statistic_binary64_hex": "3ff0000000000001",
+      "review_limit": 72566,
+      "expected_disposition": "execution_trace_resource_bound_exceeded"
+    },
+    {
+      "case_key": "tail-node-limit-at-witness",
+      "degrees_of_freedom": 200,
+      "test_statistic_binary64_hex": "3ff0000000000001",
+      "review_limit": 72567,
+      "expected_disposition": "within_candidate_resource_envelope"
+    }
+  ],
+  "metamorphic_base": {
+    "condition_order": ["first", "second"],
+    "repeated_measurements": "none",
+    "pair_ids": ["pair-001", "pair-002", "pair-003", "pair-004"],
+    "first_condition_values": [4, 7, 11, 14],
+    "second_condition_values": [3, 5, 7, 9],
+    "paired_differences": [1, 2, 4, 5]
+  },
+  "metamorphic_transformations": [
+    {
+      "transformation_key": "observation_and_pair_permutation",
+      "operation": "reverse_input_observation_order",
+      "expected_relation": "all_returned_numerical_values_and_canonical_traces_identical"
+    },
+    {
+      "transformation_key": "condition_direction_swap",
+      "operation": "reverse_declared_condition_order",
+      "expected_relation": "mean_and_t_negated_variance_se_and_p_unchanged_ci_negated_and_reversed"
+    },
+    {
+      "transformation_key": "outcome_sign_reversal",
+      "operation": "negate_every_outcome",
+      "expected_relation": "mean_and_t_negated_variance_se_and_p_unchanged_ci_negated_and_reversed"
+    },
+    {
+      "transformation_key": "exact_power_of_two_scale",
+      "operation": "multiply_every_outcome_by_two",
+      "expected_relation": "mean_se_margin_and_ci_scaled_by_two_variance_by_four_t_and_p_unchanged"
+    },
+    {
+      "transformation_key": "exact_common_translation",
+      "operation": "add_sixteen_to_every_outcome",
+      "expected_relation": "all_returned_numerical_values_unchanged"
+    }
+  ],
+  "coverage_boundary": {
+    "finite_corpus_defines_supported_domain": false,
+    "finite_corpus_maximum_is_a_global_error_bound": false,
+    "candidate_scope_is_rectangular_magnitude_box": false,
+    "unexercised_input_accepted_by_corpus_membership_alone": false,
+    "per_input_operation_trace_truth_and_projection_checks_remain_required": true,
+    "platform_or_runtime_admission_established": false
+  }
+}
