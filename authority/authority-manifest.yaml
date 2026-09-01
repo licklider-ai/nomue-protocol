@@ -663,6 +663,13 @@ artifacts:
       reconciliation: GO, all twelve checks passed, no blocker or should-fix
       finding, two non-blocking observations, and no Protocol-adoption
       authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md
+    class: informative
+    notes: >-
+      Source-bounded steward disposition for the all-pairs successor-source
+      follow-up; narrows and closes named mathematical and lineage subclaims,
+      preserves the historical-attribution residual, and creates no
+      Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.
