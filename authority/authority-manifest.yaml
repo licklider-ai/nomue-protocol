@@ -623,6 +623,16 @@ artifacts:
       Steward reconciliation candidate for the non-clinical estimand passes;
       proposes a narrowed bearer-explicit structure while keeping FND1-H04
       open for primary-source completion and authorizes no Protocol adoption.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation-close-review-commission.md
+    class: informative
+    notes: >-
+      Close-only review commission for the non-clinical estimand
+      reconciliation candidate; no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation-close-review-result.md
+    class: informative
+    notes: >-
+      Pending close-only review result placeholder for the non-clinical
+      estimand reconciliation; no findings or Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
