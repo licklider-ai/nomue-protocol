@@ -22,11 +22,17 @@ describe("Release 2 numerical evidence readiness", () => {
     expect(validatePairedTNumericalReadinessCandidate(loadReadiness())).toEqual([]);
   });
 
-  it("rejects a premature evidence-closure claim", () => {
-    const candidate = loadReadiness();
-    candidate.p_value_enclosure_evidence.closure = "closed" as never;
-    expect(validatePairedTNumericalReadinessCandidate(candidate)).toContain(
-      "certificate evidence cannot be marked closed by this readiness increment",
+  it("keeps p-value evidence reviewed while critical-value evidence remains open", () => {
+    const demoted = loadReadiness();
+    demoted.p_value_enclosure_evidence.closure = "incomplete" as never;
+    expect(validatePairedTNumericalReadinessCandidate(demoted)).toContain(
+      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
+    );
+
+    const promoted = loadReadiness();
+    promoted.fixed_95_critical_value_evidence.closure = "closed" as never;
+    expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
+      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
     );
   });
 
@@ -112,16 +118,16 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the tail numerical selection as input-specific and pending review", () => {
+  it("records the independently reviewed input-specific tail selection as M2 closed", () => {
     const candidate = loadReadiness();
     expect(candidate.tail_numerical_selection_candidate).toMatchObject({
-      closure: "selection_candidate_pending_independent_review",
+      closure: "reviewed_input_specific_selection",
       input_specific_bound_selected_for_tail_numerical_contract: true,
       global_constant_bound_required_for_tail_numerical_closure: false,
       global_constant_truth_error_bound_selected: false,
       projection_margin_runtime_activated: false,
-      independent_selection_review_complete: false,
-      m2_closed: false,
+      independent_selection_review_complete: true,
+      m2_closed: true,
       supported_degrees_of_freedom_max: null,
       supported_platform_matrix: "pending",
       supported_execution_predicate_selected: false,
@@ -134,7 +140,7 @@ describe("Release 2 numerical evidence readiness", () => {
     demoted.tail_numerical_selection_candidate.input_specific_bound_selected_for_tail_numerical_contract =
       false as never;
     expect(validatePairedTNumericalReadinessCandidate(demoted)).toContain(
-      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+      "tail numerical selection must remain reviewed input-specific M2 closure and non-runtime",
     );
 
     const promoted = loadReadiness();
@@ -150,7 +156,7 @@ describe("Release 2 numerical evidence readiness", () => {
     promoted.tail_numerical_selection_candidate.supported_domain_claimed = true as never;
     promoted.tail_numerical_selection_candidate.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
-      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+      "tail numerical selection must remain reviewed input-specific M2 closure and non-runtime",
     );
   });
 

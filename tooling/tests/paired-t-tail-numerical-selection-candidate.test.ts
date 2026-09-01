@@ -22,8 +22,8 @@ describe("paired-t tail numerical selection candidate", () => {
     const candidate = loadCheckpoint();
     expect(validatePairedTTailNumericalSelectionCandidate(candidate)).toEqual([]);
     expect(candidate).toMatchObject({
-      decision_state: "input_specific_bound_selection_candidate_pending_independent_review",
-      m2_closed: false,
+      decision_state: "independently_reviewed_input_specific_bound_selection",
+      m2_closed: true,
       runtime_support_enabled: false,
       supported_domain_claimed: false,
       truth_error_contract: {
@@ -33,7 +33,7 @@ describe("paired-t tail numerical selection candidate", () => {
         finite_corpus_maximum_is_a_bound: false,
       },
       closure_state: {
-        independent_selection_review: "pending",
+        independent_selection_review: "complete",
         supported_degrees_of_freedom_maximum: null,
         supported_platform_matrix: "pending",
         supported_execution_predicate: "unselected",
