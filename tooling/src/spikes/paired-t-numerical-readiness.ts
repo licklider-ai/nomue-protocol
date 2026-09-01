@@ -103,7 +103,7 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   tail_numerical_selection_candidate: {
-    closure: "selection_candidate_pending_independent_review";
+    closure: "reviewed_input_specific_selection";
     artifact: "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json";
     validator: "tooling/src/spikes/paired-t-tail-numerical-selection-candidate.ts";
     review_protocol: "governance/drafts/release-2-candidate/reviews/d5-tail-numerical-selection-adversarial-review-protocol.md";
@@ -113,8 +113,8 @@ export interface PairedTNumericalReadinessCandidate {
     global_constant_truth_error_bound_selected: false;
     projection_margin_rule: "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound";
     projection_margin_runtime_activated: false;
-    independent_selection_review_complete: false;
-    m2_closed: false;
+    independent_selection_review_complete: true;
+    m2_closed: true;
     supported_degrees_of_freedom_max: null;
     supported_platform_matrix: "pending";
     supported_execution_predicate_selected: false;
@@ -194,7 +194,7 @@ export interface PairedTNumericalReadinessCandidate {
     recompute_mismatch: string[];
   };
   p_value_enclosure_evidence: {
-    closure: "incomplete";
+    closure: "reviewed_complete";
     primary_path: "arb_regularized_incomplete_beta_exact_rational_input";
     secondary_path: "rigorous_density_quadrature_with_analytic_tail_bound";
     certificate_validator: string;
@@ -864,7 +864,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const tailNumericalSelectionCandidate = candidate.tail_numerical_selection_candidate;
   if (
-    tailNumericalSelectionCandidate.closure !== "selection_candidate_pending_independent_review" ||
+    tailNumericalSelectionCandidate.closure !== "reviewed_input_specific_selection" ||
     tailNumericalSelectionCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json" ||
     tailNumericalSelectionCandidate.validator !==
@@ -881,8 +881,8 @@ function validatePairedTNumericalReadinessCandidateInternal(
     tailNumericalSelectionCandidate.projection_margin_rule !==
       "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound" ||
     tailNumericalSelectionCandidate.projection_margin_runtime_activated !== false ||
-    tailNumericalSelectionCandidate.independent_selection_review_complete !== false ||
-    tailNumericalSelectionCandidate.m2_closed !== false ||
+    tailNumericalSelectionCandidate.independent_selection_review_complete !== true ||
+    tailNumericalSelectionCandidate.m2_closed !== true ||
     tailNumericalSelectionCandidate.supported_degrees_of_freedom_max !== null ||
     tailNumericalSelectionCandidate.supported_platform_matrix !== "pending" ||
     tailNumericalSelectionCandidate.supported_execution_predicate_selected !== false ||
@@ -890,7 +890,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     tailNumericalSelectionCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+      "tail numerical selection must remain reviewed input-specific M2 closure and non-runtime",
     );
   }
 
@@ -1029,10 +1029,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
   );
 
   if (
-    candidate.p_value_enclosure_evidence.closure !== "incomplete" ||
+    candidate.p_value_enclosure_evidence.closure !== "reviewed_complete" ||
     candidate.fixed_95_critical_value_evidence.closure !== "incomplete"
   ) {
-    errors.push("certificate evidence cannot be marked closed by this readiness increment");
+    errors.push(
+      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
+    );
   }
   const expectedValidator = "tooling/src/spikes/paired-t-certificate-candidate.ts";
   if (

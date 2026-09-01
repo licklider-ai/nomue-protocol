@@ -23,8 +23,8 @@ const EXPECTED_CHECKPOINT = {
   issuance: "unissued",
   review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
   candidate_key: "paired-t-d5-tail-numerical-selection-1",
-  decision_state: "input_specific_bound_selection_candidate_pending_independent_review",
-  m2_closed: false,
+  decision_state: "independently_reviewed_input_specific_bound_selection",
+  m2_closed: true,
   runtime_support_enabled: false,
   supported_domain_claimed: false,
   truth_error_contract: {
@@ -77,7 +77,7 @@ const EXPECTED_CHECKPOINT = {
     correctly_rounded_p_value_claim_requires_all_selected_conditions: true,
   },
   closure_state: {
-    independent_selection_review: "pending",
+    independent_selection_review: "complete",
     supported_degrees_of_freedom_maximum: null,
     supported_platform_matrix: "pending",
     supported_execution_predicate: "unselected",
@@ -162,8 +162,8 @@ export function validatePairedTTailNumericalSelectionCandidate(candidate: unknow
     return JSON.stringify(canonicalizeJson(candidate)) ===
       JSON.stringify(canonicalizeJson(EXPECTED_CHECKPOINT))
       ? []
-      : ["tail numerical selection checkpoint differs from the pending-review candidate"];
+      : ["tail numerical selection checkpoint differs from the reviewed M2 candidate"];
   } catch {
-    return ["tail numerical selection checkpoint differs from the pending-review candidate"];
+    return ["tail numerical selection checkpoint differs from the reviewed M2 candidate"];
   }
 }
