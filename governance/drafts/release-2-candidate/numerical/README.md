@@ -38,9 +38,11 @@ by `../reviews/d5-r2-d5-closure-gap-adversarial-review-protocol.md`.
 
 `candidate-supported-scope-resource-bounds-candidate.json` is the first successor
 increment for the ordered closure-gap inventory. It selects a candidate Group 1
-scope and resource envelope for exact-head independent review. It does not establish
-an authoritative supported domain, activate runtime support, choose a platform, or
-complete Group 1 before that review.
+scope and resource envelope. Its exact-head independent review returned `GO` with no
+findings, and the byte-identical review result is preserved on `main`; Group 1 is
+therefore closed as a non-authoritative candidate-selection milestone. It does not
+establish an authoritative supported domain, activate runtime support, or choose a
+platform.
 
 The pair-count candidate is `2..201`, with the exact paired-t relation
 `df = n_pairs - 1`, so the candidate df range is `1..200`. The selection is based on
@@ -76,7 +78,8 @@ literally in `support-domain-candidate.json`, while
 `truth-error-support-closure-candidate.json` is the later checkpoint that resolved
 the numerical part of that dependency. Group 2 graph/oracle selection, platform
 admission, final reason codes, Public Check/bundle issuance, R2-D5, and Release 2 all
-remain open.
+remain open. The review identity and preservation merge are pinned by the candidate
+checkpoint and aggregate readiness overlay; changing any of them fails closed.
 
 ## Operation-stage support-domain candidate
 

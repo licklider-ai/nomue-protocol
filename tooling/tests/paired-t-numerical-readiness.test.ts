@@ -52,10 +52,10 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records Group 1 selection while keeping review, support, and runtime open", () => {
+  it("records reviewed Group 1 closure while keeping support and runtime open", () => {
     const candidate = loadReadiness();
     expect(candidate.candidate_supported_scope_resource_bounds).toEqual({
-      closure: "selection_pending_independent_review",
+      closure: "reviewed_group_1_candidate_selection",
       artifact:
         "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
       corpus:
@@ -75,8 +75,14 @@ describe("Release 2 numerical evidence readiness", () => {
       selected_ci_specific_trace_node_maximum: 3,
       selected_combined_primitive_trace_node_maximum: 101011,
       selection_made_by_this_increment: true,
-      independent_review: "pending",
-      group_1_complete: false,
+      independent_review: "complete",
+      group_1_complete: true,
+      reviewed_candidate_head: "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+      reviewed_candidate_tree: "66446cb02e01adc23d55c45ee97c89b83179a8bb",
+      review_result:
+        "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
+      review_result_blob: "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910",
+      review_preservation_merge: "8aac3c192b972d679308c230efc0cb3b4eff41cf",
       supported_domain_claimed: false,
       runtime_support_enabled: false,
     });
@@ -84,13 +90,47 @@ describe("Release 2 numerical evidence readiness", () => {
     expect(candidate.numerical_contract_frozen).toBe(false);
     expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
 
+    const demoted = loadReadiness();
+    demoted.candidate_supported_scope_resource_bounds.independent_review = "pending" as never;
+    demoted.candidate_supported_scope_resource_bounds.group_1_complete = false as never;
+    expect(validatePairedTNumericalReadinessCandidate(demoted)).toContain(
+      "candidate supported-scope/resource bounds must bind the preserved exact-head review and close only Group 1 without support or runtime promotion",
+    );
+
+    const identityAttacks: Array<
+      (
+        value: PairedTNumericalReadinessCandidate["candidate_supported_scope_resource_bounds"],
+      ) => void
+    > = [
+      (value) => {
+        value.reviewed_candidate_head = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.reviewed_candidate_tree = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_result = "review-inputs/substituted/REVIEW-RESULT.md" as never;
+      },
+      (value) => {
+        value.review_result_blob = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_preservation_merge = "0".repeat(40) as never;
+      },
+    ];
+    for (const attack of identityAttacks) {
+      const substituted = loadReadiness();
+      attack(substituted.candidate_supported_scope_resource_bounds);
+      expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
+        "candidate supported-scope/resource bounds must bind the preserved exact-head review and close only Group 1 without support or runtime promotion",
+      );
+    }
+
     const promoted = loadReadiness();
-    promoted.candidate_supported_scope_resource_bounds.independent_review = "complete" as never;
-    promoted.candidate_supported_scope_resource_bounds.group_1_complete = true as never;
     promoted.candidate_supported_scope_resource_bounds.supported_domain_claimed = true as never;
     promoted.candidate_supported_scope_resource_bounds.runtime_support_enabled = true as never;
     expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
-      "candidate supported-scope/resource bounds must remain selected for independent review without support or runtime promotion",
+      "candidate supported-scope/resource bounds must bind the preserved exact-head review and close only Group 1 without support or runtime promotion",
     );
   });
 

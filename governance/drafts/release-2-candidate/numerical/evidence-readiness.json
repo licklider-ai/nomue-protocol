@@ -17,7 +17,7 @@
     "final_reason_codes_frozen": false
   },
   "candidate_supported_scope_resource_bounds": {
-    "closure": "selection_pending_independent_review",
+    "closure": "reviewed_group_1_candidate_selection",
     "artifact": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
     "corpus": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json",
     "validator": "tooling/src/spikes/paired-t-candidate-supported-scope-resource-bounds.ts",
@@ -33,8 +33,13 @@
     "selected_ci_specific_trace_node_maximum": 3,
     "selected_combined_primitive_trace_node_maximum": 101011,
     "selection_made_by_this_increment": true,
-    "independent_review": "pending",
-    "group_1_complete": false,
+    "independent_review": "complete",
+    "group_1_complete": true,
+    "reviewed_candidate_head": "000705ccc3b29d3ef449c5c050e7dba4723a3cab",
+    "reviewed_candidate_tree": "66446cb02e01adc23d55c45ee97c89b83179a8bb",
+    "review_result": "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
+    "review_result_blob": "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910",
+    "review_preservation_merge": "8aac3c192b972d679308c230efc0cb3b4eff41cf",
     "supported_domain_claimed": false,
     "runtime_support_enabled": false
   },
