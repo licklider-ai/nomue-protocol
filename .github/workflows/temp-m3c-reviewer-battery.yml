@@ -1,0 +1,29 @@
+name: Temporary M3-C reviewer battery
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  reviewer-battery:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Format reviewer-only test in workspace
+        run: pnpm exec prettier --write tooling/tests/reviewer-paired-t-ci-execution-trace-adversarial.test.ts
+      - name: Run reviewer-only battery
+        run: pnpm exec vitest run tooling/tests/reviewer-paired-t-ci-execution-trace-adversarial.test.ts
+      - name: Re-run production M3-C focused suite
+        run: pnpm exec vitest run tooling/tests/paired-t-ci-execution-trace-candidate.test.ts
+      - name: Typecheck candidate plus reviewer instrumentation
+        run: pnpm typecheck
