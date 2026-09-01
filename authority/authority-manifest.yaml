@@ -641,6 +641,18 @@ artifacts:
       Source-bounded steward disposition accepting the narrowed non-clinical
       estimand reconciliation while keeping FND1-H04 and its exact
       primary-source requirement open; no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-commission.md
+    class: informative
+    notes: >-
+      Bounded primary-source completion commission for the exact residual
+      source requirement retained under FND1-H04; no Protocol-adoption
+      authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-result.md
+    class: informative
+    notes: >-
+      Pending primary-source completion result for FND1-H04; supplies no
+      evidence and creates no Protocol-adoption authority until completed and
+      reviewed.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
