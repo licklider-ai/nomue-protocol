@@ -1,0 +1,211 @@
+/** Fail-closed validation for the non-authoritative R2-D5 p-value evidence receipt. */
+
+export interface PairedTPValueEnclosureEvidenceClosureCandidate {
+  status: string;
+  issuance: string;
+  review_issue: string;
+  candidate_key: string;
+  decision_state: string;
+  p_value_enclosure_evidence_closed: boolean;
+  m2_closed: boolean;
+  source_evidence: Record<string, unknown>;
+  environment: Record<string, unknown>;
+  closure_items: Record<string, unknown>;
+  closure_state: Record<string, unknown>;
+  prohibited_claims: string[];
+}
+
+const EXPECTED_CHECKPOINT = {
+  status: "non_authoritative_candidate",
+  issuance: "unissued",
+  review_issue: "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  candidate_key: "paired-t-d5-p-value-enclosure-evidence-closure-1",
+  decision_state: "fixed_evidence_artifact_pending_independent_numerical_review",
+  p_value_enclosure_evidence_closed: false,
+  m2_closed: false,
+  source_evidence: {
+    generator_commit: "98da47599053d3e29a2c42f274ffc9c239621ded",
+    workflow_run_id: 33452181213,
+    workflow_name: "Release 2 paired-t candidate evidence",
+    artifact_id: 9780152851,
+    artifact_name: "release-2-paired-t-pilot-98da47599053d3e29a2c42f274ffc9c239621ded",
+    artifact_zip_sha256:
+      "sha256:cf092f0b3bfd4cdb8a32e5fb9864f564390dd0027f847b591be1262c134d1299",
+    artifact_created_at: "2026-08-31T23:48:22Z",
+    artifact_expires_at: "2026-11-29T23:47:55Z",
+    repository_source_blobs: {
+      "generator.py": "95abb62f33f627ffaf5ad13024619137607172d4",
+      "cases.json": "dc2b9c26953c016f16fac818815cf8c481ca99ee",
+      "requirements.txt": "388b3abf3e5e746b922e1bd1ed888165685786b0",
+      certificate_validator: "d5f3bfc2ee1b2397bba52d9975a463e6ca7790b8",
+      bundle_validator: "65dbca6a1d3483206c530d5cf8742a662c73f745",
+    },
+    internal_file_sha256: {
+      "MANIFEST.sha256":
+        "sha256:2030f7f15f67b99b7a731a949245b604a9ecb51aa655cbac223789e639a96e7e",
+      "cases.json":
+        "sha256:e0d724015616a5070982438a79030a9c10bfa52614e418d36ffbac4b62ba629d",
+      "certificates.json":
+        "sha256:46438c6555e39c8aa8eaae16177613b51d532e0772a7cc033aa953c7e330dbb3",
+      "critical-value-table-manifest.json":
+        "sha256:e3cf17cc59429664f54a4ab6a69f7b60da3cfe564182baa3869ad50dbe37dc06",
+      "environment.json":
+        "sha256:03ef8db98b4af9889df0beb77702aa09da28b16ca64f456a76e072b1a8e98601",
+      "generator.py":
+        "sha256:8e22ab2ec10571148c33a2d7f8c096e9ef5a606c92e596da37f88f8de8cd3725",
+      "raw-oracle-output.json":
+        "sha256:a1059d5461ed64fde1d83a625857b8c3d05fed1f48567059e95d824352dd7f53",
+      "requirements.txt":
+        "sha256:4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d",
+    },
+  },
+  environment: {
+    python: "3.12.14",
+    python_implementation: "CPython",
+    python_flint: "0.9.0",
+    flint: "3.6.0",
+    arb_threads: 1,
+    platform_system: "Linux",
+    platform_machine: "x86_64",
+    requirements_sha256:
+      "sha256:4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d",
+  },
+  closure_items: {
+    secondary_overlap_success_path: {
+      evidence_status: "present_pending_independent_review",
+      certified_p_value_case_count: 3,
+      generator_disjoint_primary_secondary_behavior: "raise",
+      validator_requires_declared_and_exact_enclosure_overlap: true,
+    },
+    exact_enclosure_endpoints_and_rounding_cells: {
+      evidence_status: "present_pending_independent_review",
+      certified_p_value_case_count: 3,
+      boundary_probe_count: 6,
+      rounding_mode: "roundTiesToEven",
+      exact_rational_endpoints: true,
+      strict_rounding_cell_containment: true,
+    },
+    df1_df2_closed_form_paths: {
+      evidence_status: "present_pending_independent_review",
+      p_value_df1_method: "df1-cauchy-tail",
+      p_value_df2_method: "df2-closed-form-tail",
+      df1_max_finite_t_closed_form_present: true,
+      df2_max_finite_t_closed_form_present: true,
+    },
+    missing_oracle_dependency_fail_closed: {
+      evidence_status: "source_and_negative_reproduction_pending_independent_review",
+      required_dependency: "python-flint==0.9.0",
+      missing_dependency_exit_nonzero: true,
+      fallback_oracle_path: false,
+    },
+    df1_df2_max_finite_t_cases: {
+      evidence_status: "present_pending_independent_review",
+      case_ids: ["df1-max-finite-t", "df2-max-finite-t"],
+      df1_expected_projection_class: "subnormal",
+      df2_expected_projection_class: "zero",
+    },
+    generator_environment_and_output_hashes: {
+      evidence_status: "present_pending_independent_review",
+      manifest_binds_complete_closed_file_set: true,
+      certificate_provenance_binds_generator_environment_and_raw_output: true,
+      workflow_binds_generator_commit: true,
+    },
+  },
+  closure_state: {
+    independent_numerical_review: "pending",
+    readiness_admission: "held_pending_independent_numerical_review",
+    p_value_enclosure_evidence: "closure_candidate_not_closed",
+    tail_numerical_selection: "reviewed_separate_increment",
+    supported_degrees_of_freedom_maximum: null,
+    supported_platform_matrix: "pending",
+    supported_execution_predicate: "unselected",
+    supported_domain: false,
+    runtime_support: false,
+    final_reason_codes_frozen: false,
+  },
+  prohibited_claims: [
+    "p_value_enclosure_evidence_closed_before_independent_review",
+    "m2_closed_before_p_value_evidence_review",
+    "finite_evidence_corpus_as_supported_domain",
+    "global_truth_error_bound_from_finite_evidence",
+    "supported_df_max",
+    "supported_platform",
+    "supported_execution_predicate",
+    "supported_runtime_student_t_procedure",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete",
+  ],
+} as const;
+
+function canonicalizeJson(value: unknown, ancestors = new Set<object>()): unknown {
+  if (
+    value === undefined ||
+    typeof value === "bigint" ||
+    typeof value === "function" ||
+    typeof value === "symbol" ||
+    (typeof value === "number" && !Number.isFinite(value))
+  ) {
+    throw new TypeError("p-value evidence closure checkpoint contains non-JSON data");
+  }
+  if (typeof value !== "object" || value === null) return value;
+  if (ancestors.has(value)) {
+    throw new TypeError("p-value evidence closure checkpoint contains a cycle");
+  }
+  const nextAncestors = new Set(ancestors).add(value);
+  const keys = Reflect.ownKeys(value);
+  if (keys.some((key) => typeof key === "symbol")) {
+    throw new TypeError("p-value evidence closure checkpoint contains symbol keys");
+  }
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  if (Array.isArray(value)) {
+    const lengthDescriptor = Object.getOwnPropertyDescriptor(value, "length");
+    if (
+      lengthDescriptor === undefined ||
+      !("value" in lengthDescriptor) ||
+      typeof lengthDescriptor.value !== "number" ||
+      !Number.isSafeInteger(lengthDescriptor.value) ||
+      lengthDescriptor.value < 0 ||
+      keys.length !== lengthDescriptor.value + 1
+    ) {
+      throw new TypeError("p-value evidence closure checkpoint contains an invalid array");
+    }
+    const result: unknown[] = [];
+    for (let index = 0; index < lengthDescriptor.value; index += 1) {
+      const descriptor = descriptors[String(index)];
+      if (descriptor === undefined || !descriptor.enumerable || !("value" in descriptor)) {
+        throw new TypeError("p-value evidence closure checkpoint contains a non-JSON array entry");
+      }
+      result.push(canonicalizeJson(descriptor.value, nextAncestors));
+    }
+    return result;
+  }
+  if (Object.getPrototypeOf(value) !== Object.prototype) {
+    throw new TypeError("p-value evidence closure checkpoint contains a non-JSON object");
+  }
+  const entries: [string, unknown][] = [];
+  for (const key of keys) {
+    if (typeof key !== "string") {
+      throw new TypeError("p-value evidence closure checkpoint contains a non-string key");
+    }
+    const descriptor = descriptors[key];
+    if (descriptor === undefined || !descriptor.enumerable || !("value" in descriptor)) {
+      throw new TypeError("p-value evidence closure checkpoint contains hidden or accessor data");
+    }
+    entries.push([key, canonicalizeJson(descriptor.value, nextAncestors)]);
+  }
+  return Object.fromEntries(
+    entries.sort(([first], [second]) => (first < second ? -1 : first > second ? 1 : 0)),
+  );
+}
+
+export function validatePairedTPValueEnclosureEvidenceClosureCandidate(candidate: unknown): string[] {
+  try {
+    return JSON.stringify(canonicalizeJson(candidate)) ===
+      JSON.stringify(canonicalizeJson(EXPECTED_CHECKPOINT))
+      ? []
+      : ["p-value evidence closure checkpoint differs from the pending-review candidate"];
+  } catch {
+    return ["p-value evidence closure checkpoint differs from the pending-review candidate"];
+  }
+}
