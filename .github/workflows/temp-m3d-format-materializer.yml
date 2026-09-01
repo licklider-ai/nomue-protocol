@@ -19,6 +19,19 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Repair nested reviewed-artifact handoff
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts')
+          s = p.read_text()
+          old = '  const top = ownDataRecord(canonical, ['
+          new = '  const top = ownDataRecord(candidate, ['
+          if s.count(old) != 1:
+              raise SystemExit('nested verifier handoff target not found exactly once')
+          p.write_text(s.replace(old, new, 1))
+          PY
       - name: Format bounded M3-D files
         run: |
           pnpm exec prettier --write \
@@ -26,12 +39,11 @@ jobs:
             governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-error-adversarial-review-protocol.md \
             tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts \
             tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
-      - name: Diagnose M3-D success-path refusals
+      - name: Diagnose M3-D success paths
         shell: bash
         run: |
           cat > tooling/tmp-m3d-diagnostic.ts <<'TS'
           import { evaluatePairedTCIEndpointTruthCandidate } from "./src/spikes/paired-t-ci-endpoint-truth-error-candidate.js";
-
           function inputFromDifferences(differences: readonly number[]) {
             return {
               conditionOrder: ["first", "second"] as const,
@@ -54,7 +66,6 @@ jobs:
               ]),
             };
           }
-
           for (const differences of [[1, 2, 3], [-1, -2, -4], [1, 2, 3, 5]]) {
             const result = evaluatePairedTCIEndpointTruthCandidate(inputFromDifferences(differences));
             console.log(JSON.stringify(result.ok ? { ok: true } : result, null, 2));
