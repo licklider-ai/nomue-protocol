@@ -49,7 +49,10 @@ and its
 record `GO`, with all twelve checks passing, no blocker or should-fix finding,
 and two non-direction-changing observations. The review makes the
 reconciliation eligible for a bounded steward disposition; it does not close
-`FND1-H04` or authorize any Protocol change.
+`FND1-H04` or authorize any Protocol change. The
+[`steward disposition`](2026-09-01-nonclinical-estimand-source-steward-disposition.md)
+accepts the narrowed reconciliation as source-bounded research input while
+keeping the exact primary-source completion requirement and `FND1-H04` open.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
