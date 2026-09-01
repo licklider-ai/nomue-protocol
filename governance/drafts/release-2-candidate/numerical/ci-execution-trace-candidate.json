@@ -1,0 +1,55 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-ci-actual-execution-trace-candidate-1",
+  "decision_state": "actual_execution_trace_candidate_pending_independent_review_and_endpoint_truth_closure",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "scope": {
+    "input": "explicit_paired_binary64_observations",
+    "upstream_graph": "reviewed_g4_actual_execution_trace",
+    "critical_value_source": "exact_reviewed_fixed_95_table_content_selected_for_candidate_ci_work",
+    "output": "fixed_95_mean_difference_confidence_interval_endpoints",
+    "confidence_interval_endpoint_truth_included": false
+  },
+  "execution_trace": {
+    "format": "paired-t-ci-actual-execution-trace-v1",
+    "g4_trace_reverified": true,
+    "selected_table_revalidated_before_lookup": true,
+    "critical_value_lookup": "exact_integer_df_index_into_selected_200_cell_candidate_table",
+    "margin_operation": "critical_value_multiply_standard_error",
+    "lower_operation": "mean_difference_subtract_margin",
+    "upper_operation": "mean_difference_add_margin",
+    "ci_specific_primitive_count": 3,
+    "exact_primitive_verification_required": true,
+    "returned_endpoints_from_same_verified_trace": true,
+    "finite_distinct_endpoint_refusal": true
+  },
+  "selected_table_binding": {
+    "artifact": "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json",
+    "validator": "tooling/src/spikes/paired-t-selected-fixed-95-table-candidate.ts",
+    "ordered_cell_content_hash": "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0",
+    "supported_degrees_of_freedom_maximum": null
+  },
+  "closure_state": {
+    "actual_execution_trace": "implemented_pending_independent_review",
+    "confidence_interval_endpoint_truth_ledger": "pending",
+    "supported_platform_matrix": "pending",
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "final_reason_codes_frozen": false,
+    "m3_closed": false
+  },
+  "prohibited_claims": [
+    "complete_confidence_interval_truth_bound",
+    "supported_df_max",
+    "supported_platform_or_execution_predicate",
+    "supported_runtime_paired_t",
+    "final_reason_codes_frozen",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete"
+  ]
+}
