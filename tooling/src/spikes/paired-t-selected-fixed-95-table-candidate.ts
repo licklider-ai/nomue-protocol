@@ -110,6 +110,9 @@ export function validatePairedTSelectedFixed95TableCandidate(candidate: unknown)
       "review_issue",
       "candidate_key",
       "selection_state",
+      "selection_review_result",
+      "independent_selection_review_complete",
+      "m3_closed",
       "runtime_support_enabled",
       "supported_degrees_of_freedom_maximum",
       "target",
@@ -130,6 +133,10 @@ export function validatePairedTSelectedFixed95TableCandidate(candidate: unknown)
     copied.review_issue !== "https://github.com/licklider-ai/nomue-protocol/issues/25" ||
     copied.candidate_key !== "paired-t-d5-fixed-95-critical-value-table-selected-candidate-1" ||
     copied.selection_state !== "exact_reviewed_table_content_selected_for_candidate_ci_work_only" ||
+    copied.selection_review_result !==
+      "review-inputs/r2-d5-fixed-95-table-selection/REVIEW-RESULT.md" ||
+    copied.independent_selection_review_complete !== true ||
+    copied.m3_closed !== true ||
     copied.runtime_support_enabled !== false ||
     copied.supported_degrees_of_freedom_maximum !== null
   ) {
@@ -226,8 +233,6 @@ export function validatePairedTSelectedFixed95TableCandidate(candidate: unknown)
     JSON.stringify(copied.held_decisions) !==
       JSON.stringify([
         "final_supported_degrees_of_freedom_maximum",
-        "confidence_interval_actual_execution_trace",
-        "confidence_interval_endpoint_truth_ledger",
         "supported_platform_matrix",
         "supported_execution_predicate",
         "runtime_support_activation",
@@ -236,7 +241,7 @@ export function validatePairedTSelectedFixed95TableCandidate(candidate: unknown)
     JSON.stringify(copied.prohibited_claims) !==
       JSON.stringify([
         "supported_df_max",
-        "complete_confidence_interval_truth_bound",
+        "global_confidence_interval_error_constant",
         "supported_platform_or_execution_predicate",
         "supported_runtime_paired_t",
         "authoritative_public_check_or_bundle",

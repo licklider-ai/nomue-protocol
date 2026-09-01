@@ -22,6 +22,9 @@ describe("paired-t selected fixed-95 critical-value table candidate", () => {
       status: "non_authoritative_candidate",
       issuance: "unissued",
       selection_state: "exact_reviewed_table_content_selected_for_candidate_ci_work_only",
+      selection_review_result: "review-inputs/r2-d5-fixed-95-table-selection/REVIEW-RESULT.md",
+      independent_selection_review_complete: true,
+      m3_closed: true,
       runtime_support_enabled: false,
       supported_degrees_of_freedom_maximum: null,
       reviewed_source: {
@@ -64,6 +67,11 @@ describe("paired-t selected fixed-95 critical-value table candidate", () => {
     const wrongSource = loadTable();
     wrongSource.reviewed_source.source_artifact_zip_sha256 = "sha256:deadbeef";
     expect(validatePairedTSelectedFixed95TableCandidate(wrongSource)).not.toEqual([]);
+
+    const demoted = loadTable();
+    demoted.independent_selection_review_complete = false;
+    demoted.m3_closed = false;
+    expect(validatePairedTSelectedFixed95TableCandidate(demoted)).not.toEqual([]);
 
     const promoted = loadTable();
     promoted.runtime_support_enabled = true;

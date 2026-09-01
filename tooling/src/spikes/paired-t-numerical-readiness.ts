@@ -151,9 +151,45 @@ export interface PairedTNumericalReadinessCandidate {
     tail_trace_composition_artifact: "governance/drafts/release-2-candidate/numerical/g4-tail-trace-composition-candidate.json";
     tail_trace_composition_review_disposition: "governance/drafts/release-2-candidate/reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md";
     tail_trace_composition_complete: true;
-    confidence_interval_trace_composition_complete: false;
+    confidence_interval_trace_composition_artifact: "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json";
+    confidence_interval_trace_composition_review_result: "review-inputs/r2-d5-ci-execution-trace-candidate/REVIEW-RESULT.md";
+    confidence_interval_trace_composition_complete: true;
+    confidence_interval_endpoint_truth_artifact: "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json";
+    confidence_interval_endpoint_truth_review_result: "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md";
+    confidence_interval_endpoint_truth_complete: true;
+    m3_closed: true;
     supported_domain_claimed: false;
     runtime_support_enabled: false;
+  };
+  confidence_interval_numerical_closure_candidate: {
+    closure: "reviewed_m3_confidence_interval_numerical_closure";
+    fixed_95_evidence_review_sync_artifact: "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-evidence-review-sync-candidate.json";
+    fixed_95_evidence_review_result: "review-inputs/r2-d5-fixed-95-evidence-review-sync/REVIEW-RESULT.md";
+    fixed_95_table_selection_artifact: "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json";
+    fixed_95_table_selection_candidate_key: "paired-t-d5-fixed-95-critical-value-table-selected-candidate-1";
+    fixed_95_table_selection_review_result: "review-inputs/r2-d5-fixed-95-table-selection/REVIEW-RESULT.md";
+    confidence_interval_execution_trace_artifact: "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json";
+    confidence_interval_execution_trace_candidate_key: "paired-t-d5-ci-actual-execution-trace-candidate-1";
+    confidence_interval_execution_trace_review_result: "review-inputs/r2-d5-ci-execution-trace-candidate/REVIEW-RESULT.md";
+    confidence_interval_endpoint_truth_artifact: "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json";
+    selected_endpoint_truth_candidate_key: "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1";
+    selected_endpoint_truth_candidate_commit: "ba3d81e62f8f77884628c59c4b27d1c5ff3cb340";
+    confidence_interval_endpoint_truth_review_result: "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md";
+    not_selected_alternative_pr: "https://github.com/licklider-ai/nomue-protocol/pull/110";
+    not_selected_alternative_candidate_key: "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1";
+    not_selected_alternative_candidate_commit: "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80";
+    not_selected_alternative_merged: false;
+    selected_table_content_hash: "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0";
+    finite_corpus_maximum_is_a_bound: false;
+    global_confidence_interval_error_constant_selected: false;
+    m3_closed: true;
+    supported_degrees_of_freedom_max: null;
+    supported_platform_matrix: "pending";
+    supported_execution_predicate_selected: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+    final_reason_codes_frozen: false;
+    public_check_or_bundle_issued: false;
   };
   supported_execution_predicate_candidate: {
     closure: "reviewed_tail_only_implementation_candidate";
@@ -201,7 +237,7 @@ export interface PairedTNumericalReadinessCandidate {
     known_closure_items: string[];
   };
   fixed_95_critical_value_evidence: {
-    closure: "incomplete";
+    closure: "reviewed_complete";
     primary_path: "arb_forward_probability_midpoint_bracketing";
     secondary_path: "rigorous_density_quadrature_or_executed_low_df_closed_form";
     certificate_validator: string;
@@ -273,6 +309,7 @@ const REQUIRED_PROHIBITIONS = [
   "cross_runtime_bit_identity_through_native_sqrt",
   "cross_library_agreement_as_oracle",
   "zero_p_for_a_positive_mathematical_tail",
+  "global_confidence_interval_error_constant",
   "authoritative_public_check_or_bundle_support",
 ] as const;
 
@@ -295,6 +332,7 @@ const TOP_LEVEL_KEYS = [
   "tail_numerical_selection_candidate",
   "runtime_input_reason_code_candidate",
   "g4_actual_execution_trace_candidate",
+  "confidence_interval_numerical_closure_candidate",
   "supported_execution_predicate_candidate",
   "operation_graph",
   "refusal_classes",
@@ -469,9 +507,46 @@ const G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS = [
   "tail_trace_composition_artifact",
   "tail_trace_composition_review_disposition",
   "tail_trace_composition_complete",
+  "confidence_interval_trace_composition_artifact",
+  "confidence_interval_trace_composition_review_result",
   "confidence_interval_trace_composition_complete",
+  "confidence_interval_endpoint_truth_artifact",
+  "confidence_interval_endpoint_truth_review_result",
+  "confidence_interval_endpoint_truth_complete",
+  "m3_closed",
   "supported_domain_claimed",
   "runtime_support_enabled",
+] as const;
+
+const CONFIDENCE_INTERVAL_NUMERICAL_CLOSURE_CANDIDATE_KEYS = [
+  "closure",
+  "fixed_95_evidence_review_sync_artifact",
+  "fixed_95_evidence_review_result",
+  "fixed_95_table_selection_artifact",
+  "fixed_95_table_selection_candidate_key",
+  "fixed_95_table_selection_review_result",
+  "confidence_interval_execution_trace_artifact",
+  "confidence_interval_execution_trace_candidate_key",
+  "confidence_interval_execution_trace_review_result",
+  "confidence_interval_endpoint_truth_artifact",
+  "selected_endpoint_truth_candidate_key",
+  "selected_endpoint_truth_candidate_commit",
+  "confidence_interval_endpoint_truth_review_result",
+  "not_selected_alternative_pr",
+  "not_selected_alternative_candidate_key",
+  "not_selected_alternative_candidate_commit",
+  "not_selected_alternative_merged",
+  "selected_table_content_hash",
+  "finite_corpus_maximum_is_a_bound",
+  "global_confidence_interval_error_constant_selected",
+  "m3_closed",
+  "supported_degrees_of_freedom_max",
+  "supported_platform_matrix",
+  "supported_execution_predicate_selected",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+  "final_reason_codes_frozen",
+  "public_check_or_bundle_issued",
 ] as const;
 
 const SUPPORTED_EXECUTION_PREDICATE_CANDIDATE_KEYS = [
@@ -664,6 +739,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "G4 actual-execution trace candidate",
     candidate.g4_actual_execution_trace_candidate,
     G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "confidence-interval numerical closure candidate",
+    candidate.confidence_interval_numerical_closure_candidate,
+    CONFIDENCE_INTERVAL_NUMERICAL_CLOSURE_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -942,12 +1023,74 @@ function validatePairedTNumericalReadinessCandidateInternal(
     g4TraceCandidate.tail_trace_composition_review_disposition !==
       "governance/drafts/release-2-candidate/reviews/d5-g4-tail-trace-composition-adversarial-review-disposition.md" ||
     g4TraceCandidate.tail_trace_composition_complete !== true ||
-    g4TraceCandidate.confidence_interval_trace_composition_complete !== false ||
+    g4TraceCandidate.confidence_interval_trace_composition_artifact !==
+      "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json" ||
+    g4TraceCandidate.confidence_interval_trace_composition_review_result !==
+      "review-inputs/r2-d5-ci-execution-trace-candidate/REVIEW-RESULT.md" ||
+    g4TraceCandidate.confidence_interval_trace_composition_complete !== true ||
+    g4TraceCandidate.confidence_interval_endpoint_truth_artifact !==
+      "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json" ||
+    g4TraceCandidate.confidence_interval_endpoint_truth_review_result !==
+      "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md" ||
+    g4TraceCandidate.confidence_interval_endpoint_truth_complete !== true ||
+    g4TraceCandidate.m3_closed !== true ||
     g4TraceCandidate.supported_domain_claimed !== false ||
     g4TraceCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail-composed, unbounded, and non-runtime",
+      "G4 actual-execution trace candidate must remain reviewed, truth-bounded, tail/CI-composed, unbounded, and non-runtime",
+    );
+  }
+
+  const ciClosureCandidate = candidate.confidence_interval_numerical_closure_candidate;
+  if (
+    ciClosureCandidate.closure !== "reviewed_m3_confidence_interval_numerical_closure" ||
+    ciClosureCandidate.fixed_95_evidence_review_sync_artifact !==
+      "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-evidence-review-sync-candidate.json" ||
+    ciClosureCandidate.fixed_95_evidence_review_result !==
+      "review-inputs/r2-d5-fixed-95-evidence-review-sync/REVIEW-RESULT.md" ||
+    ciClosureCandidate.fixed_95_table_selection_artifact !==
+      "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json" ||
+    ciClosureCandidate.fixed_95_table_selection_candidate_key !==
+      "paired-t-d5-fixed-95-critical-value-table-selected-candidate-1" ||
+    ciClosureCandidate.fixed_95_table_selection_review_result !==
+      "review-inputs/r2-d5-fixed-95-table-selection/REVIEW-RESULT.md" ||
+    ciClosureCandidate.confidence_interval_execution_trace_artifact !==
+      "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json" ||
+    ciClosureCandidate.confidence_interval_execution_trace_candidate_key !==
+      "paired-t-d5-ci-actual-execution-trace-candidate-1" ||
+    ciClosureCandidate.confidence_interval_execution_trace_review_result !==
+      "review-inputs/r2-d5-ci-execution-trace-candidate/REVIEW-RESULT.md" ||
+    ciClosureCandidate.confidence_interval_endpoint_truth_artifact !==
+      "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json" ||
+    ciClosureCandidate.selected_endpoint_truth_candidate_key !==
+      "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1" ||
+    ciClosureCandidate.selected_endpoint_truth_candidate_commit !==
+      "ba3d81e62f8f77884628c59c4b27d1c5ff3cb340" ||
+    ciClosureCandidate.confidence_interval_endpoint_truth_review_result !==
+      "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md" ||
+    ciClosureCandidate.not_selected_alternative_pr !==
+      "https://github.com/licklider-ai/nomue-protocol/pull/110" ||
+    ciClosureCandidate.not_selected_alternative_candidate_key !==
+      "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1" ||
+    ciClosureCandidate.not_selected_alternative_candidate_commit !==
+      "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80" ||
+    ciClosureCandidate.not_selected_alternative_merged !== false ||
+    ciClosureCandidate.selected_table_content_hash !==
+      "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0" ||
+    ciClosureCandidate.finite_corpus_maximum_is_a_bound !== false ||
+    ciClosureCandidate.global_confidence_interval_error_constant_selected !== false ||
+    ciClosureCandidate.m3_closed !== true ||
+    ciClosureCandidate.supported_degrees_of_freedom_max !== null ||
+    ciClosureCandidate.supported_platform_matrix !== "pending" ||
+    ciClosureCandidate.supported_execution_predicate_selected !== false ||
+    ciClosureCandidate.supported_domain_claimed !== false ||
+    ciClosureCandidate.runtime_support_enabled !== false ||
+    ciClosureCandidate.final_reason_codes_frozen !== false ||
+    ciClosureCandidate.public_check_or_bundle_issued !== false
+  ) {
+    errors.push(
+      "confidence-interval numerical closure must bind the selected reviewed M3 chain without support or runtime promotion",
     );
   }
 
@@ -1030,10 +1173,10 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   if (
     candidate.p_value_enclosure_evidence.closure !== "reviewed_complete" ||
-    candidate.fixed_95_critical_value_evidence.closure !== "incomplete"
+    candidate.fixed_95_critical_value_evidence.closure !== "reviewed_complete"
   ) {
     errors.push(
-      "p-value evidence must remain reviewed complete while critical-value evidence remains incomplete",
+      "p-value and fixed-95 critical-value evidence must remain reviewed complete after M3 closure",
     );
   }
   const expectedValidator = "tooling/src/spikes/paired-t-certificate-candidate.ts";
