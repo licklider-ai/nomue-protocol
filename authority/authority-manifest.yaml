@@ -635,6 +635,12 @@ artifacts:
       GO, all twelve checks passed, no blocker or should-fix finding, two
       non-direction-changing observations, FND1-H04 kept open, and no
       Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-steward-disposition.md
+    class: informative
+    notes: >-
+      Source-bounded steward disposition accepting the narrowed non-clinical
+      estimand reconciliation while keeping FND1-H04 and its exact
+      primary-source requirement open; no Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
