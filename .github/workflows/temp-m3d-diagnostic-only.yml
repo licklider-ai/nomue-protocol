@@ -1,0 +1,47 @@
+name: Temporary M3-D diagnostic only
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Format candidate workspace
+        run: |
+          pnpm exec prettier --write \
+            tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts \
+            tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts
+      - name: Print M3-D refusal classifications
+        shell: bash
+        run: |
+          cat > tooling/tmp-m3d-diagnostic.ts <<'TS'
+          import { evaluatePairedTCIEndpointTruthCandidate } from "./src/spikes/paired-t-ci-endpoint-truth-error-candidate.js";
+          function inputFromDifferences(differences: readonly number[]) {
+            return {
+              conditionOrder: ["first", "second"] as const,
+              repeatedMeasurements: "none" as const,
+              observations: differences.flatMap((difference, index) => [
+                { observationId: `d-${index}-f`, experimentalUnitId: `du-${index}-f`, pairId: `dp${index}`, conditionId: "first", outcomeValue: difference },
+                { observationId: `d-${index}-s`, experimentalUnitId: `du-${index}-s`, pairId: `dp${index}`, conditionId: "second", outcomeValue: 0 },
+              ]),
+            };
+          }
+          for (const differences of [[1, 2, 3], [-1, -2, -4], [1, 2, 3, 5]]) {
+            const result = evaluatePairedTCIEndpointTruthCandidate(inputFromDifferences(differences));
+            console.log(JSON.stringify(result.ok ? { ok: true } : result, null, 2));
+          }
+          TS
+          pnpm exec tsx tooling/tmp-m3d-diagnostic.ts
