@@ -112,6 +112,48 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the tail numerical selection as input-specific and pending review", () => {
+    const candidate = loadReadiness();
+    expect(candidate.tail_numerical_selection_candidate).toMatchObject({
+      closure: "selection_candidate_pending_independent_review",
+      input_specific_bound_selected_for_tail_numerical_contract: true,
+      global_constant_bound_required_for_tail_numerical_closure: false,
+      global_constant_truth_error_bound_selected: false,
+      projection_margin_runtime_activated: false,
+      independent_selection_review_complete: false,
+      m2_closed: false,
+      supported_degrees_of_freedom_max: null,
+      supported_platform_matrix: "pending",
+      supported_execution_predicate_selected: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+    });
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
+
+    const demoted = loadReadiness();
+    demoted.tail_numerical_selection_candidate.input_specific_bound_selected_for_tail_numerical_contract =
+      false as never;
+    expect(validatePairedTNumericalReadinessCandidate(demoted)).toContain(
+      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+    );
+
+    const promoted = loadReadiness();
+    promoted.tail_numerical_selection_candidate.global_constant_truth_error_bound_selected =
+      true as never;
+    promoted.tail_numerical_selection_candidate.independent_selection_review_complete =
+      true as never;
+    promoted.tail_numerical_selection_candidate.m2_closed = true as never;
+    promoted.tail_numerical_selection_candidate.supported_degrees_of_freedom_max = 200 as never;
+    promoted.tail_numerical_selection_candidate.supported_platform_matrix = "selected" as never;
+    promoted.tail_numerical_selection_candidate.supported_execution_predicate_selected =
+      true as never;
+    promoted.tail_numerical_selection_candidate.supported_domain_claimed = true as never;
+    promoted.tail_numerical_selection_candidate.runtime_support_enabled = true as never;
+    expect(validatePairedTNumericalReadinessCandidate(promoted)).toContain(
+      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+    );
+  });
+
   it("records the reviewed input shape without freezing the partial reason-code inventory", () => {
     const candidate = loadReadiness();
     candidate.runtime_input_reason_code_candidate.final_reason_codes_frozen = true as never;
@@ -245,6 +287,17 @@ describe("Release 2 numerical evidence readiness", () => {
       "truth-error support closure candidate: keys are incomplete or contain an undeclared item",
     );
 
+    const tailNumericalSelection = loadReadiness();
+    (
+      tailNumericalSelection.tail_numerical_selection_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["global_bound_ulp"] = 374;
+    expect(validatePairedTNumericalReadinessCandidate(tailNumericalSelection)).toContain(
+      "tail numerical selection candidate: keys are incomplete or contain an undeclared item",
+    );
+
     const runtimeInputReasonCode = loadReadiness();
     (
       runtimeInputReasonCode.runtime_input_reason_code_candidate as unknown as Record<
@@ -302,6 +355,50 @@ describe("Release 2 numerical evidence readiness", () => {
     malformedNested.operation_graph = null as never;
     expect(() => validatePairedTNumericalReadinessCandidate(malformedNested)).not.toThrow();
     expect(validatePairedTNumericalReadinessCandidate(malformedNested)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+
+    const hidden = loadReadiness() as PairedTNumericalReadinessCandidate & {
+      hidden_support?: boolean;
+    };
+    Object.defineProperty(hidden, "hidden_support", { value: true, enumerable: false });
+    expect(validatePairedTNumericalReadinessCandidate(hidden)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+
+    let getterCalls = 0;
+    const accessor = loadReadiness();
+    Object.defineProperty(accessor, "supported_domain", {
+      enumerable: true,
+      get() {
+        getterCalls += 1;
+        return null;
+      },
+    });
+    expect(validatePairedTNumericalReadinessCandidate(accessor)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+    expect(getterCalls).toBe(0);
+
+    const sparse = loadReadiness();
+    sparse.required_boundary_cases.length += 1;
+    expect(validatePairedTNumericalReadinessCandidate(sparse)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+
+    const cycle = loadReadiness() as PairedTNumericalReadinessCandidate & { cycle?: unknown };
+    cycle.cycle = cycle;
+    expect(validatePairedTNumericalReadinessCandidate(cycle)).toEqual([
+      "numerical readiness candidate is not a structurally valid object",
+    ]);
+
+    const throwingProxy = new Proxy(loadReadiness(), {
+      ownKeys() {
+        throw new Error("hostile ownKeys");
+      },
+    });
+    expect(() => validatePairedTNumericalReadinessCandidate(throwingProxy)).not.toThrow();
+    expect(validatePairedTNumericalReadinessCandidate(throwingProxy)).toEqual([
       "numerical readiness candidate is not a structurally valid object",
     ]);
   });

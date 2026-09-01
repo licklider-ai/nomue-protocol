@@ -102,6 +102,25 @@ export interface PairedTNumericalReadinessCandidate {
     supported_domain_claimed: false;
     runtime_support_enabled: false;
   };
+  tail_numerical_selection_candidate: {
+    closure: "selection_candidate_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json";
+    validator: "tooling/src/spikes/paired-t-tail-numerical-selection-candidate.ts";
+    review_protocol: "governance/drafts/release-2-candidate/reviews/d5-tail-numerical-selection-adversarial-review-protocol.md";
+    selected_bound_form: "input_specific_normal_binary64_roundoff_plus_positive_series_remainder";
+    input_specific_bound_selected_for_tail_numerical_contract: true;
+    global_constant_bound_required_for_tail_numerical_closure: false;
+    global_constant_truth_error_bound_selected: false;
+    projection_margin_rule: "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound";
+    projection_margin_runtime_activated: false;
+    independent_selection_review_complete: false;
+    m2_closed: false;
+    supported_degrees_of_freedom_max: null;
+    supported_platform_matrix: "pending";
+    supported_execution_predicate_selected: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   runtime_input_reason_code_candidate: {
     closure: "reviewed_candidate_input_contract_and_partial_inventory";
     artifact: "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json";
@@ -273,6 +292,7 @@ const TOP_LEVEL_KEYS = [
   "runtime_table_integration_candidate",
   "truth_boundary_evidence_candidate",
   "truth_error_support_closure_candidate",
+  "tail_numerical_selection_candidate",
   "runtime_input_reason_code_candidate",
   "g4_actual_execution_trace_candidate",
   "supported_execution_predicate_candidate",
@@ -398,6 +418,26 @@ const TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const TAIL_NUMERICAL_SELECTION_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "validator",
+  "review_protocol",
+  "selected_bound_form",
+  "input_specific_bound_selected_for_tail_numerical_contract",
+  "global_constant_bound_required_for_tail_numerical_closure",
+  "global_constant_truth_error_bound_selected",
+  "projection_margin_rule",
+  "projection_margin_runtime_activated",
+  "independent_selection_review_complete",
+  "m2_closed",
+  "supported_degrees_of_freedom_max",
+  "supported_platform_matrix",
+  "supported_execution_predicate_selected",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
 const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
   "closure",
   "artifact",
@@ -489,6 +529,63 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function hasStrictJsonShape(value: unknown, ancestors = new Set<object>()): boolean {
+  if (
+    value === undefined ||
+    typeof value === "bigint" ||
+    typeof value === "function" ||
+    typeof value === "symbol" ||
+    (typeof value === "number" && !Number.isFinite(value))
+  ) {
+    return false;
+  }
+  if (typeof value !== "object" || value === null) return true;
+  if (ancestors.has(value)) return false;
+  const nextAncestors = new Set(ancestors).add(value);
+  const keys = Reflect.ownKeys(value);
+  if (keys.some((key) => typeof key === "symbol")) return false;
+  const descriptors = Object.getOwnPropertyDescriptors(value);
+  if (Array.isArray(value)) {
+    const lengthDescriptor = Object.getOwnPropertyDescriptor(value, "length");
+    if (
+      lengthDescriptor === undefined ||
+      !("value" in lengthDescriptor) ||
+      typeof lengthDescriptor.value !== "number" ||
+      !Number.isSafeInteger(lengthDescriptor.value) ||
+      lengthDescriptor.value < 0 ||
+      keys.length !== lengthDescriptor.value + 1
+    ) {
+      return false;
+    }
+    for (let index = 0; index < lengthDescriptor.value; index += 1) {
+      const descriptor = descriptors[String(index)];
+      if (
+        descriptor === undefined ||
+        !descriptor.enumerable ||
+        !("value" in descriptor) ||
+        !hasStrictJsonShape(descriptor.value, nextAncestors)
+      ) {
+        return false;
+      }
+    }
+    return true;
+  }
+  if (Object.getPrototypeOf(value) !== Object.prototype) return false;
+  for (const key of keys) {
+    if (typeof key !== "string") return false;
+    const descriptor = descriptors[key];
+    if (
+      descriptor === undefined ||
+      !descriptor.enumerable ||
+      !("value" in descriptor) ||
+      !hasStrictJsonShape(descriptor.value, nextAncestors)
+    ) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function requireExactSet(
   label: string,
   actual: readonly string[],
@@ -549,6 +646,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "truth-error support closure candidate",
     candidate.truth_error_support_closure_candidate,
     TRUTH_ERROR_SUPPORT_CLOSURE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "tail numerical selection candidate",
+    candidate.tail_numerical_selection_candidate,
+    TAIL_NUMERICAL_SELECTION_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -759,6 +862,38 @@ function validatePairedTNumericalReadinessCandidateInternal(
     );
   }
 
+  const tailNumericalSelectionCandidate = candidate.tail_numerical_selection_candidate;
+  if (
+    tailNumericalSelectionCandidate.closure !== "selection_candidate_pending_independent_review" ||
+    tailNumericalSelectionCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json" ||
+    tailNumericalSelectionCandidate.validator !==
+      "tooling/src/spikes/paired-t-tail-numerical-selection-candidate.ts" ||
+    tailNumericalSelectionCandidate.review_protocol !==
+      "governance/drafts/release-2-candidate/reviews/d5-tail-numerical-selection-adversarial-review-protocol.md" ||
+    tailNumericalSelectionCandidate.selected_bound_form !==
+      "input_specific_normal_binary64_roundoff_plus_positive_series_remainder" ||
+    tailNumericalSelectionCandidate.input_specific_bound_selected_for_tail_numerical_contract !==
+      true ||
+    tailNumericalSelectionCandidate.global_constant_bound_required_for_tail_numerical_closure !==
+      false ||
+    tailNumericalSelectionCandidate.global_constant_truth_error_bound_selected !== false ||
+    tailNumericalSelectionCandidate.projection_margin_rule !==
+      "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound" ||
+    tailNumericalSelectionCandidate.projection_margin_runtime_activated !== false ||
+    tailNumericalSelectionCandidate.independent_selection_review_complete !== false ||
+    tailNumericalSelectionCandidate.m2_closed !== false ||
+    tailNumericalSelectionCandidate.supported_degrees_of_freedom_max !== null ||
+    tailNumericalSelectionCandidate.supported_platform_matrix !== "pending" ||
+    tailNumericalSelectionCandidate.supported_execution_predicate_selected !== false ||
+    tailNumericalSelectionCandidate.supported_domain_claimed !== false ||
+    tailNumericalSelectionCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "tail numerical selection must remain input-specific, pending independent review, and non-runtime",
+    );
+  }
+
   const runtimeInputReasonCodeCandidate = candidate.runtime_input_reason_code_candidate;
   if (
     runtimeInputReasonCodeCandidate.closure !==
@@ -942,7 +1077,11 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
 export function validatePairedTNumericalReadinessCandidate(candidate: unknown): string[] {
   const malformed = ["numerical readiness candidate is not a structurally valid object"];
-  if (!isRecord(candidate)) return malformed;
+  try {
+    if (!isRecord(candidate) || !hasStrictJsonShape(candidate)) return malformed;
+  } catch {
+    return malformed;
+  }
   try {
     return validatePairedTNumericalReadinessCandidateInternal(
       candidate as unknown as PairedTNumericalReadinessCandidate,
