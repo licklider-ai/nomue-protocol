@@ -1,0 +1,34 @@
+name: Temporary M3-B formatter materializer
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  format-materialize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Format only M3-B candidate sources
+        run: |
+          pnpm exec prettier --write \
+            tooling/src/spikes/paired-t-selected-fixed-95-table-candidate.ts \
+            tooling/tests/paired-t-selected-fixed-95-table-candidate.test.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3b-formatted-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            tooling/src/spikes/paired-t-selected-fixed-95-table-candidate.ts
+            tooling/tests/paired-t-selected-fixed-95-table-candidate.test.ts
+          if-no-files-found: error
+          retention-days: 7
