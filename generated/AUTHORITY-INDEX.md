@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:da86c8a0ed4f49757cf84f73e958de715ed340c1d8fb8401781fd74a83307f21)
+- authority/authority-manifest.yaml (sha256:51e4379755eba81485e032ae2a0c1e336e1e3544339bba9e2f1595d7096b6006)
 
 Generation command: pnpm generate
 -->
@@ -188,6 +188,8 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation-close-review-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-reconciliation-close-review-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-source-steward-disposition.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md` | informative |
