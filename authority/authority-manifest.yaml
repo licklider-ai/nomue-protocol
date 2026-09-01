@@ -654,6 +654,18 @@ artifacts:
       DEFER with FND1-H04 kept open, residual acquisition requirements
       preserved, direct-evidence claims subject to bounded independent review,
       and no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-close-review-commission.md
+    class: informative
+    notes: >-
+      Bounded close-review commission requiring direct source-artifact checks
+      for the completed FND1-H04 primary-source result; no hold-closure or
+      Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-close-review-result.md
+    class: informative
+    notes: >-
+      Pending close-review result for the completed FND1-H04 primary-source
+      result; supplies no verdict and creates no hold-closure or
+      Protocol-adoption authority until completed and reviewed.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
