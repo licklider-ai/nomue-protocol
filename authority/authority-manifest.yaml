@@ -630,6 +630,17 @@ artifacts:
     notes: >-
       Pending all-pairs successor repository-analysis result placeholder; no
       findings or decisions.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-commission.md
+    class: informative
+    notes: >-
+      Bounded source-supplied primary-text completion commission for the
+      retained all-pairs successor-source requirement; no Protocol-adoption
+      authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md
+    class: informative
+    notes: >-
+      Pending all-pairs source-supplied completion result placeholder; no
+      findings or decisions.
   - path: evidence/research/foundation-identity/fnd-2/README.md
     class: informative
     notes: Independent FND-2 research commission; not an adoption decision.

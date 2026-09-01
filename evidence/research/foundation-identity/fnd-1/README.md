@@ -25,9 +25,18 @@ advance before corpus expansion or schema design:
 | Non-clinical estimand structure (`FND1-H04`) | [`2026-08-31-nonclinical-estimand-source-closure-commission.md`](2026-08-31-nonclinical-estimand-source-closure-commission.md) | [`2026-08-31-nonclinical-estimand-primary-source-result.md`](2026-08-31-nonclinical-estimand-primary-source-result.md) | [`2026-08-31-nonclinical-estimand-repository-analysis-result.md`](2026-08-31-nonclinical-estimand-repository-analysis-result.md) |
 | All-pairs and unequal-size successor sources | [`2026-08-31-all-pairs-successor-source-closure-commission.md`](2026-08-31-all-pairs-successor-source-closure-commission.md)   | [`2026-08-31-all-pairs-successor-primary-source-result.md`](2026-08-31-all-pairs-successor-primary-source-result.md)   | [`2026-08-31-all-pairs-successor-repository-analysis-result.md`](2026-08-31-all-pairs-successor-repository-analysis-result.md)   |
 
-Each package keeps its two passes blind until both outputs are frozen. The
-result files are pending placeholders and create no hold closure. `FND1-H05`
-through `FND1-H08` remain outside these source-closure packages.
+Each package keeps its two passes blind until both outputs are frozen. Result
+artifacts and follow-up commissions create no hold closure without a recorded
+steward disposition. `FND1-H05` through `FND1-H08` remain outside these
+source-closure packages.
+
+The all-pairs package has a bounded
+[`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
+and
+[`result placeholder`](2026-09-01-all-pairs-successor-source-supplied-completion-result.md)
+for primary texts acquired after its initial access-limited pass. The source
+artifacts themselves are not repository contents. This continuation may narrow
+the retained source requirement but creates no Protocol-adoption authority.
 
 ## Completed follow-up: multiplicity primary-text closure
 

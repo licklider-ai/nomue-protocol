@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:893c48e844dcb5f1a690fde2faac904f6c48119251de783ddec649388f3d146b)
+- authority/authority-manifest.yaml (sha256:37d4b50d2241ee427cd3feeb5dc45c7353f7850c1e6634de55b5f0eebb907983)
 
 Generation command: pnpm generate
 -->
@@ -187,6 +187,8 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/README.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-independent-research-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-2/2026-08-30-source-bounded-steward-disposition.md` | informative |
