@@ -1,0 +1,53 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-ci-endpoint-mathematical-truth-error-candidate-1",
+  "decision_state": "endpoint_truth_error_candidate_pending_independent_review_and_m3_integration",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "scope": {
+    "input": "reviewed_m3c_ci_actual_execution_trace_from_explicit_paired_binary64_observations",
+    "g4_truth_source": "independently_reviewed_g4_exact_rational_truth_envelope",
+    "critical_value_truth_source": "independently_reviewed_correctly_rounded_fixed_95_cell",
+    "output": "exact_rational_truth_intervals_and_absolute_error_bounds_for_ci_margin_and_endpoints",
+    "support_selection_included": false
+  },
+  "proof_model": {
+    "mean_truth": "reuse_reviewed_g4_exact_rational_truth_interval",
+    "standard_error_truth": "reuse_reviewed_g4_2048_bit_exact_rational_sqrt_enclosure",
+    "critical_value_truth": "exact_midpoint_rounding_cell_of_reviewed_correctly_rounded_binary64_cell",
+    "margin_truth": "positive_interval_product_of_critical_value_and_standard_error",
+    "lower_endpoint_truth": "mean_interval_minus_margin_interval",
+    "upper_endpoint_truth": "mean_interval_plus_margin_interval",
+    "error_metric": "exact_absolute_rational_maximum_distance_from_graph_binary64_value_to_truth_interval_endpoints",
+    "same_trace_binding_required": true,
+    "finite_corpus_maximum_is_a_bound": false
+  },
+  "selected_table_binding": {
+    "artifact": "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json",
+    "ordered_cell_content_hash": "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0",
+    "supported_degrees_of_freedom_maximum": null
+  },
+  "closure_state": {
+    "implementation": "implemented_pending_independent_review",
+    "m3c_actual_execution_trace": "independently_reviewed_separate_candidate",
+    "endpoint_truth_error_ledger": "pending_independent_review",
+    "m3_closed": false,
+    "supported_platform_matrix": "pending",
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "final_reason_codes_frozen": false
+  },
+  "prohibited_claims": [
+    "global_confidence_interval_error_constant",
+    "supported_df_max",
+    "supported_platform_or_execution_predicate",
+    "supported_runtime_paired_t",
+    "final_reason_codes_frozen",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete"
+  ]
+}
