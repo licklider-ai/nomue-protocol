@@ -1,0 +1,58 @@
+name: Temporary M3-C type and formatter materializer
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  materialize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Apply bounded TypeScript repairs
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts')
+          s = p.read_text()
+          old = 'classification?: PairedTCIExecutionCandidateResult["classification"]'
+          new = 'classification?: Extract<PairedTCIExecutionCandidateResult, { ok: false }>["classification"]'
+          if old not in s:
+              raise SystemExit('classification type target not found')
+          s = s.replace(old, new, 1)
+          old = '  const withoutHash = {\n    format: TRACE_FORMAT,'
+          new = '  const withoutHash: Omit<PairedTCIExecutionTraceCandidate, "sha256"> = {\n    format: TRACE_FORMAT,'
+          if old not in s:
+              raise SystemExit('withoutHash annotation target not found')
+          s = s.replace(old, new, 1)
+          p.write_text(s)
+          PY
+      - name: Format bounded candidate files
+        run: |
+          pnpm exec prettier --write \
+            tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts \
+            tooling/tests/paired-t-ci-execution-trace-candidate.test.ts \
+            governance/drafts/release-2-candidate/reviews/d5-ci-execution-trace-adversarial-review-protocol.md \
+            governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json
+      - run: pnpm typecheck
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3c-repaired-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts
+            tooling/tests/paired-t-ci-execution-trace-candidate.test.ts
+            governance/drafts/release-2-candidate/reviews/d5-ci-execution-trace-adversarial-review-protocol.md
+            governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json
+          if-no-files-found: error
+          retention-days: 7
