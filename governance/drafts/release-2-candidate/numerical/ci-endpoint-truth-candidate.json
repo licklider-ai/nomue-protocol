@@ -1,0 +1,51 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-ci-endpoint-mathematical-truth-candidate-1",
+  "decision_state": "implemented_candidate_pending_independent_endpoint_truth_review",
+  "runtime_support_enabled": false,
+  "supported_domain_claimed": false,
+  "scope": {
+    "input": "explicit_paired_binary64_observations",
+    "execution_source": "independently_reviewed_ci_actual_execution_trace_candidate",
+    "g4_truth_source": "independently_reviewed_g4_mathematical_truth_error_candidate",
+    "critical_value_truth_source": "reviewed_correct_rounding_cell_for_exact_selected_fixed_95_table_cell",
+    "output": "exact_rational_truth_intervals_and_absolute_error_bounds_for_margin_and_both_confidence_interval_endpoints",
+    "existing_numerical_implementations_changed": false
+  },
+  "proof_model": {
+    "mean_difference": "reviewed_g4_exact_rational_truth_interval",
+    "standard_error": "reviewed_g4_2048_bit_dyadic_sqrt_truth_interval",
+    "critical_value": "exact_midpoints_to_adjacent_binary64_cells_around_reviewed_correctly_rounded_selected_value",
+    "margin": "positive_interval_product_of_critical_value_and_standard_error",
+    "lower_endpoint": "mean_truth_interval_minus_margin_truth_interval",
+    "upper_endpoint": "mean_truth_interval_plus_margin_truth_interval",
+    "execution_rounding": "absolute_error_of_trace_bound_binary64_result_against_composed_truth_interval",
+    "error_metric": "exact_absolute_rational_upper_bound",
+    "finite_corpus_maximum_is_a_bound": false
+  },
+  "closure_state": {
+    "actual_execution_trace": "independently_reviewed_candidate",
+    "endpoint_truth_implementation": "implemented_pending_independent_review",
+    "endpoint_truth_independent_review": "pending",
+    "m3_closed": false,
+    "supported_degrees_of_freedom_maximum": null,
+    "supported_platform_matrix": "pending",
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "final_reason_codes_frozen": false
+  },
+  "prohibited_claims": [
+    "independently_reviewed_endpoint_truth_bound",
+    "m3_complete",
+    "supported_df_max",
+    "supported_platform_or_execution_predicate",
+    "supported_runtime_paired_t",
+    "final_reason_codes_frozen",
+    "authoritative_public_check_or_bundle",
+    "r2_d5_complete",
+    "release_2_complete"
+  ]
+}
