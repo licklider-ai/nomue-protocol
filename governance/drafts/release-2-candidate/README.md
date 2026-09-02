@@ -66,9 +66,10 @@ and this partial inventory passed independent adversarial review as non-authorit
 decision-preparation material. The separate Group 4 successor preserves those eleven
 entries exactly, maps the complete candidate relationship and declared-result
 surfaces, and resolves the ten support-dependent vocabulary decisions against the
-now-closed Groups 1–3 candidate boundaries. That successor is still unissued,
-unfrozen, and pending exact-head independent review; it changes no registry or Public
-Check.
+now-closed Groups 1–3 candidate boundaries. Its exact-head independent review is
+preserved, closing only the non-authoritative Group 4 candidate milestone. It remains
+unissued and unfrozen and changes no registry or Public Check; final authoritative
+disposition remains blocked by the RFC window.
 
 A separate upstream G4 candidate derives the paired differences, mean difference,
 sample variance, standard error, test statistic, and degrees of freedom from one

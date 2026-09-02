@@ -9,7 +9,7 @@
 import { createHash } from "node:crypto";
 
 const EXPECTED_CHECKPOINT_CANONICAL_SHA256 =
-  "sha256:ad2c69ed530686b95f02d83b425391d4c87da0eefa22ce0e66914066dd00ad45";
+  "sha256:8e63811f020a12447ca5bd0b345fdb19d16995539c7675d09f2110283fc2b143";
 const MAXIMUM_CLOSED_JSON_ARRAY_LENGTH = 20_000;
 const VALIDATION_ERROR = "final reason-code inventory checkpoint differs from the exact candidate";
 

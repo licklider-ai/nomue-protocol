@@ -251,7 +251,7 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   final_reason_code_inventory_candidate: {
-    closure: "candidate_selection_pending_independent_review";
+    closure: "reviewed_group_4_candidate_selection";
     artifact: "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json";
     validator: "tooling/src/spikes/paired-t-final-reason-code-inventory-candidate.ts";
     review_protocol: "governance/drafts/release-2-candidate/reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md";
@@ -267,8 +267,13 @@ export interface PairedTNumericalReadinessCandidate {
     resolved_support_dependent_reason_code_decision_count: 10;
     unresolved_support_dependent_reason_code_decision_count: 0;
     selection_made_by_this_increment: true;
-    independent_review: "pending";
-    group_4_complete: false;
+    independent_review: "complete";
+    group_4_complete: true;
+    reviewed_candidate_head: "1a2802000b80ed795c51984bd88f89fc6be707a0";
+    reviewed_candidate_tree: "5dee78c6fc3585df467304c4cca821a75aac3421";
+    review_result: "review-inputs/r2-d5-group-4-final-reason-code-inventory/REVIEW-RESULT.md";
+    review_result_blob: "2b99afe46b953f56a398a5dd5ed333be13e57718";
+    review_preservation_merge: "3668fe95a0f2c5a7beaec70156d11bc523d4dc4e";
     final_reason_codes_frozen: false;
     authoritative_reason_codes_issued: false;
     supported_domain_claimed: false;
@@ -776,6 +781,11 @@ const FINAL_REASON_CODE_INVENTORY_CANDIDATE_KEYS = [
   "selection_made_by_this_increment",
   "independent_review",
   "group_4_complete",
+  "reviewed_candidate_head",
+  "reviewed_candidate_tree",
+  "review_result",
+  "review_result_blob",
+  "review_preservation_merge",
   "final_reason_codes_frozen",
   "authoritative_reason_codes_issued",
   "supported_domain_claimed",
@@ -1497,8 +1507,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const finalReasonCodeInventoryCandidate = candidate.final_reason_code_inventory_candidate;
   if (
-    finalReasonCodeInventoryCandidate.closure !==
-      "candidate_selection_pending_independent_review" ||
+    finalReasonCodeInventoryCandidate.closure !== "reviewed_group_4_candidate_selection" ||
     finalReasonCodeInventoryCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json" ||
     finalReasonCodeInventoryCandidate.validator !==
@@ -1520,15 +1529,25 @@ function validatePairedTNumericalReadinessCandidateInternal(
     finalReasonCodeInventoryCandidate.unresolved_support_dependent_reason_code_decision_count !==
       0 ||
     finalReasonCodeInventoryCandidate.selection_made_by_this_increment !== true ||
-    finalReasonCodeInventoryCandidate.independent_review !== "pending" ||
-    finalReasonCodeInventoryCandidate.group_4_complete !== false ||
+    finalReasonCodeInventoryCandidate.independent_review !== "complete" ||
+    finalReasonCodeInventoryCandidate.group_4_complete !== true ||
+    finalReasonCodeInventoryCandidate.reviewed_candidate_head !==
+      "1a2802000b80ed795c51984bd88f89fc6be707a0" ||
+    finalReasonCodeInventoryCandidate.reviewed_candidate_tree !==
+      "5dee78c6fc3585df467304c4cca821a75aac3421" ||
+    finalReasonCodeInventoryCandidate.review_result !==
+      "review-inputs/r2-d5-group-4-final-reason-code-inventory/REVIEW-RESULT.md" ||
+    finalReasonCodeInventoryCandidate.review_result_blob !==
+      "2b99afe46b953f56a398a5dd5ed333be13e57718" ||
+    finalReasonCodeInventoryCandidate.review_preservation_merge !==
+      "3668fe95a0f2c5a7beaec70156d11bc523d4dc4e" ||
     finalReasonCodeInventoryCandidate.final_reason_codes_frozen !== false ||
     finalReasonCodeInventoryCandidate.authoritative_reason_codes_issued !== false ||
     finalReasonCodeInventoryCandidate.supported_domain_claimed !== false ||
     finalReasonCodeInventoryCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "final reason-code inventory must remain a complete candidate selection pending independent review and non-authoritative",
+      "final reason-code inventory must bind the preserved exact-head review and close only Group 4 without issuance or authoritative promotion",
     );
   }
 
