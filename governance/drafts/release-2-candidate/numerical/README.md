@@ -189,6 +189,32 @@ completion is promoted. The candidate review and closure review are defined by
 and
 `../reviews/d5-group-4-final-reason-code-inventory-closure-integration-adversarial-review-protocol.md`.
 
+## Final R2-D5 review-readiness candidate
+
+`final-r2-d5-review-readiness-candidate.json` is the pre-disposition Group 5
+evidence package. It binds the preserved reviewed closures for Groups 1-4 to the
+current repository snapshot and summarizes the exact selected-domain oracle,
+boundary, metamorphic, resource, one-tuple execution, and reason-inventory evidence
+that the final exact-head numerical reviewer must reconstruct and re-execute. It does
+not rewrite an earlier checkpoint or durable review result and does not reselect a
+candidate value.
+
+The package keeps the reviewed candidate scope at 2 through 201 pairs with integer
+`df = n_pairs - 1`, the predicate-bounded rather than corpus-membership guarantee,
+the selected Group 2 full-trace and table identities, the one-entry Group 3 candidate
+matrix and controlled process, and the complete but unissued Group 4 vocabulary. It
+also pins the 200-case pair/df sweep, eleven operation-stage boundary cases, twenty
+tail-truth cases, three projection-transition families at seven df values, six
+resource cases, and five metamorphic relations. These counts make the evidence set
+reviewable; they do not turn a finite corpus into a supported domain or global bound.
+
+Candidate assembly and independent review are allowed during the open RFC window.
+The package therefore requires its own exact-head independent numerical review but
+keeps final selection, Steward disposition, authoritative freeze/issuance, R2-D5,
+and Release 2 incomplete. Any Steward disposition remains a separate increment no
+earlier than `2026-09-25T20:52:54Z`. The review is defined by
+`../reviews/d5-final-r2-d5-review-readiness-adversarial-review-protocol.md`.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain
