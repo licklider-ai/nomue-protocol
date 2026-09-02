@@ -675,6 +675,28 @@ artifacts:
       completion evidence, recording both documentation corrections, keeping
       FND1-H04 and the full Research Gate open, and authorizing no Protocol
       adoption.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md
+    class: informative
+    notes: >-
+      Bounded primary-source commission for the potential-outcomes lineage
+      residual retained under H04-S1; no hold-closure or Protocol-adoption
+      authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md
+    class: informative
+    notes: >-
+      Pending potential-outcomes lineage primary-source result placeholder;
+      no findings, disposition, or Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md
+    class: informative
+    notes: >-
+      Bounded primary-source commission for the animal and humane-endpoint
+      residual retained under H04-S4; no hold-closure or Protocol-adoption
+      authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md
+    class: informative
+    notes: >-
+      Pending animal-endpoint primary-source result placeholder; no findings,
+      disposition, or Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-

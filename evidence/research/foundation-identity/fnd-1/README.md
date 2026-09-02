@@ -82,6 +82,25 @@ review's two documentation corrections, and keeps `FND1-H04` open on the
 potential-outcomes lineage and non-clinical terminal-event residuals. It closes
 no Research Gate and authorizes no Protocol change.
 
+### Active `FND1-H04` residual source passes
+
+The remaining material source work is now split into two isolated passes so
+that an access failure or disputed conclusion in one lineage does not determine
+the other:
+
+| Residual                             | Commission                                                                                                                                             | Assigned result                                                                                                                                |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `H04-S1` potential-outcomes lineage  | [`2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md) | [`2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md) |
+| `H04-S4` animal and humane endpoints | [`2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md`](2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md)         | [`2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md`](2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md)         |
+
+Each investigator reads only its own commission and the bounded completion
+steward disposition. Neither result may be read by the companion pass before
+both are frozen. The potential-outcomes pass can propose a disposition only for
+`H04-S1`; the animal-endpoint pass can propose a disposition only for
+`H04-S4`. A later steward reconciliation is required before any re-adjudication
+of `FND1-H04`. Neither pass authorizes Protocol adoption, schema work,
+implementation, or release changes.
+
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
 and
