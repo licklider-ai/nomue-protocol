@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -21,12 +22,17 @@ const priorEvidenceDirectory = path.join(
   "governance/drafts/release-2-candidate/numerical/group-3-admission-evidence-5563bae",
 );
 const selectionRollup = "a53970d7f00b5823b2e601faaafa6dd900b7cf69ab51b4896feba7433761be20";
-const checkpointSha256 = "sha256:5b00688bb049c37cd07ec7a3a92b15f82a8bb1e6dae382f180cdcbaf8a8be22d";
+const checkpointSha256 = "sha256:d1fd8bcbeeb6166c6ec23b0477fd1876be23e8e4c02dff79cdce135de3c8ce4d";
 
 type MutableJson = Record<string, any>;
 
 function loadCheckpoint(): MutableJson {
   return JSON.parse(readFileSync(checkpointPath, "utf8")) as MutableJson;
+}
+
+function gitBlobSha1(bytes: Uint8Array): string {
+  const header = Buffer.from(`blob ${bytes.byteLength}\0`, "utf8");
+  return createHash("sha1").update(header).update(bytes).digest("hex");
 }
 
 function ordinaryInput(): unknown {
@@ -116,7 +122,7 @@ function selectionManifest(mode: "cold" | "hot", commit: string): MutableJson {
 }
 
 describe("R2-D5 Group 3 supported-execution selection candidate", () => {
-  it("pins a one-entry candidate selection without authoritative support", () => {
+  it("binds the preserved exact-head review and closes only Group 3", () => {
     const checkpoint = loadCheckpoint();
     expect(validatePairedTSupportedExecutionSelectionCheckpoint(checkpoint)).toEqual([]);
     expect(
@@ -125,10 +131,26 @@ describe("R2-D5 Group 3 supported-execution selection candidate", () => {
       ),
     ).toEqual([]);
     expect(checkpoint).toMatchObject({
-      decision_state: "candidate_selection_pending_exact_head_independent_review",
+      decision_state: "independently_reviewed_candidate_supported_execution_selection",
       selection_made_by_this_checkpoint: true,
-      independent_review: "pending",
-      group_3_complete: false,
+      independent_review: "complete",
+      group_3_complete: true,
+      independent_review_binding: {
+        verdict: "GO",
+        blocker_count: 0,
+        should_fix_count: 0,
+        nice_to_have_count: 0,
+        reviewed_candidate_head: "9e58eccb3cde54a4f653340d13170fbdf559b62b",
+        reviewed_candidate_tree: "fb83d6635e95d4bb50048bfcfb98bdbd835c5f28",
+        candidate_merge: "2e8a4100ca45c2b85d9a0adb2848ecff5fb64471",
+        review_commit: "c5972d2d9550a6143544c95223c8c27fe0df7f95",
+        review_commit_parent: "9e58eccb3cde54a4f653340d13170fbdf559b62b",
+        review_commit_tree: "533d51773b0ab290a2115fe3e09e48b5bd28256f",
+        review_result: "review-inputs/r2-d5-group-3-supported-execution-selection/REVIEW-RESULT.md",
+        review_result_blob: "ea0fa641af7d0a3dfd75af6bd2152025a47c4f68",
+        preservation_head: "0af9cad57c4918788b3a7d2ffda1e28fae2b3900",
+        preservation_merge: "7912c70d50e2206b518ad154fc869cc76de2c680",
+      },
       candidate_supported_platform_matrix: {
         selection_scope: "one_exact_tuple_only",
         entry_count: 1,
@@ -145,7 +167,21 @@ describe("R2-D5 Group 3 supported-execution selection candidate", () => {
         public_check: "unissued",
         supported_bundle: "unissued",
       },
+      review_and_closure_state: {
+        selection_increment_independent_review: "complete",
+        selection_result_preserved: true,
+        group_3_complete: true,
+        next_after_group_3_closure: "final_reason_code_inventory",
+        final_r2_d5_disposition: "blocked_by_group_4_and_rfc_window",
+      },
     });
+
+    const reviewResultBytes = readFileSync(
+      path.join(repositoryRoot, checkpoint.independent_review_binding.review_result as string),
+    );
+    expect(gitBlobSha1(reviewResultBytes)).toBe(
+      checkpoint.independent_review_binding.review_result_blob,
+    );
   });
 
   it("selects only the candidate boundary and keeps public support disabled", () => {
@@ -234,7 +270,33 @@ describe("R2-D5 Group 3 supported-execution selection candidate", () => {
         value.candidate_supported_platform_matrix.broad_cross_platform_support_claimed = true;
       },
       (value) => {
-        value.review_and_closure_state.group_3_complete = true;
+        value.independent_review = "pending";
+        value.group_3_complete = false;
+      },
+      (value) => {
+        value.independent_review_binding.verdict = "NO-GO";
+        value.independent_review_binding.blocker_count = 1;
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_head = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_tree = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.candidate_merge = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_commit = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_result_blob = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.preservation_merge = "0".repeat(40);
+      },
+      (value) => {
+        value.review_and_closure_state.group_3_complete = false;
       },
       (value) => {
         value.non_promotions.authoritative_supported_execution_predicate_issued = true;

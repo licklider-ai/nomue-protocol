@@ -15,7 +15,7 @@ import {
 } from "./paired-t-supported-execution-admission-evidence-candidate.js";
 
 const EXPECTED_CHECKPOINT_CANONICAL_SHA256 =
-  "sha256:5b00688bb049c37cd07ec7a3a92b15f82a8bb1e6dae382f180cdcbaf8a8be22d";
+  "sha256:d1fd8bcbeeb6166c6ec23b0477fd1876be23e8e4c02dff79cdce135de3c8ce4d";
 const SELECTION_STATUS = "non_authoritative_group_3_supported_execution_selection_evaluation";
 const MAXIMUM_CLOSED_JSON_ARRAY_LENGTH = 140_000;
 

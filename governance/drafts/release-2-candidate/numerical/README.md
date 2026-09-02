@@ -155,10 +155,11 @@ claim. Unlisted tuples fail candidate admission.
 The selection evidence workflow repeats cold and post-warm-up evaluation on the
 exact pull-request head and verifies that all numerical bits, component digests,
 table hashes, and resource accounting remain identical to the reviewed admission
-evidence. Candidate selection flags are true, while independent review and Group 3
-closure remain false. Authoritative allowlists and predicates, supported
-domain/runtime, reason codes, Public Check/bundle issuance, RFC #25, R2-D5, and
-Release 2 all remain open.
+evidence. The one-entry selection now has a preserved exact-head independent review,
+so the non-authoritative Group 3 candidate milestone is closed. This does not issue
+an authoritative allowlist, controlled-process profile, or supported-execution
+predicate. Supported domain/runtime, final reason codes, Public Check/bundle
+issuance, RFC #25, R2-D5, and Release 2 all remain open.
 
 ## Operation-stage support-domain candidate
 
@@ -584,14 +585,15 @@ not multiply the ULP by `|t_c|` a second time.
 ## Items intentionally still open
 
 - the authoritative maximum supported pair count or integer degrees of freedom
-  (`201` pairs / `df = 200` is only the Group 1 candidate pending review);
+  (`201` pairs / `df = 200` is only the reviewed non-authoritative Group 1
+  candidate);
 - the supported input, variance, standard-error, statistic, and p-value domain;
 - whether any subnormal stage is supported through target-format-aware evidence or
   refused;
 - final runtime selection of the reviewed Student-t operation graph, stopping rule,
   input-specific mathematical-truth predicate, and supported resource boundary;
-- exact-head independent review and closure of the one-entry Group 3
-  supported-execution selection candidate (without broader platform support);
+- final disposition of the reviewed one-entry Group 3 selection as part of the
+  authoritative Release 2 decision (without broader platform support);
 - final Protocol selection of the reviewed critical-value table bytes and content
   hash (the M3 selection remains limited to candidate confidence-interval work); and
 - the ten support-dependent reason-code decisions, final reason-code freeze, and
