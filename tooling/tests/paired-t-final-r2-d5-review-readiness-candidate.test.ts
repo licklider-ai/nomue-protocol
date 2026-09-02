@@ -50,7 +50,7 @@ describe("paired-t final R2-D5 review-readiness candidate", () => {
     const candidate = loadJson(candidatePath);
     expect(validatePairedTFinalR2D5ReviewReadinessCandidate(candidate)).toEqual([]);
     expect(canonicalSha256(candidate)).toBe(
-      "sha256:b7be0a3716ab5ebad2bc8029ab6ffb8708c77917949afcb48b7fe1641f680608",
+      "sha256:ebd69fa3eb30483e6be54e90e0146cd2f52a8b6648eca4bfdd4052dbfbe7712f",
     );
     expect(candidate).toMatchObject({
       status: "non_authoritative_candidate",

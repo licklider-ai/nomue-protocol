@@ -7,7 +7,7 @@
 import { createHash } from "node:crypto";
 
 const EXPECTED_CHECKPOINT_CANONICAL_SHA256 =
-  "sha256:b7be0a3716ab5ebad2bc8029ab6ffb8708c77917949afcb48b7fe1641f680608";
+  "sha256:ebd69fa3eb30483e6be54e90e0146cd2f52a8b6648eca4bfdd4052dbfbe7712f";
 const MAXIMUM_CLOSED_JSON_ARRAY_LENGTH = 20_000;
 const VALIDATION_ERROR = "final R2-D5 review-readiness checkpoint differs from the exact candidate";
 

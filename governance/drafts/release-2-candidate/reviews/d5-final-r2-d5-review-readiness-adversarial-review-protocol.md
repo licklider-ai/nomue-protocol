@@ -49,7 +49,7 @@ objects. At minimum, require:
 | Group | Closure reviewed head                      | Closure result blob                        | Closure preservation merge                 |
 | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | 1     | `897bd5b0ff0d9723fd6a319fc8c1a3b9d586b186` | `93df75802fbadc03c41a0547a261439658016559` | `9d53f7b9ae2e6059eb8b6d9f1e3ca70002f8f24f` |
-| 2     | `ef62d8a047026eb7226a0fa38ef27dbd1a49b017` | `c24d14e8f9ea830cb9ec07815f80dc8db5c9038d` | `68e2cb2d96a4c84f0788e87b099052ef4fcf83e2` |
+| 2     | `ef62d8a047026eb7226a0fa38ef27dbd1a49b017` | `c24d14e8f9ea830cb9ec07815f80dc8db5c9038d` | `68e2cb2d8b8a6bae9991b04fca4be73bc3f6144c` |
 | 3     | `32549c855a3ecbdfb8761a617b1a3753cb7caa01` | `02336912dceac4840eba627fe3f22ff60bb9bbcd` | `005d902635e98bbcfaf5caa0ade4c48204cb4851` |
 | 4     | `8909d31cce3d36303e403103f459b10127e87a1b` | `0683c48c1bd1a6abbdf4453f1e29818e5328c8f5` | `c1fc9985a9a6d989ba6985bc0d103463f86e6840` |
 
@@ -158,7 +158,7 @@ state that the eventual authoritative change set is approved, complete, or issue
 
 Independently recompute the recursively key-sorted compact-JSON SHA-256 and require:
 
-`sha256:b7be0a3716ab5ebad2bc8029ab6ffb8708c77917949afcb48b7fe1641f680608`
+`sha256:ebd69fa3eb30483e6be54e90e0146cd2f52a8b6648eca4bfdd4052dbfbe7712f`
 
 Attack at least:
 
