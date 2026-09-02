@@ -48,6 +48,11 @@ result placeholder:
    [animal-endpoint source result](2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md),
    blob `e70e0f1020878fc76757e895fcc85aef63acda4e`.
 
+Repository-level operating instructions required by `AGENTS.md` may be read
+solely to govern repository operations. They are not substantive review inputs,
+must not be used as source-content evidence, and do not expand the research
+scope fixed above.
+
 Do not read the potential-outcomes lineage commission or result, its close
 review, any later reconciliation or disposition, earlier non-clinical estimand
 results or reviews, FND-2 results, unrelated review branches, private
