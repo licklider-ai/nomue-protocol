@@ -1,0 +1,8 @@
+{
+  "status": "validated_non_authoritative_group_3_admission_evidence",
+  "candidate_commit": "5563bae511069cc3bc73a2e3db24d8448de9fe2a",
+  "case_count": 6,
+  "platform_neutral_rollup": "a6274fb82627f0be78bc71a5e46e9641586cc8749a2c2a07de77adfddb5ddd4a",
+  "cold_hot_identical": true,
+  "support_selected_or_claimed": false
+}

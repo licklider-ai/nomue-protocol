@@ -110,7 +110,7 @@ Release 2 completion is claimed. The review identity and preservation merge are
 pinned by the candidate checkpoint and aggregate readiness overlay; changing any of
 them fails closed.
 
-## Supported-execution admission-evidence infrastructure candidate
+## Supported-execution admission evidence and selection candidate
 
 `supported-execution-admission-evidence-candidate.json` begins Group 3 without
 selecting or closing it. It proposes one exact evidence tuple only: the official
@@ -137,12 +137,28 @@ collapse refusal, and the fact that no support is selected or claimed. The hot r
 also retains the engine optimization trace; cold and hot case projections must be
 byte-identical.
 
-This increment is infrastructure awaiting exact-head evidence and independent
-adversarial review. The proposed tuple is not an allowlist entry, the controlled
-profile is not selected for a supported runtime, cross-platform admission is not
-complete, and the supported-execution predicate remains unselected. Group 3,
-supported domain/runtime, reason codes, Public Check/bundle issuance, RFC #25,
-R2-D5, and Release 2 all remain open.
+That infrastructure has now completed exact-head evidence and independent review.
+The review result is preserved byte-for-byte, and the cold/hot manifests, compiled
+file digest list, relevant optimization-trace lines, and validation record are
+durable repository evidence. The hosted artifact ZIP and its full optimization log
+remain hash-pinned. This closes only the infrastructure review; it does not itself
+select an allowlist or claim support.
+
+`supported-execution-selection-candidate.json` is the separate selection increment.
+It selects a candidate matrix containing exactly the single reviewed tuple, the
+controlled-process profile, and their composition with the closed Group 2
+full-trace predicate. Admission completeness means completeness over that one-entry
+candidate matrix only. It is neither evidence for other operating systems,
+architectures, engines, builds, or runtime versions nor a broad cross-platform
+claim. Unlisted tuples fail candidate admission.
+
+The selection evidence workflow repeats cold and post-warm-up evaluation on the
+exact pull-request head and verifies that all numerical bits, component digests,
+table hashes, and resource accounting remain identical to the reviewed admission
+evidence. Candidate selection flags are true, while independent review and Group 3
+closure remain false. Authoritative allowlists and predicates, supported
+domain/runtime, reason codes, Public Check/bundle issuance, RFC #25, R2-D5, and
+Release 2 all remain open.
 
 ## Operation-stage support-domain candidate
 
@@ -574,8 +590,8 @@ not multiply the ULP by `|t_c|` a second time.
   refused;
 - final runtime selection of the reviewed Student-t operation graph, stopping rule,
   input-specific mathematical-truth predicate, and supported resource boundary;
-- full-graph supported-execution composition, exact runtime/build/platform admission,
-  and controlled-process enforcement;
+- exact-head independent review and closure of the one-entry Group 3
+  supported-execution selection candidate (without broader platform support);
 - final Protocol selection of the reviewed critical-value table bytes and content
   hash (the M3 selection remains limited to candidate confidence-interval work); and
 - the ten support-dependent reason-code decisions, final reason-code freeze, and

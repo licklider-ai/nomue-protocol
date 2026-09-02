@@ -77,7 +77,7 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   supported_execution_admission_evidence_candidate: {
-    closure: "infrastructure_candidate_pending_exact_head_evidence_and_independent_review";
+    closure: "reviewed_admission_evidence_infrastructure";
     artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-admission-evidence-candidate.json";
     evaluator: "tooling/src/spikes/paired-t-supported-execution-admission-evidence-candidate.ts";
     collector: "tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.ts";
@@ -89,14 +89,45 @@ export interface PairedTNumericalReadinessCandidate {
     group_2_complete: true;
     proposed_matrix_entry_count: 1;
     controlled_process_profile_implemented_for_evidence: true;
-    exact_head_cold_hot_evidence: "pending";
-    independent_review: "pending";
+    exact_head_cold_hot_evidence: "complete";
+    independent_review: "complete";
+    reviewed_candidate_head: "5563bae511069cc3bc73a2e3db24d8448de9fe2a";
+    reviewed_candidate_tree: "1b256b4e7a969da61efb135f2c22a9166332e6d6";
+    review_result: "review-inputs/r2-d5-group-3-supported-execution-admission-evidence/REVIEW-RESULT.md";
+    review_result_blob: "97bcc1ac0b59e56f84d997e83d10e43d3285933a";
+    review_preservation_merge: "3b4eab15bf3f5bb02819d27b4ab9e28bf2055f0b";
+    durable_evidence_manifest: "governance/drafts/release-2-candidate/numerical/group-3-admission-evidence-5563bae/artifact-manifest.json";
+    durable_evidence_manifest_sha256: "sha256:2aef6ddd1177a6bcae62d32325a03486c7b0ee838b48f57d6b11078fa7cf42f2";
     selection_made_by_this_increment: false;
     exact_runtime_allowlist_selected: false;
     controlled_process_profile_selected: false;
     cross_platform_admission_evidence_complete: false;
     supported_execution_predicate_selected: false;
     group_3_complete: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
+  supported_execution_selection_candidate: {
+    closure: "candidate_selection_pending_exact_head_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json";
+    evaluator: "tooling/src/spikes/paired-t-supported-execution-selection-candidate.ts";
+    collector: "tooling/src/spikes/collect-paired-t-supported-execution-selection-evidence.ts";
+    validator: "tooling/src/spikes/validate-paired-t-supported-execution-selection-evidence.ts";
+    workflow: ".github/workflows/release2-paired-t-supported-execution-selection-evidence.yml";
+    review_protocol: "governance/drafts/release-2-candidate/reviews/d5-group-3-supported-execution-selection-adversarial-review-protocol.md";
+    source_snapshot_commit: "3b4eab15bf3f5bb02819d27b4ab9e28bf2055f0b";
+    candidate_matrix_scope: "one_exact_tuple_only";
+    candidate_matrix_entry_count: 1;
+    candidate_supported_platform_matrix_selected: true;
+    every_selected_tuple_admission_evidence_complete: true;
+    candidate_exact_runtime_allowlist_selected: true;
+    candidate_controlled_process_profile_selected: true;
+    candidate_supported_execution_predicate_selected: true;
+    selection_made_by_this_increment: true;
+    independent_review: "pending";
+    group_3_complete: false;
+    broad_cross_platform_support_claimed: false;
+    authoritative_supported_execution_predicate_issued: false;
     supported_domain_claimed: false;
     runtime_support_enabled: false;
   };
@@ -408,6 +439,7 @@ const TOP_LEVEL_KEYS = [
   "candidate_supported_scope_resource_bounds",
   "runtime_numerical_contract_full_trace_candidate",
   "supported_execution_admission_evidence_candidate",
+  "supported_execution_selection_candidate",
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
   "runtime_inverse_beta_table_evidence_candidate",
@@ -526,12 +558,44 @@ const SUPPORTED_EXECUTION_ADMISSION_EVIDENCE_CANDIDATE_KEYS = [
   "controlled_process_profile_implemented_for_evidence",
   "exact_head_cold_hot_evidence",
   "independent_review",
+  "reviewed_candidate_head",
+  "reviewed_candidate_tree",
+  "review_result",
+  "review_result_blob",
+  "review_preservation_merge",
+  "durable_evidence_manifest",
+  "durable_evidence_manifest_sha256",
   "selection_made_by_this_increment",
   "exact_runtime_allowlist_selected",
   "controlled_process_profile_selected",
   "cross_platform_admission_evidence_complete",
   "supported_execution_predicate_selected",
   "group_3_complete",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
+const SUPPORTED_EXECUTION_SELECTION_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "evaluator",
+  "collector",
+  "validator",
+  "workflow",
+  "review_protocol",
+  "source_snapshot_commit",
+  "candidate_matrix_scope",
+  "candidate_matrix_entry_count",
+  "candidate_supported_platform_matrix_selected",
+  "every_selected_tuple_admission_evidence_complete",
+  "candidate_exact_runtime_allowlist_selected",
+  "candidate_controlled_process_profile_selected",
+  "candidate_supported_execution_predicate_selected",
+  "selection_made_by_this_increment",
+  "independent_review",
+  "group_3_complete",
+  "broad_cross_platform_support_claimed",
+  "authoritative_supported_execution_predicate_issued",
   "supported_domain_claimed",
   "runtime_support_enabled",
 ] as const;
@@ -876,6 +940,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     errors,
   );
   requireExactKeys(
+    "supported-execution selection candidate",
+    candidate.supported_execution_selection_candidate,
+    SUPPORTED_EXECUTION_SELECTION_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
     "numerical-contract decision candidate",
     candidate.numerical_contract_decision_candidate,
     NUMERICAL_CONTRACT_CANDIDATE_KEYS,
@@ -1074,8 +1144,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const admissionEvidenceCandidate = candidate.supported_execution_admission_evidence_candidate;
   if (
-    admissionEvidenceCandidate.closure !==
-      "infrastructure_candidate_pending_exact_head_evidence_and_independent_review" ||
+    admissionEvidenceCandidate.closure !== "reviewed_admission_evidence_infrastructure" ||
     admissionEvidenceCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/supported-execution-admission-evidence-candidate.json" ||
     admissionEvidenceCandidate.evaluator !==
@@ -1094,8 +1163,21 @@ function validatePairedTNumericalReadinessCandidateInternal(
     admissionEvidenceCandidate.group_2_complete !== true ||
     admissionEvidenceCandidate.proposed_matrix_entry_count !== 1 ||
     admissionEvidenceCandidate.controlled_process_profile_implemented_for_evidence !== true ||
-    admissionEvidenceCandidate.exact_head_cold_hot_evidence !== "pending" ||
-    admissionEvidenceCandidate.independent_review !== "pending" ||
+    admissionEvidenceCandidate.exact_head_cold_hot_evidence !== "complete" ||
+    admissionEvidenceCandidate.independent_review !== "complete" ||
+    admissionEvidenceCandidate.reviewed_candidate_head !==
+      "5563bae511069cc3bc73a2e3db24d8448de9fe2a" ||
+    admissionEvidenceCandidate.reviewed_candidate_tree !==
+      "1b256b4e7a969da61efb135f2c22a9166332e6d6" ||
+    admissionEvidenceCandidate.review_result !==
+      "review-inputs/r2-d5-group-3-supported-execution-admission-evidence/REVIEW-RESULT.md" ||
+    admissionEvidenceCandidate.review_result_blob !== "97bcc1ac0b59e56f84d997e83d10e43d3285933a" ||
+    admissionEvidenceCandidate.review_preservation_merge !==
+      "3b4eab15bf3f5bb02819d27b4ab9e28bf2055f0b" ||
+    admissionEvidenceCandidate.durable_evidence_manifest !==
+      "governance/drafts/release-2-candidate/numerical/group-3-admission-evidence-5563bae/artifact-manifest.json" ||
+    admissionEvidenceCandidate.durable_evidence_manifest_sha256 !==
+      "sha256:2aef6ddd1177a6bcae62d32325a03486c7b0ee838b48f57d6b11078fa7cf42f2" ||
     admissionEvidenceCandidate.selection_made_by_this_increment !== false ||
     admissionEvidenceCandidate.exact_runtime_allowlist_selected !== false ||
     admissionEvidenceCandidate.controlled_process_profile_selected !== false ||
@@ -1106,7 +1188,43 @@ function validatePairedTNumericalReadinessCandidateInternal(
     admissionEvidenceCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "supported-execution admission-evidence infrastructure must remain exact-head-review pending and must not select or promote Group 3 support",
+      "supported-execution admission-evidence infrastructure must bind its preserved exact-head review and must not itself select or promote Group 3 support",
+    );
+  }
+
+  const selectionCandidate = candidate.supported_execution_selection_candidate;
+  if (
+    selectionCandidate.closure !== "candidate_selection_pending_exact_head_independent_review" ||
+    selectionCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json" ||
+    selectionCandidate.evaluator !==
+      "tooling/src/spikes/paired-t-supported-execution-selection-candidate.ts" ||
+    selectionCandidate.collector !==
+      "tooling/src/spikes/collect-paired-t-supported-execution-selection-evidence.ts" ||
+    selectionCandidate.validator !==
+      "tooling/src/spikes/validate-paired-t-supported-execution-selection-evidence.ts" ||
+    selectionCandidate.workflow !==
+      ".github/workflows/release2-paired-t-supported-execution-selection-evidence.yml" ||
+    selectionCandidate.review_protocol !==
+      "governance/drafts/release-2-candidate/reviews/d5-group-3-supported-execution-selection-adversarial-review-protocol.md" ||
+    selectionCandidate.source_snapshot_commit !== "3b4eab15bf3f5bb02819d27b4ab9e28bf2055f0b" ||
+    selectionCandidate.candidate_matrix_scope !== "one_exact_tuple_only" ||
+    selectionCandidate.candidate_matrix_entry_count !== 1 ||
+    selectionCandidate.candidate_supported_platform_matrix_selected !== true ||
+    selectionCandidate.every_selected_tuple_admission_evidence_complete !== true ||
+    selectionCandidate.candidate_exact_runtime_allowlist_selected !== true ||
+    selectionCandidate.candidate_controlled_process_profile_selected !== true ||
+    selectionCandidate.candidate_supported_execution_predicate_selected !== true ||
+    selectionCandidate.selection_made_by_this_increment !== true ||
+    selectionCandidate.independent_review !== "pending" ||
+    selectionCandidate.group_3_complete !== false ||
+    selectionCandidate.broad_cross_platform_support_claimed !== false ||
+    selectionCandidate.authoritative_supported_execution_predicate_issued !== false ||
+    selectionCandidate.supported_domain_claimed !== false ||
+    selectionCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "supported-execution selection must remain a one-tuple candidate pending exact-head review without broad or authoritative support",
     );
   }
 
