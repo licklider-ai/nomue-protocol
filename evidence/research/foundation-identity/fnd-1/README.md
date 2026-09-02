@@ -101,6 +101,15 @@ both are frozen. The potential-outcomes pass can propose a disposition only for
 of `FND1-H04`. Neither pass authorizes Protocol adoption, schema work,
 implementation, or release changes.
 
+The completed potential-outcomes lineage pass reports `NARROW` and proposes
+`NARROW_AND_CLOSE` for `H04-S1`. It directly verifies the treatment-indexed
+unit-level outcome objects and population aggregation in the inspected source
+lineage, preserves the distinction between Rubin's Greek effect symbol and
+capital treatment label, and does not attribute later no-interference or
+treatment-version conditions to the inspected texts. The proposal remains
+subject to independent close review and later steward reconciliation;
+`FND1-H04` and the full Research Gate remain open, with no Protocol adoption.
+
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
 and
