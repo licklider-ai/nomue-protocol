@@ -268,7 +268,7 @@ describe("Release 2 numerical evidence readiness", () => {
       runtime_support_enabled: false,
     });
     expect(candidate.supported_execution_selection_candidate).toEqual({
-      closure: "candidate_selection_pending_exact_head_independent_review",
+      closure: "reviewed_group_3_candidate_selection",
       artifact:
         "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json",
       evaluator: "tooling/src/spikes/paired-t-supported-execution-selection-candidate.ts",
@@ -286,8 +286,13 @@ describe("Release 2 numerical evidence readiness", () => {
       candidate_controlled_process_profile_selected: true,
       candidate_supported_execution_predicate_selected: true,
       selection_made_by_this_increment: true,
-      independent_review: "pending",
-      group_3_complete: false,
+      independent_review: "complete",
+      group_3_complete: true,
+      reviewed_candidate_head: "9e58eccb3cde54a4f653340d13170fbdf559b62b",
+      reviewed_candidate_tree: "fb83d6635e95d4bb50048bfcfb98bdbd835c5f28",
+      review_result: "review-inputs/r2-d5-group-3-supported-execution-selection/REVIEW-RESULT.md",
+      review_result_blob: "ea0fa641af7d0a3dfd75af6bd2152025a47c4f68",
+      review_preservation_merge: "7912c70d50e2206b518ad154fc869cc76de2c680",
       broad_cross_platform_support_claimed: false,
       authoritative_supported_execution_predicate_issued: false,
       supported_domain_claimed: false,
@@ -337,10 +342,25 @@ describe("Release 2 numerical evidence readiness", () => {
         value.candidate_matrix_entry_count = 2 as never;
       },
       (value) => {
-        value.independent_review = "complete" as never;
+        value.independent_review = "pending" as never;
       },
       (value) => {
-        value.group_3_complete = true as never;
+        value.group_3_complete = false as never;
+      },
+      (value) => {
+        value.reviewed_candidate_head = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.reviewed_candidate_tree = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_result = "review-inputs/substituted/REVIEW-RESULT.md" as never;
+      },
+      (value) => {
+        value.review_result_blob = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_preservation_merge = "0".repeat(40) as never;
       },
       (value) => {
         value.broad_cross_platform_support_claimed = true as never;
@@ -356,7 +376,7 @@ describe("Release 2 numerical evidence readiness", () => {
       const substituted = loadReadiness();
       attack(substituted.supported_execution_selection_candidate);
       expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
-        "supported-execution selection must remain a one-tuple candidate pending exact-head review without broad or authoritative support",
+        "supported-execution selection must bind the preserved exact-head review and close only Group 3 without broad or authoritative support",
       );
     }
   });

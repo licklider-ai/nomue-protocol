@@ -4,10 +4,26 @@
   "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
   "candidate_key": "paired-t-d5-group-3-supported-execution-selection-candidate-1",
   "decision_group": "supported_execution_admission",
-  "decision_state": "candidate_selection_pending_exact_head_independent_review",
+  "decision_state": "independently_reviewed_candidate_supported_execution_selection",
   "selection_made_by_this_checkpoint": true,
-  "independent_review": "pending",
-  "group_3_complete": false,
+  "independent_review": "complete",
+  "group_3_complete": true,
+  "independent_review_binding": {
+    "verdict": "GO",
+    "blocker_count": 0,
+    "should_fix_count": 0,
+    "nice_to_have_count": 0,
+    "reviewed_candidate_head": "9e58eccb3cde54a4f653340d13170fbdf559b62b",
+    "reviewed_candidate_tree": "fb83d6635e95d4bb50048bfcfb98bdbd835c5f28",
+    "candidate_merge": "2e8a4100ca45c2b85d9a0adb2848ecff5fb64471",
+    "review_commit": "c5972d2d9550a6143544c95223c8c27fe0df7f95",
+    "review_commit_parent": "9e58eccb3cde54a4f653340d13170fbdf559b62b",
+    "review_commit_tree": "533d51773b0ab290a2115fe3e09e48b5bd28256f",
+    "review_result": "review-inputs/r2-d5-group-3-supported-execution-selection/REVIEW-RESULT.md",
+    "review_result_blob": "ea0fa641af7d0a3dfd75af6bd2152025a47c4f68",
+    "preservation_head": "0af9cad57c4918788b3a7d2ffda1e28fae2b3900",
+    "preservation_merge": "7912c70d50e2206b518ad154fc869cc76de2c680"
+  },
   "source_snapshot": {
     "repository_commit": "3b4eab15bf3f5bb02819d27b4ab9e28bf2055f0b",
     "repository_tree": "6ee8ea33fb12e304bf54e84d01acbe6acd71c859",
@@ -174,11 +190,11 @@
     "authoritative_protocol_predicate_issued": false
   },
   "review_and_closure_state": {
-    "selection_increment_independent_review": "pending",
-    "selection_result_preserved": false,
-    "group_3_complete": false,
+    "selection_increment_independent_review": "complete",
+    "selection_result_preserved": true,
+    "group_3_complete": true,
     "next_after_group_3_closure": "final_reason_code_inventory",
-    "final_r2_d5_disposition": "blocked_by_groups_3_and_4_and_rfc_window"
+    "final_r2_d5_disposition": "blocked_by_group_4_and_rfc_window"
   },
   "non_promotions": {
     "authoritative_supported_bounds": false,

@@ -12,7 +12,7 @@ type JsonRecord = Record<string, unknown>;
 
 const PRIOR_CANDIDATE_HEAD = "5563bae511069cc3bc73a2e3db24d8448de9fe2a";
 const EXPECTED_CHECKPOINT_SHA256 =
-  "sha256:5b00688bb049c37cd07ec7a3a92b15f82a8bb1e6dae382f180cdcbaf8a8be22d";
+  "sha256:d1fd8bcbeeb6166c6ec23b0477fd1876be23e8e4c02dff79cdce135de3c8ce4d";
 const EXPECTED_SELECTION_ROLLUP =
   "a53970d7f00b5823b2e601faaafa6dd900b7cf69ab51b4896feba7433761be20";
 const EXPECTED_ARTIFACT_MANIFEST_SHA256 =

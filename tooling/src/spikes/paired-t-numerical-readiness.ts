@@ -108,7 +108,7 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   supported_execution_selection_candidate: {
-    closure: "candidate_selection_pending_exact_head_independent_review";
+    closure: "reviewed_group_3_candidate_selection";
     artifact: "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json";
     evaluator: "tooling/src/spikes/paired-t-supported-execution-selection-candidate.ts";
     collector: "tooling/src/spikes/collect-paired-t-supported-execution-selection-evidence.ts";
@@ -124,8 +124,13 @@ export interface PairedTNumericalReadinessCandidate {
     candidate_controlled_process_profile_selected: true;
     candidate_supported_execution_predicate_selected: true;
     selection_made_by_this_increment: true;
-    independent_review: "pending";
-    group_3_complete: false;
+    independent_review: "complete";
+    group_3_complete: true;
+    reviewed_candidate_head: "9e58eccb3cde54a4f653340d13170fbdf559b62b";
+    reviewed_candidate_tree: "fb83d6635e95d4bb50048bfcfb98bdbd835c5f28";
+    review_result: "review-inputs/r2-d5-group-3-supported-execution-selection/REVIEW-RESULT.md";
+    review_result_blob: "ea0fa641af7d0a3dfd75af6bd2152025a47c4f68";
+    review_preservation_merge: "7912c70d50e2206b518ad154fc869cc76de2c680";
     broad_cross_platform_support_claimed: false;
     authoritative_supported_execution_predicate_issued: false;
     supported_domain_claimed: false;
@@ -594,6 +599,11 @@ const SUPPORTED_EXECUTION_SELECTION_CANDIDATE_KEYS = [
   "selection_made_by_this_increment",
   "independent_review",
   "group_3_complete",
+  "reviewed_candidate_head",
+  "reviewed_candidate_tree",
+  "review_result",
+  "review_result_blob",
+  "review_preservation_merge",
   "broad_cross_platform_support_claimed",
   "authoritative_supported_execution_predicate_issued",
   "supported_domain_claimed",
@@ -1194,7 +1204,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const selectionCandidate = candidate.supported_execution_selection_candidate;
   if (
-    selectionCandidate.closure !== "candidate_selection_pending_exact_head_independent_review" ||
+    selectionCandidate.closure !== "reviewed_group_3_candidate_selection" ||
     selectionCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json" ||
     selectionCandidate.evaluator !==
@@ -1216,15 +1226,21 @@ function validatePairedTNumericalReadinessCandidateInternal(
     selectionCandidate.candidate_controlled_process_profile_selected !== true ||
     selectionCandidate.candidate_supported_execution_predicate_selected !== true ||
     selectionCandidate.selection_made_by_this_increment !== true ||
-    selectionCandidate.independent_review !== "pending" ||
-    selectionCandidate.group_3_complete !== false ||
+    selectionCandidate.independent_review !== "complete" ||
+    selectionCandidate.group_3_complete !== true ||
+    selectionCandidate.reviewed_candidate_head !== "9e58eccb3cde54a4f653340d13170fbdf559b62b" ||
+    selectionCandidate.reviewed_candidate_tree !== "fb83d6635e95d4bb50048bfcfb98bdbd835c5f28" ||
+    selectionCandidate.review_result !==
+      "review-inputs/r2-d5-group-3-supported-execution-selection/REVIEW-RESULT.md" ||
+    selectionCandidate.review_result_blob !== "ea0fa641af7d0a3dfd75af6bd2152025a47c4f68" ||
+    selectionCandidate.review_preservation_merge !== "7912c70d50e2206b518ad154fc869cc76de2c680" ||
     selectionCandidate.broad_cross_platform_support_claimed !== false ||
     selectionCandidate.authoritative_supported_execution_predicate_issued !== false ||
     selectionCandidate.supported_domain_claimed !== false ||
     selectionCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "supported-execution selection must remain a one-tuple candidate pending exact-head review without broad or authoritative support",
+      "supported-execution selection must bind the preserved exact-head review and close only Group 3 without broad or authoritative support",
     );
   }
 
