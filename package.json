@@ -43,6 +43,7 @@
     "evidence:r2-paired-t-truth-boundary:validate": "node --import tsx tooling/src/spikes/validate-paired-t-truth-boundary-evidence.ts",
     "evidence:r2-paired-t-truth-boundary:probe": "node --import tsx tooling/src/spikes/probe-paired-t-truth-boundary-evidence.ts",
     "evidence:r2-paired-t-supported-execution-admission:validate": "node --import tsx tooling/src/spikes/validate-paired-t-supported-execution-admission-evidence.ts",
+    "evidence:r2-paired-t-supported-execution-selection:validate": "node --import tsx tooling/src/spikes/validate-paired-t-supported-execution-selection-evidence.ts",
     "evidence:phase2a": "tsx tooling/src/phase2a/evidence-phase2a.ts",
     "snapshot:manifest": "tsx tooling/src/release/snapshot-manifest-cli.ts",
     "release:signing:prepare": "tsx tooling/src/release/release-signing-cli.ts prepare",
