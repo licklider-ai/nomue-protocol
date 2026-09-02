@@ -6,11 +6,24 @@
   "review_protocol": "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md",
   "expected_review_result": "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
   "decision_group": "runtime_numerical_contract_and_full_trace_predicate",
-  "decision_state": "candidate_runtime_numerical_contract_and_full_trace_predicate_selected_pending_independent_review",
+  "decision_state": "independently_reviewed_candidate_runtime_numerical_contract_and_full_trace_predicate",
   "selection_made_by_this_checkpoint": true,
-  "independent_review": "pending",
+  "independent_review": "complete",
   "group_1_dependency": "closed_with_preserved_exact_head_review",
-  "group_2_complete": false,
+  "group_2_complete": true,
+  "independent_review_binding": {
+    "verdict": "GO",
+    "blocker_count": 0,
+    "should_fix_count": 0,
+    "nice_to_have_count": 0,
+    "reviewed_candidate_head": "adea5c12d709350cbd8d4fbf918ea8344c111000",
+    "reviewed_candidate_tree": "7d56ad8f8b97b4c0baef336716a1dfc97338d3ac",
+    "review_commit": "813ee3a7e33bacd8d772ca7b8e51e15ecbf695c8",
+    "review_commit_parent": "adea5c12d709350cbd8d4fbf918ea8344c111000",
+    "review_result": "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
+    "review_result_blob": "fc4da85398eeda3220b0ae0f4401195db0228250",
+    "preservation_merge": "b6bb348a22a25b82dfa940d39d017fe3c22859ff"
+  },
   "numerical_contract_frozen": false,
   "supported_domain_claimed": false,
   "runtime_support_enabled": false,
@@ -242,9 +255,9 @@
     "platform_admission_required_separately": true
   },
   "downstream_dependency_state": {
-    "supported_execution_admission": "blocked_until_group_2_independent_review_and_closure",
-    "final_reason_code_inventory": "blocked_by_groups_2_and_3",
-    "final_r2_d5_review_and_disposition": "blocked_by_groups_2_through_4_and_rfc_window"
+    "supported_execution_admission": "next_open_after_group_2_closure",
+    "final_reason_code_inventory": "blocked_by_group_3",
+    "final_r2_d5_review_and_disposition": "blocked_by_groups_3_and_4_and_rfc_window"
   },
   "non_promotions": {
     "authoritative_supported_pair_or_df_bound": false,

@@ -46,7 +46,7 @@ export interface PairedTNumericalReadinessCandidate {
     runtime_support_enabled: false;
   };
   runtime_numerical_contract_full_trace_candidate: {
-    closure: "selection_pending_independent_review";
+    closure: "reviewed_group_2_candidate_selection";
     artifact: "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json";
     evaluator: "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts";
     review_protocol: "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md";
@@ -61,8 +61,13 @@ export interface PairedTNumericalReadinessCandidate {
     full_trace_format: "paired-t-runtime-numerical-contract-full-trace-v1";
     candidate_full_trace_predicate_selected: true;
     selection_made_by_this_increment: true;
-    independent_review: "pending";
-    group_2_complete: false;
+    independent_review: "complete";
+    group_2_complete: true;
+    reviewed_candidate_head: "adea5c12d709350cbd8d4fbf918ea8344c111000";
+    reviewed_candidate_tree: "7d56ad8f8b97b4c0baef336716a1dfc97338d3ac";
+    review_result: "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md";
+    review_result_blob: "fc4da85398eeda3220b0ae0f4401195db0228250";
+    review_preservation_merge: "b6bb348a22a25b82dfa940d39d017fe3c22859ff";
     numerical_contract_frozen: false;
     supported_platform_matrix: "pending";
     exact_runtime_allowlist_selected: false;
@@ -467,6 +472,11 @@ const RUNTIME_NUMERICAL_CONTRACT_FULL_TRACE_CANDIDATE_KEYS = [
   "selection_made_by_this_increment",
   "independent_review",
   "group_2_complete",
+  "reviewed_candidate_head",
+  "reviewed_candidate_tree",
+  "review_result",
+  "review_result_blob",
+  "review_preservation_merge",
   "numerical_contract_frozen",
   "supported_platform_matrix",
   "exact_runtime_allowlist_selected",
@@ -965,7 +975,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
 
   const fullTraceCandidate = candidate.runtime_numerical_contract_full_trace_candidate;
   if (
-    fullTraceCandidate.closure !== "selection_pending_independent_review" ||
+    fullTraceCandidate.closure !== "reviewed_group_2_candidate_selection" ||
     fullTraceCandidate.artifact !==
       "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json" ||
     fullTraceCandidate.evaluator !==
@@ -985,8 +995,14 @@ function validatePairedTNumericalReadinessCandidateInternal(
     fullTraceCandidate.full_trace_format !== "paired-t-runtime-numerical-contract-full-trace-v1" ||
     fullTraceCandidate.candidate_full_trace_predicate_selected !== true ||
     fullTraceCandidate.selection_made_by_this_increment !== true ||
-    fullTraceCandidate.independent_review !== "pending" ||
-    fullTraceCandidate.group_2_complete !== false ||
+    fullTraceCandidate.independent_review !== "complete" ||
+    fullTraceCandidate.group_2_complete !== true ||
+    fullTraceCandidate.reviewed_candidate_head !== "adea5c12d709350cbd8d4fbf918ea8344c111000" ||
+    fullTraceCandidate.reviewed_candidate_tree !== "7d56ad8f8b97b4c0baef336716a1dfc97338d3ac" ||
+    fullTraceCandidate.review_result !==
+      "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md" ||
+    fullTraceCandidate.review_result_blob !== "fc4da85398eeda3220b0ae0f4401195db0228250" ||
+    fullTraceCandidate.review_preservation_merge !== "b6bb348a22a25b82dfa940d39d017fe3c22859ff" ||
     fullTraceCandidate.numerical_contract_frozen !== false ||
     fullTraceCandidate.supported_platform_matrix !== "pending" ||
     fullTraceCandidate.exact_runtime_allowlist_selected !== false ||
@@ -996,7 +1012,7 @@ function validatePairedTNumericalReadinessCandidateInternal(
     fullTraceCandidate.runtime_support_enabled !== false
   ) {
     errors.push(
-      "runtime numerical contract full-trace candidate must remain selected only for independent Group 2 review without closure, platform, support, or runtime promotion",
+      "runtime numerical contract full-trace candidate must bind the preserved exact-head review and close only Group 2 without numerical freeze, platform, support, or runtime promotion",
     );
   }
 
