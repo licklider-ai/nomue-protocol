@@ -126,6 +126,12 @@ post-event outcome existence or a missingness mechanism from the animal-source
 corpus. The proposal remains subject to independent close review and later
 steward reconciliation; `FND1-H04` and the full Research Gate remain open,
 with no Protocol adoption.
+The bounded
+[`animal-endpoint close-review commission`](2026-09-02-nonclinical-estimand-animal-endpoint-close-review-commission.md)
+requires direct reinspection of all three exact source artifacts and assigns a
+fail-closed
+[`result placeholder`](2026-09-02-nonclinical-estimand-animal-endpoint-close-review-result.md).
+It creates no sub-hold closure or Protocol-adoption authority.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)

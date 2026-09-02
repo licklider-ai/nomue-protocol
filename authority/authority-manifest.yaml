@@ -712,6 +712,17 @@ artifacts:
       proposing NARROW_AND_CLOSE for H04-S4, subject to independent close
       review and steward reconciliation, with FND1-H04 and the full Research
       Gate kept open and no Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-close-review-commission.md
+    class: informative
+    notes: >-
+      Bounded close-review commission requiring direct inspection of the three
+      source artifacts used by the animal-endpoint result; no sub-hold closure
+      or Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-close-review-result.md
+    class: informative
+    notes: >-
+      Pending animal-endpoint close-review result placeholder; no evidence,
+      verdict, sub-hold closure, or Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
