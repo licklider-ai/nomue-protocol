@@ -110,6 +110,17 @@ treatment-version conditions to the inspected texts. The proposal remains
 subject to independent close review and later steward reconciliation;
 `FND1-H04` and the full Research Gate remain open, with no Protocol adoption.
 
+The completed animal-endpoint pass reports `NARROW` and proposes
+`NARROW_AND_CLOSE` for `H04-S4`. It directly records prespecified welfare
+triggers, time-bearing terminal or intervention events, graded actions, and
+the boundary between welfare action and scientific objective across three
+fully inspected artifacts. It preserves the source-level disagreement between
+`humane endpoint` and `humane intervention point`, and does not infer
+post-event outcome existence or a missingness mechanism from the animal-source
+corpus. The proposal remains subject to independent close review and later
+steward reconciliation; `FND1-H04` and the full Research Gate remain open,
+with no Protocol adoption.
+
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
 and
