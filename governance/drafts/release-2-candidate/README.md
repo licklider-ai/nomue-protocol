@@ -63,8 +63,12 @@ runtime-input and reason-code checkpoint now gives both candidate evaluation
 entrypoints the same closed two-field input shape and proposes unissued spellings
 only for the eleven already reviewed operation-stage failures. The input contract
 and this partial inventory passed independent adversarial review as non-authoritative
-decision-preparation material. Ten support-dependent reason-code decisions remain
-explicitly deferred.
+decision-preparation material. The separate Group 4 successor preserves those eleven
+entries exactly, maps the complete candidate relationship and declared-result
+surfaces, and resolves the ten support-dependent vocabulary decisions against the
+now-closed Groups 1–3 candidate boundaries. That successor is still unissued,
+unfrozen, and pending exact-head independent review; it changes no registry or Public
+Check.
 
 A separate upstream G4 candidate derives the paired differences, mean difference,
 sample variance, standard error, test statistic, and degrees of freedom from one
