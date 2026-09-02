@@ -81,6 +81,31 @@ admission, final reason codes, Public Check/bundle issuance, R2-D5, and Release 
 remain open. The review identity and preservation merge are pinned by the candidate
 checkpoint and aggregate readiness overlay; changing any of them fails closed.
 
+## Runtime numerical-contract full-trace candidate
+
+`runtime-numerical-contract-full-trace-candidate.json` is the Group 2 successor
+increment. It selects one non-authoritative candidate numerical contract and one
+executable full-trace predicate for independent review. The candidate composes the
+reviewed G4 actual trace and exact-rational truth envelope, the reviewed tail actual
+trace and input-specific truth/projection proof, the selected fixed-95 confidence-
+interval trace and same-trace endpoint-truth envelope, and the closed Group 1
+resource envelope.
+
+The executable envelope requires the tail and confidence-interval paths to contain
+the identical verified G4 trace. It binds the returned p-value and interval endpoint
+bits to their component traces, pins the reviewed tail and fixed-95 table hashes,
+reconstructs the Group 1 resource accounting, and verifies every nested component
+before accepting. Its outer digest uses recursively key-sorted canonical JSON, so
+object-key order is non-semantic while array order and all values remain pinned.
+
+This increment selects only a candidate Group 2 graph, table, truth, projection, and
+full-trace contract. Independent review is pending, Group 2 is not closed, and the
+numerical contract is not frozen. Platform/build/runtime allowlisting, controlled-
+process enforcement, and full supported-execution admission remain the separate
+Group 3 decision. No supported domain, runtime support, comparison tolerance,
+global truth-error constant, final reason-code inventory, Public Check, bundle,
+RFC disposition, R2-D5 completion, or Release 2 completion is claimed.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain

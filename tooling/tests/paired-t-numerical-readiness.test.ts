@@ -134,6 +134,101 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("selects the Group 2 full-trace candidate only for independent review", () => {
+    const candidate = loadReadiness();
+    expect(candidate.runtime_numerical_contract_full_trace_candidate).toEqual({
+      closure: "selection_pending_independent_review",
+      artifact:
+        "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json",
+      evaluator: "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
+      review_protocol:
+        "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md",
+      source_snapshot_commit: "9d53f7b9ae2e6059eb8b6d9f1e3ca70002f8f24f",
+      group_1_complete: true,
+      selected_pair_count_minimum: 2,
+      selected_pair_count_maximum: 201,
+      selected_degrees_of_freedom_minimum: 1,
+      selected_degrees_of_freedom_maximum: 200,
+      selected_tail_table_content_hash:
+        "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+      selected_fixed_95_table_content_hash:
+        "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0",
+      full_trace_format: "paired-t-runtime-numerical-contract-full-trace-v1",
+      candidate_full_trace_predicate_selected: true,
+      selection_made_by_this_increment: true,
+      independent_review: "pending",
+      group_2_complete: false,
+      numerical_contract_frozen: false,
+      supported_platform_matrix: "pending",
+      exact_runtime_allowlist_selected: false,
+      controlled_process_profile_enforced: false,
+      supported_execution_predicate_selected: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+    });
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
+
+    const attacks: Array<
+      (
+        value: PairedTNumericalReadinessCandidate["runtime_numerical_contract_full_trace_candidate"],
+      ) => void
+    > = [
+      (value) => {
+        value.source_snapshot_commit = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.group_1_complete = false as never;
+      },
+      (value) => {
+        value.selected_pair_count_maximum = 202 as never;
+      },
+      (value) => {
+        value.selected_tail_table_content_hash = `sha256:${"0".repeat(64)}` as never;
+      },
+      (value) => {
+        value.selected_fixed_95_table_content_hash = `sha256:${"0".repeat(64)}` as never;
+      },
+      (value) => {
+        value.full_trace_format = "substituted" as never;
+      },
+      (value) => {
+        value.independent_review = "complete" as never;
+        value.group_2_complete = true as never;
+      },
+      (value) => {
+        value.numerical_contract_frozen = true as never;
+      },
+      (value) => {
+        value.supported_platform_matrix = "selected" as never;
+        value.exact_runtime_allowlist_selected = true as never;
+        value.controlled_process_profile_enforced = true as never;
+      },
+      (value) => {
+        value.supported_execution_predicate_selected = true as never;
+        value.supported_domain_claimed = true as never;
+        value.runtime_support_enabled = true as never;
+      },
+    ];
+    for (const attack of attacks) {
+      const substituted = loadReadiness();
+      attack(substituted.runtime_numerical_contract_full_trace_candidate);
+      expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
+        "runtime numerical contract full-trace candidate must remain selected only for independent Group 2 review without closure, platform, support, or runtime promotion",
+      );
+    }
+
+    const undeclared = loadReadiness();
+    (
+      undeclared.runtime_numerical_contract_full_trace_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    ).undeclared = true;
+    expect(validatePairedTNumericalReadinessCandidate(undeclared)).toContain(
+      "runtime numerical contract full-trace candidate: keys are incomplete or contain an undeclared item",
+    );
+  });
+
   it("keeps the numerical-contract decision candidate incomplete and non-runtime", () => {
     const candidate = loadReadiness();
     candidate.numerical_contract_decision_candidate.supported_degrees_of_freedom_max = 200 as never;
