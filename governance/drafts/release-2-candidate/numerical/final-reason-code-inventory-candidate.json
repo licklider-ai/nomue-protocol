@@ -3,13 +3,29 @@
   "issuance": "unissued",
   "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
   "candidate_key": "paired-t-d5-final-reason-code-inventory-candidate-1",
-  "decision_state": "candidate_selection_pending_independent_review",
+  "decision_state": "independently_reviewed_candidate_final_reason_code_inventory",
   "selection_made_by_this_checkpoint": true,
-  "independent_review": "pending",
+  "independent_review": "complete",
   "group_1_complete": true,
   "group_2_complete": true,
   "group_3_complete": true,
-  "group_4_complete": false,
+  "group_4_complete": true,
+  "independent_review_binding": {
+    "verdict": "GO",
+    "blocker_count": 0,
+    "should_fix_count": 0,
+    "nice_to_have_count": 0,
+    "reviewed_candidate_head": "1a2802000b80ed795c51984bd88f89fc6be707a0",
+    "reviewed_candidate_tree": "5dee78c6fc3585df467304c4cca821a75aac3421",
+    "candidate_merge": "7c88fa2645af03d163513f84887f3b609ea037f4",
+    "review_commit": "ed462eea1d149eefd5da3a971c76d9424430dbce",
+    "review_commit_parent": "1a2802000b80ed795c51984bd88f89fc6be707a0",
+    "review_commit_tree": "9b331c946ec249cda192d304eb7ab6ff9445a6d1",
+    "review_result": "review-inputs/r2-d5-group-4-final-reason-code-inventory/REVIEW-RESULT.md",
+    "review_result_blob": "2b99afe46b953f56a398a5dd5ed333be13e57718",
+    "preservation_head": "3566b433619a9ee9c260430de4a7030e0edadf36",
+    "preservation_merge": "3668fe95a0f2c5a7beaec70156d11bc523d4dc4e"
+  },
   "final_reason_codes_frozen": false,
   "authoritative_reason_codes_issued": false,
   "supported_domain_claimed": false,
@@ -663,8 +679,8 @@
     "internal_only": "none"
   },
   "downstream_ordering": {
-    "next_open_group": "group_4_closure_synchronization_after_independent_review_and_preservation",
-    "final_r2_d5_disposition": "blocked_by_group_4_closure_and_rfc_window",
+    "next_open_group": "final_r2_d5_review_and_disposition",
+    "final_r2_d5_disposition": "blocked_by_rfc_window",
     "earliest_rfc_decision": "2026-09-25T20:52:54Z"
   },
   "non_promotions": {

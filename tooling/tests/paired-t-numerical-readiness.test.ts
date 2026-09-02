@@ -505,10 +505,10 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("records the complete Group 4 candidate inventory without review or issuance promotion", () => {
+  it("records the reviewed Group 4 candidate closure without issuance promotion", () => {
     const candidate = loadReadiness();
     expect(candidate.final_reason_code_inventory_candidate).toEqual({
-      closure: "candidate_selection_pending_independent_review",
+      closure: "reviewed_group_4_candidate_selection",
       artifact:
         "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json",
       validator: "tooling/src/spikes/paired-t-final-reason-code-inventory-candidate.ts",
@@ -526,8 +526,13 @@ describe("Release 2 numerical evidence readiness", () => {
       resolved_support_dependent_reason_code_decision_count: 10,
       unresolved_support_dependent_reason_code_decision_count: 0,
       selection_made_by_this_increment: true,
-      independent_review: "pending",
-      group_4_complete: false,
+      independent_review: "complete",
+      group_4_complete: true,
+      reviewed_candidate_head: "1a2802000b80ed795c51984bd88f89fc6be707a0",
+      reviewed_candidate_tree: "5dee78c6fc3585df467304c4cca821a75aac3421",
+      review_result: "review-inputs/r2-d5-group-4-final-reason-code-inventory/REVIEW-RESULT.md",
+      review_result_blob: "2b99afe46b953f56a398a5dd5ed333be13e57718",
+      review_preservation_merge: "3668fe95a0f2c5a7beaec70156d11bc523d4dc4e",
       final_reason_codes_frozen: false,
       authoritative_reason_codes_issued: false,
       supported_domain_claimed: false,
@@ -536,9 +541,19 @@ describe("Release 2 numerical evidence readiness", () => {
 
     for (const attack of [
       (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
-        (value.independent_review = "complete" as never),
+        (value.independent_review = "pending" as never),
       (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
-        (value.group_4_complete = true as never),
+        (value.group_4_complete = false as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.reviewed_candidate_head = "0".repeat(40) as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.reviewed_candidate_tree = "0".repeat(40) as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.review_result = "review-inputs/substituted/REVIEW-RESULT.md" as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.review_result_blob = "0".repeat(40) as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.review_preservation_merge = "0".repeat(40) as never),
       (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
         (value.unresolved_support_dependent_reason_code_decision_count = 1 as never),
       (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
@@ -551,7 +566,7 @@ describe("Release 2 numerical evidence readiness", () => {
       const changed = loadReadiness();
       attack(changed.final_reason_code_inventory_candidate);
       expect(validatePairedTNumericalReadinessCandidate(changed)).toContain(
-        "final reason-code inventory must remain a complete candidate selection pending independent review and non-authoritative",
+        "final reason-code inventory must bind the preserved exact-head review and close only Group 4 without issuance or authoritative promotion",
       );
     }
   });

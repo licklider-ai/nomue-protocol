@@ -180,12 +180,14 @@ Internal verifier, configuration, invariant, and malformed pre-check failures ar
 not attributed to the Record.
 
 This candidate completes an inventory for the selected Groups 1–3 candidate surface,
-not an authoritative Protocol inventory. Its independent review is pending and Group
-4 remains open. No reason code or Public Check is issued or frozen; no registry,
-supported domain/runtime, numerical contract, Public bundle, RFC disposition,
-R2-D5 completion, or Release 2 completion is promoted. Independent review is defined
-by
-`../reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md`.
+not an authoritative Protocol inventory. Its exact-head independent review is
+preserved, so the non-authoritative Group 4 candidate milestone is closed. No reason
+code or Public Check is issued or frozen; no registry, supported domain/runtime,
+numerical contract, Public bundle, RFC disposition, R2-D5 completion, or Release 2
+completion is promoted. The candidate review and closure review are defined by
+`../reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md`
+and
+`../reviews/d5-group-4-final-reason-code-inventory-closure-integration-adversarial-review-protocol.md`.
 
 ## Operation-stage support-domain candidate
 
@@ -622,9 +624,9 @@ not multiply the ULP by `|t_c|` a second time.
   authoritative Release 2 decision (without broader platform support);
 - final Protocol selection of the reviewed critical-value table bytes and content
   hash (the M3 selection remains limited to candidate confidence-interval work); and
-- independent review and preservation of the candidate resolution for the ten
-  formerly support-dependent reason-code decisions, final reason-code freeze, and
-  authoritative Public Check revision.
+- final authoritative disposition of the reviewed candidate resolution for the ten
+  formerly support-dependent reason-code decisions, reason-code freeze/issuance, and
+  authoritative Public Check revision after the RFC window.
 
 Support will be expressed as machine-testable operation-stage predicates plus a
 declared validation corpus and oracle claim. It will not be inferred from a single

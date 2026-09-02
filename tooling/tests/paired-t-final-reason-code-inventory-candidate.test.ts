@@ -33,19 +33,19 @@ function gitBlobSha1(bytes: Buffer): string {
 }
 
 describe("paired-t final reason-code inventory candidate", () => {
-  it("accepts the exact checkpoint and pins candidate boundaries", () => {
+  it("accepts the reviewed closure checkpoint and pins candidate boundaries", () => {
     const candidate = loadJson(candidatePath);
     expect(validatePairedTFinalReasonCodeInventoryCandidate(candidate)).toEqual([]);
     expect(candidate).toMatchObject({
       status: "non_authoritative_candidate",
       issuance: "unissued",
-      decision_state: "candidate_selection_pending_independent_review",
+      decision_state: "independently_reviewed_candidate_final_reason_code_inventory",
       selection_made_by_this_checkpoint: true,
-      independent_review: "pending",
+      independent_review: "complete",
       group_1_complete: true,
       group_2_complete: true,
       group_3_complete: true,
-      group_4_complete: false,
+      group_4_complete: true,
       final_reason_codes_frozen: false,
       authoritative_reason_codes_issued: false,
       supported_domain_claimed: false,
@@ -63,6 +63,31 @@ describe("paired-t final reason-code inventory candidate", () => {
       candidate_inventory_complete_for_selected_groups_1_through_3: true,
       authoritative_inventory_complete_claimed: false,
     });
+    expect(candidate.independent_review_binding).toEqual({
+      verdict: "GO",
+      blocker_count: 0,
+      should_fix_count: 0,
+      nice_to_have_count: 0,
+      reviewed_candidate_head: "1a2802000b80ed795c51984bd88f89fc6be707a0",
+      reviewed_candidate_tree: "5dee78c6fc3585df467304c4cca821a75aac3421",
+      candidate_merge: "7c88fa2645af03d163513f84887f3b609ea037f4",
+      review_commit: "ed462eea1d149eefd5da3a971c76d9424430dbce",
+      review_commit_parent: "1a2802000b80ed795c51984bd88f89fc6be707a0",
+      review_commit_tree: "9b331c946ec249cda192d304eb7ab6ff9445a6d1",
+      review_result: "review-inputs/r2-d5-group-4-final-reason-code-inventory/REVIEW-RESULT.md",
+      review_result_blob: "2b99afe46b953f56a398a5dd5ed333be13e57718",
+      preservation_head: "3566b433619a9ee9c260430de4a7030e0edadf36",
+      preservation_merge: "3668fe95a0f2c5a7beaec70156d11bc523d4dc4e",
+    });
+    expect(candidate.downstream_ordering).toEqual({
+      next_open_group: "final_r2_d5_review_and_disposition",
+      final_r2_d5_disposition: "blocked_by_rfc_window",
+      earliest_rfc_decision: "2026-09-25T20:52:54Z",
+    });
+    const reviewResult = readFileSync(
+      path.join(root, candidate.independent_review_binding.review_result),
+    );
+    expect(gitBlobSha1(reviewResult)).toBe(candidate.independent_review_binding.review_result_blob);
   });
 
   it("binds every source snapshot entry to the actual Git blob bytes", () => {
@@ -212,7 +237,7 @@ describe("paired-t final reason-code inventory candidate", () => {
     });
     expect(resolvePairedTFinalReasonCodeCandidate(candidate, "UNKNOWN_NEW_FAILURE")).toBeNull();
     const changed = clone(candidate);
-    changed.group_4_complete = true;
+    changed.group_4_complete = false;
     expect(resolvePairedTFinalReasonCodeCandidate(changed, "PAIR_COUNT_BELOW_TWO")).toBeNull();
   });
 
@@ -220,8 +245,22 @@ describe("paired-t final reason-code inventory candidate", () => {
     const candidate = loadJson(candidatePath);
     const attacks: Array<(value: Record<string, any>) => void> = [
       (value) => (value.issuance = "issued"),
-      (value) => (value.independent_review = "complete"),
-      (value) => (value.group_4_complete = true),
+      (value) => (value.independent_review = "pending"),
+      (value) => (value.group_4_complete = false),
+      (value) => (value.independent_review_binding.verdict = "NO-GO"),
+      (value) => (value.independent_review_binding.blocker_count = 1),
+      (value) => (value.independent_review_binding.reviewed_candidate_head = "0".repeat(40)),
+      (value) => (value.independent_review_binding.reviewed_candidate_tree = "0".repeat(40)),
+      (value) => (value.independent_review_binding.candidate_merge = "0".repeat(40)),
+      (value) => (value.independent_review_binding.review_commit = "0".repeat(40)),
+      (value) => (value.independent_review_binding.review_commit_parent = "0".repeat(40)),
+      (value) => (value.independent_review_binding.review_commit_tree = "0".repeat(40)),
+      (value) =>
+        (value.independent_review_binding.review_result =
+          "review-inputs/substituted/REVIEW-RESULT.md"),
+      (value) => (value.independent_review_binding.review_result_blob = "0".repeat(40)),
+      (value) => (value.independent_review_binding.preservation_head = "0".repeat(40)),
+      (value) => (value.independent_review_binding.preservation_merge = "0".repeat(40)),
       (value) => (value.final_reason_codes_frozen = true),
       (value) => (value.authoritative_reason_codes_issued = true),
       (value) => (value.supported_domain_claimed = true),
@@ -238,6 +277,8 @@ describe("paired-t final reason-code inventory candidate", () => {
       (value) => (value.source_snapshot.bindings[0].blob = "0".repeat(40)),
       (value) => value.candidate_public_check_order.reverse(),
       (value) => (value.non_promotions.r2_d5_complete = true),
+      (value) => (value.downstream_ordering.next_open_group = "release_2_complete"),
+      (value) => (value.downstream_ordering.final_r2_d5_disposition = "complete"),
       (value) => (value.downstream_ordering.earliest_rfc_decision = "2026-09-02T00:00:00Z"),
       (value) => (value.extra = true),
     ];
