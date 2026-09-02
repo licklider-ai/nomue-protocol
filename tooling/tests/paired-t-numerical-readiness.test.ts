@@ -134,10 +134,10 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
-  it("selects the Group 2 full-trace candidate only for independent review", () => {
+  it("records reviewed Group 2 closure without numerical freeze or support", () => {
     const candidate = loadReadiness();
     expect(candidate.runtime_numerical_contract_full_trace_candidate).toEqual({
-      closure: "selection_pending_independent_review",
+      closure: "reviewed_group_2_candidate_selection",
       artifact:
         "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json",
       evaluator: "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
@@ -156,8 +156,13 @@ describe("Release 2 numerical evidence readiness", () => {
       full_trace_format: "paired-t-runtime-numerical-contract-full-trace-v1",
       candidate_full_trace_predicate_selected: true,
       selection_made_by_this_increment: true,
-      independent_review: "pending",
-      group_2_complete: false,
+      independent_review: "complete",
+      group_2_complete: true,
+      reviewed_candidate_head: "adea5c12d709350cbd8d4fbf918ea8344c111000",
+      reviewed_candidate_tree: "7d56ad8f8b97b4c0baef336716a1dfc97338d3ac",
+      review_result: "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
+      review_result_blob: "fc4da85398eeda3220b0ae0f4401195db0228250",
+      review_preservation_merge: "b6bb348a22a25b82dfa940d39d017fe3c22859ff",
       numerical_contract_frozen: false,
       supported_platform_matrix: "pending",
       exact_runtime_allowlist_selected: false,
@@ -192,8 +197,23 @@ describe("Release 2 numerical evidence readiness", () => {
         value.full_trace_format = "substituted" as never;
       },
       (value) => {
-        value.independent_review = "complete" as never;
-        value.group_2_complete = true as never;
+        value.independent_review = "pending" as never;
+        value.group_2_complete = false as never;
+      },
+      (value) => {
+        value.reviewed_candidate_head = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.reviewed_candidate_tree = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_result = "review-inputs/substituted/REVIEW-RESULT.md" as never;
+      },
+      (value) => {
+        value.review_result_blob = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.review_preservation_merge = "0".repeat(40) as never;
       },
       (value) => {
         value.numerical_contract_frozen = true as never;
@@ -213,7 +233,7 @@ describe("Release 2 numerical evidence readiness", () => {
       const substituted = loadReadiness();
       attack(substituted.runtime_numerical_contract_full_trace_candidate);
       expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
-        "runtime numerical contract full-trace candidate must remain selected only for independent Group 2 review without closure, platform, support, or runtime promotion",
+        "runtime numerical contract full-trace candidate must bind the preserved exact-head review and close only Group 2 without numerical freeze, platform, support, or runtime promotion",
       );
     }
 

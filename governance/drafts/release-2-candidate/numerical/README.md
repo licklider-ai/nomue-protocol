@@ -85,11 +85,13 @@ checkpoint and aggregate readiness overlay; changing any of them fails closed.
 
 `runtime-numerical-contract-full-trace-candidate.json` is the Group 2 successor
 increment. It selects one non-authoritative candidate numerical contract and one
-executable full-trace predicate for independent review. The candidate composes the
-reviewed G4 actual trace and exact-rational truth envelope, the reviewed tail actual
-trace and input-specific truth/projection proof, the selected fixed-95 confidence-
-interval trace and same-trace endpoint-truth envelope, and the closed Group 1
-resource envelope.
+executable full-trace predicate. Its exact-head independent numerical review returned
+`GO` with no findings, and the byte-identical review result is preserved on `main`;
+Group 2 is therefore closed as a non-authoritative candidate-selection milestone. The
+candidate composes the reviewed G4 actual trace and exact-rational truth envelope,
+the reviewed tail actual trace and input-specific truth/projection proof, the selected
+fixed-95 confidence-interval trace and same-trace endpoint-truth envelope, and the
+closed Group 1 resource envelope.
 
 The executable envelope requires the tail and confidence-interval paths to contain
 the identical verified G4 trace. It binds the returned p-value and interval endpoint
@@ -98,13 +100,15 @@ reconstructs the Group 1 resource accounting, and verifies every nested componen
 before accepting. Its outer digest uses recursively key-sorted canonical JSON, so
 object-key order is non-semantic while array order and all values remain pinned.
 
-This increment selects only a candidate Group 2 graph, table, truth, projection, and
-full-trace contract. Independent review is pending, Group 2 is not closed, and the
-numerical contract is not frozen. Platform/build/runtime allowlisting, controlled-
-process enforcement, and full supported-execution admission remain the separate
-Group 3 decision. No supported domain, runtime support, comparison tolerance,
-global truth-error constant, final reason-code inventory, Public Check, bundle,
-RFC disposition, R2-D5 completion, or Release 2 completion is claimed.
+The reviewed selection remains only a candidate Group 2 graph, table, truth,
+projection, and full-trace contract; the numerical contract is not authoritative or
+frozen. Platform/build/runtime allowlisting, controlled-process enforcement, and
+full supported-execution admission are the next open Group 3 decision. No supported
+domain, runtime support, comparison tolerance, global truth-error constant, final
+reason-code inventory, Public Check, bundle, RFC disposition, R2-D5 completion, or
+Release 2 completion is claimed. The review identity and preservation merge are
+pinned by the candidate checkpoint and aggregate readiness overlay; changing any of
+them fails closed.
 
 ## Operation-stage support-domain candidate
 

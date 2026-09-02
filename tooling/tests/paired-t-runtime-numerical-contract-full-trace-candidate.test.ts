@@ -108,7 +108,7 @@ function expectRejected(result: unknown): void {
 }
 
 describe("R2-D5 Group 2 runtime numerical contract full-trace candidate", () => {
-  it("pins the Group 1 dependency, reviewed source snapshot, and review-pending boundary", () => {
+  it("binds the preserved exact-head review and closes only Group 2", () => {
     const checkpoint = loadCheckpoint();
     expect(validatePairedTRuntimeNumericalContractFullTraceCheckpoint(checkpoint)).toEqual([]);
     expect(
@@ -121,11 +121,24 @@ describe("R2-D5 Group 2 runtime numerical contract full-trace candidate", () => 
       issuance: "unissued",
       decision_group: "runtime_numerical_contract_and_full_trace_predicate",
       decision_state:
-        "candidate_runtime_numerical_contract_and_full_trace_predicate_selected_pending_independent_review",
+        "independently_reviewed_candidate_runtime_numerical_contract_and_full_trace_predicate",
       selection_made_by_this_checkpoint: true,
-      independent_review: "pending",
+      independent_review: "complete",
       group_1_dependency: "closed_with_preserved_exact_head_review",
-      group_2_complete: false,
+      group_2_complete: true,
+      independent_review_binding: {
+        verdict: "GO",
+        blocker_count: 0,
+        should_fix_count: 0,
+        nice_to_have_count: 0,
+        reviewed_candidate_head: "adea5c12d709350cbd8d4fbf918ea8344c111000",
+        reviewed_candidate_tree: "7d56ad8f8b97b4c0baef336716a1dfc97338d3ac",
+        review_commit: "813ee3a7e33bacd8d772ca7b8e51e15ecbf695c8",
+        review_commit_parent: "adea5c12d709350cbd8d4fbf918ea8344c111000",
+        review_result: "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
+        review_result_blob: "fc4da85398eeda3220b0ae0f4401195db0228250",
+        preservation_merge: "b6bb348a22a25b82dfa940d39d017fe3c22859ff",
+      },
       numerical_contract_frozen: false,
       supported_domain_claimed: false,
       runtime_support_enabled: false,
@@ -136,9 +149,9 @@ describe("R2-D5 Group 2 runtime numerical contract full-trace candidate", () => 
         platform_admission_required_separately: true,
       },
       downstream_dependency_state: {
-        supported_execution_admission: "blocked_until_group_2_independent_review_and_closure",
-        final_reason_code_inventory: "blocked_by_groups_2_and_3",
-        final_r2_d5_review_and_disposition: "blocked_by_groups_2_through_4_and_rfc_window",
+        supported_execution_admission: "next_open_after_group_2_closure",
+        final_reason_code_inventory: "blocked_by_group_3",
+        final_r2_d5_review_and_disposition: "blocked_by_groups_3_and_4_and_rfc_window",
       },
     });
 
@@ -147,6 +160,13 @@ describe("R2-D5 Group 2 runtime numerical contract full-trace candidate", () => 
       const bytes = readFileSync(path.join(repositoryRoot, binding.path as string));
       expect(gitBlobSha1(bytes), binding.role as string).toBe(binding.blob);
     }
+
+    const reviewResultBytes = readFileSync(
+      path.join(repositoryRoot, checkpoint.independent_review_binding.review_result as string),
+    );
+    expect(gitBlobSha1(reviewResultBytes)).toBe(
+      checkpoint.independent_review_binding.review_result_blob,
+    );
   });
 
   it("composes one G4 trace through tail truth, CI endpoint truth, and the resource envelope", () => {
@@ -295,8 +315,34 @@ describe("R2-D5 Group 2 runtime numerical contract full-trace candidate", () => 
         value.group_1_dependency = "pending";
       },
       (value) => {
-        value.independent_review = "complete";
-        value.group_2_complete = true;
+        value.independent_review = "pending";
+        value.group_2_complete = false;
+      },
+      (value) => {
+        value.independent_review_binding.verdict = "NO-GO";
+        value.independent_review_binding.blocker_count = 1;
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_head = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.reviewed_candidate_tree = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_commit = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_commit_parent = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.review_result =
+          "review-inputs/substituted/REVIEW-RESULT.md";
+      },
+      (value) => {
+        value.independent_review_binding.review_result_blob = "0".repeat(40);
+      },
+      (value) => {
+        value.independent_review_binding.preservation_merge = "0".repeat(40);
       },
       (value) => {
         value.selected_runtime_numerical_contract_candidate.input_scope.pair_count_maximum = 202;
