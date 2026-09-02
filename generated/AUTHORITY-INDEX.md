@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:6a9bafbe8bc51632096e33bc326b9a362b70415b78113d56810e286634c1172e)
+- authority/authority-manifest.yaml (sha256:6cd443429237c361d164b808a8578111807cff6254e757b5138ae9d34acb5133)
 
 Generation command: pnpm generate
 -->
@@ -192,6 +192,7 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-close-review-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-close-review-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-completion-steward-disposition.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-primary-source-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-repository-analysis-result.md` | informative |

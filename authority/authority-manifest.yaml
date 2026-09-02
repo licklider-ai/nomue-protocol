@@ -668,6 +668,13 @@ artifacts:
       documentation-level should-fix findings to address in or before the
       steward disposition, FND1-H04 kept open, and no Protocol-adoption
       authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-completion-steward-disposition.md
+    class: informative
+    notes: >-
+      Source-bounded steward disposition accepting the reviewed FND1-H04
+      completion evidence, recording both documentation corrections, keeping
+      FND1-H04 and the full Research Gate open, and authorizing no Protocol
+      adoption.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-
