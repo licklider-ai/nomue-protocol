@@ -1,0 +1,203 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-supported-execution-admission-evidence-candidate-1",
+  "decision_group": "supported_execution_admission",
+  "decision_state": "admission_evidence_infrastructure_pending_exact_head_evidence_and_independent_review",
+  "selection_made_by_this_checkpoint": false,
+  "group_1_dependency": "closed_with_preserved_exact_head_review",
+  "group_2_dependency": "closed_with_preserved_exact_head_review",
+  "source_snapshot": {
+    "repository_commit": "68e2cb2d8b8a6bae9991b04fca4be73bc3f6144c",
+    "repository_tree": "e4229513dbfb86f21592d9abd22e3a57a36488ff",
+    "bindings": [
+      {
+        "role": "group_1_scope_resource_selection",
+        "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+        "blob": "7d6572db31f40fb63619edadd9a2b76ff2b35d1e"
+      },
+      {
+        "role": "group_1_boundary_and_metamorphic_corpus",
+        "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json",
+        "blob": "0733d2c2f4b8e391e3224ef84164255fc4c9206c"
+      },
+      {
+        "role": "group_2_runtime_numerical_contract_selection",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json",
+        "blob": "74885507600f7fcb476af4a52d612415d68229d7"
+      },
+      {
+        "role": "group_2_full_trace_evaluator",
+        "path": "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
+        "blob": "510059f27adf6dfe10618ed4803dfe08097b9e31"
+      },
+      {
+        "role": "group_2_selection_review_result",
+        "path": "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
+        "blob": "fc4da85398eeda3220b0ae0f4401195db0228250"
+      },
+      {
+        "role": "group_2_closure_review_result",
+        "path": "review-inputs/r2-d5-group-2-runtime-numerical-contract-closure/REVIEW-RESULT.md",
+        "blob": "c24d14e8f9ea830cb9ec07815f80dc8db5c9038d"
+      },
+      {
+        "role": "reviewed_tail_supported_execution_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json",
+        "blob": "23cc96bab77f1be18be9861dc639246225d91124"
+      },
+      {
+        "role": "reviewed_tail_supported_execution_implementation",
+        "path": "tooling/src/spikes/paired-t-supported-execution-candidate.ts",
+        "blob": "25ce33117d2e1abcf2e115587e1df27af29ab4dd"
+      },
+      {
+        "role": "reviewed_tail_supported_execution_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-supported-execution-predicate-adversarial-review-disposition.md",
+        "blob": "a95cf905dbd915f0061a57cac7f75e136373def7"
+      },
+      {
+        "role": "historical_cross_runner_supplement",
+        "path": "review-inputs/r2-d5-supported-execution-predicate/REVIEW-SUPPLEMENT-H.md",
+        "blob": "cb6af5df91060ec6c025094bd1931e0e663ba9d8"
+      },
+      {
+        "role": "historical_cross_runner_comparison",
+        "path": "review-inputs/r2-d5-supported-execution-predicate/supplement-h/comparison.json",
+        "blob": "2d059e71c554a00d655d93c116ded1d0c6cdeee3"
+      },
+      {
+        "role": "supported_platform_research_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-supported-platform-primary-source-research-disposition.md",
+        "blob": "6015f45bccd10ba603d82527c408297ac45a05de"
+      },
+      {
+        "role": "pre_increment_readiness",
+        "path": "governance/drafts/release-2-candidate/numerical/evidence-readiness.json",
+        "blob": "a6fdec26cc98d4307a0cbe188deffe9c16da56d2"
+      }
+    ]
+  },
+  "proposed_runtime_build_platform_matrix": {
+    "selection_state": "single_tuple_proposed_for_exact_head_admission_evidence_only",
+    "entry_count": 1,
+    "entries": [
+      {
+        "tuple_key": "node-24.19.0-v8-13.6.233.17-node.51-linux-x64-official-binary",
+        "runtime": "node",
+        "runtime_version": "24.19.0",
+        "engine": "v8",
+        "engine_version": "13.6.233.17-node.51",
+        "platform": "linux",
+        "architecture": "x64",
+        "executable_sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12",
+        "artifact_provenance": "official_node_setup_distribution_reidentified_by_executable_sha256",
+        "historical_section_h_evidence": true,
+        "historical_section_h_optimized_entry_evidence": true,
+        "current_group_2_exact_head_evidence": "pending"
+      }
+    ],
+    "exact_runtime_allowlist_selected": false,
+    "historical_evidence_is_current_admission": false,
+    "unlisted_tuple_disposition": "candidate_admission_refusal_without_protocol_reason_code"
+  },
+  "controlled_process_profile_candidate": {
+    "profile_key": "paired-t-group-3-pure-js-permissioned-single-process-profile-1",
+    "selection_state": "implemented_for_evidence_pending_independent_review",
+    "required_node_flags": [
+      "--permission",
+      "--no-addons",
+      "--disallow-code-generation-from-strings",
+      "--frozen-intrinsics"
+    ],
+    "permitted_read_grants": "compiled_candidate_tree_and_exact_runtime_executable_only",
+    "forbidden_permissions": [
+      "addons",
+      "child_process",
+      "worker_threads",
+      "wasi",
+      "inspector",
+      "filesystem_write"
+    ],
+    "user_callbacks_during_evaluation": false,
+    "runtime_intrinsic_identity_checked_before_and_after": true,
+    "ordinary_uncontrolled_process_disposition": "candidate_admission_refusal",
+    "evidence_runner_enforces_profile": true,
+    "selected_for_supported_runtime": false
+  },
+  "candidate_predicate_composition": {
+    "environment_and_profile_guard": "tooling/src/spikes/paired-t-supported-execution-admission-evidence-candidate.ts",
+    "selected_group_2_full_trace_predicate": "paired-t-runtime-numerical-contract-full-trace-v1",
+    "selected_group_1_resource_envelope": "paired-t-d5-candidate-supported-scope-resource-bounds-1",
+    "same_invocation_environment_pre_and_post_guard": true,
+    "full_trace_reverified_before_candidate_admission": true,
+    "candidate_supported_execution_predicate_selected": false
+  },
+  "exact_head_admission_evidence_plan": {
+    "workflow": ".github/workflows/release2-paired-t-supported-execution-admission-evidence.yml",
+    "review_protocol": "governance/drafts/release-2-candidate/reviews/d5-group-3-supported-execution-admission-evidence-adversarial-review-protocol.md",
+    "collector": "tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.ts",
+    "validator": "tooling/src/spikes/validate-paired-t-supported-execution-admission-evidence.ts",
+    "modes": ["cold_first_invocation", "post_warmup_with_optimization_trace"],
+    "case_set": [
+      "minimum_pair_scope",
+      "ordinary_central_branch",
+      "ordinary_tail_branch",
+      "exact_zero_branch",
+      "maximum_pair_scope",
+      "confidence_interval_collapse_refusal"
+    ],
+    "binds": [
+      "exact_candidate_commit",
+      "runtime_engine_platform_architecture_and_executable_digest",
+      "controlled_process_flags_and_permissions",
+      "group_2_full_trace_digest",
+      "group_1_resource_envelope",
+      "tail_and_fixed_95_table_hashes",
+      "cold_hot_platform_neutral_case_projection"
+    ],
+    "current_exact_head_evidence": "pending",
+    "independent_review": "pending",
+    "cross_platform_admission_evidence_complete": false
+  },
+  "closure_state": {
+    "admission_evidence_infrastructure": "implemented_pending_independent_review",
+    "exact_runtime_build_platform_allowlist": "pending",
+    "controlled_process_profile_selection": "pending",
+    "cold_and_optimized_evidence_for_every_selected_tuple": "pending",
+    "admission_evidence_bound_to_selected_domain_graph_and_resources": "pending",
+    "supported_execution_predicate": "unselected",
+    "group_3_complete": false
+  },
+  "non_promotions": {
+    "authoritative_supported_bounds": false,
+    "numerical_contract_frozen": false,
+    "final_protocol_tables_selected": false,
+    "supported_platform_matrix": "pending",
+    "runtime_allowlist_entries": [],
+    "controlled_process_profile_enforced_for_supported_runtime": false,
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "global_truth_error_constants": null,
+    "comparison_tolerances": null,
+    "final_reason_codes_frozen": false,
+    "public_check": "unissued",
+    "supported_bundle": "unissued",
+    "rfc_25": "open",
+    "r2_d5": "incomplete",
+    "release_2": "incomplete"
+  },
+  "prohibited_claims": [
+    "selected_supported_platform_matrix",
+    "selected_exact_runtime_allowlist",
+    "selected_controlled_process_profile",
+    "complete_cross_platform_admission_evidence",
+    "selected_supported_execution_predicate",
+    "supported_domain_or_runtime",
+    "frozen_numerical_contract_or_reason_codes",
+    "issued_public_check_or_bundle",
+    "r2_d5_or_release_2_complete"
+  ]
+}

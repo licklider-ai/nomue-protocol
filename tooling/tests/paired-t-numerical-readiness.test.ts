@@ -249,6 +249,79 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records Group 3 admission-evidence infrastructure without selecting support", () => {
+    const candidate = loadReadiness();
+    expect(candidate.supported_execution_admission_evidence_candidate).toEqual({
+      closure: "infrastructure_candidate_pending_exact_head_evidence_and_independent_review",
+      artifact:
+        "governance/drafts/release-2-candidate/numerical/supported-execution-admission-evidence-candidate.json",
+      evaluator: "tooling/src/spikes/paired-t-supported-execution-admission-evidence-candidate.ts",
+      collector: "tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.ts",
+      validator: "tooling/src/spikes/validate-paired-t-supported-execution-admission-evidence.ts",
+      workflow: ".github/workflows/release2-paired-t-supported-execution-admission-evidence.yml",
+      review_protocol:
+        "governance/drafts/release-2-candidate/reviews/d5-group-3-supported-execution-admission-evidence-adversarial-review-protocol.md",
+      source_snapshot_commit: "68e2cb2d8b8a6bae9991b04fca4be73bc3f6144c",
+      group_1_complete: true,
+      group_2_complete: true,
+      proposed_matrix_entry_count: 1,
+      controlled_process_profile_implemented_for_evidence: true,
+      exact_head_cold_hot_evidence: "pending",
+      independent_review: "pending",
+      selection_made_by_this_increment: false,
+      exact_runtime_allowlist_selected: false,
+      controlled_process_profile_selected: false,
+      cross_platform_admission_evidence_complete: false,
+      supported_execution_predicate_selected: false,
+      group_3_complete: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+    });
+    expect(validatePairedTNumericalReadinessCandidate(candidate)).toEqual([]);
+
+    const attacks: Array<
+      (
+        value: PairedTNumericalReadinessCandidate["supported_execution_admission_evidence_candidate"],
+      ) => void
+    > = [
+      (value) => {
+        value.source_snapshot_commit = "0".repeat(40) as never;
+      },
+      (value) => {
+        value.proposed_matrix_entry_count = 5 as never;
+      },
+      (value) => {
+        value.exact_head_cold_hot_evidence = "complete" as never;
+      },
+      (value) => {
+        value.independent_review = "complete" as never;
+      },
+      (value) => {
+        value.selection_made_by_this_increment = true as never;
+      },
+      (value) => {
+        value.exact_runtime_allowlist_selected = true as never;
+        value.controlled_process_profile_selected = true as never;
+      },
+      (value) => {
+        value.cross_platform_admission_evidence_complete = true as never;
+        value.supported_execution_predicate_selected = true as never;
+        value.group_3_complete = true as never;
+      },
+      (value) => {
+        value.supported_domain_claimed = true as never;
+        value.runtime_support_enabled = true as never;
+      },
+    ];
+    for (const attack of attacks) {
+      const substituted = loadReadiness();
+      attack(substituted.supported_execution_admission_evidence_candidate);
+      expect(validatePairedTNumericalReadinessCandidate(substituted)).toContain(
+        "supported-execution admission-evidence infrastructure must remain exact-head-review pending and must not select or promote Group 3 support",
+      );
+    }
+  });
+
   it("keeps the numerical-contract decision candidate incomplete and non-runtime", () => {
     const candidate = loadReadiness();
     candidate.numerical_contract_decision_candidate.supported_degrees_of_freedom_max = 200 as never;

@@ -1,0 +1,143 @@
+name: Release 2 paired-t supported-execution admission evidence
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/release2-paired-t-supported-execution-admission-evidence.yml"
+      - "governance/drafts/release-2-candidate/numerical/**"
+      - "governance/drafts/release-2-candidate/reviews/d5-group-3-supported-execution-admission-evidence-adversarial-review-protocol.md"
+      - "tooling/src/spikes/paired-t-supported-execution-admission-evidence-candidate.ts"
+      - "tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.ts"
+      - "tooling/src/spikes/validate-paired-t-supported-execution-admission-evidence.ts"
+      - "tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts"
+      - "package.json"
+
+permissions:
+  contents: read
+
+jobs:
+  exact-tuple-evidence:
+    name: non-authoritative exact-tuple admission evidence
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.19.0
+          cache: pnpm
+
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+
+      - name: Confirm exact candidate head and proposed executable identity
+        shell: bash
+        env:
+          NOMUE_CANDIDATE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$NOMUE_CANDIDATE_COMMIT"
+          test "$(node -p 'process.versions.node')" = "24.19.0"
+          test "$(node -p 'process.versions.v8')" = "13.6.233.17-node.51"
+          test "$(node -p 'process.platform')" = "linux"
+          test "$(node -p 'process.arch')" = "x64"
+          node_path="$(node -p 'process.execPath')"
+          test "$(sha256sum "$node_path" | cut -d' ' -f1)" = \
+            "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+
+      - name: Compile the exact-head TypeScript graph to a read-only candidate tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          build_dir="$GITHUB_WORKSPACE/candidate-evidence/group-3/compiled"
+          mkdir -p "$build_dir"
+          pnpm exec tsc \
+            --ignoreConfig \
+            tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.ts \
+            --noEmit false \
+            --outDir "$build_dir" \
+            --rootDir . \
+            --declaration false \
+            --sourceMap false \
+            --target ES2022 \
+            --lib ES2022 \
+            --module NodeNext \
+            --moduleResolution NodeNext \
+            --types node \
+            --strict \
+            --noUncheckedIndexedAccess \
+            --noFallthroughCasesInSwitch \
+            --forceConsistentCasingInFileNames \
+            --skipLibCheck
+          mkdir -p \
+            "$build_dir/tooling/r2-paired-t-runtime-series" \
+            "$build_dir/governance/drafts/release-2-candidate/numerical"
+          cp \
+            tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json \
+            "$build_dir/tooling/r2-paired-t-runtime-series/"
+          cp \
+            governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json \
+            "$build_dir/governance/drafts/release-2-candidate/numerical/"
+          (
+            cd "$build_dir"
+            find . -type f -print0 | sort -z | xargs -0 sha256sum
+          ) > "$GITHUB_WORKSPACE/candidate-evidence/group-3/compiled-sha256.txt"
+
+      - name: Collect cold and post-warm-up evidence in the controlled process
+        shell: bash
+        env:
+          NOMUE_CANDIDATE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          evidence_dir="$GITHUB_WORKSPACE/candidate-evidence/group-3"
+          build_dir="$evidence_dir/compiled"
+          node_path="$(node -p 'process.execPath')"
+          collector="$build_dir/tooling/src/spikes/collect-paired-t-supported-execution-admission-evidence.js"
+          controlled_flags=(
+            --permission
+            --no-addons
+            --disallow-code-generation-from-strings
+            --frozen-intrinsics
+            "--allow-fs-read=$build_dir"
+            "--allow-fs-read=$node_path"
+          )
+          NODE_NO_WARNINGS=1 node "${controlled_flags[@]}" "$collector" cold \
+            > "$evidence_dir/cold.json"
+          NODE_NO_WARNINGS=1 node --trace-opt "${controlled_flags[@]}" "$collector" hot \
+            > "$evidence_dir/hot-optimization.log" \
+            2> "$evidence_dir/hot.json"
+          grep -E \
+            'runDiagnosticSentinels|buildTrace|normalizeDyadic' \
+            "$evidence_dir/hot-optimization.log" \
+            > "$evidence_dir/hot-optimization-matches.txt"
+          test -s "$evidence_dir/hot-optimization-matches.txt"
+
+      - name: Validate cold/hot identity, trace binding, and non-promotion
+        shell: bash
+        env:
+          NOMUE_CANDIDATE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          pnpm evidence:r2-paired-t-supported-execution-admission:validate \
+            candidate-evidence/group-3/cold.json \
+            candidate-evidence/group-3/hot.json \
+            "$NOMUE_CANDIDATE_COMMIT" \
+            | tee candidate-evidence/group-3/validation.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-2-paired-t-group-3-admission-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            candidate-evidence/group-3/cold.json
+            candidate-evidence/group-3/hot.json
+            candidate-evidence/group-3/hot-optimization.log
+            candidate-evidence/group-3/hot-optimization-matches.txt
+            candidate-evidence/group-3/compiled-sha256.txt
+            candidate-evidence/group-3/validation.json
+          if-no-files-found: error
+          retention-days: 90

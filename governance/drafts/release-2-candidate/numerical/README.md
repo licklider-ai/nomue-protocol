@@ -110,6 +110,40 @@ Release 2 completion is claimed. The review identity and preservation merge are
 pinned by the candidate checkpoint and aggregate readiness overlay; changing any of
 them fails closed.
 
+## Supported-execution admission-evidence infrastructure candidate
+
+`supported-execution-admission-evidence-candidate.json` begins Group 3 without
+selecting or closing it. It proposes one exact evidence tuple only: the official
+Node 24.19.0 Linux x64 binary with V8 `13.6.233.17-node.51`, identified by the
+complete executable SHA-256. The older Section H result is retained as historical
+reproducibility and optimization evidence for those bytes, but is mechanically
+forbidden from becoming current Group 2 admission evidence by itself.
+
+The candidate evaluator checks that exact tuple and requires its runner to enable
+Node's permission model, disable native addons and dynamic string compilation,
+freeze intrinsics, and grant read access only to the compiled candidate tree and
+exact executable. It confirms that addon, child-process, worker, WASI, inspector,
+and filesystem-write permissions remain denied. It repeats the identity, permission,
+intrinsic, and binary64 sentinel checks before and after one Group 2 full-trace
+evaluation and re-verifies the returned full-trace envelope. An ordinary process
+therefore refuses candidate admission.
+
+The dedicated evidence workflow compiles the exact pull-request head, records a
+complete compiled-file digest manifest, and exercises cold first-invocation and
+post-warm-up paths in separate controlled processes. The retained projection binds
+the exact head, runtime/build/platform identity, Group 2 full-trace and component
+digests, Group 1 resource envelope, both table hashes, the confidence-interval
+collapse refusal, and the fact that no support is selected or claimed. The hot run
+also retains the engine optimization trace; cold and hot case projections must be
+byte-identical.
+
+This increment is infrastructure awaiting exact-head evidence and independent
+adversarial review. The proposed tuple is not an allowlist entry, the controlled
+profile is not selected for a supported runtime, cross-platform admission is not
+complete, and the supported-execution predicate remains unselected. Group 3,
+supported domain/runtime, reason codes, Public Check/bundle issuance, RFC #25,
+R2-D5, and Release 2 all remain open.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain
