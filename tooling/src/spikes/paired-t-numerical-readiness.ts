@@ -250,6 +250,30 @@ export interface PairedTNumericalReadinessCandidate {
     final_reason_codes_frozen: false;
     runtime_support_enabled: false;
   };
+  final_reason_code_inventory_candidate: {
+    closure: "candidate_selection_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json";
+    validator: "tooling/src/spikes/paired-t-final-reason-code-inventory-candidate.ts";
+    review_protocol: "governance/drafts/release-2-candidate/reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md";
+    source_snapshot_commit: "005d902635e98bbcfaf5caa0ade4c48204cb4851";
+    group_1_complete: true;
+    group_2_complete: true;
+    group_3_complete: true;
+    candidate_public_check_count: 5;
+    record_level_reason_mapping_count: 4;
+    relationship_reason_mapping_count: 25;
+    retained_operation_stage_reason_code_candidate_count: 11;
+    declared_result_comparison_mapping_count: 12;
+    resolved_support_dependent_reason_code_decision_count: 10;
+    unresolved_support_dependent_reason_code_decision_count: 0;
+    selection_made_by_this_increment: true;
+    independent_review: "pending";
+    group_4_complete: false;
+    final_reason_codes_frozen: false;
+    authoritative_reason_codes_issued: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   g4_actual_execution_trace_candidate: {
     closure: "reviewed_g4_actual_execution_trace_candidate";
     artifact: "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json";
@@ -453,6 +477,7 @@ const TOP_LEVEL_KEYS = [
   "truth_error_support_closure_candidate",
   "tail_numerical_selection_candidate",
   "runtime_input_reason_code_candidate",
+  "final_reason_code_inventory_candidate",
   "g4_actual_execution_trace_candidate",
   "confidence_interval_numerical_closure_candidate",
   "supported_execution_predicate_candidate",
@@ -732,6 +757,31 @@ const RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS = [
   "runtime_support_enabled",
 ] as const;
 
+const FINAL_REASON_CODE_INVENTORY_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "validator",
+  "review_protocol",
+  "source_snapshot_commit",
+  "group_1_complete",
+  "group_2_complete",
+  "group_3_complete",
+  "candidate_public_check_count",
+  "record_level_reason_mapping_count",
+  "relationship_reason_mapping_count",
+  "retained_operation_stage_reason_code_candidate_count",
+  "declared_result_comparison_mapping_count",
+  "resolved_support_dependent_reason_code_decision_count",
+  "unresolved_support_dependent_reason_code_decision_count",
+  "selection_made_by_this_increment",
+  "independent_review",
+  "group_4_complete",
+  "final_reason_codes_frozen",
+  "authoritative_reason_codes_issued",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
 const G4_ACTUAL_EXECUTION_TRACE_CANDIDATE_KEYS = [
   "closure",
   "artifact",
@@ -1001,6 +1051,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     "runtime input/reason-code candidate",
     candidate.runtime_input_reason_code_candidate,
     RUNTIME_INPUT_REASON_CODE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
+    "final reason-code inventory candidate",
+    candidate.final_reason_code_inventory_candidate,
+    FINAL_REASON_CODE_INVENTORY_CANDIDATE_KEYS,
     errors,
   );
   requireExactKeys(
@@ -1436,6 +1492,43 @@ function validatePairedTNumericalReadinessCandidateInternal(
   ) {
     errors.push(
       "runtime input/reason-code candidate must remain reviewed, partial, unissued, and non-runtime",
+    );
+  }
+
+  const finalReasonCodeInventoryCandidate = candidate.final_reason_code_inventory_candidate;
+  if (
+    finalReasonCodeInventoryCandidate.closure !==
+      "candidate_selection_pending_independent_review" ||
+    finalReasonCodeInventoryCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json" ||
+    finalReasonCodeInventoryCandidate.validator !==
+      "tooling/src/spikes/paired-t-final-reason-code-inventory-candidate.ts" ||
+    finalReasonCodeInventoryCandidate.review_protocol !==
+      "governance/drafts/release-2-candidate/reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md" ||
+    finalReasonCodeInventoryCandidate.source_snapshot_commit !==
+      "005d902635e98bbcfaf5caa0ade4c48204cb4851" ||
+    finalReasonCodeInventoryCandidate.group_1_complete !== true ||
+    finalReasonCodeInventoryCandidate.group_2_complete !== true ||
+    finalReasonCodeInventoryCandidate.group_3_complete !== true ||
+    finalReasonCodeInventoryCandidate.candidate_public_check_count !== 5 ||
+    finalReasonCodeInventoryCandidate.record_level_reason_mapping_count !== 4 ||
+    finalReasonCodeInventoryCandidate.relationship_reason_mapping_count !== 25 ||
+    finalReasonCodeInventoryCandidate.retained_operation_stage_reason_code_candidate_count !== 11 ||
+    finalReasonCodeInventoryCandidate.declared_result_comparison_mapping_count !== 12 ||
+    finalReasonCodeInventoryCandidate.resolved_support_dependent_reason_code_decision_count !==
+      10 ||
+    finalReasonCodeInventoryCandidate.unresolved_support_dependent_reason_code_decision_count !==
+      0 ||
+    finalReasonCodeInventoryCandidate.selection_made_by_this_increment !== true ||
+    finalReasonCodeInventoryCandidate.independent_review !== "pending" ||
+    finalReasonCodeInventoryCandidate.group_4_complete !== false ||
+    finalReasonCodeInventoryCandidate.final_reason_codes_frozen !== false ||
+    finalReasonCodeInventoryCandidate.authoritative_reason_codes_issued !== false ||
+    finalReasonCodeInventoryCandidate.supported_domain_claimed !== false ||
+    finalReasonCodeInventoryCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "final reason-code inventory must remain a complete candidate selection pending independent review and non-authoritative",
     );
   }
 

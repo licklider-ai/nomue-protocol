@@ -1,0 +1,697 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-final-reason-code-inventory-candidate-1",
+  "decision_state": "candidate_selection_pending_independent_review",
+  "selection_made_by_this_checkpoint": true,
+  "independent_review": "pending",
+  "group_1_complete": true,
+  "group_2_complete": true,
+  "group_3_complete": true,
+  "group_4_complete": false,
+  "final_reason_codes_frozen": false,
+  "authoritative_reason_codes_issued": false,
+  "supported_domain_claimed": false,
+  "runtime_support_enabled": false,
+  "source_snapshot": {
+    "commit": "005d902635e98bbcfaf5caa0ade4c48204cb4851",
+    "tree": "027f1cd65639f1afe646a0cee31bb9bfbb15430f",
+    "bindings": [
+      {
+        "role": "closure_gap_review",
+        "path": "review-inputs/r2-d5-closure-gap-checkpoint/REVIEW-RESULT.md",
+        "blob": "d2bd2c1c87fa2569fb2c7f9a277e855e8952147b"
+      },
+      {
+        "role": "reviewed_partial_reason_inventory",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-input-reason-code-candidate.json",
+        "blob": "89a4babdd8c2fb3eb3accde681d30d726017f21d"
+      },
+      {
+        "role": "partial_reason_inventory_review",
+        "path": "review-inputs/r2-d5-runtime-input-reason-code-candidate/REVIEW-RESULT.md",
+        "blob": "761af1dbc440b98ef0eb9f3495b5ceac567149aa"
+      },
+      {
+        "role": "candidate_identifier_inventory",
+        "path": "governance/drafts/release-2-candidate/protocol-identifiers.json",
+        "blob": "fb1c27d919c670dc89f59e14ffea0d8d3b33da55"
+      },
+      {
+        "role": "candidate_profile_schema",
+        "path": "governance/drafts/release-2-candidate/schemas/paired-two-condition-continuous-0.1.candidate.schema.json",
+        "blob": "84f80b3f076f01be9c6459ff7be1c1fce01fc64d"
+      },
+      {
+        "role": "candidate_fixture_manifest",
+        "path": "governance/drafts/release-2-candidate/fixtures/manifest.json",
+        "blob": "10c9656fef00ff4fc6f62243565e1bf49d3d2322"
+      },
+      {
+        "role": "candidate_relationship_evaluator",
+        "path": "tooling/src/spikes/release-2-candidate.ts",
+        "blob": "020fb491de6c601dafce53d7965e67086e1f007d"
+      },
+      {
+        "role": "candidate_projection_classifier",
+        "path": "tooling/src/spikes/paired-t-numerical-contract-candidate.ts",
+        "blob": "8978b4e08dba35b0f2310823a1c4ce8b46a78009"
+      },
+      {
+        "role": "candidate_tail_series_evaluator",
+        "path": "tooling/src/spikes/paired-t-runtime-series-candidate.ts",
+        "blob": "eca3aaecd36f284a3659c49248a04ece1d9b7c41"
+      },
+      {
+        "role": "candidate_truth_error_evaluator",
+        "path": "tooling/src/spikes/paired-t-truth-error-support-candidate.ts",
+        "blob": "ef152cbe60bfdc492dc2c5afd3c7d67b25e9188b"
+      },
+      {
+        "role": "candidate_g4_trace_evaluator",
+        "path": "tooling/src/spikes/paired-t-g4-execution-trace-candidate.ts",
+        "blob": "53432184abd54bd4c251f3b1a3faa7b4ba19aa44"
+      },
+      {
+        "role": "candidate_ci_trace_evaluator",
+        "path": "tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts",
+        "blob": "42fb87f63614e87492ca90b59e76484ecf550170"
+      },
+      {
+        "role": "reviewed_tail_supported_execution_evaluator",
+        "path": "tooling/src/spikes/paired-t-supported-execution-candidate.ts",
+        "blob": "25ce33117d2e1abcf2e115587e1df27af29ab4dd"
+      },
+      {
+        "role": "group_1_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+        "blob": "7d6572db31f40fb63619edadd9a2b76ff2b35d1e"
+      },
+      {
+        "role": "group_1_closure_review",
+        "path": "review-inputs/r2-d5-group-1-scope-resource-closure/REVIEW-RESULT.md",
+        "blob": "93df75802fbadc03c41a0547a261439658016559"
+      },
+      {
+        "role": "group_2_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json",
+        "blob": "74885507600f7fcb476af4a52d612415d68229d7"
+      },
+      {
+        "role": "group_2_closure_review",
+        "path": "review-inputs/r2-d5-group-2-runtime-numerical-contract-closure/REVIEW-RESULT.md",
+        "blob": "c24d14e8f9ea830cb9ec07815f80dc8db5c9038d"
+      },
+      {
+        "role": "group_3_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/supported-execution-selection-candidate.json",
+        "blob": "2b90bf761693b93dae53870acadf67599aba1f06"
+      },
+      {
+        "role": "group_3_closure_review",
+        "path": "review-inputs/r2-d5-group-3-supported-execution-closure/REVIEW-RESULT.md",
+        "blob": "02336912dceac4840eba627fe3f22ff60bb9bbcd"
+      },
+      {
+        "role": "issued_reason_code_registry",
+        "path": "registries/reason-codes.yaml",
+        "blob": "083fcb89b542a239ad6e1488c66602089a99491f"
+      },
+      {
+        "role": "issued_public_check_registry",
+        "path": "registries/public-checks.yaml",
+        "blob": "1d155cf2c31835ee33d2700ab7d3663e58bf7a44"
+      },
+      {
+        "role": "group_2_full_trace_evaluator",
+        "path": "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
+        "blob": "510059f27adf6dfe10618ed4803dfe08097b9e31"
+      },
+      {
+        "role": "group_3_selection_evaluator",
+        "path": "tooling/src/spikes/paired-t-supported-execution-selection-candidate.ts",
+        "blob": "c02e62caf4b22d6a542d5b18b85459b13d5620df"
+      },
+      {
+        "role": "group_3_admission_evaluator",
+        "path": "tooling/src/spikes/paired-t-supported-execution-admission-evidence-candidate.ts",
+        "blob": "b5b1340e67b3084743588e4aae3abb8649e00c13"
+      }
+    ]
+  },
+  "candidate_public_check_order": [
+    {
+      "ordinal": 1,
+      "key": "record_conformance_check",
+      "candidate_spelling": "https://nomue.ai/id/check/record-conformance/0.3.0-draft.1",
+      "state": "unissued"
+    },
+    {
+      "ordinal": 2,
+      "key": "record_integrity_check",
+      "candidate_spelling": "https://nomue.ai/id/check/record-integrity/0.3.0-draft.1",
+      "state": "unissued"
+    },
+    {
+      "ordinal": 3,
+      "key": "paired_profile_admissibility_check",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-profile-admissibility/0.1.0-draft.1",
+      "state": "unissued"
+    },
+    {
+      "ordinal": 4,
+      "key": "paired_t_computability_check",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-t-computability/0.1.0-draft.1",
+      "state": "unissued"
+    },
+    {
+      "ordinal": 5,
+      "key": "paired_t_recompute_check",
+      "candidate_spelling": "https://nomue.ai/id/check/paired-t-recompute/0.1.0-draft.1",
+      "state": "unissued"
+    }
+  ],
+  "inventory_completeness": {
+    "candidate_public_check_count": 5,
+    "record_level_reason_mapping_count": 4,
+    "relationship_source_classification_count": 25,
+    "retained_operation_stage_reason_code_candidate_count": 11,
+    "declared_result_comparison_mapping_count": 12,
+    "resolved_support_dependent_reason_code_decision_count": 10,
+    "unresolved_support_dependent_reason_code_decision_count": 0,
+    "runtime_source_classifications_are_routed_or_internal": true,
+    "candidate_inventory_complete_for_selected_groups_1_through_3": true,
+    "authoritative_inventory_complete_claimed": false
+  },
+  "record_level_reason_mappings": [
+    {
+      "source_classification": "record_schema_invalid",
+      "reason_code": "NRS-SCHEMA-INVALID",
+      "reason_code_state": "registered_reuse",
+      "candidate_check_key": "record_conformance_check"
+    },
+    {
+      "source_classification": "record_semantic_conformance_failed",
+      "reason_code": "NRS-SEMANTIC-CONFORMANCE-FAILED",
+      "reason_code_state": "registered_reuse",
+      "candidate_check_key": "record_conformance_check"
+    },
+    {
+      "source_classification": "record_digest_mismatch",
+      "reason_code": "NRS-DIGEST-MISMATCH",
+      "reason_code_state": "registered_reuse",
+      "candidate_check_key": "record_integrity_check"
+    },
+    {
+      "source_classification": "record_canonicalization_failed",
+      "reason_code": "NRS-CANONICALIZATION-FAILED",
+      "reason_code_state": "registered_reuse",
+      "candidate_check_key": "record_integrity_check"
+    }
+  ],
+  "relationship_reason_mappings": [
+    {
+      "source_classification": "DATASET_REFERENCE_MISMATCH",
+      "reason_code": "NRS-DATASET-REFERENCE-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "DESIGN_REFERENCE_MISMATCH",
+      "reason_code": "NRS-DESIGN-REFERENCE-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "ANALYSIS_REFERENCE_MISMATCH",
+      "reason_code": "NRS-ANALYSIS-REFERENCE-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "DUPLICATE_CONDITION_ID",
+      "reason_code": "NRS-DUPLICATE-CONDITION-ID",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "CONDITION_ORDER_MISMATCH",
+      "reason_code": "NRS-CONDITION-ORDER-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "DUPLICATE_OBSERVATION_ID",
+      "reason_code": "NRS-DUPLICATE-OBSERVATION-ID",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "UNKNOWN_CONDITION",
+      "reason_code": "NRS-UNKNOWN-CONDITION",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "EXPERIMENTAL_UNIT_REUSED_ACROSS_PAIRS",
+      "reason_code": "NRS-EXPERIMENTAL-UNIT-REUSED-ACROSS-PAIRS",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "DUPLICATE_PAIR_CONDITION",
+      "reason_code": "NRS-DUPLICATE-PAIR-CONDITION",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "PAIR_COUNT_BELOW_TWO",
+      "reason_code": "NRS-PAIRED-T-PAIR-COUNT-BELOW-TWO",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "INCOMPLETE_PAIR",
+      "reason_code": "NRS-INCOMPLETE-PAIR",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "EXPERIMENTAL_UNIT_DECLARATION_MISMATCH",
+      "reason_code": "NRS-EXPERIMENTAL-UNIT-DECLARATION-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "PAIR_SUMMARY_COUNT_MISMATCH",
+      "reason_code": "NRS-PAIR-SUMMARY-COUNT-MISMATCH",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "PAIR_INDEPENDENCE_NOT_DECLARED",
+      "reason_code": "NRS-PAIR-INDEPENDENCE-NOT-DECLARED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "CLUSTERING_UNSUPPORTED",
+      "reason_code": "NRS-CLUSTERING-NOT-SUPPORTED",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "ANALYSIS_POPULATION_UNSUPPORTED",
+      "reason_code": "NRS-SUBSET-ANALYSIS-NOT-SUPPORTED",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "MISSING_OUTCOMES_UNSUPPORTED",
+      "reason_code": "NRS-MISSING-OUTCOMES-NOT-SUPPORTED",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "TRANSFORMATION_UNSUPPORTED",
+      "reason_code": "NRS-TRANSFORMATION-NOT-SUPPORTED",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "WEIGHTING_UNSUPPORTED",
+      "reason_code": "NRS-WEIGHTING-NOT-SUPPORTED",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "ALTERNATIVE_UNSUPPORTED",
+      "reason_code": "NRS-UNSUPPORTED-ALTERNATIVE",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "MODEL_UNSUPPORTED",
+      "reason_code": "NRS-PAIRED-DIFFERENCE-MODEL-NOT-SUPPORTED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "ESTIMAND_UNSUPPORTED",
+      "reason_code": "NRS-UNSUPPORTED-ESTIMAND",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "DIRECTION_UNSUPPORTED",
+      "reason_code": "NRS-PAIRED-DIFFERENCE-DIRECTION-NOT-SUPPORTED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "CONFIDENCE_LEVEL_UNSUPPORTED",
+      "reason_code": "NRS-CONFIDENCE-LEVEL-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "source_classification": "RESULT_CONFIDENCE_LEVEL_MISMATCH",
+      "reason_code": "NRS-CONFIDENCE-LEVEL-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    }
+  ],
+  "retained_operation_stage_reason_code_candidates": [
+    {
+      "ordinal": 1,
+      "source_spike_error": "PAIR_COUNT_BELOW_TWO",
+      "failure_class": "contract_computability",
+      "readiness_key": "fewer_than_two_pairs",
+      "candidate_reason_code": "NRS-PAIRED-T-PAIR-COUNT-BELOW-TWO",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 2,
+      "source_spike_error": "DIFFERENCE_OVERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "difference_overflow",
+      "candidate_reason_code": "NRS-PAIRED-T-DIFFERENCE-OVERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 3,
+      "source_spike_error": "ZERO_DIFFERENCE_VARIANCE",
+      "failure_class": "contract_computability",
+      "readiness_key": "exact_paired_differences_all_equal",
+      "candidate_reason_code": "NRS-PAIRED-T-ZERO-DIFFERENCE-VARIANCE",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 4,
+      "source_spike_error": "DIFFERENCE_VARIANCE_ERASED_BY_ROUNDING",
+      "failure_class": "binary64_computability",
+      "readiness_key": "difference_variance_erased_by_rounding",
+      "candidate_reason_code": "NRS-PAIRED-T-DIFFERENCE-VARIANCE-ERASED-BY-ROUNDING",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 5,
+      "source_spike_error": "MEAN_ACCUMULATION_OVERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "mean_accumulation_overflow",
+      "candidate_reason_code": "NRS-PAIRED-T-MEAN-ACCUMULATION-OVERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 6,
+      "source_spike_error": "CENTERING_OVERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "centering_overflow",
+      "candidate_reason_code": "NRS-PAIRED-T-CENTERING-OVERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 7,
+      "source_spike_error": "SQUARED_DEVIATION_OVERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "squared_deviation_overflow",
+      "candidate_reason_code": "NRS-PAIRED-T-SQUARED-DEVIATION-OVERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 8,
+      "source_spike_error": "VARIANCE_ACCUMULATION_OVERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "variance_accumulation_overflow",
+      "candidate_reason_code": "NRS-PAIRED-T-VARIANCE-ACCUMULATION-OVERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 9,
+      "source_spike_error": "VARIANCE_UNDERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "variance_underflow",
+      "candidate_reason_code": "NRS-PAIRED-T-VARIANCE-UNDERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 10,
+      "source_spike_error": "STANDARD_ERROR_SQUARED_UNDERFLOW",
+      "failure_class": "binary64_computability",
+      "readiness_key": "standard_error_squared_underflow",
+      "candidate_reason_code": "NRS-PAIRED-T-STANDARD-ERROR-SQUARED-UNDERFLOW",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    },
+    {
+      "ordinal": 11,
+      "source_spike_error": "NON_FINITE_INTERMEDIATE",
+      "failure_class": "binary64_computability",
+      "readiness_key": "non_finite_later_intermediate",
+      "candidate_reason_code": "NRS-PAIRED-T-NON-FINITE-INTERMEDIATE",
+      "candidate_check_key": "paired_t_computability_check",
+      "state": "candidate_unissued"
+    }
+  ],
+  "declared_result_comparison_mappings": [
+    {
+      "result_path": "pair_summary.n_pairs",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "pair_summary.mean_difference",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "pair_summary.sample_variance_difference",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.estimate",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.standard_error",
+      "reason_code": "NRS-STANDARD-ERROR-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.confidence_interval.confidence_level",
+      "reason_code": "NRS-CONFIDENCE-LEVEL-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.confidence_interval.lower",
+      "reason_code": "NRS-CONFIDENCE-INTERVAL-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.confidence_interval.upper",
+      "reason_code": "NRS-CONFIDENCE-INTERVAL-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "test.test_statistic",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "test.degrees_of_freedom",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "test.p_value",
+      "reason_code": "NRS-DECLARED-RESULT-MISMATCH",
+      "reason_code_state": "registered_reuse"
+    },
+    {
+      "result_path": "effect_estimate.confidence_interval.lower_upper_order",
+      "reason_code": "NRS-CONFIDENCE-INTERVAL-ORDER-INVALID",
+      "reason_code_state": "registered_reuse"
+    }
+  ],
+  "resolved_support_dependent_reason_code_decisions": [
+    {
+      "decision_key": "supported_degrees_of_freedom_range",
+      "source_classification": "outside_evidence_evaluation_range",
+      "reason_code": "NRS-PAIRED-T-DEGREES-OF-FREEDOM-OUTSIDE-SUPPORTED-RANGE",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_1_pair_df_scope"
+    },
+    {
+      "decision_key": "positive_series_iteration_cap",
+      "source_classification": "positive_series_iteration_cap_reached",
+      "reason_code": "NRS-PAIRED-T-RESOURCE-ENVELOPE-EXCEEDED",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_1_resource_envelope"
+    },
+    {
+      "decision_key": "truth_error_proof_precondition",
+      "source_classification": "truth_error_proof_precondition_failed",
+      "reason_code": "NRS-PAIRED-T-TRUTH-ERROR-PROOF-PRECONDITION-FAILED",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_2_truth_contract_and_group_3_execution_predicate"
+    },
+    {
+      "decision_key": "truth_error_bound_formation",
+      "source_classification": "truth_error_bound_not_finite",
+      "reason_code": "NRS-PAIRED-T-TRUTH-ERROR-BOUND-NOT-FINITE",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_2_input_specific_truth_contract"
+    },
+    {
+      "decision_key": "projection_margin",
+      "source_classification": "projection_margin_not_established",
+      "reason_code": "NRS-PAIRED-T-PROJECTION-MARGIN-NOT-ESTABLISHED",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_2_strict_pointwise_projection_contract"
+    },
+    {
+      "decision_key": "positive_subnormal_p_value",
+      "source_classification": "refuse_positive_subnormal",
+      "reason_code": "NRS-PAIRED-T-P-VALUE-SUBNORMAL",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_2_binary64_projection_contract"
+    },
+    {
+      "decision_key": "positive_p_value_not_representable",
+      "source_classification": "refuse_positive_tail_not_representable",
+      "reason_code": "NRS-P-VALUE-UNDERFLOW",
+      "reason_code_state": "registered_reuse",
+      "resolved_by": "closed_group_2_binary64_projection_contract"
+    },
+    {
+      "decision_key": "confidence_interval_endpoint_collapse",
+      "source_classification": "confidence_interval_endpoint_collapse",
+      "reason_code": "NRS-PAIRED-T-CONFIDENCE-INTERVAL-ENDPOINT-COLLAPSE",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_2_confidence_interval_endpoint_contract"
+    },
+    {
+      "decision_key": "supported_platform_predicate",
+      "source_classification": "unsupported_platform",
+      "reason_code": "NRS-PAIRED-T-SUPPORTED-EXECUTION-NOT-ESTABLISHED",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_group_3_exact_tuple_and_controlled_process_predicate"
+    },
+    {
+      "decision_key": "subnormal_intermediate_first_failure",
+      "source_classification": "subnormal_intermediate_outside_supported_scope",
+      "reason_code": "NRS-PAIRED-T-SUBNORMAL-INTERMEDIATE-OUTSIDE-SUPPORTED-SCOPE",
+      "reason_code_state": "candidate_unissued",
+      "resolved_by": "closed_groups_1_and_2_operation_order_and_full_trace_contract"
+    }
+  ],
+  "runtime_classification_routing": [
+    {
+      "source_classification": "candidate_supported_execution_predicate_refusal",
+      "routing": "delegate_to_upstream_classification"
+    },
+    {
+      "source_classification": "runtime_build_platform_tuple_mismatch",
+      "reason_code": "NRS-PAIRED-T-SUPPORTED-EXECUTION-NOT-ESTABLISHED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "controlled_process_profile_not_established",
+      "reason_code": "NRS-PAIRED-T-SUPPORTED-EXECUTION-NOT-ESTABLISHED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "execution_diagnostic_failed",
+      "reason_code": "NRS-PAIRED-T-SUPPORTED-EXECUTION-NOT-ESTABLISHED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "group_2_full_trace_refusal",
+      "routing": "delegate_to_upstream_classification"
+    },
+    {
+      "source_classification": "g4_tail_stage_refusal",
+      "routing": "delegate_to_upstream_classification"
+    },
+    {
+      "source_classification": "ci_truth_stage_refusal",
+      "routing": "delegate_to_upstream_classification"
+    },
+    {
+      "source_classification": "runtime_graph_refusal",
+      "routing": "delegate_to_graph_classification"
+    },
+    {
+      "source_classification": "resource_envelope_refusal",
+      "reason_code": "NRS-PAIRED-T-RESOURCE-ENVELOPE-EXCEEDED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "execution_trace_resource_bound_exceeded",
+      "reason_code": "NRS-PAIRED-T-RESOURCE-ENVELOPE-EXCEEDED",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "non_finite_candidate_intermediate",
+      "reason_code": "NRS-PAIRED-T-NON-FINITE-INTERMEDIATE",
+      "reason_code_state": "candidate_unissued"
+    },
+    {
+      "source_classification": "non_finite_ci_intermediate",
+      "reason_code": "NRS-PAIRED-T-NON-FINITE-INTERMEDIATE",
+      "reason_code_state": "candidate_unissued"
+    }
+  ],
+  "internal_only_classifications": [
+    "invalid_candidate_input",
+    "candidate_constant_table_unavailable",
+    "proof_graph_reproduction_mismatch",
+    "refuse_negative_zero",
+    "refuse_invalid_probability",
+    "environment_changed_during_evaluation",
+    "group_2_full_trace_reverification_failed",
+    "same_trace_binding_mismatch",
+    "full_trace_verification_failed",
+    "trace_verification_failed",
+    "output_invariant_failed",
+    "selection_evaluation_failed_closed"
+  ],
+  "internal_failure_reason_code": {
+    "reason_code": "NRS-INTERNAL-VERIFIER-ERROR",
+    "reason_code_state": "registered_reuse",
+    "record_caused": false,
+    "public_check_attribution": "none"
+  },
+  "check_ownership": {
+    "record_level": "candidate_check_key_on_each_mapping",
+    "relationship_default": "paired_profile_admissibility_check",
+    "relationship_exception": {
+      "source_classification": "PAIR_COUNT_BELOW_TWO",
+      "candidate_check_key": "paired_t_computability_check"
+    },
+    "operation_stage": "candidate_check_key_on_each_retained_entry",
+    "declared_result_comparison": "paired_t_recompute_check",
+    "support_dependent_and_runtime": "paired_t_computability_check",
+    "delegated": "owner_of_delegated_upstream_classification",
+    "internal_only": "none"
+  },
+  "downstream_ordering": {
+    "next_open_group": "group_4_closure_synchronization_after_independent_review_and_preservation",
+    "final_r2_d5_disposition": "blocked_by_group_4_closure_and_rfc_window",
+    "earliest_rfc_decision": "2026-09-25T20:52:54Z"
+  },
+  "non_promotions": {
+    "authoritative_supported_bounds": false,
+    "numerical_contract_frozen": false,
+    "final_runtime_tables_selected": false,
+    "authoritative_platform_allowlist_issued": false,
+    "authoritative_controlled_process_profile_issued": false,
+    "authoritative_supported_execution_predicate_issued": false,
+    "supported_domain_claimed": false,
+    "runtime_support_enabled": false,
+    "global_truth_error_constants_selected": false,
+    "comparison_tolerances_selected": false,
+    "reason_codes_frozen": false,
+    "public_checks_issued": false,
+    "bundle_issued": false,
+    "r2_d5_complete": false,
+    "release_2_complete": false
+  },
+  "prohibited_claims": [
+    "authoritative_reason_code_issuance",
+    "final_reason_code_freeze",
+    "authoritative_public_check_or_bundle",
+    "supported_domain_or_runtime",
+    "authoritative_supported_execution",
+    "rfc_disposition",
+    "r2_d5_completion",
+    "release_2_completion"
+  ]
+}

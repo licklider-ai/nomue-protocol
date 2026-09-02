@@ -505,6 +505,57 @@ describe("Release 2 numerical evidence readiness", () => {
     );
   });
 
+  it("records the complete Group 4 candidate inventory without review or issuance promotion", () => {
+    const candidate = loadReadiness();
+    expect(candidate.final_reason_code_inventory_candidate).toEqual({
+      closure: "candidate_selection_pending_independent_review",
+      artifact:
+        "governance/drafts/release-2-candidate/numerical/final-reason-code-inventory-candidate.json",
+      validator: "tooling/src/spikes/paired-t-final-reason-code-inventory-candidate.ts",
+      review_protocol:
+        "governance/drafts/release-2-candidate/reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md",
+      source_snapshot_commit: "005d902635e98bbcfaf5caa0ade4c48204cb4851",
+      group_1_complete: true,
+      group_2_complete: true,
+      group_3_complete: true,
+      candidate_public_check_count: 5,
+      record_level_reason_mapping_count: 4,
+      relationship_reason_mapping_count: 25,
+      retained_operation_stage_reason_code_candidate_count: 11,
+      declared_result_comparison_mapping_count: 12,
+      resolved_support_dependent_reason_code_decision_count: 10,
+      unresolved_support_dependent_reason_code_decision_count: 0,
+      selection_made_by_this_increment: true,
+      independent_review: "pending",
+      group_4_complete: false,
+      final_reason_codes_frozen: false,
+      authoritative_reason_codes_issued: false,
+      supported_domain_claimed: false,
+      runtime_support_enabled: false,
+    });
+
+    for (const attack of [
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.independent_review = "complete" as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.group_4_complete = true as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.unresolved_support_dependent_reason_code_decision_count = 1 as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.final_reason_codes_frozen = true as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.authoritative_reason_codes_issued = true as never),
+      (value: PairedTNumericalReadinessCandidate["final_reason_code_inventory_candidate"]) =>
+        (value.runtime_support_enabled = true as never),
+    ]) {
+      const changed = loadReadiness();
+      attack(changed.final_reason_code_inventory_candidate);
+      expect(validatePairedTNumericalReadinessCandidate(changed)).toContain(
+        "final reason-code inventory must remain a complete candidate selection pending independent review and non-authoritative",
+      );
+    }
+  });
+
   it("records reviewed G4 truth, tail, and confidence-interval composition without support", () => {
     const candidate = loadReadiness();
     candidate.g4_actual_execution_trace_candidate.maximum_values_are_supported_resource_bounds =
@@ -706,6 +757,17 @@ describe("Release 2 numerical evidence readiness", () => {
     )["supported"] = true;
     expect(validatePairedTNumericalReadinessCandidate(runtimeInputReasonCode)).toContain(
       "runtime input/reason-code candidate: keys are incomplete or contain an undeclared item",
+    );
+
+    const finalReasonCodeInventory = loadReadiness();
+    (
+      finalReasonCodeInventory.final_reason_code_inventory_candidate as unknown as Record<
+        string,
+        unknown
+      >
+    )["issued"] = true;
+    expect(validatePairedTNumericalReadinessCandidate(finalReasonCodeInventory)).toContain(
+      "final reason-code inventory candidate: keys are incomplete or contain an undeclared item",
     );
 
     const g4Trace = loadReadiness();

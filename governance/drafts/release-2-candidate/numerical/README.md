@@ -161,6 +161,32 @@ an authoritative allowlist, controlled-process profile, or supported-execution
 predicate. Supported domain/runtime, final reason codes, Public Check/bundle
 issuance, RFC #25, R2-D5, and Release 2 all remain open.
 
+## Final reason-code inventory candidate
+
+`final-reason-code-inventory-candidate.json` is the Group 4 selection increment. It
+retains all eleven independently reviewed operation-stage candidate entries without
+changing their spelling, order, ownership, or unissued state. It enumerates all 25
+relationship classifications emitted by the candidate profile evaluator, the twelve
+declared-result comparison fields, and the runtime wrapper classifications that must
+either propagate a record-caused reason or remain internal-only.
+
+The ten decisions that the partial inventory deferred are now resolved as candidate
+vocabulary against the closed Groups 1–3 boundaries: df/resource scope, truth-proof
+and bound formation, projection margin and p-value format, confidence-interval
+endpoint collapse, exact supported execution, and subnormal intermediate scope. The
+selection deliberately reuses an issued reason only when its existing meaning is
+identical; new paired-t spellings remain `candidate_unissued` and collision-free.
+Internal verifier, configuration, invariant, and malformed pre-check failures are
+not attributed to the Record.
+
+This candidate completes an inventory for the selected Groups 1–3 candidate surface,
+not an authoritative Protocol inventory. Its independent review is pending and Group
+4 remains open. No reason code or Public Check is issued or frozen; no registry,
+supported domain/runtime, numerical contract, Public bundle, RFC disposition,
+R2-D5 completion, or Release 2 completion is promoted. Independent review is defined
+by
+`../reviews/d5-group-4-final-reason-code-inventory-adversarial-review-protocol.md`.
+
 ## Operation-stage support-domain candidate
 
 `support-domain-candidate.json` is the first machine-readable support-domain
@@ -596,7 +622,8 @@ not multiply the ULP by `|t_c|` a second time.
   authoritative Release 2 decision (without broader platform support);
 - final Protocol selection of the reviewed critical-value table bytes and content
   hash (the M3 selection remains limited to candidate confidence-interval work); and
-- the ten support-dependent reason-code decisions, final reason-code freeze, and
+- independent review and preservation of the candidate resolution for the ten
+  formerly support-dependent reason-code decisions, final reason-code freeze, and
   authoritative Public Check revision.
 
 Support will be expressed as machine-testable operation-stage predicates plus a
