@@ -663,9 +663,11 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-01-nonclinical-estimand-primary-source-completion-close-review-result.md
     class: informative
     notes: >-
-      Pending close-review result for the completed FND1-H04 primary-source
-      result; supplies no verdict and creates no hold-closure or
-      Protocol-adoption authority until completed and reviewed.
+      Completed close review of the FND1-H04 primary-source completion result:
+      GO after direct inspection of both mandatory source artifacts, with two
+      documentation-level should-fix findings to address in or before the
+      steward disposition, FND1-H04 kept open, and no Protocol-adoption
+      authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-

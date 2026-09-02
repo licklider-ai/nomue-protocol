@@ -68,11 +68,13 @@ review. Neither the package nor the result authorizes Protocol adoption.
 The
 [`completion close-review commission`](2026-09-01-nonclinical-estimand-primary-source-completion-close-review-commission.md)
 and its
-[`pending result`](2026-09-01-nonclinical-estimand-primary-source-completion-close-review-result.md)
-require direct inspection of the two load-bearing source artifacts before any
-review verdict. This review assesses whether the completed result is eligible
-for a steward disposition while keeping `FND1-H04` open; it performs no new
-source-completion research and creates no Protocol-adoption authority.
+[`completed result`](2026-09-01-nonclinical-estimand-primary-source-completion-close-review-result.md)
+record `GO` after direct inspection of both load-bearing source artifacts. The
+review upholds the load-bearing claims and `DEFER / KEEP_OPEN` disposition,
+records two documentation-level `SHOULD_FIX` findings concerning the `D14`
+search record and the `SRC-06` extent, and requires those corrections in or
+before the steward disposition. `FND1-H04` remains open; the review performs no
+new source-completion research and creates no Protocol-adoption authority.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
