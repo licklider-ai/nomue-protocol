@@ -75,6 +75,12 @@ records two documentation-level `SHOULD_FIX` findings concerning the `D14`
 search record and the `SRC-06` extent, and requires those corrections in or
 before the steward disposition. `FND1-H04` remains open; the review performs no
 new source-completion research and creates no Protocol-adoption authority.
+The
+[`completion steward disposition`](2026-09-02-nonclinical-estimand-completion-steward-disposition.md)
+accepts the reviewed completion result as bounded evidence, records the close
+review's two documentation corrections, and keeps `FND1-H04` open on the
+potential-outcomes lineage and non-clinical terminal-event residuals. It closes
+no Research Gate and authorizes no Protocol change.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
