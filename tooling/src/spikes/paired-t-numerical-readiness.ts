@@ -45,6 +45,32 @@ export interface PairedTNumericalReadinessCandidate {
     supported_domain_claimed: false;
     runtime_support_enabled: false;
   };
+  runtime_numerical_contract_full_trace_candidate: {
+    closure: "selection_pending_independent_review";
+    artifact: "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json";
+    evaluator: "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts";
+    review_protocol: "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md";
+    source_snapshot_commit: "9d53f7b9ae2e6059eb8b6d9f1e3ca70002f8f24f";
+    group_1_complete: true;
+    selected_pair_count_minimum: 2;
+    selected_pair_count_maximum: 201;
+    selected_degrees_of_freedom_minimum: 1;
+    selected_degrees_of_freedom_maximum: 200;
+    selected_tail_table_content_hash: "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08";
+    selected_fixed_95_table_content_hash: "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0";
+    full_trace_format: "paired-t-runtime-numerical-contract-full-trace-v1";
+    candidate_full_trace_predicate_selected: true;
+    selection_made_by_this_increment: true;
+    independent_review: "pending";
+    group_2_complete: false;
+    numerical_contract_frozen: false;
+    supported_platform_matrix: "pending";
+    exact_runtime_allowlist_selected: false;
+    controlled_process_profile_enforced: false;
+    supported_execution_predicate_selected: false;
+    supported_domain_claimed: false;
+    runtime_support_enabled: false;
+  };
   numerical_contract_decision_candidate: {
     closure: "incomplete";
     artifact: "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json";
@@ -351,6 +377,7 @@ const TOP_LEVEL_KEYS = [
   "comparison_tolerances",
   "support_domain_predicate_candidate",
   "candidate_supported_scope_resource_bounds",
+  "runtime_numerical_contract_full_trace_candidate",
   "numerical_contract_decision_candidate",
   "runtime_series_evaluation_candidate",
   "runtime_inverse_beta_table_evidence_candidate",
@@ -418,6 +445,33 @@ const CANDIDATE_SUPPORTED_SCOPE_RESOURCE_BOUND_KEYS = [
   "review_result",
   "review_result_blob",
   "review_preservation_merge",
+  "supported_domain_claimed",
+  "runtime_support_enabled",
+] as const;
+
+const RUNTIME_NUMERICAL_CONTRACT_FULL_TRACE_CANDIDATE_KEYS = [
+  "closure",
+  "artifact",
+  "evaluator",
+  "review_protocol",
+  "source_snapshot_commit",
+  "group_1_complete",
+  "selected_pair_count_minimum",
+  "selected_pair_count_maximum",
+  "selected_degrees_of_freedom_minimum",
+  "selected_degrees_of_freedom_maximum",
+  "selected_tail_table_content_hash",
+  "selected_fixed_95_table_content_hash",
+  "full_trace_format",
+  "candidate_full_trace_predicate_selected",
+  "selection_made_by_this_increment",
+  "independent_review",
+  "group_2_complete",
+  "numerical_contract_frozen",
+  "supported_platform_matrix",
+  "exact_runtime_allowlist_selected",
+  "controlled_process_profile_enforced",
+  "supported_execution_predicate_selected",
   "supported_domain_claimed",
   "runtime_support_enabled",
 ] as const;
@@ -750,6 +804,12 @@ function validatePairedTNumericalReadinessCandidateInternal(
     errors,
   );
   requireExactKeys(
+    "runtime numerical contract full-trace candidate",
+    candidate.runtime_numerical_contract_full_trace_candidate,
+    RUNTIME_NUMERICAL_CONTRACT_FULL_TRACE_CANDIDATE_KEYS,
+    errors,
+  );
+  requireExactKeys(
     "numerical-contract decision candidate",
     candidate.numerical_contract_decision_candidate,
     NUMERICAL_CONTRACT_CANDIDATE_KEYS,
@@ -900,6 +960,43 @@ function validatePairedTNumericalReadinessCandidateInternal(
   ) {
     errors.push(
       "candidate supported-scope/resource bounds must bind the preserved exact-head review and close only Group 1 without support or runtime promotion",
+    );
+  }
+
+  const fullTraceCandidate = candidate.runtime_numerical_contract_full_trace_candidate;
+  if (
+    fullTraceCandidate.closure !== "selection_pending_independent_review" ||
+    fullTraceCandidate.artifact !==
+      "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json" ||
+    fullTraceCandidate.evaluator !==
+      "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts" ||
+    fullTraceCandidate.review_protocol !==
+      "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md" ||
+    fullTraceCandidate.source_snapshot_commit !== "9d53f7b9ae2e6059eb8b6d9f1e3ca70002f8f24f" ||
+    fullTraceCandidate.group_1_complete !== true ||
+    fullTraceCandidate.selected_pair_count_minimum !== 2 ||
+    fullTraceCandidate.selected_pair_count_maximum !== 201 ||
+    fullTraceCandidate.selected_degrees_of_freedom_minimum !== 1 ||
+    fullTraceCandidate.selected_degrees_of_freedom_maximum !== 200 ||
+    fullTraceCandidate.selected_tail_table_content_hash !==
+      "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08" ||
+    fullTraceCandidate.selected_fixed_95_table_content_hash !==
+      "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0" ||
+    fullTraceCandidate.full_trace_format !== "paired-t-runtime-numerical-contract-full-trace-v1" ||
+    fullTraceCandidate.candidate_full_trace_predicate_selected !== true ||
+    fullTraceCandidate.selection_made_by_this_increment !== true ||
+    fullTraceCandidate.independent_review !== "pending" ||
+    fullTraceCandidate.group_2_complete !== false ||
+    fullTraceCandidate.numerical_contract_frozen !== false ||
+    fullTraceCandidate.supported_platform_matrix !== "pending" ||
+    fullTraceCandidate.exact_runtime_allowlist_selected !== false ||
+    fullTraceCandidate.controlled_process_profile_enforced !== false ||
+    fullTraceCandidate.supported_execution_predicate_selected !== false ||
+    fullTraceCandidate.supported_domain_claimed !== false ||
+    fullTraceCandidate.runtime_support_enabled !== false
+  ) {
+    errors.push(
+      "runtime numerical contract full-trace candidate must remain selected only for independent Group 2 review without closure, platform, support, or runtime promotion",
     );
   }
 

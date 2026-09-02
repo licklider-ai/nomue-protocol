@@ -1,0 +1,284 @@
+{
+  "status": "non_authoritative_candidate",
+  "issuance": "unissued",
+  "review_issue": "https://github.com/licklider-ai/nomue-protocol/issues/25",
+  "candidate_key": "paired-t-d5-runtime-numerical-contract-full-trace-candidate-1",
+  "review_protocol": "governance/drafts/release-2-candidate/reviews/d5-group-2-runtime-numerical-contract-adversarial-review-protocol.md",
+  "expected_review_result": "review-inputs/r2-d5-group-2-runtime-numerical-contract/REVIEW-RESULT.md",
+  "decision_group": "runtime_numerical_contract_and_full_trace_predicate",
+  "decision_state": "candidate_runtime_numerical_contract_and_full_trace_predicate_selected_pending_independent_review",
+  "selection_made_by_this_checkpoint": true,
+  "independent_review": "pending",
+  "group_1_dependency": "closed_with_preserved_exact_head_review",
+  "group_2_complete": false,
+  "numerical_contract_frozen": false,
+  "supported_domain_claimed": false,
+  "runtime_support_enabled": false,
+  "source_snapshot": {
+    "repository_commit": "9d53f7b9ae2e6059eb8b6d9f1e3ca70002f8f24f",
+    "repository_tree": "c23b636d6aac296bea285bdf9af694b7d465b4dd",
+    "binding_algorithm": "git_blob_sha1",
+    "bindings": [
+      {
+        "role": "closed_group_1_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+        "blob": "7d6572db31f40fb63619edadd9a2b76ff2b35d1e"
+      },
+      {
+        "role": "durable_group_1_closure_review",
+        "path": "review-inputs/r2-d5-group-1-scope-resource-closure/REVIEW-RESULT.md",
+        "blob": "93df75802fbadc03c41a0547a261439658016559"
+      },
+      {
+        "role": "durable_group_1_selection_review",
+        "path": "review-inputs/r2-d5-candidate-supported-scope-resource-bounds/REVIEW-RESULT.md",
+        "blob": "18d3b6e42e3ce4eaf38a4583e89ab6b9f8405910"
+      },
+      {
+        "role": "reviewed_closure_gap_inventory",
+        "path": "governance/drafts/release-2-candidate/numerical/r2-d5-closure-gap-candidate.json",
+        "blob": "4d03477a5689d8df4cfd884102387a8d2a63c203"
+      },
+      {
+        "role": "reviewed_g4_actual_trace_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/g4-execution-trace-candidate.json",
+        "blob": "e11a3b01ed3d068675dbfb93c8acb384bd700200"
+      },
+      {
+        "role": "g4_trace_formula_close_review",
+        "path": "review-inputs/r2-d5-g4-execution-trace-repair-close/REVIEW-RESULT.md",
+        "blob": "325bbfe6f157e2c0880355ebb2ad3cfd0bc079d6"
+      },
+      {
+        "role": "reviewed_g4_truth_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/g4-truth-error-candidate.json",
+        "blob": "e8328610b0fa9ffb9e5c862fa16132cd99de4f26"
+      },
+      {
+        "role": "g4_truth_independent_review",
+        "path": "review-inputs/r2-d5-g4-truth-error-candidate/REVIEW-RESULT.md",
+        "blob": "bdf8ec380f857abfca87f367a5c27ebd9d724afd"
+      },
+      {
+        "role": "reviewed_g4_tail_composition_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/g4-tail-trace-composition-candidate.json",
+        "blob": "6a87edb9f37c6a51f112e15d6d393f789bcc70af"
+      },
+      {
+        "role": "g4_tail_composition_independent_review",
+        "path": "review-inputs/r2-d5-g4-tail-trace-composition-candidate/REVIEW-RESULT.md",
+        "blob": "5c172f212fd4d9411908bc0e20ff6afe8b7415ce"
+      },
+      {
+        "role": "reviewed_tail_numerical_selection",
+        "path": "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json",
+        "blob": "df57149cc63fc1948950deb9a0fa530a27646e6b"
+      },
+      {
+        "role": "durable_m2_closure_review",
+        "path": "review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md",
+        "blob": "9e19c355f544949ea277b786b4ed1a77eb7c1d6a"
+      },
+      {
+        "role": "reviewed_tail_actual_trace_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/supported-execution-predicate-candidate.json",
+        "blob": "23cc96bab77f1be18be9861dc639246225d91124"
+      },
+      {
+        "role": "tail_actual_trace_independent_review",
+        "path": "review-inputs/r2-d5-supported-execution-predicate/REVIEW-RESULT.md",
+        "blob": "7583ac907103827b177fc0cb801e8bbc49926c3d"
+      },
+      {
+        "role": "reviewed_tail_table_integration",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-table-integration-candidate.json",
+        "blob": "d2793f254ba6fcbe78764afcbd464f35bd77ff56"
+      },
+      {
+        "role": "reviewed_tail_table_bytes",
+        "path": "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json",
+        "blob": "bb73633f57630736f0b8ec85f6dccccc77796314"
+      },
+      {
+        "role": "tail_table_integration_review_disposition",
+        "path": "governance/drafts/release-2-candidate/reviews/d5-runtime-table-integration-adversarial-review-disposition.md",
+        "blob": "5c17f638b086ef3b73d6a13744b3fcf65bf73b20"
+      },
+      {
+        "role": "reviewed_fixed_95_table_selection",
+        "path": "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json",
+        "blob": "d923aa742dd8549210812b8150a95f3bb5d44f06"
+      },
+      {
+        "role": "fixed_95_table_selection_independent_review",
+        "path": "review-inputs/r2-d5-fixed-95-table-selection/REVIEW-RESULT.md",
+        "blob": "8b450f86fb5d89c4dcfda196bf63dc1192229dea"
+      },
+      {
+        "role": "reviewed_ci_actual_trace_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json",
+        "blob": "e4635043cefffd364a94b26b24fc673a85a911bc"
+      },
+      {
+        "role": "ci_actual_trace_independent_review",
+        "path": "review-inputs/r2-d5-ci-execution-trace-candidate/REVIEW-RESULT.md",
+        "blob": "2a35633bb2c33d07b0b2e75bc7338ff5764569ad"
+      },
+      {
+        "role": "selected_ci_endpoint_truth_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json",
+        "blob": "d85f0dd598adc57c64d991b20921645c6124b4f0"
+      },
+      {
+        "role": "ci_endpoint_truth_independent_review",
+        "path": "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md",
+        "blob": "1cdedef140b9eae1e7ab85502859b147fd79fe10"
+      },
+      {
+        "role": "durable_m3_closure_review",
+        "path": "review-inputs/r2-d5-m3-confidence-interval-closure/REVIEW-RESULT.md",
+        "blob": "2024fc5456313155ae5adc6a5a80b413987cd2ad"
+      },
+      {
+        "role": "reviewed_tail_truth_error_proof_checkpoint",
+        "path": "governance/drafts/release-2-candidate/numerical/truth-error-support-closure-candidate.json",
+        "blob": "f3ade9fe6ece6d28d4d73d1c494169efc0d0c67c"
+      },
+      {
+        "role": "reviewed_group_1_boundary_and_metamorphic_corpus",
+        "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-corpus.json",
+        "blob": "0733d2c2f4b8e391e3224ef84164255fc4c9206c"
+      }
+    ]
+  },
+  "selected_runtime_numerical_contract_candidate": {
+    "input_scope": {
+      "source": "closed_group_1_candidate_scope_and_resource_bounds",
+      "pair_count_minimum": 2,
+      "pair_count_maximum": 201,
+      "degrees_of_freedom_minimum": 1,
+      "degrees_of_freedom_maximum": 200,
+      "degrees_of_freedom_relation": "exact_integer_n_pairs_minus_one",
+      "parsed_values": "finite_binary64_after_strict_json_and_canonical_ingress",
+      "negative_zero": "outside_candidate_scope",
+      "rectangular_magnitude_domain_selected": false
+    },
+    "operation_graph": {
+      "execution_surface": "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
+      "ordered_stages": [
+        "reviewed_g4_pairwise_two_pass_actual_trace",
+        "reviewed_g4_exact_rational_truth_envelope",
+        "reviewed_table_connected_positive_series_tail_trace",
+        "reviewed_same_trace_input_specific_tail_truth_and_projection",
+        "reviewed_fixed_95_confidence_interval_actual_trace",
+        "reviewed_same_trace_confidence_interval_endpoint_truth_envelope",
+        "closed_group_1_resource_envelope"
+      ],
+      "one_input_and_one_g4_trace_required_across_all_stages": true,
+      "exact_primitive_verification_required": true,
+      "candidate_full_trace_predicate_selected": true,
+      "supported_execution_predicate_selected": false
+    },
+    "table_selection": {
+      "tail_inverse_beta_table": "tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json",
+      "tail_inverse_beta_content_hash": "sha256:ba1f992199e9e153956589d62dcf5a6509575100bb7c923c170bfa45fdd76c08",
+      "fixed_95_table": "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json",
+      "fixed_95_ordered_cell_content_hash": "sha256:24ccc86d7a49b9e1ef1e3fc9b038a5b8d338b8b5ca4a02492d8900d7e7dea3c0",
+      "selected_for_group_2_candidate_contract": true,
+      "authoritative_protocol_table_selected": false
+    },
+    "truth_and_projection": {
+      "g4_truth": "reviewed_exact_rational_mean_variance_standard_error_and_test_statistic_envelope",
+      "tail_truth_bound": "reviewed_input_specific_normal_binary64_roundoff_plus_positive_series_remainder",
+      "tail_bound_arithmetic": "exact_rational_with_exact_integer_ulp_ceiling",
+      "tail_projection_classes": ["positive_normal", "rounded_one"],
+      "tail_projection_margin": "cells_to_nearest_policy_class_transition_strictly_greater_than_input_specific_bound",
+      "confidence_interval_truth": "same_trace_exact_rational_endpoint_truth_with_reviewed_critical_rounding_cell",
+      "confidence_interval_collapse": "fail_closed_outside_candidate_scope",
+      "global_truth_error_constant_required": false,
+      "global_truth_error_constant_selected": false
+    },
+    "stage_specific_subnormal_policy": {
+      "parsed_input_subnormal": "not_blanket_refused",
+      "g4_intermediates": "reviewed_stage_specific_predicates_and_finite_postcondition",
+      "tail_proof_tracked_positive_intermediates": "strictly_above_minimum_normal_binary64",
+      "p_value_subnormal_or_zero": "fail_closed_outside_candidate_scope",
+      "confidence_interval_intermediates": "finite_binary64_and_strictly_ordered_endpoints",
+      "blanket_subnormal_refusal_selected": false
+    },
+    "comparison_contract": {
+      "operation_graph_reproduction": "exact_binary64_bit_identity",
+      "mathematical_truth_error": "exact_rational_enclosures_and_input_specific_bounds",
+      "target_format_projection": "exact_rounding_cells_with_strict_pointwise_margin",
+      "generic_cross_implementation_tolerance": null,
+      "quantity_specific_tolerances": null
+    }
+  },
+  "selected_full_trace_predicate_candidate": {
+    "evaluator": "tooling/src/spikes/paired-t-runtime-numerical-contract-full-trace-candidate.ts",
+    "envelope_format": "paired-t-runtime-numerical-contract-full-trace-v1",
+    "required_same_trace_bindings": [
+      "raw_input_to_g4_trace",
+      "g4_trace_to_tail_input",
+      "g4_trace_to_g4_truth",
+      "g4_trace_to_confidence_interval_trace",
+      "g4_truth_and_confidence_interval_trace_to_endpoint_truth",
+      "returned_p_value_to_tail_trace",
+      "returned_confidence_interval_to_confidence_interval_trace"
+    ],
+    "resource_envelope": {
+      "g4_trace_node_formula": "5_times_n_pairs_plus_3",
+      "g4_trace_node_maximum": 1008,
+      "tail_trace_node_maximum": 100000,
+      "tail_iteration_cap_formula": "40_times_df_plus_64",
+      "tail_iteration_cap_maximum": 8064,
+      "confidence_interval_specific_trace_nodes": 3,
+      "combined_primitive_trace_node_maximum": 101011
+    },
+    "acceptance": "all_reviewed_stage_verifiers_same_trace_bindings_truth_projection_and_resource_checks_pass",
+    "failure": "fail_closed_without_support_claim",
+    "candidate_predicate_selected_for_independent_review": true,
+    "supported_execution_predicate_selected": false,
+    "platform_admission_required_separately": true
+  },
+  "downstream_dependency_state": {
+    "supported_execution_admission": "blocked_until_group_2_independent_review_and_closure",
+    "final_reason_code_inventory": "blocked_by_groups_2_and_3",
+    "final_r2_d5_review_and_disposition": "blocked_by_groups_2_through_4_and_rfc_window"
+  },
+  "non_promotions": {
+    "authoritative_supported_pair_or_df_bound": false,
+    "authoritative_supported_value_or_intermediate_bound": false,
+    "authoritative_runtime_numerical_contract_selected": false,
+    "numerical_contract_frozen": false,
+    "final_protocol_fixed_95_table_selected": false,
+    "supported_platform_matrix": "pending",
+    "runtime_allowlist_entries": [],
+    "controlled_process_profile_enforced": false,
+    "supported_execution_predicate": "unselected",
+    "supported_domain": false,
+    "runtime_support": false,
+    "global_truth_error_constant": null,
+    "comparison_tolerances": null,
+    "final_reason_codes_frozen": false,
+    "public_check": "unissued",
+    "supported_bundle": "unissued",
+    "rfc_25": "open",
+    "r2_d5": "incomplete",
+    "release_2": "incomplete"
+  },
+  "finite_observations_not_global_bounds": [374, 2978, 5182, 72567],
+  "prohibited_claims": [
+    "authoritative_or_frozen_runtime_numerical_contract",
+    "authoritative_supported_scope_or_resource_bound",
+    "universal_behavior_from_finite_corpus_or_runner_evidence",
+    "global_truth_error_constant_from_finite_observation",
+    "selected_supported_platform_allowlist_or_execution_predicate",
+    "supported_domain_or_runtime",
+    "frozen_public_reason_codes",
+    "issued_public_check_or_supported_bundle",
+    "completed_group_2_before_independent_review",
+    "completed_r2_d5_or_rfc_review",
+    "completed_release_2"
+  ]
+}
