@@ -109,6 +109,12 @@ capital treatment label, and does not attribute later no-interference or
 treatment-version conditions to the inspected texts. The proposal remains
 subject to independent close review and later steward reconciliation;
 `FND1-H04` and the full Research Gate remain open, with no Protocol adoption.
+The bounded
+[`potential-outcomes lineage close-review commission`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-commission.md)
+requires direct reinspection of all three exact source artifacts and assigns a
+fail-closed
+[`result placeholder`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md).
+It creates no sub-hold closure or Protocol-adoption authority.
 
 The completed animal-endpoint pass reports `NARROW` and proposes
 `NARROW_AND_CLOSE` for `H04-S4`. It directly records prespecified welfare

@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:6696a3a328cc907425460fe0378369212f17628b2c8056ea4f63556c390d99ab)
+- authority/authority-manifest.yaml (sha256:df569b0275869d8a34a38f36280e6021b6bd7789c5e4c4cb5a6b358cc00b0240)
 
 Generation command: pnpm generate
 -->
@@ -195,6 +195,8 @@ Non-authoritative view of the authority manifest.
 | `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-completion-steward-disposition.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-commission.md` | informative |
+| `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md` | informative |
 | `evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md` | informative |
