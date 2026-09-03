@@ -81,17 +81,22 @@ those scopes; no reused claim is extended to a later variant or a different proc
 ### 2.2 Sources identified but not inspectable in this research environment
 
 The research environment's outbound network policy denied direct document retrieval for
-every scholarly-publisher, preprint, and regulatory host attempted on 2026-09-03. HTTPS
-CONNECT requests were rejected at the egress gateway (policy denial, response 403) for at
-least: `www.fda.gov`, `www.ema.europa.eu`, `projecteuclid.org`, `arxiv.org`, and
-`doi.org`. Only a general-purpose web search index was reachable, returning bibliographic
-snippets. Snippets are secondary material and are used below for discovery and
-bibliographic identity only, never as the basis of a decision-bearing semantic claim.
+every scholarly-publisher, preprint, and regulatory host attempted on 2026-09-03. The
+recorded attempts covered `www.fda.gov`, `www.ema.europa.eu`, `projecteuclid.org`,
+`arxiv.org`, `doi.org`, `www.jstor.org`, `onlinelibrary.wiley.com`,
+`www.tandfonline.com`, and `academic.oup.com`. HTTPS CONNECT requests were rejected at
+the egress gateway (policy denial, response 403). Only an environment-provided
+general-purpose web index was reachable, returning bibliographic snippets; the interface
+did not expose a stable public index or provider identity, and no scholarly citation
+database was reachable. Snippets are secondary material and are used below for discovery
+and bibliographic identity only, never as the basis of a decision-bearing semantic claim.
 
 Every source in the following list therefore carries the access status
 `ACCESS_FAILED_IN_ENVIRONMENT`, and every technique whose semantics rest only on such a
 source receives an individual deferred disposition in Sections 8–9. Bibliographic
-identity below was cross-checked across at least two independent search results.
+identity below was discovered through the recorded queries, but per-source result
+identities were not retained; no independently auditable two-result cross-check is
+claimed.
 
 | ID     | Source (bibliographic identity from documented search)                                                                                                                                           | Needed for                                                                                       |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
@@ -127,7 +132,8 @@ identity below was cross-checked across at least two independent search results.
 ### 2.3 Access-record summary
 
 - Access date for all attempts: 2026-09-03.
-- Reachable: one general-purpose web search index (snippets only).
+- Reachable: one environment-provided general-purpose web index (snippets only); the
+  interface exposed no stable public index or provider identity.
 - Not reachable: every attempted publisher, repository, preprint, and regulatory host
   (egress CONNECT rejected by the environment's network policy).
 - Consequence: no new full-text primary inspection was possible in this environment. The
@@ -139,8 +145,9 @@ identity below was cross-checked across at least two independent search results.
 ### 3.1 Search protocol
 
 - Search date: 2026-09-03.
-- Instrument: a general-purpose web search index reachable from the research
-  environment. No scholarly index (e.g., a citation database) was directly reachable.
+- Instrument: an environment-provided general-purpose web index. Its interface exposed
+  no stable public index or provider identity. No scholarly index (e.g., a citation
+  database) was directly reachable.
 - Language limit: English queries; no date limit applied.
 - Verbatim queries executed (13):
   1. `Benjamini Yekutieli 2001 "control of the false discovery rate in multiple testing under dependency" Annals of Statistics projecteuclid`
@@ -164,10 +171,10 @@ Backward and forward chaining was performed from two evidence classes:
 1. **From inspected text (decision-grade chaining).** The reused full-text inspections
    record explicit citation networks: Hayter (1984) printed p. 62 and p. 70 chain to
    Kurtz (1956), Miller (1966), Spjøtvoll and Stoline (1973), Dunn (1974), Hochberg
-   (1974a, 1975), Genizi-Hochberg (1978), Gabriel (1978), Brown (1979, 1982), Stoline
-   (1981), Kramer (1957), and Tukey (1953); Dunnett (1980) printed pp. 789–790 and 795
-   chain to the same competing unequal-size family plus Steel and Torrie and Box, Hunter
-   and Hunter; Benjamini-Hochberg (1995) printed pp. 293–294 chain to Simes (1986),
+   (1974a, 1975), Brown (1979, 1982), Stoline (1981), Kramer (1957), and Tukey
+   (1953); Dunnett (1980) printed pp. 789–790 and 795 introduce Genizi-Hochberg
+   (1978), Gabriel (1978), the competing unequal-size family, Steel and Torrie, and
+   Box, Hunter and Hunter; Benjamini-Hochberg (1995) printed pp. 293–294 chain to Simes (1986),
    Hochberg (1988), Hommel (1988), and Holm (1979); Dunnett (1955) printed p. 1097
    chains to Tukey and Scheffé as the all-comparisons comparators; Kramer (1956) printed
    p. 307 chains to Newman, Keuls, Duncan, and Tukey as the multiple-range family.
@@ -248,8 +255,10 @@ by the claim-to-source table (Section 19).
   (1.1)) and attributed there to Tukey (1953); the 1949 Tukey paper does not contain
   it (SRC-04, absence, recorded rows T10–T12).
 - **F-08.** Holm (1979) and BH (1995) act on an abstract finite set of `n` (resp. `m`)
-  hypotheses with valid marginal p-values; membership is an input, not derived from the
-  data (SRC-01, printed pp. 65–67; SRC-02, printed pp. 291, 293).
+  hypotheses with valid marginal p-values (SRC-01, printed pp. 65–67; SRC-02, printed
+  pp. 291, 293). Investigator inference: because those procedures begin from the supplied
+  finite hypothesis set, family membership is an input to the procedure rather than an
+  output inferred from the observed values.
 - **F-09.** Hayter (1984) Section 3 extends the pairwise constraint set to all
   contrasts via an identity credited to Tukey (1953), with simultaneous coverage at
   least `1 − α` for all contrasts; the pairwise-width preference over competing
@@ -423,8 +432,9 @@ motivate but do not mandate them.
 ## 8. In-scope technique catalogue
 
 Legend — Evidence: `DIRECT` (inspected primary text reused within recorded scope, §2.1),
-`REPORT` (known only through inspected later text's report of it), `SNIPPET`
-(bibliographic identity only; access failed). Disposition (commission vocabulary):
+`INFERENCE` (an investigator derivation from a `DIRECT` result, not a guarantee printed
+for the named procedure), `REPORT` (known only through inspected later text's report of
+it), `SNIPPET` (bibliographic identity only; access failed). Disposition (commission vocabulary):
 `R3-CAND` = Release 3 implementation candidate; `RES-ONLY` = research-only evidence;
 `TRANSFER(<target>)` = transfer to a named later release/program; `REJECT` = reject with
 rationale. A trailing `†` marks a disposition blocked by a named source-acquisition hold
@@ -433,40 +443,40 @@ their hold closes, and nothing may be frozen on them.
 
 ### 8.1 Omnibus procedures (one-member family over the global null)
 
-| ID     | Technique                                        | Evidence                                        | Disposition and rationale                                                                                                      |
-| ------ | ------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| OMN-01 | Classical equal-variance one-way ANOVA F         | SNIPPET (SRC-12 context; no primary inspection) | `R3-CAND`† — central omnibus candidate; blocked by hold SR-A (primary text for the F test's target and assumptions)            |
-| OMN-02 | Welch heteroscedastic omnibus (Welch 1951)       | SNIPPET (SRC-09)                                | `R3-CAND`† — blocked by hold SR-A; target/df semantics unverified here                                                         |
-| OMN-03 | James first/second-order tests (James 1951)      | SNIPPET (SRC-10)                                | `RES-ONLY`† — competing approximation; catalogue completeness entry                                                            |
-| OMN-04 | Brown-Forsythe modified F (1974)                 | SNIPPET (SRC-11)                                | `RES-ONLY`† — competing approximation; catalogue completeness entry                                                            |
-| OMN-05 | Kruskal-Wallis rank omnibus (1952)               | SNIPPET (SRC-31)                                | `TRANSFER(rank-based successor program, Release 5 horizon)` — distributional target; outside the continuous-mean claim classes |
-| OMN-06 | Permutation one-way tests (Fisher-Pitman family) | SNIPPET                                         | `TRANSFER(seeded-stochastic reproducibility program)` — blocked on the queued randomness-identity foundation                   |
+| ID     | Technique                                        | Evidence                                        | Disposition and rationale                                                                                                                                                                                          |
+| ------ | ------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| OMN-01 | Classical equal-variance one-way ANOVA F         | SNIPPET (SRC-12 context; no primary inspection) | `R3-CAND`† — central omnibus candidate; blocked by hold SR-A (primary text for the F test's target and assumptions)                                                                                                |
+| OMN-02 | Welch heteroscedastic omnibus (Welch 1951)       | SNIPPET (SRC-09)                                | `R3-CAND`† — blocked by hold SR-A; target/df semantics unverified here                                                                                                                                             |
+| OMN-03 | James first/second-order tests (James 1951)      | SNIPPET (SRC-10)                                | `RES-ONLY`† — competing approximation; catalogue completeness entry; hold SR-A                                                                                                                                     |
+| OMN-04 | Brown-Forsythe modified F (1974)                 | SNIPPET (SRC-11)                                | `RES-ONLY`† — competing approximation; catalogue completeness entry; hold SR-A                                                                                                                                     |
+| OMN-05 | Kruskal-Wallis rank omnibus (1952)               | SNIPPET (SRC-31)                                | `TRANSFER(rank-based successor program, Release 5 horizon)` — transfer follows the repository planning boundary, not uninspected source semantics; statistical characterization remains pending primary inspection |
+| OMN-06 | Permutation one-way tests (Fisher-Pitman family) | SNIPPET                                         | `TRANSFER(seeded-stochastic reproducibility program)` — transfer follows the queued repository randomness-identity foundation, not uninspected source semantics                                                    |
 
 ### 8.2 Generic p-value FWER procedures
 
-| ID     | Technique                                                | Evidence                                                                                                              | Disposition and rationale                                                                                                                                              |
-| ------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PVL-01 | Bonferroni single-step                                   | DIRECT (partial: SRC-01 pp. 66–68 defines the classical thresholds and confidence-set equivalence) + SNIPPET (SRC-14) | `R3-CAND` — dependence-free by the Boole inequality as used in SRC-01; original-source attribution (Dunn 1961/Bonferroni) still carries hold SR-B for attribution only |
-| PVL-02 | Šidák single-step                                        | SNIPPET (SRC-13)                                                                                                      | `R3-CAND`† — blocked by hold SR-B; independence/positive-orthant conditions unverified here                                                                            |
-| PVL-03 | Holm step-down (Bonferroni thresholds)                   | DIRECT (SRC-01)                                                                                                       | `R3-CAND` — strong FWER, dependence-free, ordering and stop rule fully sourced (F-03, F-10, F-18)                                                                      |
-| PVL-04 | Holm product-form ("Holm-Šidák") step-down               | DIRECT (SRC-01, p. 68)                                                                                                | `R3-CAND` — distinct variant; independence-based; supportable only with a declared independence condition (F-11)                                                       |
-| PVL-05 | Weighted Holm (Scheme 2 / Theorem 2)                     | DIRECT (SRC-01, p. 69)                                                                                                | `RES-ONLY` — sourced, but weight semantics add declaration surface not needed by the first slice                                                                       |
-| PVL-06 | Simes global test (1986)                                 | SNIPPET (SRC-15)                                                                                                      | `RES-ONLY`† — global-null test only; needed as the basis for PVL-07/PVL-08; hold SR-C                                                                                  |
-| PVL-07 | Hochberg step-up (1988)                                  | SNIPPET (SRC-16)                                                                                                      | `R3-CAND`† — blocked by hold SR-C (dependence conditions; relation to Simes inequality)                                                                                |
-| PVL-08 | Hommel procedure (1988, closed Simes)                    | SNIPPET (SRC-17)                                                                                                      | `RES-ONLY`† — blocked by hold SR-C; computationally heavier closed procedure                                                                                           |
-| PVL-09 | Shaffer logically-restricted sequential rejection (1986) | SNIPPET (SRC-19)                                                                                                      | `RES-ONLY`† — logical-constraint sharpening for pairwise families; hold SR-C                                                                                           |
-| PVL-10 | Rom (1990); Holland-Copenhaver (1987) sharpened stepwise | SNIPPET                                                                                                               | `RES-ONLY`† — completeness entries from chaining; hold SR-C                                                                                                            |
+| ID     | Technique                                                | Evidence                                                                                                                                        | Disposition and rationale                                                                                                                                                                                       |
+| ------ | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PVL-01 | Bonferroni single-step                                   | INFERENCE from DIRECT (SRC-01 pp. 66–68: the Bonferroni-threshold rejection set is a subset of Holm's sourced rejection set) + SNIPPET (SRC-14) | `R3-CAND` — dependence-free validity is an investigator inference from F-03/F-10/F-18, not a separately printed single-step guarantee in the frozen ledger; original-source attribution still carries hold SR-B |
+| PVL-02 | Šidák single-step                                        | SNIPPET (SRC-13)                                                                                                                                | `R3-CAND`† — blocked by hold SR-B; independence/positive-orthant conditions unverified here                                                                                                                     |
+| PVL-03 | Holm step-down (Bonferroni thresholds)                   | DIRECT (SRC-01)                                                                                                                                 | `R3-CAND` — strong FWER, dependence-free, ordering and stop rule fully sourced (F-03, F-10, F-18)                                                                                                               |
+| PVL-04 | Holm product-form ("Holm-Šidák") step-down               | DIRECT (SRC-01, p. 68)                                                                                                                          | `R3-CAND` — distinct variant; independence-based; supportable only with a declared independence condition (F-11)                                                                                                |
+| PVL-05 | Weighted Holm (Scheme 2 / Theorem 2)                     | DIRECT (SRC-01, p. 69)                                                                                                                          | `RES-ONLY` — sourced, but weight semantics add declaration surface not needed by the first slice                                                                                                                |
+| PVL-06 | Simes global test (1986)                                 | SNIPPET (SRC-15)                                                                                                                                | `RES-ONLY`† — global-null test only; needed as the basis for PVL-07/PVL-08; hold SR-C                                                                                                                           |
+| PVL-07 | Hochberg step-up (1988)                                  | SNIPPET (SRC-16)                                                                                                                                | `R3-CAND`† — blocked by hold SR-C (dependence conditions; relation to Simes inequality)                                                                                                                         |
+| PVL-08 | Hommel procedure (1988, closed Simes)                    | SNIPPET (SRC-17)                                                                                                                                | `RES-ONLY`† — blocked by hold SR-C; computationally heavier closed procedure                                                                                                                                    |
+| PVL-09 | Shaffer logically-restricted sequential rejection (1986) | SNIPPET (SRC-19)                                                                                                                                | `RES-ONLY`† — logical-constraint sharpening for pairwise families; hold SR-C                                                                                                                                    |
+| PVL-10 | Rom (1990); Holland-Copenhaver (1987) sharpened stepwise | SNIPPET                                                                                                                                         | `RES-ONLY`† — completeness entries from chaining; hold SR-C                                                                                                                                                     |
 
 ### 8.3 Closed testing, hierarchical, and gatekeeping families
 
-| ID     | Technique                                                    | Evidence         | Disposition and rationale                                                                                          |
-| ------ | ------------------------------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| CLS-01 | Closed testing principle (Marcus-Peritz-Gabriel 1976)        | SNIPPET (SRC-18) | `R3-CAND`† (as framework) — foundational strong-FWER construction; blocked by hold SR-D                            |
-| CLS-02 | Fixed-sequence (hierarchical) testing                        | SNIPPET (SRC-27) | `RES-ONLY`† — ordered one-way families (e.g., ordered doses) are R3-relevant; hold SR-D                            |
-| CLS-03 | Fallback procedure (Wiens 2003)                              | SNIPPET (SRC-27) | `RES-ONLY`† — hold SR-D                                                                                            |
-| CLS-04 | Serial gatekeeping (Maurer-Hothorn-Lehmacher 1995 lineage)   | SNIPPET (SRC-27) | `RES-ONLY`† for R3; `TRANSFER(multiple-endpoint program, Releases 11–15 horizon)` for endpoint families; hold SR-D |
-| CLS-05 | Parallel gatekeeping (Dmitrienko-Offen-Westfall 2003)        | SNIPPET (SRC-27) | Same treatment as CLS-04; hold SR-D                                                                                |
-| CLS-06 | Graphical weighted-Bonferroni procedures (Bretz et al. 2009) | SNIPPET (SRC-26) | `RES-ONLY`† — unifying representation; candidate future framework; hold SR-D                                       |
+| ID     | Technique                                                    | Evidence         | Disposition and rationale                                                                                                                               |
+| ------ | ------------------------------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CLS-01 | Closed testing principle (Marcus-Peritz-Gabriel 1976)        | SNIPPET (SRC-18) | `R3-CAND`† (as framework) — foundational strong-FWER construction; blocked by hold SR-D                                                                 |
+| CLS-02 | Fixed-sequence (hierarchical) testing                        | SNIPPET (SRC-27) | `RES-ONLY`† — ordered one-way families (e.g., ordered doses) are R3-relevant; hold SR-D                                                                 |
+| CLS-03 | Fallback procedure (Wiens 2003)                              | SNIPPET (SRC-27) | `RES-ONLY`† — hold SR-D                                                                                                                                 |
+| CLS-04 | Serial gatekeeping (Maurer-Hothorn-Lehmacher 1995 lineage)   | SNIPPET (SRC-27) | `RES-ONLY`† — R3 research evidence under hold SR-D; applicable findings may later be transferred to the Releases 11–15 multiple-endpoint program        |
+| CLS-05 | Parallel gatekeeping (Dmitrienko-Offen-Westfall 2003)        | SNIPPET (SRC-27) | `RES-ONLY`† — same R3 treatment as CLS-04 under hold SR-D; applicable findings may later be transferred to the Releases 11–15 multiple-endpoint program |
+| CLS-06 | Graphical weighted-Bonferroni procedures (Bretz et al. 2009) | SNIPPET (SRC-26) | `RES-ONLY`† — unifying representation; candidate future framework; hold SR-D                                                                            |
 
 ### 8.4 All-pairs comparisons and simultaneous intervals (homoscedastic)
 
@@ -478,8 +488,8 @@ their hold closes, and nothing may be frozen on them.
 | APR-04 | Spjøtvoll-Stoline extended T (max multiplier, augmented range)             | DIRECT (SRC-07)                                                             | `RES-ONLY` — sourced but dominated for pairwise width under imbalance (F-16); augmented-range numerics add cost                         |
 | APR-05 | Hochberg GT2 (Studentized maximum modulus)                                 | REPORT (via SRC-08)                                                         | `RES-ONLY`† — analytic guarantee reported, not inspected; hold SR-F                                                                     |
 | APR-06 | Genizi-Hochberg (1978)                                                     | REPORT (via SRC-08)                                                         | `RES-ONLY`† — hold SR-F                                                                                                                 |
-| APR-07 | Gabriel (1978)                                                             | REPORT (via SRC-08)                                                         | `REJECT` (as R3 candidate) — inspected simulation reports excessive error under extreme imbalance (F-17); retained as research evidence |
-| APR-08 | Harmonic-mean-size substitution into balanced constants                    | REPORT (via SRC-08)                                                         | `REJECT` — inspected simulation reports excessive error rates as sizes diverge (F-17)                                                   |
+| APR-07 | Gabriel (1978)                                                             | DIRECT (SRC-08 simulation)                                                  | `REJECT` (as R3 candidate) — inspected simulation reports excessive error under extreme imbalance (F-17); retained as research evidence |
+| APR-08 | Harmonic-mean-size substitution into balanced constants                    | DIRECT (SRC-08 simulation)                                                  | `REJECT` — inspected simulation reports excessive error rates as sizes diverge (F-17)                                                   |
 | APR-09 | Scheffé all-contrasts procedure (1953)                                     | SNIPPET (SRC-12); REPORT (named comparator in SRC-03 p. 1097, SRC-06 p. 70) | `R3-CAND`† — the only named candidate covering arbitrary/post-hoc contrasts; blocked by hold SR-G                                       |
 | APR-10 | Newman-Keuls step-down range (1939/1952)                                   | SNIPPET (SRC-29); REPORT (Newman as comparator in SRC-04)                   | `RES-ONLY`† — reported weak-only FWER control unverified; provisional non-candidate; hold SR-H                                          |
 | APR-11 | Duncan multiple range test (1955)                                          | SNIPPET (SRC-29); REPORT (named in SRC-05 p. 307)                           | `RES-ONLY`† — reported not to control FWER; provisional non-candidate; hold SR-H                                                        |
@@ -506,19 +516,19 @@ their hold closes, and nothing may be frozen on them.
 
 ### 8.7 FDR procedures
 
-| ID     | Technique                                            | Evidence         | Disposition and rationale                                                                                                                                 |
-| ------ | ---------------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| FDR-01 | Benjamini-Hochberg linear step-up (1995)             | DIRECT (SRC-02)  | `R3-CAND` — fully sourced under independence (F-01, F-02, F-12, F-19); the dependence condition for one-way shared-variance p-values is part of hold SR-K |
-| FDR-02 | Benjamini-Yekutieli (2001): PRDS and `Σ1/i` variants | SNIPPET (SRC-22) | `R3-CAND`† — blocked by hold SR-K (PRDS definition and its coverage of one-way statistics)                                                                |
-| FDR-03 | Adaptive / two-stage BH (BKY 2006; adaptive `m0`)    | SNIPPET (SRC-23) | `RES-ONLY`† — hold SR-K; explicitly listed by SRC-02 as outside its own theorems (F-12 boundary)                                                          |
-| FDR-04 | Storey direct FDR / q-value (2002)                   | SNIPPET (SRC-24) | `TRANSFER(estimation-oriented FDR program, later release)` — estimator-based target; different output object                                              |
+| ID     | Technique                                            | Evidence         | Disposition and rationale                                                                                                                                                                |
+| ------ | ---------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FDR-01 | Benjamini-Hochberg linear step-up (1995)             | DIRECT (SRC-02)  | `R3-CAND` — fully sourced under independence (F-01, F-02, F-12, F-19); the dependence condition for one-way shared-variance p-values is part of hold SR-K                                |
+| FDR-02 | Benjamini-Yekutieli (2001): PRDS and `Σ1/i` variants | SNIPPET (SRC-22) | `R3-CAND`† — blocked by hold SR-K (PRDS definition and its coverage of one-way statistics)                                                                                               |
+| FDR-03 | Adaptive / two-stage BH (BKY 2006; adaptive `m0`)    | SNIPPET (SRC-23) | `RES-ONLY`† — hold SR-K; explicitly listed by SRC-02 as outside its own theorems (F-12 boundary)                                                                                         |
+| FDR-04 | Storey direct FDR / q-value (2002)                   | SNIPPET (SRC-24) | `TRANSFER(high-dimensional or omics program, Releases 16–20 horizon)`† — target release follows the repository horizon, while estimator semantics and output remain blocked by hold SR-K |
 
 ### 8.8 Resampling-based multiplicity procedures
 
-| ID     | Technique                                     | Evidence         | Disposition and rationale                                                                                                                                      |
-| ------ | --------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RSM-01 | Westfall-Young maxT / minP (1993)             | SNIPPET (SRC-25) | `TRANSFER(seeded-stochastic reproducibility program)` — subset-pivotality and permutation semantics need both source work and the queued randomness foundation |
-| RSM-02 | Permutation-based pairwise/step-down families | SNIPPET          | Same as RSM-01                                                                                                                                                 |
+| ID     | Technique                                     | Evidence         | Disposition and rationale                                                                                                                                                                    |
+| ------ | --------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RSM-01 | Westfall-Young maxT / minP (1993)             | SNIPPET (SRC-25) | `TRANSFER(seeded-stochastic reproducibility program)` — transfer follows the queued repository randomness foundation; subset-pivotality and permutation semantics remain pending source work |
+| RSM-02 | Permutation-based pairwise/step-down families | SNIPPET          | `TRANSFER(seeded-stochastic reproducibility program)` — same repository-planning basis and unresolved source semantics as RSM-01                                                             |
 
 ### 8.9 Authoritative guidance (not procedures; framing sources)
 
@@ -836,7 +846,7 @@ this report's reuse date is 2026-09-03.
 | F-05  | SRC-02          | pp. 293, 296                                                                 | weak-only FWER for BH; Simes step-up strong-FWER failure (attributed) | none                                        |
 | F-06  | SRC-03          | pp. 1096, 1101                                                               | many-to-one member set                                                | none                                        |
 | F-07  | SRC-06          | p. 61, (1.1); SRC-04 absence rows T10–T12                                    | balanced all-pairs exact coverage (later formalization); 1949 absence | attribution boundary per SR-E               |
-| F-08  | SRC-01/SRC-02   | pp. 65–67 / 291, 293                                                         | abstract declared families                                            | none                                        |
+| F-08  | SRC-01/SRC-02   | pp. 65–67 / 291, 293                                                         | abstract declared families                                            | membership-as-input clause is inference     |
 | F-09  | SRC-06          | pp. 69–70                                                                    | all-contrasts extension and its qualification                         | none                                        |
 | F-10  | SRC-01          | pp. 67–68                                                                    | dependence-free Holm validity                                         | none                                        |
 | F-11  | SRC-01          | pp. 68, 69                                                                   | independence-based product-form; weighted scheme                      | none                                        |
@@ -859,10 +869,11 @@ this report's reuse date is 2026-09-03.
 
 - What is ready: the claim-class and guarantee taxonomy, the declaration/refusal
   skeleton, the counterexample boundary analysis, and a complete, method-bounded,
-  disposition-labeled catalogue. Seven catalogue entries are `R3-CAND` on directly
-  inspected primary text (PVL-01, PVL-03, PVL-04, APR-01, APR-02, MTO-01, FDR-01 —
-  FDR-01 under an explicit independence declaration), and two entries are rejected on
-  inspected evidence.
+  disposition-labeled catalogue. Six catalogue entries are `R3-CAND` on directly
+  inspected primary text (PVL-03, PVL-04, APR-01, APR-02, MTO-01, FDR-01 — FDR-01
+  under an explicit independence declaration); PVL-01 is a seventh unblocked candidate
+  by explicit investigator inference from the inspected Holm result. Two entries are
+  rejected on inspected evidence.
 - Why not `PROGRAM_SCOPE_READY`: the commission's comprehensive RFC question spans
   omnibus, step-up, closed/gatekeeping, heteroscedastic, all-contrasts, and
   dependence-robust FDR lanes whose primary texts could not be inspected in this
