@@ -106,6 +106,18 @@ discussion opens if the RFC explicitly leaves the operation graph, algorithm,
 support domain, resource bounds, platform predicate, and tolerances undecided. Those
 items must close before design freeze or authoritative implementation.
 
+## Current research-gate state
+
+The semantic commission produced a preserved, independently reviewed `NARROW`
+result. Its 49-entry catalogue is stable as an informative research record, but
+source-acquisition holds SR-A through SR-L prevent the comprehensive public question
+from being treated as source-ready.
+
+The
+[semantic source-acquisition commission](semantic-source-acquisition-commission.md)
+is the bounded follow-up for those holds. It may run in parallel with the numerical
+commission. Neither result opens public discussion by itself.
+
 ## Public-opening gate
 
 Release 3 public discussion can open when all of the following are true:
@@ -147,13 +159,12 @@ different numerical graph remain separate Release 4 questions.
 
 ## Immediate sequence
 
-1. merge this amended work-start package as the public scope record;
-2. execute the comprehensive semantic catalogue commission and numerical commission
-   independently;
-3. review and preserve the scope-and-catalogue result and any completed numerical
-   result;
-4. update the Release 3 RFC from the bounded findings and explicit procedure
-   dispositions;
-5. perform the pre-opening readiness pass; and
-6. open the public discussion without waiting for every procedure implementation to
+1. complete and independently review the SR-A through SR-L source-acquisition
+   follow-up;
+2. execute the numerical commission in parallel against the preserved semantic
+   catalogue;
+3. update the Release 3 RFC from the reviewed semantic and numerical findings,
+   preserving every unresolved decision as an explicit hold;
+4. perform the pre-opening readiness pass; and
+5. open public discussion without waiting for every procedure implementation to
    close.
