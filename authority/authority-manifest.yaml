@@ -9,7 +9,7 @@
 
 manifest: nrs-authority-manifest
 manifest_version: "0.1.0"
-updated: "2026-08-18"
+updated: "2026-09-03"
 
 targets:
   - target_id: mission-scope-non-goals
@@ -697,8 +697,10 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md
     class: informative
     notes: >-
-      Pending potential-outcomes lineage close-review result placeholder; no
-      evidence, verdict, sub-hold closure, or Protocol-adoption authority.
+      Completed potential-outcomes lineage close review: GO with zero blocker,
+      three documentation-level should-fix findings, and three non-blocking
+      observations; eligible for bounded steward reconciliation and no
+      Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md
     class: informative
     notes: >-
@@ -721,8 +723,28 @@ artifacts:
   - path: evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-animal-endpoint-close-review-result.md
     class: informative
     notes: >-
-      Pending animal-endpoint close-review result placeholder; no evidence,
-      verdict, sub-hold closure, or Protocol-adoption authority.
+      Completed first animal-endpoint close review: GO with zero blocker or
+      should-fix finding and two non-blocking observations; later review
+      variance is resolved by the bounded adjudication record.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-animal-endpoint-supplemental-close-review-result.md
+    class: informative
+    notes: >-
+      Verbatim report-body intake of a second independent animal-endpoint close
+      review: GO with four documentation-level should-fix findings and four
+      non-blocking observations; no hold-closure or Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-residual-review-variance-adjudication.md
+    class: informative
+    notes: >-
+      Claim-by-claim adjudication of the two animal-endpoint close reviews;
+      accepts the stricter four-item correction ledger without changing the
+      GO verdict or creating Protocol-adoption authority.
+  - path: evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-residual-steward-disposition.md
+    class: informative
+    notes: >-
+      Bounded steward disposition accepting H04-S1 and H04-S4 as
+      NARROW_AND_CLOSE, recording all review corrections, and narrowing and
+      closing FND1-H04 while keeping FND1-H05 through FND1-H08 and the full
+      Research Gate open; no Protocol-adoption authority.
   - path: evidence/research/foundation-identity/fnd-1/2026-08-31-all-pairs-successor-source-closure-commission.md
     class: informative
     notes: >-

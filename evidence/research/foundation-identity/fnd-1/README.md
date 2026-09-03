@@ -11,8 +11,10 @@ primary-text follow-up are complete. The
 accepted as dual-pass, source-bounded FND-1 input with disposition `NARROW`.
 The
 [`multiplicity steward disposition`](2026-08-31-multiplicity-steward-disposition.md)
-closes `FND1-H01` through `FND1-H03` in narrowed form. `FND1-H04` through
-`FND1-H08` remain open. The
+closes `FND1-H01` through `FND1-H03` in narrowed form. The
+[`non-clinical estimand residual steward disposition`](2026-09-03-nonclinical-estimand-residual-steward-disposition.md)
+now narrows and closes `FND1-H04` after reviewed `H04-S1` and adjudicated
+`H04-S4` completion. `FND1-H05` through `FND1-H08` remain open. The
 [`all-pairs successor-source steward disposition`](2026-09-01-all-pairs-successor-source-steward-disposition.md)
 narrows and closes the named mathematical and lineage subclaims while keeping
 an exact historical-attribution residual open. The full FND-1 Research Gate
@@ -82,39 +84,34 @@ review's two documentation corrections, and keeps `FND1-H04` open on the
 potential-outcomes lineage and non-clinical terminal-event residuals. It closes
 no Research Gate and authorizes no Protocol change.
 
-### Active `FND1-H04` residual source passes
+### Completed `FND1-H04` residual source passes
 
-The remaining material source work is now split into two isolated passes so
-that an access failure or disputed conclusion in one lineage does not determine
-the other:
+The two material residuals were completed as isolated passes so that an access
+failure or disputed conclusion in one lineage did not determine the other:
 
 | Residual                             | Commission                                                                                                                                             | Assigned result                                                                                                                                |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `H04-S1` potential-outcomes lineage  | [`2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-commission.md) | [`2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md) |
 | `H04-S4` animal and humane endpoints | [`2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md`](2026-09-02-nonclinical-estimand-animal-endpoint-source-commission.md)         | [`2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md`](2026-09-02-nonclinical-estimand-animal-endpoint-source-result.md)         |
 
-Each investigator reads only its own commission and the bounded completion
-steward disposition. Neither result may be read by the companion pass before
-both are frozen. The potential-outcomes pass can propose a disposition only for
-`H04-S1`; the animal-endpoint pass can propose a disposition only for
-`H04-S4`. A later steward reconciliation is required before any re-adjudication
-of `FND1-H04`. Neither pass authorizes Protocol adoption, schema work,
-implementation, or release changes.
+Each investigator read only its own commission and the bounded completion
+steward disposition until both results were frozen. Each pass proposed a
+disposition only for its assigned residual. Neither pass authorized Protocol
+adoption, schema work, implementation, or release changes.
 
 The completed potential-outcomes lineage pass reports `NARROW` and proposes
 `NARROW_AND_CLOSE` for `H04-S1`. It directly verifies the treatment-indexed
 unit-level outcome objects and population aggregation in the inspected source
 lineage, preserves the distinction between Rubin's Greek effect symbol and
-capital treatment label, and does not attribute later no-interference or
+capital Latin population-summary symbol, and does not attribute later no-interference or
 treatment-version conditions to the inspected texts. The proposal remains
-subject to independent close review and later steward reconciliation;
-`FND1-H04` and the full Research Gate remain open, with no Protocol adoption.
-The bounded
+subject to independent close review and steward reconciliation. The bounded
 [`potential-outcomes lineage close-review commission`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-commission.md)
-requires direct reinspection of all three exact source artifacts and assigns a
-fail-closed
-[`result placeholder`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md).
-It creates no sub-hold closure or Protocol-adoption authority.
+and its
+[`completed result`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md)
+record `GO`, zero blocker, three documentation-level should-fix findings, and
+three non-blocking observations. The corrections are recorded by the later
+steward disposition rather than silently editing the frozen source result.
 
 The completed animal-endpoint pass reports `NARROW` and proposes
 `NARROW_AND_CLOSE` for `H04-S4`. It directly records prespecified welfare
@@ -123,15 +120,25 @@ the boundary between welfare action and scientific objective across three
 fully inspected artifacts. It preserves the source-level disagreement between
 `humane endpoint` and `humane intervention point`, and does not infer
 post-event outcome existence or a missingness mechanism from the animal-source
-corpus. The proposal remains subject to independent close review and later
-steward reconciliation; `FND1-H04` and the full Research Gate remain open,
-with no Protocol adoption.
-The bounded
+corpus. The bounded
 [`animal-endpoint close-review commission`](2026-09-02-nonclinical-estimand-animal-endpoint-close-review-commission.md)
-requires direct reinspection of all three exact source artifacts and assigns a
-fail-closed
-[`result placeholder`](2026-09-02-nonclinical-estimand-animal-endpoint-close-review-result.md).
-It creates no sub-hold closure or Protocol-adoption authority.
+has two completed independent review records: the
+[`first result`](2026-09-02-nonclinical-estimand-animal-endpoint-close-review-result.md)
+and the
+[`supplemental result`](2026-09-03-nonclinical-estimand-animal-endpoint-supplemental-close-review-result.md).
+Both return `GO` and support `H04-S4: NARROW_AND_CLOSE`; they differ on four
+documentation findings. The
+[`variance adjudication`](2026-09-03-nonclinical-estimand-residual-review-variance-adjudication.md)
+accepts the stricter four-item correction ledger without using reviewer count
+as a vote.
+
+The
+[`residual steward disposition`](2026-09-03-nonclinical-estimand-residual-steward-disposition.md)
+records all required corrections, narrows and closes `H04-S1`, `H04-S4`, and
+the containing `FND1-H04` research hold, and preserves every recorded source,
+rendition, terminology, and evidence-grade boundary. `FND1-H05` through
+`FND1-H08` and the full FND-1 Research Gate remain open. No Protocol adoption,
+implementation, or release change follows from this bounded closure.
 
 The all-pairs package has a bounded
 [`source-supplied completion commission`](2026-09-01-all-pairs-successor-source-supplied-completion-commission.md)
