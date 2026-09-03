@@ -36,39 +36,92 @@ base and must not be read or cited.
 
 ## Bounded question
 
-Can Release 3 define one independently verifiable, one-way, independent multi-group
-continuous-outcome omnibus Contract with an explicit one-member comparison family,
-no automatic method switch, and fail-closed exclusions, without silently making an
-unsupported statistical or data-design choice?
+Can Release 3 define a comprehensive, independently verifiable family of one-way,
+independent multi-group continuous-outcome Contracts covering omnibus inference,
+contrasts, post-hoc comparisons, simultaneous intervals, and multiplicity control,
+with explicit member sets, no automatic method switch, and fail-closed exclusions,
+without silently making an unsupported statistical or data-design choice?
+
+"Comprehensive" is an inventory and disposition requirement, not a claim that every
+historical method is suitable for Protocol support. The report must define a
+reproducible source-search and inclusion rule, catalogue every in-scope technique it
+finds, and assign each technique one explicit disposition: Release 3 implementation
+candidate, research-only evidence, transfer to a named later release, or reject with
+rationale.
+
+## Inventory completeness rule
+
+The inventory boundary is every statistical procedure or procedure family that is
+presented in inspectable primary literature or authoritative guidance as controlling
+or characterizing multiple claims arising from independent one-way continuous-group
+inference, including generic p-value procedures applicable to those claims.
+
+The investigator must:
+
+1. record the search date, scholarly indexes or authoritative collections, exact
+   queries, language limits, access failures, and inclusion and exclusion rules;
+2. search from the named seed procedures below and perform backward and forward
+   citation chaining sufficient to identify distinct predecessor, successor, and
+   competing procedure classes;
+3. treat two variants as distinct when their member set, assumptions, error
+   criterion, guarantee strength, ordering, output, or numerical construction
+   differs materially;
+4. use catalogues and software documentation only for discovery, then ground every
+   decision-bearing claim in an inspected primary source or authoritative guidance;
+5. record every excluded item and its reason rather than dropping it from the audit
+   trail; and
+6. freeze the resulting catalogue by content hash for independent completeness and
+   classification review before it is used to open public discussion.
+
+The resulting completeness claim is bounded to this documented method and date. It
+is not a claim to know every procedure ever published. A later-discovered material
+procedure triggers the recorded reopen rule rather than being silently ignored.
 
 ## Questions to answer
 
-1. What exact population target and null hypothesis do the defensible one-way
-   omnibus procedures test? Distinguish equality of means, distributional equality,
-   and any weighted or approximate target.
+1. What exact population targets and null hypotheses do defensible one-way omnibus,
+   pairwise, many-to-one, all-pairs, planned-contrast, and post-hoc procedures test?
+   Distinguish equality of means, distributional equality, weighted or approximate
+   targets, and claims about individual contrasts.
 2. Which assumptions differ among classical equal-variance analysis of variance,
    Welch-type heteroscedastic omnibus procedures, and other plausible candidates?
-   Do not select a default merely because software exposes one.
-3. What do the test statistic and numerator and denominator degrees of freedom mean,
-   including cases in which a denominator degree of freedom is non-integer?
+   Which follow-up procedures are valid under each assumption set? Do not select a
+   default merely because software exposes one.
+3. For each candidate, what do the statistic, reference distribution, numerator and
+   denominator degrees of freedom, critical value, adjusted p-value, and interval
+   coverage mean? Include non-integer degrees of freedom where applicable.
 4. Which declarations are required to make independent groups, experimental units,
-   group assignment, analysis population, outcome scale, and one-way design
+   group assignment, analysis population, outcome scale, one-way design, comparison
+   family, contrast coefficients, control group, and selection timing
    machine-checkable? Identify what cannot be inferred from values or row order.
-5. Is a one-member family containing only the omnibus hypothesis a defensible and
-   useful initial multiplicity boundary? State exactly what it does and does not
-   guarantee.
-6. What additional semantics would pairwise, many-to-one, planned-contrast,
-   all-pairs, post-hoc, or simultaneous-interval support require? Confirm whether
-   excluding all of them makes the initial slice materially safer and narrower.
-7. What minimum result surface is scientifically coherent for the selected omnibus
-   target? Separate necessary outputs from conventional but optional reporting.
-8. Which missing values, non-finite values, empty or small groups, zero within-group
-   variance, extreme imbalance, or other inputs make the procedure undefined,
-   non-computable, or unsuitable for the initial supported claim?
-9. Which conclusions from existing FND-1 and FND-2 records are reusable, which open
-   holds are actually implicated, and which holds can remain outside scope?
-10. Which findings can later be reused for factorial or interaction inference, and
-    which are specific to a one-way design?
+5. Define and compare the protected member sets for a single omnibus claim,
+   all-pairs, many-to-one, arbitrary or planned contrasts, hierarchical or
+   gatekeeping families, and data-dependent post-hoc families. State when the member
+   set must be fixed before observing results.
+6. Catalogue the relevant error criteria and guarantee strengths, including at least
+   per-comparison error, weak and strong FWER, FDR, and simultaneous coverage. State
+   which criteria are coherent for each member set and result surface.
+7. Catalogue applicable procedure classes and named candidates. The initial search
+   seed must include Bonferroni and Sidak single-step procedures; Holm, Holm-Sidak,
+   Hochberg, and Hommel stepwise procedures; closed testing and gatekeeping; Tukey,
+   Tukey-Kramer, Dunnett, Scheffe, and Games-Howell families; Benjamini-Hochberg and
+   Benjamini-Yekutieli FDR procedures; and resampling-based multiplicity procedures.
+   The seed is not the final inventory and must not be treated as evidence that two
+   similarly named variants are identical.
+8. For each candidate procedure, is the output a rejection set, adjusted p-values,
+   simultaneous confidence intervals, or some combination? Which outputs are
+   coherent, consonant, directionally interpretable, and independently recomputable?
+9. When is an omnibus gate required, optional, or invalid before follow-up testing?
+   Distinguish protected hierarchical procedures from the common but unsupported
+   convention that post-hoc work is automatically authorized by omnibus rejection.
+10. Which missing values, non-finite values, empty or small groups, zero within-group
+    variance, extreme imbalance, or other inputs make each procedure undefined,
+    non-computable, or unsuitable for a supported claim?
+11. Which conclusions from existing FND-1 and FND-2 records are reusable, which open
+    holds are actually implicated, and which holds can remain outside scope?
+12. Which findings can later be reused for factorial or interaction inference,
+    multiple-endpoint procedures, or other releases, and which are specific to a
+    one-way design?
 
 ## Required counterexamples
 
@@ -79,6 +132,15 @@ Attempt to construct at least these attacks against the proposed meaning:
 - an omnibus rejection represented as evidence that every group differs;
 - a non-rejection represented as evidence that group means are equal;
 - a post-hoc or pairwise claim inferred from an omnibus result;
+- a pairwise procedure applied under a variance model it does not support;
+- a family changed after inspecting unadjusted p-values or group means;
+- a procedure controlling weak FWER represented as controlling strong FWER;
+- an FDR guarantee represented as an FWER guarantee, or conversely;
+- adjusted p-values from one family combined with intervals from another procedure;
+- ordered stepwise decisions recomputed after losing ties or original member order;
+- a many-to-one critical value reused for an all-pairs family;
+- a balanced-design procedure silently extended to unequal group sizes;
+- a stochastic resampling result without fixed randomness and replay semantics;
 - independence inferred from row order or distinct labels;
 - a variance assumption inferred from observed sample variances;
 - missing rows silently removed;
@@ -86,8 +148,8 @@ Attempt to construct at least these attacks against the proposed meaning:
 - the same hypothesis placed in materially different comparison families; and
 - a project convention described as external consensus.
 
-For each attack, state whether the proposed narrow scope rejects it, needs an added
-declaration, or cannot yet defend against it.
+For each attack, state which Contract or Public Check boundary rejects it, which
+declaration or evidence is needed, or why the candidate must be deferred.
 
 ## Required report
 
@@ -98,14 +160,20 @@ Write an English report that clearly separates:
 3. investigator inference;
 4. material disagreement or uncertainty;
 5. candidate Protocol decisions, clearly labeled as project choices;
-6. the minimum defensible scope and explicit exclusions;
-7. required declarations, result fields, and refusal classes;
-8. reusable findings and reopen conditions;
-9. unresolved holds; and
-10. one disposition: `SCOPE_READY`, `NARROW`, `DEFER`, or `NO_GO`.
+6. the documented search and inclusion method plus a catalogue of all in-scope
+   techniques found;
+7. a matrix crossing member set, error criterion, procedure, assumptions, outputs,
+   numerical dependencies, and explicit disposition;
+8. the proposed dependency order for separately closable Release 3 Contracts and
+   Public Checks;
+9. required declarations, result fields, and refusal classes;
+10. reusable findings and reopen conditions;
+11. unresolved holds; and
+12. one disposition: `PROGRAM_SCOPE_READY`, `NARROW`, `DEFER`, or `NO_GO`.
 
-`SCOPE_READY` means only that a bounded public RFC question can be drafted. It does
-not approve numerical implementation, issue Protocol meaning, or authorize Release 3.
+`PROGRAM_SCOPE_READY` means only that a bounded comprehensive public RFC question
+and a complete disposition ledger can be drafted. It does not approve a procedure,
+numerical implementation, issued Protocol meaning, or Release 3.
 
 Record short quotations sparingly and respect source licensing and quotation limits.
 Include a claim-to-source table with direct page, section, theorem, or equation

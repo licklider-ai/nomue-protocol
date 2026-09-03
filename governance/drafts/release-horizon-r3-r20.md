@@ -34,14 +34,14 @@ applicable discussion window.
 
 ## Current horizon
 
-| Release horizon | Planning state | Candidate direction                                                                                                                                                                                           | Reuse and dependency boundary                                                                                                                                                                                                                                  |
-| --------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Release 3       | next candidate | A bounded independent multi-group continuous-inference vertical slice, including an explicitly identified omnibus target and only the contrast or multiplicity surface justified by its Research Gate package | May reuse completed Release 2 successor architecture after verifying its final disposition; requires release-scoped adjudication of F-distribution numerics, comparison-family meaning, and multiplicity                                                       |
-| Release 4       | next candidate | A bounded factorial and interaction-inference vertical slice                                                                                                                                                  | Should reuse the applicable F-distribution, projection, and multiplicity foundation established for Release 3, but must independently close factorial estimands, design declarations, admissibility, interaction meaning, and any non-reusable numerical graph |
-| Release 5       | near horizon   | Rank-based successor Contracts: paired signed-rank and independent rank-sum are leading candidates                                                                                                            | Existing research handoffs may be reused only within their recorded scope; the two Contracts close independently even if one publication train carries both                                                                                                    |
-| Releases 6–10   | near horizon   | Repeated or clustered dependence, correlation and linear models, categorical outcomes, count or rate outcomes, and survival or time-to-event inference                                                        | Exact order remains open and is chosen by research maturity, dependency closure, product demand, and ability to form a bounded vertical slice                                                                                                                  |
-| Releases 11–15  | planned        | Nonlinear or dose-response inference, diagnostic-accuracy or ROC families, equivalence or non-inferiority, multiple-endpoint procedures, and meta-analysis or evidence synthesis                              | Iterative fitting, directional claims, evidence identity, and multiplicity dependencies must be closed before the relevant design freeze                                                                                                                       |
-| Releases 16–20  | exploratory    | High-dimensional or omics workflows, causal estimands, Bayesian computation, and machine-learning evaluation or resampling                                                                                    | These subjects remain research horizons until a portable, independently checkable, resource-bounded Protocol claim can be stated                                                                                                                               |
+| Release horizon | Planning state | Candidate direction                                                                                                                                                                                            | Reuse and dependency boundary                                                                                                                                                                                                                                          |
+| --------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Release 3       | next candidate | A bounded independent multi-group continuous-inference program covering omnibus, contrast, post-hoc, simultaneous-interval, and explicit multiplicity families through separately closable vertical increments | May reuse completed Release 2 successor architecture after verifying its final disposition; requires a comprehensive technique catalogue plus release-scoped adjudication of F, t, Studentized-range, joint-probability, comparison-family, and multiplicity semantics |
+| Release 4       | next candidate | A bounded factorial and interaction-inference vertical slice                                                                                                                                                   | Should reuse the applicable F-distribution, projection, and multiplicity foundation established for Release 3, but must independently close factorial estimands, design declarations, admissibility, interaction meaning, and any non-reusable numerical graph         |
+| Release 5       | near horizon   | Rank-based successor Contracts: paired signed-rank and independent rank-sum are leading candidates                                                                                                             | Existing research handoffs may be reused only within their recorded scope; the two Contracts close independently even if one publication train carries both                                                                                                            |
+| Releases 6–10   | near horizon   | Repeated or clustered dependence, correlation and linear models, categorical outcomes, count or rate outcomes, and survival or time-to-event inference                                                         | Exact order remains open and is chosen by research maturity, dependency closure, product demand, and ability to form a bounded vertical slice                                                                                                                          |
+| Releases 11–15  | planned        | Nonlinear or dose-response inference, diagnostic-accuracy or ROC families, equivalence or non-inferiority, multiple-endpoint procedures, and meta-analysis or evidence synthesis                               | Iterative fitting, directional claims, evidence identity, and multiplicity dependencies must be closed before the relevant design freeze                                                                                                                               |
+| Releases 16–20  | exploratory    | High-dimensional or omics workflows, causal estimands, Bayesian computation, and machine-learning evaluation or resampling                                                                                     | These subjects remain research horizons until a portable, independently checkable, resource-bounded Protocol claim can be stated                                                                                                                                       |
 
 This table fixes neither one capability per release nor the listed order inside a
 range. Splitting, combining, or reordering a future release updates this planning
@@ -68,25 +68,28 @@ the dependencies needed to interpret the release horizon.
 The objective of this phase is to open a reviewable public question, not to finish
 the implementation first.
 
-1. **Bound the proposed vertical slice.** State the independent-group design,
-   omnibus target, supported result surface, and explicit exclusions. Contrasts,
-   post-hoc procedures, multiplicity guarantees, standardized effects, missing-data
-   handling, and broad model families stay excluded unless the RFC defines them
-   precisely.
+1. **Bound the proposed program.** State the independent-group design and the
+   inclusion rules for omnibus, contrast, post-hoc, simultaneous-interval, FWER,
+   FDR, and related procedure families. Define "comprehensive" through a finite
+   catalogue and explicit dispositions rather than through an unbounded claim to
+   support every named historical method.
 2. **Assemble the Research Gate handoff.** Map the existing foundational estimand,
-   routing, and multiplicity records to the Release 3 question. Commission only the
-   missing release-scoped work, especially F-distribution numerical and oracle
-   semantics and any selected comparison family.
+   routing, and multiplicity records to the Release 3 question. Commission the
+   missing release-scoped work, including procedure-family semantics and the F, t,
+   Studentized-range, joint-probability, adjustment, and resampling numerical paths
+   implicated by the catalogue.
 3. **Define the Release 2 dependency.** Identify which successor identifier,
    Contract, bundle, schema, and verifier patterns are conditional on Release 2.
    Keep all Release 3 spellings unissued and record what must be revised if the
    Release 2 disposition changes.
 4. **Draft the Release 3 RFC.** Include motivation, bounded semantics, affected
    authority classes and stability tiers, compatibility, excluded capabilities,
-   research dispositions, unresolved holds, and the exact decision requested.
+   research dispositions, staged vertical-increment order, unresolved holds, and
+   the exact decision requested.
 5. **Prepare a review-readiness check.** Independently confirm that the draft does
-   not silently select an unresolved estimand, multiplicity family, numerical
-   algorithm, tolerance, support domain, or identifier.
+   not silently omit an in-scope technique or select an unresolved estimand,
+   multiplicity family, numerical algorithm, tolerance, support domain, or
+   identifier.
 6. **Open the public discussion.** Publish the RFC issue, record the opening time,
    applicable tier, minimum window, and earliest decision time. Opening the issue
    authorizes discussion and candidate preparation only.
@@ -100,10 +103,11 @@ authoritative disposition and surfaces are known.
 1. **Maintain the scope ledger.** Classify comments and research updates as
    clarification, evidence, repair, or material semantic change. Restart the public
    window when the applicable governance rules require it.
-2. **Build the candidate vertical slice.** Prepare candidate normative text,
-   Requirement namespaces, identifiers, schemas, bundle bindings, Public Checks,
-   reason codes, fixtures, reference dispatch, and generated views without issuing
-   them.
+2. **Build dependency-ordered candidate increments.** Prepare separately closable
+   omnibus, contrast, post-hoc, interval, and multiplicity Contracts and Public
+   Checks with their normative text, Requirement namespaces, identifiers, schemas,
+   bundle bindings, reason codes, fixtures, reference dispatch, and generated views
+   without issuing them.
 3. **Close numerical and execution evidence.** Select and independently review the
    operation graph, F-tail or equivalent procedure, projection policy, resource and
    support bounds, platform or execution predicate, tolerances, and adversarial

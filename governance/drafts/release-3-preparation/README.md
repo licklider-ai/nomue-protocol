@@ -7,43 +7,57 @@ capability, RFC window, release commitment, or implementation authority.
 
 ## Objective
 
-Prepare a public RFC for one bounded independent multi-group continuous-inference
-vertical slice without waiting for Release 2 publication or for the entire Release 3
-implementation to be complete.
+Prepare a public RFC for a bounded but comprehensive independent multi-group
+continuous-inference program without waiting for Release 2 publication or for the
+entire Release 3 implementation to be complete.
 
 Release 2 dependencies remain conditional until Release 2 has an authoritative
 disposition. No Release 2 candidate spelling or surface is treated as issued by this
 package.
 
-## Narrow initial scope candidate
+## Release 3 scope candidate
 
-The fastest defensible Release 3 scope is:
+Release 3 is intended to cover the independent one-way multi-group inference family,
+not only a single omnibus procedure. Its research and public-discussion scope
+includes:
 
 - an explicitly declared one-way design with at least three independent groups;
 - one finite continuous outcome and explicit group membership;
-- one registered omnibus Analysis Contract for a precisely stated equality-of-means
-  or equivalent selected target;
-- one explicit, one-member comparison family containing only that omnibus
-  hypothesis;
-- a deterministic result containing only the quantities justified by the selected
-  Contract and its reviewed numerical procedure; and
+- omnibus targets and procedures under their separately stated variance and sampling
+  assumptions;
+- explicit all-pairs, many-to-one, planned-contrast, and post-hoc comparison
+  families;
+- single-step, stepwise, closed, simultaneous-interval, and other relevant
+  multiplicity procedure families, including both FWER and FDR claims where they are
+  scientifically coherent for the represented family;
+- deterministic results containing only the quantities justified by each selected
+  Contract, comparison family, multiplicity claim, and reviewed numerical procedure;
+  and
 - fail-closed refusal outside the selected design, data, numerical, resource, and
   execution domain.
 
-The procedure is not selected by this work-start record. The semantic investigation
-must compare the defensible one-way omnibus candidates, including their variance
-assumptions and degrees-of-freedom meaning, before the RFC freezes a Contract.
+No procedure is selected by this work-start record. The semantic investigation must
+compare the defensible omnibus, follow-up, contrast, and multiplicity candidates,
+including their target, member set, assumptions, error criterion, ordering, and
+degrees-of-freedom meaning, before any Contract or Public Check is frozen.
 
-The initial scope does not automatically provide a post-hoc procedure, pairwise or
-planned contrasts, simultaneous intervals, standardized effects, or a significance
-boolean. It makes no multiplicity guarantee beyond the explicitly one-member
-omnibus family. Any broader family requires its own selected procedure, error
-criterion, ordering, evidence, and review.
+Comprehensive research does not mean automatic support for every named historical or
+software procedure. It means that every in-scope technique found by the documented
+search and inclusion rules receives an explicit disposition: candidate for Release 3
+implementation, research-only evidence, transfer to a named later release, or reject
+with rationale. Nothing is silently omitted, and no software catalogue defines the
+inventory.
 
-## Explicit exclusions
+Implementation remains vertical. Separate Contracts or Public Checks close their
+own semantics, numerical evidence, schemas, fixtures, and reviews in dependency
+order. They may share one Release 3 publication train without being collapsed into
+one method or one guarantee.
 
-The initial RFC draft keeps these outside support unless later research demonstrates
-that adding one does not materially enlarge or destabilize the public question:
+## Boundary exclusions
+
+The following remain outside the Release 3 design family unless the public RFC is
+materially revised. Their research and implementation can still be completed in
+their own release programs:
 
 - paired, repeated-measures, clustered, longitudinal, or otherwise dependent data;
 - factorial or interaction designs;
@@ -52,8 +66,7 @@ that adding one does not materially enlarge or destabilize the public question:
 - inferred group membership, independence, or analysis-population selection;
 - automatic complete-case selection or any missing-data default;
 - automatic switching among classical, heteroscedastic, rank, permutation, or other
-  procedures;
-- post-hoc and contrast families;
+  procedures based on observed values;
 - causal, clinical, regulatory, or domain-specific interpretations;
 - Record-supplied confidence levels, tolerances, algorithms, or executable code;
   and
@@ -65,25 +78,27 @@ policy merely to open the RFC.
 
 ## Existing research reuse and open work
 
-| Input area                              | Current usable boundary                                                                                                        | Release 3 treatment                                                                                                                                                 |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Estimand and inference-routing research | Bounded foundational findings and dispositions exist; the full foundation gate remains open                                    | Reuse only the source-bounded distinctions that apply to the selected omnibus target; do not claim full-gate closure                                                |
-| Multiplicity research                   | Original-procedure attribution and family distinctions are narrow-closed; later procedure applications remain release-specific | Use the taxonomy to state the one-member omnibus family and explicit non-guarantees; reopen procedure-specific research before adding contrasts or post-hoc support |
-| Derived-summary and design holds        | Foundational holds covering relation rules and units, timing, transformations, and analysis sets remain open                   | Resolve only the one-way independent-group declarations needed by this slice; do not silently close broader holds                                                   |
-| Attestation and sensitivity holds       | Still open                                                                                                                     | Exclude these surfaces from the initial Release 3 slice                                                                                                             |
-| Missingness and analysis-data research  | Source-bounded work exists but the full gate is not closed                                                                     | Require explicit admitted observations and refuse missing or undeclared selection; adopt no general missingness semantics                                           |
-| Release 2 successor architecture        | Complete candidate and independent-review preparation exists; final RFC and authoritative decisions remain open                | Describe identifier, Contract, bundle, schema, and verifier reuse as conditional and recheck after Release 2 disposition                                            |
+| Input area                              | Current usable boundary                                                                                                        | Release 3 treatment                                                                                                                                                              |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Estimand and inference-routing research | Bounded foundational findings and dispositions exist; the full foundation gate remains open                                    | Reuse only the source-bounded distinctions that apply to the selected omnibus target; do not claim full-gate closure                                                             |
+| Multiplicity research                   | Original-procedure attribution and family distinctions are narrow-closed; later procedure applications remain release-specific | Use the bounded findings as inputs, then complete a Release 3 catalogue and disposition for omnibus, contrast, post-hoc, simultaneous-interval, FWER, and FDR procedure families |
+| Derived-summary and design holds        | Foundational holds covering relation rules and units, timing, transformations, and analysis sets remain open                   | Resolve only the one-way independent-group declarations needed by this slice; do not silently close broader holds                                                                |
+| Attestation and sensitivity holds       | Still open                                                                                                                     | Exclude these surfaces from the initial Release 3 slice                                                                                                                          |
+| Missingness and analysis-data research  | Source-bounded work exists but the full gate is not closed                                                                     | Require explicit admitted observations and refuse missing or undeclared selection; adopt no general missingness semantics                                                        |
+| Release 2 successor architecture        | Complete candidate and independent-review preparation exists; final RFC and authoritative decisions remain open                | Describe identifier, Contract, bundle, schema, and verifier reuse as conditional and recheck after Release 2 disposition                                                         |
 
 ## Two independent research lanes
 
 The two commissioned lanes may run in parallel:
 
 1. [Statistical semantics and comparison-family commission](semantic-research-commission.md)
-   determines whether the proposed one-way omnibus scope can be stated without an
-   unsupported method, estimand, variance, admissibility, or multiplicity choice.
-2. [F-distribution numerical and oracle commission](numerical-research-commission.md)
-   determines whether a deterministic, independently checkable numerical route is
-   feasible and what remains for candidate selection.
+   builds the comprehensive in-scope procedure catalogue and determines which
+   omnibus, contrast, post-hoc, interval, and multiplicity claims can be stated
+   without an unsupported method, estimand, variance, or admissibility choice.
+2. [Multiplicity numerical and oracle commission](numerical-research-commission.md)
+   determines which required F, t, Studentized-range, multivariate-probability,
+   adjustment, and projection routes can be made deterministic, independently
+   checkable, and resource-bounded.
 
 The statistical semantics result must be independently reviewed before the RFC
 scope is treated as ready. The numerical lane may remain active when public
@@ -95,9 +110,10 @@ items must close before design freeze or authoritative implementation.
 
 Release 3 public discussion can open when all of the following are true:
 
-1. the statistical commission has a stable result and independent review;
-2. the RFC draft states one bounded design, target, procedure direction, result
-   surface, and refusal boundary;
+1. the statistical commission has a stable scope-and-catalogue result and independent
+   review;
+2. the RFC draft states the bounded design family, inclusion rules, procedure
+   catalogue, staged implementation model, result classes, and refusal boundary;
 3. every reused research conclusion is linked with its exact scope and reopen
    conditions;
 4. every unresolved numerical or structural decision is named rather than hidden in
@@ -114,11 +130,12 @@ reversible candidate work only.
 
 ## Work during the public window
 
-After opening, the numerical lane, candidate Contract and Profile, namespaces,
-identifiers, schemas, bundle binding, Public Checks, reason codes, conformance
-fixtures, reference dispatch, resource and platform evidence, and independent
-reviews may proceed in parallel. Nothing becomes issued or supported before the RFC
-and later ratification decisions authorize the complete authoritative change set.
+After opening, procedure-specific semantic adjudication, the numerical lane,
+candidate Contracts and Profile, namespaces, identifiers, schemas, bundle binding,
+Public Checks, reason codes, conformance fixtures, reference dispatch, resource and
+platform evidence, and independent reviews may proceed in parallel. Nothing becomes
+issued or supported before the RFC and later ratification decisions authorize the
+applicable complete authoritative change sets.
 
 ## Release 4 handoff
 
@@ -130,9 +147,13 @@ different numerical graph remain separate Release 4 questions.
 
 ## Immediate sequence
 
-1. merge this work-start package as a public, stable research record;
-2. execute the semantic and numerical commissions independently;
-3. review and preserve each result;
-4. write the Release 3 RFC from the bounded findings;
+1. merge this amended work-start package as the public scope record;
+2. execute the comprehensive semantic catalogue commission and numerical commission
+   independently;
+3. review and preserve the scope-and-catalogue result and any completed numerical
+   result;
+4. update the Release 3 RFC from the bounded findings and explicit procedure
+   dispositions;
 5. perform the pre-opening readiness pass; and
-6. open the public discussion without waiting for candidate implementation closure.
+6. open the public discussion without waiting for every procedure implementation to
+   close.
