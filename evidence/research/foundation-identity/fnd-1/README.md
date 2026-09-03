@@ -103,7 +103,7 @@ The completed potential-outcomes lineage pass reports `NARROW` and proposes
 `NARROW_AND_CLOSE` for `H04-S1`. It directly verifies the treatment-indexed
 unit-level outcome objects and population aggregation in the inspected source
 lineage, preserves the distinction between Rubin's Greek effect symbol and
-capital treatment label, and does not attribute later no-interference or
+capital Latin population-summary symbol, and does not attribute later no-interference or
 treatment-version conditions to the inspected texts. The proposal remains
 subject to independent close review and steward reconciliation. The bounded
 [`potential-outcomes lineage close-review commission`](2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-commission.md)
