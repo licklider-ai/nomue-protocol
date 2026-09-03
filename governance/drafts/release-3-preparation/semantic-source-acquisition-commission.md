@@ -22,6 +22,12 @@ Perform the work against:
   `e646429582d206d5299ce5ff1d0c2b8978323cd3`, and
   `395054fd1e2f22a5ad63460b86be0394de429605`.
 
+The listed commit is the semantic input snapshot and does not contain this
+commission. The steward's execution instruction must separately pin this
+commission's exact blob and a repository commit that contains it. The result branch
+starts from that containing commit, while decision-bearing comparisons remain fixed
+to the semantic input snapshot above.
+
 Verify these identities before source work. Read `AGENTS.md`, `CHARTER.md`,
 `AUTHORITY.md`, and `governance/RFC.md`. Private repositories are outside scope.
 
