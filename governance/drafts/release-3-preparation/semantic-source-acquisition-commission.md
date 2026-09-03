@@ -2,9 +2,11 @@
 
 **Status: informative follow-up research commission; non-normative; not adopted.**
 This commission asks for the primary-text work needed to resolve source-acquisition
-holds SR-A through SR-L in the reviewed Release 3 semantic catalogue. It selects no
-procedure, Contract, identifier, schema, Public Check, implementation, or release
-outcome.
+holds SR-A through SR-L in the reviewed Release 3 semantic catalogue. It also closes
+the semantic source gap for the resampling-based multiplicity entries that the
+catalogue transfers to the seeded-stochastic program but that the pre-public RFC
+keeps in research scope. It selects no procedure, Contract, identifier, schema,
+Public Check, implementation, or release outcome.
 
 ## Fixed repository inputs
 
@@ -60,6 +62,14 @@ Inspect the sources assigned to every hold in the semantic result:
 | SR-K | FDR-01 dependence scope and FDR-02 through FDR-04 |
 | SR-L | GUI-01 and GUI-02                                 |
 
+In addition, inspect `RSM-01` and `RSM-02`. For `RSM-01`, directly inspect SRC-25
+and any primary procedure text needed to establish maxT/minP, subset-pivotality,
+member-set, and adjusted-output claims. For `RSM-02`, identify and directly inspect
+the primary text or texts needed to replace the catalogue's snippet-only family
+description. Treat failure to identify an exact procedure variant or source as
+`INPUT_INCOMPLETE`; do not generalize the `RSM-01` evidence to every permutation or
+step-down family.
+
 The exact source names are those in Sections 2.2 and 17 of the fixed semantic
 result, including the supplemental sources named in the applicable hold rows.
 Do not treat a search snippet, software manual, textbook summary, or model memory as
@@ -104,6 +114,12 @@ Assign exactly one disposition to each of SR-A through SR-L:
 `CLOSED` does not select the procedure for Release 3. It means only that the
 source-acquisition obstacle has been removed.
 
+Assign the same four-way disposition separately to `RSM-01` and `RSM-02`. These are
+supplemental source-completion results, not new SR-x holds and not a reversal of the
+reviewed `TRANSFER` dispositions. `SOURCE_SET_READY` requires both entries to be
+`CLOSED`; otherwise the overall result is `PARTIAL`, `NO_GO`, or `INPUT_INCOMPLETE`
+as applicable.
+
 ## Required output
 
 Write one English report at:
@@ -115,8 +131,10 @@ The report must contain:
 1. repository identity and every inspected source artifact identity;
 2. an acquisition log, including failed routes;
 3. a claim-to-source table with exact pinpoints;
-4. one disposition for every hold SR-A through SR-L;
-5. an entry-by-entry impact table covering every item assigned to those holds;
+4. one disposition for every hold SR-A through SR-L and separate dispositions for
+   `RSM-01` and `RSM-02`;
+5. an entry-by-entry impact table covering every item assigned to those holds and
+   both resampling entries;
 6. conflicts, unresolved questions, and reopen conditions;
 7. a statement of whether the existing `NARROW` program disposition can be
    reconsidered for the comprehensive public question; and
