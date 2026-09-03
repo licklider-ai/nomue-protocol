@@ -19,6 +19,15 @@ Research order and implementation order are different:
 - authoritative implementation still advances as a bounded vertical capability
   through the normal Research Gate, RFC, conformance, and release process.
 
+The canonical informative release horizon is maintained separately in the
+[Protocol Release Horizon](release-horizon-r3-r20.md). This map owns research
+questions and reusable evidence scope; the horizon owns candidate release placement
+and dependency order. Neither document adopts research or authorizes Protocol
+meaning. An active research line should have a public issue or equivalently public,
+stably linked work record, but it has no release-style minimum window or quorum. A
+consuming release RFC states explicitly what it adopts, does not adopt, or leaves
+unresolved.
+
 ## Operating model
 
 1. **Investigate broadly, decide narrowly.** Early work may survey a large domain,
