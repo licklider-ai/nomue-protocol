@@ -82,14 +82,14 @@ those scopes; no reused claim is extended to a later variant or a different proc
 
 The research environment's outbound network policy denied direct document retrieval for
 every scholarly-publisher, preprint, and regulatory host attempted on 2026-09-03. The
-recorded attempts covered `www.fda.gov`, `www.ema.europa.eu`, `projecteuclid.org`,
-`arxiv.org`, `doi.org`, `www.jstor.org`, `onlinelibrary.wiley.com`,
-`www.tandfonline.com`, and `academic.oup.com`. HTTPS CONNECT requests were rejected at
-the egress gateway (policy denial, response 403). Only an environment-provided
-general-purpose web index was reachable, returning bibliographic snippets; the interface
-did not expose a stable public index or provider identity, and no scholarly citation
-database was reachable. Snippets are secondary material and are used below for discovery
-and bibliographic identity only, never as the basis of a decision-bearing semantic claim.
+retained access record names `www.fda.gov`, `www.ema.europa.eu`, `projecteuclid.org`,
+`arxiv.org`, and `doi.org`. It does not preserve a complete per-host attempt log, so no
+broader host enumeration is claimed. HTTPS CONNECT requests were rejected at the egress
+gateway (policy denial, response 403). Only an environment-provided general-purpose web
+index was reachable, returning bibliographic snippets; the interface did not expose a
+stable public index or provider identity, and no scholarly citation database was
+reachable. Snippets are secondary material and are used below for discovery and
+bibliographic identity only, never as the basis of a decision-bearing semantic claim.
 
 Every source in the following list therefore carries the access status
 `ACCESS_FAILED_IN_ENVIRONMENT`, and every technique whose semantics rest only on such a
@@ -548,10 +548,10 @@ their hold closes, and nothing may be frozen on them.
 | Tukey (1949) three-stage gap/straggler/F procedure          | Sourced (F-21) but composite guarantee is conjectural in its own text; `RES-ONLY`, catalogued in §4/§19 rather than as a candidate |
 
 Catalogue totals: 49 procedure/variant entries across §8.1–§8.8 (plus 2 guidance
-entries and 5 recorded exclusions). Dispositions: 15 `R3-CAND` (7 unblocked — PVL-01,
-PVL-03, PVL-04, APR-01, APR-02, MTO-01, FDR-01 — and 8 blocked by SR-x holds),
-27 `RES-ONLY` (counting CLS-04/CLS-05 by their primary Release 3 label), 5 `TRANSFER`
-(OMN-05, OMN-06, FDR-04, RSM-01, RSM-02), 2 `REJECT` (APR-07, APR-08).
+entries and 5 recorded exclusions). Dispositions: 15 `R3-CAND` (7 unblocked: six with
+direct source support — PVL-03, PVL-04, APR-01, APR-02, MTO-01, FDR-01 — and PVL-01 by
+the explicit inference in §8.2; 8 blocked by SR-x holds), 27 `RES-ONLY`, 5 `TRANSFER`
+(OMN-05, OMN-06, FDR-04, RSM-01, RSM-02), and 2 `REJECT` (APR-07, APR-08).
 
 ## 9. Cross matrix: member set × error criterion × procedure × assumptions × outputs × numerical dependencies × disposition
 
@@ -595,7 +595,8 @@ implies the next:
 2. **D1 — Omnibus Contracts** (OMN-01, OMN-02 as separate Contracts; no auto-switch).
    Requires hold SR-A closure plus the F-tail numerical lane.
 3. **D2 — Generic p-value FWER Contracts over declared families** (PVL-01, PVL-03,
-   PVL-04). Sourced now; needs only D0 and scalar/sort numerics. Can close before D1.
+   PVL-04). PVL-03/PVL-04 are sourced now; PVL-01 is supported by the explicit inference
+   recorded in §8.2. Needs only D0 and scalar/sort numerics. Can close before D1.
 4. **D3 — Many-to-one simultaneous intervals** (MTO-01). Requires the
    multivariate-t/equicoordinate numerical lane (heaviest numerics; own oracle work).
 5. **D4 — All-pairs simultaneous intervals** (APR-01, APR-02). Requires the
@@ -786,20 +787,20 @@ surfaces as issued):
 
 Source-acquisition holds created by this report (each names the exact next sources):
 
-| Hold | Blocked items                           | Exact next sources                                                                                                                        |
-| ---- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| SR-A | OMN-01..04                              | Fisher-lineage F-test primary formalization (e.g., Scheffé 1959 as formal secondary anchor plus original sources); SRC-09, SRC-10, SRC-11 |
-| SR-B | PVL-01 attribution, PVL-02              | SRC-13, SRC-14                                                                                                                            |
-| SR-C | PVL-06..10                              | SRC-15, SRC-16, SRC-17, SRC-19, plus Rom (1990), Holland-Copenhaver (1987)                                                                |
-| SR-D | CLS-01..06                              | SRC-18, SRC-26, SRC-27                                                                                                                    |
-| SR-E | APR-01 historical attribution           | SRC-34 (already a recorded FND-1 residual; attribution-only)                                                                              |
-| SR-F | APR-05, APR-06                          | Hochberg (1974); Genizi-Hochberg (1978); Stoline (1981) (SRC-36)                                                                          |
-| SR-G | APR-09                                  | SRC-12                                                                                                                                    |
-| SR-H | APR-10..14                              | SRC-29, SRC-35                                                                                                                            |
-| SR-I | HET-01..03                              | SRC-20, SRC-21                                                                                                                            |
-| SR-J | MTO-02, MTO-03, MCB-01                  | SRC-28, SRC-30                                                                                                                            |
-| SR-K | FDR-01 dependence scope; FDR-02, FDR-03 | SRC-22, SRC-23                                                                                                                            |
-| SR-L | GUI-01, GUI-02                          | SRC-32, SRC-33                                                                                                                            |
+| Hold | Blocked items                                   | Exact next sources                                                                                                                        |
+| ---- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| SR-A | OMN-01..04                                      | Fisher-lineage F-test primary formalization (e.g., Scheffé 1959 as formal secondary anchor plus original sources); SRC-09, SRC-10, SRC-11 |
+| SR-B | PVL-01 attribution, PVL-02                      | SRC-13, SRC-14                                                                                                                            |
+| SR-C | PVL-06..10                                      | SRC-15, SRC-16, SRC-17, SRC-19, plus Rom (1990), Holland-Copenhaver (1987)                                                                |
+| SR-D | CLS-01..06                                      | SRC-18, SRC-26, SRC-27                                                                                                                    |
+| SR-E | APR-01 historical attribution                   | SRC-34 (already a recorded FND-1 residual; attribution-only)                                                                              |
+| SR-F | APR-05, APR-06                                  | Hochberg (1974); Genizi-Hochberg (1978); Stoline (1981) (SRC-36)                                                                          |
+| SR-G | APR-09                                          | SRC-12                                                                                                                                    |
+| SR-H | APR-10..14                                      | SRC-29, SRC-35                                                                                                                            |
+| SR-I | HET-01..03                                      | SRC-20, SRC-21                                                                                                                            |
+| SR-J | MTO-02, MTO-03, MCB-01                          | SRC-28, SRC-30                                                                                                                            |
+| SR-K | FDR-01 dependence scope; FDR-02, FDR-03, FDR-04 | SRC-22, SRC-23, SRC-24                                                                                                                    |
+| SR-L | GUI-01, GUI-02                                  | SRC-32, SRC-33                                                                                                                            |
 
 Pre-existing holds implicated and left open: `FND1-H05` (relation vocabulary — needed
 for attack 18), `FND1-H06` (design/units/timing declarations — Section 11 resolves only
