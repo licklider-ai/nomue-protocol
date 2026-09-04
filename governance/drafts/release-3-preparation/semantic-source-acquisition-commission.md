@@ -35,9 +35,10 @@ Verify these identities before source work. Read `AGENTS.md`, `CHARTER.md`,
 
 ## Question
 
-Can the source-acquisition holds in Section 17 of the semantic result be closed by
-direct inspection of the identified primary texts, without silently changing a
-procedure variant, assumption, guarantee, comparison family, or output claim?
+Can the source-acquisition holds in Section 17 of the semantic result and the
+supplemental `RSM-01` and `RSM-02` source gaps be closed by direct inspection of the
+identified primary texts, without silently changing a procedure variant, assumption,
+guarantee, comparison family, or output claim?
 
 This is a source-completion pass, not a new catalogue search. A newly discovered
 material in-scope technique is recorded as a reopen trigger; it is not silently
@@ -65,10 +66,13 @@ Inspect the sources assigned to every hold in the semantic result:
 In addition, inspect `RSM-01` and `RSM-02`. For `RSM-01`, directly inspect SRC-25
 and any primary procedure text needed to establish maxT/minP, subset-pivotality,
 member-set, and adjusted-output claims. For `RSM-02`, identify and directly inspect
-the primary text or texts needed to replace the catalogue's snippet-only family
-description. Treat failure to identify an exact procedure variant or source as
-`INPUT_INCOMPLETE`; do not generalize the `RSM-01` evidence to every permutation or
-step-down family.
+the primary text or texts needed to ground the catalogue's snippet-only family
+description. Record each identified procedure variant as a reopen trigger and possible
+variant-split candidate, not as a redefinition of the fixed entry. If the evidence
+resolves to multiple variants rather than one reviewed family characterization, assign
+`PARTIAL` with named gaps. If required primary source text cannot be identified or
+inspected, assign `INPUT_INCOMPLETE`. Do not generalize the `RSM-01` evidence to every
+permutation or step-down family.
 
 The exact source names are those in Sections 2.2 and 17 of the fixed semantic
 result, including the supplemental sources named in the applicable hold rows.
@@ -116,9 +120,10 @@ source-acquisition obstacle has been removed.
 
 Assign the same four-way disposition separately to `RSM-01` and `RSM-02`. These are
 supplemental source-completion results, not new SR-x holds and not a reversal of the
-reviewed `TRANSFER` dispositions. `SOURCE_SET_READY` requires both entries to be
-`CLOSED`; otherwise the overall result is `PARTIAL`, `NO_GO`, or `INPUT_INCOMPLETE`
-as applicable.
+reviewed `TRANSFER` dispositions. `SOURCE_SET_READY` requires every disposition for
+SR-A through SR-L and both resampling entries to be `CLOSED`. Otherwise, any `NO_GO`
+yields overall `NO_GO`; absent `NO_GO`, any `INPUT_INCOMPLETE` yields overall
+`INPUT_INCOMPLETE`; absent both, any `PARTIAL` yields overall `PARTIAL`.
 
 ## Required output
 
