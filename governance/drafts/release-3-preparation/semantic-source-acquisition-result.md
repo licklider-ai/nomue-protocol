@@ -9,9 +9,23 @@ result, adopt its catalogue, or authorize implementation. It requires independen
 exact-head primary-source review before any hold, resampling source gap,
 `SOURCE_SET_READY` state, or public-opening gate is treated as closed.
 
-**Overall disposition: `INPUT_INCOMPLETE`** (Section 12). No hold changes state. The
-fixed 49-entry catalogue, its `NARROW` program disposition, and both reviewed
+**Overall disposition after the latest pass: `INPUT_INCOMPLETE`** (Pass 2, Section
+B.12). The fixed 49-entry catalogue, its `NARROW` program disposition, and both reviewed
 `TRANSFER` dispositions are preserved unchanged.
+
+## Pass ledger
+
+This file records more than one acquisition pass. Each pass is a distinct record with its
+own date, routes, inspected artifacts, and dispositions; a later pass supersedes an
+earlier disposition only where it says so and never rewrites the earlier record.
+
+| Pass | Date (UTC)                 | Input                                                    | Inspected | Dispositions                                                     | Overall            | Where             |
+| ---- | -------------------------- | -------------------------------------------------------- | --------- | ---------------------------------------------------------------- | ------------------ | ----------------- |
+| 1    | 2026-09-04 (first attempt) | egress-restricted research environment; no supplied copy | 0         | 14 × `INPUT_INCOMPLETE`; no hold closed                          | `INPUT_INCOMPLETE` | Sections 1–13     |
+| 2    | 2026-09-04 (later, 04:46+) | lawfully supplied source packet (three artifacts)        | 3         | SR-L `CLOSED`; 13 × `INPUT_INCOMPLETE`; no `PARTIAL`, no `NO_GO` | `INPUT_INCOMPLETE` | Part B (B.1–B.15) |
+
+Sections 1–13 below are the Pass 1 record, preserved verbatim; its statements such as
+"No hold changes state" describe Pass 1 only.
 
 ## 1. Repository identity
 
@@ -609,4 +623,442 @@ supplied-copy completion pass can be commissioned without re-deriving the list.
   (Section 3), investigator inference about the process (Section 10), and dispositions
   (Sections 5, 7, 12) are kept separate.
 
+Pass 1 closing line (preserved; superseded by the Part B closing line):
+
 RELEASE 3 SEMANTIC SOURCE-ACQUISITION RESULT COMPLETE - INPUT_INCOMPLETE - NO HOLD CLOSED - NARROW PRESERVED - AWAITING INDEPENDENT REVIEW - NOT PROTOCOL ADOPTION
+
+## Part B — Completion pass 2 (2026-09-04, supplied source packet)
+
+Sections 1–13 above are the Pass 1 record and are preserved verbatim. This Part records
+a second, distinct pass run later on 2026-09-04 against a lawfully supplied local source
+packet. Nothing in Part B rewrites a Pass 1 statement; where Pass 2 supersedes a Pass 1
+disposition or corrects a Pass 1 count, it says so here and leaves the Pass 1 text in
+place.
+
+### B.1 Identity gate (re-run before Pass 2 source work)
+
+Re-derived from Git objects after a fresh fetch at 04:47 UTC on 2026-09-04.
+
+| Check                                                                                                                                                                       | Expected                                         | Observed                                                                                | Result |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------- | ------ |
+| Live head of `research/r3-semantic-source-acquisition-65a53a4` (Pass 1 head)                                                                                                | `0ef1bcd2b59b2ef95bd46476a0c5347b51f2c6ae`       | remote ref → `0ef1bcd2…`; `git cat-file -p` → tree `809699ff…`, one parent `65a53a4f…`  | match  |
+| Pass 1 head tree                                                                                                                                                            | `809699ff8326f794a41d406125ee9babf3cffef8`       | as above                                                                                | match  |
+| Sole parent (= `origin/main`)                                                                                                                                               | `65a53a4f2e54c691ccd76f71814c5a6e507f0046`       | `origin/main` → `65a53a4f…`                                                             | match  |
+| Pass 1 result blob                                                                                                                                                          | `72de5f5a85b97f3d84aa213c16b231cf7656f7c9`       | `git ls-tree` at head → `72de5f5a…`; `git hash-object` of the shown content → same      | match  |
+| Change set `65a53a4..0ef1bcd`                                                                                                                                               | one added path, the result file only             | `git diff --name-status` → `A governance/drafts/release-3-preparation/…-result.md` only | match  |
+| Every Issue-pinned identity from Section 1.1 (containing tree, commission and README blobs, snapshot commit/tree, semantic result and commission blobs, three review blobs) | as in Section 1.1                                | all re-derived; all match                                                               | match  |
+| Review PR state                                                                                                                                                             | open; head ref is the result branch; base `main` | open, not merged, mergeable, head `0ef1bcd2…`, base `65a53a4f…`; five checks successful | match  |
+
+Identity gate outcome: **passed**. Decision-bearing comparisons below remain against the
+semantic input snapshot (`7bd9c5a`, blob `8f215260…`).
+
+### B.2 Supplied packet identity
+
+A source packet was supplied to the investigator as a local file after Pass 1 was
+recorded. It was verified before use and is **not** committed to the repository.
+
+| Item                    | Value                                                                                                                                                                                                                                                                     |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Packet form             | ZIP archive, 704,726 bytes, received 04:46 UTC, 2026-09-04                                                                                                                                                                                                                |
+| Packet SHA-256          | `a4cc5b6ebbc6eb1a85b59b099de1da6c88b7830c6bd5afe6ae14152d294ad693` (recomputed locally; matches the value supplied with the packet)                                                                                                                                       |
+| Members                 | `README.md`, `manifest.csv` (47 data rows, 18 columns), `gaps.md`, `sources/` with three PDF files                                                                                                                                                                        |
+| Packet self-description | informative primary-source packet; asserts no disposition, no `SOURCE_SET_READY` decision, no catalogue edit; records RSM-02 candidates only as Section 9.2 reopen triggers                                                                                               |
+| Supplier role           | external source-acquisition assistant to the steward; not the investigator; not an author of any fixed result or review                                                                                                                                                   |
+| Trust posture           | the packet's manifest, gaps, hash values, and claims about issuing-host state were treated as supplier assertions and re-verified from the artifacts and Git objects wherever this environment allowed; assertions that could not be re-verified are marked as such below |
+
+Bundled artifacts (SHA-256 recomputed locally from the extracted files; every value
+matches the packet's manifest):
+
+| Packet ID | File                                     | SHA-256                                                            | Pages | Assigned to   |
+| --------- | ---------------------------------------- | ------------------------------------------------------------------ | ----- | ------------- |
+| SRC-32    | `SRC-32-fda-2022-multiple-endpoints.pdf` | `40284a050aab0037799072b2340e37d4b02ab6f7f2339fff6ea1cd55673a9563` | 29    | SR-L (GUI-01) |
+| SRC-33a   | `SRC-33a-ema-2002-ptc.pdf`               | `897bb9d6e9ced1865f709ca5fde8bbdcc2258ac6d89ed831cd6dcfaa0621e284` | 11    | SR-L (GUI-02) |
+| SRC-33b   | `SRC-33b-ema-2017-draft.pdf`             | `1c5977c36f5f45a4845cb706ab6fc1a9c1a90a98ce68df7e6dcad240143982f7` | 15    | SR-L (GUI-02) |
+
+The packet's remaining 44 rows carry no artifact: four are marked `GAP_LEGAL_URL_ONLY`
+(SRC-22, SRC-23, SRC-24, SRC-30; supplier-recorded SHA-256 values for copies the supplier
+retrieved, not bundled) and forty are marked `GAP` (external lawful route only).
+
+### B.3 Pass 2 acquisition log
+
+All attempts on 2026-09-04 between 04:47 and 04:49 UTC from the same environment as
+Section 2.1. Route labels continue Section 2.
+
+| Route | Target                                                                                                                                                                                                                                       | Result                                                                                                       |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| R4    | Lawfully supplied local packet (Section B.2)                                                                                                                                                                                                 | **received**; three artifacts extracted and inspected in full                                                |
+| R1    | Issuing-authority download URLs recorded in the packet for SRC-32 (`www.fda.gov`) and SRC-33a (`www.ema.europa.eu`)                                                                                                                          | `CONNECT` refused, 403, before TLS — the bundled copies could **not** be re-hashed against the issuing hosts |
+| R1    | SRC-22 and SRC-30 publisher PDF URLs (`projecteuclid.org`)                                                                                                                                                                                   | `CONNECT` refused, 403                                                                                       |
+| R1    | SRC-23 author self-archive URL (`www.math.tau.ac.il`)                                                                                                                                                                                        | `CONNECT` refused, 403                                                                                       |
+| R1    | SRC-24 author self-archive URL (`genomics.princeton.edu`)                                                                                                                                                                                    | `CONNECT` refused, 403                                                                                       |
+| R1    | Re-probe of the Pass 1 host set plus `www.accessdata.fda.gov`, `www.federalregister.gov`, `hal.science`, `osf.io`, `dl.acm.org`, `www.taylorfrancis.com`, `www.wiley.com`, `www.springer.com`, `www.jstage.jst.go.jp`, `ndlsearch.ndl.go.jp` | every host `CONNECT` refused, 403; only the repository hosting service and package registries completed      |
+| R2    | Page-fetch instrument against `www.fda.gov`, `www.ema.europa.eu`, `projecteuclid.org`, `doi.org`, `www.math.tau.ac.il`, `genomics.princeton.edu`                                                                                             | egress refusal for every domain                                                                              |
+| R3    | Web index (control query only)                                                                                                                                                                                                               | reachable; snippets only; not used for any decision-bearing statement                                        |
+| R5    | Repository tree and attachment mounts, re-checked before extraction                                                                                                                                                                          | no primary text other than the supplied packet                                                               |
+
+Consequence: the four `GAP_LEGAL_URL_ONLY` items could not be retrieved or inspected in
+this environment; their supplier-recorded SHA-256 values are carried as unverified
+identity aids only. The three bundled artifacts are the only primary texts inspected in
+Pass 2.
+
+### B.4 Inspected source artifact register (Pass 2)
+
+Inspection method for all three: full read of every page from the artifact's own text
+layer, with the printed page mapping taken from the page markers printed in the
+artifact; no rendering derivative, snippet, or secondary summary was used for any
+statement below. PDF document-information fields are quoted as identity corroboration
+only.
+
+#### B.4.1 SRC-32 — FDA (October 2022), Multiple Endpoints in Clinical Trials: Guidance for Industry
+
+| Field                         | Source-established value                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bibliographic identity        | _Multiple Endpoints in Clinical Trials — Guidance for Industry_; U.S. Department of Health and Human Services, Food and Drug Administration, Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER); October 2022; series label "Biostatistics" (cover and second page, both unnumbered) |
+| Version / printing            | Final guidance: printed p. 1 states "This guidance represents the current thinking of the Food and Drug Administration (FDA or Agency) on this topic"; no draft banner anywhere; the document itself labels a different guidance "draft" (footnote 6, printed p. 3), so the distinction is one the artifact makes                        |
+| Preparer                      | Office of Biostatistics, Office of Translational Sciences, CDER, in cooperation with CBER (footnote 1, printed p. 1)                                                                                                                                                                                                                     |
+| Acquisition route             | R4, lawfully supplied packet (Section B.2); supplier-reported origin: issuing-authority download URL; origin **not** re-verifiable here (Section B.3)                                                                                                                                                                                    |
+| Inspection date               | 2026-09-04                                                                                                                                                                                                                                                                                                                               |
+| SHA-256                       | `40284a050aab0037799072b2340e37d4b02ab6f7f2339fff6ea1cd55673a9563`                                                                                                                                                                                                                                                                       |
+| Page map                      | 29 PDF pages: cover, copies page, table of contents (unnumbered), then printed pp. 1–26 = PDF pp. 4–29; margin line numbers 1–438 are printed only on pp. 15–26 (references and appendix)                                                                                                                                                |
+| Document-information fields   | Title/Subject/Keywords "Multiple Endpoints in Clinical Trials - Guidance for Industry"; Author "FDA/CDER"; creation 2022-10-18, modification 2022-10-19 (corroboration only)                                                                                                                                                             |
+| Redistribution basis          | U.S. federal government work (investigator note: not stated in the artifact; the packet cites 17 U.S.C. §105); the file is in any case not committed                                                                                                                                                                                     |
+| Not established from artifact | the regulatory docket number named in the packet's manifest does not appear in the artifact; it is neither confirmed nor used                                                                                                                                                                                                            |
+
+#### B.4.2 SRC-33a — CPMP (adopted 19 September 2002), Points to Consider on Multiplicity Issues in Clinical Trials, CPMP/EWP/908/99
+
+| Field                       | Source-established value                                                                                                                                                                                                                                               |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bibliographic identity      | _Points to Consider on Multiplicity Issues in Clinical Trials_; Committee for Proprietary Medicinal Products (CPMP); The European Agency for the Evaluation of Medicinal Products (EMEA), London; reference CPMP/EWP/908/99; dated London, 19 September 2002 (cover)   |
+| Version / printing          | Adopted version: procedural table on the cover ends "ADOPTION BY CPMP September 2002"; every printed page carries "CPMP/EWP/908/99" and "EMEA 2002"                                                                                                                    |
+| Acquisition route           | R4, lawfully supplied packet; supplier-reported origin: issuing-authority document URL; origin not re-verifiable here                                                                                                                                                  |
+| Inspection date             | 2026-09-04                                                                                                                                                                                                                                                             |
+| SHA-256                     | `897bb9d6e9ced1865f709ca5fde8bbdcc2258ac6d89ed831cd6dcfaa0621e284`                                                                                                                                                                                                     |
+| Page map                    | 11 PDF pages: cover (unnumbered) then printed "1/10" … "10/10" = PDF pp. 2–11                                                                                                                                                                                          |
+| Document-information fields | Title "Points to consider on multiplicity issues in clinical trials"; Author "European Medicines Agency"; creation 2002-10-01; modification 2017-06-29 (the file was re-saved by the issuer in 2017; content identity is the 2002 adopted text, per the printed cover) |
+| Printed reproduction notice | cover: "EMEA 2002 Reproduction and/or distribution of this document is authorised for non commercial purposes only provided the EMEA is acknowledged" — **narrower than the packet's stated basis** (Section B.9, U-2)                                                 |
+
+#### B.4.3 SRC-33b — CHMP (draft, 15 December 2016; published for consultation 2017), Guideline on Multiplicity Issues in Clinical Trials, EMA/CHMP/44762/2017
+
+| Field                       | Source-established value                                                                                                                                                                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bibliographic identity      | _Guideline on multiplicity issues in clinical trials — Draft_; Committee for Human Medicinal Products (CHMP), European Medicines Agency; reference EMA/CHMP/44762/2017; dated 15 December 2016 (p. 1, lines 1–5)                                                                                                          |
+| Version / printing          | Draft for consultation: "Draft agreed by Biostatistics Working Party (BSWP) November 2016; Adopted by CHMP for release for consultation 15 December 2016; Start of public consultation 01 April 2017; End of consultation (deadline for comments) 30 June 2017" (p. 1); document-information version field "CURRENT,1.11" |
+| Stated relation to SRC-33a  | p. 1, lines 7–8: "This guideline replaces the 'Points to consider on multiplicity issues in clinical trials' (CPMP/EWP/908/99)" — a statement made in a draft; whether a final guideline was ever adopted is X-7 and remains unresolved (Section B.9)                                                                     |
+| Acquisition route           | R4, lawfully supplied packet; supplier-reported origin: issuing-authority document URL; origin not re-verifiable here                                                                                                                                                                                                     |
+| Inspection date             | 2026-09-04                                                                                                                                                                                                                                                                                                                |
+| SHA-256                     | `1c5977c36f5f45a4845cb706ab6fc1a9c1a90a98ce68df7e6dcad240143982f7`                                                                                                                                                                                                                                                        |
+| Page map                    | 15 PDF pages; PDF page = printed page ("Page n/15" from p. 2); margin line numbers 1–599 throughout                                                                                                                                                                                                                       |
+| Document-information fields | Title "Guideline on multiplicity issues in clinical trials - for publication"; Author "European Medicines Agency"; document reference field "EMA/CHMP/44762/2017"; creation 2017-04-10                                                                                                                                    |
+| Printed reproduction notice | p. 1: "© European Medicines Agency, 2017. Reproduction is authorised provided the source is acknowledged."                                                                                                                                                                                                                |
+
+### B.5 Claim-to-source table for SR-L (Pass 2)
+
+Pinpoints are printed pages (and margin line numbers where the artifact prints them).
+"Source fact" is what the text states; "Investigator inference" is separated and marked.
+
+| Claim ID | Claim (catalogue characterization to be verified)                                   | Source fact with pinpoint                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Relation to claim                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Status       |
+| -------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| C-L1 (a) | FDA (2022): FWER framing                                                            | SRC-32 printed p. 4, §II.B: "FDA's concern for controlling the Type I error probability is to minimize the chances of a false favorable conclusion for any primary or secondary endpoints (see section III.), regardless of which and how many of these endpoints in the study have no effect. The Type I error probability associated with testing multiple endpoints of a study is called overall Type I error probability." Printed p. 13, §IV: "the probability of erroneously finding a statistically significant treatment effect in at least one endpoint regardless of the presence or absence of treatment effects in the other endpoints is the overall Type I error rate. This error rate is typically held to 0.05 (or 0.025 for one-sided tests)." Printed p. 7, §III.A.3: "The overall Type I error rate should control for the primary and secondary endpoint families all together."                                                                                                                                                                                                                                                                                                                                                                                                                                                              | **Supports, with a terminology qualification.** The quantity the guidance controls is the probability of at least one false rejection over the prespecified family, regardless of which and how many nulls are true — the strong-sense familywise error rate in substance. The artifact never uses the words "familywise", "family-wise", or "FWER" (full-text search: zero occurrences); its vocabulary is "overall Type I error probability/rate" and "family of endpoints". | `SUPPORTED`  |
+| C-L1 (b) | FDA (2022): gatekeeping vocabulary                                                  | SRC-32 printed pp. 21–22, Appendix §7 "Gatekeeping Testing Strategies", lines 271–295: "Gatekeeping procedures (e.g., Dmitrienko et al. 2008, Dmitrienko and D'Agostino 2013) address the problems of testing hierarchically ordered families of null hypotheses … Different types of logical gatekeeping constraints have been studied including serial gatekeeping, parallel gatekeeping and their generalization referred to as tree-structured gatekeeping." Serial strategy: lines 283–290 (second family tested only if all primary-family hypotheses are rejected). Parallel strategy: lines 292–295 (second family tested when at least one primary-family endpoint is significant; "a separable testing method (e.g., Bonferroni method or Truncated Holm method)"). Multi-branched gatekeeping: printed p. 22, lines 308–311, with Figure A1 on printed p. 23.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | **Supports.** The vocabulary "serial gatekeeping", "parallel gatekeeping", "tree-structured gatekeeping", "separable testing method", and "multi-branched gatekeeping" is established verbatim from the issuing authority's text, with the definitions the guidance gives them.                                                                                                                                                                                                | `SUPPORTED`  |
+| C-L1 (c) | (scope of GUI-01 as a framing source for the one-way multi-group question)          | SRC-32 printed p. 2, §II: "The issues of multiplicity and methods that apply to multiple endpoints also generally apply to other sources of multiplicity, including other estimand attributes (e.g., multiple doses, time points, or study population subgroups); however, these other sources of multiplicity will not be specifically addressed in this guidance. … This guidance focuses on the analysis and interpretation of multiple endpoints within a single clinical trial." Printed p. 18, appendix preamble, lines 110–115: "this guidance does not attempt to recommend any one method over another in most cases."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | **Narrows (scope).** The guidance's framing is stated for endpoint families in a single trial, not for comparisons among several treatment groups; the applicability of its methods to "multiple doses" is asserted only as a general remark. The guidance selects no procedure. Investigator inference: GUI-01 is usable as a framing source for the error-rate concept and the gatekeeping vocabulary only; it is not a source for multi-group comparison semantics.         | `NARROWED`   |
+| C-L2 (a) | EMA/CPMP (2002): multiplicity framing                                               | SRC-33a printed p. 1, §1: "Throughout this document the term 'control of type I error' rate will be used as an abbreviation for the control of the family-wise type I error in the strong sense, i.e., there is control on the probability to reject at least one true null hypothesis, regardless which subset of null hypotheses happens to be true." Printed p. 2, §2: methods controlling overall α are "multiple-level-α-tests"; α is split and hypotheses tested at fractions of α ("adjusting the type I error level"); confidence intervals consistent with the tests "are not available for many of the more complex multiple-level-α-tests (or more generally closed tests)"; for an unforeseen multiple-test situation "a conservative approach will be necessary e.g. Bonferroni's or a related procedure". Printed p. 3, §2.1: the no-adjustment situations "are members from the set of closed testing procedures that control the family-wise error rate".                                                                                                                                                                                                                                                                                                                                                                                         | **Supports.** Strong-sense familywise control is defined verbatim; the framing vocabulary (multiple-level-α tests, α splitting, closed tests, hierarchical testing) is established.                                                                                                                                                                                                                                                                                            | `SUPPORTED`  |
+| C-L2 (b) | EMA/CPMP (2002): framing for designs with more than two treatment arms              | SRC-33a printed p. 5, §2.5: "As a general rule it can be stated that control of the family-wise type I error in the strong sense (i.e. application of closed test procedures) is a minimal prerequisite for confirmatory claims. It should be remembered that the usual confidence intervals for the pairwise differences between treatment groups are – except for a few instances - not consistent with the closed testing procedures, and are usually too narrow." Printed pp. 5–6, §2.5.3 (dose-response): "the control of the family-wise type I error in the strong sense is mandatory"; exploratory pairwise estimates for planning "an adjustment of the type I error is not necessary" (printed p. 6).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | **Supports and extends the framing to multi-arm designs.** This is the only inspected regulatory text that addresses several treatment groups directly. Investigator inference: for the Release 3 one-way question, GUI-02's 2002 text, not GUI-01, is the framing source that speaks to multi-group comparisons; the closed-test parenthetical is a framing statement, not a procedure selection.                                                                             | `SUPPORTED`  |
+| C-L2 (c) | EMA (2017 draft): multiplicity framing                                              | SRC-33b p. 4, lines 105–111: "Control of the study-wise rate of false positive conclusions at an acceptable level α is an important principle … the term 'control of type I error' rate will be used as an abbreviation for the control of the study-wise type I error in the strong sense, i.e. there is control on the probability to reject at least one out of several true null hypotheses, regardless of which subset of null hypotheses happens to be true." p. 4, lines 119–121: frequentist framing at pre-specified level α. pp. 5–6, lines 173–179: "multiple-level-α tests"; "adjusting the local significance level"; "Other test procedures are available, that can be more powerful if the correlation between the test statistics are taken into account, e.g. the Dunnett's test on multiple comparisons to a single control." p. 8, lines 303–305: for more than two arms, "control of the study-wise type I error is a minimal prerequisite for confirmatory claims." pp. 9–10, lines 337–356: Phase II dose-finding "may not be required"; pivotal Phase III multi-dose "mandatory". pp. 14–15, lines 561–599: multiplicity in estimation; simultaneous confidence regions; selection bias; "simple but conservative confidence interval methods, such as Bonferroni-corrected intervals" advised when regions do not correspond to the test. | **Supports.** The draft keeps the strong-sense definition and the multi-arm prerequisite, renames "family-wise" to "study-wise", drops the 2002 parenthetical "(i.e. application of closed test procedures)", names Dunnett's many-to-one test as an example, and adds an estimation section. These are recorded as differences between the two GUI-02 texts, not as a conflict to adjudicate here (Section B.9, U-3).                                                         | `SUPPORTED`  |
+| C-L2 (d) | (currency of GUI-02(b): whether the 2017 draft was superseded by a final guideline) | SRC-33b p. 1, lines 7–8 states that the guideline "replaces" CPMP/EWP/908/99, but the artifact is a draft released for consultation. No inspected artifact establishes whether a final version was adopted. The issuing host was unreachable (Section B.3); the packet's assertion that the host still lists the 2002 text as the current effective version could not be verified.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | **Does not resolve X-7.** Not a claim about what the sources state; it is a currency question carried as a reopen condition (Section B.11).                                                                                                                                                                                                                                                                                                                                    | `OPEN (X-7)` |
+
+Numerical statements read from the sources (illustrative in the sources; not
+Protocol quantities): SRC-32 printed p. 4 names 0.05 two-sided and 0.025 one-sided as
+the most widely used α; printed p. 5 computes overall Type I error of about 0.05, 7%,
+and 22% for two, three, and ten independent endpoints at two-sided 0.05, and printed p. 8
+computes 64% joint power for two independent co-primary endpoints each at 80%; SRC-33a
+printed p. 1 and SRC-33b p. 4 compute 12% (2017: "approximately 12%") for five
+independent one-sided 2.5% tests. Investigator recomputation: 0.0494, 0.0731, 0.2237,
+0.64, and 0.1189 — each agrees with the source at the precision the source prints.
+
+Reference-list corroboration (identity only, never content): SRC-32 printed pp. 15–17,
+lines 1–101, lists Hochberg (1988) as Biometrika 75:800–802 (lines 46–47), Holm (1979)
+as Scandinavian Journal of Statistics 6(2):65–70 (lines 52–53), Bretz et al. (2009) as
+Statistics in Medicine 28:586–604 (lines 15–16), Westfall and Young (1993) as
+Wiley-Interscience, New York (lines 97–98), Wiens (2003) as Pharmaceutical Statistics
+2:211–215 (lines 100–101), and the CPMP (2002) Points to Consider (lines 22–26). These
+agree with the identities of SRC-16, SRC-26, SRC-25, SRC-27 (c), and SRC-33 (a) recorded
+in Section 11. They resolve none of X-1 through X-7.
+
+### B.6 Required analysis for the affected entries (Pass 2)
+
+The commission's eight items, applied to the two entries assigned to SR-L. Nothing in
+this section is applied to any other entry.
+
+#### B.6.1 GUI-01 — FDA Multiple Endpoints guidance (2022)
+
+1. **Exact item and variant described by the source.** A final regulatory guidance
+   (October 2022) on multiple endpoints within a single clinical trial; a framing
+   document, not a procedure. Its appendix describes eight method classes (Bonferroni,
+   Holm, Hochberg, prospective alpha allocation, fixed sequence, resampling,
+   gatekeeping, graphical) as commonly used options and recommends none in most cases
+   (printed p. 18, lines 110–115).
+2. **Source statement versus investigator inference.** Source statements: Section B.5,
+   rows C-L1 (a)–(c). Investigator inference: the "overall Type I error rate" is the
+   strong-sense familywise error rate in substance; the guidance's endpoint-family scope
+   means it does not itself speak to one-way multi-group comparison semantics.
+3. **Member set, target, error criterion, guarantee strength.** Member set: the
+   prespecified primary and secondary endpoint families of one trial (printed pp. 4–7).
+   Target: false favorable conclusions on any member. Criterion: overall Type I error
+   probability, defined as at-least-one-false-rejection regardless of which and how many
+   nulls are true (printed p. 4, p. 13). Strength: strong-sense control is what the
+   definition describes; the words "strong sense" are not used.
+4. **Assumptions recorded.** For the framing itself: prespecification of endpoints and
+   analyses (printed pp. 4–6). For the appendix's method descriptions: Bonferroni and
+   Holm described as assumption-free with respect to correlation (printed p. 19, lines
+   188–190); Hochberg described as controlling "for independent endpoint tests or for
+   positively correlated dependent tests with standard test statistics in some cases"
+   and failing "for some negatively correlated tests" (printed pp. 19–20, lines 190–198,
+   citing Sarkar and Chang 1997 and Huque 2016); prospective alpha allocation valid for
+   independent or positively correlated endpoints (printed p. 20, lines 211–213);
+   resampling requiring "few, albeit important, assumptions" and large samples (printed
+   p. 21, lines 261–269). **These appendix descriptions are secondary characterizations
+   of procedures whose primary texts are assigned to other holds. They are recorded here
+   because the source states them; they are not used to support, narrow, or close SR-B,
+   SR-C, SR-D, RSM-01, or RSM-02.**
+5. **Result classes and numerical quantities justified.** The guidance justifies a
+   framing (control the overall Type I error for the prespecified family at 0.05
+   two-sided or 0.025 one-sided) and vocabulary; it justifies no test statistic, critical
+   value, or adjusted-p arithmetic for the Protocol. The illustrative inflation numbers
+   are verified above.
+6. **Mismatch with the reviewed catalogue.** None material. Terminology: the catalogue
+   says "FWER framing"; the source says "overall Type I error rate". Scope: the
+   catalogue lists GUI-01 as "required reading for FWER framing before the RFC"; the
+   source's framing is endpoint-scoped, which the catalogue does not contradict but
+   does not state.
+7. **Support / narrow / contradict / not resolve.** Supports the "FWER framing" and
+   "gatekeeping vocabulary" characterization, narrowed by the terminology and scope
+   qualifications above. Nothing contradicts.
+8. **Reopen condition.** Issuance of a revised or superseding FDA multiple-endpoints
+   guidance; or any dependent proposal citing GUI-01 for multi-group comparison
+   semantics rather than for framing and vocabulary.
+
+#### B.6.2 GUI-02 — EMA PtC (2002) and draft guideline (2017)
+
+1. **Exact items and variants.** (a) CPMP/EWP/908/99, adopted 19 September 2002 — a
+   Points-to-Consider document; (b) EMA/CHMP/44762/2017 — a draft guideline released
+   for consultation (consultation 1 April–30 June 2017) that states it replaces (a).
+   Both are framing documents. Neither is a procedure.
+2. **Source statement versus investigator inference.** Source statements: Section B.5,
+   rows C-L2 (a)–(d). Investigator inference: (a) is the inspected regulatory text that
+   directly addresses designs with more than two treatment arms; the 2002→2017
+   vocabulary change ("family-wise" → "study-wise") and the dropped closed-test
+   parenthetical are differences in framing emphasis, not a change in the defined
+   quantity.
+3. **Member set, target, error criterion, guarantee strength.** Member set: the
+   confirmatory null hypotheses of one trial (endpoints, arms, doses, subgroups as
+   pre-specified). Target: false positive confirmatory conclusions. Criterion:
+   family-wise (2002) / study-wise (2017) type I error. Strength: **strong sense,
+   stated verbatim in both texts** (2002 printed p. 1; 2017 p. 4, lines 108–111).
+4. **Assumptions recorded.** Frequentist decision framework at a pre-specified α
+   (2017 p. 4, lines 119–121); pre-specification of the multiplicity procedure "without
+   room for choice" (2017 p. 6, lines 180–183; 2002 printed p. 2); for multi-arm
+   designs, strong-sense control as a minimal prerequisite (2002 printed p. 5; 2017
+   p. 8); confidence intervals consistent with complex procedures often unavailable
+   (2002 printed p. 2; 2017 pp. 14–15, lines 561–572). Dunnett's many-to-one test is
+   named as an example of a correlation-aware procedure (2017 p. 6, lines 177–179);
+   this mention is secondary and is not used for MTO-01 or hold SR-J.
+5. **Result classes and numerical quantities justified.** A framing (strong-sense
+   family-/study-wise control as a prerequisite for confirmatory claims, including in
+   multi-arm and multi-dose confirmatory designs) and an estimation-side framing
+   (simultaneous confidence regions; Bonferroni-corrected intervals as a conservative
+   fallback; selection bias). No test statistic, critical value, or adjusted-p
+   arithmetic.
+6. **Mismatch with the reviewed catalogue.** None. The catalogue's "regulatory
+   multiplicity framing" characterization is met by both texts.
+7. **Support / narrow / contradict / not resolve.** Supports. The currency of (b) (X-7)
+   is not resolved.
+8. **Reopen condition.** Adoption of a final EMA multiplicity guideline superseding
+   the 2017 draft or the 2002 Points to Consider (X-7); or any dependent proposal
+   relying on the 2017 draft's estimation section as adopted regulatory text.
+
+### B.7 Hold dispositions after Pass 2 (all fourteen re-adjudicated)
+
+| Hold   | Coverage                                      | Pass 2 source outcome                                                                                                    | Pass 1             | Pass 2 disposition | Basis                                                                                                                                                                                                                                                          |
+| ------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SR-A   | OMN-01 … OMN-04                               | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-B   | PVL-01 attribution; PVL-02                    | no assigned source acquired; SRC-32's Bonferroni description is secondary and not used                                   | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-C   | PVL-06 … PVL-10                               | no assigned source acquired; SRC-32's Holm and Hochberg descriptions are secondary and not used                          | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-D   | CLS-01 … CLS-06                               | no assigned source acquired; SRC-32's fixed-sequence, gatekeeping, and graphical descriptions are secondary and not used | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-E   | APR-01 historical attribution                 | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-F   | APR-05; APR-06                                | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-G   | APR-09                                        | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-H   | APR-10 … APR-14                               | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-I   | HET-01 … HET-03                               | no assigned source acquired                                                                                              | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-J   | MTO-02; MTO-03; MCB-01                        | no assigned source acquired (SRC-30 lawful URL refused); SRC-33b's Dunnett mention is secondary and not used             | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged; Section 11 omission of Marcus (1976) recorded (Section B.10)                                                                                                                                                                                        |
+| SR-K   | FDR-01 dependence scope; FDR-02 … FDR-04      | no assigned source acquired (SRC-22, SRC-23, SRC-24 lawful URLs refused)                                                 | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged                                                                                                                                                                                                                                                      |
+| SR-L   | GUI-01; GUI-02                                | SRC-32, SRC-33 (a), SRC-33 (b) inspected in full with SHA-256 and printed pinpoints (Sections B.4–B.6)                   | `INPUT_INCOMPLETE` | **`CLOSED`**       | every decision-bearing claim the hold exists to verify (C-L1 a–b, C-L2 a–c) is directly supported with exact artifact identity and pinpoints; qualifications and the X-7 reopen condition are recorded, none of them being a claim the sources fail to support |
+| RSM-01 | Westfall-Young maxT / minP                    | SRC-25 not acquired; SRC-32's resampling paragraph (printed p. 21) is a secondary description and is not used            | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged (Section B.8)                                                                                                                                                                                                                                        |
+| RSM-02 | permutation-based pairwise/step-down families | no candidate text acquired                                                                                               | `INPUT_INCOMPLETE` | `INPUT_INCOMPLETE` | unchanged; V-1 … V-4 remain reopen triggers / variant-split candidates only (Section B.8)                                                                                                                                                                      |
+
+What `CLOSED` for SR-L means: the source-acquisition obstacle for GUI-01 and GUI-02 is
+removed and their framing characterization is verified from the issuing authorities'
+texts. It selects nothing, changes no catalogue token, and does not itself lift the
+hold-blocked marker on the two entries; that is the steward's catalogue action after
+independent exact-head review. SR-L's closure does not bear on any other hold: the
+regulatory texts describe procedures only at second hand, and no such description is
+used anywhere in this report as support for a procedure entry.
+
+### B.8 Resampling entries after Pass 2
+
+- **RSM-01.** SRC-25 remains unacquired (monograph; publisher and library hosts refused;
+  no copy supplied). SRC-32 printed p. 21, Appendix §6, describes resampling-based
+  procedures citing Westfall and Young (1993) in general terms (data-based null
+  distribution; bootstrap and permutation; assumptions hard to verify in small samples).
+  This is a regulatory summary, not the primary text; it establishes neither the
+  maxT/minP definitions nor subset pivotality nor the member set, and is not used.
+  **Disposition: `INPUT_INCOMPLETE`** (unchanged).
+- **RSM-02.** No candidate text (V-1 … V-4) was acquired. The candidates remain reopen
+  triggers and possible variant-split candidates exactly as in Section 9.2; none is
+  promoted, none redefines the fixed entry, and no evidence from any inspected source is
+  generalized to a permutation or step-down family. The Pass 1 forward note (Section
+  7.2) stands: if the candidates are later inspected and resolve to several materially
+  different variants, the entry becomes named-gap `PARTIAL` at best and a catalogue
+  reopen with a steward variant-split decision is required; that outcome is not a
+  reason to treat the resampling lane as resolved. **Disposition: `INPUT_INCOMPLETE`**
+  (unchanged).
+
+### B.9 Conflicts, unresolved questions, and uncertainties surfaced in Pass 2
+
+No primary-source conflict bearing on a catalogue procedure was found, because the only
+inspected sources are framing documents. Items surfaced:
+
+- **X-7 (carried; not resolved).** Whether a final EMA guideline superseded the 2017
+  draft or the 2002 Points to Consider cannot be established from the inspected
+  artifacts, and the issuing host was unreachable. The packet's statement about the
+  host's current listing is unverified here.
+- **X-8 (new, bibliographic).** The fixed result's SRC-28 names "Marcus (1976)" as a
+  step-down many-to-one text; Section 11 of this report omitted it (Section B.10). Its
+  identity — the same paper as SRC-18 (Marcus, Peritz, and Gabriel 1976) or a distinct
+  Marcus 1976 text — must be confirmed from the reference lists of Dunnett and Tamhane
+  (1991, 1992) when supplied. Until then it is a named required item for SR-J.
+- **U-1 (terminology, recorded, not a conflict).** SRC-32 does not use "familywise" or
+  "FWER"; its "overall Type I error rate" is defined as the strong-sense quantity. Any
+  dependent text quoting GUI-01 should use the guidance's own term or state the
+  equivalence explicitly.
+- **U-2 (redistribution notice discrepancy, recorded).** The printed notice on SRC-33a
+  permits reproduction "for non commercial purposes only" with acknowledgment, which is
+  narrower than the current website legal notice the packet cites. This does not affect
+  inspection and no file is committed; a steward relying on the packet's redistribution
+  basis for SRC-33a should note the artifact's own printed terms.
+- **U-3 (differences between the two GUI-02 texts, recorded).** "family-wise" (2002) →
+  "study-wise" (2017); the 2002 parenthetical tying the multi-arm prerequisite to
+  closed test procedures is absent in 2017; 2017 adds an estimation section and names
+  Dunnett's test. Both texts define the same strong-sense quantity. No adjudication is
+  needed for the framing claim; a dependent proposal citing one text's specific wording
+  should cite that text.
+- **U-4 (source-internal identifier anomaly, recorded).** SRC-33b p. 3, lines 57–58,
+  refers to the 2002 Points to Consider under the identifier "EMA/286914/2012", which
+  differs from the identifier printed on SRC-33a (CPMP/EWP/908/99). Investigator
+  inference: a cross-reference slip in the draft; it does not affect identity of either
+  artifact, both of which are established from their own covers.
+- **U-5 (origin cross-check pending).** The three bundled files could not be re-hashed
+  against the issuing hosts from this environment. Identity rests on the artifacts'
+  printed covers, reference numbers, dates, and document-information fields, which are
+  mutually consistent. An independent reviewer with host access should re-download and
+  compare SHA-256 values; a mismatch would reopen SR-L for re-inspection of the host
+  copy.
+
+Unresolved questions carried forward unchanged from the fixed result: I-03/D-03, D-02,
+D-04, and the SR-E attribution residual. X-1 through X-6 are unchanged.
+
+### B.10 Count reconciliation
+
+Recomputed from the Pass 1 text at blob `72de5f5a…` and from the packet.
+
+| Figure                                        | Where stated               | Stated | Recount                                                               | Finding                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------------------------------- | -------------------------- | ------ | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SR-A through SR-L named sources               | Section 2.8                | 43     | 42 rows in Section 11 (4 + 2 + 6 + 5 + 1 + 3 + 1 + 7 + 3 + 4 + 3 + 3) | The 43 arises from counting SRC-28 as four texts — Marcus (1976), Naik (1975), Dunnett-Tamhane (1991), Dunnett-Tamhane (1992), as the fixed result's Section 2.2 names it — while Section 11 lists only three SRC-28 rows under SR-J. Section 11 therefore **omits one required item** (Marcus 1976; X-8). Neither figure is silently edited: 43 is the count of distinct named texts implied by the fixed result; 42 is the count of Section 11 rows as written. The corrected required-source enumeration is 43 SR items = Section 11's 42 rows plus Marcus (1976). |
+| Section 11 SR rows                            | Section 11                 | —      | 42                                                                    | as above; plus one RSM-01 row and one RSM-02 row referencing four candidates (44 table rows)                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Packet total                                  | packet README and manifest | 47     | 47                                                                    | 42 SR rows (mirroring Section 11, so also missing Marcus 1976) + 1 (SRC-25) + 4 (V-1 … V-4). With the omission repaired the required total is 48.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Lawful-URL-only items                         | packet `gaps.md` Section 1 | 3      | 4                                                                     | manifest status `GAP_LEGAL_URL_ONLY` on SRC-22, SRC-23, SRC-24, SRC-30; `gaps.md` Section 1 says 3 and its Section 3 closing paragraph corrects itself to 4; the README says 4. The Section 1 table's "36 unbundled SR" is correspondingly 35.                                                                                                                                                                                                                                                                                                                        |
+| Bundled items                                 | packet                     | 3      | 3                                                                     | verified by SHA-256 and cover inspection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Items inspected in Pass 2                     | this Part                  | —      | 3                                                                     | all assigned to SR-L                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Required items still uninspected after Pass 2 | this Part                  | —      | 45                                                                    | 40 SR items (43 − 3) + 1 (SRC-25) + 4 (V-1 … V-4)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+### B.11 Reopen conditions after Pass 2
+
+Section 9.1's conditions continue to apply. Added for SR-L:
+
+1. a final EMA multiplicity guideline, or a revised FDA multiple-endpoints guidance, is
+   published (X-7 and Section B.6 item 8) — GUI-02 or GUI-01 is then re-inspected;
+2. the issuing-host copy of any bundled artifact is found to differ by SHA-256 from the
+   inspected copy (U-5) — SR-L is re-inspected against the host copy;
+3. a dependent proposal cites GUI-01 as a source for multi-group comparison semantics,
+   or cites the 2017 draft's estimation section as adopted text — the citation is
+   outside what Pass 2 verified and must be re-sourced.
+
+### B.12 `NARROW` reconsideration and overall disposition after Pass 2
+
+- **Can the `NARROW` program disposition be reconsidered?** No. The comprehensive public
+  question spans lanes whose primary texts remain uninspected (SR-A through SR-K,
+  RSM-01, RSM-02). Verifying the two framing entries does not make that source basis
+  reviewable. `NARROW` stands.
+- **`SOURCE_SET_READY` test.** Requires `CLOSED` on all fourteen. One of fourteen is
+  `CLOSED`. **Not satisfied.**
+- **Precedence `NO_GO` > `INPUT_INCOMPLETE` > `PARTIAL`.** `NO_GO`: none (no inspected
+  evidence contradicts the catalogue). `INPUT_INCOMPLETE`: thirteen (SR-A through SR-K,
+  RSM-01, RSM-02). `PARTIAL`: none. `CLOSED`: one (SR-L).
+
+**Overall disposition after Pass 2: `INPUT_INCOMPLETE`.**
+
+### B.13 Remaining supply task
+
+Section 11 remains the required-source list, with these corrections and status notes:
+
+- add to SR-J: Marcus (1976) as named in the fixed result's SRC-28; identity to be
+  resolved per X-8;
+- SR-L: no further supply needed for the hold as commissioned; host-copy SHA-256
+  cross-check (U-5) and the X-7 currency check are reviewer or steward actions requiring
+  access to `www.fda.gov` and `www.ema.europa.eu`;
+- SR-K and SR-J: SRC-22, SRC-23, SRC-24, SRC-30 have supplier-recorded lawful URLs and
+  SHA-256 values in the packet; they must be supplied as local copies (or the four hosts
+  added to the environment policy) — none was inspectable here;
+- all other Section 11 items: unchanged; lawful supply via institutional access,
+  purchase, or library loan; nothing may be committed.
+
+Lowest-cost next increment: SRC-22 and SRC-30 (publisher free-to-read copies) would
+allow SR-K's FDR-01/FDR-02 dependence-scope claims and SR-J's MCB-01 claim to be
+inspected; neither hold can close on those alone (SR-K also needs SRC-23 and SRC-24;
+SR-J also needs SRC-28).
+
+### B.14 Validation record (Pass 2 head)
+
+Run in the working clone on 2026-09-04 against the exact content committed as the Pass 2
+head, after pinned dependency installation.
+
+- `pnpm format:check`: "All matched files use Prettier code style!" — clean.
+- `pnpm lint:markdown`: 350 files linted, 0 issues (a first run reported one
+  heading-increment finding on the pass ledger heading, which was corrected before
+  commit).
+- `node --import tsx tooling/src/validate.ts`: "validate: OK" — registries,
+  traceability, normative lint, authority, gates, conformance manifest, links,
+  private-dependency and language audits, phase-1 schemas, cross-checks, code-path
+  audits, and the snapshot manifest mechanism clean.
+
+### B.15 Public-artifact self-check (Pass 2)
+
+- Only this file changed. The fixed semantic result, both commissions, the RFC draft,
+  authoritative artifacts, registries, schemas, conformance artifacts, reference code,
+  generated views, and Release 2 material are untouched.
+- No PDF, ZIP, or other primary-source file is committed. The packet's own metadata
+  cells are not reproduced verbatim; only artifact-derived facts and the packet's hash
+  values are recorded.
+- The Pass 1 record (Sections 1–13) is preserved verbatim, including its acquisition
+  log, its `INPUT_INCOMPLETE` dispositions, its Section 2.8 and Section 11 figures, and
+  its closing line; Pass 2 corrections are stated in Section B.10 rather than applied to
+  the Pass 1 text.
+- The fixed 49-entry catalogue, its `NARROW` disposition, and both reviewed `TRANSFER`
+  dispositions are unchanged. No entry is redefined, split, promoted, or demoted. RSM-02
+  candidates are recorded only as reopen triggers / variant-split candidates.
+- Source-established facts (Sections B.4–B.5), investigator inference (marked in
+  Sections B.5–B.6 and B.9), dispositions (Sections B.7, B.8, B.12), and count
+  corrections (Section B.10) are kept separate.
+- Attribution is role-based; no drafting, extraction, search, or review software,
+  service, provider, or mechanism is identified; no human authorship is claimed.
+
+RELEASE 3 SEMANTIC SOURCE-ACQUISITION RESULT — PASS 2 COMPLETE - INPUT_INCOMPLETE - SR-L CLOSED - 13 OF 14 OPEN - NARROW PRESERVED - TRANSFER PRESERVED - AWAITING INDEPENDENT REVIEW - NOT PROTOCOL ADOPTION
