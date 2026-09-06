@@ -485,8 +485,6 @@ artifacts:
     class: informative
   - path: AGENTS.md
     class: informative
-  - path: CLAUDE.md
-    class: informative
   - path: PROTOCOL-ARCHITECTURE.md
     class: informative
     notes: Architecture map; no independent semantic authority.
