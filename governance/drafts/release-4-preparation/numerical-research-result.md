@@ -3,6 +3,10 @@
 Status: informative, preliminary research only; not adopted.
 Programme disposition: `INPUT_INCOMPLETE`.
 Investigator role: independent numerical investigator, 2026-09-06.
+Repair role: preparation-package author performing self-review, 2026-09-06;
+Sections 4, 9, and the probe transcript were repaired as recorded in Section 11.
+The repair contributor is not an independent reviewer of either the package or
+this revised result; the original investigator attribution does not cover repairs.
 No semantic-investigator output or preferred implementation was supplied or used.
 This authoring pass is not independent review of this report. No implementation,
 RFC, design freeze, public opening, support domain, tolerance, or release is authorized.
@@ -132,8 +136,13 @@ a candidate rounded value conditional on the host's rational-to-float conversion
 a portable certificate needs an independent explicit nearest-even converter.
 
 A separate Decimal positive-series recurrence evaluates DLMF 8.17.7 at 150
-digits for nine moderate/far-tail points. Agreement to 1e-140 is a diagnostic
-only, not a rigorous remainder bound. The routes share special-function
+digits for nine moderate/far-tail points. The repaired diagnostic requires
+positive rational bounds, a relative enclosure width below 1e-120/4, and
+distance from both endpoints at most 1e-120 times the positive lower bound.
+This is a diagnostic threshold, not a Protocol tolerance or a rigorous series
+remainder bound. Zero and doubled-probability controls fail at all nine points.
+The original absolute 1e-140 diagnostic admitted zero in the smallest tail;
+Section 11 records the self-review correction. The routes share special-function
 identities but not the polynomial algorithm. They do not share reference-kernel
 code. Exact rational cell algebra is checked by a diagonal least-squares
 identity and total-SS decomposition, not an independent library implementation.
@@ -350,16 +359,27 @@ print('order',sequential([1e16,1.,-1e16]),sequential([1e16,-1e16,1.]))
 v=[1e8-1,1e8+1]; print('SSE cancellation',sum(x*x for x in v)-sum(v)**2/2,sum((x-1e8)**2 for x in v))
 print('extremes',1e308+1e308,1e-200*1e-200,'degree collapse',float(2**53)==float(2**53+1))
 print('zero residual',algebra([[i,i] for i in range(4)])[2])
+def diagnostic_agrees(q,lo,hi):
+    eps=Q(1,10**120)
+    return (0<lo<hi<=1 and hi-lo<lo*eps/4
+            and max(abs(q-lo),abs(q-hi))<=lo*eps)
+
+old_lo,old_hi=tail_bounds(Q(2**100),60,1024)
+assert 0<old_lo<old_hi and abs((old_lo+old_hi)/2)<Q(1,10**140)
+assert not diagnostic_agrees(Q(0),old_lo,old_hi)
+print('old absolute check admits zero at F=2^100, nu=60; repaired check rejects: PASS')
 for nu in [4,8,60]:
     for f in [Q(nu),Q(8*nu),Q(2**100)]:
         lo,hi=tail_bounds(f,nu,1024)
         p,it=series(f,nu,150)
         # Decimal precision agreement is diagnostic, not enclosure proof.
-        q=Q(p); assert abs(q-(lo+hi)/2)<Q(1,10**140)
-print('9 F tails: exact enclosure vs 150-digit series PASS')
+        q=Q(p); assert diagnostic_agrees(q,lo,hi)
+        assert not diagnostic_agrees(Q(0),lo,hi)
+        assert not diagnostic_agrees(2*q,lo,hi)
+print('9 F tails: relative enclosure diagnostic PASS; 18 negative controls rejected')
 for power in [510,530,540,600]:
     f=Q(2**power);lo,hi=tail_bounds(f,4,4096)
-    assert 0<lo<hi
+    assert 0<lo<hi and float(lo)==float(hi)
     print('F=2^'+str(power),'positive',lo>0,'same binary64 projection',float(lo)==float(hi),'hex',float(lo).hex())
 # Critical bracket at alpha=1/20, nu=4, independently enclosed bisection.
 l,r=Q(0),Q(32);alpha=Q(1,20)
@@ -421,7 +441,8 @@ order 0.0 1.0
 SSE cancellation 0.0 2.0
 extremes inf 0.0 degree collapse True
 zero residual 0
-9 F tails: exact enclosure vs 150-digit series PASS
+old absolute check admits zero at F=2^100, nu=60; repaired check rejects: PASS
+9 F tails: relative enclosure diagnostic PASS; 18 negative controls rejected
 F=2^510 positive True same binary64 projection True hex 0x1.8000000000000p-1018
 F=2^530 positive True same binary64 projection True hex 0x0.0000000018000p-1022
 F=2^540 positive True same binary64 projection True hex 0x0.0p+0
@@ -431,5 +452,33 @@ near-zero and adjacent critical projections: PASS
 7 preliminary admission negatives: PASS
 6 manifest equality tampering controls: PASS (toy only)
 threshold equality True projection midpoint 0x1.0000000000000p+0
-script sha256 65b32feeb662b7dd3fdac36a3608e82c15b943a9a6d6086b0f05bd13b15558fc
+script sha256 b66f7826badf2d335fa7faf9669a625752c30848a1fc24a1dae0dd41eba9cf0e
 ```
+
+## 11. Self-adversarial repair record
+
+This is author-side repair, not the required separate-context exact-head review.
+The original result is preserved at commit
+`e5d5ba4e87d6dac05ad1df541a7b25aa0d8b08ab`, blob
+`da509af2ebe55795f4afe8035c7a003664672187`. Its script SHA-256 was
+`65b32feeb662b7dd3fdac36a3608e82c15b943a9a6d6086b0f05bd13b15558fc`;
+the original transcript was reproduced before repair (exit 0).
+
+Finding SA-N1 (`SHOULD-FIX`): the nine-tail check used absolute error below
+1e-140. At F=2^100 and nu=60, even an incorrect zero passes that check.
+The repaired script reproduces that false acceptance, rejects zero, and
+requires scale-relative agreement with both rational endpoints. All nine
+positive cases pass and all eighteen zero/doubled-result negative controls
+are rejected. This does not certify series truncation or a support domain.
+
+Finding SA-N2 (`NICE-TO-HAVE`): equality of the four binary64 endpoint
+projections was printed but not asserted. It is now asserted. Their previously
+recorded hexadecimal projections are unchanged, including positive real tails
+whose binary64 projection is zero. Host-conversion limitations remain open.
+
+The replacement transcript above was regenerated from the exact repaired
+embedded script under Python 3.12.13 on x86_64 (exit 0). No primary-source gap,
+semantic dependency, omitted adversarial case, or independent review is closed
+by these corrections. Programme disposition remains `INPUT_INCOMPLETE`;
+per-entry labels remain preliminary. Review the new PR head, not the original
+head, before relying on this revised report.
