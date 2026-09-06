@@ -10,6 +10,15 @@ No discussion URL, opening timestamp, minimum-window determination, or earliest
 decision timestamp has been assigned. Those fields are recorded only when the
 public-opening gate is satisfied and the discussion issue is actually opened.
 
+**Current evidence reconciliation (2026-09-06):** the semantic programme remains
+`NARROW`; source acquisition remains `INPUT_INCOMPLETE` with SR-L alone closed and
+13 source-completion items open. The numerical result in PR #174 remains an
+unmerged `INPUT_INCOMPLETE` candidate awaiting independent repair closure. The
+[preparation status](release-3-preparation/README.md#current-research-gate-state)
+and [readiness audit](release-3-preparation/readiness-audit-2026-09-06.md)
+record the evidence and remaining tasks. The comprehensive scope below remains a
+proposal; this status update does not approve it or dispose R3-H1 through R3-H7.
+
 ## Summary
 
 Release 3 is proposed as a bounded but comprehensive successor program for
