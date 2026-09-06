@@ -131,7 +131,11 @@ unissued.
 
 ## Release 4 parallel start
 
-Release 4 preparation may begin while Release 3 is under public discussion:
+Release 4 research preparation may begin while Release 3 research is active. Drafting
+its public question, commissioning Release 4-specific research, and cataloguing
+conditional reuse do not depend on Release 3 public discussion having opened. Release
+4 public discussion opens only after its own bounded question and Research Gate handoff
+are reviewable:
 
 1. frame the factorial or interaction question and exclusions;
 2. identify which Release 3 F-distribution and multiplicity results are genuinely
