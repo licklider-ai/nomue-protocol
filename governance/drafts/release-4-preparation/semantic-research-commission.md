@@ -8,7 +8,10 @@ multiplicity procedure, implementation, or release outcome.
 ## Independence and fixed inputs
 
 Assign this work to an investigator independent of any future Release 4 semantic or
-numerical implementation. The execution issue must pin:
+numerical implementation who did not author or revise the preparation README,
+either commission, the horizon change, or PR #176. The result records this
+non-authorship boundary. This later clarification mirrors repaired Issue #177;
+it does not replace that issue's fixed commission blob. The execution issue must pin:
 
 - the containing repository commit and tree;
 - this commission's exact blob;

@@ -18,6 +18,13 @@ result. A final numerical disposition requires the reviewed semantic catalogue a
 may cover only its exact hypotheses, outputs, design boundary, and degrees of freedom.
 Release 3 candidates are precedent to test, not Release 4 authority.
 
+A preliminary-only result returns programme disposition `INPUT_INCOMPLETE`.
+Per-entry assessments use explicitly preliminary `PRELIM-*` labels, not the
+final disposition vocabulary below. Only a successor bound to the reviewed
+semantic handoff can issue final per-entry dispositions. Every later input
+records its exact commit, tree, blob, and review state. These clarifications
+mirror repaired Issue #178 and do not replace its fixed commission blob.
+
 Directly inspect primary numerical literature, standards, or authoritative upstream
 documentation. Two agreeing libraries do not establish mathematical truth or a
 portable operation graph.
@@ -56,9 +63,10 @@ unchanged in principle, and which require a new factorial-specific graph or proo
    and iterations. A finite corpus maximum is not a global bound.
 10. Define a supported-execution evidence strategy and exact platform/build/process
     admission boundary without copying a Release 3 allowlist.
-11. Determine whether unbalanced Candidates B/C require matrix-rank, pivoting,
-    generalized-inverse, or iterative behavior that creates distinct numerical
-    Contracts or a defer disposition.
+11. For Candidate C (unbalanced), determine whether matrix-rank, pivoting,
+    generalized-inverse, or iterative behavior creates distinct numerical
+    Contracts or a defer disposition. For Candidate B (balanced `a × b`),
+    investigate rank and dimension bounds without reclassifying it as unbalanced.
 12. Identify which factorial numerical results can later serve higher-factor,
     regression, blocked, repeated, or mixed-model work, and state the non-reusable
     assumptions.

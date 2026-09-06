@@ -14,6 +14,13 @@ This preparation starts from main commit
 activate the research commissions must pin the containing commit and the exact
 commission blobs after this package is merged.
 
+The initial package was merged at
+`58675e66dbf263c94688d47867c731ad4efddbf6`. This subsequent informative
+self-review revision does not replace the fixed inputs of Issues #177 and #178.
+Their original blobs and repaired issue bodies remain the commissioned inputs.
+The [self-review record](self-review-result.md) tracks corrections and open work;
+it is not independent review or an adoption decision.
+
 ## Objective
 
 Determine whether the first Release 4 vertical slice can be a portable, independently
@@ -74,6 +81,15 @@ may inform a Release 4 RFC, design freeze, implementation, or public-opening dec
 
 ## Release 3 reuse boundary
 
+Historical research-start snapshot, 2026-09-06, at `58675e66dbf263c94688d47867c731ad4efddbf6`:
+the Release 3 semantic result (blob `8f21526040924b891f64724c2d0fde9ea94eff92`)
+records `NARROW`; its source-acquisition result (blob
+`5465cbcfd00708facac94785d9244b79166cb81e`) retains 13 incomplete source holds.
+Release 3 numerical PR #174 was open and unaccepted at research start. This is
+a dated input snapshot, not a live status or a claim that an accepted numerical
+foundation already exists. Later reuse requires fresh commit/tree/blob and
+review-state pins.
+
 Potentially reusable after scope verification:
 
 - the claim-object separation among target, protected family, error criterion, and
@@ -96,18 +112,23 @@ automatically a Release 4 decision.
 The commission owns final source selection and direct inspection. This initial ledger
 records source routes to inspect, not accepted evidence.
 
-| Lane                              | Candidate source or source family                                                                                                       | Planned evidentiary role                                                                           | Current state                                                             |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Factorial effects                 | Yates, _The Design and Analysis of Factorial Experiments_ (1937) and original factorial-analysis lineage identified from its references | Balanced factorial contrasts, interaction construction, replication, and degrees of freedom        | Identify exact edition and inspect primary text                           |
-| Interaction interpretation        | Tukey, "The Interpretation of Interactions in Factorial Experiments," _Biometrika_ 39 (1952), 65–81                                     | Meaning and limits of interaction decompositions                                                   | Publisher record identified; full text and exact scope require inspection |
-| Orthogonal two-level design       | NIST/SEMATECH Engineering Statistics Handbook, sections on two-level full factorial designs and effect estimation                       | Authoritative executable/formula cross-check; not a substitute for original methodological sources | Public text identified; inspect exact version and archive identity        |
-| Unbalanced hypotheses             | Original papers defining or criticizing Type I, II, III, and IV sums of squares and estimable-function conventions                      | Determine whether Candidate C has one defensible portable meaning or must be split/deferred        | Bibliographic search required; software manuals alone are insufficient    |
-| Robust/randomization alternatives | Original randomization-based and heteroscedastic factorial inference papers                                                             | Determine whether these are variants, alternatives, or later Contracts                             | Catalogue and inspect by exact procedure                                  |
-| Numerical F route                 | Primary numerical literature and authoritative upstream documentation for the exact F-tail/quantile algorithms considered               | Algorithm, domain, convergence, projection, and oracle evidence                                    | Reuse candidates from Release 3 only after inspection and scope match     |
+| Lane                              | Candidate source or source family                                                                                                       | Planned evidentiary role                                                                           | Current state                                                                          |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Factorial effects                 | Yates, _The Design and Analysis of Factorial Experiments_ (1937) and original factorial-analysis lineage identified from its references | Balanced factorial contrasts, interaction construction, replication, and degrees of freedom        | Identify exact edition and inspect primary text                                        |
+| Interaction interpretation        | E. J. Williams, "The Interpretation of Interactions in Factorial Experiments," _Biometrika_ 39 (1952), 65–81                            | Meaning and limits of interaction decompositions                                                   | Publisher metadata identifies the author; full text and exact scope remain uninspected |
+| Orthogonal two-level design       | NIST/SEMATECH Engineering Statistics Handbook, sections on two-level full factorial designs and effect estimation                       | Authoritative executable/formula cross-check; not a substitute for original methodological sources | Public text identified; inspect exact version and archive identity                     |
+| Unbalanced hypotheses             | Original papers defining or criticizing Type I, II, III, and IV sums of squares and estimable-function conventions                      | Determine whether Candidate C has one defensible portable meaning or must be split/deferred        | Bibliographic search required; software manuals alone are insufficient                 |
+| Robust/randomization alternatives | Original randomization-based and heteroscedastic factorial inference papers                                                             | Determine whether these are variants, alternatives, or later Contracts                             | Catalogue and inspect by exact procedure                                               |
+| Numerical F route                 | Primary numerical literature and authoritative upstream documentation for the exact F-tail/quantile algorithms considered               | Algorithm, domain, convergence, projection, and oracle evidence                                    | Reuse candidates from Release 3 only after inspection and scope match                  |
 
 The source packet expected for Release 3 may satisfy part of the final row or identify
 reusable multiplicity sources. It cannot close the factorial-specific rows merely by
 arriving in the repository workflow.
+
+Bibliographic correction: the [publisher record](https://academic.oup.com/biomet/article-abstract/39/1-2/65/295165)
+identifies E. J. Williams, not Tukey, for DOI `10.1093/biomet/39.1-2.65`.
+Publisher-indexed metadata was checked on 2026-09-06; the direct page route failed.
+This correction establishes no methodological claim or primary-text completion.
 
 ## Pre-public opening holds
 
@@ -134,5 +155,7 @@ gate identifiers.
 4. reconcile Release 3 results as they become accepted, without changing the Release
    4 scope silently;
 5. draft and independently review the standalone Release 4 RFC; and
-6. open public discussion only through a distinct steward action after R4-P1 through
-   R4-P6 are reviewably resolved or explicitly bounded.
+6. open public discussion only through a distinct steward action after R4-P1,
+   R4-P2, R4-P4, R4-P5, and R4-P6 are reviewably resolved. Only R4-P3 may remain
+   an explicitly named unresolved numerical hold at opening; that exception does
+   not authorize design freeze or implementation while numerical evidence is open.
