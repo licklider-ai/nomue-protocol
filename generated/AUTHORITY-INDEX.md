@@ -146,7 +146,6 @@ Non-authoritative view of the authority manifest.
 | `evidence/development/phase-2a/cross-platform-report.json` | evidence |
 | `README.md` | informative |
 | `AGENTS.md` | informative |
-| `CLAUDE.md` | informative |
 | `PROTOCOL-ARCHITECTURE.md` | informative |
 | `spec/README.md` | informative |
 | `spec/AGENTS.md` | informative |
