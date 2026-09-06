@@ -30,6 +30,12 @@ this repository.
   task-oriented name. Name it after the research topic, review scope,
   governance task, repair, or optional date; never include the identity of the
   software, service, provider, or mechanism used to create or review it.
+- The neutrality rule also covers repository and directory names, document
+  signatures and attribution footers, comments and prompts, issue text, commit
+  authorship trailers, workflow, job, check, and artifact names, package and
+  release metadata, and generated output. An identifier required by the
+  technical, scientific, contractual, or evidentiary subject matter remains
+  exact; this exception never exists merely to credit a creation mechanism.
 - Never read, copy from, link to, or depend on private product repositories.
   No private paths, private package dependencies, submodules, subtrees, or
   symlinks outside this repository. The private-dependency audit enforces this.
