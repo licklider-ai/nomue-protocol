@@ -108,13 +108,27 @@ items must close before design freeze or authoritative implementation.
 
 ## Current research-gate state
 
-The semantic commission produced a preserved, independently reviewed `NARROW`
-result. Its 49-entry catalogue is stable as an informative research record, but
-source-acquisition holds SR-A through SR-L prevent the comprehensive public question
-from being treated as source-ready. The resampling-based multiplicity entries remain
-in the RFC's research scope even though the catalogue transfers their implementation
-to the seeded-stochastic program; their snippet-only semantic source gap must also be
-closed rather than delegated to the numerical lane.
+The following is an informative status reconciliation as of 2026-09-06 against
+`main` at `0eb388e11c240795282b6b17d7718501757d1e43`. It records existing
+decisions; it does not make a new gate decision. The detailed evidence, review
+limitations, and ordered remaining work are in the
+[readiness audit](readiness-audit-2026-09-06.md).
+
+| Area                              | Current state                                                                                           | Evidence and next boundary                                                                                                                                                                                            |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Semantic catalogue                | Reviewed `NARROW`; 49 procedure/variant entries, plus 2 guidance entries and 5 recorded exclusions      | The [fixed result](semantic-research-result.md) remains unchanged; catalogue membership does not establish implementation support                                                                                     |
+| SR-L source acquisition           | `CLOSED`, independently reviewed and merged through PR #173                                             | The [Pass 2 result](semantic-source-acquisition-result.md) and [preserved independent review](../../../review-inputs/r3-semantic-source-acquisition-sr-l-repair/REVIEW-RESULT.md) cover the two guidance entries only |
+| SR-A through SR-K, RSM-01, RSM-02 | 13 items remain `INPUT_INCOMPLETE`                                                                      | Overall `INPUT_INCOMPLETE`, `SOURCE_SET_READY=false`, and `NARROW` remain in force; the source list contains 44–45 still-uninspected items, conditional on bibliographic gap X-8                                      |
+| Numerical investigation           | PR #174 remains open at `9f39eafd4b0a676e6615956b5a7899f195fc0358`; not an accepted research result     | The successor returns `INPUT_INCOMPLETE` without a numerical disposition; its repair still needs independent close-only review, including the original review's probe-reproduction requirement                        |
+| Release 2 dependency              | Groups 1–4 and final review-readiness have preserved candidate reviews; final ratification remains open | Reuse stays conditional; the earliest RFC decision is `2026-09-25T20:52:54Z`, not an automatic approval or publication date                                                                                           |
+| Release 3 public opening          | Not open; no opening or earliest-decision timestamp                                                     | R3-H1 through R3-H7 still require an integrated pre-opening disposition; no identifier, schema, Contract, Public Check, or support has been issued                                                                    |
+
+SR-L closure does not lift the fixed catalogue's guidance hold markers in place or
+close any other source hold. X-7 (issuer currency), U-5 (issuer-copy hash comparison),
+and X-8 (the Marcus bibliographic identity) remain visible in the Pass 2 record.
+The resampling-based multiplicity entries remain in the RFC's research scope even
+though their implementation is transferred to the seeded-stochastic program; their
+semantic source gaps are not delegated to the numerical lane.
 
 The
 [semantic source-acquisition commission](semantic-source-acquisition-commission.md)
@@ -162,12 +176,15 @@ different numerical graph remain separate Release 4 questions.
 
 ## Immediate sequence
 
-1. complete and independently review the SR-A through SR-L and resampling semantic
-   source-acquisition follow-up;
-2. execute the numerical commission in parallel against the preserved semantic
-   catalogue;
-3. update the Release 3 RFC from the reviewed semantic and numerical findings,
-   preserving every unresolved decision as an explicit hold;
+1. complete and independently review SR-A through SR-K and RSM-01/RSM-02, preserving
+   the completed SR-L result and its reopen conditions; resolve X-8 to fix the source
+   count;
+2. close the remaining repair-review obligations of PR #174 and preserve its review
+   before considering intake; separately obtain and inspect the missing numerical
+   primary sources under the numerical commission;
+3. reconcile R3-H1 through R3-H6 in the RFC from accepted research findings,
+   preserving `NARROW` until a separately reviewed reconsideration and naming every
+   unresolved numerical decision as an explicit hold;
 4. perform the pre-opening readiness pass; and
 5. open public discussion without waiting for every procedure implementation to
    close.
