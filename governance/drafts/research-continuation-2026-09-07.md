@@ -452,7 +452,7 @@ source gaps remain independent.
 ## 11. Steward approval of decisions A and B
 
 The user explicitly approved both Section 10 decisions in this conversation with
-"Yes, I approve" (Japanese original: "はい、承認します。"). The coordinator records
+an explicit approval of both proposals. The coordinator records
 that approval here; the approving role is the user/steward, not this assistant.
 Sections 10's NOT APPROVED status and conditional wording are historical proposal
 state, superseded for A/B by this record.
@@ -474,3 +474,83 @@ required review at a new exact identity. Final hold closure, merge, public
 discussion, method adoption, ratification and release remain outside this approval.
 The reviewed result at eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4 and PR 195's
 review remain unchanged.
+
+## 12. Part G review intake, language repair and limited SR-C acceptance
+
+Date: 2026-09-07. Following delivery of PR 197, the user/steward stated that
+acceptance was appropriate and instructed the coordinator to proceed. This records
+that instruction as acceptance of the limited SR-C source-acquisition disposition
+reviewed below. The continuing OpenAI-assisted author/coordinator records the
+steward decision; it does not issue an independent review.
+
+### Exact evidence and review disposition
+
+- Accepted result: PR 196, commit
+  `80ad520cf25e8cdf647f20e7d08d5bb426a85633`, result blob
+  `34f01d4e14b0e0feac7ef934f11e886535c90c41`, at
+  `governance/drafts/release-3-preparation/semantic-source-acquisition-result.md`.
+- Independent delta review: PR 197, commit
+  `3828b82b0b2e79b7ba05f6eb771288c39d49435b`, sole parent the accepted result
+  commit, tree `db25b3158112b6335ba2d73457f56d9f9cc9ae3c`, review blob
+  `a3725411d3e6a6f32d98b0a5d798c541e401a3b3`, path
+  `review-inputs/r3-src-closure-proposal/REVIEW-RESULT.md`.
+- PR 197 reports GO for Part G, no blocker, and S-G1 outside the result diff.
+  Its source basis is the attributed six-source primary review in PR 195,
+  commit `c36318971244c26073078b848ab2f3c52f46010b`, review blob
+  `8e2c0299d9ddc8da6bc165bb5317e8d6262ecf74`. The coordinator verified the
+  fetched PR 197 commit, sole parent, tree and review blob; it did not rerun
+  the reviewer's source inspection or calculations.
+
+### S-G1 repair and citation treatment
+
+Section 11 now uses an English description of the user's approval instead of
+quoting its Japanese wording. This is an explicit successor correction of the
+public-language defect in commit `a5d886c56c5c0b9c9e60f19a10d15778dbad7c44`,
+blob `3e2919865ca1a40421dcc3586fff2a687a0aacf8`; its approval substance and
+attribution are unchanged. The original Git object remains preserved.
+
+Use PR 197 Section 8's permitted history-preserving route: retain Part G's
+citation of that original exact commit as the identity of the approval at the
+time Part G was authored, and record this language repair separately here.
+Do not move the independently reviewed result head merely to replace the
+historical citation. Sections 10 (proposals) and 11 (approval) locate the evidence.
+S-G1 is repaired on the coordinator side; this is not a rewritten reviewer verdict.
+N-G1/N-G2 and the previously carried optional findings remain deferred.
+
+### Decision and limits
+
+**SR-C: ACCEPTED AS CLOSED for the source-acquisition obstacle only**, at the
+exact Part G identity above. This acceptance follows the user's current instruction,
+Section 11's decisions A/B, PR 195's primary-source GO and PR 197's delta GO.
+The previous statements that formal acceptance was pending are historical states,
+now superseded for SR-C only by this dated record.
+
+The bounded Rom adjudication remains in force: preserve the conflicting printed
+cell, base the PVL-10 characterization on equation (2) and the described procedure,
+exclude Table 1 as numerical authority, and require separately reviewed future
+constants. C.7/F.3 remain the conflict record. G.2's exclusions, G.3's reopen
+conditions, PVL-07 R3-CAND and PVL-06/08/09/10 RES-ONLY are unchanged.
+The scoped independence determination is the steward's decision on ordinary
+accountable evidence, not verification of author-side models from Git. Historical
+PENDING records remain intact.
+
+This records the research hold decision within the existing commission and RFC
+process, not a new Protocol authority or a release-gate registry change. The
+source-result candidate ledger remains four CLOSED and ten INPUT_INCOMPLETE;
+it is not a count of four newly accepted holds. SR-L is inherited; SR-K/SR-G
+retain their separate acceptance question. Overall INPUT_INCOMPLETE and the
+fixed semantic NARROW remain. None of this approves all thirty-five originals.
+No merge, public-discussion opening, method adoption, implementation guarantee,
+ratification, release, or website publication is included.
+
+### Next executable source work
+
+Proceed first with SR-B: supplier 20 (Sidak 1967, SRC-13/PVL-02) and supplier 21
+(Dunn 1961, SRC-14/PVL-01 attribution). Their existing D.2 custody identities are
+reused; D.3 intake is not mistaken for completed content review. The bounded
+questions are the exact rectangular-probability assumptions, applicability to
+true-null subsets, the Bonferroni attribution, and which adjusted outputs follow
+by investigator derivation rather than being printed in these sources. Preserve
+the reviewed Parts A–G bytes and obtain an independent review of any new result.
+SR-H can follow with the already received originals. R4 source-access findings
+remain on their own lane and are not closed by this SR-C acceptance.
