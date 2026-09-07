@@ -1075,3 +1075,464 @@ head, after pinned dependency installation.
   service, provider, or mechanism is identified; no human authorship is claimed.
 
 RELEASE 3 SEMANTIC SOURCE-ACQUISITION RESULT — PASS 2 COMPLETE - INPUT_INCOMPLETE - SR-L CLOSED - 13 OF 14 OPEN - NARROW PRESERVED - TRANSFER PRESERVED - AWAITING INDEPENDENT REVIEW - NOT PROTOCOL ADOPTION
+
+## C. Supplied-source increment, 2026-09-07
+
+### C.1 Status, provenance, and fixed inputs
+
+This appended increment preserves Parts A and B as historical evidence. Their
+non-acquisition statements describe those passes, not the supplied-source inventory
+below. This is an author-side primary-source investigation and review candidate;
+it is not independent review, a catalogue rewrite, or an implementation decision.
+The Source Investigator has prior preparation, intake, and research context.
+The work used an LLM-assisted authoring session, Python/PyMuPDF extraction and page
+images, and exact rational arithmetic. A separate investigator and model, outside
+this authoring context, is required by RFC rule 2 before promotion.
+
+User authorization on 2026-09-07 covers integrating received sources, prioritizing
+SR-K, and preparing independent review. The containing input commit is
+`f39100161cb45de15767bdb19ed54aba9489b41a`; the acquisition commission blob there is
+`3c7ddcc696f0c284213f7efe0da68e747bc238d7`. The prior result blob is
+`5465cbcfd00708facac94785d9244b79166cb81e`.
+The semantic comparison remains commit `7bd9c5ab854777c3e99e624d9d2ed62731228852`,
+tree `f0436f5784dbe34d4c150893c20a60f0431c5d90`, result blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`, and original commission blob
+`c6760efc8450efe5fe2da6ccce2b2fac4846c066`. These identities were recomputed locally.
+The preserved review blobs `fc61decb017821c403841a6db822ccd5e5b7233d`,
+`e646429582d206d5299ce5ff1d0c2b8978323cd3`, and
+`395054fd1e2f22a5ad63460b86be0394de429605` remain the prior review inputs, not reviews
+of this increment. Their Git object types were checked; no new independent audit
+of those reviews is claimed.
+
+### C.2 Acquisition and artifact inventory
+
+Acquisition route: original PDFs supplied by the user in this session, inspected
+on 2026-09-07. No purchase or publisher retrieval was performed in this increment.
+Earlier failed routes remain recorded in Parts A/B; receiving a local PDF does not
+prove that those hosts have become reachable. Original bytes remain unchanged.
+No source PDF or full-text extraction is published in this repository.
+The guide numbers below are supplier locator labels, not Protocol identifiers.
+
+All 19 sizes, page counts, and SHA-256 values were recomputed. Numbers 01–03 are
+identical to the three Pass 2 originals: 19 received artifacts comprise 16 additional
+artifacts and 3 duplicates of already-inspected sources. Receipt counts do not
+measure independent reviews or completed holds. Text reading and selected equation
+images underpin the new intake; this is not a full proof audit or verification of
+every table cell. Hsu required OCR with mathematical image checks. For 01–03 the
+existing Part B reading is reused; hashing is not a fresh substantive review.
+
+| Number | Original file           |   Bytes | PDF pages | SHA-256                                                            |
+| ------ | ----------------------- | ------: | --------: | ------------------------------------------------------------------ |
+| 01     | `01_FDA_2022.pdf`       |  324708 |        29 | `40284a050aab0037799072b2340e37d4b02ab6f7f2339fff6ea1cd55673a9563` |
+| 02     | `02_EMA_2002.pdf`       |  207098 |        11 | `897bb9d6e9ced1865f709ca5fde8bbdcc2258ac6d89ed831cd6dcfaa0621e284` |
+| 03     | `03_EMA_2016.pdf`       |  194065 |        15 | `1c5977c36f5f45a4845cb706ab6fc1a9c1a90a98ce68df7e6dcad240143982f7` |
+| 04     | `04_Benjamini_2001.pdf` |  169653 |        24 | `4bfbec2b1099968fee729852c5d6c3a8123ba6e5748e1e9583a81d5c5ebdef27` |
+| 05     | `05_Hsu_1984.pdf`       |  649578 |         9 | `ac190ceeb614141b64da413248d94e3a3cfe050ab42be31ef7b4dc8db089065b` |
+| 06     | `06_Newman_1939.pdf`    | 1141066 |        12 | `2a95351862462f2165a4a2f82f16572eb4a0482afcea2772c590ade02e45e974` |
+| 07     | `07_Welch_1951.pdf`     | 1626731 |         8 | `f86986a4850cc2c161f41a401db87460772405281677e9cce702af4321dca30d` |
+| 09     | `09_Scheffe_1953.pdf`   |  908514 |        19 | `bb0bd080601c566697ebb657f81aa6d08cc2a02239a31d4ada7c5a7da2cda701` |
+| 10     | `10_Scheffe_1969.pdf`   |  219412 |         2 | `df5671bfb92e0ab64354dad5a117be19d7b536c2d0e2a9cc22ead004b1beb9ba` |
+| 11     | `11_Simes_1986.pdf`     |  642630 |         5 | `6e8a40c5bf6df814f11a0565435dc5db7430bb26fac2b50df7aee723a41a6077` |
+| 12     | `12_Hochberg_1988.pdf`  |  974801 |         4 | `588aa12db5cad0741229b2eaf4e63b9344fef99abb59ebdc85f16630602793e4` |
+| 13     | `13_Hommel_1988.pdf`    |  655387 |         5 | `c006eb7c7a6cec1fb86e7ec3db333a1c14ae6b0e197a35bebfaf2572adb8cbc1` |
+| 14     | `14_Rom_1990.pdf`       |  436687 |         4 | `9c72d73accb55d7f95ff71e47350b2225d4c342e69bee332b4e0a9032bbaa269` |
+| 15     | `15_Marcus_1976.pdf`    |  446500 |         7 | `7b81e37b502d885658249196f25db32e1682d6461f3c15f7a3d56e3732899a24` |
+| 16     | `16_Benjamini_2006.pdf` | 1777550 |        18 | `d96aea58a5490bb4c6e339e3fc9528affa09c10637003ba9f5533ca0d7a632e8` |
+| 17     | `17_Duncan_1955.pdf`    | 4442167 |        43 | `6504e0bd884850d639ea5e0a9b5794d3c02f7d3df5895e3ca64ced6face64bdf` |
+| 18     | `18_Holland_1987.pdf`   |  964480 |         8 | `d632570b190ef5ae3bdaa1e9a929e728c72e6106fa4b6d91b31192a32b3c549d` |
+| 19     | `19_Storey_2002.pdf`    |  634954 |        21 | `4eafd121b98b693aa7fb3386de536a6a4902446cc4f48d8f5c3f2e489615a046` |
+| 31     | `31_Romano_2005.pdf`    |  362932 |        15 | `2623c4335cdac339333ffaf7beade68049b0437d3a2337207c59556fb1f8a4f3` |
+
+### C.3 Bibliography and non-SR-K claim impacts
+
+Pinpoints use printed pages. For 01–03 use Part B's page/line mapping. For the other
+PDFs, printed page p maps to PDF page as follows: 04 p−1164; 05 p−1135; 06 p−18;
+07 p−328; 09 p−85; 10 page 229 is PDF 2; 11 p−749; 12 p−798; 13 p−381;
+14 p−661; 15 p−653; 16 p−489; 17 p+1; 18 p−415; 19 p−477; 31 p−93.
+These mappings include supplier covers where present.
+
+| Number | Bibliographic identity                                                                                                                                                      | Claim/entry and direct pinpoints                          | Source finding and boundary                                                                                                                                                                                                                          |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01     | FDA, Multiple Endpoints in Clinical Trials, October 2022                                                                                                                    | C-L1 / GUI-01; B.4–B.6                                    | Same bytes; no new claim or hold change                                                                                                                                                                                                              |
+| 02     | EMA/CPMP, Points to Consider on Multiplicity Issues in Clinical Trials, CPMP/EWP/908/99 (2002)                                                                              | C-L2 / GUI-02; B.4–B.6                                    | Same bytes; preserve existing scope                                                                                                                                                                                                                  |
+| 03     | EMA, Guideline on Multiplicity Issues in Clinical Trials, EMA/CHMP/44762/2017, draft dated 2016-12-15                                                                       | C-L2 / GUI-02; B.4–B.6                                    | Filename year 2016 does not make this a different text from the 2017 consultation draft; final/current adoption not established                                                                                                                      |
+| 05     | Hsu (1984), Constrained Simultaneous Confidence Intervals for Multiple Comparisons with the Best, Ann. Statist. 12(3):1136–1144                                             | C-J2 / MCB-01; 1136–1141, Theorem 3.1                     | Target theta_i minus best OTHER mean; common continuous location model, independent equal-size samples. Intervals use min(Delta−d,0), max(Delta+d,0), with calibrated d. Not arbitrary unequal-variance MCB or guaranteed unique-best identification |
+| 06     | Newman (1939), The Distribution of Range in Samples from a Normal Population, Expressed in Terms of an Independent Estimate of Standard Deviation, Biometrika 31(1/2):20–30 | C-H1 / APR-10, partial; 20–24, 27–28                      | Studentized range with independent scale estimate; two-member critical value has sqrt(2) relation to two-sided t. Keuls remains unread; a rounded table is not a certified oracle                                                                    |
+| 07     | Welch (1951), On the Comparison of Several Mean Values: An Alternative Approach, Biometrika 38(3/4):330–336                                                                 | C-A2 / OMN-02; 330, 334–335 equations (29)–(30)           | Independent normal means and independent chi-square variance estimates; heteroscedastic equal-means null; weighted statistic and noninteger denominator df; approximate F reference, not exact finite-sample F                                       |
+| 09     | Scheffe (1953), A Method for Judging all Contrasts in the Analysis of Variance, Biometrika 40(1/2):87–104                                                                   | C-G1 / APR-09; 87–90 equations (1)–(13), 95–96            | Simultaneous all-contrast intervals under known covariance shape, normality, independent chi-square scale and rank conditions; data-suggested contrasts allowed within that space. See C.6 corrections                                               |
+| 10     | Corrections (1969), Biometrika 56(1):229, item (1) for Scheffe                                                                                                              | C-G1 and X-1; 229                                         | Explicitly identifies 1953 article as 87–104; nine corrections, including deletion of interaction footnote. Other items on this page concern different authors                                                                                       |
+| 11     | Simes (1986), An Improved Bonferroni Procedure for Multiple Tests of Significance, Biometrika 73(3):751–754                                                                 | C-C1 / PVL-06; 751–752 theorem, 754                       | Global intersection test: some p_(j) ≤ j alpha/m. Independent uniform nulls give exact level; arbitrary dependence not justified; not itself individual strong-FWER rejection                                                                        |
+| 12     | Hochberg (1988), A Sharper Bonferroni Procedure for Multiple Tests of Significance, Biometrika 75(4):800–802                                                                | C-C2 / PVL-07; 800–801                                    | Step-up rejects through largest i with p_(i) ≤ alpha/(m−i+1); inherits Simes validity requirements for relevant intersections, not Holm's arbitrary-dependence scope                                                                                 |
+| 13     | Hommel (1988), A Stagewise Rejective Multiple Test Procedure Based on a Modified Bonferroni Test, Biometrika 75(2):383–386                                                  | C-C3 / PVL-08; 383–385                                    | Closed-Simes shortcut; valid local intersection tests support strong FWER; independence is a supplied sufficient basis, not arbitrary dependence                                                                                                     |
+| 14     | Rom (1990), A Sequentially Rejective Test Procedure Based on a Modified Bonferroni Inequality, Biometrika 77(3):663–665                                                     | C-C5 / PVL-10, Rom variant; 663–664 equation (2), Table 1 | Sharpened step-up using recursively calibrated constants under independence. One printed constant conflicts with the recurrence; C.7                                                                                                                 |
+| 15     | Marcus, Peritz and Gabriel (1976), On Closed Testing Procedures with Special Reference to Ordered Analysis of Variance, Biometrika 63(3):655–660                            | C-D1 / CLS-01; 655–658                                    | Every required intersection needs a level-alpha local test; dependence between valid local tests is not an extra condition. Does not make an invalid Simes local test valid. Ordered-alternative examples require a priori order                     |
+| 17     | Duncan (1955), Multiple Range and Multiple F Tests, Biometrics 11(1):1–42                                                                                                   | C-H2 / APR-11; 5–7, 16, 28, 41                            | Equal-precision independent normal means and independent variance estimate; p-mean protection (1−alpha)^(p−1). Every containing ordered subset matters; p.41 monotonizes critical ranges by max with predecessor. Nominal 5% is not general 5% FWER  |
+| 18     | Holland and Copenhaver (1987), An Improved Sequentially Rejective Bonferroni Test Procedure, Biometrics 43(2):417–423                                                       | C-C5 / PVL-10, separate variant; 418–422                  | Step-down critical value 1−(1−alpha)^(1/t_i), stopping at first failure; t_i bounds possible true null count under preceding rejections. POD lower-orthant condition is not merely positive pairwise correlation                                     |
+| 31     | Romano and Wolf (2005), Exact and Approximate Stepdown Methods for Multiple Hypothesis Testing, JASA 100(469):94–108                                                        | C-R2 / RSM-02 candidate V-3; 98–104, Theorems 3–8         | Randomization, bootstrap and subsampling have distinct conditions. Monotone critical values alone are insufficient; transformation invariance or asymptotic assumptions still matter. No silent family-wide replacement or variant adoption          |
+
+These are source-supported, bounded characterizations; the investigator's impact
+judgment is to retain every fixed catalogue classification. The shared PVL-10 entry
+contains two different procedures, not interchangeable algorithms. Other unaffected
+entries retain Section 6 and B.7's impact and completion conditions. The individual
+newly inspected rows above do not close multi-source holds with missing texts.
+
+### C.4 SR-K primary-source result
+
+The three required texts are now available: 04 = SRC-22, Benjamini and Yekutieli
+(2001), The Control of the False Discovery Rate in Multiple Testing under Dependency,
+Ann. Statist. 29(4):1165–1188; 16 = SRC-23, Benjamini, Krieger and Yekutieli (2006),
+Adaptive Linear Step-up Procedures That Control the False Discovery Rate,
+Biometrika 93(3):491–507; 19 = SRC-24, Storey (2002), A Direct Approach to False
+Discovery Rates, JRSS B 64(3):479–498. All three were read in the intake; key
+definitions and formulas were checked against page images. BY pp.1174–1175 were
+rechecked visually for the present family mapping.
+
+#### C.4.1 C-K1: BH dependence and BY variants
+
+| Locator in 04                                   | Source fact                                                                                                                                 | Boundary / investigator application                                                                                         |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 1167 equation (1), 1169 section 2.1             | Fixed finite family of m hypotheses; V false rejections, R total rejections; FDR=E[V/(R or 1)]; BH step-up uses i q/m                       | Error criterion is an expectation, not FWER or a bound on every realized false-discovery proportion                         |
+| 1168 PRDS definition, Theorem 1.2               | For increasing D, conditional probability of X in D is nondecreasing in a true-null coordinate; BH FDR ≤ (m0/m)q under the stated condition | PRDS applies on the true-null subset, including partial-null configurations; empirical positive correlation is insufficient |
+| 1169 Theorem 1.3, 1182–1183 proof               | Replace q by q/H_m, H_m=sum(1/j), for arbitrary dependence                                                                                  | Valid (super-uniform) marginal null p-values remain necessary; correction does not repair invalid approximate p-values      |
+| 1172–1173 Case 1; 1174 Corollary 3.3 and Case 3 | Certain normal numerators and their absolute values divided by an independent chi-square scale satisfy the needed dependence condition      | Two-sided shared-denominator t tests are not automatically covered merely because the denominator is shared                 |
+| 1174–1175 Case 4, 1180 Remark 4.2               | Signed Studentized normal statistics need not be globally PRDS; the relevant monotonicity suffices for one-sided tests at q<1/2             | Preserve the range restriction and numerator covariance assumptions                                                         |
+| 1175 Problems 2–3                               | Orthogonal contrasts in balanced normal designs and qualified one-sided many-to-one comparisons are applications                            | Do not read Problem 3's shorthand PRDS statement in isolation from Case 4 and Remark 4.2                                    |
+| 1182 discussion                                 | General normal all-pairs applicability was unresolved in the paper's account                                                                | This is a limitation of this source, not a claim about the current literature                                               |
+
+Concrete scope mapping (investigator derivation using those source conditions):
+
+- For independent normal group means with common population variance, prespecified
+  contrasts orthogonal in the covariance metric have independent normal numerators.
+  With a residual variance estimate independent of those means and with the stated
+  chi-square law, the two-sided absolute-statistic family is within Case 3. Balance
+  alone does not establish orthogonality of an arbitrary chosen family.
+- For prespecified one-sided treatment-minus-common-control comparisons, numerator
+  covariances between distinct comparisons equal the positive control-mean variance
+  before normalization. Under the same normal/independent chi-square scale model,
+  Case 4 provides the source route at q<1/2. This is not blanket global PRDS or a
+  two-sided many-to-one guarantee.
+- An arbitrary set of two-sided all-pairs contrasts, data-selected family, unequal
+  variance Welch comparisons, or estimated general covariance model does not get
+  unadjusted BH control from these arguments. A separately justified family-specific
+  result is needed; alternatively Theorem 1.3 supports the harmonic correction if
+  the individual null p-values are valid. No alternative is selected here.
+
+The source supports a conditional, family-specific answer to C-K1; it does not
+support the assertion that all one-way shared-variance statistics satisfy PRDS.
+This narrows applicability without contradicting the fixed catalogue, which
+explicitly left the dependence question open. No new true-null or model declaration
+is claimed mechanically verifiable from reported numbers alone.
+
+Output/numerical boundary: BH and the harmonic variant determine a rejection set.
+As investigator algebra, their threshold-equivalent adjusted values are suffix
+minima of m p_(j)/j or m H_m p_(j)/j, capped at 1. This transformation is not Storey's
+q-value definition. It adds no adopted output contract, sorting/tie protocol or
+floating-point tolerance. Member set and m remain fixed; no hypothesis selection
+is silently removed from the multiplicity count.
+
+#### C.4.2 C-K2: two-stage and other adaptive procedures
+
+Source 16, p.495 Definition 6, defines TST: run BH at q'=q/(1+q), with r1 rejections;
+if r1=0 stop with none, if r1=m stop with all, otherwise set estimated m0=m−r1 and
+run BH again on all original m p-values at q' m/(m−r1).
+Theorem 1 and its proof, pp.496–498, supply FDR≤q under independence. The family
+consists of the original fixed m hypotheses, the nulls those tested by valid p-values;
+the output here is the rejection set. No degrees of freedom, sampling balance or
+variance model is supplied by an abstract adaptive-p-value rule: those belong to
+the individual p-value construction. Its guarantee does not repair invalid p-values.
+
+Other variants are distinct: Definitions 2–5 (pp.493–495), multiple-stage Definition 7,
+and Theorem 2's prespecified-rank estimator (p.498) are not all the same adaptive BH.
+Theorem 1 is not transferred to a data-chosen rank, arbitrary iteration or dependence.
+The pp.502–504 positive-dependence simulations do not establish a PRDS theorem.
+The finite-sample examples and Storey discussion on pp.499–501 retain their correction
+terms and restrictions, including the +1 and p≤lambda conditions of the compared
+procedure. These are not silently inserted into Storey 2002's original estimator.
+
+Investigator finding: the motivating p.495 equation (1) displays
+(m−R)/(1−q) ≤ (m−R)(1+q), which is false for 0<q<1 and m−R>0.
+The image confirms the sign. This is not used as a proof. Definition 6 and the
+formal Theorem 1 are evaluated separately; the observation does not invalidate TST.
+Official erratum status has not been searched in this increment.
+The printed p.505 example gives ordinary BH 4 rejections and TST 8; C.7 reproduces
+those decisions with exact rational arithmetic. The second example's complete
+138 input p-values are absent from the supplied text and were not reproduced.
+
+Catalogue impact: supports FDR-03 as a bounded research-only family requiring
+variant identification; no expansion of its fixed RES-ONLY treatment. An adjusted
+p-value for an adaptive procedure needs its own q-dependent inversion definition;
+ordinary BH adjusted p-values are not substituted.
+
+#### C.4.3 C-K3: Storey estimation and q-values
+
+| Locator in 19                        | Source-supported statement                                                                                                                                                      | Boundary                                                                                                                            |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 481 Definition 1                     | pFDR=E[V/R given R>0]; FDR=pFDR Pr(R>0)                                                                                                                                         | Conditioning requires positive probability of R>0; not a per-hypothesis posterior at an exact observed statistic                    |
+| 482 Theorem 1 and model              | Independent identically distributed tests, random iid Bernoulli null indicators; pFDR of a common rejection region is the posterior null probability conditional on that region | Fixed nonrandom configurations and arbitrary dependence do not automatically inherit this representation                            |
+| 483 equations (5)–(10)               | W(lambda)=count(p>lambda), pi0hat=W/[m(1−lambda)], R(gamma)=count(p≤gamma); FDRhat=W gamma/[(1−lambda)(R or 1)]; pFDRhat=FDRhat/[1−(1−gamma)^m]                                 | Original estimator has no +1. Use a fixed lambda<1 and appropriate positive gamma; endpoint conventions require separate treatment  |
+| 487 Theorem 2, 496–497 proof         | Expected untruncated estimates are conservative under the stated model at fixed tuning and region                                                                               | Not a pointwise upper bound, and not an immediate finite-m theorem for selecting gamma or lambda from data                          |
+| 484, 488 Theorem 3                   | Truncation of a reported error-rate estimate at 1 improves MSE as stated                                                                                                        | Does not automatically preserve mean conservatism; distinguish this from truncating estimated m0 in an adaptive rejection procedure |
+| 488–489 Theorem 4 and corollaries    | Limiting bias/conservatism depends on the alternative distribution and lambda                                                                                                   | Fixed lambda need not give exact consistency; data-driven tuning needs its own argument                                             |
+| 490 Definitions 2–3, 491 Algorithm 2 | q-value is the infimum of pFDR over nested rejection regions containing the observation; estimated values use suffix minima of estimated pFDR at sorted p-values                | Includes the finite-m factor of this paper; not ordinary BH adjustment or an unspecified later software default                     |
+| 490 last paragraph                   | Exact operating characteristics of estimated q-values are left open                                                                                                             | Theorem 2 does not certify the procedure that rejects qhat≤q                                                                        |
+| 493–494                              | Bootstrap selection of lambda and interval estimation are proposed                                                                                                              | No general exact finite-sample coverage or uniform selection guarantee is inferred                                                  |
+
+For the p-value mixture representation, the null distribution is uniform (p.483).
+The alternative CDF g has g(0)=0, g(1)=1 and g(t)>t for 0<t<1 in the paper's
+power setting (p.488); in particular the bound on Pr(R>0) used on pp.483/496
+requires rejection probability at least gamma. Do not extend that step to arbitrary
+biased tests with alternative power below their size. Concavity of g and endpoint
+derivatives are additional conditions for the corresponding corollaries, not
+consequences of independence. Remark 2 on p.497 refers weaker-assumption proofs to
+another text; that external proof is not inspected or claimed here.
+
+The source supports the estimator and output semantics of FDR-04 with these limits.
+It does not turn the transfer target (Releases 16–20 horizon) into an R3/R4 candidate.
+Required numerical objects are counts, denominator conventions, lambda/gamma,
+finite-m power factor and suffix minimum; this reading supplies no numerical error,
+resource, platform or probability-projection certificate. Sampling/variance/balance
+and degrees of freedom of an eventual underlying test still require that test's
+own source basis. A fixed rejection region with all nulls can have pFDR=1 while
+FDR is much smaller; this distinction is reproduced in C.7.
+
+### C.5 Proposed hold dispositions and entry-by-entry coverage
+
+These are the new investigator's source-result dispositions offered for independent
+review, not effective release-gate updates. Existing reviewed decisions remain the
+baseline until this exact result and original artifacts pass separate review.
+
+| Hold   | Candidate disposition | Entry coverage / remaining condition                                                                                               |
+| ------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| SR-A   | INPUT_INCOMPLETE      | OMN-02 gains C-A2 evidence; OMN-01, OMN-03, OMN-04 still require their assigned texts                                              |
+| SR-B   | INPUT_INCOMPLETE      | PVL-01 attribution and PVL-02 unchanged; assigned texts not supplied                                                               |
+| SR-C   | INPUT_INCOMPLETE      | PVL-06/07/08 and both PVL-10 variants inspected; PVL-09 Shaffer source absent                                                      |
+| SR-D   | INPUT_INCOMPLETE      | CLS-01 inspected; CLS-02/03/04/05/06 assigned sources absent                                                                       |
+| SR-E   | INPUT_INCOMPLETE      | APR-01 attribution source absent                                                                                                   |
+| SR-F   | INPUT_INCOMPLETE      | APR-05/06 assigned GT2, Genizi-Hochberg and Stoline texts absent                                                                   |
+| SR-G   | CLOSED                | APR-09 / C-G1 and X-1 supported by 09 plus correction 10, with C.6 limits; candidate only                                          |
+| SR-H   | INPUT_INCOMPLETE      | APR-10 has Newman only; APR-11 gains Duncan; Keuls and APR-12/13/14 texts absent                                                   |
+| SR-I   | INPUT_INCOMPLETE      | HET-01/02/03 assigned texts absent                                                                                                 |
+| SR-J   | INPUT_INCOMPLETE      | MCB-01 gains Hsu; MTO-02/03 sources and X-8 identity mapping remain unresolved                                                     |
+| SR-K   | CLOSED                | FDR-01 dependence scope and FDR-02/03/04 source questions answered in C.4, including explicit unsupported variants; candidate only |
+| SR-L   | CLOSED                | Part B disposition carried forward using identical 01–03 originals, no new closure                                                 |
+| RSM-01 | INPUT_INCOMPLETE      | maxT/minP and subset-pivotality primary basis still absent                                                                         |
+| RSM-02 | INPUT_INCOMPLETE      | V-3 source gains distinct randomization/bootstrap/subsampling descriptions; other required variant texts remain absent             |
+
+This table, C.3 and C.4, together with unchanged entry rows in Section 6 and B.7,
+cover every assigned entry without changing its catalogue classification. In
+particular FDR-01 stays R3-CAND under its original explicit independence boundary;
+FDR-02 stays R3-CAND with no adopted dependence extension; FDR-03 stays RES-ONLY;
+FDR-04 retains TRANSFER. C.4 is new source evidence for reconsideration, not removal
+of the dagger or a Protocol-supported method announcement.
+
+Candidate totals: CLOSED 3 (including the carried SR-L), INPUT_INCOMPLETE 11,
+PARTIAL 0, NO_GO 0. Overall **INPUT_INCOMPLETE**; SOURCE_SET_READY is not satisfied.
+The NARROW programme cannot yet be reconsidered as source-complete for the
+comprehensive public question. No numerical, RFC, discussion-opening or release
+permission follows even if the two proposed closures are independently accepted.
+
+### C.6 Scheffe correction-aware closure candidate and R4 handoff
+
+C-G1: 09 pp.87–90 assumes jointly normal unbiased estimates with known covariance
+shape sigma^2 A and an independent variance estimate with chi-square degrees of
+freedom nu. For a contrast c with sum(c)=0, the simultaneous half-width is
+sqrt((k−1) F_(1−alpha;k−1,nu)) sqrt(s^2 c' A c), with the paper's rank conditions.
+The F notation here uses a LOWER-tail 1−alpha quantile, equivalent to the paper's
+upper-tail alpha convention. Coverage is 1−alpha for the full contrast space and
+at least 1−alpha for a subset. Data-suggested contrasts within that same space are
+covered (p.89); data-dependent selection between different procedures is not
+licensed (pp.92–93). The global F equivalence on pp.95–96 concerns existence of
+some contrast, not necessarily a pairwise difference or a prelisted finite family.
+
+Original pp.87–104 are continuous, and correction 10 identifies that exact span.
+X-1 can be resolved to 87–104 in this candidate: the alleged missing pp.105–110 are
+not part of this article. This is an artifact-backed correction, not a subscription
+or publisher-currentness claim. Nine corrections from 10 p.229 item (1) were read
+with the original; their complete impact list follows.
+
+| Original locator                         | Correction                                                                        |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| 89, eighth line from bottom              | Estimated mu subscript 1 becomes i                                                |
+| 90, line 7                               | Comma after eta_j                                                                 |
+| 93, starred interaction footnote         | Delete: the compared Tukey method's equal off-diagonal covariance condition fails |
+| 100, first line below (28)               | psi>A becomes psi≥A                                                               |
+| 100, second and seventh lines below (28) | psi≤A becomes psi<A in both places                                                |
+| 102, line 16                             | Estimated zeta subscript 1 becomes i                                              |
+| 102, fifth line from bottom              | Restrict derivation to gamma<pi/2; handle equality separately through Section 4   |
+| 102, fourteenth line from bottom         | Restore estimator hat on zeta_(k−1)                                               |
+| 103, second line above (38)              | Restore factor w before p1 in transformed integral                                |
+
+Do not treat the moderate/large-nu power approximations on pp.100–101 as numerical
+certificates. Reopen SR-G if the supported contrast space/rank, covariance model,
+selection of procedure, correction applicability or original artifact identity
+changes. This closure candidate does not cover Scheffe's 1959 book, other holds,
+or a specific R4 interaction interval construction.
+
+R4 investigator implication: under independent balanced cell-mean errors of variance
+v, centered interaction estimates have covariance
+v(delta_ik−1/a)(delta_jl−1/b). For 2 by 2, off-diagonal values include −v/4 and +v/4.
+Balance therefore does not satisfy the deleted footnote's constant-covariance
+condition. This is an investigator algebraic illustration, not a theorem newly
+attributed to the paper. A future R4 successor needs to compare its exact target
+and contrast rank to these conditions; this increment does not repin PR 181 or
+claim to review its interaction intervals.
+
+### C.7 Reproductions and unresolved textual conflicts
+
+The code below was run using Python standard-library exact rationals, except the
+explicit exploratory float display of Storey's finite-m expression. These are
+source-reading diagnostics, not reference implementation or certified oracles.
+
+```python
+from fractions import Fraction as F
+from math import comb
+
+p = list(map(F, ['.0001', '.0004', '.0019', '.0095', '.0201', '.0278',
+                '.0298', '.0344', '.0459', '.3240', '.4262', '.5719',
+                '.6528', '.7590', '1']))
+def bh(values, q):
+    return max((i for i, x in enumerate(sorted(values), 1)
+                if x <= i*q/len(values)), default=0)
+q = F('.05')
+q1 = q/(1+q)
+r1 = bh(p, q1)
+q2 = q1*len(p)/(len(p)-r1)
+assert (bh(p, q), r1, q2, bh(p, q2)) == (4, 4, F(5, 77), 8)
+assert 1/(1-q) > 1+q
+print('BKY example: BH=4, first=4, second=8; motivating inequality false')
+
+alpha = F('.01')
+b = {1: alpha}
+for n in range(2, 11):
+    b[n] = (sum(alpha**i for i in range(1, n))
+            - sum(comb(n, i)*b[i+1]**(n-i) for i in range(1, n-1)))/n
+assert format(float(b[10]), '.3g') == '0.001'
+print('Rom alpha=.01 n=10:', format(float(b[10]), '.16g'))
+
+values = [0]*20
+rank = 20 - (20*q).__floor__()
+critical = sorted(values)[rank-1]
+assert not (0 > critical) and (0 >= critical)
+assert F(sum(v >= 0 for v in values), len(values)) == 1
+print('Romano-Wolf all ties: strict rejects=False, inclusive rejects=True, p=1')
+
+assert 1-F('.95')**2 == F('.0975')
+ps = list(map(F, ['.01', '.04', '.2', '.6', '.9']))
+w = sum(x > F('.5') for x in ps)
+gamma = F('.04')
+r = sum(x <= gamma for x in ps)
+fdrhat = w*gamma/(F('.5')*r)
+pfdrhat = fdrhat/(1-(1-gamma)**len(ps))
+assert fdrhat == F('.08')
+print('Storey fixed-region estimates:', float(fdrhat), float(pfdrhat))
+```
+
+Observed transcript:
+
+```text
+BKY example: BH=4, first=4, second=8; motivating inequality false
+Rom alpha=.01 n=10: 0.001004472598983613
+Romano-Wolf all ties: strict rejects=False, inclusive rejects=True, p=1
+Storey fixed-region estimates: 0.08 0.43330536145016
+```
+
+Additional conflicts retained for independent review:
+
+- 06 p.28 prints f=3 while preceding f=30 and referenced table values suggest a
+  discrepancy; not silently corrected or used as an oracle.
+- 07 p.335 input arithmetic reproduces F=3.3509576647402737 and denominator
+  df=22.567817024698538, but intermediate B=.11816236651281907 differs from the
+  printed .1180. Final displayed F and df agree at their printed precision.
+- 14 p.664 Table 1 gives 1.01e−3 at alpha=.01, n=10 whereas its recurrence gives
+  .001004472598983613 (three significant digits 1.00e−3). No formal erratum is claimed.
+- 16 p.495 motivating inequality is false as printed; separate from the formal
+  TST theorem. New contradictions in that theorem would reopen C-K2/SR-K.
+- 31 p.99 following (24) uses an inclusive critical-value comparison where the
+  all-ties example rejects with probability 1. Counting ties with ≥ in the p-value
+  remains correct; strict rejection against an order-statistic critical value is
+  different. Do not reject the whole paper on this isolated finding.
+- 15 p.660 cites a distinct Marcus single-author 1976 article, pages 177–183.
+  Existence of that citation does not settle whether SRC-28 intended it. X-8 stays
+  open; no additional source is silently added to the fixed catalogue.
+
+Formal erratum searches and full table/proof audits remain unperformed. These
+observations are not claims that the authors or publishers have acknowledged errors.
+
+### C.8 Independent review handoff and remaining work
+
+Repository access is required for an exact-head review (or a complete, verifiable
+Git bundle with the same objects); PDFs alone cannot establish the output's parent,
+diff, original fixed inputs or governance boundary. The reviewer also needs the
+original supplied PDF bytes in C.2: at minimum 04/09/10/16/19 for the two proposed
+closures, and all 19 to verify the full intake and other source findings. A report
+or OCR extraction alone is insufficient. PDF transfer is separate from public Git;
+no redistribution authorization is inferred from supply.
+
+Review execution instructions:
+
+1. Freeze the review PR's exact head SHA before reading; verify its sole parent is
+   f39100161cb45de15767bdb19ed54aba9489b41a and its only changed path is this result.
+   Record head, tree, parent, result blob and input hashes. Compare original Part A/B
+   content against blob 5465cbcfd00708facac94785d9244b79166cb81e; disclose any formatting
+   changes rather than treating old evidence as substantively rewritten.
+2. Record non-authorship of this increment and the relevant prior preparation,
+   intake and result writing. This authoring context cannot supply that independent
+   pass. Read the controlling commission and fixed semantic catalogue/review inputs.
+3. Recompute all available PDF hashes. Missing originals yield SOURCE_ACCESS_INCOMPLETE
+   for the affected review scope, never an inferred pass from this manifest.
+4. Review C-K1/C-K2/C-K3 against original pages and all eight commission analysis
+   items. Adversarially test shared-denominator versus independent numerator claims,
+   one-sided versus two-sided scope, PRDS versus positive correlation, q<1/2,
+   fixed-family counting, TST stopping cases, and estimation versus control.
+5. Review C-G1, X-1 and all nine correction entries. Check covariance/rank and
+   all-contrasts versus all-pairs distinctions. Do not infer R4 method adoption.
+6. Rerun C.7. Evaluate each conflict as a local observation with explicit consequences,
+   not automatic rejection of its full source. Verify all 14 candidate dispositions,
+   overall precedence and unchanged catalogue classes.
+7. Run formatting, Markdown lint and the direct repository validator. Record exact
+   commands, exits and limitations. Return findings with severities and per-scope
+   disposition; a clean repository check does not prove methodological correctness.
+8. Preserve review evidence separately from the authored result. Do not merge,
+   edit issue instructions, close releases, or promote candidate closures as part
+   of a review. Result changes require a new exact-head review.
+
+The PR metadata supplies the frozen result head once committed; it is not necessary
+or possible for this file to contain its own commit hash. No independent reviewer
+has been invoked by this authoring increment.
+
+Remaining execution order:
+
+- First, independently review SR-K and SR-G plus the intake; resolve any findings,
+  then record accepted source dispositions through the existing process.
+- For SR-C, the five supplied texts now cover Simes/Hochberg/Hommel and the two
+  PVL-10 variants; finish the missing Shaffer primary source before whole-hold closure.
+- Complete the other named missing texts in C.5 as supplied. Receipt of the remaining
+  numbered procurement papers is not itself proof that every commissioned source,
+  textbook anchor or resampling variant is covered.
+- Carry C.6's corrected interaction scope into a new R4 research successor. Keep the
+  exact old semantic/numerical heads and review evidence unchanged.
+- R4 review PR 184 at commit 1d493622af970145925f35c8d2cd95f6cbf03cc7 remains a
+  separate source-access problem: its two PDF hashes/pinpoints, arXiv version/date,
+  Williams publisher record and NIST/DLMF/LAPACK pages require source completion
+  against the original heads. This intake does not close Section 5.4.
+- Track PR 184's N-A1 version annotation, N-A2/N-B2 provenance wording (preserving
+  material process disclosure), N-A3 E-SIM listing, N-A4 non-authorship enumeration
+  and N-B1 even-nu input guard in successors. N-C1's PR 182 CI description was already
+  supplemented in the PR body when inspected; no source review is inferred. Updating
+  the two result files needs re-review; this single-file commission does not mutate
+  those other heads.
+- Even after source completion, numerical certificates, final semantic-bound R4
+  numerical work, RFC/pre-opening review and steward decisions remain distinct work.
+
+### C.9 Validation boundary
+
+Validation of this increment is recorded in its review PR, against its committed
+head. Dependency lockfile and package.json are unchanged from the existing checkout.
+An offline frozen install failed on a missing cached tarball; existing local
+node_modules from that same lockfile were copied into this isolated clone for the
+checks. This is not claimed as a fresh successful frozen installation.
+No test expectation, authoritative file, public schema, tolerance, catalogue class,
+source PDF, prior review result or fixed issue body is changed by this increment.
+
+SOURCE-ACQUISITION INCREMENT C: INPUT_INCOMPLETE — TWO NEW SOURCE-CLOSURE CANDIDATES —
+AWAITING INDEPENDENT EXACT-HEAD PRIMARY-SOURCE REVIEW — NOT PROTOCOL ADOPTION
