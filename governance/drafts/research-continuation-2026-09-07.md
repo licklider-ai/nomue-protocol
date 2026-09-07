@@ -359,3 +359,92 @@ independent six-source review remain. SR-B and SR-H investigations can also proc
 No new hold disposition or formal acceptance is issued. The provenance adjudication
 in Section 8 and the two separate R4 PDF gaps remain. No further transfer of these
 sixteen originals is needed for the current author-side workspace.
+
+## 10. Completed six-source review and proposed steward decisions
+
+Status: proposed decisions, NOT APPROVED or executed. The user returned PR 195's
+result; return of a review is not itself steward adjudication.
+
+### Verified record and scope
+
+PR 195 remains draft, open and unmerged. Fetched Git objects confirm commit
+`c36318971244c26073078b848ab2f3c52f46010b`, sole parent
+`eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4`, tree
+`e860cda8cc3637384e8fe798f8878045e06c2eb1`, review blob
+`8e2c0299d9ddc8da6bc165bb5317e8d6262ecf74`, and the sole new path
+`review-inputs/r3-src-primary-completion/REVIEW-RESULT.md`.
+PR 193 still points to that reviewed result head, blob
+`6ce3fbaa88ece237c27091a355e6f920ca175179`.
+
+PR 194's historical SOURCE_ACCESS_INCOMPLETE remains preserved. PR 195 supplies
+the missing primary-source GO for suppliers 11, 12, 13, 14, 18 and 22 only,
+with zero BLOCKER/SHOULD-FIX. Its polynomial integration, table comparisons,
+original checks and validation are reviewer-reported work, not rerun in this intake.
+The result's PARTIAL remains accurate pending the separate Rom decision.
+
+Two administrative qualifications to PR 195 are recorded without rewriting it:
+
+- Its references to the "ten other Part D papers" are arithmetically incorrect.
+  Part D contains sixteen suppliers, and only 22 overlaps the six-source review.
+  The fifteen Part D originals outside this pass are 08, 20, 21, 23, 24, 25,
+  26, 27, 28, 29, 30, 32, 33, 35 and 36. The other five reviewed originals
+  were received in Part C. The review approves neither these fifteen nor all
+  thirty-five collected items. N-D4 remains outside scope.
+- Section 11 says the reviewer session started after every reviewed commit,
+  while its own Section 1 and PR 194 explain that Part F was appended during
+  that session. The later re-pinning is documented. This chronology qualification
+  does not contradict the reviewer's non-authorship testimony; no inference that
+  the reviewer authored Part F follows from the overlap.
+
+### Decision A proposed: bounded Rom conflict adjudication
+
+The steward would retain Rom p.664 Table 1's alpha=.01, row-10 MH value
+1.01 x 10^-3 as a conflicting printed value, alongside the recorded equation (2)
+result 0.001004472598983613... . For the bounded PVL-10 source characterization,
+the evidentiary basis would be equation (2) and the described procedure, as
+supported by PR 195 Section 10. Table 1 would not be adopted as numerical
+authority. Any future constants would require separately reviewed computation
+and applicable numerical gates. This would neither declare a publisher erratum,
+edit the original, approve a numerical constant, nor select the Rom method.
+
+If approved, this resolves the named conflict's treatment for preparing a bounded
+SR-C CLOSED source-result proposal. It is not a final hold closure. A subsequent
+changed proposal is pinned and reviewed as required by the commission.
+
+### Decision B proposed: accept scoped independence evidence
+
+For the current six-source recheck and Parts D–F synthesis, the steward would rely
+on the coordinator's first-hand authoring/execution account of this OpenAI assistant
+session (including Part F's original rechecks and output derivations), together
+with PR 195's reviewer testimony identifying claude-fable-5-1, separate context,
+actual primary-source inspection and non-participation in authoring.
+
+These are ordinary accountable evidence, sufficient to support a distinct-model
+independent primary-source pass for this scoped work under RFC rule 2. Rule 6 does
+not demand verification from Git or an exact-build-log evidence format. The
+recommended determination is ESTABLISHED for this scoped pass, not an assertion
+that the entire historical authoring toolset was exclusive or independently
+reconstructed. Earlier human responsibility and partial-Claude accounts remain;
+PR 192's older SR-K/SR-G acceptance question is not automatically decided here.
+PR 194/195's historical PENDING remains unchanged as reviewer testimony, followed
+by a separate dated steward determination if approved.
+
+This proposal does not require another identical review just to reproduce model
+evidence already stated. It also does not waive any unmet content or acceptance gate.
+
+### Follow-up and retained findings
+
+Carry N-P1 (printed free-association assumption), N-P2 (positive orthant dependence
+terminology), N-P3 (Shaffer Section 4.1 printed index versus interpretation),
+N-P4 (ordering pinpoint), N-D1 and N-F1 to a future increment; N-D2/N-D3 were
+answered by review. N-P3 remains a source-notation issue to resolve before any
+Section 4.1 implementation, not a newly adopted formula or formal erratum.
+None calls for moving the reviewed head solely for optional wording.
+
+Pending steward approval of A/B, retain SR-C PARTIAL, three CLOSED/one PARTIAL/
+ten INPUT_INCOMPLETE and overall INPUT_INCOMPLETE. If approved, prepare the
+limited successor proposal while preserving the reviewed head, then obtain the
+required review of that change. No merge, formal hold closure, public discussion,
+method adoption, rule amendment, ratification or release is included in A/B.
+SR-B and SR-H research can continue using already received originals; the R4
+source gaps remain independent.
