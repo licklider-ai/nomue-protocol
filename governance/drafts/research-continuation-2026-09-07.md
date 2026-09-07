@@ -243,3 +243,94 @@ Next custody action for 08 is to receive the original and match its bibliography
 byte identity and intended claim before any source-result increment. This is not
 a renewed request for the existing five attachments or a reason to suspend R4
 exploratory numerical work. No acquisition or review count in Part C is overwritten.
+
+## 8. Additional collection and review return, 2026-09-07
+
+The user subsequently reported collection of 20, 21, 22, 23, 24, 25, 26, 27, 28,
+29, 30, 32, 33, 35 and 36. With Section 7 this is 35 distinct reported collected
+items: 01–33, 35 and 36. Item 34 has not been reported collected in this numbered
+range. These are supplier labels, not Protocol source identifiers. None of the
+fifteen new originals was attached to this update. The received and independently
+reviewed inventories are unchanged.
+
+The next requested transfer is one archive preserving original filenames for
+08, 20–30, 32, 33, 35 and 36 (sixteen PDFs), with an existing number/title list if
+available. Do not commission a new bibliography merely to transfer the files.
+All sixteen need custody and bibliographic matching before source-to-hold priority
+can be determined; a number alone does not establish that the file is Shaffer,
+Keuls or any other named source. Previously supplied five closure-candidate PDFs
+do not need retransmission. Retain missing source requirements until the actual
+bibliographies and contents are matched; reported collection alone closes no hold.
+
+### Returned review identities and content dispositions
+
+Both draft PRs were retrieved from GitHub, remained open and unmerged, and had the
+following identities. Parent, tree, result blob and sole changed path were also
+recomputed from fetched Git objects and matched:
+
+| Review                                                               | Commit                                     | Sole parent                                | Tree                                       | Result blob                                |
+| -------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| [R3 PR 192](https://github.com/licklider-ai/nomue-protocol/pull/192) | `54fb11a7f1e909a0c7135563885d235987358382` | `9eee0caf6a423d509a996be71df8cff8b4d1e9df` | `25ec65fd42e5795fe7290a4dce2cdb2a9f33ba65` | `67546234a5f30c0225f462a514e5a89a05a272a7` |
+| [R4 PR 191](https://github.com/licklider-ai/nomue-protocol/pull/191) | `2e3698ba32c0dae6dcd07ab8c71272d990fbaf49` | `5962cc2def5b1aca7e30d219f12a9a6486ca7b11` | `554b3e493f6ba2e5c6bdd500f03a68fc03d9e289` | `8cf64bbe35e4c9f9537dc134f8334f6e5c44178f` |
+
+The sole new paths are respectively
+`review-inputs/r3-srk-srg-additional-primary-pass/REVIEW-RESULT.md` and
+`review-inputs/r4-numerical-degree-guard/REVIEW-RESULT.md`.
+
+PR 192 records content GO for the two R3 candidates, zero BLOCKER and SHOULD-FIX,
+and three new optional findings: distinguish the illustrative Storey inputs from
+printed data, add the preceding BY p.1182 two-sided-scope sentence, and record the
+BKY Example 2 level. The reviewer reports an independent Example 2 calculation;
+this is newly available reviewer evidence, not a new calculation by this coordinator.
+The prior N-4 partial and N-5 deferred author-result states, R-N1 and R-N2 remain
+explicit. No optional repair justifies moving the fixed source result now.
+
+PR 191 records delta GO and N-B1 CLOSED on content, zero BLOCKER and SHOULD-FIX.
+Its fifty additional invalid calls, optimized-interpreter rejection, mutations and
+mpmath checks are reviewer-reported observations, not rerun by the coordinator in
+this intake. G-N1 (integer-subclass discrimination) and G-N2 (interpreter-version
+line) are optional. Any later changed script/result still receives review at its
+new exact head; an optional finding does not silently waive that boundary.
+
+### Reconciliation of assistance provenance
+
+The returned reviews frame the OpenAI/GPT assistance record and the user's Claude
+assistance account as alternative explanations. They need not be mutually exclusive:
+partial assistance in human-led work can include more than one assistant. Neither
+the user's account nor the coordinator record establishes exclusivity. Preserve
+both rather than selecting one and erasing the other.
+
+For the exact R4 successor delta `5bae1f25…` to `5962cc2d…`, this coordinator has
+first-hand execution history in the current conversation: the guard, added corpus,
+prose and transcript were prepared and validated through this OpenAI assistant
+session, then the tested blob `200296de…` was saved to GitHub. This is an ordinary
+accountable author-side provenance statement, not an inferred serving-build ID.
+PR 191 separately records reviewer-session testimony identifying
+`claude-fable-5-1`, together with non-involvement and context separation. Those
+records support a distinct-model comparison for this specific repair delta. The
+older R3 user clarification does not negate the later, specifically observed R4
+work. This scoped comparison does not establish the provenance or completeness of
+all earlier R4 research and does not resolve PR 184's source-access limitations.
+
+For R3, C.10 and the preceding coordinator record identify GPT/OpenAI assistance,
+while the user's account identifies human responsibility and partial Claude
+assistance. Both are retained as a mixed assistance history. PR 192 supplies the
+reviewer-side model and non-involvement testimony. The coordinator cannot reconstruct
+an exclusive author-side model history for all in-scope R3 source judgments from
+this continuation session. Whether the documented combination satisfies the
+existing requirement for the bounded source intake remains a steward adjudication;
+this note does not interpret the rule as requiring disjoint sets of every tool used,
+or as automatically satisfied by a provider name.
+
+No new exact-build logs or repetition of the user's working-arrangement explanation
+is requested. No further identical review is automatically commissioned merely
+because the prior record says PENDING. The next action is to assess this scoped
+provenance reconciliation alongside the returned reviews and record the separate
+acceptance decision. The preserved PR 191/192 reports remain byte-for-byte intact,
+including their historical model-level PENDING. This note supplies later evidence
+and analysis; it does not rewrite reviewer testimony or issue formal acceptance.
+
+R3 source support remains bounded to SR-K/SR-G; I-03 and the all-pairs limitation
+remain. All research-programme, source-access, public-opening and adoption boundaries
+remain as previously recorded. No merge, hold closure, rule amendment, waiver or
+release was performed.
