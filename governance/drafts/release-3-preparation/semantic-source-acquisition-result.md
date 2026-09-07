@@ -1189,15 +1189,15 @@ rechecked visually for the present family mapping.
 
 #### C.4.1 C-K1: BH dependence and BY variants
 
-| Locator in 04                                   | Source fact                                                                                                                                 | Boundary / investigator application                                                                                         |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 1167 equation (1), 1169 section 2.1             | Fixed finite family of m hypotheses; V false rejections, R total rejections; FDR=E[V/(R or 1)]; BH step-up uses i q/m                       | Error criterion is an expectation, not FWER or a bound on every realized false-discovery proportion                         |
-| 1168 PRDS definition, Theorem 1.2               | For increasing D, conditional probability of X in D is nondecreasing in a true-null coordinate; BH FDR ≤ (m0/m)q under the stated condition | PRDS applies on the true-null subset, including partial-null configurations; empirical positive correlation is insufficient |
-| 1169 Theorem 1.3, 1182–1183 proof               | Replace q by q/H_m, H_m=sum(1/j), for arbitrary dependence                                                                                  | Valid (super-uniform) marginal null p-values remain necessary; correction does not repair invalid approximate p-values      |
-| 1172–1173 Case 1; 1174 Corollary 3.3 and Case 3 | Certain normal numerators and their absolute values divided by an independent chi-square scale satisfy the needed dependence condition      | Two-sided shared-denominator t tests are not automatically covered merely because the denominator is shared                 |
-| 1174–1175 Case 4, 1180 Remark 4.2               | Signed Studentized normal statistics need not be globally PRDS; the relevant monotonicity suffices for one-sided tests at q<1/2             | Preserve the range restriction and numerator covariance assumptions                                                         |
-| 1175 Problems 2–3                               | Orthogonal contrasts in balanced normal designs and qualified one-sided many-to-one comparisons are applications                            | Do not read Problem 3's shorthand PRDS statement in isolation from Case 4 and Remark 4.2                                    |
-| 1182 discussion                                 | General normal all-pairs applicability was unresolved in the paper's account                                                                | This is a limitation of this source, not a claim about the current literature                                               |
+| Locator in 04                                   | Source fact                                                                                                                                              | Boundary / investigator application                                                                                         |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 1167 equation (1), 1169 section 2.1             | Fixed finite family of m hypotheses; V false rejections, R total rejections; FDR=E[V/(R or 1)]; BH step-up uses i q/m                                    | Error criterion is an expectation, not FWER or a bound on every realized false-discovery proportion                         |
+| 1168 PRDS definition, Theorem 1.2               | For increasing D, conditional probability of X in D is nondecreasing in a true-null coordinate; BH FDR ≤ (m0/m)q under the stated condition              | PRDS applies on the true-null subset, including partial-null configurations; empirical positive correlation is insufficient |
+| 1169 Theorem 1.3, 1182–1183 proof               | Replace q by q/H_m, H_m=sum(1/j), for arbitrary dependence                                                                                               | Valid (super-uniform) marginal null p-values remain necessary; correction does not repair invalid approximate p-values      |
+| 1172–1173 Case 1; 1174 Corollary 3.3 and Case 3 | Certain normal numerators and their absolute values divided by an independent chi-square scale satisfy the needed dependence condition                   | Two-sided shared-denominator t tests are not automatically covered merely because the denominator is shared                 |
+| 1174–1175 Case 4, 1180 Remark 4.2               | Signed Studentized normal statistics need not be globally PRDS; the relevant monotonicity suffices for one-sided tests at q<1/2                          | Preserve the range restriction and numerator covariance assumptions                                                         |
+| 1175 Problems 2–3                               | Orthogonal contrasts in balanced normal designs and qualified one-sided many-to-one comparisons are applications                                         | Do not read Problem 3's shorthand PRDS statement in isolation from Case 4 and Remark 4.2                                    |
+| 1182 discussion                                 | The paper states that MTP2 and PRDS do not hold for the discussed normal all-pairs statistics; whether BH controls FDR there remains open in its account | This is a limitation of this source, not a claim about the current literature                                               |
 
 Concrete scope mapping (investigator derivation using those source conditions):
 
@@ -1224,8 +1224,9 @@ explicitly left the dependence question open. No new true-null or model declarat
 is claimed mechanically verifiable from reported numbers alone.
 
 Output/numerical boundary: BH and the harmonic variant determine a rejection set.
-As investigator algebra, their threshold-equivalent adjusted values are suffix
-minima of m p_(j)/j or m H_m p_(j)/j, capped at 1. This transformation is not Storey's
+Source 16 p.493 gives the ordinary-BH suffix-minimum formula m p_(j)/j.
+The harmonic variant m H_m p_(j)/j is investigator algebra; both are capped at 1
+for the threshold-equivalent adjusted-value representation here. This transformation is not Storey's
 q-value definition. It adds no adopted output contract, sorting/tie protocol or
 floating-point tolerance. Member set and m remain fixed; no hypothesis selection
 is silently removed from the multiplicity count.
@@ -1235,7 +1236,7 @@ is silently removed from the multiplicity count.
 Source 16, p.495 Definition 6, defines TST: run BH at q'=q/(1+q), with r1 rejections;
 if r1=0 stop with none, if r1=m stop with all, otherwise set estimated m0=m−r1 and
 run BH again on all original m p-values at q' m/(m−r1).
-Theorem 1 and its proof, pp.496–498, supply FDR≤q under independence. The family
+Theorem 1 and its proof, pp.497–498 (section setup on p.496), supply FDR≤q under independence. The family
 consists of the original fixed m hypotheses, the nulls those tested by valid p-values;
 the output here is the rejection set. No degrees of freedom, sampling balance or
 variance model is supplied by an abstract adaptive-p-value rule: those belong to
@@ -1293,7 +1294,30 @@ finite-m power factor and suffix minimum; this reading supplies no numerical err
 resource, platform or probability-projection certificate. Sampling/variance/balance
 and degrees of freedom of an eventual underlying test still require that test's
 own source basis. A fixed rejection region with all nulls can have pFDR=1 while
-FDR is much smaller; this distinction is reproduced in C.7.
+FDR is much smaller; this distinction is stated in source 19 p.481; C.7 demonstrates the finite-m
+estimator difference, not a simulation of the all-null identity.
+
+#### C.4.4 SR-K reopen conditions and closure scope
+
+The proposed CLOSED disposition concerns removal of the assigned-source acquisition
+obstacle for the bounded families in C.4. It does not answer the residual all-pairs
+BH-control question or remove I-03 for unsupported families. Review PR 187 Section
+5.4 supports this reading but also identifies PARTIAL as the alternative if the
+steward requires that residual methodological question to be resolved by the hold.
+No acceptance choice between those readings is made by this author-side repair.
+
+Reopen C-K1/SR-K before relying on unadjusted BH for all-pairs or any family outside
+the stated Case 3/4 conditions, changing one/two-sidedness, the fixed member set,
+normal/covariance/independent-scale assumptions or q<1/2 restriction, or relaxing
+valid marginal null p-values for Theorem 1.3. Such extensions need a newly reviewed
+primary-source basis; the harmonic correction is not silently adopted as a fallback.
+Reopen C-K2/SR-K for an adaptive variant other than Definition 6, changes to its
+stopping/counting rules, or a dependence guarantee. Reopen C-K3/SR-K for treating
+Storey estimates as guaranteed rejection rules, +1 or p≤lambda modifications,
+data-selected lambda/regions, changed mixture/power assumptions, or new truncation
+or endpoint conventions. Reopen the affected claim for a source-version/hash
+change or a material contradiction in the proofs of 04 Theorems 1.2/1.3,
+16 Theorem 1, or 19 Theorem 2. Unchanged fixed catalogue classes remain in force.
 
 ### C.5 Proposed hold dispositions and entry-by-entry coverage
 
@@ -1336,7 +1360,8 @@ permission follows even if the two proposed closures are independently accepted.
 C-G1: 09 pp.87–90 assumes jointly normal unbiased estimates with known covariance
 shape sigma^2 A and an independent variance estimate with chi-square degrees of
 freedom nu. For a contrast c with sum(c)=0, the simultaneous half-width is
-sqrt((k−1) F_(1−alpha;k−1,nu)) sqrt(s^2 c' A c), with the paper's rank conditions.
+sqrt((k−1) F_(1−alpha;k−1,nu)) sqrt(s^2 c' A c), with the paper's rank conditions (p.88): covariance rank k for unrestricted
+means, or rank k−1 when both the means and their estimates satisfy restriction (1).
 The F notation here uses a LOWER-tail 1−alpha quantile, equivalent to the paper's
 upper-tail alpha convention. Coverage is 1−alpha for the full contrast space and
 at least 1−alpha for a subset. Data-suggested contrasts within that same space are
@@ -1536,3 +1561,36 @@ source PDF, prior review result or fixed issue body is changed by this increment
 
 SOURCE-ACQUISITION INCREMENT C: INPUT_INCOMPLETE — TWO NEW SOURCE-CLOSURE CANDIDATES —
 AWAITING INDEPENDENT EXACT-HEAD PRIMARY-SOURCE REVIEW — NOT PROTOCOL ADOPTION
+
+### C.10 Repair after the limited independent review
+
+Review PR 187: commit `f8c17dba9bb2e7cc5e3ebe5a9f837f54af0fdd88`, result blob
+`a92da5e6c2ed105e3074f51861c4c08d1b4df66e`, path
+`review-inputs/r3-srk-srg-source-closure/REVIEW-RESULT.md`. It reviewed the original
+Part C at `37d3ed1626964c20080c26614052e2ce1971d635`, not this successor.
+Its conditional GO coexists with two SHOULD-FIX findings; neither is treated as
+closed by the author. S-1 is repaired in the C.4.1 all-pairs row; S-2 is repaired
+in C.4.4. N-1 (explicit rank), N-2 (adjusted-p pinpoint), N-3 (reproduction wording)
+and N-4's theorem pinpoint are also addressed. N-4's optional second-example
+calculation and N-5's optional original-token column are deferred; the original
+nine-correction ledger remains intact. No finding is independently re-reviewed here.
+
+The review confirms separate authoring/review contexts but leaves model identity
+verification to acceptance. The user's returned review report identifies the
+reviewer's configured/last-served model as `claude-fable-5-1`; that is supplied
+session testimony, not a model identifier independently extracted from Git. This
+authoring environment identifies the assistant as GPT but does not expose a
+verifiable exact serving-model identifier for the prior authoring turns. No exact
+identifier is guessed, and RFC rule 2 is not marked satisfied by this repair.
+A recorded comparison of the two session identities is still needed before hold
+acceptance. The result does not represent an external review's conditional GO as
+unconditional independent model verification.
+
+Close-only review request: inspect this successor's exact parent/diff/blob, verify
+S-1 against 04 p.1182 and S-2 against commission item 8, inspect the N-1–N-4 edits
+against the same five originals, and confirm C.4.4 preserves the residual all-pairs
+question and catalogue classes. Record separate findings for textual repairs,
+source-closure interpretation and independence evidence. Preserve original review
+187; do not overwrite it or treat its GO as covering the successor. Parts A/B,
+source hashes, the C.7 code and transcript, and the candidate disposition counts
+remain unchanged. No merge, hold acceptance, public opening or R4 promotion occurs.
