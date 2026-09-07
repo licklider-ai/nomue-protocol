@@ -1764,3 +1764,209 @@ but are not all attached in this continuation workspace. Request them when that
 review requires access, rather than repeating the already received sixteen-file
 transfer. This increment is ready for custody/bibliography and bounded-finding
 review, not represented as a completed six-source closure proposal.
+
+---
+
+## Part E — SR-C synthesis and bounded review handoff (2026-09-07)
+
+### E.1. Evidence basis and role
+
+This author-side synthesis appends to the exact Part D result at
+`6f0679629a8b37ea98bc3c4fc661a5c5e923fed6`, blob
+`06b98ef96abcd9ed13f8ed94644f90017465dad0`; all earlier bytes are preserved.
+The commission remains the blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7`
+at `f39100161cb45de15767bdb19ed54aba9489b41a`. The comparison remains the
+semantic result at `7bd9c5ab854777c3e99e624d9d2ed62731228852`, blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`. No catalogue entry is rewritten.
+
+OpenAI assistant support prepared this increment in the continuing author context.
+This is not an independent pass. The earlier human-responsibility/partial-Claude
+account and review provenance are retained, not reconstructed or contradicted here.
+
+Evidence layers are distinguished throughout:
+
+- **Recorded primary inspection:** C.2/C.3 and C.7 at the preserved repaired head
+  contain the earlier author investigation of suppliers 11, 12, 13, 14 and 18.
+  Their hashes and pinpoints are reused. These five PDFs are not present in this
+  workspace; no new reading of them is claimed.
+- **Current primary inspection:** supplier 22, Shaffer, hash in D.2, was read
+  through printed pp.826–831 including the appendix and references. The core
+  formulas and variants at pp.827–830 were also inspected as rendered images.
+  The current computation below checks one specified combinatorial claim; it
+  does not reproduce all numerical illustrations or certify the appendix.
+- **Investigator synthesis:** the cross-entry assumptions, output gaps and
+  dispositions below are deductions from those two evidence layers, not new
+  statements attributed verbatim to the papers.
+
+### E.2. Entry-by-entry claim and impact matrix
+
+| Entry / claim                     | Evidence and pinpoint                                                                          | Supported characterization and target                                                                                               | Assumptions and output boundary                                                                                                                                                                                              | Impact                                                                          |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| PVL-06 / C-C1                     | Recorded: Simes, 11, pp.751–752 theorem and p.754                                              | Global intersection-null test; reject if some ordered p-value meets its rank-scaled threshold                                       | Independent uniform null p-values supply exact level in the recorded theorem. A global rejection does not identify individual false nulls or establish individual strong FWER. No arbitrary-dependence claim                 | Supports the global-test characterization; retain RES-ONLY                      |
+| PVL-07 / C-C2                     | Recorded: Hochberg, 12, pp.800–801, with 11                                                    | Step-up rejection through the largest qualifying rank; threshold alpha/(m-i+1); strong FWER subject to the relevant Simes validity  | A declared finite family alone does not suffice: validity is needed for the relevant true-null intersections. Independence is the recorded sufficient basis. Exact adjusted-p derivation and conventions remain E.4 work     | Narrows any unrestricted reading; retain R3-CAND, pending the source gate       |
+| PVL-08 / C-C3                     | Recorded: Hommel, 13, pp.383–385, with 11                                                      | Closed-Simes construction supports elementary-hypothesis strong FWER when the local intersection tests are valid                    | Invalid local tests are not repaired by closure. The saved summary supports the construction, but does not fully document the computational shortcut or adjusted-output equivalence                                          | Supports the qualified construction; retain RES-ONLY                            |
+| PVL-09 / C-C4                     | Current: Shaffer, 22, pp.826–827 Sections 1–2; pp.827–828 Section 3.1; pp.829–830 Sections 4–6 | Logical constraints sharpen Holm's sequential rejection; familywise probability of at least one false rejection is bounded by alpha | Valid marginal tests and correct logical constraints; no additional joint-independence requirement for the basic Bonferroni argument. Count-based, identity-sensitive and prior-composite-test variants remain distinct; E.3 | Supports the pairwise logical-constraint characterization; retain RES-ONLY      |
+| PVL-10 / C-C5, Rom                | Recorded: 14, pp.663–664 equation (2), Table 1; C.7                                            | Sharpened step-up procedure with recursively calibrated constants                                                                   | Independence basis; the printed constant and recurrence conflict retained below prevents treating the printed table as a validated numerical authority                                                                       | Supports the qualified family description; retain RES-ONLY; unresolved constant |
+| PVL-10 / C-C5, Holland–Copenhaver | Recorded: 18, pp.418–422                                                                       | Step-down product-form threshold 1-(1-alpha)^(1/t_i), stopping at first failure; t_i bounds the remaining possible true-null count  | The stated positive lower-orthant dependence condition is not merely positive pairwise correlation. Do not borrow Rom's algorithm or attach a universal dependence claim                                                     | Supports this separate variant; retain RES-ONLY                                 |
+
+For these generic p-value procedures, sampling distribution, variance, balance and
+degrees of freedom enter through the validity of the underlying tests; the papers
+are not a blanket authorization to use arbitrary p-values from any data model.
+Order by observed p-values is part of the procedure, not permission to select the
+hypothesis family after observing results. A later implementation needs an explicit
+family, sidedness, individual-test model and tie/output convention.
+
+The fixed semantic Section 9 lists adjusted p-values for PVL-07 and PVL-08.
+The saved source summaries justify rejection mechanisms, but do not alone complete
+that output claim. E.4 names this gap instead of silently deleting the output or
+claiming that a source printed an investigator-derived formula.
+
+### E.3. Shaffer procedure distinctions and reproducible check
+
+**Source statements:** Section 2, p.827, orders the marginal significance
+probabilities and replaces Holm's stage denominator with the largest attainable
+true-null count compatible with at least j-1 false hypotheses. The sequential
+procedure stops at failure, as in the Section 1 construction. Section 3.1 uses
+partitions into equivalence classes for all pairwise equality hypotheses; equation
+(3.2) and Table 2 give attainable counts. Section 6, p.830, distinguishes logical
+information from further distributional information.
+
+Section 4.1, p.829, treats an initial level-alpha rejection of a more comprehensive
+hypothesis that implies at least r component hypotheses are false. It is not an
+arbitrary screening step. Section 4.2 instead uses the identities of previously
+rejected hypotheses to tighten the compatible true-null count. Section 5's
+illustrations apply those distinct modifications, including a balanced factorial
+example. They are not one undifferentiated algorithm called Shaffer.
+
+**Investigator interpretation:** PVL-09's pairwise logical-constraint description
+is supported. The most direct bounded variant is Section 2 with Section 3.1's
+attainable-count set. A later proposal to use Section 4.1 or 4.2 needs its own
+explicit family and algorithm specification; this synthesis selects none of them.
+A gate or rejection is statistical evidence, not an assertion that the rejected
+null is logically known false. The source's error-control argument includes the
+possibility of a false rejection. No R4 interaction method is approved by this
+example, and the Scheffe 1969 footnote deletion remains effective.
+
+The following author-side diagnostic uses exact integer arithmetic. It compares
+(3.2) with a separate enumeration of integer partitions, then compares the displayed
+sets with Table 2 at p.828. Every row for k=3 through 10 matches. These are source
+combinatorics, not a reference implementation or an independent-review oracle.
+
+```python
+from math import comb
+
+def partitions(n, minimum=1):
+    if n == 0:
+        yield ()
+    for first in range(minimum, n + 1):
+        for rest in partitions(n - first, first):
+            yield (first,) + rest
+
+s = [{0}, {0}]
+for k in range(2, 11):
+    s.append({comb(j, 2) + x for j in range(1, k + 1)
+              for x in s[k-j]})
+    direct = {sum(comb(j, 2) for j in part) for part in partitions(k)}
+    assert s[k] == direct
+    if k >= 3:
+        print(k, sorted(s[k]))
+print('k=4 stage denominators:',
+      [max(x for x in s[4] if x <= 6-j+1) for j in range(1, 7)])
+```
+
+Observed output:
+
+```text
+3 [0, 1, 3]
+4 [0, 1, 2, 3, 6]
+5 [0, 1, 2, 3, 4, 6, 10]
+6 [0, 1, 2, 3, 4, 6, 7, 10, 15]
+7 [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 15, 21]
+8 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 21, 28]
+9 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 18, 21, 22, 28, 36]
+10 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24, 28, 29, 36, 45]
+k=4 stage denominators: [6, 3, 3, 3, 2, 1]
+```
+
+No simulation of FWER, adjusted-p algorithm, or reproduction of the illustrative
+normal-range critical values 3.68 and 3.53 at p.830 is claimed.
+
+### E.4. Named gaps, disposition and reopening
+
+SR-C's proposed author-result disposition is **PARTIAL**, replacing C.5's
+INPUT_INCOMPLETE for this hold only. All six assigned originals have recorded
+custody and the five entry descriptions now have primary-inspection evidence;
+remaining gaps concern claims and outputs rather than an unreceived Shaffer PDF.
+This is not formal hold closure. In particular:
+
+1. Complete the source-to-computation trace for Hommel and the adjusted-output
+   claims for PVL-07/PVL-08, checking the actual five older originals against
+   their saved hashes. Distinguish any investigator derivation from printed
+   formulas; specify ties, comparison boundary and truncation conventions.
+2. Resolve or explicitly bound the Rom Table 1 discrepancy: C.7 records the
+   alpha=.01, n=10 recurrence result and a conflict with the printed cell.
+   Neither a convenient choice of value nor this synthesis is an erratum.
+   The investigator has not found or verified a formal correction in this pass.
+3. An independent six-source review tests C-C1 through C-C5, the cross-entry
+   assumptions, the source/computation trace and whether any residual is
+   compatible with a strictly bounded CLOSED source-result proposal. Until
+   then, no such proposal or formal acceptance is issued here.
+
+Reopen the relevant claim if the hypothesis family or equality constraints change;
+if independence/Simes-validity/lower-orthant conditions are relaxed; if the underlying
+marginal test or sidedness changes; if count-based Shaffer is replaced by an
+identity-sensitive or initial-composite-test variant; if the output expands from
+rejection to adjusted p-values or intervals; or if a changed artifact, correction,
+threshold, tie rule or contradictory theorem affects the source-to-entry mapping.
+The two PVL-10 variants remain separate in analysis under the unchanged shared ID.
+
+| Hold   | Current proposed disposition | Basis                                                                                        |
+| ------ | ---------------------------- | -------------------------------------------------------------------------------------------- |
+| SR-A   | INPUT_INCOMPLETE             | Carry C.5 with D's new custody facts; no whole-hold reassessment here                        |
+| SR-B   | INPUT_INCOMPLETE             | Carry C.5 with D's new custody facts; no whole-hold reassessment here                        |
+| SR-C   | PARTIAL                      | Six-source synthesis; named computational/output and constant gaps above                     |
+| SR-D   | INPUT_INCOMPLETE             | C.5 unchanged                                                                                |
+| SR-E   | INPUT_INCOMPLETE             | C.5 unchanged                                                                                |
+| SR-F   | INPUT_INCOMPLETE             | C.5 disposition retained; D's new custody facts apply                                        |
+| SR-G   | CLOSED                       | Preserved candidate; separate formal acceptance remains pending                              |
+| SR-H   | INPUT_INCOMPLETE             | C.5 disposition retained; D's new custody facts apply                                        |
+| SR-I   | INPUT_INCOMPLETE             | C.5 disposition retained; D's new custody facts apply                                        |
+| SR-J   | INPUT_INCOMPLETE             | C.5 disposition retained; D's new custody facts and X-8 remain                               |
+| SR-K   | CLOSED                       | Preserved limited source candidate; all-pairs/I-03 and formal acceptance boundaries retained |
+| SR-L   | CLOSED                       | Inherited prior disposition                                                                  |
+| RSM-01 | INPUT_INCOMPLETE             | C.5 unchanged                                                                                |
+| RSM-02 | INPUT_INCOMPLETE             | C.5 disposition retained; Troendle custody does not close all variants                       |
+
+Counts: three CLOSED, one PARTIAL, ten INPUT_INCOMPLETE. Overall disposition is
+**INPUT_INCOMPLETE**. The semantic programme remains NARROW; SOURCE_SET_READY is
+not reached. No other entry classification or adoption status changes.
+
+### E.5. Independent-review instruction for this increment
+
+Use the exact successor commit containing this section, as recorded in the PR,
+not a moving branch. Read AGENTS and its Read first documents, the pinned commission,
+the fixed semantic entries and the saved result identities in E.1. Verify all
+Parts A–D bytes are preserved. Record the actual reviewer role, non-authorship
+boundary, context separation and ordinary model provenance without demanding
+unavailable exact-build logs. This author context cannot supply the independent pass.
+
+The six originals are 11, 12, 13, 14 and 18 from C.2, plus 22 from D.2. The reviewer
+needs actual source access, not just hash tables or prior GO on a different set.
+If an original is unavailable, identify the affected claim as SOURCE_ACCESS_INCOMPLETE
+and continue separable checks; do not substitute a saved author summary for the
+reviewer's primary-source inspection. PRs 187/188/192 do not cover these six sources.
+
+Check C-C1 through C-C5, all E.2 rows and E.3's variants against the printed papers;
+reproduce the exact combinatorial diagnostic; assess E.4's PARTIAL rather than
+assuming that receipt implies CLOSED. Inspect Rom's disputed cell and recurrence,
+Hommel's computational form, and the fixed adjusted-output claims. Separate source
+statements, reviewer deductions and adoption decisions. Return per-claim findings,
+severity, content verdict, actual independence evidence and remaining scope.
+
+Write a new English review result on an unused review branch starting at the exact
+input head, preserving every investigation and old review file. A suitable path is
+`review-inputs/r3-src-six-source-synthesis/REVIEW-RESULT.md`; use an unused suffix
+if necessary. Run format, Markdown lint, direct validator and diff checks; report
+actual results. Open a draft review PR only. Do not merge, close holds, amend rules,
+open discussion, adopt a procedure or publish a release. Any changed result needs
+review against its new exact identity.
