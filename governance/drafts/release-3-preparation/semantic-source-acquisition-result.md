@@ -2323,3 +2323,168 @@ REPAIR_REQUIRED / SOURCE_ACCESS_INCOMPLETE, findings, actual independence and
 remaining acceptance steps. Run format:check, Markdown lint, direct validator and
 diff checks with the review file; open a draft review PR. No formal acceptance,
 hold update, public discussion, adoption, ratification or release.
+
+---
+
+## Part H. SR-B primary-source completion: Dunn and Sidak
+
+**Status: author-side source-completion proposal; independent review and SR-B
+acceptance pending.** Date: 2026-09-07. The continuing OpenAI-assisted investigator
+appends this increment, not an independent review. Parts A-G are preserved as the
+exact 267540-byte prefix from PR 196, commit
+`80ad520cf25e8cdf647f20e7d08d5bb426a85633`, blob
+`34f01d4e14b0e0feac7ef934f11e886535c90c41`. The fixed semantic input and acquisition
+commission remain those pinned in the earlier parts. No catalogue entry is edited.
+
+### H.1. Custody, inspection and prior-work reuse
+
+D.2/D.3 already record receipt and routing of suppliers 20 and 21. This pass first
+consulted those records and the saved inventory, then confirmed the local PDFs'
+hashes and lengths before extending the initial intake into content inspection.
+Neither is newly acquired or counted again: the received supplier total stays 35.
+
+| Supplier / source | Original identity                                                                                       | Bibliography and inspection                                                                                                                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 20 / SRC-13       | SHA-256 `6cd0ccda87a138d447391991c9858f5cea4294bfaeccaa8518754d2854d89533`; 641762 bytes; 9 PDF pages   | Sidak (1967), Rectangular Confidence Regions for the Means of Multivariate Normal Distributions, JASA 62(318), 626-633; DOI 10.1080/01621459.1967.10482935. One publisher cover plus eight printed pages. |
+| 21 / SRC-14       | SHA-256 `14aa5adbbf07da8e7a73f4451a04d62bd7da198f6053e120afab29145a422488`; 1385001 bytes; 14 PDF pages | Dunn (1961), Multiple Comparisons among Means, JASA 56(293), 52-64; DOI 10.1080/01621459.1961.10482090. One publisher cover plus thirteen printed pages.                                                  |
+
+Acquisition route: previously supplied publisher-purchase ZIP, preserved locally;
+no new external acquisition attempted. Inspected the saved text extraction across
+both papers, with focused page-image checks of Sidak pp.627-631 and Dunn pp.53-54, 61 and 63. Equation-level claims below rely on those images where extraction was damaged.
+The comparative tables are not comprehensively transcribed or recalculated here.
+No PDF, full extraction, or table facsimile is included in the repository.
+
+### H.2. Direct source findings
+
+| Claim                                         | Primary pinpoint                                                                                 | What the original supports and its limits                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| B-1: finite planned family and attribution    | Dunn pp.52-54, Section 2, equations (1)-(6)                                                      | Select m linear combinations in advance, rather than all possible post-selection contrasts. The mean estimators are normally distributed, their covariance matrix is known up to a common scale, and an independent variance estimate has the stated chi-square degrees of freedom. Each standardized combination has a Student t marginal. Dunn explicitly invokes a Bonferroni inequality without needing the joint t distribution; equation (4) bounds simultaneous coverage from below. |
+| B-2: equal allocation and supported intervals | Dunn p.54, equations (5)-(7) and the displayed tail integral                                     | Choose the upper t tail to equal alpha/(2m); the two-sided marginal noncoverage is alpha/m. The intervals cover all m planned targets with probability at least 1-alpha. The source's occasional description as level 1-alpha does not convert the lower bound into exact joint coverage. Equation (7) permits unequal sample sizes with the stated common-scale model.                                                                                                                     |
+| B-3: Gaussian symmetric rectangles            | Sidak pp.626-628, Theorem 1, equation (1), singular-limit paragraph and Corollary 1 equation (4) | For a centered multivariate normal vector, arbitrary variances and correlation matrix, the probability of a coordinatewise symmetric rectangle is at least the product of its marginal probabilities. The paper extends the result to singular distributions by a limiting argument. No positive pairwise-correlation restriction is imposed for this symmetric result.                                                                                                                     |
+| B-4: independent-coordinate calibration       | Sidak pp.628-629, Section 3, equation (5) and following normal-quantile expression               | With known variances, choose marginal coverage probabilities whose product is 1-alpha. Equal allocation gives marginal coverage (1-alpha)^(1/k). This is conservative for the dependent Gaussian coordinates covered by B-3; independence gives the calibration case.                                                                                                                                                                                                                       |
+| B-5: common random scale and boundary         | Sidak pp.629-631, Theorem 2 equation (6), Corollary 2 equation (8), Section 5 and Remarks 2-3    | The extension uses one positive random scale independent of the Gaussian vector and the same scale distribution under the compared laws. Corollary 2 bounds joint coverage by the product of marginal coverages. Section 5 gives an unknown-equal-variance construction using one coordinate's sample variance and n-1 degrees of freedom. It does not license arbitrary coordinate-specific standard errors.                                                                               |
+| B-6: pooled-scale qualification               | Sidak p.631, Remark 2; p.632, Discussion                                                         | For the mentioned pooled estimate, the paper says its comparison to the intermediate independent-coordinate law cannot be established by the stated method; it separately asserts that the first-to-last product bound remains true by a similar proof. Preserve that distinction. The discussion distinguishes the unknown-unequal-variance case; do not transfer the equal-variance construction to arbitrary Welch statistics.                                                           |
+
+Dunn pp.52-53 is a directly inspected primary account of this application of the
+Bonferroni inequality, not proof of historical priority: Dunn herself leaves prior
+use open. SRC-14 attribution is resolved as the assigned source for the procedure,
+not as a claim that Dunn invented the inequality or was its first user.
+
+Sidak p.628 also mentions a one-sided comparison result attributed to Slepian.
+That mention is not the symmetric-rectangle theorem and its cited original was
+not inspected in this pass. No general one-sided guarantee is attributed to B-3.
+
+### H.3. Investigator derivations and catalogue reconciliation
+
+These are mathematical deductions from the stated marginal and joint bounds,
+not adjusted-p formulas transcribed from the originals. Fix a finite family of
+m >= 1 hypotheses before selection and alpha in (0,1). Each true-null p value is
+valid: P(p_i <= u) <= u for every u in [0,1]. Let I0 be the true-null subset.
+
+**PVL-01.** Reject at p_i <= alpha/m. The union bound gives
+P(any false rejection) <= sum over I0 of P(p_i <= alpha/m)
+<= count(I0)*alpha/m <= alpha. Thus the abstract rule has strong FWER control
+under arbitrary dependence of valid marginals. Dunn's Student-t interval model is
+one sourced construction of those marginals, not a necessary normality condition
+for the abstract probability argument. Inverting the single-step threshold yields
+adjusted p_i = min(1, m*p_i); the cap is the investigator's [0,1] output convention.
+This does not approve a general marginal-p generator or a production implementation.
+
+**PVL-02.** Let t = 1-(1-alpha)^(1/m). Independence of the true-null p values,
+or more generally the explicit bound
+P(all p_i > t for i in I0) >= product over I0 of P(p_i > t),
+yields P(any false rejection) <= 1-(1-t)^count(I0) <= alpha.
+For strong control the bound is required under every configuration of false nulls,
+not just under the complete null. The empty true-null set has false-rejection
+probability zero. Independence and valid marginals imply this bound directly;
+exact uniform independent p values give equality when all m nulls are true.
+
+The source-backed dependent example is the continuous two-sided Gaussian pivot
+family in B-3/B-4 (or a justified common-scale family in B-5). Apply the rectangle
+bound to the true-null subvector. Its centered Gaussian law and covariance
+assumptions must continue to hold under the relevant parameter configuration.
+The continuous boundary has zero marginal probability, so the strict no-rejection
+event matches the source's non-strict rectangle for this purpose. Inverting the
+threshold gives adjusted p_i = 1-(1-p_i)^m. This inversion alone does not establish
+the joint bound or strong FWER for an arbitrary dependent p-value family.
+
+The fixed catalogue's shorthand "independence/orthant condition" is therefore
+reconciled by the explicit no-rejection product bound above and these sourced
+Gaussian cases. A claim of arbitrary dependence, merely nonnegative pairwise
+correlations, or an unspecified positive-dependence label is not supported.
+This is a clarification of the source condition, not expansion to a new method.
+Both PVL-01 and PVL-02 retain R3-CAND as research classifications; neither is selected.
+
+Dunn's planned finite-family intervals and Sidak's specified rectangles are actual
+source outputs. Their presence does not create a simultaneous-interval Contract
+for every abstract adjusted-p procedure. Neither paper supplies Protocol tolerance,
+rounding, implementation, deterministic-output or numerical-oracle requirements.
+
+### H.4. Conflicts and reopening boundaries
+
+Two source observations are preserved outside the decision-bearing PVL-01/02 basis:
+
+- Sidak p.631 Table 1 and p.632 explicitly question the reproduced k=2,
+  infinite-degrees-of-freedom value 2.23 (the other column gives 2.24). This is
+  the original author's printed observation, not a publisher erratum found here.
+  No value from that table is adopted or independently recomputed in this pass.
+- Dunn p.61 Section 5 prints n(a-1)(b-1) for the example's pooled-variance degrees
+  of freedom. The p.63 Table 7 headers instead list 24 for a=3,b=4,n=3
+  and 60 for a=4,b=5,n=4; these equal ab(n-1), not the p.61 expression.
+  The p.61 expression and both table headers were confirmed in page images.
+  This is a flagged example-level
+  discrepancy, not a formal erratum or an adopted replacement formula. Section 2's
+  generic assumed degrees of freedom, used for B-1/B-2, does not depend on it.
+  Carry it to R4 before reusing this factorial example; it resolves none of
+  PR 184's source-access findings.
+
+Reopen SR-B if the intended family is selected after examining results, marginals
+are not valid, the true-null product condition cannot be established for PVL-02,
+a different tail/scale construction is proposed, priority rather than assigned-source
+attribution becomes decision-bearing, or new primary evidence changes the scoped
+reading. Any numerical use of the flagged tables/example requires separate review
+and, if material to a decision, adjudication. No conflicting cell is silently fixed.
+
+### H.5. Proposed disposition and independent handoff
+
+**SR-B: CLOSED proposed for its source-acquisition obstacle**, subject to an
+independent primary-source review of H.2-H.4 and the narrowing interpretation in
+H.3. The assigned originals are identified and directly inspected; the necessary
+source claims for PVL-01 attribution and the bounded PVL-02 characterization have
+pinpoints. The restrictions above are explicit unsupported-domain boundaries,
+not claims that the method is universally valid. This author verdict is not GO
+from an independent reviewer and is not formal SR-B acceptance.
+
+With this proposal the candidate ledger is:
+
+| Disposition      | Entries                                                  | Count |
+| ---------------- | -------------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-G, SR-K, SR-L                             |     5 |
+| PARTIAL          | none                                                     |     0 |
+| INPUT_INCOMPLETE | SR-A, SR-D, SR-E, SR-F, SR-H, SR-I, SR-J, RSM-01, RSM-02 |     9 |
+
+Overall **INPUT_INCOMPLETE**; existing semantic **NARROW** retained. Thirteen
+non-SR-B dispositions are carried from G.3, not re-reviewed here. SR-C's separate
+steward acceptance is recorded in continuation Section 12 at commit
+`e048cc0622bd5e063b692c7e6072674f1631df85`, blob
+`1b09b81f8bd6a9e368111d21e1c7733d09a47de7`; the candidate count does not assert five
+formally accepted holds. SR-K/SR-G acceptance remains separate.
+
+Next reviewer: use the exact new PR head, verify its sole parent and result blob,
+preserve the 267540-byte Parts A-G prefix and prior reviews, and supply the two
+originals at H.1 identities. Reuse prior custody and PR 197's Part G review with
+attribution; directly check B-1 through B-6, the assumptions and true-null-subset
+argument, adjusted-output derivations, source conflicts and CLOSED proposal.
+If the proposed narrowing does not satisfy the commissioned source claims, record
+the precise residual gap and an appropriate disposition instead of assuming closure.
+The other thirty-three supplied sources are outside this pass. Record context,
+non-involvement and ordinary model provenance; do not request exact-build logs.
+Write a separate English review under
+`review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md` on an unused neutral
+branch created from the new exact head. Run format check, Markdown lint, direct
+validator and diff check, then open a draft PR only. Do not merge, accept a hold,
+move the reviewed head, alter historical reviews, open discussion, adopt a method
+or publish a release.
+
+RELEASE 3 PART H AUTHOR SOURCE WORK COMPLETE - SR-B CLOSED PROPOSED - INDEPENDENT
+PRIMARY REVIEW AND SR-B ACCEPTANCE PENDING - OVERALL INPUT_INCOMPLETE - NOT ADOPTED
