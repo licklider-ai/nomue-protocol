@@ -448,3 +448,29 @@ required review of that change. No merge, formal hold closure, public discussion
 method adoption, rule amendment, ratification or release is included in A/B.
 SR-B and SR-H research can continue using already received originals; the R4
 source gaps remain independent.
+
+## 11. Steward approval of decisions A and B
+
+The user explicitly approved both Section 10 decisions in this conversation with
+"Yes, I approve" (Japanese original: "はい、承認します。"). The coordinator records
+that approval here; the approving role is the user/steward, not this assistant.
+Sections 10's NOT APPROVED status and conditional wording are historical proposal
+state, superseded for A/B by this record.
+
+- **Decision A: APPROVED.** Retain the Rom printed conflict; ground the bounded
+  PVL-10 source characterization in equation (2) and the procedure; do not adopt
+  Table 1 as numerical authority; require separately reviewed future constants.
+  This is a source-conflict scope adjudication, not correction of the original,
+  selection of the method, or approval of a numerical constant.
+- **Decision B: APPROVED.** Accept the first-hand OpenAI author-side account for
+  the current six-source recheck/Parts D–F, together with PR 195's Claude
+  reviewer model, primary-source and non-involvement testimony. The scoped
+  independent-model criterion is ESTABLISHED on that stated evidentiary basis.
+  Historical PENDING remains in the original review records. This decision does
+  not retrospectively settle PR 192's separate SR-K/SR-G acceptance history.
+
+Authorized next work is the limited SR-C CLOSED source-result proposal and its
+required review at a new exact identity. Final hold closure, merge, public
+discussion, method adoption, ratification and release remain outside this approval.
+The reviewed result at eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4 and PR 195's
+review remain unchanged.
