@@ -5,6 +5,9 @@ Programme disposition: `INPUT_INCOMPLETE`.
 Investigator role: independent numerical investigator, 2026-09-06.
 Repair role: preparation-package author performing self-review, 2026-09-06;
 Sections 4, 9, and the probe transcript were repaired as recorded in Section 11.
+Successor repair role: investigation/repair coordinator with OpenAI assistant
+support, 2026-09-07; the degree-domain guard and additional corpus are recorded
+in Section 12. This successor is not independently reviewed.
 The repair contributor is not an independent reviewer of either the package or
 this revised result; the original investigator attribution does not cover repairs.
 No semantic-investigator output or preferred implementation was supplied or used.
@@ -118,6 +121,9 @@ Candidate A's three tests can share this mathematical tail family at d=1
 and nu=4(n-1), not necessarily one accepted implementation.
 Candidate B changes d to a-1, b-1 and (a-1)(b-1), nu=ab(n-1);
 the half-integer-specialized oracle below does not cover all those parameters.
+Both probe routes now reject degrees of freedom that are not positive even Python
+integers before evaluating nu/2. This guard does not provide a general Candidate B
+oracle or a Protocol admission rule.
 Avoiding 1-CDF cancellation is useful but does not alone prevent overflow in
 d*F, underflow in x or an uncertified final projection.
 
@@ -219,8 +225,8 @@ df 4,8,60, not every count's probability domain.
 The embedded script is disposable, not production or conformance code.
 It runs in Python 3.12.13, x86_64, standard library only. No browser/runtime
 matrix, compiler setting, process isolation or numerical platform is admitted.
-The source SHA-256 before embedding is
-`65b32feeb662b7dd3fdac36a3608e82c15b943a9a6d6086b0f05bd13b15558fc`.
+The current Section 9 source SHA-256 before embedding is
+`ae3fc166acc8c00e135e198810e5e32459d6518c16b69247a755d2d9a4225ed4`. Earlier script identities remain in Sections 11 and 12.
 Extract the Python fence verbatim to a temporary file and execute with Python 3.12.
 
 Executed: all counts 2..16; isolated zero main and interaction contrasts;
@@ -231,8 +237,8 @@ near-zero and adjacent critical-value float points; positive normal/subnormal/ze
 tail projections; exact alpha equality and a nearest-even midpoint example.
 Seven toy admission negatives cover count one, duplicate units, missing cell,
 imbalance, infinity, NaN and signed zero. Their policy is a probe guard only.
-All-equal global observations are not separately executed; zero residual is
-executed with within-cell equality. Generic QR and a near-zero nonzero contrast
+All-equal global observations are now separately executed in the successor;
+zero residual is also executed with within-cell equality. Generic QR and a near-zero nonzero contrast
 projection family remain unexecuted.
 
 Six tampering controls alter trace/table/certificate/resource/environment/declared
@@ -312,7 +318,13 @@ def algebra(cells):
     assert total==e+sum(ss)
     return contrast,ss,e
 
+def require_even_nu(nu):
+    # Probe domain only; not a Protocol admission rule.
+    if type(nu) is not int or nu <= 0 or nu % 2:
+        raise ValueError('probe requires positive even integer nu')
+
 def tail_bounds(f,nu,bits=256):
+    require_even_nu(nu)
     # For nu even, a=nu/2 integer. Substitute t=1-u^2 in
     # integral B_x(a,1/2); full integral is a rational polynomial.
     a=nu//2; z=Q(f)/(nu+Q(f)); scale=1<<bits
@@ -324,6 +336,7 @@ def tail_bounds(f,nu,bits=256):
     return 1-h(hi)/den,1-h(lo)/den
 
 def series(f,nu,precision=100):
+    require_even_nu(nu)
     with localcontext() as c:
         c.prec=precision
         a=nu//2; x=D(nu)/(D(nu)+D(f.numerator)/D(f.denominator))
@@ -413,10 +426,28 @@ for k in manifest:
     bad=dict(manifest);bad[k]='altered';assert bad!=manifest
 print('6 manifest equality tampering controls: PASS (toy only)')
 print('threshold equality',Q(1,20)==alpha,'projection midpoint',float(Q(1)+Q(1,2**53)).hex())
+# Successor-only domain controls; neither function may silently floor nu.
+for bad_nu in [1,3,9,0,-2,True,4.0]:
+    for route in [tail_bounds,series]:
+        try:
+            route(Q(3),bad_nu)
+        except ValueError as exc:
+            assert str(exc)=='probe requires positive even integer nu'
+        else:
+            raise AssertionError((route.__name__,bad_nu))
+print('14 degree-domain negatives rejected by both routes: PASS')
+# Explicit missing corpus item: equal observations in all four cells.
+c,ss,e=algebra([[7,7]]*4)
+assert c==[0,0,0] and ss==[0,0,0] and e==0
+print('all-equal cells: three zero contrasts, zero SS and zero residual: PASS')
 print('script sha256',hashlib.sha256(open(__file__,'rb').read()).hexdigest())
 ```
 
 ## 10. Validation record
+
+The following repository-validation paragraphs are the historical 2026-09-06
+record. The transcript below them is explicitly replaced by the 2026-09-07
+successor run. New repository checks are recorded in the successor PR.
 
 Formatting the result with Prettier succeeded. Repository-wide `pnpm format:check`,
 `pnpm lint:markdown` (357 files, zero issues), and `pnpm typecheck` passed.
@@ -431,7 +462,7 @@ The observed command runtime was Node 24.19.0 and pnpm 11.19.0, not the
 package's requested pnpm 11.7.0; this is validation provenance, not an admitted
 supported-execution environment.
 
-Probe transcript (exit 0):
+Probe transcript (successor, 2026-09-07, exit 0):
 
 ```text
 3.12.13 x86_64
@@ -452,10 +483,16 @@ near-zero and adjacent critical projections: PASS
 7 preliminary admission negatives: PASS
 6 manifest equality tampering controls: PASS (toy only)
 threshold equality True projection midpoint 0x1.0000000000000p+0
-script sha256 b66f7826badf2d335fa7faf9669a625752c30848a1fc24a1dae0dd41eba9cf0e
+14 degree-domain negatives rejected by both routes: PASS
+all-equal cells: three zero contrasts, zero SS and zero residual: PASS
+script sha256 ae3fc166acc8c00e135e198810e5e32459d6518c16b69247a755d2d9a4225ed4
 ```
 
 ## 11. Self-adversarial repair record
+
+Historical 2026-09-06 repair account, retained for provenance. Its reference to
+the replacement transcript described that earlier revision; Section 10 now shows
+the successor transcript and Section 12 pins the preserved earlier bytes.
 
 This is author-side repair, not the required separate-context exact-head review.
 The original result is preserved at commit
@@ -482,3 +519,65 @@ semantic dependency, omitted adversarial case, or independent review is closed
 by these corrections. Programme disposition remains `INPUT_INCOMPLETE`;
 per-entry labels remain preliminary. Review the new PR head, not the original
 head, before relying on this revised report.
+
+## 12. Degree-domain successor, 2026-09-07
+
+This is author-side exploratory repair, not independent review or a final numerical
+result. The exact prior result remains unchanged on PR 180 at
+`5bae1f2548a7126c254c51b65b0eda4ae4941343`, blob
+`5b3668b8fb1b3c23f975654b21ffb8e8a1d41c46`. Its script SHA-256 is
+`b66f7826badf2d335fa7faf9669a625752c30848a1fc24a1dae0dd41eba9cf0e`.
+The preserved PR 184 review is commit
+`1d493622af970145925f35c8d2cd95f6cbf03cc7`, blob
+`f676f8ab32ee009d193c854aee00beb48503ec64`. Its findings and judgments are not edited.
+This new branch starts at the prior result head and changes only this result file.
+
+### Repair and executed evidence
+
+PR 184 N-B1 identified that `tail_bounds` silently floors odd nu. Inspection of
+Section 9 shows `series` also uses `nu//2`; agreement of these two routes can
+therefore conceal the same parameter error. The successor places the same explicit
+positive-even-integer precondition at the entry to each routine, before any division
+or polynomial/series work. It raises ValueError rather than using a removable
+assertion as the domain guard. Booleans and integral-valued floats are rejected by
+the probe; this is deliberately a Python probe-domain restriction, not a selected
+Protocol input policy. No other algorithm, precision, diagnostic threshold or
+recorded valid-case calculation changes.
+
+The exact previous script and the successor both ran under Python 3.12.13 on
+x86_64, exit 0. Every previous transcript line before the script hash is identical.
+The nine positive tails, eighteen zero/doubled controls, four projections, critical
+bracket and exact cell-algebra corpus therefore retain their recorded observations.
+Both routines reject each of 1, 3, 9, 0, -2, True and 4.0: fourteen explicit negative
+calls in total. The newly executed all-equal four-cell case has zero for each
+contrast, each effect sum of squares and residual sum of squares. It does not
+attempt to manufacture an F statistic from zero divided by zero or select a
+refusal code. This closes the earlier omission in the exploratory corpus only.
+
+The current script hash and complete executed transcript are in Sections 7 and 10.
+N-B1 is addressed by this author-side repair candidate; independent closure remains
+pending. No blanket closure of PR 184, other NICE-TO-HAVE items or source holds is
+claimed. Historical validation in Sections 10–11 belongs to the earlier work; the
+successor's repository checks are recorded in its PR after execution.
+
+### Reuse limits and required successor review
+
+Candidate A has nu=4(n-1), so its recorded corpus stays within the even-degree
+specialization. Candidate B can have odd residual degrees of freedom, and even
+residual degrees alone do not handle its multi-degree numerator. Rejecting a call
+prevents silent misuse; it does not provide the missing general F oracle. F-input
+endpoints, precision parameters, resource caps, portable projection and series
+remainder certification still require their own work. The diagnostic 1e-120 remains
+a research comparison threshold, not a Protocol tolerance.
+
+An eligible separate-context reviewer should verify the sole changed path and
+parent, compare with the preserved PR 180 blob, extract and hash the Section 9
+script, rerun the transcript and independently challenge odd-degree calls to both
+routes. Confirm no valid-case numerical drift, no zero-SSE inference, unchanged
+source/semantic holds and the distinction between a probe guard and Protocol
+admission. Read the exact new head, not PR 184's old target. This coordinator does
+not supply that independent pass.
+
+Programme disposition remains INPUT_INCOMPLETE and all per-entry assessments remain
+PRELIM. No reviewed semantic handoff has been incorporated; no numerical adoption,
+RFC, design freeze, public-opening decision, implementation or release follows.
