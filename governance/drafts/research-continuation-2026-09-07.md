@@ -223,3 +223,23 @@ execution; no old reviewer validation is attributed to this coordinator.
 No authoritative artifact, source result, original review, public-opening state,
 method selection, tolerance, implementation, ratification, release or main branch
 is changed by this record. PDFs and full-text extraction data are not included.
+
+## 7. User collection update, 2026-09-07
+
+After this record's first commit, the user reported collection of exactly these
+supplier numbers: 09, 10, 01, 02, 03, 04, 05, 31, 06, 07, 08, 11, 12, 13, 14, 15,
+16, 17, 18, 19. In sorted order this is 01–19 and 31: twenty collected items.
+All other items remain in the user's collection workflow.
+
+This adds supplier number 08 to the reported inventory. Its file, bibliographic
+identity, bytes and SHA-256 have not been supplied to this continuation session;
+no mapping to a Protocol source ID, substantive reading or hold disposition is
+inferred from its number. The prior nineteen-artifact C.2 intake remains the last
+verified received inventory, with 01–03 duplicate bytes from Pass 2. Only five of
+those originals are attached in this continuation session. The twenty reported
+collected items are not twenty newly received or independently reviewed sources.
+
+Next custody action for 08 is to receive the original and match its bibliography,
+byte identity and intended claim before any source-result increment. This is not
+a renewed request for the existing five attachments or a reason to suspend R4
+exploratory numerical work. No acquisition or review count in Part C is overwritten.
