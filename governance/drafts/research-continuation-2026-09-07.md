@@ -334,3 +334,28 @@ R3 source support remains bounded to SR-K/SR-G; I-03 and the all-pairs limitatio
 remain. All research-programme, source-access, public-opening and adoption boundaries
 remain as previously recorded. No merge, hold closure, rule amendment, waiver or
 release was performed.
+
+## 9. Actual receipt of the sixteen pending transfers
+
+The user supplied James (08) as a PDF and fifteen PDFs (20–30, 32, 33, 35 and 36)
+in an archive. [PR 193](https://github.com/licklider-ai/nomue-protocol/pull/193)
+records their individual hashes, lengths, page counts, bibliographic matches and
+bounded initial findings in acquisition-result Part D. Its fixed head is
+`6f0679629a8b37ea98bc3c4fc661a5c5e923fed6`, sole parent
+`9eee0caf6a423d509a996be71df8cff8b4d1e9df`, result blob
+`06b98ef96abcd9ed13f8ed94644f90017465dad0`. The original 213491-byte result is
+preserved as a prefix. PR 186 and its reviewed head remain unchanged.
+
+This supersedes Sections 7/8's unreceived statements for custody. C.2's nineteen
+received artifacts plus the sixteen new distinct artifacts give 35 supplier items:
+01–33, 35 and 36. The three Pass 2 copies remain duplicates of earlier evidence.
+This does not assert fresh inspection of all thirty-five originals. Archive CRC,
+new PDF hashes and lengths, prefix preservation, formatting, Markdown lint and
+direct repository validation passed; API retrieval matched the tested blob.
+
+Shaffer is now received, completing custody of the six assigned SR-C texts. The
+new increment is explicit about limited reading scope; complete synthesis and
+independent six-source review remain. SR-B and SR-H investigations can also proceed.
+No new hold disposition or formal acceptance is issued. The provenance adjudication
+in Section 8 and the two separate R4 PDF gaps remain. No further transfer of these
+sixteen originals is needed for the current author-side workspace.
