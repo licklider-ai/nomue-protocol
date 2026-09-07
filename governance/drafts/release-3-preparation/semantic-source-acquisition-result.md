@@ -2201,3 +2201,125 @@ role/context/model evidence and distinguish content verdict from formal acceptan
 no extra exact-build-log format is required. Preserve the old reviews, and follow
 E.5's new-file/draft-PR and validation instructions. No merge, hold closure, rule
 amendment, public discussion, adoption, ratification or release has been performed.
+
+---
+
+## Part G — SR-C limited source-closure proposal after steward adjudication
+
+### G.1. Fixed evidence and recorded approval
+
+Status: author-side CLOSED source-result proposal; independent review of this
+increment and formal hold acceptance remain pending. This is not implementation,
+method adoption, numerical certification, public discussion or a release.
+
+All 259026 bytes of Parts A–F at
+`eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4`, blob
+`6ce3fbaa88ece237c27091a355e6f920ca175179`, SHA-256
+`938dea980fae84411b53a4cbe08745b14211b96988d14b5e8add6576a32f9025`,
+are preserved. The commission and fixed semantic comparison remain as in E.1.
+The source set remains suppliers 11, 12, 13, 14, 18 and 22 with C.2/D.2 identities.
+No new primary-source inspection or computation is claimed in this increment.
+
+PR 195's independent primary completion at
+`c36318971244c26073078b848ab2f3c52f46010b`, review blob
+`8e2c0299d9ddc8da6bc165bb5317e8d6262ecf74`, supports C-C1 through C-C5
+and the limited Rom adjudication. PR 194's separable review is preserved and its
+original-access limitation is superseded only for these six sources. Their
+source checks, independent integrations and validation are attributed to those
+reports, not rerun here.
+
+The user/steward explicitly approved the two proposed decisions in continuation
+record Section 10. Approval is recorded in Section 11 at commit
+`a5d886c56c5c0b9c9e60f19a10d15778dbad7c44`, blob
+`3e2919865ca1a40421dcc3586fff2a687a0aacf8`, path
+`governance/drafts/research-continuation-2026-09-07.md`.
+The approval covers the bounded Rom conflict adjudication and the scoped
+independence evidence; it does not approve final hold closure or merging.
+
+### G.2. Decision applied to the source result
+
+Rom p.664 Table 1, alpha=.01, row 10, MH retains its printed value 1.01 x 10^-3
+as a conflicting value. The equation (2) result recorded in F.3 remains
+0.001004472598983613... . Neither source value is silently replaced. The approved
+boundary grounds PVL-10's methodological characterization in equation (2) and
+the procedure; Table 1 is not adopted as numerical authority. Any later constants
+require separately reviewed computation and the applicable numerical gates.
+This is not a publisher erratum or a choice to implement Rom.
+
+Accordingly the proposed source-result disposition for SR-C becomes **CLOSED**:
+the six assigned primary texts support the bounded methodological claims, output
+derivations are explicitly investigator algebra, and the material source conflict
+now has an approved treatment. CLOSED here removes the specified source-acquisition
+obstacle only. It does not promise arbitrary-dependence validity, general all-pairs
+Simes validity, a production adjusted-p algorithm, an adopted numerical constant,
+a simultaneous interval construction, or unrestricted use of logical constraints.
+The fixed PVL-06/08/09/10 RES-ONLY and PVL-07 R3-CAND classifications remain.
+
+For this current six-source recheck and Parts D–F, the steward accepted the
+first-hand OpenAI author-side record and the Claude Fable 5.1 reviewer testimony,
+primary-source inspection and non-involvement as establishing the distinct-model
+pass. Historical review PENDING is preserved; a later acceptance relies on the
+separate dated determination rather than modifying old testimony. This does not
+resolve the separate historical SR-K/SR-G acceptance question. Part G itself was
+prepared with OpenAI assistant support in the continuing author role; it requires
+its own independent delta review.
+
+### G.3. Proposed disposition ledger and limits
+
+| Hold   | Proposed disposition | Basis / remaining boundary                                                                                   |
+| ------ | -------------------- | ------------------------------------------------------------------------------------------------------------ |
+| SR-A   | INPUT_INCOMPLETE     | Prior disposition retained; new custody is not full synthesis                                                |
+| SR-B   | INPUT_INCOMPLETE     | Prior disposition retained; new custody is not full synthesis                                                |
+| SR-C   | CLOSED               | Six-source GO and approved limited Rom adjudication; this proposal awaits delta review and formal acceptance |
+| SR-D   | INPUT_INCOMPLETE     | Prior source gaps retained                                                                                   |
+| SR-E   | INPUT_INCOMPLETE     | Prior source gaps retained                                                                                   |
+| SR-F   | INPUT_INCOMPLETE     | Prior disposition with Part D custody retained                                                               |
+| SR-G   | CLOSED               | Preserved source-supported candidate; separate formal acceptance pending                                     |
+| SR-H   | INPUT_INCOMPLETE     | Prior disposition with Part D custody retained                                                               |
+| SR-I   | INPUT_INCOMPLETE     | Prior disposition with Part D custody retained                                                               |
+| SR-J   | INPUT_INCOMPLETE     | Prior disposition with Part D custody and X-8 retained                                                       |
+| SR-K   | CLOSED               | Preserved bounded candidate; all-pairs/I-03 and separate formal acceptance remain                            |
+| SR-L   | CLOSED               | Inherited prior disposition                                                                                  |
+| RSM-01 | INPUT_INCOMPLETE     | Prior source gaps retained                                                                                   |
+| RSM-02 | INPUT_INCOMPLETE     | Prior disposition; Troendle custody does not cover all variants                                              |
+
+Candidate counts: four CLOSED, zero PARTIAL, ten INPUT_INCOMPLETE. Overall
+INPUT_INCOMPLETE and semantic NARROW remain; no SOURCE_SET_READY determination.
+These are candidate result dispositions, not a claim that four holds have now
+been formally accepted. Every other entry impact remains as in the prior tables.
+
+The six-source review contains only one Part D original, 22. The other fifteen
+Part D sources (08, 20, 21, 23–30, 32, 33, 35, 36) remain outside its scope.
+The review's phrase "ten other Part D papers" is not used as a coverage count.
+N-D4 stays open. No approval of all thirty-five collected artifacts follows.
+
+Carry PR 195 N-P1–N-P4, PR 194 N-D1 and N-F1 as optional follow-up, with N-D2/N-D3
+answered in review. In particular, Shaffer Section 4.1's printed index is not
+adopted or repaired by this proposal; later selection of that variant requires
+explicit treatment of N-P3. E.4's family, equality-constraint, dependence,
+underlying-test, sidedness, variant, output, artifact and theorem reopen triggers
+remain. Reopen the Rom claim if the adjudicated basis or future numerical use
+changes, or a correction changes the interpretation of equation (2).
+
+### G.4. Independent delta-review handoff
+
+Pin the exact commit containing Part G from the PR, with sole parent eb6c0b26... .
+Verify the sole changed path, the full A–F prefix, the unchanged six-source hashes,
+PR 195's review identity and the approval record above. Review G.2's use of the
+adjudication, the distinction between candidate CLOSED and formal acceptance,
+the ledger counts, retained entry classes and reopen triggers. Assess the scope
+of the approved independence determination without rewriting earlier PENDING.
+
+Reuse PR 195's actual six-source pass and PR 194's separable work with attribution;
+do not automatically repeat all original reading or calculations for this
+administrative delta. Revisit an original only to resolve a concrete new concern.
+If a source-level claim changes, report the expanded review needed. This review
+does not authorize a merge or final hold closure.
+
+Write a new English review on an unused neutral branch starting at the exact
+successor, at `review-inputs/r3-src-closure-proposal/REVIEW-RESULT.md`. Preserve
+all prior reviews and investigation heads; no force-push. Report per-scope GO /
+REPAIR_REQUIRED / SOURCE_ACCESS_INCOMPLETE, findings, actual independence and
+remaining acceptance steps. Run format:check, Markdown lint, direct validator and
+diff checks with the review file; open a draft review PR. No formal acceptance,
+hold update, public discussion, adoption, ratification or release.
