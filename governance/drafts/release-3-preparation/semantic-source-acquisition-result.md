@@ -1970,3 +1970,234 @@ if necessary. Run format, Markdown lint, direct validator and diff checks; repor
 actual results. Open a draft review PR only. Do not merge, close holds, amend rules,
 open discussion, adopt a procedure or publish a release. Any changed result needs
 review against its new exact identity.
+
+---
+
+## Part F — SR-C original recheck and output derivations (2026-09-07)
+
+### F.1. Custody and inspection boundary
+
+The user supplied the five originals requested after Part E: Simes (11), Hochberg
+(12), Hommel (13), Rom (14), and Holland–Copenhaver (18). Every SHA-256, byte length
+and PDF page count matches C.2. The filename suffix `(1)` does not identify a new
+version. Cumulative receipt remains 35 items, not 40. Together with Shaffer (22),
+all six SR-C originals are now accessible in this author workspace.
+
+This increment preserves all bytes of the result at
+`fb1a2f647d3157083a1aaceee207b75624385480`, blob
+`6cebcde5ead3dc5496f747a24ab0669d33b05469`. E.1/E.5's missing-local-original
+statements are historical and superseded by this receipt. The pinned commission,
+semantic comparison, assistance provenance and independent-review boundary remain.
+
+Current reading covered the supplied article text: 11 pp.751–754; 12 pp.800–802;
+13 pp.383–386; 14 pp.663–665; 18 pp.417–423. The critical pages 12 p.801,
+13 pp.384–385 and 14 p.664 were also inspected as rendered images. This does not
+claim to verify all references cited by these articles or to repeat their simulation
+studies. No original, extracted full text or page image is published here.
+
+### F.2. Source-to-output trace
+
+**Simes:** p.752 proves exact global level for independent uniform null p-values
+and explicitly states that the inequality is not general. The simulations at
+pp.752–753 are not a theorem for arbitrary dependence. Page 754 treats additional
+individual rejections from the global procedure as exploratory. This confirms
+E.2's separation of a global rejection and individual strong FWER.
+
+**Hochberg:** p.801 equation (8) uses the non-strict comparison and the following
+paragraph gives the descending scan. For sorted p-values p_(1),...,p_(m), reject
+through the largest j satisfying p_(j) <= alpha/(m-j+1). For rank i, this is
+an existence statement over j >= i. Taking the smallest corresponding level gives
+
+```text
+Hochberg adjusted p_(i) = min(1, min over j >= i of (m-j+1)*p_(j)).
+```
+
+This expression is **investigator algebraic inversion of the printed rejection
+rule**, not a formula claimed to be printed in the 1988 paper. For input p-values
+in [0,1], reject when the derived value is <= alpha. Equal raw p-values get equal
+adjusted values: among tied ranks the later ranks supply the same or a smaller
+multiplier. Rank ties therefore do not create label-dependent decisions in this
+bounded formula. Capping at 1 is an explicit output convention; it does not
+change decisions at alpha in [0,1] for this construction. The error guarantee
+still requires the source's qualified Simes basis, not merely this algebra.
+
+**Hommel:** p.384 Section 2 prints the following shortcut. For each i=1,...,n,
+consider the largest i p-values and check whether p_(n-i+k) > k*alpha/i for
+**every** k=1,...,i. Let j be the largest i satisfying those inequalities. If
+none exists, reject all individual hypotheses; otherwise reject those with
+p <= alpha/j. The strict comparison in finding j and the non-strict final
+rejection comparison are distinct and were checked on the page image.
+
+For a nonempty subset I, define its local Simes threshold from its own ordered
+p-values. Inverting the closed-testing conjunction in the theorem on p.384 gives
+
+```text
+s(I) = min(1, min over k=1,...,size(I) of size(I)*p_I(k)/k)
+Hommel general adjusted p_i = max over all I containing i of s(I).
+```
+
+This is an **investigator derivation**: all supersets containing an elementary
+hypothesis need local rejection, so their maximum threshold is the first level
+where the conjunction holds. The paper supplies the closure theorem and shortcut;
+it does not print this adjusted-output expression. This formula is deliberately
+a direct subset construction, not a claim to have sourced or optimized a modern
+software implementation. Its general-family meaning is not silently extended to
+the logically restricted improvement in Section 3. It gives the same value to
+equal raw p-values by symmetry, keeps values in [0,1], and makes the <= boundary
+explicit. No simultaneous confidence interval construction follows here.
+
+For the printed ten p-values at p.385 and alpha=.05, the shortcut yields j=5 and
+three rejections. Restricting the admissible counts to {1,2,3,4,6,10}, as in
+Section 3's five-distribution family, yields j=4 and five rejections. Both match
+the paper. The latter calculation reproduces a rule; it does not elevate the
+paper's pairwise-normal simulation into a universal Simes-validity theorem.
+
+**Holland–Copenhaver:** p.420 Definition 3.1 and Theorem 3.1 supply the
+lower-orthant product inequality for large-statistic rejection and the threshold
+1-(1-alpha)^(1/t_i), stopping at the first strict exceedance. Page 418 assumes
+valid uniform marginal p-values and describes the logical bound. Page 419 warns
+that deleting comparisons changes the needed bounds. Consequently, neither a
+count-only table nor positive pairwise correlation alone justifies an arbitrary
+selected-family application. The paper's distributional examples at pp.421–422
+cite additional sources; their universal applicability is not newly certified here.
+This remains a separate PVL-10 variant from Rom's step-up procedure.
+
+### F.3. Rom discrepancy retained with exact pinpoint
+
+At p.664 equation (2), with c_(n,n)=alpha and b_n=c_(1,n), rearrangement gives
+
+```text
+b_1 = alpha
+b_n = (sum(i=1,...,n-1, alpha^i)
+       - sum(i=1,...,n-2, choose(n,i)*b_(i+1)^(n-i))) / n.
+```
+
+Exact rational arithmetic gives b_10 = 0.001004472598983613... at alpha=.01.
+At the table's three-significant-digit precision this is 1.00 x 10^-3. The image
+of Table 1 prints **1.01 x 10^-3** in row 10, MH, alpha=.01. The other nineteen
+MH cells at alpha=.05/.01 match at that precision in this diagnostic. Thus this
+is not solely an extraction problem, nor a rounding difference at the printed
+precision. It reproduces and localizes C.7's existing conflict; it is not a newly
+found second discrepancy.
+
+No formal erratum was verified. A limited web discovery check on 2026-09-07
+searched the title with correction/corrigendum and Rom/1990/correction, including
+Oxford Academic-targeted queries. No relevant correction was identified in the
+returned results; unrelated results were not evidence. This is not proof that no
+correction exists. The source's recurrence and printed cell remain separately
+recorded. This increment neither changes the original table nor approves either
+value for Protocol numerical use.
+
+### F.4. Reproducible author-side diagnostics
+
+The following exact-rational calculations check the two derived outputs against
+the direct source rules on 251 multisets with n=1,...,5 from the grid
+{0,.01,.05,.5,1}, supplied in reverse order to exercise label mapping. Checks use
+all distinct derived thresholds, endpoints and intervening midpoints (1395 levels).
+This includes ties, zero/one and equality boundaries. It is a finite algebraic
+regression check, not a proof of FWER or a claim to cover every input. The subset
+formula's justification is the closure argument in F.2. The diagnostic also
+reproduces Hommel's example and the Rom cell comparison.
+
+```python
+from fractions import Fraction as F
+from itertools import combinations, combinations_with_replacement
+from math import comb
+import platform
+
+def local(p):
+    return min(F(1), min(len(p)*x/k for k,x in enumerate(sorted(p),1)))
+def closure(p):
+    a=[F(0)]*len(p)
+    for n in range(1,len(p)+1):
+        for ids in combinations(range(len(p)),n):
+            v=local([p[i] for i in ids])
+            for i in ids:a[i]=max(a[i],v)
+    return a
+
+def hommel(p,alpha,allowed=None):
+    n=len(p); v=sorted(p)
+    j=max((i for i in (range(1,n+1) if allowed is None else allowed)
+           if all(v[n-i+k-1]>k*alpha/i for k in range(1,i+1))),default=0)
+    return j,[j==0 or x<=alpha/j for x in p]
+
+def hochberg(p,alpha):
+    v=sorted(p);n=len(p)
+    j=max((i for i,x in enumerate(v,1) if x<=alpha/(n-i+1)),default=0)
+    return [j>0 and x<=v[j-1] for x in p]
+def hochberg_adjust(p):
+    v=sorted(p);n=len(p)
+    return [min(F(1),min((n-j)*v[j] for j in range(n) if v[j]>=x)) for x in p]
+
+cases=levels=0
+for n in range(1,6):
+ for v in combinations_with_replacement(map(F,['0','.01','.05','.5','1']),n):
+    p=list(reversed(v));a=closure(p);b=hochberg_adjust(p)
+    points=sorted(set([F(0),F(1)]+a+b))
+    points+= [(x+y)/2 for x,y in zip(points,points[1:])]
+    for alpha in points:
+        assert hommel(p,alpha)[1]==[x<=alpha for x in a]
+        assert hochberg(p,alpha)==[x<=alpha for x in b]
+        levels+=1
+    cases+=1
+print('Python',platform.python_version())
+print('grid multisets',cases,'level checks',levels,'both equivalences passed')
+p=list(map(F,['.0021','.0074','.0093','.0106','.0121','.0218','.0238','.0352','.0466','.0605']))
+for name,allowed in [('general',None),('logical',{1,2,3,4,6,10})]:
+ j,reject=hommel(p,F('.05'),allowed); print('Hommel example',name,'j',j,'rejected',sum(reject))
+assert hommel(p,F('.05'))==(5,[True]*3+[False]*7)
+assert hommel(p,F('.05'),{1,2,3,4,6,10})==(4,[True]*5+[False]*5)
+print('general Hommel adjusted:',','.join(str(x) for x in closure(p)))
+
+printed={'.05':['.05','.025','.0169','.0127','.0102','.00851','.00730','.00639','.00568','.00511'],
+         '.01':['.01','.005','.00334','.00251','.00201','.00167','.00143','.00126','.00112','.00101']}
+for text,expected in printed.items():
+ alpha=F(text);b={1:alpha}
+ for n in range(2,11):
+    b[n]=(sum(alpha**i for i in range(1,n))-sum(comb(n,i)*b[i+1]**(n-i) for i in range(1,n-1)))/n
+ for n in range(1,11):
+    if F(format(float(b[n]),'.3g'))!=F(expected[n-1]):
+        print('Rom mismatch alpha',text,'row',n,'computed',format(float(b[n]),'.16g'),'printed',expected[n-1])
+```
+
+Observed output:
+
+```text
+Python 3.12.13
+grid multisets 251 level checks 1395 both equivalences passed
+Hommel example general j 5 rejected 3
+Hommel example logical j 4 rejected 5
+general Hommel adjusted: 21/1000,111/2500,119/2500,53/1000,233/4000,121/2000,121/2000,121/2000,121/2000,121/2000
+Rom mismatch alpha .01 row 10 computed 0.001004472598983613 printed .00101
+```
+
+### F.5. Updated findings and exact-head review handoff
+
+| Part E gap                               | Current author finding                                                                           | Review boundary                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| Missing local originals                  | RESOLVED; five supplied copies match C.2                                                         | All six actual originals remain necessary in the reviewer workspace                           |
+| Hommel computational trace               | RESOLVED for Section 2's general individual-rejection shortcut and the printed example; F.2/F.4  | Does not claim all-intersection software, or adopt Section 3's variant                        |
+| PVL-07/08 adjusted-output substantiation | RESOLVED as explicit algebraic derivations from primary rules, with ties and boundaries; F.2/F.4 | Independent review assesses the derivations; no implementation or numerical guarantee adopted |
+| Rom constant conflict                    | OPEN at p.664 Table 1, row 10, alpha=.01, MH                                                     | Require independent assessment and an explicit scope/adjudication; no silent correction       |
+
+SR-C remains **PARTIAL** pending the named Rom conflict and its scope assessment;
+no new CLOSED proposal is issued. E.4's other thirteen dispositions remain:
+three CLOSED, one PARTIAL, ten INPUT_INCOMPLETE in total; overall INPUT_INCOMPLETE,
+semantic NARROW and R4 PRELIM/source gaps remain. The fixed candidate/research-only
+classifications, I-03 and SR-K's limited reading are unchanged. Resolving an
+algebraic-output gap does not select that output for a Contract.
+
+E.5's review instruction now applies to the exact successor containing Part F,
+as pinned in the PR. Scope the review to C-C1 through C-C5 and Parts E/F with the
+necessary C.2/C.3/C.7 and Shaffer D/E context. In particular inspect the five
+reattached originals plus 22, verify their hashes, assess the two output derivations
+and non-strict boundaries, reproduce the diagnostics, and judge the Rom discrepancy
+without erasing it. Report whether PARTIAL is accurate and what bounded resolution
+would permit a later CLOSED proposal. Do not demand unrelated R3/R4 PDFs for this
+six-source pass. Carry optional old SR-K/SR-G findings without revising those heads.
+
+The reviewer is independent of this continuing author-side work. Record actual
+role/context/model evidence and distinguish content verdict from formal acceptance;
+no extra exact-build-log format is required. Preserve the old reviews, and follow
+E.5's new-file/draft-PR and validation instructions. No merge, hold closure, rule
+amendment, public discussion, adoption, ratification or release has been performed.
