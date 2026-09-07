@@ -1594,3 +1594,173 @@ source-closure interpretation and independence evidence. Preserve original revie
 187; do not overwrite it or treat its GO as covering the successor. Parts A/B,
 source hashes, the C.7 code and transcript, and the candidate disposition counts
 remain unchanged. No merge, hold acceptance, public opening or R4 promotion occurs.
+
+---
+
+## Part D — Additional sixteen-source intake and first-pass findings (2026-09-07)
+
+### D.1. Scope, provenance and preserved input
+
+This is an author-side acquisition increment prepared with OpenAI assistant support,
+not an independent review or acceptance decision. Parts A–C are preserved as the
+exact 213491-byte prefix from commit
+`9eee0caf6a423d509a996be71df8cff8b4d1e9df`, result blob
+`47b497d67bcf7e02382c1fe20cd69a8e615c31cf`, SHA-256
+`444fa1d78f585c21ea26db3e8d7c2dfe39dc0728a4d6a3d996665df060f10680`.
+PRs 187, 188 and 192 review that earlier work within their recorded scopes; none
+reviews this increment. Their findings, independence qualifications and the separate
+acceptance adjudication are preserved.
+
+The user supplied item 08 as a PDF and fifteen other PDFs in a ZIP. The archive
+passed its CRC integrity check. All sixteen PDFs opened and yielded extractable
+text; hashes, byte lengths and page counts below were computed from the received
+bytes. Opening/extracting a PDF is not a complete substantive review. The current
+pass checked bibliographic headers and opening material for all sixteen, with the
+additional targeted Shaffer and Ryan inspections specified below. No complete
+review of every theorem, table, numerical example or reference is claimed.
+
+The sixteen hashes are mutually distinct and absent from the preserved result.
+C.2's nineteen-artifact intake plus these sixteen gives **35 distinct received
+supplier items: 01–33, 35 and 36**. This carries forward the saved C.2 custody
+evidence, rather than claiming all thirty-five originals are currently attached or
+were freshly rehashed. Items 01–03 remain identical Pass 2 copies, not newly
+acquired evidence counted a second time. Item 34 is not reported collected. These
+supplier numbers are not Protocol source IDs; 35 items do not mean all commissioned
+sources have been acquired.
+
+No PDF, archive, full extracted text or page image is included in this repository.
+
+### D.2. Received byte identities
+
+Transport ZIP: 13103742 bytes; SHA-256
+`7066b13da148d8d00034c053012f245f73583fbd51e6f7c6fa702f1f8d67c6c0`.
+The transport digest does not replace the individual source digests.
+
+| File                   |   Bytes | PDF pages | SHA-256                                                            |
+| ---------------------- | ------: | --------: | ------------------------------------------------------------------ |
+| `08_James_1951.pdf`    |  523245 |         7 | `34d14510ddcd10b0a5e90f21412b78e1d03359358ff0ae50c86bd93c83b62145` |
+| `20_Sidak_1967.pdf`    |  641762 |         9 | `6cd0ccda87a138d447391991c9858f5cea4294bfaeccaa8518754d2854d89533` |
+| `21_Dunn_1961.pdf`     | 1385001 |        14 | `14aa5adbbf07da8e7a73f4451a04d62bd7da198f6053e120afab29145a422488` |
+| `22_Shaffer_1986.pdf`  |  870893 |         7 | `6ea4bb9fd390aad49e8b5360d8c51386d8931e6db62947303e71a3c7b95973c7` |
+| `23_Genizi_1978.pdf`   | 1123267 |         7 | `21938051d7bcfd1d56babe21280976d3918b69d8ffdff4ec646c18ed3b6fe2b0` |
+| `24_Einot_1975.pdf`    | 1211995 |        11 | `1b097f5cdf16785e0aebf9c29359b957beb94caf51bb46255eaceb3d841cd57b` |
+| `25_Welsch_1977.pdf`   |  954326 |        11 | `1111684b7f639503ae40caa063556f79f0da5729c34fcef6286ba9b2498a0600` |
+| `26_Hayter_1986.pdf`   |  582732 |         6 | `33000fec094c81a4dbb581653d28d3a72bb8a2379a8baafbc1dafab1d6032eed` |
+| `27_Tamhane_1979.pdf`  | 1759491 |        11 | `f6183845a373361b8840040ecd9f0afce59cb8cb5170abf44c551376cd414bf0` |
+| `28_Dunnett_1980.pdf`  |  726755 |         6 | `ac862081c93be6ce38ba0dc17b811cb3dd96227cf6ba50f66a7c35715a2870a0` |
+| `29_Dunnett_1992.pdf`  | 1099979 |        10 | `f1144f4ca64d874d1d812cfc6b0b8f9d275d2251619796805d5ac955594386f6` |
+| `30_Troendle_1995.pdf` | 1020647 |        10 | `21c9fbad95c8c29e709863aa45d314deca1f70f4bf148da1b7407f3178f08b54` |
+| `32_Stoline_1981.pdf`  |  910960 |         9 | `65c2ce23d2dc5adb105af5d07f6060ebc4c07c9b908dc71256abcc2b64665cb4` |
+| `33_Brown_1974.pdf`    |  518538 |         5 | `bba8ba4d8b105b47194a20704a5967b32e2ea5447f2587986ebbca5a298a6124` |
+| `35_Keuls_1952.pdf`    |  564826 |        11 | `3c15767f3d732bd3268b2dc7dacba397fd736e8181bb9ddbc0fc9a63941e1616` |
+| `36_Ryan_1960.pdf`     |  750050 |        11 | `4a8b0f3429c4f538f5d34da776c6b410506b95e95b0a3d5d0bb21c6f2e522c99` |
+
+The page counts include publisher/JSTOR covers where present. For 08 and
+20–30, 32 and 33, PDF page 2 is the first printed article page listed below.
+For 35 and 36, PDF page 1 is the first printed article page. Printed pagination,
+rather than a cover-inclusive PDF index, is used for the findings.
+
+### D.3. Bibliographic matches and research routing
+
+These matches use the supplied papers, compared with the existing acquisition
+result. A route to a source set is not approval of all entries using that set.
+
+| Supplier | Author, year and title                                                                                                           | Printed journal/pages                | Existing research route             |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ----------------------------------- |
+| 08       | James (1951), The Comparison of Several Groups of Observations When the Ratios of the Population Variances are Unknown           | Biometrika 38:324–329                | SR-A / SRC-10; OMN-03               |
+| 20       | Šidák (1967), Rectangular Confidence Regions for the Means of Multivariate Normal Distributions                                  | JASA 62:626–633                      | SR-B / SRC-13; PVL-02               |
+| 21       | Dunn (1961), Multiple Comparisons among Means                                                                                    | JASA 56:52–64                        | SR-B / SRC-14; PVL-01               |
+| 22       | Shaffer (1986), Modified Sequentially Rejective Multiple Test Procedures                                                         | JASA 81:826–831                      | SR-C / SRC-19; PVL-09               |
+| 23       | Genizi and Hochberg (1978), On Improved Extensions of the T-Method of Multiple Comparisons for Unbalanced Designs                | JASA 73:879–884                      | SR-F / SRC-36; APR-05/06 source set |
+| 24       | Einot and Gabriel (1975), A Study of the Powers of Several Methods of Multiple Comparisons                                       | JASA 70:574–583                      | SR-H / SRC-29; APR-12               |
+| 25       | Welsch (1977), Stepwise Multiple Comparison Procedures                                                                           | JASA 72:566–575                      | SR-H / SRC-29; APR-12               |
+| 26       | Hayter (1986), The Maximum Familywise Error Rate of Fisher’s Least Significant Difference Test                                   | JASA 81:1000–1004                    | SR-H / SRC-35; APR-13/14            |
+| 27       | Tamhane (1979), A Comparison of Procedures for Multiple Comparisons of Means with Unequal Variances                              | JASA 74:471–480                      | SR-I / SRC-21; HET-02               |
+| 28       | Dunnett (1980), Pairwise Multiple Comparisons in the Unequal Variance Case                                                       | JASA 75:796–800                      | SR-I / SRC-21; HET-03               |
+| 29       | Dunnett and Tamhane (1992), A Step-Up Multiple Test Procedure                                                                    | JASA 87:162–170                      | SR-J / SRC-28; MTO-03               |
+| 30       | Troendle (1995), A Stepwise Resampling Method of Multiple Hypothesis Testing                                                     | JASA 90:370–378                      | RSM-02; variant-specific follow-up  |
+| 32       | Stoline (1981), The Status of Multiple Comparisons: Simultaneous Estimation of All Pairwise Comparisons in One-Way ANOVA Designs | The American Statistician 35:134–141 | SR-F / SRC-36; APR-05/06 source set |
+| 33       | Brown and Forsythe (1974), The Small Sample Behavior of Some Statistics Which Test the Equality of Several Means                 | Technometrics 16:129–132             | SR-A / SRC-11; OMN-04               |
+| 35       | Keuls (1952), The Use of the Studentized Range in Connection with an Analysis of Variance                                        | Euphytica 1:112–122                  | SR-H / SRC-29; APR-10               |
+| 36       | Ryan (1960), Significance Tests for Multiple Comparison of Proportions, Variances, and Other Statistics                          | Psychological Bulletin 57:318–328    | SR-H / SRC-29; APR-12               |
+
+### D.4. Targeted source observations and interpretation
+
+#### D.4.1. Shaffer: the previously missing SR-C text is now available
+
+**Source content inspected:** pp.826–828 (PDF pages 2–4), especially Section 2
+and Section 3.1; p.827 was also checked as a rendered page image because extracted
+mathematical subscripts and inequality signs were unreliable. Section 2 uses the
+maximum possible number of true hypotheses compatible with at least the preceding
+number of false hypotheses as the stage denominator. The proof bounds the chance
+of any false rejection using the true-null count and the Bonferroni argument.
+Section 3.1 exploits equivalence constraints for all pairwise equality hypotheses.
+For four distributions the possible true-null counts are 0, 1, 2, 3 and 6
+(Table 1); the recursion (3.2) generates the attainable counts.
+
+**Investigator interpretation:** this supplies the missing primary text behind
+PVL-09's logical-constraint improvement over Holm. The denominator depends on the
+actual hypothesis family and valid individual tests; it is not a universal
+replacement of Holm denominators for an arbitrary family. This is familywise
+error control, not an FDR claim. The inspected basic procedure does not by itself
+freeze the more elaborate modifications later in the paper or a Protocol
+adjusted-p representation. No new implementation or adjusted-p formula is adopted.
+
+**Disposition:** all six assigned SR-C texts now have recorded custody: the five
+C.3 items (Simes, Hochberg, Hommel, Rom and Holland–Copenhaver) plus Shaffer. The
+earlier statement that Shaffer is unreceived is superseded for custody only.
+Complete claim-by-claim synthesis and independent review of the six-source set
+remain; SR-C is not newly declared CLOSED by this initial intake. Existing
+source-specific dependence restrictions and Rom's recorded table-cell doubt remain.
+The five earlier source readings are reusable recorded author evidence, not new
+readings or independent approvals in this pass.
+
+#### D.4.2. Distinguish nearby papers and scopes
+
+- Brown–Forsythe item 33 is the paper on testing equality of **means**,
+  pp.129–132; it is not the similarly associated variance-homogeneity procedure.
+  The opening material at p.129 provides the relevant OMN-04 route.
+- Dunnett–Tamhane item 29 is the 1992 step-up paper, not their 1991 step-down
+  paper. Its p.162 setup specifies jointly normal estimates with a common known
+  correlation and an independent chi-square variance estimate. Its receipt does
+  not supply every SRC-28 text or settle X-8.
+- Ryan item 36 matches the commissioned 1960 title. Its p.318 opening and p.328
+  references distinguish the earlier 1959 means paper and a 1959 erratum.
+  This is a bibliographic follow-up if a later claim depends on that earlier
+  procedure; no assertion that the 1960 item is the wrong supplied paper is made.
+  Neither the earlier paper nor its erratum has been inspected here.
+- Troendle item 30 concerns the paper's stepwise resampling construction. Its
+  p.370 abstract describes asymptotic experimentwise control; that is not a
+  blanket finite-sample guarantee for every maxT/minP or Romano–Wolf variant.
+- Šidák item 20 concerns multivariate-normal rectangular regions (p.626),
+  not unrestricted dependence of arbitrary p-values. Dunn item 21 concerns
+  multiple comparisons among means (p.52). Exact PVL-01/02 assumptions and
+  output conventions remain a targeted follow-up.
+
+### D.5. Follow-up that no longer depends on collecting these originals
+
+| Lane               | Newly executable work                                                                                                | Boundary still retained                                                                        |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| SR-C               | Finish Shaffer variants and combine with the five saved C.3 investigations; prepare the six-source exact-head review | Do not apply PR 192's five-PDF approval to this different set                                  |
+| SR-B               | Read Šidák/Dunn proofs and map family, dependence, sidedness and output assumptions                                  | Custody alone does not close either entry                                                      |
+| SR-A               | Compare James and Brown–Forsythe variants against the recorded Welch result                                          | F-test formalization and other assigned source requirements remain separate                    |
+| SR-H               | Examine Keuls, Ryan, Einot–Gabriel, Welsch and Hayter alongside saved Newman/Duncan findings                         | Range-test variants, strong-error claims and numerical critical values need their own evidence |
+| SR-F / SR-I / SR-J | Inspect the newly supplied comparison and step-up papers against the entry claims                                    | Missing companion sources and X-8 are not automatically resolved                               |
+| Resampling         | Map Troendle's exact algorithm and asymptotic assumptions to the requested variant                                   | RSM-01/02 are not interchangeable                                                              |
+| R4                 | Continue repository-verifiable preparation using the separate review and source-follow-up records                    | Neither arXiv 1211.2481 nor NBS SP 503 is supplied by this batch; PR 184's source gaps remain  |
+
+No new source-hold disposition is issued here. The last candidate table remains
+C.5's three CLOSED (including inherited SR-L and two candidates awaiting formal
+acceptance) and eleven INPUT_INCOMPLETE. That table is a disposition record, not
+a claim that newly received PDFs remain inaccessible. Overall INPUT_INCOMPLETE,
+semantic NARROW, PRELIM numerical assessments and the SR-K/all-pairs/I-03 boundaries
+remain. No formal acceptance, merge, hold release, public discussion, adoption,
+ratification or release was performed.
+
+An independent review of a later completed synthesis needs the exact successor
+Git identity and originals for its stated scope. For an SR-C pass the originals
+are supplier 11, 12, 13, 14, 18 and 22; the first five have saved C.2 identities
+but are not all attached in this continuation workspace. Request them when that
+review requires access, rather than repeating the already received sixteen-file
+transfer. This increment is ready for custody/bibliography and bounded-finding
+review, not represented as a completed six-source closure proposal.
