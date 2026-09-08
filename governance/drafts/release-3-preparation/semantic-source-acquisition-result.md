@@ -2992,3 +2992,114 @@ Do not merge, formally accept SR-H, choose methods, open discussion or release.
 
 RELEASE 3 PART K AUTHOR RANGE SYNTHESIS COMPLETE - INDEPENDENT REVIEW PENDING -
 SR-H PARTIAL CANDIDATE - OVERALL INPUT_INCOMPLETE - NO METHOD ADOPTED
+
+## Part L. Range-review precision repair and remaining primary-review scope
+
+### L.1. Preserved input and independent review intake
+
+Date: 2026-09-08. Continuing OpenAI-assisted author/coordinator; not an independent
+reviewer. Preserve all 326756 bytes of Parts A–K at
+`070e5dd569f0dfcb6f15ec49daebc0544af217d9`, result blob
+`5ee739767f3b29db6a7628f092e26d9b909830c8`.
+
+PR 206 supplies GO for Part K with zero BLOCKER, one SHOULD-FIX and five
+NICE-TO-HAVE. Exact review: commit
+`f1cbcca6e1ff06670d43d44bd38bf76a7a43833a`, sole parent equal to the input
+above, tree `90b49522740540e35d3af8eb0bb8dacf133902b8`, review blob
+`752b7a1e8b2f4c2d3c67dc59bea6c36e69b8ad59` (56183 bytes), path
+`review-inputs/r3-srh-range-synthesis/REVIEW-RESULT.md`. Live PR metadata and
+fetched commit, parent, tree and blob match. The reviewer supports the PARTIAL
+candidate but expressly does not independently verify Newman/Duncan or formally
+accept the hold. These distinctions and the original records remain preserved.
+
+### L.2. S-K1: source statement versus general monotonicity inference
+
+The K.3 item 3 caution is incomplete as a description of attribution. For the
+**step-up** critical-number construction, Welsch (1977), printed p.569 Appendix A,
+after (A.1), explicitly specifies replacing a newly computed `C_k` below
+`C_(k-1)` by `C_(k-1)` to preserve the ordering. This is a source statement for
+GAPA/GAPB, not merely investigator reasoning. The p.575 GAPA usage example at
+`t=5`, `nu=20` prints 3.58, 3.97, 3.97 and 4.29 in increasing stretch order;
+the repeated values illustrate the monotone sequence without certifying the
+numbers or independently reconstructing their computation.
+
+For **step-down NKA/NKB**, p.568 Theorem 2 requires a nondecreasing critical
+sequence. The p.571 opening paragraph describes inverse interpolation as for
+C2 and says Monte Carlo is unnecessary; it does not explicitly prescribe the
+same replacement step for those tables. Do not transfer the Appendix A step-up
+instruction to every step-down table as a printed historical fact.
+
+The general statement that raising a critical value cannot increase its tail
+probability remains investigator reasoning. No numerical table, production
+monotonization rule, guarantee or implementation is adopted. S-K1 is addressed
+on the author side by this additive clarification, pending independent repair
+review. The page images were inspected in Part K's author pass; PR 206's source
+confirmation is reused here. No new PDF reading or numerical recomputation is
+claimed in this repair.
+
+### L.3. Optional findings and independent-coverage gap
+
+N-K1 through N-K5 remain optional and deferred at PR 206 Section 10. In
+particular, N-K2's caution about Ryan's product expression does not enlarge K.3's
+claim: the result uses only the sum-budget arithmetic, subject to the stated
+selection and monotonicity limits, and does not adopt an independent-block
+product guarantee for general plug-in statistics.
+
+PR 206 Section 9 identifies a material distinction in the evidence inventory:
+Newman and Duncan have prior author-side C.3 readings, but the cited independent
+reviews do not verify those rows. This is independent-review coverage missing,
+not a reversal of their already-recorded acquisition or author inspection. This
+successor commissions the minimal missing primary review before treating the
+entire SR-H PARTIAL candidate as independently covered for acceptance; it does
+not accept those author readings as a substitute for independent verification.
+
+| Original             | Expected bytes / PDF pages | SHA-256                                                            | Minimum printed-page scope                                                                                                |
+| -------------------- | -------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `06_Newman_1939.pdf` | 1141066 / 12               | `2a95351862462f2165a4a2f82f16572eb4a0482afcea2772c590ade02e45e974` | pp.20–24, 27–28; C.3 row 06, independent scale and two-member range/t relation; preserve the existing p.28 df doubt       |
+| `17_Duncan_1955.pdf` | 4442167 / 43               | `6504e0bd884850d639ea5e0a9b5794d3c02f7d3df5895e3ca64ced6face64bdf` | pp.5–7, 16, 28, 41; C.3 row 17, equal-precision model, protection levels, containing subsets and monotone critical ranges |
+
+These identities are reused from C.2, not rehashed in this pass: neither PDF is
+present in the current upload/source-intake directories. Request these two
+already-collected originals for the review environment, not a new purchase or
+new supplier count. If a required statement depends on another page in the same
+original, inspect that page and report the additional coverage rather than
+stopping at the minimum list. No wholesale rereview of the other originals is
+commissioned.
+
+### L.4. Disposition and combined review handoff
+
+SR-H remains a PARTIAL candidate; its formal hold-level acceptance is pending.
+Ledger 5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE, overall INPUT_INCOMPLETE,
+semantic NARROW, 35 originals, APR-10 through APR-14 RES-ONLY, the existing
+C-H4 acceptance, and all other holds and R4 limitations are unchanged. S-K1's
+repair does not resolve the APR-12 variant questions or the recorded print
+conflicts. The latter still require independent confirmation and a separate
+bounded adjudication before affected reuse.
+
+On the exact successor head, perform two separately reported checks:
+
+1. Close-only review of L.2 against PR 206 Section 10 and the unchanged K.3;
+   explicitly reuse the completed Welsch primary inspection. Original 25 is not
+   required again unless a new source question arises. Verify the 326756-byte
+   prefix and the unchanged scope and dispositions.
+2. Primary-source completion for C.3 rows 06/17 and their K.6 reuse, using the
+   two originals above. Verify actual assumptions, procedure, error criterion,
+   degrees of freedom, source versus inference and existing doubts. Assess
+   whether the combined fixed evidence supports the whole-hold PARTIAL proposal;
+   do not infer CLOSED or a unique APR-12 method. Keep each conclusion separate
+   if only one check can be completed. Missing originals yield an explicit
+   SOURCE_ACCESS_INCOMPLETE for the affected source scope, not a source-content GO.
+
+Read AGENTS.md and the Read first/local instructions; retain K.1's fixed
+commission and semantic inputs. Save one English review at
+`review-inputs/r3-srh-range-completion/REVIEW-RESULT.md` on an unused neutral
+branch from the exact successor head; open a draft PR targeting this result
+branch. Report source inspections, reused evidence, findings, independence and
+actual format/Markdown-lint/direct-validator/diff checks separately. Author-side
+assistance is OpenAI; disclose actual reviewer model/context evidence, without
+exact-build-log demands, unsupported claims about different human participants,
+or historical PENDING edits. No PDFs, images or full extractions enter Git.
+Do not merge, accept a hold, adopt a method, open discussion or release.
+
+RELEASE 3 PART L PRECISION REPAIR RECORDED - INDEPENDENT REPAIR AND TWO-SOURCE
+COMPLETION PENDING - SR-H PARTIAL CANDIDATE - OVERALL INPUT_INCOMPLETE
