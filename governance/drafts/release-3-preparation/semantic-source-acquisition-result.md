@@ -3621,3 +3621,176 @@ images and extracts outside Git. Run `pnpm format:check`, `pnpm lint:markdown`,
 `node --import tsx tooling/src/validate.ts`, and `git diff --check`; distinguish
 actual checks from reused results. Report final commit/parent/tree/blob and live
 head stability. Do not merge, change formal holds, adopt a method or release.
+
+## Part P — SR-F review intake and corrective addendum (2026-09-08)
+
+### P.1 Fixed evidence and role
+
+This is continuing OpenAI-assisted author work, not an independent review or a
+steward decision. It appends to PR #216 head
+`4ce988231330f5702a7d3d8a352b01fac575191f`, result blob
+`78feb17baba67d41d0aac274c51e2f12b507a6d3` (370999 bytes; SHA-256
+`543a4c14b6e0d4fea809c6935a7bc69f08019467283edc9141f8dd1856c48596`).
+All Parts A–O bytes, including the error corrected below, are preserved.
+
+Independent review PR #220 is pinned at commit
+`ca88a1550165dc9b2f5f16541e91d92d1c79ef82`, sole parent the above author head,
+tree `4a4e44e7ee519d9cb3e64a5307807a923a6e5b05`. Its record is
+`review-inputs/r3-srf-primary-research/REVIEW-RESULT.md`, blob
+`55fe509ed5a87b263e26d0145983f1caa3d2912f` (55123 bytes; SHA-256
+`cd819183d13ea970893d066e39c3c9e65482e3845f0fd076f61fdabd55e2fe1c`).
+It reports content GO, zero BLOCKER, two SHOULD-FIX and five NICE-TO-HAVE,
+with SR-F CLOSED proposed and a PARTIAL alternative for a pending conflict
+adjudication. Its four-source page checks and independent numerical work are
+reused as explicitly attributed review evidence, not claimed as repeated here.
+
+The reviewer discloses no authoring involvement, non-blind reading order and
+`claude-fable-5-1` from the session service. Part O and this addendum disclose
+OpenAI author assistance. Git identities, model testimony and non-involvement
+statements are different evidence. No exact-build log is requested and no old
+PENDING record is rewritten. The reviewer reports a duplicate session-named
+branch; this addendum uses a neutral branch and does not delete or rewrite any
+review branch. Model-level acceptance remains a scoped steward determination.
+
+### P.2 S-1 correction: rounded components and reconstructed components
+
+**The Part O.3 assertion that both averages round to 0.9987 is incorrect.**
+PR #220 Sections 10 and 12 correctly distinguish the two computations:
+
+- Printed four-place components: `(0.9462 + 0.9462 + 1.1035)/3`
+  equals `0.998633333...`, rounding to **0.9986** at four places.
+- Reconstructed, not first rounded, components: the O.3 diagnostic gives
+  `0.998662296...`, rounding to **0.9987**.
+
+The first arithmetic was rechecked here with Python Decimal, independently of
+the original floating-point diagnostic. The source's printed average is
+consistent with averaging its printed rounded components. The difference does
+not establish a source inconsistency; the earlier author characterization is
+withdrawn. Printed values are retained. The half-width versus full-width label
+observation remains separate; doubling both averages does not change their
+ordering. No numerical kernel, diagnostic output or source table is changed.
+This is the author repair of S-1, pending independent repair review.
+
+### P.3 S-2 correction: explicit APR-06 catalogue narrowing
+
+The fixed semantic catalogue's combined APR-05/06 shorthand assigns Studentized
+maximum modulus and special tables. PR #220 Sections 7.4 and 12 identifies the
+entry-level distinction that O.5 omitted. The author result is explicitly:
+
+| Entry  | Relation to the fixed catalogue                                                                                   | Supported bounded reading                                                                                                                                                                                                                                                   | Classification |
+| ------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| APR-05 | Supports the GT2 SMM construction with the model and at-least coverage in O.2; generic exact coverage is excluded | Hochberg pp.225–226, Theorem 3.1 p.228 and (3.2) p.229; known covariance shape, common unknown scale, independent chi-square variance estimator                                                                                                                             | `RES-ONLY`     |
+| APR-06 | Narrows the combined shorthand: SMM is not the critical-value basis for this GH procedure                         | Genizi–Hochberg pp.879–880: SR for contrast-preserving `T_c(Q)`, SAR for all-linear-function `T(Q)`; Section 3 and Table 1 constants for the two-distinct-size construction, with restrictions (i)–(ii); Section 3.2 / Table 2 bounds the average-width comparison with GT2 | `RES-ONLY`     |
+
+This is an informative catalogue comparison, not an edit to the fixed catalogue.
+It does not promote general CSP optimality, arbitrary sample-size patterns,
+pointwise superiority over GT2 or certified table constants. Restriction (i)
+preserves minimum within-size-group pairwise widths and (ii) equal cross-size
+pair widths; the optimum is within that constrained family. This is the author
+repair of S-2, pending independent repair review.
+
+### P.4 Corrigendum receipt, scope and optional observations
+
+The supplied artifact **Corrigenda, JASA 74(367), 744, item on Genizi–Hochberg
+(1978)** has 256229 bytes, two PDF pages (publisher cover plus printed p.744),
+and SHA-256
+`07a6c3433f77e85f2ce5034e0068e7421a7f5041679705755cbfabec7493653a`.
+The prior author turn checked its hash/bytes/pages and read the p.744 page image;
+PR #220 Section 4 independently checked the same identity and Section 5 its scope.
+Those saved checks are reused here, without re-reading the PDF.
+
+The inspected artifact prints publisher DOI `10.1080/01621459.1979.10481678`.
+The acquisition log's `10.2307/2287029` remains the archival item identifier used
+for discovery. The relevant paragraph is unsigned; calling it Genizi–Hochberg
+(1979) follows Stoline's bibliography and does not establish personal authorship.
+The two unrelated corrections on the same page are outside this review scope.
+
+The text rejects the inference from nonattainment within `T(Q)` to Kramer's
+pairwise intervals being liberal. It retains the within-family distinction and
+leaves the proposed conservativeness to future analytical or simulation work.
+It does not correct (1.7), the example, or Tables 1/2. The correction itself is
+not a proof of Kramer coverage. These are the source-scope findings of PR #220
+Section 5 and the preceding author PDF inspection; no renewed source search or
+new broader proof is claimed.
+
+Receipt accounting now distinguishes **42 numbered supplier originals plus one
+unnumbered supplementary corrigendum artifact**, hence 43 received artifacts in
+this intake chain. There are still 42 numbered originals; no supplier number is
+invented and the three unrelated items on one corrigenda page are not counted
+as three PDFs. O.4's unchanged total described the time before receipt. PR #220's
+unchanged 42 count is retained as its numbered-original count, not used to deny
+receipt of the extra artifact. Previously reported unavailable 38/44/45/46
+remain unavailable; this correction is none of those four.
+
+Optional observations from PR #220 Section 12 are carried with attribution:
+N-1/N-4 are addressed by the identifiers and unsigned-item description above;
+N-2 records reviewer SciPy 1.17.1 versus author 1.17.0 with identical printed
+outputs, not one shared execution. N-3 reports the example's `1.3157` versus a
+bounded reviewer reconstruction around `1.3152`; N-5 reports a repeated `H_11`
+label in the p.882 Lemma where the second block is read as `H_12`. Neither is
+adopted as a replacement value or formal erratum. Their causes are not established
+here; inspect them before any numerical reuse or transcription of that Lemma.
+No optional finding is independently certified closed by this author addendum.
+
+### P.5 Remaining bounded decision and source-result ledger
+
+There is no remaining source-acquisition request for SR-F in the reviewed scope.
+Hochberg (1975) is not newly required: PR #220 Section 9 D-2 independently derives
+the model-based coverage statements explicitly stated in the supplied 1978 paper.
+This does not claim inspection of the 1975 proof or of wider GT3 optimality.
+
+**Proposed bounded disposition decision, not enacted:** retain the printed
+`=` in Genizi–Hochberg (1.7) as a documented discrepancy; ground the GT2
+characterization in Hochberg's originating Theorem 3.1 / (3.2), using coverage
+at least `1-alpha`; do not claim generic exact coverage or a published erratum
+for the equality sign. Apply the explicit APR-06 narrowing in P.3. Treat SR-F
+as CLOSED only in the commission's source-completion sense, not method adoption.
+This proposal follows PR #220 Section 13 R-1/R-2 and requires no further paper.
+It is not a presumption that the journal's text has been corrected.
+
+Pending that bounded disposition decision, this successor records **SR-F
+PARTIAL**, with the single named disposition gap R-1 and no missing source.
+The two author repairs still await close-only review; they are tracked separately
+from the remaining source-disposition decision. This uses the review's explicit
+PARTIAL alternative rather than perpetuating O.5's historical INPUT_INCOMPLETE.
+The author is not declaring RFC rule 5 adjudication or formal hold acceptance
+complete. The independent repair reviewer should assess the proposed use of the
+existing direct-source adjudication in PR #220, not automatically commission
+another full four-paper pass.
+
+The successor candidate ledger is **5 CLOSED / 2 PARTIAL / 7 INPUT_INCOMPLETE**:
+SR-B/C/G/K/L CLOSED candidates; SR-F/H PARTIAL; SR-A/D/E/I/J and RSM-01/02
+INPUT_INCOMPLETE. If the bounded decision is approved and the repair confirmed,
+the proposed ledger is 6/1/7. Neither ledger is a list of formally accepted holds.
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY false, NARROW, RES-ONLY and the separate
+R4 state remain. No merge, formal hold change, method adoption, public opening,
+publication or release is made.
+
+### P.6 Limited independent repair-review instructions
+
+Review this addendum only, against the exact full head and result identity in its
+draft PR body. Read AGENTS.md and ordered Read first documents, applicable local
+instructions, the unchanged commission, Parts O/P and PR #220 Sections 4–5,
+7.4, 9–13 at the fixed review identity in P.1. Preserve the 370999-byte Parts A–O
+prefix and all prior reviews. Check S-1 by exact decimal/rational arithmetic;
+check S-2 against the fixed catalogue and PR #220's pinned primary-source mapping.
+Check the corrigendum transcription, attribution, numbered versus total-artifact
+count, PARTIAL ledger and unapproved bounded CLOSED proposal. Assess whether the
+proposal addresses R-1 using the direct source adjudication already in PR #220;
+leave the actual steward decision distinct.
+
+Reuse PR #220's source-image and numerical verification explicitly. No PDF is
+required merely to repeat it. Request only a specific original/page if a new
+material question cannot be resolved from that record. Do not repeat the whole
+primary-source review, arbitrary-precision integrals or Monte Carlo by default.
+Disclose independence, context/model testimony and evidence reuse without demanding
+exact-build logs. Do not overwrite past PENDING or claim steward authority.
+
+On a new neutral branch `review/r3-srf-review-repair-20260908` (or a fresh neutral
+suffix if used), create one English file
+`review-inputs/r3-srf-review-repair/REVIEW-RESULT.md` with the fixed author head as
+sole parent. Record S-1/S-2 status, regressions, findings, actual validation and
+limits, then open a draft PR against the author branch. Run format:check,
+lint:markdown, the direct validator and diff check. Verify the final Git objects
+and live target head. Do not mirror to a session-labelled branch, change fixed
+results, commit PDFs/extracts, merge, formally close holds, adopt or release.
