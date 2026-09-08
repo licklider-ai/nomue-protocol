@@ -923,3 +923,68 @@ it is research preparation rather than selection. Commission an exact-head revie
 only after a substantive increment exists, with its prompt and necessary source
 attachments supplied together. Other eight incomplete entries remain a separate
 research queue; this intake does not assess their evidence or change R4 work.
+
+## 18. First three artifacts of the reported seven-paper addition
+
+Date: 2026-09-08. The user reports seven newly collected papers and supplies
+three files in this batch, numbered 34, 39 and 40. The previous received inventory
+was 35; this batch brings received distinct artifacts to 38. The reported
+collection would total 42 if all seven are additional distinct papers; the four
+remaining files and their identities have not yet been supplied in this batch.
+Do not record those four as received or inspected. Supplier numbers are not SRC
+identifiers. The historical 35-original statements remain dated checkpoints.
+
+### Artifact identity and bibliography
+
+| Supplier file       | Bytes   | PDF pages | SHA-256                                                            |
+| ------------------- | ------- | --------- | ------------------------------------------------------------------ |
+| `34_Games_1976.pdf` | 994128  | 13        | `eee42d00cdd66f9f24e334c2db503e17233fc73b6a87ed5f85c6868f17a2c021` |
+| `39_Ge_2003.pdf`    | 3452172 | 77        | `abe8095de12b3499f863c3e5aced94a90812f0732d80423374eadafdc20a7f68` |
+| `40_Bretz_2009.pdf` | 439933  | 19        | `87041fa4b4d17e6a2832536d586cc26b253422255df59cd00a86344f6b0a5664` |
+
+The continuing OpenAI-assisted coordinator computed these hashes and byte counts,
+counted pages with PyMuPDF, and checked the three first-page images. None of the
+three hashes occurs in the preserved result through Part M. Inspection here is
+bibliographic intake, not source-content review or an independent pass.
+
+- Games and Howell (1976), "Pairwise Multiple Comparison Procedures with Unequal
+  N's and/or Variances: A Monte Carlo Study," Journal of Educational Statistics
+  1(2):113–125. The first-page image resolves OCR's misleading volume/issue text
+  as volume 1, number 2. Route: fixed semantic SRC-20, SR-I, HET-01. This fills
+  the previously missing supplier 34 custody slot; it does not establish an
+  exact FWER guarantee from the Monte Carlo study.
+- Ge, Dudoit and Speed (2003), "Resampling-based Multiple Testing for Microarray
+  Data Analysis," TEST 12(1), supplied pagination 1–77. The 77-page file includes
+  discussion/rejoinder material: text inspection finds the authors' rejoinder
+  beginning at printed/PDF p.66. Article, discussion and rejoinder boundaries and
+  each contributor's claims require separate attribution during content review;
+  the complete file is not treated as 77 pages of the three authors' main text.
+  Proposed routing from its title/abstract: RSM-01 maxT/minP and error-control
+  assumptions, with RSM-02 relevance to be established per variant. This is a
+  supplemental-source routing proposal, not a substitution for an assigned
+  monograph or automatic closure of either hold.
+- Bretz, Maurer, Brannath and Posch (2009), "A graphical approach to sequentially
+  rejective multiple test procedures," Statistics in Medicine 28:586–604,
+  DOI `10.1002/sim.3495`. The first page records online publication on
+  2 December 2008; the issue year is 2009. Route: fixed semantic SRC-26,
+  SR-D, CLS-06. Receipt does not adopt the graphical family or close its source
+  hold.
+
+### Next work and preserved boundaries
+
+After the remaining four files arrive, reconcile their identities before
+updating the consolidated acquisition result in a separate increment. Review
+source claims only after reading the relevant texts; commission independent
+review against a fixed, concrete result and supply its prompt and required
+originals together. This intake adds no scientific conclusions or new review
+request. PDFs, page images and full extraction data stay outside public Git.
+
+PR 213 Part M remains pinned at
+`f7ab321477bbb4f6decefbf931615ff6966e9e6e`, result blob
+`18e18eb1900f3560b752c336addf2c88bd1ff616`, awaiting its bounded S-X1 repair
+review. Its 35-original status is historical for that fixed input. The SR-H
+PARTIAL candidate and 5/1/8 candidate ledger are unchanged by this receipt;
+overall INPUT_INCOMPLETE, NARROW and all method classifications remain.
+Section 17's Parts K/L independence and limited-acceptance proposals remain
+unenacted. No merge, hold closure, method adoption, R4 closure, public opening,
+website publication or release is enacted.
