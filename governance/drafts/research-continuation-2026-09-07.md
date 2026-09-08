@@ -988,3 +988,95 @@ overall INPUT_INCOMPLETE, NARROW and all method classifications remain.
 Section 17's Parts K/L independence and limited-acceptance proposals remain
 unenacted. No merge, hold closure, method adoption, R4 closure, public opening,
 website publication or release is enacted.
+
+## 19. Completion of the seven-file receipt and unavailable-source work plan
+
+Date: 2026-09-08. The user supplies 37, 41, 42 and 43, completing the seven
+additions begun in Section 18, and reports 38, 44, 45 and 46 unavailable through
+their acquisition effort. Received distinct artifacts now total 42: supplier
+01–37 and 39–43. This counts received files, not 42 independently reviewed
+sources. The four unavailable items are not received, and the report does not
+establish that every possible lawful access route is permanently unavailable.
+Supplier 47 is outside the reported set; no acquisition outcome is inferred.
+
+| Supplier file            | Bytes  | PDF pages | SHA-256                                                            |
+| ------------------------ | ------ | --------- | ------------------------------------------------------------------ |
+| `37_Hochberg_1974.pdf`   | 561598 | 11        | `4eebb9ab9e4e7c133bdc7bff7130dda98b762e498cca0ce1738680be2bb539b4` |
+| `41_Dmitrienko_2003.pdf` | 106251 | 14        | `c1df1453c5001cfeae4bd3d52d31e46f7248cd7b3524ec7d46e2d47ef0a07ed4` |
+| `42_Dunnett_1991.pdf`    | 634124 | 9         | `ed93660e9e8286f1ff2e0026f972c783ac523ac96465e1689e17b4f99a960161` |
+| `43_Wiens_2003.pdf`      | 120883 | 5         | `f9634c824d637b2f1e262d226c8bd3d7d01f540501facdaead9c1e802eed5bd7` |
+
+The continuing OpenAI-assisted coordinator computed hashes/bytes, counted PDF
+pages with PyMuPDF, inspected first-page images, and checked that these hashes
+are absent from the earlier receipt/result records. This is bibliographic
+intake, not full reading, theorem verification or independent review.
+
+- Hochberg (1974), "Some Generalizations of the T-Method in Simultaneous
+  Inference," Journal of Multivariate Analysis 4:224–234: SRC-36 / SR-F,
+  APR-05; compare the GT1/GT2 distinction during later reading.
+- Dmitrienko, Offen and Westfall (2003), "Gatekeeping strategies for clinical
+  trials that do not require all primary effects to be significant,"
+  Statistics in Medicine 22:2387–2400, DOI `10.1002/sim.1526`: SRC-27 / SR-D,
+  CLS-05. Do not generalize the parallel strategy to all serial strategies.
+- Dunnett and Tamhane (1991), "Step-Down Multiple Tests for Comparing Treatments
+  with a Control in Unbalanced One-Way Layouts," Statistics in Medicine
+  10:939–947: SRC-28 / SR-J, MTO-02. This is not their 1992 step-up paper.
+- Wiens (2003), "A fixed sequence Bonferroni procedure for testing multiple
+  endpoints," Pharmaceutical Statistics 2:211–215, first-page DOI
+  `10.1002/pst.064`: SRC-27 / SR-D, CLS-03. The acquisition checklist omits
+  the DOI's zero; this intake preserves the printed identifier without claiming
+  to have resolved DOI aliases externally.
+
+### Unavailable items and decision boundaries
+
+Supplier-number mapping was read from the previously supplied acquisition
+checklist, sections 4-3/4-4; those bibliographic entries are identifiers for
+unreceived sources, not an assertion their contents were inspected. Routing is
+checked against the fixed semantic input and acquisition commission.
+
+| Supplier | Reported unavailable source                                                 | Affected scope              | Work that can proceed                                                                                                            |
+| -------- | --------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 38       | Naik (1975), Some Selection Rules for Comparing p Processes with a Standard | SRC-28 / SR-J               | Inspect supplier 42's exact step-down procedure; retain the Naik relationship and any unsupported historical claim as a gap      |
+| 44       | Scheffe (1959), The Analysis of Variance                                    | SR-A                        | Inspect already received Welch, James and Brown-Forsythe texts; retain the assigned omnibus/Fisher-lineage source gap            |
+| 45       | Collected Works of John W. Tukey, Vol. VIII: Multiple Comparisons 1948–1983 | SR-E historical attribution | Use already reviewed range results only within their scope; do not substitute them for the assigned historical-source inspection |
+| 46       | Westfall and Young (1993), Resampling-Based Multiple Testing                | SRC-25 / RSM-01             | Read supplier 39 as supplemental evidence and its RSM-02 variant contribution; do not silently replace the monograph             |
+
+Section 18's proposed RSM-01 relevance for Ge is supplemental. The acquisition
+checklist routes it primarily to RSM-02; its exact variant coverage requires
+content inspection. Neither route alone closes RSM-01 or RSM-02.
+
+Research can continue with these access gaps. The current commission requires
+all fourteen dispositions CLOSED for SOURCE_SET_READY; unavailable required
+texts cannot simply be marked PARTIAL or CLOSED because related texts exist.
+The affected scope stays INPUT_INCOMPLETE where a required source cannot be
+inspected. A future claim-to-source matrix may show a genuinely sufficient
+alternative basis, but a changed mandatory source assignment or reduced release
+scope needs an explicit, reviewable commission/governance decision. No such
+change, source waiver or release-scope decision is made here.
+
+### Sequencing after the pending Part M review
+
+1. Receive the user's next review result and handle only its concrete findings;
+   keep PR 213's fixed input unchanged during review.
+2. Consolidate the seven new custody records in a separate result increment.
+   First content priorities are SR-F (37 with already received 23/32 and the
+   commission's remaining dependencies) and SR-I (34 with the received companion
+   papers). These are executable reading tasks, not promises of hold closure.
+3. Inspect SR-D's available closure, graphical, parallel and fallback texts
+   (15/40/41/43), retaining missing serial-lineage dependencies; inspect 42's
+   bounded SR-J step-down scope and 39's resampling variants separately.
+4. For 38/44/45/46, identify the exact unsupported claims and minimum required
+   pages before any renewed access request. Consider a lawful excerpt or another
+   primary source only with a documented sufficiency assessment; otherwise
+   prepare an explicit deferred/reduced-scope proposal for steward decision.
+   Do not send messages, place orders, or repeatedly ask the user to reacquire
+   the same whole books as part of this intake.
+
+The checklist's older Scheffe 1953 page-range instruction is not reopened by
+this lookup; the previously established pp.87–104 scope remains. New original
+receipt does not resolve Part M's uninspected Einot-Gabriel proof reference or
+R4's separate dependencies. The historical fixed result still reports 35 while
+this current custody record reports 42; that is a dated inventory difference,
+not a silent rewrite. Candidate ledger 5/1/8, overall INPUT_INCOMPLETE, NARROW,
+method classifications and pending formal decisions remain unchanged. No merge,
+hold closure, adoption, publication or release is enacted.
