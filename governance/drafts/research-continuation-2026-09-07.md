@@ -837,3 +837,89 @@ No merge, method adoption, public opening, numerical guarantee, website publicat
 or release follows from this repair acceptance. The next substantive SR-H work
 is the already-collected Keuls and Ryan/Einot-Gabriel/Welsch source synthesis,
 with independent review commissioned only once that new result is concrete.
+
+## 17. Part L review intake and SR-H partial-acceptance preparation
+
+Date: 2026-09-08. The user supplied PR 211's completed review. This continuing
+OpenAI-assisted author/coordinator records the independent findings and prepares
+the bounded disposition below; review delivery is not recorded as a new steward
+approval. Sections 15/16 remain historical checkpoints preceding Parts K/L.
+
+### Fixed evidence and review outcome
+
+PR 207 remains at `044078d3b19ff3307dc347b0b9e7ecbbed1750c6`, sole parent
+`070e5dd569f0dfcb6f15ec49daebc0544af217d9`, result blob
+`ff2ee8c3ca08b57ecc62c143a46153b02bcd04f7` (334121 bytes), SHA-256
+`02290488c7a9997b72caf228bb6e32a03465b4117d65f456826b5a3fa957acb1`.
+PR 211's review commit is `a5e921c07ea2ab4f0147864fd2323f607512ef0d`,
+sole parent equal to that input, tree
+`6b7691a1b80d5400cea8dcb85d1bd8b38e59bbe9`, review blob
+`63ee9079012cf7fa2e3a3b909ef294538a99c70b` (76460 bytes), path
+`review-inputs/r3-srh-range-completion/REVIEW-RESULT.md`. Live metadata and
+fetched review commit, parent, tree and blob agree. Both PRs are draft/unmerged.
+
+Check A is GO: S-K1 CLOSED as an additive repair, no regression, zero BLOCKER
+and SHOULD-FIX, two optional findings. Check B is GO for C.3 rows 06/17 and
+K.6's bounded reuse, zero BLOCKER and SHOULD-FIX, five optional findings.
+PR 211 reuses PR 206's Welsch inspection explicitly; it does not claim to have
+re-read that original. The coordinator reuses these review findings and their
+prefix/source/validation checks, without claiming a fresh PDF inspection,
+source rehash, numerical calculation or independent review.
+
+PR 211 Section 11 completes the independent coverage map: Newman/Duncan in
+PR 211; Keuls, Ryan, Einot-Gabriel and Welsch in PR 206 at
+`f1cbcca6e1ff06670d43d44bd38bf76a7a43833a` (blob
+`752b7a1e8b2f4c2d3c67dc59bea6c36e69b8ad59`); Hayter in PR 201/203,
+with the bounded acceptance in Sections 15/16. Coverage is for the recorded
+claims and pages, not blanket approval of every page, proof or numerical table.
+
+### Carried observations and limits
+
+PR 211 Sections 8/12 refine the Newman p.28 doubt: Tables III/IV have no
+`f = 3` row; printed values 4.1/4.3 correspond to `f = 30`, also the example's
+p.27 degrees of freedom. Sections 9/12 report Duncan p.28's 87.8%/79.7%
+transposition relative to pp.14–15. These are attributed reviewer observations,
+not coordinator rechecks, authorized corrections, or formal errata.
+
+B-N3's reading of attained protection as at least the nominal level, rather
+than an equality guarantee, is reviewer inference. Preserve that distinction
+before any reuse. A-N1's finer locator "after (A.1)" remains unverified in the
+reused review; it is not a newly confirmed pinpoint. A-N2 and B-N4 are optional
+cross-reference/attribution improvements. B-N5 is resolved as a chronology
+clarification here: C.3's historical "Keuls remains unread" was superseded by
+Part K and PR 206. No old text or finding is silently rewritten. Other optional
+wording changes remain deferred without moving the reviewed head.
+
+### Concrete bounded decision proposal, not yet enacted
+
+1. Accept S-K1's reviewed repair completion at the fixed Part L input.
+2. Determine scoped independence for Parts K/L using their OpenAI author
+   testimony and PR 206/211's separate-context, non-involvement and
+   claude-fable-5-1 evidence. PR 211 Section 13 discloses prior-review reuse.
+   Git objects establish artifact identity; session/model and non-involvement
+   statements are ordinary testimony. Commit timestamps or absence of a Git
+   identity alone do not prove non-involvement or model identity. No exact-build
+   logs or unsupported distinct-human assertion is required. Prior PENDING
+   records remain intact.
+3. Accept SR-H as PARTIAL for the source-acquisition research disposition only,
+   on the combined fixed evidence. All seven designated texts now have scoped
+   independent coverage, but APR-12 still denotes multiple procedures. Variant
+   characterization, monotonicity/selection conditions, and resolution or
+   explicit exclusion of print conflicts before affected use remain named gaps.
+   This decision would not close the hold or select an executable procedure.
+
+These proposals are ready for the steward's bounded determination; no further
+primary review is requested solely to repeat the completed scope. Current
+candidate ledger: 5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE, total 14;
+SR-H PARTIAL candidate, formal acceptance pending. Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY false, semantic NARROW, APR-10–14 RES-ONLY, 35 originals.
+SR-K/SR-G formal acceptance remains separate. No merge, method adoption,
+critical-value replacement, R4 closure, public opening or release is enacted.
+
+The next SR-H research increment can characterize the distinct APR-12 variants
+and name their individual assumptions, subset rules, monotonicity conditions and
+output gaps from the already reviewed evidence. This requires no new acquisition;
+it is research preparation rather than selection. Commission an exact-head review
+only after a substantive increment exists, with its prompt and necessary source
+attachments supplied together. Other eight incomplete entries remain a separate
+research queue; this intake does not assess their evidence or change R4 work.
