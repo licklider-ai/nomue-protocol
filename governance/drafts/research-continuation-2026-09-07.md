@@ -554,3 +554,128 @@ by investigator derivation rather than being printed in these sources. Preserve
 the reviewed Parts A–G bytes and obtain an independent review of any new result.
 SR-H can follow with the already received originals. R4 source-access findings
 remain on their own lane and are not closed by this SR-C acceptance.
+
+## 13. Part H independent review intake and acceptance proposal
+
+Date: 2026-09-08. **Status: author/coordinator follow-up; SR-B acceptance and
+Part H independence determination proposed, not yet approved.** The user supplied
+PR 199's review result. Receipt of that review is not treated as a new steward
+approval. This continuing OpenAI-assisted author records the findings and prepares
+the bounded decision below; it is not an independent reviewer.
+
+### Fixed result and review
+
+- Reviewed result: PR 198, commit
+  `f6d39534e85920a8331941126a6eb384244e34f1`, sole parent
+  `80ad520cf25e8cdf647f20e7d08d5bb426a85633`, result blob
+  `b0679cbad8d384158b93ce414f8dfb7f2270ea74`, at
+  `governance/drafts/release-3-preparation/semantic-source-acquisition-result.md`.
+- Review: PR 199, commit `3059f6baca76dc93b5fbf248012f09132f3881f6`,
+  sole parent the reviewed result commit, tree
+  `a4bdafbd8b215e5fa269bc4789f10ce7a77decc8`, review blob
+  `4c8b55bac817be9f25b1b6fa7b82cbb6eb2fc813`, at
+  `review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md`.
+- Review blob: 64338 bytes; SHA-256
+  `c7b294cd3b618d0276caa9fa03d8c6c0906c126d7376a61b6e60677c56f51212`.
+  Neutral review branch: `review/r3-srb-primary-completion-20260908`.
+
+The live PRs retain those heads and remain draft/unmerged at this intake. The
+coordinator checked the fetched review commit, parent, tree and blob identity.
+PR 199 reports content GO, SR-B CLOSED support under H.3, zero BLOCKER, two
+SHOULD-FIX and five NICE-TO-HAVE. Its source inspection, independent derivations,
+quantile calculations and validation are attributed reviewer work, not rerun here.
+PR 199 Section 13 permits both SHOULD-FIX items to be recorded in this continuation
+record without moving the reviewed result head. That route is used below.
+
+### S-H1: explicit correction of the equation (7) summary
+
+The author accepts S-H1. Read H.2 B-2's final sentence with this qualification:
+Dunn p.54 equation (7) is the **independent sample-means special case**, with
+`a_ii = 1/n_i` and `a_ij = 0` for `i != j`, under the stated common-scale model.
+It permits unequal sample sizes under those conditions. For known non-zero
+covariances, equation (6), with the general variance expression of Section 2,
+is the applicable sourced interval form; equation (7) is not that general form.
+
+This corrects the omitted independence condition; it does not weaken the
+arbitrary-dependence union-bound argument for valid marginal p values in H.3.
+The reviewed original remains unchanged and this explicit addendum accompanies
+its use. S-H1 is addressed on the author side by this qualification, not by
+rewriting PR 199's findings or claiming another independent GO.
+
+### S-H2: extend the Dunn example conflict record before numerical reuse
+
+The author accepts the need to carry PR 199 Section 6.2's additional observation
+alongside H.4's existing p.61 formula versus p.63 header discrepancy. For Dunn's
+second factorial design, the reviewer reports the following comparisons at
+alpha = .05, with c calculated as `t_nu(1 - .05/(2m))`:
+
+|   m | Printed c, Tables 7/8 | Reviewer c at nu=60 | Reviewer c at nu=24 |
+| --: | --------------------: | ------------------: | ------------------: |
+| 195 |                  4.31 |               3.887 |               4.284 |
+|  75 |                  3.93 |               3.590 |               3.907 |
+| 165 |                  4.26 |               3.836 |               4.218 |
+|  45 |                  3.71 |               3.426 |               3.703 |
+
+The reviewer interprets the printed c values as consistent with nu=24 rather
+than the printed header nu=60, in the context of the source's graphical
+interpolation. The numbers above are not exact matches, and this record does not
+claim exact reproduction or establish how the original author computed them.
+The same design's printed S values 5.92 and 5.78 compare with the reviewer's
+nu=60 calculations 5.91 and 5.79. This is additional evidence of an internal
+example inconsistency, not an adopted replacement table or a publisher erratum.
+
+The p.61 formula, p.63 headers, all printed c/S values and reviewer calculations
+remain distinct evidence. The example remains excluded from PVL-01/02's
+source basis. Before R4 or another numerical programme uses it, independently
+resolve and adjudicate the intended model, degrees of freedom, calibration and
+numerical values. No R4 source-access finding or numerical guarantee is closed.
+S-H2's recording requirement is addressed here; the numerical discrepancy itself
+remains unresolved. The coordinator has not independently rerun these values.
+
+PR 199 Section 6.1 also reports Sidak Table 1's k=5, nu=5 first-column value
+as 3.78 versus a computed 3.789, a further rounding-level discrepancy. Carry that
+unadjudicated observation with the existing 2.23/2.24 record; no value from the
+table is adopted. Do not present the reviewer's exploratory recomputation as a
+Protocol numerical oracle or a complete table certification.
+
+### Optional findings and provenance preservation
+
+Carry N-H1 (positive marginal variances), N-H2 (Dunn conjecture attribution),
+N-H3 (the separate Dunnett-Sobel one-sided analogue), and N-H4 (future catalogue
+wording) to the next applicable increment. In particular, a future catalogue
+revision should carry H.3's explicit condition instead of relying on the old
+"independence/orthant" shorthand; the fixed catalogue is not edited here.
+
+N-H5 concerns image coverage. The author's actual H.1 image list remains as
+recorded. Do not add p.632 to that historical list merely because PR 199's
+reviewer inspected it. This intake performs no new PDF inspection; the independent
+review's additional image coverage is attributable to PR 199 only.
+
+The user also reports that the reviewer duplicated its commit onto a
+session-specified non-neutral branch. The neutral review branch and exact objects
+above are the review locator. No branch is renamed, deleted or rewritten in this
+intake; the reported duplicate does not change the review's substantive provenance.
+
+### Prepared steward decision: Part H independence and limited SR-B acceptance
+
+Recommended decision, **PENDING APPROVAL**:
+
+1. Accept the first-hand Part H author-side OpenAI-assistance account together
+   with PR 199's separate-context, non-involvement and claude-fable-5-1 testimony
+   as sufficient ordinary evidence for the scoped independent-model criterion
+   under RFC rule 2. Record ESTABLISHED for this Part H pass on that basis,
+   not as model identity proved from Git. No exact-build logs are required.
+   This is a new scope-specific determination, not automatic application of the
+   earlier SR-C decision and not a claim about all historical authoring tools.
+2. Accept SR-B as CLOSED solely for its source-acquisition obstacle at the
+   exact PR 198 head, read together with the S-H1 qualification and S-H2 conflict
+   addendum here, relying on PR 199's GO and H.3's bounded conditions.
+
+The present record prepares those decisions but does not enact them. Historical
+PENDING review statements stay preserved. SR-C's Section 12 acceptance remains
+in force; SR-K/SR-G acceptance remains separate. The source-result candidate
+ledger stays 5 CLOSED / 0 PARTIAL / 9 INPUT_INCOMPLETE, with overall
+INPUT_INCOMPLETE and semantic NARROW. There is no assertion of five formally
+accepted holds. The other thirty-three originals are outside PR 199's scope.
+No merge, method adoption, public-discussion opening, ratification, release or
+website publication is included in the proposed decision.
