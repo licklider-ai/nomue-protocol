@@ -1,6 +1,6 @@
 # Release 4 QR and cancellation supplement
 
-Status: informative exploratory research; not adopted; independent review pending.
+Status: informative exploratory research; not adopted; successor repair review pending.
 Date: 2026-09-08. Prepared by the OpenAI-assisted research author in the current
 authoring context. This is not a separate-investigator review or a completion of
 the numerical commission. No production implementation is introduced.
@@ -34,10 +34,14 @@ these are supporting documentation, not closure of original-source access holds.
   balanced fixed-effects sums-of-squares partition and residual degrees of freedom.
 - [LAPACK Users' Guide, linear least squares](https://www.netlib.org/lapack/lug/node27.html):
   full-rank QR/LQ and separate rank-deficient driver families. This probe explicitly
-  constructs QR and solves its triangular system; it does not claim to execute DGELS.
+  constructs QR and uses a general linear solver on its R matrix; it does not
+  claim to execute DGELS or a specialized triangular solver.
 
 The exact coefficient route below derives from orthogonality using Python
-Fractions. Floating routes use sequential cell means and NumPy QR respectively.
+Fractions. The direct floating route uses Python's builtin `sum()` for both cell
+means and the contrast. On the disclosed CPython 3.12 interpreter its float sums
+use compensated accumulation, not a naive left-to-right addition loop. The QR
+routes call `np.linalg.qr` and then `np.linalg.solve` on the computed R matrix.
 They do not constitute two independent statistical software systems for unbalanced
 hypothesis semantics, and do not close the prior S6 hold.
 
@@ -122,11 +126,11 @@ The output corpus SHA-256 was
 `2371c1ef31a25816e09d08324718dd87329c5b6aa93076fd17ae772373fff55c`.
 Input projection changed 666 intended coefficients; 525 became exact zero.
 
-| Route                         | Nonzero coefficient error | Largest absolute error         | Nonzero result when exact coefficient is zero |
-| ----------------------------- | ------------------------: | ------------------------------ | --------------------------------------------: |
-| Sequential cell means         |                       144 | 3/45035996273704960            |                                             0 |
-| Uncentered QR                 |                       850 | 2340808394435/9007199254740992 |                                           462 |
-| First-observation-centered QR |                       885 | 1/1125899906842624             |                                           501 |
+| Route                          | Nonzero coefficient error | Largest absolute error         | Nonzero result when exact coefficient is zero |
+| ------------------------------ | ------------------------: | ------------------------------ | --------------------------------------------: |
+| CPython builtin-sum cell means |                       144 | 3/45035996273704960            |                                             0 |
+| Uncentered QR                  |                       850 | 2340808394435/9007199254740992 |                                           462 |
+| First-observation-centered QR  |                       885 | 1/1125899906842624             |                                           501 |
 
 Counts concern only the chosen effect axis in each case, not every coefficient or
 all floating operations. A tiny nonzero residual counts as an error; this table is
@@ -141,6 +145,59 @@ Two reproducible witnesses:
 - `n=3, offset=1, delta=2**-40, axis=A`: input coefficient preserved exactly,
   direct `0x1.0000000000000p-40`, QR `0x1.00002f0aa6583p-40`, centered QR
   `0x1.00027e3f8f0a3p-40`. Centering did not improve this coefficient's error.
+
+## Review intake and successor corrections
+
+The predecessor at `014824e482d0dccac696053176f834b0f5e45fb6`, blob
+`94cb0e0b86df2451b531660b913f8dd504f1ffed`, received the bounded content GO
+in [PR 208's fixed review](https://github.com/licklider-ai/nomue-protocol/blob/253fe14b801b861a23714e7491b6bb9e19951b2f/review-inputs/r4-qr-cancellation-supplement/REVIEW-RESULT.md).
+The review reports 0 BLOCKER, 1 SHOULD-FIX, 7 NICE-TO-HAVE, and
+SOURCE_ACCESS_INCOMPLETE. Its stated independence is model/provider and work-context
+independence; it does not claim independent human investigators. This author-side
+intake preserves those limits and makes no new steward determination.
+The later PR 205 head `42eb498473bdf6d318ac9f1180f71b08cc2e3422` added only
+the original review prompt, with the same supplement blob. That prompt remains
+historical; this successor requires the close-review prompt.
+
+SF-1 is repaired by relabeling and explaining the direct route, preserving the
+Python fence and original transcript. The interpreter is part of the operation
+definition. [Python 3.12's official documentation](https://docs.python.org/3.12/library/functions.html#sum)
+records a changed float-summation algorithm. PR 208 identifies it as Neumaier
+compensation and reproduces the original digest with CPython 3.12.11 under both
+NumPy 2.3.5 and 2.4.6. With CPython 3.11.15 it instead reports corpus SHA-256
+`ca4947956e5b97a25f96d8ac62a572726a187d6095133ea9409f9f6457f5be7a`
+and direct maximum error `1/7318349394477056`. The counts and both witnesses
+remain unchanged in those runs. The observed difference is in the Python direct
+route, not the QR rows. Agreement across those builds does not guarantee agreement
+on every BLAS build, interpreter, or later Python version.
+
+Optional findings are recorded below as observations of PR 208, Sections 6–8,
+not new author experiments or universal bounds:
+
+| Finding | Successor treatment                                                                                                                                                                                                                                                                                                                                                                               |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| N-1     | Name the actual calls: NumPy documents `qr` as using `dgeqrf`/`dorgqr` for real double inputs and `solve` as using `gesv`. The latter is a general LU-based solve on R, not `dtrtrs`.                                                                                                                                                                                                             |
+| N-2     | For exact-zero selected coefficients the reviewer reports maximum spurious magnitudes about 2.49e-4 uncentered and 5.9e-16 centered; the direct count is zero. Across the two non-selected axes, QR is nonzero in 1,672/1,890 instances and centered QR in 1,780/1,890. The review's naive-loop direct count of 10 is a different graph and is not substituted for this report's builtin-sum row. |
+| N-3     | The review finds inexact centering in 135/945 cases, affecting 1,440 observations. Exact truth continues to come from the original admitted inputs.                                                                                                                                                                                                                                               |
+| N-4     | This probe computes floating coefficients only. It computes no binary64 sum of squares, mean square, F statistic, or tail probability.                                                                                                                                                                                                                                                            |
+| N-5     | The original reviewed input and prompt-only successor are distinguished above. The repaired input will be pinned separately for close review.                                                                                                                                                                                                                                                     |
+| N-6     | For the review's specified transformations and comparisons, factor reversal preserves QR bits, factor exchange changes them in 926/945 cases, and in-cell permutation in 890/945. These finite probes do not establish a general invariance theorem.                                                                                                                                              |
+| N-7     | The review's default-thread and one-thread runs have matching digests within each tested interpreter. This is recorded as an observation; no universal threading threshold or dispensability of thread control is established.                                                                                                                                                                    |
+
+The author re-inspected the NIST and LAPACK HTML texts on 2026-09-08 through
+web extraction: the balanced partition, residual N-ab degrees of freedom, and
+full-rank versus rank-deficient solver-family descriptions are consistent with
+the supplement. The author also inspected the linked Python documentation and
+the [NumPy QR](https://numpy.org/doc/2.3/reference/generated/numpy.linalg.qr.html)
+and [solve](https://numpy.org/doc/2.3/reference/generated/numpy.linalg.solve.html)
+documentation, cross-checking the routine names against installed NumPy 2.3.5
+docstrings. These are author-side inspections, with no raw-source archive or
+immutable upstream hash, so PR 208's independent source-access gap remains open.
+
+The unchanged Python fence SHA-256 is
+`50a014324de141b32c284c5e5cbcc3cca9ea825ab6f8c7fe9e76d320b7c1bbfe`.
+SF-1 is author-repaired, pending independent close review. None of the optional
+recordings closes a programme hold or extends the predecessor GO to this successor.
 
 ## Author-side validation
 
@@ -168,7 +225,7 @@ missing cells, unequal weighting, overflow, underflow of squared effects, F tail
 near-critical decisions, intervals, permutations, and deployment admission require
 their own probes and proofs. No tolerance is inferred from the observed maximum.
 
-Next reviewable work is an exact-head independent review of this script and
-transcript, then extension to squared-effect/F projection and rank-deficient designs
+Next reviewable work is independent close review of this prose repair and the
+source-access supplement, then extension to squared-effect/F projection and rank-deficient designs
 under separately settled semantics. The earlier programme INPUT_INCOMPLETE and
 source-access holds remain open. Release 3 scope and numbering are unchanged.
