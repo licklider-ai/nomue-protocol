@@ -787,3 +787,53 @@ acceptances stand; SR-K/SR-G acceptance remains separate. The submitted Part I
 approval is not construed as a blanket release-gate decision. No merge, method
 adoption, public-discussion opening, numerical guarantee, release or website
 publication is enacted. R4's source-access findings and Dunn conflicts remain.
+
+## 16. Part J independent repair completion under the existing approval
+
+Date: 2026-09-08. The user supplied the completed PR 203 review following the
+explicit steward approval recorded in Section 15. This continuing OpenAI-assisted
+coordinator applies that existing approval to the authorized S-I1/S-I2 repair,
+now that its requested independent delta review has returned GO. This is not a
+new user statement or an independent review by the coordinator.
+
+Accepted repair input: PR 202, commit
+`1b2a1efa25d37b6cc140b788cbaab4f78e84ec2b`, sole parent
+`81835178ac49f189064e20d9babda219acfd7c5f`, result blob
+`94751f095f5b669c40520c84c40aaf3080eb552a` (303208 bytes). Independent basis:
+PR 203, commit `f30cd00d01666ec07f2573d428fed6c92689ba85`, sole parent equal
+to that repair input, tree `0d0b872b4e830978d3f9b3f0284a2a09a9f6cab2`, blob
+`1b50c6251466ebe0d02cae4111d5c685cbfb9efd` (43924 bytes), path
+`review-inputs/r3-srh-lsd-repair/REVIEW-RESULT.md`. Live PR metadata and fetched
+review commit, parent, tree and blob match. Both PRs remain draft and unmerged.
+
+**Repair disposition: ACCEPTED / S-I1 CLOSED on the transcription basis;
+S-I2 CLOSED.** PR 203 reports no regression, zero BLOCKER, zero SHOULD-FIX,
+and two NICE-TO-HAVE. Section 15 decision 3's independent repair-review condition
+is satisfied for this exact delta. The coordinator relies on the same approved
+ordinary-evidence approach, now using Part J's own OpenAI author testimony and
+PR 203 Section 9's claude-fable-5-1, separate-context and non-involvement record.
+For this bounded repair pass, model independence is recorded as ESTABLISHED
+under the standing approval; Part I's finding is not simply copied across.
+Git author identity is not evidence of model identity. Neither the actual human
+participants' distinctness nor exact serving-build logs are asserted or required.
+The reviewer's reserved steward determination and historical PENDING statements
+remain intact at their original objects.
+
+N-J1/N-J2 are deferred without moving the reviewed head. For a durable locator,
+the Section 15 approval input is commit
+`e17e825d0376be927da1541b1b565dd0fc194014`, blob
+`839953008ca72ed2934404ad20562a04fe5b35b8`. PR 203 Section 7 records N-J2's
+per-column k lists and rejected rounding hypothesis; PR 201 Section 7 remains
+their evidentiary source. No new result increment is needed for either optional
+finding. The table discrepancy itself remains unresolved, despite closure of
+its recording defect; no computed or printed table value is adopted.
+
+This intake reuses PR 203's prefix and validation results and PR 201's original
+inspection and computations. No PDF reread or numerical recomputation is claimed.
+C-H4's bounded acceptance stands; SR-H remains INPUT_INCOMPLETE, APR-13/14
+RES-ONLY, the candidate ledger 5/0/9, overall INPUT_INCOMPLETE and semantic
+NARROW. Other holds, R4 source gaps and Dunn numerical conflicts are unchanged.
+No merge, method adoption, public opening, numerical guarantee, website publication
+or release follows from this repair acceptance. The next substantive SR-H work
+is the already-collected Keuls and Ryan/Einot-Gabriel/Welsch source synthesis,
+with independent review commissioned only once that new result is concrete.
