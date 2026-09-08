@@ -2488,3 +2488,173 @@ or publish a release.
 
 RELEASE 3 PART H AUTHOR SOURCE WORK COMPLETE - SR-B CLOSED PROPOSED - INDEPENDENT
 PRIMARY REVIEW AND SR-B ACCEPTANCE PENDING - OVERALL INPUT_INCOMPLETE - NOT ADOPTED
+
+---
+
+## Part I. SR-H source work: protected and modified LSD
+
+**Status: author-side bounded source investigation; independent review pending.**
+Date: 2026-09-08. This continuing OpenAI-assisted investigator inspected the
+previously received Hayter (1986) original for C-H4, APR-13 and APR-14. This is
+not an independent review, an SR-H closure proposal or an implementation decision.
+
+### I.1. Fixed inputs, custody and scope
+
+Parent result: PR 198 at `f6d39534e85920a8331941126a6eb384244e34f1`, blob
+`b0679cbad8d384158b93ce414f8dfb7f2270ea74`. Its 283253-byte Parts A-H prefix
+is preserved exactly. The acquisition commission and fixed semantic comparison
+remain those pinned earlier. SR-B's scoped acceptance, with the S-H1/S-H2
+addendum, is recorded in continuation Section 14 at
+`03ce30ec67904e08da70d80afd1fd6de36909dad`, blob
+`bc16345d5058d0b5d122c71577008716db49a89f`. That acceptance is not applied to
+this new source work. Historical result and review verdicts remain unchanged.
+
+Supplier 26 / SRC-35: Anthony J. Hayter (1986), The Maximum Familywise Error Rate
+of Fisher's Least Significant Difference Test, JASA 81(396), 1000-1004;
+DOI `10.1080/01621459.1986.10478364`. Original SHA-256
+`33000fec094c81a4dbb581653d28d3a72bb8a2379a8baafbc1dafab1d6032eed`,
+582732 bytes, six PDF pages: publisher cover followed by pp.1000-1004.
+
+Consulted D.2/D.3 and the saved inventory before rechecking this original's hash
+and length. Used the previously supplied publisher-purchase ZIP copy; no external
+reacquisition. Read the extracted text of pp.1000-1004, including references,
+and page images of pp.1000-1003 for the model, equations, theorems, proof and
+Table 1. Supplier 26 is not newly counted; custody remains 35. The full extraction,
+PDF and images remain outside Git. This increment reviews neither the remaining
+SR-H papers nor all supplied originals.
+
+### I.2. Primary-source findings for C-H4
+
+| Topic                         | Direct pinpoint                                                | Source statement and scope                                                                                                                                                                                                                                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Population and family         | pp.1000-1001, Sections 1-2                                     | Independent normal observations in a fixed-effects one-way model with common variance; k >= 3 populations; all k(k-1)/2 two-sided pairwise equality tests. S squared estimates the common variance independently of the means and has scaled chi-square law with nu degrees of freedom, ordinarily sum(n_i)-k. Equal n_i defines balance.                 |
+| Protected LSD procedure       | p.1000, Section 1; p.1001 equation (2.2)                       | Stage 1 is an alpha-level overall ANOVA F test. Only after rejection does stage 2 perform the pairwise alpha-level t tests. Under the complete null, the false-rejection event is contained in the stage-1 rejection event, so FWER is at most alpha.                                                                                                     |
+| Original LSD worst-case error | p.1001 Theorem 1 equation (2.1); p.1002 equations (2.9)-(2.12) | For balanced designs and unbalanced k=3 designs, MFWER equals P(Q_(k-1,nu) > sqrt(2)*t_(alpha/2,nu)), with t denoting an upper-tail critical value. For general unbalanced k>=4 designs this expression is an upper bound, not a universal equality.                                                                                                      |
+| Worst-case construction       | pp.1001-1002 equations (2.3)-(2.11)                            | Partition the population means into equal-mean clusters. Separate distinct cluster means without bound so the omnibus gate rejects with probability tending to one. The extremal partition used in the proof has k-1 equal means and one separated mean.                                                                                                  |
+| Unbalanced qualification      | p.1002, paragraph after equation (2.12)                        | The paper additionally establishes equality when k-1 sample sizes are equal. Its claim that the bound is usually close for other imbalances cites external simulation/calculation; those cited studies are not independently inspected here and no uniform closeness guarantee is inferred.                                                               |
+| Modified LSD                  | pp.1002-1003, Section 3 and Theorem 2                          | Retain the stage-1 gate and replace the stage-2 t critical value by q_(alpha,k-1,nu)/sqrt(2), where q is the upper alpha Studentized-range quantile. MFWER equals alpha for balanced models and unbalanced k=3; it is at most alpha for unbalanced k>=4.                                                                                                  |
+| Proof dependencies            | p.1003, Appendix Theorems A.1/A.2                              | A.1 compares unequal-precision independent normal pairwise ranges with equal-precision ranges; its proof is referred to Hayter (1984), not reproduced. A.2 supplies the strict product inequality for grouped independent-normal ranges and includes its proof here. This pass inspects the 1986 statements and proof use, not the referenced 1984 proof. |
+
+The source's term MFWER concerns false pairwise rejections over configurations of
+population means. It does not mean that failing to reject establishes equality.
+Its language declaring means equal after a non-rejection is procedural wording,
+not a Protocol equivalence claim.
+
+### I.3. Investigator interpretation and implications
+
+These implications are investigator deductions, distinguished from I.2:
+
+- APR-13 is the protected two-stage procedure, not an unprotected collection of
+  t tests. The complete-null bound establishes weak control. The balanced-model
+  worst-case expression for k>3 can exceed alpha, so the fixed catalogue's
+  strong-FWER warning is supported. Do not reinterpret this as saying that
+  every parameter configuration, or every unequal-sample-size design, exceeds
+  alpha. For k=3, Q_(2,nu) has the distribution of sqrt(2)*abs(t_nu), so the
+  expression reduces to alpha under the source model.
+- The paper uses a maximum notation, but its separation argument approaches the
+  extremal error in a limit. Retain the worst-case/supremum interpretation rather
+  than claiming a finite mean vector necessarily attains that value.
+- Let T_ij = abs(mean_i-mean_j)/(S*sqrt(1/n_i+1/n_j)). Modified LSD rejects a
+  pair only if the omnibus gate rejects and T_ij exceeds
+  q_(alpha,k-1,nu)/sqrt(2). Equivalently the absolute difference exceeds
+  q_(alpha,k-1,nu)*S*sqrt((1/n_i+1/n_j)/2). This algebra translates the
+  printed critical value; it is not a new sourced procedure or certified code.
+- The range dimension is k-1, while the member set still contains all
+  k(k-1)/2 pairs. The dimension is not the number of pairwise hypotheses and
+  does not remove one observed group from the family.
+- Theorem 2 gives strong FWER control for the modified procedure under its
+  model, with exact worst-case equality only in the stated cases. Removing the
+  stage-1 gate is not licensed by this result. Common variance, normality and
+  the independent variance estimator do not carry over to arbitrary Welch pairs.
+- Source outputs are rejection decisions and worst-case error characterizations.
+  No adjusted-p algorithm, simultaneous confidence-interval contract, grouping
+  convention, numerical tolerance or production quantile implementation is
+  adopted. An adjusted-output or interval claim would need its own derivation
+  and review before use.
+
+### I.4. Limited author-side calculation and printed-table precision
+
+As a diagnostic, recomputed three cells of p.1002 Table 1 at alpha=.05 and
+nu=infinity, without using the Studentized-range distribution implementation.
+For r=k-1 and q=sqrt(2)_Phi_inverse(1-alpha/2), the normal-range CDF is
+r times the integral of phi(x)_(Phi(x+q)-Phi(x))^(r-1) over the real line.
+The following Python/SciPy 1.17.0 calculation truncates to [-12,12]; outside
+this interval the integrand is bounded above by r*phi(x). The quadrature error
+estimate is diagnostic, not a rigorous enclosure or a Protocol tolerance.
+
+```python
+from math import exp, pi, sqrt
+from scipy.integrate import quad
+from scipy.special import ndtr, ndtri
+
+q = sqrt(2) * ndtri(1 - .05 / 2)
+for k in (3, 4, 10):
+    r = k - 1
+    cdf, err = quad(
+        lambda x: r * exp(-x*x/2) / sqrt(2*pi)
+        * (ndtr(x+q)-ndtr(x))**(r-1),
+        -12, 12, epsabs=1e-12, epsrel=1e-12,
+    )
+    print(k, 1-cdf, err)
+```
+
+|   k | Printed Table 1 | Author diagnostic tail | Reported quadrature error |
+| --: | --------------: | ---------------------: | ------------------------: |
+|   3 |           .0500 |     .04999999999999993 |                  7.14e-13 |
+|   4 |           .1222 |     .12226630594424204 |                  3.84e-13 |
+|  10 |           .5715 |      .5715912453416663 |                  1.71e-14 |
+
+The k=4 and k=10 diagnostic values round to .1223 and .5716 at four decimals,
+not the printed .1222 and .5715. Preserve both representations. This pass has
+not established whether historical approximation, truncation or another cause
+explains those last-place differences; it has not found or searched for a formal
+erratum. The theorem, not the printed rounded table, is the characterization
+basis. No table value or substitute is adopted. This is an author-side check,
+not independent review, full-table validation or finite-nu numerical closure.
+
+### I.5. Entry impact, remaining source work and review handoff
+
+| Entry                | Current increment                                               | Remaining boundary                                                                                                                               |
+| -------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| APR-10 Newman-Keuls  | Saved C.3 Newman findings retained; no new content claim        | Keuls and the complete range step-down/error characterization still require detailed synthesis and review.                                       |
+| APR-11 Duncan        | Saved C.3 Duncan findings retained; no new content claim        | Carry the protection-level versus familywise-error distinction into the joint SR-H synthesis and review.                                         |
+| APR-12 REGWQ         | D.2 custody of Ryan, Einot-Gabriel and Welsch retained          | Exact variants, stagewise critical levels, guarantees and the mapping to the fixed combined entry remain to be synthesized from those originals. |
+| APR-13 protected LSD | C-H4 source characterization supported by Theorem 1 and I.2/I.3 | RES-ONLY retained; no implementation, unrestricted strong-FWER claim or numerical table adoption.                                                |
+| APR-14 modified LSD  | C-H4 source characterization supported by Theorem 2 and I.2/I.3 | RES-ONLY retained; retain the gate, model and k-1 range dimension; independent review pending.                                                   |
+
+C-H4 is now source-supported on the author side for this bounded characterization;
+that is not a new SR hold or an independent GO. **SR-H remains INPUT_INCOMPLETE**
+because required C-H1/C-H3 source work is still incomplete, even though copies
+have been received. Receipt and completion of content inspection are distinct.
+No independent content approval of Newman/Duncan or the other SR-H papers is
+inferred from this one-paper pass.
+
+All fourteen H.5 dispositions are retained: five CLOSED candidates, zero PARTIAL,
+nine INPUT_INCOMPLETE. Overall INPUT_INCOMPLETE and semantic NARROW remain.
+SR-B/SR-C accepted research dispositions are not method adoption; SR-K/SR-G's
+separate acceptance question is unchanged. No source restriction is relaxed.
+
+Reopen C-H4 before a change to the gate, tails, family, balance/variance model,
+scale estimator, range dimension, or claimed output. Any future numerical use of
+Table 1 requires resolving the recorded precision discrepancies and satisfying
+its own numerical evidence requirements. A complete proof audit of the unequal-size
+comparison would also require the cited Hayter (1984) proof; this pass does not
+claim that audit. R4's existing source gaps and Dunn-example conflicts remain.
+
+Independent reviewer: pin this increment's exact head and sole parent; verify
+that Parts A-H remain a 283253-byte prefix and that supplier 26 matches I.1/D.2.
+Directly inspect Hayter (1986) at the stated printed pinpoints, assess C-H4,
+Theorems 1/2, exact-versus-bound distinctions, the gate and model restrictions,
+the proof-dependency disclosure, the diagnostic integral and the table differences.
+Do not rely on the author check as an independent oracle. Reuse earlier identities
+with attribution, without repeating unrelated source reviews. The other 34 supplied
+originals and C-H1/C-H2/C-H3 content verdicts are outside this bounded pass.
+Record ordinary model/context/non-involvement evidence without exact-build-log
+requirements. Save a separate English review at
+`review-inputs/r3-srh-lsd-primary/REVIEW-RESULT.md` on an unused neutral branch
+from the exact head; run format check, Markdown lint, direct validator and diff
+check and open a draft review PR. Do not rewrite this result or prior reviews,
+merge, accept SR-H, open discussion, adopt a method or publish a release.
+
+RELEASE 3 PART I C-H4 AUTHOR SOURCE WORK COMPLETE - INDEPENDENT REVIEW PENDING -
+SR-H AND OVERALL INPUT_INCOMPLETE - NO METHOD OR NUMERICAL VALUE ADOPTED
