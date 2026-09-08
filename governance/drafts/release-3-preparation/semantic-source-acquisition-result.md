@@ -2658,3 +2658,90 @@ merge, accept SR-H, open discussion, adopt a method or publish a release.
 
 RELEASE 3 PART I C-H4 AUTHOR SOURCE WORK COMPLETE - INDEPENDENT REVIEW PENDING -
 SR-H AND OVERALL INPUT_INCOMPLETE - NO METHOD OR NUMERICAL VALUE ADOPTED
+
+## Part J. Part I review repairs: table discrepancy scope and formula display
+
+### J.1. Scope, provenance and preserved input
+
+Date: 2026-09-08. This continuing OpenAI-assisted author appends a bounded
+repair after the user's explicit steward approval of PR 201's submitted matters.
+Parts A–I are preserved byte-for-byte: 297669 bytes at
+`81835178ac49f189064e20d9babda219acfd7c5f`, result blob
+`8774beb8d1736baa8637ef60945d53834a0affb0`. This increment supplies no new
+independent review and does not rewrite the historical Part I status line.
+
+Independent review basis: PR 201, commit
+`92867850f00d9d3a0f0f62b527707cb198196f51`, review blob
+`39232d73052774cabeab6c090c29deed64b6126c`, path
+`review-inputs/r3-srh-lsd-primary/REVIEW-RESULT.md`. Its GO is bounded to C-H4;
+S-I1/S-I2 concern record precision and leave the disposition unchanged. The
+steward's Part I acceptance and scoped independence determination are recorded
+separately in continuation Section 15. That determination does not establish
+independence for the present author-side Part J repair or alter past PENDING
+statements. The exact continuation identity is supplied in this PR's handoff.
+
+### J.2. S-I1: expanded table-discrepancy record
+
+I.4 reports only its actual three-cell author diagnostic. It is not a complete
+description of the discrepancies in Hayter (1986), printed p.1002 Table 1.
+PR 201 Section 7 extends the comparison to all 54 cells, using a separate
+mpmath computation of the infinite-df expression. Its reported results are:
+
+| alpha | Cells differing at four-decimal rounding | Approximate largest absolute computed-minus-printed difference | Direction among differing cells |
+| ----- | ---------------------------------------- | -------------------------------------------------------------- | ------------------------------- |
+| .01   | 16 of 18                                 | .00065 (k=20)                                                  | printed below computed          |
+| .05   | 14 of 18                                 | .00013 (k=15)                                                  | printed below computed          |
+| .10   | 8 of 18                                  | .00012 (k=8)                                                   | printed above computed          |
+
+Thus 38 of 54 cells differ, with a column-dependent pattern. Future work cannot
+treat the issue as only two last-place differences. This paragraph supersedes
+that limited reading of I.4, while preserving the earlier diagnostic's actual
+scope and outputs. The expanded observations and calculations belong to the
+independent reviewer; this repair has not rerun them or reinspected the PDF.
+
+The cause is not established. No formal erratum, replacement values or guaranteed
+three-decimal accuracy follows from the diagnostic. The printed table remains
+preserved and is not adopted as numerical authority. Any future numerical use
+requires separately reviewed calculations and resolution of the discrepancy;
+neither the quadrature error estimates nor these observed differences become
+Protocol tolerances. The theorem-based characterization remains unchanged.
+
+### J.3. S-I2: literal multiplication in the I.4 prose formula
+
+The two prose expressions in I.4 lost multiplication signs through Markdown
+emphasis formatting. Read them as follows, matching the unchanged Python code:
+
+- `r = k - 1` and `q = sqrt(2) * Phi_inverse(1 - alpha/2)`.
+- The normal-range CDF is the integral, over the entire real line, of
+  `r * phi(x) * (Phi(x + q) - Phi(x))**(r - 1)`.
+
+Here `phi` and `Phi` are the standard normal density and CDF. Code spans preserve
+the literal multiplication signs. This corrects presentation only: I.4's code,
+transcript, integration truncation and diagnostic limitations are unchanged.
+
+### J.4. Disposition and bounded repair-review handoff
+
+S-I1/S-I2 are addressed on the author side; independent close-only review of this
+delta is pending. PR 201's seven optional findings remain carried forward rather
+than silently adopted. C-H4's accepted scope stays bounded to Part I read with
+these precision corrections. SR-H remains INPUT_INCOMPLETE, APR-13/14 RES-ONLY,
+and the candidate ledger 5 CLOSED / 0 PARTIAL / 9 INPUT_INCOMPLETE. Overall
+INPUT_INCOMPLETE, semantic NARROW, the 35-original custody count, all other holds,
+R4 source gaps and Dunn numerical conflicts remain unchanged. No method, table
+value, implementation, numerical guarantee, public opening or release is adopted.
+
+The independent repair pass checks the exact new head and sole parent, the
+297669-byte prefix, J.2 against PR 201 Sections 7/10, J.3 against I.4's code,
+attribution, scoped approval, and unchanged limits and ledger. Reuse PR 201's
+primary-source findings explicitly; no new original inspection or 54-cell
+recalculation is needed for this transcription/presentation-only scope. If a
+source claim is reopened, request only the necessary original and record the
+access limitation rather than claiming inspection. Save an English review at
+`review-inputs/r3-srh-lsd-repair/REVIEW-RESULT.md` on a new neutral branch
+from the exact repair head, and open a draft review PR targeting the repair
+branch. Do not change this result, historical reviews or acceptance records.
+Report actual format, Markdown lint, direct-validator and diff-check results,
+and disclose context/model independence without exact-build-log requirements.
+
+RELEASE 3 PART J REPAIRS RECORDED - INDEPENDENT DELTA REVIEW PENDING -
+SR-H AND OVERALL INPUT_INCOMPLETE - NO METHOD OR NUMERICAL VALUE ADOPTED
