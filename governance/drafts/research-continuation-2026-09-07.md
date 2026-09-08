@@ -715,3 +715,75 @@ INPUT_INCOMPLETE, semantic NARROW, the existing R3-CAND classifications and R4's
 source-access findings are unchanged. No merge, public-discussion opening,
 method adoption, implementation guarantee, ratification, release or website
 publication is authorized by this decision.
+
+## 15. Steward acceptance of the bounded Part I result and review intake
+
+Date: 2026-09-08. After supplying PR 201's independent review, the user explicitly
+approved the submitted matters as steward and instructed the coordinator to proceed.
+This continuing OpenAI-assisted author/coordinator records that decision and the
+authorized successor repairs; it is not an independent reviewer.
+
+The accepted research input is PR 200 at
+`81835178ac49f189064e20d9babda219acfd7c5f`, result blob
+`8774beb8d1736baa8637ef60945d53834a0affb0` (297669 bytes). The independent
+basis is PR 201, commit `92867850f00d9d3a0f0f62b527707cb198196f51`, sole parent
+equal to that input, tree `869d21981c28706206d71037859c0733b71a9e61`, review blob
+`39232d73052774cabeab6c090c29deed64b6126c`, at
+`review-inputs/r3-srh-lsd-primary/REVIEW-RESULT.md`. Live PR metadata and fetched
+Git objects matched these identities during intake. Both PRs remained draft and
+unmerged. Content verdict: GO, zero BLOCKER, two SHOULD-FIX, seven NICE-TO-HAVE.
+
+### Approved decisions and their limits
+
+1. **Part I scoped model independence: APPROVED / ESTABLISHED.** The steward
+   relies on the first-hand OpenAI author-assistance account and PR 201's recorded
+   claude-fable-5-1 review-side account, context separation and non-involvement
+   statement as sufficient ordinary evidence under RFC rule 2. This is a new
+   Part I determination, not an automatic extension of Section 14, a Git proof
+   of model identity, or an assertion that the human participants are different
+   people. No exact-build logs are required. Historical PENDING statements stay
+   preserved.
+2. **C-H4 bounded research characterization: ACCEPTED**, at the exact Part I
+   input above, read together with the corrections below. This covers the
+   source-supported protected/modified LSD characterization and its stated
+   model, gate and proof-dependency limits. It is not acceptance of a numerical
+   table, a quantile implementation, or the whole SR-H hold as CLOSED.
+3. **S-I1/S-I2 successor recording: APPROVED.** Preserve Parts A–I and append
+   an explicit correction; obtain a bounded review of that new delta before
+   treating its author-side repair proposals as independently closed.
+
+### Corrections authorized for the successor
+
+S-I1: PR 201 Section 7 reports a whole-table diagnostic, extending I.4's three
+cells. Of 54 cells in Hayter (1986) p.1002 Table 1, 38 differ from the rounded
+infinite-df expression: 16/18 in the .01 column, 14/18 in .05, and 8/18 in .10.
+The respective reported maximum absolute differences are approximately .00065,
+.00013 and .00012; differing printed cells are below the computation in .01/.05
+and above it in .10. This is a table-wide discrepancy pattern, not merely a
+two-cell issue. These are the independent reviewer's observations, not new
+coordinator calculations or a certified accuracy bound. No cause, formal erratum,
+replacement cell, or three-decimal accuracy guarantee is established. Preserve
+the original values; any future numerical use needs its own reviewed calculation
+and resolution of the discrepancy.
+
+S-I2: the intended prose expressions, matching I.4's unchanged code, are
+`r = k - 1`, `q = sqrt(2) * Phi_inverse(1 - alpha/2)`, and the integral over the
+real line of `r * phi(x) * (Phi(x + q) - Phi(x))**(r - 1)`. Multiplication signs
+are literal inside code spans. This repairs presentation, not the algorithm or
+its transcript.
+
+Carry N-I1 through N-I7 with PR 201's exact locators. In particular, N-I2 points
+to Dunnett (1980), JASA 75:789–795, SRC-08, rather than supplier 28's unequal-
+variance paper. N-I3/N-I4 distinguish the already recorded SRC-06 (Hayter 1984)
+from a new acquisition request and limit the external proof dependency to the
+unbalanced k >= 4 inequalities. No new original inspection or new proof audit is
+claimed here. Other optional findings remain deferred; none enlarges the
+accepted characterization automatically.
+
+SR-H remains INPUT_INCOMPLETE; APR-13/14 remain RES-ONLY. The candidate ledger
+remains 5 CLOSED / 0 PARTIAL / 9 INPUT_INCOMPLETE, overall INPUT_INCOMPLETE,
+semantic NARROW, with 35 collected originals. SR-B/SR-C's recorded limited
+acceptances stand; SR-K/SR-G acceptance remains separate. The submitted Part I
+approval is not construed as a blanket release-gate decision. No merge, method
+adoption, public-discussion opening, numerical guarantee, release or website
+publication is enacted. R4's source-access findings and Dunn conflicts remain.
