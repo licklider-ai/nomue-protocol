@@ -3794,3 +3794,117 @@ limits, then open a draft PR against the author branch. Run format:check,
 lint:markdown, the direct validator and diff check. Verify the final Git objects
 and live target head. Do not mirror to a session-labelled branch, change fixed
 results, commit PDFs/extracts, merge, formally close holds, adopt or release.
+
+## Part Q — Approved SR-F source acceptance (2026-09-08)
+
+### Q.1 Approval and fixed evidence
+
+The steward explicitly approved all three decisions presented after PR #222:
+the bounded R-1 adjudication, the scoped independence determination, and SR-F
+source-completion acceptance. This records that approval from the current user
+conversation on 2026-09-08. It is continuing OpenAI-assisted author/coordinator
+work recording the steward's decision, not a new independent review.
+
+The accepted research input is PR #221 head
+`c6ba9c923d142e0dacbb62ea20009cbd0ecb34c5`, result blob
+`ed6c56a96592fdb9bded45ad8fdf10477eb36c11` (383051 bytes; SHA-256
+`33eca71fe6deb33da001f85c8a847f45bb39cf03942efb1eb95626e6bf465b1a`).
+All 383051 bytes of Parts A–P are preserved, including historical pending states.
+The commission remains blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7`;
+the fixed semantic input remains blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`.
+
+The independent evidence is:
+
+- PR #220, commit `ca88a1550165dc9b2f5f16541e91d92d1c79ef82`,
+  `review-inputs/r3-srf-primary-research/REVIEW-RESULT.md`, blob
+  `55fe509ed5a87b263e26d0145983f1caa3d2912f`: four-source review and direct
+  adjudication, especially Sections 6, 7.3 and 13.
+- PR #222, commit `eb9edc50e776bafb856273c76c21ff5d4bb2e876`, sole parent
+  the accepted research head, tree `c8dc7c7b965c4923fbb601a29dd0de4d53be6b69`,
+  `review-inputs/r3-srf-review-repair/REVIEW-RESULT.md`, blob
+  `75e9a177a2b8ca9bd6c139462e64623d97b0cea6` (30613 bytes; SHA-256
+  `dfc4f84a23a21db32359edd59b0e7b82c8de53cf638ab67f4a8d50310762e6ce`):
+  content GO, S-1/S-2 independently CLOSED, no regression, zero BLOCKER,
+  one editorial SHOULD-FIX and two optional observations.
+
+PR #222 describes the former PR base at review time. PR #221 was subsequently
+retargeted to `research/r3-source-receipt-42-20260908` at
+`1da537aba29bed6bf65efc1a6e97ebdc2b1f6725`, consolidating Parts O/P after
+PR #216 was closed without merge. The accepted commit's sole parent remains
+`4ce988231330f5702a7d3d8a352b01fac575191f`; a PR base is not its commit parent.
+No old review is rewritten to update that historical description.
+
+### Q.2 Three enacted decisions
+
+1. **R-1 adjudication accepted.** Ground the GT2 characterization in Hochberg's
+   originating Theorem 3.1 and (3.2), with coverage at least `1-alpha` under
+   the stated model. Retain the later printed equality in Genizi–Hochberg (1.7)
+   as a discrepancy. Do not assert generic exact coverage or a published erratum
+   for that sign. Apply the APR-06 narrowing in P.3. The direct primary-source
+   adjudication in PR #220 and its assessment in PR #222 Section 7 are the
+   RFC rule 5 basis; the corrigendum is not a proof of Kramer coverage.
+2. **Scoped RFC rule 2 independence accepted as ESTABLISHED.** For Parts O/P
+   and reviews #220/#222 only, the steward relies on the disclosed OpenAI
+   author assistance, the reviewers' `claude-fable-5-1` service testimony, and
+   their context/non-involvement disclosures. This is a determination on ordinary
+   evidence, not Git verification of serving models or proof that the human
+   participants are different people. Non-blind reading and shared reviewer
+   model lineage remain disclosed. No exact-build log is required and no past
+   PENDING record is changed or generalized to another scope.
+3. **SR-F ACCEPTED AS CLOSED for source completion only.** The named
+   source-acquisition obstacle is accepted as removed on the fixed evidence
+   above. APR-05/06 remain `RES-ONLY`. This accepts neither an implementation
+   nor numerical constants, generic optimality, arbitrary sample-size patterns,
+   pointwise superiority, a public opening, or a release. Broader claims,
+   new material source conflicts or numerical reuse outside the reviewed bounds
+   reopen the relevant research or numerical review.
+
+### Q.3 Editorial follow-up and evidence limits
+
+For PR #222 F-1, replace the interpretation of P.4's phrase "three unrelated
+items" with: **The three items on one corrigenda page are not counted as three
+PDFs.** Two of those three items are unrelated to SR-F. The inventory remains
+42 numbered originals plus one unnumbered supplementary corrigendum, or 43
+artifacts. This is an author editorial correction applying the review's exact
+intended sense; no new independent CLOSED verdict is claimed for this addendum.
+
+For F-2, custody and source scope in this acceptance rely on PR #220 Sections
+4–5. The earlier author PDF inspection remains conversation testimony, not an
+invented earlier Git record. F-3's service-state observation is preserved without
+claiming a cause. The numerical/label observations in P.4 remain constraints
+before reuse, not adopted replacement values or formal errata.
+
+No PDF was reread and no scientific calculation was rerun for this administrative
+acceptance. Prior source and numerical checks are reused with attribution. Local
+validation and saved identities for this addendum are reported in its PR body.
+
+### Q.4 Current ledger and next bounded work
+
+| Source-result disposition | Items                                        | Count |
+| ------------------------- | -------------------------------------------- | ----- |
+| CLOSED                    | SR-B, SR-C, SR-F, SR-G, SR-K, SR-L           | 6     |
+| PARTIAL                   | SR-H                                         | 1     |
+| INPUT_INCOMPLETE          | SR-A, SR-D, SR-E, SR-I, SR-J, RSM-01, RSM-02 | 7     |
+
+This is the source-result ledger, not a list of six formally accepted holds.
+This decision newly accepts SR-F only. Earlier SR-B/SR-C limited acceptances,
+SR-K/SR-G separate acceptance questions, SR-L's inherited status, and SR-H's
+outstanding proposals are not expanded by it. Overall `INPUT_INCOMPLETE`,
+`SOURCE_SET_READY` false, `NARROW`, and the separate R4 state remain.
+
+Next substantive author research is SR-I, using already received suppliers
+34 (Games–Howell 1976), 27 (Tamhane 1979), and 28 (Dunnett 1980b, pp.796–800).
+Reuse custody identities from N.2 and D.2 before any rereading. Bound the pass to
+C-I1/C-I2 and HET-01/02/03: construction, assumptions, degrees of freedom,
+critical-value basis, and the distinction between simulation evidence and
+analytic control. Preserve current classifications until separately justified.
+Supplier 28 is not Dunnett's different 1980 paper at pp.789–795. A substantive
+successor will carry its own exact-head independent-review prompt and required
+three-source packet; this administrative record does not commission a redundant
+SR-F primary review or claim SR-I has already been investigated.
+
+Unavailable suppliers 38/44/45/46 remain explicit gaps in their own routes.
+They do not block this SR-I pass. Main integration of the wider R3 chain remains
+separate from intake into its research aggregation branch. No method adoption,
+public discussion opening, publication or release is enacted here.
