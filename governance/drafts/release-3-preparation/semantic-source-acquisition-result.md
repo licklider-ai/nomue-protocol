@@ -3371,3 +3371,426 @@ SOURCE_SET_READY false, semantic NARROW and method classifications unchanged.
 Continuation Section 17's bounded acceptance and independence proposals remain
 unenacted. No merge, hold closure, method adoption, R4 closure, public opening,
 website publication or release is enacted by this intake.
+
+## Part O — SR-F primary-source research and correction dependency (2026-09-08)
+
+### O.1 Fixed input, custody and inspection
+
+This is continuing author-side research with OpenAI assistant support, not an
+independent review or a steward acceptance. It appends to PR #215 head
+`1da537aba29bed6bf65efc1a6e97ebdc2b1f6725`, result blob
+`60e680aefe64969b29a255ba62cfe47a92345463` (353310 bytes; SHA-256
+`07b9dd6d3473170e82bf95606dcc974a2f17920a74c9f28101e94334797ba2b7`).
+All Parts A–N bytes are preserved. The commission remains at
+`f39100161cb45de15767bdb19ed54aba9489b41a`, blob
+`3c7ddcc696f0c284213f7efe0da68e747bc238d7`; the fixed semantic result remains at
+`7bd9c5ab854777c3e99e624d9d2ed62731228852`, blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`.
+
+Saved custody identities were checked before reinspection. These are existing
+receipts, not three additional papers:
+
+| Supplier | Source                                                       |   Bytes | PDF pages | SHA-256                                                            |
+| -------- | ------------------------------------------------------------ | ------: | --------: | ------------------------------------------------------------------ |
+| 37       | Hochberg (1974), Journal of Multivariate Analysis 4, 224–234 |  561598 |        11 | `4eebb9ab9e4e7c133bdc7bff7130dda98b762e498cca0ce1738680be2bb539b4` |
+| 23       | Genizi–Hochberg (1978), JASA 73, 879–884                     | 1123267 |         7 | `21938051d7bcfd1d56babe21280976d3918b69d8ffdff4ec646c18ed3b6fe2b0` |
+| 32       | Stoline (1981), The American Statistician 35, 134–141        |  910960 |         9 | `65c2ce23d2dc5adb105af5d07f6060ebc4c07c9b908dc71256abcc2b64665cb4` |
+
+The supplied local PDFs matched these hashes, byte counts and page counts. The
+last two include a publisher cover. Complete extracted text was read for all
+three. Decision-bearing page images were inspected for Hochberg pp.225–226 and
+228–229; Genizi–Hochberg pp.879–883; Stoline pp.136–137 and 140. Other pages were
+read as extraction only, not claimed as image-verified. PDFs, extracts and images
+remain outside Git. Inspection date: 2026-09-08.
+
+### O.2 Claim-to-source results
+
+| Claim        | Direct primary-source support                                                                                                                                                                                                                                                                                            | Boundary                                                                                                                                                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| C-F1; APR-05 | Hochberg pp.225–226 defines normal estimators with covariance `sigma^2 B`, known `B`, and an independent chi-square scale estimator. Theorem 3.1, pp.228–229, gives simultaneous all-contrast coverage at least `1-alpha`; (3.2) gives its pairwise event with Studentized maximum modulus (SMM).                        | This is a common unknown scalar variance with known covariance shape. Unequal estimator variances do not permit arbitrary unknown population variances. The pairwise differences can be dependent.                 |
+| C-F2; APR-06 | Genizi–Hochberg p.879 (1.4)–(1.5) defines `T(Q)` with `QQ'=B`, using Studentized augmented range (SAR). P.880 (1.6) gives the contrast-preserving restriction `Q1=lambda*1`, `lambda>0`, with Studentized range (SR). Pp.881–883, Sections 3/3.1/3.2, give the two-sample-size construction and its comparison criteria. | The Section 3 optimum is conditional on two explicit restrictions. The reported average-width advantage over GT2 is not pointwise dominance or a theorem for all imbalance. A correction dependency remains (O.4). |
+| C-F3         | Stoline pp.136–137 compares TK, GT2, T-prime and GH, reports the 1979 retraction, and limits GH to two distinct sample sizes. P.140 identifies the corrigendum.                                                                                                                                                          | This is the paper's historical assessment. Its contemporary TK conjecture and recommendations are not substituted for later proof or Protocol adoption.                                                            |
+
+**Source facts about outputs and variants.** For GT2 let `r=k(k-1)/2` and
+`d_ij=b_ii+b_jj-2*b_ij`. Write `m(r,nu,alpha)` for the upper-alpha SMM critical
+value in the source's convention. The pairwise half-width in (3.2) is
+`s*sqrt(d_ij)*m(r,nu,alpha)`. The target is all pairwise differences, extended to
+all contrasts by (3.1); the source gives intervals, not a stepwise rejection
+ordering. It requires neither a selected subset nor sorted observed means.
+
+For GH, distinguish all-linear-function `T(Q)` using SAR from contrast-only
+`T_c(Q)` using SR. In Section 3, `m1` treatments have size `n1`, the other `m2`
+have size `n2`, and `n1>n2`. The optimization preserves minimum within-size-group
+pairwise widths and equal widths for all cross-size-group pairs, then minimizes
+the latter. P.882 reports a computer search over `3 <= m1+m2 <= 10` and
+`b=n1/n2=1.1(.1)25`; the optimizing matrices observed in that search were
+contrast-preserving. This observation does not prove a universal CSP optimizer.
+Section 2.6 explicitly labels the broader optimality proposition a conjecture.
+The within-group `T(Q)` intervals coincide with the corresponding `T(D_a)`
+intervals under those restrictions; using SR for `T_c(Q)` rather than SAR further
+changes the comparison. The paper supports no-longer pairwise intervals than
+`T(D_a)` in this stated construction, with strict improvement for some pairs.
+
+Stoline p.137 reverses the sample-size indexing: its first block has the smaller
+size `n`, the other `n*u`. Do not copy GH table indices into that notation without
+mapping the groups. Stoline's wider optimality wording and report of an
+unpublished Felzenbaum–Hochberg proof are not direct inspection of that proof.
+The foundational Hochberg (1975), JRSS B 37, 426–433, is cited by these papers;
+it was not inspected here. No claim is made about its full proof or every GT3
+variant. It is a conditional follow-up if a later claim needs more than the
+explicit constructions and author derivations recorded here.
+
+### O.3 Author derivation and numerical diagnostic
+
+These are investigator derivations, separate from the preceding source facts.
+For a nonzero contrast `c`, put `A=sum(c_i for c_i>0)=sum(abs(c_i))/2`.
+Then `c'e = sum(c_i*(-c_j)*(e_i-e_j), i positive, j negative)/A`.
+The triangle inequality on the simultaneous pairwise event gives precisely the
+weighted half-width of (3.1). The zero contrast is identically zero and does not
+use the division by `A`. For positive difference variances, inverting these
+intervals gives a single-step strong-FWER bound under the same model, since any
+false rejection of a true pairwise equality lies outside that simultaneous
+coverage event. This does not create an adopted hypothesis-testing interface.
+
+The reference SMM variates have independent standard-normal numerators and one
+shared independent scale `S=sqrt(chi_square_nu/nu)`. Their CDF is
+`E[(2*Phi(c*S)-1)^r]`. It is not the maximum of independent Student t variables,
+and it is not Studentized range. This identity supplies a research calculation,
+not a numerical accuracy certificate or Protocol kernel. The all-contrast
+interpretation of `T_c(Q)` likewise follows by putting `e=QZ` and observing that
+`Q'c` is a contrast when `Q1=lambda*1`; SR bounds its linear form by half its L1
+norm. General linear forms instead require the augmented range bound. These
+arguments do not prove the optimum over all choices of `Q`.
+
+The following diagnostic was run with Python 3.12.13 and SciPy 1.17.0. The
+chi-square mixture integration and SR implementation are distinct formulas in
+one library ecosystem, not independent implementation validation. The `r=1`
+comparison is a useful distribution check, not proof of accuracy for all inputs.
+Printed inputs are deliberately retained in the final two lines.
+
+```python
+import math
+from scipy.integrate import quad
+from scipy.optimize import brentq
+from scipy.special import erf
+from scipy.stats import chi2, studentized_range, t
+
+
+def smm_cdf(c, r, nu):
+    return quad(
+        lambda x: erf(c * math.sqrt(x / nu) / math.sqrt(2)) ** r
+        * chi2.pdf(x, nu),
+        0,
+        math.inf,
+        epsabs=1e-11,
+        epsrel=1e-11,
+    )[0]
+
+
+m = brentq(lambda c: smm_cdf(c, 3, 30) - .9, 1, 4, xtol=1e-12)
+q = studentized_range.ppf(.9, 3, 30)
+a = 2.207 * math.sqrt(1 / 17 + 1 / 8)
+b = 2.207 * math.sqrt(2 / 8)
+c = 3.017 * 1.3157 / math.sqrt(17)
+d = 3.017 / math.sqrt(8)
+print(format(m, '.12f'), format(q, '.12f'))
+print(format(brentq(lambda c: smm_cdf(c, 1, 30) - .9, 1, 4)
+             - t.ppf(.95, 30), '.3g'))
+print(*[round(x, 9) for x in (a, a, b, (2*a+b)/3)])
+print(*[round(x, 9) for x in (c, c, d, (2*c+d)/3)])
+```
+
+Observed numerical values:
+
+```text
+2.206681092596 3.017233892894
+1.13e-14
+0.946243444 0.946243444 1.1035 0.998662296
+0.962737136 0.962737136 1.066670579 0.997381617
+```
+
+These reproduce the rounded critical values 2.207 and 3.017 and the p.883
+example's half-widths. Its GH cross-group half-widths are larger than GT2's,
+while its same-size half-width is smaller. The printed average 0.9986 for GT2
+is not ordinary four-place rounding of either the printed four-place component
+values or these reconstructed values (both round to 0.9987); it is retained,
+not silently corrected. The displayed averages are half-widths even though the
+paragraph calls them interval lengths. Doubling both means leaves the ordering
+unchanged. No table-wide reproduction or claimed erratum follows from this check.
+
+### O.4 Material conflicts and remaining source dependency
+
+1. **Coverage sign.** Genizi–Hochberg p.880 (1.7) prints equality to `1-alpha`
+   while calling GT2 conservative. Hochberg pp.228–229 states at least coverage
+   and prints `>=` in (3.2). Both images were checked. Use the latter bounded
+   characterization for APR-05; do not infer generic exact coverage from (1.7).
+   This is an observed cross-source discrepancy, not a claim about a published
+   correction of that sign.
+2. **Kramer assertion and corrigendum.** Genizi–Hochberg p.879 claims that
+   Kramer's procedure does not control the experimentwise error; p.882 calls it
+   inappropriate based on the preceding comparison. Stoline p.136 explicitly
+   reports that the nonconservatism statement was retracted in 1979. Its p.140
+   bibliography identifies Genizi–Hochberg (1979), Corrigenda, JASA 74, 744.
+   Inspection of the primary corrigendum is still missing. We do not infer its
+   precise replacement language or whether it also addresses (1.7).
+3. **Class optimality is not coverage impossibility.** Nonattainment of the
+   smallest widths within `T(Q)` does not prove that another procedure lacks
+   coverage. That logical distinction is investigator analysis. The historical
+   negative Kramer claim is not accepted as evidence against modern TK coverage.
+4. **Optimality and numerical scope.** The explicit constraints, the finite
+   optimization search, the broader CSP conjecture and the average-width table
+   are separate evidence types. A general optimizer, certified SMM/SAR critical
+   values, table constants, or universal dominance would require additional
+   analysis and independent numerical review. None is selected here.
+
+Acquisition log for the newly identified correction: on 2026-09-08, web search
+located the archival issue listing
+<https://www.jstor.org/stable/i314251>, identifying the authors, title, p.744 and
+<https://doi.org/10.2307/2287029>. Opening the item
+<https://www.jstor.org/stable/2287029> returned a non-retryable access error.
+A second search did not supply the correction text. The issue metadata is
+bibliographic evidence only; no correction PDF was acquired, hashed or read.
+This newly identified dependency has no assigned supplier number and does not
+change the received total of 42. It is distinct from unavailable 38/44/45/46.
+
+### O.5 Disposition and forward work
+
+**SR-F remains `INPUT_INCOMPLETE`.** C-F1 now has direct construction/coverage
+support with the stated narrowing; C-F2 has substantial construction and
+comparison support; C-F3 has direct historical-status support. But the material
+1979 correction text has not been inspected. The commission's required-source
+rule is applied rather than turning three assigned papers read into automatic
+`CLOSED`. No independent review of this Part O has yet occurred.
+
+| Entry  | Effect of this research                                                                                                              | Retained classification |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| APR-05 | GT2 model, interval target and at-least coverage characterized; generic exact-coverage reading excluded                              | `RES-ONLY`              |
+| APR-06 | Two-size, constrained construction and width comparison characterized; correction and any broader optimality claim remain unresolved | `RES-ONLY`              |
+
+The remaining ledger is inherited unchanged: SR-B/C/G/K/L `CLOSED` candidates,
+SR-H `PARTIAL`, and SR-A/D/E/I/J plus RSM-01/02 `INPUT_INCOMPLETE`. With SR-F,
+that is **5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE**, not a formal acceptance
+inventory. Overall `INPUT_INCOMPLETE`, `SOURCE_SET_READY` false, `NARROW`, all
+previous classifications, old `PENDING` records and the 42-paper receipt count
+remain unchanged. No merge, hold acceptance, method adoption, public discussion,
+publication, R4 closure or release occurs.
+
+Unavailable papers do not halt independent work: SR-I can use the received
+Games–Howell, Tamhane and Dunnett sources; SR-D can examine the received graphical,
+fallback and gatekeeping papers with missing texts named; SR-J can inspect
+Dunnett–Tamhane/Hsu while keeping Naik unavailable; Ge does not silently replace
+Westfall–Young for RSM-01. SR-A/SR-E historical attribution gaps also remain
+explicit. This is sequencing, not a commission amendment.
+
+### O.6 Additional research and independent review instructions
+
+Use the draft PR's fixed full head and result blob, bytes and SHA-256 from its
+body as the review input; check the live head first and stop identity-dependent
+claims if it has moved. Read AGENTS.md and its ordered Read first documents,
+applicable local instructions, the fixed commission and semantic input in O.1,
+then Parts N/O. Remain a separate investigator, disclose prior involvement,
+context and model evidence, and distinguish testimony from Git verification.
+Do not request exact-build logs or treat a new authoring session as independent.
+
+Supply originals 37, 23 and 32 with the O.1 hashes. The minimum **additional
+research** input is Genizi–Hochberg (1979), Corrigenda, JASA 74(367), p.744,
+DOI `10.2307/2287029`. Read the actual correction image, record hash/bytes/page
+count and exact scope, and compare it with the 1978 p.879/p.882 assertions and
+p.880 (1.7). Do not infer the correction's contents from Stoline's report. If
+unavailable, record `SOURCE_ACCESS_INCOMPLETE` for this portion and a concrete
+remaining acquisition request; do not repeat broad searches indefinitely.
+
+Independently check C-F1/F2/F3 and O.2–O.4 against page images, including model,
+shared-scale SMM versus SR/SAR, all-contrast extension, two-size constraints,
+CSP conjecture versus finite search, reversed group indexing, at-least versus
+exact coverage, and half-width/rounding observations. Reproduce O.3 and check the
+mixture CDF by a separate justified numerical route if making precision claims.
+An independent research result may propose a narrowed `PARTIAL` or `CLOSED`
+only by mapping every decision-bearing claim and remaining gap to the commission;
+ordinary content GO does not itself close SR-F. No new implementation or universal
+optimality claim is requested. Escalate Hochberg (1975) only if a specific required
+claim cannot be verified from the supplied primary text and an explicit derivation.
+
+Preserve Parts A–O and all old reviews. Add an English report at
+`review-inputs/r3-srf-primary-research/REVIEW-RESULT.md` on a new neutral branch
+`review/r3-srf-primary-research-20260908` if unused, otherwise a new dated suffix.
+Use the fixed author head as sole parent and its branch as draft PR base. Record
+identity, inspected/uninspected pages, reused evidence, source facts versus
+inferences, findings by severity, per-claim disposition, and limits. Keep PDFs,
+images and extracts outside Git. Run `pnpm format:check`, `pnpm lint:markdown`,
+`node --import tsx tooling/src/validate.ts`, and `git diff --check`; distinguish
+actual checks from reused results. Report final commit/parent/tree/blob and live
+head stability. Do not merge, change formal holds, adopt a method or release.
+
+## Part P — SR-F review intake and corrective addendum (2026-09-08)
+
+### P.1 Fixed evidence and role
+
+This is continuing OpenAI-assisted author work, not an independent review or a
+steward decision. It appends to PR #216 head
+`4ce988231330f5702a7d3d8a352b01fac575191f`, result blob
+`78feb17baba67d41d0aac274c51e2f12b507a6d3` (370999 bytes; SHA-256
+`543a4c14b6e0d4fea809c6935a7bc69f08019467283edc9141f8dd1856c48596`).
+All Parts A–O bytes, including the error corrected below, are preserved.
+
+Independent review PR #220 is pinned at commit
+`ca88a1550165dc9b2f5f16541e91d92d1c79ef82`, sole parent the above author head,
+tree `4a4e44e7ee519d9cb3e64a5307807a923a6e5b05`. Its record is
+`review-inputs/r3-srf-primary-research/REVIEW-RESULT.md`, blob
+`55fe509ed5a87b263e26d0145983f1caa3d2912f` (55123 bytes; SHA-256
+`cd819183d13ea970893d066e39c3c9e65482e3845f0fd076f61fdabd55e2fe1c`).
+It reports content GO, zero BLOCKER, two SHOULD-FIX and five NICE-TO-HAVE,
+with SR-F CLOSED proposed and a PARTIAL alternative for a pending conflict
+adjudication. Its four-source page checks and independent numerical work are
+reused as explicitly attributed review evidence, not claimed as repeated here.
+
+The reviewer discloses no authoring involvement, non-blind reading order and
+`claude-fable-5-1` from the session service. Part O and this addendum disclose
+OpenAI author assistance. Git identities, model testimony and non-involvement
+statements are different evidence. No exact-build log is requested and no old
+PENDING record is rewritten. The reviewer reports a duplicate session-named
+branch; this addendum uses a neutral branch and does not delete or rewrite any
+review branch. Model-level acceptance remains a scoped steward determination.
+
+### P.2 S-1 correction: rounded components and reconstructed components
+
+**The Part O.3 assertion that both averages round to 0.9987 is incorrect.**
+PR #220 Sections 10 and 12 correctly distinguish the two computations:
+
+- Printed four-place components: `(0.9462 + 0.9462 + 1.1035)/3`
+  equals `0.998633333...`, rounding to **0.9986** at four places.
+- Reconstructed, not first rounded, components: the O.3 diagnostic gives
+  `0.998662296...`, rounding to **0.9987**.
+
+The first arithmetic was rechecked here with Python Decimal, independently of
+the original floating-point diagnostic. The source's printed average is
+consistent with averaging its printed rounded components. The difference does
+not establish a source inconsistency; the earlier author characterization is
+withdrawn. Printed values are retained. The half-width versus full-width label
+observation remains separate; doubling both averages does not change their
+ordering. No numerical kernel, diagnostic output or source table is changed.
+This is the author repair of S-1, pending independent repair review.
+
+### P.3 S-2 correction: explicit APR-06 catalogue narrowing
+
+The fixed semantic catalogue's combined APR-05/06 shorthand assigns Studentized
+maximum modulus and special tables. PR #220 Sections 7.4 and 12 identifies the
+entry-level distinction that O.5 omitted. The author result is explicitly:
+
+| Entry  | Relation to the fixed catalogue                                                                                   | Supported bounded reading                                                                                                                                                                                                                                                   | Classification |
+| ------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| APR-05 | Supports the GT2 SMM construction with the model and at-least coverage in O.2; generic exact coverage is excluded | Hochberg pp.225–226, Theorem 3.1 p.228 and (3.2) p.229; known covariance shape, common unknown scale, independent chi-square variance estimator                                                                                                                             | `RES-ONLY`     |
+| APR-06 | Narrows the combined shorthand: SMM is not the critical-value basis for this GH procedure                         | Genizi–Hochberg pp.879–880: SR for contrast-preserving `T_c(Q)`, SAR for all-linear-function `T(Q)`; Section 3 and Table 1 constants for the two-distinct-size construction, with restrictions (i)–(ii); Section 3.2 / Table 2 bounds the average-width comparison with GT2 | `RES-ONLY`     |
+
+This is an informative catalogue comparison, not an edit to the fixed catalogue.
+It does not promote general CSP optimality, arbitrary sample-size patterns,
+pointwise superiority over GT2 or certified table constants. Restriction (i)
+preserves minimum within-size-group pairwise widths and (ii) equal cross-size
+pair widths; the optimum is within that constrained family. This is the author
+repair of S-2, pending independent repair review.
+
+### P.4 Corrigendum receipt, scope and optional observations
+
+The supplied artifact **Corrigenda, JASA 74(367), 744, item on Genizi–Hochberg
+(1978)** has 256229 bytes, two PDF pages (publisher cover plus printed p.744),
+and SHA-256
+`07a6c3433f77e85f2ce5034e0068e7421a7f5041679705755cbfabec7493653a`.
+The prior author turn checked its hash/bytes/pages and read the p.744 page image;
+PR #220 Section 4 independently checked the same identity and Section 5 its scope.
+Those saved checks are reused here, without re-reading the PDF.
+
+The inspected artifact prints publisher DOI `10.1080/01621459.1979.10481678`.
+The acquisition log's `10.2307/2287029` remains the archival item identifier used
+for discovery. The relevant paragraph is unsigned; calling it Genizi–Hochberg
+(1979) follows Stoline's bibliography and does not establish personal authorship.
+The two unrelated corrections on the same page are outside this review scope.
+
+The text rejects the inference from nonattainment within `T(Q)` to Kramer's
+pairwise intervals being liberal. It retains the within-family distinction and
+leaves the proposed conservativeness to future analytical or simulation work.
+It does not correct (1.7), the example, or Tables 1/2. The correction itself is
+not a proof of Kramer coverage. These are the source-scope findings of PR #220
+Section 5 and the preceding author PDF inspection; no renewed source search or
+new broader proof is claimed.
+
+Receipt accounting now distinguishes **42 numbered supplier originals plus one
+unnumbered supplementary corrigendum artifact**, hence 43 received artifacts in
+this intake chain. There are still 42 numbered originals; no supplier number is
+invented and the three unrelated items on one corrigenda page are not counted
+as three PDFs. O.4's unchanged total described the time before receipt. PR #220's
+unchanged 42 count is retained as its numbered-original count, not used to deny
+receipt of the extra artifact. Previously reported unavailable 38/44/45/46
+remain unavailable; this correction is none of those four.
+
+Optional observations from PR #220 Section 12 are carried with attribution:
+N-1/N-4 are addressed by the identifiers and unsigned-item description above;
+N-2 records reviewer SciPy 1.17.1 versus author 1.17.0 with identical printed
+outputs, not one shared execution. N-3 reports the example's `1.3157` versus a
+bounded reviewer reconstruction around `1.3152`; N-5 reports a repeated `H_11`
+label in the p.882 Lemma where the second block is read as `H_12`. Neither is
+adopted as a replacement value or formal erratum. Their causes are not established
+here; inspect them before any numerical reuse or transcription of that Lemma.
+No optional finding is independently certified closed by this author addendum.
+
+### P.5 Remaining bounded decision and source-result ledger
+
+There is no remaining source-acquisition request for SR-F in the reviewed scope.
+Hochberg (1975) is not newly required: PR #220 Section 9 D-2 independently derives
+the model-based coverage statements explicitly stated in the supplied 1978 paper.
+This does not claim inspection of the 1975 proof or of wider GT3 optimality.
+
+**Proposed bounded disposition decision, not enacted:** retain the printed
+`=` in Genizi–Hochberg (1.7) as a documented discrepancy; ground the GT2
+characterization in Hochberg's originating Theorem 3.1 / (3.2), using coverage
+at least `1-alpha`; do not claim generic exact coverage or a published erratum
+for the equality sign. Apply the explicit APR-06 narrowing in P.3. Treat SR-F
+as CLOSED only in the commission's source-completion sense, not method adoption.
+This proposal follows PR #220 Section 13 R-1/R-2 and requires no further paper.
+It is not a presumption that the journal's text has been corrected.
+
+Pending that bounded disposition decision, this successor records **SR-F
+PARTIAL**, with the single named disposition gap R-1 and no missing source.
+The two author repairs still await close-only review; they are tracked separately
+from the remaining source-disposition decision. This uses the review's explicit
+PARTIAL alternative rather than perpetuating O.5's historical INPUT_INCOMPLETE.
+The author is not declaring RFC rule 5 adjudication or formal hold acceptance
+complete. The independent repair reviewer should assess the proposed use of the
+existing direct-source adjudication in PR #220, not automatically commission
+another full four-paper pass.
+
+The successor candidate ledger is **5 CLOSED / 2 PARTIAL / 7 INPUT_INCOMPLETE**:
+SR-B/C/G/K/L CLOSED candidates; SR-F/H PARTIAL; SR-A/D/E/I/J and RSM-01/02
+INPUT_INCOMPLETE. If the bounded decision is approved and the repair confirmed,
+the proposed ledger is 6/1/7. Neither ledger is a list of formally accepted holds.
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY false, NARROW, RES-ONLY and the separate
+R4 state remain. No merge, formal hold change, method adoption, public opening,
+publication or release is made.
+
+### P.6 Limited independent repair-review instructions
+
+Review this addendum only, against the exact full head and result identity in its
+draft PR body. Read AGENTS.md and ordered Read first documents, applicable local
+instructions, the unchanged commission, Parts O/P and PR #220 Sections 4–5,
+7.4, 9–13 at the fixed review identity in P.1. Preserve the 370999-byte Parts A–O
+prefix and all prior reviews. Check S-1 by exact decimal/rational arithmetic;
+check S-2 against the fixed catalogue and PR #220's pinned primary-source mapping.
+Check the corrigendum transcription, attribution, numbered versus total-artifact
+count, PARTIAL ledger and unapproved bounded CLOSED proposal. Assess whether the
+proposal addresses R-1 using the direct source adjudication already in PR #220;
+leave the actual steward decision distinct.
+
+Reuse PR #220's source-image and numerical verification explicitly. No PDF is
+required merely to repeat it. Request only a specific original/page if a new
+material question cannot be resolved from that record. Do not repeat the whole
+primary-source review, arbitrary-precision integrals or Monte Carlo by default.
+Disclose independence, context/model testimony and evidence reuse without demanding
+exact-build logs. Do not overwrite past PENDING or claim steward authority.
+
+On a new neutral branch `review/r3-srf-review-repair-20260908` (or a fresh neutral
+suffix if used), create one English file
+`review-inputs/r3-srf-review-repair/REVIEW-RESULT.md` with the fixed author head as
+sole parent. Record S-1/S-2 status, regressions, findings, actual validation and
+limits, then open a draft PR against the author branch. Run format:check,
+lint:markdown, the direct validator and diff check. Verify the final Git objects
+and live target head. Do not mirror to a session-labelled branch, change fixed
+results, commit PDFs/extracts, merge, formally close holds, adopt or release.
