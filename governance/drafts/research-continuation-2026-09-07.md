@@ -679,3 +679,39 @@ INPUT_INCOMPLETE and semantic NARROW. There is no assertion of five formally
 accepted holds. The other thirty-three originals are outside PR 199's scope.
 No merge, method adoption, public-discussion opening, ratification, release or
 website publication is included in the proposed decision.
+
+## 14. Steward approval of Part H independence and limited SR-B acceptance
+
+Date: 2026-09-08. The user/steward explicitly approved both prepared decisions
+in Section 13 and instructed the coordinator to proceed. The approved proposal
+is preserved at commit `0aee03f50aaf40c333dc2e2821d5b98decc5ee64`, blob
+`e752bb9e1d0bb53153015a308827d875665e394a`. This continuing OpenAI-assisted
+coordinator records the user's decision; it does not supply an independent review.
+
+1. **Part H scoped model independence: APPROVED / ESTABLISHED.** Rely on the
+   first-hand OpenAI author-side account and PR 199's claude-fable-5-1,
+   separate-context and non-involvement testimony, as specified in Section 13.
+   This is an ordinary-evidence steward determination under RFC rule 2, not
+   model identity verified from Git and not a finding about all historical work.
+2. **SR-B: ACCEPTED AS CLOSED for the source-acquisition obstacle only.** The
+   accepted result is PR 198 at `f6d39534e85920a8331941126a6eb384244e34f1`,
+   result blob `b0679cbad8d384158b93ce414f8dfb7f2270ea74`, read together with
+   Section 13's explicit S-H1 qualification and S-H2 conflict addendum. The
+   independent basis is PR 199 at `3059f6baca76dc93b5fbf248012f09132f3881f6`,
+   review blob `4c8b55bac817be9f25b1b6fa7b82cbb6eb2fc813`.
+
+Section 13's proposed/pending approval state is historical and superseded for
+these two decisions only. The original result and review heads, their historical
+PENDING statements and source statements remain unchanged. H.3's bounded
+conditions and H.4's reopen conditions remain in force. S-H1 is addressed by the
+independent-means qualification for Dunn equation (7); S-H2's recording requirement
+is addressed, while the example's numerical inconsistencies remain unresolved
+before any R4 or other numerical reuse. No printed value or replacement is adopted.
+
+SR-C's prior limited acceptance remains in force. SR-K/SR-G acceptance remains
+separate. The candidate ledger stays five CLOSED, zero PARTIAL and nine
+INPUT_INCOMPLETE; it is not a count of five newly accepted holds. Overall
+INPUT_INCOMPLETE, semantic NARROW, the existing R3-CAND classifications and R4's
+source-access findings are unchanged. No merge, public-discussion opening,
+method adoption, implementation guarantee, ratification, release or website
+publication is authorized by this decision.
