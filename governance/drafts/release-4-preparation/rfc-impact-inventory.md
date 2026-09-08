@@ -58,9 +58,14 @@ Recommend additive, versioned factorial surfaces, with no edits to historical
 Welch schemas or old bundle meanings. Whether a new enclosing Record/report
 schema is needed cannot be decided from a profile sketch. The final surface
 inventory records every new and affected schema version before R4-P5 closure.
-Follow the existing bundle registry's identity scheme and bind exact versions;
-no candidate identifier is issued here and no Release 2/3 candidate spelling is
-automatically reused. Any needed change to refusal outputs is evaluated as the
+New Contract, Profile, schema, Public Check and bundle identifiers use the
+`https://nomue.ai/id/<family>/<name>/<revision>` minting grammar of
+[ID-POLICY](../../ID-POLICY.md) and
+[ADR-0032](../../decisions/ADR-0032-contract-identity-and-capability-requirement-namespaces.md).
+Existing `urn:nomue:*` identifiers remain immutable and are not aliases of new
+identifiers. The registry discipline reused here is exact-version binding,
+not legacy identifier spelling. No candidate identifier is issued here and
+no Release 2/3 candidate spelling is automatically reused. Any needed change to refusal outputs is evaluated as the
 verifier output contract, which is independent of a selected bundle.
 
 Proposed new factorial-specific material remains a candidate for EXPERIMENTAL.

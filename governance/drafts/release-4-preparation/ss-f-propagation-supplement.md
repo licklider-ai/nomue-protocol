@@ -65,8 +65,9 @@ loss of a practically meaningful effect. The uncentered QR residual error is
 largest at offset 2^40. These observations do not establish a general significance
 threshold or a guarantee outside this corpus.
 
-The interpreter is part of the operation definition: builtin sum aggregates
-cell means, contrast coefficients, and squared residuals in all three routes.
+The interpreter is part of the operation definition. The builtin sum is used
+at three sites: `builtin_cell` cell means, `builtin_cell` contrast coefficients,
+and the squared-residual aggregation of all three routes.
 The reviewer observed 10 spurious nonzero F values for builtin_cell on CPython
 3.11.15 with the same NumPy 2.3.5, versus zero on CPython 3.12.3, and SSE counts
 changed for every route. NumPy 2.5.3 with OpenBLAS 0.3.34 also changed QR rows and
