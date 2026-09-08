@@ -3245,3 +3245,129 @@ Continuation Section 17 at `a0db221edec78377d867bf0f4636d684d44dc5af`, blob
 `ea44c75032d12c5c635459129972ccf71ae73134`, still contains proposals, not enacted
 Parts K/L independence or hold acceptance. No merge, adoption, R4 closure,
 public opening, website publication or release follows from this supplement.
+
+## Part N — Repair-review intake and seven additional source receipts
+
+### N.1. Fixed review completion and provenance
+
+Date: 2026-09-08. This continuing OpenAI-assisted author/coordinator appends
+custody and review-intake information only. All 343401 bytes of Parts A–M at
+PR 213 head `f7ab321477bbb4f6decefbf931615ff6966e9e6e`, result blob
+`18e18eb1900f3560b752c336addf2c88bd1ff616`, are preserved. This is not a new
+independent source review or a steward approval.
+
+PR 214 records S-X1 CLOSED as an additive author-side repair, zero BLOCKER,
+zero SHOULD-FIX and five optional findings. Review commit:
+`c9389daf5c8b33dc769ff962e43ea392fe85ef86`; sole parent equals the Part M
+head; tree `5193981144710d5b35af020a137c5f6b3fe51706`; blob
+`473baa22eee31251998e82ea3e647d4c5a58a8df` (57700 bytes); path
+`review-inputs/r3-srh-monotonicity-repair/REVIEW-RESULT.md`. Live metadata and
+fetched Git objects match. The review's PDF checks, four-pair reproduction,
+mpmath sanity check and Welsch-A grid rerun are reused, not claimed as new
+coordinator executions. The remaining proof/variant gap is not closed.
+
+PR 214 discloses prior-review reading before its page inspection (not blind),
+non-involvement in the authoring or earlier reviews, and claude-fable-5-1 service
+testimony. This intake preserves that evidence without determining Parts K/L
+model independence or hold acceptance on the steward's behalf. Earlier PENDING
+and proposal records remain historical and unmodified.
+
+### N.2. Optional findings retained with exact review attribution
+
+PR 214 Section 10 is the basis of these notes; no additional source reading or
+calculation is claimed:
+
+- N-M1 identifies Einot-Gabriel reference [9] from p.583 as Gabriel, K. R.
+  (1964), "A Procedure for Testing the Homogeneity of All Sets of Means in
+  Analysis of Variance," Biometrics 20:459–477. Its Section 9 proof remains
+  uninspected. This is a bibliographic reopen target, not an inspected new source
+  and not one of the seven receipts below.
+- N-M2 confirms that (1.16) and its [9, Section 9] dependency are already in the
+  monotonicity reopen scope. The imperative wording in M.2 does not leave a
+  second, unperformed administrative task.
+- N-M3 provides the finer locator: second paragraph after (1.15), immediately
+  before the Section 1.5 heading. The author reuses that page observation.
+- N-M4 offers the counting reconciliation for PR 212: seven new optional
+  findings plus reopened N-X1 give eight identifiers. M.3's eight-versus-seven
+  observation is not an assertion of an additional scientific defect.
+- N-M5 notes that the grid has six allocations whereas M.2 summarizes four;
+  Ryan (1.13-prime)/Welsch B and Duncan-original are the other two. No omitted
+  row is silently claimed to be monotone or independently recalculated here.
+
+These notes do not change the fixed reviewed Part M or its numerical meaning.
+
+### N.3. Consolidated custody of seven additions
+
+The intake records are continuation Sections 18/19 at commit
+`b405512111699f262440d0b819dfa0977ad7b72a`, blob
+`f7497cbee7d7a9701ffe1cd8b06f9bed014c04b0`, path
+`governance/drafts/research-continuation-2026-09-07.md`.
+The coordinator previously computed hashes/bytes, counted PDF pages and inspected
+first-page images. This table reuses those recorded checks instead of reacquiring
+or rereading the same files. It is not full-text or theorem review.
+
+| Supplier file            | Bytes   | PDF pages | SHA-256                                                            |
+| ------------------------ | ------- | --------- | ------------------------------------------------------------------ |
+| `34_Games_1976.pdf`      | 994128  | 13        | `eee42d00cdd66f9f24e334c2db503e17233fc73b6a87ed5f85c6868f17a2c021` |
+| `37_Hochberg_1974.pdf`   | 561598  | 11        | `4eebb9ab9e4e7c133bdc7bff7130dda98b762e498cca0ce1738680be2bb539b4` |
+| `39_Ge_2003.pdf`         | 3452172 | 77        | `abe8095de12b3499f863c3e5aced94a90812f0732d80423374eadafdc20a7f68` |
+| `40_Bretz_2009.pdf`      | 439933  | 19        | `87041fa4b4d17e6a2832536d586cc26b253422255df59cd00a86344f6b0a5664` |
+| `41_Dmitrienko_2003.pdf` | 106251  | 14        | `c1df1453c5001cfeae4bd3d52d31e46f7248cd7b3524ec7d46e2d47ef0a07ed4` |
+| `42_Dunnett_1991.pdf`    | 634124  | 9         | `ed93660e9e8286f1ff2e0026f972c783ac523ac96465e1689e17b4f99a960161` |
+| `43_Wiens_2003.pdf`      | 120883  | 5         | `f9634c824d637b2f1e262d226c8bd3d7d01f540501facdaead9c1e802eed5bd7` |
+
+| Supplier | Bibliographic identity from receipt                                                                                                                                                                    | Research routing, not acceptance                                |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| 34       | Games and Howell (1976), Pairwise Multiple Comparison Procedures with Unequal N's and/or Variances: A Monte Carlo Study; Journal of Educational Statistics 1(2):113–125                                | SRC-20 / SR-I / HET-01                                          |
+| 37       | Hochberg (1974), Some Generalizations of the T-Method in Simultaneous Inference; Journal of Multivariate Analysis 4:224–234                                                                            | SRC-36 / SR-F / APR-05                                          |
+| 39       | Ge, Dudoit and Speed (2003), Resampling-based Multiple Testing for Microarray Data Analysis; TEST 12(1), supplied pagination 1–77                                                                      | RSM-02 variant research; proposed supplemental RSM-01 relevance |
+| 40       | Bretz, Maurer, Brannath and Posch (2009), A graphical approach to sequentially rejective multiple test procedures; Statistics in Medicine 28:586–604; DOI 10.1002/sim.3495                             | SRC-26 / SR-D / CLS-06                                          |
+| 41       | Dmitrienko, Offen and Westfall (2003), Gatekeeping strategies for clinical trials that do not require all primary effects to be significant; Statistics in Medicine 22:2387–2400; DOI 10.1002/sim.1526 | SRC-27 / SR-D / CLS-05                                          |
+| 42       | Dunnett and Tamhane (1991), Step-Down Multiple Tests for Comparing Treatments with a Control in Unbalanced One-Way Layouts; Statistics in Medicine 10:939–947                                          | SRC-28 / SR-J / MTO-02                                          |
+| 43       | Wiens (2003), A fixed sequence Bonferroni procedure for testing multiple endpoints; Pharmaceutical Statistics 2:211–215; printed DOI 10.1002/pst.064                                                   | SRC-27 / SR-D / CLS-03                                          |
+
+Supplier numbers and SRC identifiers are different systems. Ge's 77-page file
+includes discussion and a rejoinder beginning at printed/PDF p.66; its entire
+pagination is not attributed to the authors' main article. Bretz's first page
+records online publication in December 2008 and issue year 2009. Wiens's printed
+DOI retains the zero omitted in the acquisition checklist. The Dunnett-Tamhane
+1991 step-down paper does not supply the separate 1992 step-up text. These
+bibliographic boundaries remain as recorded at intake.
+
+The previous 35 artifacts plus these seven distinct recorded hashes total 42:
+supplier 01–37 and 39–43. Repeated 01–03 bytes from Pass 2 are not added again.
+Historical 35-original statements remain valid for their fixed snapshots; 42 is
+the current received inventory, not an independent-review count.
+
+### N.4. Unavailable sources and next substantive work
+
+The user reports supplier 38 (Naik 1975), 44 (Scheffe 1959), 45 (Tukey collected
+works volume VIII) and 46 (Westfall-Young 1993) unavailable through their
+acquisition effort. Their respective affected scopes are SR-J, SR-A, SR-E and
+RSM-01, as recorded in continuation Section 19. No finding about all possible
+access routes, unread source contents or a substitute's sufficiency follows.
+Supplier 47's outcome is not reported. Required missing-source claims remain
+INPUT_INCOMPLETE under the current commission; related papers do not silently
+replace assigned texts.
+
+The next content work is SR-F (37 with received 23/32 and any remaining assigned
+dependencies), then SR-I (34 with its companions), followed by available SR-D
+texts (15/40/41/43). Supplier 42 supports a bounded SR-J investigation while
+Naik remains missing; supplier 39 needs separate main-text/discussion/variant
+mapping. Source inspection, derivation and an exact-head independent review are
+still required for new substantive results. No additional review is commissioned
+solely to repeat this custody transcription. Any later substantive commission
+will include its executable prompt and necessary original attachments.
+
+For unavailable items, first identify the unsupported claim and minimum needed
+pages. If required, prepare a documented alternate-primary-basis or reduced-scope
+proposal for the steward; do not change the commission or waive an input here.
+The Gabriel 1964 proof dependency is a separate reopen target, not silently
+classified as one of the four reported unavailable items.
+
+Candidate ledger remains 5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE, SR-H PARTIAL
+candidate with formal acceptance pending; overall INPUT_INCOMPLETE,
+SOURCE_SET_READY false, semantic NARROW and method classifications unchanged.
+Continuation Section 17's bounded acceptance and independence proposals remain
+unenacted. No merge, hold closure, method adoption, R4 closure, public opening,
+website publication or release is enacted by this intake.
