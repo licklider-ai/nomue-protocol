@@ -3103,3 +3103,145 @@ Do not merge, accept a hold, adopt a method, open discussion or release.
 
 RELEASE 3 PART L PRECISION REPAIR RECORDED - INDEPENDENT REPAIR AND TWO-SOURCE
 COMPLETION PENDING - SR-H PARTIAL CANDIDATE - OVERALL INPUT_INCOMPLETE
+
+## Part M — Adversarial review follow-up and monotonicity source conflict
+
+### M.1. Fixed evidence and author role
+
+This additive successor preserves all 334121 bytes of Parts A–L at PR 207 head
+`044078d3b19ff3307dc347b0b9e7ecbbed1750c6`, result blob
+`ff2ee8c3ca08b57ecc62c143a46153b02bcd04f7`. The continuing author/coordinator
+uses OpenAI assistance; this is not an independent review or a new steward
+approval. Date: 2026-09-08.
+
+PR 212 supplies the adversarial review at commit
+`ec0840c0ae20d71fbca715cf1e41880f3b09a20a`, sole parent equal to that input,
+tree `79272100bbf9a693bd864c43a01da63568f2fa9b`, review blob
+`2d1dd72a904d8097d40eafadd9b7dcc19df22ab9` (103533 bytes), path
+`review-inputs/r3-srh-cross-cutting-adversarial/REVIEW-RESULT.md`.
+Its overall finding supports the PARTIAL candidate with S-X1 outstanding;
+it is not unconditional GO. Six originals were inspected there; Newman was
+SOURCE_ACCESS_INCOMPLETE for that pass. The reviewer read the four earlier
+reviews before the originals and disclosed the same review-side model family.
+These limitations remain part of the evidence.
+
+### M.2. S-X1: printed monotonicity and the uninspected proof pointer
+
+**Source statement.** Einot and Gabriel (1975), supplier 24, printed p.576,
+Section 1.4, gives critical values for methods using the same statistic and
+then states `zeta_p^M < zeta_r^M if p < r` in (1.16). It refers to
+`[9, Sec. 9]` for the proof. The paragraph follows (1.15), in the same section
+as allocations (1.11)–(1.13). This statement was missing from K.2/K.4 and the
+monotonicity-gap account. PR 212 Sections 5.3/9 confirmed it on the page image;
+the author has now also checked the previously saved p.576 image. Reference
+[9]'s proof has not been inspected in this work. No condition from that proof,
+or formal erratum, is asserted.
+
+**Diagnostic conflict.** PR 212 Section 6.6 and its script
+`review-inputs/r3-srh-cross-cutting-adversarial/scripts/critical_sequence_monotonicity.py`
+(blob `c9424d55d80ed5ea68c02e61a4255e9684356980` at the review commit)
+compute raw upper-tail Studentized-range quantiles before any monotonicity
+enforcement. The grid is alpha in {.01, .05}, total group count in
+{3, 4, 5, 6, 8, 10, 12, 15, 20}, and error df in {3, 5, 10, 20, 60, infinity}.
+The review reports no decrease for the constant-alpha Newman–Keuls allocation
+on that grid, but decreases for the paper's Ryan and rescaled-Duncan allocations
+at small df, and for Welsch A including infinite df. These are finite-grid
+observations, not universal parameter thresholds or verified quantile bounds.
+Welsch A is a later allocation and is not presented as an allocation printed
+in the 1975 paper.
+
+Representative decreases, all at alpha = .05, are recorded below. Here k is
+total group count, p is subset size, and gamma_p is upper-tail probability.
+
+| Allocation                                                                  | k   | Error df | Adjacent subset sizes | Raw quantiles, approximately |
+| --------------------------------------------------------------------------- | --- | -------- | --------------------- | ---------------------------- |
+| Einot–Gabriel Ryan (1.13), `gamma_p = 1-(1-alpha)^(p/k)`                    | 8   | 3        | 6 to 7                | 8.91186585 > 8.89435083      |
+| Einot–Gabriel rescaled Duncan (1.12), `gamma_p = 1-(1-alpha)^((p-1)/(k-1))` | 4   | 3        | 3 to 4                | 6.86866438 > 6.82452645      |
+| Welsch A, `gamma_p = alpha*p/k`, except `gamma_(k-1) = gamma_k = alpha`     | 6   | 20       | 4 to 5                | 4.23450864 > 4.23185675      |
+| Welsch A, same allocation                                                   | 8   | infinity | 6 to 7                | 4.17130447 > 4.16955416      |
+
+The author reproduced these four pairs with SciPy 1.17.0 using
+`studentized_range.ppf(1-gamma_p, p, nu)`. This is a limited author-side check
+using the same numerical library family as the review, not an independent
+oracle or a rerun of its full grid. The second pair makes explicit the small-df
+rescaled-Duncan observation. The Welsch examples agree with Section 6.6's
+examples; that section's aggregate wording is not adopted as an exhaustive
+threshold description (it also gives a k = 6 example). No numerical error
+certificate is claimed for these floating-point values.
+
+**Interpretation and affected-use boundary.** The diagnostics challenge an
+unqualified reading of (1.16) for the raw range quantiles of the paper's own
+allocations. The printed claim, the external proof pointer, and the diagnostic
+counterexamples are preserved separately. The missing-proof conditions and
+appropriate family characterization remain unresolved. The failure of a raw
+sequence to be nondecreasing means Welsch's nondecreasing-sequence theorem
+hypothesis cannot simply be assumed; it does not by itself prove that the
+whole procedure exceeds its error budget. Nor does the absence of a printed
+NKA/NKB enforcement step authorize inventing one. L.2's step-up attribution
+remains intact. Add (1.16) and its proof dependency to the monotonicity reopen
+list before any affected characterization, algorithm or table reuse. No max
+rule, replacement critical value, numerical tolerance or procedure is adopted.
+
+### M.3. Evidence precision and retained observations
+
+PR 212 lists N-X1 through N-X8, eight identifiers, although its heading says
+seven NICE-TO-HAVE. This intake uses the identifiers without rewriting that
+review. N-X1 supplies page-image support for PR 211 A-N1's previously unverified
+"after (A.1)" locator. N-X2/N-X3's additional Keuls/Welsch numerical observations
+remain attributed to PR 212 Sections 6.5/9 and deferred; they are not new author
+source checks, certified replacement values or formal errata.
+
+N-X4: Hayter page-level inspection is PR 201; PR 203 reviewed the additive
+repair and explicitly did not reread the PDF. Continuation Section 17's
+combined "PR 201/203" reference is read with those separate roles.
+N-X5: the commission's explicit multiple-variant instruction occurs in the
+RSM-02 paragraph. For SR-H, the general Hold dispositions definition of PARTIAL
+(supported claims with named gaps) is the basis. The RSM-02 sentence is not
+asserted as a general SR-H rule, and multiple names alone do not establish a gap.
+The unresolved APR-12 family characterization and applicability of the
+monotonicity/selection conditions are the substantive gaps here.
+
+N-X6: Git verifies artifact identity and commit order; model/session evidence
+and non-involvement statements are ordinary testimony, not facts proved by a
+Git name or timestamp. N-X7: the continuation record documents limited SR-C
+acceptance in Section 12 and limited SR-B acceptance in Section 14; SR-K/SR-G
+remain separate, SR-L is inherited without a new acceptance here. The candidate
+count of five CLOSED is not a count of five formal acceptances.
+N-X8: the recorded numerical print conflicts gate affected numerical reuse;
+they are not, by themselves, a reason the source-acquisition hold cannot close.
+The substantive SR-H gaps above remain. No prior result/review is overwritten.
+
+Newman remains covered by PR 211 Section 8 at
+`a5e921c07ea2ab4f0147864fd2323f607512ef0d`, review blob
+`63ee9079012cf7fa2e3a3b909ef294538a99c70b`. This is explicit reuse of its scoped
+page inspection, not a claim PR 212 or this author pass reread Newman. The later
+pass's missing attachment does not erase that earlier evidence. No new source
+question about Newman was raised that requires another copy for this repair.
+
+### M.4. Status and bounded repair review commission
+
+S-X1 is addressed on the author side, pending independent close-only review.
+Review M.2 against Einot–Gabriel p.576, PR 212 Sections 5.3/6.6/9 and the pinned
+script; check M.3's attribution corrections against the cited records and actual
+commission. Verify the 334121-byte prefix, unchanged ledger, and the separation
+of raw-quantile diagnostics from theorem or procedure guarantees. The four-pair
+check may be reproduced; a full grid rerun is unnecessary unless a concrete
+mismatch requires it. Do not use the review's rounded grid summary as a theorem.
+
+Required original: only supplier 24, `24_Einot_1975.pdf`, 1211995 bytes,
+11 PDF pages, SHA-256
+`1b097f5cdf16785e0aebf9c29359b957beb94caf51bb46255eaceb3d841cd57b`.
+Reuse existing reviews explicitly for the other source observations. If a new
+source question requires more material, identify only that dependency and keep
+unaffected checks separate. Output an English record at
+`review-inputs/r3-srh-monotonicity-repair/REVIEW-RESULT.md` from the fixed
+successor head on an unused neutral branch, with a separate draft PR targeting
+this author branch. Do not modify the input, prior reviews or main.
+
+Candidate ledger remains 5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE; SR-H remains
+PARTIAL candidate, formal acceptance pending. Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY false, semantic NARROW, APR-10–14 RES-ONLY, 35 originals.
+Continuation Section 17 at `a0db221edec78377d867bf0f4636d684d44dc5af`, blob
+`ea44c75032d12c5c635459129972ccf71ae73134`, still contains proposals, not enacted
+Parts K/L independence or hold acceptance. No merge, adoption, R4 closure,
+public opening, website publication or release follows from this supplement.
