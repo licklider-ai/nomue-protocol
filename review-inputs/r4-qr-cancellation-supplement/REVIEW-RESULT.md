@@ -27,7 +27,7 @@ witness in the transcript (Section 7, SF-1).
   OpenAI-assisted research author in the current authoring context." This review did not
   consult that context, its session, or any intermediate author material.
 - **Reviewer.** This review was produced by an Anthropic model, `claude-fable-5-1`, running in
-  a hosted remote coding session, in a fresh
+  a Claude Code remote session (session identifier recorded in the commit trailer), in a fresh
   container cloned from the repository at the start of the session. The serving model reported
   by the session service for this session was `claude-fable-5-1`. This satisfies the
   separate-model requirement of the research gate in `governance/RFC.md` (item 2, "a separate
@@ -691,7 +691,7 @@ claim is made or authorised by this record.
 - Review date: 2026-09-08.
 - Reviewed head: `014824e482d0dccac696053176f834b0f5e45fb6` (tree `d14fe1c0…`, blob
   `94cb0e0b…`).
-- Reviewer: Anthropic `claude-fable-5-1` in a hosted remote coding session; no other model or
+- Reviewer: Anthropic `claude-fable-5-1` in a Claude Code remote session; no other model or
   person contributed; the human commissioner is the repository maintainer who also opened the
   reviewed pull request (Section 2).
 - Reviewer oracle SHA-256: `908911d6014ecc84d62692fff1c834aec6c35ae7e8b7ee51f3a3806f239d9d4d`;
