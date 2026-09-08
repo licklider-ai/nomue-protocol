@@ -2745,3 +2745,250 @@ and disclose context/model independence without exact-build-log requirements.
 
 RELEASE 3 PART J REPAIRS RECORDED - INDEPENDENT DELTA REVIEW PENDING -
 SR-H AND OVERALL INPUT_INCOMPLETE - NO METHOD OR NUMERICAL VALUE ADOPTED
+
+## Part K. Ordered-range source synthesis and procedure boundaries
+
+### K.1. Identity, custody and inspection scope
+
+Date: 2026-09-08. Continuing OpenAI-assisted author investigation, not an
+independent review. Append only to PR 202 at
+`1b2a1efa25d37b6cc140b788cbaab4f78e84ec2b`, result blob
+`94751f095f5b669c40520c84c40aaf3080eb552a`; preserve all 303208 bytes of
+Parts A–J. The acquisition commission remains blob
+`3c7ddcc696f0c284213f7efe0da68e747bc238d7` at containing commit
+`f39100161cb45de15767bdb19ed54aba9489b41a`; comparison remains fixed to
+semantic commit `7bd9c5ab854777c3e99e624d9d2ed62731228852`, result blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`. Both input blobs were verified.
+
+The four supplier PDFs below were already received in Part D. Local SHA-256,
+bytes and PDF page counts were recomputed and match D.2. No retrieval, new
+purchase or new supplier count is involved; the total stays 35. Acquisition route
+is the user's supplied publisher-purchase archive, as recorded in Part D.
+
+| Supplier / original       |   Bytes | PDF pages | SHA-256                                                            |
+| ------------------------- | ------: | --------: | ------------------------------------------------------------------ |
+| 24 / `24_Einot_1975.pdf`  | 1211995 |        11 | `1b097f5cdf16785e0aebf9c29359b957beb94caf51bb46255eaceb3d841cd57b` |
+| 25 / `25_Welsch_1977.pdf` |  954326 |        11 | `1111684b7f639503ae40caa063556f79f0da5729c34fcef6286ba9b2498a0600` |
+| 35 / `35_Keuls_1952.pdf`  |  564826 |        11 | `3c15767f3d732bd3268b2dc7dacba397fd736e8181bb9ddbc0fc9a63941e1616` |
+| 36 / `36_Ryan_1960.pdf`   |  750050 |        11 | `4a8b0f3429c4f538f5d34da776c6b410506b95e95b0a3d5d0bb21c6f2e522c99` |
+
+Bibliographic identities remain D.3: Keuls (1952), _The Use of the Studentized
+Range in Connection with an Analysis of Variance_, Euphytica 1:112–122;
+Ryan (1960), _Significance Tests for Multiple Comparison of Proportions,
+Variances, and Other Statistics_, Psychological Bulletin 57:318–328;
+Einot and Gabriel (1975), _A Study of the Powers of Several Methods of Multiple
+Comparisons_, JASA 70:574–583, DOI 10.1080/01621459.1975.10482474; Welsch
+(1977), _Stepwise Multiple Comparison Procedures_, JASA 72:566–575,
+DOI 10.1080/01621459.1977.10480614. Supplier numbers are not SRC identifiers:
+all four belong to the SRC-29 collection.
+
+Actual inspection in this pass:
+
+- Keuls: extracted prose pp.112–122; page images pp.115–117 and 120–121.
+  The graphs and complete cabbage-data table were not numerically audited.
+- Ryan: text pp.318–322 and p.328, plus the beginning of the p.323 table;
+  images pp.319–322. The later proportion, variance and nonparametric examples
+  are not approved by this pass.
+- Einot–Gabriel: text pp.574–579, closing discussion pp.582–583, and references;
+  images pp.575–578 and 583. The Monte Carlo tables were not reproduced.
+- Welsch: text pp.566–571 and 575; images pp.567–569, 571 and 575.
+  Appendix A's computational discussion was read, but no full algorithm or
+  critical-table audit is claimed; pp.572–574 tables were not inspected here.
+
+Newman (06) and Duncan (17) evidence in C.2/C.3 is reused as prior author
+inspection, not as a fresh PDF reading or independent approval. Hayter's C-H4
+result/reviews remain separately fixed. Continuation Section 16 at
+`0202eb00c1e9b4f62b80ae4074160e1b58e77c57`, blob
+`000f27e012c5ab3446b16fd5f08f4c4d3a3b9ebb`, records Part J acceptance.
+It neither accepts Part K nor establishes this new pass's review independence.
+
+### K.2. Source statements and exact procedure distinctions
+
+In this table, k denotes the total number of means and p a subset size unless
+explicitly describing Ryan's or Welsch's original notation. These notational
+translations do not change the source procedures.
+
+| Claim / entry                                         | Primary pinpoint                                                              | Source statement and boundary                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C-H1 / APR-10, Keuls construction                     | Keuls pp.116–117, 120–121, Range-test and Conclusion                          | Equal-precision normal, uncorrelated means in the balanced example; order means, test the largest span with its Studentized-range critical value, and proceed to shorter spans with their corresponding sizes. The example follows ANOVA. The discussion treats F and range as nearly equivalent in experience, not identical rejection events. The p.121 footnote explicitly distinguishes this procedure from Newman's examples.                                                                      |
+| C-H1, limits of Keuls's argument                      | Keuls p.120 and p.121 Conclusion                                              | The author acknowledges neglected uncertainty from earlier conclusions and accumulation of errors as groups shrink; further mathematical study is left open. This is not a proof of strong FWER control.                                                                                                                                                                                                                                                                                                |
+| C-H3 / APR-12, Ryan's actual 1960 rule                | Ryan pp.318–319, numbered rules 1–3                                           | Layered testing from the ordered extremes inward; a non-significant span stops testing inside it. For n total samples and span size k, test the extreme pair at two-sided nominal level `2*alpha/(n*(k-1))` using the applicable pairwise test. This is not a Studentized-range quantile rule.                                                                                                                                                                                                          |
+| C-H3, Ryan's error allocation and outputs             | Ryan pp.320–322                                                               | The partial-null argument allocates an error budget proportional to the number of samples in each homogeneous group; p.321 discusses unused budget for a singleton and erroneous reversals. On p.322 confidence intervals use the constant pairwise level `2*alpha/(n*(n-1))`, independently of observed order; they are not intervals obtained by inverting the variable layer rule. The broad plug-in generalization is the source's claim, not a Protocol guarantee for arbitrary statistics.        |
+| C-H3, Einot–Gabriel model and all-containing-set rule | Einot–Gabriel p.575 Sections 1.2–1.3, (1.1)–(1.5); p.577 Section 1.6          | Independent normal means with variances `sigma^2/n_i`, and an independent estimate with scaled chi-square law and error df. Subset homogeneity is rejected only if its statistic and every containing-set statistic exceed the relevant critical values, strictly. Retention of a containing set retains its subsets. A local threshold exceedance alone is insufficient.                                                                                                                               |
+| C-H3, distinct statistics and allocations             | Einot–Gabriel p.576 (1.6)–(1.15), footnote 2                                  | The balanced range statistic is `sqrt(n)*(max(mean)-min(mean))/s`; the sum-of-squares statistic is `(p-1)*F`. NK uses `gamma_p=alpha`; the comparison's rescaled Duncan allocation is `1-(1-alpha)**((p-1)/(k-1))`; the Ryan-type allocation used here is `1-(1-alpha)**(p/k)`. Footnote 2 contrasts Ryan's more conservative `alpha*p/k`. These are different allocations, and range and F remain different procedures.                                                                                |
+| C-H1/C-H3, error-control distinction                  | Einot–Gabriel pp.577–578 Section 1.7, (1.23)–(1.26)                           | For separated homogeneous blocks, a shared-scale product bound is used; for known variance the block statistics are independent. NK can yield `1-(1-alpha)**q > alpha` for q greater than one; the Ryan allocation gives a bound no greater than alpha. The rescaled Duncan comparison is also bounded, and is not the original conventional pairwise-alpha calibration.                                                                                                                                |
+| C-H3, Welsch ordering and model                       | Welsch p.567 Sections 2–3                                                     | Ordered equal-sample-size means, independent Gaussian populations and an independent chi-square scale estimate. A significant stretch makes containing stretches significant; a retained stretch precludes significance inside it. Step-down starts with the full range; step-up starts with adjacent gaps. Ordered sample positions do not identify the order of true means.                                                                                                                           |
+| C-H3, Welsch's distinct A/B and step-up/down variants | Welsch pp.567–568, Theorems 1–2 and Section 4                                 | In original notation t is total means and j is block size. B uses block budget `j*alpha/t`; A uses the same except `t-1` receives alpha (t also receives alpha). GAPA/GAPB calibrate a union of stretch exceedances. NKA/NKB use Studentized-range tail probabilities for individual homogeneous blocks. Both theorems require a nondecreasing critical sequence and bound overall Type I error by a sum of block probabilities. Section 4 explicitly contrasts Ryan's pairwise tests with range tests. |
+| C-H3, numerical and directional boundaries            | Welsch p.569 Section 5.2 and Appendix A; p.571 top; p.575 table-use paragraph | General control of the union of Type I and Type III errors is left as a conjecture. Step-up critical construction uses Monte Carlo; step-down NKA/NKB table construction does not require it. Interpolation recommendations and printed critical numbers are not certified numerical guarantees.                                                                                                                                                                                                        |
+
+Einot–Gabriel p.576 also describes an unequal-size statistic using the square root
+of the smaller sample size and cites external work for conservativeness. This pass
+records that statement but does not promote it to an audited unequal-size guarantee
+or substitute a Tukey–Kramer/Welch formula. The external proof is not read here.
+
+### K.3. Investigator deductions, separated from the originals
+
+1. The compound catalogue label APR-12 does not identify one executable method.
+   Ryan's 1960 pairwise-level procedure, Einot–Gabriel's product allocation, Welsch's
+   linear A/B allocations, range versus F statistics, and step-up versus step-down
+   cannot be silently interchanged. Record them as variant-split/reopen candidates;
+   do not add new catalogue entries or choose a default here.
+2. For Ryan's span rule, the number of possible pairs in a homogeneous block of
+   d samples is `d*(d-1)/2`. Multiplication by `2*alpha/(n*(d-1))` gives
+   `alpha*d/n`. A union-budget argument sums these quantities to at most alpha.
+   This arithmetic explains the allocation; it is not a proof that every plug-in
+   statistic, unequal-size ordering or directional claim satisfies all required
+   selection and monotonicity conditions.
+3. For Welsch's B allocation, sums over non-singleton true-mean blocks are at
+   most alpha because their sizes sum to at most t. For A, a block of size t-1
+   leaves at most a singleton (zero Type I error budget); a block of size t
+   exhausts the set; otherwise the linear argument applies. Hence both budgets
+   satisfy the sum condition. This uses the theorem's model and monotone critical
+   sequence; a list of uncorrected quantiles alone is not a complete procedure.
+   Taking successive maxima of raw critical values would only reduce tail
+   probabilities, but that is investigator reasoning, not an adopted algorithm
+   or a claim that every printed table used that exact construction.
+4. Under known scale, two widely separated blocks of two equal means give the
+   NK limiting false-rejection probability `1-(1-alpha)**2`; at alpha=.05 it is
+   .0975. This illustrates the source's strong-control failure mechanism without
+   asserting the same equality at finite df or for every mean configuration.
+   Singleton blocks do not contribute false equality rejections. Neither Keuls's
+   historical F discussion nor a complete-null guarantee repairs this mechanism.
+5. Rejection/retention or grouping output is not proof of equality, a unique
+   disjoint clustering, adjusted-p values or a simultaneous interval contract.
+   Ryan's constant-level interval construction is separate from his layer tests.
+   No range critical value, interpolation tolerance, software default or published
+   power ranking is adopted. Einot–Gabriel p.583 Section 2.7 and Welsch p.569
+   explicitly limit what their simulated power comparisons establish.
+
+### K.4. Printed inconsistencies and unresolved precision
+
+**Keuls p.115:** the image prints `s_e^2 = 2983.03 : 12 = 124.29`, while the
+same page derives 24 error degrees of freedom and p.116 uses 24. Direct arithmetic
+is `2983.03/12 = 248.585833...`, whereas `2983.03/24 = 124.292916...`.
+Thus the printed divisor and quotient are inconsistent; 24 is a plausible intended
+divisor, not a formally confirmed erratum. Retain the print and do not reuse the
+example as a numerical oracle. The p.116 `176.0 - 97.7 = 78.2` also differs from
+the displayed operands and p.117's 78.3; no silent correction is applied.
+
+**Einot–Gabriel p.576 (1.10):** the page image prints
+`T_p^(2) = 2 * (T_p^(1))^2` for p=2. Direct substitution into the balanced
+range definition (1.8) and sum-of-squares definition (1.9) instead gives
+`T_2^(2) = (T_2^(1))^2 / 2`. For n=1, means 0 and 2, and s=1,
+(1.8) squared is 4 and (1.9) is 2. This is an internal coefficient discrepancy,
+not an adopted repair. The nearby prose about identical statistics on pairs does
+not make complete range and F procedures identical because containing-set tests
+still differ. The line on p.578 cites (1.10) for NK allocation and (1.12) for Ryan
+allocation, while the allocation formulas are (1.11) and (1.13); use formula
+content and page locators rather than silently correcting those cross-references.
+
+These observations were checked on page images. No formal erratum search or
+publisher correction confirmation was performed. The conflict record is part of
+the result, not authority to replace source values. Before numerical reuse or
+selection of a formula affected by these discrepancies, obtain independent
+confirmation and a separate bounded adjudication. The historical source-status
+classification can be researched without adopting the disputed example or (1.10).
+
+### K.5. Reproducible author-side arithmetic diagnostic
+
+This is exact rational arithmetic, not a range-distribution computation, simulation,
+independent oracle, or numerical implementation test. It checks the allocation
+bookkeeping and two-mean coefficient only. It does not establish either theorem.
+
+```python
+from fractions import Fraction as F
+
+
+def partitions(n, least=1):
+    if n == 0:
+        yield ()
+    for j in range(least, n + 1):
+        for rest in partitions(n - j, j):
+            yield (j,) + rest
+
+
+count = 0
+for t in range(2, 21):
+    for part in partitions(t):
+        count += 1
+        a = sum(F(0) if d == 1 else F(1) if d >= t - 1
+                else F(d, t) for d in part)
+        b = sum(F(d, t) for d in part if d >= 2)
+        assert a <= 1 and b <= 1
+print("partitions checked:", count)
+print("NK two-block limit:", 1 - (1 - F(1, 20))**2)
+print("two-mean augmented-F/range-squared:", F(2, 4))
+```
+
+Observed output:
+
+```text
+partitions checked: 2712
+NK two-block limit: 39/400
+two-mean augmented-F/range-squared: 1/2
+```
+
+### K.6. Entry impact, candidate status and reopen conditions
+
+| Entry                  | Evidence used now                                                                     | Author-side impact; classification unchanged                                                                                                                                                                                                                                   |
+| ---------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| APR-10 / C-H1          | Fresh Keuls reading above; Newman author record C.3 reused; Einot–Gabriel Section 1.7 | Ordered-range construction and a direct later primary analysis of failure of strong control are supported. Keuls and Newman are not asserted to be byte-identical algorithms. RES-ONLY retained.                                                                               |
+| APR-11 / C-H2          | Duncan author record C.3 reused; fresh Einot–Gabriel calibration comparison           | Preserve original pairwise-alpha protection-level interpretation. Rescaled Duncan in the 1975 comparison is a distinct calibration, not a contradiction of the existing conventional-FWER warning. RES-ONLY retained; no fresh Duncan audit.                                   |
+| APR-12 / C-H3          | Fresh Ryan, Einot–Gabriel and Welsch readings above                                   | Named constructions and their different guarantee conditions are source-grounded. PARTIAL characterization: a single REGWQ implementation identity is not fixed, monotone critical construction and the intended model/output scope remain named questions. RES-ONLY retained. |
+| APR-13 / APR-14 / C-H4 | Parts I/J, PR 201/203 and recorded scoped acceptance reused                           | No change to accepted bounded protected/modified LSD characterization or proof limitations. RES-ONLY retained.                                                                                                                                                                 |
+
+**SR-H candidate disposition: PARTIAL, replacing INPUT_INCOMPLETE in this
+successor only.** The formerly unread Keuls and Ryan/Einot–Gabriel/Welsch texts
+are now inspected for the decision-bearing characterization above; Newman and
+Duncan already have the explicitly reused C.3 source readings. This does not
+claim that all six originals have undergone one independent review. Remaining
+named gaps are the intended APR-12 variant boundary (including the treatment of
+GAPA/GAPB as separate reopen candidates), exact monotonicity/selection conditions,
+and resolution or explicit exclusion of the disputed numeric/formula material
+before any affected use. Independent review is asked to assess this PARTIAL
+proposal, not instructed to accept it.
+
+Reopen/closure conditions: resolve the named characterization gaps against these
+fixed originals and the prior Newman/Duncan evidence; inspect any external primary
+proof required by a claim that is actually retained, rather than assuming a cited
+proof has been audited. A full SR-H closure review must cover or explicitly reuse
+Newman/Duncan as well as the four current originals and the fixed C-H4 pass. If
+an essential retained claim needs an uninspected original, use INPUT_INCOMPLETE
+for that gap instead of concealing it in PARTIAL. Unequal-variance generalization,
+Type III guarantees, simultaneous outputs, numerical constants or production
+algorithms would be new scope and require their own source work and review.
+
+| Holds                                              | Candidate disposition                                                 |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| SR-B, SR-C, SR-G, SR-K, SR-L                       | CLOSED (existing candidate statuses; not five new formal acceptances) |
+| SR-H                                               | PARTIAL (this author-side proposal)                                   |
+| SR-A, SR-D, SR-E, SR-F, SR-I, SR-J, RSM-01, RSM-02 | INPUT_INCOMPLETE                                                      |
+
+Candidate totals: 5 CLOSED / 1 PARTIAL / 8 INPUT_INCOMPLETE, 14 entries.
+Overall INPUT_INCOMPLETE and semantic NARROW remain. No public-opening gate,
+R4 source-access finding, adoption, implementation, merger or release is closed.
+
+### K.7. Independent primary-source review handoff
+
+Review only the new Part K at the exact PR head, preserving the 303208-byte
+Parts A–J prefix. Supply originals 24, 25, 35 and 36 from K.1. Verify the source
+statements, pinpoints, mathematical deductions, printed inconsistencies, budget
+diagnostic and PARTIAL proposal; prioritize the all-containing-set requirement,
+statistic/calibration variants, monotonicity and Type I versus Type III scope.
+Reuse C.3 and Parts I/J only as disclosed historical evidence. Do not claim a
+fresh reading or independent approval of Newman/Duncan or the other 31 originals.
+If those are necessary to decide the whole-hold status, bound the verdict and name
+that exact gap. Do not approve a specific REGWQ implementation by name alone.
+
+Read repository instructions and the pinned commission; report separate source,
+inference, disposition and independence findings. The author side here is OpenAI
+assistance; record actual reviewer provenance and context separation without
+exact-build-log demands or rewriting older PENDING statements. Save the English
+review at `review-inputs/r3-srh-range-synthesis/REVIEW-RESULT.md` on a new neutral
+branch from the fixed head, targeting this result branch in a draft PR. Run
+format check, Markdown lint, direct validator and diff check, reporting actual
+results and any access failures. No PDF, page image or full extraction enters Git.
+Do not merge, formally accept SR-H, choose methods, open discussion or release.
+
+RELEASE 3 PART K AUTHOR RANGE SYNTHESIS COMPLETE - INDEPENDENT REVIEW PENDING -
+SR-H PARTIAL CANDIDATE - OVERALL INPUT_INCOMPLETE - NO METHOD ADOPTED
