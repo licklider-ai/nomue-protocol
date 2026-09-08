@@ -44,7 +44,7 @@ R4-P1, R4-P2 or R4-P6.
 
 ## Proposed authority and change inventory
 
-Current change: this informative document only. The eventual implementation
+Current preparation changes are informative documents only. The eventual implementation
 proposal inventories exact files and registered Requirement IDs before opening;
 new IDs are not guessed or allocated here.
 
@@ -88,13 +88,13 @@ execution support. No result produced by the disposable probe is a public fixtur
 
 ## Numerical evidence map
 
-| Quantity or boundary         | Available evidence                                      | Remaining prerequisite                                                   |
-| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Coded coefficients           | Accepted bounded QR cancellation supplement             | Applicability to the final chosen graph and supported domain             |
-| SS, SSE and F ratio          | PR 218 exploratory 945-case probe and three diagnostics | Independent derivation and reproduction; domain and error analysis       |
-| F tails and quantiles        | Conditional research reuse candidates                   | Exact source, algorithm, parameter range and projection review           |
-| Signed effects and intervals | Proposed normalization; interval inclusion undecided    | Source-based inferential construction plus numerical propagation         |
-| Resource and platform limits | Finite probe environment only                           | Supported bounds and execution evidence; no extrapolation from 945 cases |
+| Quantity or boundary         | Available evidence                                         | Remaining prerequisite                                                   |
+| ---------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Coded coefficients           | Accepted as an accurate exploratory QR cancellation record | Applicability to the final chosen graph and supported domain             |
+| SS, SSE and F ratio          | PR 218 exploratory 945-case probe and three diagnostics    | Independent derivation and reproduction; domain and error analysis       |
+| F tails and quantiles        | Conditional research reuse candidates                      | Exact source, algorithm, parameter range and projection review           |
+| Signed effects and intervals | Proposed normalization; interval inclusion undecided       | Source-based inferential construction plus numerical propagation         |
+| Resource and platform limits | Finite probe environment only                              | Supported bounds and execution evidence; no extrapolation from 945 cases |
 
 See [the SS/F supplement](ss-f-propagation-supplement.md). Bitwise disagreement
 counts are not statistical rejection rates and do not rank general algorithms.
@@ -144,3 +144,13 @@ bounded, not for adoption, implementation support or publication of a release.
 Authorship assistance: OpenAI Codex, in the existing maintainer task context.
 No independent primary-source review occurred in this increment. Research sources
 and acquisition limits are recorded in [the source follow-up](source-followup-2026-09-08.md).
+
+## Review follow-up
+
+The independent editorial review is preserved at
+[the review record](../../../review-inputs/r4-rfc-preparation/REVIEW-RESULT.md).
+It grants bounded editorial GO at `bf400469` and leaves R4-P5 open.
+The [candidate impact inventory](rfc-impact-inventory.md) now identifies concrete
+proposed paths and existing requirement constraints. It does not allocate new
+requirements or complete the final RFC impact assessment. Read numerical evidence
+with the repaired supplement's magnitude table and interpreter dependency.

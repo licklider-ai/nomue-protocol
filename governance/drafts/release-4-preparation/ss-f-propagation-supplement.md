@@ -1,6 +1,7 @@
 # Exploratory propagation from coefficients to SS and F
 
-Status: `AUTHOR_EXPLORATORY_NOT_REVIEWED`. Date: 2026-09-08.
+Status: exploratory record independently reviewed at `4cf3e12a`; subsequent prose repairs await close review. Date: 2026-09-08.
+The original JSON status is retained as historical author-run metadata.
 This disposable probe extends the accepted QR investigation; it does not reopen
 that supplement's acceptance or select an implementation.
 
@@ -45,6 +46,33 @@ the structured corpus contains many exact zero contrasts.
 | qr           | 314                         | 648                         | 303                        | 2134                            | 9                                        |
 | centered_qr  | 170                         | 908                         | 162                        | 2281                            | 3                                        |
 
+The independent review at `c8ce35c` (Section 5.4-5.5 of
+[the numerical review](../../../review-inputs/r4-public-discussion-preparation/REVIEW-RESULT.md))
+adds the following context. Of 2835 exact F targets, 2415 are zero and 420
+are nonzero. Among 945 selected-axis targets, 525 are zero. Thus the spurious
+nonzero counts are 0/2415, 2134/2415 and 2281/2415, respectively.
+
+| Graph        | Largest spurious F at exact zero (approximate) | Largest relative SSE error (approximate) | Largest exact F returned as zero (approximate) |
+| ------------ | ---------------------------------------------- | ---------------------------------------- | ---------------------------------------------- |
+| builtin_cell | 0                                              | 8.9e-17                                  | 2.0e-31                                        |
+| qr           | 1.9e-6                                         | 1.25e-6                                  | 3.2e-31                                        |
+| centered_qr  | 7.3e-30                                        | 2.2e-16                                  | 4.2e-31                                        |
+
+These magnitudes are attributed to the reviewer's independently derived analysis,
+not newly measured by this prose repair. All 105/9/3 lost targets are below
+5e-31 and arise from asymmetric input rounding; their counts do not establish
+loss of a practically meaningful effect. The uncentered QR residual error is
+largest at offset 2^40. These observations do not establish a general significance
+threshold or a guarantee outside this corpus.
+
+The interpreter is part of the operation definition: builtin sum aggregates
+cell means, contrast coefficients, and squared residuals in all three routes.
+The reviewer observed 10 spurious nonzero F values for builtin_cell on CPython
+3.11.15 with the same NumPy 2.3.5, versus zero on CPython 3.12.3, and SSE counts
+changed for every route. NumPy 2.5.3 with OpenBLAS 0.3.34 also changed QR rows and
+both witnesses, while the builtin_cell rows remained unchanged. Neither route
+has a cross-environment bitwise promise.
+
 All evaluated SS, SSE and F values in the 945-case corpus were finite. This
 corpus does not establish safety for larger magnitudes or other datasets.
 For n=2, offset exponent 0, perturbation exponent 54 and axis 1, exact selected
@@ -65,8 +93,8 @@ user-facing policy.
 
 ## Limits and next investigation
 
-The cell graph loses 105 nonzero projected F targets in this corpus, so its
-higher bit-match count is not a blanket recommendation. QR's stability in other
+The cell graph loses 105 nonzero projected F targets, all below 5e-31 in the
+reviewed analysis. Its higher bit-match count is not a blanket recommendation. QR's stability in other
 settings is not refuted by cancellation-sensitive exact-zero examples.
 No worst-case error bound, tolerance, rank policy, p-value, confidence interval,
 resource maximum, or cross-platform guarantee is supplied. Factor/order
@@ -75,5 +103,6 @@ small. Independent reproduction, independently derived expectations and review
 of graph-to-claim correspondence remain required before promotion.
 
 Authoring and execution used OpenAI Codex in the maintainer task context;
-independence is not claimed. This evidence is informative and does not change
+independence is not claimed. The independent review is preserved separately; this author-side prose repair
+is not its own close review. This evidence is informative and does not change
 normative contracts or close programme `INPUT_INCOMPLETE`.

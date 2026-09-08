@@ -60,3 +60,29 @@ Use the independent review prompt from PR 218 for the numerical lane and
 
 Authoring and search used OpenAI Codex in the existing task context. This was not
 an independent primary-source review. No methodological hold is closed here.
+
+## Supplier follow-up received after the independent review
+
+The commissioning user reports checking Cambridge University Press, CiNii,
+ResearchGate, ScienceDirect, Wiley and SSRN, finding no lawful free original PDF
+or alternative individual purchase route. The user reports Cambridge's article
+purchase as temporarily unavailable and search PDF hits as other papers citing
+Cochran. This is an attributed user report; this authoring context has not
+independently verified current purchase availability. It is not proof that no
+copy exists anywhere. No original PDF was supplied.
+
+Do not repeat this same web-search circuit as the next mandatory task. Candidate
+next routes are a library document-delivery/interlibrary request for the exact
+article, or independent investigation of whether other appropriate original
+methodological sources fully establish the retained claims. No library request
+has been sent, purchase made, or replacement source accepted. The obligation is
+adequate original evidence for the claim, not ownership of a particular paper;
+any substitution needs an explicit claim mapping and independent adjudication.
+S1/S5 remain incomplete. Existing completed provided-copy review is unchanged.
+
+The returned editorial review lists unverified Yates identifiers:
+Internet Archive `in.ernet.dli.2015.449111`, HathiTrust `002016019`, Rothamsted
+`98765`, and Google Books `YW1OAAAAMAAJ`. These are leads attributed to that
+review, not verified acquisition locations. Check title, author, edition and
+page completeness before relying on any returned file; do not infer validity
+from a plausible repository identifier.
