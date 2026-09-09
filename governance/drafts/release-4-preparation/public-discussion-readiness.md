@@ -1,5 +1,12 @@
 # Release 4 public discussion preparation
 
+Current state: **PUBLIC_DISCUSSION_OPEN**, since 2026-09-09T05:59:47Z.
+See [discussion issue 261](https://github.com/licklider-ai/nomue-protocol/issues/261)
+and the [opening record](public-discussion-opening-2026-09-09.md).
+The minimum 30-day window ends no earlier than 2026-10-09T05:59:47Z.
+Earlier pending/NOT_READY descriptions below are preserved historical states;
+the reviewed candidate is unchanged. Numerical support remains unestablished.
+
 Current repair: [PR 251/252 response](opening-rfc-review-response.md).
 Both full reports are preserved separately:
 [PR 251](../../../review-inputs/r4-opening-rfc/PR-251-REVIEW.md) and
