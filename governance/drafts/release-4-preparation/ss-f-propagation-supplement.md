@@ -1,6 +1,6 @@
 # Exploratory propagation from coefficients to SS and F
 
-Status: exploratory record independently reviewed at `4cf3e12a`; subsequent prose repairs await close review. Date: 2026-09-08.
+Status: exploratory record independently reviewed at `4cf3e12a`; PR 232 reports the subsequent SF-R1 prose repair CLOSED at `68a8726e` (review commit `510cad76132b1d18d581da581fe9c1ee162c8b59`). This records the returned verdict, not steward acceptance. Date: 2026-09-08.
 The original JSON status is retained as historical author-run metadata.
 This disposable probe extends the accepted QR investigation; it does not reopen
 that supplement's acceptance or select an implementation.

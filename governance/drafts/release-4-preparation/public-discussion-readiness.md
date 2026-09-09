@@ -106,13 +106,13 @@ acceptance of these new results.
 
 ## Review state and review scope
 
-| Evidence                               | Exact reviewed input                             | Result and limit                                                                                                                    |
-| -------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| QR supplement and two supporting pages | `0be8bb1519d7aec2810b03192de6590ec9168c60`       | Bounded record accepted; source status COMPLETE_ON_PROVIDED_COPIES, preserved by the existing intake                                |
-| SS/F numerical review                  | `4cf3e12acc77bd38c09d5acd2588ede66ee265b2`       | Numerical GO for the finite exploratory record; no programme or source closure                                                      |
-| RFC editorial review                   | `bf4004694f68018534e01bde2f2a33214accba19`       | Editorial GO; R4-P5 not closed                                                                                                      |
-| Repair review, PR 225                  | `ed7bfeb9f9ca2cee6e8766e90d9ee6a5091cb68b`       | Bounded GO with SF-R1/SF-R2; subsequent two-site repair is `68a8726ea564a88fe3663dfd84bfde8c4550d6e6`, not yet independently closed |
-| Programme self-audit                   | Input `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` | Author-side cross-document and boundary investigation; not an independent opening review                                            |
+| Evidence                               | Exact reviewed input                             | Result and limit                                                                                                                                                                                                                   |
+| -------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| QR supplement and two supporting pages | `0be8bb1519d7aec2810b03192de6590ec9168c60`       | Bounded record accepted; source status COMPLETE_ON_PROVIDED_COPIES, preserved by the existing intake                                                                                                                               |
+| SS/F numerical review                  | `4cf3e12acc77bd38c09d5acd2588ede66ee265b2`       | Numerical GO for the finite exploratory record; no programme or source closure                                                                                                                                                     |
+| RFC editorial review                   | `bf4004694f68018534e01bde2f2a33214accba19`       | Editorial GO; R4-P5 not closed                                                                                                                                                                                                     |
+| Repair review, PR 225                  | `ed7bfeb9f9ca2cee6e8766e90d9ee6a5091cb68b`       | Bounded GO with SF-R1/SF-R2; subsequent two-site repair is `68a8726ea564a88fe3663dfd84bfde8c4550d6e6`, independently reported CLOSED in PR 232 at `510cad76132b1d18d581da581fe9c1ee162c8b59`; steward acceptance not recorded here |
+| Programme self-audit                   | Input `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` | Author-side cross-document and boundary investigation; not an independent opening review                                                                                                                                           |
 
 The first two returned reviews are preserved under
 `review-inputs/r4-public-discussion-preparation/` and `review-inputs/r4-rfc-preparation/`.
@@ -137,13 +137,22 @@ Cochran acquisition report remains attributed testimony in the source follow-up.
 
 ## Numerical feasibility beyond the accepted finite record
 
-| Quantity or hazard               | Evidence route                                         | Remaining boundary                                                                                                                                                                                   |
-| -------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Effect/SS/SSE/F algebra          | Original numerical result plus reviewed SS/F probe     | No supported domain, full error propagation or production operation graph selected                                                                                                                   |
-| F tail and critical bracket      | PR 190's exact-rational and Decimal exploratory routes | Numerator df is one; positive even integer residual df only; not a general Candidate B oracle; endpoint handling, portable projection, series remainder and resource certification remain incomplete |
-| Finite inputs with extreme scale | New self-audit scale witnesses                         | All three current graphs can yield NaN although exact F is 100, 36, 4; runtime needs justified scaling or a bounded admission/refusal policy, still undecided                                        |
-| Intervals and protected families | Conditional semantic/numerical work                    | Shared estimated residual denominator does not imply independent p-values; no automatic multiplicity reuse or interval/test duality after rounding                                                   |
-| Trace and supported execution    | Earlier toy controls and proposed strategy             | Dictionary inequality is not certificate/trace tamper resistance; no production trace, admission predicate or platform certification follows                                                         |
+| Quantity or hazard               | Evidence route                                                                                         | Remaining boundary                                                                                                                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Effect/SS/SSE/F algebra          | Original numerical result plus reviewed SS/F probe                                                     | No supported domain, full error propagation or production operation graph selected                                                                                                                   |
+| F tail and critical bracket      | PR 190 input `5962cc2def5b1aca7e30d219f12a9a6486ca7b11`: exact-rational and Decimal exploratory routes | Numerator df is one; positive even integer residual df only; not a general Candidate B oracle; endpoint handling, portable projection, series remainder and resource certification remain incomplete |
+| Finite inputs with extreme scale | New self-audit scale witnesses                                                                         | All three current graphs can yield NaN although exact F is 100, 36, 4; runtime needs justified scaling or a bounded admission/refusal policy, still undecided                                        |
+| Intervals and protected families | Conditional semantic/numerical work                                                                    | Shared estimated residual denominator does not imply independent p-values; no automatic multiplicity reuse or interval/test duality after rounding                                                   |
+| Trace and supported execution    | Earlier toy controls and proposed strategy                                                             | Dictionary inequality is not certificate/trace tamper resistance; no production trace, admission predicate or platform certification follows                                                         |
 
 Source support for an F distribution and numerical ability to evaluate an F tail
 are separate prerequisites. Neither one substitutes for the other.
+
+## Returned programme review
+
+[PR 232 review](../../../review-inputs/r4-programme-audit/REVIEW-RESULT.md),
+commit `510cad76132b1d18d581da581fe9c1ee162c8b59`, reports bounded GO at
+`f01b870bdce4e051476e4b74d56b4deb4217307e`, SF-R1/SF-R2 CLOSED and independent
+reproduction of the scale fixture and corpus. None of R4-P1 through R4-P6 is
+closed. See [the receipt and follow-up](programme-review-receipt-2026-09-09.md)
+for the consumed handoff version, findings and author-side qualifications.

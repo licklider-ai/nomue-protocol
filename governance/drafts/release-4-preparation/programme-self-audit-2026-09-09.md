@@ -140,3 +140,28 @@ validation, diff whitespace and byte-preservation checks are recorded in the PR
 body after execution. No authoritative, production, historical numerical or
 Release 3 artifact is changed. The full authoritative-change test gate is not
 triggered by this informative research increment.
+
+## Post-review qualifications
+
+The [independent review](../../../review-inputs/r4-programme-audit/REVIEW-RESULT.md)
+at `510cad76132b1d18d581da581fe9c1ee162c8b59` reports bounded GO on the prior
+fixed audit input `f01b870bdce4e051476e4b74d56b4deb4217307e`. This appended
+qualification is later author-side text, not part of that reviewed input.
+
+At scale 2^-600, the exact SS/SSE targets are below half the smallest binary64
+subnormal; at scale 2^600 they exceed the finite binary64 range. Under
+round-to-nearest with overflow to infinity, zero and infinity are the respective
+projections of those targets. Exact F remains 100, 36, 4 and is representable;
+forming F from already projected SS/MSE encounters 0/0 or inf/inf. A future
+computability decision therefore concerns output representation as well as graph
+choice; this does not choose either one.
+
+The submitted graph uses NumPy float64 division under its stated errstate.
+Pure Python float division raises ZeroDivisionError for 0.0/0.0, whereas
+float infinity divided by float infinity returns NaN. The division type and
+error handling matter; the tiny-scale and huge-scale cases are not identical
+exception cases. No refusal semantics is adopted here.
+
+The original summary's nonfinite metric is zero in all nine route/quantity cells.
+Thus all 19845 SS/SSE/F quantity values in that original corpus are finite, not
+only its 8505 F values. The separate scale witnesses do not belong to that corpus.
