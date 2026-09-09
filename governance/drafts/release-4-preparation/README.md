@@ -181,3 +181,7 @@ gate identifiers.
 
 The [normal-model review response](normal-model-review-response.md) records
 PR 246, the evidence-map repair and outstanding steward dispositions.
+
+The [bounded normal-model steward acceptance](normal-model-steward-acceptance-2026-09-09.md)
+records accepted evidence, confirmed repairs, scope-specific staging and the
+remaining public-opening conditions. It supersedes the earlier pending status.
