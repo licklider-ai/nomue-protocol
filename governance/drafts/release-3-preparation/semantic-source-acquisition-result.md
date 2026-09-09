@@ -4224,3 +4224,151 @@ adding the report. Open a separate draft PR against
 moved, and report GitHub commit/parent/tree/blob identities. Report in Japanese
 with the verdict, remaining decisions and any additional-investigation prompt.
 Do not merge, accept a hold, adopt a procedure, open discussion or release.
+
+## Part S — SR-I scoped steward acceptance and review-note disposition
+
+**Status: informative source-completion acceptance record; non-normative.**
+This addendum records the three decisions approved by steward Tasuku Kobayashi
+in the continuing author/coordinator conversation on 2026-09-09, after presentation
+of PR #230 and the three concrete proposed decisions. The steward explicitly
+approved all three. This English account records that conversation approval;
+it is not a cryptographic signature or an independently recorded GitHub vote.
+The OpenAI-assisted author/coordinator records the decision and remains an author,
+not an independent reviewer.
+
+### S.1 Fixed evidence and preservation
+
+The accepted author input is PR #228, commit
+`3a8bc0d86718a2cf47ce12089a9030a02e41a297`, tree
+`a7ca249511be2bd84dd9135d99f63428db58cfb6`, result blob
+`6c4afc4363a129e707e777ebccea2a2034d74290`, 417005 bytes, SHA-256
+`52bf464832f01bcfd3f96fe0ea922fef136d0ea849ec14158008b48fcd7f44b0`.
+The independent review is PR #230, commit
+`06c09e6616b27124ef00b615a5ad59b0e060902a`, sole parent the accepted author
+commit, tree `310991a7d13762fb44ef71837aaaf07622821410`, report at
+`review-inputs/r3-sri-author-synthesis/REVIEW-RESULT.md`, blob
+`722d0e46c5f9619243f80a2464893aaf49feafa9` (66324 bytes).
+Its content verdict is GO, with no BLOCKER or SHOULD-FIX and four NICE-TO-HAVE
+observations. Its Sections 2, 9, 10, 13 and 14 delimit the evidence and decisions.
+PR #226 and its full fixed identities remain as recorded in R.1.
+
+The full 417005-byte Parts A–R prefix is preserved. Earlier PARTIAL and PENDING
+statements describe their historical state; this successor does not rewrite them.
+This acceptance reuses the direct original-page checks and arithmetic recorded in
+Part R and PR #230. No PDF rereading, quantile calculation or Monte Carlo rerun is
+claimed for this administrative and editorial addendum.
+
+### S.2 Decision 1 — accept the narrowings and source completion
+
+**ACCEPTED:** S-1–S-3 are recorded catalogue narrowings, not unresolved conflicts
+preventing completion of C-I1/C-I2. Games–Howell's evidence is simulation-based,
+with documented nominal-level exceedances and no general finite-df level-alpha
+guarantee established by the assigned texts; GH-prime is excluded. T2 and T2-prime
+have distinct df/evidence mappings. T3 and C are distinct descriptive procedures.
+Part R and PR #230 support these limited descriptions directly and distinguish
+source statements, author inferences, printed discrepancies and uninspected
+conditional dependencies.
+
+**SR-I is formally ACCEPTED AS CLOSED for source completion only.** The assigned
+source-acquisition obstacle is removed. This decision does not select or implement
+any of the procedures, establish error-rate or numerical guarantees, or resolve
+the separate choices concerning fractional df, zero variance, minimum sample
+size, contrast extensions, or conditional proof dependencies in R.6.
+
+### S.3 Decision 2 — retain HET-01 as an unselected candidate
+
+**ACCEPTED:** retain HET-01's existing R3-CAND classification as an unselected
+candidate, with no level-alpha guarantee or implementation approval. The label
+preserves a future investigation option; it is not evidence of controlled FWER
+or a commitment to ship Games–Howell. Before implementation, the supported scope,
+approximation/reporting meaning and numerical conditions require their own
+supported decisions. HET-02/03 remain RES-ONLY; no catalogue or Contract ID is
+created, split or reinterpreted in the fixed semantic input.
+
+### S.4 Decision 3 — scoped independent-pass determination
+
+**ACCEPTED for this SR-I source-completion scope:** the steward relies on Part R's
+OpenAI-assisted author provenance and PR #230 Section 2's service-reported
+`claude-fable-5-1` reviewer model, separate context and non-involvement in authoring
+Part R or PR #226. These ordinary provenance statements support the separate-model
+and separate-context determination for this review of the author synthesis under
+RFC research-gate rule 2. Git identities establish artifact identity, not serving
+model identity. No exact-build log is required or inferred.
+
+PR #226 and PR #230 share a reviewer model family; they are not presented as two
+independent model families. The user-described human responsibility remains
+respected, without inferring that the responsible humans were different people.
+This determination is scoped to SR-I and does not replace any other hold's
+independence decision or silently alter earlier PENDING evidence.
+
+### S.5 Disposition of optional review notes
+
+The following precision notes are carried forward from PR #230 Section 13, using
+its direct source inspection explicitly rather than claiming new page inspection:
+
+- N-1: retain the reported Tamhane Table 3 inconsistency: the GH k=4,
+  configuration-6 value .940 lacks an asterisk despite the printed criterion and
+  other marked cells. No table cell or historical simulation is corrected here.
+- N-2: retain the p.797 Dunnett attribution issue: its reference to Tamhane 1979
+  as evidence about T2 does not distinguish that study's T2-prime simulation.
+  Part R's T2/T2-prime mapping governs the bounded source characterization.
+- N-3: clarify that R.3's shared chi-square scale description of the SMM law is
+  an inference from the standard distribution definition, not a sentence directly
+  established in the assigned originals. The definitional references identified
+  in PR #230 remain uninspected. This is no numerical-kernel certification.
+- N-4: carry the additional pinpoint to GH p.120 for the extra 1000 experiments
+  under NC 3 and the discussion of n=3 paired with n=11 or 8. Part R's numerical
+  counts and the original table values remain unchanged.
+
+These are editorial carry-forwards and an explicit attribution clarification,
+not new statistical evidence or reasons to repeat the completed primary review.
+Their incorporation is author-side; no independent close-only verdict is claimed.
+
+### S.6 Successor ledger and remaining work
+
+| Disposition      | Holds                                    | Count |
+| ---------------- | ---------------------------------------- | ----- |
+| CLOSED           | SR-B, SR-C, SR-F, SR-G, SR-I, SR-K, SR-L | 7     |
+| PARTIAL          | SR-H                                     | 1     |
+| INPUT_INCOMPLETE | SR-A, SR-D, SR-E, SR-J, RSM-01, RSM-02   | 6     |
+
+Only SR-I changes from Part R's 6/2/6 source-result ledger. This is not a list of
+seven formally accepted holds: the other rows retain their own acceptance history.
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY false, NARROW, other hold dispositions,
+TRANSFER, remaining R3-CAND/RES-ONLY classifications and the separate R4 state
+remain. Custody remains 42 numbered originals plus one unnumbered corrigendum,
+43 artifacts; no duplicate intake or new acquisition is recorded.
+
+Source completion is now accepted for SR-I. Implementation-specific decisions
+remain open as listed above. The conditional investigations in PR #230 Section 14
+are activated only when their claims are needed, not as prerequisites to this
+bounded acceptance. Main integration, public discussion, method adoption and
+release are separate actions and are not performed by this record.
+
+### S.7 Limited record-application review handoff
+
+Review only this addendum at the full fixed identity in its PR body. Read AGENTS.md,
+the ordered Read first documents and applicable local instructions. Verify the
+sole parent is the fixed Part R commit in S.1 and that all 417005 prefix bytes are
+identical; check the one-file append-only diff and PR #230's pinned identity.
+Read the three approval proposals and approval account in this PR body, then
+compare S.2–S.4 with the approved scope and PR #230 Sections 2, 9, 10 and 14.
+The decision was made by the steward; assess faithful recording and application,
+not whether the reviewer can grant approval again. Check S.5 against Section 13,
+especially source versus inference for N-3, and verify 7/1/6 and all wider limits.
+
+Reuse the existing original-page review explicitly. No PDF is required unless a
+new concrete decision-bearing issue cannot be settled from the pinned records.
+Do not rerun simulations or seek exact-build logs. Disclose prior involvement,
+context/model basis, direct checks, reused evidence and unverified scope. Do not
+rewrite existing results, reviews or historical PENDING records.
+
+Create a fresh neutral branch `review/r3-sri-acceptance-20260909` (a fresh suffix
+if occupied), with the fixed author head as sole parent. Add only an English
+report at `review-inputs/r3-sri-acceptance/REVIEW-RESULT.md`. Run format:check,
+lint:markdown, the direct validator and git diff --check; report actual outputs
+without overstating file counts. Open a separate draft PR against
+`research/r3-sri-acceptance-20260909`, confirm the author head is unchanged and
+report commit/parent/tree/blob identities. If a substantive gap appears, supply
+an executable additional-investigation prompt. Do not merge, expand the accepted
+scope, adopt a procedure, open discussion or release.
