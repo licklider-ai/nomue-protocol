@@ -45,6 +45,9 @@ The supplied Tian/Styan copy is now recorded in the
 [bounded opening-scope proposal](normal-model-opening-scope.md). These are new
 author-side inputs for independent assessment, not source-hold closure.
 
+Use the [normal-model independent review handoff](normal-model-review-handoff.md)
+with the matching supplied PDF for the combined scientific and preparation review.
+
 ## Repository identity
 
 This preparation starts from main commit
