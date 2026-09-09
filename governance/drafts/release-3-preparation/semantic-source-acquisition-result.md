@@ -6211,3 +6211,48 @@ repository checks, full catalogue accounting, prefix preservation and output sco
 are verified for submission and recorded with fixed output identities in the PR.
 Full tests, typecheck, generated checks and scientific reruns are not part of this
 informative synthesis. The original September 6 readiness audit remains historical.
+
+## Part AE. Opening-review receipt and explicit premise exclusion
+
+2026-09-09. Sole input parent is PR #271 return
+`c28d87a2260ca04c99e3c3927e8aa847aad1bd38`, tree
+`9d8ddeac6abd8d65f3913195540569a2aac82243`; its sole parent is
+`fca5094a227422fd2d7d72ed8a7dc64f0f6ddc21`. The complete 569423-byte A-AD
+prefix, blob `abb9d6addaa028118489c7f27c5815cc370ecb38`, is preserved exactly.
+The returned review and check artifacts remain unchanged, including report blob
+`8b1e9aad128970146d70bc4f44ec2d9e5ac16c59`.
+
+Received verdict: INSUFFICIENT_EVIDENCE, BLOCKER 1 / SHOULD-FIX 1 /
+NICE-TO-HAVE 1. R3-H2-H6 satisfied for opening; H1/H7 insufficient because
+OMN-02/Welch independent coverage and the precise SR-K/SR-G provenance successor
+were not established by the fixed opening proposal. This is not a mathematical
+refutation or cancellation of previous acceptance. No new source or repeat scope
+approval was requested by the review.
+
+The coordinator uses the offered narrower-premise route: OMN-02 positive Welch
+characterization, APR-09 coverage and SR-K FDR/dependence guarantees are expressly
+excluded as enabling opening premises. The opening record Section 2.1 governs all
+candidate rows and inherited descriptions. Candidate/research labels remain;
+no method is deleted, promoted or declared false. Ge/James/Brown/Troendle are
+comparative context or exclusions, not new enabling scientific support.
+The missing qualifying links were not established in this repair; no claim that
+they do not exist is made. Reentry requires the actual bounded evidence or missing
+supplied-source review, not another broad approval or fabricated model attestation.
+
+S-01 is applied: README's old sequence is marked historical and replaced for
+current work by focused review, repairs, authority check and actual opening.
+N-01 is addressed in part with a selection-timing example and a fixed link to the
+review's evidence table; no complete new direct-link audit is claimed.
+
+Historical ledger 9 CLOSED / 1 PARTIAL / 4 INPUT_INCOMPLETE and all members,
+SOURCE_SET_READY=false, overall INPUT_INCOMPLETE, NARROW, dispositions,
+prior acceptances, residuals and numerical withdrawals remain unchanged. The
+source-scope approval and later-update permission remain effective. H1/H7 remain
+pending reconsideration; no opening, merge or new scientific acceptance occurs.
+
+This is continuing OpenAI Codex-assisted coordinator repair with prior author
+context. No new independent source review, model-build attestation, PDF reread or
+statistical rerun is claimed. The four repository checks and prefix/catalogue/scope
+checks are recorded in the submission PR. The received checks are not described as
+new coordinator execution. A focused return should assess the operative exclusion
+throughout the RFC/map, S-01 and H1/H7 without repeating unaffected scientific work.

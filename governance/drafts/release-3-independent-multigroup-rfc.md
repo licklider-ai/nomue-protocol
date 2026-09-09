@@ -32,6 +32,17 @@ record.** Scope adoption is effective; it is not a claim that this newly assembl
 RFC has already passed independent readiness review. The present coordinator
 prepares the review input and does not self-certify that gate.
 
+**Opening-review repair:** PR #271 found H2-H6 satisfied but H1/H7 insufficient.
+The [operative premise exclusions](release-3-preparation/supplied-scope-opening-record.md#21-b-01-operative-premise-exclusion)
+now explicitly withhold OMN-02 Welch model/statistic/df/calibration, APR-09 coverage,
+and SR-K FDR/dependence guarantees as scientific premises enabling opening. Their
+candidate/research/transfer labels remain questions, not asserted valid methods.
+Recent Ge/James/Brown/Troendle findings are comparative context and exclusions.
+This restriction governs all inherited descriptions, including the Summary,
+Research Gate, output classes and development tracks. No historical acceptance
+is revoked; no missing independence determination is presumed. H1/H7 await a
+focused review of this repaired package.
+
 ## Summary
 
 Release 3 is proposed as a bounded supplied-source successor program for

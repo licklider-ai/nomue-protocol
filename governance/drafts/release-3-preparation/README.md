@@ -185,7 +185,7 @@ That record is evidence reuse, not automatic Release 4 adoption. Factorial targe
 main and simple effects, interactions, design balance, admissibility, and any
 different numerical graph remain separate Release 4 questions.
 
-## Immediate sequence
+## Historical immediate sequence (2026-09-06; superseded)
 
 1. complete and independently review SR-A through SR-K and RSM-01/RSM-02, preserving
    the completed SR-L result and its reopen conditions; resolve X-8 to fix the source
@@ -199,3 +199,18 @@ different numerical graph remain separate Release 4 questions.
 4. perform the pre-opening readiness pass; and
 5. open public discussion without waiting for every procedure implementation to
    close.
+
+## Current immediate sequence (2026-09-09)
+
+1. Review PR #271's B-01 narrower-premise repair and S-01 correction against the
+   fixed repaired package; keep its H2-H6 findings as reused evidence.
+2. Obtain focused H1/H7 reconsideration, including evidence scope and independence
+   boundaries. Do not reacquire originals or require full historical hold closure.
+3. Apply any necessary repair and confirm the final fixed RFC and current authority.
+4. Execute the authorized opening only after readiness is established; record the
+   actual issue, UTC creation time, tier, minimum window and earliest decision.
+5. Continue numerical/implementation research under explicit holds. Future source
+   additions require their own identity, claim review and material-scope assessment.
+
+The historical list above is retained for traceability and is not an instruction
+to obtain missing sources or complete every historical hold before opening.
