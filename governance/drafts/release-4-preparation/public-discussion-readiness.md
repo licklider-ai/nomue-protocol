@@ -43,11 +43,16 @@ exactly four cells with a common replicate count of at least two, and declared
 factor and level order. Retain the full A, B, and interaction model.
 This is a scope recommendation awaiting review, not an adopted supported domain.
 
-Describe signed main effects and difference-in-differences explicitly. With
-cell means in order 00, 01, 10, 11, propose
+Describe signed sample estimates explicitly. Let `m00, m01, m10, m11` be
+sample cell means in declared cell order, and propose
 `dA=(-m00-m01+m10+m11)/2`, `dB=(-m00+m01-m10+m11)/2`, and
-`dAB=m00-m01-m10+m11`. Coded interaction coefficient is `dAB/4`;
-a factorial-effect convention using `dAB/2` is a different normalization.
+`dAB=m00-m01-m10+m11`. These estimate population contrasts whose exact
+population/model definition remains under source review. They are not population
+values or a causal guarantee merely because they are called effects.
+With factor levels coded -1 and +1 in that declared order and the full model
+`intercept + betaA*xA + betaB*xB + betaAB*xA*xB`, the fitted coded coefficients
+are `betaA=dA/2`, `betaB=dB/2` and `betaAB=dAB/4`. A factorial-effect convention
+using `dAB/2` for the interaction is a different normalization from `dAB` itself.
 Do not let those conventions silently alter an interval or reported effect.
 
 The discussion can compare three marginal F tests and signed estimates.
@@ -122,6 +127,8 @@ and editorial recommendations have not yet been independently reviewed or accept
 | RFC editorial review                   | `bf4004694f68018534e01bde2f2a33214accba19`       | Editorial GO; R4-P5 not closed                                                                                                                                                                                                                                                 |
 | Repair review, PR 225                  | `ed7bfeb9f9ca2cee6e8766e90d9ee6a5091cb68b`       | Bounded GO with SF-R1/SF-R2; subsequent two-site repair is `68a8726ea564a88fe3663dfd84bfde8c4550d6e6`, independently reported CLOSED in PR 232 at `510cad76132b1d18d581da581fe9c1ee162c8b59`; bounded closure accepted through PR 229, as recorded in the programme acceptance |
 | Programme self-audit                   | Input `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` | Author-side cross-document and boundary investigation; not an independent opening review                                                                                                                                                                                       |
+| Scaling original review, PR 235        | `431ac4e6e59d880eca3df07219783d622ce11e31`       | Bounded GO with SF-1/SF-2; review `4137e4902d8460e059b3d60e31fa45905a8df5fb`; superseding corrections are preserved in the close review                                                                                                                                        |
+| Scaling close review, PR 235           | `a45590d5baeee2d0e34289be8cd0f5524cb81631`       | Review `3332083e62effda3af823dc47b8d56e15cbc7fd3`: SF-1 CLOSED, SF-2 substantively CLOSED, C-1 SHOULD-FIX; author repair accepted through PR 234, not a new independent C-1 close verdict                                                                                      |
 
 The first two returned reviews are preserved under
 `review-inputs/r4-public-discussion-preparation/` and `review-inputs/r4-rfc-preparation/`.
@@ -171,3 +178,14 @@ commit `510cad76132b1d18d581da581fe9c1ee162c8b59`, reports bounded GO at
 reproduction of the scale fixture and corpus. None of R4-P1 through R4-P6 is
 closed. See [the receipt and follow-up](programme-review-receipt-2026-09-09.md)
 for the consumed handoff version, findings and author-side qualifications.
+
+## Returned opening-preparation review
+
+[PR 240 review](../../../review-inputs/r4-opening-preparation/REVIEW-RESULT.md)
+at `d065570393f2d7b7ad9ba64ecb101c77cc79cd2f` reports bounded preparation GO
+at `964fe8640399a984e42723ad3e6247971c067fc8` with four SHOULD-FIX items.
+The [repair record](opening-preparation-repair.md) maps the author-side responses;
+they have not received an independent close verdict or steward acceptance.
+The [source acquisition follow-up](source-acquisition-followup-2026-09-09.md)
+records a newly inspectable alternative paper and remaining acquisition tasks.
+This does not close S1-S6/P1 or any R4-P1 through P6 condition.

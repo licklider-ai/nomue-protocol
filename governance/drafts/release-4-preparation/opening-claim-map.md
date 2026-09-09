@@ -53,7 +53,10 @@ Return, for each decision-bearing claim:
 The already accepted NIST/LAPACK provided-copy status remains
 COMPLETE_ON_PROVIDED_COPIES. Do not impose a new independent-download condition
 on that accepted bounded record. New source evidence needs its own traceability;
-raw HTML equality is not required for dynamic pages when content can be compared.
+Two independent retrievals of a dynamic page need not have identical raw bytes.
+Record raw HTML and extracted text separately, with their respective hashes when
+available; identify any missing form. Content comparison does not erase that
+traceability distinction or prove an unobserved acquisition route.
 
 ## Opening versus later implementation
 

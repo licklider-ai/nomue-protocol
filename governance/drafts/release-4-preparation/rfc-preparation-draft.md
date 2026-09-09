@@ -167,10 +167,12 @@ with the repaired supplement's magnitude table and interpreter dependency.
 The readiness document now carries the complete S1-S6 and P1 ambiguity map,
 exact-input review status, and numerical-domain limitations. The new scale
 boundary observations concern finite-input computability, not the distributional
-validity of F. Read the existing impact path table with its explicit unresolved
-Contract/Profile allocation; no Profile-owned statistical operation is selected
-by that provisional layout. The audit makes no numerical algorithm choice and
-opens no public-discussion window.
+validity of F. At the PR 227 audit the Contract/Profile placement was unresolved.
+The revised impact inventory now proposes Contract-owned operation semantics,
+Profile-owned applicability declarations and Public Check-owned recomputation.
+That concrete allocation awaits acceptance; it is no longer an unspecified
+placement choice. Neither the audit nor the proposal selects a numerical
+algorithm or opens a public-discussion window.
 
 ## Proposed opening decision and sequence
 

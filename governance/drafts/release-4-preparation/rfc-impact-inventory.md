@@ -15,6 +15,11 @@ Paths labelled proposed do not exist or acquire authority through this document.
 They are reviewable placement recommendations, conditional on the final scope
 and successor architecture. No schema or public identifier is allocated.
 
+`spec/contracts/` is a proposed new directory convention, not an existing
+repository layout. Acceptance would require a coupled `spec/README.md` layout
+entry and explicit assignment of the new files to the authority manifest's
+`normative-meaning` target. No authority follows from a directory name.
+
 | Path or existing owner                                                                                  | Proposed responsibility or impact                                                                                                   |
 | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `spec/contracts/balanced-two-factor/design-and-estimands.md` (proposed)                                 | Candidate A declarations, cell/level ordering, signed estimands and full-model boundary                                             |
@@ -24,7 +29,8 @@ and successor architecture. No schema or public identifier is allocated.
 | `spec/profiles/balanced-two-factor/non-claims.md` (proposed)                                            | Assumption declarations versus scientific validity, causality and familywise claims                                                 |
 | `spec/verification/factorial-recompute.md` (proposed)                                                   | Scoped result comparisons tied to newly registered public checks                                                                    |
 | `schemas/profiles/balanced-two-factor.schema.json` (proposed)                                           | Structural profile candidate; exact version and enclosing Record schema remain unresolved                                           |
-| `authority/authority-manifest.yaml`                                                                     | Assign accepted new specification and schema files to existing targets                                                              |
+| `spec/README.md`                                                                                        | Add the proposed Contract directory to the layout/navigation when the new normative files are adopted                               |
+| `authority/authority-manifest.yaml`                                                                     | Assign new Contract/Profile/check specification files to `normative-meaning` and their schemas to `json-structure`                  |
 | `registries/requirements.yaml`                                                                          | Allocate new design, admission, computation and check requirements once clauses are reviewed                                        |
 | `registries/public-contract-surfaces.yaml`                                                              | Register new versioned surfaces; inspect whether enclosing Record/report surfaces also change                                       |
 | `registries/interpretation-bundles.yaml`                                                                | Bind exact new profile, schema, check and policy versions; preserve old bundle entries                                              |
@@ -116,14 +122,22 @@ a final crosswalk task. This added coverage is still not R4-P5 closure.
 These subjects turn the placement recommendation into reviewable work. They are
 not registered Requirement IDs, and do not complete the affected-ID assessment.
 
-| Proposed owner                          | Clause subjects needing final wording                                                                                      | Boundary to preserve                                                                                   |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Contract design and estimands           | Factor and level ordering; population targets versus sample estimates; full-model hypothesis definitions and normalization | No software-default ordering, causal assertion or silent interaction rescaling                         |
-| Contract admissibility                  | Four explicit cells, common admitted count, unit membership and declared model assumptions                                 | Checkable data conditions are separate from scientific assumptions that cannot be proved from a Record |
-| Contract calculation                    | Mathematical quantities, degrees of freedom and permitted result domain                                                    | No runtime graph or tail algorithm selected by this placement                                          |
-| Profile declarations and non-claims     | Application context, exact Contract binding and assumption declarations                                                    | No second operation identity or guarantee beyond the bound Contract                                    |
-| Public Check specification and registry | Recomputable quantities, projection/comparison rule, check version, admitted execution and failure ordering                | Tolerances are check-owned; they are never producer-selected Record values                             |
-| Coupled schemas and fixtures            | Structure, exact version binding, report/refusal representation and independently justified judgments                      | No reinterpretation of historical bundles or reference-generated truth alone                           |
+| Proposed owner                          | Clause subjects needing final wording                                                                                                                                         | Boundary to preserve                                                                                   |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Contract design and estimands           | Factor and level ordering; population targets versus sample estimates; full-model hypothesis definitions and normalization                                                    | No software-default ordering, causal assertion or silent interaction rescaling                         |
+| Contract admissibility                  | Four explicit cells, common admitted count, unit membership; the mathematical model premises required by the operation                                                        | Checkable data conditions are separate from scientific assumptions that cannot be proved from a Record |
+| Contract calculation                    | Mathematical quantities, degrees of freedom and permitted result domain                                                                                                       | No runtime graph or tail algorithm selected by this placement                                          |
+| Profile declarations and non-claims     | Application context, exact Contract binding and the producer's declaration that the Contract-defined premises apply to this analysis                                          | No second operation identity or guarantee beyond the bound Contract                                    |
+| Public Check specification and registry | Recomputable quantities, projection/comparison rule, check version, admitted execution and failure ordering                                                                   | Tolerances are check-owned; they are never producer-selected Record values                             |
+| Coupled schemas and fixtures            | Successor Record schema owns the direct JSON Contract-identity binding; claim-object fields, exact version binding, report/refusal shape and independently justified fixtures | No reinterpretation of historical bundles or reference-generated truth alone                           |
+
+The Contract defines the model premises and target, protected-family, error-criterion
+and result-class meanings if retained. The Profile owns the applicability
+declaration, referring to those premises without redefining them. A declaration
+is not evidence that the premises hold. The successor Record schema owns their
+JSON representation, including direct Contract identity binding under ADR-0032;
+field spellings and any conditional R3 reuse remain unsettled. This separates
+mathematical meaning, applicability assertion and structural representation.
 
 Before R4-P5 closure, replace these subjects with exact proposed clauses and their
 Requirement-ID treatment under the ID policy, finish the enclosing schema/report

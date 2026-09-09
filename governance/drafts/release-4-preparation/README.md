@@ -35,6 +35,11 @@ with the updated [RFC preparation draft](rfc-preparation-draft.md) and
 review under the [opening preparation handoff](opening-preparation-handoff.md).
 They are not covered by the earlier steward acceptances.
 
+The returned PR 240 review is preserved with the
+[author-side repair record](opening-preparation-repair.md). For the next source
+work, use the [acquisition follow-up](source-acquisition-followup-2026-09-09.md).
+Both links are added in the same increment as their destination files.
+
 ## Repository identity
 
 This preparation starts from main commit
