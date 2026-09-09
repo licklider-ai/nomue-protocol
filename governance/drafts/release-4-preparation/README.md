@@ -178,3 +178,6 @@ gate identifiers.
 5. draft and independently review the standalone Release 4 RFC; and
 6. open public discussion only through a distinct steward action after R4-P1 through
    R4-P6 are reviewably resolved or explicitly bounded.
+
+The [normal-model review response](normal-model-review-response.md) records
+PR 246, the evidence-map repair and outstanding steward dispositions.

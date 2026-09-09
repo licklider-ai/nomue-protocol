@@ -1,7 +1,8 @@
 # Candidate A normal-model source and derivation
 
 Status: author-side source inspection and derivation, 2026-09-09. Independent
-review pending; no source hold or public-opening condition is closed.
+review of the original input is recorded in PR 246; the prose repairs below
+await confirmation. No source hold or public-opening condition is closed.
 Parent: `e59d2aaa43a28857396f1acfcdd0c44e96e555b9`.
 
 ## Supplied source identity and inspection
@@ -36,11 +37,31 @@ copy of Cochran (1934).
 
 The Candidate A application, population definitions, nuisance-mean argument,
 residual rank and F-ratio derivation below are this author's work. They are not
-claimed as factorial formulas printed in Tian/Styan. The independent investigator
-is asked to decide whether the source and explicit derivation suffice for the
-retained bounded claim, and to identify a concrete missing premise if not. The
+claimed as factorial formulas printed in Tian/Styan. The original commission asked the independent investigator to decide whether
+the source and explicit derivation suffice for the retained bounded claim,
+and to identify a concrete missing premise if not. PR 246 supplies that
+assessment; the evidence-map repair is recorded below. The
 mere presence of references does not automatically impose acquisition of every
 cited ancestor; neither does publication of this paper automatically close S5.
+
+The probability claims have the following distinct evidence roles. The paper
+proves none of the probability facts used by this application: its page 2663
+criteria are cited as well known, and Theorem 2.4 reuses those criteria without
+stating degrees of freedom, noncentrality or a ratio distribution.
+
+| Retained claim                                | Paper contribution                                                                             | Derivation contribution                                                                        |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Chi-square criterion for the projected errors | Page 2663 cites the quadratic-form criterion; at identity covariance it reduces to idempotence | Orthogonal-coordinate density argument establishes the law for these projectors                |
+| Degrees of freedom one and nu                 | Theorem 2.4 gives no degrees-of-freedom identification                                         | Four-column geometry and residual rank identify the counts                                     |
+| Numerator/residual independence               | Page 2663 cites the zero-product criterion; Theorem 2.4 reuses it                              | Disjoint coordinates and density factorization establish independence for each individual null |
+| Chi-square densities                          | No proof of these densities in the supplied paper                                              | Polar-coordinate integration supplies the gamma densities                                      |
+| F density, normalization and upper tail       | No ratio law or tail derivation in Theorem 2.4                                                 | Gamma-ratio change of variables and beta integration supply these steps                        |
+
+[PR 246](https://github.com/licklider-ai/nomue-protocol/pull/246), review commit
+`4013118bdd253a0420cc84af1e78c35cdf048c37`, independently reconstructs this
+bounded derivation and returns bounded source GO. This is evidence for the
+steward's S5 disposition, not a claim that the cited ancestors were inspected
+or that a printed primary proof of every probability step was obtained.
 
 A notation issue was retained: the displayed blocks preceding (2.10) on page 2664
 use `D` where the surrounding definitions and final rank line use `Dm`. This is
@@ -48,6 +69,12 @@ visible in the supplied page image, not an extraction repair. Its general
 interpretation is not adjudicated here. The application below uses identity
 covariance and a direct orthogonal-coordinate argument, not the rectangular
 matrix calculation in (2.10).
+
+PR 246 also observes that the D of (1.1) has p by n diagonal blocks,
+whereas Pm M Qm has n by n blocks. For n different from p the displayed
+subtraction is dimensionally incompatible; the final line itself uses Dm.
+This bounded reading is recorded without editing the source or relying on
+that rectangular calculation.
 
 ## Explicit model, targets and sample quantities
 
@@ -187,10 +214,15 @@ independent primary-source review in AGENTS.md/RFC.md remains required.
 The [companion exact-arithmetic probe](probes/normal-model-projection.py) and
 [its result](probes/normal-model-projection-result.json) check projection, rank, contrast and
 nuisance-null identities at selected n and an unequal-variance negative control.
+The probe's unequal-variance covariance matrix is invertible. Therefore
+PA Sigma PE being nonzero is equivalent to Sigma PA Sigma PE Sigma being
+nonzero, the paper's independence criterion in its stated form.
 It is author-side corroboration of the all-n derivation, not an independent
 oracle, a distribution simulation or production conformance evidence.
 
 All derivations and source judgments here used OpenAI Codex in the existing
 authoring context. No separate investigator was used. The earlier PR 240 review
 explicitly performed no source investigation and does not cover this result.
-The submitted PDF is required input for the new independent investigation.
+The submitted PDF was required input for PR 246, which now independently
+reviews the fixed result. See the [review response](normal-model-review-response.md)
+for the subsequent prose repair and outstanding decisions.

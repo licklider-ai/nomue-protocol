@@ -59,6 +59,12 @@ This is not global closure of any of those items. S5 requires a positive bounded
 source assessment of the actual derivation; absence of another named PDF cannot
 be used either as automatic rejection or as automatic acceptance.
 
+PR 246 independently supports this scope-specific staging and the bounded
+derivation, subject to its S-A evidence-map clarification. Steward disposition
+is still pending. Independent numerical oracles for balanced Candidate A fixture
+expectations remain an AGENTS.md implementation obligation; staging the
+unbalanced S6 comparison does not postpone or waive those oracles.
+
 ## Ownership, interfaces and migration
 
 Use the [impact inventory](rfc-impact-inventory.md) for the concrete proposed
@@ -95,10 +101,11 @@ before that assessment; the authoritative duration remains in the tier registry.
    are met, recording exact input, scope, applicable tier, URL, opening timestamp
    and earliest decision time. No timestamp or discussion window is started here.
 
-The current obstacle is not established to be an irreplaceable missing book.
-It is the still-unreviewed source/derivation and incomplete assembled proposal.
-The primary-source review mandated by AGENTS.md and governance/RFC.md is the
-specific reason public discussion has not been opened in this authoring turn.
+PR 246 now supplies the independent source/derivation assessment and confirms
+the parent repairs. The original steps 1 and 2 above therefore have review
+evidence; S-A repair confirmation and steward disposition remain pending.
+The assembled clause/ID/surface/tier proposal and its pre-opening review remain
+incomplete. Public discussion has not been opened.
 
 Authorship assistance: OpenAI Codex in the existing author context. No independent
 review or steward satisfaction-of-conditions decision is claimed.
