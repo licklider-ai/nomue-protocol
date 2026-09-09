@@ -6,6 +6,9 @@ Not an opened RFC, issued namespace, supported bundle or implementation decision
 Repaired against PR 251 and PR 252; see the
 [response and reconciliation](opening-rfc-review-response.md).
 All choices below remain proposed and await fixed-input confirmation.
+The [PR 257 boundary repair](opening-rfc-boundary-response.md) supersedes
+the earlier local-reference failure classification and completes the
+admissibility carrier outcome domain.
 
 ## Decision requested
 
@@ -198,12 +201,12 @@ numerical reason assignments are open. Global pre-routing ordering is fixed.
 The following proposed clauses bind the new capability, rather than editing or
 reissuing the old phase-qualified rules. All IDs are unissued candidates.
 
-| Proposed ID          | Proposed owner under spec/                     | Proposed clause text                                                                                                                                                                                               | Tier          |
-| -------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| NRS-PROFILE-BTF-0003 | profiles/balanced-two-factor/representation.md | Bind all payload numbers, required result members and undefined-result exclusions to the representation rules below; no distinct negative-zero meaning.                                                            | STABLE-INTENT |
-| NRS-PROFILE-BTF-0004 | profiles/balanced-two-factor/representation.md | Bind the BTF result/analysis/design/dataset and observation/cell chain through exact local references below, with Contract identity rather than a method alias.                                                    | STABLE-INTENT |
-| NRS-VERIFY-0032      | verification/factorial-recompute.md            | Bind the new check set to independent integrity checking and to execution of registered procedures only, never Record-supplied code; preserve structural-conformance gating separately from numeric admissibility. | STABLE-INTENT |
-| NRS-CORE-0022        | core/balanced-two-factor-lifecycle.md          | Bind profile_eligibility for this bundle to its declared-design admissibility check; retain the existing axis domains, single truth-carrier and absence-of-evaluation behavior.                                    | STABLE-INTENT |
+| Proposed ID          | Proposed owner under spec/                     | Proposed clause text                                                                                                                                                                                                                      | Tier          |
+| -------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| NRS-PROFILE-BTF-0003 | profiles/balanced-two-factor/representation.md | Bind all payload numbers, required result members and undefined-result exclusions to the representation rules below; no distinct negative-zero meaning.                                                                                   | STABLE-INTENT |
+| NRS-PROFILE-BTF-0004 | profiles/balanced-two-factor/representation.md | Bind the BTF result/analysis/design/dataset and observation/cell chain through exact local references below, with Contract identity rather than a method alias; unresolved or ambiguous associations fail semantic conformance.           | STABLE-INTENT |
+| NRS-VERIFY-0032      | verification/factorial-recompute.md            | Bind the new check set to independent integrity checking and to execution of registered procedures only, never Record-supplied code; gate verification on both structural and semantic conformance, separately from design admissibility. | STABLE-INTENT |
+| NRS-CORE-0022        | core/balanced-two-factor-lifecycle.md          | Bind profile_eligibility for this bundle to its declared-design admissibility check; retain the existing axis domains, single truth-carrier and absence-of-evaluation behavior.                                                           | STABLE-INTENT |
 
 ### Payload and declaration
 
@@ -282,27 +285,93 @@ post_quantization_calibration and admission_conditional_calibration, each
 required with constant not_asserted. These expose capability non-claims;
 they confer no new aggregate verdict.
 
-### Structural reasons and lifecycle carrier
+### Conformance, admissibility and propagation
 
-Proposed unissued admissibility reasons are NRS-BTF-MODEL-NOT-DECLARED,
-NRS-BTF-CELL-COVERAGE-INVALID, NRS-BTF-CELL-COUNTS-UNSUPPORTED,
-NRS-BTF-UNIT-NOT-UNIQUE and NRS-BTF-LOCAL-REFERENCE-INVALID. They identify,
-respectively, false assertion, invalid factor/level/Cartesian cover, unequal
-counts or fewer than two units per cell, duplicate observation/unit IDs, and
-unresolved local references. Structural type/required-member/unknown-property
-failures use NRS-SCHEMA-INVALID before admissibility. Contract mismatch is
-structural conformance failure under the exact new bundle/schema binding,
-not a guessed alternative Contract. Level reversal and factor exchange are
-valid changes of declared orientation, not refusal reasons; incorrect numerical
-claims after such a change are result mismatches.
+The BTF record-conformance judgment has a registered versioned check identity
+but is reported only in the report's conformance section, never in
+verification_results (NRS-VERIFY-0005). Its local conformanceResult definition
+uses record_revision scope and the existing execution/outcome invariant.
+Structural conformance checks types, required members, closed objects and
+bundle/schema/Contract constants. After structural success, semantic conformance
+checks the required local identity and association rules owned by
+PROFILE-BTF-0004, including factor/cell cover. Both stages are needed for
+conformance completed/pass; neither asserts applicability or numerical truth.
 
-The BTF declared-design admissibility check is the sole profile_eligibility
-truth-carrier for this bundle: completed pass gives eligible, completed fail
-gives ineligible, and absence/error/not_run gives not_evaluated. Numeric
-computability never overwrites this axis. A normative bundle-to-carrier mapping
-belongs to the new lifecycle binding and check-set specification; the reference
-lifecycle.ts mapping implements it, not vice versa. No new lifecycle operation,
-axis, attestation capability or state-invariant entry is proposed.
+On a conformance failure, the conformance object reports completed/fail,
+reason_codes, and violations entries with stage (structural or semantic),
+reason_code and path (a JSON Pointer in the Record). The same reason may have
+multiple paths. The new local report definitions own this addition; historical
+common definitions are unchanged. A structural failure prevents semantic
+evaluation; evidence does not claim that skipped stage passed.
+The successor VERIFY-0032 binding requires every verification check, including
+integrity and declared-design admissibility, to be not_run unless conformance
+completed/pass. Propagated reason_codes identify the conformance blocker;
+no verification outcome is emitted. Error or unavailable conformance also
+supplies no permission to run; the versioned check set owns its error/blocker
+codes, without bypassing the existing global input-refusal priority.
+
+The following proposed reason applicability is explicit. Diagnostic names are
+unissued candidates, except the existing schema reason whose new conformance
+applicability is added in the coupled registry change.
+
+| Condition                                                                                                                       | Judgment and reason                                                           | Downstream effect                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Missing/wrong-type required member, unknown property, or wrong exact Contract constant                                          | Structural conformance fail: NRS-SCHEMA-INVALID                               | All verification checks not_run; eligibility not_evaluated.                                                             |
+| A result/analysis/design/dataset reference or observation/cell reference has no unique target                                   | Semantic conformance fail: NRS-BTF-LOCAL-REFERENCE-INVALID                    | Same conformance blocking, including integrity.                                                                         |
+| Duplicate observation_id, factor_id or cell_id; repeated level ID within one factor; duplicate/missing factor_order association | Semantic conformance fail: NRS-BTF-IDENTITY-AMBIGUOUS                         | Same conformance blocking. Experimental-unit repetition is distinguished below.                                         |
+| Declared cell/level tuples do not cover the specified Cartesian product exactly once                                            | Semantic conformance fail: NRS-BTF-CELL-COVERAGE-INVALID                      | Same conformance blocking. Empty observation membership in a uniquely declared cell is instead a count condition below. |
+| Well-formed model_applicability_declared=false after conformance passes                                                         | Declared-design admissibility completed/fail: NRS-BTF-MODEL-NOT-DECLARED      | Dependent computability/recomputation not_run with blocking reason; integrity still runs; eligibility ineligible.       |
+| Resolvable unique observations have unequal cell counts or a cell count below two                                               | Declared-design admissibility completed/fail: NRS-BTF-CELL-COUNTS-UNSUPPORTED | Same admissibility blocking; integrity independent.                                                                     |
+| Distinct observation IDs refer to the same experimental_unit_id                                                                 | Declared-design admissibility completed/fail: NRS-BTF-UNIT-NOT-UNIQUE         | Same admissibility blocking; a repeated unit is representable but unsupported.                                          |
+
+For the review witness design.design_id=D1 and analysis.design_id=D2, with
+no D2 defined, conformance fails semantically. Integrity and admissibility are
+not_run; profile_eligibility is not_evaluated. This is not evidence of an
+ineligible scientific design: the declared representation is broken.
+
+If conformance passes but admissibility fails, preserve NRS-VERIFY-0013/0017:
+admissibility and computability are distinct checks, and dependent numerical
+checks are not_run with the admissibility blocker. Integrity has no
+admissibility dependency. If both pass, exact observed zero SSE belongs to
+the separate computability failure already specified above. Earlier gating
+always takes precedence. Valid factor reversal/exchange changes interpretation
+of signed quantities, not conformance/admissibility; stale numeric claims
+become result mismatches. Declared count/df consistency with observations is
+an exact numerical comparison, not an ambiguous-identity judgment.
+
+### Lifecycle carrier outcome domain
+
+The BTF declared-design admissibility check remains the sole profile_eligibility
+truth-carrier for this bundle. Restrict its completed outcomes to pass or fail:
+its supported judgments concern the explicit boolean, resolvable finite
+membership and unit/count rules, which are determinate once conformance and
+resource gates permit evaluation. An execution failure reports error; an
+earlier gate reports not_run. Neither is disguised as a completed fail.
+
+Completed/pass maps to eligible; completed/fail maps to ineligible;
+absence/error/not_run maps to not_evaluated. A completed/indeterminate result
+for this particular carrier is outside its proposed check/report domain and
+cannot supply a valid lifecycle carrier or be coerced to ineligible.
+Other checks retain the general execution/outcome model, including
+indeterminate where their own version permits it. No numerical uncertainty
+policy is selected by restricting this non-numerical carrier.
+
+CORE-0022 owns this new bundle-specific mapping and VERIFY-0032 binds the
+carrier's check-domain rule; the new local report schema enforces the
+pass/fail restriction conditionally on the eventual exact BTF admissibility
+check identity. Reference lifecycle.ts implements that mapping and does not
+define it. No existing lifecycle axis or global outcome enum changes.
+No new state-invariant registry entry or BTF reference is proposed there.
+
+Proposed coupling includes positive/negative semantic-conformance fixtures for
+the D1/D2 witness, duplicate observation IDs versus repeated unit IDs, unknown
+cell targets, ambiguous tuples and valid reordered associations. Verify exact
+report placement, blocker propagation, integrity execution and eligibility in
+each case. Add carrier-domain fixtures rejecting completed/indeterminate for
+this carrier, permitting it for another check whose version allows it, and
+covering pass/fail/error/not_run/absence projections. New reason applicability
+and report violations are coupled to the new conformance/check specifications;
+no old Phase 1/2A semantic invariant is silently extended.
 
 ### Authoritative registry grammar and coupling
 

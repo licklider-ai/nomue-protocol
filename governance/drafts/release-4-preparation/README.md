@@ -1,5 +1,9 @@
 # Release 4 Research Preparation
 
+Current boundary repair: [PR 257 response](opening-rfc-boundary-response.md).
+The candidate clarifies semantic conformance and the eligibility carrier's
+outcome domain. Fixed-input confirmation remains pending; discussion is not open.
+
 Current repair: [PR 251/252 response](opening-rfc-review-response.md).
 Next: [fixed-input repair confirmation](opening-rfc-repair-confirmation.md).
 This handoff/link is a later delivery addition outside its six-file input.
