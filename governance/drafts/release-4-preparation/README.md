@@ -1,6 +1,8 @@
 # Release 4 Research Preparation
 
 Current repair: [PR 251/252 response](opening-rfc-review-response.md).
+Next: [fixed-input repair confirmation](opening-rfc-repair-confirmation.md).
+This handoff/link is a later delivery addition outside its six-file input.
 Both full reports are preserved separately:
 [PR 251](../../../review-inputs/r4-opening-rfc/PR-251-REVIEW.md) and
 [PR 252](../../../review-inputs/r4-opening-rfc/PR-252-REVIEW.md).
