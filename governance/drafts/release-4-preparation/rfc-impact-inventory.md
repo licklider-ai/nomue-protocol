@@ -1,9 +1,10 @@
 # Release 4 candidate file and requirement impact inventory
 
-Status: informative placement proposal; cited constraints independently reviewed
-at `ed7bfeb9`; new inventory clarifications await independent review. This advances
-R4-P5 but does not close it. Baseline is main `cd217f88238a2ecc57b72f5835a813d92270f5ad`
-and the reviewed PR 219 input `bf4004694f68018534e01bde2f2a33214accba19`.
+Status: informative placement proposal. Earlier constraints and audit additions
+were reviewed through PR 225/232 and accepted through PR 229. The revised
+Contract/Profile placement below awaits review; R4-P5 remains open. Current
+baseline is main `ed6e9d9bde691556b99d22e261b31c3b25df338f`; historical inputs
+remain recorded in the readiness ledger.
 Existing requirements below were read in their owning specification files.
 A requirement constraining a new feature is not automatically a requirement
 whose meaning changes. No current normative wording is proposed to change here.
@@ -14,21 +15,22 @@ Paths labelled proposed do not exist or acquire authority through this document.
 They are reviewable placement recommendations, conditional on the final scope
 and successor architecture. No schema or public identifier is allocated.
 
-| Path or existing owner                                                                                  | Proposed responsibility or impact                                                             |
-| ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `spec/profiles/balanced-two-factor/design-and-estimands.md` (proposed)                                  | Candidate A declarations, cell/level ordering, signed estimands and full-model boundary       |
-| `spec/profiles/balanced-two-factor/admissibility.md` (proposed)                                         | Balance, replication, membership and supported input preconditions                            |
-| `spec/profiles/balanced-two-factor/calculation.md` (proposed)                                           | Reviewed graph, residual df and computation-domain rules                                      |
-| `spec/profiles/balanced-two-factor/non-claims.md` (proposed)                                            | Assumption declarations versus scientific validity, causality and familywise claims           |
-| `spec/verification/factorial-recompute.md` (proposed)                                                   | Scoped result comparisons tied to newly registered public checks                              |
-| `schemas/profiles/balanced-two-factor.schema.json` (proposed)                                           | Structural profile candidate; exact version and enclosing Record schema remain unresolved     |
-| `authority/authority-manifest.yaml`                                                                     | Assign accepted new specification and schema files to existing targets                        |
-| `registries/requirements.yaml`                                                                          | Allocate new design, admission, computation and check requirements once clauses are reviewed  |
-| `registries/public-contract-surfaces.yaml`                                                              | Register new versioned surfaces; inspect whether enclosing Record/report surfaces also change |
-| `registries/interpretation-bundles.yaml`                                                                | Bind exact new profile, schema, check and policy versions; preserve old bundle entries        |
-| `registries/public-checks.yaml`                                                                         | Register supported quantities, estimands, confidence level if any, and justified comparisons  |
-| `registries/reason-codes.yaml`                                                                          | Register only justified new failure semantics after ordering review                           |
-| `conformance/fixtures/release-4/` and `conformance/expectations/release-4-expectations.yaml` (proposed) | Independent expected judgments and boundary cases, conditional on final conformance layout    |
+| Path or existing owner                                                                                  | Proposed responsibility or impact                                                                                                   |
+| ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `spec/contracts/balanced-two-factor/design-and-estimands.md` (proposed)                                 | Candidate A declarations, cell/level ordering, signed estimands and full-model boundary                                             |
+| `spec/contracts/balanced-two-factor/admissibility.md` (proposed)                                        | Balance, replication, membership and supported input preconditions                                                                  |
+| `spec/contracts/balanced-two-factor/calculation.md` (proposed)                                          | Contract-defined quantities, residual df and computation-domain semantics; Public Check owns the recomputation/comparison procedure |
+| `spec/profiles/balanced-two-factor/declarations.md` (proposed)                                          | Application-context declarations and the binding to the operation Contract; no duplicated statistical definitions                   |
+| `spec/profiles/balanced-two-factor/non-claims.md` (proposed)                                            | Assumption declarations versus scientific validity, causality and familywise claims                                                 |
+| `spec/verification/factorial-recompute.md` (proposed)                                                   | Scoped result comparisons tied to newly registered public checks                                                                    |
+| `schemas/profiles/balanced-two-factor.schema.json` (proposed)                                           | Structural profile candidate; exact version and enclosing Record schema remain unresolved                                           |
+| `authority/authority-manifest.yaml`                                                                     | Assign accepted new specification and schema files to existing targets                                                              |
+| `registries/requirements.yaml`                                                                          | Allocate new design, admission, computation and check requirements once clauses are reviewed                                        |
+| `registries/public-contract-surfaces.yaml`                                                              | Register new versioned surfaces; inspect whether enclosing Record/report surfaces also change                                       |
+| `registries/interpretation-bundles.yaml`                                                                | Bind exact new profile, schema, check and policy versions; preserve old bundle entries                                              |
+| `registries/public-checks.yaml`                                                                         | Register supported quantities, estimands, confidence level if any, and justified comparisons                                        |
+| `registries/reason-codes.yaml`                                                                          | Register only justified new failure semantics after ordering review                                                                 |
+| `conformance/fixtures/release-4/` and `conformance/expectations/release-4-expectations.yaml` (proposed) | Independent expected judgments and boundary cases, conditional on final conformance layout                                          |
 
 Reference implementation destinations and generated views are assigned only after
 final architecture reconciliation; this draft does not fabricate an executable
@@ -80,14 +82,15 @@ is claimed.
 
 ## Contract/Profile allocation and additional constraints
 
-The path table is provisional and previously leaned toward Profile-owned files.
-It does not decide that a Profile owns the operation's statistical semantics.
+The revised path table proposes Contract ownership for operation semantics
+and Profile ownership for contextual declarations. This replaces the older
+Profile-only placement recommendation, not any issued file or identifier.
 Under ADR-0032, the Analysis Contract owns the bounded analytical operation;
 a Profile may bind its application context and declarations, while a Public Check
-owns recomputation/comparison procedure identity. Decide which proposed sections
-belong in each class before accepting the path table. Contract/Profile namespace
+owns recomputation/comparison procedure identity. Independently review this proposed allocation before accepting the path table. Contract/Profile namespace
 tokens are registered in `registries/requirements.yaml` before issuing IDs.
-No token, final Contract path, or new requirement is allocated in this audit.
+The Contract paths are now concrete proposals; no path has been created under
+`spec/`, and no token or new requirement is allocated.
 
 Additional existing clauses inspected in the self-audit:
 
@@ -107,3 +110,23 @@ inspect whether `applies_to_bundle_ids` entries need additive changes in
 `registries/public-contract-surfaces.yaml`; preserve their old bundle meanings.
 Canonicalization, strict-input, report and final Contract/Profile clauses remain
 a final crosswalk task. This added coverage is still not R4-P5 closure.
+
+## Clause subjects to resolve before final ID allocation
+
+These subjects turn the placement recommendation into reviewable work. They are
+not registered Requirement IDs, and do not complete the affected-ID assessment.
+
+| Proposed owner                          | Clause subjects needing final wording                                                                                      | Boundary to preserve                                                                                   |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Contract design and estimands           | Factor and level ordering; population targets versus sample estimates; full-model hypothesis definitions and normalization | No software-default ordering, causal assertion or silent interaction rescaling                         |
+| Contract admissibility                  | Four explicit cells, common admitted count, unit membership and declared model assumptions                                 | Checkable data conditions are separate from scientific assumptions that cannot be proved from a Record |
+| Contract calculation                    | Mathematical quantities, degrees of freedom and permitted result domain                                                    | No runtime graph or tail algorithm selected by this placement                                          |
+| Profile declarations and non-claims     | Application context, exact Contract binding and assumption declarations                                                    | No second operation identity or guarantee beyond the bound Contract                                    |
+| Public Check specification and registry | Recomputable quantities, projection/comparison rule, check version, admitted execution and failure ordering                | Tolerances are check-owned; they are never producer-selected Record values                             |
+| Coupled schemas and fixtures            | Structure, exact version binding, report/refusal representation and independently justified judgments                      | No reinterpretation of historical bundles or reference-generated truth alone                           |
+
+Before R4-P5 closure, replace these subjects with exact proposed clauses and their
+Requirement-ID treatment under the ID policy, finish the enclosing schema/report
+and strict-input crosswalk, and identify the highest actually affected tier.
+Final candidate identifier spelling and namespace registration remain coupled
+review work; this informative table does not bypass the RFC draft requirements.

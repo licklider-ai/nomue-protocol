@@ -1,6 +1,6 @@
 # Release 4 factorial verification: RFC preparation draft
 
-Status: informative editorial preparation, 2026-09-08. Not an opened RFC.
+Status: informative editorial preparation, updated 2026-09-09. Not an opened RFC.
 The preparation commission requires independent research review before a result
 informs an RFC. This document organizes the proposed questions and required
 artifact changes for that handoff; unreviewed methodology is not adopted here.
@@ -88,13 +88,13 @@ execution support. No result produced by the disposable probe is a public fixtur
 
 ## Numerical evidence map
 
-| Quantity or boundary         | Available evidence                                         | Remaining prerequisite                                                   |
-| ---------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Coded coefficients           | Accepted as an accurate exploratory QR cancellation record | Applicability to the final chosen graph and supported domain             |
-| SS, SSE and F ratio          | PR 218 exploratory 945-case probe and three diagnostics    | Independent derivation and reproduction; domain and error analysis       |
-| F tails and quantiles        | Conditional research reuse candidates                      | Exact source, algorithm, parameter range and projection review           |
-| Signed effects and intervals | Proposed normalization; interval inclusion undecided       | Source-based inferential construction plus numerical propagation         |
-| Resource and platform limits | Finite probe environment only                              | Supported bounds and execution evidence; no extrapolation from 945 cases |
+| Quantity or boundary         | Available evidence                                                            | Remaining prerequisite                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Coded coefficients           | Accepted as an accurate exploratory QR cancellation record                    | Applicability to the final chosen graph and supported domain                             |
+| SS, SSE and F ratio          | Reviewed and accepted 945-case probe, scale witnesses and scaling exploration | Independent finite-record checks accepted; general domain and error analysis remain open |
+| F tails and quantiles        | Conditional research reuse candidates                                         | Exact source, algorithm, parameter range and projection review                           |
+| Signed effects and intervals | Proposed normalization; interval inclusion undecided                          | Source-based inferential construction plus numerical propagation                         |
+| Resource and platform limits | Finite probe environment only                                                 | Supported bounds and execution evidence; no extrapolation from 945 cases                 |
 
 See [the SS/F supplement](ss-f-propagation-supplement.md). Bitwise disagreement
 counts are not statistical rejection rates and do not rank general algorithms.
@@ -102,7 +102,7 @@ counts are not statistical rejection rates and do not rank general algorithms.
 ## Release 3 dependency reconciliation
 
 This comparison is pinned to the main baseline
-`cd217f88238a2ecc57b72f5835a813d92270f5ad`, including the Release 3 preparation
+`ed6e9d9bde691556b99d22e261b31c3b25df338f`, including the Release 3 preparation
 README and its 2026-09-06 readiness audit. It is not a claim about later branches
 or a final accepted Release 3 contract. Repeat against the exact final scope
 before treating R4-P4 as resolved.
@@ -114,6 +114,11 @@ before treating R4-P4 as resolved.
 | F tails and quantiles                          | Numerical research candidate      | Check algorithm, domain, df, error and source coverage individually  |
 | Projection, oracle and resource patterns       | Reusable investigation pattern    | Derive Release 4-specific bounds; no inherited tolerance by analogy  |
 | Exact-bundle dispatch and historical integrity | Existing architectural obligation | Test old bundles and reject unsupported combinations                 |
+
+The inspected Release 3 README blob is
+`4dbb5170f839f83ef22d3297dae832098d5cc95d`; its readiness-audit blob is
+`bc0bb942d429fe9a9ee4e959ea483972d4dbae4d`. These are snapshots of preparation,
+not accepted R3 procedure or interface definitions.
 
 Release 4 research can continue while those dependencies remain conditional.
 Release 3 numbering and scope remain unchanged. Earlier releases retain their
@@ -166,3 +171,29 @@ validity of F. Read the existing impact path table with its explicit unresolved
 Contract/Profile allocation; no Profile-owned statistical operation is selected
 by that provisional layout. The audit makes no numerical algorithm choice and
 opens no public-discussion window.
+
+## Proposed opening decision and sequence
+
+The eventual decision request is to open discussion of the independently reviewed
+Candidate A proposal, with its explicitly listed implementation holds, after the
+readiness conditions are resolved. The current request is only to review this
+preparation. It does not ask to open that discussion now.
+
+No numerical-release-order condition was found in the inspected RFC process.
+On that basis, the author proposes evaluating R4 opening on its own evidence and
+actual dependencies even if R3 discussion has not opened. This is an interpretation
+for review, not a new governance permission or a change to either release number.
+A dependent R3 claim remains conditional until its exact source and decision scope
+are reconciled; an earlier calendar opening cannot establish compatibility.
+
+Use the [opening claim map](opening-claim-map.md) to complete source-supported
+scope decisions first, then the [impact inventory](rfc-impact-inventory.md) to
+finish authority placement, affected IDs, surface versions and tier assessment.
+The revised inventory proposes operation definitions under a Contract, contextual
+declarations under a Profile, and recomputation/comparison under Public Checks.
+It proposes paths and clause subjects without creating normative artifacts.
+
+The standalone RFC remains incomplete while those decisions are unresolved. Once
+assembled, obtain a separate pre-opening review of its exact content and request
+steward opening approval with the applicable tier, discussion URL and timestamps.
+Preserve unclosed research obligations and all historical review limitations.

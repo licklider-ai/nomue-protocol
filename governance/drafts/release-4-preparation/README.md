@@ -25,7 +25,15 @@ subsequent chat-returned editorial feedback and its disposition.
 The [steward acceptance](programme-steward-acceptance-2026-09-09.md) records
 integration of the bounded preparation. The subsequent
 [power-of-two scaling exploration](power-scale-exploration.md) is new author-side
-research awaiting independent review; it is not covered by that acceptance.
+research accepted separately through PR 234 after PR 235 review and the C-1
+repair. Its final acceptance paragraph records the bounded decision; it does not
+close public-opening conditions.
+
+The next editorial input is the [opening claim map](opening-claim-map.md), read
+with the updated [RFC preparation draft](rfc-preparation-draft.md) and
+[impact inventory](rfc-impact-inventory.md). These new recommendations await
+review under the [opening preparation handoff](opening-preparation-handoff.md).
+They are not covered by the earlier steward acceptances.
 
 ## Repository identity
 
