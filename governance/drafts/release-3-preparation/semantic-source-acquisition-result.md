@@ -5923,3 +5923,133 @@ Validation for this integration is recorded in the submission PR body: the
 four repository checks, exact prefix preservation and unchanged earlier blobs.
 No full pnpm check, statistical rerun, numerical algorithm repair, new-original
 acquisition, acceptance, public opening or merge is part of this change.
+
+## Part AB. Bounded investigation of supplied Troendle (1995)
+
+2026-09-09. New author source investigation under the approved supplied-corpus
+cap. This adds bounded RSM-02 evidence, not a new hold acceptance, catalogue
+split, method adoption, public-opening authorization or independent verdict.
+
+### AB.1. Fixed input and preservation
+
+Input is PR #266 commit `55d30240252517aa4a84b8cccf374a72260c3426`, sole
+parent `9e95cdee40b64cbf0f42dca8e3fab1c075507168`, tree
+`a469f08b484d032f2301b89518960a27c28226e1`. The entire 552103-byte Parts A-AA
+result is preserved as an exact prefix: blob
+`db3cb0bb2766c8bb776bff9162ed8b35759e29e6`, SHA-256
+`7f558850f37e70487e145e97d2fdf15d5ea0ddf0fb537074fb810b489bf4306c`.
+The earlier 542963-byte Parts A-Z prefix and the input's three-path increment
+were verified. All other pre-existing files retain their committed blobs,
+including the semantic catalogue, acquisition commission, Ge report/diagnostic,
+SR-A report and received review. Output identities are recorded in the draft
+PR body without inserting self-referential hashes into the report.
+
+### AB.2. New source reading and reused evidence
+
+The directly supplied `30_Troendle_1995.pdf` matches 1020647 bytes, 10 pages,
+SHA-256 `21c9fbad95c8c29e709863aa45d314deca1f70f4bf148da1b7407f3178f08b54`.
+The cover and all article pages were read as text and individually as images:
+PDF 1 is the cover; PDF 2-10 are JASA 90(429):370-378. This is supplier 30,
+not SRC-30 in the catalogue. No new original was obtained. The purchase ZIP
+was unnecessary and not rehashed; the PDF pin is controlling.
+
+The complete English account is
+[the Troendle report](../../../review-inputs/r3-troendle-supplied-primary/REVIEW-RESULT.md).
+Prior Ge findings and Y/Z/AA receipts are attributed reuse, not fresh reading
+of Ge or numerical confirmation. Troendle's bibliography and discussion of
+Westfall-Young do not count as independent inspection of their monograph.
+The separate PR #174/#263/#265 algorithm lane was not investigated or edited.
+
+### AB.3. Supported procedure and guarantee boundaries
+
+Troendle defines a step-down procedure for component outcomes of two groups,
+not a universal all-pairs procedure. Equations (3)-(5), p.372, order observed
+evidence from largest to smallest, retain common whole-subject resamples,
+remove rejected components from the maximum and use inclusive exceedance counts.
+Practical Algorithm 3 divides by M, rejects strictly below alpha and stops at
+or above alpha. Page 375 constructs adjusted values by cumulative maxima.
+The report distinguishes this strict boundary from the introductory <= rule,
+Ge's recorded <= diagnostic, and the infimum qualification at equality.
+Tied observed indices use an explicitly labelled investigator convention;
+shared-draw cumulative maxima make the tied-block result invariant to it.
+
+Theorem 1 is an ideal exact-critical-value guarantee under joint null
+calibration. Theorem 2, p.373 (7), is asymptotic conservativeness: limsup over
+N after the limit over M, with observed-statistic size 2N0 fixed and resamples
+of that size drawn with replacement from a growing pool of 2N subjects.
+It is not a finite-M bound, a rate, or an N0=N theorem. The proof on p.376
+uses iid true-coordinate subvectors with a common joint law. Marginal means
+or distributions alone do not justify this step. Bounded 1-P statistics
+supply integrability, not joint exchangeability.
+
+The appendix was read, including its equality-mass case. The supplied (A.12)
+display is malformed; the following calculation indicates the intended G>U*
+event. The report records this rather than silently editing the source. It
+does not certify all arbitrary-G convergence or every appendix proof step.
+The independent sufficient first-true-step argument is explicitly conditional
+on valid true-subset calibration and a common reference law. Full theorem
+certification, finite-M calibration, general unequal-size or N0=N extensions,
+all-variant coverage and numerical/runtime contracts remain unestablished.
+
+### AB.4. Independent finite diagnostics
+
+The new standard-library diagnostic uses exact rational arithmetic, with no
+import from Ge's code. Four subject vectors give observed mean differences
+(5/2,1). Six allocations give stage probabilities (1/6,1/3); all 256 ordered
+pooled with-replacement draws give (3/64,37/256), independently checked by
+pair-sum counting. The literal alpha boundary, ties, common-draw alignment,
+1-P transformation and cumulative-max/stop logic are checked.
+
+All 729 small two-component/three-draw tables pass 8616 stop/adjustment
+comparisons and 25848 first-true-step inclusions. The p.372 example is reproduced
+across 252 allocations: P(T1*>=8)=1/2, single-step H2 tail=1/2 and SR stage
+tails (1/252,1/252). A separate with-replacement convolution yields the
+single-step lower bound P(T1*>=5)=193/512 > 1/4.
+
+A one-null Bernoulli example with N=N0=1 and M=1 gives exact FWER=3/16 at
+alpha=1/20. It demonstrates why a finite-M guarantee cannot be inferred;
+it is not a counterexample to the source's ordered-limit theorem. The report
+also discloses an initial author expected-count error, corrected by independent
+finite counting before the successful final execution.
+
+All final diagnostics pass. Finite examples are not universal FWER proofs.
+Tables 1-9 were visually inspected, but historical simulation and Fortran
+code were not rerun. Table 8 contains only marginal counts, insufficient to
+reconstruct Table 9's joint resampling. No infant-level data was obtained.
+
+### AB.5. Ledger and residual conditions
+
+| Disposition      | Members                                              | Count |
+| ---------------- | ---------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-J, SR-K, SR-L |     9 |
+| PARTIAL          | SR-H                                                 |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, RSM-01, RSM-02                           |     4 |
+
+No member changes from AA.4. Overall INPUT_INCOMPLETE, SOURCE_SET_READY=false,
+NARROW, TRANSFER, R3-CAND/RES-ONLY classifications, previous limited acceptances,
+their residual conditions, other holds and R4 remain unchanged. The 42+1
+inventory is reused, not a new all-corpus inspection. The specific Troendle
+reading is completed; RSM-02's broader source hold remains INPUT_INCOMPLETE.
+Unprovided variants and unproved extensions remain excluded, not newly requested
+sources. A possible future variant split is explicitly unapproved.
+
+### AB.6. Validation, disclosure and next review
+
+The author diagnostic, four required repository checks and preservation checks
+are executed for submission, with exact outcomes and output identities in the
+PR body. Python is 3.12.14 and Node is v24.19.0. Available pnpm is 11.19.0
+while packageManager requests 11.7.0; the frozen lockfile is unchanged. Full
+pnpm check, tests, typecheck, generated checks, previous statistical diagnostics
+and historical simulations are not run. No authoritative surface changes.
+
+This is OpenAI Codex-assisted author work in the present conversation with
+historical summaries and prior records visible, not an independent or blind
+review, a model-build attestation or unaided human authorship. No subagents
+were used. The direct source findings, investigator reasoning and reused
+record evidence are separately labelled.
+
+[The limited independent-review handoff](../../../review-inputs/r3-troendle-supplied-primary/INDEPENDENT-REVIEW.md)
+requires the submitted fixed commit and same supplied PDF, independent
+recalculation, guarantee/assumption scrutiny, prefix checks and a separate
+English report/draft PR. It neither authorizes a hold closure nor treats a
+bounded GO as formal independence satisfaction or public readiness.
