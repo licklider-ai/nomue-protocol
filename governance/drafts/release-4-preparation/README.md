@@ -8,6 +8,15 @@ release commitment.
 
 ## Current navigation
 
+Current next work: the [assembled RFC candidate](opening-rfc-candidate.md).
+The [normal-model steward acceptance](normal-model-steward-acceptance-2026-09-09.md)
+and its preserved review/confirmation are integrated in main at
+0abdca8f822d0de3faf35f218f762a951fd75e9e. The candidate proposes concrete
+clauses, additive surfaces and a 30-day minimum discussion window; it awaits
+independent opening assessment. It does not issue identifiers or open discussion.
+The older next-step descriptions below document the sequence leading to that
+acceptance; they are not instructions to repeat accepted reviews.
+
 For the 2026-09-09 programme state, use
 [public-discussion readiness](public-discussion-readiness.md) and the
 [programme self-audit](programme-self-audit-2026-09-09.md). The initial work-start

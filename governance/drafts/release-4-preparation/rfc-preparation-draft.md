@@ -1,5 +1,10 @@
 # Release 4 factorial verification: RFC preparation draft
 
+Current successor proposal: [assembled RFC candidate](opening-rfc-candidate.md).
+This earlier preparation is retained as review history. Where the successor
+chooses a concrete allocation or surface, assess that proposal; neither document
+issues identifiers or closes the independent opening review.
+
 Status: informative editorial preparation, updated 2026-09-09. Not an opened RFC.
 The preparation commission requires independent research review before a result
 informs an RFC. This document organizes the proposed questions and required
