@@ -6053,3 +6053,106 @@ requires the submitted fixed commit and same supplied PDF, independent
 recalculation, guarantee/assumption scrutiny, prefix checks and a separate
 English report/draft PR. It neither authorizes a hold closure nor treats a
 bounded GO as formal independence satisfaction or public readiness.
+
+## Part AC. Troendle review receipt and SF-01 wording correction
+
+2026-09-09. Informative author/coordinator integration of the returned limited
+review and its requested correction. No new primary-source review or acceptance.
+
+### AC.1. Fixed return and preserved history
+
+The sole input parent is PR #268's returned commit
+`646ae78d2836525333ac1c1a259fdeda0bb6be89`, tree
+`11f0591fdb96dda92c09972bfdb652abe00789ed`. Its sole parent is the reviewed
+PR #267 commit `0e82d4a3d6f098753a703287f9424fe590b886d5`, tree
+`22991421dc023eb140e522a6962ae76ac2d7cf6a`.
+
+The complete 559874-byte Parts A-AB prefix is preserved, blob
+`abb1d947e1bdfcc52600f6fde4c0b774340685ea`, SHA-256
+`da0426eb5f339b16ee0caf7d36aa5c1a7e5961c5d758e2104d0043ffcc1102c9`.
+Only this append and the SF-01 passage of the author report change. All other
+existing paths and modes, including both author scripts and all three returned
+review files, retain their input blobs. The prior author report remains available
+at the immutable reviewed commit; its original blob is
+`a3f67bc1d2d97d818ba5f8be2cc66c13ce475345`.
+
+The received [review report](../../../review-inputs/r3-troendle-bounded-review/REVIEW-RESULT.md)
+is retained as blob `9f6aa4fc3af061aac3cfc7ec37a7a517292c4a37`, 20479 bytes,
+SHA-256 `c96bdc71331e26c9a73f297bb85e18ef92a8de76fdb7cb00477f0e954182b03a`.
+Its independent diagnostic and preservation script retain blobs
+`e58016594c72dca72778b9abd810b3ce4294574d` and
+`58793d6d74cca1c82be6ac0abafc095136ceafd4` respectively.
+
+### AC.2. Received verdict and evidence boundary
+
+The received verdict is **GO for the bounded author account; BLOCKER 0 /
+SHOULD-FIX 1 / NICE-TO-HAVE 0**. It is preserved as returned, not rewritten to
+zero findings after the coordinator's repair. SF-01 is the sole non-blocking
+source-description correction. The user returned this verdict and correction
+for continuation of the established repair-and-integration workflow.
+
+The reviewer reports matching supplier-30 PDF identity, full text and all ten
+page images, and independent reproduction of the six allocations, 256 ordered
+draws, 252 printed-example allocations, counts 12/37, lower bound 193/512 and
+finite-M witness 3/16. Further independent stop/adjustment, first-true inclusion,
+tied-order and alpha-boundary tests passed. The report and PR body disclose
+successful required repository, author diagnostic and preservation checks.
+These are received review results; this integration does not describe them as
+newly executed coordinator calculations.
+
+The return discloses OpenAI-assisted work with historical summaries, author
+report and code visible. It cannot authenticate a different provider/model,
+exact serving build, separate human investigator or absence of prior-session
+involvement. Independent calculations and direct page inspection do not by
+themselves determine satisfaction of the formal independence gate. The review
+does not certify the full arbitrary-G proof, finite-M guarantee, N0=N or general
+unequal-size extensions. GO does not close RSM-02 or authorize public opening.
+
+### AC.3. SF-01 applied
+
+The author report Section 3.2 incorrectly described an "incomplete outer
+integration" in (A.12). Per the review's Section 4, its left side is an
+indicator of an integrated tail probability being below alpha. The right-hand
+indicator is missing its comparison; the subsequent calculation indicates
+G>U*. No integration measure should be added as a supposed source repair.
+
+The exact proposed replacement was applied to the author report:
+
+> Page 378 (A.12), as supplied, has a right-hand indicator with its comparison
+> omitted. The left-hand side is an indicator of an integrated tail probability
+> being below alpha; the following calculation indicates the intended event
+> G>U*. This identifies the intended reading without certifying a corrected
+> appendix proof.
+
+The existing arbitrary-G/proof limitations remain. Part AB's historical
+statement only mentioned the malformed display and intended event; it made no
+outer-integral allegation and remains byte-identical. Algorithms, tests,
+probabilities and diagnostic programs are unchanged. **SF-01 is applied by the
+coordinator; a fresh independent acceptance of this repair is not claimed.**
+The source was not reread here; the change implements the returned review's
+specific correction and does not newly certify the appendix.
+
+### AC.4. State and validation boundary
+
+The effective ledger remains 9 CLOSED (SR-B/C/D/F/G/I/J/K/L), 1 PARTIAL
+(SR-H), and 4 INPUT_INCOMPLETE (SR-A/E, RSM-01/02). Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY=false, NARROW, TRANSFER, existing R3-CAND/RES-ONLY classes,
+prior limited acceptances and residual conditions, inventory 42+1, other holds
+and R4 are unchanged. The supplied-source cap remains approved. No new original,
+source substitution, catalogue split, numerical-lane repair, method adoption,
+hold acceptance, public authorization or merge occurs.
+
+This is continuing OpenAI Codex-assisted author/coordinator work, with prior
+integration and investigation context visible, not a separate scientific
+review or an attested model-build identity. The four required repository checks,
+exact replacement, prefix preservation and two-file output scope are checked
+for submission; exact outcomes and new identities are in the PR body. No full
+pnpm check, tests, typecheck, generated checks, statistical diagnostics,
+PDF rereading or historical simulation is performed for this wording repair.
+The old preservation programs remain fixed to their original author/reviewer
+increments; they are not weakened to accommodate the later two-file change.
+
+A later close-only check can compare the repaired paragraph with PR #268
+Section 4, verify the entire A-AB prefix and unchanged other blobs, and assess
+only faithful application and preserved limits. It need not repeat the finite
+statistical review and cannot silently turn this receipt into RSM-02 acceptance.

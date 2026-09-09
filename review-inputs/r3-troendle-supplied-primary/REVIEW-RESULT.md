@@ -189,11 +189,11 @@ indicator at equality.
 
 Some displays require care: p.373's illustrative G drops the positive z-scale
 normalization displayed immediately above it; integrability is unaffected by
-that constant, but it is not literally the same normalized maximum. Page 378
-(A.12), as supplied, has a malformed right-hand indicator without its comparison
-and an incomplete outer integration; the next displayed calculation explicitly
-uses the event G>U*. This is a reported transcription/display limitation, not
-an authorized correction of the article. Appendix critical values also involve
+that constant, but it is not literally the same normalized maximum. Page 378 (A.12), as supplied, has a right-hand indicator with its comparison
+omitted. The left-hand side is an indicator of an integrated tail probability
+being below alpha; the following calculation indicates the intended event
+G>U*. This identifies the intended reading without certifying a corrected
+appendix proof. Appendix critical values also involve
 a data-selected remaining family; the sufficient argument below states the
 common-reference monotonicity that makes the first-error bound precise.
 
