@@ -1,5 +1,12 @@
 # Release 4 Research Preparation
 
+Current repair: [PR 251/252 response](opening-rfc-review-response.md).
+Both full reports are preserved separately:
+[PR 251](../../../review-inputs/r4-opening-rfc/PR-251-REVIEW.md) and
+[PR 252](../../../review-inputs/r4-opening-rfc/PR-252-REVIEW.md).
+The candidate includes author-side repairs; fixed-input confirmation is pending.
+Public discussion is not open.
+
 **Status: informative pre-public research work-start record.** Release 4 public
 discussion is not open. This package prepares a bounded factorial and interaction
 question for independent investigation. It creates no Protocol meaning, identifier,
