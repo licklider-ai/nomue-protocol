@@ -4871,3 +4871,202 @@ Execute this limited review at the full fixed Part U commit in the PR body:
    needed, give its exact bounded scope. No merge, procedure adoption,
    additional hold decision, public opening or release. This check does not
    reopen the steward's already approved acceptance merely by being pending.
+
+---
+
+## Part V. SR-J review receipt, clarifications and a pending source-basis proposal
+
+**Status: informative author/coordinator continuation, 2026-09-09. The bounded
+SR-J investigation has received an independent GO for record accuracy. SR-J
+remains INPUT_INCOMPLETE. The one-entry proposal in V.5 is NOT YET APPROVED.**
+This continuation receives PR #250, records its six optional notes and presents
+an exact decision for the steward. It does not treat delivery of a review as
+approval of a source exception or acceptance of a hold.
+
+### V.1 Fixed inputs and receipt
+
+The coordinator read the complete fixed review and re-derived its parent, tree,
+changed-path and blob/byte/hash identities from fetched Git objects. This is the
+continuing OpenAI Codex-assisted author context of PR #248, not a new independent
+review or a repetition of the reviewer's source inspection.
+
+| Input                                  | Fixed identity                                                                                                                                                                                          |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PR #248 author commit / sole parent    | `cbbc51143b82d97b29afaa0902ee2a42456d3166` / `95683fc99403dc614e4722fb2ee7ab2760afed37`                                                                                                                 |
+| Author tree                            | `027e6f895664180fc12db7af76043a1fdbdc2853`                                                                                                                                                              |
+| Author report                          | `review-inputs/r3-srj-primary-followup/REVIEW-RESULT.md`; blob `572ffb3763a48b57ad77cbde30179728d8a8d5c3`; 27075 bytes; SHA-256 `2c89bd1d153c5f79467aa14009dfa962aff929466ef67cbed34e75b8872a8fbc`      |
+| Author diagnostic                      | `review-inputs/r3-srj-primary-followup/check-srj.py`; blob `7cec5f5bc1e31d0075ba1b6cc9184b677a44ffd2`; 5008 bytes; SHA-256 `30c450d417828171a54900d34010945f20c282e779785be6beb22e92f11280d2`           |
+| PR #250 review commit / sole parent    | `2ba1f1672af6846414439cb3db9524828d0ac8ac` / `cbbc51143b82d97b29afaa0902ee2a42456d3166`                                                                                                                 |
+| Review tree                            | `405354f691b7dd23c562fa8c2007d36db2500959`                                                                                                                                                              |
+| Independent review                     | `review-inputs/r3-srj-primary-followup/INDEPENDENT-REVIEW.md`; blob `87fcc45f8a9185884cc2428b83c814629523d7fc`; 28010 bytes; SHA-256 `bb0db4ea2c51b83f545568debd11739a2d0a77e0fdda227e474817e9aa99fbf8` |
+| Parts A-U preserved prefix             | blob `7f05c96ea2d45ddfcc762bc1f785652dce51f5c3`; 466932 bytes; SHA-256 `802ca0c5adfe8c489ba5365e694237d25e2d6d84a975cef15b20e4dd2fb9a376`                                                               |
+| Commission at both heads               | blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7`                                                                                                                                                         |
+| Fetched main snapshot for this receipt | `0abdca8f822d0de3faf35f218f762a951fd75e9e`; the seven Read-first file blobs match the review head                                                                                                       |
+| Author CI                              | run `34311196515`, head `cbbc51143b82d97b29afaa0902ee2a42456d3166`: completed / success                                                                                                                 |
+| Review CI                              | run `34313417076`, head `2ba1f1672af6846414439cb3db9524828d0ac8ac`: completed / success                                                                                                                 |
+
+PR #250 adds exactly the independent-review file. The author report, diagnostic,
+commission, Parts A-U and PR #247 report are unchanged. This Part starts from
+PR #250's fixed commit and appends only to the commissioned result. It preserves
+all 466932 prior bytes and every prior report and script.
+
+### V.2 Meaning and limits of the received GO
+
+PR #250 Section 10 gives GO for the accuracy of PR #248's bounded author record:
+zero BLOCKER, zero SHOULD-FIX, six NICE-TO-HAVE notes. Sections 2 and 7 explicitly
+exclude a source waiver, alternative-basis recommendation and hold acceptance.
+Those exclusions remain operative. This receipt does not attribute V.5's proposal
+to the reviewer.
+
+The review discloses a fresh context, no authorship of PR #248, #247, #245, #244
+or Parts A-U, and no participation in an acceptance conversation. It reports
+service model `claude-fable-5-1`, different from the OpenAI-assisted author context,
+but the same family as the prior PR #244/#247 reviewers. It is not blind: it read
+the author report first. These are the reviewer's disclosed process facts, not
+independently attested model-build or human-authorship evidence. The coordinator
+receives the review on those stated limits; a formal scoped independence decision
+can accompany a later hold-acceptance proposal rather than being inferred here.
+
+The review independently re-hashed the three supplied PDFs, inspected the original
+passages and checked the author arguments. Its Sections 4-6 report adaptive
+nested quadrature, a multinomial cell-count dynamic programme and a SciPy Genz
+cross-check, distinct from the author's numerical construction. Its tabulated
+values are retained as reviewer evidence, not newly rerun coordinator outputs.
+Only the review report was committed; this receipt does not claim that the
+reviewer's auxiliary programs have been archived as reproducible code artifacts.
+
+The actual numerical scope is **selected tables/settings**, not every value in
+all cited tables: 1991 Tables II/III and the stated Table IV quantities; 1992
+Table 1 at two settings, Table 6, and part of Table 7. The full step-up adjusted-p
+table, two-sided step-up constants and Hsu coverage simulation were not checked.
+The numerical envelope analysis supports that no numerical erratum follows from
+rounded printed statistics; it does not identify the unprinted exact data.
+The review did not verify the supplier-29 archive, the author's image-viewing
+process, the publisher access failure or Naik's DOI, and did not read Naik.
+Those remain explicitly attributed to the author custody/access record or unread.
+
+### V.3 Disposition of the six optional notes
+
+All six are incorporated as successor clarifications below. The fixed author
+report and diagnostic remain unchanged, so the review still applies to their
+exact bytes. No new algorithm, numerical result or generic implementation is
+introduced.
+
+| Note | Successor clarification                                                                                                                                                                                                                                                                                                                                                                            |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| N-1  | `rectangle()` in the fixed diagnostic is a Table-II calculation with control sample size 11 hard-coded. Its `sizes` argument varies treatment sizes only. It is not a reusable general-control-size API and cannot be applied to Table IV (control size 10) unchanged. This explicit scope comment supplies the note's documentation option; the source code is preserved.                         |
+| N-2  | Dunnett-Tamhane 1992 p.164 cites both the m=2 existence proof and the m=2 inequality against Hochberg to the uninspected 1990 technical report. Neither proof is printed in the inspected 1992 text. Its broad superiority claim for m>2 relies on the stated conjectured inequality; it is not promoted as a proved guarantee.                                                                    |
+| N-3  | Given valid calibration for every true subset and nondecreasing constants, the author Section 5.1 event argument supplies a familywise error bound for every configuration. The least-favourable-configuration theorem is not needed for that sufficient bound. This does not supply the missing existence proof, validate arbitrary constants or establish an unequal-correlation generalization. |
+| N-4  | The value .108618427 at m=1 is the marginal Bonferroni bound, not an adjusted Holm bound. The suffix maximum .170334133 is the corresponding Holm adjusted bound. This terminology supersedes the author's phrase and the diagnostic's printed label "raw Holm"; the values and inequalities remain correct.                                                                                       |
+| N-5  | `ed6e9d9b...` was the main snapshot compared during authoring; `0abdca8f...` was the review-time snapshot and is also the fetched snapshot used for this receipt. Neither is a promise that main will remain at that head. The seven Read-first blobs agree at the current comparison.                                                                                                             |
+| N-6  | The 1991 Table IV printed p column contains adjusted values, not local tails. PR #250 Section 4 reports local p'_1 about .727 and adjusted p_1 about .911; this is another suffix-maximum example. Those additional numerical values are reviewer results reused here, not part of the author's Table-II-only diagnostic.                                                                          |
+
+### V.4 Three-entry evidence and bibliographic clarification
+
+The original artifacts remain those pinned by PR #248 Section 2 and independently
+checked by PR #250 Section 3. Acquisition and source reading are reused, not
+recounted as new custody or fresh inspection in this Part.
+
+| Entry             | Inspected primary basis and pinpoints                                                                                                                                                                                                        | Supported boundary retained for integration                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MTO-02 / RES-ONLY | Supplier 42, Dunnett-Tamhane 1991, 634124 bytes / 9 PDF pages, SHA-256 `ed93660e9e8286f1ff2e0026f972c783ac523ac96465e1689e17b4f99a960161`; pp.940-943 rule/model/adjusted p; pp.945-947 examples and limits                                  | Specified control; independent normal groups with common variance and an independent pooled chi-square scale; unequal sizes allowed; labelled-subset step-down maximum calibration and suffix-maximum adjusted p. Source FWER statement and separately attributed sufficient author proof remain distinct. No heteroscedastic, cross-endpoint, average-correlation or step-down-compatible interval guarantee. Naik is still required under the present basis. |
+| MTO-03 / RES-ONLY | Supplier 29, Dunnett-Tamhane 1992, 1099979 bytes / 10 PDF pages, SHA-256 `f1144f4ca64d874d1d812cfc6b0b8f9d275d2251619796805d5ac955594386f6`; pp.163-165 calibration and qualifications; pp.168-170 adjusted p, examples and extension limits | Common-correlation normal estimates with common variance and independent chi-square scale; step-up ordered-event calibration, monotone constants and prefix-minimum adjusted p. Existence, imported proofs, conjectured superiority and unequal-correlation extension limits remain. Finite-df zero correlation does not imply independent t statistics.                                                                                                       |
+| MCB-01 / RES-ONLY | Supplier 05, Hsu 1984, 649578 bytes / 9 PDF pages, SHA-256 `ac190ceeb614141b64da413248d94e3a3cfe050ab42be31ef7b4dc8db089065b`; pp.1137-1141 model, theorem, calibration and selection interpretation                                         | Each treatment minus the best other treatment; independent equal-size samples from a common continuous location family; simultaneous coverage at least the calibrated level under the source premises. Constrained intervals include zero and need the stated selection interpretation. Nonparametric and best-t extensions are not silently adopted.                                                                                                          |
+
+Both original reference lists (1991 p.947, 1992 p.170) identify Naik's article as
+_Some selection rules for comparing p processes with a standard_, volume 4,
+pp.519-535, and identify Marcus, Peritz and Gabriel (1976), Biometrika 63:655-660.
+PR #250 Section 7 independently confirms this. The current author integration
+therefore records **X-3 bibliographic identity supported** and **X-8's source
+mapping supported: SRC-18, no additional distinct Marcus original indicated by
+these reference lists**. The bibliographic findings do not read Naik or broaden
+any mathematical guarantee.
+
+**Correction to T.3:** its sentence referring to "the separate Marcus
+single-author paper involved in SR-J X-8" was too definite. X-8 had been an
+unresolved identity question; the now-inspected reference lists point to the
+three-author SRC-18 paper. This successor replaces that characterization for
+current use while preserving the historical Part T bytes. No conclusion about
+all Marcus publications or the intent behind unseen drafting is claimed.
+SR-D's accepted source scope and its historical evidence are unchanged. A later
+integration review should verify this correction against the pinned findings;
+no duplicate source or custody increment is introduced.
+
+### V.5 Concrete one-entry source-basis proposal: NOT YET APPROVED
+
+The commission currently requires Naik (1975) within SRC-28. The user previously
+reported supplier 38 unavailable; the bounded investigation did not recover it.
+The exact acquisition target remains pp.519-535 (17 pages), not an entire book.
+No finding that every lawful route is exhausted is made.
+
+The author/coordinator recommends the following **single, narrowly scoped
+exception**, for the steward to approve or decline:
+
+1. For MTO-02 source-completion characterization only, use the directly inspected
+   Dunnett-Tamhane 1991 pp.940-947 as the decision-bearing primary basis for the
+   specified-control step-down construction and the bounded guarantee described
+   in V.4 and PR #248 Sections 4.1-4.4, with V.3's corrections.
+2. Remove Naik (1975) from the required source-completion inputs **only for that
+   bounded MTO-02 characterization**. Retain the original 1975 formulation,
+   historical attribution, priority and relationship between variants as
+   **unverified**. Do not describe the 1991 procedure as a verified reconstruction
+   of Naik's procedure, and do not infer that Naik contains no distinct variant.
+3. Preserve all MTO-03 and MCB-01 obligations and every other hold's source basis.
+   Keep the 1992 calibration/existence/proof/conjecture limits and all V.4 model,
+   family, output and numerical limits. Author arguments remain author mathematics,
+   not replacement primary texts or evidence that an unread cited proof was read.
+4. This approval would authorize preparing the successor three-entry synthesis
+   and its exact-head integration review. It would **not itself accept SR-J as
+   CLOSED**, alter the ledger, approve a method or implementation, authorize a
+   merge, open public discussion or release anything. Formal hold acceptance would
+   be presented separately after that review.
+
+This is a new coordinator proposal based on the already reviewed available-source
+characterization. PR #250 neither proposed nor approved it. The earlier SR-D
+exception is a process precedent only; it does not authorize this different entry.
+Delivery of PR #250 is not a conversation approval of these four points.
+Until the steward approves this proposal, Naik remains mandatory and SR-J remains
+INPUT_INCOMPLETE. A later approval would be recorded append-only with its exact
+scope and conversation provenance; this historical PENDING proposal would remain.
+
+If the steward retains the original requirement, continue seeking the 17-page
+Naik article and inspect its rule, model, guarantee and attribution before
+proposing closure. If the exception is approved, acquisition remains a targeted
+reopen task when its historical/original-formulation claims become necessary or
+when the original becomes available. Contradictory evidence, a distinct relevant
+variant, or a demand for broader guarantees also reopens the bounded synthesis.
+Neither path treats required missing text as merely PARTIAL under the current
+commission.
+
+### V.6 Current ledger, checks and next execution
+
+Current dispositions remain unchanged:
+
+| Disposition      | Members                                        | Count |
+| ---------------- | ---------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-K, SR-L |     8 |
+| PARTIAL          | SR-H                                           |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, SR-J, RSM-01, RSM-02               |     5 |
+
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY=false, NARROW, TRANSFER, all
+R3-CAND/RES-ONLY tokens, scoped SR-D/SR-I acceptances, custody 42+1, all other
+holds and R4 remain. No formal SR-J independence or acceptance decision is
+recorded. This continuation neither changes source custody nor public readiness.
+
+The receipt's PR body records actual format:check, lint:markdown, direct validator
+and diff --check outcomes and its full commit/parent/tree/blob/byte/SHA-256
+identity. No scientific script was changed; the prior author and review checks
+are reused explicitly. Full pnpm check, tests, typecheck, generated checks,
+Phase 1/2 suites and statistical recalculations are not claimed for this receipt.
+
+Next action is the steward's decision on V.5, not another independent scientific
+pass solely to acknowledge receipt. If approved, the coordinator records the
+exception and prepares the three-entry synthesis, then supplies a fixed-head
+integration-review handoff. That review will check identity, preservation of the
+approved exception, V.3's six-note treatment, V.4's bibliography correction and
+claim-to-source mapping, and all retained limits. The existing two source readings
+can be reused explicitly; new direct source checks are needed for any concrete
+unresolved or changed scientific claim. A formal source-completion acceptance
+proposal follows a satisfactory integration review. No additional permission is
+needed to prepare those already described reversible artifacts once V.5 is
+approved; hold acceptance and merge remain separate decisions.
