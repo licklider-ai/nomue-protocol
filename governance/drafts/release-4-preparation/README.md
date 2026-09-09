@@ -22,6 +22,11 @@ they are not part of that reviewed input and do not supply an independent verdic
 The [handoff repair record](programme-handoff-repair-2026-09-09.md) records the
 subsequent chat-returned editorial feedback and its disposition.
 
+The [steward acceptance](programme-steward-acceptance-2026-09-09.md) records
+integration of the bounded preparation. The subsequent
+[power-of-two scaling exploration](power-scale-exploration.md) is new author-side
+research awaiting independent review; it is not covered by that acceptance.
+
 ## Repository identity
 
 This preparation starts from main commit
