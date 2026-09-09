@@ -8,7 +8,9 @@ release commitment.
 
 ## Current navigation
 
-Current next work: the [assembled RFC candidate](opening-rfc-candidate.md).
+Current next work: the [assembled RFC candidate](opening-rfc-candidate.md)
+and [independent opening review handoff](opening-rfc-review-handoff.md).
+The handoff is a later delivery addition, outside its fixed five-file input.
 The [normal-model steward acceptance](normal-model-steward-acceptance-2026-09-09.md)
 and its preserved review/confirmation are integrated in main at
 0abdca8f822d0de3faf35f218f762a951fd75e9e. The candidate proposes concrete
