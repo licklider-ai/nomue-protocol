@@ -1,5 +1,15 @@
 # Release 3 Public-Review Preparation
 
+**Current status: public discussion opened on 2026-09-09 in [Issue #274](https://github.com/licklider-ai/nomue-protocol/issues/274).**
+See the [actual opening receipt](public-opening-record.md) for PR #273 GO,
+fixed inputs, exclusions and the 30-day window. Earliest decision:
+2026-10-09T11:50:18Z. The preparation statuses and sequences below are historical
+and superseded by the receipt for current operational status; they do not request
+another opening review or start a second window. Scientific and numerical holds
+remain unchanged.
+
+## Preserved pre-opening preparation record
+
 **Status: informative pre-public work record.** Release 3 public discussion is not
 open. This package starts the research and scope work needed to make a bounded RFC
 reviewable. It creates no Protocol meaning, identifier, Requirement ID, supported

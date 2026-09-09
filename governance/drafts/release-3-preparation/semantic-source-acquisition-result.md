@@ -6256,3 +6256,30 @@ statistical rerun is claimed. The four repository checks and prefix/catalogue/sc
 checks are recorded in the submission PR. The received checks are not described as
 new coordinator execution. A focused return should assess the operative exclusion
 throughout the RFC/map, S-01 and H1/H7 without repeating unaffected scientific work.
+
+## Part AF — Public opening and PR #273 GO receipt (2026-09-09)
+
+Public discussion opened in [Issue #274](https://github.com/licklider-ai/nomue-protocol/issues/274)
+at GitHub creation time 2026-09-09T11:50:18Z. The anticipated STABLE-INTENT
+minimum is 30 calendar days; earliest decision is 2026-10-09T11:50:18Z.
+See the [execution receipt](public-opening-record.md) for immutable inputs,
+authorization, live authority checks, review provenance and next actions.
+
+PR #273 at `c97e1dacd779f7e3ecf9167630ecb2de9c15a231` records GO for the
+fixed proposal `545f6eb4c28eb93bd7cc5404dd45afd475822317`, with BLOCKER 0,
+SHOULD-FIX 0 and one optional navigation improvement. H1/H7 are
+SATISFIED_FOR_OPENING; H2-H6 reuse PR #271 with delta checks. This receives
+the separate review; it does not attest missing scientific independence evidence.
+
+The operative exclusions for OMN-02, APR-09/SR-G and SR-K remain effective
+throughout the proposal. All 49 dispositions and historical source acceptances
+remain intact. Ledger: 9 CLOSED / 1 PARTIAL / 4 INPUT_INCOMPLETE;
+SOURCE_SET_READY=false, overall INPUT_INCOMPLETE, NARROW. Numerical holds
+and PR #265 withdrawals remain. Future additions require scoped review and
+window assessment. No additional original confirmation was required for this
+narrowed opening; no method is adopted, hold closed, PR merged or release issued.
+
+Parts A-AE remain the exact 572261-byte prefix, SHA-256
+`ca4fcdfce6df502e539b2ffe74c1056854fe1b367ddc58d308d65153766ec29f`.
+The fixed RFC/map and prior review reports are unchanged. This is an
+OpenAI Codex-assisted administrative execution record in the coordinator context.
