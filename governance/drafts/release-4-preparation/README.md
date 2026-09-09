@@ -6,6 +6,22 @@ question for independent investigation. It creates no Protocol meaning, identifi
 Requirement ID, supported capability, RFC window, implementation authority, or
 release commitment.
 
+## Current navigation
+
+For the 2026-09-09 programme state, use
+[public-discussion readiness](public-discussion-readiness.md) and the
+[programme self-audit](programme-self-audit-2026-09-09.md). The initial work-start
+identity and sequence below are historical; they are not instructions to repeat
+completed preparation or the accepted QR source-copy review. Corrections to this
+navigation do not rewrite immutable commission inputs or accept unmerged research.
+
+For the next work, use the [numerical feasibility workplan](numerical-feasibility-workplan.md)
+and [programme review handoff](programme-review-handoff.md). Both are author-side
+instructions added after the fixed PR 227 input `f01b870bdce4e051476e4b74d56b4deb4217307e`;
+they are not part of that reviewed input and do not supply an independent verdict.
+The [handoff repair record](programme-handoff-repair-2026-09-09.md) records the
+subsequent chat-returned editorial feedback and its disposition.
+
 ## Repository identity
 
 This preparation starts from main commit
@@ -99,7 +115,7 @@ records source routes to inspect, not accepted evidence.
 | Lane                              | Candidate source or source family                                                                                                       | Planned evidentiary role                                                                           | Current state                                                             |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Factorial effects                 | Yates, _The Design and Analysis of Factorial Experiments_ (1937) and original factorial-analysis lineage identified from its references | Balanced factorial contrasts, interaction construction, replication, and degrees of freedom        | Identify exact edition and inspect primary text                           |
-| Interaction interpretation        | Tukey, "The Interpretation of Interactions in Factorial Experiments," _Biometrika_ 39 (1952), 65–81                                     | Meaning and limits of interaction decompositions                                                   | Publisher record identified; full text and exact scope require inspection |
+| Interaction interpretation        | E. J. Williams, "The Interpretation of Interactions in Factorial Experiments," _Biometrika_ 39 (1952), 65–81                            | Meaning and limits of interaction decompositions                                                   | Publisher record identified; full text and exact scope require inspection |
 | Orthogonal two-level design       | NIST/SEMATECH Engineering Statistics Handbook, sections on two-level full factorial designs and effect estimation                       | Authoritative executable/formula cross-check; not a substitute for original methodological sources | Public text identified; inspect exact version and archive identity        |
 | Unbalanced hypotheses             | Original papers defining or criticizing Type I, II, III, and IV sums of squares and estimable-function conventions                      | Determine whether Candidate C has one defensible portable meaning or must be split/deferred        | Bibliographic search required; software manuals alone are insufficient    |
 | Robust/randomization alternatives | Original randomization-based and heteroscedastic factorial inference papers                                                             | Determine whether these are variants, alternatives, or later Contracts                             | Catalogue and inspect by exact procedure                                  |
@@ -124,7 +140,7 @@ gate identifiers.
 | R4-P5 | Draft a standalone RFC with explicit affected authority classes, stability tier, exclusions, staged Contracts/Public Checks, and decision requested  |
 | R4-P6 | Complete an independent pre-opening readiness review with no undisclosed estimand, interaction, algorithm, tolerance, support, or identity selection |
 
-## Immediate sequence
+## Original work-start sequence (historical)
 
 1. merge this bounded work-start package and open separate public execution issues for
    the two commissions with exact commit and blob pins;

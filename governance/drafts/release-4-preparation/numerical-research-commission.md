@@ -56,7 +56,8 @@ unchanged in principle, and which require a new factorial-specific graph or proo
    and iterations. A finite corpus maximum is not a global bound.
 10. Define a supported-execution evidence strategy and exact platform/build/process
     admission boundary without copying a Release 3 allowlist.
-11. Determine whether unbalanced Candidates B/C require matrix-rank, pivoting,
+11. Determine whether general balanced Candidate B and unbalanced Candidate C require
+    matrix-rank, pivoting,
     generalized-inverse, or iterative behavior that creates distinct numerical
     Contracts or a defer disposition.
 12. Identify which factorial numerical results can later serve higher-factor,
