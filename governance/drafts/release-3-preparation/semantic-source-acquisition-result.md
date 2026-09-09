@@ -5070,3 +5070,246 @@ unresolved or changed scientific claim. A formal source-completion acceptance
 proposal follows a satisfactory integration review. No additional permission is
 needed to prepare those already described reversible artifacts once V.5 is
 approved; hold acceptance and merge remain separate decisions.
+
+---
+
+## Part W. Approved SR-J source-basis exception and three-entry author synthesis
+
+**Status: informative author synthesis, 2026-09-09. V.5's one-entry source-basis
+exception is APPROVED. Integration review and formal SR-J acceptance are PENDING.**
+The author recommends bounded source-completion closure on the basis below; this
+is a candidate for review, not an effective hold decision. The carried ledger
+remains 8 CLOSED / 1 PARTIAL / 5 INPUT_INCOMPLETE until a separate acceptance
+record changes it. No method, implementation, merge or public opening is approved.
+
+### W.1 Fixed inputs, role and preservation
+
+This is the continuing OpenAI Codex-assisted author/coordinator context that
+created PR #248 and Part V. It is not the independent reviewer of PR #250 and
+claims no fresh source inspection, new statistical computation or model-build
+attestation in this Part. The complete source investigation and independent
+review already read in this context are reused explicitly.
+
+| Fixed input                    | Identity                                                                                                                                                                                                |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Part V / PR #253 commit        | `55a073525ec685278cf40731d61b1b17ec0882aa`                                                                                                                                                              |
+| Its sole parent / tree         | `2ba1f1672af6846414439cb3db9524828d0ac8ac` / `31283beac9d9235fb696163b2815d72f4726833f`                                                                                                                 |
+| Parts A-V prefix               | result blob `5f4b136bfaa76a2942e112e1e3776b247f148152`; 487459 bytes; SHA-256 `7f3fc1361a8605651b4771d2949e94634e050ce94cf57200f2f026bfd917cdc6`                                                        |
+| Author investigation / PR #248 | `cbbc51143b82d97b29afaa0902ee2a42456d3166`; tree `027e6f895664180fc12db7af76043a1fdbdc2853`                                                                                                             |
+| Author report                  | `review-inputs/r3-srj-primary-followup/REVIEW-RESULT.md`; blob `572ffb3763a48b57ad77cbde30179728d8a8d5c3`; 27075 bytes; SHA-256 `2c89bd1d153c5f79467aa14009dfa962aff929466ef67cbed34e75b8872a8fbc`      |
+| Author diagnostic              | `review-inputs/r3-srj-primary-followup/check-srj.py`; blob `7cec5f5bc1e31d0075ba1b6cc9184b677a44ffd2`; 5008 bytes; SHA-256 `30c450d417828171a54900d34010945f20c282e779785be6beb22e92f11280d2`           |
+| Independent review / PR #250   | `2ba1f1672af6846414439cb3db9524828d0ac8ac`; tree `405354f691b7dd23c562fa8c2007d36db2500959`                                                                                                             |
+| Independent report             | `review-inputs/r3-srj-primary-followup/INDEPENDENT-REVIEW.md`; blob `87fcc45f8a9185884cc2428b83c814629523d7fc`; 28010 bytes; SHA-256 `bb0db4ea2c51b83f545568debd11739a2d0a77e0fdda227e474817e9aa99fbf8` |
+| Acquisition commission         | blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7` at all three heads                                                                                                                                      |
+| Fixed semantic comparison      | commit `7bd9c5ab854777c3e99e624d9d2ed62731228852`; semantic-result blob `8f21526040924b891f64724c2d0fde9ea94eff92`                                                                                      |
+| Part V CI                      | run `34313909808`, head `55a073525ec685278cf40731d61b1b17ec0882aa`: completed / success                                                                                                                 |
+
+The parent identities were checked against fetched Git objects and PR #253
+metadata. All previous artifacts and the exact 487459-byte prefix are preserved.
+Only this Part is appended to the commissioned result. The repository Read-first
+instructions already read in this author context continue to apply; this is not
+a change to the semantic catalogue, either commission or an authoritative file.
+
+### W.2 Approval account and exact exception
+
+After the coordinator presented Part V.5 and PR #253, steward Tasuku Kobayashi
+explicitly approved the limited V.5 change in the continuing conversation and
+instructed the coordinator to create the integration record. This paragraph is
+an English account of that conversation decision, not a verbatim quotation,
+independently signed vote or claim of unaided human authorship. It records one
+approval, not additional votes inferred from the prior review or this PR.
+
+The approved four-point scope is recorded here in operational terms:
+
+1. MTO-02's bounded source-completion description uses inspected Dunnett-Tamhane
+   1991 pp.940-947 for the specified-control step-down construction and guarantee
+   under its stated premises, with the corrections and limits in V.3-V.4 and
+   PR #248 Sections 4.1-4.4.
+2. Naik (1975) is removed from the required source-completion inputs only for
+   that bounded description. Its original formulation, historical attribution,
+   priority and relationship between variants remain unverified. The 1991 method
+   is not claimed to reconstruct Naik, nor is Naik claimed to contain no distinct
+   relevant variant.
+3. MTO-03, MCB-01 and every other hold retain their source obligations. The 1992
+   calibration, existence, imported-proof and conjecture limits remain; all
+   model, family, output and numerical limits remain. Author mathematics is
+   separately attributed and is not an unread original's proof.
+4. The approval authorizes this synthesis and its exact-head integration review.
+   It does not itself accept SR-J as CLOSED, change the ledger, select a method,
+   implement, merge, open discussion or release. A formal hold-acceptance proposal
+   follows a satisfactory integration review.
+
+This is the successor exception to the assigned source basis for one entry, not
+a general revision of the commission's missing-source rule. The earlier
+INPUT_INCOMPLETE assessments and Part V's NOT YET APPROVED text were correct at
+their dates and remain historical evidence. No retrospective PARTIAL relabeling
+occurs. Neither PR #250's GO nor SR-D's earlier exception supplies this approval;
+the present conversation does. It is not pending again merely because integration
+review remains pending.
+
+### W.3 Source custody, pinpoints and reuse
+
+| Supplier / original       | Bytes / PDF pages | SHA-256                                                            | Reused inspection and claim pinpoints                                                                                                                                                          |
+| ------------------------- | ----------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 42 / Dunnett-Tamhane 1991 | 634124 / 9        | `ed93660e9e8286f1ff2e0026f972c783ac523ac96465e1689e17b4f99a960161` | PR #248 Sections 2/4 and PR #250 Sections 3/4: pp.940-943 model, ordered rule, tail adjustment and limitations; pp.945-947 numerical examples, confidence-bound distinction and references     |
+| 29 / Dunnett-Tamhane 1992 | 1099979 / 10      | `f1144f4ca64d874d1d812cfc6b0b8f9d275d2251619796805d5ac955594386f6` | PR #248 Sections 2/5 and PR #250 Sections 3/5: pp.163-165 model, ordered-event calibration, cited proofs and conjecture; pp.168-170 adjusted p, examples, generalization limits and references |
+| 05 / Hsu 1984             | 649578 / 9        | `ac190ceeb614141b64da413248d94e3a3cfe050ab42be31ef7b4dc8db089065b` | PR #248 Sections 2/6 and PR #250 Sections 3/6: pp.1137-1141 model, target, coverage theorem, calibration and selection interpretation                                                          |
+
+Printed page = PDF page +938 for supplier 42, +160 for supplier 29's pages 2-10
+(page 1 is a cover), and +1135 for supplier 05. The original custody routes and
+failed Naik retrieval remain in PR #248 Sections 2/7. No new retrieval or reading
+is claimed here, and custody remains 42 numbered artifacts plus one corrigendum.
+The independent reviewer verified the three original PDFs but not the purchased
+archive's hash or the publisher-access account; V.2 preserves that distinction.
+No copyrighted PDFs, images or complete extracts are committed.
+
+### W.4 Three-entry impact, guarantee and output map
+
+| Entry / disposition of characterization                                          | Family, target and premises                                                                                                                                                                                                                                                               | Supported rule and output                                                                                                                                                                                                                                                                                                                                                                                                  | Scope limit                                                                                                                                                                                                                                                                                                                                                                                     |
+| -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MTO-02 / supports with narrowing under approved basis; RES-ONLY retained         | Fixed test-treatment set versus a specified control; independent normal groups with common unknown variance, independent pooled chi-square scale and fixed pooled df. Unequal group sizes allowed. One-sided mean difference no greater than a specified margin, or two-sided point null. | Relabel observations and sample-size/correlation parameters together; descend through labelled remaining-subset maximum critical values and stop at first nonrejection. Local joint-t tails become adjusted p by a suffix maximum. The source states strong FWER; PR #248 Section 4.2 gives a separate sufficient author proof checked in PR #250 Section 4.                                                               | No heteroscedastic or average-correlation guarantee; no automatic error control across endpoints or control families. Strict critical-value versus inclusive p-value boundary needs a convention before implementation. Table IV uses single-step confidence bounds, not step-down-compatible intervals. Naik lineage and original form unverified.                                             |
+| MTO-03 / supports conditional characterization with narrowing; RES-ONLY retained | Fixed family of common-variance, common-correlation normal estimates with independent chi-square scale. Equal test-group sizes with possibly different control size is a supported many-to-one setting.                                                                                   | Increasing statistics: the first crossing rejects it and all larger statistics. A nondecreasing sequence is calibrated by joint ordered-statistic events for each subset size. Implicit local step-up calibrations become adjusted p by a prefix minimum. Conditional strong FWER follows from valid calibration and monotonicity; the sufficient author argument in PR #248 Section 5.1 was checked in PR #250 Section 5. | No unconditional arbitrary-size existence theorem is certified. The two m=2 proofs and least-favourable theorem are referred to an unread 1990 report; larger-m superiority against Hochberg remains conjectural. No unequal-correlation or average-correlation extension, or liberal substitution of step-down constants. Zero correlation at finite df does not imply independent t variates. |
+| MCB-01 / supports with target/output clarification; RES-ONLY retained            | Fixed treatment set, independent equal-size samples from a common absolutely continuous location family, translation-equivariant statistics and the source's calibrated event. Target is each location minus the maximum over all OTHER locations.                                        | Under the theorem's event-region premises, simultaneous coverage is at least P*, with P* at least 1/k. Parametric intervals are `[min(Delta_i-d,0), max(Delta_i+d,0)]`, where Delta compares the observed location to the best other observation and d is calibrated to the model/scale. Source theorem and separate author event-inclusion argument remain distinct.                                                      | Not fixed-control or best-including-self inference; not exact equality of coverage at every configuration. Intervals contain zero and require the source's subset/indifference-zone selection interpretation. No guaranteed unique best, arbitrary univariate cutoff, general all-pairs output, or adoption of nonparametric/best-t extensions.                                                 |
+
+The former generic shrinking-subset multivariate-t description of MTO-02/03 is
+narrowed here: MTO-03 requires ordered-event calibration, not the step-down
+maximum-quantile recursion. No catalogue ID or method is silently redefined.
+Prospective family membership and model validity are not inferred from an observed
+result. No scientific validity or numerical implementation contract is adopted.
+
+### W.5 Corrections, numerical evidence and bibliography
+
+V.3's six-note dispositions apply in full to this synthesis. Specifically:
+
+- The fixed diagnostic uses control size 11 for Table II; it is not a generic
+  many-to-one function and does not compute Table IV unchanged (N-1).
+- Both cited m=2 proofs remain unread, and general superiority is not promoted
+  from the m>2 conjecture (N-2). The sufficient conditional FWER argument does
+  not need the least-favourable theorem, but still needs valid calibration and
+  nondecreasing constants; it does not prove their general existence (N-3).
+- .108618427 is the marginal Bonferroni bound at m=1, whereas .170334133 is the
+  corresponding cumulative Holm bound. The printed p.942 upper-bound sentence
+  targets the wrong quantity; local versus adjusted remains explicit (N-4).
+- The author/reviewer main commits are time-specific comparison snapshots (N-5).
+- Table IV's printed column is already adjusted p, with the additional local
+  versus adjusted example attributed to PR #250, not newly calculated here (N-6).
+
+The author Table-II quadrature agrees between orders 64/96, and matches the
+printed tables within .001 from rounded inputs; this is not a certified error
+bound or exact decimal reproduction. The independent review used a different
+construction and reports selected values/settings only, as V.2 details. Its
+rounding-envelope check supports that no numerical erratum follows from rounded
+inputs; it does not recover exact unprinted observations. Full step-up adjusted-p
+tables, two-sided step-up constants and Hsu coverage simulations remain unrun.
+The author's 594-case event-inclusion check and the reviewer's additional finite
+checks are not coverage proofs. Reviewer numerical programs are not archived in
+the committed report; numerical evidence is attributed, not overclaimed as a
+complete independently executable oracle packet.
+
+X-3 now has a supported Naik bibliographic identity (1975, volume 4, pp.519-535);
+content and lineage remain unverified under W.2. X-8 maps to the existing
+Marcus-Peritz-Gabriel 1976 Biometrika 63:655-660 source, SRC-18, on both original
+reference lists (1991 p.947; 1992 p.170), confirmed by PR #250 Section 7.
+V.4's correction to T.3 is carried forward: the former definite reference to a
+separate Marcus single-author paper is not the current characterization. No
+additional distinct source or custody item is introduced by this mapping. The
+SRC-18 closure-framework reading is already recorded in the accepted SR-D basis;
+it is reused as framework context, not a new Naik proof or a reopened SR-D decision.
+
+### W.6 Candidate conclusion, effective ledger and reopen conditions
+
+**Author recommendation: bounded SR-J source-completion CLOSED candidate under
+W.2-W.5, subject to integration review and separate steward acceptance.** The
+1991 original supports the construction under the approved one-entry basis; the
+1992 original supports the conditional characterization with its explicit limits;
+Hsu supports the stated constrained MCB target and coverage. This is source
+characterization, not certification of every cited theorem or variant. No other
+assigned original is removed, and no author proof is relabelled as a primary text.
+
+Per V.5 point 4, this recommendation is not yet applied to the effective ledger:
+
+| Effective disposition                                      | Members                                        | Count |
+| ---------------------------------------------------------- | ---------------------------------------------- | ----: |
+| CLOSED                                                     | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-K, SR-L |     8 |
+| PARTIAL                                                    | SR-H                                           |     1 |
+| INPUT_INCOMPLETE, carried pending separate SR-J acceptance | SR-A, SR-E, SR-J, RSM-01, RSM-02               |     5 |
+
+Naik is no longer mandatory for the approved bounded MTO-02 description; the
+carried SR-J status is a pending-governance state, not a claim that this approved
+exception remains undecided. The conditional post-acceptance counts would be
+9/1/4 by moving only SR-J. Those counts are prospective, not current. Formal
+acceptance and a scoped independence determination remain PENDING.
+
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY=false, NARROW, TRANSFER, all
+R3-CAND/RES-ONLY tokens, scoped SR-D/SR-I acceptances, other holds, custody 42+1
+and R4 remain unchanged. Even prospective SR-J acceptance leaves SR-A, SR-E,
+RSM-01 and RSM-02 incomplete and SR-H partial; the comprehensive public question
+is not ready for opening on this basis alone.
+
+Reopen or investigate further when:
+
+1. Naik becomes available, or the original 1975 formulation, priority, lineage or
+   a possible distinct variant becomes decision-bearing; acquire pp.519-535.
+2. A broader 1992 existence, least-favourable, superiority or unequal-correlation
+   claim is needed; obtain the relevant original proof sources and test the
+   chosen variant. The unread 1990 report is not silently waived by W.2.
+3. Numerical critical values or adjusted-p computations become implementation
+   evidence; supply an independently reproducible method with explicit error,
+   rounding, parameter and endpoint conventions. Existing .001 checks are not
+   a Public Check tolerance or a reference oracle.
+4. Step-down-compatible confidence intervals, directional error, heteroscedastic
+   models, cross-family error control, average-correlation approximations or a
+   broader Hsu variant/output are proposed; inspect the required primary basis.
+5. Contradictory source evidence, a distinct material in-scope variant, or a
+   defect in a relied-upon proof/calibration appears. Record it without silently
+   expanding the fixed entries or rewriting historical findings.
+
+### W.7 Executable limited integration-review handoff
+
+Use a separate investigator context and the full fixed Part W head supplied in
+this PR body. Review the integration, approved exception's faithful scope and
+candidate conclusion. Do not ask for V.5 approval again, grant hold acceptance
+or treat the prior record-only GO as a review of this new synthesis.
+
+1. Fetch the full fixed head and check it out. Read AGENTS.md, the ordered
+   Read-first documents, the commission, Parts V/W, the PR #253 proposal and
+   this PR's approval account, and the pinned author and independent reports.
+   Disclose prior involvement, authoring context and model evidence limits.
+2. Re-derive W.1's commit/parent/tree/blob/byte/hash identities. Confirm the sole
+   parent is `55a073525ec685278cf40731d61b1b17ec0882aa`, one changed file and an
+   unchanged 487459-byte prefix. Confirm every prior report and script unchanged.
+   Compare Read-first files with a named main snapshot; do not infer timeless
+   identity. Verify the PR body describes the same fixed head and approval scope.
+3. Check W.2 item by item against V.5's four points and the recorded conversation
+   approval. Assess faithful recording; no fresh approval is needed for the
+   already approved exception. Check that no other source obligation, unverified
+   attribution or proof dependency was removed, and acceptance remains pending.
+4. Check W.3-W.5 against PR #248 and #250, with their evidence boundaries: all
+   three entry assumptions, targets, rules, guarantees, outputs, six notes and
+   bibliographic correction. Verify W.6's candidate is genuinely limited and
+   the effective/prospective ledgers cannot be mistaken for an accepted closure.
+   Do not upgrade the 1992 conjecture or source statement into an inspected proof.
+5. Reuse the two prior original-source readings explicitly. No PDF is required by
+   default for this integration-only pass. If a concrete disputed or changed
+   scientific claim needs original inspection, use the exact three files/hashes
+   in W.3 and state the page checked. Request the needed original if unavailable;
+   do not replace it with model memory. Full scientific recalculation is not
+   required merely to repeat the prior review; disclose actual checks and reuse.
+6. Create neutral branch `review/r3-srj-author-synthesis-20260909` from the fixed
+   Part W head (a fresh neutral suffix if occupied). Add only an English report
+   at `review-inputs/r3-srj-author-synthesis/REVIEW-RESULT.md`. Record BLOCKER,
+   SHOULD-FIX, NICE-TO-HAVE and GO or REPAIR_REQUIRED for this integration only.
+   Run format:check, lint:markdown, the direct validator and diff --check on the
+   resulting tree; record versions, actual outputs and omissions. No full-suite
+   or statistical rerun is claimed unless performed.
+7. Commit and open a separate draft PR against
+   `research/r3-srj-author-synthesis-20260909`. Supply full head, sole parent,
+   tree, report blob, bytes and SHA-256. Recheck the reviewed branch has not moved.
+   Use neutral names only, no session-labelled mirror. Do not merge or accept
+   SR-J, adopt a method, open public discussion or release. If a substantive gap
+   remains, provide its bounded repair or additional-investigation instructions.
+
+A satisfactory review allows the coordinator to present a separate concrete
+formal SR-J acceptance proposal with a scoped independence account. It does not
+make approval automatic. Repository validation and this synthesis's immutable
+identity are recorded in its PR body. No statistical program changes in this Part.
