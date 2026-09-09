@@ -15,6 +15,21 @@ commission's stop condition therefore controls. Every catalogue entry still rece
 numerical family and a preliminary, non-dispositive assessment so that the executed work
 can be reused without silently treating any technique as numerically covered.
 
+**Callback-contract correction (2026-09-09).** The
+[separate confirmation review](../../../review-inputs/r3-numerical-callback-confirmation/REVIEW-RESULT.md)
+found that the B2/C3 nested integration callbacks discard imaginary components
+before an outer complex integration and do not establish the required analytic
+extension. Accordingly, B2/C3 and their reuse by Probe G are retained as
+**uncertified numerical observations**, including their reported radii and sign
+labels. They do not establish rigorous enclosures, certified brackets, or a
+validated truth oracle. This withdrawal also applies to NF-C/NF-D feasibility
+inferences that depended on those guarantees. The separate incomplete-beta
+identity route for `k = 2` and the scalar NF-A routes are not withdrawn by this
+finding. The eight original scripts and eight output blocks remain historical
+bytes; their embedded words such as `rigorous` and `certified=True` record what
+the programs said, not an endorsed guarantee. All existing numerical/source
+holds remain; NB-01 now explicitly includes this callback defect.
+
 **Historical repair provenance (2026-09-04).** A work context separate from the original
 investigation applied the three blockers and one should-fix finding recorded by exact-head
 review commit `32e9f3c599eb40e9bd25a33a8595ee07bda6be28`. The repair changes the program
@@ -184,7 +199,7 @@ in script order. It is not represented as one serial-process transcript.
 | Package        | Version | Wheel SHA-256                                                      | Evidentiary role                                                            |
 | -------------- | ------- | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
 | `mpmath`       | 1.4.1   | `dc4f0ea2304480d4a9a48a94c1020571558ade522b44a6912efac63a586e140f` | arbitrary-precision route (pure Python; non-rigorous)                       |
-| `python-flint` | 0.9.0   | `376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76` | ball-arithmetic route (rigorous enclosures via Arb/FLINT)                   |
+| `python-flint` | 0.9.0   | `376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76` | ball-arithmetic software; nested B2/C3 guarantees withdrawn (NB-01)         |
 | `gmpy2`        | 2.3.1   | `beb43dfb4b28e541343400115f009b57d44b29fdf4c0b0435d6d3674ae52c098` | original installation reported; original backend not independently attested |
 | `numpy`        | 2.4.6   | `89cd468399cfd2504718f0ba50e410dca55a170b61a02ad92bb18c8a65186e93` | dependency of the falsification probe                                       |
 | `scipy`        | 1.17.1  | `43af8d1f3bea642559019edfe64e9b11192a8978efbd1539d7bc2aaa23d92de4` | typical-library falsification only (never an oracle)                        |
@@ -210,6 +225,16 @@ and reproduced under the capture convention in Appendix B. Resource timings in S
 remain dated historical investigation/September 4 repair observations; the new raw
 transcripts carry their own measured timings. None is a resource bound. Probe scripts import nothing from this repository;
 Probes G and C-2 import the routes of Probes B and C respectively.
+
+### 2.4 Limited callback documentation check (2026-09-09)
+
+The separate confirmation inspected the installed python-flint 0.9.0
+`acb.integral` documentation and the upstream `acb_calc_integrate` callback
+contract. This is a bounded addition to the historical access record above,
+not completion of NSR-17 or any other source requirement. Its exact scope,
+URLs, installed-docstring hash, and executable counterexamples are recorded in
+the confirmation review. The original investigator's source access status is
+not retroactively changed, and no numerical disposition is restored.
 
 ## 3. Method
 
@@ -460,12 +485,13 @@ about the evaluated inputs only.
   `ν = 2`, and `ν = 200` to at least 19 significant digits, and reproduced the
   closed form `2Φ(q/sqrt 2) - 1` of `F_2` to 20 digits. This validates the integral
   representation and its truncation against an independent identity, not against a table.
-- **N-26 (`PROBE` B, `PROBE` G).** A rigorous enclosure route for `P(Q_{k,ν} ≤ q)` was
-  executed: nested ball-arithmetic integration on `[ε, s_max] × [-Z, Z]` with the omitted
+- **N-26 (`PROBE` B, `PROBE` G).** A ball-arithmetic candidate for `P(Q_{k,ν} ≤ q)` was
+  executed; its claimed rigorous guarantee is withdrawn under NB-01: nested ball-arithmetic integration on `[ε, s_max] × [-Z, Z]` with the omitted
   masses bounded exactly by `P(S ≤ ε) + P(S ≥ s_max)` (regularized incomplete gamma balls)
   and `k · 2(1 - Φ(Z))`, added as `[0, mass]` intervals. On eleven `(k, ν, q)` cases
   spanning `k ∈ {3, 4, 5, 6, 20}`, `ν ∈ {1, 2, 5, 7.3, 10, 20, 30, 60}`, and `q` from `0.5`
-  to `20`, every arbitrary-precision value lay inside the enclosure. Radii and costs at
+  to `20`, every arbitrary-precision comparison reported containment in the output
+  ball. These are observed program results, not certified containment. Reported radii and costs at
   tolerance `2^-40` and 96-bit precision: between `4.7e-14` and `8.3e-12` in 100–490 s
   for `ν ≥ 2`, but `5.2e-7` in 496 s at `ν = 1` (the heavy-tailed `S` density makes the
   truncated domain and the integrand's decay much worse). The distribution is monotone
@@ -478,11 +504,12 @@ about the evaluated inputs only.
   each root were `2.8e-15` (`k = 3, ν = 10`), `5.6e-16` (`k = 4, ν = 20`), and `6.6e-17`
   (`k = 3, ν = 5`, where the lower cell was decided and the upper cell not), all too wide
   to decide the sign against the local slope (`≈ 0.058 · ULP ≈ 2.6e-17` at `k = 3, ν = 10`).
-  Probe G then showed the certificate strategy at a declared resolution: `q(3,10)` is
-  rigorously bracketed within `±1e-12` (and `±1e-13`) by decided signs at both ends
+  Probe G reported opposite signs at a declared resolution: around `q(3,10)`,
+  the endpoints `±1e-12` (and `±1e-13`) received negative/positive labels
   (225 s and 235 s per two-endpoint bracket), and at tolerance `2^-56` with 128-bit precision
-  the enclosure radius at the root falls to `5.3e-18` in 188 s, below the cell requirement.
-  The radius observation motivates a future midpoint-certificate experiment. It is not
+  the reported ball radius at the root falls to `5.3e-18` in 188 s.
+  The callback defect prevents these signs or radii from certifying a root bracket.
+  A corrected, independently reviewed enclosure is needed before a midpoint-certificate experiment. It is not
   itself a rounding-cell certificate or a resource bound. For `k = 2` the exact
   identity route gives decided signs (radius `1e-26`; `P - 0.95` is `-2.6e-17` at the
   lower neighbour, `+1.9e-19` at the nearest candidate, `+2.7e-17` at the upper
@@ -524,12 +551,13 @@ about the evaluated inputs only.
   18 digits at three `(ν, d)` pairs; at `p = 2` with unequal sizes it agreed with a direct
   three-dimensional quadrature of the explicit bivariate normal density (which does not use
   the product representation) to 16 digits in all four cases (one- and two-sided).
-- **N-28 (`PROBE` C, `PROBE` C-2).** A rigorous enclosure route (same truncation and
+- **N-28 (`PROBE` C, `PROBE` C-2).** A ball-arithmetic candidate (same truncation and
   omitted-mass method as N-26, with the inner product integrand) was executed on four
   cases: balanced `p = 3` one-sided (`ν = 16`, radius `4.0e-11`, 173 s), unbalanced `p = 3`
   two-sided (`ν = 30`, `4.9e-12`, 276 s), balanced `p = 2` two-sided (`ν = 9`, `5.8e-11`,
   93 s), and balanced `p = 8` two-sided (`ν = 171`, `7.3e-12`, 1,463 s); every
-  arbitrary-precision value lay inside its enclosure. Balanced (`ρ = 1/2`) one-sided
+  arbitrary-precision comparison reported containment in its output ball.
+  The C3 callback defect in NB-01 prevents a rigorous-enclosure claim. Balanced (`ρ = 1/2`) one-sided
   `0.95` constants located by root finding: `d(2, 10) = 2.1506138267506874`,
   `d(3, 20) = 2.192283462387244`, `d(2, 10^6) = 1.9163340506762367`; the two-sided
   `p = 2, ν = 10` constant is `2.568338876031627`. The investigator's own unverified
@@ -537,7 +565,7 @@ about the evaluated inputs only.
   (`2.3` against the computed `2.19`), which is recorded as a concrete demonstration that
   remembered table values are not authority. Cell-level certification of the two-sided
   constant at tolerance `2^-44` gave radii `5.5e-14` at both adjacent cells, undecided;
-  the precision scaling of N-26 applies. Correlation boundaries: with `n_1 = n_2 = 10`,
+  a valid callback and error proof are needed before precision scaling can establish a certificate. Correlation boundaries: with `n_1 = n_2 = 10`,
   `ν = 25`, `d = 2`, the one-sided probability moves from `0.9613` at `n_0 = 1`
   (`λ = 0.953`) through `0.9529` (`n_0 = 5`) and `0.9457` (`n_0 = 50`) to `0.9447` at
   `n_0 = 5000` (`λ = 0.045`), monotone in `λ`, with no numerical difficulty at either
@@ -620,10 +648,10 @@ decision.
   is a candidate at integer `d2` but has no established analogue at non-integer `d2`.
   (c) _Nested-integral class_: Studentized range, augmented range, Studentized maximum
   modulus, and equicoordinate multivariate t (Sections 4.5, 4.6) are two-level integrals of
-  normal and chi quantities; a rigorous enclosure route exists but is orders of magnitude
-  more expensive, and no binary64 runtime graph with an input-specific error proof exists
-  for them in the repository or was constructed here.
-- **I-04 (tables are the feasible runtime instrument for class (c)).** For procedures that
+  normal and chi quantities. The B2/C3 nested candidates ran, but their rigorous
+  guarantees are withdrawn under NB-01. Neither a validated general truth enclosure
+  nor a binary64 runtime graph with an input-specific error proof was established here.
+- **I-04 (tables remain a conditional runtime candidate for class (c)).** For procedures that
   only need a critical constant at a fixed level (APR-01, APR-02, MTO-01 intervals and
   their rejection sets), a finite, exhaustively certified table indexed by `(k, ν)` at
   integer `ν` (and, for MTO-01, a finite size-configuration grid or the balanced
@@ -632,8 +660,9 @@ decision.
   margin, exactly as the Release 2 fixed-95 table does for `t`. Procedures that need the
   _distribution function_ at an arbitrary argument (adjusted p-values for Tukey-type
   procedures, Games-Howell at non-integer `ν`, step-down Dunnett at varying subset sizes)
-  cannot use a finite table and remain in the oracle-only state until a runtime graph with
-  a proof is constructed and reviewed.
+  cannot use that finite table. For NF-C/NF-D, even the general truth-oracle
+  guarantee remains unestablished under NB-01; a reviewed error proof is needed
+  before promoting either a table or runtime route.
 - **I-05 (adjusted p-values for interval families are a separate numerical object).** A
   Tukey-type "adjusted p-value" is `P(Q_{k,ν} ≥ q_obs)` and needs class (c) at runtime;
   the rejection set of the same procedure needs only the table of I-04. The semantic
@@ -680,29 +709,30 @@ decision.
 
 Numerical families used below:
 
-| Family | Meaning                                                                                                                | Evidence routes demonstrated                                                                                     |
-| ------ | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| NF-A   | Scalar F / Student-t tail or quantile through the regularized incomplete beta (N-01..N-07, N-22, N-23)                 | exact rational (integer parameters), ball enclosure, arbitrary precision, density quadrature                     |
-| NF-B   | Algebraic multiplicity transform over declared p-values (sort, integer ratios, powers, harmonic sums) (N-08..N-17)     | exact rational, binary64 single-rounding forms, exhaustive invariance checks                                     |
-| NF-C   | Studentized range distribution `Q_{k,ν}` and its quantiles (Section 4.5)                                               | arbitrary-precision nested quadrature, rigorous nested enclosure, exact `k = 2` and `ν → ∞` identities           |
-| NF-C'  | Augmented Studentized range and Studentized maximum modulus (variants of NF-C with a different inner range functional) | none executed; same integral structure as NF-C (inference only)                                                  |
-| NF-D   | Equicoordinate multivariate t with product correlation (Section 4.6)                                                   | arbitrary-precision product reduction, direct multi-dimensional quadrature, rigorous enclosure, `p = 1` identity |
-| NF-E   | Closed-family combinatorics (`2^m - 1` intersections) over NF-B local tests (N-14, N-15)                               | exact rational, exhaustive equivalence                                                                           |
-| NF-F   | Seeded resampling replay (Section 4.8)                                                                                 | exact replay, cross-seed and cross-mapping counterexamples, exhaustive enumeration bound                         |
-| NF-G   | Rank transform with chi-square or exact permutation tail                                                               | none executed (transferred lane)                                                                                 |
-| NF-0   | No numerical evaluation needed by Release 3 (rejected entry or framing source)                                         | not applicable                                                                                                   |
+| Family | Meaning                                                                                                                | Evidence routes demonstrated                                                                            |
+| ------ | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| NF-A   | Scalar F / Student-t tail or quantile through the regularized incomplete beta (N-01..N-07, N-22, N-23)                 | exact rational (integer parameters), ball enclosure, arbitrary precision, density quadrature            |
+| NF-B   | Algebraic multiplicity transform over declared p-values (sort, integer ratios, powers, harmonic sums) (N-08..N-17)     | exact rational, binary64 single-rounding forms, exhaustive invariance checks                            |
+| NF-C   | Studentized range distribution `Q_{k,ν}` and its quantiles (Section 4.5)                                               | arbitrary-precision quadrature, uncertified B2 observations, exact `k = 2` and `ν → ∞` identities       |
+| NF-C'  | Augmented Studentized range and Studentized maximum modulus (variants of NF-C with a different inner range functional) | none executed; same integral structure as NF-C (inference only)                                         |
+| NF-D   | Equicoordinate multivariate t with product correlation (Section 4.6)                                                   | arbitrary-precision product reduction, direct quadrature, uncertified C3 observations, `p = 1` identity |
+| NF-E   | Closed-family combinatorics (`2^m - 1` intersections) over NF-B local tests (N-14, N-15)                               | exact rational, exhaustive equivalence                                                                  |
+| NF-F   | Seeded resampling replay (Section 4.8)                                                                                 | exact replay, cross-seed and cross-mapping counterexamples, exhaustive enumeration bound                |
+| NF-G   | Rank transform with chi-square or exact permutation tail                                                               | none executed (transferred lane)                                                                        |
+| NF-0   | No numerical evaluation needed by Release 3 (rejected entry or framing source)                                         | not applicable                                                                                          |
 
-Preliminary numerical assessment labels (orthogonal to the semantic labels):
-`PRELIM-FEASIBLE` (at least two independent evidence routes executed and a runtime candidate
-pattern identified), `PRELIM-FEASIBLE-TABLE` (feasible for the rejection set and fixed-level
-intervals through an exhaustively certified finite table; the distribution function at
-arbitrary arguments remains oracle-only), `PRELIM-ORACLE-ONLY` (truth reference feasible by
-enclosure; no runtime binary64 graph with an error proof exists), `PRELIM-DEFER` (a
-reproducible truth reference, projection boundary, or resource-bounded path cannot be
-defended now), `PRELIM-TRANSFER` (follows the semantic transfer; randomness or rank foundation
-not closed), `PRELIM-NA` (no numerical path needed). In this `INPUT_INCOMPLETE` record these
-are preliminary assessment labels, not numerical dispositions. "Gate" names the semantic
-hold that blocks any Contract regardless of numerical feasibility.
+Historical preliminary assessment labels are retained for traceability and the
+49-entry / 50-scope accounting. They are not current numerical dispositions:
+`PRELIM-FEASIBLE` recorded multiple evidence routes and a runtime candidate;
+`PRELIM-FEASIBLE-TABLE` recorded a proposed finite-table route;
+`PRELIM-ORACLE-ONLY` recorded an oracle proposal without a runtime proof;
+`PRELIM-DEFER` recorded an unresolved numerical path; `PRELIM-TRANSFER`
+recorded another foundation's dependency; and `PRELIM-NA` recorded no numerical
+path needed. For every NF-C/NF-D-dependent row, the callback defect in NB-01
+withdraws any implication that an enclosure oracle or table feasibility has
+already been established. The labels preserve historical planning, not
+validated feasibility. "Gate" retains the fixed semantic input's dependency;
+NB-01 is an additional numerical hold and does not reopen accepted semantic work.
 
 | ID     | Procedure                            | Semantic disposition | Family            | Required quantities                                                                                 | Preliminary numerical assessment                                                 | Gate                      |
 | ------ | ------------------------------------ | -------------------- | ----------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------- |
@@ -772,13 +802,13 @@ For the seven semantically unblocked `R3-CAND` entries: PVL-01, PVL-03, PVL-04, 
 
 ### 6.1 Follow-up procedures: what must be independently certified (commission question 5)
 
-| Procedure               | Reference distribution                                                   | Covariance / correlation structure                                                         | Degrees of freedom                                                          | Critical value                                                                                                                    | Simultaneous interval construction                                                                      | Certification status here                                                                                                                        |
-| ----------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Tukey balanced (APR-01) | Studentized range `Q_{k,ν}` (SRC-06 p. 61)                               | equal variances of means; correlation structure enters only through the range              | `ν = N - k` integer                                                         | `q_{α;k,ν}`; declared-resolution bracket demonstrated in Probe G; rounding-cell certification remains open (Section 4.5)          | `ȳ_i - ȳ_j ± q S/sqrt(n)` (SRC-06 (1.1)); decision on the exact surface `n (ȳ_i-ȳ_j)^2 / S^2 ⋚ q^2`     | oracle: two routes plus exact `k = 2` anchor; runtime: table candidate; adjusted p: oracle-only                                                  |
-| Tukey-Kramer (APR-02)   | same                                                                     | unequal sizes; per-pair factor `sqrt((1/n_i+1/n_j)/2)` (SRC-06 (1.2), SRC-05 p. 308)       | same                                                                        | same constant                                                                                                                     | half-width `q S sqrt((1/n_i+1/n_j)/2)`; exact surface `2 (ȳ_i-ȳ_j)^2 / (S^2 (1/n_i+1/n_j)) ⋚ q^2`       | same as APR-01; conservativeness is a semantic fact (F-14), not a numerical one                                                                  |
-| Dunnett (MTO-01)        | equicoordinate multivariate t, product correlation (SRC-03 eqs. (4)–(7)) | `ρ_ij = λ_i λ_j`, `λ_i = sqrt(n_i/(n_i+n_0))` (derived in Section 4.6 from SRC-03 p. 1103) | `ν = N - k` integer                                                         | one-sided `d` and two-sided `d'` per sidedness (SRC-03 p. 1101–1105); both neighbouring-value signs in Probe C remain `UNDECIDED` | `ȳ_i - ȳ_0 ± d S sqrt(1/n_i + 1/n_0)`; exact surface per member                                         | oracle: product reduction validated by direct integral and `p = 1` identity; runtime: balanced-grid table candidate; arbitrary sizes oracle-only |
-| Scheffé (APR-09)        | F at `(k-1, ν)`                                                          | any contrast `c` with `Σ c_i = 0`; variance `S^2 Σ c_i^2/n_i` (exact rational)             | `k - 1`, `N - k`                                                            | `F_{α;k-1,ν}`; two-cell bracket certified (N-22)                                                                                  | `c·ȳ ± sqrt((k-1) F) S sqrt(Σ c_i^2/n_i)`; exact surface `(c·ȳ)^2 / (S^2 Σ c_i^2/n_i) ⋚ (k-1) F` (N-23) | oracle and runtime feasible on the exact surface; semantic hold SR-G                                                                             |
-| Games-Howell (HET-01)   | Studentized range at per-pair `ν_ij`                                     | per-pair variances `s_i^2/n_i + s_j^2/n_j`; no pooled variance                             | Welch-Satterthwaite `ν_ij` (rational function of `s_i^2, n_i`), non-integer | `q_{α;k,ν_ij}` at non-integer `ν`                                                                                                 | `ȳ_i - ȳ_j ± q sqrt((s_i^2/n_i + s_j^2/n_j)/2)`                                                         | oracle only (non-integer `ν`); no table; semantic hold SR-I                                                                                      |
+| Procedure               | Reference distribution                                                   | Covariance / correlation structure                                                         | Degrees of freedom                                                          | Critical value                                                                                                                    | Simultaneous interval construction                                                                      | Certification status here                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Tukey balanced (APR-01) | Studentized range `Q_{k,ν}` (SRC-06 p. 61)                               | equal variances of means; correlation structure enters only through the range              | `ν = N - k` integer                                                         | `q_{α;k,ν}`; opposite signs reported by Probe G; bracket and rounding-cell guarantees unestablished (NB-01)                       | `ȳ_i - ȳ_j ± q S/sqrt(n)` (SRC-06 (1.1)); decision on the exact surface `n (ȳ_i-ȳ_j)^2 / S^2 ⋚ q^2`     | oracle: exact `k = 2` anchor; general B2 guarantee withdrawn; table and adjusted-p routes conditional (NB-01)                         |
+| Tukey-Kramer (APR-02)   | same                                                                     | unequal sizes; per-pair factor `sqrt((1/n_i+1/n_j)/2)` (SRC-06 (1.2), SRC-05 p. 308)       | same                                                                        | same constant                                                                                                                     | half-width `q S sqrt((1/n_i+1/n_j)/2)`; exact surface `2 (ȳ_i-ȳ_j)^2 / (S^2 (1/n_i+1/n_j)) ⋚ q^2`       | same as APR-01; conservativeness is a semantic fact (F-14), not a numerical one                                                       |
+| Dunnett (MTO-01)        | equicoordinate multivariate t, product correlation (SRC-03 eqs. (4)–(7)) | `ρ_ij = λ_i λ_j`, `λ_i = sqrt(n_i/(n_i+n_0))` (derived in Section 4.6 from SRC-03 p. 1103) | `ν = N - k` integer                                                         | one-sided `d` and two-sided `d'` per sidedness (SRC-03 p. 1101–1105); both neighbouring-value signs in Probe C remain `UNDECIDED` | `ȳ_i - ȳ_0 ± d S sqrt(1/n_i + 1/n_0)`; exact surface per member                                         | observations agree with direct integral and `p = 1` identity; C3 guarantee withdrawn; table/arbitrary-size routes conditional (NB-01) |
+| Scheffé (APR-09)        | F at `(k-1, ν)`                                                          | any contrast `c` with `Σ c_i = 0`; variance `S^2 Σ c_i^2/n_i` (exact rational)             | `k - 1`, `N - k`                                                            | `F_{α;k-1,ν}`; neighbouring-value bracket certified, not a rounding-cell certificate (N-22)                                       | `c·ȳ ± sqrt((k-1) F) S sqrt(Σ c_i^2/n_i)`; exact surface `(c·ȳ)^2 / (S^2 Σ c_i^2/n_i) ⋚ (k-1) F` (N-23) | oracle and runtime feasible on the exact surface; semantic hold SR-G                                                                  |
+| Games-Howell (HET-01)   | Studentized range at per-pair `ν_ij`                                     | per-pair variances `s_i^2/n_i + s_j^2/n_j`; no pooled variance                             | Welch-Satterthwaite `ν_ij` (rational function of `s_i^2, n_i`), non-integer | `q_{α;k,ν_ij}` at non-integer `ν`                                                                                                 | `ȳ_i - ȳ_j ± q sqrt((s_i^2/n_i + s_j^2/n_j)/2)`                                                         | oracle proposal (non-integer `ν`), unvalidated under NB-01; no table; semantic hold SR-I                                              |
 
 ## 7. Candidate algorithms and alternatives (no selection)
 
@@ -792,10 +822,10 @@ identity only and are not endorsed.
 | F / t tail, integer df                             | finite binomial sum when both halved parameters are integers (N-02); for one odd parameter, closed forms with `arcsin`/`sqrt` terms (not probed) | ball-arithmetic regularized incomplete beta with complement switch (N-01, N-05); Release 2 positive-series graph with table-cell normalization and a-posteriori remainder (blob `df57149c…`) generalized to `1/B(d2/2, d1/2)` cells | continued-fraction incomplete beta as used by common libraries (N-07 shows last-place errors) | not applicable (arbitrary argument)                                                      | —                                                              |
 | F / t tail, non-integer df                         | none                                                                                                                                             | ball-arithmetic incomplete beta (N-04); density quadrature with analytic tail bound (N-04)                                                                                                                                          | continued fraction; series                                                                    | none                                                                                     | —                                                              |
 | F / t quantile at fixed level                      | none (transcendental)                                                                                                                            | monotone bracket at binary64 cells with ball signs (N-22, N-23), optionally confirmed by the exact route                                                                                                                            | Newton/Halley on a library CDF                                                                | exhaustively certified `(d1, d2)` grid at fixed level (Release 2 fixed-95 pattern)       | —                                                              |
-| Studentized range CDF                              | `k = 2` reduces to `t` (Section 4.5)                                                                                                             | rigorous nested integration on truncated domains with exact omitted-mass bounds (Section 4.5)                                                                                                                                       | Copenhaver-Holland Gauss-Legendre scheme (NSR-05); AS 190 (NSR-06)                            | none at arbitrary argument                                                               | —                                                              |
-| Studentized range quantile                         | none                                                                                                                                             | bracket at binary64 cells with rigorous CDF signs (Section 4.5)                                                                                                                                                                     | secant/Newton on an approximate CDF; AS 190 initial approximation                             | exhaustively certified `(k, ν)` grid at fixed level (candidate runtime instrument, I-04) | —                                                              |
+| Studentized range CDF                              | `k = 2` reduces to `t` (Section 4.5)                                                                                                             | unvalidated nested candidate; B2 guarantee withdrawn (NB-01, Section 4.5)                                                                                                                                                           | Copenhaver-Holland Gauss-Legendre scheme (NSR-05); AS 190 (NSR-06)                            | none at arbitrary argument                                                               | —                                                              |
+| Studentized range quantile                         | none                                                                                                                                             | requires a valid CDF enclosure; B2/G signs are uncertified (NB-01)                                                                                                                                                                  | secant/Newton on an approximate CDF; AS 190 initial approximation                             | exhaustively certified `(k, ν)` grid at fixed level (candidate runtime instrument, I-04) | —                                                              |
 | Augmented range / maximum modulus                  | none                                                                                                                                             | same nested structure with a modified inner functional (not executed)                                                                                                                                                               | —                                                                                             | historical tables (uninspected)                                                          | —                                                              |
-| Equicoordinate multivariate t, product correlation | `p = 1` reduces to `t` (Section 4.6)                                                                                                             | rigorous nested integration of the product reduction (Section 4.6)                                                                                                                                                                  | Dunnett's AS 251 lineage (NSR-09); Genz-Bretz quasi-Monte Carlo is stochastic (below)         | exhaustively certified `(p, ν)` grid at `ρ = 1/2` or a finite size-configuration grid    | Genz-Bretz randomized lattice (NSR-08)                         |
+| Equicoordinate multivariate t, product correlation | `p = 1` reduces to `t` (Section 4.6)                                                                                                             | unvalidated nested candidate; C3 guarantee withdrawn (NB-01, Section 4.6)                                                                                                                                                           | Dunnett's AS 251 lineage (NSR-09); Genz-Bretz quasi-Monte Carlo is stochastic (below)         | exhaustively certified `(p, ν)` grid at `ρ = 1/2` or a finite size-configuration grid    | Genz-Bretz randomized lattice (NSR-08)                         |
 | Adjusted p-values (algebraic)                      | exact rational (N-08)                                                                                                                            | —                                                                                                                                                                                                                                   | binary64 single-rounding forms (N-11)                                                         | —                                                                                        | —                                                              |
 | Šidák / product-form thresholds                    | exact `(1-p)^r ≥ 1-α` (N-08)                                                                                                                     | ball enclosure of `1-(1-α)^{1/r}`                                                                                                                                                                                                   | `expm1/log1p` form (N-11)                                                                     | —                                                                                        | —                                                              |
 | BY constant                                        | exact harmonic number (N-12)                                                                                                                     | —                                                                                                                                                                                                                                   | binary64 sums (order-dependent, N-12)                                                         | —                                                                                        | —                                                              |
@@ -866,8 +896,10 @@ reason-code family, not an issued code.
 
 ### 8.5 Resource and precision refusals
 
-- Nested rigorous integration returns a wide ball under an evaluation limit (N-24); the
-  refusal predicate is "radius exceeds the required margin", never "value looks wrong".
+- Probe F's single integral of an entire Gaussian function returned a wide ball
+  under an evaluation limit (N-24). This does not validate the B2/C3 nested
+  callbacks. A future rigorous route needs a valid callback contract as well as
+  a refusal when its proven radius exceeds the required margin.
 - Enclosure-refinement decisions (I-07) refuse as `UNDECIDED_AT_SUPPORTED_PRECISION` when
   the versioned precision ceiling is reached.
 - Exact-rational transforms refuse when a versioned bit-length or `m` ceiling is exceeded
@@ -878,16 +910,23 @@ reason-code family, not an issued code.
 
 ## 9. Independent oracle and certificate strategies by numerical family
 
+These are proposed requirements. NF-C/NF-D do not have a validated general
+truth enclosure in this record (NB-01). Their future callbacks need complex
+enclosures on every domain requested for quadrature error control, explicit
+handling of non-analytic domains, and a separate proof of real-axis truncation
+mass. Increasing precision or obtaining library agreement does not repair
+that missing contract.
+
 | Family                                  | Truth reference                                                                           | Precision and convergence evidence                                                                                                                                         | Independence requirement                                                                                                                                                                           | Certificate form                                                                                                   |
 | --------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | NF-A (integer, both-even)               | exact rational (N-02)                                                                     | none needed; integer arithmetic                                                                                                                                            | exact route plus one enclosure route (different code base) with containment                                                                                                                        | exact numerator/denominator or their hashes; binary64 rounding cell with exact midpoints                           |
 | NF-A (other integer and non-integer df) | ball enclosure of `I_x(a,b)` with complement switch (N-01, N-04, N-05)                    | radius reported at the working precision; precision doubled until the radius is below the required margin (Release 2 "increasing precision history with declared ceiling") | ball route plus arbitrary-precision route from a different code base, agreement to a declared digit count; density-quadrature route as a third, method-distinct check where the density is regular | enclosure endpoints as exact rationals; rounding-cell containment; precision history                               |
 | NF-A quantiles                          | monotone bracket at binary64 cells (N-22)                                                 | ball signs at both cells with radii strictly smaller than the distance to zero                                                                                             | same as above; exact route confirmation where both-even                                                                                                                                            | the two cells, the two signed enclosures, monotonicity direction                                                   |
 | NF-B                                    | exact rational (N-08)                                                                     | none                                                                                                                                                                       | two independent exact implementations (for example integer-arithmetic implementations in two languages) must agree bit-for-bit on adjusted values and decisions                                    | exact rationals or a canonical trace (N-17)                                                                        |
-| NF-C                                    | rigorous nested integral with exact omitted-mass bounds (Section 4.5)                     | ball radius at the requested tolerance; truncation masses reported separately; `k = 2` identity and `ν → ∞` limit as exact anchors                                         | rigorous route plus arbitrary-precision route from a different code base; exact identity checks at `k = 2`; monotonicity in `q`, `k`, `ν`                                                          | enclosure endpoints; truncation parameters `(Z, ε, smax)`; evaluation limits used; identity-anchor residuals       |
+| NF-C                                    | future valid nested enclosure; current B2 guarantee withdrawn (NB-01)                     | ball radius at the requested tolerance; truncation masses reported separately; `k = 2` identity and `ν → ∞` limit as exact anchors                                         | rigorous route plus arbitrary-precision route from a different code base; exact identity checks at `k = 2`; monotonicity in `q`, `k`, `ν`                                                          | enclosure endpoints; truncation parameters `(Z, ε, smax)`; evaluation limits used; identity-anchor residuals       |
 | NF-C quantiles (tables)                 | bracket at binary64 cells with rigorous CDF signs                                         | as NF-A quantiles, with the heavier per-evaluation cost recorded                                                                                                           | same as NF-C; cross-check against `k = 2` exact column                                                                                                                                             | ordered `(k, ν)` cells, per-cell certificates, table content hash (Release 2 table pattern)                        |
 | NF-C'                                   | not executed; the same strategy applies once the inner functional is derived and reviewed | —                                                                                                                                                                          | —                                                                                                                                                                                                  | —                                                                                                                  |
-| NF-D                                    | rigorous nested integral of the product reduction (Section 4.6)                           | ball radius; truncation masses; `p = 1` identity; direct multi-dimensional quadrature at `p = 2` as a method-distinct check that does not use the product reduction        | rigorous route plus arbitrary-precision route; direct-integral route at low dimension                                                                                                              | enclosure endpoints; the `λ_i` vector as exact rationals under the square; sidedness                               |
+| NF-D                                    | future valid product-reduction enclosure; current C3 guarantee withdrawn (NB-01)          | ball radius; truncation masses; `p = 1` identity; direct multi-dimensional quadrature at `p = 2` as a method-distinct check that does not use the product reduction        | rigorous route plus arbitrary-precision route; direct-integral route at low dimension                                                                                                              | enclosure endpoints; the `λ_i` vector as exact rationals under the square; sidedness                               |
 | NF-E                                    | exhaustive intersections (N-14)                                                           | none (finite)                                                                                                                                                              | shortcut algorithm versus exhaustive definition on small `m` (N-14)                                                                                                                                | trace of intersection tests or the equivalent shortcut trace                                                       |
 | NF-F                                    | exact replay (Section 4.8); exhaustive enumeration for tiny designs                       | none (deterministic given the declaration)                                                                                                                                 | two independent implementations of the declared generator and mapping must reproduce the same permutation sequence bit-for-bit                                                                     | generator identity, seed, mapping, `B`, scheme, digest of the permutation sequence or of the sorted max-statistics |
 
@@ -1061,18 +1100,18 @@ per-graph.
 
 ### 16.1 Blockers created or confirmed by this report
 
-| Blocker | Statement                                                                                                                                                                                         | Reopen or closure condition                                                                                                                                    |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NB-01   | No runtime binary64 graph with an input-specific error proof exists for NF-C or NF-D; only oracle enclosures were demonstrated.                                                                   | A reviewed runtime graph and proof, or adoption of the table instrument (I-04) for fixed-level decisions with adjusted p-values excluded from the first slice. |
-| NB-02   | No exact route and no table route exist at non-integer df (OMN-02, OMN-04, HET-01, HET-02, HET-03); feasibility is oracle-only.                                                                   | A reviewed runtime incomplete-beta graph with a proof at non-integer parameters (NF-A) and a Studentized-range runtime graph at non-integer `ν` (NF-C).        |
-| NB-03   | Primary algorithmic literature for NF-C and NF-D (NSR-05..NSR-09) and the standards texts (NSR-01, NSR-03) were not inspectable; candidate algorithms are named from bibliographic identity only. | Full-text inspection with pinpoints; until then the self-contained derivations in Sections 4.5 and 4.6 and the executed identities are the only basis.         |
-| NB-04   | The level identity (`1/20` versus binary64 `0.05`) is undecided (N-09).                                                                                                                           | A check-version decision naming the exact rational level.                                                                                                      |
-| NB-05   | Ceilings for `m`, bit length, precision, evaluation limits, and trace nodes are unselected (Section 12).                                                                                          | Steward selection with witnesses at each ceiling, per the Release 2 Group 1 pattern.                                                                           |
-| NB-06   | Augmented range and maximum modulus (NF-C') were not executed; APR-04/05/06 and HET-03 are `PRELIM-DEFER`.                                                                                        | Derivation of the inner functional, execution of the two-route probe, and independent review.                                                                  |
-| NB-07   | The one-sided/two-sided and unbalanced Dunnett constants beyond the probed cases have no certified table; MTO-01 at arbitrary sizes is oracle-only.                                               | A finite size-configuration grid decision or a runtime NF-D graph with proof.                                                                                  |
-| NB-08   | The duality claim (test versus interval) is unsupported unless a single exact comparison surface is adopted (N-19, I-06).                                                                         | A Contract-level decision to derive both decisions from the same exact comparison.                                                                             |
-| NB-09   | Supported-execution admission evidence exists for no Release 3 graph.                                                                                                                             | Per-tuple admission evidence once a graph exists (Release 2 Group 3 pattern).                                                                                  |
-| NB-10   | The randomness contract for NF-F has no adopted generator, mapping, or replicate-count semantics.                                                                                                 | Closure of the seeded-stochastic foundation line; until then `PRELIM-TRANSFER`.                                                                                |
+| Blocker | Statement                                                                                                                                                                                         | Reopen or closure condition                                                                                                                                                                                                               |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| NB-01   | NF-C/NF-D have neither a validated general truth enclosure nor a runtime error proof. B2/C3 discard complex information and do not establish the analytic callback contract; G inherits B2.       | First provide and independently review valid complex callbacks, branch handling, real-axis truncation bounds, and fresh evidence. Then review the runtime proof or certified table proposal; observed radii/signs do not close this hold. |
+| NB-02   | No exact route or table route is established at non-integer df (OMN-02, OMN-04, HET-01, HET-02, HET-03); NF-C oracle guarantees additionally remain unvalidated under NB-01.                      | A reviewed runtime incomplete-beta graph with a proof at non-integer parameters (NF-A) and a Studentized-range runtime graph at non-integer `ν` (NF-C).                                                                                   |
+| NB-03   | Primary algorithmic literature for NF-C and NF-D (NSR-05..NSR-09) and the standards texts (NSR-01, NSR-03) were not inspectable; candidate algorithms are named from bibliographic identity only. | Full-text inspection with pinpoints; until then the self-contained derivations in Sections 4.5 and 4.6 and the executed identities are the only basis.                                                                                    |
+| NB-04   | The level identity (`1/20` versus binary64 `0.05`) is undecided (N-09).                                                                                                                           | A check-version decision naming the exact rational level.                                                                                                                                                                                 |
+| NB-05   | Ceilings for `m`, bit length, precision, evaluation limits, and trace nodes are unselected (Section 12).                                                                                          | Steward selection with witnesses at each ceiling, per the Release 2 Group 1 pattern.                                                                                                                                                      |
+| NB-06   | Augmented range and maximum modulus (NF-C') were not executed; APR-04/05/06 and HET-03 are `PRELIM-DEFER`.                                                                                        | Derivation of the inner functional, execution of the two-route probe, and independent review.                                                                                                                                             |
+| NB-07   | No certified Dunnett table is established; MTO-01 at arbitrary sizes retains only a historical oracle proposal, with the C3 guarantee withdrawn under NB-01.                                      | A finite size-configuration grid decision or a runtime NF-D graph with proof.                                                                                                                                                             |
+| NB-08   | The duality claim (test versus interval) is unsupported unless a single exact comparison surface is adopted (N-19, I-06).                                                                         | A Contract-level decision to derive both decisions from the same exact comparison.                                                                                                                                                        |
+| NB-09   | Supported-execution admission evidence exists for no Release 3 graph.                                                                                                                             | Per-tuple admission evidence once a graph exists (Release 2 Group 3 pattern).                                                                                                                                                             |
+| NB-10   | The randomness contract for NF-F has no adopted generator, mapping, or replicate-count semantics.                                                                                                 | Closure of the seeded-stochastic foundation line; until then `PRELIM-TRANSFER`.                                                                                                                                                           |
 
 ### 16.2 Semantic holds that also block numerical closure
 
@@ -1153,9 +1192,9 @@ and Appendix B outputs.
 | N-19   | Probe E                                                           | "(c2) random search" line                                                         | binary64 duality flips                                                   | I-06, NB-08                                             |
 | N-22   | Probe F                                                           | "F upper 0.05 quantiles" section                                                  | rigorous two-cell brackets incl. non-integer df                          | none                                                    |
 | N-25   | proof (Section 4.5) + Probe B                                     | `probe_b_studentized_range.py`, identity sections                                 | Studentized-range definition validated by exact identities               | none                                                    |
-| N-26   | Probe B                                                           | "B1 vs B2" and bracket sections                                                   | rigorous enclosure feasibility and cost                                  | I-03, I-04, NB-01                                       |
+| N-26   | Probe B                                                           | "B1 vs B2" and bracket sections                                                   | B2 observations and measured costs; guarantee withdrawn (NB-01)          | I-03, I-04, NB-01                                       |
 | N-27   | proof (Section 4.6, reused SRC-03 eqs. (6)–(7) p. 1103) + Probe C | `probe_c_dunnett.py`, identity and C1/C2 sections                                 | product-correlation reduction validated against a direct integral        | none                                                    |
-| N-28   | Probe C                                                           | "C1 vs C3" and bracket sections                                                   | rigorous enclosure feasibility; boundaries                               | NB-07                                                   |
+| N-28   | Probe C                                                           | "C1 vs C3" and bracket sections                                                   | C3 observations and boundaries; guarantee withdrawn (NB-01)              | NB-07                                                   |
 | N-29   | Probe E                                                           | replay lines                                                                      | exact replay feasibility                                                 | Section 13                                              |
 | N-30   | Probe E                                                           | cross-seed and cross-mapping lines                                                | seed- and mapping-dependence of decisions                                | I-10                                                    |
 | N-31   | Release 2 blob `6015f45b…`                                        | "Facts accepted" items 1–4                                                        | runtime arithmetic model                                                 | reuse scope only                                        |
@@ -1183,9 +1222,10 @@ assesses the repaired PR #174 head and records the corrections proposed here:
    protected from formatting. The evidence verifier checks the final fenced bytes
    against captured stdout; formatting-normalized text is not called verbatim.
 6. Quantile brackets, unresolved signs, and rounding-cell certification are distinct.
-   This correction withdraws unsupported certification wording without promoting a
-   new numerical claim. Historical semantic snapshots do not replace later accepted
-   source records or reopen approved SR-J acceptance.
+   The separate callback confirmation additionally withdraws rigorous B2/C3/G
+   guarantees and updates their dependent prose, strategies, and NB-01 hold.
+   Historical semantic snapshots do not replace later accepted source records
+   or reopen approved SR-J acceptance.
 
 The [replay evidence](../../../review-inputs/r3-numerical-reproduction/replay-evidence.json)
 and [verification script](../../../review-inputs/r3-numerical-reproduction/verify_replay.py)

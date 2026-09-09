@@ -1,0 +1,56 @@
+{
+  "reviewed_commit": "a133707a0c09008a26709318c8cc54e000b3bd36",
+  "validation_date_utc": "2026-09-09",
+  "environment": {
+    "node": "24.19.0",
+    "pnpm": "11.19.0",
+    "declared_package_manager": "pnpm@11.7.0",
+    "python": "3.12.14"
+  },
+  "checks": {
+    "pnpm lint:markdown": {
+      "exit_code": 0,
+      "markdown_files": 401
+    },
+    "pnpm typecheck": {
+      "exit_code": 0
+    },
+    "node --import tsx tooling/src/validate.ts": {
+      "exit_code": 0
+    },
+    "git diff --check": {
+      "exit_code": 0,
+      "scope": "correction relative to reviewed head"
+    },
+    "check_bindings.py": {
+      "exit_code": 0,
+      "task_body_derivations": 41
+    },
+    "check_callbacks.py": {
+      "exit_code": 0,
+      "expected_contract_counterexamples": 3
+    },
+    "verify_replay.py --evidence --compare-to prior174": {
+      "exit_code": 0,
+      "script_hashes": 8,
+      "output_hashes": 8,
+      "capture_bindings": 8,
+      "task_coverage": 41,
+      "observation_comparisons": "8/8 MATCH"
+    },
+    "known_bad_original": {
+      "outcome": "rejected on fenced-byte digest mismatch"
+    },
+    "replay_selected.py": {
+      "exit_code": 0,
+      "complete_script_executions": 5,
+      "empty_stderr": true,
+      "observation_comparisons": "5/5 MATCH"
+    },
+    "pnpm format:check": {
+      "exit_code": 0
+    }
+  },
+  "capture_driver_sha256": "d3f629aba97acf25def1a0933a98cf966a60a0c1078220f2f4e76a3fd7067107",
+  "mathematical_disposition": "No independent approval of a repaired numerical algorithm; current B2/C3/G guarantees withdrawn."
+}

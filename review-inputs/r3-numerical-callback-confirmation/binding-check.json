@@ -1,0 +1,12 @@
+{
+  "fixed_commit_object": "MATCH",
+  "added_files": 6,
+  "unchanged_scripts": "8/8",
+  "unchanged_output_fences": "8/8",
+  "unchanged_replay_evidence": true,
+  "driver_digest": "MATCH",
+  "task_bodies_derived_from_original_ast": {
+    "b": 24,
+    "c": 17
+  }
+}
