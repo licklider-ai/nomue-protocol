@@ -15,12 +15,12 @@ not a supported-domain study or a ranking of general algorithms.
 
 ## Results
 
-| Fixture                                                               | Observation                                                                                                                                                                                                                  |
-| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Original fixture at scales 1, 2^-600, 2^600                           | Scaling loses no input information and restores the extreme-scale floating F outputs to the corresponding unit-scale graph F outputs; direct F is exactly 100,36,4, while QR retains its recorded small rounding differences |
-| Original fixture plus common offset 2^40                              | Scaling preserves inputs but leaves each graph's F outputs bitwise unchanged; the uncentered QR cancellation error is not repaired by this normalization                                                                     |
-| Mixed magnitudes, including the smallest positive subnormal and 2^600 | Scaling erases the subnormal input at zero-based index 1 and changes the exact F target. QR returns finite values after scaling, illustrating why finiteness alone is not evidence of correctness                            |
-| Exact zero-residual control                                           | Scaling preserves inputs but leaves the old behavior: direct F is infinite and QR reports finite F from spurious positive residuals. Scaling does not resolve the zero-residual policy                                       |
+| Fixture                                                               | Observation                                                                                                                                                                                                                                                                |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Original fixture at scales 1, 2^-600, 2^600                           | Scaling loses no input information and restores the extreme-scale floating F outputs to the corresponding unit-scale graph F outputs; direct F is exactly 100,36,4, while QR retains its recorded small rounding differences                                               |
+| Original fixture plus common offset 2^40                              | Scaling preserves inputs but leaves each graph's F outputs bitwise unchanged; the uncentered QR cancellation error is not repaired by this normalization                                                                                                                   |
+| Mixed magnitudes, including the smallest positive subnormal and 2^600 | Scaling erases the subnormal input at zero-based index 1 and changes the exact F target (relative magnitude approximately 2^-1674; both targets project to +inf). QR returns finite values after scaling, illustrating why finiteness alone is not evidence of correctness |
+| Exact zero-residual control                                           | Scaling preserves inputs but leaves the old behavior: direct F is infinite and QR reports finite F from spurious positive residuals. Scaling does not resolve the zero-residual policy                                                                                     |
 
 The mixed fixture is `[0, 2^-1074, 1, 1.5, 2, 2.5, 2^600, 2^600]`.
 Its exact residual is positive. Unlike the uniform fixtures, its exact F values
@@ -104,3 +104,27 @@ do not adopt scaling or close programme conditions from these witnesses. The
 review uses a separate model/context under the existing research gate.
 
 Prepared with OpenAI Codex assistance in the existing authoring context.
+
+## Residual-location correction
+
+The [close review](../../../review-inputs/r4-power-scale-exploration-close/REVIEW-RESULT.md)
+at `3332083e62effda3af823dc47b8d56e15cbc7fd3` reports SF-1 CLOSED and SF-2
+CLOSED on substance, with C-1 correcting the residual location. The author
+reproduced both QR residual vectors on CPython 3.12.14 / NumPy 2.3.5:
+`[0x1.8p-55, 0x1.8p-55, 0x1p-54, 0x1p-54, 0x1.8p-55, 0x1.8p-55, 0, 0]`.
+Their squared sum is `17 * 2^-110`, matching `0x1.1p-106`. The explanation
+above now locates these residuals correctly. No script or transcript changed.
+The original review's mistaken location is preserved and superseded by its
+reviewer's close-review correction, not silently rewritten.
+
+For readable inspection of the long mixed-row relative-change rationals, the
+signs for A, B and AB are +, + and -, respectively; each decimal log2 absolute
+magnitude rounds to -1674.000000000 at nine decimal places. These display
+approximations were computed from the exact fractions with 60-digit Decimal
+logarithms; the exact transcript remains the reference and the changes are not
+exact powers of two. This addresses C-N2 in prose without changing the reviewed
+transcript. C-N1's magnitude qualification is also added directly to the table.
+
+The preserved close-review blob is `78a99a0f2f9e3cffd8035e2e9061a47337f77dfa`.
+Its same-session review boundary remains disclosed. This is an author-side C-1
+repair, not a new independent close verdict, steward acceptance or merge decision.
