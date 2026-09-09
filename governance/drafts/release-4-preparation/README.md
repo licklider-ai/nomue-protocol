@@ -25,7 +25,28 @@ subsequent chat-returned editorial feedback and its disposition.
 The [steward acceptance](programme-steward-acceptance-2026-09-09.md) records
 integration of the bounded preparation. The subsequent
 [power-of-two scaling exploration](power-scale-exploration.md) is new author-side
-research awaiting independent review; it is not covered by that acceptance.
+research accepted separately through PR 234 after PR 235 review and the C-1
+repair. Its final acceptance paragraph records the bounded decision; it does not
+close public-opening conditions.
+
+The next editorial input is the [opening claim map](opening-claim-map.md), read
+with the updated [RFC preparation draft](rfc-preparation-draft.md) and
+[impact inventory](rfc-impact-inventory.md). These new recommendations await
+review under the [opening preparation handoff](opening-preparation-handoff.md).
+They are not covered by the earlier steward acceptances.
+
+The returned PR 240 review is preserved with the
+[author-side repair record](opening-preparation-repair.md). For the next source
+work, use the [acquisition follow-up](source-acquisition-followup-2026-09-09.md).
+Both links are added in the same increment as their destination files.
+
+The supplied Tian/Styan copy is now recorded in the
+[normal-model source result](normal-model-source-result.md), with an explicit
+[bounded opening-scope proposal](normal-model-opening-scope.md). These are new
+author-side inputs for independent assessment, not source-hold closure.
+
+Use the [normal-model independent review handoff](normal-model-review-handoff.md)
+with the matching supplied PDF for the combined scientific and preparation review.
 
 ## Repository identity
 
@@ -157,3 +178,10 @@ gate identifiers.
 5. draft and independently review the standalone Release 4 RFC; and
 6. open public discussion only through a distinct steward action after R4-P1 through
    R4-P6 are reviewably resolved or explicitly bounded.
+
+The [normal-model review response](normal-model-review-response.md) records
+PR 246, the evidence-map repair and outstanding steward dispositions.
+
+The [bounded normal-model steward acceptance](normal-model-steward-acceptance-2026-09-09.md)
+records accepted evidence, confirmed repairs, scope-specific staging and the
+remaining public-opening conditions. It supersedes the earlier pending status.

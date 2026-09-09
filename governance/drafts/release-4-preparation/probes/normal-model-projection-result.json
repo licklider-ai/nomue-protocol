@@ -1,0 +1,33 @@
+{
+  "role": "author-side finite exact corroboration",
+  "rows": [
+    {
+      "n": 2,
+      "N": 8,
+      "residual_df": 4,
+      "checks": 49,
+      "SS": ["20402/441", "5408/441", "2/49"],
+      "SSE": "18/25",
+      "unequal_variance_cross_covariance_nonzero": true
+    },
+    {
+      "n": 3,
+      "N": 12,
+      "residual_df": 8,
+      "checks": 49,
+      "SS": ["10201/147", "2704/147", "3/49"],
+      "SSE": "392/75",
+      "unequal_variance_cross_covariance_nonzero": true
+    },
+    {
+      "n": 5,
+      "N": 20,
+      "residual_df": 16,
+      "checks": 49,
+      "SS": ["51005/441", "13520/441", "5/49"],
+      "SSE": "1496/25",
+      "unequal_variance_cross_covariance_nonzero": true
+    }
+  ],
+  "checks": 147
+}
