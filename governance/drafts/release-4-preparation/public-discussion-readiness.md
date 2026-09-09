@@ -189,3 +189,14 @@ they have not received an independent close verdict or steward acceptance.
 The [source acquisition follow-up](source-acquisition-followup-2026-09-09.md)
 records a newly inspectable alternative paper and remaining acquisition tasks.
 This does not close S1-S6/P1 or any R4-P1 through P6 condition.
+
+## Supplied normal-model source and proposed scope staging
+
+The [normal-model source result](normal-model-source-result.md) records the
+user-supplied Tian/Styan PDF, all-n projection and null-calibration derivation,
+and finite author-side exact checks. The [opening-scope proposal](normal-model-opening-scope.md)
+requests review of an opening route without interval, multiplicity or historical
+claims, preserving the wider source obligations. The earlier uninspected-source
+entries are historical inputs; receipt and author reading of this new source do
+not close S5 or supply the missing independent source review. R4-P1 through P6
+remain open and NOT_READY remains the current opening disposition.

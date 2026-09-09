@@ -40,6 +40,11 @@ The returned PR 240 review is preserved with the
 work, use the [acquisition follow-up](source-acquisition-followup-2026-09-09.md).
 Both links are added in the same increment as their destination files.
 
+The supplied Tian/Styan copy is now recorded in the
+[normal-model source result](normal-model-source-result.md), with an explicit
+[bounded opening-scope proposal](normal-model-opening-scope.md). These are new
+author-side inputs for independent assessment, not source-hold closure.
+
 ## Repository identity
 
 This preparation starts from main commit
