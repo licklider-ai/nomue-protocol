@@ -128,3 +128,19 @@ transcript. C-N1's magnitude qualification is also added directly to the table.
 The preserved close-review blob is `78a99a0f2f9e3cffd8035e2e9061a47337f77dfa`.
 Its same-session review boundary remains disclosed. This is an author-side C-1
 repair, not a new independent close verdict, steward acceptance or merge decision.
+
+## Steward final confirmation and acceptance
+
+On 2026-09-09 the steward reported final confirmation, accepted this increment
+and explicitly instructed merge. The accepted input is PR 234 head
+`bc0f745272739a78e0fa863965a9ba81686fde2a`, including the C-1 correction and
+both preserved review records. This paragraph records that task-conversation
+instruction; it is not a cryptographic signature or an additional independent
+review. The earlier statement that steward acceptance was pending is superseded
+by this paragraph for this bounded increment.
+
+The accepted scope is the exploration, its target-detail evidence, review
+corrections and residual-location repair. Historical numerical files and review
+blobs remain unchanged. Scaling is not adopted, source holds and R4-P1 through
+R4-P6 remain open, and public-opening readiness remains NOT_READY. The recording
+assistant does not act as the approving steward.
