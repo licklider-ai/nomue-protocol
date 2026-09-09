@@ -4372,3 +4372,312 @@ without overstating file counts. Open a separate draft PR against
 report commit/parent/tree/blob identities. If a substantive gap appears, supply
 an executable additional-investigation prompt. Do not merge, expand the accepted
 scope, adopt a procedure, open discussion or release.
+
+## Part T — SR-D author synthesis under the approved bounded primary basis
+
+**Status: informative author source-completion result; non-normative.**
+This addendum records the steward's approved source-basis change for CLS-02/04
+and synthesizes the inspected evidence for CLS-01 through CLS-06. It proposes
+SR-D `CLOSED` for source completion under that bounded basis. Formal SR-D hold
+acceptance remains pending the synthesis review and a separate steward decision.
+This is not method adoption, implementation approval or permission to open R3.
+
+### T.1 Fixed evidence, preservation and provenance
+
+The continuing OpenAI-assisted author/coordinator wrote this synthesis, with prior
+involvement in PR #238 and the acceptance discussion. This is not an independent
+review. No new PDF reading, mathematical derivation, quantile calculation or
+simulation is claimed. Direct primary reading and independent recomputation are
+reused only within the recorded bounds of the following immutable evidence:
+
+| Input                              | Commit / tree                                                                           | Report blob / bytes / SHA-256                                                                                            |
+| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Part S, PR #231                    | `1c013a6bc07f7d066fa43c692abe2be91241b384` / `0f8b6baa728099dc21880016fbace8c44166e088` | `34ee7f83368462a4782d86eff02b72cf5c18a0a0` / 426114 / `736c6484f12d0e59330ae257e23e597b868f9c5930ff86809ba8cf8d4c97b044` |
+| Primary investigation, PR #236     | `7190c78b58f9d6b36dad0d8a39ff1c3b29faa961` / `24c77b7098cd0eddae1469c6fcfa80ddabd586f9` | `785785bef368694d4643be5eada6524231f8e244` / 101944 / `06c9de684706f1ca1da016d6c4600093bf6bb962855d67860dc3d1f6c4e1dec1` |
+| Targeted investigation, PR #237    | `ea9c74de316515dcfa592b52328b1af7005ed32d` / `2e7b4158f31bf7505427854ad6296279ce47d851` | `e0bfa5094e41ed7cdd693cd32f29699a99b97d53` / 69702 / `083f26e9a0d0e33811204eead6089e716ebf126a005b07cc7706f0f7fe69bd7b`  |
+| Author corrections, PR #238        | `862dfe2bcf55b206c9f87ac06164b02b2cc3c079` / `703c4af0e6ade14634947cf5a204ef4ade1162b5` | `2c8839e3a1d12778557ea4ae3e0babda64f7c597` / 39160 / `a7a1f7111575484840cb615b57435fd63c9dad1332e7819589db2a864ea8061b`  |
+| Focused correction review, PR #241 | `00f50638d3389d2d901fcadb5e2d03a5f2bd4f78` / `45ae68798fcdbc6dd269f37a42197671db8cadf0` | `fad66a294e9a966d62d2abf9335df26fe50af1be` / 25875 / `4e0bc664fc1955a75e71c929ff8dbf22c1ebeeccbdb779286a865da5d415c8d5`  |
+
+Report paths are `review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md`,
+`review-inputs/r3-srd-targeted-followup/REVIEW-RESULT.md`,
+`review-inputs/r3-srd-author-followup/REVIEW-RESULT.md`, and
+`review-inputs/r3-srd-author-followup-review/REVIEW-RESULT.md`, respectively.
+PR #237 remains a separate fixed input; it is not implicitly included by ancestry.
+Its exact commit provides access to that report and script.
+
+The result preserves all 426114 Parts A-S bytes as an exact prefix. The new commit
+has PR #241's fixed commit as sole parent, preserving the parent investigation,
+author corrections and focused review in the tree. No earlier report, script,
+commission, catalogue, RFC or acceptance record is rewritten. The commission
+remains blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7`, fixed containing commit
+`f39100161cb45de15767bdb19ed54aba9489b41a`. The semantic comparison remains commit
+`7bd9c5ab854777c3e99e624d9d2ed62731228852`, result blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`.
+
+PR #241's GO covers the content of PR #238 only. Its reported separate context,
+non-involvement and Claude model are retained as scoped provenance, distinct from
+the OpenAI-assisted author work; Git identity is not model evidence. This is not
+a review of Part T, an additional independent model family relative to PR #236/237,
+or an extension of Part S's SR-I determination. No exact-build log is required.
+
+### T.2 Approved source-basis change and its exact boundary
+
+On 2026-09-09 the coordinator proposed the two-entry alternative basis in PR #238
+Section 5 and the PR #231 continuation: use inspected later original papers for
+the bounded procedure/guarantee descriptions, while retaining the 1995 attribution
+and original formulation as unverified. Steward Tasuku Kobayashi explicitly
+approved that proposal in the continuing conversation. This English account
+records that conversation approval; it is not an independently signed GitHub vote
+and does not imply unaided human authorship of the synthesis.
+
+**APPROVED for CLS-02 and CLS-04 source-completion characterization only:**
+
+| Entry  | Required decision-bearing basis after approval                                                                                                                                              | Preserved residual                                                                                   |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| CLS-02 | Wiens 2003 pp.212-213: prospectively fixed sequence, each test at alpha, stopping at first non-rejection; separately attributed supporting graph treatment in Bretz 2009 p.593 and Appendix | Maurer-Hothorn-Lehmacher 1995 attribution, exact original formulation and variants remain unverified |
+| CLS-04 | Dmitrienko-Offen-Westfall 2003 pp.2389-2391: two-family serial weighted-Bonferroni Algorithm 2 and the closed-testing error bound                                                           | The proposed 1995 lineage remains unverified; no historical absence or priority claim                |
+
+SRC-27(b) is removed from the required source-completion basis **for those two
+bounded characterizations only**. This is the approved exception to the fixed
+commission's assigned source basis, recorded here append-only. It does not change
+the commission's general disposition rules or any other source obligation.
+Earlier INPUT_INCOMPLETE conclusions were correct under the then-required basis
+and remain historical evidence. They are not retrospectively recast as PARTIAL.
+
+The approval does not read or certify the 1995 chapter, relabel our own proofs as
+primary sources, select an adjusted-p convention, guarantee Simes or resampling,
+endorse broad graphical equivalence, adopt a procedure, or formally accept SR-D.
+The fixed CLS-02/04 `RES-ONLY` classifications remain. No catalogue ID is created
+or redefined. This successor explains the historical label's unsupported part
+rather than silently changing the fixed semantic catalogue.
+
+### T.3 Source custody and claim-to-source map
+
+This synthesis uses the same four artifacts. Recovered copies and hashes were
+verified in PR #238; PR #241 independently re-hashed them and checked the relevant
+pages. PR #236 records complete reading of all four. Those observations are reused
+explicitly. No new acquisition is counted and no source file is committed.
+
+| Supplier / primary text                   | Bytes / PDF pages | SHA-256                                                            | Decision-bearing pinpoint and evidence boundary                                                                                                                                                      |
+| ----------------------------------------- | ----------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 15 Marcus, Peritz and Gabriel 1976        | 446500 / 7        | `7b81e37b502d885658249196f25db32e1682d6461f3c15f7a3d56e3732899a24` | C-D1, CLS-01: printed pp.655-656, closed family and level-alpha local tests; directional limitation pp.656-657; framework reading reused from #236 Section 4                                         |
+| 43 Wiens 2003                             | 120883 / 5        | `f9634c824d637b2f1e262d226c8bd3d7d01f540501facdaead9c1e802eed5bd7` | C-D2, CLS-02/03: pp.212-213 Sections 2.2/2.3; fallback strong-FWE claim, displayed proof for I=2, general I asserted; #241 Section 5 checks reused author proof                                      |
+| 41 Dmitrienko, Offen and Westfall 2003    | 106251 / 14       | `c1df1453c5001cfeae4bd3d52d31e46f7248cd7b3524ec7d46e2d47ef0a07ed4` | C-D2, CLS-04/05: pp.2389-2392, local Bonferroni condition and Algorithms 1/2; conflicting Tables I/II and Table III reconstruction pp.2391,2394-2395; weighted-Simes cited proof dependency p.2393   |
+| 40 Bretz, Maurer, Brannath and Posch 2009 | 439933 / 19       | `87041fa4b4d17e6a2832536d586cc26b253422255df59cd00a86344f6b0a5664` | C-D3, CLS-06: pp.590-592, graph/update and representation limits; fixed sequence/fallback p.593; epsilon p.596; Appendix pp.601-603 states/imports shortcut result and proves graph-level properties |
+
+Printed/PDF mapping is Marcus printed 658 = PDF 5 (JSTOR cover at PDF 1);
+Bretz printed page = PDF page +585; Dmitrienko +2386; Wiens +210. Supplier 15
+is the three-author closed-testing paper, not the separate Marcus single-author
+paper involved in SR-J X-8. The 1995 chapter remains uninspected, not proved
+unavailable worldwide. Supplier 47's receipt status is not resolved here.
+
+### T.4 Six-entry impact and supported meaning
+
+| Entry / existing classification | Member set, inputs and rule                                                                                                                                                                                  | Supported guarantee / outputs                                                                                                                                                                | Narrowing and future dependency                                                                                                                                                                                   |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CLS-01 / R3-CAND as framework   | Prespecified elementary hypotheses and their intersection-closed family; a valid level-alpha local test for each intersection; reject an elementary hypothesis only when every required intersection rejects | Strong familywise false-rejection bound via the intersection of all true nulls; rejection statements, not a general confidence-interval construction                                         | Dependence among valid local tests adds no requirement, but each local test needs its own assumptions. No directional-error guarantee or incorporation of the separate ordered-ANOVA numerical procedure          |
+| CLS-02 / RES-ONLY               | Finite prospectively ordered hypotheses; each at alpha; stop at the first non-rejection                                                                                                                      | Fixed-sequence false-rejection bound under valid marginal p-values; source-defined rejection/stop rule                                                                                       | Approved Wiens basis; 1995 attribution unresolved. No observed-p ordering. Zero-level fallback equivalence is convention-dependent; no implementation convention chosen                                           |
+| CLS-03 / RES-ONLY               | Fixed finite order and nonnegative prespecified allocations summing to alpha; carry preceding level after a rejection, reset to own allocation after non-rejection; continue through family                  | Wiens's strong-FWE claim; I=2 proof in source, general proof separately attributed below; decisions only in Wiens                                                                            | Original fallback only, not improved/modified variants. Adjusted-p and compatible-interval machinery require separate basis if needed                                                                             |
+| CLS-04 / RES-ONLY               | Two fixed families; Algorithm 2 gives normalized gate weights if any gate remains in an intersection, otherwise normalized secondary weights; local weighted Bonferroni tests and closure                    | Strong FWER with valid marginal p-values and admissible predetermined local weights; secondary adjusted p at least maximum gate adjusted p; source supplies adjusted-p/decision construction | Strictly positive original weights for the displayed normalization formulas; two-family Bonferroni characterization only; 1995 lineage unverified; no general epsilon/multi-family theorem adopted                |
+| CLS-05 / RES-ONLY               | Two fixed families with prespecified importance weights summing to one within each family; Algorithm 1's three cases for intersection weights                                                                | Weighted Bonferroni closure controls strong FWER. Raw Algorithm 1 gate values are min(1,p_i/w_i), independent of secondary values; secondary values at least minimum gate value              | Raw and normalized/Table-II reconstructions stay distinct; only raw convention retains the stated Condition 1. No variant selected. Simes/resampling excluded from this guarantee and retained as reopen triggers |
+| CLS-06 / RES-ONLY               | Finite prespecified graph, nonnegative initial levels with total at most alpha, nonnegative edges, zero diagonal and outgoing sums at most one; transfer/update under weighted Bonferroni                    | Source's graph-level construction and sufficient shortcut/closure characterization; bounded rejection and adjusted-p descriptions with explicit zero/endpoint qualifications                 | Several named procedures have graph representations; not all closed/gatekeeping procedures. Compatible intervals, necessity, broad epsilon-origin and multi-family claims remain separate dependencies            |
+
+These are source-characterization boundaries, not declarations of supported
+Protocol operations. Prospective family membership, hypotheses, order and weights
+are not inferred from results. The parent studies' endpoint examples are not an
+approval to extend R3 beyond its declared one-way design scope.
+
+### T.5 Proof, numerical and variant corrections carried into this synthesis
+
+**Guarantees versus investigator proofs.** For nonempty true-null set T, closed
+testing can reject a true elementary null only if its true intersection is rejected;
+its local level bound gives the familywise bound. With no true null the event is
+empty. This restates the Marcus argument recorded in #236, not a new theorem.
+For Bonferroni, the local union bound applies to fixed nonnegative weights summing
+to at most one under marginal validity; it establishes neither Simes validity nor
+identity of two different gatekeeping algorithms.
+
+The general-I fallback proof and sufficient shortcut/closure proof in #238 Section
+3, independently checked in #241 Section 5, are reused as **author derivations**.
+The fallback proof bounds each first-true-error event by a deterministic budget
+between consecutive true nulls, whose budgets sum to at most alpha. It assumes
+fixed order/allocations and valid marginal p-values, not conditional validity after
+observed decisions. Shortcut equality uses monotone predetermined local levels,
+a common zero-level eligibility rule, arbitrary eligible selection and stopping
+only when none is eligible. These are sufficient-direction arguments, not a claim
+to have inspected Hommel-Bretz-Maurer 2007 or proved necessity. Bretz's source
+statement, imported theorem and Appendix graph argument remain separately identified.
+
+**Zero and endpoint boundaries.** Allocations (.05,0), p=(.1,0) distinguish
+positive-level eligibility from literal p<=level continuation. Fixed sequence
+stops at the first non-rejection. True p=0 has probability zero under marginal
+validity, but a false-null or represented p=0 still changes the pointwise function.
+No convention is selected. Clipping an inactive adjusted value to 1 also requires
+care at alpha=1: the positive-level direct rule and p-adjusted<=alpha need not agree
+there. Any implementation must separately specify its alpha domain and endpoint
+meaning. The parent's zero-denominator branch in `remove_vertex` is a script
+convention, not a newly attributed sentence of Bretz's paper (#241 N-3).
+
+**Graph scope.** Reuse the named positive-weight examples in #236 and the reviewed
+strictly positive 2+2 serial epsilon algebra of #238/#241. The latter proves the
+limit of the local weights, not equality of decisions at finite epsilon: at
+alpha=.05, gate weights (.9,.1), secondary weights (.5,.5), epsilon=1e-9,
+p=(.09,.004,1e-12,1) allows a secondary rejection before the first family clears;
+p=(.05,.004,1,1) misses the first gate's equality rejection for every positive
+epsilon. Finite-epsilon rounding is not a symbolic limit or error certificate.
+PR #237 Sections 5.3-5.4 offer broader investigator proofs; **this synthesis does not
+adopt those broader claims**. Their full separate review is not needed merely to
+retain the bounded characterization. For a single secondary there are no
+secondary-to-secondary edges, so the earlier sentence requiring a separately
+defined construction solely on account of its unit weight was too restrictive
+(#241 N-2). This correction does not adopt arbitrary-weight or general-family
+extensions. Zero original weights that null a normalization denominator remain
+an explicit unimplemented case.
+
+**Dmitrienko conflict.** Preserve source inconsistency rather than choose authorial
+intent: Algorithm 1/Table I leave singleton gates at original weights; Table II
+uses full singleton level. For p=(.024,.003,.026,.002) and weights (.9,.1,.5,.5):
+
+| Local test / weights                   | Adjusted H1 | H2     | H3     | H4     |
+| -------------------------------------- | ----------- | ------ | ------ | ------ |
+| Bonferroni / raw Algorithm 1           | 2/75        | 3/100  | 13/450 | 2/75   |
+| Bonferroni / normalized                | 2/75        | 13/450 | 13/450 | 2/75   |
+| Weighted Simes expression / raw        | 2/75        | 3/100  | 13/500 | 12/475 |
+| Weighted Simes expression / normalized | 13/500      | 13/500 | 13/500 | 12/475 |
+
+Table III's Bonferroni column matches raw weights; its Simes column matches the
+normalized reconstruction. This is a computational observation, not proof of
+intended convention. At alpha=.029 the two Bonferroni variants differ on H2.
+For k=2 the change is in gate singletons; for k=3 full normalization also changes
+proper gate-only pairs. Raw and normalized local Bonferroni tests can both be
+valid yet have different values and different Condition-1 behavior. Any later
+variant selection requires its own explicit decision and semantic review.
+
+**Simes guarantee partition.** The positive-regression-dependence validity claim
+on Dmitrienko p.2393 points to an uninspected unpublished Kling-Benjamini 2002
+manuscript. It is not supplied by a Bonferroni weight-sum argument. The four-atom
+law in #238/#241 has valid marginal p-values but Simes local error .075 at alpha=.05;
+it claims no positive-regression-dependence property. Separately, the #237
+Condition-2 examples, reproduced in #238 and independently in #241, show that
+raw Simes at p=(.048,.03,.001,.001) can reject both secondaries before either gate,
+and normalized Simes at p=(.02,.021,.001,.03) can reject H3 first. The latter full
+vector is (1/45,3/100,21/1000,3/100), including the fourth value verified by #241
+N-4. These disprove a general gatekeeping-order property under those conventions,
+not the uninspected conditional FWER theorem. Simes/resampling are outside this
+Bonferroni completion claim; future use reopens both guarantee and ordering work.
+
+**Marcus arithmetic.** The corrected conditional numerical observation is six
+rows, seven cells differing by more than .001, and 57/64 agreeing; not 58/64.
+At .0005 there are 13 flagged cells, with six additional last-digit discrepancies,
+as reported in #237 and checked in #241. The numerical routes share the equal-n
+Stirling mixture premise; agreement is not a certified probability proof or an
+acknowledged erratum. #238's mutation is a flag-dictionary counting test; #237
+Section 4.5 supplies the separately attributed data-path mutation coverage
+(#241 N-1). #241 reran with SciPy 1.17.1 versus the author's 1.17.0 and found
+identical reported results (N-5). No table is selected as a Protocol oracle. The
+handover's supposed F(1,10^9) approximation does not exist in the fixed #236 files;
+the correction is retained without claiming a computation that never occurred.
+
+### T.6 Disposition, residuals and exact reopen conditions
+
+**Author result: SR-D CLOSED for the approved bounded source-completion question;
+formal steward acceptance PENDING.** The four identified required artifacts for
+that question have been inspected, its procedure descriptions/claims have direct
+pinpoints, and the conflicts and derivation limits are recorded. SRC-27(b)'s
+former required status is changed only by the explicit decision in T.2. This
+classification does not certify every cited proof or every variant mentioned in
+these papers. The decision-bearing characterization is closed testing, fixed
+sequence, original fallback and the bounded weighted-Bonferroni constructions,
+with explicit evidence-strength and variant limits. Broader claims are excluded,
+not represented as proved or silently waived.
+
+The old 1995-required-but-unread PARTIAL proposal is not reused. No NO_GO is
+assigned merely because an excluded Simes variant fails a gatekeeping property;
+that is a recorded conflict/reopen trigger outside the bounded characterization.
+The following residuals do not become accepted claims through CLOSED:
+
+- Obtain the 1995 chapter if historical attribution, its original formulation or
+  a variant depending on it becomes decision-bearing. Use #236 Section 18.1 plus
+  #237 Section 14; request only the identified pp.3-18 chapter with identity and
+  relevant assumptions/proofs. Its receipt can reopen CLS-02/04 if conflicting.
+- Before adjusted-p or rejection-set implementation, declare raw versus
+  normalized gatekeeping, positive/zero-weight handling, equality/ties, alpha
+  domain, stopping and resource limits. Do not import a script default.
+- Reopen source work before Simes/resampling, confidence bounds, directional
+  error, improved/modified fallback, general graph necessity/representability,
+  epsilon-origin invariance or multi-family procedures are claimed.
+- Reopen independent mathematical/source review if #237's broader graph proofs
+  are promoted; they remain investigator input here. The existing narrow review
+  is not stretched to cover that generalization.
+- Before any Marcus Table 1 oracle use, establish the level-probability basis,
+  numerical error requirements and printed discrepancies independently. SR-J X-8
+  remains separate; supplier 15 does not answer that bibliographic question.
+
+The successor **author source-result** ledger is:
+
+| Disposition      | Holds                                          | Count |
+| ---------------- | ---------------------------------------------- | ----- |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-K, SR-L | 8     |
+| PARTIAL          | SR-H                                           | 1     |
+| INPUT_INCOMPLETE | SR-A, SR-E, SR-J, RSM-01, RSM-02               | 5     |
+
+Only SR-D's author classification changes relative to S.6. This is **not eight
+formally accepted holds**. In particular, SR-D's source-basis change is approved,
+its synthesis is now reviewable, and its formal hold acceptance is still pending.
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY false, NARROW, TRANSFER, other holds,
+R3-CAND/RES-ONLY tokens, SR-I acceptance, historical PENDING and R4 remain.
+Custody stays 42 numbered originals plus one corrigendum, 43 artifacts. Main
+integration and the historical preparation counts require later reconciliation.
+The R3 public-opening goal still requires scoped accepted research, RFC integration
+and an independent readiness pass; this source-result candidate opens nothing.
+
+### T.7 Validation and focused synthesis-review instruction
+
+This is an append-only synthesis of checked evidence, not a new statistical
+implementation. Run format:check, lint:markdown, direct validator and staged
+whitespace/prefix/diff checks. Record actual outputs and immutable successor
+identity in the PR body. No full pnpm check, tests, typecheck, generated check,
+parent 55-check, #237 57-check or #238 diagnostic rerun is claimed for this
+synthesis. Existing same-lockfile dependencies may be reused explicitly.
+
+**Execute the following limited independent review at the full fixed Part T
+commit in the PR body.** Read AGENTS, ordered Read first files, the commission,
+T.1's fixed evidence and the approval account in T.2/PR body. Verify the sole
+parent is `00f50638d3389d2d901fcadb5e2d03a5f2bd4f78`, this result is the only
+changed file, and all 426114 Parts A-S bytes match the T.1 hash. Check every
+input identity against its fixed object; do not silently follow moving heads.
+Disclose prior authorship/review and model/context basis; this author's new
+synthesis has not been independently reviewed simply because #241 was GO.
+
+Review faithful application of the already approved **two-entry** source-basis
+exception. Do not ask the steward to approve it again. Check that 1995 access
+remains unverified, no other source obligation is dropped and no own proof is
+presented as an inspected original. For all six entries, check sources, hypotheses,
+local validity/dependence, order/weights, outputs and exclusions against the fixed
+investigation and corrections. In particular decide whether the bounded CLOSED
+candidate is justified without hiding a remaining decision-bearing source gap;
+return a named gap and its correct disposition if not. Verify the 8/1/5 author
+ledger and still-pending formal SR-D acceptance.
+
+Reuse #241's A-D checks and relevant #237 evidence explicitly. Do not repeat the
+full investigation, table computations, symbolic epsilon work or general graph
+programme without a concrete new issue. Confirm all five #241 optional notes are
+carried accurately. Use the same four PDFs in T.3, verify their hashes, and inspect
+only source passages needed to assess this synthesis: especially Marcus pp.655-656
+for CLS-01 and Wiens pp.212-213 / Dmitrienko pp.2389-2391 for the approved basis.
+Reuse the already reviewed numerical/variant passages unless a specific mismatch
+requires direct reinspection. No new PDF is needed; the 1995 chapter is not a
+prerequisite under T.2's approved scope. If a new claim needs a missing source,
+state precisely why and finish unaffected partitions.
+
+Create a fresh neutral branch `review/r3-srd-author-synthesis-20260909` (new suffix
+if occupied), with the full Part T commit as sole parent. Add an English report at
+`review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md`; preserve all inputs. Run
+format:check, lint:markdown, direct validator and diff check, reporting actual
+outputs and omissions. Open a separate draft PR against
+`research/r3-srd-author-synthesis-20260909`. Record GitHub commit/parent/tree/blob,
+byte count/SHA-256 and whether the reviewed head moved. Return GO or
+REPAIR_REQUIRED for this synthesis, with severity and exact conditions. If more
+work is needed, include an executable bounded investigation/repair prompt.
+Do not grant formal hold acceptance, merge, adopt a procedure, open discussion
+or release. A GO permits the separate steward acceptance decision to be presented.
