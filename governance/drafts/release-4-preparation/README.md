@@ -15,6 +15,13 @@ identity and sequence below are historical; they are not instructions to repeat
 completed preparation or the accepted QR source-copy review. Corrections to this
 navigation do not rewrite immutable commission inputs or accept unmerged research.
 
+For the next work, use the [numerical feasibility workplan](numerical-feasibility-workplan.md)
+and [programme review handoff](programme-review-handoff.md). Both are author-side
+instructions added after the fixed PR 227 input `f01b870bdce4e051476e4b74d56b4deb4217307e`;
+they are not part of that reviewed input and do not supply an independent verdict.
+The [handoff repair record](programme-handoff-repair-2026-09-09.md) records the
+subsequent chat-returned editorial feedback and its disposition.
+
 ## Repository identity
 
 This preparation starts from main commit

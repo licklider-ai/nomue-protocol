@@ -13,12 +13,26 @@ Repository: `licklider-ai/nomue-protocol`.
 | Input                                             | Expected value                             |
 | ------------------------------------------------- | ------------------------------------------ |
 | PR 227 head                                       | `f01b870bdce4e051476e4b74d56b4deb4217307e` |
-| Parent, including the two wording repairs         | `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` |
+| Parent: one two-site wording-repair commit        | `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` |
 | PR 227 tree                                       | `af6606a1f85af83c36714a4c64708688a9308068` |
 | Pre-repair input independently reviewed in PR 225 | `ed7bfeb9f9ca2cee6e8766e90d9ee6a5091cb68b` |
 | Preserved PR 225 review blob                      | `28aa4f8dcefe5bc0285c65c6374a5ae5040b2bbe` |
 | Original SS/F probe blob                          | `a3f9a9a4ad3e031ae0e63857400359c0c08f2fba` |
 | Original SS/F result blob                         | `38bd5d8eadcbcc91dc1ae8630eb05ba4be4daa53` |
+
+PR 227 branch locator: `research/r4-programme-adversarial-audit`.
+PR 225 review head: `f505a1f06a4f36500ec8d88895821c41e2c1820b`.
+
+| Blob                                       | Repository path                                                                                           |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| `28aa4f8dcefe5bc0285c65c6374a5ae5040b2bbe` | `review-inputs/r4-preparation-repair/REVIEW-RESULT.md`                                                    |
+| `a3f9a9a4ad3e031ae0e63857400359c0c08f2fba` | `governance/drafts/release-4-preparation/probes/ss-f-propagation.py`                                      |
+| `38bd5d8eadcbcc91dc1ae8630eb05ba4be4daa53` | `governance/drafts/release-4-preparation/probes/ss-f-propagation-result.json`                             |
+| `200296de5745a3bc7087de4d924e1759f4c0f84e` | `governance/drafts/release-4-preparation/numerical-research-result.md` at the separate PR 190 input below |
+
+PR 190 numerical input: `5962cc2def5b1aca7e30d219f12a9a6486ca7b11`.
+This is a separate research history, not an ancestor of the PR 227 head; fetch
+it separately and verify its listed result blob before assessing its limits.
 
 Fetch the exact commits; a moving branch is a locator only. Read AGENTS.md and its
 ordered governance prerequisites. Confirm head, parent, tree and listed blobs.
@@ -26,7 +40,7 @@ Compare the complete nine-file PR 227 increment with its parent, and the parent'
 two-file wording repair with `ed7bfeb9`. Record any unavailable or mismatched input;
 do not silently review a newer head or issue an unqualified verdict on missing input.
 
-The companion workplan and this handoff are later author-side instructions, not
+The [companion workplan](numerical-feasibility-workplan.md) and this handoff are later author-side instructions, not
 part of the pinned PR 227 input. Record their consumed commit and blobs separately.
 You may flag defects in them, but keep their assessment separate from the fixed
 audit verdict. Neither document supplies new experimental evidence.
@@ -36,17 +50,23 @@ audit verdict. Neither document supplies new experimental evidence.
 1. Read `programme-self-audit-2026-09-09.md` under the Release 4 preparation
    directory. Check A1-A6 against the cited pinned research and preserved reviews.
    Assess the full readiness/source/architecture map, not merely changed sentences.
-2. Close-check SF-R1 against the actual three graph implementations: builtin-cell
-   means, builtin-cell contrast coefficients, and all-three-route residual sums.
+2. Close-check SF-R1 against the three graphs in `graphs()`: `builtin_cell`,
+   `qr`, and `centered_qr`. Distinguish these graphs from the three builtin `sum()`
+   usage sites: `builtin_cell` cell means, `builtin_cell` contrast coefficients,
+   and squared-residual aggregation in all three routes. Confirm that the QR
+   routes obtain coefficients through NumPy `solve`, not builtin `sum()`.
    Close-check SF-R2 against ID-POLICY and ADR-0032. State CLOSED or still open
    individually; do not rewrite PR 225's historical verdict.
-3. Independently reconstruct the three scale fixtures using exact arithmetic
+3. Independently reconstruct one fixture at scales 1, 2^-600 and 2^600 using exact arithmetic
    without the submitted `exact()` function. Check representability of the inputs,
    SS, SSE, df and F ratios; reproduce floating observations separately. Determine
    whether the text correctly distinguishes exact zero residual from numerical
    underflow and avoids a general algorithm or supported-domain claim.
 4. Reproduce the original 945-case corpus on CPython 3.12 and NumPy 2.3.5 where
-   available. Expected corpus digest:
+   available. The original transcript records CPython 3.12.13; the self-audit
+   records 3.12.14, both with NumPy 2.3.5. CPython 3.11 is known to change the
+   corpus; these recorded environments are reproduction references, not a
+   guarantee across every build. Expected corpus digest:
    `558b6e65da273bf836204f7d0f5b4bae08cfd85918a23374a475197c2e851ca3`.
    Record interpreter, NumPy, BLAS and thread settings. An environment mismatch is
    investigated, not silently normalized. Distinguish the corpus digest from file
@@ -65,7 +85,7 @@ audit verdict. Neither document supplies new experimental evidence.
 Report separately: input integrity; SF-R1/SF-R2 closure; audit/algebra accuracy;
 source state by claim; workplan comments if any; and overall opening readiness.
 Use BLOCKER, SHOULD-FIX and NICE-TO-HAVE findings with evidence and concrete repairs.
-A bounded GO does not close R4-P1/P3/P5/P6, adopt a method, allocate identifiers,
+A bounded GO does not close any condition from R4-P1 through R4-P6, adopt a method, allocate identifiers,
 approve execution support, or authorize public discussion.
 
 Add only `review-inputs/r4-programme-audit/REVIEW-RESULT.md` on a neutral review
