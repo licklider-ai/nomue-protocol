@@ -6156,3 +6156,58 @@ A later close-only check can compare the repaired paragraph with PR #268
 Section 4, verify the entire A-AB prefix and unchanged other blobs, and assess
 only faithful application and preserved limits. It need not repeat the finite
 statistical review and cannot silently turn this receipt into RSM-02 acceptance.
+
+## Part AD. Approved public-RFC source scope and opening preparation
+
+2026-09-09. The steward expressly adopted the provided-original boundary for the
+public RFC, with possible later paper additions and updates, and instructed the
+coordinator to proceed as far as possible toward public opening. This is scope
+adoption, not scientific acceptance of every historical claim or an independence
+waiver. The earlier source cap needs no repeat approval.
+
+The steward also returned close-only GO with no additional findings for PR #269
+at `829e1050ab35ced87867490c974ea07b6e1545c9`: SF-01 exactly matches the
+PR #268 proposed wording, the whole 559874-byte A-AB prefix and 1016 other
+files/modes were preserved, and Part AC faithfully retains the received verdict
+and limits. This is recorded as conversational review testimony; no new signed
+report, PDF reread, statistical rerun or formal independence finding is implied.
+
+This submission's sole parent is that PR #269 commit. Its full 565802-byte
+A-AC prefix, blob `f1fc0ce7793cd7e393949bd3e538bb5cd33b2802`, SHA-256
+`31d852a1c0e92688c2c1ec2ec1b6fd5f1c34eac3be1282a4f4ae98ab1247d9eb`,
+is preserved exactly. No previous source finding, review or statistical script
+is edited. The fixed source commission and semantic catalogue remain unchanged.
+
+The updated [public RFC candidate](../release-3-independent-multigroup-rfc.md)
+and [opening record](supplied-scope-opening-record.md) map all 49 frozen technique
+entries, the two guidance entries and five exclusions, candidate declarations,
+result classes, dependencies, numerical holds and R3-H1-H7. R3-CAND/RES-ONLY/
+TRANSFER/REJECT counts remain 15/27/5/2. Catalogue membership and a historical
+CLOSED source hold do not establish numerical support or broad theorem validity.
+
+The historical source ledger remains 9 CLOSED / 1 PARTIAL / 4 INPUT_INCOMPLETE
+with every AC.4 member unchanged, overall INPUT_INCOMPLETE and
+SOURCE_SET_READY=false. NARROW, earlier limited acceptances, residual conditions,
+other holds and R4 remain. The inventory is 42 numbered originals plus one
+corrigendum; future additions are reviewed deltas, not presumed evidence.
+Unprovided-source claims and unresolved wider characterizations are excluded from
+opening premises; retained research/transfer entries are not executable promises.
+
+Main was observed at `dedd26a3e0655001b67e40ccfb741e43ecb07beb`; the
+Read-first documents, stability registry and old RFC match the input branch.
+Every R2 reuse stays conditional. The opening record carries #265's fixed
+withdrawal as limiting evidence only; no numerical algorithm is imported or repaired.
+
+R3-H1-H6 treatments are proposed for readiness review; R3-H7 remains pending.
+The [independent opening handoff](../../../review-inputs/r3-supplied-scope-opening/INDEPENDENT-REVIEW.md)
+defines the concrete next action and the future opening record requirements.
+AGENTS.md, governance/RFC.md and R3-H7 require this separate review; coordinator
+self-checks cannot close it. The user is not asked to approve the source cap again.
+No public issue, opening timestamp, method adoption, release or merge occurs here.
+
+This is continuing OpenAI Codex-assisted coordinator synthesis, with prior author
+context disclosed. Source evidence is reused, not independently reread. Required
+repository checks, full catalogue accounting, prefix preservation and output scope
+are verified for submission and recorded with fixed output identities in the PR.
+Full tests, typecheck, generated checks and scientific reruns are not part of this
+informative synthesis. The original September 6 readiness audit remains historical.

@@ -5,6 +5,17 @@ open. This package starts the research and scope work needed to make a bounded R
 reviewable. It creates no Protocol meaning, identifier, Requirement ID, supported
 capability, RFC window, release commitment, or implementation authority.
 
+## Current supplied-scope opening preparation (2026-09-09)
+
+The steward has adopted provided originals as this RFC's source scope, allowing
+later reviewed additions. The [opening record](supplied-scope-opening-record.md)
+and [updated RFC](../release-3-independent-multigroup-rfc.md) supersede the dated
+September 6 status snapshot below for current scope. Historical ledger: 9 CLOSED /
+1 PARTIAL / 4 INPUT_INCOMPLETE; SOURCE_SET_READY=false. Troendle's bounded review
+and SF-01 repair have received close-only GO. Numerical B2/C3/G guarantees remain
+withdrawn. R3-H1-H6 have proposed explicit treatments; R3-H7 is pending whole-package
+independent review. No public window has started.
+
 ## Objective
 
 Prepare a public RFC for a bounded but comprehensive independent multi-group
