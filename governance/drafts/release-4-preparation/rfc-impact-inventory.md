@@ -1,6 +1,7 @@
 # Release 4 candidate file and requirement impact inventory
 
-Status: informative author proposal; independent review pending. This advances
+Status: informative placement proposal; cited constraints independently reviewed
+at `ed7bfeb9`; new inventory clarifications await independent review. This advances
 R4-P5 but does not close it. Baseline is main `cd217f88238a2ecc57b72f5835a813d92270f5ad`
 and the reviewed PR 219 input `bf4004694f68018534e01bde2f2a33214accba19`.
 Existing requirements below were read in their owning specification files.
@@ -74,5 +75,35 @@ force a CORE semantic amendment. Conversely, changing its meaning requires the
 applicable CORE process. Final tier and discussion window need the complete
 clause/ID impact assessment, so neither is declared resolved here.
 
-Authoring assistance: OpenAI Codex in the existing task context. No independent
-review of this inventory or final R4-P5 closure is claimed.
+Authoring assistance: OpenAI Codex in the existing task context. No independent review of the new inventory additions or final R4-P5 closure
+is claimed.
+
+## Contract/Profile allocation and additional constraints
+
+The path table is provisional and previously leaned toward Profile-owned files.
+It does not decide that a Profile owns the operation's statistical semantics.
+Under ADR-0032, the Analysis Contract owns the bounded analytical operation;
+a Profile may bind its application context and declarations, while a Public Check
+owns recomputation/comparison procedure identity. Decide which proposed sections
+belong in each class before accepting the path table. Contract/Profile namespace
+tokens are registered in `registries/requirements.yaml` before issuing IDs.
+No token, final Contract path, or new requirement is allocated in this audit.
+
+Additional existing clauses inspected in the self-audit:
+
+| Owner                                | Requirement and tier                              | Assessment                                                                                                                  |
+| ------------------------------------ | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `spec/core/versioning-principles.md` | NRS-VERSION-0002, CORE                            | Preserve failure on unsupported tuples; exact registration is required                                                      |
+| `spec/verification/public-checks.md` | NRS-VERIFY-0006, EXPERIMENTAL                     | Existing Phase 1 integrity check; assess successor applicability without expanding its historical scope in place            |
+| Same owner                           | NRS-VERIFY-0007 and NRS-VERIFY-0009, EXPERIMENTAL | Existing ITGC precondition and comparison clauses; define successor checks and their scope explicitly                       |
+| Same owner                           | NRS-SEC-0002, CORE                                | Preserve no Record-supplied code execution; research probe code is never Record-executable payload                          |
+| Same owner                           | NRS-SEC-0003 and NRS-SEC-0006, EXPERIMENTAL       | Existing bounded-input/time/memory context; derive new workload limits, do not copy numeric ceilings as accuracy guarantees |
+
+The proposed schema filename is a placement placeholder: final versioned paths,
+IDs and supersession records remain part of the surface assessment. The proposed
+release-named conformance directory is a possible new grouping convention, not
+an established repository pattern. For reused enclosing surfaces, explicitly
+inspect whether `applies_to_bundle_ids` entries need additive changes in
+`registries/public-contract-surfaces.yaml`; preserve their old bundle meanings.
+Canonicalization, strict-input, report and final Contract/Profile clauses remain
+a final crosswalk task. This added coverage is still not R4-P5 closure.

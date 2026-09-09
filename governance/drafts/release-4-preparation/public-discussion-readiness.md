@@ -1,9 +1,9 @@
 # Release 4 public discussion preparation
 
-Status: informative author proposal; independent review pending. Date: 2026-09-08.
+Status: informative preparation with bounded independent reviews; programme and
+current self-audit repairs remain incomplete. Updated: 2026-09-09.
 The target is a proposal that outsiders can assess, not specification adoption.
-The conversational estimate of approximately 50% is a planning judgment, not a
-registered gate score or an estimate of remaining engineering hours.
+This document records evidence and open decisions rather than a completion percentage.
 
 ## Evidence baseline
 
@@ -54,14 +54,14 @@ proposed first scope. Exclusion is not proof that those methods are invalid.
 These labels refer to the existing preparation conditions; this table does not
 create a parallel gate registry or close a condition.
 
-| Condition                     | Current evidence                                                     | Work before opening                                                                                                                                |
-| ----------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| R4-P1: meaning and sources    | Semantic catalogue and bounded algebra; original-source holds remain | Complete independent primary-source support for every inferential claim retained in the proposal, especially classical F calibration and intervals |
-| R4-P2: scope                  | Candidate A recommended above                                        | Review and record exact estimands, population/model assumptions, interval and multiplicity choices, and exclusions                                 |
-| R4-P3: numerical feasibility  | Accepted coefficient supplement; new SS/F exploratory probe          | Independently review the new probe; map SS, residuals, F, tails and optional intervals to evidence paths or explicit blocking holds                |
-| R4-P4: Release 3 relationship | Release numbering and Release 3 work remain intact                   | Compare the proposed interfaces against the then-current exact Release 3 scope; state dependencies and independent work explicitly                 |
-| R4-P5: standalone RFC         | This preparation consolidates evidence and decisions                 | Draft an outsider-readable RFC with proposed authority classes, stability tier, staged contracts, public checks, exclusions and decision requested |
-| R4-P6: opening review         | No independent review of this increment yet                          | Review the exact assembled proposal for unsupported claims and hidden methodological choices                                                       |
+| Condition                     | Current evidence                                                           | Work before opening                                                                                                                                |
+| ----------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| R4-P1: meaning and sources    | Semantic catalogue and bounded algebra; original-source holds remain       | Complete independent primary-source support for every inferential claim retained in the proposal, especially classical F calibration and intervals |
+| R4-P2: scope                  | Candidate A recommended above                                              | Review and record exact estimands, population/model assumptions, interval and multiplicity choices, and exclusions                                 |
+| R4-P3: numerical feasibility  | Accepted coefficient supplement; new SS/F exploratory probe                | Retain bounded probe GO; map SS, residuals, F, tails and optional intervals to reviewed evidence paths or explicit blocking holds                  |
+| R4-P4: Release 3 relationship | Release numbering and Release 3 work remain intact                         | Compare the proposed interfaces against the then-current exact Release 3 scope; state dependencies and independent work explicitly                 |
+| R4-P5: standalone RFC         | This preparation consolidates evidence and decisions                       | Draft an outsider-readable RFC with proposed authority classes, stability tier, staged contracts, public checks, exclusions and decision requested |
+| R4-P6: opening review         | Bounded numerical/editorial reviews exist; assembled opening review absent | Review the exact assembled proposal for unsupported claims and hidden methodological choices                                                       |
 
 Full runtime certification and final schema/check versions need not be completed
 merely to discuss a proposal. A missing proof can be an explicit implementation
@@ -92,13 +92,58 @@ acceptable by calling it a discussion draft.
 
 See [the SS/F supplement](ss-f-propagation-supplement.md) and
 [the reviewer instructions](public-discussion-review-prompt.md).
-The new probe extends 945 finite cases to sums of squares, residuals and F ratios,
+The reviewed probe extends 945 finite cases to sums of squares, residuals and F ratios,
 plus three zero-residual diagnostics. It establishes examples to investigate,
 not an error bound, inferential validity, or a production algorithm selection.
 
 OpenAI Codex assisted the authoring and execution in the maintainer's task
-context. No independent investigator participated in this increment. Exact
+context. The original authoring increment had no independent investigator; subsequent
+separate-context reviews are indexed below. This new self-audit is not independent. Exact
 model-build identity was not available as authenticated runtime metadata.
 This work changes no normative surface, schema version, public check, release
 number, or Release 3 behavior. Previous steward acceptance is not asserted as
 acceptance of these new results.
+
+## Review state and review scope
+
+| Evidence                               | Exact reviewed input                             | Result and limit                                                                                                                    |
+| -------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| QR supplement and two supporting pages | `0be8bb1519d7aec2810b03192de6590ec9168c60`       | Bounded record accepted; source status COMPLETE_ON_PROVIDED_COPIES, preserved by the existing intake                                |
+| SS/F numerical review                  | `4cf3e12acc77bd38c09d5acd2588ede66ee265b2`       | Numerical GO for the finite exploratory record; no programme or source closure                                                      |
+| RFC editorial review                   | `bf4004694f68018534e01bde2f2a33214accba19`       | Editorial GO; R4-P5 not closed                                                                                                      |
+| Repair review, PR 225                  | `ed7bfeb9f9ca2cee6e8766e90d9ee6a5091cb68b`       | Bounded GO with SF-R1/SF-R2; subsequent two-site repair is `68a8726ea564a88fe3663dfd84bfde8c4550d6e6`, not yet independently closed |
+| Programme self-audit                   | Input `68a8726ea564a88fe3663dfd84bfde8c4550d6e6` | Author-side cross-document and boundary investigation; not an independent opening review                                            |
+
+The first two returned reviews are preserved under
+`review-inputs/r4-public-discussion-preparation/` and `review-inputs/r4-rfc-preparation/`.
+PR 225's review is preserved under `review-inputs/r4-preparation-repair/`.
+Historical author-run JSON status is not a current programme-status field.
+
+## Complete source and interpretation hold map
+
+These entries restate the pinned semantic result, not new source findings.
+
+| Hold or ambiguity                | Affected claim                                                  | Disposition before promotion                                                                                                                                                      |
+| -------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| S1 and S5                        | Classical factorial F tests and any retained intervals          | Directly inspect adequate original sources, map assumptions and obtain independent review; Cochran/Yates are candidates, not irreplaceable named-file requirements                |
+| S2                               | Interaction interpretation and historical decomposition lineage | Williams full text remains uninspected; clarify whether each retained claim needs this lineage or an independently justified replacement                                          |
+| P1 version and formula ambiguity | Factorial/randomization normalization                           | Resolve the recorded arXiv-version/printed-date mismatch and equation-example ambiguity against exact source bytes and page images; do not promote a transcription into an oracle |
+| S3                               | Type I-IV conventions in Candidate C                            | Original mappings incomplete; no portable default selected                                                                                                                        |
+| S4                               | Robust and generic permutation variants                         | Exact procedure and assumptions incomplete; exclusion from Candidate A does not establish invalidity                                                                              |
+| S6                               | Two-system unbalanced comparison                                | Not executed; remains a research obligation; an independent review permits staging only where Candidate A's exclusion rationale does not depend on it                             |
+
+No source hold above was closed by the new algebraic boundary probe. The latest
+Cochran acquisition report remains attributed testimony in the source follow-up.
+
+## Numerical feasibility beyond the accepted finite record
+
+| Quantity or hazard               | Evidence route                                         | Remaining boundary                                                                                                                                                                                   |
+| -------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Effect/SS/SSE/F algebra          | Original numerical result plus reviewed SS/F probe     | No supported domain, full error propagation or production operation graph selected                                                                                                                   |
+| F tail and critical bracket      | PR 190's exact-rational and Decimal exploratory routes | Numerator df is one; positive even integer residual df only; not a general Candidate B oracle; endpoint handling, portable projection, series remainder and resource certification remain incomplete |
+| Finite inputs with extreme scale | New self-audit scale witnesses                         | All three current graphs can yield NaN although exact F is 100, 36, 4; runtime needs justified scaling or a bounded admission/refusal policy, still undecided                                        |
+| Intervals and protected families | Conditional semantic/numerical work                    | Shared estimated residual denominator does not imply independent p-values; no automatic multiplicity reuse or interval/test duality after rounding                                                   |
+| Trace and supported execution    | Earlier toy controls and proposed strategy             | Dictionary inequality is not certificate/trace tamper resistance; no production trace, admission predicate or platform certification follows                                                         |
+
+Source support for an F distribution and numerical ability to evaluate an F tail
+are separate prerequisites. Neither one substitutes for the other.

@@ -1,0 +1,78 @@
+{
+  "cases": [
+    {
+      "exact_f": ["100", "36", "4"],
+      "exact_sse_positive": true,
+      "observed": {
+        "builtin_cell": {
+          "f": ["0x1.9000000000000p+6", "0x1.2000000000000p+5", "0x1.0000000000000p+2"],
+          "ss": ["0x1.9000000000000p+5", "0x1.2000000000000p+4", "0x1.0000000000000p+1"],
+          "sse": ["0x1.0000000000000p+1"]
+        },
+        "centered_qr": {
+          "f": ["0x1.9000000000003p+6", "0x1.2000000000003p+5", "0x1.ffffffffffffap+1"],
+          "ss": ["0x1.9000000000003p+5", "0x1.2000000000003p+4", "0x1.ffffffffffffap+0"],
+          "sse": ["0x1.0000000000000p+1"]
+        },
+        "qr": {
+          "f": ["0x1.9000000000008p+6", "0x1.2000000000000p+5", "0x1.ffffffffffffap+1"],
+          "ss": ["0x1.9000000000008p+5", "0x1.2000000000000p+4", "0x1.ffffffffffffap+0"],
+          "sse": ["0x1.0000000000000p+1"]
+        }
+      },
+      "scale_exponent": 0
+    },
+    {
+      "exact_f": ["100", "36", "4"],
+      "exact_sse_positive": true,
+      "observed": {
+        "builtin_cell": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["0x0.0p+0", "0x0.0p+0", "0x0.0p+0"],
+          "sse": ["0x0.0p+0"]
+        },
+        "centered_qr": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["0x0.0p+0", "0x0.0p+0", "0x0.0p+0"],
+          "sse": ["0x0.0p+0"]
+        },
+        "qr": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["0x0.0p+0", "0x0.0p+0", "0x0.0p+0"],
+          "sse": ["0x0.0p+0"]
+        }
+      },
+      "scale_exponent": -600
+    },
+    {
+      "exact_f": ["100", "36", "4"],
+      "exact_sse_positive": true,
+      "observed": {
+        "builtin_cell": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["inf", "inf", "inf"],
+          "sse": ["inf"]
+        },
+        "centered_qr": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["inf", "inf", "inf"],
+          "sse": ["inf"]
+        },
+        "qr": {
+          "f": ["nan", "nan", "nan"],
+          "ss": ["inf", "inf", "inf"],
+          "sse": ["inf"]
+        }
+      },
+      "scale_exponent": 600
+    }
+  ],
+  "numpy": "2.3.5",
+  "numpy_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+  "original_corpus_sha256": "558b6e65da273bf836204f7d0f5b4bae08cfd85918a23374a475197c2e851ca3",
+  "python": "3.12.14",
+  "script_sha256": "68c22f575054af90435708a042fc4863cfd5a655afb5a7a746a1daeb36bf4fb8",
+  "source_sha256": "8c68703fb5fa8cf002c593b0b9a2bff0256cf9fc090ba43eb02436f262225839",
+  "status": "AUTHOR_SELF_AUDIT_NOT_INDEPENDENT",
+  "threading": "not pinned; environment-specific observations"
+}

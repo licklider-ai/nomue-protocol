@@ -142,7 +142,9 @@ bounded proposal for discussion after those requirements are resolved or explici
 bounded, not for adoption, implementation support or publication of a release.
 
 Authorship assistance: OpenAI Codex, in the existing maintainer task context.
-No independent primary-source review occurred in this increment. Research sources
+No independent primary-source review occurred in the authoring increment;
+subsequent bounded numerical/editorial reviews are indexed in the readiness
+document. They do not close the original-methodology source ledger. Research sources
 and acquisition limits are recorded in [the source follow-up](source-followup-2026-09-08.md).
 
 ## Review follow-up
@@ -154,3 +156,13 @@ The [candidate impact inventory](rfc-impact-inventory.md) now identifies concret
 proposed paths and existing requirement constraints. It does not allocate new
 requirements or complete the final RFC impact assessment. Read numerical evidence
 with the repaired supplement's magnitude table and interpreter dependency.
+
+## Programme audit qualifications
+
+The readiness document now carries the complete S1-S6 and P1 ambiguity map,
+exact-input review status, and numerical-domain limitations. The new scale
+boundary observations concern finite-input computability, not the distributional
+validity of F. Read the existing impact path table with its explicit unresolved
+Contract/Profile allocation; no Profile-owned statistical operation is selected
+by that provisional layout. The audit makes no numerical algorithm choice and
+opens no public-discussion window.
