@@ -5777,3 +5777,149 @@ before submission. Only this append, the new report and its diagnostic change.
 Full pnpm check, tests, typecheck, generated checks, prior statistical programs,
 historical simulation and a complete second-order James oracle are not run.
 No authoritative artifact changes; copyrighted source files are not committed.
+
+## Part AA. SR-A review receipt and numerical guarantee-withdrawal confirmation
+
+2026-09-09. Informative integration authorized by the steward's instruction to
+append the SR-A GO receipt and PR #265 confirmation and prepare a Troendle
+investigation prompt. No new source investigation or acceptance decision.
+
+### AA.1. Fixed input and preservation
+
+The sole input parent is PR #264 commit
+`9e95cdee40b64cbf0f42dca8e3fab1c075507168`, tree
+`6aa8d6bab4fd5f1312c3f88875cb4ff35044734f`. Parts A-Z are preserved as
+an exact 542963-byte prefix, blob `98c673682acc29df74f8ba37bcf03712156e9243`,
+SHA-256 `8fbe47a29f0953823af1288331b53cffa20088fb612dedd3af6856bdf8857162`.
+All pre-existing files other than this append retain their input blobs.
+The numerical branch is referenced by fixed identity, not merged into this line.
+
+### AA.2. Received SR-A verdict
+
+The steward supplied a revised separate-session review of that fixed input:
+**GO for the accuracy of the bounded author record; BLOCKER 0 / SHOULD-FIX 0 /
+NICE-TO-HAVE 0.** It supersedes the reviewer's earlier INSUFFICIENT_EVIDENCE
+after receipt of the matching James PDF, without changing the reviewed commit.
+The original attachment is preserved byte-for-byte as
+[the received review](../../../review-inputs/r3-source-review-receipts/SRA-RECEIVED-REVIEW.txt):
+16768 bytes, SHA-256
+`4c341027291c0438f2ea14efa858782827b8d5c0d406ddeb3f7d3ac1a6525daf`.
+Its text is received testimony, not a newly executed review or signed attestation.
+
+The reviewer reports verification of both PDF identities, James (40)-(44) and
+the p.329 approximation caveat, independent first-order algebra, the
+James/Brown-Forsythe normalization mismatch, moment and two-group reasoning,
+and table arithmetic. The explicit second-order limits are judged adequate;
+no repair is requested within the bounded account.
+
+The review discloses a separate OpenAI-assisted conversation, historical context
+and prior reading of the author report. It does not attest a different provider
+or model, a separate human signature, or satisfaction of the formal independence
+gate. Full authentication of the earlier conversational Ge review was outside
+its available evidence. This receipt preserves those limitations and does not
+convert GO into second-order certification, method adoption, hold acceptance,
+public-discussion readiness or release authorization. James and Brown-Forsythe
+were not reread and their statistical diagnostics were not rerun for this receipt.
+
+### AA.3. PR #265 confirmation and exact boundary
+
+The steward separately authorized checking the numerical correction. This later
+instruction permits the bounded PR #265 confirmation despite the earlier
+Part Z separation of the PR #174 work. It does not delegate the entire numerical
+workstream or authorize a merge.
+
+| Object                                    | Fixed identity                                                  |
+| ----------------------------------------- | --------------------------------------------------------------- |
+| Correction PR                             | [#265](https://github.com/licklider-ai/nomue-protocol/pull/265) |
+| Correction commit                         | `92bea491e237df6aec08ae1e3c4c52e43ec3593d`                      |
+| Sole parent / unchanged PR #263 candidate | `a133707a0c09008a26709318c8cc54e000b3bd36`                      |
+| Correction tree                           | `053b922dcf4f0d38afe5a68f9a6dfccb8ddd35fe`                      |
+| Corrected numerical result blob           | `0d360ec3eaa1ede0d6112555027255a6e3e695c3`                      |
+| Correction review blob                    | `42c9f39904ff325a553b4414cd1c63009e785e90`                      |
+
+The coordinator checked the fixed commit object hash, sole parent, tree and
+nine-path increment (one modified result and eight added evidence/review files).
+The report and affected correction were read. The supplied `check_bindings.py`
+and `verify_replay.py` were rerun successfully: eight scripts, eight output
+fences and the prior replay evidence remain intact; all 41 task bodies derive
+from the original syntax tree (24 B and 17 C); capture bindings are 8/8 and
+historical accounting is 49 IDs / 50 scope assignments. The prior review blob
+also remains unchanged. These finite checks are not fresh numerical executions.
+
+The code discards imaginary components inside the nested callbacks. The
+[python-flint integration documentation](https://python-flint.readthedocs.io/en/latest/acb.html#flint.acb.integral)
+and [FLINT callback contract](https://flintlib.org/doc/acb_calc.html#c.acb_calc_integrate)
+were consulted as already cited software references: complex-domain analytic
+evaluation is needed for the quadrature error guarantee. This documentation
+check neither adds a statistical original nor completes a numerical source hold.
+Independent SciPy closed-form evaluations reproduce imaginary parts
+0.0005946341020711784 for erf((3+0.01i)/2), and 0.001079603359199064 for
+Phi(2*(1+0.01i)). This supports the reported lost-complex-information witnesses,
+not a new rigorous enclosure. The present environment lacked python-flint;
+`check_callbacks.py`, the branch-box Arb witness, complete numerical replays and
+the numerical branch's local repository suite were not rerun by this coordinator.
+
+**Confirmation: the withdrawal is appropriate; no additional correction was
+identified within this bounded check.** PR #265's NO_GO / one BLOCKER concerns
+its unchanged parent #263. The correction removes unsupported B2/C3/G rigorous
+enclosure, sign-bracket and dependent NF-C/NF-D feasibility claims; it does not
+repair the algorithm or prove a recorded real-axis probability wrong. Historical
+output words remain evidence, not current guarantees. The separate k=2 identity
+and scalar NF-A routes are not invalidated by this specific defect, but this
+receipt does not independently certify them.
+
+NB-01 remains unresolved. Restoring guarantees requires valid complex callbacks,
+branch handling, truncation bounds, fresh numerical evidence and independent
+review. The original approved SR-J acceptance is not reopened by a numerical
+hold. No broader PR #174 disposition, algorithm repair or numerical acceptance
+is made here.
+
+The prior confirmation observed completed successful GitHub CI runs
+[34325505375](https://github.com/licklider-ai/nomue-protocol/actions/runs/34325505375)
+for the correction commit and
+[34322778713](https://github.com/licklider-ai/nomue-protocol/actions/runs/34322778713)
+for the SR-A commit. The PR #265 head remained fixed and draft/unmerged at the
+end of that check. These are dated observations, not ongoing monitoring or a
+mathematical certificate.
+
+### AA.4. Effective scope and next investigation
+
+| Disposition      | Members                                              | Count |
+| ---------------- | ---------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-J, SR-K, SR-L |     9 |
+| PARTIAL          | SR-H                                                 |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, RSM-01, RSM-02                           |     4 |
+
+This is the unchanged Z.5 ledger. Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY=false, NARROW, TRANSFER, R3-CAND/RES-ONLY classifications,
+prior limited acceptances, other holds and R4 remain unchanged. The inventory
+is still 42 numbered originals plus one corrigendum; it is not a 43/43 full-text
+completion claim. The approved supplied-source cap excludes unprovided-source
+claims from active verification without declaring their historical holds closed.
+
+The provided James/Brown-Forsythe reading and Ge bounded review have reached
+limited GO. SR-A second-order certification and excluded attribution, SR-E
+excluded historical attribution, SR-H broader family/selection claims and full
+RSM-01/02 variant coverage remain unresolved at their recorded boundaries.
+
+The next available-source investigation is supplier 30, Troendle (1995),
+1020647 bytes / 10 PDF pages, SHA-256
+`21c9fbad95c8c29e709863aa45d314deca1f70f4bf148da1b7407f3178f08b54`.
+Its text has not been read in this integration. The
+[bounded investigation handoff](../../../review-inputs/r3-source-review-receipts/TROENDLE-HANDOFF.md)
+provides the scope, identity checks, questions and deliverables. Its execution
+is a later task; this integration does not report its results in advance.
+
+### AA.5. Process and validation
+
+This is continuing OpenAI Codex-assisted author/coordinator work. The context
+previously authored Part Z and performed the bounded PR #265 confirmation.
+It is not a new independent primary-source review or an attested model-build
+identity. Received reviewer testimony, coordinator checks and future tasks are
+explicitly separated. No authoritative surface changes and no copyrighted PDFs
+are committed.
+
+Validation for this integration is recorded in the submission PR body: the
+four repository checks, exact prefix preservation and unchanged earlier blobs.
+No full pnpm check, statistical rerun, numerical algorithm repair, new-original
+acquisition, acceptance, public opening or merge is part of this change.

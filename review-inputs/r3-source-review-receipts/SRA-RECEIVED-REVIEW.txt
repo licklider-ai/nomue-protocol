@@ -1,0 +1,285 @@
+# Bounded SR-A review of 9e95cdee
+
+Date: 2026-09-09.
+
+**Verdict: GO - limited to the accuracy of the bounded author record.**
+
+**BLOCKER 0 / SHOULD-FIX 0 / NICE-TO-HAVE 0.**
+
+This revision supersedes the earlier INSUFFICIENT_EVIDENCE assessment after
+receipt and direct inspection of `08_James_1951(1).pdf`. Its bytes match the
+specified supplier-08 identity exactly. The fixed commit has not changed.
+
+Both supplied primary sources, the repository preservation checks, independent
+first-order algebra, normalization witness, moment reasoning, two-group reduction
+and table arithmetic support the bounded scientific account. No repair is
+required within that scope. The explicit second-order limitations are adequate
+and match the source's caveat. This GO is not a complete second-order proof or
+numerical certificate, hold acceptance, release-readiness finding, or formal
+independence-gate determination. Full authentication of the earlier conversational
+Ge review remains outside the available evidence, as disclosed in Section 4.
+
+## 1. Scope and identity
+
+Input: [nomue-protocol commit 9e95cdee40b64cbf0f42dca8e3fab1c075507168](https://github.com/licklider-ai/nomue-protocol/commit/9e95cdee40b64cbf0f42dca8e3fab1c075507168).
+
+The GitHub Git-data response identifies exactly one parent,
+`09a75be0f3549d75e74ee7226b476a9d71480cb0`, and tree
+`6aa8d6bab4fd5f1312c3f88875cb4ff35044734f`. Reconstructing the commit object
+from the returned metadata, with the matching +0900 author/committer offsets
+and no terminal message newline, independently reproduces the input SHA-1.
+This proves object consistency, not a signed authorship attestation.
+
+Both recursive tree responses are untruncated. Independent reconstruction of
+all 193 submitted-tree and 192 parent-tree directory objects reproduces their
+Git tree hashes, including the parent root
+`fbcf46ac67f444161f96e1a158c1b3e88dc53328`.
+
+Exactly three file paths change; no file is removed:
+
+| Path | Submitted blob | Bytes |
+| --- | --- | ---: |
+| `governance/drafts/release-3-preparation/semantic-source-acquisition-result.md` | `98c673682acc29df74f8ba37bcf03712156e9243` | 542963 |
+| `review-inputs/r3-sra-supplied-primary/REVIEW-RESULT.md` | `27720e02cf8c6e2398df6e9ee03bd65aa9ffd43f` | 22914 |
+| `review-inputs/r3-sra-supplied-primary/check-sra.py` | `c06f34fdf6b3f8f86d34fe02e27c1f66a201c913` | 4974 |
+
+The downloaded contents independently reproduce all three blob hashes. The
+cumulative result's first 533740 bytes equal the entire parent result exactly;
+only the 9223-byte Part Z append follows. The prefix SHA-256 is
+`2436a534c665a10f4e5625fa7183be0839b6cda8805ac125a8118ce9e41a6d1a`.
+
+All other tracked file identities are unchanged. In particular, the Ge report
+and diagnostic retain `6092ab5a856673c414c02f04478373fd8492ba89` and
+`aa7664372c125e37e8cfc5a9c2ae8b97e44a70bb`; the acquisition commission retains
+`3c7ddcc696f0c284213f7efe0da68e747bc238d7`; the fixed catalogue retains
+`8f21526040924b891f64724c2d0fde9ea94eff92`.
+
+Read: AGENTS.md and its six ordered Read-first documents, the acquisition
+commission, Part Z, the fixed author report and diagnostic, and the parent
+Y.5 ledger for the transition comparison. No directory-local AGENTS.md exists
+on the relevant review/governance paths in the inspected tree. No repository
+file is edited in this review.
+
+## 2. Primary-source availability and page evidence
+
+The attachment set now contains the pasted Markdown report,
+`33_Brown_1974.pdf`, and the subsequently supplied `08_James_1951(1).pdf`.
+The latter is byte-identical to the designated `08_James_1951.pdf`; the filename
+suffix does not change its identity.
+
+Brown-Forsythe identity independently verified:
+
+- 518538 bytes; 5 PDF pages.
+- SHA-256: `bba8ba4d8b105b47194a20704a5967b32e2ea5447f2587986ebbca5a298a6124`.
+- PDF page 1 is the supplier cover; PDF pages 2-5 are printed pages 129-132.
+- Cover: Brown and Forsythe, 1974, Technometrics 16(1):129-132, DOI
+  `10.1080/00401706.1974.10489158`; the 2012 online date is distinct from
+  original publication. No external DOI verification was performed.
+
+All Brown-Forsythe PDF text was inspected. Page images were inspected for printed
+pp.130-132, including the decision-bearing formulas, Table 2, Table 3 and
+reference [2]. Findings:
+
+| Printed page / PDF page | Direct evidence and assessment |
+| --- | --- |
+| 129 / 2 | Text states independent normal observations and defines the usual ANOVA statistic. The report's model boundary agrees. |
+| 130 / 3 | Welch weighting, denominator correction and denominator degrees of freedom agree with Section 5. Modified F is A/D, with no additional division by g-1, and the printed c_i and moment-matched degrees of freedom agree. |
+| 130 / 3 | The printed James summary explicitly defines J=Q/(g-1), compares J to the unscaled corrected chi-square percentile, and defines that percentile on g-1 degrees of freedom. All three features are visible in the image. |
+| 131 / 4 | The simulation uses 10000 replicates per configuration; the report appropriately limits the resulting recommendations to empirical evidence. The first four Table 2 rows agree with the independently reconstructed Table 3 totals after rounding. |
+| 132 / 5 | Reference [2] is James's linear-hypotheses article, Biometrika 38:19-43. It is not the title/page range attributed to supplier 08 in the submitted custody record. Table 3 entries agree with the submitted transcription. |
+
+James identity independently verified on receipt:
+
+- 523245 bytes; 7 PDF pages.
+- SHA-256: `34d14510ddcd10b0a5e90f21412b78e1d03359358ff0ae50c86bd93c83b62145`.
+- PDF page 1 is a JSTOR supplier cover; PDF pages 2-7 are printed pp.324-329.
+- G. S. James, The Comparison of Several Groups of Observations When the Ratios
+  of the Population Variances are Unknown, Biometrika 38(3/4), December 1951,
+  pp.324-329. The cover and article title agree with the author record.
+
+All seven pages were inspected as extracted text, and all six article pages
+were also inspected as images. Original-page findings:
+
+| Printed page / PDF page | Direct evidence and assessment |
+| --- | --- |
+| 324 / 2 | Equation (1) specifies independent scaled-chi-square variance estimates independent of the normal estimates. Equations (2)-(3) give the known-weight chi-square result; equation (5) replaces true weights with estimated weights and introduces the corrected boundary. The report preserves these distinctions. |
+| 325-327 / 3-5 | Equations (9)-(15) organize the inverse-df expansion, and the derivative construction follows. These pages were read for scope and notation; a complete proof audit of all operators and derivatives was not performed. |
+| 328 / 6 | Equation (40) has the transcribed first-order correction; equation (41) begins with q plus one-half of (3 X_4 + X_2) S, followed by second-order terms and an inverse-df third-order remainder. The first-order conversion in the report agrees. |
+| 329 / 7 | Equation (42) defines R_st=sum nu_i^(-s)(w_i/w)^t. The following sentence defines X_(2s)=q^s/[(k-1)(k+1)...(k+2s-3)]. Thus X_2=q/r and X_4=q^2/[r(r+2)], exactly as reported. |
+| 329 / 7 | Equation (43) gives q[1+(3q+k+1)S/(2(k^2-1))+O(nu^-2)]; equation (44) uses the unnormalized Q, not Q/(k-1). The author has correctly exposed the conflict with Brown-Forsythe's literal display. |
+| 329 / 7 | The paper explicitly leaves the convergence of expansion (41) unknown, discusses the extra numerical burden of the second corrective term, and states agreement with Welch for k=2. The note added in proof describes alternative weight adjustments. The report accurately preserves these qualifications and does not claim to have verified the full k=2 second-order reduction. |
+
+The original cross-paper mismatch and the distinction between the two James
+articles are now directly supported by the supplied materials. No content of
+the excluded James pp.19-43 paper was acquired or inferred.
+
+## 3. Independent mathematics and numerical checks
+
+### 3.1 First-order conversion, now checked against the original
+
+Let r=g-1, p=r/2 and zeta=q/2. Original equation (40) gives
+
+```math
+2h_1=\frac{S}{2}\left[\frac{3q^2}{r(r+2)}+\frac{q}{r}\right]
+=\frac{qS(3q+r+2)}{2r(r+2)}.
+```
+
+Thus q+2h_1 equals the reported C_1, since r(r+2)=g^2-1 and r+2=g+1.
+The first-order expression attributed to equation (41) has the same algebra.
+This is a general symbolic derivation; 27 independently chosen rational cases
+also passed using Python Fraction. The transcription is now confirmed directly
+against equations (40), (41) and (43). This does not certify the second-order
+coefficients. The O(nu^-2) remainder in (43) is omitted in the truncated C_1
+rule; it is not an implemented error correction or a finite-sample level bound.
+
+### 3.2 Normalization witness and limiting tail
+
+For n=(11,11,11), means=(0,1,1), variances=(1,1,1), the weighted mean is 2/3,
+Q=11(4/9+1/9+1/9)=22/3, J=11/3, and S=3(2/3)^2/10=2/15.
+Using the elementary chi-square-2 survival function gives q=-2 log(.05).
+An independent evaluation gives:
+
+- C_1 = 7.088621217492877;
+- C_1/2 = 3.5443106087464384;
+- Q > C_1, but J < C_1.
+
+The arithmetic and the conflict between the literal Brown-Forsythe display and
+James equations (43)-(44) are confirmed directly. Dividing the cutoff by g-1
+would restore the J-scale rule; this is an explicit mathematical reconciliation,
+not a silent correction of the historical article or its unknown code.
+
+For three chi-square degrees of freedom, independently using
+`erfc(sqrt(x/2)) + sqrt(2*x/pi)*exp(-x/2)` and bisection for its .05 quantile
+gives a survival probability at three times that quantile of
+`3.262726711980898e-05`. This agrees with the author's SciPy value. This
+calculation used no SciPy distribution function. It supports the normalization
+objection under the stated asymptotic model, not a claim about the historical
+simulation code. The report correctly makes no such implementation claim.
+
+### 3.3 Modified-F moment reasoning
+
+Under the equal-mean null, write y_i=x_i-mu and
+V=diag(sigma_i^2/n_i). Then
+A=sum(n_i*y_i^2)-(sum(n_i*y_i))^2/N. Taking expectations directly gives
+E(A)=sum(sigma_i^2)-sum(n_i*sigma_i^2)/N=E(D).
+Independence and the normal-model variance of each sample variance give
+Var(D)=2 sum((1-n_i/N)^2*sigma_i^4/(n_i-1)).
+
+Matching D to a scaled chi-square therefore gives f=2 E(D)^2/Var(D);
+substitution of observed variances produces exactly the printed f_B.
+The numerator is generally a weighted normal quadratic form with unequal
+nonzero eigenvalues. Matching denominator moments does not make it an exact
+chi-square numerator or make the ratio an exact F pivot. The report's
+approximate-versus-exact distinction is mathematically sound.
+
+### 3.4 Two-group and balanced reductions
+
+For a=s_1^2/n_1, b=s_2^2/n_2 and delta=x_1-x_2:
+A=(n_1*n_2/N)*delta^2 and D=(n_1*n_2/N)*(a+b). Consequently
+F-star=delta^2/(a+b). Inverse-variance weighted dispersion gives the same Q;
+the Welch correction vanishes for g=2, hence W=Q.
+Both denominator degrees of freedom reduce to
+`(a+b)^2/[a^2/(n_1-1)+b^2/(n_2-1)]`.
+
+For equal group sizes n, D=(g-1)*sum(s_i^2)/g; substitution proves that
+F-star's statistic equals ordinary ANOVA F. Its denominator df is
+`(n-1)*(sum(s_i^2))^2/sum(s_i^4)`, at most g(n-1), with equality only when
+the observed variances are equal. The distinction in the report is correct.
+
+For the unequal example, an independent pairwise dispersion identity
+`sum_{i<j} w_i*w_j*(x_i-x_j)^2/sum(w_i)` was used instead of the author's
+weighted-center implementation. Exact results agree:
+Q=9, W=2920320/663601, f_W=432640/14641,
+F-star=359/102 and f_B=9987840/250897.
+
+### 3.5 Table arithmetic
+
+The 36 Table 3 entries were independently transcribed from the page image into
+integer hundredths. All three pairwise decompositions agree on each marginal.
+
+| Table 3 row | F (%) | F-star (%) | W (%) |
+| --- | ---: | ---: | ---: |
+| 1 | 4.91 | 5.08 | 5.00 |
+| 2 | 68.55 | 67.63 | 64.98 |
+| 3 | 55.31 | 54.44 | 52.30 |
+| 4 | 33.62 | 33.34 | 31.78 |
+
+All agree with the displayed one-decimal Table 2 values. This is a table
+consistency check, not a rerun or certification of the Monte Carlo experiment.
+
+## 4. Claim boundaries, receipt and dispositions
+
+Sections 3, 4, 7 and 8 explicitly distinguish an available formulation from a
+fully verified second-order proof or numerical implementation. They exclude
+the full operator expansion, fourth derivatives, all second-order coefficients,
+numerical inversion, uniform error bounds and an exact finite-sample guarantee.
+No second-order certificate is implied by the diagnostic. This limitation
+language is sufficiently explicit. Its correspondence to James's original
+page-329 qualifications is now directly confirmed. Reading the second-order
+expression does not promote it into a fully audited proof or implementation.
+
+The report also appropriately separates an omnibus equality-of-means test
+from individual pair conclusions, simultaneous intervals, variance-equality
+tests, multiplicity control and data-dependent procedure selection.
+
+The Ge receipt is internally consistent between Section 1 and Part Z.1. It
+preserves the bounded GO, attributes prior computations to the received review,
+and explicitly disclaims a newly authenticated signed review, a fresh Ge
+scientific review, full completion of the older delivery requirements, formal
+independence satisfaction and hold acceptance. The visible historical excerpt
+supports the bounded verdict, zero counts and preservation-check account.
+The complete original conversational Ge review is not supplied in this task;
+full line-by-line receipt fidelity, including every provenance assertion, is
+therefore not independently authenticated. This is an evidence limitation,
+not a demonstrated misstatement. No new Ge scientific review was performed.
+
+The Y.5 and Z.5 ledgers agree: 9 CLOSED, 1 PARTIAL and 4 INPUT_INCOMPLETE,
+with SR-A still INPUT_INCOMPLETE. SOURCE_SET_READY=false, NARROW, TRANSFER,
+prior limited acceptances and the remaining holds are preserved. No normative
+artifact, public tolerance, catalogue, production procedure or R4 file changes.
+
+## 5. Execution, omissions and disclosure
+
+The fixed, blob-verified author diagnostic was run with Python 3.12.14 and
+SciPy 1.17.0. It exited 0 and reported all bounded diagnostics passed, including
+24 two-group cases and 15 first-order rational cases. Its displayed numbers
+match the submitted report. Independent checks above are separately derived;
+the author diagnostic is supplementary evidence only.
+
+Git transport did not produce a checkout; fixed GitHub Git-data and content
+responses were used instead. Commit/tree/blob consistency and prefix equality
+were checked as described. No repository report, branch, commit or draft PR
+was created. The conditional repository-delivery checks (format:check,
+lint:markdown, direct validator and git diff --check) were not run. The author's
+reported repository validation is not relabelled as reviewer execution.
+
+The review did not inspect, edit or judge PR #174 or its associated work.
+It obtained no new scientific originals, requested no source-cap reapproval,
+closed no hold, merged nothing, and made no release-readiness determination.
+No historical simulation, complete James second-order audit, new Welch-source
+reading or follow-on Troendle investigation was performed.
+
+This is an OpenAI assistant's bounded review in the present conversation. The
+assistant did not author the submitted commit in this conversation. Historical
+conversation summaries and the supplied author report were visible, so this is
+not a blind review. No distinct-provider/model independence, exact model-build
+attestation, independent human review or satisfaction of the formal research
+independence gate is asserted. No subagents were used.
+
+## 6. Completion and remaining boundaries
+
+The mandatory James source-identity, page, first-order formula, normalization,
+notation and approximation-caveat checks are now complete. The previously
+completed Brown-Forsythe, repository preservation and independent numerical
+checks are retained for the same fixed commit; they were not needlessly rerun.
+No author-record repair was identified.
+
+The Ge account remains an attributed receipt, not an independently authenticated
+copy of the full earlier conversational review. The present GO does not certify
+unseen wording or resolve the formal independence gate. If full receipt
+correspondence is needed separately, the complete original review account would
+be required. This is not a request to reopen Ge's scientific investigation.
+
+The next Troendle investigation described in the author's Section 9 is a
+separate task and was not begun here. No new source acquisition, hold closure,
+merge or release-readiness decision follows from this bounded GO.
