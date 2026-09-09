@@ -4681,3 +4681,193 @@ REPAIR_REQUIRED for this synthesis, with severity and exact conditions. If more
 work is needed, include an executable bounded investigation/repair prompt.
 Do not grant formal hold acceptance, merge, adopt a procedure, open discussion
 or release. A GO permits the separate steward acceptance decision to be presented.
+
+## Part U — Scoped SR-D steward acceptance
+
+**Status: informative steward acceptance record, 2026-09-09; non-normative.**
+SR-D is accepted as `CLOSED` for the bounded source-completion characterization
+reviewed in Part T. The previously approved CLS-02/04 source-basis exception stays
+in effect. This record grants no method selection, implementation, merge,
+public-opening or release permission.
+
+### U.1 Fixed inputs and preservation
+
+The fixed author synthesis is PR #242, commit
+`8a1b5f9da70c654c03e0deb0229d2abd592aee44`, sole parent
+`00f50638d3389d2d901fcadb5e2d03a5f2bd4f78`, tree
+`f453bb9d6a5246dcefa4ac1562c9e77fe18b0c49`. Its result blob is
+`0077a749490ac6b288eb578e520071e5fe1a1a98`, 454817 bytes, SHA-256
+`016605bec49391177c84fa0549ba40e6ef82b3a6873a1150c833a76e81c7de89`.
+All 454817 Parts A-T bytes are preserved as an exact prefix here, including the
+426114 Parts A-S bytes identified in T.1. Earlier PENDING and INPUT_INCOMPLETE
+statements remain historical records rather than being rewritten.
+
+The independent synthesis review is PR #244, commit
+`8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4`, sole parent the Part T commit above,
+tree `3f95e2a7cdeb026cdc511ca2b426c2647aa9e97a`. Its report at
+`review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md` has blob
+`ad5f229d36a8dcec55d8a9fdaed9ce29aaf0acb5`, 35242 bytes, SHA-256
+`dd6b3318cbbed36f130704ce24eea0865fae8254aa9307084df3b1152ca0d25a`.
+The coordinator fetched these Git objects, re-derived the identities, read the
+report in full and confirmed GO with zero BLOCKER, zero SHOULD-FIX and four
+optional notes. CI runs 34305483112 (#242) and 34306590720 (#244) completed
+successfully. This record uses the fixed #244 commit as sole parent.
+
+All T.1 inputs, reports, scripts, the semantic comparison, original commission and
+four original-artifact identities remain unchanged. PR #237 remains a separately
+pinned input rather than an ancestor. No PDF, image or full extraction is added.
+No new primary reading or statistical rerun is claimed. The source inspection and
+calculations reported in #244 are reused with their stated boundaries.
+
+### U.2 Decision presented and explicitly approved
+
+After receiving PR #244, the coordinator presented a concrete proposal to steward
+Tasuku Kobayashi: formally accept SR-D source completion only within the already
+approved and reviewed scope, retain the unread 1995 attribution and every named
+limitation, and leave method adoption, implementation, merge and public opening
+outside the decision. The proposal and note handling were recorded in the PR #242
+receipt, with a continuation receipt in PR #231. The steward explicitly approved
+that proposal in the continuing conversation on 2026-09-09.
+
+The following is the English record of the approved decision, not a verbatim
+quotation or an independently signed GitHub vote:
+
+1. Accept SR-D as `CLOSED` for source completion within Part T.2-T.6, supported by
+   the fixed author synthesis and PR #244's scoped independent GO. The former
+   author candidate is now a steward-accepted source-completion result.
+2. Retain the already approved two-entry source-basis exception: Wiens 2003
+   pp.212-213 supports CLS-02's prospective fixed sequence at alpha, stopping at
+   the first non-rejection; Dmitrienko et al. 2003 pp.2389-2391 supports CLS-04's
+   two-family serial weighted-Bonferroni construction and closed-testing bound.
+   SRC-27(b), Maurer-Hothorn-Lehmacher 1995, is not required for those two bounded
+   characterizations. Its attribution and exact original formulation remain
+   unverified. No other source obligation changes, and the historical commission
+   remains intact. This restates the existing exception rather than granting a
+   second or broader waiver.
+3. Accept the scoped independent-pass determination based on #244's disclosed
+   separate context and non-involvement relative to the OpenAI-assisted author
+   record. Do not infer independence among all prior investigations or model
+   identity from Git metadata.
+4. Preserve all conflicts, proof-strength qualifications, excluded variants and
+   reopen conditions in T.4-T.6, with the clarifications in U.3. Accepting source
+   completion does not certify every theorem cited by the originals or authorize
+   any procedure as a Protocol operation.
+
+The continuing OpenAI-assisted author/coordinator prepared this record and has
+prior involvement in the author synthesis and acceptance discussion. This is not
+an independent review or a claim of unaided human authorship. PR #244 Section 2
+reports configured and last-served model `claude-fable-5-1`, separate session and
+no prior authorship. That testimony is reused as disclosed; no independent model
+build verification is claimed. The review is distinct from the author context,
+but not an additional model family relative to #236/#237/#241. The approval
+accounts in Part T and PR bodies record the same conversation decision, not
+multiple independent votes or attestations.
+
+### U.3 Disposition of PR #244's four optional notes
+
+**N-1: source expression versus clipping convention.** Dmitrienko p.2392 states
+the uncapped gate expression `p_i/w_i`; `min(1,p_i/w_i)` is the clipped convention
+used by the reviewed calculations. They are not identical numerical expressions.
+Their threshold decisions agree for `0 <= alpha < 1`. Do not adopt #244 N-1's
+extension of that statement to every `alpha <= 1`: at alpha=1, p=1 and w=1/2 give
+raw=2 and clipped=1, so raw<=alpha is false while clipped<=alpha is true. The
+coordinator checked that example with exact rational arithmetic when receiving
+PR #244. Part T.5 already preserves the alpha=1 boundary; this clarification maintains
+it. No clipping, endpoint or implementation convention is selected here.
+
+**N-2: explicit decision record.** U.2 states the exact proposal approved by the
+steward and its scope, including the earlier two-entry exception and the new
+formal source-completion acceptance. It identifies conversation approval honestly
+and does not turn the coordinator's wording into a purported verbatim statement,
+independent signature or separate vote. The steward was presented the concrete
+bounded decision before approving it; no repeat approval is needed.
+
+**N-3: source premise versus author generalization.** Wiens p.213 specifies
+prescribed allocations summing to alpha. The reviewed author proof also works
+when those allocations sum to at most alpha, because its deterministic first-error
+budgets have that bound. The weaker premise is an author derivation, not a new
+quotation from Wiens. The source's displayed I=2 proof and its general-I assertion
+remain distinct from the separately reviewed author proof.
+
+**N-4: additional source pinpoints.** Supplement T.3's Bretz row with p.587 for
+the subclass statement attributed to reference [9], and p.604, reference 2, for
+the supplied bibliographic identity of the 1995 chapter. These pinpoints are
+reused from PR #236 F-D-09/S-3 as identified by #244 N-4. They do not establish
+what the unread chapter says, priority, or the imported theorem's full proof.
+No fresh PDF inspection is claimed in this record.
+
+These clarifications leave the reviewed Part T and #244 artifacts immutable.
+They do not expand the source basis, alter a tested procedure or change numerical
+results. The alpha=1 sentence in #244 N-1 is not an accepted claim.
+
+### U.4 Successor state and remaining work
+
+| Source-result disposition | Holds                                          | Count |
+| ------------------------- | ---------------------------------------------- | ----- |
+| CLOSED                    | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-K, SR-L | 8     |
+| PARTIAL                   | SR-H                                           | 1     |
+| INPUT_INCOMPLETE          | SR-A, SR-E, SR-J, RSM-01, RSM-02               | 5     |
+
+The source-result ledger remains 8/1/5. The change from Part T is SR-D's formal
+acceptance, not the row counts and not a claim that all eight CLOSED rows have
+been formally accepted through this decision. SR-I acceptance and all other hold
+states are preserved. Overall remains `INPUT_INCOMPLETE`; `SOURCE_SET_READY`
+remains false. `NARROW`, `TRANSFER`, existing `R3-CAND`/`RES-ONLY` tokens and R4
+remain unchanged. Custody remains 42 numbered originals plus one corrigendum,
+43 artifacts. Historical preparation counts and main integration still require
+their separate reconciliation.
+
+T.6's reopen conditions remain in full, including the 1995 chapter if historical
+attribution or a dependent formulation becomes decision-bearing; Simes/resampling
+validity and gatekeeping order; graph necessity, broad representability,
+epsilon-origin and multi-family extensions; confidence bounds and directional
+error; improved/modified fallback; Marcus Table 1 oracle work; and raw/normalized,
+zero-weight, equality/tie, alpha-domain and stopping conventions before any
+implementation. The separate SR-J bibliographic question remains separate.
+
+This acceptance removes the bounded SR-D source-acquisition obstacle. It does not
+make the comprehensive source set ready or open public discussion. Remaining
+source work, accepted scope/RFC integration, independent readiness review and the
+public-opening decision remain necessary. The four supplied PDFs suffice for
+this record's reused evidence; no additional 1995 chapter acquisition is requested
+for this bounded record-application step.
+
+### U.5 Validation and limited record-application review
+
+This change only appends Part U to the prescribed source-acquisition result.
+Actual format:check, lint:markdown, direct validator, whitespace, prefix and
+single-file-diff outcomes and immutable successor identity are recorded in the
+PR body. Same-lockfile dependencies may be reused. No full pnpm check, tests,
+typecheck, generated check, diagnostic rerun, new simulation or full source survey
+is claimed. The preceding accepted scientific scope does not change.
+
+Execute this limited review at the full fixed Part U commit in the PR body:
+
+1. Read AGENTS and the ordered Read-first files, the acquisition commission,
+   U.1-U.5, fixed Part T and PR #244. Verify the sole parent is
+   `8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4`, only the prescribed result file
+   changes, and the first 454817 bytes match U.1's exact hash. Verify the fixed
+   review's commit/tree/blob/length/SHA-256. Disclose prior involvement and
+   model/context basis. Do not silently follow a moving head.
+2. Check faithful recording/application of the already approved decision, the
+   unchanged two-entry exception, the scoped independence determination, the
+   four optional notes and the distinction between acceptance and adoption.
+   Do not request the source-basis or formal acceptance approval again.
+   Confirm U.3 keeps the alpha=1 exception and distinguishes source premises
+   from author derivations. Reuse prior source checks explicitly; no PDF is
+   needed by default. Inspect a source only for a concrete new discrepancy.
+3. Verify 8/1/5, SR-D's newly accepted source-completion status, preserved other
+   holds and residuals, and the unchanged overall/public-opening boundary.
+   Review this application record, not a new six-entry or A-D investigation.
+4. Start a fresh neutral branch `review/r3-srd-acceptance-20260909` (fresh suffix
+   if occupied) from the fixed Part U commit as sole parent. Add an English
+   report at `review-inputs/r3-srd-acceptance/REVIEW-RESULT.md`. Preserve all
+   inputs. Run format:check, lint:markdown, direct validator and diff check;
+   report actual outputs and omissions. Open a separate draft PR against
+   `research/r3-srd-acceptance-20260909`, with exact commit/parent/tree/blob,
+   byte count/SHA-256 and whether the reviewed head moved. Use the specified
+   neutral branch only; do not create a session-labelled mirror.
+5. Return GO or REPAIR_REQUIRED for faithful record application. If repair is
+   needed, give its exact bounded scope. No merge, procedure adoption,
+   additional hold decision, public opening or release. This check does not
+   reopen the steward's already approved acceptance merely by being pending.
