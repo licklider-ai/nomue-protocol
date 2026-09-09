@@ -5478,3 +5478,152 @@ record check is pending.
 The acceptance-record PR body supplies immutable identity and actual validation
 outputs. This Part changes no scientific script or authoritative artifact; no
 full-suite or statistical execution is claimed unless separately recorded.
+
+## Part Y. Approved supplied-corpus cap and bounded resampling investigation
+
+2026-09-09. The corpus restriction below is approved and effective. The new
+scientific findings are an author investigation awaiting separate primary-source
+review; no hold acceptance, catalogue split or method adoption occurs here.
+
+### Y.1. Fixed input and completed SR-J sequence
+
+This part starts from PR #259 commit
+`72e4dd3b71868cf6423dfefa231751a03a1b2161`, sole parent
+`7e513d174de83a564a91bea9168e45f623c58448`, tree
+`0b155357bdf8de3a353adab5c2b1e330a8ebd6dc`. Its record-application review is GO,
+with zero findings in every category, for the already approved limited SR-J
+acceptance. That review is reused in its actual scope, not as resampling evidence.
+
+The preserved Parts A-X result has blob
+`b8e6d35ded0071f8a4c7d30d222937fb351092a8`, 523962 bytes, SHA-256
+`f18f70b3b6b65accbbcc0b2a7ae27e99a303482b712d30f0a044bfe6bdc5805c`.
+Those bytes remain the exact prefix of this file. The PR #259 report remains
+blob `3a0dfec6456f7156f4a712e9908838a9edf9c9e6`, 26051 bytes, SHA-256
+`c4172ce4a18e5cc305015c3c283b420e6131f50b932b2e99367a8cd85572fcc4`.
+The fixed acquisition commission and semantic catalogue remain unchanged.
+
+### Y.2. New steward instruction and its application
+
+The steward confirmed proceeding and explicitly restricted originals to those
+already supplied, with a correspondingly limited target scope. This is an
+English account of that instruction, not a verbatim transcript or a signed
+GitHub vote. It is recorded as approved now; no repeat approval is requested.
+
+For this continuation, use the received corpus only. Do not seek or require
+new originals as a condition of completing the bounded work. Claims that need
+unprovided texts remain unverified and outside active verification. Earlier
+minimum-acquisition requests are superseded for this task; their historical
+findings and reopen conditions are preserved. A reference cited by a supplied
+paper is not itself a supplied original. This decision neither asserts that
+unread sources support a claim nor approves an unspecified substitute.
+
+The inventory is unchanged: supplier 01-37 and 39-43, plus the recorded
+corrigendum, or 42+1 artifacts. The inventory is reused from custody records,
+not newly rehashed in full. Supplier 47 has no confirmed receipt here. No source
+purchase, outside-original lookup or new receipt is part of this continuation.
+
+### Y.3. Bounded source work and excluded claims
+
+The complete claim-routing table and evidence are in
+`review-inputs/r3-supplied-source-scope/REVIEW-RESULT.md`, Sections 2-6.
+The table below records the active work boundary, not replacement dispositions.
+
+| Entry  | Active supplied-source scope                                                          | Excluded or unresolved scope                                                                                                  |
+| ------ | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| SR-A   | Reuse Welch 1951; next inspect supplied James 1951 (08) and Brown-Forsythe 1974 (33). | Unread Scheffe 1959/Fisher-lineage formulation and historical claims; no new OMN-01 guarantee inferred from Ge.               |
+| SR-E   | Existing SRC-06-grounded mathematical scope and its limits remain available.          | Unverified Tukey 1953 manuscript wording, archival identity and priority; no new acquisition prerequisite.                    |
+| SR-H   | Reuse prior supported multiple-range findings.                                        | APR-12 characterization, unresolved monotonicity/selection applicability and unsupported numerical reuse; no invented repair. |
+| RSM-01 | Ge's explicit maxT/minP formulations and Westfall's included discussion.              | The unread 1993 monograph, all-variant equivalence, and broader outputs are not verified.                                     |
+| RSM-02 | Ge's identified FWER algorithm slice and its conditions.                              | Universal pairwise/step-down characterization and unprovided variant texts; no catalogue split.                               |
+
+The previously limited SR-D/SR-I/SR-J acceptances stand. Unread Naik and other
+sources behind broader accepted-family claims remain unverified. Within this
+capped task, the corresponding reopen conditions mark excluded claims rather
+than renewed procurement obligations. Any future expansion would be separately
+scoped; the present instruction is sufficient to proceed now.
+
+### Y.4. Supplier 39 findings and limitations
+
+The supplied `39_Ge_2003.pdf` was retrieved and independently rehashed:
+3452172 bytes, 77 pages, SHA-256
+`abe8095de12b3499f863c3e5aced94a90812f0732d80423374eadafdc20a7f68`.
+These facts match N.3. No copyrighted PDF or extracted text is committed.
+The main article, discussions and rejoinder are distinguished. The report
+specifies pages actually read and nine pages inspected as images; it makes no
+full-77-page, FDR/pFDR, empirical-data or historical-software certification.
+
+The directly inspected definitions are (3.6), (3.7), (3.10), (3.11), Boxes 2-4
+and the inclusive tie-rank rule (4.1). Sorted tail ranks and common permutation
+columns support the fast minP computation. The no-ties p.22 index m is treated
+as B, following the explicitly B-valued row and (4.1); the report records this
+indexing issue rather than concealing the correction.
+
+Strong control is conditional on valid intersection calibration and compatible
+joint subset reference laws. Westfall's discussion pp.62-64 explicitly warns
+that identical marginal laws do not suffice for a joint permutation test.
+The main-text/rejoinder row-local argument is not accepted as an unconditional
+proof of subset pivotality. Report Section 5 gives a sufficient first-error
+proof and closure-equivalence derivation as author work, not as an inspected
+Westfall-Young monograph proof. Different marginal distributions do not alone
+invalidate that conditional proof or require maxT to equal minP.
+
+A new exact author counterexample uses complete-reference `(U,U,1)` and
+partial-null `(U,21/20-U,0)`, with U uniform on the 20 positive twentieths.
+Both true marginal p-values are valid, but the changed joint subset law gives
+FWER=1/10 at alpha=1/20 for complete-null-calibrated step-down minP. This is
+separate from Westfall's printed normal example, which was not simulated.
+
+The disposable standard-library program
+`review-inputs/r3-supplied-source-scope/check-ge.py` checks all 729 two-by-three
+integer tables on {0,1,2}, plus all 20 allocations in a six-sample balanced
+example. It compares sorted ranks with direct counts and ordered suffix tests
+with all nonempty closure intersections: 4414 closure/shortcut comparisons.
+All passed, as did exact finite-table calibration and detection of naive tie
+ranking and misaligned permutation rows. The six-sample outputs are maxT
+`(1/10,1/5,1/5)` and minP `(1/10,1/5,1/10)`. The program's exact output and
+limits are in report Section 6. These checks are not a separate investigator,
+a general Monte Carlo theorem or a production numerical oracle.
+
+### Y.5. Ledger and provenance
+
+| Disposition      | Members                                              | Count |
+| ---------------- | ---------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-J, SR-K, SR-L |     9 |
+| PARTIAL          | SR-H                                                 |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, RSM-01, RSM-02                           |     4 |
+
+There is no transition from X.4 and no reduced-denominator readiness claim.
+Overall INPUT_INCOMPLETE, SOURCE_SET_READY=false, NARROW, TRANSFER, all
+R3-CAND/RES-ONLY classifications, other holds, R4 and prior limited acceptances
+remain unchanged. Missing inputs in the historical full catalogue are compatible
+with finishing a smaller informative investigation; they do not authorize
+unsupported scientific claims.
+
+This is an OpenAI Codex-assisted author/coordinator continuation with prior work
+and historical summaries in context. It is not an independent review or a
+verified model-build attestation. New reading, author proofs and diagnostics are
+separated from reused prior reviews and the steward's decision. No source-cap
+reapproval, formal new hold acceptance, implementation, merge or public opening
+is performed.
+
+### Y.6. Validation and concrete handoff
+
+The resulting tree passes `pnpm format:check`, `pnpm lint:markdown`,
+`node --import tsx tooling/src/validate.ts` and `git diff --cached --check`,
+all exit 0. The exact diagnostic exits 0 with
+`ALL BOUNDED GE DIAGNOSTICS PASSED`. Prefix and unchanged-input hashes are
+verified directly before submission. Submission commit/tree/blob/bytes/SHA-256
+are placed in the draft PR body to avoid self-referential output hashes.
+No full pnpm check, tests, typecheck, generated checks, prior statistical
+scripts, biological datasets or Monte Carlo simulation is run. No authoritative
+artifact changes.
+
+The next review instruction is report Section 8. It fixes the submitted commit,
+requires the same supplied PDF, independent proof/numerical checks, and a separate
+English report/draft PR on a neutral branch. It expressly excludes new-original
+acquisition, renewed scope approval, hold closure, catalogue redefinition and
+merge. The present author does not self-certify that independent gate.
+
+After that bounded review, continue with the provided James and Brown-Forsythe
+papers in SR-A, reusing the already recorded Welch evidence. The unavailable
+Scheffe/Fisher-lineage and Tukey-original claims stay outside active verification.
