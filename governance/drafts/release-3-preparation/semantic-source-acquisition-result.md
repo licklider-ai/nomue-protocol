@@ -3908,3 +3908,319 @@ Unavailable suppliers 38/44/45/46 remain explicit gaps in their own routes.
 They do not block this SR-I pass. Main integration of the wider R3 chain remains
 separate from intake into its research aggregation branch. No method adoption,
 public discussion opening, publication or release is enacted here.
+
+## Part R — SR-I author result and independent-investigation intake (2026-09-09)
+
+### R.1 Fixed inputs, roles and inspection order
+
+This is continuing OpenAI-assisted author work, not an independent review or a
+steward acceptance. It appends to Part Q at
+`7cf5a5d0a14446fce0a67d0850793bbd4e117d67`, sole parent
+`c6ba9c923d142e0dacbb62ea20009cbd0ecb34c5`, tree
+`f806edd99e94adbc9f12193ea52ec3a08611da20`. The result blob is
+`608cd7b04d2d34accb209060ee9163b39210f4f9` (389970 bytes; SHA-256
+`48adf4a0f94fd2c0d2fc509aef1a579feb8651d339135c021975093578621f32`).
+All Parts A–Q bytes are preserved. The commission remains blob
+`3c7ddcc696f0c284213f7efe0da68e747bc238d7`; the semantic input at
+`7bd9c5ab854777c3e99e624d9d2ed62731228852` remains blob
+`8f21526040924b891f64724c2d0fde9ea94eff92`.
+
+Independent investigation PR #226 is reused at commit
+`a3e1c735b7878be071dc7268c63c6f4bada25a9a`, sole parent the above Part Q
+commit, tree `d5f33ab36b764843bb651847389ce2e929214573`. Its
+`review-inputs/r3-sri-primary-investigation/REVIEW-RESULT.md` is blob
+`3520d2293bbbf855e07fee150953cc7709d6349f` (81005 bytes; SHA-256
+`d36cbc12cd91fb56851aef8e594f5752517b585120545fc74b5cc68da47d8411`).
+Its sibling `reproduce-sr-i.py` is blob
+`19d7d172f916857fbd7ab97b2f9809c7f8bd2876` (15752 bytes; SHA-256
+`289587151072cf5ac9b9f7381006a3bd269e7ca6034ab07039efa453992e6d9b`).
+These identities were re-derived from fetched Git objects. The investigation
+proposes source completion; it did not issue GO on this later author result.
+
+The governing instructions were checked first; the current main versions of the
+Read first documents match the fixed input. This author read PR #226's full
+record, including Sections 4–14, before the three PDFs. Its Section 18 requested
+the opposite order. That ordering cannot now be recreated: this pass is openly
+non-blind and uses the investigation as a primary input, supplemented by direct
+author source checks. It is not a parallel independent pass. No independence is
+claimed merely because this is a later turn. The investigation's separate-context
+and service-reported `claude-fable-5-1` disclosures are preserved; the scoped
+steward determination for SR-F does not automatically cover SR-I.
+
+### R.2 Received originals and direct reading
+
+Previously supplied local PDFs were used, with stored D.2/N.3 identities checked
+before rehashing. No network acquisition or additional purchase was needed.
+All three hashes, lengths and PDF page counts matched on 2026-09-09:
+
+| Supplier | Bibliography                                                                                                                                                            | Bytes   | PDF pages | SHA-256                                                            |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------------------------------------------------------------ |
+| 34       | Games and Howell (1976), Pairwise Multiple Comparison Procedures with Unequal N's and/or Variances: A Monte Carlo Study; Journal of Educational Statistics 1(2):113–125 | 994128  | 13        | `eee42d00cdd66f9f24e334c2db503e17233fc73b6a87ed5f85c6868f17a2c021` |
+| 27       | Tamhane (1979), A Comparison of Procedures for Multiple Comparisons of Means with Unequal Variances; JASA 74:471–480; DOI `10.1080/01621459.1979.10482541`              | 1759491 | 11        | `f6183845a373361b8840040ecd9f0afce59cb8cb5170abf44c551376cd414bf0` |
+| 28       | Dunnett (1980b), Pairwise Multiple Comparisons in the Unequal Variance Case; JASA 75:796–800; DOI `10.1080/01621459.1980.10477552`                                      | 726755  | 6         | `ac862081c93be6ce38ba0dc17b811cb3dd96227cf6ba50f66a7c35715a2870a0` |
+
+The text of all printed pages was read. Additional page-image checks covered
+Games–Howell pp.116–118, 121–123; Tamhane pp.471, 473–477; Dunnett pp.796–800.
+PDF page 1 is printed p.113 for Games–Howell; the other two have a publisher
+cover, so PDF page 2 is printed p.471 and p.796 respectively. Pages outside
+that image list were read from extraction only. PyMuPDF was used for extraction
+and rendering; no image, PDF or full extraction is included in Git.
+
+Supplier 28 is not the separate Dunnett paper at pp.789–795. These are repeat
+checks of received artifacts, not three new receipts: 42 numbered originals plus
+one unnumbered corrigendum remain 43 artifacts. Unavailable 38/44/45/46 are
+unchanged and do not block the current SR-I scope.
+
+### R.3 Construction and claim-to-source mapping
+
+The bounded family is all `m = k*(k-1)/2` pairs of independent normal groups,
+with unknown means and possibly unequal variances and sample sizes. The target
+is simultaneous two-sided intervals for the true mean differences. Ordinary
+sample variances have `nu_i = n_i-1`; Tamhane p.471 and Dunnett p.796 also
+state the model with an independent variance estimate on specified `nu_i` df.
+The latter is not a license to insert arbitrary variance estimates.
+
+For readable comparison define `a_i = s_i^2/n_i`,
+`SE_ij = sqrt(a_i+a_j)`, and
+`nu_W = (a_i+a_j)^2/(a_i^2/nu_i+a_j^2/nu_j)` where defined. Let
+`q(alpha,k,nu)` denote the upper-alpha Studentized-range point and
+`u = (1-(1-alpha)^(1/m))/2` the upper-tail t probability. These are notation
+normalizations of the sources, not new Protocol definitions.
+
+| Claim / variant                        | Direct primary pinpoints                                                                                | Bounded source result                                                                                                                                                                                                           |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C-I1 / GH construction                 | Games–Howell pp.116–117, pp.122–123 Table V; Tamhane p.473; Dunnett p.796 (1.2)–(1.4)                   | Statistic is mean difference divided by `SE_ij`; interval half-width is `q(alpha,k,nu_W)*SE_ij/sqrt(2)`; Games–Howell calls it Method BF. This BF label is not Tamhane's Brown–Forsythe BF.                                     |
+| C-I1 / GH evidence and claimed control | Games–Howell pp.116–118, p.120, Table III p.121; Tamhane pp.475–477 Table 3; Dunnett pp.797–799 Table 1 | Monte Carlo evidence for finite-sample error behaviour, with documented nominal-level exceedance. No general finite-sample level-alpha guarantee for GH is established by these assigned texts.                                 |
+| C-I2 / T2                              | Tamhane p.473 (2.5) and T2 paragraph; Dunnett p.796 (1.4), (1.7), pp.797–799                            | Half-width `t_upper(u,nu_W)*SE_ij`; the two-sided gamma in Dunnett equals twice Tamhane's upper-tail gamma. Dunnett Table 1 supplies unmodified T2 simulation evidence.                                                         |
+| C-I2 / T2-prime                        | Tamhane p.474 Section 3.2, p.475 glossary, p.477 Table 3                                                | Replaces Welch df with `n_i+n_j-2` in stated balance cases. The 1979 Table 3 evidence belongs to this primed variant, not unmodified T2.                                                                                        |
+| C-I2 / T3                              | Dunnett p.796 (1.4), (1.8), p.797, pp.798–799 Table 1 and Section 4.1                                   | Half-width is the SMM upper-alpha point for `m` normal coordinates at `nu_W` df times `SE_ij`. The SMM critical law uses one shared chi-square scale; it is not the maximum of independent t variables with independent scales. |
+| C-I2 / C                               | Dunnett p.796 (1.5)–(1.6), pp.798–800 Tables 1/2 and Section 4.3                                        | Half-width is `[a_i*q(alpha,k,nu_i)+a_j*q(alpha,k,nu_j)]*SE_ij/[(a_i+a_j)*sqrt(2)]`. Average the range points, not the df and not the sample variances into one common estimate.                                                |
+
+For C, the two input df are integers in the ordinary-sample simulations;
+the general model and formula do not state that every admissible variance
+estimate must have integer df. The implied single range df is a descriptive
+inverse, not the Welch formula. GH-prime is explicitly excluded from the GH
+reading: Tamhane p.474 reports it as substantially liberal and drops it.
+No new catalogue ID is minted for a primed variant or for the T3/C split.
+
+Tamhane p.472 discusses extending pairwise intervals to contrasts through an
+unread Hochberg (1975) lemma. That extension is outside the all-pairs claims here;
+it is not accurate to say that the paper never discusses contrasts. One-sided
+and adjusted-p outputs are not established by the present investigation.
+
+### R.4 Evidence strength and precise simulation boundaries
+
+The following are printed observations, not confidence guarantees for new data:
+
+| Source                           | Design / repetitions                                                                                                                                                            | Decision-bearing observations                                                                                                                                                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Games–Howell pp.116–118, 120–121 | Four groups; four variance patterns; moderate and small sample-size configurations; normally 1000 experiments per cell, with 2000 in the marked pooled/additional rows          | Table I BF rates range .041–.071; p.118 gives .0545–.0631 as a confidence interval for the mean FWI. Table III includes .092 at sample sizes (11,8,4,3), variances (1,3,5,7), versus nominal .05.                                       |
+| Tamhane pp.475–477               | Four or eight groups; eight configurations each; sample sizes 7–13; 1000 experiments per cell; .05 results printed                                                              | GH joint coverage reaches .936 for k=4 and .916 for k=8. T2-prime's k=4 row ranges .947–.968, and k=8 row .942–.973. Two k=4 cells and one k=8 cell are below .95, although none of the T2-prime cells has the paper's below-.942 flag. |
+| Dunnett pp.797–799               | Three base sample-size configurations, five tabulated variance multipliers, four size/df scales including infinity; 10000 draws per set with reused draws across configurations | Table 1 finite-df GH estimates include .0622 at k=8. All printed T2/T3 rates are below .05. C finite-df rates are below .05; its Simulation II known-variance cell at c=1 is .0503. These are observed estimates, not proofs.           |
+
+Tamhane's table reports coverage, whereas the other two tables above report
+error probabilities. Thus coverage .916 corresponds to error estimate .084.
+The .092 GH estimate is 4.2 percentage points above .05, or 84% relative excess;
+.084 is 3.4 points / 68% relative excess. Describing all configurations as only
+small or at most about 25% relative exceedances would understate these cells.
+These arithmetic comparisons do not identify the unknown true error rates.
+
+The papers' finite-df GH/T2/T3/C characterizations use approximate procedures
+and simulation-based assessments. This does not mean that every statement in
+all three papers lacks mathematical derivation: Tamhane includes other
+procedures and distributional calculations. In particular, its p.476 Table 2
+SMM constants are for GT2, not a direct T2 simulation or an early T3 definition.
+Dunnett pp.799–800 asserts a known-variance GH/C bound by reference to his
+other 1980 paper. That proof dependency was not checked here; an earlier
+catalogue's evidence label cannot establish that the unread paper has no proof.
+No known-variance guarantee is adopted in this finite-df source characterization.
+
+The common-scale Studentized inequality in Part H is not a proof of the
+heteroscedastic procedures' joint behaviour with pair-specific random standard
+errors and random Welch df. Calling a procedure approximate-conservative does
+not establish strong or weak level-alpha control throughout its input domain.
+
+### R.5 S-1–S-3 response, precision corrections and retained doubts
+
+The author accepts S-1–S-3 as **proposed informative narrowings**, pending exact-head
+review and steward acceptance. They are not silently applied to the fixed catalogue:
+
+| Finding      | Author response                                                                                                                                                                                                                                                            | Fixed classification retained                                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| S-1 / HET-01 | Replace the reading of pending evidence with simulation-based approximate intervals, documented exceedances at the stated configurations, and no general finite-df level-alpha guarantee in the assigned texts. Exclude GH-prime. Do not qualify all exceedances as small. | `R3-CAND` as an unselected implementation candidate; this status alone authorizes no guaranteed-FWER Contract or implementation. |
+| S-2 / HET-02 | Identify unmodified T2 with Welch df and the Dunnett 1980b experiments; separately record T2-prime and Tamhane 1979's experiments. Tamhane 1977 is an attribution through the inspected texts, not a claimed direct reading.                                               | `RES-ONLY`; variant split is a reopen trigger, not a new ID or replacement of HET-02.                                            |
+| S-3 / HET-03 | Keep T3 (SMM at Welch df) and C (weighted range points at the two variance-estimate df) explicitly separate. Width comparisons depend on df and the design, not one universal preference between them.                                                                     | `RES-ONLY`; two descriptive variants under the unchanged entry.                                                                  |
+
+Direct inspection identifies precision corrections to PR #226, which is retained
+unchanged. These are author findings for the next independent reviewer:
+
+1. **T2-prime cells and bounds.** PR #226 Sections 5.4/11 give an overbroad
+   conservative-in-every-cell summary and an incorrect k=4 upper endpoint .973.
+   The p.477 image gives .947–.968 for k=4 and .942–.973 for k=8. Lack of the
+   source's significance flag is not equivalent to every estimate reaching .95.
+2. **Tamhane p.474 comparison signs.** PR #226 Section 5.2 transcribes some
+   endpoints strictly. The four printed conditions use non-strict comparisons:
+   `9/10 <= n_i/n_j <= 10/9`; or `9/10 <= V <= 10/9`; or
+   `4/5 <= n_i/n_j <= 5/4` and `1/2 <= V <= 2`; or
+   `2/3 <= n_i/n_j <= 3/2` and `3/4 <= V <= 4/3`, with
+   `V=(s_i^2/n_i)/(s_j^2/n_j)`. This transcribes T2-prime/GH-prime identity
+   only; no variant is adopted. The original does not specify software handling
+   when that ratio is undefined.
+3. **Magnitude and proof scope.** R.4 replaces PR #226 Section 8.1's relative
+   excess summary and limits the no-proof statement to the finite-df procedures
+   under investigation. Known-variance proof content stays unverified.
+4. **Dunnett p.800 direction.** The printed text associates the point to the
+   left on a reciprocal-df plot with smaller df. Its displayed identity instead
+   makes `1/nu_W` smaller and `nu_W` larger than the weighted reciprocal-df
+   comparator. For `nu_i=6`, `nu_j=12`, `V=1`, that comparator is 8 and
+   `nu_W=16`. The plotted direction is retained; the accompanying smaller-df
+   phrase is a source inconsistency, not adopted. This refines the loose-scale
+   observation reused from PR #226 Sections 6.5/9/12.5.
+5. **Dunnett p.797 wording.** The text describes GH's joint confidence
+   coefficient as sometimes exceeding `1-alpha` while referring to the flaw
+   discussed by Tamhane. Tamhane p.477 and Dunnett's own Table 1 document
+   noncoverage excess / coverage shortfall instead. Preserve the wording as a
+   discrepancy; do not silently reverse its sign or call it a formal erratum.
+6. **Tamhane p.476 generator expression.** The printed even-df chi-square
+   expression is `-sum(log(U_i), i=1..nu/2)` without a factor 2. Under the
+   stated uniform model that expression has mean `nu/2`, not `nu`.
+   The author infers a missing factor 2 if the intended variate is chi-square;
+   the actual historical program has not been inspected, so this is not evidence
+   that the simulation itself used the printed expression. Do not certify its
+   generator from this prose or rerun it literally as a chi-square sampler.
+
+These issues affect precise description and possible numerical reuse; none
+turns the assigned texts back into missing sources. A reviewer may nevertheless
+identify a material unresolved source conflict and require separate adjudication.
+No author claim here closes a finding independently.
+
+PR #226 N-1 printed doubts (GH p.123 4.69; Tamhane reference years; Dunnett's
+seven mentioned versus five tabulated c values) are retained as attributed
+observations, without an erratum search. The GH printed value was viewed here;
+its reported quantile recomputation is reused, not repeated. Other reference-year
+observations were read in extraction, not newly verified in page images.
+
+### R.6 Author inferences, diagnostic reuse and future decisions
+
+For each of these location-invariant interval constructions, subtracting the
+true mean difference removes the means from the joint noncoverage event. The
+all-pairs noncoverage probability is therefore the same under different mean
+vectors within the stated model. False rejections among true nulls form a subset
+of that event. This supports reuse of complete-null simulations to study joint
+noncoverage, but does not convert a simulated estimate into a proved alpha bound.
+This is author reasoning agreeing with PR #226 I-1, not a sourced theorem.
+
+With `w=V/(V+1)` and `h=2/(1/nu_i+1/nu_j)`, direct algebra gives
+`1/nu_W = w^2/nu_i + (1-w)^2/nu_j` and
+`1/nu_prime = w/nu_i + (1-w)/nu_j`, hence
+`1/nu_W = 1/nu_prime - 2*w*(1-w)/h`. Exact rational arithmetic checked the
+R.5 example. It also counted the T2-prime below-.95 cells and computed the
+excesses reported in R.4. No quantile, quadrature or Monte Carlo was rerun.
+PR #226 Section 12 is reused as attributed diagnostic evidence: its 40000-draw
+spot checks are not literal agreement with printed probabilities or a replication
+of every cell, and its numerical routes are not certified error bounds.
+
+The following work allocation is proposed, not a method-selection decision:
+
+- **Semantic lane first:** choose the exact procedure/variant, comparison family,
+  sidedness, meaning of any approximation claim, minimum sample-size/df domain,
+  and policy for one or both zero sample variances. The GH p.122 example explicitly
+  mentions one zero variance; it does not define a complete admissibility policy.
+  One zero with the other positive can yield a defined pair formula; both zero
+  create undefined Welch df. Neither outcome is silently turned into a rule.
+- **Semantic and numerical coordination:** decide whether the target uses the
+  continuous-df law or deliberately reproduces historical rounding/interpolation.
+  GH p.123 rounds a worked df; Tamhane p.476 describes harmonic interpolation for
+  range tables; Dunnett p.797 uses quadratic interpolation on reciprocal df.
+  These choices change results, so they are not merely implementation tuning.
+- **Numerical lane after the target is fixed:** establish admissible-domain
+  evaluation, tail/quantile accuracy, numerical failure handling and independent
+  oracles for the chosen t, range or SMM law. Reuse of existing Welch-df or t
+  numerics does not certify range/SMM kernels or statistical coverage.
+
+Recommendation: retain HET-01's current candidate label while explicitly withholding
+level-alpha guarantee and implementation approval. Reclassification, adoption of
+an approximate reporting Contract, or a narrower guaranteed domain requires a
+separate supported decision. Tamhane (1977) is needed only for claims depending
+on its uninspected original material; Keselman–Rogan (1978) becomes relevant if
+claiming more favourable GH control in a defined domain. Acquiring that study
+alone would not erase the documented exceedances. Dunnett (1980a) is required
+before relying on its known-variance proof pointer; check existing SRC-08 custody
+before any reacquisition. The all-contrasts extension likewise reopens its own
+proof dependency. None is asserted as completed here.
+
+### R.7 Proposed disposition and full source-result ledger
+
+C-I1 is supported as a construction and a characterization of simulation evidence,
+not a guarantee of level-alpha control. C-I2 is supported with the T2/T2-prime and
+T3/C distinctions. The author recommends accepting S-1–S-3 as bounded catalogue
+narrowings, rather than inventing a conflict between source formulas that agree.
+The new precision findings above remain explicit review inputs.
+
+**Current successor disposition: SR-I PARTIAL**, with named remaining gaps:
+independent review of this author synthesis and the proposed narrowing/disposition
+acceptance. Required assigned source text is no longer unavailable. On favourable
+exact-head review and scoped steward acceptance, SR-I CLOSED is proposed only
+for source completion; that conditional ledger would be 7/1/6. Neither formal
+acceptance nor that conditional change is enacted here. The separate-model
+question for SR-I remains a scoped determination on ordinary provenance evidence;
+past PENDING records and the already accepted SR-F decision remain untouched.
+
+| Disposition      | Holds                                  | Count |
+| ---------------- | -------------------------------------- | ----- |
+| CLOSED           | SR-B, SR-C, SR-F, SR-G, SR-K, SR-L     | 6     |
+| PARTIAL          | SR-H, SR-I                             | 2     |
+| INPUT_INCOMPLETE | SR-A, SR-D, SR-E, SR-J, RSM-01, RSM-02 | 6     |
+
+This ledger is not a list of formally accepted holds. Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY false, the existing semantic NARROW, other hold dispositions,
+R3-CAND/RES-ONLY/TRANSFER classifications, and the separate R4 state remain.
+No source result is promoted to numerical certification, method adoption,
+public discussion opening or release.
+
+### R.8 Exact-head independent review handoff
+
+Review Part R only at the complete fixed head and result identity in this PR's
+body. Start by reading AGENTS.md and its ordered Read first documents, applicable
+local instructions, the unchanged commission and fixed semantic entries for
+C-I1/C-I2 and HET-01/02/03. Verify the sole parent is Part Q commit
+`7cf5a5d0a14446fce0a67d0850793bbd4e117d67`, the 389970-byte Parts A–Q prefix
+is byte-identical, and only this result file changed. Reuse PR #226 at the full
+commit/blob identities in R.1, disclosing non-blind reading and any prior role.
+The reviewer must not have authored Part R and must disclose the model/context
+basis without demanding exact-build logs. Do not treat this author as independent.
+
+Attach suppliers 34/27/28 with R.2 hashes. Reuse PR #226's broad source review
+and diagnostics explicitly; do not automatically rerun its entire simulations.
+Directly inspect the pages needed for the new precision findings: GH pp.118,
+121–123; Tamhane pp.473–477; Dunnett pp.796–800. In particular verify the four
+p.474 non-strict conditions, the T2-prime table rows and coverage/error distinction,
+the reciprocal-df direction, p.797 wording, and p.476 generator expression.
+Check the R.3 equations, C's df boundary, HET variant mapping, source facts versus
+inferences, and proposed semantic/numerical allocation. Check the six author
+precision findings against the original images, not solely against PR #226.
+Simple algebra/counts suffice where indicated; require further numerical work
+only for a concrete remaining decision-bearing issue.
+
+Assess whether S-1–S-3 are faithfully addressed and whether the bounded CLOSED
+proposal is source-supportable. Distinguish content verdict from actual steward
+acceptance, candidate classification and guaranteed implementation. Preserve the
+6/2/6 current versus 7/1/6 conditional ledger and every wider boundary. If a new
+material conflict prevents completion, identify the exact claim, necessary source
+or computation and an executable additional-investigation prompt. If PDFs cannot
+be inspected, partition SOURCE_ACCESS_INCOMPLETE to affected claims and continue
+repository-only checks; do not report a source-level GO.
+
+Create a fresh neutral branch `review/r3-sri-author-synthesis-20260909` (use a
+new neutral suffix if already used) from the fixed author head as sole parent.
+Add an English report at
+`review-inputs/r3-sri-author-synthesis/REVIEW-RESULT.md`; include fixed identity,
+reading order, direct and reused evidence, findings/severity, per-finding status,
+actual checks and unverified scope. Do not rewrite PR #226 or any earlier file.
+Keep PDFs, images and full extractions out of Git and use no session mirror branch.
+Run format:check, lint:markdown, the direct validator and git diff --check after
+adding the report. Open a separate draft PR against
+`research/r3-sri-author-synthesis-20260909`, confirm the live author head has not
+moved, and report GitHub commit/parent/tree/blob identities. Report in Japanese
+with the verdict, remaining decisions and any additional-investigation prompt.
+Do not merge, accept a hold, adopt a procedure, open discussion or release.
