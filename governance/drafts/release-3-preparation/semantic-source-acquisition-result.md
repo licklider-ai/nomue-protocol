@@ -5627,3 +5627,153 @@ merge. The present author does not self-certify that independent gate.
 After that bounded review, continue with the provided James and Brown-Forsythe
 papers in SR-A, reusing the already recorded Welch evidence. The unavailable
 Scheffe/Fisher-lineage and Tukey-original claims stay outside active verification.
+
+## Part Z. Ge review receipt and bounded supplied-source SR-A investigation
+
+2026-09-09. Receipt of a limited GO and new author source work. No new hold
+acceptance, formal independence determination, catalogue change or merge.
+
+### Z.1. Received review and continuation instruction
+
+The steward supplied a separate-session simple review of PR #262 at
+`09a75be0f3549d75e74ee7226b476a9d71480cb0`: GO for the accuracy of that
+bounded author record, BLOCKER 0 / SHOULD-FIX 0 / NICE-TO-HAVE 0. The review
+reports Git-object/parent/three-file/prefix verification, matching supplier 39
+identity, direct text/image inspection, valid conditional proofs, independent
+reproduction of the counterexample and all 20 allocations, and successful
+execution of the author script. It independently reports the same maxT/minP
+outputs and FWER=1/10 counterexample at alpha=1/20.
+
+The supplied review expressly discloses historical summaries and prior reading
+of the author report: separate-session, non-blind work with independent
+calculations, not an attested different-provider/model review or determination
+that the formal independence gate is satisfied. It did not run repository
+validation, edit or commit files, create a review PR, or judge PR #174. This
+receipt preserves those limits; it is not another scientific rerun, authenticated
+signed review, full execution of the earlier delivery instruction, or an
+acceptance decision inferred from GO. The full received account remains in the
+conversation; report Section 1 records an English receipt summary.
+
+The steward asked this continuation to proceed while PR #174's independent
+confirmation and associated work continue separately. This work does not inspect,
+edit or judge those materials. Part Y's supplied-corpus cap is already approved
+and remains effective; no renewed approval or new-original acquisition is needed.
+
+### Z.2. Fixed input and preserved evidence
+
+The new work has the PR #262 commit above as its sole parent. That input's tree
+is `fbcf46ac67f444161f96e1a158c1b3e88dc53328`; its sole parent is
+`72e4dd3b71868cf6423dfefa231751a03a1b2161`. The entire Parts A-Y result is
+preserved as the first 533740 bytes, blob
+`9d4cf4b5b8a7159fd51f7c4275a0292a81acbcdc`, SHA-256
+`2436a534c665a10f4e5625fa7183be0839b6cda8805ac125a8118ce9e41a6d1a`.
+Ge's report remains blob `6092ab5a856673c414c02f04478373fd8492ba89`, and
+its diagnostic remains blob `aa7664372c125e37e8cfc5a9c2ae8b97e44a70bb`.
+The acquisition commission, fixed semantic catalogue and every earlier report
+remain unchanged. Output identities are recorded in the new PR body.
+
+### Z.3. Source identity and bounded findings
+
+The English investigation is
+`review-inputs/r3-sra-supplied-primary/REVIEW-RESULT.md`; the disposable
+reproduction program is `review-inputs/r3-sra-supplied-primary/check-sra.py`.
+Both source PDFs were recovered from already supplied materials and directly
+rehashed against the custody record. Each has one supplier cover; all ten
+article pages were read as text and page images.
+
+| Original          | Bytes / PDF pages | SHA-256                                                            | Inspected article pages |
+| ----------------- | ----------------- | ------------------------------------------------------------------ | ----------------------- |
+| 08_James_1951.pdf | 523245 / 7        | `34d14510ddcd10b0a5e90f21412b78e1d03359358ff0ae50c86bd93c83b62145` | 324-329                 |
+| 33_Brown_1974.pdf | 518538 / 5        | `bba8ba4d8b105b47194a20704a5967b32e2ea5447f2587986ebbca5a298a6124` | 129-132                 |
+
+James supplies the normal independent-estimate model, inverse-variance quadratic
+Q, first-order critical correction (43), and second-order expansion (41)-(42).
+The first-order correction is checked algebraically against (40) and the
+first-order terms of (41). James p.329 explicitly leaves the convergence of the
+full expansion unknown. This pass records the second-order formulation and
+limits; it does not certify all its coefficients or a numerical implementation.
+Existing Welch 1951 evidence is reused, not newly inspected.
+
+Brown-Forsythe p.130 directly supports the modified F statistic A/D, where A
+uses sample-size-weighted mean differences and D is the sum of
+(1-n_i/N)*s_i^2, and its approximate Satterthwaite denominator df. Author
+moment reasoning and exact two-group reduction checks explain the formula.
+It is a global means test, distinct from a variance-equality test. Neither
+empirical robustness nor matched numerator/denominator expectations proves
+universal exact F calibration under unequal variances.
+
+### Z.4. Two source issues and numerical checks
+
+**Scale mismatch.** Brown-Forsythe p.130 defines J=Q/(g-1) but compares it to
+the unscaled chi-square-based James correction. James (43)-(44) compare Q
+with that correction. In a three-group example with n=(11,11,11), means
+(0,1,1), variances (1,1,1), Q=22/3 and J=11/3. At alpha=.05 the first-order
+cutoff is 7.0886212175: the James-source rule rejects, but the literal printed
+J rule does not. The equivalent J-scale cutoff is 3.5443106087. This is not a
+rounding difference. The literal g=4 rule also has a limiting size about
+0.00003262726712 at nominal .05. The report records the competing printed
+formulations, uses the supplied James rule explicitly for its diagnostic, and
+does not claim to know the historical simulation code or issue corrected tables.
+The separate modified-F construction is not invalidated by this James-summary
+mismatch.
+
+**Different cited James paper.** Brown-Forsythe reference [2], p.132, identifies
+James's 1951 paper on linear hypotheses at Biometrika 38:19-43. Supplier 08 is
+the differently titled paper at pp.324-329. Formula correspondence does not
+establish text identity. The cited pp.19-43 text and detailed attribution remain
+unverified and outside the capped task; no acquisition request or silent
+substitution is made.
+
+Exact diagnostics pass 24 two-group reduction cases, 15 first-order conversion
+cases, translation/common-scale checks and balanced-statistic checks. The
+unequal example n=(11,16,21), means=(0,1,2), variances=(1,4,9) gives Q=9,
+Welch W=2920320/663601, df=432640/14641; modified F=359/102,
+df=9987840/250897. Illustrative SciPy tails are .0212380391 and .0391307833.
+The four equal-variance rows of Table 3 are internally consistent and agree
+with Table 2 at its displayed precision. These checks are not a reproduction
+of the historical Monte Carlo study, an independent review, or a public
+numerical oracle. Exact output and all limits are in report Section 7.
+
+### Z.5. Status, boundaries and next action
+
+| Disposition      | Members                                              | Count |
+| ---------------- | ---------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-J, SR-K, SR-L |     9 |
+| PARTIAL          | SR-H                                                 |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, RSM-01, RSM-02                           |     4 |
+
+No member changes from Y.5. Overall INPUT_INCOMPLETE, SOURCE_SET_READY=false,
+NARROW, TRANSFER, all R3-CAND/RES-ONLY classifications, other holds, prior
+limited acceptances, inventory 42+1 and R4 remain unchanged. The provided 08/33
+reading task is completed within its declared scope. The excluded original
+F-test lineage and the second-order/numerical limits are not relabelled as
+verified to make the fixed full SR-A hold close.
+
+This is OpenAI Codex-assisted author/coordinator work in the continuing context,
+not an independent-review verdict or a verified model-build attestation. The
+received Ge review, reused evidence, new source findings and author derivations
+are separately identified. No release-readiness or PR #174 determination occurs.
+
+Report Section 9 gives the executable limited-review instruction for this
+submission, using only supplied originals 08 and 33. The reviewer should focus
+on the normalization mismatch, variant/citation boundaries, approximate nature
+of the guarantees and independent algebra. The corpus cap needs no reapproval.
+No hold closure, catalogue split or merge is requested.
+
+After that review and any repair, supplier 30, Troendle (1995), is a next
+available-source RSM-02 candidate. It was already recorded in the custody
+inventory and is present in the existing purchase ZIP; its text was not read
+here. Part Y excluded it from the Ge pass, not from the supplied corpus. A
+later investigation would retain its own variant boundaries.
+
+### Z.6. Validation
+
+The author program exits 0 with `ALL BOUNDED SR-A DIAGNOSTICS PASSED`
+(Python 3.12.14, SciPy 1.17.0; rational algebra plus labelled numerical tails).
+The submitted tree passes `pnpm format:check`, `pnpm lint:markdown`,
+`node --import tsx tooling/src/validate.ts` and `git diff --cached --check`,
+all exit 0. The exact 533740-byte prefix and unchanged prior files are checked
+before submission. Only this append, the new report and its diagnostic change.
+Full pnpm check, tests, typecheck, generated checks, prior statistical programs,
+historical simulation and a complete second-order James oracle are not run.
+No authoritative artifact changes; copyrighted source files are not committed.
