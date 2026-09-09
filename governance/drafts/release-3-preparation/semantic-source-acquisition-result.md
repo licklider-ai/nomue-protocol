@@ -5313,3 +5313,168 @@ A satisfactory review allows the coordinator to present a separate concrete
 formal SR-J acceptance proposal with a scoped independence account. It does not
 make approval automatic. Repository validation and this synthesis's immutable
 identity are recorded in its PR body. No statistical program changes in this Part.
+
+---
+
+## Part X. Scoped SR-J steward acceptance
+
+**Status: informative acceptance record, 2026-09-09. SR-J is steward-accepted
+CLOSED for bounded source completion within W.2-W.6. Effective ledger: 9 CLOSED /
+1 PARTIAL / 4 INPUT_INCOMPLETE. Overall INPUT_INCOMPLETE; SOURCE_SET_READY=false.**
+This records the separately approved formal acceptance. It selects no procedure
+and authorizes no implementation, merge, public opening or release.
+
+### X.1 Fixed evidence and record provenance
+
+| Fixed input                   | Identity                                                                                                                                                                                           |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accepted Part W / PR #254     | commit `4d61db593510466f34ca546430d7796ea42d22e1`; tree `63345297c0c8e17a46bad0d53d6e1d7cdbce2738`; sole parent `55a073525ec685278cf40731d61b1b17ec0882aa`                                         |
+| Preserved Parts A-W           | result blob `00bb45c9b59bb8989e870c74e982bdabbea35821`; 512073 bytes; SHA-256 `aec2c605204539e8a5c5b935017e8fa810d2303683c8cb8904ee92e9aecea27d`                                                   |
+| Integration review / PR #256  | commit `c9ca0084a377381740396f00174aba653cee0aed`; sole parent `4d61db593510466f34ca546430d7796ea42d22e1`; tree `27f4f27f507d3c1aa154ab8d960792a50f44404e`                                         |
+| Integration report            | `review-inputs/r3-srj-author-synthesis/REVIEW-RESULT.md`; blob `b085d7c2c25d28a38c153f7661125dce1f86e4d1`; 30658 bytes; SHA-256 `7fb88e37aa7cabbd8c6c2fbebcfe5bd8ef0019ee9b78947e66405c2f18320695` |
+| Original author investigation | PR #248, commit `cbbc51143b82d97b29afaa0902ee2a42456d3166`; report and diagnostic identities in W.1                                                                                                |
+| Primary-source review         | PR #250, commit `2ba1f1672af6846414439cb3db9524828d0ac8ac`; report blob `87fcc45f8a9185884cc2428b83c814629523d7fc`; full identities in W.1                                                         |
+| Acquisition commission        | blob `3c7ddcc696f0c284213f7efe0da68e747bc238d7`                                                                                                                                                    |
+| Part W CI                     | run `34314429603`, head `4d61db593510466f34ca546430d7796ea42d22e1`: completed / success                                                                                                            |
+| Integration CI                | run `34315306851`, head `c9ca0084a377381740396f00174aba653cee0aed`: completed / success                                                                                                            |
+
+The continuing OpenAI Codex-assisted author/coordinator read the complete
+integration review, re-derived its immutable identities from fetched Git objects
+and confirmed its one-file addition and unchanged Part W. PR #256 gives GO for
+limited integration, zero BLOCKER, zero SHOULD-FIX and zero NICE-TO-HAVE. This
+record begins from that fixed review commit and appends only this Part, preserving
+the exact 512073-byte prefix and every prior report and script.
+The coordinator does not claim a new independent review or new original reading.
+
+### X.2 Decision presented and approved
+
+The coordinator presented a concrete four-point formal-acceptance proposal in
+PR #254's receipt headed "Integration review received; concrete SR-J acceptance
+proposal (NOT YET APPROVED)" and in the continuing conversation. Steward Tasuku
+Kobayashi then explicitly formally approved it and instructed continuation.
+This English account records that one conversation decision. It is not a
+verbatim quotation, independently signed GitHub vote, second approval inferred
+from review delivery, or claim of unaided human authorship.
+
+The approved decision is applied as follows:
+
+1. Accept SR-J as CLOSED for bounded source completion of MTO-02, MTO-03 and
+   MCB-01 exactly within Part W.2-W.6 at the fixed Part W head, on the pinned
+   author record, PR #250 primary-source review and PR #256 integration GO.
+2. Accept the scoped independence account in X.3 for this decision only, with
+   every disclosed context, provider-family, non-blindness and evidence-reuse
+   limitation. No finding about every historical investigation follows.
+3. Move only SR-J in the effective ledger from INPUT_INCOMPLETE to CLOSED,
+   changing 8/1/5 to 9/1/4. Keep every other entry and wider state as in X.4.
+4. Preserve all W.6 reopen conditions and the existing V.5/W.2 source-basis
+   exception without reapproving or expanding it. Naik remains unread and its
+   original formulation, attribution, priority and variant relationship remain
+   unverified. The 1992 and Hsu limitations and numerical implementation
+   requirements remain. Acceptance does not select a procedure or authorize
+   implementation, merge, public opening or release.
+
+The earlier source-basis approval and this formal acceptance are separate
+conversation decisions. The former changed one entry's required basis; the
+latter accepts the reviewed bounded source-completion result. Historical PENDING
+and NOT YET APPROVED text is preserved with its original meaning and superseded
+for current use by this Part. Neither decision is made pending again by the
+record-application check below.
+
+### X.3 Scoped independence determination and reused evidence
+
+For this bounded source-completion decision, the steward accepts the disclosed
+division of work: PR #250 supplies the separate primary-source pass and PR #256
+the separate integration assessment.
+
+PR #250 reports a fresh context, no authorship of the author packet, direct
+reading of the three originals and independent numerical work, and
+service-reported `claude-fable-5-1`. It read the author report first and is not
+blind. Its model/process statements remain disclosures, not independently
+verified model-build attestations. Its GO concerns the bounded author record.
+
+PR #256 is a separate OpenAI Codex-assisted conversation with no authorship of
+the fixed packets in that conversation. Historical summaries were available;
+it uses the same provider family as the author. It reused the prior original
+readings and performed an integration assessment, without rereading PDFs,
+statistical recalculation or a third original-proof audit. It is not blind or
+history-free and is not counted as a second different-provider primary-source
+pass. The reviewers did not themselves grant this formal independence decision.
+
+The present approval accepts precisely those limits. It does not infer stronger
+independence, exact model builds, unaided human authorship or independence of
+all earlier work. V.2/W.5's limited numerical coverage and unarchived reviewer
+auxiliary-code boundary remain. No new source custody or scientific evidence is
+created by this acceptance record.
+
+### X.4 Effective ledger and preserved scope
+
+| Disposition      | Members                                              | Count |
+| ---------------- | ---------------------------------------------------- | ----: |
+| CLOSED           | SR-B, SR-C, SR-D, SR-F, SR-G, SR-I, SR-J, SR-K, SR-L |     9 |
+| PARTIAL          | SR-H                                                 |     1 |
+| INPUT_INCOMPLETE | SR-A, SR-E, RSM-01, RSM-02                           |     4 |
+
+Only SR-J has moved. This decision does not claim that all nine CLOSED entries
+were formally accepted by this one approval. Overall INPUT_INCOMPLETE,
+SOURCE_SET_READY=false, NARROW, TRANSFER, every R3-CAND/RES-ONLY token, scoped
+SR-D/SR-I acceptances, all other holds, custody 42+1 and R4 remain unchanged.
+The remaining four incomplete entries and SR-H partial prevent comprehensive
+source readiness; public-opening and release decisions remain separate.
+
+The accepted source scope is W.4's three-entry map with W.2's one-entry exception
+and W.5's corrections. All six PR #250 notes remain addressed; X-8 maps to SRC-18
+and the T.3 correction remains in force without altering historical bytes or
+accepted SR-D scope. No unresolved source assertion becomes a proved theorem.
+
+All five W.6 reopen conditions remain active:
+
+1. Acquire Naik pp.519-535 when available, or when its original formulation,
+   priority, lineage or a distinct relevant variant becomes decision-bearing.
+2. Obtain primary proof sources for broader 1992 existence, least-favourable,
+   superiority or unequal-correlation claims. The unread 1990 report is not
+   waived for those claims by the bounded Naik exception.
+3. Before numerical implementation use, supply an independently reproducible
+   method and explicit error, rounding, parameter and endpoint conventions.
+   The .001 author diagnostic is not a Public Check tolerance or certified oracle.
+4. Inspect the primary basis for step-down-compatible intervals, directional
+   error, heteroscedasticity, cross-family control, average-correlation or broader
+   Hsu variants/outputs. Do not inherit such guarantees from this acceptance.
+5. Reopen on contradictory evidence, a distinct material in-scope variant or a
+   defect in a relied-upon proof/calibration, preserving historical findings.
+
+### X.5 Limited record-application check
+
+Check only faithful recording and application of the approved decision in this
+Part at the full fixed head in its PR body. This is not another source-completion
+or independence-merits review. The decisions in X.2/X.3 were made by the steward;
+do not seek them again or leave the accepted SR-J pending merely because this
+record check is pending.
+
+1. Read repository Read-first instructions, the commission, Parts W/X, the fixed
+   PR #256 report and PR #254's four-point proposal/approval receipt. Re-derive
+   X.1 identities; verify the sole parent is
+   `c9ca0084a377381740396f00174aba653cee0aed`, exactly one changed file, and the
+   exact 512073-byte Parts A-W prefix and every prior report/script unchanged.
+2. Compare X.2 with the four approved points item by item. Check X.3 states the
+   accepted independence scope without strengthening either review. Confirm
+   9/1/4 moves only SR-J, retains all X.4 conditions and changes no wider state.
+   Prior involvement in PR #256 can be disclosed for this limited application
+   check; do not present such a check as another independent source investigation.
+3. Reuse prior evidence explicitly. No PDF or statistical rerun is required by
+   default. If a concrete discrepancy needs original evidence, name the issue
+   and inspect only what is necessary. State direct checks, reused evidence,
+   process testimony, model/context limits and omissions honestly.
+4. From the fixed author head create neutral branch
+   `review/r3-srj-acceptance-20260909` (fresh neutral suffix if occupied), add only
+   an English report at `review-inputs/r3-srj-acceptance/REVIEW-RESULT.md`, run
+   format:check, lint:markdown, direct validator and diff --check, and record
+   actual results. Return GO or REPAIR_REQUIRED for faithful record application.
+5. Commit and open a separate draft PR against
+   `research/r3-srj-acceptance-20260909`, with full commit/parent/tree/blob,
+   bytes/SHA-256 and reviewed-head recheck. Do not create a session-labelled
+   mirror, merge, broaden the approval, adopt a procedure or open discussion.
+   If repair is needed, identify the exact bounded record discrepancy.
+
+The acceptance-record PR body supplies immutable identity and actual validation
+outputs. This Part changes no scientific script or authoritative artifact; no
+full-suite or statistical execution is claimed unless separately recorded.
