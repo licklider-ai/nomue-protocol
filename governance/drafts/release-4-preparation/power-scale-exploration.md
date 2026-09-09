@@ -43,8 +43,9 @@ project to positive infinity. This witnesses conversion loss, not a materially
 different binary64 F target. The transformed exact SSE is 2^-1204 and projects
 to zero. Exact SS values differ slightly from 1/8 and each rounds to 1/8.
 
-The scaled QR routes instead compute SSE `0x1.1p-106`, dominated by rounding
-residuals at the two 0.5 observations, and F `0x1.e1e1e1e1e1e22p+104`.
+The scaled QR routes instead compute SSE `0x1.1p-106` from rounding
+residuals at the six smaller observations; the two 0.5 observations have zero
+residual. The resulting F is `0x1.e1e1e1e1e1e22p+104`.
 These finite F values are about 2^1098 smaller than the exact targets, whose
 projections are infinite. This is spurious positive residual from floating QR,
 also seen in the zero-residual diagnostics; it is not evidence that the tiny
@@ -144,3 +145,13 @@ corrections and residual-location repair. Historical numerical files and review
 blobs remain unchanged. Scaling is not adopted, source holds and R4-P1 through
 R4-P6 remain open, and public-opening readiness remains NOT_READY. The recording
 assistant does not act as the approving steward.
+
+## Publication follow-through correction (2026-09-09)
+
+The main-branch intake still retained the old two-observation attribution in
+the mixed-fixture explanation, despite the Residual-location correction above.
+This prose-only repair applies the already documented C-1 correction to that
+paragraph: the six smaller observations carry the nonzero residuals, while the
+two 0.5 observations have zero residual. The residual vector, SSE, F, scripts,
+transcripts, review records, and bounded acceptance are unchanged. No new
+statistical or numerical verification is claimed by this editorial correction.
