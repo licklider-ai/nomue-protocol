@@ -1,0 +1,566 @@
+{
+  "result": "PASS",
+  "review_commit": "7f3321b5d8168611baba7647a864d862d87c0a55",
+  "sole_parent": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "tree": "84e98484d01bf9baac91ecf6adba96c83927bc49",
+  "original_delta": [
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/REPORT.md",
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/VALIDATION.md",
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/candidates.json",
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/check-map.py",
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/classification-check.json",
+    "A\tgovernance/drafts/release-3-preparation/candidate-evidence-map-20260910/inputs.json"
+  ],
+  "original_clean_worktree_check": {
+    "result": "PASS",
+    "classifications": 49,
+    "candidates": 15,
+    "evidence_files": 30,
+    "input_entries": 39,
+    "exclusions_preserved": true,
+    "changes_confined_to_output_directory": true
+  },
+  "original_clean_before_and_after": true,
+  "review_scope_checked_separately": true,
+  "review_added_paths": [
+    "review-inputs/r3-evidence-map-holm-7f3321b/CANDIDATE-CONNECTIONS.md",
+    "review-inputs/r3-evidence-map-holm-7f3321b/HOLM-APPLICABILITY.md",
+    "review-inputs/r3-evidence-map-holm-7f3321b/REVIEW-RESULT.md",
+    "review-inputs/r3-evidence-map-holm-7f3321b/VALIDATION.md",
+    "review-inputs/r3-evidence-map-holm-7f3321b/check-results.json",
+    "review-inputs/r3-evidence-map-holm-7f3321b/check-review.py"
+  ],
+  "classification_counts": {
+    "R3-CAND": 15,
+    "RES-ONLY": 27,
+    "TRANSFER": 5,
+    "REJECT": 2
+  },
+  "exact_classification_rows": [
+    {
+      "id": "OMN-01",
+      "name": "Classical equal-variance one-way ANOVA F",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "OMN-02",
+      "name": "Welch heteroscedastic omnibus (Welch 1951)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "OMN-03",
+      "name": "James first/second-order tests (James 1951)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "OMN-04",
+      "name": "Brown-Forsythe modified F (1974)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "OMN-05",
+      "name": "Kruskal-Wallis rank omnibus (1952)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "OMN-06",
+      "name": "Permutation one-way tests (Fisher-Pitman family)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "PVL-01",
+      "name": "Bonferroni single-step",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-02",
+      "name": "\u0160id\u00e1k single-step",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-03",
+      "name": "Holm step-down (Bonferroni thresholds)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-04",
+      "name": "Holm product-form (\"Holm-\u0160id\u00e1k\") step-down",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-05",
+      "name": "Weighted Holm (Scheme 2 / Theorem 2)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-06",
+      "name": "Simes global test (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-07",
+      "name": "Hochberg step-up (1988)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-08",
+      "name": "Hommel procedure (1988, closed Simes)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-09",
+      "name": "Shaffer logically-restricted sequential rejection (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-10",
+      "name": "Rom (1990); Holland-Copenhaver (1987) sharpened stepwise",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-01",
+      "name": "Closed testing principle (Marcus-Peritz-Gabriel 1976)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "CLS-02",
+      "name": "Fixed-sequence (hierarchical) testing",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-03",
+      "name": "Fallback procedure (Wiens 2003)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-04",
+      "name": "Serial gatekeeping (Maurer-Hothorn-Lehmacher 1995 lineage)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-05",
+      "name": "Parallel gatekeeping (Dmitrienko-Offen-Westfall 2003)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-06",
+      "name": "Graphical weighted-Bonferroni procedures (Bretz et al. 2009)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-01",
+      "name": "Balanced Studentized-range all-pairs intervals (\"Tukey\", per SRC-06 (1.1))",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-02",
+      "name": "Tukey-Kramer unequal-size all-pairs intervals",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-03",
+      "name": "Kramer's multiple-range unequal-replication test (as proposed 1956)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-04",
+      "name": "Spj\u00f8tvoll-Stoline extended T (max multiplier, augmented range)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-05",
+      "name": "Hochberg GT2 (Studentized maximum modulus)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-06",
+      "name": "Genizi-Hochberg (1978)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-07",
+      "name": "Gabriel (1978)",
+      "classification": "REJECT"
+    },
+    {
+      "id": "APR-08",
+      "name": "Harmonic-mean-size substitution into balanced constants",
+      "classification": "REJECT"
+    },
+    {
+      "id": "APR-09",
+      "name": "Scheff\u00e9 all-contrasts procedure (1953)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-10",
+      "name": "Newman-Keuls step-down range (1939/1952)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-11",
+      "name": "Duncan multiple range test (1955)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-12",
+      "name": "Ryan / Einot-Gabriel / Welsch (REGWQ) corrected range procedures",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-13",
+      "name": "Fisher (protected) LSD",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-14",
+      "name": "Hayter's modified LSD (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "HET-01",
+      "name": "Games-Howell (1976)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "HET-02",
+      "name": "Tamhane T2 (1979)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "HET-03",
+      "name": "Dunnett T3 and C (1980b, JASA 75:796\u2013800)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MTO-01",
+      "name": "Dunnett many-to-one simultaneous intervals (1955)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "MTO-02",
+      "name": "Step-down Dunnett (Naik 1975; Dunnett-Tamhane 1991)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MTO-03",
+      "name": "Step-up Dunnett-Tamhane (1992)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MCB-01",
+      "name": "Hsu's multiple comparisons with the best (1984)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "FDR-01",
+      "name": "Benjamini-Hochberg linear step-up (1995)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "FDR-02",
+      "name": "Benjamini-Yekutieli (2001): PRDS and `\u03a31/i` variants",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "FDR-03",
+      "name": "Adaptive / two-stage BH (BKY 2006; adaptive `m0`)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "FDR-04",
+      "name": "Storey direct FDR / q-value (2002)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "RSM-01",
+      "name": "Westfall-Young maxT / minP (1993)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "RSM-02",
+      "name": "Permutation-based pairwise/step-down families",
+      "classification": "TRANSFER"
+    }
+  ],
+  "manual_candidate_connections_present": [
+    "PVL-03",
+    "PVL-01",
+    "PVL-07",
+    "PVL-02",
+    "PVL-04",
+    "FDR-02",
+    "FDR-01",
+    "CLS-01",
+    "OMN-01",
+    "OMN-02",
+    "APR-09",
+    "APR-01",
+    "APR-02",
+    "MTO-01",
+    "HET-01"
+  ],
+  "manual_assessment_not_proved_by_script": true,
+  "locator_anchors_checked": {
+    "holm_source": [
+      "L3",
+      "L4",
+      "L5",
+      "FND1-H01",
+      "43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af"
+    ],
+    "multiplicity_review": ["C-05", "the original texts could not be opened"],
+    "opening": ["2.1", "not a finding that no such record exists"],
+    "numerical": ["uncertified numerical observations", "N-08", "N-17"],
+    "allpairs_source": ["(1.2)", "Hayter"]
+  },
+  "evidence_identities": [
+    {
+      "key": "catalogue",
+      "commit": "7bd9c5ab854777c3e99e624d9d2ed62731228852",
+      "path": "governance/drafts/release-3-preparation/semantic-research-result.md",
+      "blob": "8f21526040924b891f64724c2d0fde9ea94eff92",
+      "sha256": "61b20c9b5e4c43ed54e67c74630fb1d5f87f0b972af76f3876ad09340dd9d06f",
+      "bytes": 102312
+    },
+    {
+      "key": "opening",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "blob": "ab7ca233505dd21ee3bbf249889960d515022151",
+      "sha256": "26c229c4229d0a60efa6d5bdba1755da2cbb46352ef687a28c3bea56ea9d5367",
+      "bytes": 42379
+    },
+    {
+      "key": "receipt",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/public-opening-record.md",
+      "blob": "6cf4d237be11552fc2e3cb2bf281e7b073aa3828",
+      "sha256": "3533129fc40c1865f8bbfa0a2bc2ebc7b615341343583e1183b6db2e9060928d",
+      "bytes": 7195
+    },
+    {
+      "key": "opening_review",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "review-inputs/r3-opening-premise-repair-review/REVIEW-RESULT.md",
+      "blob": "ecb19b8e5b0cf5f4e8d84aeaaed2f54e79d215c9",
+      "sha256": "70d700ba8b401fdc27612e238d514975ba46aca4d68b9e3f7b8da7bf8778722c",
+      "bytes": 18703
+    },
+    {
+      "key": "prior_opening_review",
+      "commit": "c28d87a2260ca04c99e3c3927e8aa847aad1bd38",
+      "path": "review-inputs/r3-supplied-scope-opening-review/REVIEW-RESULT.md",
+      "blob": "8b1e9aad128970146d70bc4f44ec2d9e5ac16c59",
+      "sha256": "302ce465fae1b25300a6e84ddfd3c44cbda0dfbd5840ca324fb118a4bb44db69",
+      "bytes": 26193
+    },
+    {
+      "key": "holm_source",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "blob": "55d81187aa297697badb3266a87584f32c732871",
+      "sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+      "bytes": 93349
+    },
+    {
+      "key": "multiplicity_review",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md",
+      "blob": "b3f06eb85d7cf8588a8fc4087dbefcee6d57a572",
+      "sha256": "75797e4e092a749d3ee1cca35c549624015ddd79f9ea7558c736613e6a70de7e",
+      "bytes": 16107
+    },
+    {
+      "key": "multiplicity_acceptance",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-31-multiplicity-steward-disposition.md",
+      "blob": "5e8a69ba571637408c79e1c46d9167f679b57c38",
+      "sha256": "def5f362d6f19a08bb17092fe7f0c6db2cabcbe280c037095e8e29fed4c734dc",
+      "bytes": 9972
+    },
+    {
+      "key": "dunnett_source",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "blob": "55d81187aa297697badb3266a87584f32c732871",
+      "sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+      "bytes": 93349
+    },
+    {
+      "key": "allpairs_source",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+      "blob": "236cd949b99b558e207082c74832edf158f3839d",
+      "sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+      "bytes": 87553
+    },
+    {
+      "key": "allpairs_review",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md",
+      "blob": "5cf50bf08df8bf0750f950ec29888cfa298727ad",
+      "sha256": "bd70ba97987b995af8f62c98ba934c77e6647069bb618cff2391b1665485fc68",
+      "bytes": 17051
+    },
+    {
+      "key": "allpairs_acceptance",
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md",
+      "blob": "eef626596732c707bd428e39fdf3970155710cea",
+      "sha256": "28e4e1997f61a48863f09c525df75a8fdaefe4c7d8586842fea4a7d07428ed84",
+      "bytes": 15447
+    },
+    {
+      "key": "sr_b_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "sr_b_review",
+      "commit": "3059f6baca76dc93b5fbf248012f09132f3881f6",
+      "path": "review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md",
+      "blob": "4c8b55bac817be9f25b1b6fa7b82cbb6eb2fc813",
+      "sha256": "c7b294cd3b618d0276caa9fa03d8c6c0906c126d7376a61b6e60677c56f51212",
+      "bytes": 64338
+    },
+    {
+      "key": "sr_b_acceptance",
+      "commit": "03ce30ec67904e08da70d80afd1fd6de36909dad",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "blob": "bc16345d5058d0b5d122c71577008716db49a89f",
+      "sha256": "2d8611a36202cf72f5d17cdfb06a617d0d5a5067cd2faabda45cee34909e4790",
+      "bytes": 49584
+    },
+    {
+      "key": "sr_c_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "sr_c_review",
+      "commit": "c36318971244c26073078b848ab2f3c52f46010b",
+      "path": "review-inputs/r3-src-primary-completion/REVIEW-RESULT.md",
+      "blob": "8e2c0299d9ddc8da6bc165bb5317e8d6262ecf74",
+      "sha256": "9570cb0a49c7dd0137b9ffb5ed7e2cd4688a1f111f86c131eb597fead435e098",
+      "bytes": 51543
+    },
+    {
+      "key": "sr_c_acceptance",
+      "commit": "e048cc0622bd5e063b692c7e6072674f1631df85",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "blob": "1b09b81f8bd6a9e368111d21e1c7733d09a47de7",
+      "sha256": "40178e2400bf6ddfa20ece04b17f239aaf02fe061fa42b3d908e77a8280677c1",
+      "bytes": 39685
+    },
+    {
+      "key": "sr_d_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "sr_d_primary",
+      "commit": "7190c78b58f9d6b36dad0d8a39ff1c3b29faa961",
+      "path": "review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md",
+      "blob": "785785bef368694d4643be5eada6524231f8e244",
+      "sha256": "06c9de684706f1ca1da016d6c4600093bf6bb962855d67860dc3d1f6c4e1dec1",
+      "bytes": 101944
+    },
+    {
+      "key": "sr_d_review",
+      "commit": "8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4",
+      "path": "review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md",
+      "blob": "ad5f229d36a8dcec55d8a9fdaed9ce29aaf0acb5",
+      "sha256": "dd6b3318cbbed36f130704ce24eea0865fae8254aa9307084df3b1152ca0d25a",
+      "bytes": 35242
+    },
+    {
+      "key": "sr_i_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "sr_i_review",
+      "commit": "06c09e6616b27124ef00b615a5ad59b0e060902a",
+      "path": "review-inputs/r3-sri-author-synthesis/REVIEW-RESULT.md",
+      "blob": "722d0e46c5f9619243f80a2464893aaf49feafa9",
+      "sha256": "ce90d14f102689518c5560aa120323707f527310063604203e03efcc1682bb5b",
+      "bytes": 66324
+    },
+    {
+      "key": "sr_kg_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "sr_kg_review",
+      "commit": "54fb11a7f1e909a0c7135563885d235987358382",
+      "path": "review-inputs/r3-srk-srg-additional-primary-pass/REVIEW-RESULT.md",
+      "blob": "67546234a5f30c0225f462a514e5a89a05a272a7",
+      "sha256": "6301658007680a3ea46f9659778c2c42bc9d5a57c23f9ab0cc42d34e00f6d8c4",
+      "bytes": 62856
+    },
+    {
+      "key": "sr_kg_reconciliation",
+      "commit": "4087ca5d7b5292cccb76c273d2fad29db9ab9522",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "blob": "3a49de7a8467b618df8cf370fa47d3dcb4aa91b3",
+      "sha256": "603e45b8a6c7065da00498c7b08f476f2ad184a4114ddccc23d78ae61acf3f12",
+      "bytes": 26515
+    },
+    {
+      "key": "continuation_latest",
+      "commit": "b405512111699f262440d0b819dfa0977ad7b72a",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "blob": "f7497cbee7d7a9701ffe1cd8b06f9bed014c04b0",
+      "sha256": "33db20a378b2c2652af4d2982e8c0912c65acee43463102ed02b70798b6de9d1",
+      "bytes": 74011
+    },
+    {
+      "key": "welch_source",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    },
+    {
+      "key": "numerical",
+      "commit": "92bea491e237df6aec08ae1e3c4c52e43ec3593d",
+      "path": "governance/drafts/release-3-preparation/numerical-research-result.md",
+      "blob": "0d360ec3eaa1ede0d6112555027255a6e3e695c3",
+      "sha256": "016660089298136a2c75636df4c2f62ae2dcab32658e14bafdb1ff291ebbcc9d",
+      "bytes": 260011
+    },
+    {
+      "key": "withdrawal",
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "bytes": 573903
+    }
+  ],
+  "omissions": [
+    "primary PDF reread and rehash",
+    "numerical research replay",
+    "full implementation test suite",
+    "full mathematical reproof",
+    "independent model or human authentication"
+  ]
+}
