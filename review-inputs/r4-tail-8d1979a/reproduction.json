@@ -1,0 +1,36 @@
+{
+  "author_results_sha256": "a2b00241f24318e2cce19de8fa217957dd934ffee4c9ac8f1cbf8bcf48ee0e7d",
+  "rerun_results_sha256": "a2b00241f24318e2cce19de8fa217957dd934ffee4c9ac8f1cbf8bcf48ee0e7d",
+  "byte_identical": true,
+  "summary": {
+    "cases": 220,
+    "projection_counts": {
+      "rounded-one": 47,
+      "normal": 115,
+      "positive-rounds-zero": 56,
+      "subnormal": 2
+    },
+    "domain_and_resource_rejections": 42,
+    "oracle_numeric_negative_controls": 408,
+    "midpoint_cases": 4,
+    "precision_refinement": "8 unresolved; 128 and 256 closed",
+    "max_oracle_series_terms": 251,
+    "upstream_interval_witness": {
+      "f_lower": "0x1.fffffffffffffp+1",
+      "f_upper": "0x1.0000000000001p+2",
+      "p_bounds": [
+        {
+          "significand_hex": "0x1db9cfff07aa003b814977f21252b77c891eab31f6ede1",
+          "exponent": -184
+        },
+        {
+          "significand_hex": "0x1db9cfff07aa036a178fe1d67b00c4f3512513e6136154",
+          "exponent": -184
+        }
+      ]
+    },
+    "status": "author-side exploration passed; independent review pending"
+  },
+  "author_hash_checks": "12 SHA256SUMS entries passed; reviewer INPUTS.json also pins SHA256SUMS itself, 13 files total",
+  "author_verify_inputs": "5 commits, 23 blobs, 13 paths confined; run before review files staged"
+}
