@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-10",
+  "repository": "licklider-ai/nomue-protocol",
+  "review_commit": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+  "sole_parent": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "tree": "78a8df1ddb1269de451751419aa915a3179e70d1",
+  "main_observed": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "proposal": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+  "pr_snapshot": {
+    "additions": 375080,
+    "base": "main",
+    "base_sha": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+    "body": "The bounded Release 4 proposal is open for discussion, but its arithmetic has no reviewed execution candidate with original-input error evidence. Existing cell/QR/scaling probes expose range, cancellation and exact-zero failures.\n\nThis Lane 1 research packet compares the three historical graphs, their scaled forms and a minimal anchored-cell alternative, and adds an exploratory integer-lattice candidate with adjacent-binary64 enclosures. A separate Fraction-based oracle computes expectations directly from declared inputs; no candidate output is used as an expectation.\n\nFixed base / sole parent: dedd26a3e0655001b67e40ccfb741e43ecb07beb.\nSeparate proposal/opening input: 022c8699befbcba375e3aa6e07c1a8dd8eace483.\nReview head: 2864903316b4b4b2b219a56b42c535bfec7935b3.\nTree: 78a8df1ddb1269de451751419aa915a3179e70d1.\nMain was rechecked equal to the fixed base. The proposal branch is not substituted for that base, and the base's residual-location correction is retained.\n\nStart with governance/drafts/release-4-preparation/arithmetic-candidate-20260910/REPORT.md, INPUTS.json, VALIDATION.md and SHA256SUMS. All 28 added files are confined to this new directory; all baseline files remain unchanged.\n\nValidation:\n- 968 datasets, including all 945 historical cases: 18,380 exact quantity equalities and 18,380 enclosure/projection checks pass.\n- Independent algorithmic oracle, deterministic replay, historical corpus digest, sign/order/scale checks and exact/rounded-zero diagnostics pass.\n- 20,470 exponent-edge decoding checks and four finite workloads through 16,384 observations pass.\n- Formatting, Markdown lint (400 files), typecheck, direct node/tsx validation, generated drift (19 files), diff check and 27 artifact checksums pass.\n- The pnpm validate wrapper failed on an IPC-pipe EPERM; the same validator passed via node --import tsx. Node/pnpm environment differences and unrun full suites are documented.\n\nFindings include a 50% SSE error from computing residuals around a rounded cell mean, spurious finite QR F values for exact-zero effects, and the failure of scaling alone to preserve every mixed-scale input. The integer path is a review candidate, not a formally adopted algorithm. Finite observed errors are not tolerances or whole-domain guarantees.\n\nLane 2 receives a proposed original-input rational F/enclosure interface, exact df and exact-zero-SSE versus positive-underflow states. No Lane 2 result is consumed and no tail algorithm is implemented.\n\nAuthorship and execution: OpenAI Codex in the author task context, with continuity summaries visible; no independent investigator, human review or sub-agent is claimed. Candidate/oracle separation is algorithmic only. Research Gate review, supported resources/platforms, final projection/admission/comparison policy and tail integration remain open.\n\nDraft PR for independent candidate review only. No merge, formal adoption, identifier/bundle registration, new gate or release is requested.",
+    "changed_files": 28,
+    "closed_at": null,
+    "comments": null,
+    "commits": 1,
+    "created_at": "2026-09-10T08:25:50Z",
+    "deletions": 0,
+    "diff": null,
+    "display_title": "Prepare Release 4 arithmetic candidates and original-input evidence",
+    "display_url": "https://github.com/licklider-ai/nomue-protocol/pull/279",
+    "draft": true,
+    "head": "research/r4-arithmetic-candidate-20260910",
+    "head_repo_full_name": "licklider-ai/nomue-protocol",
+    "head_repo_id": 1344183347,
+    "head_sha": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+    "merge_commit_sha": "b545617167fba378b130c1a555fc33c9e9de9146",
+    "mergeable": true,
+    "merged": false,
+    "merged_at": null,
+    "number": 279,
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "state": "open",
+    "title": "Prepare Release 4 arithmetic candidates and original-input evidence",
+    "updated_at": "2026-09-10T08:25:50Z",
+    "url": "https://github.com/licklider-ai/nomue-protocol/pull/279",
+    "user": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/29053298?v=4",
+      "email": null,
+      "id": 29053298,
+      "login": "tasuku-kobayashi",
+      "name": "tasuku-kobayashi"
+    }
+  },
+  "input_ci": {
+    "workflow_runs": [
+      {
+        "conclusion": "success",
+        "id": 34455119180,
+        "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34455119180/jobs",
+        "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34455119180/logs",
+        "name": "CI",
+        "run_number": 606,
+        "status": "completed",
+        "workflow_id": 340763308
+      }
+    ]
+  },
+  "independence": "OpenAI Codex in review task context. No target authorship/repair in this session; continuity summaries visible. No authenticated distinct-model identity or separate-model primary-source review. No subagents."
+}

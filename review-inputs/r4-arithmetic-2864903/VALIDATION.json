@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "command": ["pnpm", "format:check"],
+      "exit_code": 0,
+      "output": "$ prettier --check .\nChecking formatting...\nAll matched files use Prettier code style!\n"
+    },
+    {
+      "command": ["pnpm", "lint:markdown"],
+      "exit_code": 0,
+      "output": "$ markdownlint-cli2\nmarkdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: **/*.md !node_modules/** !generated/** !LICENSE.md !evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md\nLinting: 401 files\nSummary: 0 issues in 0 files\n"
+    },
+    {
+      "command": ["pnpm", "typecheck"],
+      "exit_code": 0,
+      "output": "$ tsc --noEmit\n"
+    },
+    {
+      "command": ["node", "--import", "tsx", "tooling/src/validate.ts"],
+      "exit_code": 0,
+      "output": "validate: OK - registries, traceability, normative lint, authority,\ngates, conformance manifest, links, private-dependency and language audits,\nphase-1 schemas, cross-checks, code-path audits, and the snapshot\nmanifest mechanism are clean.\n"
+    },
+    {
+      "command": ["node", "--import", "tsx", "tooling/src/generate.ts", "--check"],
+      "exit_code": 0,
+      "output": "check:generated: OK (19 generated files match their sources).\n"
+    },
+    {
+      "command": ["git", "diff", "--cached", "--check"],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "node": "v24.19.0",
+  "pnpm": "11.19.0",
+  "dependency_note": "Pinned installed node_modules copied from another checkout of this public repository. No tracked manifest changed; package requests pnpm 11.7.0 while available pnpm is 11.19.0.",
+  "not_run": [
+    "Full local pnpm check and release/conformance suites",
+    "Cross-platform numerical reproduction",
+    "Separate-model primary-source Research Gate review"
+  ],
+  "scope": "Review evidence only. Direct node --import tsx invokes unchanged validators without the IPC CLI wrapper."
+}
