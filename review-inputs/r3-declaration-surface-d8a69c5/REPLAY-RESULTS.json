@@ -1,0 +1,18 @@
+{
+  "clean_input_preserve": {
+    "pinned_files": 25,
+    "pins_match": true,
+    "outside_directory_changes": 0,
+    "collision_matches_at_fixed_inputs": 0
+  },
+  "structural_replay": {
+    "total": 70,
+    "matched": 70,
+    "entire_recorded_json_equal": true
+  },
+  "compatibility_replay": {
+    "total": 12,
+    "passed": 12,
+    "entire_recorded_json_equal": true
+  }
+}
