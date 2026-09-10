@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://dlmf.nist.gov/8.17",
+    "status": 403,
+    "bytes": 17,
+    "response_sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+    "source_bytes_acquired": false
+  },
+  {
+    "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3665.htm",
+    "status": 403,
+    "bytes": 17,
+    "response_sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+    "source_bytes_acquired": false
+  },
+  {
+    "url": "https://www.boost.org/doc/libs/1_88_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html",
+    "error": "URLError",
+    "source_bytes_acquired": false
+  },
+  {
+    "url": "https://www.mpfr.org/mpfr-4.2.1/mpfr.html",
+    "status": 200,
+    "bytes": 558879,
+    "response_sha256": "1f4f4d9022781fd96279e589641ee3038f5a005d1d7f3739d62125a17101ffd1",
+    "source_bytes_acquired": true
+  },
+  {
+    "url": "https://dl.acm.org/doi/10.1145/131766.131776",
+    "status": 403,
+    "bytes": 5988,
+    "response_sha256": "96d326725ad7f82fdf3a9c59391e691d9a79711aaf9d194397eeaf96edb82db8",
+    "source_bytes_acquired": false
+  }
+]
