@@ -1,0 +1,4 @@
+validate: OK - registries, traceability, normative lint, authority,
+gates, conformance manifest, links, private-dependency and language audits,
+phase-1 schemas, cross-checks, code-path audits, and the snapshot
+manifest mechanism are clean.

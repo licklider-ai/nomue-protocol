@@ -1,0 +1,198 @@
+{
+  "cases": 945,
+  "comparison_values_per_quantity": {
+    "f": 2835,
+    "ss": 2835,
+    "sse": 945
+  },
+  "corpus_sha256": "558b6e65da273bf836204f7d0f5b4bae08cfd85918a23374a475197c2e851ca3",
+  "environment": {
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "numpy_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+    "python": "3.12.14",
+    "threading": "not pinned; no portability claim"
+  },
+  "script_sha256": "8c68703fb5fa8cf002c593b0b9a2bff0256cf9fc090ba43eb02436f262225839",
+  "status": "AUTHOR_EXPLORATORY_NOT_REVIEWED",
+  "summary": {
+    "builtin_cell": {
+      "f": {
+        "exact_real_matches": 2526,
+        "nonfinite": 0,
+        "projected_matches": 2637,
+        "spurious_nonzero_from_exact_zero": 0,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 105
+      },
+      "ss": {
+        "exact_real_matches": 2691,
+        "nonfinite": 0,
+        "projected_matches": 2691,
+        "spurious_nonzero_from_exact_zero": 0,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 105
+      },
+      "sse": {
+        "exact_real_matches": 804,
+        "nonfinite": 0,
+        "projected_matches": 945,
+        "spurious_nonzero_from_exact_zero": 0,
+        "values": 945,
+        "zero_when_projected_truth_nonzero": 0
+      }
+    },
+    "centered_qr": {
+      "f": {
+        "exact_real_matches": 140,
+        "nonfinite": 0,
+        "projected_matches": 162,
+        "spurious_nonzero_from_exact_zero": 2281,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 3
+      },
+      "ss": {
+        "exact_real_matches": 170,
+        "nonfinite": 0,
+        "projected_matches": 170,
+        "spurious_nonzero_from_exact_zero": 2281,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 3
+      },
+      "sse": {
+        "exact_real_matches": 804,
+        "nonfinite": 0,
+        "projected_matches": 908,
+        "spurious_nonzero_from_exact_zero": 0,
+        "values": 945,
+        "zero_when_projected_truth_nonzero": 0
+      }
+    },
+    "qr": {
+      "f": {
+        "exact_real_matches": 283,
+        "nonfinite": 0,
+        "projected_matches": 303,
+        "spurious_nonzero_from_exact_zero": 2134,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 9
+      },
+      "ss": {
+        "exact_real_matches": 314,
+        "nonfinite": 0,
+        "projected_matches": 314,
+        "spurious_nonzero_from_exact_zero": 2134,
+        "values": 2835,
+        "zero_when_projected_truth_nonzero": 9
+      },
+      "sse": {
+        "exact_real_matches": 507,
+        "nonfinite": 0,
+        "projected_matches": 648,
+        "spurious_nonzero_from_exact_zero": 0,
+        "values": 945,
+        "zero_when_projected_truth_nonzero": 0
+      }
+    }
+  },
+  "witnesses": [
+    {
+      "axis": 1,
+      "e": 0,
+      "k": 54,
+      "n": 2,
+      "observed": "0x1.fffffffffffe0p-219",
+      "route": "qr",
+      "truth": "0"
+    },
+    {
+      "axis": 1,
+      "e": 0,
+      "k": 54,
+      "n": 2,
+      "observed": "0x1.0000000000001p-319",
+      "route": "centered_qr",
+      "truth": "0"
+    }
+  ],
+  "zero_residual_diagnostics": [
+    {
+      "cell_means": [
+        "0x1.c000000000000p+2",
+        "0x1.c000000000000p+2",
+        "0x1.c000000000000p+2",
+        "0x1.c000000000000p+2"
+      ],
+      "exact_sse": "0",
+      "routes": {
+        "builtin_cell": {
+          "f": ["nan", "nan", "nan"],
+          "finite_f_count": 0,
+          "sse": "0x0.0p+0"
+        },
+        "centered_qr": {
+          "f": ["nan", "nan", "nan"],
+          "finite_f_count": 0,
+          "sse": "0x0.0p+0"
+        },
+        "qr": {
+          "f": ["0x1.c71c71c71c71ep-2", "0x1.5c71c71c71c6dp-6", "0x1.ae38e38e38e3ap-3"],
+          "finite_f_count": 3,
+          "sse": "0x1.2000000000000p-95"
+        }
+      }
+    },
+    {
+      "cell_means": [
+        "0x0.0p+0",
+        "0x1.0000000000000p+0",
+        "0x1.0000000000000p+1",
+        "0x1.0000000000000p+2"
+      ],
+      "exact_sse": "0",
+      "routes": {
+        "builtin_cell": {
+          "f": ["inf", "inf", "inf"],
+          "finite_f_count": 0,
+          "sse": "0x0.0p+0"
+        },
+        "centered_qr": {
+          "f": ["0x1.50d79435e50dap+104", "0x1.e50d79435e50dp+102", "0x1.af286bca1af23p+99"],
+          "finite_f_count": 3,
+          "sse": "0x1.3000000000000p-99"
+        },
+        "qr": {
+          "f": ["0x1.50d79435e50dap+104", "0x1.e50d79435e50dp+102", "0x1.af286bca1af23p+99"],
+          "finite_f_count": 3,
+          "sse": "0x1.3000000000000p-99"
+        }
+      }
+    },
+    {
+      "cell_means": [
+        "0x1.0000000000000p+40",
+        "0x1.0000000001000p+40",
+        "0x1.0000000002000p+40",
+        "0x1.0000000004000p+40"
+      ],
+      "exact_sse": "0",
+      "routes": {
+        "builtin_cell": {
+          "f": ["inf", "inf", "inf"],
+          "finite_f_count": 0,
+          "sse": "0x0.0p+0"
+        },
+        "centered_qr": {
+          "f": ["0x1.50d79435e50dap+104", "0x1.e50d79435e50dp+102", "0x1.af286bca1af23p+99"],
+          "finite_f_count": 3,
+          "sse": "0x1.3000000000000p-99"
+        },
+        "qr": {
+          "f": ["0x1.0ab85e1555557p+26", "0x1.800d7888ca72bp+24", "0x1.55134143ab859p+21"],
+          "finite_f_count": 3,
+          "sse": "0x1.8000000000000p-21"
+        }
+      }
+    }
+  ]
+}

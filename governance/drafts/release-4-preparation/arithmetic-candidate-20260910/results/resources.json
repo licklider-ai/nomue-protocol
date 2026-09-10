@@ -1,0 +1,42 @@
+{
+  "exponent_edge_decode_checks": 20470,
+  "workloads": [
+    {
+      "n": 2,
+      "observations": 8,
+      "elapsed_seconds": 0.008960489998571575,
+      "traced_peak_additional_bytes": 19491,
+      "max_reduced_integer_bits": 4184,
+      "exact_oracle_equal": true,
+      "quantities": 19
+    },
+    {
+      "n": 16,
+      "observations": 64,
+      "elapsed_seconds": 0.009433836996322498,
+      "traced_peak_additional_bytes": 21213,
+      "max_reduced_integer_bits": 4189,
+      "exact_oracle_equal": true,
+      "quantities": 19
+    },
+    {
+      "n": 256,
+      "observations": 1024,
+      "elapsed_seconds": 0.014213608999853022,
+      "traced_peak_additional_bytes": 19646,
+      "max_reduced_integer_bits": 4196,
+      "exact_oracle_equal": true,
+      "quantities": 19
+    },
+    {
+      "n": 4096,
+      "observations": 16384,
+      "elapsed_seconds": 0.10443639000004623,
+      "traced_peak_additional_bytes": 20136,
+      "max_reduced_integer_bits": 4205,
+      "exact_oracle_equal": true,
+      "quantities": 19
+    }
+  ],
+  "scope": "One environment and one workload per n. Input allocation excluded; tracemalloc omits native allocations. No runtime/memory ceiling established."
+}

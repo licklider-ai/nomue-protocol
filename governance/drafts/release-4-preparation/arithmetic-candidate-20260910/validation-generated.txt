@@ -1,0 +1,1 @@
+check:generated: OK (19 generated files match their sources).
