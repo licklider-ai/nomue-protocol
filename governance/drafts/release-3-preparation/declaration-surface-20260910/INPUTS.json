@@ -1,0 +1,228 @@
+{
+  "base_commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "base_tree": "31cade5ea601c896a1841296a3d3aca14bae479d",
+  "source_commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+  "source_tree": "be7e2e0a400e20219f305e587640022a3587e140",
+  "source_parents": ["c97e1dacd779f7e3ecf9167630ecb2de9c15a231"],
+  "main_observed": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "main_related_delta": "none; GitHub main matched base on 2026-09-10",
+  "inputs": [
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AGENTS.md",
+      "blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/AGENTS.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "CHARTER.md",
+      "blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "bytes": 9163,
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/CHARTER.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AUTHORITY.md",
+      "blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "bytes": 12454,
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/AUTHORITY.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "authority/authority-manifest.yaml",
+      "blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "bytes": 45801,
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/authority/authority-manifest.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/requirements.yaml",
+      "blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "bytes": 83339,
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/requirements.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/ID-POLICY.md",
+      "blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/governance/ID-POLICY.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/RFC.md",
+      "blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/governance/RFC.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/stability-tiers.yaml",
+      "blob": "3b6325125d8871b428ab48a8f206632bfcda9b16",
+      "bytes": 2042,
+      "sha256": "9236a7850860bde92159a91d3c3d405283b0b6aabf3ef60aa4342c71532b0b5b",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/stability-tiers.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "package.json",
+      "blob": "6e8934994badcfb4ae4a3e13cd4b8f53a114d4e3",
+      "bytes": 5352,
+      "sha256": "7175bf0cb413516d15ff756960e65b3dc1bf5b60321cc7c776344b8d3a599250",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/package.json"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "pnpm-lock.yaml",
+      "blob": "683674c55ce9da94b1aa8358d9941ea892785304",
+      "bytes": 189670,
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/pnpm-lock.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "canonicalization/record-canonicalization.md",
+      "blob": "dc448a7847a12bf0a6484285b91b1619a63cdb55",
+      "bytes": 13982,
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/canonicalization/record-canonicalization.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "canonicalization/phase-1-numeric-model.md",
+      "blob": "145294551ad29076be3c8a103212541bc1f5f237",
+      "bytes": 3816,
+      "sha256": "328b1ec418a617be14c3634fb720ab459cadd6892bba2ad615d935e0be7dd4cf",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/canonicalization/phase-1-numeric-model.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "spec/versioning/multi-bundle-dispatch.md",
+      "blob": "1b47376c20fca765b1ee39a7d13f739f2bbfe6e0",
+      "bytes": 4620,
+      "sha256": "ce67cb6b42caa1b7592b9e6b97542e359e855a111839677c1d011dc0c827a67e",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/spec/versioning/multi-bundle-dispatch.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "spec/core/provenance-model.md",
+      "blob": "54245dfe0ea20aac78a735643a0202e355cd4d15",
+      "bytes": 3871,
+      "sha256": "b4e22868f6d1a5ec4f12a835f0e3a2e2f2dfe706d08f6baa2926f96f94542033",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/spec/core/provenance-model.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "reference/verifier/src/strict-json.ts",
+      "blob": "c3c0bc16050f10def9ed9171fca307f305338c73",
+      "bytes": 9961,
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/reference/verifier/src/strict-json.ts"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "reference/verifier/src/jcs.ts",
+      "blob": "0819abf08a3a2ba44cd7c0d6bfc558e749b47ebc",
+      "bytes": 2822,
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/reference/verifier/src/jcs.ts"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "reference/verifier/src/ingress.ts",
+      "blob": "be849217999df99d66b60364af64456cc51bb8c3",
+      "bytes": 2668,
+      "sha256": "934e78d6a30d4f3f54b2ba7ea064c4e50731c1f623a00518dcd9ca9278859719",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/reference/verifier/src/ingress.ts"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "reference/verifier/src/resources.ts",
+      "blob": "6457672d976561560efe0c21eafc4dc4e9833120",
+      "bytes": 8281,
+      "sha256": "8c87beb556293b924628f0595c4e3314bcb2969857c9b2fd8e194d703f43bdcf",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/reference/verifier/src/resources.ts"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "reference/verifier/src/verify.ts",
+      "blob": "97325d24da5f3ee9a4c197811ee7a09907cf7e35",
+      "bytes": 13236,
+      "sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/reference/verifier/src/verify.ts"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/interpretation-bundles.yaml",
+      "blob": "3caaa381e220520de8fa9ee50415ee0510df0050",
+      "bytes": 8425,
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/interpretation-bundles.yaml"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/public-opening-record.md",
+      "blob": "6cf4d237be11552fc2e3cb2bf281e7b073aa3828",
+      "bytes": 7195,
+      "sha256": "3533129fc40c1865f8bbfa0a2bc2ebc7b615341343583e1183b6db2e9060928d",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/public-opening-record.md"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-independent-multigroup-rfc.md",
+      "blob": "09e5fe9b87e596e8d42d5cb8d46ec70ce8134261",
+      "bytes": 19178,
+      "sha256": "e369752358cd67cc7bc665693db00115f05a63ecf0c7914ecd139d32dcf7b5c3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-independent-multigroup-rfc.md"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "blob": "ab7ca233505dd21ee3bbf249889960d515022151",
+      "bytes": 42379,
+      "sha256": "26c229c4229d0a60efa6d5bdba1755da2cbb46352ef687a28c3bea56ea9d5367",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/supplied-scope-opening-record.md"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-research-result.md",
+      "blob": "8f21526040924b891f64724c2d0fde9ea94eff92",
+      "bytes": 102312,
+      "sha256": "61b20c9b5e4c43ed54e67c74630fb1d5f87f0b972af76f3876ad09340dd9d06f",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-research-result.md"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "review-inputs/r3-opening-premise-repair-review/REVIEW-RESULT.md",
+      "blob": "ecb19b8e5b0cf5f4e8d84aeaaed2f54e79d215c9",
+      "bytes": 18703,
+      "sha256": "70d700ba8b401fdc27612e238d514975ba46aca4d68b9e3f7b8da7bf8778722c",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/review-inputs/r3-opening-premise-repair-review/REVIEW-RESULT.md"
+    }
+  ],
+  "collision_scan": {
+    "commits": [
+      "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "7774242f0df81342c5abca97a8fbe40844306fa6"
+    ],
+    "labels": [
+      "unissued-d0-declaration-exercise",
+      "example-contract-omnibus-v0",
+      "example-contract-pairwise-v0",
+      "example-contract-many-to-one-v0",
+      "example-contract-planned-contrast-v0",
+      "example-contract-multiplicity-adjustment-v0",
+      "example-contract-interval-v0"
+    ],
+    "matches": [],
+    "scope": "Tracked content at base/current main and fixed R3 input; no global namespace reservation or proof about unseen work."
+  }
+}

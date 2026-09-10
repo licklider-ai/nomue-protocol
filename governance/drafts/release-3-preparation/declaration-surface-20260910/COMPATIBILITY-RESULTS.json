@@ -1,0 +1,54 @@
+{
+  "scope": "unchanged ingress, canonicalization and routing; not full numerical regression",
+  "total": 12,
+  "results": [
+    {
+      "name": "existing-ingress-rejects-pretty-exercise-bytes",
+      "passed": true
+    },
+    {
+      "name": "existing-ingress-preserves-canonical-bytes",
+      "passed": true
+    },
+    {
+      "name": "existing-jcs-idempotent",
+      "passed": true
+    },
+    {
+      "name": "jcs-does-not-sort-arrays",
+      "passed": true
+    },
+    {
+      "name": "exercise-does-not-route-as-a-Record",
+      "passed": true
+    },
+    {
+      "name": "exercise-label-is-not-a-supported-bundle",
+      "passed": true
+    },
+    {
+      "name": "existing-exact-bundle-urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+      "passed": true
+    },
+    {
+      "name": "nearby-bundle-refused-urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+      "passed": true
+    },
+    {
+      "name": "existing-exact-bundle-urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1",
+      "passed": true
+    },
+    {
+      "name": "nearby-bundle-refused-urn:nomue:bundle:itgc-guarantee:0.2.0-draft.1",
+      "passed": true
+    },
+    {
+      "name": "existing-exact-bundle-urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1",
+      "passed": true
+    },
+    {
+      "name": "nearby-bundle-refused-urn:nomue:bundle:itgc-guarantee:0.2.1-draft.1",
+      "passed": true
+    }
+  ]
+}
