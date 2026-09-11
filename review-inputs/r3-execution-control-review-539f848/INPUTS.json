@@ -1,0 +1,310 @@
+{
+  "kind": "review-input-inventory",
+  "date": "2026-09-11",
+  "reviewed_commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+  "reviewed_tree": "5a2d4ad40e76f137adeb9e4efca77c55fe6a9238",
+  "sole_parent": "633c6c650151b61c5427480fbb8ad02d908d0dff",
+  "pre_change_main": "8149731d9100b7faeae706be80cf37c7d7628dc9",
+  "merge_commit": "d348c07dee762beb677f9b37aa16e06c9191993a",
+  "cumulative_diff_paths": [
+    "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/README.md",
+    "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/SOURCE-REVIEW.md",
+    "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/INPUTS.json"
+  ],
+  "verdicts": {
+    "source_investigation_reusable_as_basis": "REPAIR_REQUIRED",
+    "implementation_plan_ready_after_repair": "REPAIR_REQUIRED"
+  },
+  "review_role": "external adversarial design reviewer",
+  "provider": {
+    "tool": "Anthropic Claude Code cloud session",
+    "configured_model": "claude-fable-5-1",
+    "last_served_model": "claude-fable-5-1",
+    "source": "session tool telemetry, not a model-build attestation",
+    "human_reviewer": false,
+    "additional_agents": false,
+    "private_repository_accessed": false
+  },
+  "prior_involvement": "none in this session; earlier Claude sessions of the same account repaired binding-experiment files that are used here as fixed inputs (see REVIEW.md)",
+  "environment": {
+    "kernel": "6.18.44-fc-v24",
+    "machine": "x86_64",
+    "node": "v22.22.2",
+    "node_executable": "/opt/node22/bin/node",
+    "node_sha256": "81925c0995b5c1427b5d538e6a90ca2fdc4daffb786b09af749beaf7369d4e90",
+    "python": "3.11.15",
+    "python_executable": "/usr/local/bin/python3",
+    "python_sha256": "f56a588548dd013906ae1dcd1b6faa417f4e204da634ff354840d9643e78ff9e",
+    "tsx": "4.23.11",
+    "esbuild_linux_x64": "0.28.1",
+    "cgroup_layout": "hybrid: memory/pids/cpu on cgroup v1 hierarchies; cgroup v2 mount with empty cgroup.controllers",
+    "v2_controls_exercised": "NOT_RUN"
+  },
+  "blocked_sources": ["man7.org", "docs.kernel.org", "docs.python.org"],
+  "inputs": [
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/README.md",
+      "git_blob": "917804b785b60be18c4af497185f8fb5d236b69c",
+      "bytes": 7452,
+      "sha256": "477889fa34a2d5b86616147cb6e148ee5939c8d5a131ec4eb44014ef6ffbde36"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/SOURCE-REVIEW.md",
+      "git_blob": "0ca1925df9c1eb1248bd6368db1b732208ab03f4",
+      "bytes": 10511,
+      "sha256": "c72131b4587226060c3f7eec371072e1a61fdfdc29943fb900bdf5b25edc2f6d"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/INPUTS.json",
+      "git_blob": "3d24d6889b76a5d43aa96b80b2d3ad7416adfc36",
+      "bytes": 3681,
+      "sha256": "2d1db6a58a3c4f8f773bf12f6197ae50ee54150334db927dd1a5a9dacdf1661f"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "review-inputs/r3-holm-envelope-review-20260911/PROMOTION-HANDOFF.md",
+      "git_blob": "4d3be915d4161550379cba7890b9834787ee3611",
+      "bytes": 4619,
+      "sha256": "d635354a4c9cfc57f81a56e7e89886a7283dec4a609db3886c2ef04633baf219"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/README.md",
+      "git_blob": "17ecb391afb659da80ede642126a584614f8e40b",
+      "bytes": 2594,
+      "sha256": "20923c5711c47a367cbdae56bfc020ca8f877ae33f3772f93fd914132b864013"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/DESIGN.md",
+      "git_blob": "3d1f62c9796107c331bb93b3ac3dc3f87019e42e",
+      "bytes": 10421,
+      "sha256": "3dfe505ba247b80e6eddd356efa52159b6466269c69234c06ca3df9c0ecebf95"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/envelope.mjs",
+      "git_blob": "c1a874ff97eaff1831702b150b810463c2fbfcb0",
+      "bytes": 16276,
+      "sha256": "f37d303cccded89108e5663a8b09028ea4b54b2d99d7e7ae5b27b42ade779236"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/INPUTS.json",
+      "git_blob": "fd41ff2fa9a164418871b3e2436f00aad8347473",
+      "bytes": 2024,
+      "sha256": "78b1f5a67b30df9b3d1254f9f73253cdff271897b2e48775477536198293013d"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/test_envelope.mjs",
+      "git_blob": "02479315931b12218788d47e24f88464ca6a9de3",
+      "bytes": 19190,
+      "sha256": "d64b529816f22b3144431b4a5b9b3eafc339cb77fb22686a44a13a09136cca76"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/example-record.jcs",
+      "git_blob": "83f4a7f030263b01ea558a885a53658489b5ad29",
+      "bytes": 6334,
+      "sha256": "4fcf7f02768abf7213b78535afe19c69c7254968fa7e053db8f34cf423955459"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/example-expected.json",
+      "git_blob": "ddc1cb0c72a499a964c99a8deb4fa8c7d889a90b",
+      "bytes": 7280,
+      "sha256": "acf90da80cce00a5c415497d4fe33bd8b78b2aa627092ab094dfc3d32e0ca6b1"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "bytes": 12664,
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "git_blob": "7656beae6750dcc29e52f8c15df53c78027cd4ee",
+      "bytes": 2278,
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/live_rss.py",
+      "git_blob": "4bf6bf3c9662be2782998be53021d5801c11cf8f",
+      "bytes": 3457,
+      "sha256": "7f5b0940ef92215fa7a8d32d6fe1626eff4cdec6cfb0ac4dffe0f611a3279d6a"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/run_suite.py",
+      "git_blob": "ee1c0c1517a769161f034dc62325791371d45002",
+      "bytes": 2729,
+      "sha256": "2d840c3a9556ecc9dc407759b0a2a9c3e5de24d74ebe0fd3eb154c4509da08e4"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/probe.mjs",
+      "git_blob": "b799e437ad74081a206994670b1083e97396a1e6",
+      "bytes": 2075,
+      "sha256": "250aa7986083664410881b645451f89e16d51f0d13de041124882a96dc1c7c8a"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/REPORT.md",
+      "git_blob": "8ae5151c284c527df740239bc7d690a24ebbeba0",
+      "bytes": 16890,
+      "sha256": "e5a86027baeada7c8e7c89bba49b3633b619b1b89237e75bf352d067c49efaf5"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "git_blob": "d08d06a6331b7dd3e1b0911f230acdbdb8cf9ca2",
+      "bytes": 31065,
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "AGENTS.md",
+      "git_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "CHARTER.md",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "bytes": 9163,
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "AUTHORITY.md",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "bytes": 12454,
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/RFC.md",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "commit": "539f8481b5c57f8d5740af16c7a46772188b85c7",
+      "path": "governance/ID-POLICY.md",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    }
+  ],
+  "primary_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/execve.2",
+      "sha256": "86a0494483315962534c7cd662ce41bbb1431bfa7b273c57c3a9589934cfbc7b",
+      "stands_for": "https://man7.org/linux/man-pages/man2/execve.2.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/fork.2",
+      "sha256": "6187bda50aaec00c8ddc72917f75d11df26c502d9ebcea64f543f64dd4abe8dd",
+      "stands_for": "https://man7.org/linux/man-pages/man2/fork.2.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/getrlimit.2",
+      "sha256": "8232e26310094745b295ec8e8f34d8c9ea8508e898795f2868341af0dc7981a0",
+      "stands_for": "https://man7.org/linux/man-pages/man2/getrlimit.2.html (mirror dated 2021-03-22; investigator read 6.19)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/kill.2",
+      "sha256": "c80f0a9d21f0249f3af4bf6812c01fbc282ed38f086ef6141a399214b566382c",
+      "stands_for": "https://man7.org/linux/man-pages/man2/kill.2.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/prctl.2",
+      "sha256": "84b2a9d8088b1eb0371e496f10be17e5cb6078bcdf8026a5e45c012835a06f2a",
+      "stands_for": "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html (older combined page)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man2/wait.2",
+      "sha256": "6555d58ab299de1ec9fc5c42a5b7e3e24ce16b1c76f9a3993cd0be35b7673e99",
+      "stands_for": "https://man7.org/linux/man-pages/man2/wait.2.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mkerrisk/man-pages/master/man7/cgroups.7",
+      "sha256": "6e082681b8f766edc5a842a2f55b44caad7e3938c3c30e88564d4fcd32156291",
+      "stands_for": "https://man7.org/linux/man-pages/man7/cgroups.7.html (mirror frozen 2021-08-27; lacks cgroup.kill)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/child_process.md",
+      "sha256": "fc56f1a7c76d9689aa7379f886fe83c66673e929d63d0bf8e754ed7aea9c69df",
+      "stands_for": "https://nodejs.org/api/child_process.html (v22.22.2 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/cli.md",
+      "sha256": "8b24935bfca5d9a0a4882614a1c65954f0e9d20b9822205b3bdcd06b3bbe525c",
+      "stands_for": "https://nodejs.org/api/cli.html (v22.22.2 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/process.md",
+      "sha256": "769ade9e038b561541797dc1c5bc2f432d9bb58fd2e439b181fe12979baf649e",
+      "stands_for": "https://nodejs.org/api/process.html (v22.22.2 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/timers.md",
+      "sha256": "e39eae1df8b8c6a21c6e5f111c877bd0156c55139fa926376ebe34d6b1701bdf",
+      "stands_for": "https://nodejs.org/api/timers.html (v22.22.2 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/typescript.md",
+      "sha256": "35d80c67917f7ec786cb3fbdd7e1a007c6f1344608f72b27c9880df68804ac39",
+      "stands_for": "https://nodejs.org/api/typescript.html (v22.22.2 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/doc/api/worker_threads.md",
+      "sha256": "eefcb91dc6bfe03149a208d5006b2261dd6cbd9a67fa321363d858596ee52e26",
+      "stands_for": "not cited"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/3.11/Doc/library/subprocess.rst",
+      "sha256": "af4fe1e80b527caa6ebbb51eab8ea733fd0fab3510eed32238c98d4ac713d369",
+      "stands_for": "https://docs.python.org/3/library/subprocess.html (3.11 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/3.14/Doc/library/subprocess.rst",
+      "sha256": "05cd782c5181481ad961788dd678b99c903eb3ff53e0ebab3095c38b48c74dfd",
+      "stands_for": "https://docs.python.org/3/library/subprocess.html (3.14 source)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/master/Documentation/accounting/psi.rst",
+      "sha256": "11c6b7129103b4547c31895cb1cfc0ff75b741c95a24bfcaeb01dece37b82692",
+      "stands_for": "not cited"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/master/Documentation/admin-guide/cgroup-v2.rst",
+      "sha256": "2750c11a6324e18f4d3a9bb63032b55f3268bd7077b80897af2f15a712611b68",
+      "stands_for": "https://docs.kernel.org/admin-guide/cgroup-v2.html (current)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v5.10/Documentation/admin-guide/cgroup-v2.rst",
+      "sha256": "da30ea53f6a1476790238e6815754af5ae44f4076636bb0d9065270782ae6dab",
+      "stands_for": "kernel v5.10 document, used for interface availability"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v5.15/Documentation/admin-guide/cgroup-v2.rst",
+      "sha256": "5d38d9c3418e7f3db9199669a616a68f9028701a9fae6bca5974ef647249fa23",
+      "stands_for": "kernel v5.15 document, used for interface availability"
+    },
+    {
+      "url": "https://nodejs.org/api/cli.html",
+      "sha256": null,
+      "stands_for": "Node.js v26.8.2 rendered page, read through the web fetch tool; not hashed",
+      "note": "used only for the v26.0.0 trap-handler statement"
+    }
+  ]
+}
