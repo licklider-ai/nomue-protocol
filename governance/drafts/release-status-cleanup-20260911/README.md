@@ -34,6 +34,15 @@ The observed remaining open PR was this cleanup PR (#329); the three RFC issues
 were still open. No branch was deleted, and every original PR body was retained
 before appending its closure explanation.
 
+## Validation correction
+
+Standard CI run 34647488522 on `f65a177e53e531bad00c1ea26d3f1fb741af096f`
+correctly rejected a navigation insertion into the hash-pinned R2 steward
+ratification package (one source-binding test failed on each Linux x64 job).
+That insertion was removed, restoring the exact baseline document. Its current
+status remains available through the new release-status page and candidate
+READMEs. No snapshot hash or test expectation was changed.
+
 ## Current navigation
 
 [Release status](../RELEASE-STATUS.md) gives one current R2/R3/R4 view and explicit
