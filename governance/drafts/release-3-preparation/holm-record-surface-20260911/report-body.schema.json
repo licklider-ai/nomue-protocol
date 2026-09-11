@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "check_ref",
+    "scope",
+    "outcome",
+    "reason",
+    "guarantee_boundary",
+    "p_generation"
+  ],
+  "properties": {
+    "kind": {
+      "const": "unissued-r3-holm-report-body-v1"
+    },
+    "check_ref": {
+      "const": "unissued-declaration-bound-holm-check-v1"
+    },
+    "scope": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["record_id", "revision_id", "analysis_id", "family_id", "result_id"],
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "revision_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "analysis_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "family_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "result_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "outcome": {
+      "enum": ["consistent", "mismatch", "input_refused", "execution_failed"]
+    },
+    "reason": {
+      "enum": [
+        "all_rows_match",
+        "context_or_value_mismatch",
+        "surface_input",
+        "worker_or_dependency_failure"
+      ]
+    },
+    "guarantee_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declaration_truth",
+        "scientific_validity",
+        "familywise_error_control",
+        "source_authenticity"
+      ],
+      "properties": {
+        "declaration_truth": {
+          "const": "not_asserted"
+        },
+        "scientific_validity": {
+          "const": "not_asserted"
+        },
+        "familywise_error_control": {
+          "const": "not_asserted"
+        },
+        "source_authenticity": {
+          "const": "not_asserted"
+        }
+      }
+    },
+    "p_generation": {
+      "const": "not_run"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "consistent"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reason": {
+            "const": "all_rows_match"
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["record_id", "revision_id", "analysis_id", "family_id", "result_id"],
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+              },
+              "revision_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+              },
+              "analysis_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+              },
+              "family_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+              },
+              "result_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "mismatch"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reason": {
+            "const": "context_or_value_mismatch"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "input_refused"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reason": {
+            "const": "surface_input"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "execution_failed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reason": {
+            "const": "worker_or_dependency_failure"
+          }
+        }
+      }
+    }
+  ]
+}

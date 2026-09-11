@@ -1,0 +1,52 @@
+{
+  "status": "unissued exploratory experiment",
+  "base_commit": "11921d1ee22eab71c6341bd9e00e9aa25f44dbdf",
+  "binding_review_head": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+  "proposal_head": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+  "runtime": [
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/d0.mjs",
+      "sha256": "ce5eca7a15ae13e198e177f2c6e07b625b6f34bcaf35ffcce7be680d4ecff85f"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/worker.py",
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/candidate.schema.json",
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/fixture-contracts.json",
+      "sha256": "5a534294d416637627e7ec158da71d4a8b47bcdd63f8e708eaef0a41293e5d18"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/fixtures.mjs",
+      "sha256": "3813c6cf62b74804e7141757ff4a763d93c69e84bfb9173f5651fe9d71534ed4"
+    },
+    {
+      "relative_path": "../holm-declaration-binding-experiment-20260911/example.json",
+      "sha256": "debaf60e44a592c50b868dd9df8ac71fb0f64cef8985f98956de3f832525943a"
+    },
+    {
+      "relative_path": "../../../../reference/verifier/src/strict-json.ts",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    },
+    {
+      "relative_path": "../../../../reference/verifier/src/jcs.ts",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    }
+  ]
+}
