@@ -1,0 +1,226 @@
+{
+  "kind": "informative-input-inventory",
+  "date": "2026-09-11",
+  "repository": "licklider-ai/nomue-protocol",
+  "base_commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "candidate_commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+  "scope": "Pinned documentary and implementation-inspection inputs; not a complete runtime inventory or new primary-source review. Full text read for proposal-bearing source reports/designs/bridge; registries inspected for relevant authority/version constraints. No numerical execution in this task.",
+  "inputs": [
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/REPORT.md",
+      "git_blob": "8ae5151c284c527df740239bc7d690a24ebbeba0",
+      "bytes": 16890,
+      "sha256": "e5a86027baeada7c8e7c89bba49b3633b619b1b89237e75bf352d067c49efaf5",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/REPORT.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "bytes": 12664,
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-design-20260911/DESIGN.md",
+      "git_blob": "228d60711ed4b0f03b41575945d932d910b010d4",
+      "bytes": 17037,
+      "sha256": "dc1a9025424887b4be0dd46c21d42d321d5bd7e56511783e690bb3890aa3d0de",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-declaration-binding-design-20260911/DESIGN.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-design-20260911/ACCEPTANCE.md",
+      "git_blob": "a745d76a076982ff42e13ca76d5d7c806ad5ba57",
+      "bytes": 9317,
+      "sha256": "be7b3d9e3e2f36cc9ed0e5366ff47700dadab23e76ce8fdc0bfea9e7ed88dbcd",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-declaration-binding-design-20260911/ACCEPTANCE.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-candidate-design-20260911/DESIGN.md",
+      "git_blob": "6c7ef2fdbbbd1019f136cb28c601c3b5a91a1c4c",
+      "bytes": 12853,
+      "sha256": "1cf388c69a1458a7d1656e56cf37948391f3c3267d40ecd08e3f4a5aad0fe553",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-candidate-design-20260911/DESIGN.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-candidate-design-20260911/EXTERNAL-REVIEW.md",
+      "git_blob": "636714986e1c8ec0df5d209e0aea3eb82bc375c9",
+      "bytes": 2915,
+      "sha256": "e9d925f46e108f32117ffe3a9d219658f347846c9549d17e7f3bd4c4cb87640e",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-candidate-design-20260911/EXTERNAL-REVIEW.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/REPORT.md",
+      "git_blob": "a0a441789805348790f9d1a7cb37617951d3dd6d",
+      "bytes": 9872,
+      "sha256": "5711bdf7f53184235a0b9d5ba49580011c629c784d87d273ea6539d623b92e1c",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/holm-experiment-20260911/REPORT.md"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/next-work-plan-20260911/PLAN.md",
+      "git_blob": "32445e89b4a14bd1faebac1ec4afd11484b9db11",
+      "bytes": 12813,
+      "sha256": "cc6a846890edd96650a8d49d322bc17a3dc0969f0e295fef350399e0722a430a",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cc87234d27b7a0d51bc172d0e661845a3b1f9b15/governance/drafts/release-3-preparation/next-work-plan-20260911/PLAN.md"
+    },
+    {
+      "commit": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+      "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "git_blob": "0e71a16edb686417111baf1511118c466b9a0e2b",
+      "bytes": 12540,
+      "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/9793fd2f1540c26491651ff02bf51d0bd292f821/review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "bytes": 10264,
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/864766232988181e72ae18c235dbc815466b3a1d/review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md",
+      "git_blob": "4e17382570a56d6f784ec286854f3ea30bbe90f9",
+      "bytes": 5434,
+      "sha256": "dc7ec76589d02c154bc5886e79d822f09caf0f27f0639f53f297a0cd6631cfa3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/864766232988181e72ae18c235dbc815466b3a1d/review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/DEFERRED.md",
+      "git_blob": "46f0e40281f45f8b4e2ca4d4085f1f17b1f82b6c",
+      "bytes": 6945,
+      "sha256": "a91766b7cb609b3f9a56730f82fd431edaa268c6a23f697da053c4926a2fbc3f",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/25de2d2b97934476dc2ae49eeb3fa5143a74e131/governance/drafts/release-3-preparation/declaration-surface-20260910/DEFERRED.md"
+    },
+    {
+      "commit": "a5213b446df0ec1de09d557c0c6933320f470452",
+      "path": "review-inputs/r3-evidence-map-holm-7f3321b/HOLM-APPLICABILITY.md",
+      "git_blob": "49ad3cd90e22e565b8e656ce56b2e4b1fd16baca",
+      "bytes": 16425,
+      "sha256": "bf8e88029f8a7d1ef117cc5fde2f63e7d134ea86d3884102c69bf49cbf654648",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/a5213b446df0ec1de09d557c0c6933320f470452/review-inputs/r3-evidence-map-holm-7f3321b/HOLM-APPLICABILITY.md"
+    },
+    {
+      "commit": "545f6eb4c28eb93bd7cc5404dd45afd475822317",
+      "path": "governance/drafts/release-3-independent-multigroup-rfc.md",
+      "git_blob": "09e5fe9b87e596e8d42d5cb8d46ec70ce8134261",
+      "bytes": 19178,
+      "sha256": "e369752358cd67cc7bc665693db00115f05a63ecf0c7914ecd139d32dcf7b5c3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/545f6eb4c28eb93bd7cc5404dd45afd475822317/governance/drafts/release-3-independent-multigroup-rfc.md"
+    },
+    {
+      "commit": "545f6eb4c28eb93bd7cc5404dd45afd475822317",
+      "path": "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "git_blob": "ab7ca233505dd21ee3bbf249889960d515022151",
+      "bytes": 42379,
+      "sha256": "26c229c4229d0a60efa6d5bdba1755da2cbb46352ef687a28c3bea56ea9d5367",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/545f6eb4c28eb93bd7cc5404dd45afd475822317/governance/drafts/release-3-preparation/supplied-scope-opening-record.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AGENTS.md",
+      "git_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/AGENTS.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "CHARTER.md",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "bytes": 9163,
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/CHARTER.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AUTHORITY.md",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "bytes": 12454,
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/AUTHORITY.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "authority/authority-manifest.yaml",
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "bytes": 45801,
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/authority/authority-manifest.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/requirements.yaml",
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "bytes": 83339,
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/requirements.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/ID-POLICY.md",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/governance/ID-POLICY.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/RFC.md",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/governance/RFC.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/RELEASE-POLICY.md",
+      "git_blob": "8e15af635bd97fab85f8a698b7978ca1b687da4c",
+      "bytes": 10970,
+      "sha256": "df6f65e2700c7b09f0b1e1d39be044d129cc339524d6f4f8f09db78418432387",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/governance/RELEASE-POLICY.md"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/stability-tiers.yaml",
+      "git_blob": "3b6325125d8871b428ab48a8f206632bfcda9b16",
+      "bytes": 2042,
+      "sha256": "9236a7850860bde92159a91d3c3d405283b0b6aabf3ef60aa4342c71532b0b5b",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/stability-tiers.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/interpretation-bundles.yaml",
+      "git_blob": "3caaa381e220520de8fa9ee50415ee0510df0050",
+      "bytes": 8425,
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/interpretation-bundles.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/public-contract-surfaces.yaml",
+      "git_blob": "cf4f740f1cbec6ae7b4a9a915bc6f830444c86cb",
+      "bytes": 16351,
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/registries/public-contract-surfaces.yaml"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "pnpm-lock.yaml",
+      "git_blob": "683674c55ce9da94b1aa8358d9941ea892785304",
+      "bytes": 189670,
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/pnpm-lock.yaml"
+    }
+  ]
+}
