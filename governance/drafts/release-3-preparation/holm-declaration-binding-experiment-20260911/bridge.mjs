@@ -239,14 +239,20 @@ export async function runWorker(carrier, optimized = false) {
   const metrics = path.join(temporary, "metrics.json");
   try {
     // Internal generated message and trusted diagnostic path, never submitted text.
-    const promise = execute(python, [...(optimized ? ["-O"] : []), path.join(HERE, "worker.py")], {
-      cwd: HERE,
-      maxBuffer: 262144,
-      timeout: 25000,
-      encoding: "utf8",
-      killSignal: "SIGKILL",
-      env: { ...process.env, NOMUE_EXPERIMENT_METRICS: metrics },
-    });
+    // -I: isolated mode ignores PYTHONPATH/PYTHON* variables and user site-packages,
+    // so the inherited environment cannot redirect the worker's standard-library imports.
+    const promise = execute(
+      python,
+      ["-I", ...(optimized ? ["-O"] : []), path.join(HERE, "worker.py")],
+      {
+        cwd: HERE,
+        maxBuffer: 262144,
+        timeout: 25000,
+        encoding: "utf8",
+        killSignal: "SIGKILL",
+        env: { ...process.env, NOMUE_EXPERIMENT_METRICS: metrics },
+      },
+    );
     promise.child.stdin.on("error", () => {});
     promise.child.stdin.end(message);
     let response;

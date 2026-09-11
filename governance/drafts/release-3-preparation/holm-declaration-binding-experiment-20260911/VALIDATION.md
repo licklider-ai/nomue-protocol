@@ -11,6 +11,7 @@ python governance/drafts/release-3-preparation/holm-declaration-binding-experime
 python -O governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/check_nodes.py
 python governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/run_suite.py > /tmp/r3-binding-results.json
 python governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/test_integrity.py > /tmp/r3-binding-integrity.json
+python governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/live_rss.py > /tmp/r3-binding-live-rss.json
 node governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/d0.mjs > /tmp/r3-d0-results.json
 ```
 
@@ -20,7 +21,10 @@ and runs twelve isolated admission/resource probes. `RESULTS.json` preserves thi
 run. Timings, process peaks, executable paths and platform fields vary by host;
 labels, decisions, input hashes and sizes should match. Reproduction writes only
 the specified temporary outputs, not committed results. `test_integrity.py` uses
-an isolated temporary copy, modifies/restores dependencies there and removes it.
+an isolated temporary copy, modifies/restores dependencies there and removes it;
+it honors `NOMUE_EXPERIMENT_PYTHON` for the worker like the coordinator.
+`live_rss.py` needs a `/proc` that exposes child processes; it records
+`LIVE-RSS.json` and fails, rather than refusing, on its ceiling or timeout.
 
 Do not run `pin_inputs.mjs` as validation: it is author-only pin regeneration and
 would accept deliberately changed dependencies into a new manifest. Validate the

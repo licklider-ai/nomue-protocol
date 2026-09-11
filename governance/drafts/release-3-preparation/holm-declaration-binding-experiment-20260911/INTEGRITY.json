@@ -1,5 +1,5 @@
 {
-  "checks": 12,
+  "checks": 15,
   "labels": [
     "isolated import",
     "runtime tamper d0.mjs",
@@ -12,6 +12,9 @@
     "runtime tamper ../../../../pnpm-lock.yaml",
     "Ajv package tamper",
     "Ajv origin substitution",
-    "worker direct pin"
+    "Ajv origin restored",
+    "worker direct pin",
+    "shadow control without isolation",
+    "worker isolated mode"
   ]
 }

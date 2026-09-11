@@ -19,6 +19,7 @@ def require(ok,label):
 
 def main():
     manifest=json.loads((HERE/'INPUTS.json').read_text())
+    python=os.environ.get('NOMUE_EXPERIMENT_PYTHON',manifest['python_executable'])
     with tempfile.TemporaryDirectory() as folder:
         base=Path(folder)/'repo';packet=base/HERE.relative_to(ROOT)
         shutil.copytree(HERE,packet,ignore=shutil.ignore_patterns('__pycache__'))
@@ -45,10 +46,25 @@ def main():
         # A relative path, wholly inside this isolated repository.
         alias.symlink_to(os.path.relpath(other,alias.parent),target_is_directory=True)
         result=run();require(result.returncode!=0 and 'dependency origin: ajv' in result.stderr,'Ajv origin substitution')
+        alias.unlink();alias.symlink_to(os.path.relpath(actual,alias.parent),target_is_directory=True)
+        require(run().returncode==0,'Ajv origin restored')
         # Private worker checks source bytes itself, independently of coordinator.
         target=packet/'candidate.py';raw=target.read_bytes();target.write_bytes(raw+b'\n ')
-        result=subprocess.run([manifest['python_executable'],str(packet/'worker.py')],input='{}',capture_output=True,text=True,timeout=10)
+        result=subprocess.run([python,str(packet/'worker.py')],input='{}',capture_output=True,text=True,timeout=10)
         require(result.returncode!=0 and 'dependency hash: candidate.py' in result.stderr,'worker direct pin')
+        target.write_bytes(raw)
+        # The coordinator launches the worker in isolated mode: an inherited PYTHONPATH
+        # shadowing a standard-library module must not reach it. The direct control
+        # shows the shadow is effective when isolation is absent.
+        shadow=Path(folder)/'shadow';shadow.mkdir();(shadow/'hashlib.py').write_text("raise RuntimeError('shadowed hashlib')\n")
+        env=dict(os.environ,PYTHONPATH=str(shadow),NOMUE_EXPERIMENT_PYTHON=python)
+        result=subprocess.run([python,str(packet/'worker.py')],input='{}',capture_output=True,text=True,timeout=10,env=env)
+        require(result.returncode!=0 and 'shadowed hashlib' in result.stderr,'shadow control without isolation')
+        script=('const b=await import('+json.dumps(module)+');const f=await import('+json.dumps(str(packet/'fixtures.mjs'))+');'
+                'const r=await b.checkBinding(...f.texts(f.fixture()));'
+                'if(r.outcome!=="declaration_bound_supplied_p_arithmetic_consistent")process.exit(3);')
+        result=subprocess.run([NODE,'--input-type=module','-e',script],cwd=base,capture_output=True,text=True,timeout=30,env=env)
+        require(result.returncode==0,'worker isolated mode')
     print(json.dumps({'checks':len(counts),'labels':counts},indent=2))
 
 

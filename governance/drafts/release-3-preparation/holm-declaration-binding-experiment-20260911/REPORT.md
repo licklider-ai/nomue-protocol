@@ -69,8 +69,9 @@ Record parsing route.
 
 - **157 checks** pass in both normal Python and `-O`, with identical labels and
   outcomes. These are check counts, not 157 independent data sets.
-- **12 integrity checks** pass, including eight runtime-file changes, an Ajv
-  package change, Ajv origin substitution and direct worker candidate tampering.
+- **15 integrity checks** pass, including eight runtime-file changes, an Ajv
+  package change, Ajv origin substitution and restoration, direct worker candidate
+  tampering, and the worker isolation controls added after external review.
 - The copied D0 corpus remains **70/70**. Seven copied source files remain
   byte-identical to their immutable source pins.
 - The normal three-member witness, 24 deterministic small families checked by a
@@ -140,3 +141,45 @@ commits and the design parent are recorded in `INPUTS.json`; applicable prior
 research remains referenced by the design. No new primary-source acquisition or
 new numerical method is asserted. This packet remains within the disposable
 exploratory scope of the repository research gate.
+
+## External implementation review receipt and repair
+
+A user-supplied bounded adversarial implementation review of commit
+`45bd42f0a8c5572af6187e76451f65d28124ab53` examined connection, refusal order,
+dependency pinning and resource measurement. Reviewer/model identity and raw
+artifacts were not supplied; the receipt is attributed to the user. The repair
+was prepared in that reviewer's session on 2026-09-11, not by the original
+author context, and is not an independent close review of itself.
+
+Reported checks on Linux with Node v22.22.2 (native type stripping) and CPython
+3.11.15: all seven copied sources matched their source commits byte-for-byte;
+all eight runtime pins, 177 package pins, the Ajv origin and the packet
+inventory matched; `check_nodes.py` and the copied D0 corpus (70/70) passed;
+`run_suite.py` reproduced 157 checks in both Python modes with labels identical
+to the recorded run; the coordinator's refusal order was read against the design
+(raw type, size and depth, strict parse, node/type bounds, D0 counts and
+relations, sidecar and submitted shapes, selection, family scope, member order,
+canonical binding, output order, then one worker launch); the worker channel
+was confirmed to execute the hash-checked candidate bytes, cap request and
+response sizes, and treat stderr, timeouts and malformed replies as failures.
+
+| Finding                                                                                                                                                                                        | Repair                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `test_integrity.py` launched the worker with the author's absolute Python path from the manifest and ignored `NOMUE_EXPERIMENT_PYTHON`, so the integrity suite could not run on any other host | The suite now honors `NOMUE_EXPERIMENT_PYTHON` like the coordinator                                                                                                                                                            |
+| The worker inherited the coordinator's environment, so a `PYTHONPATH` entry shadowing a standard-library module could redirect the worker's imports                                            | The coordinator launches the worker with `-I` (isolated mode). Two integrity controls show the shadow is effective without isolation and inert through the coordinator                                                         |
+| The Ajv origin-substitution control left the package alias redirected, which would mask later controls in the same isolated copy                                                               | The alias is restored and re-verified before later controls                                                                                                                                                                    |
+| Live process-tree RSS sampling, required by the design, had not been executed anywhere                                                                                                         | `live_rss.py` samples the VmRSS of every process in each probe's session from `/proc` every 2 ms and terminates on the 512 MiB ceiling; `LIVE-RSS.json` records the run on this host, which exposes child processes in `/proc` |
+
+Live sampling results: all twelve probes kept their decisions; the largest
+live process-tree peak was 150,816 KiB, below the sum-of-peaks figure for the
+same probe, and every probe received at least 96 samples. This confirms on
+one host that the sum of process-reported peaks is a conservative bound for
+these probes. It is still a host observation with a 2 ms sampling resolution,
+not a hard limit or a portable guarantee; the author's environment could not
+read child processes from `/proc`, so that deviation remains recorded above.
+
+`RESULTS.json` and `INTEGRITY.json` were regenerated on the reviewer host after
+the repair; their labels match the recorded run apart from the two added
+integrity controls and the alias restoration check. Timings, peaks and
+executable paths differ by host. The largest probe elapsed time was
+0.494 seconds and the largest sum of process peaks 156,716 KiB.
