@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-09-10T08:35:02.611Z",
+  "pr276": {
+    "url": "https://github.com/licklider-ai/nomue-protocol/pull/276",
+    "head": "research/r3-declaration-surface-20260910",
+    "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+    "draft": true,
+    "state": "open"
+  },
+  "issue274": {
+    "url": "https://github.com/licklider-ai/nomue-protocol/issues/274",
+    "state": "open",
+    "created_at": "2026-09-09T11:50:18Z",
+    "comments": 0
+  },
+  "target_ci": [
+    {
+      "name": "Phase 1 + 2A validation (macOS arm64)",
+      "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34454758398/job/102798458487"
+    },
+    {
+      "name": "Phase 1 + 2A validation (Linux arm64)",
+      "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34454758398/job/102798458429"
+    },
+    {
+      "name": "Phase 1 + 2A validation (Windows x64)",
+      "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34454758398/job/102798458403"
+    },
+    {
+      "name": "Full check (Linux x64)",
+      "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34454758398/job/102798458329"
+    },
+    {
+      "name": "Full check (Linux x64, Node 24)",
+      "head_sha": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34454758398/job/102798458313"
+    }
+  ]
+}

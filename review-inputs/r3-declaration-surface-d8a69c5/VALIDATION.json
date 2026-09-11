@@ -1,0 +1,34 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "pnpm": "11.19.0",
+    "requested_pnpm": "11.7.0",
+    "os": "Linux"
+  },
+  "checks": [
+    {
+      "command": "pnpm format:check",
+      "exit_code": 0,
+      "output": "$ prettier --check .\nChecking formatting...\nAll matched files use Prettier code style!\n"
+    },
+    {
+      "command": "pnpm lint:markdown",
+      "exit_code": 0,
+      "output": "$ markdownlint-cli2\nmarkdownlint-cli2 v0.23.2 (markdownlint v0.41.1)\nFinding: **/*.md !node_modules/** !generated/** !LICENSE.md !evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md\nLinting: 402 files\nSummary: 0 issues in 0 files\n"
+    },
+    {
+      "command": "node --import tsx tooling/src/validate.ts",
+      "exit_code": 0,
+      "output": "validate: OK - registries, traceability, normative lint, authority,\ngates, conformance manifest, links, private-dependency and language audits,\nphase-1 schemas, cross-checks, code-path audits, and the snapshot\nmanifest mechanism are clean.\n"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "review_scripts_replayed_after_formatting": true,
+  "recorded_results_equal": true,
+  "candidate_files_modified": false,
+  "full_local_pnpm_check_run": false
+}

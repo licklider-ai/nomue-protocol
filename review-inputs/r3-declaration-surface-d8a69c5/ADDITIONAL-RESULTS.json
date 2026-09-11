@@ -1,0 +1,1041 @@
+{
+  "scope": "Reviewer structural expectations only; no scientific or provenance certification",
+  "total": 67,
+  "passed": 67,
+  "results": [
+    {
+      "name": "all-instance-ids-renamed",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Consistent opaque instance renaming preserves every edge; fixture labels stay fixed.",
+      "input_sha256": "8e13191140f6e4fc39c2b3fccb375b80b6eec7a580abf061919d923fa6c287b4",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "all-arrays-reversed",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Order is not reference identity; canonical bytes change.",
+      "input_sha256": "3b43688a8323c04cfb22596aa9b9f03cbde9ca33cba14faf19b57e1d946761c0",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": true,
+      "passed": true
+    },
+    {
+      "name": "family-local-member-renaming",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "m-0 in f-1 is independent of m-0 in f-2/f-4/f-5.",
+      "input_sha256": "fad0f49186bda892585b7a5c7026e50c562bf586503ddb636bdcd61e1a7a79fd",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "complete-family-swap",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Swap same-shape families and update both owners and results: a valid different document, not authenticated intent.",
+      "input_sha256": "f206d50d089dbc098109f66e7098f6fc5d8d612139b45ab332812491a9f09c38",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "complete-contract-kind-swap",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Consistent pairwise/interval label and result-kind changes are structurally valid different declarations.",
+      "input_sha256": "7e3bc3cd988abf880fe6e97f60fd57068f65dd5310453d3b40e83cfffecbdd01",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "reverse-one-pair-direction",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "An all-pairs endpoint set still occurs once; direction changes explicitly.",
+      "input_sha256": "7f4e8a881c4d9bb9fdc09f646fd8f0deca1cffe0cb66f3ea56893909d646d6cb",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "consistent-control-change",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "New control with a complete treatment-minus-control family is a valid alternative.",
+      "input_sha256": "de3cbcaf946912af78f50bd7ab4b9a2ce7e5f56455321d40f3d5694391221f14",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "no-omnibus-adjustment-only",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Generic adjustment has no implicit omnibus dependency inside this bounded shell.",
+      "input_sha256": "77e1117a679c08fb93750f9825d51961a5ca0501ffd8100feee34678c06460be",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "unknown-planned-timing-and-zero-vector",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Timing and coefficient validity are explicitly held, not admission tests.",
+      "input_sha256": "bd3bcfdb7485caf7c366641d859da90b7c4ecb7c1f5427fa302a50af0fc0bee0",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "duplicate-vector-distinct-member",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Semantic duplicate hypothesis detection is deferred.",
+      "input_sha256": "af154b3b75ab22ba935762fa6d51ce5a0379f9adfcaf507a102efd8d869a1b73",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "fourth-group-complete",
+      "expected_accept": true,
+      "expected_stage": "relations",
+      "rationale": "Not hardcoded to three groups; independent complete enumeration for four groups.",
+      "input_sha256": "dbee097eb4e925c971258c2802c1620ec961d4a1470bde15a6c68b0cf6ad613c",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-analysis-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "d1cbdbb7de3f5ef4c360b956d45d772a282f8f820d1e60477582aeb8d8005062",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-family-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "3e51e0c4b75f83d18e190d8e7b6f1ad54a5f48f91dc32619b66e3515488e44b3",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-contract-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "cd8ee50f51d2f0fb3b1157521d02ace35cc8203004682e799ea335571981dd0c",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "duplicate-contrast-dimension",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "9d5305ca743a978f30a2c3161d307e2199cf043d3c6ed3fb182b500ffdd03923",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-unit-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "7c905597bd73bd46dcae24b969e3a7f1aa194e34834cbb0ca2aa1dc6082baa83",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["OBS_UNIT_REF", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "f35d24701a390ccb21a62ad48a48efb10b8abec929f5bdf9b84e3c7aefed74bb",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "44c084e5300c943af1e9671e7f69628522977a1ef618167540e40d3b068ab48a",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "An explicit required identity, reference, uniqueness or coverage condition is violated.",
+      "input_sha256": "5c2ea0bc15dd68465474c401c9be9bdf814a4e2a36dc5b586c7c53be8dbcbc27",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+missing-family-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "4c459de66be5a2454953b3873a1d6d2c9cb1cf90b1268843d1214c7b450ce665",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_FAMILY_REF",
+          "RESULT_SLOT_CARDINALITY"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+missing-contract-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "c8b646aa323a056efab102067e5fad2a26f8461baac4850a705a131c788a6ebe",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "CONTRACT_REF",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_SLOT_CARDINALITY"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+duplicate-contrast-dimension",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "63a9de1685b6e92fe8e97ff5ff9eee6194b3f657d32e4e35b89765cce1ec876d",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "COEFFICIENT_DUPLICATE_GROUP",
+          "CONTRAST_DIMENSION",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_SLOT_CARDINALITY"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+missing-unit-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "32a40360a3b3c829d0e55e31d355b2fa45adafdb0c76e89b690ae29124031edc",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "OBS_UNIT_REF",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_SLOT_CARDINALITY",
+          "UNIT_COVERAGE"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "6eef781f0be76a16ffa49a52394d54ac8de78548da918f0f55bcedb62ded8703",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "DUPLICATE_ID",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_SLOT_CARDINALITY"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "1bfd1b6cd008226d37ed7aeafa8c127cf6f6a0a1c3bb2763353c1895d80b02b9",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-analysis-ref+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "550f3f138ab6b996e288202ff944b6da67ca1b883067c8206345aa264f48b9ef",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "ANALYSIS_INPUT_REF",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_ANALYSIS_REF",
+          "RESULT_SLOT_CARDINALITY"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+missing-contract-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "7805a6c5f2d8c4267f937d5c6ce9391df0b3aebd183ce56b1695f76d1f4ff670",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+duplicate-contrast-dimension",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "084d252aeec807f3a29a348195608566109cc9be34ed045893d91e4c07299728",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "COEFFICIENT_DUPLICATE_GROUP",
+          "CONTRAST_DIMENSION",
+          "RESULT_ANALYSIS_MISMATCH",
+          "RESULT_FAMILY_REF"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+missing-unit-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "974f8cd0dca715940ee8fb5e92ce117ad357fbd0c2247979cc495357fd7e936e",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["OBS_UNIT_REF", "RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "f2eac0b14fc230b1f095f2d62b37b3eff403d8f7b08382799218ea47d10b954d",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "33b58c0217c4cda1127324d04eb3aa45f449d71d4335c3810ad94eba987337da",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-family-ref+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "9900b942e6b103b9113c8c0f380a4d075f6c310e47c0dbce390a6abfce07ba19",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-contract-ref+duplicate-contrast-dimension",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "db044866fe7ec380f756034422990c590a6d445fd078b8c988b900ac01a2a76d",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "COEFFICIENT_DUPLICATE_GROUP",
+          "CONTRACT_REF",
+          "CONTRAST_DIMENSION",
+          "RESULT_ANALYSIS_MISMATCH"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-contract-ref+missing-unit-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "89ff2d2f7eaeea39f44b35f473b14b42934f423ba655cbd58e76dca03d122a78",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "OBS_UNIT_REF", "RESULT_ANALYSIS_MISMATCH", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-contract-ref+duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "c0815af8c62fb3628ccb63fcf4df284bc726ca58749fe3b742c68c7296bdf63e",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "DUPLICATE_ID", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-contract-ref+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "8c6551c5a50a6654c13be545a8c4e3dfd09a1989c24981baf02e717e67aa1da1",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-contract-ref+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "b73b694c8cc3155b4922792f74afbf28387e5684de42632da70ca0c19976b683",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-contrast-dimension+missing-unit-ref",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "7122a96da04fdee37784a7049fe65d255b937b7a197c14068f278446564aecfa",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": [
+          "COEFFICIENT_DUPLICATE_GROUP",
+          "CONTRAST_DIMENSION",
+          "OBS_UNIT_REF",
+          "UNIT_COVERAGE"
+        ]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-contrast-dimension+duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "ae186d5443c005ab0b033af49856b59f91fbe6ca1aaa59bd02c805ccc0317e11",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION", "DUPLICATE_ID"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-contrast-dimension+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "77c355cd7fd4bf97b7103f2b9ca139142c5cb4daef8c3f348657f83744c6cd7b",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-contrast-dimension+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "e205e5995f2e8e5ee072f79ec33593e109360ac6d9e5ccab7b475e6b2dee9b41",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-unit-ref+duplicate-analysis",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "d8dbbc25ea744eb84bbd1201cb1fd80e573e41438bd891abe653545878bb9736",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "OBS_UNIT_REF", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-unit-ref+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "92ff6c2978a0bbe6e2daf7c456c5aa6e85d5378046ed6d4e7e7fe15142094121",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["OBS_UNIT_REF", "RESULT_SLOT_CARDINALITY", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-unit-ref+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "77d8f375bbdce314f8c6e4258181adba335be429a7422bf26245f3e9a0507c97",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "OBS_UNIT_REF", "UNIT_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-analysis+missing-result",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "704c77ccf99260cdd7dc54af3682a656050280c88dc4dc6d98be648ea8863226",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:duplicate-analysis+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "db3d45b029b77151e8cc1a916f7cb0566dd819962b9929f009872c6ccd660d50",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "DUPLICATE_ID"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "compound:missing-result+wrong-analysis-dataset",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Two independent, non-cancelling relation defects remain schema-valid and must return rejection without an exception.",
+      "input_sha256": "fe1e4316c22a7b8c99c0595747cf34ba6c88e415e58467692cee0aced7e0aac1",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "partial-family-swap",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Updating reciprocal owners but not results leaves cross-analysis binding defects.",
+      "input_sha256": "18ac807b56a3205d2738c73254fc9553a86abb2c71881302c9efff27daf0a98a",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "partial-contract-swap",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Result labels/kinds do not agree with the unchanged analysis contract.",
+      "input_sha256": "1150ae7546f9cb16fc37ee18ba0a4ced89a061cfcb34ed113a39f92d823392e5",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "cross-family-same-member-labels",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "m-0/m-1/m-2 equality cannot override f-1/f-4 ownership.",
+      "input_sha256": "b1634aaebba904857fdb81e9b7204a000e8e4905d3d96a2b901a3db5cdd78781",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "family-local-member-dangling",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Changing only a member ID leaves its own result dangling.",
+      "input_sha256": "d6d068bb73de292ff709b13307334a2c8f5e07b8f2472903fddc1bd97fa18564",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_MEMBER_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "duplicate-reversed-edge",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "A reversed duplicate is still duplicate all-pairs coverage, even with complete result membership.",
+      "input_sha256": "d19341858d18252f460a7f9186d57d21cec68ece128e97c27691507fca3502a9",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_PAIR"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "missing-pair-with-result-updated",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Removing both member and result entry cannot shrink an all-pairs universe.",
+      "input_sha256": "7956a9e527a6f974b305fda2ee932a2fb52581be7790a35ac47e9feefc3f48aa",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["PAIR_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "wrong-control-direction",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Many-to-one requires treatment minus the explicit control.",
+      "input_sha256": "3d4655719ffb58e5436e7bea571aa165d22140e8dea27df47daa7345cfc40c12",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTROL_BINDING", "CONTROL_COVERAGE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "coherent-unknown-contract",
+      "expected_accept": false,
+      "expected_stage": "relations",
+      "rationale": "Consistent spelling does not register a new contract label.",
+      "input_sha256": "0591c9c8576b5cef630488ebc5d434991f2d0107d1c0ececcafe3d103919f90d",
+      "schema_valid": true,
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "producer-catalog-injection",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "A producer field cannot replace the harness catalog.",
+      "input_sha256": "96ba0769652f3aa23e6f95a2f2d3322694670408ffb1e23f86884d3fa51a1c6c",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "coercion-and-defaults-forbidden",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "Numeric strings and absent required booleans are rejected without repair.",
+      "input_sha256": "db81cf8eae18aefa7a7d5631d7f1c17b7b60efd410d7cef92249a85a45e46c3b",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "forbidden-result:p_value",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "Numerical and guarantee payloads are not part of this unissued result slot.",
+      "input_sha256": "ada21b5a294d2ba6020c6505aaf42364035fa6e9efd86caf7c8eec44fc92ad85",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "forbidden-result:confidence_level",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "Numerical and guarantee payloads are not part of this unissued result slot.",
+      "input_sha256": "9d1f53adc7d69a57936a3ad93c9a3f2c558d41eba1716c35273e98997752fa49",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "forbidden-result:guarantee",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "Numerical and guarantee payloads are not part of this unissued result slot.",
+      "input_sha256": "42d1df57775e4a6c234396b4cc2c445f78a2342b525311e84b0c561c1d27a34f",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "forbidden-result:tolerance",
+      "expected_accept": false,
+      "expected_stage": "schema",
+      "rationale": "Numerical and guarantee payloads are not part of this unissued result slot.",
+      "input_sha256": "3a0747d06c691509c8467c12a82086f3b912ccf0f79d3851dffd3f7d774259f5",
+      "schema_valid": false,
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "exception": null,
+      "canonical_changed": null,
+      "passed": true
+    },
+    {
+      "name": "nested-escaped-duplicate",
+      "expected_accept": false,
+      "expected_stage": "raw_json",
+      "raw": "{\"x\":[{\"a\":1,\"\\u0061\":2}]}",
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["DUPLICATE_JSON_MEMBER"]
+      },
+      "exception": null,
+      "passed": true
+    },
+    {
+      "name": "invalid-unicode-key",
+      "expected_accept": false,
+      "expected_stage": "raw_json",
+      "raw": "{\"\\udfff\":1}",
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["INVALID_UNICODE_STRING"]
+      },
+      "exception": null,
+      "passed": true
+    },
+    {
+      "name": "negative-zero-exponent",
+      "expected_accept": false,
+      "expected_stage": "raw_json",
+      "raw": "{\"x\":-0e12}",
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["NEGATIVE_ZERO_NUMBER"]
+      },
+      "exception": null,
+      "passed": true
+    },
+    {
+      "name": "negative-underflow-to-zero",
+      "expected_accept": false,
+      "expected_stage": "raw_json",
+      "raw": "{\"x\":-1e-999}",
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["NEGATIVE_ZERO_NUMBER"]
+      },
+      "exception": null,
+      "passed": true
+    },
+    {
+      "name": "nonfinite-in-array",
+      "expected_accept": false,
+      "expected_stage": "numeric_domain",
+      "raw": "{\"x\":[1e999]}",
+      "actual": {
+        "stage": "numeric_domain",
+        "codes": ["NONFINITE"]
+      },
+      "exception": null,
+      "passed": true
+    },
+    {
+      "name": "trailing-comma",
+      "expected_accept": false,
+      "expected_stage": "raw_json",
+      "raw": "{\"x\":1,}",
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["JSON_SYNTAX"]
+      },
+      "exception": null,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,851 @@
+{
+  "scope": "unissued D0 structure and references only",
+  "declaration_truth": "not_asserted",
+  "scientific_validity": "not_asserted",
+  "computability": "not_run",
+  "recomputation": "not_run",
+  "total": 70,
+  "matched": 70,
+  "results": [
+    {
+      "case": "six-distinct-result-slot-kinds",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "reorder-groups",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "reorder-units",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "reorder-observations",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "reorder-result-members",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "reorder-coefficients",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "numeric-ties-do-not-imply-unit-duplicates",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "post-inspection-member-declaration-is-not-admissibility",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-timing-is-not-certification",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "coefficient-zero-vector-is-structural-only",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "nonzero-coefficient-sum-is-deferred",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "non-statistical-prototype-like-id-is-opaque",
+      "expected": {
+        "stage": "relations",
+        "codes": []
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": []
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-top-field",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-nested-field",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "missing-group-binding",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "missing-selection",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "null-value-no-dropping",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "numeric-string-no-coercion",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "two-groups-only",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "false-independence-declaration",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "flattened-declaration",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-group-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-observation-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "REPEATED_UNIT"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "REPEATED_UNIT"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-unit-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "matched": true
+    },
+    {
+      "case": "repeated-unit-different-row",
+      "expected": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE", "REPEATED_UNIT"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE", "REPEATED_UNIT"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-unit",
+      "expected": {
+        "stage": "relations",
+        "codes": ["OBS_UNIT_REF", "UNIT_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["OBS_UNIT_REF", "UNIT_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-observation-group",
+      "expected": {
+        "stage": "relations",
+        "codes": ["GROUP_COVERAGE", "OBS_GROUP_REF", "UNIT_GROUP_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["GROUP_COVERAGE", "OBS_GROUP_REF", "UNIT_GROUP_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unit-group-mismatch",
+      "expected": {
+        "stage": "relations",
+        "codes": ["UNIT_GROUP_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["UNIT_GROUP_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-unit-group",
+      "expected": {
+        "stage": "relations",
+        "codes": ["UNIT_GROUP_MISMATCH", "UNIT_GROUP_REF"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["UNIT_GROUP_MISMATCH", "UNIT_GROUP_REF"]
+      },
+      "matched": true
+    },
+    {
+      "case": "population-omits-row",
+      "expected": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "population-unknown-row",
+      "expected": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["POPULATION_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "population-duplicate-row",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "wrong-dataset",
+      "expected": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF"]
+      },
+      "matched": true
+    },
+    {
+      "case": "wrong-design",
+      "expected": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_INPUT_REF"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-family",
+      "expected": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_FAMILY_REF", "FAMILY_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["ANALYSIS_FAMILY_REF", "FAMILY_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-family-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-analysis-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID"]
+      },
+      "matched": true
+    },
+    {
+      "case": "family-unknown-analysis",
+      "expected": {
+        "stage": "relations",
+        "codes": ["FAMILY_ANALYSIS_MISMATCH", "FAMILY_ANALYSIS_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["FAMILY_ANALYSIS_MISMATCH", "FAMILY_ANALYSIS_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "contract-case-not-alias",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "contract-kind-family-mismatch",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTRACT_FAMILY_MISMATCH", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_FAMILY_MISMATCH", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unknown-control",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTROL_BINDING", "CONTROL_COVERAGE", "CONTROL_REF"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTROL_BINDING", "CONTROL_COVERAGE", "CONTROL_REF"]
+      },
+      "matched": true
+    },
+    {
+      "case": "wrong-existing-control",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTROL_BINDING", "CONTROL_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTROL_BINDING", "CONTROL_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "all-pairs-member-missing",
+      "expected": {
+        "stage": "relations",
+        "codes": ["PAIR_COVERAGE", "RESULT_MEMBER_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["PAIR_COVERAGE", "RESULT_MEMBER_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "pair-duplicate-same-endpoints",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_PAIR", "RESULT_MEMBER_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_PAIR", "RESULT_MEMBER_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "duplicate-member-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_MEMBER_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_MEMBER_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "pair-self-comparison",
+      "expected": {
+        "stage": "relations",
+        "codes": ["PAIR_COVERAGE", "SELF_COMPARISON"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["PAIR_COVERAGE", "SELF_COMPARISON"]
+      },
+      "matched": true
+    },
+    {
+      "case": "pair-group-not-found",
+      "expected": {
+        "stage": "relations",
+        "codes": ["MEMBER_GROUP_REF", "PAIR_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["MEMBER_GROUP_REF", "PAIR_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "omnibus-missing-group",
+      "expected": {
+        "stage": "relations",
+        "codes": ["OMNIBUS_GROUP_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["OMNIBUS_GROUP_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "coefficient-missing-dimension",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "coefficient-unknown-dimension",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTRAST_DIMENSION"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRAST_DIMENSION"]
+      },
+      "matched": true
+    },
+    {
+      "case": "coefficient-duplicate-dimension",
+      "expected": {
+        "stage": "relations",
+        "codes": ["COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["COEFFICIENT_DUPLICATE_GROUP", "CONTRAST_DIMENSION"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-other-analysis-same-member-names",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_SLOT_CARDINALITY"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_SLOT_CARDINALITY"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-unknown-analysis",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_ANALYSIS_REF", "RESULT_SLOT_CARDINALITY"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-unknown-family",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_ANALYSIS_MISMATCH", "RESULT_FAMILY_REF"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-missing-member",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_MEMBER_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_MEMBER_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-unknown-member",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_MEMBER_COVERAGE"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_MEMBER_COVERAGE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-duplicate-member",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-slot-missing",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_SLOT_CARDINALITY"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_SLOT_CARDINALITY"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-duplicate-id",
+      "expected": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_SLOT_CARDINALITY"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["DUPLICATE_ID", "RESULT_SLOT_CARDINALITY"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-unreviewed-numeric-payload",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "result-guarantee-injection",
+      "expected": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "actual": {
+        "stage": "schema",
+        "codes": ["SHAPE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "interval-relabelled-as-adjustment",
+      "expected": {
+        "stage": "relations",
+        "codes": ["RESULT_KIND_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["RESULT_KIND_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "contract-reference-unknown-in-result",
+      "expected": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["CONTRACT_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-duplicate",
+      "expected": {
+        "stage": "raw_json",
+        "codes": ["DUPLICATE_JSON_MEMBER"]
+      },
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["DUPLICATE_JSON_MEMBER"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-escaped-duplicate",
+      "expected": {
+        "stage": "raw_json",
+        "codes": ["DUPLICATE_JSON_MEMBER"]
+      },
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["DUPLICATE_JSON_MEMBER"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-unpaired-surrogate",
+      "expected": {
+        "stage": "raw_json",
+        "codes": ["INVALID_UNICODE_STRING"]
+      },
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["INVALID_UNICODE_STRING"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-negative-zero",
+      "expected": {
+        "stage": "raw_json",
+        "codes": ["NEGATIVE_ZERO_NUMBER"]
+      },
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["NEGATIVE_ZERO_NUMBER"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-nan",
+      "expected": {
+        "stage": "raw_json",
+        "codes": ["JSON_SYNTAX"]
+      },
+      "actual": {
+        "stage": "raw_json",
+        "codes": ["JSON_SYNTAX"]
+      },
+      "matched": true
+    },
+    {
+      "case": "raw-overflow",
+      "expected": {
+        "stage": "numeric_domain",
+        "codes": ["NONFINITE"]
+      },
+      "actual": {
+        "stage": "numeric_domain",
+        "codes": ["NONFINITE"]
+      },
+      "matched": true
+    },
+    {
+      "case": "unicode-not-normalized",
+      "expected": {
+        "stage": "relations",
+        "codes": ["FAMILY_ANALYSIS_MISMATCH", "FAMILY_ANALYSIS_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "actual": {
+        "stage": "relations",
+        "codes": ["FAMILY_ANALYSIS_MISMATCH", "FAMILY_ANALYSIS_REF", "RESULT_ANALYSIS_MISMATCH"]
+      },
+      "matched": true
+    }
+  ]
+}
