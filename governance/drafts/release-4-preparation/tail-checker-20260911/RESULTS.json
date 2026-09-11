@@ -3,47 +3,172 @@
   "original_rows": 220,
   "equivalent_encoding_rows": 220,
   "valid_widened_rows": 1,
-  "rejected_mutations": 39,
+  "rejected_mutations": 41,
   "rejections": [
-    "O2 point excludes truth but passes old overlap check",
-    "O1 decimal_80_digits",
-    "O1 decimal_abs_error_upper",
-    "O1 mathematical_tail",
-    "O1 projection_class",
-    "O1 family",
-    "n",
-    "nu",
-    "f_hex",
-    "oracle_route",
-    "oracle_work",
-    "round_binary64_bits",
-    "candidate_bounds",
-    "oracle_bounds",
-    "missing n",
-    "missing nu",
-    "missing f_hex",
-    "missing family",
-    "missing candidate_bounds",
-    "missing oracle_bounds",
-    "missing oracle_route",
-    "missing oracle_work",
-    "missing decimal_80_digits",
-    "missing decimal_abs_error_upper",
-    "missing round_binary64_bits",
-    "missing projection_class",
-    "missing mathematical_tail",
-    "drop",
-    "duplicate",
-    "reorder",
-    "counter",
-    "extra",
-    "interval guard",
-    "interval guard",
-    "interval guard",
-    "interval guard",
-    "raw input",
-    "raw input",
-    "raw input"
+    {
+      "case": "O2 submitted interval misses fixed candidate enclosure",
+      "reason": "candidate containment"
+    },
+    {
+      "case": "O1 decimal_80_digits",
+      "reason": "Decimal diagnostic"
+    },
+    {
+      "case": "O1 decimal_abs_error_upper",
+      "reason": "Decimal error bound"
+    },
+    {
+      "case": "O1 mathematical_tail",
+      "reason": "mathematical tail"
+    },
+    {
+      "case": "O1 projection_class",
+      "reason": "projection class"
+    },
+    {
+      "case": "O1 family",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "n",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "nu",
+      "reason": "degrees"
+    },
+    {
+      "case": "f_hex",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "oracle_route",
+      "reason": "oracle provenance"
+    },
+    {
+      "case": "oracle_work",
+      "reason": "oracle provenance"
+    },
+    {
+      "case": "round_binary64_bits",
+      "reason": "rounded bits"
+    },
+    {
+      "case": "candidate_bounds",
+      "reason": "candidate containment"
+    },
+    {
+      "case": "oracle_bounds",
+      "reason": "oracle containment"
+    },
+    {
+      "case": "missing n",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing nu",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing f_hex",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing family",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing candidate_bounds",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing oracle_bounds",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing oracle_route",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing oracle_work",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing decimal_80_digits",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing decimal_abs_error_upper",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing round_binary64_bits",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing projection_class",
+      "reason": "row fields"
+    },
+    {
+      "case": "missing mathematical_tail",
+      "reason": "row fields"
+    },
+    {
+      "case": "drop",
+      "reason": "fixed corpus size"
+    },
+    {
+      "case": "duplicate",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "reorder",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "counter",
+      "reason": "fixed summary mismatch"
+    },
+    {
+      "case": "extra",
+      "reason": "packet fields"
+    },
+    {
+      "case": "interval guard",
+      "reason": "exponent budget/type"
+    },
+    {
+      "case": "interval guard",
+      "reason": "exponent budget/type"
+    },
+    {
+      "case": "interval guard",
+      "reason": "significand budget/type"
+    },
+    {
+      "case": "interval guard",
+      "reason": "interval order/range"
+    },
+    {
+      "case": "valid tighter interval is outside fixed-enclosure contract",
+      "reason": "candidate containment"
+    },
+    {
+      "case": "raw input",
+      "reason": "duplicate key"
+    },
+    {
+      "case": "raw input",
+      "reason": "nonfinite JSON constant"
+    },
+    {
+      "case": "raw input",
+      "reason": "nonfinite JSON number"
+    },
+    {
+      "case": "raw input",
+      "reason": "file budget exceeded"
+    }
   ],
   "old_checker_accepts_O1": 5,
   "old_checker_accepts_O2": 1,

@@ -3,7 +3,8 @@ import hashlib
 import importlib.util
 import json
 import re
-from decimal import Context, Decimal, localcontext
+import math
+from decimal import Context, Decimal, localcontext, ROUND_HALF_EVEN, InvalidOperation, DivisionByZero, Overflow
 from fractions import Fraction as Q
 from functools import lru_cache
 from pathlib import Path
@@ -32,7 +33,11 @@ def read(path):
     require(len(data) <= MAX_BYTES, 'file budget exceeded')
     def constant(_):
         raise ValueError('nonfinite JSON constant')
-    return json.loads(data, object_pairs_hook=pairs, parse_constant=constant)
+    def finite_float(text):
+        value = float(text)
+        require(math.isfinite(value), 'nonfinite JSON number')
+        return value
+    return json.loads(data, object_pairs_hook=pairs, parse_constant=constant, parse_float=finite_float)
 
 
 PINS = read(HERE / 'INPUTS.json')['files']
@@ -78,7 +83,9 @@ def targets(index):
     cb = candidate.finite_enclosure(f, n, 128)
     ob = oracle.oracle(f, n, 256)
     # Pin ambient Decimal settings rather than inherit caller precision/rounding.
-    with localcontext(Context(prec=28, Emin=-999999, Emax=999999)):
+    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999,
+                              capitals=1, clamp=0, flags=[],
+                              traps=[InvalidOperation, DivisionByZero, Overflow])):
         decimal = str(candidate.decimal_candidate(f, n, 80))
     return cb, ob, decimal
 
@@ -90,6 +97,7 @@ def check_row(row, index):
             and row['family'] == family, 'fixed roster mismatch')
     require(type(row['nu']) is int and row['nu'] == 4 * (n - 1), 'degrees')
     cb, ob, decimal = targets(index)
+    require(max(cb[0], ob[0]) <= min(cb[1], ob[1]), 'recomputed intervals disjoint')
     cl, ch = bounds(row['candidate_bounds'])
     ol, oh = bounds(row['oracle_bounds'])
     require(cl <= cb[0] <= cb[1] <= ch, 'candidate containment')

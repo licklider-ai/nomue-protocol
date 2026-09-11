@@ -7,7 +7,7 @@ Date: 2026-09-11. Disposable research code; independent review pending.
 PR 283 identified two concrete limitations in the fixed-F evidence checker:
 unchecked fields/corpus membership (O1), and overlap mistaken for candidate
 interval containment (O2). This additive successor implements the review's
-minimum containment remedy and checks the fixed research packet more completely.
+minimum fixed-enclosure containment remedy and checks the fixed research packet more completely.
 It does not change the probability algorithm, author results, historical reviews,
 Protocol verifier, supported domain, public checks or Release 4 gate state.
 
@@ -40,6 +40,14 @@ are reused with their disclosed limits, not restated as this author's review.
 
 ## Behavior
 
+This is a fixed-recomputation evidence contract, not a decision procedure for
+whether an arbitrary interval contains the mathematical truth. A narrower valid
+384-bit oracle interval can be rejected as candidate_bounds because it does not
+contain the prescribed 128-bit candidate enclosure. The regression now records
+that conservative rejection. The O2 witness itself is below a rigorous lower
+bound, but the checker rejects it for missing the fixed enclosure, not by directly
+deciding truth membership.
+
 - Fixed row count, order, n, exact F spelling and family come from the separately
   hash-pinned original packet, never from the submitted packet's summary.
 - Each candidate interval contains a fresh 128-bit candidate enclosure; each
@@ -55,7 +63,7 @@ are reused with their disclosed limits, not restated as this author's review.
 - Equivalent dyadic representations are accepted. A submitted interval may be
   wider than the recomputed enclosure if both independent enclosure requirements
   and unique-rounding conditions still hold. Error upper bounds may be conservative.
-- The file entry point rejects duplicate JSON keys/nonfinite constants and files
+- The file entry point rejects duplicate JSON keys/nonfinite constants and overflowing numeric literals and files
   over 2 MB. Dyadic significands are at most 128 hex digits; integer exponents
   are bounded by 200,000 in magnitude before shifting. These are local research
   budgets, not Protocol admission rules or a full adversarial resource proof.
@@ -76,7 +84,8 @@ PYTHONDONTWRITEBYTECODE=1 python governance/drafts/release-4-preparation/tail-ch
 PYTHONDONTWRITEBYTECODE=1 python governance/drafts/release-4-preparation/tail-checker-20260911/check.py
 ```
 
-The first command writes only this directory's RESULTS.json. The second checks
+The first command rewrites this directory's RESULTS.json, including Python and
+platform fields that may differ on another environment and leave a dirty tree. The second checks
 the original packet read-only; an optional file argument checks a submitted copy
 against the same fixed roster. Numeric caches are process-local, capped at 220
 entries and depend only on the trusted row index, never on submitted bounds.
@@ -86,7 +95,7 @@ RESULTS.json records:
 - 220 original rows accepted with candidate and oracle recomputation.
 - 220 equivalent-encoding rows accepted, demonstrating no packet byte-equality
   shortcut for interval evidence.
-- 39 altered/malformed cases rejected, including all 13 missing row fields,
+- 41 altered/malformed cases rejected, including all 13 missing row fields,
   roster size/order/duplicate changes, summary corruption and interval budgets.
 - Five O1 field changes and one O2 point interval accepted by the old checker
   but rejected by the successor.
@@ -111,3 +120,10 @@ confirmation and supported-domain decisions still outstanding. R3 Holm provenanc
 and design work remains in the previous round handoff; R2 is unchanged. This
 repair improves the reliability of evidence checking, not end-to-end R4 maturity
 or the set of supported user capabilities.
+
+## External review response
+
+See EXTERNAL-REVIEW.md for the user-supplied adversarial review of commit
+431b0e7e30d9b8fe6f097f2a00f19124e4a880d0 and item-by-item response. The follow-up
+regression includes explicit rejection reasons, DefaultContext mutation, JSON
+1e999 and a narrower valid enclosure. No repaired-head external GO is claimed.
