@@ -67,7 +67,14 @@ def strict_transport(raw):
     def integer(text):
         if text == '-0':
             raise ValueError('negative zero transport')
-        return int(text)
+        number = int(text)
+        try:
+            finite = math.isfinite(float(number))
+        except OverflowError:
+            finite = False
+        if not finite:
+            raise ValueError('ineligible transport integer')
+        return number
     # Generated trusted output only. Record bytes are never reparsed here.
     value = json.loads(raw.decode("utf-8"), object_pairs_hook=pairs,
                        parse_constant=invalid, parse_int=integer)

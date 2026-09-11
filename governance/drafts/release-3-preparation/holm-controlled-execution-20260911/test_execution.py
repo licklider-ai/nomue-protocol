@@ -58,7 +58,7 @@ def main():
     sys.path.insert(0, str(HERE))
     import supervisor
     def internal_contract():
-        for raw in [b'{"output":{"kind":"x","x":1e999}}', b'{"output":{"kind":"x","x":"\\ud800"}}',
+        for raw in [b'{"output":{"kind":"x","x":' + b'9'*400 + b'}}', b'{"output":{"kind":"x","x":1e999}}', b'{"output":{"kind":"x","x":"\\ud800"}}',
                     b'{"output":{"kind":"x","x":-0}}', b'{"output":{"kind":"x","x":-1e-999}}']:
             try:
                 supervisor.strict_transport(raw)
@@ -70,7 +70,7 @@ def main():
                                 ({'cleanup_failed':True,'memory_enforced':True},'cleanup_failed'),
                                 ({'cancelled':True,'deadline':True},'cancelled')]:
             assert supervisor.category(flags)==expected
-        return {'negative_transport_cases':4,'precedence_cases':4}
+        return {'negative_transport_cases':5,'precedence_cases':4}
     check('private output eligibility and precedence', internal_contract)
     check("T1 unavailable delegation before input open", lambda: want("/unavailable", None, "unsupported_host"))
     # Local transport controls exercise actual files with native Node, without claiming cgroup coverage.
