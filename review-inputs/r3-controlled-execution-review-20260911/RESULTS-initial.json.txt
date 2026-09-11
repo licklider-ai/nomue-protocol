@@ -1,0 +1,193 @@
+{
+  "candidate": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+  "rows": [
+    {
+      "name": "Completion observed after deadline must invalidate output",
+      "passed": false,
+      "error": "AssertionError({'kind': 'unissued-controlled-execution', 'category': 'completed_valid', 'causes': {}, 'evidence': {'kernel': '6.18.35', 'architecture': 'x86_64', 'delegation': '/tmp/tmpg0bqy0vc/delegation', 'supervisor': '/tmp/tmpg0bqy0vc/delegation/supervisor', 'leaf': '/tmp/tmpg0bqy0vc/delegation/calls/call-0d8611aa4a0d4f67a5dbdbc7938414a0', 'controls': {'memory.max': '536870912', 'memory.swap.max': '0', 'memory.oom.group': '1', 'pids.max': '64', 'cpu.max': '100000 100000'}, 'node_sha256': 'bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12', 'python_sha256': 'fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7', 'proc_swaps': 'Filename\\t\\t\\t\\tType\\t\\tSize\\t\\tUsed\\t\\tPriority\\n', 'subreaper': True, 'temporary': '/tmp/holm-call-u5szb131', 'memory_events_delta': {'max': 0, 'oom': 0, 'oom_kill': 0}, 'pids_events_delta': {'max': 0}, 'cpu_stat': {'usage_usec': 0}, 'memory.peak': None, 'pids.peak': None, 'cleanup_seconds': 0.0, 'cleanup': {'populated_zero': True, 'echild': True, 'cgroup_removed': True, 'temporary_removed': True}, 'reaped_descendants': [], 'leader_exit': 0, 'bytes_observed': {'stdout': 35, 'stderr': 0}, 'bytes_buffered': {'stdout': 35, 'stderr': 0}, 'elapsed_seconds': 1.01}, 'result': {'output': {'kind': 'trusted-probe'}}})"
+    },
+    {
+      "name": "memory max event without OOM",
+      "passed": true,
+      "evidence": {
+        "kind": "unissued-controlled-execution",
+        "category": "memory_enforced",
+        "causes": {
+          "memory_enforced": true
+        },
+        "evidence": {
+          "kernel": "6.18.35",
+          "architecture": "x86_64",
+          "delegation": "/tmp/tmpxk2jw2pw/delegation",
+          "supervisor": "/tmp/tmpxk2jw2pw/delegation/supervisor",
+          "leaf": "/tmp/tmpxk2jw2pw/delegation/calls/call-f99fdd2f182b48439d3857cc02dd1816",
+          "controls": {
+            "memory.max": "536870912",
+            "memory.swap.max": "0",
+            "memory.oom.group": "1",
+            "pids.max": "64",
+            "cpu.max": "100000 100000"
+          },
+          "node_sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+          "proc_swaps": "Filename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n",
+          "subreaper": true,
+          "temporary": "/tmp/holm-call-yimycbep",
+          "memory_events_delta": {
+            "max": 1,
+            "oom": 0,
+            "oom_kill": 0
+          },
+          "pids_events_delta": {
+            "max": 0
+          },
+          "cpu_stat": {
+            "usage_usec": 0
+          },
+          "memory.peak": null,
+          "pids.peak": null,
+          "cleanup_seconds": 0.0,
+          "cleanup": {
+            "populated_zero": true,
+            "echild": true,
+            "cgroup_removed": true,
+            "temporary_removed": true
+          },
+          "reaped_descendants": [],
+          "leader_exit": 0,
+          "bytes_observed": {
+            "stdout": 35,
+            "stderr": 0
+          },
+          "bytes_buffered": {
+            "stdout": 35,
+            "stderr": 0
+          },
+          "elapsed_seconds": 0.2
+        }
+      }
+    },
+    {
+      "name": "pids event with exit-zero output",
+      "passed": true,
+      "evidence": {
+        "kind": "unissued-controlled-execution",
+        "category": "pids_enforced",
+        "causes": {
+          "pids_enforced": true
+        },
+        "evidence": {
+          "kernel": "6.18.35",
+          "architecture": "x86_64",
+          "delegation": "/tmp/tmp3ieintff/delegation",
+          "supervisor": "/tmp/tmp3ieintff/delegation/supervisor",
+          "leaf": "/tmp/tmp3ieintff/delegation/calls/call-ee180cf3d36040159b005824514f1272",
+          "controls": {
+            "memory.max": "536870912",
+            "memory.swap.max": "0",
+            "memory.oom.group": "1",
+            "pids.max": "64",
+            "cpu.max": "100000 100000"
+          },
+          "node_sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+          "proc_swaps": "Filename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n",
+          "subreaper": true,
+          "temporary": "/tmp/holm-call-xz_ujbpp",
+          "memory_events_delta": {
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          },
+          "pids_events_delta": {
+            "max": 1
+          },
+          "cpu_stat": {
+            "usage_usec": 0
+          },
+          "memory.peak": null,
+          "pids.peak": null,
+          "cleanup_seconds": 0.0,
+          "cleanup": {
+            "populated_zero": true,
+            "echild": true,
+            "cgroup_removed": true,
+            "temporary_removed": true
+          },
+          "reaped_descendants": [],
+          "leader_exit": 0,
+          "bytes_observed": {
+            "stdout": 35,
+            "stderr": 0
+          },
+          "bytes_buffered": {
+            "stdout": 35,
+            "stderr": 0
+          },
+          "elapsed_seconds": 0.2
+        }
+      }
+    },
+    {
+      "name": "Strict transport rejects duplicate key",
+      "passed": true,
+      "evidence": {
+        "rejected": true
+      }
+    },
+    {
+      "name": "Strict transport rejects nonfinite constant",
+      "passed": true,
+      "evidence": {
+        "rejected": true
+      }
+    },
+    {
+      "name": "Strict transport rejects overflow exponent",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects lone surrogate",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects surrogate key",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects negative zero integer",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects negative zero float",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects negative underflow",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Strict transport rejects overflow integer",
+      "passed": false,
+      "error": "AssertionError('accepted ineligible trusted transport')"
+    },
+    {
+      "name": "Author local file transport suite",
+      "passed": true,
+      "evidence": {
+        "cgroup_tests": "NOT_RUN",
+        "passed": 6,
+        "controls": 6
+      }
+    }
+  ],
+  "passed": 5,
+  "controls": 13,
+  "cgroup_tests": "NOT_RUN; only ordinary temporary files used for state-machine simulation"
+}

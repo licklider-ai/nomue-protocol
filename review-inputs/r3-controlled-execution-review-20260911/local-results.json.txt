@@ -1,0 +1,93 @@
+{
+  "scope": "controlled execution research; no public support registration",
+  "node": "v24.19.0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "cgroup_tests": "NOT_RUN",
+  "rows": [
+    {
+      "name": "private output eligibility and precedence",
+      "pass": true,
+      "evidence": {
+        "negative_transport_cases": 5,
+        "precedence_cases": 4
+      }
+    },
+    {
+      "name": "T1 unavailable delegation before input open",
+      "pass": true,
+      "evidence": {
+        "kind": "unissued-controlled-execution",
+        "category": "unsupported_host",
+        "causes": {
+          "unsupported_host": true,
+          "abnormal_exit": true
+        },
+        "evidence": {
+          "kernel": "6.18.35",
+          "architecture": "x86_64",
+          "preflight_error": "ValueError: writable cgroup2 mount required",
+          "exception": "RuntimeError",
+          "cleanup": {
+            "populated_zero": false,
+            "echild": false,
+            "cgroup_removed": false,
+            "temporary_removed": false
+          },
+          "reaped_descendants": [],
+          "leader_exit": null,
+          "bytes_observed": {
+            "stdout": 0,
+            "stderr": 0
+          },
+          "bytes_buffered": {
+            "stdout": 0,
+            "stderr": 0
+          },
+          "elapsed_seconds": 0.00026424799580127
+        }
+      }
+    },
+    {
+      "name": "entry baseline and original-byte forwarding",
+      "pass": true,
+      "evidence": {
+        "checks": 5,
+        "snapshot_equal": true
+      }
+    },
+    {
+      "name": "T8 record byte boundary 2359297",
+      "pass": true,
+      "evidence": {
+        "size": 2359297,
+        "reason": "record_bytes"
+      }
+    },
+    {
+      "name": "T8 record byte boundary 12845056",
+      "pass": true,
+      "evidence": {
+        "size": 12845056,
+        "reason": "record_bytes"
+      }
+    },
+    {
+      "name": "T8 FIFO nonblocking refusal",
+      "pass": true,
+      "evidence": {
+        "elapsed_seconds": 0.06201676899945596,
+        "exit": 65
+      }
+    },
+    {
+      "name": "entry directory and record-first priority",
+      "pass": true,
+      "evidence": {
+        "directory_exit": 65,
+        "malformed_record_before_expected_io": true
+      }
+    }
+  ],
+  "passed": 7,
+  "controls": 7
+}

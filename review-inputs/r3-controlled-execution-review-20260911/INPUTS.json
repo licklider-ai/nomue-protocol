@@ -1,0 +1,380 @@
+{
+  "kind": "independent-controlled-execution-review-inputs",
+  "date": "2026-09-11",
+  "initial_candidate": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+  "initial_parent": "9f1cae75a96af08c93673cf5f4ef7d3e3f44f1c9",
+  "initial_tree": "df5d562fadf5c22179ffb90ea8a26aec47892cd3",
+  "final_candidate": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+  "final_parent": "dd1088395bbc04cd3774f9dd90b46bd29ed4cacc",
+  "final_tree": "0662492173de04cc3ab69bc96d77aa75a00b73aa",
+  "verdict": "PASS within documented unissued research and trusted-program scope",
+  "independence": {
+    "reviewer": "OpenAI Codex /root/r3_controlled_review",
+    "separate_agent_context": true,
+    "same_inherited_model_configuration": true,
+    "shared_execution_infrastructure": true,
+    "human_review": false,
+    "subagents_started": false,
+    "private_repository_access": false,
+    "implementation_authorship": false
+  },
+  "tests": {
+    "rootless_initial": {
+      "passed": 5,
+      "controls": 13
+    },
+    "rootless_final": {
+      "passed": 13,
+      "controls": 13
+    },
+    "independent_entry_initial_unchanged_final": {
+      "passed": 16,
+      "controls": 16
+    },
+    "author_local_final_rerun": {
+      "passed": 7,
+      "controls": 7
+    },
+    "local_kernel_cgroup_tests": "NOT_RUN; read-only mount; state-machine files are ordinary temporary files"
+  },
+  "received_ci": {
+    "initial_run": 34599267610,
+    "initial_candidate": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+    "initial_controls": 20,
+    "initial_passed": 20,
+    "final_run": 34599836146,
+    "final_candidate": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+    "final_artifact": 10263403165,
+    "final_zip_sha256_coordinator_verified": "22ca0509b22527024ee19b5cf43724f5ad9ec9a4a4cdfb5913f98d640412c339",
+    "final_controls": 32,
+    "final_passed": 32,
+    "provenance": "Author-run dedicated CI; exact extracted receipts inspected, not independently run kernel experiments"
+  },
+  "primary_source_reuse": {
+    "archived_inventory": "review-inputs/r3-execution-control-review-539f848/INPUTS.json",
+    "scope": "Reuse prior PR316 Linux/Node/Python basis; no new numerical methodology choice",
+    "live_corroboration": [
+      {
+        "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+        "date": "2026-09-11",
+        "scope": "Distribution layout, kill, group OOM, counters and live population"
+      },
+      {
+        "url": "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html",
+        "date": "2026-09-11",
+        "scope": "Orphan adoption and waitability"
+      },
+      {
+        "url": "https://docs.python.org/3.12/library/subprocess.html",
+        "date": "2026-09-11",
+        "scope": "close_fds behavior"
+      }
+    ],
+    "live_source_hashes": "Not captured; these corroborate but do not replace prior hashed source snapshots"
+  },
+  "repository_inputs": [
+    {
+      "path": ".github/workflows/r3-controlled-execution.yml",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "4b764284d10ba778599d3326b53df9fc142ab396",
+      "sha256": "2015fdf882121cf91fedf4a093926573e7f0e88a2de7e898cb2e9e2770db5500",
+      "bytes": 1154
+    },
+    {
+      "path": ".prettierrc.json",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "263340adff0f54c4f6f131e6254c74bcc17852d7",
+      "sha256": "80cc143045df274a5f58cedceef6036a537839e45b461fb3de7e5f477736719f",
+      "bytes": 122
+    },
+    {
+      "path": "AGENTS.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460",
+      "bytes": 9700
+    },
+    {
+      "path": "AUTHORITY.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "bytes": 12454
+    },
+    {
+      "path": "CHARTER.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "bytes": 9163
+    },
+    {
+      "path": "authority/authority-manifest.yaml",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "bytes": 45801
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314",
+      "bytes": 9575
+    },
+    {
+      "path": "governance/RFC.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "bytes": 11571
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/INPUTS.json",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "7404861386d542a7f0fb069648e94b33adb7725b",
+      "sha256": "c8f2e8ba68171075bdc3aa268ca09b0e34be90683349f8b9581cf725e8ac9a28",
+      "bytes": 8476
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/README.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "d055f26777537255d2dc2a9453aabdb6abbcf88d",
+      "sha256": "6da891ea50c638b25d1cd387e9686ffeca89f11e141f3bfdda04e7ac966982b1",
+      "bytes": 9146
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/REPAIR.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "f3ab0c541d98f4c717f31d083124154c37019fc5",
+      "sha256": "47a80f4f531babd83efb23ccbec0c15af4b7db9addb6bc45843d4066fd5db7b4",
+      "bytes": 2901
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/ci_host.py",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "326e1eb7826896f6e0e73eef49688f3baba97a94",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede",
+      "bytes": 1897
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/entry.mjs",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "e65be6f578d2d8f9dd321bb801edb00a697002b0",
+      "sha256": "823d8b9b2b05af7b59138b440e179d5c1a458a811dc3d32a8dbf5e9622655a59",
+      "bytes": 2155
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/prepare_cases.mjs",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "f245af70fd898d2f92bf43e18c41e277d3a926aa",
+      "sha256": "c0534da2a58c1e83ac446f827893e7dc8ef3edb0328f452f94abcc9ec1dcb658",
+      "bytes": 3598
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/probes.mjs",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "50afbcb663c1fd7682bf2d76d379f35b9c7440ab",
+      "sha256": "2f1a45800277f2ecb56cc9d1ed4baefd7491f9e792d4c66b2c7cbcd1ddf50829",
+      "bytes": 2269
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/supervisor.py",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "514dd70546e9d06ce4595da70888f04fe2a7b4c9",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021",
+      "bytes": 16098
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/test_execution.py",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "a200bf6482bb4c6d6e96a6e59fb7f89449f609c1",
+      "sha256": "8a97474d252b57c9e3f8f1e74e8d9205ffb9397323ab35f801929e0c112e9b40",
+      "bytes": 10147
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+      "bytes": 12664
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/envelope.mjs",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "c1a874ff97eaff1831702b150b810463c2fbfcb0",
+      "sha256": "f37d303cccded89108e5663a8b09028ea4b54b2d99d7e7ae5b27b42ade779236",
+      "bytes": 16276
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-execution-investigation-20260911/SOURCE-REVIEW.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "0ca1925df9c1eb1248bd6368db1b732208ab03f4",
+      "sha256": "c72131b4587226060c3f7eec371072e1a61fdfdc29943fb900bdf5b25edc2f6d",
+      "bytes": 10511
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "bytes": 83339
+    },
+    {
+      "path": "review-inputs/r3-execution-control-review-539f848/INPUTS.json",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "718d24ee6527a1edf4cc5d40de4324783f5239f7",
+      "sha256": "557d0d2e36fbab78295a07a7f28849c37c8bc62535002fa760c57db1f35700c0",
+      "bytes": 15183
+    },
+    {
+      "path": "review-inputs/r3-execution-control-review-539f848/REVIEW.md",
+      "commit": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+      "git_blob": "43e085c6cc9266dda1254dbc693c475f64a5f25a",
+      "sha256": "af516a70f044e115ac58ae68fc55d5df85f77f4cec54f8ce9feac3d8bbf5bc8f",
+      "bytes": 52098
+    },
+    {
+      "path": ".github/workflows/r3-controlled-execution.yml",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "4b764284d10ba778599d3326b53df9fc142ab396",
+      "sha256": "2015fdf882121cf91fedf4a093926573e7f0e88a2de7e898cb2e9e2770db5500",
+      "bytes": 1154
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/INPUTS.json",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "c0ec616b0a67340a6ecbbc546537c18a37914f83",
+      "sha256": "ebb00390c8410d6c8e0a4b5410487b1d6be7b23855c61d41ea98b40edcccb33e",
+      "bytes": 8277
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/README.md",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "d055f26777537255d2dc2a9453aabdb6abbcf88d",
+      "sha256": "6da891ea50c638b25d1cd387e9686ffeca89f11e141f3bfdda04e7ac966982b1",
+      "bytes": 9146
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/REPAIR.md",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "f3ab0c541d98f4c717f31d083124154c37019fc5",
+      "sha256": "47a80f4f531babd83efb23ccbec0c15af4b7db9addb6bc45843d4066fd5db7b4",
+      "bytes": 2901
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/ci_host.py",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "326e1eb7826896f6e0e73eef49688f3baba97a94",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede",
+      "bytes": 1897
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/entry.mjs",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "e65be6f578d2d8f9dd321bb801edb00a697002b0",
+      "sha256": "823d8b9b2b05af7b59138b440e179d5c1a458a811dc3d32a8dbf5e9622655a59",
+      "bytes": 2155
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/prepare_cases.mjs",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "0e785bc8adabd5a7545309f337d6b0bd7954f36c",
+      "sha256": "cf218b735a0509c78f5eddd655936fc94e945f3ae93788fce55d373016f9c10c",
+      "bytes": 1664
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/probes.mjs",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "5430860a6260648088c48e38ddfd196cc8bd4c08",
+      "sha256": "850f0d5932e1ab27b2c1cdbaae6e3f02eb12bec37214c9a95f2f352d838dec74",
+      "bytes": 2005
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/supervisor.py",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "5348765750fde4ee567b040052cad93e7f780b1e",
+      "sha256": "96c044f9fef3789f152ab1c8844157f9906f491e7e964a6e2d1142ca9f11c2e9",
+      "bytes": 14951
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/test_execution.py",
+      "commit": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+      "git_blob": "08d7279c20b5b4100bad01c1c50c9ac32486a311",
+      "sha256": "cc5819fd7205012b932ddd8a0d310235e66df9dac8b190bb0e6b4fe5d37e478c",
+      "bytes": 7288
+    }
+  ],
+  "review_artifacts": [
+    {
+      "path": "CI-HOST-final.json.txt",
+      "sha256": "f3f9f20a822b6f0d922b137b3942d23b980d1b31348880aaf5b2989db66a2308",
+      "bytes": 109
+    },
+    {
+      "path": "CI-HOST-initial.json.txt",
+      "sha256": "91f952dae8761eaa1adb7f235d3e799aed9ac469ba28b95acaafe55d5e3c191a",
+      "bytes": 109
+    },
+    {
+      "path": "CI-RESULTS-final.json.txt",
+      "sha256": "45a27878cc7e30819b9a2e88def74abcd9154d19f322456fada83345a6036714",
+      "bytes": 460881
+    },
+    {
+      "path": "CI-RESULTS-initial.json.txt",
+      "sha256": "05375409b05f17f4a3f06bbb213e39eaecb4d0a9b8786edeef4474a18e4400f6",
+      "bytes": 411599
+    },
+    {
+      "path": "ENTRY-RESULTS.json.txt",
+      "sha256": "c0ae0dc059020dc4755d94ccc01000632e82321c77115d6aa0fdef3459b8dc95",
+      "bytes": 3706
+    },
+    {
+      "path": "ENVIRONMENT.json",
+      "sha256": "3f677fdfedf54904e73b88af95c30a109060b1cc01af414ca1d10f3b0f6743a4",
+      "bytes": 352
+    },
+    {
+      "path": "RESULTS-final.json.txt",
+      "sha256": "b3d9c08583b0475b00b5eb4881e5508d802a3c1eebcadbec754c62bc67d2c199",
+      "bytes": 7559
+    },
+    {
+      "path": "RESULTS-initial-first.json.txt",
+      "sha256": "22b6301c1b56a277d32311606e839ada1d4ded909aae276455b2ae8a065e5512",
+      "bytes": 6324
+    },
+    {
+      "path": "RESULTS-initial.json.txt",
+      "sha256": "7de310029687d60b8cd66f93d4ac9a49e5c643fcef61583a058114196ff2a65f",
+      "bytes": 7172
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "7cd565b73cb91e338eedaa84ce4516d600885c6b3d0be65c73ce28c1de35949e",
+      "bytes": 16678
+    },
+    {
+      "path": "author-local-results.json.txt",
+      "sha256": "eb30681974e527f8680742a655a4b5dd4cd14d8d6200f681158342a66006ec11",
+      "bytes": 2328
+    },
+    {
+      "path": "build_inventory.py",
+      "sha256": "92afdd33cc892d9de7e72241d2e8dd6457a92511876b9038b7ee3fe6f90b1cf3",
+      "bytes": 3983
+    },
+    {
+      "path": "entry_controls.py",
+      "sha256": "26cf84b4fccc39e6cba9703357852a92e4f7ad9b6fb45ef4d9067ffc092dc7c8",
+      "bytes": 4260
+    },
+    {
+      "path": "independent_tests.py",
+      "sha256": "f4c48a846154558d54f3c1a85de8ca51db63c358e4ea67053b8cbaea90c63ac8",
+      "bytes": 5350
+    }
+  ]
+}

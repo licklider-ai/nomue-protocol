@@ -1,0 +1,34 @@
+{
+  "candidate_pr": 317,
+  "candidate_head": "dc6c9694d6a5221dfed0ea5bf4af55246549cd68",
+  "candidate_parent": "dd1088395bbc04cd3774f9dd90b46bd29ed4cacc",
+  "candidate_tree": "0662492173de04cc3ab69bc96d77aa75a00b73aa",
+  "merge_commit": "bfa09491bcdceb71a2ff0711e0d1ae779d9176ec",
+  "dedicated_ci_run": 34599836146,
+  "dedicated_ci_artifact": 10263403165,
+  "artifact_zip_sha256": "22ca0509b22527024ee19b5cf43724f5ad9ec9a4a4cdfb5913f98d640412c339",
+  "standard_ci_run": 34599836157,
+  "standard_ci_jobs_passed": 5,
+  "dedicated_ci_controls_passed": 32,
+  "independent_state_machine_controls_passed": 13,
+  "independent_entry_controls_passed": 16,
+  "review_scope": "PASS for unissued trusted-program research implementation",
+  "files": [
+    {
+      "path": "CI-HOST-final.json.txt",
+      "sha256": "f3f9f20a822b6f0d922b137b3942d23b980d1b31348880aaf5b2989db66a2308"
+    },
+    {
+      "path": "CI-RESULTS-final.json.txt",
+      "sha256": "45a27878cc7e30819b9a2e88def74abcd9154d19f322456fada83345a6036714"
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "7cd565b73cb91e338eedaa84ce4516d600885c6b3d0be65c73ce28c1de35949e"
+    },
+    {
+      "path": "local-results.json.txt",
+      "sha256": "85984d7691368303acbff3b09ca03c09e7390e0141706e57bf09128c39ec811f"
+    }
+  ]
+}
