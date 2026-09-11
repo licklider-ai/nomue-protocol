@@ -1,0 +1,351 @@
+{
+  "record_type": "r4_experimental_asset_archive_review_pins",
+  "record_version": 1,
+  "date_utc": "2026-09-11",
+  "scope": "Archive preservation only under governance/drafts and review-inputs; no supported implementation, adoption, freeze, gate closure, or release.",
+  "overall_decision": "ARCHIVE_GO_ONLY",
+  "reviewer": {
+    "role": "independent archive asset reviewer",
+    "provider": "OpenAI Codex",
+    "configured_model": "gpt-5.6-sol",
+    "served_build_attestation": "unavailable",
+    "human_review": false,
+    "subagents_used": false,
+    "authored_or_repaired_reviewed_packets": false,
+    "original_primary_sources_inspected_in_this_review": false,
+    "shared_repository_modified": false
+  },
+  "report": {
+    "path": "/workspace/scratch/367118710fbf/r4-asset-review/R4-ASSET-ARCHIVE-REVIEW.md",
+    "sha256": "55960d2e27470397586e5a1c320ec9fe7fa4dd3abd4089c718541a2d0b05a446",
+    "bytes": 14839
+  },
+  "inventory_input": {
+    "path": "/workspace/scratch/367118710fbf/pr-inventory-complete.json",
+    "sha256": "5d940737680aaeda9221a57148eb58fb9ada8bf9662052120253b7c4d59539bd"
+  },
+  "integration_simulation": {
+    "base_snapshot": "2a102dcfff1a49dab4f9e2c2bf01194ff5842a36",
+    "ordered_commits": 26,
+    "cherry_pick": "pass_without_conflict",
+    "worktree_after": "clean",
+    "aggregate_diff_check": "pass",
+    "final_blob_comparison": "pass; PR 288 intentionally supplies the later ADAPTER-PLAN update"
+  },
+  "focused_evidence": [
+    {
+      "stack": "arithmetic",
+      "result": "968 cases; 18380 exact checks; 18380 projection checks; parsed regenerated records equal committed records"
+    },
+    {
+      "stack": "tail-and-fixed-corpus-checker",
+      "result": "220 fixed rows accepted; 28 targeted close-review probes passed"
+    },
+    {
+      "stack": "primary-methods-ieee",
+      "result": "primary-method boundary script passed; IEEE boundary script passed in normal and optimized modes"
+    },
+    {
+      "stack": "rational-tail-composition",
+      "result": "324 checks passed in normal and optimized modes; deterministic admission probes reproduced"
+    },
+    {
+      "stack": "complete-output-and-consumer",
+      "result": "124 consumer and 318 wrapper checks reproduced in normal and optimized modes; no benchmark programme repeated"
+    },
+    {
+      "stack": "all",
+      "result": "142 stack-delta path entries (141 unique) confined to archive paths; all regular non-executable files; present SHA256SUMS inventories passed"
+    }
+  ],
+  "stacks": [
+    {
+      "id": "arithmetic",
+      "prs": [279, 281],
+      "base": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "head": "87adcec680f90271d0a6e571c1892ec38a392751",
+      "paths": [
+        "governance/drafts/release-4-preparation/arithmetic-candidate-20260910/",
+        "review-inputs/r4-arithmetic-2864903/"
+      ],
+      "source_connection": "Prior normal-model and QR/scaling records reused; originals not inspected in this archive review. Later bounded separate-model methods/IEEE assessment is recorded in the primary-methods-ieee stack.",
+      "decision": "ARCHIVE_GO_ONLY",
+      "promotion": "HOLD",
+      "commit_objects": [
+        {
+          "commit": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+          "parents": ["dedd26a3e0655001b67e40ccfb741e43ecb07beb"],
+          "tree": "78a8df1ddb1269de451751419aa915a3179e70d1",
+          "subject": "Prepare bounded Release 4 arithmetic candidates and reproducible evidence",
+          "author_date": "2026-09-10T17:25:17+09:00"
+        },
+        {
+          "commit": "87adcec680f90271d0a6e571c1892ec38a392751",
+          "parents": ["2864903316b4b4b2b219a56b42c535bfec7935b3"],
+          "tree": "04452870f6c5c13f3beefe7b75f5468812e3fe90",
+          "subject": "Review bounded Release 4 arithmetic candidate and numerical evidence",
+          "author_date": "2026-09-10T17:45:37+09:00"
+        }
+      ],
+      "delta_path_count": 35,
+      "archive_path_confinement": true,
+      "diff_check": "pass"
+    },
+    {
+      "id": "tail-and-fixed-corpus-checker",
+      "prs": [278, 283, 285, 286],
+      "base": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "head": "75e3e7b48f0c53927d3e5c228adbd0a1c9108fd3",
+      "paths": [
+        "governance/drafts/release-4-preparation/tail-feasibility-20260910/",
+        "governance/drafts/release-4-preparation/tail-checker-20260911/",
+        "governance/drafts/release-4-preparation/composition-preparation-20260911/",
+        "review-inputs/r4-tail-8d1979a/",
+        "review-inputs/r4-tail-checker-bc1c1ac/"
+      ],
+      "source_connection": "Prior NIST/DLMF inspection and source-access limits reused; originals not inspected in this archive review. Algorithm 708 remains outside the dependency.",
+      "decision": "ARCHIVE_GO_ONLY",
+      "promotion": "HOLD",
+      "commit_objects": [
+        {
+          "commit": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+          "parents": ["dedd26a3e0655001b67e40ccfb741e43ecb07beb"],
+          "tree": "9a8d8cb4398747a4fc2fe373cf6f4fef40b5d040",
+          "subject": "Research bounded Release 4 F-tail enclosures and projection evidence",
+          "author_date": "2026-09-10T17:23:16+09:00"
+        },
+        {
+          "commit": "e7ddd16f6d2272cb7c9267f7f2aa8d35103f1c44",
+          "parents": ["8d1979a4cf91012d86d57df40e5a847e2f00a358"],
+          "tree": "5eab0761ab085f9a9e18e9fb3e69ece20409d617",
+          "subject": "Review fixed Release 4 tail research candidate and evidence boundaries",
+          "author_date": "2026-09-10T17:51:46+09:00"
+        },
+        {
+          "commit": "431b0e7e30d9b8fe6f097f2a00f19124e4a880d0",
+          "parents": ["e7ddd16f6d2272cb7c9267f7f2aa8d35103f1c44"],
+          "tree": "175b0f8a5db71f8efaf7729cffe9226545553c2a",
+          "subject": "Add bounded tail evidence checker repair and regression witnesses",
+          "author_date": "2026-09-11T09:56:06+09:00"
+        },
+        {
+          "commit": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+          "parents": ["431b0e7e30d9b8fe6f097f2a00f19124e4a880d0"],
+          "tree": "586642e968fcc71ab4be930c2124c17a1149c8a8",
+          "subject": "Address adversarial review and prepare bounded R4 source and composition work",
+          "author_date": "2026-09-11T10:10:06+09:00"
+        },
+        {
+          "commit": "75e3e7b48f0c53927d3e5c228adbd0a1c9108fd3",
+          "parents": ["bc1c1ace426d51e55c9551090f6e400af2ac17d2"],
+          "tree": "ef414b92a6fdd91a80619c9aecfc63c86bb3730f",
+          "subject": "Record bounded tail checker repair review",
+          "author_date": "2026-09-11T10:19:12+09:00"
+        }
+      ],
+      "delta_path_count": 39,
+      "archive_path_confinement": true,
+      "diff_check": "pass"
+    },
+    {
+      "id": "primary-methods-ieee",
+      "prs": [287, 294],
+      "base": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "head": "864766232988181e72ae18c235dbc815466b3a1d",
+      "paths": [
+        "review-inputs/r4-primary-methods-20260911/",
+        "review-inputs/r4-ieee-clause-confirmation-20260911/"
+      ],
+      "source_connection": "Existing reports say official DLMF/NIST pages and a user-supplied IEEE 754-2019 PDF were directly inspected by prior separate-model reviewers. This archive review reused those reports and did not inspect the originals. IEEE copy SHA-256 d6f6fef52ae93cdf8c8524451d144e00172555f008bf01a6f81da03aeff80e7a; copy absent; publisher download not independently authenticated.",
+      "decision": "ARCHIVE_GO_ONLY",
+      "promotion": "HOLD",
+      "commit_objects": [
+        {
+          "commit": "db67b69580b524b58822183895137bd37a5f6ecb",
+          "parents": ["bc1c1ace426d51e55c9551090f6e400af2ac17d2"],
+          "tree": "3dc86fda926a93322cfc26510eebedf63a416355",
+          "subject": "Record bounded primary methods review and source limitations",
+          "author_date": "2026-09-11T10:19:13+09:00"
+        },
+        {
+          "commit": "869226d7d430559c73064b80ce3ab6d3cd0eb148",
+          "parents": ["db67b69580b524b58822183895137bd37a5f6ecb"],
+          "tree": "89e0521163ce3ef9e2d1fb0169ef703c76099706",
+          "subject": "Format primary review tables and results without changing findings",
+          "author_date": "2026-09-11T10:21:40+09:00"
+        },
+        {
+          "commit": "da1c53dfd70f02169014f5d882aa51aec960a019",
+          "parents": ["869226d7d430559c73064b80ce3ab6d3cd0eb148"],
+          "tree": "e829bbae00f4778c17f7a58f73c728c351359fa2",
+          "subject": "Preserve absolute-value expression in Markdown review table",
+          "author_date": "2026-09-11T10:22:20+09:00"
+        },
+        {
+          "commit": "bfe7d2307da8f72cd241fd6e7dc423a8e807e112",
+          "parents": ["da1c53dfd70f02169014f5d882aa51aec960a019"],
+          "tree": "1eaa2296c2fb7a33e6f4caae71a6c74f873c23b2",
+          "subject": "Confirm IEEE 754 binary64 clauses in bounded independent review",
+          "author_date": "2026-09-11T12:10:14+09:00"
+        },
+        {
+          "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+          "parents": ["bfe7d2307da8f72cd241fd6e7dc423a8e807e112"],
+          "tree": "00b55dd6fc2b112085faed5fdbfd0f540ff9a689",
+          "subject": "Record author applicability of IEEE source confirmation to R3 and R4",
+          "author_date": "2026-09-11T12:11:00+09:00"
+        }
+      ],
+      "delta_path_count": 11,
+      "archive_path_confinement": true,
+      "diff_check": "pass"
+    },
+    {
+      "id": "rational-tail-composition",
+      "prs": [288],
+      "base": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "head": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "paths": [
+        "governance/drafts/release-4-preparation/rational-tail-composition-20260911/",
+        "governance/drafts/release-4-preparation/composition-preparation-20260911/ADAPTER-PLAN.md"
+      ],
+      "source_connection": "Arithmetic and tail implementations inherited by fixed commit and SHA-256; originals not inspected in this archive review. No authenticated independent reviewer of the adapter itself.",
+      "decision": "ARCHIVE_GO_ONLY",
+      "promotion": "HOLD",
+      "commit_objects": [
+        {
+          "commit": "cd121030d40942493d24c104ff87e05070826c42",
+          "parents": ["bc1c1ace426d51e55c9551090f6e400af2ac17d2"],
+          "tree": "106a208df5e26ed56c44f82e3ba35ef0935f6b2e",
+          "subject": "Explore exact rational arithmetic to tail composition with bound input identity",
+          "author_date": "2026-09-11T10:20:40+09:00"
+        },
+        {
+          "commit": "bdc2cc4c84e50b6a393410abb579726aa883e6d9",
+          "parents": ["cd121030d40942493d24c104ff87e05070826c42"],
+          "tree": "131039c3c5631ca54bedb08d779cc5c856a7167d",
+          "subject": "Bound rational composition workload and enforce source integrity after review",
+          "author_date": "2026-09-11T10:54:24+09:00"
+        },
+        {
+          "commit": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+          "parents": ["bdc2cc4c84e50b6a393410abb579726aa883e6d9"],
+          "tree": "3f1761a37a3dddb96373af714487adcb61011a0a",
+          "subject": "Document effective raw-data admission and bounded repair closure",
+          "author_date": "2026-09-11T11:16:26+09:00"
+        }
+      ],
+      "delta_path_count": 17,
+      "archive_path_confinement": true,
+      "diff_check": "pass"
+    },
+    {
+      "id": "complete-output-and-consumer",
+      "prs": [291, 293, 295, 296, 297],
+      "base": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "head": "97ef2926dbea7251d9fa611d4ada6513341f9826",
+      "paths": [
+        "governance/drafts/release-4-preparation/support-boundary-plan-20260911/",
+        "governance/drafts/release-4-preparation/complete-output-design-20260911/",
+        "governance/drafts/release-4-preparation/complete-output-experiment-20260911/",
+        "governance/drafts/release-4-preparation/tail-evidence-design-20260911/",
+        "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/"
+      ],
+      "source_connection": "PR 288 numerical modules are byte-identical copies pinned by SHA-256; PR 294 is named as bounded IEEE supplement. Originals not inspected in this archive review. User-supplied design/implementation receipts lack reviewer/model identity and raw artifacts.",
+      "decision": "ARCHIVE_GO_ONLY",
+      "promotion": "HOLD",
+      "commit_objects": [
+        {
+          "commit": "4d4988b55cc4924c77f61d837dba7ba0a514f609",
+          "parents": ["dedd26a3e0655001b67e40ccfb741e43ecb07beb"],
+          "tree": "3083ae7dbdf6ecf1be1c45528d335e58e96ea3e2",
+          "subject": "Map R4 admission envelope and remaining support decisions",
+          "author_date": "2026-09-11T11:30:23+09:00"
+        },
+        {
+          "commit": "15c8c38f8f391d0361472892ebca6492bc968d37",
+          "parents": ["4d4988b55cc4924c77f61d837dba7ba0a514f609"],
+          "tree": "7fbffc8094ebe13ba72233cc5436da4c4182d450",
+          "subject": "Propose R4 complete outputs and bounded admission order",
+          "author_date": "2026-09-11T12:01:04+09:00"
+        },
+        {
+          "commit": "1ae29058f44dce65ba3a3ef0d018bdbea0d9f940",
+          "parents": ["15c8c38f8f391d0361472892ebca6492bc968d37"],
+          "tree": "333763f63805388b0b76b0a80bce758b9bd2c948",
+          "subject": "Repair R4 output design boundaries after adversarial review",
+          "author_date": "2026-09-11T12:21:48+09:00"
+        },
+        {
+          "commit": "7993c43abd21e5622b1be34b11ffaa47edda8963",
+          "parents": ["1ae29058f44dce65ba3a3ef0d018bdbea0d9f940"],
+          "tree": "c5edb1e21a644998d9f94f8077d9b48d4081a8a6",
+          "subject": "Add bounded R4 complete-output experiment and evidence",
+          "author_date": "2026-09-11T12:31:39+09:00"
+        },
+        {
+          "commit": "26847d57ed93fa0b74c83cedcb733aee547430ad",
+          "parents": ["7993c43abd21e5622b1be34b11ffaa47edda8963"],
+          "tree": "0c0ec5d59ebf079cfb9ac347d09feff738af84cd",
+          "subject": "Bind R4 complete-output dependency pins to imported module origins",
+          "author_date": "2026-09-11T03:38:28Z"
+        },
+        {
+          "commit": "f8f3feb71404962262d1a9f78b5d37f04454f746",
+          "parents": ["26847d57ed93fa0b74c83cedcb733aee547430ad"],
+          "tree": "9c47c0ed8711d911690733f98ecdf229078fa4f6",
+          "subject": "Record R4 repair intake and clarify resource guarantee boundary",
+          "author_date": "2026-09-11T12:42:00+09:00"
+        },
+        {
+          "commit": "d53030585b3e55f8d8dce431a6023d51ff9c06f1",
+          "parents": ["f8f3feb71404962262d1a9f78b5d37f04454f746"],
+          "tree": "29cb62d4432c64b621678f64393d499df29785d7",
+          "subject": "Propose bounded R4 submitted probability-evidence consumer",
+          "author_date": "2026-09-11T12:47:55+09:00"
+        },
+        {
+          "commit": "a3c51c02396660f2597ea810b47a4d62ed240171",
+          "parents": ["d53030585b3e55f8d8dce431a6023d51ff9c06f1"],
+          "tree": "3120bf3d168bbc3b77b3cd9cbb507f3901d9cc63",
+          "subject": "Record measured endpoint-cap evidence and tighter-case vectors for R4 evidence design",
+          "author_date": "2026-09-11T04:00:29Z"
+        },
+        {
+          "commit": "dc3c1c88b684aed6f90c7d35b6d06fce501f8858",
+          "parents": ["a3c51c02396660f2597ea810b47a4d62ed240171"],
+          "tree": "4625f52e0377cb52bf70982cc6f0a4c584d97a58",
+          "subject": "Record evidence-design repair intake and scope measured claims",
+          "author_date": "2026-09-11T13:05:17+09:00"
+        },
+        {
+          "commit": "60d62f61eb8bd5bf4c915098b6af50a683122025",
+          "parents": ["dc3c1c88b684aed6f90c7d35b6d06fce501f8858"],
+          "tree": "669cc688d4c7b1f8c10724e3fa2f4851b0f3baba",
+          "subject": "Add bounded R4 submitted probability evidence consumer experiment",
+          "author_date": "2026-09-11T13:23:30+09:00"
+        },
+        {
+          "commit": "97ef2926dbea7251d9fa611d4ada6513341f9826",
+          "parents": ["60d62f61eb8bd5bf4c915098b6af50a683122025"],
+          "tree": "ce5220484636bca0416f2f4cfbb10b613dbf1c34",
+          "subject": "Record external implementation review receipt for the R4 evidence consumer",
+          "author_date": "2026-09-11T04:31:05Z"
+        }
+      ],
+      "delta_path_count": 40,
+      "archive_path_confinement": true,
+      "diff_check": "pass"
+    }
+  ],
+  "global_holds": [
+    "No supported reference implementation or public verifier behavior.",
+    "No supported count, width, endpoint size, platform, runtime, memory, tolerance, or precision schedule.",
+    "Preserve exact-zero, positive-underflow, positive-rounds-zero, and above-maximum distinctions.",
+    "Preserve signed-zero identity versus arithmetic-collapse qualification.",
+    "Candidate-enclosure containment is conservative and is not general truth-inclusion verification.",
+    "Source reviews do not approve later adapters, wrappers, consumers, or output policy.",
+    "Unidentified user-supplied adversarial reviews are testimony, not authenticated Research Gate evidence.",
+    "Promotion requires the applicable later fixed-input Research Gate, independent implementation/oracle evidence, contract coupling, and steward process."
+  ]
+}

@@ -1,0 +1,253 @@
+// Independent bounded checks of the pinned D0-to-Holm bridge's binding boundary.
+// The supplied repository path must name a detached checkout of cc87234.
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+
+const repo = path.resolve(process.argv[2] ?? "");
+if (!process.argv[2]) throw new Error("usage: node reviewer_binding_checks.mjs REPOSITORY");
+const packet = path.join(
+  repo,
+  "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911",
+);
+const bridge = await import(pathToFileURL(path.join(packet, "bridge.mjs")));
+const fixtures = await import(pathToFileURL(path.join(packet, "fixtures.mjs")));
+
+const results = [];
+function require(condition, message) {
+  if (!condition) throw new Error(message);
+}
+function record(label, launches, outcome) {
+  results.push({ label, launches, outcome });
+}
+function replyFrom(fixture) {
+  return JSON.stringify({
+    adjusted_hex: fixture.submitted.adjusted.map((row) => row.adjusted_hex),
+    display_hex: fixture.submitted.adjusted.map((row) => row.display_hex),
+  });
+}
+async function expectRefusal(label, fixture, mutate, reason, expectedLaunches = 0) {
+  const correctReply = replyFrom(fixture);
+  mutate(fixture);
+  let launches = 0;
+  try {
+    await bridge.checkWithRunner(fixtures.texts(fixture), async () => {
+      launches++;
+      return correctReply;
+    });
+  } catch (error) {
+    require(error instanceof bridge.Refusal, `${label}: expected Refusal, got ${error}`);
+    require(error.reason === reason, `${label}: ${error.reason} != ${reason}`);
+    require(launches === expectedLaunches, `${label}: ${launches} launches`);
+    record(label, launches, error.reason);
+    return;
+  }
+  throw new Error(`${label}: accepted`);
+}
+async function expectRawRefusal(label, texts, reason) {
+  let launches = 0;
+  try {
+    await bridge.checkWithRunner(texts, async () => {
+      launches++;
+      throw new Error("unexpected launch");
+    });
+  } catch (error) {
+    require(error instanceof bridge.Refusal, `${label}: expected Refusal`);
+    require(error.reason === reason, `${label}: ${error.reason} != ${reason}`);
+    require(launches === 0, `${label}: worker launched`);
+    record(label, launches, error.reason);
+    return;
+  }
+  throw new Error(`${label}: accepted`);
+}
+
+{
+  const fixture = fixtures.fixture();
+  const result = await bridge.checkBinding(...fixtures.texts(fixture));
+  require(result.outcome ===
+    "declaration_bound_supplied_p_arithmetic_consistent", "baseline outcome");
+  require(result.declaration_truth === "not_asserted", "baseline declaration boundary");
+  require(result.scientific_validity === "not_asserted", "baseline science boundary");
+  record("real worker baseline", 1, result.outcome);
+}
+
+{
+  const fixture = fixtures.fixture();
+  fixture.submitted.binding = {
+    inputs: fixtures.copy(fixture.expected),
+    declaration: fixtures.copy(fixture.d),
+  };
+  const texts = fixtures.texts(fixture);
+  texts[2] = JSON.stringify(JSON.parse(texts[2]), null, 2);
+  let launches = 0;
+  const result = await bridge.checkWithRunner(texts, async () => {
+    launches++;
+    return replyFrom(fixture);
+  });
+  require(result.outcome ===
+    "declaration_bound_supplied_p_arithmetic_consistent", "canonical reorder outcome");
+  require(launches === 1, "canonical reorder launch");
+  record("JCS key order and whitespace", launches, result.outcome);
+}
+
+await expectRefusal(
+  "unrelated declaration mutation",
+  fixtures.fixture(),
+  (f) => {
+    f.d.dataset.observations[0].value += 1;
+  },
+  "context binding",
+);
+await expectRefusal(
+  "pair direction mutation",
+  fixtures.fixture(),
+  (f) => {
+    const member = f.d.families.find((x) => x.family_id === f.expected.family_id).members[0];
+    [member.minuend_group_id, member.subtrahend_group_id] = [
+      member.subtrahend_group_id,
+      member.minuend_group_id,
+    ];
+  },
+  "context binding",
+);
+await expectRefusal(
+  "result member array order mutation",
+  fixtures.fixture(),
+  (f) => {
+    f.d.result_slots.find((x) => x.result_id === f.expected.result_id).member_ids.reverse();
+  },
+  "context binding",
+);
+for (const [label, mutate] of [
+  ["revision mutation", (f) => (f.expected.revision = "other")],
+  ["origin source mutation", (f) => (f.expected.members[0].origin.source_id = "other")],
+  ["origin hypothesis mutation", (f) => (f.expected.members[0].origin.hypothesis_id = "other")],
+  ["sidedness mutation", (f) => (f.expected.members[0].origin.sidedness = "one_sided")],
+  ["p bytes mutation", (f) => (f.expected.members[0].p_hex = "3fa0000000000000")],
+]) {
+  await expectRefusal(label, fixtures.fixture(), mutate, "context binding");
+}
+
+await expectRefusal(
+  "duplicate source hypothesis",
+  fixtures.fixture(),
+  (f) => {
+    f.expected.members[1].origin = fixtures.copy(f.expected.members[0].origin);
+    fixtures.sync(f);
+  },
+  "source hypothesis duplicate",
+);
+await expectRefusal(
+  "negative zero supplied p",
+  fixtures.fixture(),
+  (f) => {
+    f.expected.members[0].p_hex = "8000000000000000";
+    fixtures.sync(f);
+  },
+  "p domain",
+);
+await expectRefusal(
+  "above-one supplied p",
+  fixtures.fixture(),
+  (f) => {
+    f.expected.members[0].p_hex = "3ff0000000000001";
+    fixtures.sync(f);
+  },
+  "p domain",
+);
+await expectRefusal(
+  "negative-zero display",
+  fixtures.fixture(),
+  (f) => {
+    f.submitted.adjusted[0].display_hex = "8000000000000000";
+  },
+  "display domain",
+);
+await expectRefusal(
+  "missing output row",
+  fixtures.fixture(),
+  (f) => {
+    f.submitted.adjusted.pop();
+  },
+  "adjusted count",
+);
+await expectRefusal(
+  "duplicate output member",
+  fixtures.fixture(),
+  (f) => {
+    f.submitted.adjusted[1].member_id = f.submitted.adjusted[0].member_id;
+  },
+  "output member order",
+);
+await expectRefusal(
+  "same-display different exact value",
+  fixtures.fixture(),
+  (f) => {
+    const value = BigInt("0x" + f.submitted.adjusted[0].adjusted_hex);
+    f.submitted.adjusted[0].adjusted_hex = (value + 1n).toString(16);
+  },
+  "adjusted mismatch",
+  1,
+);
+await expectRefusal(
+  "false final row",
+  fixtures.fixture(),
+  (f) => {
+    const last = f.submitted.adjusted.at(-1);
+    last.adjusted_hex = "0";
+    last.display_hex = "0000000000000000";
+  },
+  "adjusted mismatch",
+  1,
+);
+
+{
+  const fixture = fixtures.fixture();
+  const texts = fixtures.texts(fixture);
+  texts[1] = texts[1].replace('{"kind":', '{"kind":"duplicate","kind":');
+  await expectRawRefusal("duplicate JSON member", texts, "strict JSON");
+}
+{
+  const fixture = fixtures.fixture();
+  const texts = fixtures.texts(fixture);
+  texts[0] = texts[0].replace('"value":0', '"value":-0');
+  await expectRawRefusal("negative-zero JSON number", texts, "strict JSON");
+}
+
+for (const [label, response, expectedMessage] of [
+  ["malformed worker JSON", "{", "worker response malformed"],
+  ["partial worker response", JSON.stringify({ adjusted_hex: [] }), "worker response shape"],
+  [
+    "extra worker response field",
+    JSON.stringify({ adjusted_hex: [], display_hex: [], extra: true }),
+    "worker response shape",
+  ],
+]) {
+  const fixture = fixtures.fixture();
+  let launches = 0;
+  try {
+    await bridge.checkWithRunner(fixtures.texts(fixture), async () => {
+      launches++;
+      return response;
+    });
+  } catch (error) {
+    require(!(error instanceof bridge.Refusal), `${label}: response error became refusal`);
+    require(error.message === expectedMessage, `${label}: ${error.message}`);
+    require(launches === 1, `${label}: ${launches} launches`);
+    record(label, launches, error.message);
+    continue;
+  }
+  throw new Error(`${label}: accepted`);
+}
+
+console.log(
+  JSON.stringify(
+    {
+      commit: "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      checks: results.length,
+      results,
+      status: "pass",
+    },
+    null,
+    2,
+  ),
+);
