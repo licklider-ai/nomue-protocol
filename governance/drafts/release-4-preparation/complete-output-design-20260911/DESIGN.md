@@ -4,9 +4,11 @@
 
 Informative, unfrozen proposal dated 2026-09-11. Prepared with OpenAI Codex in
 its continuing author context. This is neither an independent source review nor
-an implemented public interface. IEEE 754-2019 clause confirmation remains
-INPUT_INCOMPLETE. The user reported acquisition may take several days; no
-substitute standard, clause conclusion or source-gate closure is inferred.
+an implemented public interface. IEEE 754-2019 was unavailable at the original
+head. PR #294 now supplies bounded clause confirmation at
+`864766232988181e72ae18c235dbc815466b3a1d`, with independent source report
+`bfe7d2307da8f72cd241fd6e7dc423a8e807e112`. Signed-zero collapse and
+above-maximum refusal remain project conventions; no whole-gate closure follows.
 
 This packet completes the output-policy proposal in PR #291 and specifies a
 bounded successor experiment. It adds no authoritative schema, reason code,
@@ -32,14 +34,14 @@ on numerical admission. No R3 multiplicity dependency is introduced.
 
 ## Proposed complete quantity set
 
-| Quantity                               | Count   | Proposed representation and completeness condition                 |
-| -------------------------------------- | ------- | ------------------------------------------------------------------ |
-| Signed estimates dA, dB, dAB           | 3       | Exact internal rational plus finite projected binary64             |
-| Effect SS for A, B, AB                 | 3       | Exact nonnegative rational plus finite projection                  |
-| Residual SSE                           | 1       | Exact positive rational plus strictly positive finite projection   |
-| Numerator and residual df              | 3 pairs | Exact integers (1, 4(n-1)); same residual df for every contrast    |
-| F for A, B, AB                         | 3       | Exact nonnegative rational plus finite projection                  |
-| Individual-null upper-tail probability | 3       | Outward rational bounds determining one binary64 encoding in [0,1] |
+| Quantity                               | Count   | Proposed representation and completeness condition                                                   |
+| -------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| Signed estimates dA, dB, dAB           | 3       | Exact internal rational plus finite projected binary64                                               |
+| Effect SS for A, B, AB                 | 3       | Exact nonnegative rational plus finite projection                                                    |
+| Residual SSE                           | 1       | Exact positive rational plus strictly positive finite projection                                     |
+| Numerator and residual df              | 3 pairs | Exact integers (1, 4(n-1)); same residual df for every contrast                                      |
+| F for A, B, AB                         | 3       | Exact nonnegative rational plus finite projection                                                    |
+| Individual-null upper-tail probability | 3       | Pinned candidate bounds determine one binary64 encoding in [0,1]; oracle comparison is test evidence |
 
 These 13 real-valued quantities and three df pairs are the proposed minimum
 complete experimental output. Repeated shared df or SSE storage is unnecessary.
@@ -53,6 +55,13 @@ For cell means m00, m01, m10, m11, retain
 SS values are n*dA^2, n*dB^2, n*dAB^2/4. Residual SSE is the sum of exact
 within-cell squared deviations; F is SS/(SSE/df), using exact quantities.
 
+At runtime, the pinned finite-sum candidate supplies the probability enclosure;
+no independent probability oracle is run to accept a result. Oracle agreement is
+required evidence in the experiment's tests, not a second runtime certificate.
+The existing projection helper located in `rational_oracle.py` may be reused for
+encoding bounds; calling that helper is not running its probability oracle.
+Pin the complete dependency set and preserve this distinction in runtime claims.
+
 ## Representation decisions proposed for the experiment
 
 1. Require absolute exact magnitude at most maximum finite binary64 for each
@@ -62,6 +71,10 @@ within-cell squared deviations; F is SS/(SSE/df), using exact quantities.
 2. Refuse exact SSE=0 before division. If exact SSE is positive but its projection
    is zero, refuse complete output as a representation limitation. This case is
    not undefined mathematics and is not evidence of zero residual variation.
+   The asymmetry is a proposed output convention: keep the displayed residual
+   denominator positive to avoid an apparent undefined division, while rounded
+   SS/F displays remain usable only with exact quantities driving computation;
+   a displayed zero never establishes an absent or negligible scientific effect.
 3. Permit a nonzero signed estimate, SS or F to round to zero if otherwise within
    range. Retain exact-zero versus rounded-zero diagnostics and the sign of a
    nonzero signed estimate's zero projection. Exact zero projects to positive
@@ -77,7 +90,11 @@ within-cell squared deviations; F is SS/(SSE/df), using exact quantities.
 The positive displayed SSE choice narrows the domain deliberately. An alternative
 would expose positive exact SSE alongside a zero display, but that would require
 a separately reviewed consumer representation. Do not silently relax this choice
-inside the wrapper. All projection conventions remain subject to source review.
+inside the wrapper. Requiring finite displayed F deliberately narrows PR #288's
+rational-tail adapter, which can evaluate tails for some exact F values above
+maximum binary64 even when SS and positive SSE are displayable. This wrapper
+refuses such a complete output before tail work. IEEE clause confirmation does
+not approve this narrower output policy.
 
 ## Admission and refusal order for a successor experiment
 

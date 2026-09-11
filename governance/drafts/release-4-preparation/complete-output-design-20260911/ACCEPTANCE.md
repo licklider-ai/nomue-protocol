@@ -40,7 +40,7 @@ That algebra does not imply equal complete-output admission after scaling.
 | Revision oversized or containing non-ASCII and observations invalid              | Revision wins; no observation arithmetic                                                |
 | Float subclass, nonfinite float, integer observation, ragged cells               | Explicit appropriate input refusal, not implicit conversion                             |
 | Revision differs; signed input zero differs; same F from translated data         | Snapshot identities remain distinct                                                     |
-| Two successful contrasts with missing or duplicate third contrast                | No complete output; no positional guess                                                 |
+| Internal invariant: missing or duplicate third contrast after two successes      | Injected construction defect fails the experiment; not a raw-input refusal              |
 | Normal and optimized execution                                                   | Same decisions and counted checks; no assert-only acceptance                            |
 | Whole-call timeout or memory termination                                         | Failed experiment, not valid resource-refusal evidence                                  |
 
@@ -59,3 +59,29 @@ support. Start with an isolated experimental 30-second / 256-MiB envelope; this
 is a test ceiling proposal, not a supported platform or completion guarantee.
 Any admitted input exceeding it blocks the wrapper experiment's bounded GO until
 its admission is narrowed or a justified envelope is reviewed.
+
+## Added representation witnesses from design review
+
+Put `[0,2^-537]` in the first three cells and `[2^500,2^500]` in the
+fourth. Writing t=2^-537 and H=2^500, all three effect SS values equal
+`(H-t/2)^2/2`, which is finite and displayable. Exact SSE is
+`3*2^-1075` and rounds to `2^-1073`, a positive subnormal. This is near
+the minimum subnormal, not the minimum normal. All three F values equal
+`(4/3)*(H/t-1/2)^2` and exceed maximum finite. Expect stage 5 F
+representation refusal with no tail work. This is an intentional narrowing
+relative to the rational-tail adapter; no claim that this particular large-width
+input passes the adapter's resource budget is needed.
+
+For the exact zero-rounding tie, put `[0,2^-538]` in all four cells. SSE is
+`2^-1075`, exactly halfway between zero and minimum subnormal, and projects
+to positive zero by even rounding. Expect stage 5 SSE representation refusal,
+even though exact SSE is positive and all exact F values are zero.
+
+| Additional case                                              | Expected behavior                                   |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| Finite SS and positive displayed SSE, F above maximum finite | Stage 5 F refusal before any probability evaluation |
+| Exact SSE at half minimum subnormal                          | Stage 5 SSE refusal by even-zero projection         |
+
+`check_review_witnesses.py` independently derives these two witnesses with
+standard-library fractions and checks their representation boundaries. It does
+not execute the proposed wrapper or establish its refusal implementation.
