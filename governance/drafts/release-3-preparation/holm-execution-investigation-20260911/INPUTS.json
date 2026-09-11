@@ -1,0 +1,92 @@
+{
+  "review_date": "2026-09-11",
+  "timezone": "UTC",
+  "repository": "licklider-ai/nomue-protocol",
+  "repository_commit": "8149731d9100b7faeae706be80cf37c7d7628dc9",
+  "scope":
+    "Linux x64 whole-call resource control for a trusted Node envelope verifier and one trusted Python worker",
+  "review_role": "Separate execution-control primary-source investigator",
+  "investigator": "/root/r3_execution_sources",
+  "independence": {
+    "separate_authoring_context": true,
+    "same_inherited_model": true,
+    "exact_model_identifier": "not exposed to investigator",
+    "shared_tools_infrastructure_workspace": true,
+    "distinct_provider_or_model_claim": false,
+    "human_authorship_claim": false,
+    "blinded": false
+  },
+  "authority_inputs": [
+    {
+      "path": "AGENTS.md",
+      "git_blob_sha": "3ed723a20931b70284ea96cb33872bd0b60923fb"
+    },
+    {
+      "path": "CHARTER.md",
+      "git_blob_sha": "1dead95488bae31f80f25424bb3a5515fda119fb"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "git_blob_sha": "7b55e8ba6698d69431d952945a9253c2331122d0"
+    },
+    {
+      "path": "authority/authority-manifest.yaml",
+      "git_blob_sha": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "inspection": "selected execution, verification, governance, reference and evidence entries"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "git_blob_sha": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "inspection": "selected verifier/security entries; full NRS-SEC entries"
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "git_blob_sha": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce"
+    },
+    {
+      "path": "governance/RFC.md",
+      "git_blob_sha": "9fa3bdd2e273ed9569385e34bce0bbef2559b131"
+    }
+  ],
+  "primary_sources_opened": [
+    "https://man7.org/linux/man-pages/man2/getrlimit.2.html",
+    "https://man7.org/linux/man-pages/man2/fork.2.html",
+    "https://man7.org/linux/man-pages/man3/exec.3p.html",
+    "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+    "https://nodejs.org/api/cli.html",
+    "https://nodejs.org/api/process.html",
+    "https://man7.org/linux/man-pages/man2/kill.2.html",
+    "https://man7.org/linux/man-pages/man2/setsid.2.html",
+    "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html",
+    "https://man7.org/linux/man-pages/man2/wait.2.html",
+    "https://nodejs.org/api/child_process.html",
+    "https://docs.python.org/3/library/subprocess.html",
+    "https://nodejs.org/api/timers.html"
+  ],
+  "source_inspection_date": "2026-09-11",
+  "observed_documentation_versions": {
+    "node": "26.8.2",
+    "python": "3.14.7",
+    "getrlimit_linux_man_pages": "6.19"
+  },
+  "external_source_content_hashes": null,
+  "external_source_hash_limitation":
+    "Retrieved pages are mutable; not downloaded or hashed because execution unavailable",
+  "runtime_probe_status": "NOT_RUN",
+  "execution_status": "BLOCKED",
+  "execution_blocker":
+    "exec-server transport disconnected; parent separately confirmed environment_offline HTTP 409",
+  "local_runtime_versions_observed": false,
+  "cgroup_delegation_observed": false,
+  "aggregate_memory_enforcement_observed": false,
+  "tree_cleanup_observed": false,
+  "jit_code_range_numeric_requirement_established": false,
+  "repository_mutated_by_investigator": false,
+  "private_repository_accessed": false,
+  "public_support_adoption_decision": "NONE",
+  "release_gate_closure": "NONE",
+  "intended_output_directory": "/workspace/scratch/367118710fbf/r3-execution-source-review-output",
+  "local_files_created": false,
+  "handoff":
+    "Full English SOURCE-REVIEW.md and INPUTS.json delivered to authoring agent through collaboration messages for persistence"
+}
