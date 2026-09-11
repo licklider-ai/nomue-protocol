@@ -1,0 +1,9 @@
+{
+  "above_max_project_refusal_is_stricter_than_ieee_nearest": true,
+  "field_decode_cases": 8,
+  "interval_projection_cases": 1,
+  "midpoint_tie_cases": 4,
+  "monotone_order_points": 7,
+  "signed_zero_encodings_collapse_in_lattice": true,
+  "status": "pass"
+}

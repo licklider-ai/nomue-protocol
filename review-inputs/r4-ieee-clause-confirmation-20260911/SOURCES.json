@@ -1,0 +1,33 @@
+{
+  "access_date_utc": "2026-09-11",
+  "bibliographic_identity": {
+    "approval_date": "2019-06-13",
+    "isbn_pdf": "978-1-5044-5924-2",
+    "publication_date": "2019-07-22",
+    "publisher": "IEEE",
+    "title": "IEEE Standard for Floating-Point Arithmetic",
+    "standard": "IEEE Std 754-2019 (Revision of IEEE Std 754-2008)"
+  },
+  "copy": {
+    "bytes": 4085164,
+    "pages": 84,
+    "sha256": "d6f6fef52ae93cdf8c8524451d144e00172555f008bf01a6f81da03aeff80e7a",
+    "provenance": "User-supplied licensed PDF; publisher download was not independently authenticated.",
+    "preservation": "The PDF, license watermark, licensee identity, and substantial excerpts are not committed."
+  },
+  "inspected": [
+    { "clause": "3.3", "pdf_page": 19, "printed_page": 18 },
+    { "clause": "3.4", "pdf_page": 20, "printed_page": 19 },
+    { "clause": "3.6 and Table 3.5", "pdf_page": 24, "printed_page": 23 },
+    { "clause": "3.7 and Table 3.7", "pdf_page": 26, "printed_page": 25 },
+    { "clause": "4.3 and 4.3.1", "pdf_page": 28, "printed_page": 27 },
+    { "clause": "6.3", "pdf_page": 51, "printed_page": 50 },
+    { "clause": "7.4 and 7.5", "pdf_page": 54, "printed_page": 53 }
+  ],
+  "review_provenance": {
+    "requested_model": "gpt-5.6-sol",
+    "served_build_attestation": "unavailable",
+    "human_review": false,
+    "subagents": false
+  }
+}
