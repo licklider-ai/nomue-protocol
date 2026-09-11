@@ -149,8 +149,9 @@ Reported checks: both harness modes reproduced under the 30-second/256-MiB
 envelope on CPython 3.11.15 with parsed output identical to the committed
 results; the four copied dependencies matched PR #288 byte-for-byte and all
 twelve packet hashes matched; the preflight predicate was confirmed identical to
-the guard sequence executed inside the candidate, so an admitted contrast cannot
-raise a resource error during tail evaluation; the unresolved path returns no
+the guard sequence executed inside the candidate. With unchanged fixed code and
+inputs, admission cannot later fail that same deterministic work predicate;
+this does not exclude MemoryError, process termination or excessive elapsed time; the unresolved path returns no
 arithmetic bundle and the assembly invariant rejects a missing contrast; a
 `PYTHONPATH` shadow of `budget.py` did not bypass the script-directory import.
 
@@ -165,3 +166,28 @@ n=9 about 4.8 seconds and three 976-bit tails at n=17 about 4.3 seconds. The
 admission score does not order these cases by wall time; n=46 dominates.
 No preflight, partial-result or refusal-precedence defect was found. `SHA256SUMS`
 and `RESULTS.json` were regenerated for the repaired sources.
+
+## Author repair intake and round boundary
+
+The preparation author, OpenAI Codex in the continuing author context, inspected
+review repair `26847d57ed93fa0b74c83cedcb733aee547430ad`, sole parent
+`7993c43abd21e5622b1be34b11ffaa47edda8963`, tree
+`0c0ec5d59ebf079cfb9ac347d09feff738af84cd`. It was fast-forwarded intact
+onto the experiment branch. Normal and optimized tests reproduced all 318 checks
+and the committed parsed results on Python 3.12.14 within individual
+30-second/256-MiB envelopes; all twelve inventory hashes matched. No numerical
+source or benchmark was changed or rerun by this intake. The reported 14.6-second
+frontier measurement remains reviewer-supplied observation, not new author data.
+
+Origin checking prevents accidental use of a same-named module from another
+location. A matching `__file__` is not authentication of in-memory code against a
+malicious process that forges origins or monkey-patches functions. The trusted
+fresh-process/module-state boundary remains; no hostile-code sandbox is added.
+
+The only additional author repair is the wording above distinguishing the fixed
+work predicate from runtime resource failures. Subject to CI for this final
+documentation revision, this bounded implementation-review round is complete.
+The PR remains draft; no merge, supported-domain approval or release occurs.
+Next is a separate design for submitted probability evidence, including precise
+identity binding and conservative enclosure-containment semantics; it does not
+reopen this arithmetic wrapper without a concrete changed claim or defect.
