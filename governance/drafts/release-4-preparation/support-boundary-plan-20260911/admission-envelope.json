@@ -1,0 +1,261 @@
+{
+  "scope": "adapter precision at most 512; score only, not runtime",
+  "rows": [
+    {
+      "n_per_cell": 2,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 3,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 4,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 5,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 6,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 7,
+      "max_component_bits": 6500
+    },
+    {
+      "n_per_cell": 8,
+      "max_component_bits": 5102
+    },
+    {
+      "n_per_cell": 9,
+      "max_component_bits": 3906
+    },
+    {
+      "n_per_cell": 10,
+      "max_component_bits": 3086
+    },
+    {
+      "n_per_cell": 11,
+      "max_component_bits": 2500
+    },
+    {
+      "n_per_cell": 12,
+      "max_component_bits": 2066
+    },
+    {
+      "n_per_cell": 13,
+      "max_component_bits": 1736
+    },
+    {
+      "n_per_cell": 14,
+      "max_component_bits": 1479
+    },
+    {
+      "n_per_cell": 15,
+      "max_component_bits": 1275
+    },
+    {
+      "n_per_cell": 16,
+      "max_component_bits": 1111
+    },
+    {
+      "n_per_cell": 17,
+      "max_component_bits": 976
+    },
+    {
+      "n_per_cell": 18,
+      "max_component_bits": 865
+    },
+    {
+      "n_per_cell": 19,
+      "max_component_bits": 771
+    },
+    {
+      "n_per_cell": 20,
+      "max_component_bits": 692
+    },
+    {
+      "n_per_cell": 21,
+      "max_component_bits": 625
+    },
+    {
+      "n_per_cell": 22,
+      "max_component_bits": 566
+    },
+    {
+      "n_per_cell": 23,
+      "max_component_bits": 516
+    },
+    {
+      "n_per_cell": 24,
+      "max_component_bits": 472
+    },
+    {
+      "n_per_cell": 25,
+      "max_component_bits": 434
+    },
+    {
+      "n_per_cell": 26,
+      "max_component_bits": 400
+    },
+    {
+      "n_per_cell": 27,
+      "max_component_bits": 369
+    },
+    {
+      "n_per_cell": 28,
+      "max_component_bits": 342
+    },
+    {
+      "n_per_cell": 29,
+      "max_component_bits": 318
+    },
+    {
+      "n_per_cell": 30,
+      "max_component_bits": 297
+    },
+    {
+      "n_per_cell": 31,
+      "max_component_bits": 277
+    },
+    {
+      "n_per_cell": 32,
+      "max_component_bits": 260
+    },
+    {
+      "n_per_cell": 33,
+      "max_component_bits": 244
+    },
+    {
+      "n_per_cell": 34,
+      "max_component_bits": 229
+    },
+    {
+      "n_per_cell": 35,
+      "max_component_bits": 216
+    },
+    {
+      "n_per_cell": 36,
+      "max_component_bits": 204
+    },
+    {
+      "n_per_cell": 37,
+      "max_component_bits": 192
+    },
+    {
+      "n_per_cell": 38,
+      "max_component_bits": 182
+    },
+    {
+      "n_per_cell": 39,
+      "max_component_bits": 173
+    },
+    {
+      "n_per_cell": 40,
+      "max_component_bits": 164
+    },
+    {
+      "n_per_cell": 41,
+      "max_component_bits": 156
+    },
+    {
+      "n_per_cell": 42,
+      "max_component_bits": 148
+    },
+    {
+      "n_per_cell": 43,
+      "max_component_bits": 141
+    },
+    {
+      "n_per_cell": 44,
+      "max_component_bits": 135
+    },
+    {
+      "n_per_cell": 45,
+      "max_component_bits": 129
+    },
+    {
+      "n_per_cell": 46,
+      "max_component_bits": 123
+    },
+    {
+      "n_per_cell": 47,
+      "max_component_bits": 118
+    },
+    {
+      "n_per_cell": 48,
+      "max_component_bits": 113
+    },
+    {
+      "n_per_cell": 49,
+      "max_component_bits": 108
+    },
+    {
+      "n_per_cell": 50,
+      "max_component_bits": 104
+    },
+    {
+      "n_per_cell": 51,
+      "max_component_bits": 100
+    },
+    {
+      "n_per_cell": 52,
+      "max_component_bits": 96
+    },
+    {
+      "n_per_cell": 53,
+      "max_component_bits": 92
+    },
+    {
+      "n_per_cell": 54,
+      "max_component_bits": 88
+    },
+    {
+      "n_per_cell": 55,
+      "max_component_bits": 85
+    },
+    {
+      "n_per_cell": 56,
+      "max_component_bits": 82
+    },
+    {
+      "n_per_cell": 57,
+      "max_component_bits": 79
+    },
+    {
+      "n_per_cell": 58,
+      "max_component_bits": 76
+    },
+    {
+      "n_per_cell": 59,
+      "max_component_bits": 74
+    },
+    {
+      "n_per_cell": 60,
+      "max_component_bits": 71
+    },
+    {
+      "n_per_cell": 61,
+      "max_component_bits": 69
+    },
+    {
+      "n_per_cell": 62,
+      "max_component_bits": 67
+    },
+    {
+      "n_per_cell": 63,
+      "max_component_bits": 65
+    },
+    {
+      "n_per_cell": 64,
+      "max_component_bits": 62
+    },
+    {
+      "n_per_cell": 65,
+      "max_component_bits": 61
+    }
+  ]
+}
