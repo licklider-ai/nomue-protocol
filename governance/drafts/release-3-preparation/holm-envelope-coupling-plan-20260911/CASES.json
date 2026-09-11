@@ -1,0 +1,125 @@
+{
+  "status": "proposed pre-execution integration expectations; not executed conformance",
+  "cases": [
+    {
+      "case": "valid_baseline",
+      "input_change": "Complete canonical successor envelope and independently pinned matching context",
+      "expected": "Scoped integrity, association and arithmetic pass; exact report reference; unchanged forwarded bytes"
+    },
+    {
+      "case": "missing_envelope_member",
+      "input_change": "Omit each of the nine envelope members in turn",
+      "expected": "No numerical success; distinguish routing failure from post-routing schema failure"
+    },
+    {
+      "case": "local_instance_label",
+      "input_change": "Use the old body record or revision short label as envelope URI",
+      "expected": "Reject under successor instance grammar; never add a URI prefix silently"
+    },
+    {
+      "case": "future_check_identity",
+      "input_change": "Use allocated successor HTTPS check identifier after adoption",
+      "expected": "Accepted only by successor report schema; legacy URN schema remains unchanged"
+    },
+    {
+      "case": "wrong_bundle",
+      "input_change": "Use missing, non-string, unknown, or legacy ITGC bundle with Holm payload",
+      "expected": "Route/refuse exactly; no nearest version or ITGC fallback"
+    },
+    {
+      "case": "wrong_integrity_metadata",
+      "input_change": "Alter canonicalization ID, algorithm or scope independently",
+      "expected": "Reject even though integrity is excluded from the digest projection"
+    },
+    {
+      "case": "digest_tamper",
+      "input_change": "Alter each envelope metadata and payload branch without refreshing digest",
+      "expected": "Computed digest disagrees; no arithmetic pass"
+    },
+    {
+      "case": "integrity_exclusion",
+      "input_change": "Change only declared digest text",
+      "expected": "Projection bytes unchanged; integrity judgment fails against computed digest"
+    },
+    {
+      "case": "untagged_digest",
+      "input_change": "Supply SHA256 of projection without record domain tag",
+      "expected": "Integrity fails"
+    },
+    {
+      "case": "canonicalizer_fault",
+      "input_change": "Inject canonicalizer fault while retaining original stored projection",
+      "expected": "Cannot succeed solely because the same faulty canonicalizer generates and checks its own bytes"
+    },
+    {
+      "case": "storage_variants",
+      "input_change": "Pretty-print, append newline, prepend BOM, or send invalid UTF-8",
+      "expected": "Reject original bytes; no silent canonical rewrite"
+    },
+    {
+      "case": "raw_priority",
+      "input_change": "Combine malformed syntax, duplicates, lone surrogate, negative zero, and unknown bundle",
+      "expected": "Preserve existing pre-routing class priority; never report arithmetic outcome"
+    },
+    {
+      "case": "context_binding",
+      "input_change": "Alter actual URI identities, unrelated declaration, member array order or supplied inputs",
+      "expected": "Context fails before numeric worker; original full expected association retained"
+    },
+    {
+      "case": "revision_alias",
+      "input_change": "Map two different actual URI revisions to the same internal fixture label",
+      "expected": "Mismatch detected before adaptation; report never uses internal labels"
+    },
+    {
+      "case": "relation_codes",
+      "input_change": "Create multiple simultaneous D0 relation defects in schema-valid input",
+      "expected": "Carry stage and complete code set; no invented within-set priority"
+    },
+    {
+      "case": "ownership",
+      "input_change": "Use another analysis/family/result identity with otherwise correct numeric rows",
+      "expected": "Reject association before worker"
+    },
+    {
+      "case": "last_row",
+      "input_change": "Only final exact value or display differs",
+      "expected": "Completed scoped arithmetic failure; no partial success"
+    },
+    {
+      "case": "precision",
+      "input_change": "Supply exact integer as Number, uppercase, leading-zero or out-of-range string",
+      "expected": "Refuse representation/domain without lossy conversion"
+    },
+    {
+      "case": "admission_caps",
+      "input_change": "Exercise exact and just-over outer and reconstructed bridge bounds",
+      "expected": "Document conjunction and observed stage; do not infer universal RSS upper bound"
+    },
+    {
+      "case": "worker_partial",
+      "input_change": "Return malformed, truncated, wrong-length or out-of-range worker output",
+      "expected": "Execution error if check started and report valid; no numeric outcome"
+    },
+    {
+      "case": "setup_failure",
+      "input_change": "Fail trusted schema/module/dependency setup before report can be formed",
+      "expected": "Verifier-level internal failure, not fabricated report scope"
+    },
+    {
+      "case": "separate_report",
+      "input_change": "Run verification twice with only verifier metadata/time differing",
+      "expected": "Record bytes unchanged; semantic report projections agree"
+    },
+    {
+      "case": "no_aggregate",
+      "input_change": "Try overall VERIFIED, significance boolean or scientific-validity escalation",
+      "expected": "Reject outside closed successor report and guarantee scope"
+    },
+    {
+      "case": "legacy_regression",
+      "input_change": "Run each currently supported bundle and refusal contract",
+      "expected": "Existing registered fixtures and outputs remain unchanged"
+    }
+  ]
+}
