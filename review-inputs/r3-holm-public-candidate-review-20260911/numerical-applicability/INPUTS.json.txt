@@ -1,0 +1,133 @@
+{
+  "review_date": "2026-09-11",
+  "base_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+  "repository_inputs": [
+    {
+      "path": "AGENTS.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "path": "CHARTER.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "bytes": 9163,
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "bytes": 12454,
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "path": "authority/authority-manifest.yaml",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "bytes": 45801,
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "bytes": 83339,
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "path": "governance/RFC.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "0e71a16edb686417111baf1511118c466b9a0e2b",
+      "bytes": 12540,
+      "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8"
+    },
+    {
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "bytes": 10264,
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/SOURCES.json",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "0e5b3486bd56babd0a56c8c642a98f2bffde9373",
+      "bytes": 1351,
+      "sha256": "f87c2295001b927fcc6c4a983f07fecebfe3bfca5617a8e0c7b34776b8bdaa6f"
+    },
+    {
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "4e17382570a56d6f784ec286854f3ea30bbe90f9",
+      "bytes": 5434,
+      "sha256": "dc7ec76589d02c154bc5886e79d822f09caf0f27f0639f53f297a0cd6631cfa3"
+    },
+    {
+      "path": "review-inputs/r3-holm-promotion-20c8e3b/REPORT.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "f65d76eb0a4daa7b6898560206a682f20acd72bd",
+      "bytes": 21201,
+      "sha256": "88fc2ccf8b9eb9bf61cb5a26baf684b4a2635a909086aec07422d67727d47c98"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/SPECIFICATION-PROPOSAL.md",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "225c5ddce09bb272d1f051414007d9144236d617",
+      "bytes": 16103,
+      "sha256": "e4193ffa10501f56b416b5edd61b469fbb1700c6d00aed2a184f7c601a78a0a1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "bytes": 3969,
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "7656beae6750dcc29e52f8c15df53c78027cd4ee",
+      "bytes": 2278,
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "bytes": 12664,
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+      "blob": "d08d06a6331b7dd3e1b0911f230acdbdb8cf9ca2",
+      "bytes": 31065,
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    }
+  ],
+  "source_reuse": {
+    "new_original_pdf_inspection": false,
+    "primary_source_facts_reused_from": [
+      "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md"
+    ],
+    "reopen_determination": "No expanded numerical methodology: same supplied-p ordinary unweighted transformation, [0,1] binary64 field mapping and nearest/even display. No new primary reading required for unchanged claims."
+  }
+}

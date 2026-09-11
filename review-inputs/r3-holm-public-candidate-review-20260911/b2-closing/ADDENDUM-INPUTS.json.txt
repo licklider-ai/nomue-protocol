@@ -1,0 +1,178 @@
+{
+  "new_document_inputs": [
+    {
+      "bytes": 10386,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/CONTRACT.md",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/CONTRACT.md",
+      "sha256": "eae0ce8fc975066d08826c1c2b92963ae244a7d8651fe304993ef0afca3771c2"
+    },
+    {
+      "bytes": 5320,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/COUPLING.md",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/COUPLING.md",
+      "sha256": "faa3fda38dcb60120992943c48733e25d7eaea407b44feb74ede041ef60d887d"
+    },
+    {
+      "bytes": 436,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/declaration-shapes.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    }
+  ],
+  "note": "Original REPORT.md/INPUTS.json/RESULTS.json were not edited. This addendum qualifies that test replay wrote candidate example/results artifacts in the untracked packet, while reviewed source/schema/code pins still match.",
+  "purpose": "final addendum pins for CONTRACT.md, COUPLING.md, and declaration-shapes.json",
+  "replay_written_file_observations": [
+    {
+      "bytes": 6393,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-record.jcs",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "53ac6a6f58d55b92b269aa915795f745a35bc248dec97a856f30477ef76ef675",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-record.jcs",
+      "sha256": "53ac6a6f58d55b92b269aa915795f745a35bc248dec97a856f30477ef76ef675"
+    },
+    {
+      "bytes": 7384,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-expected.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "4c3428a8a039625bae770fb7a56cd28416c5d86dd504d5102b318f9064a82c49",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-expected.json",
+      "sha256": "4c3428a8a039625bae770fb7a56cd28416c5d86dd504d5102b318f9064a82c49"
+    },
+    {
+      "bytes": 3042,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-report.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "6003c949170449e9d0212d2f190f1c82e76d495ce7a946d745a9dc5ee2efb279",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-report.json",
+      "sha256": "6003c949170449e9d0212d2f190f1c82e76d495ce7a946d745a9dc5ee2efb279"
+    },
+    {
+      "bytes": 3116,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-report.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "6b539fde55316832ad8a4fe0e9abb8200722b86a4fe2b2a03002d0fa03ad8ace",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-report.json",
+      "sha256": "6b539fde55316832ad8a4fe0e9abb8200722b86a4fe2b2a03002d0fa03ad8ace"
+    },
+    {
+      "bytes": 571,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-refusal.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "7c53426330eb35d4a20624faa7cecb80ec369d081017ca8f5b41990c33691c07",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-refusal.json",
+      "sha256": "7c53426330eb35d4a20624faa7cecb80ec369d081017ca8f5b41990c33691c07"
+    },
+    {
+      "bytes": 12522,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "b315de22b50fc5a967e15f29ec193687a72b1ba4facd0e3a7cced5f58c19b40e",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+      "sha256": "b315de22b50fc5a967e15f29ec193687a72b1ba4facd0e3a7cced5f58c19b40e"
+    },
+    {
+      "bytes": 3909,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+      "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+    }
+  ],
+  "repo_branch": "proposal/r3-holm-public-candidate-20260911",
+  "repo_head": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+  "review_date": "2026-09-11",
+  "source_pin_recheck": [
+    {
+      "current_sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs"
+    },
+    {
+      "current_sha256": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs"
+    },
+    {
+      "current_sha256": "0595f6df30eac7d3e8188800d4e594673f7a834dab49ed0c8e40b4166dad8ff0",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "0595f6df30eac7d3e8188800d4e594673f7a834dab49ed0c8e40b4166dad8ff0",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json"
+    },
+    {
+      "current_sha256": "e0dcdb6abf14dca3acca709187d7fedf537213e6e452ee48bad2a48da0ef45ae",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "e0dcdb6abf14dca3acca709187d7fedf537213e6e452ee48bad2a48da0ef45ae",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json"
+    },
+    {
+      "current_sha256": "8057de0026d0d0a403f426d773bb1992e20c78d719bbce49f40c095925b617ca",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "8057de0026d0d0a403f426d773bb1992e20c78d719bbce49f40c095925b617ca",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json"
+    },
+    {
+      "current_sha256": "cb7e03a39efa754d7e6db8e6cd91eedfdc26906e06d2fd77a640ab3eef43e1cd",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "cb7e03a39efa754d7e6db8e6cd91eedfdc26906e06d2fd77a640ab3eef43e1cd",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json"
+    },
+    {
+      "current_sha256": "a347b164dba4b38164aacb9fc04c9d528538334aa68da8ff6cfff6f7620867dd",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "a347b164dba4b38164aacb9fc04c9d528538334aa68da8ff6cfff6f7620867dd",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json"
+    },
+    {
+      "current_sha256": "76894c1e49c24b29d884b5c96f9ab11030a4763d7de77431cb3a71eb8f0ddad5",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "76894c1e49c24b29d884b5c96f9ab11030a4763d7de77431cb3a71eb8f0ddad5",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json"
+    },
+    {
+      "current_sha256": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json"
+    },
+    {
+      "current_sha256": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28",
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json"
+    },
+    {
+      "current_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+      "git_status": "tracked-clean",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py"
+    },
+    {
+      "current_sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9",
+      "git_status": "tracked-clean",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py"
+    },
+    {
+      "current_sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+      "git_status": "tracked-clean",
+      "matches_original_review_pin": true,
+      "original_review_sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs"
+    }
+  ]
+}

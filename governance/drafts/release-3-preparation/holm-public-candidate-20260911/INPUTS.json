@@ -1,0 +1,166 @@
+{
+  "base_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+  "status": "unissued candidate; complete candidate runtime and inherited transitive pins",
+  "runtime": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INTEGRITY.json",
+      "sha256": "066d81257248db1edf390a6d4451245f03c0cef1db057c930b5de6ef2484fe80"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/LIVE-RSS.json",
+      "sha256": "505f56a126cf68a8ba015319664ea2b6cfa3327bc44122561ecb73f82720ab91"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/NODE-CONFIRMATION.json",
+      "sha256": "20d9d05d7bb69cb1b0dc1c52255c10350924ce37a3f260d64d8be5031e7aba76"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/RESULTS.json",
+      "sha256": "d943d9179e39a0813938f1e4e91d592edae5b2d4bc1a9dde7be6257aa3ba6701"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.schema.json",
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/cases.json",
+      "sha256": "ddea992b2b0b7231c6f2f0398deb04153586069217ea681f9ccb86587b7b05b8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/check_nodes.py",
+      "sha256": "bee6e4d42edfe8848a917f190d49a1a9b3e9b43c81f072621322dbcdbff859e6"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/d0.mjs",
+      "sha256": "ce5eca7a15ae13e198e177f2c6e07b625b6f34bcaf35ffcce7be680d4ecff85f"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/example.json",
+      "sha256": "debaf60e44a592c50b868dd9df8ac71fb0f64cef8985f98956de3f832525943a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixture-contracts.json",
+      "sha256": "5a534294d416637627e7ec158da71d4a8b47bcdd63f8e708eaef0a41293e5d18"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixtures.mjs",
+      "sha256": "3813c6cf62b74804e7141757ff4a763d93c69e84bfb9173f5651fe9d71534ed4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/live_rss.py",
+      "sha256": "7f5b0940ef92215fa7a8d32d6fe1626eff4cdec6cfb0ac4dffe0f611a3279d6a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/oracle.py",
+      "sha256": "c136af873eee3d29fa4c9a8746879e8ca0f125db2afd3bf32daabcfb8d7a6390"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/pin_inputs.mjs",
+      "sha256": "fef0db88d390af8b455bfeb7b20850da76a719c7dee3aec5cc036c418f42f43c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/probe.mjs",
+      "sha256": "250aa7986083664410881b645451f89e16d51f0d13de041124882a96dc1c7c8a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/run_suite.py",
+      "sha256": "2d840c3a9556ecc9dc407759b0a2a9c3e5de24d74ebe0fd3eb154c4509da08e4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/test_bridge.mjs",
+      "sha256": "2b72a91f8ab17e0391cdf8122ddf56ea700017c9102ac55d8989c1eca95ff924"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/test_integrity.py",
+      "sha256": "f8519ebc7e989628892bf42abe40a4cc049986f33c4105861d2063afaf0de71a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/diagnostics.json",
+      "sha256": "b412b84303db5fef10fc757104f4bd74e37212db357ee6618c148d254586dcd5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/entry.mjs",
+      "sha256": "dcc788a2540c0d85385fad98a7dcbb09e08e1649537cb4ea73818443edee6a77"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs",
+      "sha256": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "sha256": "e0dcdb6abf14dca3acca709187d7fedf537213e6e452ee48bad2a48da0ef45ae"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json",
+      "sha256": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json",
+      "sha256": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json",
+      "sha256": "a347b164dba4b38164aacb9fc04c9d528538334aa68da8ff6cfff6f7620867dd"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json",
+      "sha256": "76894c1e49c24b29d884b5c96f9ab11030a4763d7de77431cb3a71eb8f0ddad5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs",
+      "sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "sha256": "0595f6df30eac7d3e8188800d4e594673f7a834dab49ed0c8e40b4166dad8ff0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "sha256": "8057de0026d0d0a403f426d773bb1992e20c78d719bbce49f40c095925b617ca"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "sha256": "cb7e03a39efa754d7e6db8e6cd91eedfdc26906e06d2fd77a640ab3eef43e1cd"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/supervisor.py",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c"
+    },
+    {
+      "path": "reference/verifier/src/jcs.ts",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    }
+  ]
+}

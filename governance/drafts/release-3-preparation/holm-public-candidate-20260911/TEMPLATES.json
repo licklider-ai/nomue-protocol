@@ -1,0 +1,65 @@
+{
+  "base_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+  "sources": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/ci_host.py",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/entry.mjs",
+      "sha256": "823d8b9b2b05af7b59138b440e179d5c1a458a811dc3d32a8dbf5e9622655a59"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/prepare_cases.mjs",
+      "sha256": "c0534da2a58c1e83ac446f827893e7dc8ef3edb0328f452f94abcc9ec1dcb658"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/probes.mjs",
+      "sha256": "2f1a45800277f2ecb56cc9d1ed4baefd7491f9e792d4c66b2c7cbcd1ddf50829"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/supervisor.py",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/test_execution.py",
+      "sha256": "8a97474d252b57c9e3f8f1e74e8d9205ffb9397323ab35f801929e0c112e9b40"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixture-contracts.json",
+      "sha256": "5a534294d416637627e7ec158da71d4a8b47bcdd63f8e708eaef0a41293e5d18"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/diagnostics.json",
+      "sha256": "b412b84303db5fef10fc757104f4bd74e37212db357ee6618c148d254586dcd5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/envelope.mjs",
+      "sha256": "f37d303cccded89108e5663a8b09028ea4b54b2d99d7e7ae5b27b42ade779236"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/expected.schema.json",
+      "sha256": "39b41df05c0f0758753df07e5d28f05b72728d26ad682b3063b2a095a5eba6d8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/identities.json",
+      "sha256": "7fa7faf17a4e295be417957064d53e658e1ff2db46622976b5ad6e2fead7870e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/record.schema.json",
+      "sha256": "3f73cd7ed9b73e2f3664956c323a6809daef74019d035715917355e3efafa2e1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/refusal.schema.json",
+      "sha256": "a45131554e39e8887e1cf2883e96e0254c8dd5f33efb800112a2a9d15512d005"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/report.schema.json",
+      "sha256": "4b6503fe5391d533c654be8a448c8310f30963a8912b0b6cf27c7b30e2192618"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-envelope-experiment-20260911/test_envelope.mjs",
+      "sha256": "d64b529816f22b3144431b4a5b9b3eafc339cb77fb22686a44a13a09136cca76"
+    }
+  ]
+}

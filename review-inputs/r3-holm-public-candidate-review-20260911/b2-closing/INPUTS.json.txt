@@ -1,0 +1,515 @@
+{
+  "external_review_inputs": [
+    {
+      "bytes": 12432,
+      "path": "/workspace/scratch/367118710fbf/holm-candidate-applicability-review/REPORT.md",
+      "sha256": "be3af7fe6d58511289c54fc50d0f982b4f20b1de301e30c09b92d87e4ede603f"
+    },
+    {
+      "bytes": 5835,
+      "path": "/workspace/scratch/367118710fbf/holm-candidate-applicability-review/INPUTS.json",
+      "sha256": "e002ae5adf9a478e75e4915215d0f695023e660de5f0d6767a538eefc70dc8b0"
+    },
+    {
+      "bytes": 1006,
+      "path": "/workspace/scratch/367118710fbf/holm-candidate-applicability-review/RESULTS.json",
+      "sha256": "c6ca6429263e7aeadfd637d121063d905790b1788ffc8c73f4b8242600d422cc"
+    },
+    {
+      "bytes": 1006,
+      "path": "/workspace/scratch/367118710fbf/holm-candidate-applicability-review/RESULTS-OPTIMIZED.json",
+      "sha256": "c6ca6429263e7aeadfd637d121063d905790b1788ffc8c73f4b8242600d422cc"
+    },
+    {
+      "bytes": 9290,
+      "path": "/workspace/scratch/367118710fbf/holm-candidate-applicability-review/independent_checks.py",
+      "sha256": "35bcc4ebba4fca4b79d97268a7f9d538c7395d71ab89dc4d7fae1429054cf2c5"
+    }
+  ],
+  "repository_inputs": [
+    {
+      "bytes": 9700,
+      "exists": true,
+      "git_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "git_status": "tracked-clean",
+      "path": "AGENTS.md",
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "bytes": 9163,
+      "exists": true,
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "git_status": "tracked-clean",
+      "path": "CHARTER.md",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "bytes": 12454,
+      "exists": true,
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "git_status": "tracked-clean",
+      "path": "AUTHORITY.md",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "bytes": 45801,
+      "exists": true,
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "git_status": "tracked-clean",
+      "path": "authority/authority-manifest.yaml",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+    },
+    {
+      "bytes": 83339,
+      "exists": true,
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "git_status": "tracked-clean",
+      "path": "registries/requirements.yaml",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "bytes": 9575,
+      "exists": true,
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "git_status": "tracked-clean",
+      "path": "governance/ID-POLICY.md",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "bytes": 11571,
+      "exists": true,
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "git_status": "tracked-clean",
+      "path": "governance/RFC.md",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "bytes": 16103,
+      "exists": true,
+      "git_blob": "225c5ddce09bb272d1f051414007d9144236d617",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/SPECIFICATION-PROPOSAL.md",
+      "sha256": "e4193ffa10501f56b416b5edd61b469fbb1700c6d00aed2a184f7c601a78a0a1"
+    },
+    {
+      "bytes": 12540,
+      "exists": true,
+      "git_blob": "0e71a16edb686417111baf1511118c466b9a0e2b",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8"
+    },
+    {
+      "bytes": 10264,
+      "exists": true,
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "bytes": 1351,
+      "exists": true,
+      "git_blob": "0e5b3486bd56babd0a56c8c642a98f2bffde9373",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/SOURCES.json",
+      "sha256": "f87c2295001b927fcc6c4a983f07fecebfe3bfca5617a8e0c7b34776b8bdaa6f"
+    },
+    {
+      "bytes": 5434,
+      "exists": true,
+      "git_blob": "4e17382570a56d6f784ec286854f3ea30bbe90f9",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md",
+      "sha256": "dc7ec76589d02c154bc5886e79d822f09caf0f27f0639f53f297a0cd6631cfa3"
+    },
+    {
+      "bytes": 21201,
+      "exists": true,
+      "git_blob": "f65d76eb0a4daa7b6898560206a682f20acd72bd",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r3-holm-promotion-20c8e3b/REPORT.md",
+      "sha256": "88fc2ccf8b9eb9bf61cb5a26baf684b4a2635a909086aec07422d67727d47c98"
+    },
+    {
+      "bytes": 8016,
+      "exists": true,
+      "git_blob": "ebfea1279bc5ccbdb2069c9cc3a31f1fa1bf40fd",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r3-holm-promotion-20c8e3b/INPUTS.json",
+      "sha256": "e826a1b0781574b543cff66e9f2c1aea3f82afe8f59ca9aaffd852ddc4592528"
+    },
+    {
+      "bytes": 11697,
+      "exists": true,
+      "git_blob": "6b9786415b44cdf93d5ad1a51c50433135816592",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r3-holm-envelope-review-20260911/REVIEW.md",
+      "sha256": "23b8b3188b7ea617c0755344ff8079e39bb0337293e72d9c20935567d99544cb"
+    },
+    {
+      "bytes": 10042,
+      "exists": true,
+      "git_blob": "208e699f5340ef2591ab87f0621255722c7db480",
+      "git_status": "tracked-clean",
+      "path": "review-inputs/r3-holm-record-surface-review-20260911/REVIEW.md",
+      "sha256": "8cae635f1bd6c3af31687ede3b5457d16d689e4fe6aeb90e15d7d39d53b5e238"
+    },
+    {
+      "bytes": 3969,
+      "exists": true,
+      "git_blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "bytes": 2278,
+      "exists": true,
+      "git_blob": "7656beae6750dcc29e52f8c15df53c78027cd4ee",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "bytes": 12664,
+      "exists": true,
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "bytes": 31065,
+      "exists": true,
+      "git_blob": "d08d06a6331b7dd3e1b0911f230acdbdb8cf9ca2",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "bytes": 16890,
+      "exists": true,
+      "git_blob": "8ae5151c284c527df740239bc7d690a24ebbeba0",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/REPORT.md",
+      "sha256": "e5a86027baeada7c8e7c89bba49b3633b619b1b89237e75bf352d067c49efaf5"
+    },
+    {
+      "bytes": 21186,
+      "exists": true,
+      "git_blob": "b3e4e0d07f188dd35e52ef7c748c836413a4423b",
+      "git_status": "tracked-clean",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/RESULTS.json",
+      "sha256": "d943d9179e39a0813938f1e4e91d592edae5b2d4bc1a9dde7be6257aa3ba6701"
+    },
+    {
+      "bytes": 8287,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/INPUTS.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/INPUTS.json",
+      "sha256": "cfeeefa2cc1504e60ddbbdd78972c65ed1684ba577a560e235412e5fcc88c5e3"
+    },
+    {
+      "bytes": 12522,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+      "sha256": "b315de22b50fc5a967e15f29ec193687a72b1ba4facd0e3a7cced5f58c19b40e"
+    },
+    {
+      "bytes": 3909,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+      "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+    },
+    {
+      "bytes": 3153,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/TEMPLATES.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/TEMPLATES.json",
+      "sha256": "542da40be00f9bd2650d1b094d6eacd8f6bf7fddf8ae0c81c529d465621be996"
+    },
+    {
+      "bytes": 10133,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/build_candidate.py",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/build_candidate.py",
+      "sha256": "d79285e902c8832b7f92e3f41d415a32742da308e5bbf3cd394eae72b085a3e0"
+    },
+    {
+      "bytes": 1897,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/ci_host.py",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/ci_host.py",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede"
+    },
+    {
+      "bytes": 4021,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/diagnostics.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/diagnostics.json",
+      "sha256": "b412b84303db5fef10fc757104f4bd74e37212db357ee6618c148d254586dcd5"
+    },
+    {
+      "bytes": 2120,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/entry.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/entry.mjs",
+      "sha256": "dcc788a2540c0d85385fad98a7dcbb09e08e1649537cb4ea73818443edee6a77"
+    },
+    {
+      "bytes": 16603,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs",
+      "sha256": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34"
+    },
+    {
+      "bytes": 7384,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-expected.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-expected.json",
+      "sha256": "4c3428a8a039625bae770fb7a56cd28416c5d86dd504d5102b318f9064a82c49"
+    },
+    {
+      "bytes": 571,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-refusal.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-refusal.json",
+      "sha256": "7c53426330eb35d4a20624faa7cecb80ec369d081017ca8f5b41990c33691c07"
+    },
+    {
+      "bytes": 3116,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-report.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-report.json",
+      "sha256": "6b539fde55316832ad8a4fe0e9abb8200722b86a4fe2b2a03002d0fa03ad8ace"
+    },
+    {
+      "bytes": 6393,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-record.jcs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-record.jcs",
+      "sha256": "53ac6a6f58d55b92b269aa915795f745a35bc248dec97a856f30477ef76ef675"
+    },
+    {
+      "bytes": 3042,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-report.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-report.json",
+      "sha256": "6003c949170449e9d0212d2f190f1c82e76d495ce7a946d745a9dc5ee2efb279"
+    },
+    {
+      "bytes": 27176,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "sha256": "e0dcdb6abf14dca3acca709187d7fedf537213e6e452ee48bad2a48da0ef45ae"
+    },
+    {
+      "bytes": 1014,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json",
+      "sha256": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae"
+    },
+    {
+      "bytes": 5632,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json",
+      "sha256": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28"
+    },
+    {
+      "bytes": 1231,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/pin_runtime.py",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/pin_runtime.py",
+      "sha256": "193ea2171090e31aea4bf18d5b70e2e13346231872480e1c4c1f8cc9fbfafca3"
+    },
+    {
+      "bytes": 3826,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/prepare_cases.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/prepare_cases.mjs",
+      "sha256": "468fd5c638032b0ac3b28a43aa30b5d6571118338c3396ec356849549e37176d"
+    },
+    {
+      "bytes": 1184,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/present.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "bytes": 2775,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json",
+      "sha256": "a347b164dba4b38164aacb9fc04c9d528538334aa68da8ff6cfff6f7620867dd"
+    },
+    {
+      "bytes": 10696,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json",
+      "sha256": "76894c1e49c24b29d884b5c96f9ab11030a4763d7de77431cb3a71eb8f0ddad5"
+    },
+    {
+      "bytes": 2269,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/probes.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/probes.mjs",
+      "sha256": "2f1a45800277f2ecb56cc9d1ed4baefd7491f9e792d4c66b2c7cbcd1ddf50829"
+    },
+    {
+      "bytes": 4976,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs",
+      "sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0"
+    },
+    {
+      "bytes": 30696,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "sha256": "0595f6df30eac7d3e8188800d4e594673f7a834dab49ed0c8e40b4166dad8ff0"
+    },
+    {
+      "bytes": 5683,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "sha256": "8057de0026d0d0a403f426d773bb1992e20c78d719bbce49f40c095925b617ca"
+    },
+    {
+      "bytes": 10875,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "sha256": "cb7e03a39efa754d7e6db8e6cd91eedfdc26906e06d2fd77a640ab3eef43e1cd"
+    },
+    {
+      "bytes": 16098,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/supervisor.py",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/supervisor.py",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021"
+    },
+    {
+      "bytes": 19456,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_envelope.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_envelope.mjs",
+      "sha256": "b4cd5282fd3ac19f4c273babc4112de4ae425e431d1af3c65eee18870e6e6da9"
+    },
+    {
+      "bytes": 10102,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_execution.py",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_execution.py",
+      "sha256": "41692bd2377d154d2257d38edbd8942faa0af4525152a56b3a264f6778a0beb4"
+    },
+    {
+      "bytes": 7551,
+      "exists": true,
+      "git_blob": null,
+      "git_status": "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_public.mjs",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_public.mjs",
+      "sha256": "b8ad18bf027cab7f663a85fa4ea0272d84e9d0367ad65e155e7cf2c19f56dd66"
+    }
+  ],
+  "review_date": "2026-09-11",
+  "scope": "bounded B2 closing review for Holm supplied-p numerical methodology and public candidate mapping",
+  "source_reuse": {
+    "new_original_pdf_or_full_standard_inspection": false,
+    "note": "This review reused archived primary-source excerpts/reports and clause confirmation for unchanged ordinary Holm/binary64 choices; it did not perform a fresh full IEEE standard survey.",
+    "primary_source_facts_reused_from": [
+      "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md"
+    ]
+  },
+  "summary": {
+    "author_model_attested_by_this_review": false,
+    "configured_reviewer_model_from_task": "gpt-5.5",
+    "git_status_short": [
+      "?? governance/drafts/release-3-preparation/holm-public-candidate-20260911/"
+    ],
+    "node": "v24.19.0",
+    "public_candidate_summary": {
+      "analysis_operation_kinds": [
+        "multiplicity_adjustment"
+      ],
+      "expected_contains_contract_ref": false,
+      "ids_contract": "https://nomue.ai/id/contract/holm-supplied-p-contract/0.3.0-candidate.1",
+      "payload_contract_id": "https://nomue.ai/id/contract/holm-supplied-p-contract/0.3.0-candidate.1",
+      "record_contains_contract_ref": false,
+      "result_slot_operation_kinds": [
+        "multiplicity_adjustment"
+      ],
+      "selected_result_ownership_equal": true
+    },
+    "python": "3.12.14",
+    "repo_branch": "proposal/r3-holm-public-candidate-20260911",
+    "repo_head": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+    "served_model_build_observable": false
+  },
+  "test_results": {
+    "checks": {
+      "decode_refusal": 5,
+      "decode_valid": 259,
+      "display_collision": 1,
+      "projection": 1098,
+      "projection_refusal": 5,
+      "public_mapping": 3,
+      "transform_family": 41,
+      "worker_execution": 2
+    },
+    "hashes": {
+      "bridge.mjs": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+      "candidate.py": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+      "envelope.mjs": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34",
+      "identities.json": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae",
+      "outcomes.json": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28",
+      "public.mjs": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0",
+      "worker.py": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "status": "PASS",
+    "total_checks": 1414
+  }
+}

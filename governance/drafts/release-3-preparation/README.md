@@ -15,6 +15,11 @@ connect the bounded supplied-p Holm implementation to its remaining public
 Contract/schema/check/bundle work. Hosted-service capacity engineering is separate;
 these research observations do not adopt or publish Release 3.
 
+The [coordinated Holm public candidate](holm-public-candidate-20260911/README.md)
+now connects the bounded Contract, proposed identities, schemas, scoped outcomes,
+exact candidate dispatch and conformance controls. It remains unissued;
+[adoption changes and decisions](holm-public-candidate-20260911/COUPLING.md) are explicit.
+
 ## Preserved pre-opening preparation record
 
 **Status: informative pre-public work record.** Release 3 public discussion is not

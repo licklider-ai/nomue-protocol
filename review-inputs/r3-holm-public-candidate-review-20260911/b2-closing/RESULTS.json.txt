@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "decode_refusal": 5,
+    "decode_valid": 259,
+    "display_collision": 1,
+    "projection": 1098,
+    "projection_refusal": 5,
+    "public_mapping": 3,
+    "transform_family": 41,
+    "worker_execution": 2
+  },
+  "hashes": {
+    "bridge.mjs": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262",
+    "candidate.py": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+    "envelope.mjs": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34",
+    "identities.json": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae",
+    "outcomes.json": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28",
+    "public.mjs": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0",
+    "worker.py": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+  },
+  "node": "v24.19.0",
+  "python": "3.12.14",
+  "status": "PASS",
+  "total_checks": 1414
+}
