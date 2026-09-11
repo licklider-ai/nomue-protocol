@@ -8,6 +8,13 @@ and superseded by the receipt for current operational status; they do not reques
 another opening review or start a second window. Scientific and numerical holds
 remain unchanged.
 
+Current first-capability work: the
+[R3 execution-boundary assessment](holm-execution-admission-20260911/SCOPE.md)
+and [admission review/evidence](../../../review-inputs/r3-admission-method-review-20260911/README.md)
+connect the bounded supplied-p Holm implementation to its remaining public
+Contract/schema/check/bundle work. Hosted-service capacity engineering is separate;
+these research observations do not adopt or publish Release 3.
+
 ## Preserved pre-opening preparation record
 
 **Status: informative pre-public work record.** Release 3 public discussion is not

@@ -1,0 +1,14 @@
+[
+  {
+    "control": "first_reset_exception",
+    "exception": "OSError('synthetic reset write failure')",
+    "report_exists": false,
+    "confirmed_evidence_gap": true
+  },
+  {
+    "control": "timeout_then_outer_kill_error",
+    "exception": "OSError('synthetic outer kill race')",
+    "row_returned": false,
+    "confirmed_evidence_gap": true
+  }
+]
