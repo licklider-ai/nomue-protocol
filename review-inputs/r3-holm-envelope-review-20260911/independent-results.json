@@ -1,0 +1,380 @@
+{
+  "scope": "unissued fixed-candidate integration review; no formal acceptance or new primary-source review",
+  "node": "v24.19.0",
+  "controls": 93,
+  "passed": 93,
+  "rows": [
+    {
+      "name": "cold-start pre-await snapshot",
+      "pass": true
+    },
+    {
+      "name": "real isolated worker hand fractions",
+      "pass": true
+    },
+    {
+      "name": "byte projection \"urn:review:é\"",
+      "pass": true
+    },
+    {
+      "name": "byte projection \"urn:review:é\"",
+      "pass": true
+    },
+    {
+      "name": "byte projection \"https://example.invalid/a%2Fb\"",
+      "pass": true
+    },
+    {
+      "name": "byte projection \"urn:review:𝄞\\\"\\\\{},:integrity\"",
+      "pass": true
+    },
+    {
+      "name": "byte projection \"urn:review:\\u0001\"",
+      "pass": true
+    },
+    {
+      "name": "record priority record_duplicate_member",
+      "pass": true
+    },
+    {
+      "name": "record priority record_malformed_json",
+      "pass": true
+    },
+    {
+      "name": "record priority record_invalid_unicode",
+      "pass": true
+    },
+    {
+      "name": "record priority record_negative_zero",
+      "pass": true
+    },
+    {
+      "name": "record priority bundle_unsupported",
+      "pass": true
+    },
+    {
+      "name": "record priority record_string",
+      "pass": true
+    },
+    {
+      "name": "record priority record_key",
+      "pass": true
+    },
+    {
+      "name": "record priority record_container",
+      "pass": true
+    },
+    {
+      "name": "record priority record_nodes",
+      "pass": true
+    },
+    {
+      "name": "record priority record_depth",
+      "pass": true
+    },
+    {
+      "name": "expected_duplicate_member",
+      "pass": true
+    },
+    {
+      "name": "expected_invalid_unicode",
+      "pass": true
+    },
+    {
+      "name": "expected_negative_zero",
+      "pass": true
+    },
+    {
+      "name": "expected_schema",
+      "pass": true
+    },
+    {
+      "name": "expected_string",
+      "pass": true
+    },
+    {
+      "name": "bad digest precedes invalid expected context",
+      "pass": true
+    },
+    {
+      "name": "opaque exact URI record_id",
+      "pass": true
+    },
+    {
+      "name": "opaque exact URI revision_id",
+      "pass": true
+    },
+    {
+      "name": "all six D0 variants survive reverse adapter",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 0",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 1",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 2",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 3",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 4",
+      "pass": true
+    },
+    {
+      "name": "nonselected and selected D0 variant relation 5",
+      "pass": true
+    },
+    {
+      "name": "complete hand-predicted simultaneous relation codes",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {}",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {\"adjusted_hex\":[],\"display_hex\":[]}",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {\"adjusted_hex\":[],\"adjusted_hex\":[],\"display_hex\":[]}",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {\"adjusted_hex\":[\"300000000000000000000000000000000000000000",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {\"adjusted_hex\":[\"300000000000000000000000000000000000000000",
+      "pass": true
+    },
+    {
+      "name": "invalid worker {\"adjusted_hex\":[\"300000000000000000000000000000000000000000",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 0 adjusted_hex",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 0 display_hex",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 1 adjusted_hex",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 1 display_hex",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 2 adjusted_hex",
+      "pass": true
+    },
+    {
+      "name": "every row mismatch 2 display_hex",
+      "pass": true
+    },
+    {
+      "name": "report rejection order",
+      "pass": true
+    },
+    {
+      "name": "report rejection check identity",
+      "pass": true
+    },
+    {
+      "name": "report rejection scope",
+      "pass": true
+    },
+    {
+      "name": "report rejection record reference",
+      "pass": true
+    },
+    {
+      "name": "report rejection pass reason",
+      "pass": true
+    },
+    {
+      "name": "report rejection stage reason",
+      "pass": true
+    },
+    {
+      "name": "report rejection unrun first",
+      "pass": true
+    },
+    {
+      "name": "report rejection continuation",
+      "pass": true
+    },
+    {
+      "name": "report rejection aggregate",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_malformed_json",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_duplicate_member",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_invalid_unicode",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_negative_zero",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_parser_exhaustion",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_nodes",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_string",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_depth",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_container",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_key",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_bytes",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_malformed_json",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_duplicate_member",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_invalid_unicode",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_negative_zero",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_parser_exhaustion",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_nodes",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_string",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_depth",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_container",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_key",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_bytes",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_bytes_type",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_utf8",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple bundle_missing",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple bundle_type",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple bundle_unsupported",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_nonfinite",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple record_schema",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple stored_bytes_noncanonical",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple projection_disagreement",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_type",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple expected_schema",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple legacy_admission_limit",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple report_invariant",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple internal_failure",
+      "pass": true
+    },
+    {
+      "name": "refusal tuple setup_failure",
+      "pass": true
+    },
+    {
+      "name": "supported verifier isolation",
+      "pass": true
+    },
+    {
+      "name": "82 controls and 24 labels are accurate",
+      "pass": true
+    }
+  ]
+}

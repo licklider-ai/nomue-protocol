@@ -1,0 +1,15 @@
+{
+  "candidate_pr": 313,
+  "candidate_head": "180d6551a48c7d2f8018c21ccbab1fcf33ab6a02",
+  "candidate_parent": "6116ea1e4ff21c312a904ccf461f59554819c848",
+  "candidate_tree": "ce6b85a5984f1b071bd858d3ed0f113411584ca7",
+  "merge_commit": "2d43a5f25ba905007fd209b707bd349f726c5c9d",
+  "ci_run": 34580816703,
+  "ci_jobs_passed": 5,
+  "independent_controls_passed": 93,
+  "author_controls_passed": 82,
+  "author_categories": 24,
+  "legacy_fixtures_passed": 132,
+  "decision": "GO for merger as an unissued research asset only",
+  "coordinator_additions": ["README.md", "INTEGRATION.json", "PROMOTION-HANDOFF.md"]
+}
