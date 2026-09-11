@@ -126,7 +126,10 @@ no numerical payload is inserted into that closed historical schema.
    unordered relation errors. Preserve the stage and full codes on refusal.
 4. Validate closed expected-sidecar and submitted shapes and scalar limits;
    selected family kind/count, exact reference ownership, descriptor/result kind,
-   member order/coverage and source-hypothesis uniqueness. Validate all p encodings
+   member order/coverage and source-hypothesis uniqueness. Member-ID uniqueness
+   within the selected family is already refused at step 3 by D0's `DUPLICATE_ID`
+   relation code, so the Holm worker's own duplicate-hypothesis refusal is never
+   the first line of defense. Validate all p encodings
    and all adjusted integer/display syntax/ranges before numerical execution.
 5. Compare complete canonical binding and selected output member order. Refuse
    any mismatch before starting the numerical worker. Unknown or after-inspection
@@ -170,16 +173,25 @@ own dependency-origin, subprocess-failure and malformed-response tests.
 
 ## Admission and measured-envelope proposal
 
-| Limit                  | First bridge proposal                                                                                                                                                       |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input text sizes       | expected D0 <=1 MiB UTF-8, expected sidecar <=256 KiB, submitted evidence <=2 MiB; reject UTF-16 code-unit excess first, then UTF-8 size                                    |
-| Nesting                | At most 32 open array/object levels, ignoring brackets within strings                                                                                                       |
-| Parsed document budget | Per text: <=20000 total object/array/scalar nodes, <=4096 UTF-16 code units per string, <=1024 entries per container                                                        |
-| D0 counts              | 3..16 groups, <=1024 observations/units, <=16 analyses, <=16 families, <=16 result slots, <=120 members per family                                                          |
-| Selected family        | all_pairs only; 3..120 members with exact D0 pair coverage                                                                                                                  |
-| Worker transport       | Each request/response <=256 KiB UTF-8, checked before decode; exactly one response                                                                                          |
-| Numerical limits       | Inherit fixed Holm operand and comparison guards; do not enlarge them                                                                                                       |
-| Experiment envelope    | Whole coordinator/worker call <=30 seconds; Python worker address space <=256 MiB; Node old-space cap 256 MiB; measure process-tree RSS with a 512-MiB experimental ceiling |
+| Limit                  | First bridge proposal                                                                                                                                                                                            |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input text sizes       | expected D0 <=1 MiB UTF-8, expected sidecar <=256 KiB, submitted evidence <=2 MiB; reject UTF-16 code-unit excess first, then UTF-8 size                                                                         |
+| Nesting                | Expected texts: at most 32 open array/object levels; submitted evidence: at most 34, because `binding.declaration` embeds the D0 two levels deeper; brackets within strings ignored                              |
+| Parsed document budget | Expected D0 <=24576 nodes, expected sidecar <=2048 nodes, submitted evidence <=28672 nodes (D0 plus sidecar plus adjusted rows plus envelope); <=4096 UTF-16 code units per string, <=1024 entries per container |
+| D0 counts              | 3..16 groups, <=1024 observations/units, <=16 analyses, <=16 families, <=16 result slots, <=120 members per family                                                                                               |
+| Selected family        | all_pairs only; 3..120 members with exact D0 pair coverage                                                                                                                                                       |
+| Worker transport       | Each request/response <=256 KiB UTF-8, checked before decode; exactly one response                                                                                                                               |
+| Numerical limits       | Inherit fixed Holm operand and comparison guards; do not enlarge them                                                                                                                                            |
+| Experiment envelope    | Whole coordinator/worker call <=30 seconds; Python worker address space <=256 MiB; Node old-space cap 256 MiB; measure process-tree RSS with a 512-MiB experimental ceiling                                      |
+
+The submitted budgets are sized for embedding: the submitted evidence carries
+the complete expected D0 and sidecar, so its node and nesting limits must exceed
+the sum of the embedded limits, and a D0 at the expected nesting limit must
+still embed. From the pinned example's per-object costs, a D0 at every count
+limit needs about 23,000 nodes, so the D0 node budget is set above the count
+limits rather than below them; `check_design_witnesses.py` records the estimate.
+The strict parser calls `JSON.parse` before its eligibility scan, so the step 1
+raw-size and depth preflight is the only guard that runs before parsing.
 
 These are proposed admission and test limits, not measured guarantees. Node heap
 cap is not total process memory. The harness must sample combined process-tree

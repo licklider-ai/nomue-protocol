@@ -39,3 +39,35 @@ and schema were inspected for actual field names, member coverage, IDs and defer
 payloads. Pinned source files are recorded with commit/blob/hash identities.
 Formatting, Markdown lint and repository validation are checked on this packet.
 These activities are author preparation, not this requested external review.
+
+## External design review receipt
+
+A user-supplied bounded adversarial design review of commit
+`517cb7dcfc02556ea8a91b583bbfdce91b7921f0` found no BLOCKER. Reviewer/model
+identity and raw artifacts were not supplied; the receipt is attributed to the
+user. The repair was prepared in that reviewer's session on 2026-09-11, not by
+the original author context, and is not an independent close review of itself.
+
+Reported checks: all twenty pinned inputs matched by commit, blob, size and
+SHA-256; the three-member vector, its displays and lattice values, the
+`3fd0000000000003` collision input, the adjusted value 3/4+9*2^-54 and the
+shared display `3fe8000000000004` for the distinct exact value 3/4+8*2^-54 were
+reproduced with independent lattice arithmetic; the 269-digit adjusted-hex
+width was confirmed; the pinned D0 schema, example and checker were inspected
+for the field names, `all_pairs`/`pair` kinds with stored minuend/subtrahend
+direction, `member_ids` set coverage, `method_payload_deferred`, the
+`example-contract-multiplicity-adjustment-v0` descriptor, the `before`/`after`/
+`not_declared` timing enum, unordered sorted relation codes and `DUPLICATE_ID`
+on family members; the strict parser's duplicate-member, unpaired-surrogate and
+negative-zero rejections and the JCS shortest-number serialization were
+confirmed, as was the checker's `numeric_domain` stage for non-finite numbers.
+
+| Finding                                                                                                                                                                                                                                                 | Repair                                                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A uniform per-text budget of 20,000 nodes and 32 levels cannot hold: submitted evidence embeds the whole expected D0 and sidecar, so a D0 near either limit could never be bound, and a D0 at every stated count limit already needs about 23,000 nodes | Budgets now distinguish expected texts from submitted evidence (24,576 / 2,048 / 28,672 nodes; 32 versus 34 levels) and state the embedding rule; two acceptance rows and the witness script cover it |
+| Step 4 did not say where duplicate member IDs are refused, although the acceptance matrix promises refusal before worker start                                                                                                                          | Step 4 names D0's `DUPLICATE_ID` at step 3; an acceptance row records the code and zero launches                                                                                                      |
+| The strict parser runs `JSON.parse` before its eligibility scan, which the processing order did not make explicit                                                                                                                                       | The limits section states that the step 1 preflight is the only pre-parse guard                                                                                                                       |
+
+Repair validation: `check_design_witnesses.py` passed with normal Python and
+`python -O`. No bridge was implemented; no pinned input, numerical code or
+historical packet changed.
