@@ -1,9 +1,8 @@
 name: R3 Holm adoption map
 on:
   pull_request:
-    paths:
-      - "governance/drafts/release-3-preparation/holm-adoption-map-20260911/**"
-      - ".github/workflows/r3-holm-adoption-map.yml"
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,5 +16,8 @@ jobs:
         with:
           node-version: "24.19.0"
           cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
       - run: pnpm install --frozen-lockfile
-      - run: node governance/drafts/release-3-preparation/holm-adoption-map-20260911/check.mjs
+      - run: NOMUE_EXPERIMENT_PYTHON="$(command -v python3)" node governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs

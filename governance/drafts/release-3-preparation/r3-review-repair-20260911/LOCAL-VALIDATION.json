@@ -1,0 +1,25 @@
+{
+  "scope": "author-context local observations; no actual local cgroup claim",
+  "candidate": "0.3.0-candidate.3",
+  "envelope_controls": 82,
+  "public_controls": 93,
+  "budget_controls": 38,
+  "legacy_fixtures": 132,
+  "local_execution_controls": 7,
+  "source_lint_mutations": 4,
+  "map": {
+    "proposed_requirements": 16,
+    "property_declarations": 531,
+    "source_pins": 419,
+    "negative_controls": [
+      "new real-schema field",
+      "removed real ownership",
+      "unknown owner",
+      "actual duplicate requirement",
+      "removed executed evidence",
+      "import text is not executed evidence"
+    ],
+    "readiness": "NOT_READY_FOR_ADOPTION"
+  },
+  "historical_zip_digests": "all three re-downloaded and matched"
+}

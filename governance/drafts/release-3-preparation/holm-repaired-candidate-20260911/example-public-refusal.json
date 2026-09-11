@@ -1,0 +1,12 @@
+{
+  "$schema": "https://nomue.ai/id/schema/holm-supplied-p-refusal/0.3.0-candidate.3",
+  "output_type": "nomue-verifier-refusal",
+  "stage": "execution",
+  "refusal_kind": "resource_limit",
+  "reason_codes": ["candidate:holm:memory_enforced"],
+  "message": "The candidate did not produce a complete result for the requested operation.",
+  "verifier": { "name": "holm-public-candidate", "version": "unissued-v1" },
+  "input_evidence": { "availability": "not_observed" },
+  "generated_at": "2026-09-11T00:00:00.000Z",
+  "limit_category": "memory_limit"
+}

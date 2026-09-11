@@ -1,16 +1,15 @@
 name: R3 full-invocation admission research
 on:
   pull_request:
-    paths:
-      - "governance/drafts/release-3-preparation/holm-execution-admission-20260911/**"
-      - ".github/workflows/r3-execution-admission.yml"
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   admission:
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -25,10 +24,10 @@ jobs:
       - name: Measure paired starts on this disposable hosted VM
         run: |
           sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" \
-            "GITHUB_ACTIONS=$GITHUB_ACTIONS" "RUNNER_ENVIRONMENT=$RUNNER_ENVIRONMENT" \
+            "NOMUE_EVENT_HEAD=${{ github.event.pull_request.head.sha || github.sha }}" "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME" "GITHUB_ACTIONS=$GITHUB_ACTIONS" "RUNNER_ENVIRONMENT=$RUNNER_ENVIRONMENT" \
             "RUNNER_OS=$RUNNER_OS" "GITHUB_RUN_ID=$GITHUB_RUN_ID" "GITHUB_SHA=$GITHUB_SHA" \
             "ImageOS=$ImageOS" "ImageVersion=$ImageVersion" \
-            python3 -I governance/drafts/release-3-preparation/holm-execution-admission-20260911/measure.py \
+            python3 -I governance/drafts/release-3-preparation/holm-admission-repair-20260911/measure.py \
             --disposable-host-cache-reset --output admission-results.json
       - name: Upload admission observations
         if: always()

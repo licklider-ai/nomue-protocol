@@ -1,0 +1,401 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_reference",
+    "interpretation_bundle_id",
+    "verifier",
+    "generated_at",
+    "checks",
+    "guarantee_boundary",
+    "$schema",
+    "report_type"
+  ],
+  "properties": {
+    "record_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "revision_id", "content_digest"],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:\\S+$"
+        },
+        "revision_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2048,
+          "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:\\S+$"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "interpretation_bundle_id": {
+      "const": "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.3"
+    },
+    "verifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "source_digest"],
+      "properties": {
+        "name": {
+          "const": "holm-envelope-exercise"
+        },
+        "version": {
+          "const": "unissued-v1"
+        },
+        "source_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?Z$",
+      "$comment": "RFC 3339 timestamp restricted to UTC with a Z suffix; numeric offsets are rejected. Field ranges are bounded; exact calendar validity (month lengths, leap years) is not fully expressible in a regex and is out of scope for Phase 1."
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/check"
+            },
+            {
+              "properties": {
+                "stage": {
+                  "const": "integrity"
+                },
+                "check_ref": {
+                  "const": "https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/check"
+            },
+            {
+              "properties": {
+                "stage": {
+                  "const": "context"
+                },
+                "check_ref": {
+                  "const": "https://nomue.ai/id/check/holm-context/0.3.0-candidate.3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/check"
+            },
+            {
+              "properties": {
+                "stage": {
+                  "const": "declaration"
+                },
+                "check_ref": {
+                  "const": "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/check"
+            },
+            {
+              "properties": {
+                "stage": {
+                  "const": "admission"
+                },
+                "check_ref": {
+                  "const": "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/check"
+            },
+            {
+              "properties": {
+                "stage": {
+                  "const": "arithmetic"
+                },
+                "check_ref": {
+                  "const": "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "guarantee_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_validity",
+        "declaration_truth",
+        "distributional_model_validity",
+        "causal_interpretation",
+        "standardized_effect_size",
+        "familywise_error_control",
+        "source_authenticity",
+        "p_generation"
+      ],
+      "properties": {
+        "scientific_validity": {
+          "const": "not_asserted"
+        },
+        "declaration_truth": {
+          "const": "not_asserted"
+        },
+        "distributional_model_validity": {
+          "const": "not_asserted"
+        },
+        "causal_interpretation": {
+          "const": "not_asserted"
+        },
+        "standardized_effect_size": {
+          "const": "not_asserted"
+        },
+        "familywise_error_control": {
+          "const": "not_asserted"
+        },
+        "source_authenticity": {
+          "const": "not_asserted"
+        },
+        "p_generation": {
+          "const": "outside_scope"
+        }
+      }
+    },
+    "$schema": {
+      "const": "https://nomue.ai/id/schema/holm-supplied-p-report/0.3.0-candidate.3"
+    },
+    "report_type": {
+      "const": "nomue-verification-report"
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "check_ref", "scope", "execution", "reason_codes"],
+      "properties": {
+        "stage": {
+          "enum": ["integrity", "context", "declaration", "admission", "arithmetic"]
+        },
+        "check_ref": {
+          "enum": [
+            "https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.3",
+            "https://nomue.ai/id/check/holm-context/0.3.0-candidate.3",
+            "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.3",
+            "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.3",
+            "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.3"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["record_id", "revision_id", "analysis_id", "family_id", "result_id"],
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 2048,
+              "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:\\S+$"
+            },
+            "revision_id": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 2048,
+              "pattern": "^[A-Za-z][A-Za-z0-9+.-]*:\\S+$"
+            },
+            "analysis_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "family_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            },
+            "result_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+            }
+          }
+        },
+        "execution": {
+          "enum": ["completed", "not_run", "error"]
+        },
+        "outcome": {
+          "enum": ["pass", "fail"]
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_stage", "codes", "bridge_reason"],
+          "properties": {
+            "source_stage": {
+              "type": ["string", "null"],
+              "maxLength": 64
+            },
+            "codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "uniqueItems": true,
+              "maxItems": 64
+            },
+            "bridge_reason": {
+              "type": ["string", "null"],
+              "maxLength": 256
+            }
+          }
+        },
+        "error": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["error_type", "message"],
+          "properties": {
+            "error_type": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            }
+          }
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "candidate:holm:prerequisite_failed",
+              "candidate:holm:digest_mismatch",
+              "candidate:holm:context_mismatch",
+              "candidate:holm:declaration_invalid",
+              "candidate:holm:holm_input_invalid",
+              "candidate:holm:result_ownership",
+              "candidate:holm:exact_value_mismatch",
+              "candidate:holm:display_value_mismatch",
+              "candidate:holm:worker_failure"
+            ]
+          },
+          "uniqueItems": true,
+          "maxItems": 64
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution": {
+                "const": "completed"
+              }
+            }
+          },
+          "then": {
+            "required": ["outcome"],
+            "not": {
+              "required": ["error"]
+            }
+          },
+          "else": {
+            "not": {
+              "required": ["outcome"]
+            },
+            "properties": {
+              "reason_codes": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": ["error"]
+          },
+          "else": {
+            "not": {
+              "required": ["error"]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "fail"
+              }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "reason_codes": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "pass"
+              }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "reason_codes": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Unissued R3 candidate. Proposed identities are not allocated or supported by the registered verifier.",
+  "$id": "https://nomue.ai/id/schema/holm-supplied-p-report/0.3.0-candidate.3"
+}

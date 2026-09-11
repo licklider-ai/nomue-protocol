@@ -1,0 +1,16 @@
+{
+  "record": "https://nomue.ai/id/schema/holm-supplied-p-record/0.3.0-candidate.3",
+  "bundle": "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.3",
+  "profile": "https://nomue.ai/id/profile/holm-supplied-p-profile/0.3.0-candidate.3",
+  "report": "https://nomue.ai/id/schema/holm-supplied-p-report/0.3.0-candidate.3",
+  "refusal": "https://nomue.ai/id/schema/holm-supplied-p-refusal/0.3.0-candidate.3",
+  "expected": "https://nomue.ai/id/schema/holm-supplied-p-expected/0.3.0-candidate.3",
+  "contract": "https://nomue.ai/id/contract/holm-supplied-p-contract/0.3.0-candidate.3",
+  "checks": {
+    "integrity": "https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.3",
+    "context": "https://nomue.ai/id/check/holm-context/0.3.0-candidate.3",
+    "declaration": "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.3",
+    "admission": "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.3",
+    "arithmetic": "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.3"
+  }
+}

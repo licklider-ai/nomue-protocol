@@ -1,0 +1,59 @@
+[
+  {
+    "archive_download_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265661670/zip",
+    "created_at": "2026-09-11T13:19:12Z",
+    "digest": "sha256:c5a59b568053a116d29561b9e5141fab23e168dd4d0a1173521a90de479fa8ae",
+    "expired": false,
+    "expires_at": "2026-12-10T13:18:50Z",
+    "id": 10265661670,
+    "name": "r3-execution-admission",
+    "size_in_bytes": 3483,
+    "updated_at": "2026-09-11T13:19:12Z",
+    "url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265661670",
+    "workflow_run": {
+      "head_branch": "research/r3-execution-boundary-admission-20260911",
+      "head_repository_id": 1344183347,
+      "head_sha": "42a3f841d2c5f3648edb8cd1f45fce6b65ba41ee",
+      "id": 34603591363,
+      "repository_id": 1344183347
+    }
+  },
+  {
+    "archive_download_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265852083/zip",
+    "created_at": "2026-09-11T13:22:11Z",
+    "digest": "sha256:f868fe49358e0e76c651728901779a0fc80fd1b3e04a3beb777cb44f35593a83",
+    "expired": false,
+    "expires_at": "2026-12-10T13:21:01Z",
+    "id": 10265852083,
+    "name": "r3-execution-admission",
+    "size_in_bytes": 14943,
+    "updated_at": "2026-09-11T13:22:11Z",
+    "url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265852083",
+    "workflow_run": {
+      "head_branch": "research/r3-execution-boundary-admission-20260911",
+      "head_repository_id": 1344183347,
+      "head_sha": "f6ac2219f81749cd62bd61563146f1f0b5146085",
+      "id": 34603795098,
+      "repository_id": 1344183347
+    }
+  },
+  {
+    "archive_download_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265969680/zip",
+    "created_at": "2026-09-11T14:10:12Z",
+    "digest": "sha256:3ac349aac9970e226bb31c4c01dc66d1033bd6bf564a53225846b9f02ef98154",
+    "expired": false,
+    "expires_at": "2026-12-10T14:08:54Z",
+    "id": 10265969680,
+    "name": "r3-holm-public-candidate",
+    "size_in_bytes": 49606,
+    "updated_at": "2026-09-11T14:10:12Z",
+    "url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10265969680",
+    "workflow_run": {
+      "head_branch": "proposal/r3-holm-public-candidate-20260911",
+      "head_repository_id": 1344183347,
+      "head_sha": "f34dcbf7db4ddff44437f952af613b93a7bda9d8",
+      "id": 34608405863,
+      "repository_id": 1344183347
+    }
+  }
+]

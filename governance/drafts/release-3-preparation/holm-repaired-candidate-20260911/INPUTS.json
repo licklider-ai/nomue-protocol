@@ -1,0 +1,174 @@
+{
+  "base_commit": "7e7b73935d2cd256c4b6e24e7bc1059b8f0a5cb4",
+  "status": "unissued checkpoint successor; old candidate unchanged",
+  "runtime": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INTEGRITY.json",
+      "sha256": "066d81257248db1edf390a6d4451245f03c0cef1db057c930b5de6ef2484fe80"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/LIVE-RSS.json",
+      "sha256": "505f56a126cf68a8ba015319664ea2b6cfa3327bc44122561ecb73f82720ab91"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/NODE-CONFIRMATION.json",
+      "sha256": "20d9d05d7bb69cb1b0dc1c52255c10350924ce37a3f260d64d8be5031e7aba76"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/RESULTS.json",
+      "sha256": "d943d9179e39a0813938f1e4e91d592edae5b2d4bc1a9dde7be6257aa3ba6701"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.schema.json",
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/cases.json",
+      "sha256": "ddea992b2b0b7231c6f2f0398deb04153586069217ea681f9ccb86587b7b05b8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/check_nodes.py",
+      "sha256": "bee6e4d42edfe8848a917f190d49a1a9b3e9b43c81f072621322dbcdbff859e6"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/d0.mjs",
+      "sha256": "ce5eca7a15ae13e198e177f2c6e07b625b6f34bcaf35ffcce7be680d4ecff85f"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/example.json",
+      "sha256": "debaf60e44a592c50b868dd9df8ac71fb0f64cef8985f98956de3f832525943a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixture-contracts.json",
+      "sha256": "5a534294d416637627e7ec158da71d4a8b47bcdd63f8e708eaef0a41293e5d18"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixtures.mjs",
+      "sha256": "3813c6cf62b74804e7141757ff4a763d93c69e84bfb9173f5651fe9d71534ed4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/live_rss.py",
+      "sha256": "7f5b0940ef92215fa7a8d32d6fe1626eff4cdec6cfb0ac4dffe0f611a3279d6a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/oracle.py",
+      "sha256": "c136af873eee3d29fa4c9a8746879e8ca0f125db2afd3bf32daabcfb8d7a6390"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/pin_inputs.mjs",
+      "sha256": "fef0db88d390af8b455bfeb7b20850da76a719c7dee3aec5cc036c418f42f43c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/probe.mjs",
+      "sha256": "250aa7986083664410881b645451f89e16d51f0d13de041124882a96dc1c7c8a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/run_suite.py",
+      "sha256": "2d840c3a9556ecc9dc407759b0a2a9c3e5de24d74ebe0fd3eb154c4509da08e4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/test_bridge.mjs",
+      "sha256": "2b72a91f8ab17e0391cdf8122ddf56ea700017c9102ac55d8989c1eca95ff924"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/test_integrity.py",
+      "sha256": "f8519ebc7e989628892bf42abe40a4cc049986f33c4105861d2063afaf0de71a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/budget.mjs",
+      "sha256": "c4090e2edc16893daa88f30f774d5ea2ad489639f389a2c97cadb2816dfa754e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/diagnostics.json",
+      "sha256": "06e30ff5112870172e1e7b29bcd997a1b6ab83868509419e77bbcfa55d9a0fe3"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/entry.mjs",
+      "sha256": "e47a4c4de1946b121e0c1b42ffbbd225d68bbeecf1da583989ae48e0f4d1d42d"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/envelope.mjs",
+      "sha256": "54d3919c7776ada400b065f785535777d5bf5ea6b621dc84cbaa7d92b6ac00c8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/expected.schema.json",
+      "sha256": "1dcf3d0efe81e12a585a3fadd1c16119b0c2bf91b7915a9ce8893453053b2cea"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/identities.json",
+      "sha256": "975d93e96f045826e2b86259f4cd424def0ad3861a46c3bee431cc1c180d0658"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/outcomes.json",
+      "sha256": "84aa5675808c5aa5f203c1a4f592ddf92c2ae5c0c05f52a482a836379cdc1dff"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/private-refusal.schema.json",
+      "sha256": "05f37aefc10632b34018e98a7f7e98a09a84cc4e97aefb9d38dfcd9f00873e53"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/private-report.schema.json",
+      "sha256": "9f581c5676636ae97a3c7a189f2c5f90fe4934d625d4185f993d8a6eeabdfa6a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/public.mjs",
+      "sha256": "4ded270ea596a9c5ca9bc10c8b2d606b69821a5db177435a8a4461aaab6ca3a5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/record.schema.json",
+      "sha256": "e460f63f2cc2e0663328f1f71929be3da4f38d383ba49f4a9949ef6f7073b28c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/refusal.schema.json",
+      "sha256": "4570d48421edf07c78d2bad3934789256b748ad5084794e905e90b445c1ea357"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/report.schema.json",
+      "sha256": "65c2eed7d5c3d12487dbed6a301af4e334942268c5d90a05bd1270be87d599a9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/supervisor.py",
+      "sha256": "a25997e41dea174f2f6455fd3be7c1eaf977ad28e28b95df01a57a5f2d7d9ded"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c"
+    },
+    {
+      "path": "reference/verifier/src/jcs.ts",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    },
+    {
+      "path": "reference/verifier/src/limits.ts",
+      "sha256": "1309fac987b7ea787cdc7ce30b086111c1414e5f74beef78d8f80dbff44b9bc2"
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    }
+  ]
+}

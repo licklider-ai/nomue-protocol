@@ -1,0 +1,230 @@
+{
+  "status": "proposed allocations only; not a registry or normative authority",
+  "base": "84117fb7b285da43ebb3168c12155f31c4c49bc7",
+  "requirements": [
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0001",
+      "title": "Scope and direct Contract identity",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Only ordinary unweighted supplied-p Holm for one selected all-pairs family of 3..120 members from 3..16 groups is admitted. The payload binds the exact Contract identity.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "valid_baseline"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0002",
+      "title": "Supplied binary64 domain",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Inputs use exactly 16 lowercase hexadecimal binary64 bits in [0,1], including positive zero and excluding negative zero, infinities and NaNs. Sidedness is retained without changing p.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "precision"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0003",
+      "title": "Exact adjusted target",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Decode on denominator 2^1074, sort by exact p then original position, form each rank product, take the cumulative maximum, clip at one, and restore original member order. Exact numerators use minimal lowercase hexadecimal.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "last_row"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0004",
+      "title": "Single binary64 projection",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Project the exact adjusted value once to nearest binary64, ties to even. The selected check version owns the comparison policy; no Record or Requirement supplies a tolerance.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "precision"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0005",
+      "title": "Independent complete expected context",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "The caller provides actual Record/revision identities, full declaration and selected inputs independently. Equality includes unrelated analyses before any private compatibility conversion. No authenticity is inferred.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "context_binding"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0006",
+      "title": "Selected ownership and origin",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Selected analysis/family/result ownership and complete member order agree; source-hypothesis tuples are unique. Only the selected multiplicity-adjustment result is executed.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "ownership"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0007",
+      "title": "All-row arithmetic comparison",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Compare all exact adjusted numerators and all projected displays. Any mismatch prevents byte forwarding; display equality alone is insufficient.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "last_row"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0008",
+      "title": "Five ordered scoped checks",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Integrity, context, declaration, admission and arithmetic share the complete scope. A failed prerequisite gates later checks. Error has no pass/fail outcome; there is no aggregate status.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "no_aggregate"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0009",
+      "title": "Complete refusal and resource mapping",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Each refusal has its versioned reason, kind and stage. Resource refusals have the matching limit category. Observed outer failure discards inner reports and forwarded bytes.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "worker_partial"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0010",
+      "title": "Canonical ingress and exact routing",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Strict UTF-8/JSON admission precedes exact bundle routing. Closed schema precedes canonical-storage admission. The original tagged byte projection and canonical value projection agree before digest acceptance.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "raw_priority"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0011",
+      "title": "Successor report and refusal structure",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Closed successor output schemas are used. Reports bind actual scope; refusals contain no Record reference or arithmetic result. Unknown input size is represented explicitly, never invented.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "separate_report"
+        }
+      ],
+      "implementation_status": "implemented_pending_output_decision"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0012",
+      "title": "Conjunctive input bounds",
+      "proposed_stability": "EXPERIMENTAL",
+      "wording": "Record and expected byte caps, depth, nodes, string/key width, per-container bounds and inherited bridge limits apply together. Individual maxima are not a promise that simultaneous maxima fit.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "admission_caps"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0013",
+      "title": "No scientific or origin guarantee",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Every report leaves scientific validity, declaration truth, FWER and source authenticity not asserted; original p generation is outside scope. No alpha input or significance output is accepted.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "no_aggregate"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-CONTRACT-HOLM-0014",
+      "title": "Whole-invocation enforcement and cleanup",
+      "proposed_stability": "EXPERIMENTAL",
+      "wording": "Trusted execution retains all observed causes, fixed refusal precedence, unconditional descendant cleanup and no partial acceptance. Supervisor loss requires the external owner; no output never means acceptance.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/supplied-p-holm.md",
+      "candidate_evidence": [
+        {
+          "suite": "budget",
+          "name": "outer failure discards checkpoint success"
+        }
+      ],
+      "implementation_status": "implemented_with_declared_host_boundary"
+    },
+    {
+      "proposed_id": "NRS-PROFILE-IMGC-0001",
+      "title": "Complete one-way declaration",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "Retain the complete dataset, represented units, observations, groups, design, analyses, families and result slots with closed fields and valid D0 relationships.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/declarations.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "relation_codes"
+        }
+      ],
+      "implementation_status": "implemented"
+    },
+    {
+      "proposed_id": "NRS-PROFILE-IMGC-0002",
+      "title": "Declaration shapes and compatibility",
+      "proposed_stability": "STABLE-INTENT",
+      "wording": "The six closed operation_kind values identify declaration shapes, not executed scientific Contracts. Private one-to-one compatibility conversion occurs only after complete expected-context equality.",
+      "future_document": "spec/profiles/independent-multigroup-continuous/declarations.md",
+      "candidate_evidence": [
+        {
+          "suite": "envelope",
+          "group": "legacy_regression"
+        }
+      ],
+      "implementation_status": "implemented"
+    }
+  ]
+}
