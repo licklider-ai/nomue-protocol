@@ -4,6 +4,7 @@ import base64
 import ctypes
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -63,8 +64,26 @@ def strict_transport(raw):
         return value
     def invalid(_):
         raise ValueError("nonfinite transport")
+    def integer(text):
+        if text == '-0':
+            raise ValueError('negative zero transport')
+        return int(text)
     # Generated trusted output only. Record bytes are never reparsed here.
-    value = json.loads(raw.decode("utf-8"), object_pairs_hook=pairs, parse_constant=invalid)
+    value = json.loads(raw.decode("utf-8"), object_pairs_hook=pairs,
+                       parse_constant=invalid, parse_int=integer)
+    pending = [value]
+    while pending:
+        item = pending.pop()
+        if isinstance(item, str):
+            item.encode('utf-8', errors='strict')
+        elif isinstance(item, float):
+            if not math.isfinite(item) or (item == 0 and math.copysign(1, item) < 0):
+                raise ValueError('ineligible transport number')
+        elif isinstance(item, dict):
+            pending.extend(item.keys())
+            pending.extend(item.values())
+        elif isinstance(item, list):
+            pending.extend(item)
     if not isinstance(value, dict) or set(value) not in ({"output"}, {"output", "verified_record_base64"}):
         raise ValueError("transport shape")
     output = value["output"]
@@ -212,6 +231,9 @@ def run(args):
             flags["setup_failed"] = True
         info["exception"] = type(e).__name__
     finally:
+        # A leader exiting during the last selector wait still consumed that wall time.
+        if process is not None and time.monotonic() - started >= args.deadline:
+            flags['deadline'] = True
         # Even an exit-zero leader can leave grandchildren and temporary files.
         if leaf is not None:
             cleanup_start = time.monotonic()

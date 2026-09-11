@@ -26,14 +26,14 @@ def check(name, fn):
         rows.append({"name": name, "pass": False, "error": repr(e)})
 
 
-def invoke(delegation, probe=None, options=(), record=None, expected=None, env=None):
+def invoke(delegation, probe=None, options=(), record=None, expected=None, env=None, pass_fds=()):
     args = [PYTHON, "-I", str(HERE / "supervisor.py"), "--delegation", delegation,
             "--node", NODE, "--python", PYTHON]
     if probe:
         args += ["--probe", probe]
     args += list(options) + [str(record or ENVELOPE / "example-record.jcs"),
                             str(expected or ENVELOPE / "example-expected.json")]
-    p = subprocess.run(args, capture_output=True, timeout=80, cwd=ROOT, env=env)
+    p = subprocess.run(args, capture_output=True, timeout=80, cwd=ROOT, env=env, pass_fds=pass_fds)
     assert p.returncode == 0, p.stderr.decode()[-2000:]
     value = json.loads(p.stdout)
     assert ("result" in value) == (value["category"] == "completed_valid")
@@ -55,6 +55,23 @@ def main():
     p.add_argument("--delegation")
     p.add_argument("--output", required=True)
     a = p.parse_args()
+    sys.path.insert(0, str(HERE))
+    import supervisor
+    def internal_contract():
+        for raw in [b'{"output":{"kind":"x","x":1e999}}', b'{"output":{"kind":"x","x":"\\ud800"}}',
+                    b'{"output":{"kind":"x","x":-0}}', b'{"output":{"kind":"x","x":-1e-999}}']:
+            try:
+                supervisor.strict_transport(raw)
+                raise AssertionError('accepted ineligible transport')
+            except ValueError:
+                pass
+        for flags, expected in [({'memory_enforced':True,'deadline':True},'memory_enforced'),
+                                ({'pids_enforced':True,'abnormal_exit':True},'pids_enforced'),
+                                ({'cleanup_failed':True,'memory_enforced':True},'cleanup_failed'),
+                                ({'cancelled':True,'deadline':True},'cancelled')]:
+            assert supervisor.category(flags)==expected
+        return {'negative_transport_cases':4,'precedence_cases':4}
+    check('private output eligibility and precedence', internal_contract)
     check("T1 unavailable delegation before input open", lambda: want("/unavailable", None, "unsupported_host"))
     # Local transport controls exercise actual files with native Node, without claiming cgroup coverage.
     with tempfile.TemporaryDirectory() as td:
@@ -101,6 +118,20 @@ def main():
         if a.delegation:
             check("T12 real baseline through supervisor", lambda: want(a.delegation, None, "completed_valid"))
             subprocess.run([NODE, str(HERE / 'prepare_cases.mjs'), td], check=True, cwd=ROOT)
+            for case in json.loads((temp / 'cases.json').read_text()):
+                def stage_case(case=case):
+                    name, want = case['name'], case['want']
+                    r = invoke(a.delegation, record=temp / (name + '.record'), expected=temp / (name + '.expected'))
+                    assert r['category'] == 'completed_valid', r
+                    out = r['result']['output']
+                    if ':' in want:
+                        stage, outcome = want.split(':')
+                        assert next(c for c in out['checks'] if c['stage']==stage)['outcome']==outcome, r
+                    else:
+                        assert out['reason']==want, r
+                    assert 'verified_record_base64' not in r['result']
+                    return r
+                check('T12 scoped output ' + case['name'], stage_case)
             for name in ['maximum', 'large-declaration', 'six-variants']:
                 def real_case(name=name):
                     r = invoke(a.delegation, record=temp / (name + '.record'), expected=temp / (name + '.expected'))
@@ -122,10 +153,24 @@ def main():
                 check("cgroup " + mode, lambda m=mode, c=category, o=options: want(a.delegation, m, c, o))
             def environment():
                 env = dict(os.environ, NODE_OPTIONS="--require=/nonexistent-marker.cjs", PYTHONPATH="/nonexistent")
-                r = invoke(a.delegation, "environment", env=env)
+                marker = temp / 'nomue-inherited-descriptor-sentinel'
+                with marker.open('w') as f:
+                    r = invoke(a.delegation, "environment", env=env, pass_fds=(f.fileno(),))
                 assert r["category"] == "completed_valid", r
                 return r
-            check("T11 environment sanitization", environment)
+            check("T11 environment and descriptor sanitization", environment)
+            def cancellation():
+                args = [PYTHON, '-I', str(HERE / 'supervisor.py'), '--delegation', a.delegation,
+                        '--node', NODE, '--python', PYTHON, '--probe', 'hang', 'unused', 'unused']
+                child = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=ROOT)
+                time.sleep(.5)
+                child.terminate()
+                out, err = child.communicate(timeout=10)
+                r = json.loads(out)
+                assert r['category'] == 'cancelled' and 'result' not in r, r
+                assert all(r['evidence']['cleanup'].values()), r
+                return r
+            check('supervisor cancellation and cleanup', cancellation)
             def siblings():
                 with ThreadPoolExecutor(2) as pool:
                     f = pool.submit(want, a.delegation, "worker-memory", "memory_enforced", ["--memory", "100663296"])

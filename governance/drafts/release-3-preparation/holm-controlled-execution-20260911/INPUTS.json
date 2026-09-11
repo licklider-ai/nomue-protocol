@@ -8,7 +8,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/supervisor.py",
-      "sha256": "96c044f9fef3789f152ab1c8844157f9906f491e7e964a6e2d1142ca9f11c2e9"
+      "sha256": "63c61efdeb59d2f6028c2ed9f3da2460e24b52e35de251ade0a5bf7b24a319b0"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
@@ -161,6 +161,10 @@
     {
       "path": "reference/verifier/src/strict-json.ts",
       "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/probes.mjs",
+      "sha256": "2f1a45800277f2ecb56cc9d1ed4baefd7491f9e792d4c66b2c7cbcd1ddf50829"
     }
   ]
 }

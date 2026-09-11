@@ -40,6 +40,14 @@ if (mode === "node-memory") {
 } else if (mode === "environment") {
   if (["NODE_OPTIONS", "NODE_PATH", "PYTHONPATH", "LD_PRELOAD"].some((k) => k in process.env))
     process.exit(66);
+  for (const fd of fs.readdirSync("/proc/self/fd")) {
+    try {
+      if (fs.readlinkSync("/proc/self/fd/" + fd).endsWith("nomue-inherited-descriptor-sentinel"))
+        process.exit(68);
+    } catch {
+      /* Descriptor can close during inspection. */
+    }
+  }
   // The fixed child interpreter also sees the fixed environment.
   if (
     spawnSync(python, ["-I", "-c", "import os; assert 'NODE_OPTIONS' not in os.environ"]).status !==
