@@ -1,5 +1,5 @@
 {
-  "status": "candidate preparation; CI pending",
+  "status": "candidate merged; final CI evidence archived",
   "base_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
   "review_configuration": "explicit gpt-5.5 separate context; served build and author model not attested",
   "comparison": [
@@ -196,11 +196,64 @@
     "legacy_fixtures": 132,
     "public_controls": 91,
     "entry_controls": 7,
-    "real_cgroup": "NOT_RUN"
+    "real_cgroup": "NOT_RUN",
+    "unit_test_files": 55,
+    "unit_tests_passed": 520
   },
   "independent": {
     "applicability_checks_each_mode": 21763,
     "closing_checks": 1414
   },
-  "full_suite_local": "pnpm check passed format/markdown/typecheck then tsx CLI failed creating local IPC socket (EPERM); native node --import tsx validation and dedicated CI used for remaining checks."
+  "full_suite_local": "pnpm check passed format/markdown/typecheck then tsx CLI failed creating local IPC socket (EPERM); native node --import tsx validation and dedicated CI used for remaining checks.",
+  "candidate": {
+    "pr": 321,
+    "head": "f34dcbf7db4ddff44437f952af613b93a7bda9d8",
+    "merge": "732368e88e10a18f3bc53cca289fd5a399aadb37"
+  },
+  "ci": {
+    "standard_run": 34608405741,
+    "standard_jobs_passed": 5,
+    "candidate_run": 34608405863,
+    "candidate_job": 103292464658,
+    "artifact_id": 10265969680,
+    "artifact_zip_sha256": "3ac349aac9970e226bb31c4c01dc66d1033bd6bf564a53225846b9f02ef98154",
+    "controls": 32,
+    "passed": 32,
+    "actual_receipts": 27,
+    "launched_receipts_with_complete_cleanup": 26,
+    "original_byte_forwards": 5,
+    "all_public_outputs_valid": true,
+    "artifact_members": [
+      {
+        "artifact_member": "execution-host.json",
+        "archive_path": "ci/execution-host.json.txt",
+        "sha256": "aa9a2f1b6c7e743c67464e40b9542c7986ecf7c6f48e15077638fc23222e1991",
+        "bytes": 109
+      },
+      {
+        "artifact_member": "candidate-public-receipts.json",
+        "archive_path": "ci/candidate-public-receipts.json.txt",
+        "sha256": "ac4e740abb55f48d353757061672a4740e7be73f7f07cf887d3301a11d17c064",
+        "bytes": 88
+      },
+      {
+        "artifact_member": "execution-cgroup-results.json",
+        "archive_path": "ci/execution-cgroup-results.json.txt",
+        "sha256": "1bac682c0cdda96d8c8a7ccef895289e9d8687fb8e36db34eaf17bac3f75f23a",
+        "bytes": 461345
+      },
+      {
+        "artifact_member": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+        "archive_path": "ci/RESULTS.json.txt",
+        "sha256": "ef5da3e9d2b0d0fdb1176f05fb5f2f0df676757561bad7defcc5c2cc21ec9c85",
+        "bytes": 12589
+      },
+      {
+        "artifact_member": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+        "archive_path": "ci/PUBLIC-RESULTS.json.txt",
+        "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14",
+        "bytes": 3909
+      }
+    ]
+  }
 }

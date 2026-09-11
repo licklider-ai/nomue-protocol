@@ -51,8 +51,29 @@ private bridge remain unchanged. The ordinary registered verifier continues to
 refuse the proposed bundle; legacy conformance fixtures remain authoritative for
 their own bundles.
 
-The coordinator records exact CI results after the candidate PR runs. A local
-7/7 result with cgroup NOT_RUN does not substitute for that real-host evidence.
-Any repair receives its own recorded delta and test result; failed initial
-receipts are retained if a CI repair is needed. No green check silently closes
-the RFC, existing in-process-budget applicability question or publication gate.
+[PR #321](https://github.com/licklider-ai/nomue-protocol/pull/321) merged the candidate
+at `732368e88e10a18f3bc53cca289fd5a399aadb37`; tested head was
+`f34dcbf7db4ddff44437f952af613b93a7bda9d8`.
+
+| Final evidence                                                                          | Result                                                                                                       |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [Standard CI](https://github.com/licklider-ai/nomue-protocol/actions/runs/34608405741)  | All five jobs passed, including full checks on Linux x64 Node 22/24 and Windows/Linux arm64/macOS checks     |
+| [Candidate CI](https://github.com/licklider-ai/nomue-protocol/actions/runs/34608405863) | 32/32 controlled-execution checks passed on the dedicated host                                               |
+| [Actual private receipts](ci/execution-cgroup-results.json.txt)                         | 27 receipts; all 26 launched invocations have complete cleanup evidence                                      |
+| [Public projection](ci/candidate-public-receipts.json.txt)                              | All 27 outputs valid; original bytes forwarded only for the five expected complete successes                 |
+| [Host distribution check](ci/execution-host.json.txt)                                   | Internal-process controller write rejected with EBUSY; sibling placement then enabled controllers            |
+| Candidate and local regression                                                          | 82 envelope controls, 91 public controls and 132 legacy fixtures; local unit suite 520 tests across 55 files |
+
+The artifact ZIP (ID 10265969680) was downloaded and its SHA-256 verified as
+`3ac349aac9970e226bb31c4c01dc66d1033bd6bf564a53225846b9f02ef98154`.
+The five exact artifact members are retained under ci/ with .txt suffixes;
+INTEGRATION.json maps original paths, sizes and hashes. CI-JOBS.json is a
+normalized connector API snapshot, not a claim to preserve raw HTTP response bytes.
+The candidate passed on its first CI attempt; no failed run is omitted.
+
+This closes the missing candidate-specific real-host evidence within the declared
+trusted-program boundary. It does not establish a universal whole-service memory
+maximum or supervisor-crash recovery. The local cgroup NOT_RUN receipt remains
+historical evidence; the real-host result does not rewrite it. No green check
+closes the RFC, existing in-process-budget applicability question or publication
+gate. The next authoritative delta remains explicitly proposed in COUPLING.md.
