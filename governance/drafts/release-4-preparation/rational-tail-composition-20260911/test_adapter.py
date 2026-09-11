@@ -7,7 +7,8 @@ from rational_oracle import oracle, projection
 
 counts={}
 def check(name, condition):
-    assert condition, name
+    if not condition:
+        raise AssertionError(name)
     counts[name]=counts.get(name,0)+1
 
 def reject(name, fn, message):
@@ -19,7 +20,13 @@ p=Path(__file__).resolve().parent
 rows=json.loads((p.parent/'tail-feasibility-20260910/results.json').read_text())
 for row in rows['rows']:
     q=Q(float.fromhex(row['f_hex']))
-    check('fixed corpus embedding',tail(q,q,row['n'])['encoding']==int(row['round_binary64_bits'],16))
+    try:
+        result=tail(q,q,row['n'])
+    except ValueError as e:
+        check('fixed corpus explicit budget refusal',str(e)=='rational work budget' and row['n']==65 and row['f_hex']=='0x1.0000000000000p+100')
+    else:
+        check('fixed corpus embedding',result['encoding']==int(row['round_binary64_bits'],16))
+check('fixed admission counts',counts.get('fixed corpus embedding')==219 and counts.get('fixed corpus explicit budget refusal')==1)
 # Remaining checks below use exact represented inputs and a distinct tail formula.
 for n in (2,3,4,8):
     for q in (Q(0),Q(1,3),Q(4),Q(17,7),Q(1,1<<2200),Q(1<<2200)):
@@ -38,6 +45,8 @@ for contrast, f in zip(('A','B','AB'),(100,36,4)):
         reject('binding rejection',lambda:compose(cells,'fixture-1',contrast,dict(carrier,**{key:value})),'carrier binding')
     reject('false interval',lambda:compose(cells,'fixture-1',contrast,dict(carrier,lower=Q(f+1),upper=Q(f+2))),'upstream containment')
     broad=compose(cells,'fixture-1',contrast,dict(carrier,lower=Q(0),upper=Q(f+1)))
+    point=tail(Q(f),Q(f),2)
+    check('wide contains point enclosure',broad['bounds'][0]<=point['bounds'][0]<=point['bounds'][1]<=broad['bounds'][1])
     check('wide unresolved',broad['status']=='unresolved' and broad['encoding'] is None)
 tiny=math.ulp(0.)
 carrier=prepare([[0.,tiny]]*4,'tiny','A')
@@ -58,5 +67,13 @@ huge=[[0.,tiny],[0.,tiny],[1.,1.],[1.,1.]]
 carrier=prepare(huge,'huge','A')
 check('raw finite F beyond binary64',carrier['lower']>Q(float.fromhex('0x1.fffffffffffffp+1023')))
 check('raw huge composition',compose(huge,'huge','A',carrier)['status']=='resolved')
+for width in (1100,2200,6500):
+    q=Q(1<<(width-1))
+    reject('candidate work refusal',lambda:tail(q,q,65),'rational work budget')
+    reject('oracle work refusal',lambda:oracle(q,65),'rational work budget')
+mid=(Q(1,2)+Q(float.fromhex('0x1.0000000000001p-1')))/2
+check('midpoint ambiguous',projection((mid-Q(1,1<<100),mid+Q(1,1<<100))) is None)
+# Fixed independent oracle boundary remains inside its cap; exhaustion is explicit.
+check('oracle boundary budget',oracle(Q(256),65,512)[3]<=512)
 (p/'RESULTS.json').write_text(json.dumps({'checks':counts,'total':sum(counts.values())},indent=2)+'\n')
 print(counts)

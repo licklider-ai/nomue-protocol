@@ -3,6 +3,8 @@ from fractions import Fraction as Q
 import hashlib
 import json
 import math
+from pins import verify
+verify()
 from upstream_arithmetic import exact_candidate
 from rational_candidate import finite_enclosure
 from rational_oracle import projection
@@ -36,7 +38,7 @@ def tail(lower, upper, n, precisions=(128,256,512)):
         raise ValueError('precision budget')
     for bits in precisions:
         left = finite_enclosure(upper,n,bits)
-        right = finite_enclosure(lower,n,bits)
+        right = left if lower == upper else finite_enclosure(lower,n,bits)
         bounds = (left[0],right[1])
         rounded = projection(bounds)
         if rounded is not None:

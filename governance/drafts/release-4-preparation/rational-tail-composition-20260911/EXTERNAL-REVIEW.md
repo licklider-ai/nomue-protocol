@@ -1,0 +1,33 @@
+# First composition adversarial review receipt and response
+
+The user supplied an external adversarial review of immutable commit
+`cd121030d40942493d24c104ff87e05070826c42` on 2026-09-11. Reviewer identity,
+model identity, execution artifacts and institutional independence were not
+supplied. The receipt is attributed to the user; it is not a manager-authenticated
+independent scientific review. This document summarizes all reported findings.
+The manager authored the repair with OpenAI Codex in the original author context.
+This is not an independent close review of the repair.
+
+Reported conclusion: no blocking mathematical or binding defect; three medium
+issues to address before interface freeze. Reviewer reproduced 312 checks,
+source hashes and CI, independently derived the n=4/F=4 witness, and tested
+identity substitution, signed-zero digests, endpoint subclasses and widening.
+
+| Finding                                                           | Response                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 6500-bit admission permits impractical n=65 runtime               | Added joint count/operand-width/precision guard before expensive arithmetic to candidate and oracle. Reported 1100/2200/6500-bit n=65 inputs refuse immediately. Absolute bit ceiling alone is no longer the admission policy. Sample timings recorded; no full runtime proof claimed. |
+| Plan row 14 has no submitted-tail-evidence entry point            | Explicitly deferred in REPORT. Upstream F interval checks are not tail evidence checks. No new evidence-consumer API is introduced to close a documentation gap.                                                                                                                       |
+| Pins not enforced; historical results unpinned                    | Seven dependencies checked before adapter imports; historical results included. Seven individual file mutations rejected. Manifest/loader remain trusted.                                                                                                                              |
+| Assertions disappear under python -O                              | Test check now raises explicitly; normal and optimized executions both pass and write identical assertion counts.                                                                                                                                                                      |
+| Oracle 512-term cap nearly reached                                | Added n=65, F=256, 512-bit boundary regression. Existing explicit cap refusal retained; no new supported domain or higher cap inferred.                                                                                                                                                |
+| Point-route test tautological; midpoint/widening coverage missing | Classified point test as wiring only; added midpoint ambiguity and actual wider-enclosure containment checks.                                                                                                                                                                          |
+| Unused helpers/imports; duplicate point evaluation                | Point evaluation now reused. Historical unused Decimal diagnostic/imports retained for source traceability; not called by adapter.                                                                                                                                                     |
+
+No IEEE source gap is closed here. The user is obtaining that standard separately.
+No original upstream packet, prior reviewer evidence, specification, registry,
+formal supported range, adoption or release state changes.
+
+Reproduce with `test_adapter.py` under normal Python and `python -O`, then
+`test_repair.py`. The latter rewrites measured timing values. The former reports
+324 assertions, including exactly 219 accepted historical encodings and one
+specific resource refusal. The old 312-result record remains in the parent.

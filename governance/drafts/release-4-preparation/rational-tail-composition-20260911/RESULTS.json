@@ -1,6 +1,8 @@
 {
   "checks": {
-    "fixed corpus embedding": 220,
+    "fixed corpus embedding": 219,
+    "fixed corpus explicit budget refusal": 1,
+    "fixed admission counts": 1,
     "rational oracle overlap": 24,
     "rational rounded agreement": 24,
     "exact n4 F4": 1,
@@ -8,6 +10,7 @@
     "point composition": 3,
     "binding rejection": 18,
     "false interval": 3,
+    "wide contains point enclosure": 3,
     "wide unresolved": 3,
     "positive SSE rounded zero": 1,
     "exact zero effect": 1,
@@ -21,7 +24,11 @@
     "raw positive F rounded zero": 1,
     "raw small composition": 1,
     "raw finite F beyond binary64": 1,
-    "raw huge composition": 1
+    "raw huge composition": 1,
+    "candidate work refusal": 3,
+    "oracle work refusal": 3,
+    "midpoint ambiguous": 1,
+    "oracle boundary budget": 1
   },
-  "total": 312
+  "total": 324
 }

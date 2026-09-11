@@ -45,8 +45,9 @@ mathematical zero and infinity.
 
 `INPUTS.json` pins the original arithmetic and tail commits and source hashes.
 `upstream_arithmetic.py` is a byte-identical copy of the original candidate.
-`rational_candidate.py` adapts the original candidate input guard to Fraction and
-a 6500-bit numerator/denominator budget. Its finite-sum formula is unchanged.
+`rational_candidate.py` adapts the original candidate input guard to Fraction,
+a 6500-bit absolute operand ceiling, and a joint count/width/precision admission
+score implemented in `budget.py`. Its finite-sum formula is unchanged.
 `rational_oracle.py` makes the corresponding guard adaptation to the distinct
 polynomial-integral / remainder-bounded series implementation. Its exact
 probability projection remains unchanged. Neither adapted file is an independent
@@ -69,7 +70,7 @@ malformed observations; resource guards; and deliberate precision exhaustion.
 historical foundations and basic runtime primitives with the candidate. Tests
 support the experiment; they do not establish all-input proofs or approvals.
 
-The bit/count/precision caps bound this experiment only. They are not a validated
+The bit/count/precision caps and joint admission score restrict this experiment only. They are not a validated
 wall-time or memory budget and are not a final supported domain. No serialization
 parser, production API, significance decision, multiplicity adjustment, or
 comparison tolerance is added. Internal rational success does not resolve public
@@ -85,3 +86,34 @@ intervals, exact-zero versus rounded-zero behavior, non-dyadic endpoint propagat
 precision exhaustion, and runtime limits. Keep source-gate outcomes separate from
 implementation evidence. Small repairs can then close this experiment round;
 production promotion and Release 2 parity require further scoped decisions.
+
+## Adversarial repair of the first composition
+
+See `EXTERNAL-REVIEW.md` for the user-supplied external review receipt and each
+disposition. The initial 312-check result remains in commit cd12103. The successor
+replays all 220 historical rows: 219 retain their encoding; n=65, F=2^100 now
+receives an explicit resource refusal. This is an intentional experimental
+admission reduction, not unchanged 220-row acceptance.
+
+The admission score checks a^2*w <= 1,000,000 and a^2*(w+b) <= 10,000,000,
+where a=2(n-1), w is the larger rational component bit length, and b is root
+precision. It is a conservative workload proxy, not a proved CPU-operation count
+or wall-time guarantee. It rejects the reported expensive n=65 inputs before
+root or monomial evaluation in both implementations. Sample timings are in
+`REPAIR-RESULTS.json`; they are observations, not platform guarantees.
+
+At adapter import, `pins.verify` checks SHA-256 for seven local dependencies,
+including original source copies, adapted implementations, budget code, and the
+historical 220-row expectations. The loader and manifest remain trusted; replacing
+both is outside this integrity check. Tests mutate each pinned file separately.
+
+Acceptance-plan row 14, submitted tail-evidence widening/falsification including
+PR #283 O2, is **DEFERRED and unimplemented** in this adapter. It has no submitted
+probability-evidence API. Its false/widened interval checks concern upstream F
+only. The historical fixed checker does not close this adapter acceptance row.
+A later evidence-consumer design and adversarial review are needed before such
+an interface is frozen. Point-route equivalence is a wiring regression only;
+the distinct-formula oracle supplies numerical cross-checks. Midpoint ambiguity
+and wider-output containment are now explicitly tested. The oracle boundary
+n=65, F=256 at 512 bits is tested within the existing 512-term cap; cap exhaustion
+remains an explicit ArithmeticError. No larger oracle domain is claimed.

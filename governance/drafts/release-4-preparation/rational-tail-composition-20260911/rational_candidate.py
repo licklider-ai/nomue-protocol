@@ -1,6 +1,7 @@
 """Disposable positive finite-sum candidate; no production support claim."""
 from decimal import Decimal as D, localcontext
 from fractions import Fraction as Q
+from budget import work_guard
 from math import comb, factorial, isfinite, copysign, isqrt
 
 MAX_N = 65  # Research budget, not a proposed supported count.
@@ -42,6 +43,7 @@ def finite_enclosure(f, n, bits=128):
     q, a = guard(f, n)
     if type(bits) is not int or not 8 <= bits <= MAX_BITS:
         raise ValueError("square-root precision outside probe budget")
+    work_guard(q, n, bits)
     if not q:
         return Q(1), Q(1)
     x = Q(2 * a) / (2 * a + q)

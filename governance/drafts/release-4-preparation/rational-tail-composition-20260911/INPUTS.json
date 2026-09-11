@@ -6,5 +6,14 @@
     "upstream_arithmetic.py": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
     "candidate.py": "4baaf53bc1b75d94d335b539e6e2f9c736bbff93a267f36ca084cfe99f41ee58",
     "oracle.py": "fda30f7dfb5d765b51a9c24ae6d1458b94c34b828273c65d8f6d74222adea16f"
+  },
+  "runtime_sha256": {
+    "upstream_arithmetic.py": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+    "rational_candidate.py": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712",
+    "rational_oracle.py": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c",
+    "budget.py": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38",
+    "../tail-feasibility-20260910/candidate.py": "4baaf53bc1b75d94d335b539e6e2f9c736bbff93a267f36ca084cfe99f41ee58",
+    "../tail-feasibility-20260910/oracle.py": "fda30f7dfb5d765b51a9c24ae6d1458b94c34b828273c65d8f6d74222adea16f",
+    "../tail-feasibility-20260910/results.json": "a2b00241f24318e2cce19de8fa217957dd934ffee4c9ac8f1cbf8bcf48ee0e7d"
   }
 }

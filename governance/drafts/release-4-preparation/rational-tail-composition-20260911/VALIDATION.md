@@ -36,3 +36,13 @@ rewritten by the manager.
 
 The next adversarial checkpoint is this complete adapter's immutable commit.
 Do not silently replace that checkpoint with the original-methods review.
+
+## Successor repair validation
+
+The external review target is the parent cd12103; its receipt and repair
+responses are in EXTERNAL-REVIEW. Normal and optimized Python runs each passed
+324 explicit assertions with identical recorded counts. Seven actual dependency
+mutations were rejected. Sample admitted workload timings and immediate refusal
+timings are in REPAIR-RESULTS. Markdown lint inspected 411 files successfully;
+Prettier and the repository validator passed. This is author-side repair evidence,
+not an independent verdict on the successor. Source-gate limitations persist.

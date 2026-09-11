@@ -1,0 +1,55 @@
+{
+  "tamper_rejections": [
+    "upstream_arithmetic.py",
+    "rational_candidate.py",
+    "rational_oracle.py",
+    "budget.py",
+    "../tail-feasibility-20260910/candidate.py",
+    "../tail-feasibility-20260910/oracle.py",
+    "../tail-feasibility-20260910/results.json"
+  ],
+  "timings": [
+    {
+      "n": 65,
+      "width": 53,
+      "status": "resolved",
+      "seconds": 0.5924829600007797
+    },
+    {
+      "n": 16,
+      "width": 1100,
+      "status": "resolved",
+      "seconds": 0.13825563499995042
+    },
+    {
+      "n": 8,
+      "width": 2200,
+      "status": "resolved",
+      "seconds": 0.048634837999998126
+    },
+    {
+      "n": 2,
+      "width": 6500,
+      "status": "resolved",
+      "seconds": 0.0007539350008300971
+    },
+    {
+      "n": 65,
+      "width": 1100,
+      "status": "refused",
+      "seconds": 1.5394001820823178e-5
+    },
+    {
+      "n": 65,
+      "width": 2200,
+      "status": "refused",
+      "seconds": 7.26999860489741e-6
+    },
+    {
+      "n": 65,
+      "width": 6500,
+      "status": "refused",
+      "seconds": 5.418998625827953e-6
+    }
+  ]
+}

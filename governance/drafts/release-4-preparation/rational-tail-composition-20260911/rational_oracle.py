@@ -4,6 +4,7 @@ Shared trusted primitives: Python integers, Fraction, isqrt; not independent
 hardware or independent investigators. See REPORT.md for proof obligations.
 """
 from fractions import Fraction as Q
+from budget import work_guard
 from math import comb, isqrt, isfinite, copysign
 
 
@@ -16,6 +17,7 @@ def oracle(f, n, bits=256, max_terms=512):
         raise ValueError("oracle precision guard")
     if type(max_terms) is not int or not 1 <= max_terms <= 512:
         raise ValueError("oracle series budget guard")
+    work_guard(f, n, bits)
     f = Q(f)
     a = 2 * (n - 1)
     if f == 0:
