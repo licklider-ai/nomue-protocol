@@ -1,0 +1,488 @@
+{
+  "status": "author checks for unissued envelope exercise",
+  "node": "v24.19.0",
+  "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "groups": 24,
+  "controls": 82,
+  "legacy_fixtures": 132,
+  "rows": [
+    {
+      "group": "valid_baseline",
+      "name": "baseline exact fractions",
+      "expected": "arithmetic:pass",
+      "worker_calls": 1
+    },
+    {
+      "group": "valid_baseline",
+      "name": "real isolated Python worker",
+      "expected": "arithmetic:pass"
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing $schema",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing record_type",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing record_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing revision_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing created_at",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing interpretation_bundle_id",
+      "expected": "refusal:bundle_missing",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing profile_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing payload",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "missing_envelope_member",
+      "name": "missing integrity",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "local_instance_label",
+      "name": "local record_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "local_instance_label",
+      "name": "local revision_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "future_check_identity",
+      "name": "unallocated HTTPS sentinel accepted by exercise, rejected by legacy check pattern",
+      "expected": "version separation"
+    },
+    {
+      "group": "wrong_bundle",
+      "name": "bundle null",
+      "expected": "refusal:bundle_type",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_bundle",
+      "name": "bundle 17",
+      "expected": "refusal:bundle_type",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_bundle",
+      "name": "bundle unknown",
+      "expected": "refusal:bundle_unsupported",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_bundle",
+      "name": "bundle urn:nomue:bundle:itgc-minimal:0.1.0-draft.1",
+      "expected": "refusal:bundle_unsupported",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_bundle",
+      "name": "supported verifier refuses exercise bundle",
+      "expected": "unsupported_bundle"
+    },
+    {
+      "group": "wrong_integrity_metadata",
+      "name": "integrity metadata canonicalization_id",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_integrity_metadata",
+      "name": "integrity metadata digest_algorithm",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "wrong_integrity_metadata",
+      "name": "integrity metadata digest_scope",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after record_id",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after revision_id",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after created_at",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after declaration",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after inputs",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "digest_tamper",
+      "name": "unchanged digest after result",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "integrity_exclusion",
+      "name": "declared digest only changed",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "untagged_digest",
+      "name": "untagged hash",
+      "expected": "integrity:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "canonicalizer_fault",
+      "name": "faulty projection canonicalizer cannot confirm old digest",
+      "expected": "refusal:projection_disagreement",
+      "worker_calls": 0
+    },
+    {
+      "group": "storage_variants",
+      "name": "pretty",
+      "expected": "refusal:stored_bytes_noncanonical",
+      "worker_calls": 0
+    },
+    {
+      "group": "storage_variants",
+      "name": "newline",
+      "expected": "refusal:stored_bytes_noncanonical",
+      "worker_calls": 0
+    },
+    {
+      "group": "storage_variants",
+      "name": "BOM",
+      "expected": "refusal:record_malformed_json",
+      "worker_calls": 0
+    },
+    {
+      "group": "storage_variants",
+      "name": "bad UTF8",
+      "expected": "refusal:record_utf8",
+      "worker_calls": 0
+    },
+    {
+      "group": "raw_priority",
+      "name": "syntax before duplicates",
+      "expected": "refusal:record_malformed_json",
+      "worker_calls": 0
+    },
+    {
+      "group": "raw_priority",
+      "name": "duplicates before Unicode",
+      "expected": "refusal:record_duplicate_member",
+      "worker_calls": 0
+    },
+    {
+      "group": "raw_priority",
+      "name": "Unicode before negative zero",
+      "expected": "refusal:record_invalid_unicode",
+      "worker_calls": 0
+    },
+    {
+      "group": "raw_priority",
+      "name": "negative zero before routing",
+      "expected": "refusal:record_negative_zero",
+      "worker_calls": 0
+    },
+    {
+      "group": "raw_priority",
+      "name": "depth before routing",
+      "expected": "refusal:record_depth",
+      "worker_calls": 0
+    },
+    {
+      "group": "context_binding",
+      "name": "record URI",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "context_binding",
+      "name": "revision URI",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "context_binding",
+      "name": "unrelated declaration",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "context_binding",
+      "name": "member order",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "context_binding",
+      "name": "origin",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "revision_alias",
+      "name": "both actual revisions would map to same private carrier label",
+      "expected": "context:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "relation_codes",
+      "name": "multiple relation defects",
+      "expected": "declaration:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "ownership",
+      "name": "foreign analysis_id",
+      "expected": "admission:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "ownership",
+      "name": "foreign family_id",
+      "expected": "admission:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "ownership",
+      "name": "foreign result_id",
+      "expected": "admission:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "last_row",
+      "name": "last adjusted_hex",
+      "expected": "arithmetic:fail",
+      "worker_calls": 1
+    },
+    {
+      "group": "last_row",
+      "name": "last display_hex",
+      "expected": "arithmetic:fail",
+      "worker_calls": 1
+    },
+    {
+      "group": "precision",
+      "name": "Number",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "precision",
+      "name": "uppercase",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "precision",
+      "name": "leading zero",
+      "expected": "refusal:record_schema",
+      "worker_calls": 0
+    },
+    {
+      "group": "precision",
+      "name": "out of range",
+      "expected": "admission:fail",
+      "worker_calls": 0
+    },
+    {
+      "group": "admission_caps",
+      "name": "raw record byte boundary 2359295",
+      "expected": "refusal:record_malformed_json",
+      "worker_calls": 0
+    },
+    {
+      "group": "admission_caps",
+      "name": "raw record byte boundary 2359296",
+      "expected": "refusal:record_malformed_json",
+      "worker_calls": 0
+    },
+    {
+      "group": "admission_caps",
+      "name": "raw record byte boundary 2359297",
+      "expected": "refusal:record_bytes",
+      "worker_calls": 0
+    },
+    {
+      "group": "admission_caps",
+      "name": "external expected byte boundary 1572863",
+      "expected": "arithmetic:pass",
+      "worker_calls": 1
+    },
+    {
+      "group": "admission_caps",
+      "name": "external expected byte boundary 1572864",
+      "expected": "arithmetic:pass",
+      "worker_calls": 1
+    },
+    {
+      "group": "admission_caps",
+      "name": "external expected byte boundary 1572865",
+      "expected": "refusal:expected_bytes",
+      "worker_calls": 0
+    },
+    {
+      "group": "admission_caps",
+      "name": "layered dimensions 3/1024/1",
+      "expected": "arithmetic:pass",
+      "observed": "pass"
+    },
+    {
+      "group": "admission_caps",
+      "name": "layered dimensions 3/1024/16",
+      "expected": "resource_limit",
+      "observed": "legacy_admission_limit"
+    },
+    {
+      "group": "admission_caps",
+      "name": "layered dimensions 16/1024/16",
+      "expected": "resource_limit",
+      "observed": "record_nodes"
+    },
+    {
+      "group": "worker_partial",
+      "name": "malformed",
+      "expected": "arithmetic:error",
+      "worker_calls": 0
+    },
+    {
+      "group": "worker_partial",
+      "name": "partial",
+      "expected": "arithmetic:error",
+      "worker_calls": 0
+    },
+    {
+      "group": "worker_partial",
+      "name": "out of range",
+      "expected": "arithmetic:error",
+      "worker_calls": 0
+    },
+    {
+      "group": "worker_partial",
+      "name": "exception",
+      "expected": "arithmetic:error",
+      "worker_calls": 0
+    },
+    {
+      "group": "setup_failure",
+      "name": "trusted setup failure",
+      "expected": "refusal:setup_failure",
+      "worker_calls": 0
+    },
+    {
+      "group": "separate_report",
+      "name": "separate report and stable semantic projection",
+      "expected": "unchanged bytes and semantics"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "overall",
+      "expected": "invalid report"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "significance",
+      "expected": "invalid report"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "scientific claim",
+      "expected": "invalid report"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "errored outcome",
+      "expected": "invalid report"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "continued after failure",
+      "expected": "invalid report"
+    },
+    {
+      "group": "legacy_regression",
+      "name": "all existing registered conformance fixtures",
+      "expected": "no change",
+      "fixtures": 132
+    },
+    {
+      "group": "storage_variants",
+      "name": "caller mutation after invocation cannot change snapshot",
+      "expected": "original bytes verified"
+    },
+    {
+      "group": "valid_baseline",
+      "name": "UTF-8 byte spans preserve non-ASCII opaque instance identifiers",
+      "expected": "arithmetic:pass"
+    },
+    {
+      "group": "admission_caps",
+      "name": "120-member real worker",
+      "expected": "arithmetic:pass"
+    },
+    {
+      "group": "digest_tamper",
+      "name": "every non-integrity root field participates in stored projection",
+      "expected": "all eight changes alter digest"
+    },
+    {
+      "group": "no_aggregate",
+      "name": "different local scopes across one report rejected",
+      "expected": "invalid report"
+    }
+  ]
+}

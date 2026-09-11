@@ -1,0 +1,97 @@
+{
+  "kind": "https://example.invalid/nomue-exercise/holm-report/v1",
+  "record_reference": {
+    "record_id": "urn:example:record",
+    "revision_id": "urn:example:revision-1",
+    "content_digest": "sha256:204806fadd02c0b83729b0175a22db3131b9abf754b95fb3d33ccb75f132b634"
+  },
+  "interpretation_bundle_id": "https://example.invalid/nomue-exercise/holm-bundle/v1",
+  "verifier": {
+    "name": "holm-envelope-exercise",
+    "version": "unissued-v1",
+    "source_digest": "sha256:022c0545109e51fb87e1b29e422796dc555ea01d94791d9b26e96c39294e2711"
+  },
+  "generated_at": "2026-09-11T00:00:00.000Z",
+  "checks": [
+    {
+      "stage": "integrity",
+      "check_ref": "https://example.invalid/nomue-exercise/holm-check-integrity/v1",
+      "scope": {
+        "record_id": "urn:example:record",
+        "revision_id": "urn:example:revision-1",
+        "analysis_id": "a-0",
+        "family_id": "f-0",
+        "result_id": "r-0"
+      },
+      "execution": "completed",
+      "reasons": [],
+      "outcome": "pass"
+    },
+    {
+      "stage": "context",
+      "check_ref": "https://example.invalid/nomue-exercise/holm-check-context/v1",
+      "scope": {
+        "record_id": "urn:example:record",
+        "revision_id": "urn:example:revision-1",
+        "analysis_id": "a-0",
+        "family_id": "f-0",
+        "result_id": "r-0"
+      },
+      "execution": "completed",
+      "reasons": [],
+      "outcome": "pass"
+    },
+    {
+      "stage": "declaration",
+      "check_ref": "https://example.invalid/nomue-exercise/holm-check-declaration/v1",
+      "scope": {
+        "record_id": "urn:example:record",
+        "revision_id": "urn:example:revision-1",
+        "analysis_id": "a-0",
+        "family_id": "f-0",
+        "result_id": "r-0"
+      },
+      "execution": "completed",
+      "reasons": [],
+      "outcome": "pass"
+    },
+    {
+      "stage": "admission",
+      "check_ref": "https://example.invalid/nomue-exercise/holm-check-admission/v1",
+      "scope": {
+        "record_id": "urn:example:record",
+        "revision_id": "urn:example:revision-1",
+        "analysis_id": "a-0",
+        "family_id": "f-0",
+        "result_id": "r-0"
+      },
+      "execution": "completed",
+      "reasons": [],
+      "outcome": "pass"
+    },
+    {
+      "stage": "arithmetic",
+      "check_ref": "https://example.invalid/nomue-exercise/holm-check-arithmetic/v1",
+      "scope": {
+        "record_id": "urn:example:record",
+        "revision_id": "urn:example:revision-1",
+        "analysis_id": "a-0",
+        "family_id": "f-0",
+        "result_id": "r-0"
+      },
+      "execution": "completed",
+      "reasons": [],
+      "outcome": "pass"
+    }
+  ],
+  "guarantee_boundary": {
+    "scientific_validity": "not_asserted",
+    "declaration_truth": "not_asserted",
+    "distributional_model_validity": "not_asserted",
+    "causal_interpretation": "not_asserted",
+    "standardized_effect_size": "not_asserted",
+    "familywise_error_control": "not_asserted",
+    "source_authenticity": "not_asserted",
+    "p_generation": "outside_scope"
+  }
+}

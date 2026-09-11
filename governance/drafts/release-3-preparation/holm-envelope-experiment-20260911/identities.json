@@ -1,0 +1,14 @@
+{
+  "record": "https://example.invalid/nomue-exercise/holm-record/v1",
+  "bundle": "https://example.invalid/nomue-exercise/holm-bundle/v1",
+  "profile": "https://example.invalid/nomue-exercise/holm-profile/v1",
+  "report": "https://example.invalid/nomue-exercise/holm-report/v1",
+  "refusal": "https://example.invalid/nomue-exercise/holm-refusal/v1",
+  "checks": {
+    "integrity": "https://example.invalid/nomue-exercise/holm-check-integrity/v1",
+    "context": "https://example.invalid/nomue-exercise/holm-check-context/v1",
+    "declaration": "https://example.invalid/nomue-exercise/holm-check-declaration/v1",
+    "admission": "https://example.invalid/nomue-exercise/holm-check-admission/v1",
+    "arithmetic": "https://example.invalid/nomue-exercise/holm-check-arithmetic/v1"
+  }
+}
