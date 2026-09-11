@@ -1,0 +1,27 @@
+[
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/measure.py",
+    "bytes": 11546,
+    "sha256": "5ecf05d3d7fdbfd38f2db5932cb3766b3a07093e868dc0838b838d65c08627b5"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/prepare.mjs",
+    "bytes": 2716,
+    "sha256": "88cbf683ee08e920ab93af73902dc4550bfbf9a044a869bbcf177728cbfc5a0a"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/README.md",
+    "bytes": 5553,
+    "sha256": "35b1326cb5e7d8eaab396823631505519b8decb5a3144471c809a9fdc40d60c7"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/SCOPE.md",
+    "bytes": 8800,
+    "sha256": "f6c8190427fb009f1c9680c8364ce180ba6e7c8dfe4e6caa93ca6bf9268e078e"
+  },
+  {
+    "path": ".github/workflows/r3-execution-admission.yml",
+    "bytes": 1429,
+    "sha256": "e75513511e9747c2bed9fa760c41314a3bae828325f9c6f24b846e29731aa1a3"
+  }
+]

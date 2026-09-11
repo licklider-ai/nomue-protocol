@@ -1,0 +1,26 @@
+[
+  {
+    "control": "first_reset_exception",
+    "exception": "SystemExit(1)",
+    "report_exists": true,
+    "failed_reset_rows_retained": 3,
+    "failure_retention_pass": true
+  },
+  {
+    "control": "timeout_then_outer_kill_error",
+    "exception": null,
+    "row_returned": true,
+    "failure_retention_pass": true,
+    "retained_trial": {
+      "delegation": "/tmp/admission-method-review-izug6mpu/nomue-admission-bc21916701e742c991d00e4a7a94f888",
+      "pass": false,
+      "error": "TimeoutExpired('safe mock', 45)",
+      "cleanup_attempt_errors": {
+        "launcher_kill": "OSError('synthetic outer kill race')",
+        "launcher_wait": "TimeoutExpired('safe mock', 5)"
+      },
+      "outer_cleanup": false,
+      "cleanup_error": "OSError(39, 'Directory not empty')"
+    }
+  }
+]

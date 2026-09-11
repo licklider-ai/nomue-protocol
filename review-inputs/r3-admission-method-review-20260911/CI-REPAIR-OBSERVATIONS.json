@@ -1,0 +1,15 @@
+{
+  "run": "34603591363",
+  "repository_head": "42a3f841",
+  "workflow_merge_sha": "125d27e6f4acbe7b91ddc5753531f36dbe62a318",
+  "input_sha256": "392762630c9eb9f382113caa411aa156b57306cd8cb310082def28c8817e1bc2",
+  "input_bytes": 24440,
+  "rows": 36,
+  "passed": 0,
+  "errors": ["AssertionError('fresh measurement hierarchy')"],
+  "outer_cleanup_pass": 36,
+  "reset_rows": 18,
+  "all_reset_events_one": true,
+  "all_sentinel_1024_to_zero": true,
+  "interpretation": "Received CI evidence inspected; no invocation launched due to erroneous zero-peak precondition; no independent kernel run"
+}

@@ -1,0 +1,42 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "candidate_pr": 319,
+  "candidate_head": "f6ac2219f81749cd62bd61563146f1f0b5146085",
+  "merge_commit": "5d263b6d2f6c3045c55429ecc748a8784a332ac7",
+  "initial_run": 34603591363,
+  "initial_artifact": 10265661670,
+  "initial_zip_sha256": "c5a59b568053a116d29561b9e5141fab23e168dd4d0a1173521a90de479fa8ae",
+  "final_run": 34603795098,
+  "final_artifact": 10265852083,
+  "final_zip_sha256": "f868fe49358e0e76c651728901779a0fc80fd1b3e04a3beb777cb44f35593a83",
+  "controlled_regression_run": 34603795053,
+  "standard_ci_run": 34603795039,
+  "standard_ci_jobs_passed": 5,
+  "trials": 36,
+  "passed": 36,
+  "cache_reset_observations_passed": 18,
+  "local_entry_checks_passed": 6,
+  "safe_failure_controls_passed": 2,
+  "files": [
+    {
+      "path": "CI-initial.json.txt",
+      "sha256": "392762630c9eb9f382113caa411aa156b57306cd8cb310082def28c8817e1bc2"
+    },
+    {
+      "path": "CI-final.json.txt",
+      "sha256": "d874b406dc72ab397b52b8da552efd6dc5a744adcc8fd633e3f62452d80e8757"
+    },
+    {
+      "path": "REVIEW.md",
+      "sha256": "de771e24c37da95adc7a6f5d49864de336e1dea1217bc105deb6ea1bb86d3624"
+    },
+    {
+      "path": "CI-REPAIR.md",
+      "sha256": "ac8ca0fafd2d30802cc150ba5c68b8cf9c7628e0d64d0a76aeb4444e4566c8c5"
+    },
+    {
+      "path": "INPUTS.json",
+      "sha256": "29328248ab82469ce2a564585067d2393d2d5fd679e7f92979679ea8d2b5d707"
+    }
+  ]
+}

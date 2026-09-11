@@ -1,0 +1,819 @@
+{
+  "scope": "unissued full-invocation admission observations",
+  "kernel": "6.17.0-1022-azure",
+  "node": "v24.19.0",
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "real_cache_reset": true,
+  "rows": [
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-ab154cbc3d444f8a88092da09c3fb1d4",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-6669118a497d4f7796dee35067f8d70f",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-1c6085df1df0438fb82c9a20e783ffa3",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-5b97ce026fa04ef8924cc9055ea9f2b2",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-47157bbf2eda4ca28724cbe68a10dcb5",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-548d426f255a4be19216c40913653e60",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "baseline",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-55ed67214fd745c887d7b785c565f8fb",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-44e9efd67d514202b95a68a9b574bacf",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-9d681125b3bb49409368de182df494f2",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-2bc0f4de9c1f4d829550ca021b21e691",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-82bee0e55fcd4b27be1bbcfeb599f0f1",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-7ffd461009ad48e7b84a900b5ba99fe1",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "maximum-family",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-f362686d7eb748b2902045cddec96d59",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-38876ae2c1834db7925244adf1b1d359",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-f340f0181ff04fe5b66fe044b9c0f580",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-5476d4fb675741b5b2575c4bec52267a",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-934c9ec9d6e94dcd956f41685b9f995e",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-967e5335dc504fffad42a333996fdee4",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "large-population",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-5b485fc6dc2d4364b8cee8f34f511646",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-b4fbcb794c72417eacc098a79fd0bc6e",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-6a77378536804a2caeffdb6486b0a174",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-ccc95825e6434fdd88bb2cc2ee5e3821",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-2164dc7c89ce4b81affebc1e42d10c5f",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-a03985bd81884202bb5ef99d3120b052",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "combined-large",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-c87760dd615249959b86316bad1c3b61",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-323c3a9cad9d448ca3376ef94b9c7b24",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-df13cd2c38b246b2aaa15e6847e7d737",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-89b664d56e0f42e79fa3c934b838e73f",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-98eea17f672540bc994d93159c277b53",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-d41d7a869f844a758bb18ebc96caa74d",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "six-variants",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-aecf8edeb2f74a618e7d0785c12276f1",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 0,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-d5bfdb9953d94b8b8439eaf7dc02126d",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 0,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-48557d4f3a2141b9869ebf4093c381c2",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 1,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-d20decf74f944ec2bbdb045b7efa8182",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 1,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-c1b050b38756477199988c0b9e184767",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 2,
+      "mode": "cache-reset-requested",
+      "cache": {
+        "request": 3,
+        "write_succeeded": true,
+        "vmstat_delta": {
+          "drop_pagecache": 1,
+          "drop_slab": 1
+        },
+        "sentinel_before": {
+          "pages": 1024,
+          "resident": 1024
+        },
+        "sentinel_after": {
+          "pages": 1024,
+          "resident": 0
+        },
+        "pass": true
+      }
+    },
+    {
+      "delegation": "/sys/fs/cgroup/nomue-admission-0770ff9cb90f4a41b653a946bf11462b",
+      "pass": false,
+      "error": "AssertionError('fresh measurement hierarchy')",
+      "outer_cleanup": true,
+      "case": "conjunctive-refusal",
+      "repeat": 2,
+      "mode": "warm-repeat",
+      "cache": {
+        "request": null,
+        "pass": true
+      }
+    }
+  ],
+  "host": {
+    "GITHUB_RUN_ID": "34603591363",
+    "GITHUB_SHA": "125d27e6f4acbe7b91ddc5753531f36dbe62a318",
+    "RUNNER_ENVIRONMENT": "github-hosted",
+    "RUNNER_OS": "Linux",
+    "ImageOS": "ubuntu24",
+    "ImageVersion": "20260907.300.1"
+  },
+  "ancestor_limits": {
+    "memory.max": null,
+    "memory.swap.max": null,
+    "pids.max": null,
+    "cpu.max": null
+  },
+  "mounts": "/dev/root / ext4 rw,relatime,discard,errors=remount-ro,commit=30 0 0\ndevtmpfs /dev devtmpfs rw,nosuid,noexec,relatime,size=8181156k,nr_inodes=2045289,mode=755,inode64 0 0\nproc /proc proc rw,nosuid,nodev,noexec,relatime 0 0\nsysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0\nsecurityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0\ntmpfs /dev/shm tmpfs rw,nosuid,nodev,inode64 0 0\ndevpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0\ntmpfs /run tmpfs rw,nosuid,nodev,size=3274488k,nr_inodes=819200,mode=755,inode64 0 0\ntmpfs /run/lock tmpfs rw,nosuid,nodev,noexec,relatime,size=5120k,inode64 0 0\ncgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot 0 0\nnone /sys/fs/pstore pstore rw,nosuid,nodev,noexec,relatime 0 0\nefivarfs /sys/firmware/efi/efivars efivarfs rw,nosuid,nodev,noexec,relatime 0 0\nbpf /sys/fs/bpf bpf rw,nosuid,nodev,noexec,relatime,mode=700 0 0\nsystemd-1 /proc/sys/fs/binfmt_misc autofs rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=127 0 0\nhugetlbfs /dev/hugepages hugetlbfs rw,nosuid,nodev,relatime,pagesize=2M 0 0\nmqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0\ndebugfs /sys/kernel/debug debugfs rw,nosuid,nodev,noexec,relatime 0 0\ntracefs /sys/kernel/tracing tracefs rw,nosuid,nodev,noexec,relatime 0 0\nfusectl /sys/fs/fuse/connections fusectl rw,nosuid,nodev,noexec,relatime 0 0\nconfigfs /sys/kernel/config configfs rw,nosuid,nodev,noexec,relatime 0 0\n/dev/sda16 /boot ext4 rw,relatime,discard 0 0\n/dev/sda15 /boot/efi vfat rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0\nbinfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,nosuid,nodev,noexec,relatime 0 0\ntmpfs /run/user/1001 tmpfs rw,nosuid,nodev,relatime,size=1637240k,nr_inodes=409310,mode=700,uid=1001,gid=1001,inode64 0 0\n",
+  "runtime": {
+    "node_sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12",
+    "python_sha256": "bef88f140b625959f8af25c7b75cce2cd5d4b29cc2f2b079befd7f68eda4dba0",
+    "supervisor_sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "want": "pass",
+      "groups": 3,
+      "observations": 3,
+      "analyses": 1,
+      "selected_members": 3,
+      "record_nodes": 169,
+      "expected_nodes": 141,
+      "record_bytes": 4739,
+      "expected_bytes": 3101,
+      "record_sha256": "622cb91567c1f2bada05dd22c75a7569fd2ea4dfe819c03c1f2e3b6393f70231",
+      "expected_sha256": "f32452550f2a3eff720840042637cc6ac9213aa3e25351ab1fbaa5e3c8d8fd68"
+    },
+    {
+      "name": "maximum-family",
+      "want": "pass",
+      "groups": 16,
+      "observations": 16,
+      "analyses": 1,
+      "selected_members": 120,
+      "record_nodes": 2652,
+      "expected_nodes": 2156,
+      "record_bytes": 87092,
+      "expected_bytes": 45541,
+      "record_sha256": "7f0f7a52c84bcb8d5737d2726b698a23f7925ed46af4af71fb4406020cec68e2",
+      "expected_sha256": "36b5cb9bf581be8be29633d4d3f3e2ff13533af27619fb4a0bfa6fcfae912d05"
+    },
+    {
+      "name": "large-population",
+      "want": "pass",
+      "groups": 3,
+      "observations": 1024,
+      "analyses": 1,
+      "selected_members": 3,
+      "record_nodes": 9358,
+      "expected_nodes": 9330,
+      "record_bytes": 152384,
+      "expected_bytes": 150746,
+      "record_sha256": "595f7c6ab979a2f0685dae185ad451ae086cb2ab8583696f340487448462f276",
+      "expected_sha256": "9e732bed4b17d3fe0d39dcc663a6db19183c5263a485ec72d272286f620eae07"
+    },
+    {
+      "name": "combined-large",
+      "want": "pass",
+      "groups": 16,
+      "observations": 256,
+      "analyses": 16,
+      "selected_members": 120,
+      "record_nodes": 25347,
+      "expected_nodes": 24851,
+      "record_bytes": 556994,
+      "expected_bytes": 515443,
+      "record_sha256": "29ee026104ac13474c853a6e089e1be71c0281958bd232895f22c778e989d6f1",
+      "expected_sha256": "fe1a65f4a4fd403020fe1371024f972fd68cc034bd23ef52dda4f1ab9ce95f61"
+    },
+    {
+      "name": "six-variants",
+      "want": "pass",
+      "groups": 3,
+      "observations": 3,
+      "analyses": 6,
+      "selected_members": 3,
+      "record_nodes": 449,
+      "expected_nodes": 421,
+      "record_bytes": 11531,
+      "expected_bytes": 9893,
+      "record_sha256": "89667575de3c44815fa7669caabfb2bd36e59ba8496c0f74cdb0b9d7133d4e93",
+      "expected_sha256": "c33a8d3bf14c017e07730354221e18372341e1d7c31c4d7f439ffb2f4e4ea68a"
+    },
+    {
+      "name": "conjunctive-refusal",
+      "want": "record_nodes",
+      "groups": 16,
+      "observations": 1024,
+      "analyses": 16,
+      "selected_members": 120,
+      "record_nodes": 43779,
+      "expected_nodes": 43283,
+      "record_bytes": 761570,
+      "expected_bytes": 720019,
+      "record_sha256": "529386d0704f6409c2b69f75ca529e87375e4f865393e21f63222982b5abb314",
+      "expected_sha256": "3fa1a7c3cca1b425a74ca216cdc76d37378fd06cf9825ac9a43d7ce2d17d9a64"
+    }
+  ],
+  "controls": 36,
+  "passed": 0
+}

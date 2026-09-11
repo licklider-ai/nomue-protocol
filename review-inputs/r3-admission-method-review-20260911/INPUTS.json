@@ -1,0 +1,32 @@
+[
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/measure.py",
+    "bytes": 11794,
+    "sha256": "d2fe453d7a1968eafd51f26b7d52ac3e5b9ae7006c429ddbf078c7d0bc61e7a8",
+    "commit": "f6ac2219f81749cd62bd61563146f1f0b5146085"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/prepare.mjs",
+    "bytes": 2716,
+    "sha256": "88cbf683ee08e920ab93af73902dc4550bfbf9a044a869bbcf177728cbfc5a0a",
+    "commit": "f6ac2219f81749cd62bd61563146f1f0b5146085"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/README.md",
+    "bytes": 5752,
+    "sha256": "a9a2712024512be8f6c7bd45147ae7366c1851a3439b4073b3316904c30be113",
+    "commit": "f6ac2219f81749cd62bd61563146f1f0b5146085"
+  },
+  {
+    "path": "governance/drafts/release-3-preparation/holm-execution-admission-20260911/SCOPE.md",
+    "bytes": 8800,
+    "sha256": "f6c8190427fb009f1c9680c8364ce180ba6e7c8dfe4e6caa93ca6bf9268e078e",
+    "commit": "f6ac2219f81749cd62bd61563146f1f0b5146085"
+  },
+  {
+    "path": ".github/workflows/r3-execution-admission.yml",
+    "bytes": 1429,
+    "sha256": "e75513511e9747c2bed9fa760c41314a3bae828325f9c6f24b846e29731aa1a3",
+    "commit": "f6ac2219f81749cd62bd61563146f1f0b5146085"
+  }
+]
