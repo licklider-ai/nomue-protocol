@@ -1,0 +1,21 @@
+name: R3 Holm adoption map
+on:
+  pull_request:
+    paths:
+      - "governance/drafts/release-3-preparation/holm-adoption-map-20260911/**"
+      - ".github/workflows/r3-holm-adoption-map.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  adoption-map:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: node governance/drafts/release-3-preparation/holm-adoption-map-20260911/check.mjs

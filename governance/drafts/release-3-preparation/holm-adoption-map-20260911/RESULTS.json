@@ -1,0 +1,11 @@
+{
+  "base": "2ee34a5eae70ca2913dffeb4e42b155d344d2023",
+  "proposed_requirements": 16,
+  "public_schemas": 4,
+  "property_declarations": 357,
+  "source_pins": 59,
+  "negative_controls": 3,
+  "registry_meta_schema": "PASS",
+  "readiness": "NOT_READY_FOR_ADOPTION",
+  "reason": "Checkpoint implementation, output decision, permanent fixture/surface references, authoritative coupling and RFC decision remain open."
+}

@@ -1,0 +1,64 @@
+{
+  "status": "proposed field ownership by longest schema-pointer prefix; structural inventory, not proof of semantic coverage",
+  "schemas": [
+    {
+      "name": "record",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "future_path": "schemas/record/record-holm-0.3.schema.json",
+      "owners": {
+        "/properties/payload/properties/contract_id": "NRS-CONTRACT-HOLM-0001",
+        "/properties/payload/properties/declaration": "NRS-PROFILE-IMGC-0001",
+        "/properties/payload/properties/inputs": "NRS-CONTRACT-HOLM-0002",
+        "/properties/payload/properties/result": "NRS-CONTRACT-HOLM-0007",
+        "/$defs": "NRS-PROFILE-IMGC-0001",
+        "": "NRS-CONTRACT-HOLM-0010",
+        "/properties/payload/properties/result/properties/adjusted/items/properties/adjusted_hex": "NRS-CONTRACT-HOLM-0003",
+        "/properties/payload/properties/result/properties/adjusted/items/properties/display_hex": "NRS-CONTRACT-HOLM-0004",
+        "/$defs/declaration/properties/analyses/items/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/operation_kind": "NRS-PROFILE-IMGC-0002"
+      }
+    },
+    {
+      "name": "expected",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "future_path": "schemas/reports/holm-expected-0.3.schema.json",
+      "owners": {
+        "/properties/declaration": "NRS-PROFILE-IMGC-0001",
+        "/properties/inputs": "NRS-CONTRACT-HOLM-0002",
+        "/$defs": "NRS-PROFILE-IMGC-0001",
+        "": "NRS-CONTRACT-HOLM-0005",
+        "/$defs/declaration/properties/analyses/items/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/operation_kind": "NRS-PROFILE-IMGC-0002",
+        "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/operation_kind": "NRS-PROFILE-IMGC-0002"
+      }
+    },
+    {
+      "name": "report",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "future_path": "schemas/reports/holm-report-0.3.schema.json",
+      "owners": {
+        "/properties/guarantee_boundary": "NRS-CONTRACT-HOLM-0013",
+        "/properties/checks": "NRS-CONTRACT-HOLM-0008",
+        "/$defs/check": "NRS-CONTRACT-HOLM-0008",
+        "": "NRS-CONTRACT-HOLM-0011"
+      }
+    },
+    {
+      "name": "refusal",
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "future_path": "schemas/reports/holm-refusal-0.3.schema.json",
+      "owners": {
+        "": "NRS-CONTRACT-HOLM-0009"
+      }
+    }
+  ]
+}

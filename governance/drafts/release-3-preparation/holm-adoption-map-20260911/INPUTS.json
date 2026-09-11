@@ -1,0 +1,241 @@
+{
+  "base": "2ee34a5eae70ca2913dffeb4e42b155d344d2023",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "path": "CHARTER.md",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "path": "authority/authority-manifest.yaml",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "path": "governance/RFC.md",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/CANDIDATE-INDEX.md",
+      "sha256": "8548243fc5e43c032751d2f9606f95ae94b0ccda7607206c376357380ac8fe54"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/CONTRACT.md",
+      "sha256": "eae0ce8fc975066d08826c1c2b92963ae244a7d8651fe304993ef0afca3771c2"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/COUPLING.md",
+      "sha256": "c1ddaed2d55f5f7fb4455262235860449c9e7dfba852ea5936ca1617a6e08d17"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/INPUTS.json",
+      "sha256": "cfeeefa2cc1504e60ddbbdd78972c65ed1684ba577a560e235412e5fcc88c5e3"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+      "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/README.md",
+      "sha256": "6d085c4a28206af7c37e1a56cecf451d74a059a1e3daa438d6854bee8579e2fb"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+      "sha256": "b315de22b50fc5a967e15f29ec193687a72b1ba4facd0e3a7cced5f58c19b40e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/TEMPLATES.json",
+      "sha256": "542da40be00f9bd2650d1b094d6eacd8f6bf7fddf8ae0c81c529d465621be996"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/VALIDATION.md",
+      "sha256": "3276c6d2c55f69302ca7bda32ef17844f56c93278dab123277c568b4a752db60"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/build_candidate.py",
+      "sha256": "d79285e902c8832b7f92e3f41d415a32742da308e5bbf3cd394eae72b085a3e0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/bundle.json",
+      "sha256": "6cf36c5d4a3d3a6c032d3682dc6b711389a91dc3ee7a285e8d6fe7c135ddaae2"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/check-policy.json",
+      "sha256": "42b1bedc39e7a1dbb15a8a3823eb437079a0e55b6bcfe990a26bf21e3346f465"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/ci_host.py",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/diagnostics.json",
+      "sha256": "b412b84303db5fef10fc757104f4bd74e37212db357ee6618c148d254586dcd5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/entry.mjs",
+      "sha256": "dcc788a2540c0d85385fad98a7dcbb09e08e1649537cb4ea73818443edee6a77"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/envelope.mjs",
+      "sha256": "5982798a1c9f9b8b588504ecef8df218ba8932ac8f0df33bcbfbe4d296722e34"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-expected.json",
+      "sha256": "ae1aedeab8937456020a1033d237dbbefbb3c91ed3e19dbf3f648081f192f683"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-refusal.json",
+      "sha256": "778794f5858531f0e1ff410b3d1b9f96260acf0b48a8a200702eb080e123c4df"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-public-report.json",
+      "sha256": "6b539fde55316832ad8a4fe0e9abb8200722b86a4fe2b2a03002d0fa03ad8ace"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-record.jcs",
+      "sha256": "53ac6a6f58d55b92b269aa915795f745a35bc248dec97a856f30477ef76ef675"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/example-report.json",
+      "sha256": "6003c949170449e9d0212d2f190f1c82e76d495ce7a946d745a9dc5ee2efb279"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/expected.schema.json",
+      "sha256": "e0dcdb6abf14dca3acca709187d7fedf537213e6e452ee48bad2a48da0ef45ae"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/identities.json",
+      "sha256": "b68132952f0038c173f56e059c3722e4258ee776cac032f5e8f8e825eaae30ae"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/index.mjs",
+      "sha256": "0e24d389f041b85f7ea805367486ded412bfca1a3ea7d3b12a6a67896388bfc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/outcomes.json",
+      "sha256": "a6e1f55c0ae69c857b8f352a0b316ec3aa0e973ed73069bd9f0997751f888f28"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/pin_runtime.py",
+      "sha256": "193ea2171090e31aea4bf18d5b70e2e13346231872480e1c4c1f8cc9fbfafca3"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/prepare_cases.mjs",
+      "sha256": "468fd5c638032b0ac3b28a43aa30b5d6571118338c3396ec356849549e37176d"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-refusal.schema.json",
+      "sha256": "a347b164dba4b38164aacb9fc04c9d528538334aa68da8ff6cfff6f7620867dd"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/private-report.schema.json",
+      "sha256": "76894c1e49c24b29d884b5c96f9ab11030a4763d7de77431cb3a71eb8f0ddad5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/probes.mjs",
+      "sha256": "2f1a45800277f2ecb56cc9d1ed4baefd7491f9e792d4c66b2c7cbcd1ddf50829"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs",
+      "sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/record.schema.json",
+      "sha256": "0595f6df30eac7d3e8188800d4e594673f7a834dab49ed0c8e40b4166dad8ff0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/refusal.schema.json",
+      "sha256": "8057de0026d0d0a403f426d773bb1992e20c78d719bbce49f40c095925b617ca"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/report.schema.json",
+      "sha256": "cb7e03a39efa754d7e6db8e6cd91eedfdc26906e06d2fd77a640ab3eef43e1cd"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/supervisor.py",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_envelope.mjs",
+      "sha256": "b4cd5282fd3ac19f4c273babc4112de4ae425e431d1af3c65eee18870e6e6da9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_execution.py",
+      "sha256": "41692bd2377d154d2257d38edbd8942faa0af4525152a56b3a264f6778a0beb4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_public.mjs",
+      "sha256": "b8ad18bf027cab7f663a85fa4ea0272d84e9d0367ad65e155e7cf2c19f56dd66"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_receipts.mjs",
+      "sha256": "7488721c6d25cbe7262366a681480d41e7a7dde014cbe2f313af61afd471bcd0"
+    },
+    {
+      "path": "reference/verifier/src/limits.ts",
+      "sha256": "1309fac987b7ea787cdc7ce30b086111c1414e5f74beef78d8f80dbff44b9bc2"
+    },
+    {
+      "path": "registries/interpretation-bundles.yaml",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290"
+    },
+    {
+      "path": "registries/public-checks.yaml",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9"
+    },
+    {
+      "path": "registries/public-contract-surfaces.yaml",
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a"
+    },
+    {
+      "path": "registries/reason-codes.yaml",
+      "sha256": "1bbe75c9898eb2692a34aafff2b9dba7a5a8de2f48bfde7f0145e3d6e47bbe05"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "path": "review-inputs/r3-holm-public-candidate-review-20260911/INTEGRATION.json",
+      "sha256": "74202622990fdf971a250d1403a770042183c867ab126cbe4c2c55e24781bf45"
+    },
+    {
+      "path": "review-inputs/r3-holm-public-candidate-review-20260911/README.md",
+      "sha256": "bed248de4e3ab28f0ebe814df3a8e44b101146ea342b603f438bdf4dbd83bc8f"
+    },
+    {
+      "path": "review-inputs/r3-holm-public-candidate-review-20260911/b2-closing/ADDENDUM.md.txt",
+      "sha256": "d9ee384a880189eb9c9e820368e61c38946394e835c90f19e09ccc5031f73cac"
+    },
+    {
+      "path": "review-inputs/r3-holm-public-candidate-review-20260911/b2-closing/REPORT.md.txt",
+      "sha256": "4c93553fe58c398d943adee803293c838592534a7ff55c39f76c498cd00c319e"
+    },
+    {
+      "path": "schemas/meta/requirements-registry.schema.json",
+      "sha256": "1827f06b528f3fe3fcf6f8aec97131acf2d3a24b6db8b77073f5b7d292a798c4"
+    },
+    {
+      "path": "spec/verification/public-checks.md",
+      "sha256": "b815e17687fb72d3ae8171127b20c69c3ad44513279332709f6ad154e04634a8"
+    }
+  ]
+}
