@@ -1,0 +1,103 @@
+# Holm B-2 closing review
+
+Date: 2026-09-11 UTC. Repository under review: `/workspace/scratch/367118710fbf/nomue-protocol`, branch `proposal/r3-holm-public-candidate-20260911`, HEAD `234abcaf256eac491a68b4b4b1593bf3983a8992`, with the public-candidate directory present as untracked working-tree material. This report makes no repository changes.
+
+## Determination
+
+**No blocker found for bounded B-2 promotion of the pinned ordinary unweighted supplied-p Holm numerical method and the current public-candidate mapping.** My recommendation is:
+
+| Item | Closing recommendation | Boundary |
+| --- | --- | --- |
+| B1 / Holm source applicability | **Close for this bounded arithmetic slice.** The proposal's ordinary Scheme 1 basis and adjusted-p derivation are applicable to supplied binary64 p encodings for all-pairs families of 3..120 members. | No p-generation validity, no family-selection validity, no scientific FWER guarantee, no alpha/significance output. |
+| IEEE / binary64 source applicability | **Close by reuse for the unchanged choice.** The archived IEEE clause confirmation covers finite binary64 field interpretation and nearest, ties-to-even projection used here. | I did not perform a fresh full IEEE standard inspection. Signed-zero admission/rejection is a project policy choice, not an IEEE mandate. |
+| B2 / implementation and public-candidate closing | **Close for the pinned candidate bytes and public wrapper semantics inspected here.** The numerical code realizes the proposed exact-lattice transform; the public candidate retains exact contract identity, scoped reports/refusals, and no FWER claim. | Final RFC/governance decision, public identifier issuance, and supported-execution release decision remain separate. |
+
+## Reviewer provenance
+
+Accountable role: independent bounded numerical/methodology closing reviewer in a separate agent context. The commissioning task explicitly configured this reviewer as `gpt-5.5`; I cannot observe or attest the served model build from inside the runtime. I do not attest the proposal author's model or human provenance. No human expert review is asserted. No sub-agents were used.
+
+This review used the repository instructions and RFC research-gate rules. It treats reference code and evidence records as evidence only; Protocol meaning remains with the appropriate authoritative artifacts and future governance decision.
+
+## Evidence basis
+
+I read and pinned the repository governance instructions, the Holm proposal, the exact numerical files `candidate.py`, `worker.py`, `bridge.mjs`, the public-candidate files including `public.mjs`, `envelope.mjs`, schemas, identities and examples, the archived source-review inputs, and the earlier independent same-inherited-model applicability review. All material inputs are hashed in `INPUTS.json`.
+
+Primary-source evidence is reused from archived reviews rather than newly reacquired: `review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md` for Holm Scheme 1 and strong-FWER theorem boundaries, and `review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md` plus its intake/source metadata for binary64 and nearest/even facts. That reuse is appropriate because the inspected implementation and proposal keep the same ordinary supplied-p transformation, [0,1] binary64 domain, and display projection. I did not perform a fresh original-PDF/full-standard survey in this pass.
+
+I also used `/workspace/scratch/367118710fbf/holm-candidate-applicability-review` as prior evidence. Its 21,763-check result is useful corroboration, but I did not treat it as a substitute for this review's source-to-implementation judgment or tests.
+
+## Numerical implementation assessment
+
+The inspected numerical bytes are unchanged from the earlier pinned experiment:
+
+- `candidate.py` SHA-256 `70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606`
+- `worker.py` SHA-256 `d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9`
+- `bridge.mjs` SHA-256 `0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262`
+
+`decode` admits only nonnegative encodings no greater than positive one. Positive zero maps to lattice integer 0; negative zero, negative values, infinities, NaNs and values above one are refused by the domain check. The subnormal and normal branches implement the exact integer numerator on the `U = 2^1074` lattice.
+
+`transform` sorts by exact lattice value and original member position, computes `(m-rank)*P` with exact integers, applies a running maximum, clips at `U`, and maps adjusted values back to original member order. Equal input p encodings receive equal adjusted exact values because the first member in a tied block has the largest rank multiplier for that block and the cumulative maximum carries forward. Tie ordering is a deterministic project convention; it does not create a statistical claim.
+
+`project` performs one nearest, ties-to-even binary64 projection of the exact adjusted value `A/U` without intermediate floating arithmetic. Exact adjusted integer comparison remains essential because different exact adjusted values can share a display encoding.
+
+For `0 < alpha < 1`, the adjusted-value condition is equivalent to the ordinary Holm sequential comparisons under the reviewed assumptions. At `alpha = 1`, clipping can break that equivalence, so the candidate correctly accepts no alpha and emits no rejection/significance boolean. Binary64 `0.05` is not silently treated as exact rational `1/20`.
+
+`worker.py` rehashes and executes the pinned `candidate.py`, accepts only the private generated carrier, restricts the promoted slice to 3..120 members, and returns exact adjusted hex plus display hex. `bridge.mjs` adds the public-side preparation discipline: strict JSON, D0 validation, all-pairs 3..16 group scope, complete expected-context binding, member order, source-hypothesis uniqueness, exact adjusted and display comparison. The private worker carrier drops source-hypothesis IDs only after the full binding and origin tuple checks have already run.
+
+## Public candidate assessment
+
+The public candidate now carries the actual proposed Holm operation as `payload.contract_id` with exact constant:
+
+```text
+https://nomue.ai/id/contract/holm-supplied-p-contract/0.3.0-candidate.1
+```
+
+That constant matches `identities.json` and the `record.schema.json` `payload.contract_id` const. The public record and expected examples no longer contain the synthetic `example-contract-*` labels. The D0 declaration surfaces use closed `operation_kind` values for declaration/result-slot shape, including the selected `multiplicity_adjustment` slot. Those `operation_kind` values identify declaration shape, while `payload.contract_id` identifies the actual proposed Holm operation.
+
+I specifically reviewed the adapter choice flagged during the task: `envelope.mjs` first compares the actual record payload declaration and inputs to the caller-supplied expected context using the pinned JCS canonicalizer. Only after that equality does `legacyTexts` restore the one-to-one synthetic labels for the unchanged D0/bridge validation path. That is methodologically acceptable for this candidate because the original stored bytes/digest are not rewritten, the actual public operation identity remains `payload.contract_id`, and the legacy labels are private compatibility input for the unchanged bridge, not public operation identity.
+
+`public.mjs` maps trusted completed-supervisor receipts into public reports/refusals. For reports, it converts private `kind` to public `$schema`/`report_type` and private reasons to registered-style `reason_codes`, then validates the public output. For execution failures and malformed completed receipts, it maps through the declared precedence/policy rather than returning partial arithmetic success. `validatePublic` reverses the mapping and checks schema/policy consistency. I found no claim regression: reports remain scoped, refusal outputs remain refusals, and the guarantee boundary includes `familywise_error_control: not_asserted`, `scientific_validity: not_asserted`, `declaration_truth: not_asserted`, and `p_generation: outside_scope`.
+
+## Independent tests performed
+
+I authored and ran `/workspace/scratch/367118710fbf/holm-b2-closing-review/independent_closing_tests.py`. It produced `RESULTS.json` with **1,414 checks passed** on Python 3.12.14 and Node v24.19.0. Coverage included:
+
+- 259 valid decode/domain cases and 5 invalid domain controls, including negative zero.
+- 1,098 projection cases using an independent rational binary-search oracle over binary64 encodings, plus 5 invalid projection controls.
+- 41 transform families, including tied values, all-pairs-sized families through 120 members, endpoint values, and a display collision.
+- 2 real isolated worker executions checked against the independent oracle.
+- 3 public receipt/refusal mapping smoke controls.
+
+I also replayed the candidate's intended Node tests with the required TypeScript loader:
+
+```text
+node --import tsx --test governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_public.mjs governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_envelope.mjs
+```
+
+Result: 82 envelope controls in 24 groups passed; 132 legacy fixtures passed; 91 public candidate controls passed.
+
+I ran the execution-control test with output in this review directory:
+
+```text
+python3 governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_execution.py --output /workspace/scratch/367118710fbf/holm-b2-closing-review/test_execution_results.json
+```
+
+Result: 7 controls passed; cgroup tests were `NOT_RUN`. This supports the mapping and local control behavior exercised here, but does not establish a universal resource-enforcement claim.
+
+## Findings
+
+No BLOCKER.
+
+No SHOULD-FIX for numerical methodology or public mapping was found in the inspected candidate. The operation-kind/public-contract change is a methodological improvement over exposing synthetic bridge labels as operation identity, provided it remains described as a candidate/unissued surface.
+
+Residual boundaries remain and should not be collapsed into this closing recommendation:
+
+1. The final RFC/governance decision is still separate from this reviewer recommendation.
+2. Issuing permanent identifiers, coupled conformance fixtures, and release/publication remains outside this report.
+3. The current review does not establish p-generator validity, selection validity, rounded-input FWER, omnibus preconditions, intervals, weighted/product-form Holm, Hochberg, FDR, many-to-one families, or arbitrary contrast families.
+4. Supported-execution resource guarantees require their own selected-environment evidence. The cgroup branch was not run in my local execution test.
+5. Any change to `candidate.py`, `worker.py`, `bridge.mjs`, or the public mapping/identity semantics should reopen the affected part of this review.
+
+## Closing recommendation
+
+Promote the bounded candidate as review-ready for the next governance decision with B1, IEEE, and B2 treated as satisfied for the pinned ordinary unweighted supplied-p Holm arithmetic slice and the inspected public candidate semantics. Record the final decision separately and keep the report language scoped: arithmetic consistency of supplied declarations and encodings, not scientific validity or familywise-error control for arbitrary studies.

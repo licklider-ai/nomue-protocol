@@ -1,0 +1,14 @@
+{
+  "status": "unissued proposed check-owned policy",
+  "check_id": "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.1",
+  "denominator_power_of_two": 1074,
+  "exact_numerator_tolerance": 0,
+  "display_bits_tolerance": 0,
+  "projection": "binary64_round_ties_to_even",
+  "sort": "exact_p_then_original_index",
+  "alpha_input": false,
+  "groups_min": 3,
+  "groups_max": 16,
+  "members_min": 3,
+  "members_max": 120
+}

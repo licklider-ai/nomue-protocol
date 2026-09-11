@@ -1,0 +1,12 @@
+82 controls in 24 groups passed; 132 legacy fixtures passed
+✔ governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_envelope.mjs (2200.765661ms)
+91 public candidate controls passed
+✔ governance/drafts/release-3-preparation/holm-public-candidate-20260911/test_public.mjs (1105.850853ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2208.779617

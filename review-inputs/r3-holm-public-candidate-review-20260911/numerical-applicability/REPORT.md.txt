@@ -1,0 +1,171 @@
+# Bounded supplied-p Holm numerical applicability review
+
+Date: 2026-09-11 UTC. Public repository base:
+`234abcaf256eac491a68b4b4b1593bf3983a8992`.
+
+## Determination
+
+**PASS for the pinned numerical implementation and bounded applicability;
+B-2 qualifying-model closure remains unestablished by this review.** No numerical
+defect was found in the inspected `decode`, `project`, `transform`, or private
+worker. The implementation realizes the proposed ordinary unweighted supplied-p
+transformation and single nearest/even display on its stated nonnegative domain.
+The existing source facts remain applicable without a new methodological choice.
+
+This is useful independent implementation evidence for the coordinated unissued
+candidate. It is not adoption, registration, permission to publish supported
+behavior, public-wrapper conformance, or a scientific guarantee. It does not turn
+the preparation packet's sentinel identities into issued identifiers.
+
+## Role, independence, and custody
+
+Accountable role: bounded numerical investigator in a separate OpenAI Codex agent
+context, assigned under the RFC Research Gate. This context did not author the
+pinned candidate or its prior repairs. It inherited the parent model and visible
+task history; it was not a blind review, and no distinct model configuration or
+distinct served model is established. No model-build attestation or human expert
+review is available. No additional agents were used. The distinction between
+separate context and separate model is material here.
+
+The RFC's statistical/numerical gate requires a separate LLM/model primary-source
+pass. Existing source reports disclose their own requested configurations and
+limitations. This review neither changes their provenance nor supplies missing
+distinct-model provenance for the implementation-closing leg. A steward should
+not mark B-2 closed merely because this report exists or because its tests pass.
+The residual action can remain bounded to the pinned numerical implementation,
+source applicability, and claimed domain; no evidence found calls for a broad
+new Holm/IEEE literature survey.
+
+Only the public nomue-protocol repository and this review's output directory were
+used. Repository inputs have immutable commit, blob, size, and SHA-256 pins in
+`INPUTS.json`; the executed script checks those pins before importing candidate
+code. The local environment was Linux x64, Python 3.12.14. No network access or
+new original-PDF inspection was performed. The earlier primary reports are reused
+as attributed source evidence, not misrepresented as originals read here.
+
+## Source facts, derivations, and policies
+
+| Claim                                                                          | Basis and pinpoint                                                                       | Applicability determination                                                                                                                                            |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ordinary unweighted sequential rejection                                       | PR #289 source report, Scheme 1 row, Holm printed pp. 66-67                              | Reused within exactly this procedure. Product-form and weighted alternatives remain excluded.                                                                          |
+| Strong FWER without joint independence, conditional on valid individual levels | PR #289, Theorem 1 and marginal-validity rows, printed pp. 65-68                         | A conditional source theorem, not a guarantee for arbitrary supplied encodings. No p generator, family-selection justification, or validity assessment is implemented. |
+| Finite binary64 represented set and fields                                     | PR #294 report, IEEE 754-2019 clauses 3.3, 3.4, 3.6 / Table 3.5                          | Independent applicability to Holm: the restricted positive [0,1] subset uses the same binary64 fields and exact unit `2^-1074`. No interval or R4 kernel is imported.  |
+| Nearest/even projection                                                        | PR #294 report, clause 4.3.1                                                             | Applicable to a single exact `A/U` in [0,1]. Overflow behavior, negative nonzero values, and exception-state machinery are outside this calculation.                   |
+| Negative-zero rejection; positive-zero admission; no values above one          | S2 and inspected admission code                                                          | Project policies. IEEE distinguishes signed zeros and does not require these admission choices.                                                                        |
+| Cumulative maximum adjusted values                                             | S3; prior derivation review #290/#292 as mapped by `r3-holm-promotion-20c8e3b/REPORT.md` | A derived expression, not quoted from Holm. Independently checked below, including exact comparisons and clipping.                                                     |
+| Stable tie ordering and canonical lowercase integer/bit strings                | S2-S4 and bridge                                                                         | Deterministic project representations and ordering; they are not statistical recommendations attributed to Holm.                                                       |
+
+The reused received Holm PDF is identified by SHA-256
+`43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af`.
+The reused received IEEE PDF is identified by SHA-256
+`d6f6fef52ae93cdf8c8524451d144e00172555f008bf01a6f81da03aeff80e7a`.
+These identify the copies inspected by the prior reviewers, not newly downloaded
+or publisher-authenticated copies in this pass.
+
+## Implementation argument
+
+`decode` first restricts an eight-byte unsigned encoding to at most the encoding
+of one. This excludes all sign-bit values, infinities, NaNs, and numbers above
+one. Its subnormal and normal cases give exactly the IEEE field-derived lattice
+integer from the reused source review. Positive zero maps to integer zero.
+
+`transform` sorts the exact integers, using original index only to resolve ties.
+At rank i it forms the exact integer product `(m-i+1)*P_(i)`, takes the running
+maximum and clips at U. Since all terms are nonnegative, clipping each scan step
+is equivalent to clipping the final prefix maximum. The explicit inverse
+assignment returns values in original member order. For a tied block, its first
+product is largest within that block, so all tied members receive the same
+prefix maximum after clipping.
+
+For `0<alpha<1`, an adjusted value is at most alpha exactly when every earlier
+rank product is at most alpha. This is Scheme 1's sequential rejection rule.
+Clipping can make that equivalence false at alpha=1: three p values of 3/4 all
+have clipped adjusted value one, while the first Scheme 1 comparison at level
+one fails. The operation correctly accepts no alpha and emits no significance
+boolean. This review also retains the distinction between binary64 0.05 and the
+exact rational 1/20.
+
+`project` shifts to at most 53 significant bits, compares the discarded integer
+remainder with its exact midpoint, and increments on greater distance or an odd
+tie. It then handles a significand carry before assembling the bits. Near zero
+the integer lattice already represents every subnormal exactly; at the upper
+endpoint clipping keeps the argument at most one. No intermediate float rounding
+enters this implementation. Exact adjusted integer comparison remains necessary:
+distinct values can share one display encoding.
+
+The generic module allows 1..1024 members, but the bridge and worker restrict
+this slice to 3..120, with the bridge requiring `k*(k-1)/2` for 3..16 groups.
+Those generic extra sizes are not added to the candidate support domain. The
+bridge checks full expected declaration/input equality and source-hypothesis
+tuple uniqueness before reducing the private worker carrier. Dropping the
+source-hypothesis field from that private arithmetic message does not itself
+discard the earlier full-context comparison. This is a read-through assessment
+of the bridge's ordering, not a new complete D0/adversarial-wrapper review.
+
+## Independent checks
+
+`independent_checks.py` authored six fixed rational expectation families before
+loading candidate code. For small families its oracle enumerates every nonempty
+intersection, assigns the Bonferroni local level `min(1, |S|*min(p in S))`, and
+takes the maximum over intersections containing each hypothesis. It does not
+repeat the candidate's sorted running-maximum algorithm. For larger families it
+uses a separate threshold/set-cardinality characterization, cross-checked against
+the complete enumeration in every small generated case.
+
+The projection oracle binary-searches positive binary64 encodings using
+`struct.unpack` and exact `float.as_integer_ratio()` values, then compares exact
+distances to adjacent floats and applies low-bit parity. It does not reuse the
+candidate's significand-shift rounding algorithm. A third cross-check uses
+Python's rational-to-float conversion. These are standard-library software
+oracles, not hardware-certification evidence or an independent vendor runtime.
+
+Recorded results: **21,763 explicit checks passed**, both normally and with
+Python `-O`; the two result files are byte-identical. Principal coverage:
+
+- 408 exact encoding/lattice checks and 10 invalid-input controls.
+- Six hand-authored families, 240 closed-testing families with 3..8 members,
+  and 28 all-pairs families covering every group count 3..16.
+- 1,547 exact sequential-test comparisons in the stated alpha domain, plus
+  tied-member equality, the alpha=1 counterexample, and a display collision.
+- 9,295 projection cases and the same number of rational-to-float cross-checks,
+  including midpoint parity, adjacent values, exponent carries, subnormal/normal
+  boundaries, and one; five invalid projection arguments are refused.
+- Fourteen actual private-worker executions, seven fixed/max-size inputs in
+  ordinary and optimized isolated Python, compared against the independent
+  expected exact integers and display bits.
+
+These are bounded tests and a code argument, not exhaustive enumeration of all
+binary64 families. The seed is recorded; checks use explicit exceptions and do
+not disappear under optimized Python. There was no broad replay of old repository
+regression suites, no cgroup experiment, and no claim about current CI state.
+
+Reproduce from any location with the pinned public checkout:
+
+```text
+python3 independent_checks.py /path/to/nomue-protocol
+python3 -O independent_checks.py /path/to/nomue-protocol
+```
+
+## Residual conditions
+
+No numerical repair is requested for the reviewed bytes. Four boundaries remain:
+
+1. B-2's qualifying separate-model implementation/applicability determination is
+   not supplied by this same inherited-model review. Its absence is provenance,
+   not a newly discovered arithmetic defect.
+2. The coordinated public candidate's successor identifiers, schemas, reasons,
+   storage-byte handling, exact dispatch, and execution-result mapping require
+   their own integration checks. They were not yet fixed inputs to this report.
+3. Resource enforcement and cleanup evidence are separate from numerical
+   correctness. In particular, this report does not discharge NRS-SEC-0006's
+   in-process checkpoint obligation with external cgroup evidence.
+4. Any future scientific FWER claim needs valid marginal p-producing procedures,
+   relevant family/selection conditions, and rounded-input analysis. Range
+   admission, identity binding, exact arithmetic, and this review do not supply
+   those facts.
+
+Reuse this result only for unchanged pinned numerical bytes and covered domain.
+A later edit to the numerical code or an expanded domain reopens the affected
+implementation review. A wrapper change can reuse it only after explicitly
+checking that the wrapper still supplies exactly this admitted input and retains
+the exact integer as well as the display comparison.

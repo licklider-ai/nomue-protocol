@@ -1,0 +1,60 @@
+# Holm B-2 closing review addendum
+
+Date: 2026-09-11 UTC. This is a bounded final semantic addendum to `REPORT.md`, based on newly completed `CONTRACT.md` and `COUPLING.md` in the untracked `holm-public-candidate-20260911` packet, plus the previously omitted `declaration-shapes.json`. It does not replace the original report, test receipts, or input pins.
+
+## New inputs pinned
+
+| File | SHA-256 |
+| --- | --- |
+| `governance/drafts/release-3-preparation/holm-public-candidate-20260911/CONTRACT.md` | `eae0ce8fc975066d08826c1c2b92963ae244a7d8651fe304993ef0afca3771c2` |
+| `governance/drafts/release-3-preparation/holm-public-candidate-20260911/COUPLING.md` | `faa3fda38dcb60120992943c48733e25d7eaea407b44feb74ede041ef60d887d` |
+| `governance/drafts/release-3-preparation/holm-public-candidate-20260911/declaration-shapes.json` | `46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32` |
+
+Full addendum pins and source rechecks are in `ADDENDUM-INPUTS.json`.
+
+## Source pin recheck
+
+The reviewed source/schema/code files from the original report still match the original review pins. This includes `public.mjs`, `envelope.mjs`, the public/private schemas, `identities.json`, `outcomes.json`, and the unchanged numerical files `candidate.py`, `worker.py`, and `bridge.mjs`. I performed no new broad tests for this addendum because the requested review was semantic/documentary and the code pins remained unchanged.
+
+The original report said the review made no repository changes. That should be read with this qualification: I made no authored repository mutations, but my test replay commands did write/regenerate candidate example/result artifacts inside the untracked public-candidate packet. Current byte comparison shows those replay-written artifacts match the hashes captured in the original review inputs.
+
+## CONTRACT.md semantic check
+
+`CONTRACT.md` is consistent with the numerical and public semantics inspected in the original review.
+
+It correctly states that `payload.contract_id` directly identifies the bounded Holm operation and is not a library name, method alias, or synthetic D0 contract reference. It describes `operation_kind` as one of six closed declaration shapes and explicitly says those values describe declaration structure rather than an executed scientific procedure. That matches the inspected public schema/examples and the adapter path: public bytes and expected context carry `operation_kind`, while the private adapter restores the old `example-contract-*` labels only after complete context equality to reuse unchanged D0 relationship validation.
+
+The arithmetic description in C3 matches the inspected implementation: supplied lowercase binary64 hex in `[0,1]`; positive zero admitted; negative zero, NaN and infinity rejected; exact `U = 2^1074` lattice; sort by `(P, original_index)`; exact rank products, cumulative maximum and cap; exact adjusted numerator plus nearest-even `display_hex`; zero tolerances; no floating multiply/accumulate semantics; no alpha input and no significance output. It preserves the `0 < alpha < 1` derivation boundary and does not turn it into an FWER claim.
+
+The public outcome description in C5 matches the inspected report/refusal mapping. It keeps private short reasons internal, exposes public `reason_codes`, treats worker failure as arithmetic execution error rather than arithmetic disagreement, and maps outer enforcement/cancellation/cleanup failure to refusals that discard inner reports and forwarded bytes. It also explicitly states input-size availability as `not_observed`, which matches the public refusal schema and avoids inventing an observed size.
+
+C6 accurately records the supported-execution boundary as a candidate proposal rather than a universal resource claim. Its NRS-SEC-0006 discussion is especially important: the current engine has deterministic input caps and an external controller, but does not implement the existing in-process time/heap checkpoints. The document therefore does not claim compliance with that clause and instead records a successor requirement/adoption decision as still needed. That is consistent with my original residual-boundary finding.
+
+## COUPLING.md semantic check
+
+`COUPLING.md` is consistent with the governance boundary in the original report.
+
+It frames every item as informative proposed adoption work, states that no Requirement ID, public surface ID, or Protocol identity is allocated by the packet, and requires a future authoritative change set for normative adoption. It keeps research observations separate from authority, preserves old dispatch and old fixtures, and identifies the successor nature of the payload, expected context, report, refusal, check, bundle and public-surface changes.
+
+The coupling table matches the inspected public semantics: bounded Holm Contract/check allocation, `operation_kind` representation without fixture Contract IDs, exact bundle dispatch, storage-byte versus canonical-value distinction, five scoped checks with no aggregate status, successor refusal kinds/limit categories, explicit unknown input-size representation, and candidate-specific input/execution bounds.
+
+The NRS-SEC-0006 row is properly cautious. It proposes a new requirement scoped to the successor bundle for declared whole-call enforcement plus no forwarding after observed resource/cleanup failure, while saying the existing in-process checkpoint requirement and legacy implementation remain intact. It also states that applicability and requirement allocation need explicit decision and that controller evidence alone is insufficient. I see no regression against the original numerical/public recommendation.
+
+## declaration-shapes.json check
+
+`declaration-shapes.json` fills the omitted pin and supports the documented one-to-one adapter mapping:
+
+| `operation_kind` | Legacy private adapter label |
+| --- | --- |
+| `omnibus` | `example-contract-omnibus-v0` |
+| `pairwise` | `example-contract-pairwise-v0` |
+| `many_to_one` | `example-contract-many-to-one-v0` |
+| `planned_contrast` | `example-contract-planned-contrast-v0` |
+| `multiplicity_adjustment` | `example-contract-multiplicity-adjustment-v0` |
+| `interval` | `example-contract-interval-v0` |
+
+The file itself labels the shapes as unissued declaration shapes, not executable Contracts. That matches the public-candidate design reviewed here.
+
+## Addendum determination
+
+No blocker or new should-fix finding. The new documents strengthen rather than weaken the original review conclusion: they explicitly document the operation identity boundary, the declaration-shape-only role of `operation_kind`, the current unknown input-size successor proposal, and the unresolved NRS-SEC-0006 adoption decision. The original recommendation remains: B1/IEEE/B2 can be treated as satisfied for the pinned ordinary unweighted supplied-p Holm arithmetic slice and inspected public candidate semantics, with final governance/adoption decision separate.

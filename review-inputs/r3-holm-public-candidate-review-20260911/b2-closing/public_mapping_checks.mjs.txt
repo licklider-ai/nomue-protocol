@@ -1,0 +1,18 @@
+
+import assert from "node:assert/strict";
+import { publishReceipt, validatePublic } from "../nomue-protocol/governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs";
+const fixedNow=()=>"2026-09-11T00:00:00Z";
+const mkPrivRefusal=(reason, stage="raw", refusal_kind="parse_error") => ({
+  kind:"https://nomue.ai/id/schema/holm-supplied-p-refusal-private/0.3.0-candidate.1", stage, refusal_kind, reason
+});
+let r = await publishReceipt({category:"completed_valid", causes:{}, result:{output:mkPrivRefusal("record_malformed_json")}}, {now: fixedNow});
+assert.equal(r.output.output_type, "nomue-verifier-refusal");
+assert.equal(r.output.reason_codes.length, 1);
+assert.equal(await validatePublic(r.output), true);
+r = await publishReceipt({category:"deadline", causes:{deadline:true}}, {now: fixedNow});
+assert.equal(r.output.stage, "execution");
+assert.equal(await validatePublic(r.output), true);
+r = await publishReceipt({category:"completed_valid", causes:{deadline:true}, result:{output:mkPrivRefusal("record_malformed_json")}}, {now: fixedNow});
+assert.equal(r.output.reason_codes[0], "NRS-HOLM-COMPLETED-INVALID-OUTPUT");
+assert.equal(await validatePublic(r.output), true);
+console.log(JSON.stringify({public_mapping_checks:3}));

@@ -1,0 +1,206 @@
+#!/usr/bin/env python3
+import base64, hashlib, importlib.util, json, math, os, random, struct, subprocess, sys, tempfile
+from fractions import Fraction
+from pathlib import Path
+
+ROOT = Path(sys.argv[1]).resolve()
+OUT = Path(__file__).resolve().parent
+EXP = ROOT/'governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911'
+PUB = ROOT/'governance/drafts/release-3-preparation/holm-public-candidate-20260911'
+U = 1 << 1074
+random.seed(0xB2C109)
+checks = {}
+
+def inc(name, n=1): checks[name]=checks.get(name,0)+n
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+def load_candidate():
+    spec=importlib.util.spec_from_file_location('candidate_under_review', EXP/'candidate.py')
+    mod=importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod
+cand=load_candidate()
+
+# Independent binary64 helpers.
+def bits_to_fraction(bits):
+    if bits < 0 or bits > 0x3ff0000000000000:
+        raise ValueError('domain')
+    e=(bits>>52)&2047; f=bits & ((1<<52)-1)
+    if e==0: return Fraction(f, U)
+    return Fraction(((1<<52)+f) << (e-1), U)
+
+def lattice_from_bits(bits):
+    fr = bits_to_fraction(bits)
+    return (fr.numerator * U) // fr.denominator
+
+def float_from_bits(bits):
+    return struct.unpack('>d', bits.to_bytes(8,'big'))[0]
+
+def frac_to_nearest_even_bits(fr):
+    assert 0 <= fr <= 1
+    if fr == 0: return 0
+    # Search all positive encodings in [0,1]. Monotone by encoding in positive domain.
+    lo, hi = 1, 0x3ff0000000000000
+    while lo < hi:
+        mid = (lo+hi)//2
+        if bits_to_fraction(mid) < fr: lo = mid+1
+        else: hi = mid
+    upper = lo
+    lower = upper if bits_to_fraction(upper)==fr else upper-1
+    cands=[]
+    for b in {lower, upper}:
+        if 0 <= b <= 0x3ff0000000000000:
+            cands.append((abs(bits_to_fraction(b)-fr), b & 1, b))
+    return min(cands)[2]
+
+def expected_holm(ps):
+    order=sorted(range(len(ps)), key=lambda i:(ps[i], i))
+    out=[None]*len(ps); cumulative=0; products=[]
+    for rank, original in enumerate(order):
+        t=(len(ps)-rank)*ps[original]
+        products.append(t)
+        cumulative=min(U, max(cumulative,t))
+        out[original]=cumulative
+    return order, products, out
+
+# decode domain and signed zero.
+valid_bits=[0,1,2,(1<<52)-1,1<<52,0x0010000000000000,0x3fd0000000000000,0x3fefffffffffffff,0x3ff0000000000000]
+valid_bits += [random.randrange(0,0x3ff0000000000001) for _ in range(250)]
+for b in valid_bits:
+    got=cand.decode(b.to_bytes(8,'big'))
+    assert got == lattice_from_bits(b), (b, got, lattice_from_bits(b))
+    inc('decode_valid')
+for b in [0x8000000000000000,0xbff0000000000000,0x3ff0000000000001,0x7ff0000000000000,0x7ff8000000000000]:
+    try:
+        cand.decode(b.to_bytes(8,'big'))
+    except ValueError:
+        inc('decode_refusal')
+    else:
+        raise AssertionError('decode accepted invalid %x'%b)
+
+# Projection, including hand-picked midpoint ties and carry boundaries.
+proj_as=[0,1,2,(1<<52)-1,1<<52,U//2,U-1,U]
+for exp in range(0,1075,37):
+    if exp <= 1074:
+        proj_as.extend([max(0,(1<<exp)-1), min(U,1<<exp), min(U,(1<<exp)+1)])
+for _ in range(1000):
+    proj_as.append(random.randrange(0,U+1))
+# Exact midpoints between adjacent normal/subnormal floats exercise even rule.
+for b in [1,2,3,0x000fffffffffffff,0x0010000000000000,0x0010000000000001,0x3feffffffffffffe,0x3fefffffffffffff]:
+    mid=(bits_to_fraction(b)+bits_to_fraction(b+1))/2
+    if mid.denominator == U:
+        proj_as.append(mid.numerator)
+    else:
+        # numerator over denominator not always lattice aligned; skip integer-only candidate input.
+        pass
+for a in proj_as:
+    got=int.from_bytes(cand.project(a),'big')
+    want=frac_to_nearest_even_bits(Fraction(a,U))
+    assert got == want, (a, hex(got), hex(want))
+    inc('projection')
+for a in [-1,U+1,Fraction(1,2),'0',None]:
+    try:
+        cand.project(a)
+    except (ValueError, TypeError): inc('projection_refusal')
+    else: raise AssertionError('project accepted invalid')
+
+# Families: fixed, ties, max all-pairs, display collision.
+families=[]
+families.append([0, U//10, U//5])
+families.append([U//4, U//4, U//4, U//2])
+families.append([1,1,2,2,3,3])
+families.append([U, U//2, 0, U//3, U//3])
+# display collision from prior review, independently rechecked.
+families.append([3*U//4 + 9*(1<<1020), 3*U//4 + 8*(1<<1020), U//8])
+for k in range(3,17):
+    m=k*(k-1)//2
+    families.append([random.randrange(0,U+1) for _ in range(m)])
+for m in range(3,25):
+    families.append([random.choice([0,1,U//7,U//5,U//3,U//2,U-1,U,random.randrange(0,U+1)]) for _ in range(m)])
+for fam_i, ps in enumerate(families):
+    members=[]
+    for i,p in enumerate(ps):
+        bits=frac_to_nearest_even_bits(Fraction(p,U)) if p not in (U-1,) else 0x3fefffffffffffff
+        # If chosen via bits, candidate input is rounded p. Use decoded lattice.
+        P=lattice_from_bits(bits)
+        members.append({'hypothesis':f'h{i:03d}','origin':f's{i:03d}','p':bits.to_bytes(8,'big')})
+    decoded=[lattice_from_bits(int.from_bytes(m['p'],'big')) for m in members]
+    want_order, want_products, want_adj=expected_holm(decoded)
+    got=cand.transform({'family':'fam','revision':'rev','members':members})
+    assert got['order']==want_order
+    assert got['sorted_products']==want_products
+    assert got['adjusted_lattice']==want_adj
+    assert [int.from_bytes(x,'big') for x in got['display']]==[frac_to_nearest_even_bits(Fraction(a,U)) for a in want_adj]
+    # Equal p values get equal adjusted values.
+    for i in range(len(decoded)):
+        for j in range(i):
+            if decoded[i]==decoded[j]: assert got['adjusted_lattice'][i]==got['adjusted_lattice'][j]
+    inc('transform_family')
+# Display collision actually shares display but not exact value.
+a=3*U//4 + 9*(1<<1020); b=3*U//4 + 8*(1<<1020)
+assert a != b and cand.project(a)==cand.project(b)
+inc('display_collision')
+
+# Worker execution on fixed and 120-member family.
+for ps in [[0,U//10,U//5], [random.randrange(0,U+1) for _ in range(120)]]:
+    carrier={'family':'fam','revision':'rev','members':[]}
+    decoded=[]
+    for i,p in enumerate(ps):
+        bits=frac_to_nearest_even_bits(Fraction(p,U))
+        carrier['members'].append({'hypothesis':f'h{i:03d}','origin':f's{i:03d}','p':f'{bits:016x}'})
+        decoded.append(lattice_from_bits(bits))
+    proc=subprocess.run([sys.executable,'-I',str(EXP/'worker.py')], input=json.dumps(carrier,separators=(',',':')).encode(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True, timeout=30)
+    reply=json.loads(proc.stdout)
+    _,_,want=expected_holm(decoded)
+    assert reply['adjusted_hex']==[format(x,'x') for x in want]
+    assert reply['display_hex']==[f'{frac_to_nearest_even_bits(Fraction(x,U)):016x}' for x in want]
+    inc('worker_execution')
+
+# Public mapping smoke checks if candidate files exist and node supports modules.
+node=os.environ.get('NODE','node')
+js = OUT/'public_mapping_checks.mjs'
+js.write_text('''
+import assert from "node:assert/strict";
+import { publishReceipt, validatePublic } from "../nomue-protocol/governance/drafts/release-3-preparation/holm-public-candidate-20260911/public.mjs";
+const fixedNow=()=>"2026-09-11T00:00:00Z";
+const mkPrivRefusal=(reason, stage="raw", refusal_kind="parse_error") => ({
+  kind:"https://nomue.ai/id/schema/holm-supplied-p-refusal-private/0.3.0-candidate.1", stage, refusal_kind, reason
+});
+let r = await publishReceipt({category:"completed_valid", causes:{}, result:{output:mkPrivRefusal("record_malformed_json")}}, {now: fixedNow});
+assert.equal(r.output.output_type, "nomue-verifier-refusal");
+assert.equal(r.output.reason_codes.length, 1);
+assert.equal(await validatePublic(r.output), true);
+r = await publishReceipt({category:"deadline", causes:{deadline:true}}, {now: fixedNow});
+assert.equal(r.output.stage, "execution");
+assert.equal(await validatePublic(r.output), true);
+r = await publishReceipt({category:"completed_valid", causes:{deadline:true}, result:{output:mkPrivRefusal("record_malformed_json")}}, {now: fixedNow});
+assert.equal(r.output.reason_codes[0], "NRS-HOLM-COMPLETED-INVALID-OUTPUT");
+assert.equal(await validatePublic(r.output), true);
+console.log(JSON.stringify({public_mapping_checks:3}));
+''')
+try:
+    out=subprocess.run([node,str(js)], cwd=str(OUT.parent), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=40, check=True)
+    data=json.loads(out.stdout)
+    inc('public_mapping', data['public_mapping_checks'])
+except Exception as e:
+    (OUT/'public_mapping_error.txt').write_text(repr(e)+'\n')
+    raise
+
+result={
+  'status':'PASS',
+  'python':sys.version.split()[0],
+  'node':subprocess.run([node,'--version'],stdout=subprocess.PIPE,text=True).stdout.strip(),
+  'checks':checks,
+  'total_checks':sum(checks.values()),
+  'hashes':{
+    'candidate.py':sha(EXP/'candidate.py'),
+    'worker.py':sha(EXP/'worker.py'),
+    'bridge.mjs':sha(EXP/'bridge.mjs'),
+    'public.mjs':sha(PUB/'public.mjs'),
+    'envelope.mjs':sha(PUB/'envelope.mjs'),
+    'identities.json':sha(PUB/'identities.json'),
+    'outcomes.json':sha(PUB/'outcomes.json'),
+  }
+}
+(OUT/'RESULTS.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+print(json.dumps(result,indent=2,sort_keys=True))

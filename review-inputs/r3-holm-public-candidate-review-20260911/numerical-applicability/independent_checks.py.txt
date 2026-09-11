@@ -1,0 +1,205 @@
+"""Bounded independent oracles; run with the public repository root argument.
+
+Expectations use closed Bonferroni intersections and search of represented floats,
+not the candidate's rank scan or significand rounding implementation.
+"""
+import hashlib
+import importlib.util
+import itertools
+import json
+from pathlib import Path
+import random
+import struct
+import subprocess
+import sys
+from fractions import Fraction
+from functools import lru_cache
+
+ROOT = Path(sys.argv[1]).resolve()
+HERE = Path(__file__).resolve().parent
+PACKET = ROOT / 'governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911'
+U = 2**1074
+ONE = 0x3ff0000000000000
+COUNTS = {}
+
+
+def require(ok, label):
+    if not ok:
+        raise RuntimeError(label)
+    COUNTS[label.split(':')[0]] = COUNTS.get(label.split(':')[0], 0) + 1
+
+
+@lru_cache(maxsize=32768)
+def represented(bits):
+    # CPython's byte interchange plus exact integer ratio is independent of
+    # candidate.decode's exponent-field/lattice formula.
+    value = struct.unpack('>d', bits.to_bytes(8, 'big'))[0]
+    return Fraction(*value.as_integer_ratio())
+
+
+def nearest(a):
+    target = Fraction(a, U)
+    lo, hi = 0, ONE
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if represented(mid) <= target:
+            lo = mid
+        else:
+            hi = mid - 1
+    if represented(lo) == target or lo == ONE:
+        return lo.to_bytes(8, 'big')
+    dl, dr = target - represented(lo), represented(lo + 1) - target
+    chosen = lo if dl < dr or (dl == dr and lo % 2 == 0) else lo + 1
+    return chosen.to_bytes(8, 'big')
+
+
+def closed(p):
+    # Enumerate every nonempty intersection containing each hypothesis. Its
+    # Bonferroni local adjusted level is min(1, |S| * min(p in S)).
+    result = [Fraction(0)] * len(p)
+    for mask in range(1, 1 << len(p)):
+        members = [i for i in range(len(p)) if mask & (1 << i)]
+        local = min(Fraction(1), len(members) * min(p[i] for i in members))
+        for i in members:
+            result[i] = max(result[i], local)
+    return result
+
+
+def threshold_oracle(p):
+    # For each observed threshold t<=p_i, the maximal set with minimum t is
+    # the complete set {j:p_j>=t}. No sorting or cumulative rank scan is used.
+    return [max(min(Fraction(1), t * sum(x >= t for x in p)) for t in set(p) if t <= x)
+            for x in p]
+
+
+# Hand-authored fixed expectations precede importing/executing candidate code.
+FIXED = [
+    ([0, 0, 0], [Fraction(0)] * 3),
+    ([ONE, ONE, ONE], [Fraction(1)] * 3),
+    ([0x3fa0000000000000, 0x3fb0000000000000, 0x3fd0000000000000],
+     [Fraction(3, 32), Fraction(1, 8), Fraction(1, 4)]),
+    ([0x3fc0000000000000] * 3, [Fraction(3, 8)] * 3),
+    ([1, 2, 3], [Fraction(3, U), Fraction(4, U), Fraction(4, U)]),
+    ([0x3fe8000000000000, 0x3fe0000000000000, 0x3fc0000000000000],
+     [Fraction(1), Fraction(1), Fraction(3, 8)]),
+]
+
+
+def carrier(bits):
+    return {'family': 'review_family', 'revision': 'review_revision', 'members': [
+        {'hypothesis': 'h' + str(i), 'origin': 'shared_source', 'p': b.to_bytes(8, 'big')}
+        for i, b in enumerate(bits)]}
+
+
+def main():
+    pins = json.loads((HERE / 'INPUTS.json').read_text())
+    for entry in pins['repository_inputs']:
+        raw = (ROOT / entry['path']).read_bytes()
+        require(hashlib.sha256(raw).hexdigest() == entry['sha256'], 'input_hash:' + entry['path'])
+    spec = importlib.util.spec_from_file_location('reviewed_candidate', PACKET / 'candidate.py')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    rng = random.Random(0x20260911)
+    boundaries = [0, 1, 2, (1 << 52) - 1, 1 << 52, (1 << 52) + 1, ONE - 1, ONE]
+    bits_values = boundaries + [rng.randrange(ONE + 1) for _ in range(400)]
+    for b in bits_values:
+        expect = represented(b) * U
+        require(expect.denominator == 1 and module.decode(b.to_bytes(8, 'big')) == expect.numerator,
+                'decode')
+    invalid = [b'', bytes(7), bytes(9), bytearray(8), True, None,
+               (1 << 63).to_bytes(8, 'big'), (ONE + 1).to_bytes(8, 'big'),
+               (0x7ff0000000000000).to_bytes(8, 'big'), (0x7ff8000000000001).to_bytes(8, 'big')]
+    for value in invalid:
+        try:
+            module.decode(value)
+        except ValueError:
+            require(True, 'decode_refusal')
+        else:
+            raise RuntimeError('decode admitted out-of-domain value')
+
+    def family_check(bits, expected, label):
+        result = module.transform(carrier(bits))
+        require(result['adjusted_lattice'] == [int(x * U) for x in expected], label + '_exact')
+        require(result['display'] == [nearest(int(x * U)) for x in expected], label + '_display')
+        require(result['carrier'] == carrier(bits), label + '_identity')
+        return result
+
+    for bits, expected in FIXED:
+        require(closed([represented(b) for b in bits]) == expected, 'fixed_oracle')
+        family_check(bits, expected, 'fixed')
+    grid = [0, 1, 2, 0x3fa0000000000000, 0x3fb0000000000000,
+            0x3fc0000000000000, 0x3fe0000000000000, ONE - 1, ONE]
+    for _ in range(240):
+        n = rng.randrange(3, 9)
+        bits = [rng.choice(grid) if rng.randrange(2) else rng.randrange(ONE + 1) for _ in range(n)]
+        p = [represented(b) for b in bits]
+        expected = closed(p)
+        require(threshold_oracle(p) == expected, 'threshold_vs_closed')
+        result = family_check(bits, expected, 'closed_family')
+        alpha_values = [Fraction(1, 20), Fraction(1, 2)] + [x for x in expected if 0 < x < 1]
+        for alpha in alpha_values:
+            rejected = set()
+            for rank, i in enumerate(sorted(range(n), key=lambda i: (p[i], i))):
+                if p[i] > alpha / (n - rank):
+                    break
+                rejected.add(i)
+            require(rejected == {i for i, a in enumerate(expected) if a <= alpha}, 'stepdown_equivalence')
+        for a, b in itertools.combinations(range(n), 2):
+            if bits[a] == bits[b]:
+                require(result['adjusted_lattice'][a] == result['adjusted_lattice'][b], 'tie_invariance')
+    for k in range(3, 17):
+        n = k * (k - 1) // 2
+        for mode in range(2):
+            bits = [rng.choice(grid) if mode == 0 else rng.randrange(ONE + 1) for _ in range(n)]
+            family_check(bits, threshold_oracle([represented(b) for b in bits]), 'allpairs_family')
+
+    projections = [0, 1, (1 << 52) - 1, 1 << 52, U - 1, U]
+    # Adjacent midpoint parity, above/below midpoint, and carry across powers
+    # of two. Values are obtained from independent decoded adjacent encodings.
+    for exponent in range(2, 1024):
+        for lowbits in [0, 1, (1 << 52) - 1]:
+            b = (exponent << 52) + lowbits
+            midpoint = (represented(b) + represented(b + 1)) * U / 2
+            if midpoint.denominator == 1 and midpoint <= U:
+                center = int(midpoint)
+                projections.extend([center - 1, center, center + 1])
+    projections.extend(rng.randrange(U + 1) for _ in range(100))
+    for a in projections:
+        expect = nearest(a)
+        require(module.project(a) == expect, 'projection')
+        require(struct.pack('>d', float(Fraction(a, U))) == expect, 'float_conversion_crosscheck')
+    for value in [-1, U + 1, True, 0.0, None]:
+        try:
+            module.project(value)
+        except ValueError:
+            require(True, 'projection_refusal')
+        else:
+            raise RuntimeError('projection admitted out-of-domain value')
+    collision_a, collision_b = (3 * U // 4 + 9 * (U >> 54)), (3 * U // 4 + 8 * (U >> 54))
+    require(collision_a != collision_b and nearest(collision_a) == nearest(collision_b)
+            == bytes.fromhex('3fe8000000000004'), 'display_collision')
+    require(closed([Fraction(3, 4)] * 3) == [Fraction(1)] * 3 and Fraction(3, 4) > Fraction(1, 3),
+            'alpha_one_counterexample')
+    require(represented(0x3fa999999999999a) != Fraction(1, 20), 'decimal_alpha_identity')
+
+    worker_sets = [x[0] for x in FIXED] + [[rng.choice(grid) for _ in range(120)]]
+    for bits in worker_sets:
+        expected = threshold_oracle([represented(b) for b in bits])
+        message = carrier(bits)
+        for m in message['members']:
+            m['p'] = m['p'].hex()
+        for optimized in [False, True]:
+            run = subprocess.run([sys.executable, '-I', *(['-O'] if optimized else []), str(PACKET / 'worker.py')],
+                                 input=json.dumps(message).encode(), capture_output=True, timeout=10)
+            require(run.returncode == 0 and run.stderr == b'', 'worker_execution')
+            require(json.loads(run.stdout) == {
+                'adjusted_hex': [format(int(a * U), 'x') for a in expected],
+                'display_hex': [nearest(int(a * U)).hex() for a in expected]}, 'worker_oracle')
+    print(json.dumps({'status': 'PASS', 'checks': COUNTS, 'total_checks': sum(COUNTS.values()),
+                      'python': sys.version.split()[0], 'seed': '0x20260911',
+                      'independence': 'separate review context; same inherited model; no distinct served model attestation',
+                      'scope': 'pinned numerical core and private worker; not public wrapper conformance'}, indent=2, sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()
