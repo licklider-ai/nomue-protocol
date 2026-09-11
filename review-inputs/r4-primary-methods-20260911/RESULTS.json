@@ -1,24 +1,7 @@
 {
   "binary64_decode_cases": 8,
   "exact_tail_witness": "35995/524288",
-  "normalization_a_checked": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16
-  ],
+  "normalization_a_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
   "pairwise_sse_cases": 2,
   "root_brackets": [
     {
