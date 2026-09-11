@@ -25,6 +25,9 @@ starts. That preflight is retained. A tiny launcher enters a fresh D/supervisor
 before exec of the supervisor; D/calls/call-ID contains the original limited call.
 The test records hierarchical memory.peak at D and the original call-leaf peak.
 D is a measurement hierarchy without a newly asserted 512 MiB aggregate limit.
+Initial current/peak charges are recorded even before tasks enter; a newly created
+cgroup is not assumed to have zero kernel memory charges. They are not subtracted
+from the later hierarchical peak.
 The launcher allocations made before cgroup membership and pre-existing shared
 page charges are not retroactively moved into D.
 

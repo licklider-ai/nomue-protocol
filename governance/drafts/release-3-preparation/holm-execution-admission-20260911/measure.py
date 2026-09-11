@@ -106,7 +106,10 @@ def trial(directory, case, node):
         (d / 'supervisor').mkdir()
         (d / 'calls').mkdir()
         (d / 'calls' / 'cgroup.subtree_control').write_text('+cpu +memory +pids')
-        assert int((d / 'memory.peak').read_text()) == 0, 'fresh measurement hierarchy'
+        # A fresh empty cgroup can already have kernel charges; never subtract peaks.
+        row['outer_initial_peak_bytes'] = int((d / 'memory.peak').read_text())
+        row['outer_initial_current_bytes'] = int((d / 'memory.current').read_text())
+        assert kv(d / 'cgroup.events')['populated'] == 0, 'fresh hierarchy has tasks'
         before = kv(d / 'memory.events')
         before_pids = kv(d / 'pids.events')
         # The tiny trusted launcher joins before exec. Its earlier allocations are excluded.
