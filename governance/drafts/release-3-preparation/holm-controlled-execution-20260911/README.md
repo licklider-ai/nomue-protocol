@@ -6,6 +6,12 @@ The numerical kernel, bridge, envelope and public registries remain unchanged.
 The historical [investigation](../holm-execution-investigation-20260911/README.md)
 is retained; this packet is the current implementation instruction.
 
+The later [R3 boundary assessment](../holm-execution-admission-20260911/SCOPE.md)
+distinguishes this launcher's support obligations from hosted-service engineering.
+The [full-invocation admission experiment](../holm-execution-admission-20260911/README.md)
+adds cache-preparation and enclosing-hierarchy measurements without changing this
+implementation or retroactively changing its original observations.
+
 ## Execution and deployment contract
 
 Use Linux x64, Node v24.19.0 with native TypeScript stripping (no tsx/esbuild
