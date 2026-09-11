@@ -1,5 +1,17 @@
 # Release 2 Paired-t Candidate Surface
 
+## Current status and next work
+
+Candidate development and its bounded review-readiness round are at a stopping
+point. D2-D4 structural review and the final D5 review-readiness review have GO
+receipts. The final D2-D6 decisions, authoritative landing and publication remain
+open. Use [current release status](../RELEASE-STATUS.md) and the
+[ratification sequence](../release-2-steward-ratification-package.md).
+Pending wording in the chronology below describes earlier checkpoints; it is not
+an instruction to repeat completed reviews or proof of final adoption.
+
+## Preserved development chronology
+
 **Status: non-authoritative and unissued.** Every artifact in this directory is
 decision-preparation material for the open Release 2 review. Nothing here allocates
 a Requirement namespace, issues a Protocol identifier, registers support, changes a

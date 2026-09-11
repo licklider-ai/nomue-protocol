@@ -1,36 +1,32 @@
 # Release 3 Public-Review Preparation
 
-The [R3 review repair and active successors](r3-review-repair-20260911/README.md)
-record corrections to PRs #319–#323, executable checks and historical evidence limits.
+**Current status: public discussion open; first Holm implementation round saved
+and repaired through PR #328; no formal adoption.** See the
+[current R2/R3/R4 status and next tasks](../RELEASE-STATUS.md).
 
-**Current status: public discussion opened on 2026-09-09 in [Issue #274](https://github.com/licklider-ai/nomue-protocol/issues/274).**
-See the [actual opening receipt](public-opening-record.md) for PR #273 GO,
-fixed inputs, exclusions and the 30-day window. Earliest decision:
-2026-10-09T11:50:18Z. The preparation statuses and sequences below are historical
-and superseded by the receipt for current operational status; they do not request
-another opening review or start a second window. Scientific and numerical holds
-remain unchanged.
+Discussion [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) opened
+on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchanged
+30-day earliest decision at 2026-10-09T11:50:18Z. Reaching it does not adopt R3.
 
-Current first-capability work: the
-[R3 execution-boundary assessment](holm-execution-admission-20260911/SCOPE.md)
-and [admission review/evidence](../../../review-inputs/r3-admission-method-review-20260911/README.md)
-connect the bounded supplied-p Holm implementation to its remaining public
-Contract/schema/check/bundle work. Hosted-service capacity engineering is separate;
-these research observations do not adopt or publish Release 3.
+Use these active entry points:
 
-The [coordinated Holm public candidate](holm-public-candidate-20260911/README.md)
-now connects the bounded Contract, proposed identities, schemas, scoped outcomes,
-exact candidate dispatch and conformance controls. It remains unissued;
-[adoption changes and decisions](holm-public-candidate-20260911/COUPLING.md) are explicit.
+- [Holm candidate.3](holm-repaired-candidate-20260911/README.md): declaration,
+  arithmetic, output binding and controlled-execution implementation.
+- [Repaired adoption map](holm-adoption-map-repair-20260911/README.md): exact
+  field ownership, executed test references and conservative source closure.
+- [Review repairs](r3-review-repair-20260911/README.md) and
+  [additional findings / actual CI evidence](r3-followup-review-20260911/README.md):
+  recorded dispositions, human-review clarification and remaining evidence limits.
 
-The [checkpoint successor](holm-checkpoint-candidate-20260911/README.md) adds shared
-in-process time/heap budgets and discards partial results on exceedance. Its
-[actual-host integration evidence](../../../review-inputs/r3-holm-checkpoint-review-20260911/README.md)
-is preserved with source identity and hashes.
+Next is the bounded Holm adoption-preparation packet: connect final claims to
+covered reviews, explicitly dispose remaining B-2 applicability, settle the
+formal output/input-size and authority allocations, and assess RFC impact. This
+is not another broad source search or automatic approval of all fifteen methods.
 
-The [adoption map and restart point](holm-adoption-map-20260911/README.md)
-proposes Requirement allocations, inventories public fields and records the next
-checkpoint/output implementation decisions. It is non-operative preparation.
+Historical candidate.1, candidate.2, maps and exact review packets remain available
+at their original paths and commits. The earlier research and pre-opening account
+below is preserved chronology; its pending/opening-not-started sentences are not
+current instructions. Existing scientific exclusions and wider holds remain.
 
 ## Preserved pre-opening preparation record
 

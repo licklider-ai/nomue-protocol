@@ -8,6 +8,15 @@ Release 2 RFC review is recorded in
 Requirement namespace, freezes a numerical contract, registers support, or
 authorizes publication.
 
+## Current review receipts
+
+The [current release status](RELEASE-STATUS.md) connects the later D2-D4 structural
+GO and final D5 review-readiness GO, including reviewed Groups 1-4. Earlier
+candidate-progress descriptions below retain their dates and scope; pending
+review descriptions do not supersede those later receipts. The ratification
+sequence and authoritative stop condition remain operative. No D2-D6 decision is
+made by this navigation update.
+
 ## Completed reversible groundwork
 
 - Release 1 signed snapshot evidence, historical schemas, fixture/vector inputs, and

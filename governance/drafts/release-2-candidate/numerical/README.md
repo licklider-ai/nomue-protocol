@@ -1,5 +1,12 @@
 # Release 2 Paired-t Numerical Candidate
 
+Current receipt: [final review-readiness GO](../../../../review-inputs/r2-d5-final-review-readiness/REVIEW-RESULT.md)
+for the fixed candidate head, following reviewed Groups 1-4 and M2/M3 closures.
+The pending fields in the original JSON checkpoints remain their historical state.
+Final numerical selection and R2-D5 disposition are still open. Use the
+[current release status](../../RELEASE-STATUS.md) for next work; the checkpoint
+accounts below retain their original scope and do not replace later receipts.
+
 **Status: non-authoritative, unissued, and not numerically frozen.** The Steward has
 approved this direction for continued candidate development. That approval does not
 complete R2-D5, end the open RFC review, issue a Public Check, register a supported

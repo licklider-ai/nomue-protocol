@@ -1,5 +1,32 @@
 # Release 4 Research Preparation
 
+## Current status and next work
+
+**PUBLIC_DISCUSSION_OPEN; numerical experiments integrated with review receipts;
+public implementation and support decisions remain open.** Use the
+[current R2/R3/R4 status](../RELEASE-STATUS.md) for the operative next tasks.
+The unchanged earliest decision is 2026-10-09T05:59:47Z under
+[discussion #261](https://github.com/licklider-ai/nomue-protocol/issues/261) and its
+[opening receipt](public-discussion-opening-2026-09-09.md).
+
+The [integrated asset record](../research-asset-integration-20260911/README.md)
+connects arithmetic, tails, source supplements, complete outputs and the
+[submitted-evidence consumer](tail-evidence-experiment-20260911/REPORT.md).
+That report's appended review receipt supersedes its earlier review-pending
+introduction. Archive GO preserves the experiments; it is not numerical support
+or formal implementation approval.
+
+The next round prepares supported-domain/output policy, real resource enforcement,
+and Record/schema/check/conformance integration with the applicable bounded
+reviews. Opening preparation and the completed small experiments need not be
+repeated merely because their original requests still say pending.
+
+## Preserved preparation chronology
+
+The earlier navigation and pre-opening statements below describe their historical
+snapshots. They remain available for traceability, not as current pending tasks.
+Fixed reports and review inputs are unchanged.
+
 Current state: **PUBLIC_DISCUSSION_OPEN**, since 2026-09-09T05:59:47Z.
 See [discussion issue 261](https://github.com/licklider-ai/nomue-protocol/issues/261)
 and the [opening record](public-discussion-opening-2026-09-09.md).
