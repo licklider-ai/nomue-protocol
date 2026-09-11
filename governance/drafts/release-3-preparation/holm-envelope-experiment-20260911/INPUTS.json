@@ -1,0 +1,43 @@
+{
+  "base_commit": "6116ea1e4ff21c312a904ccf461f59554819c848",
+  "reviewed_body_head": "b0cfe157c22a868c2b45331b5fdbfebea2487bd0",
+  "status": "unissued full-envelope experiment; existing source and numerical reviews reused",
+  "runtime": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/d0.mjs",
+      "sha256": "ce5eca7a15ae13e198e177f2c6e07b625b6f34bcaf35ffcce7be680d4ecff85f"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.schema.json",
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/fixture-contracts.json",
+      "sha256": "5a534294d416637627e7ec158da71d4a8b47bcdd63f8e708eaef0a41293e5d18"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",
+      "sha256": "cdacf193d1d005e0f4fd9286dcb3ee6e7974d04f43570065ec221bd99d4c837a"
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    },
+    {
+      "path": "reference/verifier/src/jcs.ts",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    }
+  ]
+}
