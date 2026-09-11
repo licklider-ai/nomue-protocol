@@ -26,6 +26,14 @@ left open for reassessment. CLOSURE-RESULTS.json records actual returned outcome
 a planned row alone is not proof that a PR was closed. The three public RFC issues (#25, #274 and #261) remain open and retain their
 original minimum windows.
 
+## Completed delivery cleanup
+
+All 52 predecessor PRs were closed after rechecking their pinned heads.
+CLOSURE-RESULTS.json records each returned closure timestamp and disposition.
+The observed remaining open PR was this cleanup PR (#329); the three RFC issues
+were still open. No branch was deleted, and every original PR body was retained
+before appending its closure explanation.
+
 ## Current navigation
 
 [Release status](../RELEASE-STATUS.md) gives one current R2/R3/R4 view and explicit
