@@ -1,0 +1,1188 @@
+{
+  "scope": "CI evidence for the implementation commit; later archive-only commits preserve the source inputs listed below",
+  "tested_head": "634abfa0bc4055c7615df433b5942d412fb49747",
+  "tested_tree": "cd56f1fa3a8211662e4542e963fabc94fcac648b",
+  "runs": [
+    {
+      "conclusion": "success",
+      "created_at": "2026-09-11T20:22:45Z",
+      "event": "pull_request",
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "html_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34643891861",
+      "id": 34643891861,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "id": 103409923103,
+          "logs_url": null,
+          "name": "adoption-map",
+          "run_id": 34643891861,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm install --frozen-lockfile",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run NOMUE_EXPERIMENT_PYTHON=\"$(command -v python3)\" node governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 15,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "R3 Holm adoption map",
+      "run_attempt": 1,
+      "run_started_at": "2026-09-11T20:22:45Z",
+      "status": "completed",
+      "updated_at": "2026-09-11T20:23:10Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-09-11T20:22:45Z",
+      "event": "pull_request",
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "html_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34643891833",
+      "id": 34643891833,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "id": 103409923096,
+          "logs_url": null,
+          "name": "Full check (Linux x64)",
+          "run_id": 34643891833,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install (frozen lockfile)",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Environment report (process.versions, arch)",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Full check (format, lint, typecheck, validate, tests, generated diff, Phase 1 regression, Phase 2A suite, oracle comparison, example and refusal verification, evidence diffs)",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 19,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 20,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 21,
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "conclusion": "success",
+          "id": 103409923264,
+          "logs_url": null,
+          "name": "Phase 1 + 2A validation (Linux arm64)",
+          "run_id": 34643891833,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install (frozen lockfile)",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Environment report (process.versions, arch)",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Typecheck",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Supported-execution candidate trace and exact-verifier corpus",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Registry, schema, and audit validation",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Canonicalization and digest vectors",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Resource and refusal fixtures",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Examples (Phase 1 and Phase 2A)",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+              "number": 17,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 34,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 35,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 36,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 37,
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "conclusion": "success",
+          "id": 103409923359,
+          "logs_url": null,
+          "name": "Full check (Linux x64, Node 24)",
+          "run_id": 34643891833,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install (frozen lockfile)",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Environment report (process.versions, arch)",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Full check on Node 24 (V8 version-difference probe against the Node 22 baseline)",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 19,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 20,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 21,
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "conclusion": "success",
+          "id": 103409923368,
+          "logs_url": null,
+          "name": "Phase 1 + 2A validation (macOS arm64)",
+          "run_id": 34643891833,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install (frozen lockfile)",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Environment report (process.versions, arch)",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Typecheck",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Supported-execution candidate trace and exact-verifier corpus",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Registry, schema, and audit validation",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Canonicalization and digest vectors",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Resource and refusal fixtures",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Examples (Phase 1 and Phase 2A)",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+              "number": 17,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 34,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 35,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 36,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 37,
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "conclusion": "success",
+          "id": 103409923387,
+          "logs_url": null,
+          "name": "Phase 1 + 2A validation (Windows x64)",
+          "run_id": 34643891833,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Install (frozen lockfile)",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Environment report (process.versions, arch)",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Typecheck",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Supported-execution candidate trace and exact-verifier corpus",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Registry, schema, and audit validation",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Canonicalization and digest vectors",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Resource and refusal fixtures",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Examples (Phase 1 and Phase 2A)",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+              "number": 17,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 34,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 35,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 36,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 37,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "CI",
+      "run_attempt": 1,
+      "run_started_at": "2026-09-11T20:22:45Z",
+      "status": "completed",
+      "updated_at": "2026-09-11T20:25:06Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-09-11T20:22:45Z",
+      "event": "pull_request",
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "html_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34643891888",
+      "id": 34643891888,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "id": 103409922886,
+          "logs_url": null,
+          "name": "candidate",
+          "run_id": 34643891888,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm install --frozen-lockfile",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Candidate semantics and old-bundle regression",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run node governance/drafts/release-3-preparation/r3-review-repair-20260911/audit.mjs",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run python3 governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run git diff --exit-code",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Retain candidate observations",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 19,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 20,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "R3 Holm checkpoint candidate",
+      "run_attempt": 1,
+      "run_started_at": "2026-09-11T20:22:45Z",
+      "status": "completed",
+      "updated_at": "2026-09-11T20:23:15Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-09-11T20:22:45Z",
+      "event": "pull_request",
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "html_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34643891925",
+      "id": 34643891925,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "id": 103409923154,
+          "logs_url": null,
+          "name": "candidate",
+          "run_id": 34643891925,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Retain unsupported runtime path",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm install --frozen-lockfile",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_host_guard.mjs",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Candidate semantics and old-bundle regression",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Actual cgroup enforcement and public outcome conversion",
+              "number": 12,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run git diff --exit-code",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Retain candidate observations",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 24,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 25,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 26,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 27,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 28,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 29,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "R3 Holm public candidate",
+      "run_attempt": 1,
+      "run_started_at": "2026-09-11T20:22:45Z",
+      "status": "completed",
+      "updated_at": "2026-09-11T20:23:39Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-09-11T20:22:45Z",
+      "event": "pull_request",
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "html_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34643891882",
+      "id": 34643891882,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "id": 103409922999,
+          "logs_url": null,
+          "name": "admission",
+          "run_id": 34643891882,
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm/action-setup@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run pnpm install --frozen-lockfile",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Measure paired starts on this disposable hosted VM",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Upload admission observations",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 13,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 14,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run pnpm/action-setup@v4",
+              "number": 15,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "status": "completed"
+            }
+          ]
+        }
+      ],
+      "name": "R3 full-invocation admission research",
+      "run_attempt": 1,
+      "run_started_at": "2026-09-11T20:22:45Z",
+      "status": "completed",
+      "updated_at": "2026-09-11T20:24:26Z"
+    }
+  ],
+  "artifact": {
+    "archive_download_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10280939456/zip",
+    "created_at": "2026-09-11T20:23:35Z",
+    "digest": "sha256:5cb37a38197b1ae4bd00ac0804995c562b27219f802af9aca7b032fbfcb92737",
+    "expired": false,
+    "expires_at": "2026-12-10T20:22:45Z",
+    "id": 10280939456,
+    "name": "r3-holm-public-candidate",
+    "size_in_bytes": 51216,
+    "updated_at": "2026-09-11T20:23:35Z",
+    "url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10280939456",
+    "workflow_run": {
+      "head_branch": "repair/r3-followup-review-20260911",
+      "head_repository_id": 1344183347,
+      "head_sha": "634abfa0bc4055c7615df433b5942d412fb49747",
+      "id": 34643891925,
+      "repository_id": 1344183347
+    }
+  },
+  "source_inputs": [
+    {
+      "path": ".github/workflows/r3-holm-checkpoint-candidate.yml",
+      "sha256": "c21ce5f4ae8e889cb5c2c32c2ceef6630a8b404b662e4bda234900579e780b98"
+    },
+    {
+      "path": ".github/workflows/r3-holm-public-candidate.yml",
+      "sha256": "c5aa63df34a312e487e8e32720cca50712e3cd61d57516dc966f17ff267b9e30"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/INPUTS.json",
+      "sha256": "8188b3c2b07cb62a5c93b1f8c7f37a193029ba414a403e0ffbc0306098be71d7"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/INPUTS.json",
+      "sha256": "1f7944ecd7ab22fedfd13a0d27da360394fcdf6d46487568186d87b93605eae9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/README.md",
+      "sha256": "74178e667860c45febdc4567a0877717a4193c68e35a767853d05153bdde2615"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/ci_host.py",
+      "sha256": "2be1af002eeb10a4ffaba84b40aee21a46adfb77a8ce158ea6d6cd6f2b8a9881"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/entry.mjs",
+      "sha256": "077785d3b2f5e1f46c6127f1fa9e4ea05b3d0dc751d2a013c9b1524b77c04d1e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-public-report.json",
+      "sha256": "1cd57b9b1a91da5c2b93d6c3a3b8c9a2f2368b6f985e7e335ccf7c7cc360ef19"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-report.json",
+      "sha256": "d67f1610f8a564d29235551f2a63f17c82c77b7213a10f26f86ddb24449f05d1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/pin_runtime.py",
+      "sha256": "2e59bc0bfbb570953429b4dc24ed41f2cb2b9bfc9e6ceb41546b5b6fa0fa27ad"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_host_guard.mjs",
+      "sha256": "ebd7ccb9e19989ccbe88bab670ff69c9199b150b4e590f8d3b607384a67fffb9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs",
+      "sha256": "a4884fe4361d6434807b5b390e7990c10da3358fa0ee6c8e24e5cfe51bba53a4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_repairs.mjs",
+      "sha256": "d5f290e7a109a7bbf7d8c59ae09b793f67e82c5b16657bf514761026790a706c"
+    }
+  ]
+}

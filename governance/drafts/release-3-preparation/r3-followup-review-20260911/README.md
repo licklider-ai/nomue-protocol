@@ -87,3 +87,10 @@ formal-adoption evidence conditions retain their previously documented limits.
 The candidate README contains regression commands. The dedicated public workflow
 runs the Node 22 guard and cgroup/public projection controls; standard CI and the
 other active R3 workflows continue to run before merge.
+
+## Implementation verification
+
+[CI evidence for the follow-up implementation](ci/README.md) preserves the actual
+Node 22 refusal and cleanup receipt, regressions, all five successful standard
+jobs and all four successful active R3 workflows. It identifies the tested commit
+and the unchanged source inputs across the subsequent evidence-only addition.
