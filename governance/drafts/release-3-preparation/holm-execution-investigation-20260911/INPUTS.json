@@ -3,8 +3,7 @@
   "timezone": "UTC",
   "repository": "licklider-ai/nomue-protocol",
   "repository_commit": "8149731d9100b7faeae706be80cf37c7d7628dc9",
-  "scope":
-    "Linux x64 whole-call resource control for a trusted Node envelope verifier and one trusted Python worker",
+  "scope": "Linux x64 whole-call resource control for a trusted Node envelope verifier and one trusted Python worker",
   "review_role": "Separate execution-control primary-source investigator",
   "investigator": "/root/r3_execution_sources",
   "independence": {
@@ -70,12 +69,10 @@
     "getrlimit_linux_man_pages": "6.19"
   },
   "external_source_content_hashes": null,
-  "external_source_hash_limitation":
-    "Retrieved pages are mutable; not downloaded or hashed because execution unavailable",
+  "external_source_hash_limitation": "Retrieved pages are mutable; not downloaded or hashed because execution unavailable",
   "runtime_probe_status": "NOT_RUN",
   "execution_status": "BLOCKED",
-  "execution_blocker":
-    "exec-server transport disconnected; parent separately confirmed environment_offline HTTP 409",
+  "execution_blocker": "exec-server transport disconnected; parent separately confirmed environment_offline HTTP 409",
   "local_runtime_versions_observed": false,
   "cgroup_delegation_observed": false,
   "aggregate_memory_enforcement_observed": false,
@@ -87,6 +84,5 @@
   "release_gate_closure": "NONE",
   "intended_output_directory": "/workspace/scratch/367118710fbf/r3-execution-source-review-output",
   "local_files_created": false,
-  "handoff":
-    "Full English SOURCE-REVIEW.md and INPUTS.json delivered to authoring agent through collaboration messages for persistence"
+  "handoff": "Full English SOURCE-REVIEW.md and INPUTS.json delivered to authoring agent through collaboration messages for persistence"
 }
