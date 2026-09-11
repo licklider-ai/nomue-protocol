@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-11",
+  "scope": "Independent primary-source investigation; no independent kernel execution",
+  "repository": "licklider-ai/nomue-protocol",
+  "inspected_checkout_commit": "0169708c9c640a3fbf4e65ce37f1fd50b07e01b6",
+  "repository_inputs": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/supervisor.py",
+      "sha256": "3f09c6be35b11d4b060458ce1c7ba769f07c6fb9d01d874e7c37fc9e7daf0021",
+      "bytes": 16098
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/INPUTS.json",
+      "sha256": "c8f2e8ba68171075bdc3aa268ca09b0e34be90683349f8b9581cf725e8ac9a28",
+      "bytes": 8476
+    }
+  ],
+  "sources": [
+    {
+      "path": "Documentation/admin-guide/sysctl/vm.rst",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/Documentation/admin-guide/sysctl/vm.rst",
+      "sha256": "5cf010b57064fcb15c5d154be6f01e0522006a12d09007c0adcc99590689de64",
+      "bytes": 41001,
+      "scratch_acquisition_filename": "vm.rst"
+    },
+    {
+      "path": "Documentation/admin-guide/cgroup-v2.rst",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/Documentation/admin-guide/cgroup-v2.rst",
+      "sha256": "4c6248886425e22566f5b3b905939eef59d824007e11eaf6dd73933f08695559",
+      "bytes": 127813,
+      "scratch_acquisition_filename": "cgroup-v2.rst"
+    },
+    {
+      "path": "fs/drop_caches.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/fs/drop_caches.c",
+      "sha256": "1193ac531aac4d778cd8ec09010ed277b1c3250ad6f540c557ef9c8221f3d79d",
+      "bytes": 2390,
+      "scratch_acquisition_filename": "drop_caches.c"
+    },
+    {
+      "path": "mm/mincore.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/mm/mincore.c",
+      "sha256": "255fbe641fca9b78d9cccf08f03b2168b42f6cb3e8d9fddaceb7e11d7de4145f",
+      "bytes": 7697,
+      "scratch_acquisition_filename": "mincore.c"
+    },
+    {
+      "path": "mm/truncate.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/mm/truncate.c",
+      "sha256": "569d36cf7de40a3876515b80cfd0102a900e93a6d1f47c9156aec6f9ec1970e9",
+      "bytes": 27274,
+      "scratch_acquisition_filename": "truncate.c"
+    },
+    {
+      "path": "mm/vmstat.c",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.17/mm/vmstat.c",
+      "sha256": null,
+      "bytes": null,
+      "inspection": "Web retrieval and source line inspection, event-name table lines 1277-1278",
+      "download_limitation": "Local exact-byte download did not complete; no hash invented",
+      "scratch_acquisition_filename": null
+    }
+  ],
+  "source_baseline": "torvalds/linux tag v6.17; fetched source bytes are fixed by SHA-256",
+  "current_documentation_crosscheck": "https://kernel.org/doc/html/latest/admin-guide/sysctl/vm.html",
+  "runtime_pin_count": 41,
+  "local_operations": "Read-only inspection; no cache reset or cgroup mutation",
+  "source_storage": "Full upstream source downloads are scratch acquisition only and are not redistributed in the repository; URLs and exact retrieved-byte hashes are retained where available."
+}

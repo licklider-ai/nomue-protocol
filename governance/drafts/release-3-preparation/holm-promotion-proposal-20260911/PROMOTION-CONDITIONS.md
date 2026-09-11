@@ -3,6 +3,11 @@
 Informative inventory, 2026-09-11. No gate registry is created or modified.
 Row labels are local task references. Existing historical decisions remain intact.
 
+This is the historical proposal inventory. The later
+[execution-boundary assessment](../holm-execution-admission-20260911/SCOPE.md)
+connects PR #316-#318 and distinguishes per-invocation support evidence from
+hosted-service engineering. It preserves the wider promotion and publication rows.
+
 ## Current capability conditions
 
 | Row                                  | Present state                                                | Concrete next evidence or decision                                                                                                                                | Completion criterion and accountable role                                                                                                             |
