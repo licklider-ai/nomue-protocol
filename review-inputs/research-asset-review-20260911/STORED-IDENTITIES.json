@@ -1,0 +1,57 @@
+{
+  "role": "integration coordinator storage manifest; not reviewer-authored",
+  "formatting_derivatives": ["r3/reviewer_binding_checks.mjs", "r4/R4-ASSET-ARCHIVE-PINS.json"],
+  "original_bytes_suffix": ".txt",
+  "items": [
+    {
+      "path": "r3/EVIDENCE.json",
+      "bytes": 8295,
+      "sha256": "4dc066db0bf382b66e5c278f6ebab4edc6d58f783d0fcb4c9b3e765baa2ae752"
+    },
+    {
+      "path": "r3/ORIGINAL-SHA256SUMS.txt",
+      "bytes": 434,
+      "sha256": "0160be4d8f6305ebad17afa9a3cdd774406fbc4a5138d1b2aa350b52f8f01708"
+    },
+    {
+      "path": "r3/REPORT.md",
+      "bytes": 16515,
+      "sha256": "900b9c8b13df7c98eaf3129e8b106841d1a31fd7a1a1dd578b2b34f9f2c3fb18"
+    },
+    {
+      "path": "r3/pin-verification.json",
+      "bytes": 2658,
+      "sha256": "c5aac2565228968e530697b788733165809ec1d5a861fbd70c7e649d21742e06"
+    },
+    {
+      "path": "r3/reviewer_arithmetic_checks.py",
+      "bytes": 10011,
+      "sha256": "b812f48a6ca062aa29e17afa8c4547124ee9def92ace8e339269f5c00479f637"
+    },
+    {
+      "path": "r3/reviewer_binding_checks.mjs",
+      "bytes": 7784,
+      "sha256": "1c3514e81deac5a362fe2dd23a0b84e4b88c1dbc5f8cf86b28eaa8a95facf400"
+    },
+    {
+      "path": "r3/reviewer_binding_checks.mjs.txt",
+      "bytes": 7921,
+      "sha256": "83b8506b8c8f60cdc4171d99012d513a167b5f4488fb757d790d501037b033b5"
+    },
+    {
+      "path": "r4/R4-ASSET-ARCHIVE-PINS.json",
+      "bytes": 17217,
+      "sha256": "818e7b90e1351562d419ca4e6f826ae52e485ee746bd440e4517895592591252"
+    },
+    {
+      "path": "r4/R4-ASSET-ARCHIVE-PINS.json.txt",
+      "bytes": 17993,
+      "sha256": "a7b10a52e623eedda50041f054f736e415f3d5c02cd8341e681b2533711ba003"
+    },
+    {
+      "path": "r4/R4-ASSET-ARCHIVE-REVIEW.md",
+      "bytes": 14839,
+      "sha256": "55960d2e27470397586e5a1c320ec9fe7fa4dd3abd4089c718541a2d0b05a446"
+    }
+  ]
+}

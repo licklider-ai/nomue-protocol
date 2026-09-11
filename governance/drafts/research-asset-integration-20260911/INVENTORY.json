@@ -1,0 +1,2397 @@
+{
+  "date_utc": "2026-09-11",
+  "scope": "fixed PR and non-ancestor branch inventory; preservation does not establish scientific correctness or current support",
+  "initial_main": "8b9a95b2436fba0725e3f2753c5a41a2de24e8e3",
+  "inventory_prs": 99,
+  "non_ancestor_branches_without_open_pr_at_inventory": 98,
+  "remote_ref_count_including_origin_HEAD_and_main": 318,
+  "pr_disposition_counts": {
+    "superseded_by_corrected_numerical_stack_265": 1,
+    "history_included": 91,
+    "unique_self_review_extracted_other_deltas_superseded": 1,
+    "not_integrated_hook_false_positives_and_outdated_instructions": 1,
+    "tree_equivalent_no_new_assets": 1,
+    "review_blob_preserved_as_PR-251-REVIEW": 1,
+    "review_blob_preserved_as_PR-252-REVIEW": 1,
+    "review_blob_preserved_by_249": 2
+  },
+  "pull_requests": [
+    {
+      "pr": 174,
+      "title": "Record Release 3 multiplicity numerical research result",
+      "head": "9f39eafd4b0a676e6615956b5a7899f195fc0358",
+      "original_base": "main",
+      "disposition": "superseded_by_corrected_numerical_stack_265"
+    },
+    {
+      "pr": 179,
+      "title": "Record independent review of Release 4 research preparation",
+      "head": "f8e212a8c86b83b712933e3ac785d824220eb449",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 180,
+      "title": "Record preliminary Release 4 factorial numerical research",
+      "head": "5bae1f2548a7126c254c51b65b0eda4ae4941343",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 181,
+      "title": "Record bounded Release 4 factorial semantics research",
+      "head": "a2687f10719b399dafb511999cc1ef5b406a0c02",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 182,
+      "title": "Repair Release 4 preparation and record author-side adversarial audit",
+      "head": "973ae5d2062095989d491ab00450effb16770af5",
+      "original_base": "main",
+      "disposition": "unique_self_review_extracted_other_deltas_superseded"
+    },
+    {
+      "pr": 184,
+      "title": "Record independent exact-head review of Release 4 factorial research",
+      "head": "1d493622af970145925f35c8d2cd95f6cbf03cc7",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 186,
+      "title": "Integrate supplied primary sources and prepare SR-K and SR-G review",
+      "head": "9eee0caf6a423d509a996be71df8cff8b4d1e9df",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 187,
+      "title": "Record independent primary-source review of the SR-K and SR-G closure candidates",
+      "head": "f8c17dba9bb2e7cc5e3ebe5a9f837f54af0fdd88",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 188,
+      "title": "Record close-only review of the SR-K and SR-G source-closure repair",
+      "head": "a082036b734607c52c1219e9f396cd5bca8aec7b",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 189,
+      "title": "Record R3 acceptance preparation and R4 source follow-up",
+      "head": "b405512111699f262440d0b819dfa0977ad7b72a",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 190,
+      "title": "Guard preliminary R4 F-tail degree domain",
+      "head": "5962cc2def5b1aca7e30d219f12a9a6486ca7b11",
+      "original_base": "research/r4-factorial-numerics-58675e6",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 191,
+      "title": "Record independent review of the numerical degree-domain guard successor",
+      "head": "2e3698ba32c0dae6dcd07ab8c71272d990fbaf49",
+      "original_base": "research/r4-numerical-degree-guard-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 192,
+      "title": "Record additional independent primary-source review of SR-K and SR-G closure candidates",
+      "head": "54fb11a7f1e909a0c7135563885d235987358382",
+      "original_base": "research/r3-source-intake-srk-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 193,
+      "title": "Record sixteen additional R3 sources and initial research findings",
+      "head": "eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4",
+      "original_base": "research/r3-source-intake-srk-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 194,
+      "title": "Record independent exact-head review of the sixteen-source intake and SR-C synthesis (Parts D\u2013F)",
+      "head": "f3fa9767de2043de7ec54054b078b70b0765eb94",
+      "original_base": "research/r3-additional-source-intake-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 195,
+      "title": "Record SR-C primary-source completion review at the fixed head (Parts D\u2013F, six originals)",
+      "head": "c36318971244c26073078b848ab2f3c52f46010b",
+      "original_base": "research/r3-additional-source-intake-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 196,
+      "title": "Propose limited SR-C source closure after steward adjudication",
+      "head": "80ad520cf25e8cdf647f20e7d08d5bb426a85633",
+      "original_base": "research/r3-additional-source-intake-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 197,
+      "title": "Record independent delta review of the limited SR-C source-closure proposal (Part G)",
+      "head": "3828b82b0b2e79b7ba05f6eb771288c39d49435b",
+      "original_base": "research/r3-src-closure-proposal-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 198,
+      "title": "Complete bounded SR-B primary-source research from Dunn and Sidak",
+      "head": "f6d39534e85920a8331941126a6eb384244e34f1",
+      "original_base": "research/r3-src-closure-proposal-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 199,
+      "title": "Independent primary-source review of Part H SR-B completion (Dunn 1961, Sidak 1967)",
+      "head": "3059f6baca76dc93b5fbf248012f09132f3881f6",
+      "original_base": "research/r3-srb-primary-completion-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 200,
+      "title": "Record Hayter source findings for protected and modified LSD",
+      "head": "81835178ac49f189064e20d9babda219acfd7c5f",
+      "original_base": "research/r3-srb-primary-completion-20260907",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 201,
+      "title": "Add independent primary-source review of Part I SR-H C-H4 increment (Hayter 1986)",
+      "head": "92867850f00d9d3a0f0f62b527707cb198196f51",
+      "original_base": "research/r3-srh-lsd-primary-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 202,
+      "title": "Record Part I review repairs for table discrepancies and formula display",
+      "head": "1b2a1efa25d37b6cc140b788cbaab4f78e84ec2b",
+      "original_base": "research/r3-srh-lsd-primary-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 203,
+      "title": "Add independent delta review of Part J S-I1/S-I2 repair (Hayter 1986)",
+      "head": "f30cd00d01666ec07f2573d428fed6c92689ba85",
+      "original_base": "research/r3-srh-lsd-repair-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 204,
+      "title": "Record ordered-range source synthesis and bounded SR-H partial proposal",
+      "head": "070e5dd569f0dfcb6f15ec49daebc0544af217d9",
+      "original_base": "research/r3-srh-lsd-repair-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 206,
+      "title": "Record independent primary-source review of Part K ordered-range synthesis (PR #204)",
+      "head": "f1cbcca6e1ff06670d43d44bd38bf76a7a43833a",
+      "original_base": "research/r3-srh-range-synthesis-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 207,
+      "title": "Clarify step-up monotonicity and commission remaining SR-H primary review",
+      "head": "044078d3b19ff3307dc347b0b9e7ecbbed1750c6",
+      "original_base": "research/r3-srh-range-synthesis-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 209,
+      "title": "Add session naming guard and attribution settings for coding-agent sessions",
+      "head": "5a87f5c31feaee1f8f083a4a6e289478810251f6",
+      "original_base": "main",
+      "disposition": "not_integrated_hook_false_positives_and_outdated_instructions"
+    },
+    {
+      "pr": 211,
+      "title": "Record independent S-K1 repair review and Newman/Duncan primary-source completion for SR-H (PR #207)",
+      "head": "a5e921c07ea2ab4f0147864fd2323f607512ef0d",
+      "original_base": "research/r3-srh-range-review-followup-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 212,
+      "title": "Record cross-cutting adversarial independent review of the SR-H research result (PR #207)",
+      "head": "ec0840c0ae20d71fbca715cf1e41880f3b09a20a",
+      "original_base": "research/r3-srh-range-review-followup-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 213,
+      "title": "Record ordered-range monotonicity conflict and review evidence boundaries",
+      "head": "f7ab321477bbb4f6decefbf931615ff6966e9e6e",
+      "original_base": "research/r3-srh-range-review-followup-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 214,
+      "title": "Record close-only independent review of the Part M S-X1 monotonicity repair",
+      "head": "c9389daf5c8b33dc769ff962e43ea392fe85ef86",
+      "original_base": "research/r3-srh-monotonicity-repair-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 215,
+      "title": "Consolidate seven additional source receipts and Part M review completion",
+      "head": "c39ed917835edfafe31327cdb6c07afa9733f104",
+      "original_base": "research/r3-srh-monotonicity-repair-20260908",
+      "disposition": "tree_equivalent_no_new_assets"
+    },
+    {
+      "pr": 220,
+      "title": "Independent SR-F primary-source review with the 1979 corrigendum",
+      "head": "ca88a1550165dc9b2f5f16541e91d92d1c79ef82",
+      "original_base": "research/r3-srf-primary-research-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 222,
+      "title": "Limited independent repair review of SR-F Part P",
+      "head": "eb9edc50e776bafb856273c76c21ff5d4bb2e876",
+      "original_base": "research/r3-srf-review-repair-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 226,
+      "title": "Record independent SR-I primary-source investigation (Games\u2013Howell, Tamhane T2, Dunnett T3/C)",
+      "head": "a3e1c735b7878be071dc7268c63c6f4bada25a9a",
+      "original_base": "research/r3-srf-acceptance-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 228,
+      "title": "docs(research): synthesize SR-I sources and record bounded narrowing proposals (Part R)",
+      "head": "3a8bc0d86718a2cf47ce12089a9030a02e41a297",
+      "original_base": "research/r3-srf-acceptance-20260908",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 230,
+      "title": "docs(review): independent exact-head primary-source review of the SR-I author synthesis (Part R)",
+      "head": "06c09e6616b27124ef00b615a5ad59b0e060902a",
+      "original_base": "research/r3-sri-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 231,
+      "title": "docs(research): record scoped SR-I steward acceptance (Part S)",
+      "head": "1c013a6bc07f7d066fa43c692abe2be91241b384",
+      "original_base": "research/r3-sri-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 233,
+      "title": "docs(review): limited independent record-application review of the SR-I scoped acceptance (Part S)",
+      "head": "5458992f8cb0d1abba553c0f5d294fdfe0c09fa0",
+      "original_base": "research/r3-sri-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 236,
+      "title": "docs(research): independent SR-D primary-source investigation (CLS-01\u2013CLS-06)",
+      "head": "7190c78b58f9d6b36dad0d8a39ff1c3b29faa961",
+      "original_base": "research/r3-sri-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 237,
+      "title": "docs(research): targeted adversarial follow-up to the SR-D primary-source investigation",
+      "head": "ea9c74de316515dcfa592b52328b1af7005ed32d",
+      "original_base": "review/r3-srd-primary-investigation-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 238,
+      "title": "docs(research): SR-D author-side corrections and bounded diagnostics",
+      "head": "862dfe2bcf55b206c9f87ac06164b02b2cc3c079",
+      "original_base": "review/r3-srd-primary-investigation-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 241,
+      "title": "docs(research): independent focused review of the SR-D author-side follow-up (PR #238)",
+      "head": "00f50638d3389d2d901fcadb5e2d03a5f2bd4f78",
+      "original_base": "research/r3-srd-author-followup-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 242,
+      "title": "research: SR-D synthesis under approved bounded primary basis",
+      "head": "8a1b5f9da70c654c03e0deb0229d2abd592aee44",
+      "original_base": "review/r3-srd-author-followup-review-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 244,
+      "title": "docs(research): limited independent review of the SR-D author synthesis (Part T)",
+      "head": "8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4",
+      "original_base": "research/r3-srd-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 245,
+      "title": "docs(research): record scoped SR-D steward acceptance (Part U)",
+      "head": "0624d98715706f1a940025407a91dccf9e8b3881",
+      "original_base": "review/r3-srd-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 247,
+      "title": "docs(research): limited record-application review of the SR-D acceptance (Part U)",
+      "head": "95683fc99403dc614e4722fb2ee7ab2760afed37",
+      "original_base": "research/r3-srd-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 248,
+      "title": "docs(research): bounded SR-J primary-source investigation",
+      "head": "cbbc51143b82d97b29afaa0902ee2a42456d3166",
+      "original_base": "review/r3-srd-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 249,
+      "title": "Assemble the bounded Release 4 public-discussion proposal",
+      "head": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 250,
+      "title": "docs(review): independent primary-source review of the bounded SR-J follow-up",
+      "head": "2ba1f1672af6846414439cb3db9524828d0ac8ac",
+      "original_base": "research/r3-srj-primary-followup-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 251,
+      "title": "Review the assembled Release 4 opening proposal",
+      "head": "e4db34eb6561286eafb5873842d8df31e30c409b",
+      "original_base": "research/r4-opening-rfc-candidate",
+      "disposition": "review_blob_preserved_as_PR-251-REVIEW"
+    },
+    {
+      "pr": 252,
+      "title": "Independent pre-opening review of the Release 4 assembled RFC candidate",
+      "head": "fdc5364a53293ce12a837f833dd23465d2fd6fcb",
+      "original_base": "research/r4-opening-rfc-candidate",
+      "disposition": "review_blob_preserved_as_PR-252-REVIEW"
+    },
+    {
+      "pr": 253,
+      "title": "docs(research): receive SR-J review and propose bounded source basis",
+      "head": "55a073525ec685278cf40731d61b1b17ec0882aa",
+      "original_base": "review/r3-srj-primary-followup-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 254,
+      "title": "docs(research): approved SR-J source basis and three-entry synthesis",
+      "head": "4d61db593510466f34ca546430d7796ea42d22e1",
+      "original_base": "research/r3-srj-review-receipt-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 255,
+      "title": "Confirm Release 4 opening proposal repairs (PR 252 reviewer, same session)",
+      "head": "6998f65cefaeddf69956e1e1696b17cd8ad2beb8",
+      "original_base": "research/r4-opening-rfc-candidate",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 256,
+      "title": "docs(review): limited SR-J source synthesis integration \u2014 GO",
+      "head": "c9ca0084a377381740396f00174aba653cee0aed",
+      "original_base": "research/r3-srj-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 257,
+      "title": "Confirm Release 4 opening repairs and remaining representation boundaries",
+      "head": "901733a551b560aef544191d937b517f2f87c896",
+      "original_base": "research/r4-opening-rfc-candidate",
+      "disposition": "review_blob_preserved_by_249"
+    },
+    {
+      "pr": 258,
+      "title": "docs(research): scoped SR-J steward acceptance",
+      "head": "7e513d174de83a564a91bea9168e45f623c58448",
+      "original_base": "review/r3-srj-author-synthesis-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 259,
+      "title": "docs(review): confirm scoped SR-J acceptance application",
+      "head": "72e4dd3b71868cf6423dfefa231751a03a1b2161",
+      "original_base": "research/r3-srj-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 260,
+      "title": "Confirm Release 4 conformance boundaries and opening readiness",
+      "head": "36b40134321337d99417828368b5f690c70f5d07",
+      "original_base": "research/r4-opening-rfc-candidate",
+      "disposition": "review_blob_preserved_by_249"
+    },
+    {
+      "pr": 262,
+      "title": "docs(research): apply supplied-corpus cap and bound Ge resampling claims",
+      "head": "09a75be0f3549d75e74ee7226b476a9d71480cb0",
+      "original_base": "review/r3-srj-acceptance-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 263,
+      "title": "Independently reproduce and repair Release 3 numerical evidence",
+      "head": "a133707a0c09008a26709318c8cc54e000b3bd36",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 264,
+      "title": "docs(research): record Ge GO and bound supplied SR-A evidence",
+      "head": "9e95cdee40b64cbf0f42dca8e3fab1c075507168",
+      "original_base": "research/r3-supplied-source-scope-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 265,
+      "title": "Confirm Release 3 numerical evidence and withdraw unsupported bounds",
+      "head": "92bea491e237df6aec08ae1e3c4c52e43ec3593d",
+      "original_base": "review/r3-numerical-reproduction-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 266,
+      "title": "Record SR-A GO receipt and numerical guarantee withdrawal",
+      "head": "55d30240252517aa4a84b8cccf374a72260c3426",
+      "original_base": "research/r3-sra-supplied-primary-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 267,
+      "title": "Investigate supplied Troendle step-down resampling and guarantee boundaries",
+      "head": "0e82d4a3d6f098753a703287f9424fe590b886d5",
+      "original_base": "research/r3-source-review-receipts-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 268,
+      "title": "Review bounded Troendle investigation and independent finite evidence",
+      "head": "646ae78d2836525333ac1c1a259fdeda0bb6be89",
+      "original_base": "research/r3-troendle-supplied-primary-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 269,
+      "title": "Apply Troendle SF-01 correction and record bounded GO",
+      "head": "829e1050ab35ced87867490c974ea07b6e1545c9",
+      "original_base": "review/r3-troendle-supplied-primary-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 270,
+      "title": "Prepare supplied-source Release 3 public RFC and opening hold map",
+      "head": "fca5094a227422fd2d7d72ed8a7dc64f0f6ddc21",
+      "original_base": "research/r3-troendle-review-repair-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 271,
+      "title": "Review supplied-source Release 3 public-opening readiness",
+      "head": "c28d87a2260ca04c99e3c3927e8aa847aad1bd38",
+      "original_base": "research/r3-supplied-scope-opening-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 272,
+      "title": "Repair opening premise boundaries and superseded work sequence",
+      "head": "545f6eb4c28eb93bd7cc5404dd45afd475822317",
+      "original_base": "review/r3-supplied-scope-opening-fca5094",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 273,
+      "title": "Confirm PR #272 opening-premise repair: GO with explicit H1\u2013H7 dispositions",
+      "head": "c97e1dacd779f7e3ecf9167630ecb2de9c15a231",
+      "original_base": "research/r3-opening-premise-repair-20260909",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 275,
+      "title": "docs: record R3 public discussion opening and PR #273 GO",
+      "head": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "original_base": "review/r3-opening-premise-repair-545f6eb",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 276,
+      "title": "Prepare unissued Release 3 D0 declarations and result bindings",
+      "head": "d8a69c570d2b376a62f649cfb32765f1fbb646d8",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 277,
+      "title": "Map all 15 Release 3 candidates to evidence, reviews and dependencies",
+      "head": "7f3321b5d8168611baba7647a864d862d87c0a55",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 278,
+      "title": "Research bounded Release 4 F-tail enclosures and projection evidence",
+      "head": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 279,
+      "title": "Prepare Release 4 arithmetic candidates and original-input evidence",
+      "head": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 280,
+      "title": "Review fixed Release 3 D0 declaration and result bindings",
+      "head": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "original_base": "research/r3-declaration-surface-20260910",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 281,
+      "title": "Review bounded Release 4 arithmetic candidate and evidence",
+      "head": "87adcec680f90271d0a6e571c1892ec38a392751",
+      "original_base": "research/r4-arithmetic-candidate-20260910",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 282,
+      "title": "Review R3 evidence-map connections and ordinary-Holm applicability",
+      "head": "a5213b446df0ec1de09d557c0c6933320f470452",
+      "original_base": "research/r3-candidate-evidence-map-20260910",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 283,
+      "title": "Review fixed Release 4 F-tail research candidate and evidence limits",
+      "head": "e7ddd16f6d2272cb7c9267f7f2aa8d35103f1c44",
+      "original_base": "research/r4-tail-feasibility-20260910",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 284,
+      "title": "Record preparation round completion and bounded restart plan",
+      "head": "880a5bf6efb4e047772dfeec606a3f55acdaf0cf",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 285,
+      "title": "Check fixed tail enclosures and address adversarial review",
+      "head": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "original_base": "review/r4-tail-8d1979a",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 286,
+      "title": "Record bounded close review of tail checker repairs",
+      "head": "75e3e7b48f0c53927d3e5c228adbd0a1c9108fd3",
+      "original_base": "research/r4-tail-evidence-checker-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 287,
+      "title": "Record primary-methods review with IEEE source gap",
+      "head": "da1c53dfd70f02169014f5d882aa51aec960a019",
+      "original_base": "research/r4-tail-evidence-checker-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 288,
+      "title": "Explore exact rational arithmetic to tail composition",
+      "head": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "original_base": "research/r4-tail-evidence-checker-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 289,
+      "title": "Connect existing Holm and Welch sources to bounded primary review",
+      "head": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 290,
+      "title": "Propose ordinary Holm supplied-p candidate design",
+      "head": "f203eb12c036b40b3602f22603d39702cdba9bba",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 291,
+      "title": "Map R4 admission envelope and support decisions",
+      "head": "4d4988b55cc4924c77f61d837dba7ba0a514f609",
+      "original_base": "main",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 292,
+      "title": "Explore exact Holm transform with small-family closed-testing oracle",
+      "head": "c4ad231471deba354bd018550b2378f2d740b944",
+      "original_base": "research/r3-holm-candidate-design-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 293,
+      "title": "Propose R4 complete outputs and admission boundaries",
+      "head": "1ae29058f44dce65ba3a3ef0d018bdbea0d9f940",
+      "original_base": "research/r4-support-boundary-plan-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 294,
+      "title": "Confirm IEEE 754 source clauses and record bounded R3/R4 applicability",
+      "head": "864766232988181e72ae18c235dbc815466b3a1d",
+      "original_base": "review/r4-primary-methods-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 295,
+      "title": "Add R4 complete-output experiment with preflight and bounded evidence",
+      "head": "f8f3feb71404962262d1a9f78b5d37f04454f746",
+      "original_base": "research/r4-complete-output-design-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 296,
+      "title": "Design bounded R4 submitted probability-evidence checks",
+      "head": "dc3c1c88b684aed6f90c7d35b6d06fce501f8858",
+      "original_base": "research/r4-complete-output-experiment-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 297,
+      "title": "R4 submitted probability-evidence consumer experiment",
+      "head": "97ef2926dbea7251d9fa611d4ada6513341f9826",
+      "original_base": "research/r4-tail-evidence-design-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 298,
+      "title": "Plan R3 declaration-to-Holm connection and Naik source follow-up",
+      "head": "4eb31733f5e221ed211a6cc4448057e6dd2fc0dc",
+      "original_base": "research/r3-holm-experiment-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 299,
+      "title": "Design D0 declaration binding for supplied-p Holm evidence",
+      "head": "1e6c4be371bc91f63577f70a5e0fc7742aef16a8",
+      "original_base": "research/r3-next-work-plan-20260911",
+      "disposition": "history_included"
+    },
+    {
+      "pr": 300,
+      "title": "Connect D0 declarations to supplied-p Holm evidence in a bounded experiment",
+      "head": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "original_base": "research/r3-holm-declaration-binding-design-20260911",
+      "disposition": "history_included"
+    }
+  ],
+  "branches_without_open_pr": [
+    {
+      "branch": "claude/eager-dirac-vwenvd",
+      "head": "3d071195234179b0c1ed2dddadd3481e01953c50",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r3-holm-promotion-20c8e3b/INPUTS.json",
+          "source_blob": "ebfea1279bc5ccbdb2069c9cc3a31f1fa1bf40fd",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-holm-promotion-20c8e3b/INPUTS.json"]
+        },
+        {
+          "path": "review-inputs/r3-holm-promotion-20c8e3b/REPORT.md",
+          "source_blob": "f65d76eb0a4daa7b6898560206a682f20acd72bd",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-holm-promotion-20c8e3b/REPORT.md"]
+        },
+        {
+          "path": "review-inputs/r3-holm-promotion-20c8e3b/derivation_checks.py",
+          "source_blob": "f0ceadb286d328a1f70229ffffde93c1da0f2591",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-holm-promotion-20c8e3b/derivation_checks.py"]
+        }
+      ]
+    },
+    {
+      "branch": "claude/independent-review-17ps39",
+      "head": "d065570393f2d7b7ad9ba64ecb101c77cc79cd2f",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "f54579e51c080411044a22599c57cac71773d847",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/opening-claim-map.md",
+          "source_blob": "5c2c65e37127d06c07bbcf0a8f3c01843ae2d3e8",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e084f3e08ddb76dc88a6ccb062850cca5094f958"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "862585b1b2a0a4e39b76bf82fa268a1711f3c3fd",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-impact-inventory.md",
+          "source_blob": "1b2c22e08eb48592ad153752321217c9e597ccc3",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "c262f7200c6ed650df88847597d01c97a406ed61"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-preparation-draft.md",
+          "source_blob": "58cb18b01883f860549a0407e7c842585e7fd4e0",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d1dffdf17a9348ac19b63a2648bf769c3057db7"
+        }
+      ]
+    },
+    {
+      "branch": "claude/nomue-protocol-pr198-part-h-qi7dny",
+      "head": "3059f6baca76dc93b5fbf248012f09132f3881f6",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "b0679cbad8d384158b93ce414f8dfb7f2270ea74",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        },
+        {
+          "path": "review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md",
+          "source_blob": "4c8b55bac817be9f25b1b6fa7b82cbb6eb2fc813",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "claude/nomue-protocol-pr216-review-m3s58m",
+      "head": "ca88a1550165dc9b2f5f16541e91d92d1c79ef82",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "78feb17baba67d41d0aac274c51e2f12b507a6d3",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        },
+        {
+          "path": "review-inputs/r3-srf-primary-research/REVIEW-RESULT.md",
+          "source_blob": "55fe509ed5a87b263e26d0145983f1caa3d2912f",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srf-primary-research/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "claude/normal-model-review-handoff-x0ceil",
+      "head": "4013118bdd253a0420cc84af1e78c35cdf048c37",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 11,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "7ff4133bed228029f095b395c3ffd8c1f1993367",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/normal-model-opening-scope.md",
+          "source_blob": "e59c35ff45e0650a266d87ec6ad625321c5e2511",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "4d38515d9ec49f8ff7264244e43c2b0bce313a17"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/normal-model-source-result.md",
+          "source_blob": "de33be2fe92548a5688dbdd34e41fa27b0ff3c32",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "1ed68c2e449a29307225a25b495b98ce7a065106"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/opening-claim-map.md",
+          "source_blob": "cb53d25825006a5eb82d7b439e6ab738d724304a",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e084f3e08ddb76dc88a6ccb062850cca5094f958"
+        }
+      ]
+    },
+    {
+      "branch": "claude/normal-model-review-response-35wjwy",
+      "head": "bbea08ce48be82a158c96f388d7ebc22541d46da",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 15,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "eee487ecdcc99501e2537c8831a2d46f46b82dfe",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        }
+      ]
+    },
+    {
+      "branch": "claude/pr-186-sr-k-sr-g-review-s7vpd1",
+      "head": "f8c17dba9bb2e7cc5e3ebe5a9f837f54af0fdd88",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "ab3db6a9a7fe82745da28530df8d807a33cf19e8",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        },
+        {
+          "path": "review-inputs/r3-srk-srg-source-closure/REVIEW-RESULT.md",
+          "source_blob": "a92da5e6c2ed105e3074f51861c4c08d1b4df66e",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srk-srg-source-closure/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "claude/pr-218-219-review-wvr7tu",
+      "head": "c8ce35c54397ca05e3a6656f5c98b5e1376e0e14",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": []
+    },
+    {
+      "branch": "claude/pr-242-limited-review-hp9jpa",
+      "head": "8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "0077a749490ac6b288eb578e520071e5fe1a1a98",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        },
+        {
+          "path": "review-inputs/r3-srd-author-followup-review/REVIEW-RESULT.md",
+          "source_blob": "fad66a294e9a966d62d2abf9335df26fe50af1be",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-author-followup-review/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "review-inputs/r3-srd-author-followup/REVIEW-RESULT.md",
+          "source_blob": "2c8839e3a1d12778557ea4ae3e0babda64f7c597",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-author-followup/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "review-inputs/r3-srd-author-followup/check-followup.py",
+          "source_blob": "bda6527be84eedd6d9f8e42f4ec1460a04df25ed",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-author-followup/check-followup.py"]
+        },
+        {
+          "path": "review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md",
+          "source_blob": "ad5f229d36a8dcec55d8a9fdaed9ce29aaf0acb5",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md",
+          "source_blob": "785785bef368694d4643be5eada6524231f8e244",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "review-inputs/r3-srd-primary-investigation/reproduce-sr-d.py",
+          "source_blob": "ef6e2c15bd90b8d9a0164bc9caaa35997504e236",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-srd-primary-investigation/reproduce-sr-d.py"]
+        }
+      ]
+    },
+    {
+      "branch": "claude/pr210-nist-lapack-verification-j44enn",
+      "head": "b7b4b1463253bdc0f016d2b93486cf2ebe9390e5",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 6,
+      "entries": []
+    },
+    {
+      "branch": "claude/programme-review-handoff-41rbf7",
+      "head": "3332083e62effda3af823dc47b8d56e15cbc7fd3",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 7,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "c6411b4e5a45fa171f4d1130e8cb0ce2eb572290",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/power-scale-exploration.md",
+          "source_blob": "5e3dad5cfa8376fbca5725900fd5235780573d63",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "fdf1ad65908d61c16b67b2c333f68694370acf07"
+        }
+      ]
+    },
+    {
+      "branch": "claude/qr-cancellation-review-prompt-tkb8rh",
+      "head": "f599e1350e0eb48ee168ac726d0244ebd51de802",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 3,
+      "entries": []
+    },
+    {
+      "branch": "claude/qr-cancellation-review-zocdd8",
+      "head": "253fe14b801b861a23714e7491b6bb9e19951b2f",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/qr-cancellation-supplement.md",
+          "source_blob": "94cb0e0b86df2451b531660b913f8dd504f1ffed",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "007d689e2c44f50df6242137348add66c5019cc8"
+        }
+      ]
+    },
+    {
+      "branch": "claude/repair-confirmation-pr-223-az891d",
+      "head": "f505a1f06a4f36500ec8d88895821c41e2c1820b",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "governance/artifact-hygiene-20260906",
+      "head": "1308b4b0e56550e0095dfc5505e2a3878622e8d1",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "AGENTS.md",
+          "source_blob": "bcdd17d75cce598c767937bf3b96bc92d11c2aa5",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb"
+        }
+      ]
+    },
+    {
+      "branch": "maintenance/current-surface-normalization",
+      "head": "38e99e23e081942bb02e174234d7caa91d79e77d",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 4,
+      "entries": [
+        {
+          "path": "CLAUDE.md",
+          "status": "absent_at_source_head_not_reintroduced"
+        }
+      ]
+    },
+    {
+      "branch": "planning/capability-evolution-roadmap",
+      "head": "36afdb77baa01808eebbc5a7c2ad8fdd7d5c06e0",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/capability-evolution-roadmap.md",
+          "source_blob": "70c28870bfe16ba1094c7a48456f75daa8d3d88d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "d8e1342e0e369629602bd836bd52ef809f7ec0c4"
+        }
+      ]
+    },
+    {
+      "branch": "r2-d5/ci-endpoint-truth-composition",
+      "head": "bbfcb104889b7ce3ed219dc30d49bd7ca1723f80",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-candidate.json",
+          "source_blob": "03fcbe00bf4fe8a1448317fe620f747348af8c81",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-candidate.json.txt"
+          ]
+        },
+        {
+          "path": "governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-adversarial-review-protocol.md",
+          "source_blob": "e298c265f56dd1684dea8f9a3fa8ca8f27b6ff3a",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-adversarial-review-protocol.md.txt"
+          ]
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-ci-endpoint-truth-candidate.ts",
+          "source_blob": "29bd5be8ac0e2c7009f0ad8d46012f92e4f01559",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/tooling/src/spikes/paired-t-ci-endpoint-truth-candidate.ts.txt"
+          ]
+        },
+        {
+          "path": "tooling/tests/paired-t-ci-endpoint-truth-candidate.test.ts",
+          "source_blob": "5f156d7d5c97598dae29b6da18c77fd7807d2932",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/tooling/tests/paired-t-ci-endpoint-truth-candidate.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "repair/r3-source-acquisition-resampling-coverage",
+      "head": "c395179d3075a0830a964002aac145d9682a0ac1",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/README.md",
+          "source_blob": "97ffd65f4136c476042ddc3f25fafd3a4a27a861",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "29f8308656123b0690dd377b07f114eebea1762f"
+        }
+      ]
+    },
+    {
+      "branch": "research/fnd-1-animal-endpoint-close-review-result-20260902",
+      "head": "ecad57460bcd76fe51042a4ae749d06e3d8501de",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "research/fnd-1-potential-outcomes-lineage-close-review-20260902",
+      "head": "865f5e2a93645ace99502519f953d6237a186bf4",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-close-review-result.md",
+          "source_blob": "5d70667d001a299699cf0f5fc3e01c961ea0e9a2",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "24203ab3c79fe7eb7e824e91211d3e4d1beb67de"
+        }
+      ]
+    },
+    {
+      "branch": "research/r3-independent-multigroup-semantics-3137b90",
+      "head": "778f295ec549c3fe93a5f0493fa65e03cf6ed043",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "research/r3-semantic-source-acquisition-65a53a4",
+      "head": "72cc0e1e3c169d9402df222799e7127ec44e5942",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "research/r3-semantic-source-acquisition-7bd9c5a",
+      "head": "0f01fc691fe8de483a2e37465623dc52d3e77f24",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/README.md",
+          "source_blob": "718c7d10fad48dad0e4ac8b0df69669e7e82824e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "29f8308656123b0690dd377b07f114eebea1762f"
+        },
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-commission.md",
+          "source_blob": "5c5ac2b71fb08ad98344d108906fceadf4d59e3d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "3c7ddcc696f0c284213f7efe0da68e747bc238d7"
+        }
+      ]
+    },
+    {
+      "branch": "research/r3-srf-acceptance-20260908",
+      "head": "7cf5a5d0a14446fce0a67d0850793bbd4e117d67",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "608cd7b04d2d34accb209060ee9163b39210f4f9",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        }
+      ]
+    },
+    {
+      "branch": "research/r3-srf-primary-research-20260908",
+      "head": "4ce988231330f5702a7d3d8a352b01fac575191f",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "78feb17baba67d41d0aac274c51e2f12b507a6d3",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        }
+      ]
+    },
+    {
+      "branch": "research/r3-srf-review-repair-20260908",
+      "head": "c6ba9c923d142e0dacbb62ea20009cbd0ecb34c5",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "ed6c56a96592fdb9bded45ad8fdf10477eb36c11",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-normal-model-source",
+      "head": "b4483358bddd9e2d835ba2368044086442095f33",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 18,
+      "entries": []
+    },
+    {
+      "branch": "research/r4-opening-claim-map",
+      "head": "e59d2aaa43a28857396f1acfcdd0c44e96e555b9",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 6,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "5abe00a5d66f98cee8e5efabbcc978c5c2331c2d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/opening-claim-map.md",
+          "source_blob": "cb53d25825006a5eb82d7b439e6ab738d724304a",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e084f3e08ddb76dc88a6ccb062850cca5094f958"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "7d458bcb4bd7beda999718b09d294eaf59ec7900",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-opening-readiness-next",
+      "head": "4cf3e12acc77bd38c09d5acd2588ede66ee265b2",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 3,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "34db33cd4f6ebc0bc75b011399127545ace6cb20",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+          "source_blob": "2613a182e2affcf4e4d928dc3a9ede4e43454eb1",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-power-scale-exploration",
+      "head": "ffc582a098db0ee62c3511f28eb0f8c0e98584b9",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 7,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "c6411b4e5a45fa171f4d1130e8cb0ce2eb572290",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/power-scale-exploration.md",
+          "source_blob": "7d38a5962bf9507ecfbee9437adb3ac7449d070e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "fdf1ad65908d61c16b67b2c333f68694370acf07"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-programme-adversarial-audit",
+      "head": "f01b870bdce4e051476e4b74d56b4deb4217307e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 12,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "8c7ef90d6d5dd9da4e43c82a90def40aab03d3e2",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/programme-self-audit-2026-09-09.md",
+          "source_blob": "74dfc0d205c9cced097fde045b6df3cf6e07aa3b",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "c983358687d6a1887357ad189ff1a85d7170fe65"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "c37733a868f36069bb4f610086164f3fc5c75a8e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-impact-inventory.md",
+          "source_blob": "0c96df67cc98a042a32c43f0e9b7588ae5c3cc4d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "c262f7200c6ed650df88847597d01c97a406ed61"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-preparation-draft.md",
+          "source_blob": "12ddab1aff5826fa358b998166f8194126f8edb5",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d1dffdf17a9348ac19b63a2648bf769c3057db7"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+          "source_blob": "6e9fa1ecbe322828dbec8c431caf52ab65e0f78c",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-qr-cancellation-supplement",
+      "head": "668888998245a4117060433ebf2f50541a615718",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 9,
+      "entries": []
+    },
+    {
+      "branch": "research/r4-review-execution-plan",
+      "head": "58ffb0ad1dfc134196957476663d19dff1ce14e7",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 20,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/README.md",
+          "source_blob": "e4af380b1ead68d126da71178a581a1a994af0db",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "853be1bad068be585dfbf383051c270bc9957cb0"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "24971a73f50d417a059794aa2a873f5af9c418a8",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-impact-inventory.md",
+          "source_blob": "0c96df67cc98a042a32c43f0e9b7588ae5c3cc4d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "c262f7200c6ed650df88847597d01c97a406ed61"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-preparation-draft.md",
+          "source_blob": "12ddab1aff5826fa358b998166f8194126f8edb5",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d1dffdf17a9348ac19b63a2648bf769c3057db7"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-reviewed-preparation-repair",
+      "head": "68a8726ea564a88fe3663dfd84bfde8c4550d6e6",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 8,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "34db33cd4f6ebc0bc75b011399127545ace6cb20",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-impact-inventory.md",
+          "source_blob": "8f82dfcffbde1f3c83c6757c1f137702c464c0da",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "c262f7200c6ed650df88847597d01c97a406ed61"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-preparation-draft.md",
+          "source_blob": "5c7200e2a235f5b9dab5cf284908e57158807542",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d1dffdf17a9348ac19b63a2648bf769c3057db7"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+          "source_blob": "6e9fa1ecbe322828dbec8c431caf52ab65e0f78c",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb"
+        }
+      ]
+    },
+    {
+      "branch": "research/r4-rfc-preparation-draft",
+      "head": "bf4004694f68018534e01bde2f2a33214accba19",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 4,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+          "source_blob": "34db33cd4f6ebc0bc75b011399127545ace6cb20",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e1b974885166c3a0c3cf6bde8736158fe7f78cd9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/rfc-preparation-draft.md",
+          "source_blob": "31236268480de85e858c3a338ad36e6ee09face1",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d1dffdf17a9348ac19b63a2648bf769c3057db7"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/source-followup-2026-09-08.md",
+          "source_blob": "0a6065ae55b817f4771f79b59cc97709e1fcaf1d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ccff6f78e6ec8f8efb5400d3af14eb511edfada9"
+        },
+        {
+          "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+          "source_blob": "2613a182e2affcf4e4d928dc3a9ede4e43454eb1",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb"
+        }
+      ]
+    },
+    {
+      "branch": "review/fnd-1-all-pairs-successor-reconciliation-20260901",
+      "head": "92588c2d6acb709b755478fee073823e26a6a785",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/fnd-1-multiplicity-close-review-intake-fb437c8",
+      "head": "19208a6a87fa852917897694923f5fdf436f0958",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/fnd-1-multiplicity-close-review-intake/REVIEW-RESULT.md",
+          "source_blob": "2ec097893e0a84f5e0a97e9d83da39bc628fc96b",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/fnd-1-multiplicity-close-review-intake/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/fnd-1-multiplicity-steward-disposition-7ee7bdf",
+      "head": "9bc8e470fbc2ae841a5ffec95b46c6389404ca82",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/fnd-1-multiplicity-steward-disposition/REVIEW-RESULT.md",
+          "source_blob": "365f25569525b6f6edd33684487aa71d25431d32",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/fnd-1-multiplicity-steward-disposition/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/fnd-1-repo-analysis-20260830",
+      "head": "80cc0d837def650b6e0ef78d5245cdc8e2096f29",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-claude-code-repository-analysis-result.md",
+          "source_blob": "90ae8a94f021196258887f94495dd81aa5681f94",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "9e06320d79fa9f95f5afca5d8b78a33ae318473b"
+        }
+      ]
+    },
+    {
+      "branch": "review/m3b-format-materializer-e94d0d",
+      "head": "cbce6d4e37192d213c83c72b014372f6dd06d42b",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": ".github/workflows/temp-m3b-format-materializer.yml",
+          "source_blob": "a53fed45cb69d5dbda083a207df68ce9fc78ebc9",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/fixed-95-critical-value-table-selected-candidate.json",
+          "source_blob": "c2202317c49266c7db2152358f0d47c23323eddc",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "d923aa742dd8549210812b8150a95f3bb5d44f06"
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-selected-fixed-95-table-candidate.ts",
+          "source_blob": "9d17365f3a364eb16f73d616aadb9898a99cf4d2",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "fef819fe3fb2634521ba358701fbfe69259d8347"
+        },
+        {
+          "path": "tooling/tests/paired-t-selected-fixed-95-table-candidate.test.ts",
+          "source_blob": "818c61f84e0311f95992b16c8b8e525abad4abd2",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "52e03c62b849a22bb63eec13a5228d26bc4e8ac7"
+        }
+      ]
+    },
+    {
+      "branch": "review/m3c-type-format-materializer-1cf2d3",
+      "head": "63abca1ae7ceff01370015ae7d21de3212a9343e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": ".github/workflows/temp-m3c-type-format-materializer.yml",
+          "source_blob": "8232f762a02ecdd398580d202279e36b7794899f",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/ci-execution-trace-candidate.json",
+          "source_blob": "08b2f86c294f5de4bc209b2a16b9a512db854c4e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "e4635043cefffd364a94b26b24fc673a85a911bc"
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-ci-execution-trace-candidate.ts",
+          "source_blob": "84668e8f3b12aac77ea4f82d957e9c5c8c46631b",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "42fb87f63614e87492ca90b59e76484ecf550170"
+        },
+        {
+          "path": "tooling/tests/paired-t-ci-execution-trace-candidate.test.ts",
+          "source_blob": "7aba5a3253fcb55396528d4d883e2db61074e92d",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "245b5bd6b5db79bff8f02da20cb69f783de27bb5"
+        }
+      ]
+    },
+    {
+      "branch": "review/m3d-format-materializer-e32c89",
+      "head": "5f5e40ae7e9bfeb862b334e9b504af121affcce9",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": ".github/workflows/temp-m3d-diagnostic-only.yml",
+          "source_blob": "f3453f5c7bffacf4d9d779cfd1c55ffad228ac27",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": ".github/workflows/temp-m3d-format-materializer.yml",
+          "source_blob": "ea52791fd999cb45b84af68ffdf4c973e97414d7",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-error-candidate.json",
+          "source_blob": "318798f3dfe357805cd68100e3a17a82d6d05302",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "d85f0dd598adc57c64d991b20921645c6124b4f0"
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-ci-endpoint-truth-error-candidate.ts",
+          "source_blob": "1b14f510414c87a41b969ef9e2fe362945cd7498",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0fbb06ea4b75b6fa7026f801110ed8bf462ed797"
+        },
+        {
+          "path": "tooling/tests/paired-t-ci-endpoint-truth-error-candidate.test.ts",
+          "source_blob": "88f29f417a8b4e1dabafed4c9c0958f81d4eb406",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "fefdc70ec426cebac54003a0329b9cde29da8f04"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d2-d4-structural-candidate-surface-ba7f2e1",
+      "head": "5a96d0f1405631214fd9b79028d0ef4c2e8c088f",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-candidate-scope-resource-bounds-000705c",
+      "head": "b3ad38ea36ea66573033133ee94889508f72308f",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-ci-endpoint-truth-alternative-98a54eb",
+      "head": "98a54eb75113065429ca594f52bf18984b02d359",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-candidate.json",
+          "source_blob": "03fcbe00bf4fe8a1448317fe620f747348af8c81",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/governance/drafts/release-2-candidate/numerical/ci-endpoint-truth-candidate.json.txt"
+          ]
+        },
+        {
+          "path": "governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-adversarial-review-protocol.md",
+          "source_blob": "e298c265f56dd1684dea8f9a3fa8ca8f27b6ff3a",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/governance/drafts/release-2-candidate/reviews/d5-ci-endpoint-truth-adversarial-review-protocol.md.txt"
+          ]
+        },
+        {
+          "path": "review-inputs/r2-d5-ci-endpoint-truth-candidate/REVIEW-RESULT.md",
+          "source_blob": "5f1799602160591e699423e27733eff074767afe",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-ci-endpoint-truth-candidate/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-ci-endpoint-truth-candidate.ts",
+          "source_blob": "29bd5be8ac0e2c7009f0ad8d46012f92e4f01559",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/tooling/src/spikes/paired-t-ci-endpoint-truth-candidate.ts.txt"
+          ]
+        },
+        {
+          "path": "tooling/tests/paired-t-ci-endpoint-truth-candidate.test.ts",
+          "source_blob": "5f156d7d5c97598dae29b6da18c77fd7807d2932",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/98a54eb75113/tooling/tests/paired-t-ci-endpoint-truth-candidate.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-ci-endpoint-truth-ba3d81",
+      "head": "a802ac99b42925606749ad750dc795e6b887717a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": ".github/workflows/temp-m3d-independent-review.yml",
+          "source_blob": "f5b5d506a8d0cd4fb5f4e1f4afc7cf303d03f2ae",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": "tooling/reviewer/m3d-emit-corpus.ts",
+          "source_blob": "b3c3040890ee5d4d6921b93b0ab472c514a3cdca",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/a802ac99b429/tooling/reviewer/m3d-emit-corpus.ts.txt"
+          ]
+        },
+        {
+          "path": "tooling/reviewer/m3d_fraction_oracle.py",
+          "source_blob": "d22bc48662d224edb4027d711b15036b5253cf43",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/a802ac99b429/tooling/reviewer/m3d_fraction_oracle.py.txt"
+          ]
+        },
+        {
+          "path": "tooling/tests/reviewer-paired-t-ci-endpoint-truth-adversarial.test.ts",
+          "source_blob": "cb2f03d8681e1d104113c525b8cd83ace1c84596",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/a802ac99b429/tooling/tests/reviewer-paired-t-ci-endpoint-truth-adversarial.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-ci-endpoint-truth-result-ba3d81",
+      "head": "5a9b0926530b251fffcbadcd38aaf7e97ebbc27a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-ci-execution-trace-result-c571e80",
+      "head": "0b08127b2422684b951a92395097478978088f4e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-ci-trace-adversarial-c571e807",
+      "head": "c535d1bdd6a1cd79c6e98bf4c4349713aede89aa",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": ".github/workflows/temp-m3c-reviewer-battery.yml",
+          "source_blob": "52c43f5269eb662354e275780e6939cb5aaa4fe3",
+          "status": "obsolete_temporary_workflow_not_activated"
+        },
+        {
+          "path": "tooling/tests/reviewer-paired-t-ci-execution-trace-adversarial.test.ts",
+          "source_blob": "31d1dbf5c551b6f0717be8528cc264411652e970",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/c535d1bdd6a1/tooling/tests/reviewer-paired-t-ci-execution-trace-adversarial.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-ci-trace-result-c571e807",
+      "head": "37621d2a060dc4f1d6c7eca48d1ac5ad82a2cb29",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-closure-gap-checkpoint-4a2641c",
+      "head": "4dc91bc9e80fe0969ca230f5a5b3d05340f852c7",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-critical-value-table-evidence-19139d5",
+      "head": "24456c9d3d7faef56bbb731dac57045401780ea6",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-critical-value-table-evidence/REVIEW-RESULT.md",
+          "source_blob": "7aa2187fd1370b5e8676068746246d4aad0de2f9",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-critical-value-table-evidence/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-critical-value-table-n1-close-07385589",
+      "head": "ca68deadae3ccd6cc24f1bb49f4ac97ec5babd52",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-critical-value-table-n1-close/REVIEW-RESULT.md",
+          "source_blob": "5006476e9be9fc395df1863ac107426dcb4b9ad8",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-critical-value-table-n1-close/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-final-review-readiness-35ab094",
+      "head": "d24f72745a3468fac6e6980c48e675826b5ad380",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-fixed-95-evidence-sync-result-fae3d5",
+      "head": "14fcef69741d3a74b4fceaf0473793635908bb4e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-fixed-95-table-selection-result-d3096d",
+      "head": "67db6d2f3233e6418113de578aa8bf4d5fb07a6a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-execution-trace-candidate-12eff90",
+      "head": "860a3da434dbb1a1df0d6d997e166c52296639ef",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-execution-trace-review-disposition-12b6af4",
+      "head": "982062be5aa223e49105a91c7ac618a452020ef1",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-execution-trace-review-disposition-repair-close-14e818a",
+      "head": "a9a4d15eb5edeb182f3b5bea65180b2006cd742a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-tail-trace-composition-candidate-c8cfed9",
+      "head": "480473b906f587b96a8c7cb114bd5977b332a15a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-tail-trace-composition-review-disposition-fdf5246",
+      "head": "7bd6184da0ce81de872c3d7396326ee01b43460e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-truth-error-candidate-fd17daf",
+      "head": "6e4fa92406ab5cd28e702f8dd689e340a127b06a",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-g4-truth-error-review-disposition-719664b",
+      "head": "f2f39bd003bad4ea140a1f6cb537733d40ef09ab",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-1-scope-resource-closure-897bd5b",
+      "head": "bbf2383b83506577a97564d378919c94733cbbc5",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-2-runtime-numerical-contract-adea5c1",
+      "head": "813ee3a7e33bacd8d772ca7b8e51e15ecbf695c8",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-2-runtime-numerical-contract-closure-ef62d8a",
+      "head": "b5f468cb81feb21fd81a52ecb37e520538d2d197",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-3-supported-execution-admission-evidence-5563bae",
+      "head": "e2274e8b844dcf08d5f4e0a8e14225528ac561bb",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-3-supported-execution-closure-32549c8",
+      "head": "5d75f85adc62351ebc674707d6a499157a5424f0",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-3-supported-execution-selection-9e58ecc",
+      "head": "c5972d2d9550a6143544c95223c8c27fe0df7f95",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-4-final-reason-code-inventory-1a28020",
+      "head": "ed462eea1d149eefd5da3a971c76d9424430dbce",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-group-4-final-reason-code-inventory-closure-8909d31",
+      "head": "919a1e62a82304d188dca49106324a239a439679",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-m2-integration-materializer",
+      "head": "85893e7fe68b14e039e435f676c4426da4645874",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 7,
+      "entries": [
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/evidence-readiness.json",
+          "source_blob": "39dd62ece47d507999ed3725fa98eb9a6af50403",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "26ec3870cc996d7241b831c010e3ca86bfe67a1c"
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-numerical-readiness.ts",
+          "source_blob": "05fd8b8f9031c495987aeb08e38d7a09070abc8f",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "badc6d3a1d6193c74dc5de43ae5763961493fb45"
+        },
+        {
+          "path": "tooling/tests/paired-t-numerical-readiness.test.ts",
+          "source_blob": "8e7b307910cd6626bf19e0437cdb95298ba3535e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "4c45897b0506f5b1c4999ad820318beb13791327"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-m2-tail-closure-764674",
+      "head": "1d3ded490ba7edd1026e1b04bf18e7c635f7b8ef",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "tooling/tests/reviewer-m2-tail-numerical-closure.test.ts",
+          "source_blob": "6c0f65e69fb10b75985ec4e0d11af730f07a7bd8",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/1d3ded490ba7/tooling/tests/reviewer-m2-tail-numerical-closure.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-m2-tail-closure-result-764674",
+      "head": "1168261c2f32580014abf9779314169d54c71c37",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-m3-confidence-interval-closure-171f18b",
+      "head": "19148c07750e88df55302abeeb690053c71f0f90",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-p-value-enclosure-evidence-closure-ec2c645",
+      "head": "ce6d1e0dee19457d72f863d2be5a7b35591c36c1",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-pvalue-closure-format-diagnostic",
+      "head": "62c021470ff8674f6535a879ac72640a074adb6b",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-2-candidate/numerical/p-value-enclosure-evidence-closure-candidate.json",
+          "source_blob": "e8c823dd5e24019eff20f7579c59479b0b0713ee",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "4865add771a1c6a668c82eab54670579a3b9a3a0"
+        },
+        {
+          "path": "package.json",
+          "source_blob": "5e594b3f0b06e16890574d1cacad6cefa37b8826",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "6e8934994badcfb4ae4a3e13cd4b8f53a114d4e3"
+        },
+        {
+          "path": "tooling/src/spikes/paired-t-p-value-enclosure-evidence-closure-candidate.ts",
+          "source_blob": "6bde8303637d90b026711d899e7f60d3c73097ec",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "798f8b29670ed15285d12b8b4cccee7c60641182"
+        },
+        {
+          "path": "tooling/tests/paired-t-p-value-enclosure-evidence-closure-candidate.test.ts",
+          "source_blob": "8d912dd113ee5bd2c352aadecfc6ef2e9e66d870",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "9756347b655132d014abfeab4ecfd3ccd08fc1fe"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-runtime-inverse-beta-table-5d58990e",
+      "head": "ff808eb42e6d8382ad09dd36441d167d12d5c104",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 3,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/REVIEW-REQUEST.md",
+          "source_blob": "0c0a8b9e4e8ed9e29a75cf2ec70c8441c5dd356a",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/REVIEW-RESULT.md",
+          "source_blob": "d1948c223225e72643ed5f2921fd9b8ac0d88d9f",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-runtime-inverse-beta-table/REVIEW-RESULT.md"]
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/SHA256SUMS",
+          "source_blob": "d0e37b6af0e5aa9df223756dde8177c973f1aa36",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/artifact/MANIFEST.sha256",
+          "source_blob": "adb3e61c38073540064045c445148a105eb170b3",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/artifact/environment.json",
+          "source_blob": "768a4b713f759bcba27657c10a68fff3a9759ab5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-inverse-beta-table/artifact/inverse-beta-table-evidence.json",
+          "source_blob": "416e9441f0e5be48057baae1a55df95b16196c79",
+          "status": "old_transport_only_original_commit_retained"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-runtime-series-evidence-2f2672fe",
+      "head": "80768e3765177086fee5d41d463be1d6f04e5b4d",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/README.md",
+          "source_blob": "c7b33f260262f2191b47f7c84c41d82a1d84aa26",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/REVIEW-INPUTS.sha256",
+          "source_blob": "962fed62256f2b9e4aa14f6f467a26b83610aaeb",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/REVIEW-PROMPT.md",
+          "source_blob": "c8d0454be0f84fa3b1e663764f0072d78aa60ea1",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/TARGET.json",
+          "source_blob": "61fbfb31ffb6bb5194b0072ad0e768344d8f8081",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/WORKFLOW-RUNS.json",
+          "source_blob": "58d177aeaacf293ce5b47c4ec3a3f8b14aae6bcf",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/evidence/MANIFEST.sha256",
+          "source_blob": "abe1341e9a0479df92f540f344ba80912bd8fee7",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/evidence/cases.json",
+          "source_blob": "129ec2001828becfda7b775ef7c5df7c51955163",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/evidence/environment.json",
+          "source_blob": "768a4b713f759bcba27657c10a68fff3a9759ab5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/evidence/generator.py",
+          "source_blob": "4d7911f3d7695e685749992a445f30b070cbdcaf",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence/evidence/runtime-series-evidence.json",
+          "source_blob": "853fb3eb71958e2dce646652e49707e197d640d2",
+          "status": "old_transport_only_original_commit_retained"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-runtime-series-evidence-close-bafffea8",
+      "head": "a9dc518a4079140daad1a0a7f6506968a893f60c",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/README.md",
+          "source_blob": "0527a6bab4fe0a6124a5e8a6f885dc41262ca929",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/REVIEW-INPUTS.sha256",
+          "source_blob": "e0639ac8694aa765bf05bc083383784a75d63dd0",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/REVIEW-PROMPT.md",
+          "source_blob": "c87d03cd9af29a93dbaa047bfd3c0e7fefa0d243",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/TARGET.json",
+          "source_blob": "c2cdb00fd7c21e913dd007992486a17b6bc22440",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/evidence/MANIFEST.sha256",
+          "source_blob": "abe1341e9a0479df92f540f344ba80912bd8fee7",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/evidence/cases.json",
+          "source_blob": "129ec2001828becfda7b775ef7c5df7c51955163",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/evidence/environment.json",
+          "source_blob": "768a4b713f759bcba27657c10a68fff3a9759ab5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/evidence/generator.py",
+          "source_blob": "4d7911f3d7695e685749992a445f30b070cbdcaf",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-runtime-series-evidence-close/evidence/runtime-series-evidence.json",
+          "source_blob": "853fb3eb71958e2dce646652e49707e197d640d2",
+          "status": "old_transport_only_original_commit_retained"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-runtime-table-integration-f9b039d7",
+      "head": "09e720615dd3705773a5a4cc764cc3be37cedea9",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-runtime-table-integration/REVIEW-RESULT.md",
+          "source_blob": "432453d5a62eebe1643f66b95a6ce1c5fe8905f9",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-runtime-table-integration/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-supported-execution-b4bf419",
+      "head": "b9023c9d2110ec1ba7cc4969991217c163498d89",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 7,
+      "entries": [
+        {
+          "path": ".github/workflows/review-supplement-h.yml",
+          "source_blob": "d5015f497c61e9fc81a92173757283d645909884",
+          "status": "obsolete_temporary_workflow_not_activated"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-supported-execution-disposition-aeb79ba",
+      "head": "bd78378e112da5b44c8188279f35965245124d85",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-tail-numerical-selection-98da475",
+      "head": "9079d84ef6febff1a7b69a5c7009261b17c9347c",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "tooling/tests/paired-t-tail-numerical-selection-candidate.test.ts",
+          "source_blob": "af095ec4c89cd4c1cc2d3e5e205f7f551bfab04e",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "413416d07ffce9988b9e20906f0c253718c84414"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-tail-numerical-selection-result-98da475",
+      "head": "706c1d43e3fae6b4e6bcab2773a316134c20901d",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": []
+    },
+    {
+      "branch": "review/r2-d5-tail-truth-error-ledger-sync-2397b04",
+      "head": "e0988dc4d23ba2882129579ffbaf21961ec19854",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "tooling/tests/reviewer-r2-d5-tail-truth-error-ledger-sync.test.ts",
+          "source_blob": "44a2de3a980ef19f8d51c53dd4a7a2156b573c17",
+          "status": "identical_blob_preserved",
+          "stored_paths": [
+            "review-inputs/historical-assets-20260911/source-snapshots/e0988dc4d23b/tooling/tests/reviewer-r2-d5-tail-truth-error-ledger-sync.test.ts.txt"
+          ]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-truth-boundary-evidence-973cc01b",
+      "head": "48ec887eb5d602a2058f6bcd773a5127a1989c3c",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 5,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/REVIEW-INPUTS.sha256",
+          "source_blob": "eaca6d44e67c2f1019a5db9ffa324374760f6f6e",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/REVIEW-PROMPT.md",
+          "source_blob": "6f9676fc32273df680365663656fcfb3f0434e99",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/REVIEW-RESULT.md",
+          "source_blob": "34c278592b57828ef978ce597eda55a4593725f8",
+          "status": "disclosed_archival_transcription",
+          "stored_path": "review-inputs/r2-d5-truth-boundary-evidence/REVIEW-RESULT.md"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/TARGET.json",
+          "source_blob": "f573a1a2aaee1792e9411b00c43caaa5a8d78dd7",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/WORKFLOW-RUNS.json",
+          "source_blob": "29950079464aca92ca8bc9e57936ffe2d3084fab",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/evidence/MANIFEST.sha256",
+          "source_blob": "204d8edfdac9d816dd55e8d8a7a764d502f8ce6a",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/evidence/environment.json",
+          "source_blob": "768a4b713f759bcba27657c10a68fff3a9759ab5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/evidence/runtime-series-generator.py",
+          "source_blob": "4d7911f3d7695e685749992a445f30b070cbdcaf",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence/evidence/truth-boundary-evidence.json",
+          "source_blob": "2cec4da69c38ca2a705d7761b4aeff490bd217c3",
+          "status": "old_transport_only_original_commit_retained"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-truth-boundary-evidence-close-78c96328",
+      "head": "018bd33dd36971615f0cfb487e8e8d734275bcc2",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 5,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-INPUTS.sha256",
+          "source_blob": "2168b9bad887ad80c260dc1be99375a00948aaef",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-PROMPT.md",
+          "source_blob": "59325c5c67d1c703329dbeed398ebfd076c21b85",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-RESULT.md",
+          "source_blob": "220eca88e500960cea119ae5d4d3e72c8bd433e0",
+          "status": "disclosed_archival_transcription",
+          "stored_path": "review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-RESULT.md"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/TARGET.json",
+          "source_blob": "6442ca426af6f70a3110b7f389cfd1b1f7da67a5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/WORKFLOW-RUNS.json",
+          "source_blob": "0871cfa695f99fa6f497ed148c63df06f2b47158",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/evidence/MANIFEST.sha256",
+          "source_blob": "e3e864e30567fa66aba6b178e17d8d336f38824b",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/evidence/environment.json",
+          "source_blob": "768a4b713f759bcba27657c10a68fff3a9759ab5",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/evidence/runtime-series-generator.py",
+          "source_blob": "4d7911f3d7695e685749992a445f30b070cbdcaf",
+          "status": "old_transport_only_original_commit_retained"
+        },
+        {
+          "path": "review-inputs/r2-d5-truth-boundary-evidence-close/evidence/truth-boundary-evidence.json",
+          "source_blob": "04ad0982efe16f7ee9895912ecfad4ab4d0e1cd0",
+          "status": "old_transport_only_original_commit_retained"
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-truth-error-support-closure-2b9d3f4",
+      "head": "773b0eadf02618c74c11c7e215d9b7d5c1f75528",
+      "history_included": true,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-truth-error-support-closure/REVIEW-RESULT.md",
+          "source_blob": "eeac165d0104a0d52723166e1fab4e803f963ca4",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-truth-error-support-closure/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r2-d5-truth-error-support-closure-2b9d3f4-self-check",
+      "head": "befb9dc969d352764ca71152d56f6325980267d5",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "review-inputs/r2-d5-truth-error-support-closure/REVIEW-RESULT.md",
+          "source_blob": "7f9f59507c996ab5f4fd9cf9ace60d597b841ceb",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r2-d5-truth-error-support-closure/SELF-REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r3-independent-multigroup-semantics-03dce3e",
+      "head": "05f8bd6e2620df95d540eb3eed9c7029fba1915e",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-research-result.md",
+          "source_blob": "e21df31a5fc229c5f134fc7de5bb731d76bb3d0c",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "8f21526040924b891f64724c2d0fde9ea94eff92"
+        }
+      ]
+    },
+    {
+      "branch": "review/r3-independent-multigroup-semantics-final-repair-778f295",
+      "head": "ce866ef8fcdcaefba601ac68ab8f6ddce61c6cda",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": []
+    },
+    {
+      "branch": "review/r3-independent-multigroup-semantics-repair-4539295",
+      "head": "4d1c16e20a3879303b59b4480dea621d57233b17",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-research-result.md",
+          "source_blob": "30474af98f66bc8973ba8b669e4901a571124e52",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "8f21526040924b891f64724c2d0fde9ea94eff92"
+        }
+      ]
+    },
+    {
+      "branch": "review/r3-multiplicity-numerical-oracles-18563cc",
+      "head": "32e9f3c599eb40e9bd25a33a8595ee07bda6be28",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/numerical-research-result.md",
+          "source_blob": "2feb9c9b6b362000e5a46aa985ce19c825e5f7fa",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "0d360ec3eaa1ede0d6112555027255a6e3e695c3"
+        }
+      ]
+    },
+    {
+      "branch": "review/r3-semantic-source-acquisition-sr-l-d1d0475",
+      "head": "af320c3a60ea5f1ab08da9db06969dded4153d4c",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 0,
+      "entries": [
+        {
+          "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+          "source_blob": "d622494fadfc40d62ff62257f247150ed36985fa",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277"
+        },
+        {
+          "path": "review-inputs/r3-semantic-source-acquisition-sr-l/REVIEW-RESULT.md",
+          "source_blob": "dac30642790eaa8947d8b830fce0df471edc9b94",
+          "status": "identical_blob_preserved",
+          "stored_paths": ["review-inputs/r3-semantic-source-acquisition-sr-l/REVIEW-RESULT.md"]
+        }
+      ]
+    },
+    {
+      "branch": "review/r3-semantic-source-acquisition-sr-l-repair-72cc0e1",
+      "head": "1e220f676deefb679eb1a3cd2b2ed0d84ebcd0b2",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 2,
+      "entries": []
+    },
+    {
+      "branch": "review/r4-qr-cancellation-supplement",
+      "head": "b788ac9f248f6d052a7d05493457a376680f32f5",
+      "history_included": false,
+      "already_identical_elsewhere_at_start": 1,
+      "entries": [
+        {
+          "path": "governance/drafts/release-4-preparation/qr-cancellation-supplement.md",
+          "source_blob": "94cb0e0b86df2451b531660b913f8dd504f1ffed",
+          "status": "current_successor_at_same_path_preserved",
+          "current_blob": "007d689e2c44f50df6242137348add66c5019cc8"
+        }
+      ]
+    }
+  ]
+}

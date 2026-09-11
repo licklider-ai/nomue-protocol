@@ -1,0 +1,202 @@
+{
+  "review": {
+    "date": "2026-09-11",
+    "role": "bounded nonauthor asset reviewer",
+    "model_configuration": "gpt-5.6-sol",
+    "served_model_build_attestation": "unavailable",
+    "human_review": false,
+    "additional_agents": false,
+    "packet_authorship": false,
+    "scope": "archive safety and bounded implementation inspection; no formal promotion, adoption, freeze, gate, identifier, or release decision"
+  },
+  "fixed_targets": [
+    {
+      "commit": "f203eb12c036b40b3602f22603d39702cdba9bba",
+      "tree": "3fd7d3a51f58f64b0996e62a7c15bd93c4b255e6",
+      "parents": ["9bfddcc773e70a2d38db4bc39677935cfadcd726"],
+      "subject": "Clarify Holm level identity and add adversarial boundary vectors"
+    },
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "tree": "7b0b511edc694b148020f17baf2cb5795126509e",
+      "parents": ["b4b80dec20f9e2037e115395fcffff721aae134e"],
+      "subject": "Exclude sort diagnostics from Holm evidence identity and add tie-parity and budget tests"
+    },
+    {
+      "commit": "4eb31733f5e221ed211a6cc4448057e6dd2fc0dc",
+      "tree": "21a31d00a73cd41e4273af82b03718dea2235f99",
+      "parents": ["c4ad231471deba354bd018550b2378f2d740b944"],
+      "subject": "Plan R3 declaration-to-Holm connection and prospective Naik source intake"
+    },
+    {
+      "commit": "1e6c4be371bc91f63577f70a5e0fc7742aef16a8",
+      "tree": "d88b49d72a7c8c073e0c9de022e50e3becd3d13f",
+      "parents": ["e170cedcd85fe1fae2c777609a4058f8f8891d74"],
+      "subject": "Correct D0 node sizing with a materialized witness and conjunctive admission limits"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "tree": "e6944ca82664264bf1b9f9af62ba944d8d32ef1e",
+      "parents": ["cf6ae859857b6bdd2df3e313c82456131fca2731"],
+      "subject": "Record R3 bridge review intake and qualify RSS observations"
+    },
+    {
+      "commit": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+      "tree": "3ebc23e54ec78f1fb6994144b0ecf577de744674",
+      "parents": ["dedd26a3e0655001b67e40ccfb741e43ecb07beb"],
+      "subject": "Record bounded Holm and Welch primary-source connection review"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "tree": "00b55dd6fc2b112085faed5fdbfd0f540ff9a689",
+      "parents": ["bfe7d2307da8f72cd241fd6e7dc423a8e807e112"],
+      "subject": "Record author applicability of IEEE source confirmation to R3 and R4"
+    },
+    {
+      "commit": "3d071195234179b0c1ed2dddadd3481e01953c50",
+      "tree": "c8e48afc3cc1af82b0b622c2359901fcf3b04ae9",
+      "parents": ["20c8e3b01f3f8983eba4f05e60c4b64ee946d795"],
+      "subject": "Record bounded review of the R3 Holm promotion proposal"
+    }
+  ],
+  "source_boundary": {
+    "original_pdfs_available_to_this_review": false,
+    "original_pdfs_read_by_this_review": false,
+    "attributed_reports_read": [
+      {
+        "commit": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+        "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+        "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8"
+      },
+      {
+        "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+        "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+        "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+      },
+      {
+        "commit": "3d071195234179b0c1ed2dddadd3481e01953c50",
+        "path": "review-inputs/r3-holm-promotion-20c8e3b/REPORT.md",
+        "sha256": "88fc2ccf8b9eb9bf61cb5a26baf684b4a2635a909086aec07422d67727d47c98"
+      }
+    ],
+    "use": "The Holm and IEEE source findings are attributed reuse. This reviewer independently checked the arithmetic implementation and did not claim a new primary-source pass."
+  },
+  "verification": {
+    "manifest_entries_verified": 65,
+    "unique_commit_paths_verified": 40,
+    "packet_sha256sums": {
+      "entries": 25,
+      "status": "pass"
+    },
+    "git_diff_check": "pass",
+    "markdownlint": {
+      "files_reported": 412,
+      "issues": 0
+    },
+    "prettier": "pass",
+    "holm_existing_harness": {
+      "normal_total": 9499,
+      "optimized_total": 9499,
+      "assertion_mapping_identical": true
+    },
+    "reviewer_arithmetic": {
+      "candidate_commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "candidate_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+      "checks": {
+        "alpha_endpoint_checks": 2,
+        "closed_testing_families": 600,
+        "decode_boundaries": 8,
+        "decode_random_domain": 50000,
+        "identity_and_refusal_checks": 10,
+        "project_boundaries": 5364,
+        "project_exact_midpoints": 4084,
+        "project_random": 50000,
+        "step_down_levels": 600
+      },
+      "status": "pass",
+      "total": 110668
+    },
+    "reviewer_binding": {
+      "checks": 23,
+      "status": "pass",
+      "zero_launch_refusals": 16,
+      "post_worker_fail_closed": 5
+    },
+    "bridge_existing_harness": {
+      "checks_each_mode": [157, 157],
+      "modes_identical": true,
+      "isolated_probes": 12,
+      "d0_cases": [70, 70],
+      "integrity_checks": 15
+    },
+    "node_budget": {
+      "all_count_max": 42450,
+      "d0_cap": 24576,
+      "submitted_upper_bound": 27108,
+      "submitted_cap": 28672
+    },
+    "ieee_report_checks": {
+      "independent_report_script": {
+        "above_max_project_refusal_is_stricter_than_ieee_nearest": true,
+        "field_decode_cases": 8,
+        "interval_projection_cases": 1,
+        "midpoint_tie_cases": 4,
+        "monotone_order_points": 7,
+        "signed_zero_encodings_collapse_in_lattice": true,
+        "status": "pass"
+      },
+      "author_applicability_script": {
+        "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+        "source_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+        "field_boundaries": 6,
+        "negative_zero_policy": "explicit refusal",
+        "binary64_005_differs_from_one_twentieth": true
+      }
+    },
+    "external_derivation_output": "derivation checks passed: closed testing, step-down domain, alpha=1, collision, level identity, vector, width",
+    "live_rss_current_environment": {
+      "status": "not_reproduced",
+      "reason": "/proc session/process-tree RSS unavailable; sampler failed closed before probes",
+      "treatment": "committed reviewer-host LIVE-RSS.json remains attributed one-host evidence only"
+    },
+    "repository_validate": {
+      "status": "not_run_to_completion",
+      "reason": "tsx IPC creation failed with EPERM in this container; direct Node execution could not resolve tsx-mapped .js imports",
+      "not_a_content_failure": true
+    }
+  },
+  "resource_limits_retained": {
+    "standalone_family_size": [1, 1024],
+    "bridge_groups": [3, 16],
+    "bridge_members": [3, 120],
+    "worker_request_response_bytes": 262144,
+    "python_address_space_mib": 256,
+    "node_old_space_mib": 256,
+    "whole_harness_deadline_seconds": 30,
+    "live_rss_ceiling_mib": 512,
+    "live_rss_character": "reviewer-host sampled observation, not a hard or portable support bound"
+  },
+  "integration_sequence": [
+    "9bfddcc773e70a2d38db4bc39677935cfadcd726",
+    "f203eb12c036b40b3602f22603d39702cdba9bba",
+    "b4b80dec20f9e2037e115395fcffff721aae134e",
+    "c4ad231471deba354bd018550b2378f2d740b944",
+    "4eb31733f5e221ed211a6cc4448057e6dd2fc0dc",
+    "517cb7dcfc02556ea8a91b583bbfdce91b7921f0",
+    "e170cedcd85fe1fae2c777609a4058f8f8891d74",
+    "1e6c4be371bc91f63577f70a5e0fc7742aef16a8",
+    "45bd42f0a8c5572af6187e76451f65d28124ab53",
+    "cf6ae859857b6bdd2df3e313c82456131fca2731",
+    "cc87234d27b7a0d51bc172d0e661845a3b1f9b15"
+  ],
+  "integration_notes": [
+    "The listed repair commits are not self-contained patches; preserve the entire linear ancestry.",
+    "For IEEE #294, commit 8647662 adds author-intake files; its independent REPORT/SOURCES/RESULTS/check script are in parent bfe7d230.",
+    "Keep the assets informative and experimental under governance/drafts/review-inputs; do not treat archive integration as a public supported behavior or Research Gate decision."
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39"
+  }
+}
