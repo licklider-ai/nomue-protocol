@@ -99,3 +99,9 @@ The active candidate and map READMEs contain reproduction commands. Remaining wo
 is formal input-size reporting, final registry/fixture/surface allocation, coordinated
 adoption wording, and the independent-evidence decision above. RFC timing is unchanged;
 no automatic adoption is implied by a successful repair CI.
+
+## Completed repair integration
+
+[Exact repair CI evidence](ci/README.md) preserves the final tested head, merged
+tree, all successful jobs, raw artifact members and original ZIPs. The implementation
+is merged through PR #326; the historical unknowns above remain unknown.
