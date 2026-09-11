@@ -1,0 +1,36 @@
+{
+  "design_commit": "dc3c1c88b684aed6f90c7d35b6d06fce501f8858",
+  "ieee_review_commit": "864766232988181e72ae18c235dbc815466b3a1d",
+  "dependencies": {
+    "upstream_arithmetic.py": {
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+      "commit": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/upstream_arithmetic.py"
+    },
+    "rational_candidate.py": {
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712",
+      "commit": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/rational_candidate.py"
+    },
+    "rational_oracle.py": {
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c",
+      "commit": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/rational_oracle.py"
+    },
+    "budget.py": {
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38",
+      "commit": "c61e734a1f19f6572100f2594dd24b1e01ea4d49",
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/budget.py"
+    }
+  },
+  "wrapper_commit": "f8f3feb71404962262d1a9f78b5d37f04454f746",
+  "baseline_sha256": "e6dea497820cac04bcdd7425b46315ad5e9f34723d2ad64414a0bf420d21841e",
+  "runtime": {
+    "upstream_arithmetic.py": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+    "rational_candidate.py": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712",
+    "rational_oracle.py": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c",
+    "budget.py": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38",
+    "complete.py": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+  },
+  "wrapper_regression_harness_sha256": "10c3021aba0eee596ae1ad14728152bfdf343d7dc1df4872b04a60394f8dbfe3"
+}
