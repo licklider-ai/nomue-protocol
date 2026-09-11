@@ -11,6 +11,12 @@
     "identity substitution": 2,
     "member substitution": 2,
     "bool evidence": 1,
+    "diagnostics excluded from identity": 1,
+    "evidence shape": 1,
+    "upward midpoint": 1,
+    "exact tie parity": 4084,
+    "comparison budget": 1,
+    "budget headroom": 50,
     "bad p": 4,
     "count": 2,
     "duplicate": 1,
@@ -26,11 +32,11 @@
     "all zeros": 1,
     "maximum admission": 3
   },
-  "total": 5361,
+  "total": 9499,
   "benchmarks": [
     {
       "case": "reverse",
-      "seconds_transform_and_check": 0.015647487998649012,
+      "seconds_transform_and_check": 0.021472092000010434,
       "comparisons": {
         "identity": 1023,
         "values": 1023
@@ -38,7 +44,7 @@
     },
     {
       "case": "ties",
-      "seconds_transform_and_check": 0.014809215997956926,
+      "seconds_transform_and_check": 0.026225534999980482,
       "comparisons": {
         "identity": 1023,
         "values": 1023
@@ -46,22 +52,22 @@
     },
     {
       "case": "extremes",
-      "seconds_transform_and_check": 0.015968282001267653,
+      "seconds_transform_and_check": 0.02716296700000953,
       "comparisons": {
         "identity": 1023,
         "values": 5577
       }
     }
   ],
-  "max_rss_kib": 13056,
-  "python": "3.12.14",
+  "max_rss_kib": 18876,
+  "python": "3.11.15",
   "optimized_run": {
     "assertions_identical": true,
-    "total": 5361,
+    "total": 9499,
     "benchmarks": [
       {
         "case": "reverse",
-        "seconds_transform_and_check": 0.015550943000562256,
+        "seconds_transform_and_check": 0.02157594599998447,
         "comparisons": {
           "identity": 1023,
           "values": 1023
@@ -69,7 +75,7 @@
       },
       {
         "case": "ties",
-        "seconds_transform_and_check": 0.014241441000194754,
+        "seconds_transform_and_check": 0.023408401000011736,
         "comparisons": {
           "identity": 1023,
           "values": 1023
@@ -77,13 +83,13 @@
       },
       {
         "case": "extremes",
-        "seconds_transform_and_check": 0.015429961000336334,
+        "seconds_transform_and_check": 0.025296698000005335,
         "comparisons": {
           "identity": 1023,
           "values": 5577
         }
       }
     ],
-    "max_rss_kib": 15360
+    "max_rss_kib": 20544
   }
 }

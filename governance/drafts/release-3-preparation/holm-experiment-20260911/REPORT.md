@@ -42,15 +42,19 @@ The oracle is a trusted test helper, not a public malformed-input validator.
 
 ## Measured checks
 
-The normal and optimized Python runs each passed 5361 explicit assertions,
+The normal and optimized Python runs each passed 9499 explicit assertions,
 including 320 small families against the subset oracle, 320 exact step-down
 comparisons at rational levels strictly between zero and one, 4052 projection
-checks, early-cap/endpoints, permutations, case identity and changed evidence.
+checks, 4084 exact-tie parity checks across every binade, early-cap/endpoints,
+permutations, case identity, changed evidence and comparison-budget refusal.
 Expected mathematical values are not produced from the candidate alone.
+The first submission recorded 5361 assertions on CPython 3.12.14; the repaired
+run below was executed on CPython 3.11.15.
 
 At m=1024, reverse order, full ties and mixed extreme values with maximum label
 lengths passed. Transform plus evidence recheck took about 14--16 milliseconds
-per case on this CPython 3.12.14 Linux run. Both entire suites ran under an
+per case on the first CPython 3.12.14 Linux run and about 21--27 milliseconds
+on the repaired CPython 3.11.15 run. Both entire suites ran under an
 external 10-second timeout and 256-MiB virtual-memory ceiling. Maximum RSS is
 recorded in RESULTS; it is distinct from the imposed virtual-memory limit.
 These finite samples do not prove worst-case time or portable platform support.
@@ -93,3 +97,37 @@ comparison exhaustion and admitted resource extremes. Extend tests only to close
 specific findings. Preserve the source/IEEE and scientific-input limitations;
 small code repairs can close this implementation experiment independently of
 formal release decisions.
+
+## External implementation review and small repair
+
+A user-supplied bounded adversarial review of commit
+`b4b80dec20f9e2037e115395fcffff721aae134e` focused on rounding, evidence
+tampering and execution limits. Reviewer/model identity and raw execution
+artifacts were not supplied; the receipt is attributed to the user. The repair
+was prepared in that reviewer's session on 2026-09-11, not by the original
+author context, and is not an independent close review of itself.
+
+Reported checks: both harness modes reproduced under the 10-second/256-MiB
+envelope on CPython 3.11.15 with identical assertion mappings; source hashes
+matched; every exact tie across all binades and both significand parities
+projected identically to Fraction-to-float; ties-to-even was confirmed in both
+midpoint directions; comparison counts for the three benchmark inputs matched
+the 3.12.14 record; 3308 adversarial 1024-member orderings, including random
+permutations, sawtooth, organ-pipe, interleaved and run-structured inputs,
+needed at most 8962 comparisons against the 10240 budget with no refusal; and
+altered evidence using Fraction, bytearray, dict subclass, extra keys, nested
+lists, and objects with hostile `__eq__` methods were all refused before any
+hostile comparison method executed.
+
+| Finding                                                                                                                                                                                                        | Repair                                                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Runtime comparison counters were part of evidence identity, so evidence regenerated under a different sort implementation or interpreter version could be refused although every exact value and label matched | `check_evidence` now compares the evidence view without the `comparisons` diagnostic; the counters remain in the returned object. A test alters them and confirms acceptance is unchanged |
+| The design's upward midpoint vector and exact-tie parity in general were not executed by the harness                                                                                                           | Added the upward midpoint transform check and exhaustive exact-tie projection checks for every binade and both parities                                                                   |
+| The comparison budget guard had no direct test and no headroom evidence                                                                                                                                        | Added a direct refusal test with the stated reason and 50 random 1024-member orderings checked against the budget                                                                         |
+| A non-dict submitted evidence object reached the recursive comparator                                                                                                                                          | Added an explicit `evidence shape` refusal before comparison                                                                                                                              |
+
+No rounding, cap/scan, inverse-mapping or refusal-precedence defect was found.
+The comparison budget remains an experiment guard: observed headroom is not a
+proof of the runtime sort's worst case. Source/IEEE and scientific-input
+limitations are unchanged. INPUTS and RESULTS were regenerated for the repaired
+sources.

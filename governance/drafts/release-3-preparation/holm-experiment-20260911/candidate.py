@@ -86,7 +86,17 @@ def identical(a,b):
     return a==b
 
 
+DIAGNOSTICS = frozenset({'comparisons'})
+
+
+def evidence_view(result):
+    # Runtime comparison counters depend on the interpreter's sort algorithm;
+    # they are diagnostics, not exact mathematical or identity evidence.
+    require(type(result) is dict, 'evidence shape')
+    return {k: v for k, v in result.items() if k not in DIAGNOSTICS}
+
+
 def check_evidence(expected_carrier, submitted):
     expected = transform(expected_carrier)
-    require(identical(expected,submitted), 'evidence mismatch')
+    require(identical(evidence_view(expected), evidence_view(submitted)), 'evidence mismatch')
     return True
