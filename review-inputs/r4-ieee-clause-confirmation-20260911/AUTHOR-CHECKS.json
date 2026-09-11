@@ -1,0 +1,7 @@
+{
+  "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+  "source_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+  "field_boundaries": 6,
+  "negative_zero_policy": "explicit refusal",
+  "binary64_005_differs_from_one_twentieth": true
+}
