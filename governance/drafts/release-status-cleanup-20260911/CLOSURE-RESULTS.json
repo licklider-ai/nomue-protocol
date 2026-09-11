@@ -1,0 +1,553 @@
+{
+  "checked_main": "a2281924b9a2912f8cf52d396fe348b807a380d3",
+  "cleanup_pr": 329,
+  "observation_scope": "GitHub API responses during the 2026-09-11 cleanup; not signed attestations.",
+  "closed_count": 52,
+  "branches_deleted": 0,
+  "outcomes": [
+    {
+      "closed_at": "2026-09-11T20:57:18Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "1e6c4be371bc91f63577f70a5e0fc7742aef16a8",
+      "merged": false,
+      "number": 299,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/299"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:20Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "4eb31733f5e221ed211a6cc4448057e6dd2fc0dc",
+      "merged": false,
+      "number": 298,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/298"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:23Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "dc3c1c88b684aed6f90c7d35b6d06fce501f8858",
+      "merged": false,
+      "number": 296,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/296"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:25Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "f8f3feb71404962262d1a9f78b5d37f04454f746",
+      "merged": false,
+      "number": 295,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/295"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:27Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "1ae29058f44dce65ba3a3ef0d018bdbea0d9f940",
+      "merged": false,
+      "number": 293,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/293"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:30Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "c4ad231471deba354bd018550b2378f2d740b944",
+      "merged": false,
+      "number": 292,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/292"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:33Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "da1c53dfd70f02169014f5d882aa51aec960a019",
+      "merged": false,
+      "number": 287,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/287"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:35Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "merged": false,
+      "number": 285,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/285"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:38Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "e7ddd16f6d2272cb7c9267f7f2aa8d35103f1c44",
+      "merged": false,
+      "number": 283,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/283"
+    },
+    {
+      "closed_at": "2026-09-11T20:57:40Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "c97e1dacd779f7e3ecf9167630ecb2de9c15a231",
+      "merged": false,
+      "number": 273,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/273"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:45Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "545f6eb4c28eb93bd7cc5404dd45afd475822317",
+      "merged": false,
+      "number": 272,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/272"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:47Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "c28d87a2260ca04c99e3c3927e8aa847aad1bd38",
+      "merged": false,
+      "number": 271,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/271"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:51Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "fca5094a227422fd2d7d72ed8a7dc64f0f6ddc21",
+      "merged": false,
+      "number": 270,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/270"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:54Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "829e1050ab35ced87867490c974ea07b6e1545c9",
+      "merged": false,
+      "number": 269,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/269"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:56Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "646ae78d2836525333ac1c1a259fdeda0bb6be89",
+      "merged": false,
+      "number": 268,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/268"
+    },
+    {
+      "closed_at": "2026-09-11T21:00:59Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "0e82d4a3d6f098753a703287f9424fe590b886d5",
+      "merged": false,
+      "number": 267,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/267"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:01Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "55d30240252517aa4a84b8cccf374a72260c3426",
+      "merged": false,
+      "number": 266,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/266"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:04Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "9e95cdee40b64cbf0f42dca8e3fab1c075507168",
+      "merged": false,
+      "number": 264,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/264"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:06Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "09a75be0f3549d75e74ee7226b476a9d71480cb0",
+      "merged": false,
+      "number": 262,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/262"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:08Z",
+      "disposition": "review_preserved_exactly",
+      "head_sha": "36b40134321337d99417828368b5f690c70f5d07",
+      "merged": false,
+      "number": 260,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/260"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:37Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "72e4dd3b71868cf6423dfefa231751a03a1b2161",
+      "merged": false,
+      "number": 259,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/259"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:39Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "7e513d174de83a564a91bea9168e45f623c58448",
+      "merged": false,
+      "number": 258,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/258"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:42Z",
+      "disposition": "review_preserved_exactly",
+      "head_sha": "901733a551b560aef544191d937b517f2f87c896",
+      "merged": false,
+      "number": 257,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/257"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:44Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "c9ca0084a377381740396f00174aba653cee0aed",
+      "merged": false,
+      "number": 256,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/256"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:46Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "4d61db593510466f34ca546430d7796ea42d22e1",
+      "merged": false,
+      "number": 254,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/254"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:49Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "55a073525ec685278cf40731d61b1b17ec0882aa",
+      "merged": false,
+      "number": 253,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/253"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:51Z",
+      "disposition": "review_preserved_exactly",
+      "head_sha": "fdc5364a53293ce12a837f833dd23465d2fd6fcb",
+      "merged": false,
+      "number": 252,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/252"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:53Z",
+      "disposition": "review_preserved_exactly",
+      "head_sha": "e4db34eb6561286eafb5873842d8df31e30c409b",
+      "merged": false,
+      "number": 251,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/251"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:55Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "2ba1f1672af6846414439cb3db9524828d0ac8ac",
+      "merged": false,
+      "number": 250,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/250"
+    },
+    {
+      "closed_at": "2026-09-11T21:01:57Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "cbbc51143b82d97b29afaa0902ee2a42456d3166",
+      "merged": false,
+      "number": 248,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/248"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:06Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "95683fc99403dc614e4722fb2ee7ab2760afed37",
+      "merged": false,
+      "number": 247,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/247"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:10Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "0624d98715706f1a940025407a91dccf9e8b3881",
+      "merged": false,
+      "number": 245,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/245"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:12Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4",
+      "merged": false,
+      "number": 244,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/244"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:15Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "8a1b5f9da70c654c03e0deb0229d2abd592aee44",
+      "merged": false,
+      "number": 242,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/242"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:17Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "00f50638d3389d2d901fcadb5e2d03a5f2bd4f78",
+      "merged": false,
+      "number": 241,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/241"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:19Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "862dfe2bcf55b206c9f87ac06164b02b2cc3c079",
+      "merged": false,
+      "number": 238,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/238"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:21Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "7190c78b58f9d6b36dad0d8a39ff1c3b29faa961",
+      "merged": false,
+      "number": 236,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/236"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:24Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "1c013a6bc07f7d066fa43c692abe2be91241b384",
+      "merged": false,
+      "number": 231,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/231"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:27Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "3a8bc0d86718a2cf47ce12089a9030a02e41a297",
+      "merged": false,
+      "number": 228,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/228"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:29Z",
+      "disposition": "no_additional_tree_content",
+      "head_sha": "c39ed917835edfafe31327cdb6c07afa9733f104",
+      "merged": false,
+      "number": 215,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/215"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:55Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "f7ab321477bbb4f6decefbf931615ff6966e9e6e",
+      "merged": false,
+      "number": 213,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/213"
+    },
+    {
+      "closed_at": "2026-09-11T21:02:58Z",
+      "disposition": "obsolete_tooling_proposal_not_activated",
+      "head_sha": "5a87f5c31feaee1f8f083a4a6e289478810251f6",
+      "merged": false,
+      "number": 209,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/209"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:00Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "044078d3b19ff3307dc347b0b9e7ecbbed1750c6",
+      "merged": false,
+      "number": 207,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/207"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:02Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "070e5dd569f0dfcb6f15ec49daebc0544af217d9",
+      "merged": false,
+      "number": 204,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/204"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:08Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "1b2a1efa25d37b6cc140b788cbaab4f78e84ec2b",
+      "merged": false,
+      "number": 202,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/202"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:10Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "81835178ac49f189064e20d9babda219acfd7c5f",
+      "merged": false,
+      "number": 200,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/200"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:12Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "f6d39534e85920a8331941126a6eb384244e34f1",
+      "merged": false,
+      "number": 198,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/198"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:15Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "80ad520cf25e8cdf647f20e7d08d5bb426a85633",
+      "merged": false,
+      "number": 196,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/196"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:17Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "eb6c0b2657b0b8b1f5b4ca64e48ad0436319ecc4",
+      "merged": false,
+      "number": 193,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/193"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:19Z",
+      "disposition": "already_integrated_history",
+      "head_sha": "5962cc2def5b1aca7e30d219f12a9a6486ca7b11",
+      "merged": false,
+      "number": 190,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/190"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:22Z",
+      "disposition": "unique_review_preserved_old_edits_superseded",
+      "head_sha": "973ae5d2062095989d491ab00450effb16770af5",
+      "merged": false,
+      "number": 182,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/182"
+    },
+    {
+      "closed_at": "2026-09-11T21:03:24Z",
+      "disposition": "superseded_by_corrected_numerical_record",
+      "head_sha": "9f39eafd4b0a676e6615956b5a7899f195fc0358",
+      "merged": false,
+      "number": 174,
+      "original_body_preserved": true,
+      "state": "closed",
+      "url": "https://github.com/licklider-ai/nomue-protocol/pull/174"
+    }
+  ],
+  "open_prs_after_predecessor_closure": [
+    {
+      "number": 329,
+      "head_sha": "4c1320392a219c9f99a6e8fc4ed372047e471034",
+      "state": "open"
+    }
+  ],
+  "public_rfc_issues": [
+    {
+      "number": 25,
+      "state": "open",
+      "url": "https://github.com/licklider-ai/nomue-protocol/issues/25"
+    },
+    {
+      "number": 274,
+      "state": "open",
+      "url": "https://github.com/licklider-ai/nomue-protocol/issues/274"
+    },
+    {
+      "number": 261,
+      "state": "open",
+      "url": "https://github.com/licklider-ai/nomue-protocol/issues/261"
+    }
+  ]
+}
