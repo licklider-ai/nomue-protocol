@@ -1,0 +1,5 @@
+{
+  "receipts": 27,
+  "original_byte_forwards": 5,
+  "all_public_outputs_valid": true
+}
