@@ -1,0 +1,34 @@
+name: R3 controlled execution research
+on:
+  pull_request:
+    paths:
+      - "governance/drafts/release-3-preparation/holm-controlled-execution-20260911/**"
+      - ".github/workflows/r3-controlled-execution.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  controlled-call:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - name: Run real cgroup v2 admission, enforcement and cleanup controls
+        run: sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" python3 -I governance/drafts/release-3-preparation/holm-controlled-execution-20260911/ci_host.py
+      - name: Upload execution observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r3-controlled-execution
+          path: |
+            execution-host.json
+            execution-cgroup-results.json
