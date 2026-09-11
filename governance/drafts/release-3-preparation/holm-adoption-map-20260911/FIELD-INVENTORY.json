@@ -1,0 +1,1790 @@
+{
+  "status": "schema declaration coverage only; not proof of semantic or test completeness",
+  "fields": [
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/$schema",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/record_type",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/record_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/revision_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/created_at",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/interpretation_bundle_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/profile_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/integrity",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/contract_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/kind",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/analysis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/family_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/result_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/origin",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/p_hex",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/origin/properties/source_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/origin/properties/hypothesis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/inputs/properties/members/items/properties/origin/properties/sidedness",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/analysis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/family_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/result_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/adjusted",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/adjusted/items/properties/member_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0007"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/adjusted/items/properties/adjusted_hex",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0003"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/payload/properties/result/properties/adjusted/items/properties/display_hex",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0004"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/integrity/properties/canonicalization_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/integrity/properties/digest_algorithm",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/integrity/properties/digest_scope",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/properties/integrity/properties/content_digest",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0010"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/artifact_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/dataset_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/outcome_definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/scale_declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/observation_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/experimental_unit_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/value",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/design_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/experimental_unit_definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/independence_declared",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/not_flattened_declared",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/groups",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/groups/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units/items/properties/experimental_unit_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/dataset_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/design_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/procedure_selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/assumption_statements",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population/properties/definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population/properties/observation_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model/properties/declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/group_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/minuend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/subtrahend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/control_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/minuend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/subtrahend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients/items/properties/value",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/$defs/timing/properties/relative_to_outcome_inspection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "record",
+      "schema_pointer": "/$defs/declaration/$defs/timing/properties/statement",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/record_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0005"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/revision_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0005"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/kind",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/analysis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/family_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/result_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/origin",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/p_hex",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/origin/properties/source_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/origin/properties/hypothesis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/properties/inputs/properties/members/items/properties/origin/properties/sidedness",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/artifact_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/dataset_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/outcome_definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/scale_declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/observation_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/experimental_unit_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/dataset/properties/observations/items/properties/value",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/design_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/experimental_unit_definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/independence_declared",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/not_flattened_declared",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/groups",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/groups/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units/items/properties/experimental_unit_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/design/properties/units/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/dataset_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/design_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/procedure_selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/assumption_statements",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population/properties/definition",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/population/properties/observation_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model/properties/declaration",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/analyses/items/properties/variance_model/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/0/properties/members/items/properties/group_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/minuend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/1/properties/members/items/properties/subtrahend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/control_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/minuend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/2/properties/members/items/properties/subtrahend_group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/selection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients/items/properties/group_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/families/items/oneOf/3/properties/members/items/properties/coefficients/items/properties/value",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/member_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/0/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/1/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/2/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/3/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/4/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/result_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/analysis_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/family_id",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/member_ids",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/properties/result_slots/items/oneOf/5/properties/operation_kind",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0002"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/$defs/timing/properties/relative_to_outcome_inspection",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "expected",
+      "schema_pointer": "/$defs/declaration/$defs/timing/properties/statement",
+      "proposed_requirement": "NRS-PROFILE-IMGC-0001"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/record_reference",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/interpretation_bundle_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/verifier",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/generated_at",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/$schema",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/report_type",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/record_reference/properties/record_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/record_reference/properties/revision_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/record_reference/properties/content_digest",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/verifier/properties/name",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/verifier/properties/version",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/verifier/properties/source_digest",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0011"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/0/allOf/1/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/0/allOf/1/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/1/allOf/1/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/1/allOf/1/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/2/allOf/1/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/2/allOf/1/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/3/allOf/1/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/3/allOf/1/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/4/allOf/1/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/checks/prefixItems/4/allOf/1/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/scientific_validity",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/declaration_truth",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/distributional_model_validity",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/causal_interpretation",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/standardized_effect_size",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/familywise_error_control",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/source_authenticity",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/properties/guarantee_boundary/properties/p_generation",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0013"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/check_ref",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/execution",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/outcome",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/details",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/error",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/reason_codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope/properties/record_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope/properties/revision_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope/properties/analysis_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope/properties/family_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/scope/properties/result_id",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/details/properties/source_stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/details/properties/codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/details/properties/bridge_reason",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/error/properties/error_type",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/properties/error/properties/message",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/0/if/properties/execution",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/0/else/properties/reason_codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/1/if/properties/execution",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/2/if/properties/outcome",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/2/then/properties/reason_codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/3/if/properties/outcome",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "report",
+      "schema_pointer": "/$defs/check/allOf/3/then/properties/reason_codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0008"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/$schema",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/output_type",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/refusal_kind",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/reason_codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/message",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/verifier",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/input_evidence",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/generated_at",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/limit_category",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/details",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/verifier/properties/name",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/verifier/properties/version",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/input_evidence/properties/availability",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/details/properties/source_stage",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/details/properties/codes",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/properties/details/properties/bridge_reason",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    },
+    {
+      "schema": "refusal",
+      "schema_pointer": "/allOf/0/if/properties/refusal_kind",
+      "proposed_requirement": "NRS-CONTRACT-HOLM-0009"
+    }
+  ]
+}

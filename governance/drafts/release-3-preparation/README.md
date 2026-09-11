@@ -20,6 +20,10 @@ now connects the bounded Contract, proposed identities, schemas, scoped outcomes
 exact candidate dispatch and conformance controls. It remains unissued;
 [adoption changes and decisions](holm-public-candidate-20260911/COUPLING.md) are explicit.
 
+The [adoption map and restart point](holm-adoption-map-20260911/README.md)
+proposes Requirement allocations, inventories public fields and records the next
+checkpoint/output implementation decisions. It is non-operative preparation.
+
 ## Preserved pre-opening preparation record
 
 **Status: informative pre-public work record.** Release 3 public discussion is not
