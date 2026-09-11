@@ -53,3 +53,19 @@ checks explicit conditions and expected failure reasons; crashes do not count as
 valid refusals. Record input/source hashes and verify trusted dependencies before
 execution. Do not embed literal outcome counts or regenerate expected values
 from the candidate alone.
+
+## Additional design-review vectors
+
+- Early cap followed by a smaller product: original p=(3/4,1/2), sorted
+  p=(1/2,3/4), products T/U=(1,3/4), adjusted=(1,1) in both orders.
+  The cumulative value stays at the cap; do not let the later smaller product
+  reduce it.
+- Exact evidence substitution despite a colliding display: E=3/4+9*2^-54
+  and E'=3/4+8*2^-54 both display as 3/4+4*2^-53. For the three-member
+  family x=1/4+3*2^-54 repeated, E is correct and replacing it with E'
+  is rejected even though the display is unchanged.
+- Labels "A" and "a" coexist as different hypotheses; two exact "A" labels
+  are rejected. Changing only case in submitted evidence changes its identity.
+- Diagnostic alpha=1/20 differs from exact interpretation of binary64 0.05.
+  The diagnostic takes the stated integer ratio, never silently substitutes the
+  float. Candidate transformation itself still takes no alpha.

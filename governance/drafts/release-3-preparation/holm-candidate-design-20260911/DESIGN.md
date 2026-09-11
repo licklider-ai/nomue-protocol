@@ -48,7 +48,9 @@ strict parser and gets a separate review.
 A carrier contains one family label, one revision label, and an ordered list of
 members. Every member has a unique hypothesis label, an origin label, and its
 p bytes. All labels are nonempty ASCII strings of at most 64 bytes using letters,
-digits, underscore, dot or hyphen. Repeated origin labels are allowed: one
+digits, underscore, dot or hyphen. Compare labels by case-sensitive exact ASCII
+bytes without normalization: "A" and "a" are distinct hypotheses. Repeated origin
+labels are allowed: one
 upstream result may provide several distinct hypotheses. Duplicate hypothesis
 labels are refused even if p-values agree. Equal p-values with distinct labels
 are valid. Counts are derived from the list, never from a second untrusted m.
@@ -93,7 +95,9 @@ At alpha=1, clipping destroys this equivalence: p=(3/4,1) gives adjusted=(1,1),
 although the first sequential threshold 1/2 fails. Exclude alpha=1 from every
 claimed equivalence. The first candidate takes no alpha input and returns no
 rejection decisions. Review diagnostics may compare exact adjusted values with
-an exactly identified rational alpha strictly between zero and one. Any future
+an exactly identified rational alpha strictly between zero and one. Supply
+diagnostic alpha as explicit integers numerator/denominator: binary64 0.05 is
+not the exact rational 1/20 and is not silently accepted as that level. Any future
 scientific level and comparison rule belong to the check version, not the Record.
 
 For a tie block p_(r)=...=p_(s)=p, T is nonincreasing within the block. Its first
@@ -131,13 +135,16 @@ supplied encodings, with scientific validity not asserted.
 | Label widths        | At most 64 ASCII bytes each, checked before character scans                                                                         |
 | P operand           | At most 1075 bits by the validated input domain                                                                                     |
 | Uncapped T operand  | T<=1024*2^1074, at most 1085 bits                                                                                                   |
-| Sorting of p-values | Bottom-up mergesort; at most m*ceil(log2(m))<=10240 integer comparisons; reuse buffers                                              |
+| Sorting of p-values | Deterministic key (P, original index); at most 10240 integer comparisons, with explicit experiment refusal if exhausted             |
 | Transform           | m products by integers <=1024, m scan/cap steps, m projections and one inverse permutation                                          |
 | Retained carrier    | At most 139392 scalar payload bytes: family/revision labels plus 1024*(64+64+8) member bytes; object/container overhead is separate |
 | Trace               | O(m) bounded-width integer/index entries; no all-subset oracle in production candidate                                              |
 
-For unique hypothesis identity, use a separate bounded mergesort of labels and
-adjacent equality checks: at most 10240 comparisons of at most 64 bytes each.
+For unique hypothesis identity, sort exact label bytes and check adjacent
+equality: at most 10240 comparisons of at most 64 bytes each, with explicit
+experiment refusal if exhausted. Prefer the selected runtime's standard sort;
+handwritten mergesort is not required. The implementation packet documents its
+comparison/temporary-memory behavior and verifies the admitted worst cases.
 Do not assume worst-case constant-time hash-table behavior.
 
 These limits are intentionally proposed rather than inferred from benchmarks.
