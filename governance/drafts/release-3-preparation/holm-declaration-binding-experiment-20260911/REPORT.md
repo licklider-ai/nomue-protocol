@@ -1,6 +1,7 @@
 # R3 declaration-bound supplied-p Holm experiment
 
-Status: disposable, unissued author-side experiment; external implementation review pending.
+Status: bounded experiment review round complete after reviewer repair and author intake.
+The candidate remains disposable and unissued; promotion and release gates stay open.
 Date: 2026-09-11. Sole base: `1e6c4be371bc91f63577f70a5e0fc7742aef16a8` (PR #299).
 
 ## Result and scope
@@ -91,6 +92,10 @@ The copied `oracle.py` preserves provenance; the connection harness uses the
 separate JavaScript closed-testing construction in `fixtures.mjs`.
 
 ## Resource observations and design deviation
+
+Historical author-host measurements follow. The external receipt and final author
+intake below supersede the claim that no live sampling has been performed and
+qualify the sum-of-peaks interpretation.
 
 In the recorded Linux / Node 24.19.0 / Python 3.12.14 environment, the 12 isolated
 probes finished within **0.456 seconds** each including process startup. The
@@ -183,3 +188,52 @@ the repair; their labels match the recorded run apart from the two added
 integrity controls and the alias restoration check. Timings, peaks and
 executable paths differ by host. The largest probe elapsed time was
 0.494 seconds and the largest sum of process peaks 156,716 KiB.
+
+## Author intake and bounded round closure
+
+OpenAI Codex, continuing author context, 2026-09-11, inspected the returned commit
+`cf6ae859857b6bdd2df3e313c82456131fca2731`, its sole parent
+`45bd42f0a8c5572af6187e76451f65d28124ab53`, and tree
+`4aa37b4a075679b986d45381e1d901568bd595cb`. The reviewer return is preserved as
+an ancestor; this intake is not an independent scientific review.
+
+The Python executable override, isolated `-I` worker launch, and Ajv alias
+restoration are confirmed. Reproduction on the author host passes 15 integrity
+checks and 157 connection checks in each Python mode; the twelve probes match
+the reviewer record's decisions, launches, node/byte counts and input hashes.
+All 25 returned inventory entries match. Review-host live measurements are
+inspected as supplied evidence, not claimed as a new author-host live run.
+
+One reporting correction is necessary. The receipt above says that the recorded
+sum of process peaks bounds the live measurements for these probes. That does
+not hold for every recorded row:
+
+| Probe             | Python mode | Live RSS, KiB | Reported peak sum, KiB |
+| ----------------- | ----------- | ------------: | ---------------------: |
+| max-count-refusal | Normal      |       128,564 |                127,900 |
+| max-count-refusal | Optimized   |       127,936 |                127,580 |
+
+The reported live maximum of 150,816 KiB and its same-probe peak sum of 157,832
+KiB are correct. However, those two numbers cannot establish an upper-bound claim
+for every probe. `resourceMetrics()` reads Node's peak before the probe constructs
+and writes its final report, whereas live sampling continues until exit. The RSS
+interfaces and observation windows also differ. This is a plausible explanation,
+not an isolated causal proof of the two differences. Treat the reported sums as
+observations at their collection points, not guaranteed whole-lifetime bounds.
+The ideal inequality for complete, comparable process lifetime peaks does not
+establish that these particular samples satisfy it. Original JSON measurements
+and the attributed review receipt remain unchanged.
+
+Live sampling is now evidenced on the reviewer host; it is not a portable memory
+bound, a hard limit, or proof that the ceiling-kill branch was exercised. The
+2 ms setting is a requested sleep interval plus scan/scheduling time. Node
+startup options, built-ins and installed runtime remain trusted; `-I` addresses
+Python path/user-site injection, not arbitrary hostile runtime configuration.
+
+This closes the bounded implementation-review round with no remaining mandatory
+code repair identified by this intake. Historical pending-review and next-review
+text above is superseded by this closure. Separate primary-source/promotion,
+scientific input validity, public registration and release decisions remain open.
+No main merge or adoption is implied. The next work is to inventory the R3
+promotion conditions against this fixed candidate, without starting another
+numerical method or repeating this review by default.
