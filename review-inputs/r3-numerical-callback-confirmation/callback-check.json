@@ -1,0 +1,34 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "python-flint": "0.9.0",
+    "mpmath": "1.4.1",
+    "mpmath_backend": "python",
+    "arb_precision_bits": 96
+  },
+  "integral_docstring_sha256": "77fd76a462ce36a2b5dfcb466c2e50aa9976aa6c03ffc1a75106837b6c8a3858",
+  "source_sha256": {
+    "probe_b_studentized_range.py": "bc0cb05a3ce0c2a3a66563a951935a850f01703bdfbcbae0dcfcb199b2ed81f3",
+    "probe_c_dunnett.py": "5864fb5bc748769d2050cdd2eb5548a777787dc2edcc4b2320f035896225eb89"
+  },
+  "range_k2": {
+    "input": "3 + (1/100)i",
+    "returned": "[0.966109606333282024659260 +/- 5.37e-25]",
+    "closed_form": "[0.9661096063332820246592601389 +/- 5.31e-29] + [0.00059463410207117830469813010 +/- 3.09e-30]j",
+    "overlap": false
+  },
+  "normal_convolution_p1": {
+    "input_s": "1 + (1/100)i",
+    "d": 2,
+    "returned": "[0.977271463718460 +/- 2.31e-16]",
+    "closed_form": "[0.9772714637184601260167953441 +/- 2.61e-29] + [0.00107960335919906360258717199 +/- 7.71e-30]j",
+    "overlap": false
+  },
+  "noninteger_power_branch_box": {
+    "nu": "73/10",
+    "box": "[-1.0 +/- 0.0101] + [+/- 0.0101]j",
+    "ordinary": "[+/- 1.07] + [+/- 1.07]j",
+    "analytic_checked": "nan + nanj"
+  },
+  "interpretation": "Analytic-extension contract is not established; no claim of a wrong recorded real-axis probability."
+}

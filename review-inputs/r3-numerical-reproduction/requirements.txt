@@ -1,0 +1,6 @@
+# Observed reproduction wheels: Linux x86_64, CPython 3.12.
+# Use an isolated environment; the recorded mpmath backend is python.
+mpmath==1.4.1 --hash=sha256:dc4f0ea2304480d4a9a48a94c1020571558ade522b44a6912efac63a586e140f
+python-flint==0.9.0 --hash=sha256:376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76
+numpy==2.4.6 --hash=sha256:90f9849678c75fe7afa2d348ac842c168b0a4d3d61919687216dfc547976d853
+scipy==1.17.1 --hash=sha256:02ae3b274fde71c5e92ac4d54bc06c42d80e399fec704383dcd99b301df37458
