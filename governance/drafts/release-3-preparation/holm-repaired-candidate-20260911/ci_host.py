@@ -34,6 +34,10 @@ print(json.dumps({'T2_before_move':'EBUSY','T2_after_move':'enabled','delegation
     Path('execution-host.json').write_text(result)
     subprocess.run([sys.executable, '-I', str(HERE / 'test_execution.py'), '--delegation', str(delegation),
                     '--output', 'execution-cgroup-results.json'], check=True, timeout=300)
+    if os.environ.get('NOMUE_UNSUPPORTED_NODE'):
+        subprocess.run(['node', str(HERE / 'test_host_guard.mjs'), '--delegation', str(delegation),
+                        '--output', 'host-guard-results.json'], check=True, timeout=60,
+                       env=dict(os.environ, NOMUE_EXPERIMENT_PYTHON=sys.executable))
 finally:
     (delegation / 'cgroup.kill').write_text('1')
     deadline = time.monotonic() + 5

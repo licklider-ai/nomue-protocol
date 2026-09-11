@@ -1,0 +1,38 @@
+[
+  {
+    "original_path": "nomue-protocol/nomue-protocol/host-guard-results.json",
+    "archived_path": "members/host-guard-results.json.txt",
+    "bytes": 2837,
+    "sha256": "495956abf01208b90cb09d314ec4ecfa625565b22fae337832c129f64c5bb14d"
+  },
+  {
+    "original_path": "nomue-protocol/nomue-protocol/execution-cgroup-results.json",
+    "archived_path": "members/execution-cgroup-results.json.txt",
+    "bytes": 464040,
+    "sha256": "8e540f41783ea9d84dbc9b9bd2a5ac8af9b83cd3f50b0c49ea9b2cb9314f71e2"
+  },
+  {
+    "original_path": "nomue-protocol/nomue-protocol/execution-host.json",
+    "archived_path": "members/execution-host.json.txt",
+    "bytes": 109,
+    "sha256": "fc2f89fc4736eab4b8223defa8e86656bd343e8cd59dba164e9fc9eb8754e7a8"
+  },
+  {
+    "original_path": "nomue-protocol/nomue-protocol/candidate-public-receipts.json",
+    "archived_path": "members/candidate-public-receipts.json.txt",
+    "bytes": 88,
+    "sha256": "8a44597ada277781afd5b5365887e2ae6650e244c385527931b498aa16917347"
+  },
+  {
+    "original_path": "_temp/holm-observations/RESULTS.json",
+    "archived_path": "members/RESULTS.json.txt",
+    "bytes": 12429,
+    "sha256": "c6d80f80f3a23b0ff54e43a303cf4603bbc96db55e56c65fb37be59efdb1b667"
+  },
+  {
+    "original_path": "_temp/holm-observations/PUBLIC-RESULTS.json",
+    "archived_path": "members/PUBLIC-RESULTS.json.txt",
+    "bytes": 4082,
+    "sha256": "8b9cc3d0251c9879410c200d6b318ba3cc38af5466a5b1922d905895f545cca1"
+  }
+]

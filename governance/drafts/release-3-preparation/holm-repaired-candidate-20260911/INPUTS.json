@@ -104,7 +104,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/entry.mjs",
-      "sha256": "e47a4c4de1946b121e0c1b42ffbbd225d68bbeecf1da583989ae48e0f4d1d42d"
+      "sha256": "077785d3b2f5e1f46c6127f1fa9e4ea05b3d0dc751d2a013c9b1524b77c04d1e"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/envelope.mjs",
@@ -133,6 +133,10 @@
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/private-report.schema.json",
       "sha256": "9f581c5676636ae97a3c7a189f2c5f90fe4934d625d4185f993d8a6eeabdfa6a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/probes.mjs",
+      "sha256": "9b7f57e729279eec0a30ab036143c08d085ae31e59be09db046405d06ad726fe"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/public.mjs",

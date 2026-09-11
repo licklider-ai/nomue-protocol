@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "AGENTS.md",
-      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+      "sha256": "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed"
     },
     {
       "path": "AUTHORITY.md",
@@ -848,7 +848,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/INPUTS.json",
-      "sha256": "96303efe03e7ecf068c0f051020f78097f29c3ce77ee4a2d41484d3c9d37a2b3"
+      "sha256": "1f7944ecd7ab22fedfd13a0d27da360394fcdf6d46487568186d87b93605eae9"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/PUBLIC-RESULTS.json",
@@ -876,7 +876,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/ci_host.py",
-      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede"
+      "sha256": "2be1af002eeb10a4ffaba84b40aee21a46adfb77a8ce158ea6d6cd6f2b8a9881"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/declaration-shapes.json",
@@ -888,7 +888,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/entry.mjs",
-      "sha256": "e47a4c4de1946b121e0c1b42ffbbd225d68bbeecf1da583989ae48e0f4d1d42d"
+      "sha256": "077785d3b2f5e1f46c6127f1fa9e4ea05b3d0dc751d2a013c9b1524b77c04d1e"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/envelope.mjs",
@@ -904,7 +904,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-public-report.json",
-      "sha256": "1056151d51983479943a795ba1b2dc9a01c34e0770e91481afbd00cbfdacd5fe"
+      "sha256": "1cd57b9b1a91da5c2b93d6c3a3b8c9a2f2368b6f985e7e335ccf7c7cc360ef19"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-record.jcs",
@@ -912,7 +912,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-report.json",
-      "sha256": "989aff997953db78c8809cbfd49ac79e655963c77ba75734010cf059100ddc60"
+      "sha256": "d67f1610f8a564d29235551f2a63f17c82c77b7213a10f26f86ddb24449f05d1"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/expected.schema.json",
@@ -928,7 +928,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/pin_runtime.py",
-      "sha256": "40c50dbbdeea01faf665f164d513e72cc150d7cfb1d1d46319b47c87592b4c39"
+      "sha256": "2e59bc0bfbb570953429b4dc24ed41f2cb2b9bfc9e6ceb41546b5b6fa0fa27ad"
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/prepare_cases.mjs",
@@ -987,6 +987,14 @@
       "sha256": "4304b11183c3b5a2efb9ca417c41508acd909bd8ea69b346be3ef233b5b5923b"
     },
     {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_host_guard.mjs",
+      "sha256": "ebd7ccb9e19989ccbe88bab670ff69c9199b150b4e590f8d3b607384a67fffb9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs",
+      "sha256": "a4884fe4361d6434807b5b390e7990c10da3358fa0ee6c8e24e5cfe51bba53a4"
+    },
+    {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_public.mjs",
       "sha256": "a73c9eb7ad6a053660902dedf7be44a78d7dc4a32de84f762c7c8254f9bbf270"
     },
@@ -996,7 +1004,7 @@
     },
     {
       "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_repairs.mjs",
-      "sha256": "75fcf80b622787c8c97b404fdfb275acfa4e294ab0ed62dd0bbee905d97bf6c0"
+      "sha256": "d5f290e7a109a7bbf7d8c59ae09b793f67e82c5b16657bf514761026790a706c"
     },
     {
       "path": "pnpm-lock.yaml",

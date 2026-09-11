@@ -29,6 +29,7 @@ jobs:
           node --import tsx governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_public.mjs
           node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_budget.mjs
       - run: node governance/drafts/release-3-preparation/r3-review-repair-20260911/audit.mjs
+      - run: python3 governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py
       - run: git diff --exit-code
       - name: Retain candidate observations
         if: always()

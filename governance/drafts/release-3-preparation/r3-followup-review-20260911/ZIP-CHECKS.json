@@ -1,0 +1,101 @@
+{
+  "archives": [
+    {
+      "run_id": 34599267610,
+      "artifact_id": 10263033851,
+      "encoded_zip": "controlled-ci.zip.base64.txt",
+      "zip_sha256": "17922e7ee3103adac69bb956455e7c96eb551d0497549603f2365d2cb3cb7d13",
+      "zip_bytes": 41888,
+      "allowlist_exact": true,
+      "members": [
+        {
+          "original_path": "execution-host.json",
+          "archived_path": "review-inputs/r3-controlled-execution-review-20260911/CI-HOST-initial.json.txt",
+          "bytes": 109,
+          "sha256": "91f952dae8761eaa1adb7f235d3e799aed9ac469ba28b95acaafe55d5e3c191a"
+        },
+        {
+          "original_path": "execution-cgroup-results.json",
+          "archived_path": "review-inputs/r3-controlled-execution-review-20260911/CI-RESULTS-initial.json.txt",
+          "bytes": 411599,
+          "sha256": "05375409b05f17f4a3f06bbb213e39eaecb4d0a9b8786edeef4474a18e4400f6"
+        }
+      ]
+    },
+    {
+      "run_id": 34599836146,
+      "artifact_id": 10263403165,
+      "encoded_zip": "controlled-final-ci.zip.base64.txt",
+      "zip_sha256": "22ca0509b22527024ee19b5cf43724f5ad9ec9a4a4cdfb5913f98d640412c339",
+      "zip_bytes": 45738,
+      "allowlist_exact": true,
+      "members": [
+        {
+          "original_path": "execution-host.json",
+          "archived_path": "review-inputs/r3-controlled-execution-review-20260911/CI-HOST-final.json.txt",
+          "bytes": 109,
+          "sha256": "f3f9f20a822b6f0d922b137b3942d23b980d1b31348880aaf5b2989db66a2308"
+        },
+        {
+          "original_path": "execution-cgroup-results.json",
+          "archived_path": "review-inputs/r3-controlled-execution-review-20260911/CI-RESULTS-final.json.txt",
+          "bytes": 460881,
+          "sha256": "45a27878cc7e30819b9a2e88def74abcd9154d19f322456fada83345a6036714"
+        }
+      ]
+    },
+    {
+      "run_id": 34638917666,
+      "artifact_id": 10279271560,
+      "encoded_zip": "holm-checkpoint-ci.zip.base64.txt",
+      "zip_sha256": "e6df564d86a95a55fe18d04a1c6663e19327f5808740c9dfd3e43e022149318c",
+      "zip_bytes": 50639,
+      "allowlist_exact": true,
+      "members": [
+        {
+          "original_path": "execution-host.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/execution-host.json.txt",
+          "bytes": 109,
+          "sha256": "feed0a8cf42da468f1e7fd13856326cec70dd7079dc417d8f23658e6738215d4"
+        },
+        {
+          "original_path": "candidate-public-receipts.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/candidate-public-receipts.json.txt",
+          "bytes": 88,
+          "sha256": "8a44597ada277781afd5b5365887e2ae6650e244c385527931b498aa16917347"
+        },
+        {
+          "original_path": "execution-cgroup-results.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/execution-cgroup-results.json.txt",
+          "bytes": 464044,
+          "sha256": "acd75e920a078e6f83ddac8f8c744876266577ab34660b7561ce1894188ecc30"
+        },
+        {
+          "original_path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/RESULTS.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/RESULTS.json.txt",
+          "bytes": 12589,
+          "sha256": "ef5da3e9d2b0d0fdb1176f05fb5f2f0df676757561bad7defcc5c2cc21ec9c85"
+        },
+        {
+          "original_path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/PUBLIC-RESULTS.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/PUBLIC-RESULTS.json.txt",
+          "bytes": 3909,
+          "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+        },
+        {
+          "original_path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/BUDGET-RESULTS.json",
+          "archived_path": "review-inputs/r3-holm-checkpoint-review-20260911/ci/BUDGET-RESULTS.json.txt",
+          "bytes": 3310,
+          "sha256": "2eee624d56089ca4185bfb6ef4b19afba97d2b8fd7cefb214eeb91e913a3ef5f"
+        }
+      ]
+    }
+  ],
+  "external_references": [
+    {
+      "path": "review-inputs/r3-controlled-execution-review-20260911/REGRESSION.md",
+      "sha256": "db0eb79647eaf992163f95ac6dfb8af1c7da59dec14a6cad35a4f8f1e975146b",
+      "scope": "prose identity only; historical stdout not captured"
+    }
+  ]
+}

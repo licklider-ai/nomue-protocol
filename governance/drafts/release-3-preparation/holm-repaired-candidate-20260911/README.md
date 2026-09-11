@@ -32,6 +32,20 @@ cgroup controls and checks for tracked-file changes. The two-pass inner budget i
 5,000 ms and 512 MiB of sampled JS heap; it cannot preempt work between checks.
 The outer 30-second deadline and real cgroup limits remain necessary.
 
+The controlled CLI launches `entry.mjs` with native Node 24.19.0 and no tsx
+loader. The test command above uses tsx for the historical reference-verifier
+regressions. Unsupported Node exits with reserved code 78 before loading runtime
+dependencies; the supervisor maps it to `unsupported_host` and discards output.
+`test_host_guard.mjs` exercises an actual Node 22 executable in CI, both directly
+and inside the delegated cgroup. `test_identity.mjs` checks exact candidate
+bindings and rejects mutated identities; neither test rewrites fixtures.
+
+The 5.1-second checkpoint probe uses a trusted delayed runner stub and a real
+clock, not a delayed Python worker. Sampled `heapUsed` excludes Buffer and
+ArrayBuffer backing stores as well as other native allocations. The final
+transport checkpoint can replace a late routing refusal with a processing-limit
+refusal; only raw/parsed ingress refusals retain priority at that boundary.
+
 See the [repair disposition](../r3-review-repair-20260911/README.md) for the complete
 finding assessment, historical evidence limits, CI source identity and remaining
 adoption conditions. This is not a new independent research review or formal adoption.

@@ -23,6 +23,16 @@ this repository.
   and package metadata. Avoid decorative attribution to a transient drafting,
   review, or automation mechanism when it does not help readers interpret or
   reproduce the work.
+- Choose task-based branch names such as `repair/r3-host-guard` or
+  `review/r3-checkpoint-evidence`. Do not add an agent or provider name merely
+  because that tool is doing the work. A read-only review or fast-forward to
+  existing main commits does not by itself create new work requiring a branch
+  push. Preserve actual new development and review assets as authorized.
+- If a hosting platform enforces its own branch prefix or push hook outside
+  this repository, report that constraint and accept the required name; do not
+  bypass the platform or repeatedly rename branches. Do not delete historical
+  branches just to remove attribution. Repository instructions cannot guarantee
+  behavior imposed by external session settings or hooks.
 - This naming rule is not a concealment rule. Preserve and disclose software,
   services, providers, models, and execution environments whenever material to
   reproducibility, reliability, conflicts of interest, policy or contract
@@ -35,6 +45,10 @@ this repository.
   role, review scope, independence boundary, inspected sources, date, relevant
   environment details, and immutable commit or content hash. Preserve exact
   technical, scientific, contractual, and evidentiary identifiers.
+- An empty GitHub approval list establishes only that no platform approval is
+  recorded. It does not establish that no human review occurred. Record reported
+  external human review and its source separately from GitHub approvals, without
+  inventing reviewer identities, timing, scope, or research-gate compliance.
 - Never read, copy from, link to, or depend on private product repositories.
   No private paths, private package dependencies, submodules, subtrees, or
   symlinks outside this repository. The private-dependency audit enforces this.

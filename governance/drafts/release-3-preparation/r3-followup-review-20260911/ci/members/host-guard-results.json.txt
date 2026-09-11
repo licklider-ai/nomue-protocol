@@ -1,0 +1,94 @@
+{
+  "node": "v22.23.2",
+  "direct_entries": 2,
+  "isolated_guard": true,
+  "static_import_mutation_rejected": true,
+  "receipt": {
+    "kind": "unissued-controlled-execution",
+    "category": "unsupported_host",
+    "causes": {
+      "unsupported_host": true,
+      "abnormal_exit": true
+    },
+    "evidence": {
+      "kernel": "6.17.0-1022-azure",
+      "architecture": "x86_64",
+      "delegation": "/sys/fs/cgroup/nomue-execution-2647",
+      "supervisor": "/sys/fs/cgroup/nomue-execution-2647/supervisor",
+      "leaf": "/sys/fs/cgroup/nomue-execution-2647/calls/call-861d2122bcb5419485f85cbbf697646a",
+      "controls": {
+        "memory.max": "536870912",
+        "memory.swap.max": "0",
+        "memory.oom.group": "1",
+        "pids.max": "64",
+        "cpu.max": "100000 100000"
+      },
+      "node_sha256": "3517c2df0b2f8cd7f422b4b8450ef81c6889f08eb03e281d6de9079b15e6a327",
+      "python_sha256": "bef88f140b625959f8af25c7b75cce2cd5d4b29cc2f2b079befd7f68eda4dba0",
+      "proc_swaps": "Filename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n/swapfile                               file\t\t3145724\t\t0\t\t-2\n",
+      "subreaper": true,
+      "temporary": "/tmp/holm-call-m8tdkglb",
+      "memory_events_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pids_events_delta": {
+        "max": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 30618,
+        "user_usec": 21432,
+        "system_usec": 9185,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 3,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "memory.peak": 8847360,
+      "pids.peak": 7,
+      "cleanup_seconds": 0.010889082999938182,
+      "cleanup": {
+        "populated_zero": true,
+        "echild": true,
+        "cgroup_removed": true,
+        "temporary_removed": true
+      },
+      "reaped_descendants": [],
+      "leader_exit": 78,
+      "bytes_observed": {
+        "stdout": 0,
+        "stderr": 0
+      },
+      "bytes_buffered": {
+        "stdout": 0,
+        "stderr": 0
+      },
+      "elapsed_seconds": 0.27161006199980875
+    }
+  },
+  "public_output": {
+    "$schema": "https://nomue.ai/id/schema/holm-supplied-p-refusal/0.3.0-candidate.3",
+    "output_type": "nomue-verifier-refusal",
+    "stage": "execution",
+    "refusal_kind": "unsupported_execution",
+    "reason_codes": [
+      "candidate:holm:unsupported_host"
+    ],
+    "message": "The candidate did not produce a complete result for the requested operation.",
+    "verifier": {
+      "name": "holm-public-candidate",
+      "version": "unissued-v1"
+    },
+    "input_evidence": {
+      "availability": "not_observed"
+    },
+    "generated_at": "2026-09-11T20:23:34.199Z"
+  }
+}
