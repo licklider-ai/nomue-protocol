@@ -20,6 +20,9 @@ now connects the bounded Contract, proposed identities, schemas, scoped outcomes
 exact candidate dispatch and conformance controls. It remains unissued;
 [adoption changes and decisions](holm-public-candidate-20260911/COUPLING.md) are explicit.
 
+The [checkpoint successor](holm-checkpoint-candidate-20260911/README.md) adds shared
+in-process time/heap budgets and discards partial results on exceedance.
+
 The [adoption map and restart point](holm-adoption-map-20260911/README.md)
 proposes Requirement allocations, inventories public fields and records the next
 checkpoint/output implementation decisions. It is non-operative preparation.

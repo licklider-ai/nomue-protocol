@@ -1,0 +1,46 @@
+name: R3 Holm checkpoint candidate
+on:
+  pull_request:
+    paths:
+      - "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/**"
+      - ".github/workflows/r3-holm-checkpoint-candidate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - name: Candidate semantics and old-bundle regression
+        run: |
+          export NOMUE_EXPERIMENT_PYTHON="$(command -v python3)"
+          node --import tsx governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_envelope.mjs
+          node --import tsx governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_public.mjs
+          node governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_budget.mjs
+      - name: Actual cgroup enforcement and public outcome conversion
+        run: |
+          sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" python3 -I governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/ci_host.py
+          node governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_receipts.mjs execution-cgroup-results.json
+      - name: Retain candidate observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r3-holm-checkpoint-candidate
+          path: |
+            execution-host.json
+            execution-cgroup-results.json
+            candidate-public-receipts.json
+            governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/RESULTS.json
+            governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/PUBLIC-RESULTS.json
+            governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/BUDGET-RESULTS.json

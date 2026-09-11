@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "stage", "refusal_kind", "reason"],
+  "properties": {
+    "kind": {
+      "const": "https://nomue.ai/id/schema/holm-supplied-p-refusal/0.3.0-candidate.2"
+    },
+    "stage": {
+      "enum": [
+        "setup",
+        "raw",
+        "parsed",
+        "routing",
+        "schema",
+        "storage",
+        "expected_context",
+        "binding",
+        "reporting",
+        "processing"
+      ]
+    },
+    "refusal_kind": {
+      "enum": [
+        "internal_error",
+        "parse_error",
+        "resource_limit",
+        "routing_error",
+        "unsupported_bundle",
+        "schema_error",
+        "canonicalization_failure",
+        "noncanonical_storage",
+        "expected_context_error"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "maxLength": 96,
+      "enum": [
+        "record_malformed_json",
+        "record_duplicate_member",
+        "record_invalid_unicode",
+        "record_negative_zero",
+        "record_parser_exhaustion",
+        "record_nodes",
+        "record_string",
+        "record_depth",
+        "record_container",
+        "record_key",
+        "record_bytes",
+        "expected_malformed_json",
+        "expected_duplicate_member",
+        "expected_invalid_unicode",
+        "expected_negative_zero",
+        "expected_parser_exhaustion",
+        "expected_nodes",
+        "expected_string",
+        "expected_depth",
+        "expected_container",
+        "expected_key",
+        "expected_bytes",
+        "record_bytes_type",
+        "record_utf8",
+        "bundle_missing",
+        "bundle_type",
+        "bundle_unsupported",
+        "record_nonfinite",
+        "record_schema",
+        "stored_bytes_noncanonical",
+        "projection_disagreement",
+        "expected_type",
+        "expected_schema",
+        "legacy_admission_limit",
+        "report_invariant",
+        "internal_failure",
+        "setup_failure",
+        "processing_timeout",
+        "processing_heap"
+      ]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_stage", "codes", "bridge_reason"],
+      "properties": {
+        "source_stage": {
+          "type": ["string", "null"],
+          "maxLength": 64
+        },
+        "codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          },
+          "uniqueItems": true,
+          "maxItems": 64
+        },
+        "bridge_reason": {
+          "type": ["string", "null"],
+          "maxLength": 256
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Unissued R3 candidate. Proposed identities are not allocated or supported by the registered verifier."
+}
