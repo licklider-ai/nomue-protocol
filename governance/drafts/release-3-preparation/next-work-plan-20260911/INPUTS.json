@@ -1,0 +1,110 @@
+{
+  "status": "Informative pinned work planning; no PDF received or reread",
+  "inputs": [
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/REPORT.md",
+      "blob": "a0a441789805348790f9d1a7cb37617951d3dd6d",
+      "bytes": 9872,
+      "sha256": "5711bdf7f53184235a0b9d5ba49580011c629c784d87d273ea6539d623b92e1c"
+    },
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "bytes": 3969,
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/INPUTS.json",
+      "blob": "5bd6b6ea3a3c338a21ed90b96117939aa010f5ab",
+      "bytes": 350,
+      "sha256": "7b3369b195facba199da3eb53d228b5c07f97f2992d2f83e9a02d1cbc69ef729"
+    },
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/RESULTS.json",
+      "blob": "8e81cb147649002e4a69e855750935fcc2a46e3f",
+      "bytes": 2199,
+      "sha256": "99174b58bbdbdfd215bb6fcab9bb4d9d840b7ea8ec29fd8d6e8b733ff14cc1eb"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/REPORT.md",
+      "blob": "72cdb206182da7a97d211d418c8b372af79e99bb",
+      "bytes": 25989,
+      "sha256": "446a76515ea096b687d7068a029bb57c478032daa6e449cb06ea1b8fd9f97bc3"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/DEFERRED.md",
+      "blob": "46f0e40281f45f8b4e2ca4d4085f1f17b1f82b6c",
+      "bytes": 6945,
+      "sha256": "a91766b7cb609b3f9a56730f82fd431edaa268c6a23f697da053c4926a2fbc3f"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/candidate.schema.json",
+      "blob": "6a0609967fa37d49cbc54fdb7156f768412ddbe7",
+      "bytes": 21132,
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/example.json",
+      "blob": "f11c27efda9b9c09773623e49d88b191907bd5bf",
+      "bytes": 13820,
+      "sha256": "debaf60e44a592c50b868dd9df8ac71fb0f64cef8985f98956de3f832525943a"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/check.mjs",
+      "blob": "2d995236ea391d32db8a72b0873d0e588603abed",
+      "bytes": 7648,
+      "sha256": "ce5eca7a15ae13e198e177f2c6e07b625b6f34bcaf35ffcce7be680d4ecff85f"
+    },
+    {
+      "commit": "a5213b446df0ec1de09d557c0c6933320f470452",
+      "path": "governance/drafts/release-3-preparation/candidate-evidence-map-20260910/candidates.json",
+      "blob": "066b393c4236f142a8c8ce8729743618928d36e5",
+      "bytes": 62267,
+      "sha256": "4e8dbe5c7daf867f9df43a502252253fcbc7c7de383e28a3a0ea93309abe4d79"
+    },
+    {
+      "commit": "a5213b446df0ec1de09d557c0c6933320f470452",
+      "path": "review-inputs/r3-evidence-map-holm-7f3321b/HOLM-APPLICABILITY.md",
+      "blob": "49ad3cd90e22e565b8e656ce56b2e4b1fd16baca",
+      "bytes": 16425,
+      "sha256": "bf8e88029f8a7d1ef117cc5fde2f63e7d134ea86d3884102c69bf49cbf654648"
+    },
+    {
+      "commit": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+      "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "blob": "0e71a16edb686417111baf1511118c466b9a0e2b",
+      "bytes": 12540,
+      "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md",
+      "blob": "4e17382570a56d6f784ec286854f3ea30bbe90f9",
+      "bytes": 5434,
+      "sha256": "dc7ec76589d02c154bc5886e79d822f09caf0f27f0639f53f297a0cd6631cfa3"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b"
+    },
+    {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "blob": "ab7ca233505dd21ee3bbf249889960d515022151",
+      "bytes": 42379,
+      "sha256": "26c229c4229d0a60efa6d5bdba1755da2cbb46352ef687a28c3bea56ea9d5367"
+    }
+  ]
+}
