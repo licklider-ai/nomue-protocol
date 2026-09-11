@@ -1,0 +1,153 @@
+{
+  "status": "unissued proposal; no reason identifiers allocated",
+  "reasons": {
+    "record_malformed_json": "NRS-HOLM-RECORD-MALFORMED-JSON",
+    "record_duplicate_member": "NRS-HOLM-RECORD-DUPLICATE-MEMBER",
+    "record_invalid_unicode": "NRS-HOLM-RECORD-INVALID-UNICODE",
+    "record_negative_zero": "NRS-HOLM-RECORD-NEGATIVE-ZERO",
+    "record_parser_exhaustion": "NRS-HOLM-RECORD-PARSER-EXHAUSTION",
+    "record_nodes": "NRS-HOLM-RECORD-NODES",
+    "record_string": "NRS-HOLM-RECORD-STRING",
+    "record_depth": "NRS-HOLM-RECORD-DEPTH",
+    "record_container": "NRS-HOLM-RECORD-CONTAINER",
+    "record_key": "NRS-HOLM-RECORD-KEY",
+    "record_bytes": "NRS-HOLM-RECORD-BYTES",
+    "expected_malformed_json": "NRS-HOLM-EXPECTED-MALFORMED-JSON",
+    "expected_duplicate_member": "NRS-HOLM-EXPECTED-DUPLICATE-MEMBER",
+    "expected_invalid_unicode": "NRS-HOLM-EXPECTED-INVALID-UNICODE",
+    "expected_negative_zero": "NRS-HOLM-EXPECTED-NEGATIVE-ZERO",
+    "expected_parser_exhaustion": "NRS-HOLM-EXPECTED-PARSER-EXHAUSTION",
+    "expected_nodes": "NRS-HOLM-EXPECTED-NODES",
+    "expected_string": "NRS-HOLM-EXPECTED-STRING",
+    "expected_depth": "NRS-HOLM-EXPECTED-DEPTH",
+    "expected_container": "NRS-HOLM-EXPECTED-CONTAINER",
+    "expected_key": "NRS-HOLM-EXPECTED-KEY",
+    "expected_bytes": "NRS-HOLM-EXPECTED-BYTES",
+    "record_bytes_type": "NRS-HOLM-RECORD-BYTES-TYPE",
+    "record_utf8": "NRS-HOLM-RECORD-UTF8",
+    "bundle_missing": "NRS-HOLM-BUNDLE-MISSING",
+    "bundle_type": "NRS-HOLM-BUNDLE-TYPE",
+    "bundle_unsupported": "NRS-HOLM-BUNDLE-UNSUPPORTED",
+    "record_nonfinite": "NRS-HOLM-RECORD-NONFINITE",
+    "record_schema": "NRS-HOLM-RECORD-SCHEMA",
+    "stored_bytes_noncanonical": "NRS-HOLM-STORED-BYTES-NONCANONICAL",
+    "projection_disagreement": "NRS-HOLM-PROJECTION-DISAGREEMENT",
+    "expected_type": "NRS-HOLM-EXPECTED-TYPE",
+    "expected_schema": "NRS-HOLM-EXPECTED-SCHEMA",
+    "legacy_admission_limit": "NRS-HOLM-LEGACY-ADMISSION-LIMIT",
+    "report_invariant": "NRS-HOLM-REPORT-INVARIANT",
+    "internal_failure": "NRS-HOLM-INTERNAL-FAILURE",
+    "setup_failure": "NRS-HOLM-SETUP-FAILURE",
+    "prerequisite_failed": "NRS-HOLM-PREREQUISITE-FAILED",
+    "digest_mismatch": "NRS-HOLM-DIGEST-MISMATCH",
+    "context_mismatch": "NRS-HOLM-CONTEXT-MISMATCH",
+    "declaration_invalid": "NRS-HOLM-DECLARATION-INVALID",
+    "holm_input_invalid": "NRS-HOLM-HOLM-INPUT-INVALID",
+    "result_ownership": "NRS-HOLM-RESULT-OWNERSHIP",
+    "exact_value_mismatch": "NRS-HOLM-EXACT-VALUE-MISMATCH",
+    "display_value_mismatch": "NRS-HOLM-DISPLAY-VALUE-MISMATCH",
+    "worker_failure": "NRS-HOLM-WORKER-FAILURE",
+    "cleanup_failed": "NRS-HOLM-CLEANUP-FAILED",
+    "memory_enforced": "NRS-HOLM-MEMORY-ENFORCED",
+    "pids_enforced": "NRS-HOLM-PIDS-ENFORCED",
+    "cancelled": "NRS-HOLM-CANCELLED",
+    "deadline": "NRS-HOLM-DEADLINE",
+    "output_overflow": "NRS-HOLM-OUTPUT-OVERFLOW",
+    "unsupported_host": "NRS-HOLM-UNSUPPORTED-HOST",
+    "setup_failed": "NRS-HOLM-SETUP-FAILED",
+    "invalid_input": "NRS-HOLM-INVALID-INPUT",
+    "abnormal_exit": "NRS-HOLM-ABNORMAL-EXIT",
+    "completed_invalid_output": "NRS-HOLM-COMPLETED-INVALID-OUTPUT",
+    "processing_timeout": "NRS-HOLM-PROCESSING-TIMEOUT",
+    "processing_heap": "NRS-HOLM-PROCESSING-HEAP"
+  },
+  "execution_precedence": [
+    "cleanup_failed",
+    "memory_enforced",
+    "pids_enforced",
+    "cancelled",
+    "deadline",
+    "output_overflow",
+    "unsupported_host",
+    "setup_failed",
+    "invalid_input",
+    "abnormal_exit",
+    "completed_invalid_output"
+  ],
+  "execution": {
+    "cleanup_failed": {
+      "refusal_kind": "internal_error",
+      "reason": "cleanup_failed",
+      "limit_category": null
+    },
+    "memory_enforced": {
+      "refusal_kind": "resource_limit",
+      "reason": "memory_enforced",
+      "limit_category": "memory_limit"
+    },
+    "pids_enforced": {
+      "refusal_kind": "resource_limit",
+      "reason": "pids_enforced",
+      "limit_category": "task_limit"
+    },
+    "cancelled": {
+      "refusal_kind": "execution_cancelled",
+      "reason": "cancelled",
+      "limit_category": null
+    },
+    "deadline": {
+      "refusal_kind": "resource_limit",
+      "reason": "deadline",
+      "limit_category": "processing_timeout"
+    },
+    "output_overflow": {
+      "refusal_kind": "resource_limit",
+      "reason": "output_overflow",
+      "limit_category": "output_size"
+    },
+    "unsupported_host": {
+      "refusal_kind": "unsupported_execution",
+      "reason": "unsupported_host",
+      "limit_category": null
+    },
+    "setup_failed": {
+      "refusal_kind": "internal_error",
+      "reason": "setup_failed",
+      "limit_category": null
+    },
+    "invalid_input": {
+      "refusal_kind": "input_access_error",
+      "reason": "invalid_input",
+      "limit_category": null
+    },
+    "abnormal_exit": {
+      "refusal_kind": "internal_error",
+      "reason": "abnormal_exit",
+      "limit_category": null
+    },
+    "completed_invalid_output": {
+      "refusal_kind": "internal_error",
+      "reason": "completed_invalid_output",
+      "limit_category": null
+    }
+  },
+  "input_limits": {
+    "record_parser_exhaustion": "parser_exhaustion",
+    "record_nodes": "node_count",
+    "record_string": "string_length",
+    "record_depth": "nesting_depth",
+    "record_container": "container_size",
+    "record_key": "string_length",
+    "record_bytes": "file_size",
+    "expected_parser_exhaustion": "parser_exhaustion",
+    "expected_nodes": "node_count",
+    "expected_string": "string_length",
+    "expected_depth": "nesting_depth",
+    "expected_container": "container_size",
+    "expected_key": "string_length",
+    "expected_bytes": "file_size",
+    "legacy_admission_limit": "binding_admission",
+    "processing_timeout": "processing_timeout",
+    "processing_heap": "memory_limit"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "status": "author checkpoint controls; no formal support adoption",
+  "policy": {
+    "maxProcessingMs": 5000,
+    "maxHeapBytes": 536870912
+  },
+  "controls": 38,
+  "rows": [
+    {
+      "name": "boundary",
+      "time": 5000,
+      "heap": 536870912,
+      "expected": null
+    },
+    {
+      "name": "boundary",
+      "time": 5001,
+      "heap": 0,
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "boundary",
+      "time": 0,
+      "heap": 536870913,
+      "expected": "processing_heap"
+    },
+    {
+      "name": "boundary",
+      "time": 5001,
+      "heap": 536870913,
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "record_parsed",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "record_parsed",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "storage",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "storage",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "expected_parsed",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "expected_parsed",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "context",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "context",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "declaration",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "declaration",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "admission",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "admission",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "worker",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "worker",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "report",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "report",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "worker catch",
+      "thrown": true
+    },
+    {
+      "name": "worker catch",
+      "thrown": false
+    },
+    {
+      "name": "expected_io",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "expected_io",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "transport",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "transport",
+      "expected": "processing_heap"
+    },
+    {
+      "name": "two-pass budget cannot reset",
+      "expected": "processing_timeout"
+    },
+    {
+      "name": "observed peak retained across checks"
+    },
+    {
+      "name": "strict input priority before checkpoint"
+    },
+    {
+      "name": "invalid trusted observation fails closed"
+    },
+    {
+      "name": "invalid trusted observation fails closed"
+    },
+    {
+      "name": "invalid trusted observation fails closed"
+    },
+    {
+      "name": "invalid trusted observation fails closed"
+    },
+    {
+      "name": "real worker success and both passes"
+    },
+    {
+      "name": "public checkpoint refusal",
+      "reason": "processing_timeout"
+    },
+    {
+      "name": "public checkpoint refusal",
+      "reason": "processing_heap"
+    },
+    {
+      "name": "outer failure discards checkpoint success",
+      "category": "memory_enforced"
+    },
+    {
+      "name": "outer failure discards checkpoint success",
+      "category": "cleanup_failed"
+    }
+  ]
+}
