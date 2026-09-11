@@ -2,8 +2,10 @@ if (process.version !== "v24.19.0" || process.platform !== "linux" || process.ar
   process.exit(78);
 import fs from "node:fs";
 import { pathToFileURL } from "node:url";
-import { verify, validateOutput, CAPS, IDS } from "./envelope.mjs";
-import { createBudget, exhausted } from "./budget.mjs";
+// Load runtime dependencies only after the host guard. Static imports would load
+// limits.ts before an unsupported Node can return the reserved host-refusal exit.
+const { verify, validateOutput, CAPS, IDS } = await import("./envelope.mjs");
+const { createBudget, exhausted } = await import("./budget.mjs");
 
 function readBounded(name, cap) {
   const fd = fs.openSync(

@@ -7,6 +7,12 @@ No new independent research review or human review is claimed. The user authoriz
 candidate/evidence commits and merges; this is not authority to declare formal
 adoption or close a research gate without its required evidence.
 
+The [additional review disposition](../r3-followup-review-20260911/README.md)
+records the user's clarification that reviews covering #318–#325 involved humans
+and Claude jointly, with Claude consolidating the results. Empty GitHub approval
+lists are not evidence of absent human review. The statement above concerns only
+this repair's own author-context work.
+
 ## Active successors and preservation
 
 - [Candidate.3](../holm-repaired-candidate-20260911/README.md): repaired public

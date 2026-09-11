@@ -8,7 +8,7 @@
   "verifier": {
     "name": "holm-envelope-exercise",
     "version": "unissued-v1",
-    "source_digest": "sha256:4abf8c5d31385038513194f026e657c329cf2962bff740f589ccdd4edc6fd5c3"
+    "source_digest": "sha256:162e26421ebd68d5fee8af2134ca99db5d9b9ad6ed71f863d0f6dd35a2a87915"
   },
   "generated_at": "2026-09-11T00:00:00.000Z",
   "checks": [

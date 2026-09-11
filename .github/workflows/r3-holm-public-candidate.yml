@@ -12,6 +12,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retain unsupported runtime path
+        run: echo "NOMUE_UNSUPPORTED_NODE=$(command -v node)" >> "$GITHUB_ENV"
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
@@ -21,6 +26,8 @@ jobs:
         with:
           python-version: "3.12.14"
       - run: pnpm install --frozen-lockfile
+      - run: node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_host_guard.mjs
+      - run: node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs
       - name: Candidate semantics and old-bundle regression
         run: |
           export NOMUE_TEST_OUTPUT="$RUNNER_TEMP/holm-observations"
@@ -30,7 +37,7 @@ jobs:
           node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_repairs.mjs
       - name: Actual cgroup enforcement and public outcome conversion
         run: |
-          sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" python3 -I governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/ci_host.py
+          sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" "NOMUE_UNSUPPORTED_NODE=$NOMUE_UNSUPPORTED_NODE" python3 -I governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/ci_host.py
           node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_receipts.mjs execution-cgroup-results.json
       - run: git diff --exit-code
       - name: Retain candidate observations
@@ -39,6 +46,7 @@ jobs:
         with:
           name: r3-holm-public-candidate
           path: |
+            host-guard-results.json
             execution-host.json
             execution-cgroup-results.json
             candidate-public-receipts.json
