@@ -1,0 +1,74 @@
+{
+  "input_commit": "b0cfe157c22a868c2b45331b5fdbfebea2487bd0",
+  "source_status": "public repository authority and fixed experimental input; no external source re-review",
+  "files": [
+    {
+      "path": "spec/core/record-envelope.md",
+      "sha256": "9984587171668941e1da5f6ffff16538934651b49d4ef85435d525f5cb4772b1"
+    },
+    {
+      "path": "spec/core/integrity-model.md",
+      "sha256": "14cbfdaf225056fa13ae59f27cfab29c403131d67cb1250d91bd7ac2ac2e06ec"
+    },
+    {
+      "path": "spec/core/record-lifecycle.md",
+      "sha256": "b30d0a087d3d50987bdba71c84c73bcecdc321b0939cafd523d1aee211903b88"
+    },
+    {
+      "path": "canonicalization/record-canonicalization.md",
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a"
+    },
+    {
+      "path": "spec/verification/verification-report.md",
+      "sha256": "82d8967dd640d32573dcddcb3618a8ec1df191cdb792bbb081e64135aef28b97"
+    },
+    {
+      "path": "spec/verification/execution-outcome-model.md",
+      "sha256": "bc2e22b809966e4dc1e2942681a7da70b2ae0b0246d91c655730a5e36d04c602"
+    },
+    {
+      "path": "spec/verification/verifier-refusal.md",
+      "sha256": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83"
+    },
+    {
+      "path": "spec/versioning/interpretation-bundle.md",
+      "sha256": "9df130cfd52b00ed7d639b09073a54cd835da02d1ca44f11c06083779e1c763a"
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "path": "schemas/record/record-0.2.schema.json",
+      "sha256": "78edefca1af368637f22051fbec4898df932f4378b912cd91c19ad8cc8a8cc9c"
+    },
+    {
+      "path": "schemas/common/identifier.schema.json",
+      "sha256": "230796eae2baf7e3ebf5f75c9dcfe5b6afba3e320b152e7c848e38d06047b75c"
+    },
+    {
+      "path": "schemas/common/execution-outcome-0.2.schema.json",
+      "sha256": "36a1cd91fd3abb773fb279b613a4eedde4f583451690f7fec1695344cb37a78e"
+    },
+    {
+      "path": "schemas/reports/verification-report-0.2.schema.json",
+      "sha256": "c9fc5d15ba6a90ac5d1a348bcd1f8fd43fa93cfb70c7945ed5cf79fbe2bb27d8"
+    },
+    {
+      "path": "reference/verifier/src/digest.ts",
+      "sha256": "e1a9a8e9399c0a568d4c68c8c1cce7dc446ed313ae77760ba700b76628594b0e"
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    },
+    {
+      "path": "reference/verifier/src/jcs.ts",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-record-surface-20260911/example-record.jcs",
+      "sha256": "8353cff23de8d28a280c2a12e5634ebd2f788cefe780b2cccb7afcade3f0bc7f"
+    }
+  ]
+}

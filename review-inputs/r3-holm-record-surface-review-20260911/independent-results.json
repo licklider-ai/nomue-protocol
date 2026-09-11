@@ -1,0 +1,338 @@
+{
+  "node": "v24.19.0",
+  "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "cases": 67,
+  "rows": [
+    {
+      "name": "all six slot schemas equal precisely transformed legacy; expected and record schemas agree"
+    },
+    {
+      "name": "all six slot variants retained, reversible, legacy preparation identical",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "slot 0 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 0 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "slot 1 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 1 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "slot 2 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 2 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "slot 3 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 3 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "slot 4 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 4 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "slot 5 independently context bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "slot 5 legacy field refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "analyses order bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "families order bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "result_slots order bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "independent exact intersection oracle vector 0",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "real worker exact oracle vector 0",
+      "outcome": "consistent"
+    },
+    {
+      "name": "exact row bound 0/0",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 0/1",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 0/2",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "independent exact intersection oracle vector 1",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "real worker exact oracle vector 1",
+      "outcome": "consistent"
+    },
+    {
+      "name": "exact row bound 1/0",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 1/1",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 1/2",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "independent exact intersection oracle vector 2",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "real worker exact oracle vector 2",
+      "outcome": "consistent"
+    },
+    {
+      "name": "exact row bound 2/0",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 2/1",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 2/2",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "independent exact intersection oracle vector 3",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "real worker exact oracle vector 3",
+      "outcome": "consistent"
+    },
+    {
+      "name": "exact row bound 3/0",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 3/1",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 3/2",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "independent exact intersection oracle vector 4",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "real worker exact oracle vector 4",
+      "outcome": "consistent"
+    },
+    {
+      "name": "exact row bound 4/0",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 4/1",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "exact row bound 4/2",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "p domain 8000000000000000",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "p domain 7ff0000000000000",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "p domain 7ff8000000000000",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "p domain 3ff0000000000001",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "input origin source_id bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "input origin hypothesis_id bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "input origin sidedness bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes newline",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes BOM",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes duplicate escaped member",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes negative zero token",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes overlong UTF-8",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "strict bytes surrogate",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "external duplicate member refused",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "expected byte cap",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "malformed worker {}",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "malformed worker {\"adjusted_hex\":[],\"display_hex\":[]}",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "malformed worker {\"x\":1,\"x\":2}",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "malformed worker null",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "baseline report",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "16 outcome/reason combinations checked"
+    },
+    {
+      "name": "layered dimensions 16/16/1",
+      "outer": "admitted",
+      "legacy_refusal": null,
+      "outcome": "consistent",
+      "bytes": 86579
+    },
+    {
+      "name": "layered dimensions 3/1024/1",
+      "outer": "admitted",
+      "legacy_refusal": null,
+      "outcome": "consistent",
+      "bytes": 151871
+    },
+    {
+      "name": "layered dimensions 3/1024/16",
+      "outer": "admitted",
+      "legacy_refusal": "document nodes",
+      "outcome": "input_refused",
+      "bytes": 297158
+    },
+    {
+      "name": "layered dimensions 16/1024/16",
+      "outer": "nodes"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "input_commit": "b0cfe157c22a868c2b45331b5fdbfebea2487bd0",
+  "status": "author compatibility observations; envelope not implemented",
+  "node": "v24.19.0",
+  "pins_checked": 17,
+  "cases": 15,
+  "rows": [
+    {
+      "name": "nine envelope fields required",
+      "result": "pass"
+    },
+    {
+      "name": "body record ID is not a legacy envelope URI",
+      "result": "pass"
+    },
+    {
+      "name": "body revision ID is not a legacy envelope URI",
+      "result": "pass"
+    },
+    {
+      "name": "producer URI outside nomue domain is allowed",
+      "result": "pass"
+    },
+    {
+      "name": "old envelope retains ITGC payload ownership",
+      "result": "pass"
+    },
+    {
+      "name": "old envelope retains ITGC profile",
+      "result": "pass"
+    },
+    {
+      "name": "legacy check pattern rejects HTTPS lexical form",
+      "result": "pass"
+    },
+    {
+      "name": "local result label does not satisfy existing report scope",
+      "result": "pass"
+    },
+    {
+      "name": "completed without outcome",
+      "result": "pass"
+    },
+    {
+      "name": "completed pass",
+      "result": "pass"
+    },
+    {
+      "name": "not-run with outcome",
+      "result": "pass"
+    },
+    {
+      "name": "error with outcome",
+      "result": "pass"
+    },
+    {
+      "name": "failure without reason entries",
+      "result": "pass"
+    },
+    {
+      "name": "existing five-field guarantee boundary accepted",
+      "result": "pass"
+    },
+    {
+      "name": "additional FWER field needs a successor closed report",
+      "result": "pass"
+    }
+  ]
+}

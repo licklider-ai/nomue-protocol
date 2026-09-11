@@ -1,0 +1,5 @@
+2026-09-11; detached candidate b0cfe157c22a868c2b45331b5fdbfebea2487bd0
+Command: NOMUE_EXPERIMENT_PYTHON=/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 node --import tsx governance/drafts/release-3-preparation/holm-record-surface-20260911/test_surface.mjs
+Exit: 0
+Output: 33 surface controls passed
+Only example-expected.json formatting changed; restored to pinned HEAD after reproduction. RESULTS.json and example-record.jcs remained byte-identical.

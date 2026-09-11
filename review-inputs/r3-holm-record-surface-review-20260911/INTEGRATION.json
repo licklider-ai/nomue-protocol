@@ -1,0 +1,14 @@
+{
+  "status": "review archive and limited research-asset integration receipt",
+  "reviewed_head": "b0cfe157c22a868c2b45331b5fdbfebea2487bd0",
+  "reviewed_pr": 311,
+  "merge_commit": "9a72fb96a8c07ffb0c88ad8149a274ccc2d20c9c",
+  "ci_run": 34577264847,
+  "ci_conclusion": "success",
+  "ci_jobs": 5,
+  "author_controls": 33,
+  "reviewer_controls": 67,
+  "required_repairs": 0,
+  "review_output_preservation": "five reviewer-finalized files copied byte-for-byte; identities in OUTPUT-SHA256SUMS.txt",
+  "formal_adoption": false
+}
