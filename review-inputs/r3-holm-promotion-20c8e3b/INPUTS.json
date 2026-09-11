@@ -1,0 +1,175 @@
+{
+  "kind": "review-input-inventory",
+  "date": "2026-09-11",
+  "reviewed_commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+  "reviewed_tree": "7d990af49a2224d15a01adc7e6b032517bbc8ed2",
+  "sole_parent": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "experimental_baseline": {
+    "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+    "tree": "e6944ca82664264bf1b9f9af62ba944d8d32ef1e"
+  },
+  "issue_274_created_at": "2026-09-09T11:50:18Z",
+  "inputs": [
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/README.md",
+      "git_blob": "42580391522abb888a788f8bbdccbefea5b97a5d",
+      "bytes": 6150,
+      "sha256": "03fa2d6c3ca062e8feab505ec4460049c8e4b5f4478115190b1c381c354f0ae6"
+    },
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/SPECIFICATION-PROPOSAL.md",
+      "git_blob": "225c5ddce09bb272d1f051414007d9144236d617",
+      "bytes": 16103,
+      "sha256": "e4193ffa10501f56b416b5edd61b469fbb1700c6d00aed2a184f7c601a78a0a1"
+    },
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/PROMOTION-CONDITIONS.md",
+      "git_blob": "40bb7a7348233e164f84852cc62cee1abc762e01",
+      "bytes": 13104,
+      "sha256": "2fc9f543366a6484eeb8181ea7d91acba73d089217f14c04a188f6b420e9addd"
+    },
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/REVIEW.md",
+      "git_blob": "ff51bbc3782c608cc0e18972a584129beaf9df37",
+      "bytes": 6601,
+      "sha256": "65438477ddfce5f490b85f8ac59f10daa9a188c621d19c68da53f2afa6c6cbc4"
+    },
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/INPUTS.json",
+      "git_blob": "3f61e72a1cd94ca2c8586b041132c87297fff2cf",
+      "bytes": 13358,
+      "sha256": "4ae935e8b16d0015245757d6c1654733dac4504ac69fdaf1180565047a7743c0"
+    },
+    {
+      "commit": "20c8e3b01f3f8983eba4f05e60c4b64ee946d795",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/VALIDATION.md",
+      "git_blob": "7a4d95885c8c2fd0c8547bc94dc49e514c41debb",
+      "bytes": 3259,
+      "sha256": "0673e13050a5c54f82bf53e04b87fe413bb6f231298f30c697cea127b7c52484"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/REPORT.md",
+      "git_blob": "8ae5151c284c527df740239bc7d690a24ebbeba0",
+      "bytes": 16890,
+      "sha256": "e5a86027baeada7c8e7c89bba49b3633b619b1b89237e75bf352d067c49efaf5"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "bytes": 12664,
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/candidate.py",
+      "git_blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "bytes": 3969,
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/check_nodes.py",
+      "git_blob": "49ba2e2e767d5dd3b99bf4c839ac38dad7cb881d",
+      "bytes": 1574,
+      "sha256": "bee6e4d42edfe8848a917f190d49a1a9b3e9b43c81f072621322dbcdbff859e6"
+    },
+    {
+      "commit": "cc87234d27b7a0d51bc172d0e661845a3b1f9b15",
+      "path": "governance/drafts/release-3-preparation/holm-candidate-design-20260911/EXTERNAL-REVIEW.md",
+      "git_blob": "636714986e1c8ec0df5d209e0aea3eb82bc375c9",
+      "bytes": 2915,
+      "sha256": "e9d925f46e108f32117ffe3a9d219658f347846c9549d17e7f3bd4c4cb87640e"
+    },
+    {
+      "commit": "c4ad231471deba354bd018550b2378f2d740b944",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "git_blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "bytes": 3969,
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "commit": "b4b80dec20f9e2037e115395fcffff721aae134e",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "git_blob": "e693474db797d6bd0fa14f94dd6972df17890d26",
+      "bytes": 3594,
+      "sha256": "610f2f9d1ff1231c5c78e4e94462e135c65951f65d31d07ce5fe04479a31974a"
+    },
+    {
+      "commit": "9793fd2f1540c26491651ff02bf51d0bd292f821",
+      "path": "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md",
+      "git_blob": "0e71a16edb686417111baf1511118c466b9a0e2b",
+      "bytes": 12540,
+      "sha256": "ebc01dc3022456eea66472b842d9dbd987bf86df75b64c8995ff0ae20ba160c8"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "bytes": 10264,
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "commit": "864766232988181e72ae18c235dbc815466b3a1d",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/AUTHOR-INTAKE.md",
+      "git_blob": "4e17382570a56d6f784ec286854f3ea30bbe90f9",
+      "bytes": 5434,
+      "sha256": "dc7ec76589d02c154bc5886e79d822f09caf0f27f0639f53f297a0cd6631cfa3"
+    },
+    {
+      "commit": "a5213b446df0ec1de09d557c0c6933320f470452",
+      "path": "review-inputs/r3-evidence-map-holm-7f3321b/HOLM-APPLICABILITY.md",
+      "git_blob": "49ad3cd90e22e565b8e656ce56b2e4b1fd16baca",
+      "bytes": 16425,
+      "sha256": "bf8e88029f8a7d1ef117cc5fde2f63e7d134ea86d3884102c69bf49cbf654648"
+    },
+    {
+      "commit": "25de2d2b97934476dc2ae49eeb3fa5143a74e131",
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/DEFERRED.md",
+      "git_blob": "46f0e40281f45f8b4e2ca4d4085f1f17b1f82b6c",
+      "bytes": 6945,
+      "sha256": "a91766b7cb609b3f9a56730f82fd431edaa268c6a23f697da053c4926a2fbc3f"
+    },
+    {
+      "commit": "545f6eb4c28eb93bd7cc5404dd45afd475822317",
+      "path": "governance/drafts/release-3-independent-multigroup-rfc.md",
+      "git_blob": "09e5fe9b87e596e8d42d5cb8d46ec70ce8134261",
+      "bytes": 19178,
+      "sha256": "e369752358cd67cc7bc665693db00115f05a63ecf0c7914ecd139d32dcf7b5c3"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AGENTS.md",
+      "git_blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/RFC.md",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/ID-POLICY.md",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/stability-tiers.yaml",
+      "git_blob": "3b6325125d8871b428ab48a8f206632bfcda9b16",
+      "bytes": 2042,
+      "sha256": "9236a7850860bde92159a91d3c3d405283b0b6aabf3ef60aa4342c71532b0b5b"
+    }
+  ]
+}
