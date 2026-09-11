@@ -1,0 +1,23 @@
+{
+  "scope": "Author-side limited counting confirmation, not independent review",
+  "design_commit": "1e6c4be371bc91f63577f70a5e0fc7742aef16a8",
+  "breadth_first_node_counts": {
+    "dict": 6035,
+    "str": 35319,
+    "list": 70,
+    "bool": 2,
+    "float": 1024
+  },
+  "total": 42450,
+  "d0_cap": 24576,
+  "sidecar_cap": 2048,
+  "adjusted_array_nodes": 481,
+  "outer_nodes": 3,
+  "submitted_upper_bound": 27108,
+  "submitted_cap": 28672,
+  "depth_embedding": {
+    "expected": 32,
+    "outer_levels": 2,
+    "submitted": 34
+  }
+}

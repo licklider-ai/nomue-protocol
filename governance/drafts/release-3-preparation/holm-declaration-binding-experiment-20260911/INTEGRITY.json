@@ -1,0 +1,20 @@
+{
+  "checks": 15,
+  "labels": [
+    "isolated import",
+    "runtime tamper d0.mjs",
+    "runtime tamper candidate.schema.json",
+    "runtime tamper fixture-contracts.json",
+    "runtime tamper candidate.py",
+    "runtime tamper worker.py",
+    "runtime tamper ../../../../reference/verifier/src/strict-json.ts",
+    "runtime tamper ../../../../reference/verifier/src/jcs.ts",
+    "runtime tamper ../../../../pnpm-lock.yaml",
+    "Ajv package tamper",
+    "Ajv origin substitution",
+    "Ajv origin restored",
+    "worker direct pin",
+    "shadow control without isolation",
+    "worker isolated mode"
+  ]
+}

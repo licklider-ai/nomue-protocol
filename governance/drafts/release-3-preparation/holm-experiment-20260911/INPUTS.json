@@ -1,0 +1,8 @@
+{
+  "design_commit": "f203eb12c036b40b3602f22603d39702cdba9bba",
+  "sha256": {
+    "candidate.py": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606",
+    "oracle.py": "c136af873eee3d29fa4c9a8746879e8ca0f125db2afd3bf32daabcfb8d7a6390",
+    "test_candidate.py": "39bb20956138614700bb11a552444183f67e57e2eb4f4f8a89891e193e7cf01b"
+  }
+}

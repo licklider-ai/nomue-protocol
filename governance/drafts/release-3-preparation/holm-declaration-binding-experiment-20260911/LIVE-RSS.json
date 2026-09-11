@@ -1,0 +1,144 @@
+{
+  "python": "3.11.15",
+  "node": "v22.22.2",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "method": "sum of VmRSS over the probe session process tree read from /proc at each sample",
+  "sample_interval_seconds": 0.002,
+  "timeout_seconds": 30,
+  "live_tree_rss_ceiling_kib": 524288,
+  "ceiling_is_hard_limit": false,
+  "probes": [
+    {
+      "name": "baseline",
+      "optimized_python": false,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 113504,
+      "samples": 97,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 117204,
+      "wall_seconds": 0.3248470940000061
+    },
+    {
+      "name": "baseline",
+      "optimized_python": true,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 112152,
+      "samples": 96,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 114648,
+      "wall_seconds": 0.30887871200002337
+    },
+    {
+      "name": "max-family",
+      "optimized_python": false,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 123696,
+      "samples": 104,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 127916,
+      "wall_seconds": 0.3413842109999905
+    },
+    {
+      "name": "max-family",
+      "optimized_python": true,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 123272,
+      "samples": 111,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 127188,
+      "wall_seconds": 0.3549302609999927
+    },
+    {
+      "name": "large-admitted",
+      "optimized_python": false,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 141552,
+      "samples": 147,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 154120,
+      "wall_seconds": 0.46556708200000685
+    },
+    {
+      "name": "large-admitted",
+      "optimized_python": true,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 144472,
+      "samples": 145,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 159780,
+      "wall_seconds": 0.46003996800004643
+    },
+    {
+      "name": "max-count-refusal",
+      "optimized_python": false,
+      "decision": "document nodes",
+      "launches": 0,
+      "live_tree_peak_rss_kib": 128564,
+      "samples": 119,
+      "max_concurrent_processes": 1,
+      "sum_of_process_peaks_kib": 127900,
+      "wall_seconds": 0.38450708800002076
+    },
+    {
+      "name": "max-count-refusal",
+      "optimized_python": true,
+      "decision": "document nodes",
+      "launches": 0,
+      "live_tree_peak_rss_kib": 127936,
+      "samples": 117,
+      "max_concurrent_processes": 1,
+      "sum_of_process_peaks_kib": 127580,
+      "wall_seconds": 0.365653946000009
+    },
+    {
+      "name": "wide-strings",
+      "optimized_python": false,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 150816,
+      "samples": 160,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 157832,
+      "wall_seconds": 0.5209473170000365
+    },
+    {
+      "name": "wide-strings",
+      "optimized_python": true,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 150224,
+      "samples": 154,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 158728,
+      "wall_seconds": 0.4882443650000141
+    },
+    {
+      "name": "origin-long",
+      "optimized_python": false,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 144428,
+      "samples": 154,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 156652,
+      "wall_seconds": 0.5032834719999641
+    },
+    {
+      "name": "origin-long",
+      "optimized_python": true,
+      "decision": "declaration_bound_supplied_p_arithmetic_consistent",
+      "launches": 1,
+      "live_tree_peak_rss_kib": 142488,
+      "samples": 157,
+      "max_concurrent_processes": 2,
+      "sum_of_process_peaks_kib": 152848,
+      "wall_seconds": 0.5043986969999992
+    }
+  ]
+}
