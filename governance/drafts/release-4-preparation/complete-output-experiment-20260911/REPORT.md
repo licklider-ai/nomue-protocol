@@ -66,7 +66,7 @@ interval estimate, significance boolean or overall VERIFIED state is emitted.
 
 ## Verification and measured limits
 
-`RESULTS.json` records 314 checks over 12 accepted arithmetic/oracle fixtures
+`RESULTS.json` records 318 checks over 12 accepted arithmetic/oracle fixtures
 and the refusal/control cases; optimized execution produced identical output. It includes actual check counts and exact input hex encodings. The tests
 compare arithmetic with direct Fraction cell means and within-cell residuals,
 compare projected quantities with rational-to-float conversion, and compare tail
@@ -76,7 +76,8 @@ Coverage includes ordinary/zero-effect inputs, positive F displayed as zero,
 strictly positive probabilities displayed as zero, zero SSE, zero-rounded and
 overflowed representations, and exact late-contrast resource refusal. Thirteen
 planned refusal cases check exact stage/quantity/reason and zero tail calls.
-Four temporary copied-packet dependency modifications fail with named hash errors.
+Four temporary copied-packet dependency modifications fail with named hash errors,
+and four pre-imported same-named modules fail with named origin errors.
 Revision, translated same-F data and signed-zero input identity stay distinct.
 
 The unresolved-tail path and missing-contrast invariant are injected control-flow
@@ -133,3 +134,34 @@ import loader, and staged whitespace checks passed. The four copied dependencies
 were compared byte-for-byte with their pinned Git source, in addition to runtime
 hash verification. The new code remains entirely in the disposable draft packet;
 no production type or generated artifact changed. GitHub CI is reported on the PR.
+
+## External implementation review and small repair
+
+A user-supplied bounded adversarial review of commit
+`7993c43abd21e5622b1be34b11ffaa47edda8963` examined all-contrast preflight,
+partial-result handling, dependency pinning and execution limits. Reviewer/model
+identity and raw execution artifacts were not supplied; the receipt is attributed
+to the user. The repair was prepared in that reviewer's session on 2026-09-11,
+not by the original author context, and is not an independent close review of
+itself.
+
+Reported checks: both harness modes reproduced under the 30-second/256-MiB
+envelope on CPython 3.11.15 with parsed output identical to the committed
+results; the four copied dependencies matched PR #288 byte-for-byte and all
+twelve packet hashes matched; the preflight predicate was confirmed identical to
+the guard sequence executed inside the candidate, so an admitted contrast cannot
+raise a resource error during tail evaluation; the unresolved path returns no
+arithmetic bundle and the assembly invariant rejects a missing contrast; a
+`PYTHONPATH` shadow of `budget.py` did not bypass the script-directory import.
+
+| Finding                                                                                                                                                                                                                                             | Repair                                                                                                                                                                                                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The hash check read the packet files but did not bind the modules actually imported: a same-named module already present in `sys.modules` (for example from another packet in the same test process) satisfied the pin and replaced the pinned code | Before importing, any pre-existing same-named module must resolve to the hashed packet file; after importing, each dependency module's origin is checked again. Four subprocess tests confirm the named `dependency origin` refusal |
+| The reported worst full call (stress-46, about 12 seconds) is near but not at the admitted maximum: three synthetic frontier tails at n=46 with 123-bit F under the forced full schedule took about 14.6 seconds here, against a 30-second envelope | No code change. Recorded here as the current worst observed admitted workload; a host about two times slower would approach the envelope, so the envelope is not a portable ceiling                                                 |
+
+Additional frontier observations under the forced full schedule on this host:
+three 244-bit tails at n=33 took about 7.9 seconds, three 3906-bit tails at
+n=9 about 4.8 seconds and three 976-bit tails at n=17 about 4.3 seconds. The
+admission score does not order these cases by wall time; n=46 dominates.
+No preflight, partial-result or refusal-precedence defect was found. `SHA256SUMS`
+and `RESULTS.json` were regenerated for the repaired sources.

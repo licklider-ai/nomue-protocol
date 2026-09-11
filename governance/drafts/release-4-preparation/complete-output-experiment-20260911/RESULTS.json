@@ -356,6 +356,7 @@
     "arithmetic oracle": 48,
     "candidate-only runtime": 1,
     "complete": 12,
+    "dependency origin refusal": 4,
     "dependency tamper refusal": 4,
     "df": 12,
     "display oracle": 120,
@@ -372,5 +373,5 @@
     "tail overlap": 36,
     "translated input identity": 1
   },
-  "total": 314
+  "total": 318
 }

@@ -127,6 +127,11 @@ def main():
             with (target/name).open('ab') as f: f.write(b'\n# changed\n')
             r=subprocess.run([sys.executable,'-c','import complete'],cwd=target,capture_output=True,text=True)
             check(r.returncode!=0 and 'dependency hash: '+name in r.stderr, 'dependency tamper refusal')
+        # A same-named module already imported in the process must not satisfy the pin.
+        stem=name[:-3]
+        code=('import sys,types; sys.modules[%r]=types.ModuleType(%r); import complete'%(stem,stem))
+        r=subprocess.run([sys.executable,'-c',code],cwd=HERE,capture_output=True,text=True)
+        check(r.returncode!=0 and 'dependency origin: '+name in r.stderr, 'dependency origin refusal')
     print(json.dumps({'checks':counts, 'total':sum(counts.values()),'accepted_cases':records},indent=2,sort_keys=True))
 
 

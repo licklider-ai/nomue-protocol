@@ -2,6 +2,7 @@
 import hashlib
 import json
 import math
+import sys
 from pathlib import Path
 from fractions import Fraction as Q
 
@@ -12,6 +13,19 @@ manifest = json.loads((HERE / 'INPUTS.json').read_text())
 for name, pin in manifest['dependencies'].items():
     if hashlib.sha256((HERE / name).read_bytes()).hexdigest() != pin['sha256']:
         raise ValueError('dependency hash: ' + name)
+# Bind the hash check to the modules actually imported: a same-named module
+# already present in sys.modules or earlier on sys.path would otherwise pass.
+def _origin(name, module):
+    if Path(getattr(module, '__file__', '') or '').resolve() != (HERE / name).resolve():
+        raise ValueError('dependency origin: ' + name)
+for name in manifest['dependencies']:
+    if name[:-3] in sys.modules:
+        _origin(name, sys.modules[name[:-3]])
+import upstream_arithmetic, rational_candidate, rational_oracle, budget
+for name, module in (('upstream_arithmetic.py', upstream_arithmetic),
+                     ('rational_candidate.py', rational_candidate),
+                     ('rational_oracle.py', rational_oracle), ('budget.py', budget)):
+    _origin(name, module)
 from upstream_arithmetic import exact_candidate, project
 from rational_candidate import guard, finite_enclosure
 from rational_oracle import projection
