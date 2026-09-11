@@ -1,0 +1,5 @@
+validate: 1 issue(s) found
+
+  [link-audit] governance/drafts/release-4-preparation/arithmetic-candidate-20260910/REPORT.md: broken link VALIDATION.md (resolved: governance/drafts/release-4-preparation/arithmetic-candidate-20260910/VALIDATION.md)
+
+Authority conflicts and audit failures block release (NRS-GOV-0003).

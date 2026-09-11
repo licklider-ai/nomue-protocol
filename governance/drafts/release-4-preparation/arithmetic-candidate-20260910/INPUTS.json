@@ -1,0 +1,322 @@
+{
+  "base": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "base_to_main": "",
+  "commits": {
+    "022c8699befbcba375e3aa6e07c1a8dd8eace483": {
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "parents": ["5b2adfb0e350a191a3c8b0d118db67242605ff0b"],
+      "tree": "ea0c0dd13b7af1b1efd6a6c9c42815ca1d45600d"
+    },
+    "dedd26a3e0655001b67e40ccfb741e43ecb07beb": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "parents": ["0abdca8f822d0de3faf35f218f762a951fd75e9e"],
+      "tree": "31cade5ea601c896a1841296a3d3aca14bae479d"
+    }
+  },
+  "files": [
+    {
+      "blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+      "bytes": 9700,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AGENTS.md",
+      "present": true,
+      "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+    },
+    {
+      "blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "bytes": 9163,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "CHARTER.md",
+      "present": true,
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "bytes": 12454,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "AUTHORITY.md",
+      "present": true,
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "bytes": 45801,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "authority/authority-manifest.yaml",
+      "present": true,
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+    },
+    {
+      "blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "bytes": 83339,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "registries/requirements.yaml",
+      "present": true,
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "bytes": 9575,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/ID-POLICY.md",
+      "present": true,
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "bytes": 11571,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/RFC.md",
+      "present": true,
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md",
+      "present": false
+    },
+    {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "present": false
+    },
+    {
+      "blob": "b19e39ffe84474f37661ba5839518bd78b5f2cdd",
+      "bytes": 4363,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md",
+      "present": true,
+      "sha256": "fa5e625a87de357aba0fbd8805e93e93f46fabcc2825faee7d5d7c6d6b16aa96"
+    },
+    {
+      "blob": "69eeb4b7d47a5c611490a560a6374c7134c20df1",
+      "bytes": 6936,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/numerical-feasibility-workplan.md",
+      "present": true,
+      "sha256": "0b660b76fc57981104f7903afcff82a5546dca85f3d3d32f46445940280f7916"
+    },
+    {
+      "blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb",
+      "bytes": 7848,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+      "present": true,
+      "sha256": "8008eebb61e1d0285e98aa70f3c0fca8b4b8b7ca1938678fb3374a5f36bf18f9"
+    },
+    {
+      "blob": "fdf1ad65908d61c16b67b2c333f68694370acf07",
+      "bytes": 10754,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/power-scale-exploration.md",
+      "present": true,
+      "sha256": "c568aca65ae738c42905a1078f606e03d6f7ad23648be6e6307fde3f78aa8842"
+    },
+    {
+      "blob": "6dbf711228e9be121d8346e0ce401e9ecce0b153",
+      "bytes": 3340,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/power-scale-review-repair.md",
+      "present": true,
+      "sha256": "5a18fc084cfd9d061776cf52365fe8e370865bd9a935ea12de196437013b5d4b"
+    },
+    {
+      "blob": "a48c4e37da489e95118bbe94ef7ea571712092ad",
+      "bytes": 1818,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/programme-steward-acceptance-2026-09-09.md",
+      "present": true,
+      "sha256": "4fc85b4c9ff5421318738a7d4299bf3db9eccfba2b26e06445253845c4a95ba1"
+    },
+    {
+      "blob": "2e211ffe3527c3f7001ac13aff1d54729dba4e28",
+      "bytes": 15619,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/README.md",
+      "present": true,
+      "sha256": "bc65b84bb1a49f5e75456b4a398666ceb80241f61bb112815bd4a55de0d0ca71"
+    },
+    {
+      "blob": "a3f9a9a4ad3e031ae0e63857400359c0c08f2fba",
+      "bytes": 5737,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/ss-f-propagation.py",
+      "present": true,
+      "sha256": "8c68703fb5fa8cf002c593b0b9a2bff0256cf9fc090ba43eb02436f262225839"
+    },
+    {
+      "blob": "38bd5d8eadcbcc91dc1ae8630eb05ba4be4daa53",
+      "bytes": 7086,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/ss-f-propagation-result.json",
+      "present": true,
+      "sha256": "418475dc015e7bb1064213841996a0b11a1db0f8ce6df2d538ce6adac0a19568"
+    },
+    {
+      "blob": "35d900d3b89fd0f00bbfa75d94c584a28a860118",
+      "bytes": 2552,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/power-scale-exploration.py",
+      "present": true,
+      "sha256": "aac06550fe3ab54c18563e36c6e64e2ea812f92c62d9e88808a83debad14ff5f"
+    },
+    {
+      "blob": "1fb3c0af7a4c2061c6bef7885c5b99474a80eb4e",
+      "bytes": 30413,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/power-scale-exploration-result.json",
+      "present": true,
+      "sha256": "69c864b695391a799458dca8db9a4f5d6dedc9c393a1d91b15a1cda73936ce48"
+    },
+    {
+      "blob": "16bb888d5509f27266d7472887e9c3289eb8d235",
+      "bytes": 3709,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/power-scale-target-detail.py",
+      "present": true,
+      "sha256": "f0624e40a78afce72e1e41520c269f6fe9715bbc6a8901010d8ccea3b29a3211"
+    },
+    {
+      "blob": "60d25e29d29716201dfa6acf94b41fd312adb589",
+      "bytes": 60190,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "governance/drafts/release-4-preparation/probes/power-scale-target-detail-result.json",
+      "present": true,
+      "sha256": "01376e6dfec049c201e19b1e0496dd9f77d775e9ab01501415352c24bc6d2755"
+    },
+    {
+      "blob": "9efcc51a4978b3b539de4424d08c7a265c90e1ab",
+      "bytes": 65673,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-normal-model-source/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "7414ec57dc81c299900553b44093ea645bd53b4481620d894ccec22c9a400ee5"
+    },
+    {
+      "blob": "94d21ac71834043bcceb6978588a01c927f8eeea",
+      "bytes": 33538,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-normal-model-source-repair/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "7c212d4b1c28525670a27f89e31084a294cc9747d18712ef69945730214a93c7"
+    },
+    {
+      "blob": "830b5816439ecb226d8a36df2b02aa13650ac0dd",
+      "bytes": 19962,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-power-scale-exploration/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "05dff84d45bc66cef281441c22ababa22f04a28b6eb61fdc5e7d81838e2e9698"
+    },
+    {
+      "blob": "78a99a0f2f9e3cffd8035e2e9061a47337f77dfa",
+      "bytes": 19910,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-power-scale-exploration-close/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "8a1ed3b76723f59cd295f532456464410fe52686dada7d9b2cdd2d33d1963a11"
+    },
+    {
+      "blob": "4ee8f5fcff4e042aadd44d9e64f8c6bcb6e7a2d4",
+      "bytes": 49217,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-public-discussion-preparation/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "1e6d60a3b31632468254dea50c19c18cd9e5a95d3e4508686ce89d76d91d9b1d"
+    },
+    {
+      "blob": "cf7416d89f9e30c302df4ec9818cb4c067332756",
+      "bytes": 34878,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "review-inputs/r4-programme-audit/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "783caf2489ca64ff57906a65f9db3756e332f54efcb588161766eb1e4821a9db"
+    },
+    {
+      "blob": "6e8934994badcfb4ae4a3e13cd4b8f53a114d4e3",
+      "bytes": 5352,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "package.json",
+      "present": true,
+      "sha256": "7175bf0cb413516d15ff756960e65b3dc1bf5b60321cc7c776344b8d3a599250"
+    },
+    {
+      "blob": "683674c55ce9da94b1aa8358d9941ea892785304",
+      "bytes": 189670,
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "pnpm-lock.yaml",
+      "present": true,
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c"
+    },
+    {
+      "blob": "4d3ac0a0f0b71b0f6dc37698852cb650f8e9c2b0",
+      "bytes": 4865,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md",
+      "present": true,
+      "sha256": "aa2c10581368baf262cc44691fe7587cf7bfeb86dd83939112d0534b6e1c73e4"
+    },
+    {
+      "blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "bytes": 50051,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "present": true,
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4"
+    },
+    {
+      "blob": "b19e39ffe84474f37661ba5839518bd78b5f2cdd",
+      "bytes": 4363,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md",
+      "present": true,
+      "sha256": "fa5e625a87de357aba0fbd8805e93e93f46fabcc2825faee7d5d7c6d6b16aa96"
+    },
+    {
+      "blob": "69eeb4b7d47a5c611490a560a6374c7134c20df1",
+      "bytes": 6936,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/numerical-feasibility-workplan.md",
+      "present": true,
+      "sha256": "0b660b76fc57981104f7903afcff82a5546dca85f3d3d32f46445940280f7916"
+    },
+    {
+      "blob": "99921a7e350426aa0e4b4153dcb612395ec7d0eb",
+      "bytes": 7848,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/ss-f-propagation-supplement.md",
+      "present": true,
+      "sha256": "8008eebb61e1d0285e98aa70f3c0fca8b4b8b7ca1938678fb3374a5f36bf18f9"
+    },
+    {
+      "blob": "7d38a5962bf9507ecfbee9437adb3ac7449d070e",
+      "bytes": 10101,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/power-scale-exploration.md",
+      "present": true,
+      "sha256": "7d0c0724fc4484f1a0bf2a5cb2e1ecbe5293b8c1a71e099cfed0936c34fe645a"
+    },
+    {
+      "blob": "6dbf711228e9be121d8346e0ce401e9ecce0b153",
+      "bytes": 3340,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "governance/drafts/release-4-preparation/power-scale-review-repair.md",
+      "present": true,
+      "sha256": "5a18fc084cfd9d061776cf52365fe8e370865bd9a935ea12de196437013b5d4b"
+    },
+    {
+      "blob": "935995bff4db9800fdc3458bdac4930e959bd8d1",
+      "bytes": 34699,
+      "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+      "path": "review-inputs/r4-opening-rfc-boundary/assessment-20260909/REVIEW-RESULT.md",
+      "present": true,
+      "sha256": "939ff6668d4f8637e0712405b8e841dd3973b1f1cdaa8a216f870f01a90b018f"
+    }
+  ],
+  "governance_directory_agents": "",
+  "main_observed": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "proposal": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+  "proposal_to_base": "D\tgovernance/drafts/release-4-preparation/opening-rfc-candidate.md\nM\tgovernance/drafts/release-4-preparation/power-scale-exploration.md\nD\tgovernance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md\n",
+  "role": "Lane 1 author with OpenAI Codex assistance; prior context summaries visible; not a blind or independent review; no subagents or human review in this execution.",
+  "selection": "BASE owns checkout and latest scaling correction. Separate proposal commit owns the opening and exact proposed target; no cherry-pick or silent substitution."
+}

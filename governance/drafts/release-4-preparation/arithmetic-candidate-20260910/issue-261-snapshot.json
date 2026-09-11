@@ -1,0 +1,30 @@
+{
+  "display_title": "RFC: Release 4 balanced two-factor marginal inference — public discussion",
+  "display_url": "https://github.com/licklider-ai/nomue-protocol/issues/261",
+  "issue": {
+    "assignees": null,
+    "body": "## Public discussion is open\n\nThis issue opens discussion of the bounded Release 4 proposal under governance/RFC.md. It implements the maintainer's prior conditional instruction to open discussion when its prerequisites are satisfied, after PR #260 confirmed the final repairs and R4-P5/P6.\n\n**Proposal:** [balanced two-factor marginal inference](https://github.com/licklider-ai/nomue-protocol/blob/21453d82109106e9e811571383228dcef8f60fac/governance/drafts/release-4-preparation/opening-rfc-candidate.md).\n**Substantive input:** `21453d82109106e9e811571383228dcef8f60fac`, tree `0194cdc31aa4e8463776cdb6d86863586d4981a3`, candidate blob `807e4bf0c22e5270b8fc15824329d04b5c37b146`.\n**Delivery:** `5b2adfb0e350a191a3c8b0d118db67242605ff0b`.\n**Opening review:** [PR #260](https://github.com/licklider-ai/nomue-protocol/pull/260), commit `36b40134321337d99417828368b5f690c70f5d07`, review blob `935995bff4db9800fdc3458bdac4930e959bd8d1`.\n\n## Scope\n\nDiscuss a complete balanced replicated 2×2 fixed-factor design, at least two independent units in each cell, one continuous outcome, full interaction retained, signed estimates and three marginal F upper-tail quantities under declared independent normal errors with common positive variance.\n\nExcluded: confidence intervals, multiplicity guarantees, significance booleans, causal/randomization claims, unequal/missing cells, repeated/clustered units, mixed/random factors, transformations and imputation. The idealized-model result does not assert exact calibration after input quantization or admission selection.\n\nThe proposal covers Contract/Profile ownership, explicit local references, conformance versus admissibility, failure propagation, report/evidence scope, additive schema/identifier plans, lifecycle carrier, migration and historical preservation.\n\n## Review and evidence disposition\n\nPR #260 confirms C-S1 and C-N1 with zero additional findings and opening-review GO. Earlier PRs #251/#252/#257 remain historical findings at their exact inputs. The accepted normal-model paper/derivation split remains the scientific basis. Later confirmations reuse that review and disclose their OpenAI/provider/context limitations; they are not claimed as new independent scientific investigators. Wider source obligations remain staged.\n\nMain was rechecked as `0abdca8f822d0de3faf35f218f762a951fd75e9e`, unchanged from the reviewed authority baseline. This bounded proposal consumes no Release 3 identifier, schema or procedure and has no Release 3 calendar prerequisite.\n\n## Discussion period and decision boundary\n\nHighest affected tier: **STABLE-INTENT**. Minimum period: **30 calendar days** from this issue's GitHub creation timestamp (UTC). Opening: **2026-09-09T05:59:47Z**. Earliest decision: **2026-10-09T05:59:47Z**. No earlier drafting or review date counts toward the window.\n\nPlease comment here with the clause or field concerned, a concrete counterexample where possible, and the proposed correction. Feedback on scientific scope, representation, conformance/admissibility boundaries, non-claims, compatibility and unresolved numerical design is welcome. Anonymous/pseudonymous participation follows the repository RFC policy.\n\nThe end of the minimum window does not automatically adopt the proposal. Material changes require their own impact/review assessment; an actual CORE change requires the CORE process and minimum window.\n\n## Explicit remaining holds\n\n**Numerical support is NOT_ESTABLISHED; identifier/bundle issuance is HELD.** Arithmetic graphs, supported domains/resources/platforms, projection/error bounds, F-tail algorithms, tolerances, detailed reason/check entries and independent numerical conformance evidence remain unresolved. No operational BTF bundle is registered, and no implementation is certified.\n\nOpening discussion does not adopt specifications, merge implementation, publish a release/package, issue identifiers or close wider source holds. PR #249 remains the draft integration vehicle; the immutable proposal link above is the discussion input.\n\nOperational assistance: OpenAI Codex in the existing authoring context, carrying out the maintainer's prior opening authorization; not an independent reviewer or a new scientific ratification.",
+    "closed_at": null,
+    "comments": 0,
+    "created_at": "2026-09-09T05:59:47Z",
+    "display_title": "RFC: Release 4 balanced two-factor marginal inference — public discussion",
+    "display_url": "https://github.com/licklider-ai/nomue-protocol/issues/261",
+    "issue_number": 261,
+    "labels": null,
+    "milestone": null,
+    "state": "open",
+    "state_reason": null,
+    "title": "RFC: Release 4 balanced two-factor marginal inference — public discussion",
+    "updated_at": "2026-09-09T06:00:42Z",
+    "url": "https://github.com/licklider-ai/nomue-protocol/issues/261",
+    "user": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/29053298?v=4",
+      "email": null,
+      "id": 29053298,
+      "login": "tasuku-kobayashi",
+      "name": "tasuku-kobayashi"
+    }
+  },
+  "title": "RFC: Release 4 balanced two-factor marginal inference — public discussion",
+  "url": "https://github.com/licklider-ai/nomue-protocol/issues/261"
+}
