@@ -1,0 +1,13 @@
+# R4 primary-methods source identity ledger
+
+Access date: 2026-09-11 UTC.
+
+| Source | Identity and inspected passage | Access and preservation limit | Use in this review |
+| --- | --- | --- | --- |
+| NIST DLMF §8.17 | Version 1.2.7, release 2026-06-15. Equations 8.17.1--4 define the incomplete beta integral, its normalization, the beta/gamma relation, and symmetry. Equation 8.17.7 gives the hypergeometric representation. Equations 8.17.22--23 and the paragraph following them describe the continued fraction and alternating lower/upper convergents. | Directly inspected through the official HTTPS page. The review service exposed rendered text but not raw response bytes, so this review records no content digest or local source copy. Stable equation permalinks are `https://dlmf.nist.gov/8.17.E1` through `E4`, `E7`, and `E22` through `E23`. | Primary basis for beta definitions and normalization. The R4 finite sum and oracle remainder are independently derived; they are not attributed to DLMF as algorithms. |
+| NIST/SEMATECH e-Handbook §1.3.6.6.5 | Official NIST web edition. The CDF paragraph states the central-F relationship with `k=nu2/(nu2+nu1*x)` and the regularized incomplete beta ratio. | Directly inspected through the official HTTPS page. No immutable edition identifier or raw-byte digest was exposed; no local copy is claimed. | Primary official support for the central-F to beta transformation. |
+| IEEE Std 754-2019 catalog record | IEEE SA record 6210, active standard, board approval 2019-06-13, publication 2019-07-22. The catalog states that the standard specifies interchange/arithmetic formats and that results are determined by inputs, operation sequence, and destination formats. | Directly inspected official catalog metadata. Full normative text required purchase/subscription and was not accessed; therefore clauses 3.4, 3.6, 3.7 and 4.3.1 were not directly inspected and no standard-content digest is claimed. | Confirms standard identity and scope only. It does not by itself establish the exact binary64 field formula. |
+| IEEE 754 working-group 2019 background page | Official working-group page states that IEEE 754-2019 is a minor revision of 754-2008 and identifies §4.3.1 `roundTiesToEven` as changed/extended. | Directly inspected. The page expressly says its background documents are non-normative. No raw-byte digest was exposed. | Corroboration for the rounding-mode identity, not a substitute for the normative standard. |
+
+Algorithm 708 was not obtained or inspected because neither candidate adopts it
+and no finding in this review depends on its implementation details.
