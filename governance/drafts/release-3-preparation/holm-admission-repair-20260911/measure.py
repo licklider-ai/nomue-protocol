@@ -190,11 +190,11 @@ def main():
                          'harness_sha256': sha(HERE / 'measure.py'),
                          'prepare_sha256': sha(HERE / 'prepare.mjs'),
                          'example_record_sha256': sha(HERE.parent / 'holm-envelope-experiment-20260911/example-record.jcs')}
-    report['source_identity'] = {'checkout_commit': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+    report['source_identity'] = {'checkout_commit': subprocess.check_output(['git','-c','safe.directory='+str(ROOT),'rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                                'event_head': os.environ.get('NOMUE_EVENT_HEAD'),
                                'event': os.environ.get('GITHUB_EVENT_NAME'),
                                'run_id': os.environ.get('GITHUB_RUN_ID')}
-    report['source_identity']['tree'] = subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip()
+    report['source_identity']['tree'] = subprocess.check_output(['git','-c','safe.directory='+str(ROOT),'rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip()
     with tempfile.TemporaryDirectory(prefix='nomue-admission-inputs-') as td:
         directory = Path(td)
         report['cases'] = prepare(directory, node)

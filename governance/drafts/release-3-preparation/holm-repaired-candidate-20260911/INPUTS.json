@@ -1,6 +1,6 @@
 {
-  "base_commit": "7e7b73935d2cd256c4b6e24e7bc1059b8f0a5cb4",
-  "status": "unissued checkpoint successor; old candidate unchanged",
+  "base_commit": "84117fb7b285da43ebb3168c12155f31c4c49bc7",
+  "status": "unissued repair successor; historical candidates unchanged",
   "runtime": [
     {
       "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/INPUTS.json",

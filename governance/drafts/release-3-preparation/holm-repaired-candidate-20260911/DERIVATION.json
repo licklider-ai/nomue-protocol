@@ -1,0 +1,163 @@
+{
+  "base_commit": "84117fb7b285da43ebb3168c12155f31c4c49bc7",
+  "immediate_source": "candidate.2",
+  "inherited_template_inventory": "TEMPLATES.json records the earlier candidate.1 layer",
+  "files": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/BUDGET-RESULTS.json",
+      "sha256": "2eee624d56089ca4185bfb6ef4b19afba97d2b8fd7cefb214eeb91e913a3ef5f"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/INPUTS.json",
+      "sha256": "80cc55dd2d551ab92c072476bc86bb2e26853180091e460502dd36b934a2c889"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/PUBLIC-RESULTS.json",
+      "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/README.md",
+      "sha256": "cdcd30e7f6191c672ae2acfabcf4adcf6d8f47072eaddcd2a8bec5419907b82c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/RESULTS.json",
+      "sha256": "744929170ac61ea2cf9444bc4bb811094619674129081ca819c9a7bbdd3de284"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/REVIEW.md",
+      "sha256": "c756fc8590bd357592016c567fb7951ea8282085f1e9b1606409a7656b159d0a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/TEMPLATES.json",
+      "sha256": "50e2196a5a989f3b576e7e5a113c1e1f9e62015655ff1a98fd4352133244cdb9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/budget.mjs",
+      "sha256": "c4090e2edc16893daa88f30f774d5ea2ad489639f389a2c97cadb2816dfa754e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/bundle.json",
+      "sha256": "43fd3f8e02742653baf4583b882e7dc1e07a3a4537db73072b39b40055638c06"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/check-policy.json",
+      "sha256": "64e3ff666729482e9968d62ed38af8aabdc6d93d40aca889c3423cf19eb11122"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/ci_host.py",
+      "sha256": "63305d41a2af75610354e889f58a64d01817e92388abbb1f49f41dd72f228ede"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/diagnostics.json",
+      "sha256": "2e792c3aa502481b1af82457db00904b7891894c6c4210b5753abbc01dfb5f60"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/entry.mjs",
+      "sha256": "6e8a3a34523b37d8f8cdf3aa1f929b8510e916e3b3488b99bc101420469cac93"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/envelope.mjs",
+      "sha256": "54d3919c7776ada400b065f785535777d5bf5ea6b621dc84cbaa7d92b6ac00c8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/example-expected.json",
+      "sha256": "ae1aedeab8937456020a1033d237dbbefbb3c91ed3e19dbf3f648081f192f683"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/example-public-refusal.json",
+      "sha256": "57e5746af0f678b877dea8a9ae6f9a8e917488015fdc301fbf987214e1d9b173"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/example-public-report.json",
+      "sha256": "acfed0f5889a3bcee461517e25599a41def9f3b5c6bfee787695bba091bd572a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/example-record.jcs",
+      "sha256": "d16a6a02522314637a4101fcd5bc3f18c2764de2a7c9bc053cfdf2fd1bdbb423"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/example-report.json",
+      "sha256": "8bc28bef62f831cf5176f21d856fb395e1187690290cdf16d2b6513815de874c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/expected.schema.json",
+      "sha256": "b8a0dfd3b5e607c7b3e3f68223a08015ba9319a67ec17bd0c97d122a5e711b45"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/identities.json",
+      "sha256": "7b85df48ea81ed5474e23766cecb3a92a1098b319619f195780547cc121d0c29"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/outcomes.json",
+      "sha256": "5769cce189578b2d601342b561285a6be4967a943ddb540dd0886b04ea2ab0f5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/pin_runtime.py",
+      "sha256": "8a8caf712fd655690afc688d76cbda7be8d28c39b15d50ed4a55bce7709c1c80"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/prepare_cases.mjs",
+      "sha256": "468fd5c638032b0ac3b28a43aa30b5d6571118338c3396ec356849549e37176d"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/private-refusal.schema.json",
+      "sha256": "f976c9b9dba2f1ceb4b0d0c9e8a7653af4f19109a61249dc117fd6cda5d1d4dc"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/private-report.schema.json",
+      "sha256": "41b9f03cdb8acda8fd38e1f61fa8016d406a81d25340ebe3c4b6857cd64d6ae6"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/probes.mjs",
+      "sha256": "9b7f57e729279eec0a30ab036143c08d085ae31e59be09db046405d06ad726fe"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/public.mjs",
+      "sha256": "ab417b286e8e43bb1bdbb1fff588869903166d1fe0228efe753fb686c497f7f0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/record.schema.json",
+      "sha256": "4b176178aa5e1746e127c026e3171fed8011ee1f9de022d3b9aace0461931421"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/refusal.schema.json",
+      "sha256": "340a42eecb2ddf401dd22e365a12e1c09750aa3bb83edb0d83f31762a40a9edf"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/report.schema.json",
+      "sha256": "fead099744ba856e9a2547afe6cd04e2660fbbab80d6611c27aca90c62d0dce2"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/supervisor.py",
+      "sha256": "a25997e41dea174f2f6455fd3be7c1eaf977ad28e28b95df01a57a5f2d7d9ded"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_budget.mjs",
+      "sha256": "7b914bbd66266d712e4ef441cb638c554e51c4495897d60f8d11fa7a8bcc3e19"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_envelope.mjs",
+      "sha256": "b4cd5282fd3ac19f4c273babc4112de4ae425e431d1af3c65eee18870e6e6da9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_execution.py",
+      "sha256": "4304b11183c3b5a2efb9ca417c41508acd909bd8ea69b346be3ef233b5b5923b"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_public.mjs",
+      "sha256": "b8ad18bf027cab7f663a85fa4ea0272d84e9d0367ad65e155e7cf2c19f56dd66"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-checkpoint-candidate-20260911/test_receipts.mjs",
+      "sha256": "7488721c6d25cbe7262366a681480d41e7a7dde014cbe2f313af61afd471bcd0"
+    }
+  ]
+}

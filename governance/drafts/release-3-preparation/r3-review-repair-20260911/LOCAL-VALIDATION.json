@@ -10,7 +10,7 @@
   "map": {
     "proposed_requirements": 16,
     "property_declarations": 531,
-    "source_pins": 419,
+    "source_pins": 420,
     "negative_controls": [
       "new real-schema field",
       "removed real ownership",
