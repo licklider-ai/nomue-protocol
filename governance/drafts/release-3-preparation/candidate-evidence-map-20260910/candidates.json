@@ -1,0 +1,1013 @@
+{
+  "status": "Informative work-order proposal only; no new gate or authority",
+  "base_commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "opening_commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+  "first_candidate": "PVL-03",
+  "alternatives": ["PVL-01", "PVL-07"],
+  "common_boundary": "All 15 remain unissued R3-CAND with numerical support unestablished. Source assumptions are conditional scientific claims, never inferred from p-value numbers. Opening exclusions override inherited positive descriptions.",
+  "candidates": [
+    {
+      "id": "PVL-03",
+      "name": "Holm step-down (Bonferroni thresholds)",
+      "classification": "R3-CAND",
+      "proposed_order": 1,
+      "variant": "Unweighted Scheme 1 with Bonferroni thresholds; not product-form or weighted Holm",
+      "target_hypotheses": "Elementary nulls in a finite, fixed declared family",
+      "inputs": "Member IDs and raw p-values; family definition and provenance; check-owned level",
+      "proposed_outputs": "Candidate ordered step-down trace and adjusted p-values; no confidence intervals in the first slice",
+      "assumptions": "Each true-null p is super-uniform under every relevant null configuration; no joint-independence premise",
+      "guarantee_scope": "Reused source claim: strong FWER/free-combinations control conditional on valid marginals; arithmetic checking alone asserts no scientific validity",
+      "decision_bearing_claims": [
+        "Sorted member-to-p binding, Scheme 1 threshold and stop rule",
+        "Theorem 1 covers all true-null subsets",
+        "Cumulative-max adjusted output is a derived representation needing candidate review"
+      ],
+      "primary_pinpoints": [
+        "Holm 1979 pp.65–68: definition, Scheme 1, Theorem 1 and Boole proof; confidence-set limitation p.68"
+      ],
+      "evidence_keys": [
+        "holm_source",
+        "multiplicity_review",
+        "multiplicity_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Bounded source/acceptance chain is located. The close reviewer could not reopen PDFs and did not authenticate a distinct serving model. Check applicability of the existing independent primary investigation to the future candidate; do not count the close review as a second PDF pass.",
+      "scientific_unresolved": "No new theorem dispute located for Scheme 1 within these bounds. Raw p validity and selection cannot be inferred from numbers. Adjusted-output and representation boundaries remain candidate work.",
+      "dependencies": {
+        "numerical": [
+          "NF-B: sort, integer multiplication, prefix maximum, cap, projection; no distribution kernel"
+        ],
+        "structural": [
+          "D0 family/member/source binding; stable ties; original-order output; check-owned level and fail order"
+        ],
+        "other_methods": [],
+        "holds": [
+          "NB-04",
+          "NB-05",
+          "NB-09",
+          "NB-08 only if decision/interval equivalence is claimed"
+        ]
+      },
+      "next_minimum_work": "Prepare one fixed Scheme-1 source-to-candidate contract and evidence-reuse assessment; resolve only any missing scoped independent source coverage; then separately commission exact arithmetic/projection, boundary fixtures and bounded execution review. No interval or p-generator is needed.",
+      "ordering_reason": "Best balance of direct procedural evidence, dependence-free conditional control, simple numerics and reusable ordering trace.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "PVL-01",
+      "name": "Bonferroni single-step",
+      "classification": "R3-CAND",
+      "proposed_order": 2,
+      "variant": "Single-step equal-allocation Bonferroni over given p-values; separate Dunn planned-contrast interval variant",
+      "target_hypotheses": "Each elementary null in a fixed finite family",
+      "inputs": "Member IDs, raw p-values, family m and provenance",
+      "proposed_outputs": "min(1,m*p) values and optional scoped decision trace; interval construction deferred",
+      "assumptions": "Valid marginal null p-values; arbitrary dependence allowed; family fixed before selection",
+      "guarantee_scope": "Strong FWER conditional on marginal validity; Dunn normal/common-scale model belongs only to its interval instance",
+      "decision_bearing_claims": [
+        "Union-bound transfer and adjusted-output inversion are investigator derivations",
+        "Dunn equations (6)/(7) and planned-family scope are not universal normality requirements",
+        "Cap and alpha endpoints need explicit candidate meaning"
+      ],
+      "primary_pinpoints": [
+        "Dunn 1961 pp.52–54 equations (1)–(7); Holm 1979 pp.66–68 as additional basis"
+      ],
+      "evidence_keys": [
+        "sr_b_source",
+        "sr_b_review",
+        "sr_b_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Source, independent derivation review and scoped acceptance are located, including S-H1/S-H2. No missing blanket source acquisition is identified.",
+      "scientific_unresolved": "Flagged Dunn examples/printed constants remain unresolved and unnecessary for this p-only slice; do not use them as truth values.",
+      "dependencies": {
+        "numerical": [
+          "NF-B: integer multiplication/cap/projection; NF-A only for optional intervals"
+        ],
+        "structural": ["D0; family count and omitted-member refusal; input provenance"],
+        "other_methods": [],
+        "holds": ["NB-04", "NB-05", "NB-09", "NB-08 if intervals added"]
+      },
+      "next_minimum_work": "Prepare p-only candidate output/level/domain agreement and bounded numerical evidence; carry S-H1 independent-means qualification and exclude disputed tables.",
+      "ordering_reason": "Fastest smaller fallback; stronger located successor provenance chain than the old generic catalogue suggests, but less exercise of reusable stepwise structure.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "PVL-07",
+      "name": "Hochberg step-up (1988)",
+      "classification": "R3-CAND",
+      "proposed_order": 3,
+      "variant": "Hochberg 1988 step-up; not Simes global test or Hommel shortcut",
+      "target_hypotheses": "Elementary nulls in declared finite family",
+      "inputs": "Member IDs and raw p-values; evidence/declaration for relevant intersection conditions",
+      "proposed_outputs": "Step-up trace, suffix-minimum adjusted values and member map; no automatic intervals",
+      "assumptions": "Valid null p-values and Simes-valid relevant true-null intersections; independence is a sufficient sourced route, arbitrary dependence is not",
+      "guarantee_scope": "Strong FWER only under the qualified local/Simes basis",
+      "decision_bearing_claims": [
+        "Largest passing rank and non-strict comparison",
+        "Suffix-minimum output is algebraic inversion, not printed formula",
+        "Shared denominator does not by itself establish Simes validity"
+      ],
+      "primary_pinpoints": ["Hochberg 1988 pp.800–801 equation (8); Simes 1986 pp.751–752,754"],
+      "evidence_keys": [
+        "sr_c_source",
+        "sr_c_review",
+        "sr_c_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Six-source review and scoped SR-C acceptance located; Rom adjudication does not certify constants or arbitrary dependence.",
+      "scientific_unresolved": "Actual one-way family dependence must be covered; no general all-pairs guarantee inferred.",
+      "dependencies": {
+        "numerical": ["NF-B sort/suffix minima/integer products/projection"],
+        "structural": ["D0; opposite scan/stop semantics from Holm; assumption evidence"],
+        "other_methods": ["PVL-03 trace infrastructure reusable, not a mathematical prerequisite"],
+        "holds": ["NB-04", "NB-05", "NB-09"]
+      },
+      "next_minimum_work": "Bound the first allowed input-family assumptions; review reuse and suffix-min output; independently check ties/equality/projection and operation graph.",
+      "ordering_reason": "Second alternative if valid input-family scope is already available; no complex distribution needed, but a stronger dependence prerequisite than Holm.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "PVL-02",
+      "name": "Šidák single-step",
+      "classification": "R3-CAND",
+      "proposed_order": 4,
+      "variant": "Sidak single-step: explicit true-null no-rejection product bound; symmetric Gaussian/common-scale examples are separate from generic independence",
+      "target_hypotheses": "Elementary nulls of fixed family",
+      "inputs": "Raw p-values with member identities and applicable dependence/scale basis",
+      "proposed_outputs": "1-(1-p)^m adjusted values and candidate threshold comparison",
+      "assumptions": "Valid marginals plus product bound for every true-null subset; specified Gaussian symmetric rectangles or justified common scale; not merely positive pairwise correlation",
+      "guarantee_scope": "Strong FWER only within that explicit bound",
+      "decision_bearing_claims": [
+        "True-subset condition, strict/non-strict continuous boundary",
+        "One common independent positive scale is not arbitrary individual standard errors",
+        "Adjusted-value inversion is a reviewed derivation"
+      ],
+      "primary_pinpoints": [
+        "Sidak 1967 pp.626–631 Theorems 1/2, Corollaries 1/2 and Remark 2; Dunn scope addendum"
+      ],
+      "evidence_keys": [
+        "sr_b_source",
+        "sr_b_review",
+        "sr_b_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Located complete bounded chain; old orthant shorthand replaced by the accepted explicit condition.",
+      "scientific_unresolved": "Do not extend to arbitrary Welch pairs or one-sided pivots. Printed table discrepancies remain outside candidate basis.",
+      "dependencies": {
+        "numerical": [
+          "NF-B integer powers or separately justified stable log1p/expm1; cancellation and large exact denominator cost"
+        ],
+        "structural": ["D0; explicit model/dependence variant"],
+        "other_methods": [],
+        "holds": ["NB-04", "NB-05", "NB-09"]
+      },
+      "next_minimum_work": "Choose one bounded dependence variant and p-only output; review exact power/resource and projection strategy without adopting table values.",
+      "ordering_reason": "Source chain good; power arithmetic and dependence make it later than linear adjustments.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "PVL-04",
+      "name": "Holm product-form (\"Holm-Šidák\") step-down",
+      "classification": "R3-CAND",
+      "proposed_order": 5,
+      "variant": "Holm p.68 independent-statistics product-form step-down; not weighted Holm or ordinary Scheme 1",
+      "target_hypotheses": "Fixed finite elementary family",
+      "inputs": "Raw p-values, member IDs and independence basis",
+      "proposed_outputs": "Ordered stopping trace; any cumulative-max product-form adjusted output separately reviewed",
+      "assumptions": "Source independence condition and valid marginal tests; no arbitrary dependent common-scale extension inferred",
+      "guarantee_scope": "Conditional strong familywise control as the distinct source variant; no dependence-free promise",
+      "decision_bearing_claims": [
+        "Exact product-form thresholds by remaining family size",
+        "Stop at first failure; tie/endpoint and inversion conventions",
+        "No transfer of PVL-02 symmetric-rectangle theorem without its own review"
+      ],
+      "primary_pinpoints": ["Holm 1979 p.68 independence paragraph; pp.66–67 stopping context"],
+      "evidence_keys": [
+        "holm_source",
+        "multiplicity_review",
+        "multiplicity_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Accepted source variant located; historical close review is repository-only, requiring scope-aware reuse assessment before implementation.",
+      "scientific_unresolved": "Whether a concrete one-way shared-variance family meets independence remains separate; independent units are insufficient.",
+      "dependencies": {
+        "numerical": [
+          "NF-B sort, powers, cumulative adjustment/projection; denominator/resource growth"
+        ],
+        "structural": ["D0 and step-down trace"],
+        "other_methods": [
+          "PVL-03 trace and PVL-02 arithmetic reusable, neither changes the theorem"
+        ],
+        "holds": ["NB-04", "NB-05", "NB-09"]
+      },
+      "next_minimum_work": "Bind independence and exact variant in a candidate; review any derived adjusted output and exact-power domain/resources.",
+      "ordering_reason": "Shares infrastructure with earlier candidates but adds both ordering and powers.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "FDR-02",
+      "name": "Benjamini-Yekutieli (2001): PRDS and `Σ1/i` variants",
+      "classification": "R3-CAND",
+      "proposed_order": 6,
+      "variant": "Two variants retained: BY harmonic correction for arbitrary dependence; BH-type PRDS route is distinct. Prioritize harmonic variant only as future work proposal",
+      "target_hypotheses": "Fixed m elementary hypotheses, false discoveries V among total rejections R",
+      "inputs": "Raw p-values, fixed member identities, check-owned q; dependence variant",
+      "proposed_outputs": "Step-up rejection trace and candidate harmonic adjusted values; never Storey q-values",
+      "assumptions": "Valid super-uniform null p-values in both routes; PRDS requires its precise true-null conditions; harmonic route does not require PRDS",
+      "guarantee_scope": "Positive FDR guarantees remain excluded from opening premises; C.4 records conditional E[V/(R or 1)] bounds for review reuse",
+      "decision_bearing_claims": [
+        "Theorem 1.3 harmonic correction versus Theorem 1.2 PRDS",
+        "Harmonic adjusted-output inversion is investigator algebra",
+        "No invalid p-value repair or change of family m"
+      ],
+      "primary_pinpoints": [
+        "BY 2001 pp.1167–1169 definition/Theorems 1.2–1.3; pp.1182–1183 proof; C.4.1"
+      ],
+      "evidence_keys": [
+        "sr_kg_source",
+        "sr_kg_review",
+        "sr_kg_reconciliation",
+        "continuation_latest",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Five-original content GO found; exact successor scoped acceptance/provenance connection not located. Historic CLOSED preserved; exclusion not lifted.",
+      "scientific_unresolved": "Arbitrary-dependence correction still needs valid marginals; broader PRDS all-pairs claim unresolved in source. Harmonic route can avoid needing that extension, subject to review.",
+      "dependencies": {
+        "numerical": [
+          "NF-B rational harmonic sum, ratios, sort/suffix minima, projection and denominator/resource bound"
+        ],
+        "structural": ["D0; FDR separate from FWER; variant identity; q ownership"],
+        "other_methods": [],
+        "holds": ["NB-04", "NB-05", "NB-09", "B-01 SR-K exclusion"]
+      },
+      "next_minimum_work": "Locate or complete the bounded acceptance/provenance connection for Theorem 1.3; have a limited reviewer assess proposed reuse/reentry without lifting exclusion here; then define harmonic numeric candidate.",
+      "ordering_reason": "Algebraic and no PRDS burden for harmonic route; excluded claims and harmonic resources keep it behind FWER options.",
+      "opening_premise_exclusion_retained": true,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "FDR-01",
+      "name": "Benjamini-Hochberg linear step-up (1995)",
+      "classification": "R3-CAND",
+      "proposed_order": 7,
+      "variant": "Original BH linear step-up under its independence scope; later dependent cases require BY-specific evidence",
+      "target_hypotheses": "Fixed finite family; expected false-discovery proportion rather than strong FWER",
+      "inputs": "Raw p-values and member identities; q; evidence for exact independence/dependence conditions",
+      "proposed_outputs": "Step-up trace and BH adjusted values; not Storey pFDR estimates",
+      "assumptions": "Original theorem independence and valid null p-values; any Case 3/4 extension requires its specific scale/covariance/sidedness assumptions",
+      "guarantee_scope": "Positive opening guarantees remain excluded. Historical original bound (m0/m)q and later qualified cases are research input only",
+      "decision_bearing_claims": [
+        "BH largest-rank rule and no-rejection convention",
+        "Original independence distinct from BY cases",
+        "One-sided Case 4 q<1/2 and two-sided Case 3 cannot be unified"
+      ],
+      "primary_pinpoints": [
+        "BH 1995 p.293 expression (1), Theorem 1 and Appendix A; BY 2001 pp.1174–1175,1180,1182; BKY 2006 p.493 output pinpoint"
+      ],
+      "evidence_keys": [
+        "multiplicity_acceptance",
+        "sr_kg_source",
+        "sr_kg_review",
+        "sr_kg_reconciliation",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Original FND-1 bounded BH acceptance exists, but it does not silently resolve the current SR-K/B-01 exclusion or broaden to shared-scale cases. Successor connection not located.",
+      "scientific_unresolved": "Two-sided all-pairs PRDS/MTP2 fails in the cited source and BH control remains open in that source account; no claim about all later literature. Actual input family validity remains separate.",
+      "dependencies": {
+        "numerical": ["NF-B integer ratios/suffix minima; avoid two-rounding differences"],
+        "structural": ["D0; independent variant versus qualified dependence; FDR meaning"],
+        "other_methods": [],
+        "holds": ["NB-04", "NB-05", "NB-09", "B-01 SR-K exclusion"]
+      },
+      "next_minimum_work": "Map the exact intended BH variant to original FND-1 and/or PR #192 scope; obtain bounded reentry/reuse review and missing acceptance connection before candidate promotion.",
+      "ordering_reason": "Slightly simpler arithmetic than BY, but a harder joint-dependence condition for typical shared-data families.",
+      "opening_premise_exclusion_retained": true,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "CLS-01",
+      "name": "Closed testing principle (Marcus-Peritz-Gabriel 1976)",
+      "classification": "R3-CAND",
+      "proposed_order": 8,
+      "variant": "Marcus–Peritz–Gabriel closed-testing framework only; local-test family not selected",
+      "target_hypotheses": "Elementary hypotheses plus all required intersections",
+      "inputs": "Prespecified elementary members, logical intersection identity and one justified local test per required intersection",
+      "proposed_outputs": "Elementary rejection set and local-test trace; adjusted output only after explicit definition",
+      "assumptions": "Each true intersection has a valid local level-alpha test; closure complete; no additional independence between valid local tests",
+      "guarantee_scope": "Strong false-rejection FWER via true intersection; no automatic directional guarantee or intervals",
+      "decision_bearing_claims": [
+        "Closure completeness and every-containing-intersection conjunction",
+        "Validity of each selected local test",
+        "Framework does not make Simes valid or include all gatekeeping variants"
+      ],
+      "primary_pinpoints": [
+        "Marcus et al. 1976 pp.655–656 framework; pp.656–657 directional limitation"
+      ],
+      "evidence_keys": [
+        "sr_d_source",
+        "sr_d_primary",
+        "sr_d_review",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Scoped SR-D framework research/review/acceptance located in T/U; no missing 1995 chapter is needed for CLS-01.",
+      "scientific_unresolved": "Concrete local procedure is not selected. Intersections and logical restrictions must be exact; no general compatible interval or shortcut theorem imported.",
+      "dependencies": {
+        "numerical": ["NF-E up to 2^m-1 intersections; local-test arithmetic from selected family"],
+        "structural": [
+          "D0; intersection membership, local result bindings, completeness and resource refusal"
+        ],
+        "other_methods": [
+          "PVL-01 could supply reviewed Bonferroni local tests after separate composition review; PVL-03 equivalence not assumed from finite probes"
+        ],
+        "holds": ["NB-04", "NB-05", "NB-09", "NB-08 if intervals introduced"]
+      },
+      "next_minimum_work": "Propose one small finite closure/local-test composition and maximum family size; separately review semantic composition, completeness, resources and fixtures.",
+      "ordering_reason": "Foundational but not a standalone concrete statistical operation; exponential work and local-test selection raise scope.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "OMN-01",
+      "name": "Classical equal-variance one-way ANOVA F",
+      "classification": "R3-CAND",
+      "proposed_order": 9,
+      "variant": "Classical equal-variance one-way omnibus F only",
+      "target_hypotheses": "Global equality of k means, one-member family; k>=3",
+      "inputs": "Explicit one-way observations/groups, counts, common-variance declaration",
+      "proposed_outputs": "Between/within sums of squares, F, numerator/denominator df and upper-tail probability",
+      "assumptions": "Independent normal observations, common positive variance; exact admissible sample-size/degeneracy domain not selected",
+      "guarantee_scope": "Intended model-level F calibration remains source-held for this candidate; no pairwise conclusion or equality proof",
+      "decision_bearing_claims": [
+        "Global-null target and exact F law under model",
+        "Mean/SS/F graph and degrees of freedom",
+        "Source basis for intended bound without assuming unread book"
+      ],
+      "primary_pinpoints": [
+        "Frozen catalogue OMN-01; Part Y.3/Z.3 and opening SR-A row; assigned Scheffe 1959/Fisher-lineage basis uninspected"
+      ],
+      "evidence_keys": ["welch_source", "catalogue", "opening", "numerical"],
+      "evidence_connection_gap": "No completed claim-bounded classical-F source basis located for the requested candidate; inventory gap is retained, not resolved by nearby Welch/James/Brown reports.",
+      "scientific_unresolved": "Need determine whether already supplied originals support a sufficiently narrow classical-F claim; if not, keep it held. No demand for the absent book under current source cap.",
+      "dependencies": {
+        "numerical": ["NF-A F-tail at integer df; stable/exact summary arithmetic, projection"],
+        "structural": ["D0 group/unit/admitted-set model; one-member omnibus result"],
+        "other_methods": ["F-tail and arithmetic interface; R2 reuse only conditional"],
+        "holds": ["SR-A", "NB-03 as applicable", "NB-04", "NB-05", "NB-09"]
+      },
+      "next_minimum_work": "Commission a bounded supplied-corpus pinpoint assessment of the classical-F claim; keep any unsupported source requirement visible, then separate statistic arithmetic from F-tail evidence.",
+      "ordering_reason": "Simpler than unequal-variance omnibus but source basis and distribution work remain.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "OMN-02",
+      "name": "Welch heteroscedastic omnibus (Welch 1951)",
+      "classification": "R3-CAND",
+      "proposed_order": 10,
+      "variant": "Welch 1951 heteroscedastic omnibus, not two-group Welch or James/Brown-Forsythe",
+      "target_hypotheses": "Equality of k independent normal means with unequal variances",
+      "inputs": "Group counts/means/variances or their bound observations, independent variance-estimate df",
+      "proposed_outputs": "Weighted omnibus statistic, noninteger denominator df, approximate F-tail output",
+      "assumptions": "Independent normal means and independent chi-square variance estimates; defined positive variance/df domain",
+      "guarantee_scope": "Model/statistic/df/approximate F claims remain excluded as opening premises; no exact finite-sample F guarantee",
+      "decision_bearing_claims": [
+        "Welch equations (29)–(30) statistic/df mapping",
+        "Approximation versus exact calibration",
+        "Coverage of actual independent primary-source review"
+      ],
+      "primary_pinpoints": [
+        "Supplier 07 Welch 1951 pp.330,334–335 equations (29)–(30); SHA-256 in C.2"
+      ],
+      "evidence_keys": [
+        "welch_source",
+        "prior_opening_review",
+        "opening_review",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "C.3 inspection testimony exists. PR #192 covers 04/09/10/16/19, not 07; Z/AA James/Brown reviews do not supply this pass. No qualifying Welch return located in searched scope.",
+      "scientific_unresolved": "Even after review connection, approximate calibration, fractional df, variance-zero and support domain remain substantive candidate choices.",
+      "dependencies": {
+        "numerical": ["NF-A weighted arithmetic and F-tail with fractional denominator df"],
+        "structural": ["D0; approximation flag/claim boundary; no automatic variance switching"],
+        "other_methods": ["Separate scalar-tail route; no two-group Welch identity substitution"],
+        "holds": [
+          "SR-A",
+          "B-01 OMN-02 exclusion",
+          "NB-02",
+          "NB-03 as applicable",
+          "NB-04",
+          "NB-05",
+          "NB-09"
+        ]
+      },
+      "next_minimum_work": "Find an existing qualifying supplier-07 review or perform only that bounded model/statistic/df/approximation pass with truthful provenance; request limited reentry review, not source-scope reapproval.",
+      "ordering_reason": "More difficult source-review gap and fractional-df numerics than OMN-01.",
+      "opening_premise_exclusion_retained": true,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "APR-09",
+      "name": "Scheffé all-contrasts procedure (1953)",
+      "classification": "R3-CAND",
+      "proposed_order": 11,
+      "variant": "Correction-aware Scheffe 1953 full contrast-space procedure; 1969 item (1) corrections",
+      "target_hypotheses": "All sum-zero contrasts in a declared space; selected contrast can be data-suggested within that space",
+      "inputs": "Mean-estimate vector, covariance shape, independent scale estimate/df, contrast coefficients and space/rank",
+      "proposed_outputs": "Contrast estimates and simultaneous intervals using sqrt((k-1)F) multiplier",
+      "assumptions": "Joint normality, known covariance shape up to common scale, independent chi-square scale, rank k or restricted k-1 as applicable",
+      "guarantee_scope": "Full-space/subset coverage and post-hoc claims remain excluded from opening premises; historical reviewed characterization only",
+      "decision_bearing_claims": [
+        "Exact space/rank and covariance assumptions",
+        "All contrasts versus all pairs; selection of contrast versus selection of procedure",
+        "All nine corrections; deleted interaction footnote"
+      ],
+      "primary_pinpoints": [
+        "Scheffe 1953 pp.87–90 equations (1)–(13),95–96; Corrections 1969 p.229 item (1)"
+      ],
+      "evidence_keys": [
+        "sr_kg_source",
+        "sr_kg_review",
+        "sr_kg_reconciliation",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Original/corrigendum and five-source content review located. Exact scoped successor acceptance/provenance determination remains unlocated; preserve historical CLOSED.",
+      "scientific_unresolved": "pp.105–110 are not missing from this article: reviewed span is 87–104. Covariance/rank or procedure-selection extensions remain outside scope; no numerical critical value certified.",
+      "dependencies": {
+        "numerical": ["NF-A F-quantile and square-root/quadratic-form/interval projection"],
+        "structural": [
+          "D0; contrast universe and actual selection timing separate; rank and covariance binding"
+        ],
+        "other_methods": [
+          "F-tail/quantile evidence; need not wait for completed OMN-01 implementation"
+        ],
+        "holds": ["B-01 SR-G exclusion", "NB-04", "NB-05", "NB-08", "NB-09"]
+      },
+      "next_minimum_work": "Locate/complete the scoped acceptance link and limited reentry review on existing 09/10 evidence; then bound one-way covariance/contrast domain and critical-value/interval contract.",
+      "ordering_reason": "Avoids range/multivariate probability kernel but remains excluded and has richer interval semantics.",
+      "opening_premise_exclusion_retained": true,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "APR-01",
+      "name": "Balanced Studentized-range all-pairs intervals (\"Tukey\", per SRC-06 (1.1))",
+      "classification": "R3-CAND",
+      "proposed_order": 12,
+      "variant": "Balanced Studentized-range all-pairs intervals per Hayter SRC-06 (1.1); not Tukey 1949 three-stage procedure",
+      "target_hypotheses": "All k(k-1)/2 mean differences",
+      "inputs": "Balanced group means/counts, common independent variance estimate and df; complete pair family",
+      "proposed_outputs": "Two-sided simultaneous intervals; rejection/test relation separately reviewed",
+      "assumptions": "Independent normal means, common variance, equal sizes, independent chi-square scale",
+      "guarantee_scope": "Later-primary balanced full-family coverage characterization; historical Tukey 1953 attribution excluded; no certified numerical implementation",
+      "decision_bearing_claims": [
+        "Correct range normalization and all-pairs family",
+        "Balanced calibration under recorded model",
+        "Later-primary mathematics distinct from uninspected historical manuscript"
+      ],
+      "primary_pinpoints": [
+        "Hayter 1984 p.61 equation (1.1), pp.61–64; source-supplied completion Sections 3.2 and 4.2"
+      ],
+      "evidence_keys": [
+        "allpairs_source",
+        "allpairs_review",
+        "allpairs_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Later-primary source and bounded acceptance located; reconciliation review did not reread PDFs. Assess candidate-specific reuse, not historical manuscript reacquisition.",
+      "scientific_unresolved": "No new broad mathematical dispute identified within accepted model; numerical range oracle/brackets withdrawn; data representation and admission can change guarantees.",
+      "dependencies": {
+        "numerical": [
+          "NF-C Studentized range tail/quantile; interval arithmetic; independent oracle required"
+        ],
+        "structural": ["D0; complete all-pair membership, balance check, coverage result"],
+        "other_methods": [
+          "Shared range kernel also useful for APR-02; no omnibus result prerequisite"
+        ],
+        "holds": ["SR-E historical only", "NB-01", "NB-03", "NB-04", "NB-05", "NB-08", "NB-09"]
+      },
+      "next_minimum_work": "Bind balanced mathematical scope to accepted Hayter evidence; separately commission valid range oracle/quantile evidence and interval projection; preserve historical attribution exclusion.",
+      "ordering_reason": "First range-based target because balanced structure is narrower than unequal sizes.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "APR-02",
+      "name": "Tukey-Kramer unequal-size all-pairs intervals",
+      "classification": "R3-CAND",
+      "proposed_order": 13,
+      "variant": "Tukey-Kramer unequal-size simultaneous all-pairs intervals; not Kramer 1956 multiple-range test",
+      "target_hypotheses": "All mean differences in complete pair family",
+      "inputs": "Unequal counts, group means, common independent variance estimate/df",
+      "proposed_outputs": "Simultaneous intervals with per-pair square-root size multiplier",
+      "assumptions": "Independent normal model, common variance, independent chi-square scale; accepted Hayter conditions",
+      "guarantee_scope": "Conservative coverage under recorded conditions, distinct from equality in balanced case; no arbitrary variance support",
+      "decision_bearing_claims": [
+        "Hayter proof versus Kramer proposal and Dunnett simulation",
+        "Correct sqrt((1/n_i+1/n_j)/2) normalization",
+        "No harmonic-mean substitution"
+      ],
+      "primary_pinpoints": [
+        "Hayter 1984 p.61 expression (1.1), pp.62–63 theorem, pp.63–69 proof and p.70; Kramer 1956 pp.307–310 only proposal lineage"
+      ],
+      "evidence_keys": [
+        "allpairs_source",
+        "allpairs_review",
+        "allpairs_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Located accepted mathematical/lineage scope; old SR-E historical residual does not erase Hayter basis. Source-reuse qualification still necessary for candidate promotion.",
+      "scientific_unresolved": "Unequal-size domain/resources and finite-precision intervals unestablished; no use of balanced constants through harmonic mean.",
+      "dependencies": {
+        "numerical": ["NF-C shared range quantile and size-dependent interval arithmetic"],
+        "structural": ["D0; per-pair counts and common scale"],
+        "other_methods": [
+          "APR-01 range evidence reusable after domain check; APR-01 completion not a theorem prerequisite"
+        ],
+        "holds": ["NB-01", "NB-03", "NB-04", "NB-05", "NB-08", "NB-09"]
+      },
+      "next_minimum_work": "Reuse a reviewed range interface and freeze candidate unequal-size arithmetic/coverage domain with independent source applicability and boundary evidence.",
+      "ordering_reason": "Natural successor to balanced range candidate; retain separate Contract and conformance scope.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "MTO-01",
+      "name": "Dunnett many-to-one simultaneous intervals (1955)",
+      "classification": "R3-CAND",
+      "proposed_order": 14,
+      "variant": "Dunnett 1955 many-to-one simultaneous limits; one- and two-sided constants are distinct variants",
+      "target_hypotheses": "k-1 treatment-minus-explicit-control differences",
+      "inputs": "Group means/counts, control identity, common independent variance estimate/df, sidedness",
+      "proposed_outputs": "Simultaneous one- or two-sided limits matched to declared many-to-one family",
+      "assumptions": "Normal independent groups, common variance and independent chi-square scale; covariance determined by shared control and sizes",
+      "guarantee_scope": "Source joint-confidence characterization; do not silently relabel it as a separate adopted FWER/test-interval theorem",
+      "decision_bearing_claims": [
+        "General unequal-size correlation construction versus limited printed tables",
+        "One-sided/two-sided constants cannot be exchanged",
+        "Control-sharing dependence and interval claim"
+      ],
+      "primary_pinpoints": [
+        "Dunnett 1955 pp.1096–1105, especially p.1103 equations (6)–(7) and p.1105 table accuracy"
+      ],
+      "evidence_keys": [
+        "dunnett_source",
+        "multiplicity_review",
+        "multiplicity_acceptance",
+        "catalogue",
+        "opening",
+        "numerical"
+      ],
+      "evidence_connection_gap": "Foundational source/review/acceptance located; no need to borrow SR-J stepwise variants. Old close review was not a fresh PDF pass.",
+      "scientific_unresolved": "Certified table/kernel route, correlation domain and output duality unresolved; printed tables not numerical authority.",
+      "dependencies": {
+        "numerical": [
+          "NF-D equicoordinate multivariate-t probabilities/quantiles and correlation-from-sizes"
+        ],
+        "structural": ["D0; explicit control, family, sidedness and interval coherence"],
+        "other_methods": [
+          "Scalar t pieces reusable conditionally; no all-pairs kernel substitution"
+        ],
+        "holds": ["NB-01", "NB-03", "NB-04", "NB-05", "NB-07", "NB-08", "NB-09"]
+      },
+      "next_minimum_work": "Bound one side/correlation/sample-size variant, assess source reuse, and separately commission certified multivariate probability/quantile evidence or a justified bounded table route.",
+      "ordering_reason": "Strong located source basis but the heaviest distribution-specific kernel and table obligations.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "HET-01",
+      "name": "Games-Howell (1976)",
+      "classification": "R3-CAND",
+      "proposed_order": 15,
+      "variant": "Unprimed Games-Howell 1976 (Method BF in that source); excludes GH-prime and other papers’ BF labels",
+      "target_hypotheses": "All two-sided mean differences in heteroscedastic independent normal groups",
+      "inputs": "Counts, means, individual variances/df and complete pair family",
+      "proposed_outputs": "Approximate pairwise intervals with q(alpha,k,nu_W)*SE/sqrt(2); no guaranteed level-alpha statement",
+      "assumptions": "Normal independent groups; unequal variances; defined pairwise SE and Welch-Satterthwaite df",
+      "guarantee_scope": "Accepted evidence is approximation/simulation with documented nominal-level exceedance; no general finite-sample level-alpha guarantee established",
+      "decision_bearing_claims": [
+        "Exact unprimed construction and square-root normalization",
+        "Simulation evidence distinguished from proof",
+        "GH-prime exclusion and noninteger df"
+      ],
+      "primary_pinpoints": [
+        "Games–Howell 1976 pp.116–118,120–123 Tables III/V; Tamhane 1979 p.473; Dunnett 1980b p.796 (1.2)–(1.4)"
+      ],
+      "evidence_keys": ["sr_i_source", "sr_i_review", "catalogue", "opening", "numerical"],
+      "evidence_connection_gap": "Source closure and scoped independent-pass acceptance located in S. No additional whole-source collection needed.",
+      "scientific_unresolved": "A genuinely substantive approximation/support claim remains; positivity, minimum n and zero variance choices open. Source closure cannot produce a universal error-control guarantee.",
+      "dependencies": {
+        "numerical": [
+          "NF-C range quantiles at per-pair fractional df; stable SE/df and interval arithmetic"
+        ],
+        "structural": [
+          "D0; exact approximation meaning; unprimed identity; no silent method switch"
+        ],
+        "other_methods": [
+          "Range kernel plus fractional-df evidence; no borrowed exact Welch guarantee"
+        ],
+        "holds": ["NB-01", "NB-02", "NB-03", "NB-04", "NB-05", "NB-08", "NB-09"]
+      },
+      "next_minimum_work": "First decide a reviewable bounded approximation/reporting proposal consistent with S; if unavailable retain hold. Only then commission fractional-df range and interval evidence.",
+      "ordering_reason": "Most substantive guarantee limitation plus complex numerical dependencies; not a quick route to guaranteed inference.",
+      "opening_premise_exclusion_retained": false,
+      "adoption": "NOT_PERFORMED",
+      "implementation_eligibility": "NOT_ESTABLISHED"
+    }
+  ],
+  "evidence": {
+    "catalogue": {
+      "commit": "7bd9c5ab854777c3e99e624d9d2ed62731228852",
+      "path": "governance/drafts/release-3-preparation/semantic-research-result.md",
+      "section": "Sections 8.1–8.8 and 9",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7bd9c5ab854777c3e99e624d9d2ed62731228852/governance/drafts/release-3-preparation/semantic-research-result.md",
+      "role": "Frozen descriptions and classifications; superseded qualifications apply",
+      "blob": "8f21526040924b891f64724c2d0fde9ea94eff92",
+      "bytes": 102312,
+      "sha256": "61b20c9b5e4c43ed54e67c74630fb1d5f87f0b972af76f3876ad09340dd9d06f",
+      "present_at_base": true
+    },
+    "opening": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "section": "Sections 2–5, especially 2.1",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+      "role": "Operative exclusions and continued numerical holds",
+      "blob": "ab7ca233505dd21ee3bbf249889960d515022151",
+      "bytes": 42379,
+      "sha256": "26c229c4229d0a60efa6d5bdba1755da2cbb46352ef687a28c3bea56ea9d5367",
+      "present_at_base": false
+    },
+    "receipt": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/public-opening-record.md",
+      "section": "Sections 1–4",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/public-opening-record.md",
+      "role": "Actual public opening; no method decision",
+      "blob": "6cf4d237be11552fc2e3cb2bf281e7b073aa3828",
+      "bytes": 7195,
+      "sha256": "3533129fc40c1865f8bbfa0a2bc2ebc7b615341343583e1183b6db2e9060928d",
+      "present_at_base": false
+    },
+    "opening_review": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "review-inputs/r3-opening-premise-repair-review/REVIEW-RESULT.md",
+      "section": "Sections 1–6",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/review-inputs/r3-opening-premise-repair-review/REVIEW-RESULT.md",
+      "role": "Opening-only GO; not qualifying source review for excluded claims",
+      "blob": "ecb19b8e5b0cf5f4e8d84aeaaed2f54e79d215c9",
+      "bytes": 18703,
+      "sha256": "70d700ba8b401fdc27612e238d514975ba46aca4d68b9e3f7b8da7bf8778722c",
+      "present_at_base": false
+    },
+    "prior_opening_review": {
+      "commit": "c28d87a2260ca04c99e3c3927e8aa847aad1bd38",
+      "path": "review-inputs/r3-supplied-scope-opening-review/REVIEW-RESULT.md",
+      "section": "Sections 5–6",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/c28d87a2260ca04c99e3c3927e8aa847aad1bd38/review-inputs/r3-supplied-scope-opening-review/REVIEW-RESULT.md",
+      "role": "Located review gaps and offered repair routes",
+      "blob": "8b1e9aad128970146d70bc4f44ec2d9e5ac16c59",
+      "bytes": 26193,
+      "sha256": "302ce465fae1b25300a6e84ddfd3c44cbda0dfbd5840ca324fb118a4bb44db69",
+      "present_at_base": false
+    },
+    "holm_source": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "section": "Sections 3.1, 4.1 L1–L13, 5.1",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "role": "Reused primary investigator findings; no new PDF reading",
+      "blob": "55d81187aa297697badb3266a87584f32c732871",
+      "bytes": 93349,
+      "sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+      "present_at_base": true
+    },
+    "multiplicity_review": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md",
+      "section": "Sections 1–2, C-05–C-07 and scope limitations",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-close-review-result.md",
+      "role": "Repository close review; original PDFs unavailable in that review",
+      "blob": "b3f06eb85d7cf8588a8fc4087dbefcee6d57a572",
+      "bytes": 16107,
+      "sha256": "75797e4e092a749d3ee1cca35c549624015ddd79f9ea7558c736613e6a70de7e",
+      "present_at_base": true
+    },
+    "multiplicity_acceptance": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-31-multiplicity-steward-disposition.md",
+      "section": "Intake and review ruling; FND1-H01–H03; reopen conditions",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-08-31-multiplicity-steward-disposition.md",
+      "role": "Accepted bounded research; full Research Gate remains open",
+      "blob": "5e8a69ba571637408c79e1c46d9167f679b57c38",
+      "bytes": 9972,
+      "sha256": "def5f362d6f19a08bb17092fe7f0c6db2cabcbe280c037095e8e29fed4c734dc",
+      "present_at_base": true
+    },
+    "dunnett_source": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "section": "Sections 3.3, 4.3, 5.3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+      "role": "Dunnett construction and table/coverage boundaries",
+      "blob": "55d81187aa297697badb3266a87584f32c732871",
+      "bytes": 93349,
+      "sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+      "present_at_base": true
+    },
+    "allpairs_source": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+      "section": "Sections 3.2, 4.2, 5 and 6.2; Hayter (1984) p.61, pp.62–63 theorem, pp.63–69 proof, p.70 boundary",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+      "role": "Later-primary mathematical basis, distinct from historical attribution",
+      "blob": "236cd949b99b558e207082c74832edf158f3839d",
+      "bytes": 87553,
+      "sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+      "present_at_base": true
+    },
+    "allpairs_review": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md",
+      "section": "C-01–C-12; source spot-check boundary",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-reconciliation-close-review-result.md",
+      "role": "Review of frozen reconciliation; PDFs unavailable",
+      "blob": "5cf50bf08df8bf0750f950ec29888cfa298727ad",
+      "bytes": 17051,
+      "sha256": "bd70ba97987b995af8f62c98ba934c77e6647069bb618cff2391b1665485fc68",
+      "present_at_base": true
+    },
+    "allpairs_acceptance": {
+      "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+      "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md",
+      "section": "Accepted source roles; subclaim dispositions; exact residual hold",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/dedd26a3e0655001b67e40ccfb741e43ecb07beb/evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md",
+      "role": "Mathematical subclaims accepted; historical attribution remains open",
+      "blob": "eef626596732c707bd428e39fdf3970155710cea",
+      "bytes": 15447,
+      "sha256": "28e4e1997f61a48863f09c525df75a8fdaefe4c7d8586842fea4a7d07428ed84",
+      "present_at_base": true
+    },
+    "sr_b_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Part H.1–H.5",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "Dunn/Sidak source characterization, adjusted-value derivations and limitations",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "sr_b_review": {
+      "commit": "3059f6baca76dc93b5fbf248012f09132f3881f6",
+      "path": "review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md",
+      "section": "Sections 4–6, 11–13",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3059f6baca76dc93b5fbf248012f09132f3881f6/review-inputs/r3-srb-primary-completion/REVIEW-RESULT.md",
+      "role": "Two-original review; content GO plus S-H1/S-H2",
+      "blob": "4c8b55bac817be9f25b1b6fa7b82cbb6eb2fc813",
+      "bytes": 64338,
+      "sha256": "c7b294cd3b618d0276caa9fa03d8c6c0906c126d7376a61b6e60677c56f51212",
+      "present_at_base": false
+    },
+    "sr_b_acceptance": {
+      "commit": "03ce30ec67904e08da70d80afd1fd6de36909dad",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "section": "Sections 13–14",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/03ce30ec67904e08da70d80afd1fd6de36909dad/governance/drafts/research-continuation-2026-09-07.md",
+      "role": "S-H1 qualification, S-H2 conflict, scoped independence and acceptance",
+      "blob": "bc16345d5058d0b5d122c71577008716db49a89f",
+      "bytes": 49584,
+      "sha256": "2d8611a36202cf72f5d17cdfb06a617d0d5a5067cd2faabda45cee34909e4790",
+      "present_at_base": false
+    },
+    "sr_c_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Parts C.3, E, F.2–F.5 and G",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "Hochberg source and derived output; qualified Simes basis",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "sr_c_review": {
+      "commit": "c36318971244c26073078b848ab2f3c52f46010b",
+      "path": "review-inputs/r3-src-primary-completion/REVIEW-RESULT.md",
+      "section": "Sections 4–5, 10–11",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/c36318971244c26073078b848ab2f3c52f46010b/review-inputs/r3-src-primary-completion/REVIEW-RESULT.md",
+      "role": "Six-original review; scoped GO, later adjudication separate",
+      "blob": "8e2c0299d9ddc8da6bc165bb5317e8d6262ecf74",
+      "bytes": 51543,
+      "sha256": "9570cb0a49c7dd0137b9ffb5ed7e2cd4688a1f111f86c131eb597fead435e098",
+      "present_at_base": false
+    },
+    "sr_c_acceptance": {
+      "commit": "e048cc0622bd5e063b692c7e6072674f1631df85",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "section": "Sections 10–12",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/e048cc0622bd5e063b692c7e6072674f1631df85/governance/drafts/research-continuation-2026-09-07.md",
+      "role": "Approved A/B, accepted source closure; not SR-G/SR-K determination",
+      "blob": "1b09b81f8bd6a9e368111d21e1c7733d09a47de7",
+      "bytes": 39685,
+      "sha256": "40178e2400bf6ddfa20ece04b17f239aaf02fe061fa42b3d908e77a8280677c1",
+      "present_at_base": false
+    },
+    "sr_d_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Parts T.1–T.6 and U.1–U.4",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "CLS framework, source exceptions, limitations and accepted source completion",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "sr_d_primary": {
+      "commit": "7190c78b58f9d6b36dad0d8a39ff1c3b29faa961",
+      "path": "review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md",
+      "section": "Section 4, as identified by Part T.3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7190c78b58f9d6b36dad0d8a39ff1c3b29faa961/review-inputs/r3-srd-primary-investigation/REVIEW-RESULT.md",
+      "role": "Primary framework investigation; referenced through fixed accepted synthesis",
+      "blob": "785785bef368694d4643be5eada6524231f8e244",
+      "bytes": 101944,
+      "sha256": "06c9de684706f1ca1da016d6c4600093bf6bb962855d67860dc3d1f6c4e1dec1",
+      "present_at_base": false
+    },
+    "sr_d_review": {
+      "commit": "8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4",
+      "path": "review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md",
+      "section": "Scope and GO; received in Part U.1–U.3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/8c2c45d653a8c4d3b08fd4cafa7ef3f21ca01bc4/review-inputs/r3-srd-author-synthesis/REVIEW-RESULT.md",
+      "role": "Scoped synthesis review; accepted in U, not blanket graph approval",
+      "blob": "ad5f229d36a8dcec55d8a9fdaed9ce29aaf0acb5",
+      "bytes": 35242,
+      "sha256": "dd6b3318cbbed36f130704ce24eea0865fae8254aa9307084df3b1152ca0d25a",
+      "present_at_base": false
+    },
+    "sr_i_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Parts R.1–R.6 and S.1–S.5",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "GH unprimed construction, empirical limits and accepted narrowings",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "sr_i_review": {
+      "commit": "06c09e6616b27124ef00b615a5ad59b0e060902a",
+      "path": "review-inputs/r3-sri-author-synthesis/REVIEW-RESULT.md",
+      "section": "Sections 2, 9–10, 13–14; received in Part S",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/06c09e6616b27124ef00b615a5ad59b0e060902a/review-inputs/r3-sri-author-synthesis/REVIEW-RESULT.md",
+      "role": "Scoped GO; no finite-sample level-alpha theorem",
+      "blob": "722d0e46c5f9619243f80a2464893aaf49feafa9",
+      "bytes": 66324,
+      "sha256": "ce90d14f102689518c5560aa120323707f527310063604203e03efcc1682bb5b",
+      "present_at_base": false
+    },
+    "sr_kg_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Parts C.2–C.6, C.10; later AE/AF exclusions",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "FDR and correction-aware Scheffe claims; opening use excluded",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "sr_kg_review": {
+      "commit": "54fb11a7f1e909a0c7135563885d235987358382",
+      "path": "review-inputs/r3-srk-srg-additional-primary-pass/REVIEW-RESULT.md",
+      "section": "Sections 4–5, 10–12",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/54fb11a7f1e909a0c7135563885d235987358382/review-inputs/r3-srk-srg-additional-primary-pass/REVIEW-RESULT.md",
+      "role": "Five-original content GO; model-level PENDING; acceptance not performed",
+      "blob": "67546234a5f30c0225f462a514e5a89a05a272a7",
+      "bytes": 62856,
+      "sha256": "6301658007680a3ea46f9659778c2c42bc9d5a57c23f9ab0cc42d34e00f6d8c4",
+      "present_at_base": false
+    },
+    "sr_kg_reconciliation": {
+      "commit": "4087ca5d7b5292cccb76c273d2fad29db9ab9522",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "section": "Section 8, Reconciliation of assistance provenance",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/4087ca5d7b5292cccb76c273d2fad29db9ab9522/governance/drafts/research-continuation-2026-09-07.md",
+      "role": "Mixed assistance compatible; scoped steward determination left separate",
+      "blob": "3a49de7a8467b618df8cf370fa47d3dcb4aa91b3",
+      "bytes": 26515,
+      "sha256": "603e45b8a6c7065da00498c7b08f476f2ad184a4114ddccc23d78ae61acf3f12",
+      "present_at_base": false
+    },
+    "continuation_latest": {
+      "commit": "b405512111699f262440d0b819dfa0977ad7b72a",
+      "path": "governance/drafts/research-continuation-2026-09-07.md",
+      "section": "Sections 8, 11–14, 17–19",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/b405512111699f262440d0b819dfa0977ad7b72a/governance/drafts/research-continuation-2026-09-07.md",
+      "role": "PR #189 head observed; no located SR-K/SR-G successor acceptance",
+      "blob": "f7497cbee7d7a9701ffe1cd8b06f9bed014c04b0",
+      "bytes": 74011,
+      "sha256": "33db20a378b2c2652af4d2982e8c0912c65acee43463102ed02b70798b6de9d1",
+      "present_at_base": false
+    },
+    "welch_source": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "C.2/C.3 supplier 07; Z.3; AA.2; AE/AF",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "Recorded Welch inspection; later SR-A reviews do not establish qualifying Welch coverage",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    },
+    "numerical": {
+      "commit": "92bea491e237df6aec08ae1e3c4c52e43ec3593d",
+      "path": "governance/drafts/release-3-preparation/numerical-research-result.md",
+      "section": "Correction notice; Section 4.2 N-08–N-17; Section 6",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/92bea491e237df6aec08ae1e3c4c52e43ec3593d/governance/drafts/release-3-preparation/numerical-research-result.md",
+      "role": "Preliminary numerical research, not a certified implementation or adopted convention",
+      "blob": "0d360ec3eaa1ede0d6112555027255a6e3e695c3",
+      "bytes": 260011,
+      "sha256": "016660089298136a2c75636df4c2f62ae2dcab32658e14bafdb1ff291ebbcc9d",
+      "present_at_base": false
+    },
+    "withdrawal": {
+      "commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+      "path": "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "section": "Part AA.3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/7774242f0df81342c5abca97a8fbe40844306fa6/governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+      "role": "Bounded confirmation of B2/C3/G withdrawal; no repair",
+      "blob": "ddd858663d0d8cfb584edb6d9a9b8baaafee8277",
+      "bytes": 573903,
+      "sha256": "fd0959b1a420b1fa89dcf152bf06bf599cb53292d744cfa471b5cfc3eace111b",
+      "present_at_base": true
+    }
+  },
+  "historical_source_ledger": {
+    "CLOSED": ["SR-B", "SR-C", "SR-D", "SR-F", "SR-G", "SR-I", "SR-J", "SR-K", "SR-L"],
+    "PARTIAL": ["SR-H"],
+    "INPUT_INCOMPLETE": ["SR-A", "SR-E", "RSM-01", "RSM-02"],
+    "SOURCE_SET_READY": false,
+    "overall": "INPUT_INCOMPLETE",
+    "program_disposition": "NARROW"
+  },
+  "retained_numerical_holds": [
+    "NB-01",
+    "NB-02",
+    "NB-03",
+    "NB-04",
+    "NB-05",
+    "NB-06",
+    "NB-07",
+    "NB-08",
+    "NB-09",
+    "NB-10"
+  ],
+  "withdrawn_guarantees": ["B2", "C3", "G"]
+}

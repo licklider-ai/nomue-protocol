@@ -1,0 +1,267 @@
+{
+  "base_commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "catalogue_commit": "7bd9c5ab854777c3e99e624d9d2ed62731228852",
+  "opening_commit": "7774242f0df81342c5abca97a8fbe40844306fa6",
+  "counts": {
+    "R3-CAND": 15,
+    "RES-ONLY": 27,
+    "TRANSFER": 5,
+    "REJECT": 2
+  },
+  "all_49_exact_id_name_classification_match": true,
+  "rows": [
+    {
+      "id": "OMN-01",
+      "name": "Classical equal-variance one-way ANOVA F",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "OMN-02",
+      "name": "Welch heteroscedastic omnibus (Welch 1951)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "OMN-03",
+      "name": "James first/second-order tests (James 1951)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "OMN-04",
+      "name": "Brown-Forsythe modified F (1974)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "OMN-05",
+      "name": "Kruskal-Wallis rank omnibus (1952)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "OMN-06",
+      "name": "Permutation one-way tests (Fisher-Pitman family)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "PVL-01",
+      "name": "Bonferroni single-step",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-02",
+      "name": "Šidák single-step",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-03",
+      "name": "Holm step-down (Bonferroni thresholds)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-04",
+      "name": "Holm product-form (\"Holm-Šidák\") step-down",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-05",
+      "name": "Weighted Holm (Scheme 2 / Theorem 2)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-06",
+      "name": "Simes global test (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-07",
+      "name": "Hochberg step-up (1988)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "PVL-08",
+      "name": "Hommel procedure (1988, closed Simes)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-09",
+      "name": "Shaffer logically-restricted sequential rejection (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "PVL-10",
+      "name": "Rom (1990); Holland-Copenhaver (1987) sharpened stepwise",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-01",
+      "name": "Closed testing principle (Marcus-Peritz-Gabriel 1976)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "CLS-02",
+      "name": "Fixed-sequence (hierarchical) testing",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-03",
+      "name": "Fallback procedure (Wiens 2003)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-04",
+      "name": "Serial gatekeeping (Maurer-Hothorn-Lehmacher 1995 lineage)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-05",
+      "name": "Parallel gatekeeping (Dmitrienko-Offen-Westfall 2003)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "CLS-06",
+      "name": "Graphical weighted-Bonferroni procedures (Bretz et al. 2009)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-01",
+      "name": "Balanced Studentized-range all-pairs intervals (\"Tukey\", per SRC-06 (1.1))",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-02",
+      "name": "Tukey-Kramer unequal-size all-pairs intervals",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-03",
+      "name": "Kramer's multiple-range unequal-replication test (as proposed 1956)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-04",
+      "name": "Spjøtvoll-Stoline extended T (max multiplier, augmented range)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-05",
+      "name": "Hochberg GT2 (Studentized maximum modulus)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-06",
+      "name": "Genizi-Hochberg (1978)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-07",
+      "name": "Gabriel (1978)",
+      "classification": "REJECT"
+    },
+    {
+      "id": "APR-08",
+      "name": "Harmonic-mean-size substitution into balanced constants",
+      "classification": "REJECT"
+    },
+    {
+      "id": "APR-09",
+      "name": "Scheffé all-contrasts procedure (1953)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "APR-10",
+      "name": "Newman-Keuls step-down range (1939/1952)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-11",
+      "name": "Duncan multiple range test (1955)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-12",
+      "name": "Ryan / Einot-Gabriel / Welsch (REGWQ) corrected range procedures",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-13",
+      "name": "Fisher (protected) LSD",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "APR-14",
+      "name": "Hayter's modified LSD (1986)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "HET-01",
+      "name": "Games-Howell (1976)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "HET-02",
+      "name": "Tamhane T2 (1979)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "HET-03",
+      "name": "Dunnett T3 and C (1980b, JASA 75:796–800)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MTO-01",
+      "name": "Dunnett many-to-one simultaneous intervals (1955)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "MTO-02",
+      "name": "Step-down Dunnett (Naik 1975; Dunnett-Tamhane 1991)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MTO-03",
+      "name": "Step-up Dunnett-Tamhane (1992)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "MCB-01",
+      "name": "Hsu's multiple comparisons with the best (1984)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "FDR-01",
+      "name": "Benjamini-Hochberg linear step-up (1995)",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "FDR-02",
+      "name": "Benjamini-Yekutieli (2001): PRDS and `Σ1/i` variants",
+      "classification": "R3-CAND"
+    },
+    {
+      "id": "FDR-03",
+      "name": "Adaptive / two-stage BH (BKY 2006; adaptive `m0`)",
+      "classification": "RES-ONLY"
+    },
+    {
+      "id": "FDR-04",
+      "name": "Storey direct FDR / q-value (2002)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "RSM-01",
+      "name": "Westfall-Young maxT / minP (1993)",
+      "classification": "TRANSFER"
+    },
+    {
+      "id": "RSM-02",
+      "name": "Permutation-based pairwise/step-down families",
+      "classification": "TRANSFER"
+    }
+  ],
+  "guidance_outside_49": ["GUI-01", "GUI-02"],
+  "exclusions_outside_49": [
+    "Paired/repeated/clustered/factorial multiplicity",
+    "Bayesian multiple-comparison/shrinkage",
+    "Equivalence/non-inferiority multiplicity",
+    "Selective/post-selection inference",
+    "Tukey 1949 three-stage procedure (research context)"
+  ]
+}
