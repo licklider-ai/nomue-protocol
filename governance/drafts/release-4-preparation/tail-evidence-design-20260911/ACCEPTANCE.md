@@ -11,6 +11,7 @@ numeric values use independent formulas, not the candidate alone.
 | Widened candidate enclosure still inside one rounding cell                    | Scoped acceptance                                                                                                                  |
 | Candidate enclosure replaced with [0,1]                                       | Encoding ambiguity refusal                                                                                                         |
 | Tighter valid independently established enclosure not containing C            | Conservative containment refusal; no assertion that the interval is false                                                          |
+| Same pinned candidate at 512 bits when the target resolved at 128             | Nested strictly inside C; conservative containment refusal without any oracle                                                      |
 | False singleton with same displayed value                                     | Containment refusal                                                                                                                |
 | Altered encoding with valid candidate bounds                                  | Encoding refusal                                                                                                                   |
 | Swapped/missing/duplicate contrast, changed df                                | Shape or target-binding refusal before probability work                                                                            |
@@ -35,7 +36,7 @@ This realizes the original PR #283 O2 target (n=2, F=4) in the new raw-input pat
 Reconstruct the witness from the fixed independent oracle: take its 256-bit lower
 bound l, set p=ceil(l*2^400)/2^400, and independently verify p lies inside that
 256-bit interval but below the oracle's 384-bit lower bound. Submitting [p,p]
-for A then supplies a demonstrably false interval. Preserve B/AB's valid rows.
+for A, with p in reduced form, then supplies a demonstrably false interval. Preserve B/AB's valid rows.
 Require a containment refusal with otherwise correct identity and encoding.
 The original singleton proof and the consumer's conservative rejection condition
 are distinct checks. Do not relabel a generic containment failure as proof that
@@ -52,6 +53,9 @@ assertion that the tail candidate emits C for some raw data.
 - S=[t-e,t-e] excludes t but projects to t: containment refusal.
 - S=[0,1] contains C but cannot determine one encoding: encoding refusal.
 
-Add natural producer enclosures for end-to-end tests; predicate toys alone do not
-cover the consumer. Retain exact row operands and record test counts from actual
+`check_design_witnesses.py` executes the O2 reconstruction, the same-algorithm
+tighter case and these predicate toys against the pinned PR #295 modules, and
+records frontier endpoint sizes. It is reviewer-side design evidence, not the
+consumer. Add natural producer enclosures for end-to-end tests; predicate toys
+alone do not cover the consumer. Retain exact row operands and record test counts from actual
 execution. Benchmarks and test-only diagnostics do not form submitted evidence.

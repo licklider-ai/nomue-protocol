@@ -44,7 +44,11 @@ numbers are not introduced into the Protocol's JCS-eligible input surface.
 | Encoding          | Built-in int in 0..0x3ff0000000000000, identifying a nonnegative binary64 value in [0,1]                                                                          |
 
 The endpoint bound is a proposed consumer work limit, not a theorem that every
-future producer interval fits it. Twelve bounded endpoint integers total at most
+future producer interval fits it. Reviewer-supplied observation: over the
+admission frontier (maximum admitted width at n=2, 7, 9, 33, 46 and 65) the
+pinned candidate's 512-bit enclosure endpoints need at most 161,297 bits per
+component, about 62 percent of the cap; a gcd or one comparison at the cap took
+about 0.1 second on that host. See `check_design_witnesses.py`. Twelve bounded endpoint integers total at most
 384 KiB of integer magnitude payload, excluding object overhead. Their gcd and
 cross-products require separate measurement. Oversized integers are rejected
 before gcd, Fraction construction or cross-multiplication. Reject numerator
@@ -90,6 +94,10 @@ interval and E the submitted binary64 encoding. The local check requires:
 - both endpoints of S round to E under the fixed nearest/even projection;
 - E equals the encoding of the recomputed complete-output target;
 - exact expected input identity, contrast and df match for every row.
+
+The third condition is implied by the first two, because rounding is monotone
+and C lies inside S; it is retained as an explicit defensive check, not as an
+independent source of evidence.
 
 Assuming the fixed candidate enclosure contains the mathematical target, these
 conditions establish that the submitted interval contains that target and its

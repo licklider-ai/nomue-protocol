@@ -39,3 +39,33 @@ predicate intervals. These are author-side design checks, not consumer execution
 or independent review. Prettier, Markdown lint (407 files), repository validation through the Node
 import loader and staged whitespace checks passed. Their outcomes do not
 establish a numerical supported domain.
+
+## External design review receipt
+
+A user-supplied bounded adversarial design review of commit
+`d53030585b3e55f8d8dce431a6023d51ff9c06f1` found no BLOCKER. Reviewer/model
+identity and raw artifacts were not supplied; the receipt is attributed to the
+user. The repair was prepared in that reviewer's session on 2026-09-11, not by
+the original author context, and is not an independent close review of itself.
+
+Reported checks against the pinned PR #295 modules: the raw-input O2 cells
+reproduce SSE=2, A estimate 1, SS_A=2, F_A=4, df (1,4) with zero B/AB effects
+and an A tail resolved at 128 bits; the 400-bit witness lies inside the oracle's
+256-bit interval, below its 384-bit lower bound, shares the target encoding and
+is refused by containment; the exact enclosure is accepted and [0,1] is refused
+by encoding; all four predicate toys behave as stated; the same candidate at
+512 bits nests strictly inside the 128-bit enclosure and is refused
+conservatively; frontier endpoint components reach at most 161,297 bits against
+the 262,144-bit cap.
+
+| Finding                                                                                                                                | Repair                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| The cap had no measured producer evidence, which REVIEW requested                                                                      | Frontier endpoint sizes and cap-scale gcd/comparison cost recorded in DESIGN as reviewer observation; script added |
+| The tighter-valid case was described only for an independent producer, although the same candidate at higher precision is also refused | ACCEPTANCE row added; the witness script demonstrates the nesting and refusal                                      |
+| The third acceptance condition reads as independent although the first two imply it                                                    | DESIGN states the implication and keeps the check as defensive                                                     |
+| The O2 witness must be submitted in reduced form under the proposed endpoint rule                                                      | ACCEPTANCE says so                                                                                                 |
+
+Repair validation: `check_design_witnesses.py` passed with normal Python and
+`python -O`; it imports the sibling wrapper packet, whose dependency hash and
+origin checks run on import. No consumer was implemented and no numerical
+source, wrapper evidence or gate state changed.
