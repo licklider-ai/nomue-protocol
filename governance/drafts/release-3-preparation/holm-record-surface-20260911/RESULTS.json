@@ -1,0 +1,165 @@
+{
+  "status": "author self-check, not independent review",
+  "cases": 33,
+  "node": "v24.19.0",
+  "rows": [
+    {
+      "name": "reversible adapter and identical bridge input",
+      "outcome": "pass"
+    },
+    {
+      "name": "canonical record and pretty external context",
+      "outcome": "consistent",
+      "launches": 1
+    },
+    {
+      "name": "unrelated analysis bound",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "revision context mismatch",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "revision ownership",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "result ownership",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "legacy deferred field",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "legacy declaration kind",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "unknown result field",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "integer numeric precision loss",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "integer beyond lattice",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "integer leading zero",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "negative-zero p",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "output member order",
+      "outcome": "mismatch",
+      "launches": 0
+    },
+    {
+      "name": "last exact result mismatch",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "last display mismatch",
+      "outcome": "mismatch",
+      "launches": 1
+    },
+    {
+      "name": "pretty storage rejected",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "trailing newline rejected",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "BOM rejected",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "invalid UTF-8",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "duplicate names",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "unpaired surrogate",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "depth bound",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "record byte bound",
+      "outcome": "input_refused",
+      "launches": 0
+    },
+    {
+      "name": "malformed worker output",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "partial worker output",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "worker exception",
+      "outcome": "execution_failed",
+      "launches": 0
+    },
+    {
+      "name": "overall VERIFIED",
+      "outcome": "schema_rejected"
+    },
+    {
+      "name": "scientific assertion",
+      "outcome": "schema_rejected"
+    },
+    {
+      "name": "success without scope",
+      "outcome": "schema_rejected"
+    },
+    {
+      "name": "success wrong reason",
+      "outcome": "schema_rejected"
+    },
+    {
+      "name": "unknown report field",
+      "outcome": "schema_rejected"
+    },
+    {
+      "name": "real isolated Python worker",
+      "outcome": "consistent"
+    }
+  ]
+}
