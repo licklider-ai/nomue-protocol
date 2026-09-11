@@ -117,3 +117,21 @@ the distinct-formula oracle supplies numerical cross-checks. Midpoint ambiguity
 and wider-output containment are now explicitly tested. The oracle boundary
 n=65, F=256 at 512 bits is tested within the existing 512-term cap; cap exhaustion
 remains an explicit ArithmeticError. No larger oracle domain is claimed.
+
+## Effective admission for ordinary observations
+
+The guard reduces raw-data admission much more than the single refusal in the
+historical fixed-F corpus suggests. At n=65, the first score permits at most
+61 bits in either reduced rational F component. Ordinary binary64 observations
+need not produce such a short fraction: the bounded seeded [0,10) probes in
+`ADMISSION-PROBES.json` yield 119--123 bits at n=65 and all five refuse. At
+n=45 and 46 all five tested samples pass admission; n=47 has both outcomes.
+Passing admission here does not mean a tail was evaluated or resolved.
+
+For a fixed width w, the first condition implies
+n <= 1 + floor(sqrt(1,000,000/(4w))). For w=110--120 this is approximately
+46--48 observations per cell, not a universal supported maximum of 46. Short
+exact fractions can still pass at n=65. Thus the external review's observed
+ordinary-data refusal is material, but cannot be generalized to every binary64
+dataset. The final platform/resource domain remains open. Reproduce using
+`python governance/drafts/release-4-preparation/rational-tail-composition-20260911/probe_admission.py`.

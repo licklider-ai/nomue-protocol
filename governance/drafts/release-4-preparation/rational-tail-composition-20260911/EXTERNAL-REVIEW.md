@@ -31,3 +31,24 @@ Reproduce with `test_adapter.py` under normal Python and `python -O`, then
 `test_repair.py`. The latter rewrites measured timing values. The former reports
 324 assertions, including exactly 219 accepted historical encodings and one
 specific resource refusal. The old 312-result record remains in the parent.
+
+## User-supplied repair close review
+
+The user subsequently supplied a bounded review of bdc2cc4 (sole parent cd12103).
+It reported no new blocking defect, reproduced all 324 checks normally and under
+optimization, confirmed seven hash checks and recorded successful CI. It accepted
+the workload guard, source integrity repair and explicit row-14 deferral. The
+last item is a documented scope reduction, not implemented tail-evidence checking.
+The reported admitted worst-case sample timings were 6.9, 3.8, 4.3 and 1.3 seconds
+for n=33,17,9,5 respectively; these external measurements were not rerun here and
+are not universal runtime guarantees.
+
+One low finding remains addressed by this documentation successor: the original
+report understated raw-data admission loss. REPORT now explains the 61-bit limit
+at n=65, provides 20 deterministic raw-data probes, and qualifies the approximate
+46-per-cell observation with the actual width-dependent formula. The optional
+plan annotation is also added. Numerical implementation and manifest pins are
+unchanged. No additional broad review cycle is required by this management
+receipt; the bounded repair task can close while research/domain and row-14
+requirements remain open. Reviewer identity/model and external independence
+remain unverified; the additional probes and response are author-side work.
