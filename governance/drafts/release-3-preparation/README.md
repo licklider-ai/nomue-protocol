@@ -21,7 +21,9 @@ exact candidate dispatch and conformance controls. It remains unissued;
 [adoption changes and decisions](holm-public-candidate-20260911/COUPLING.md) are explicit.
 
 The [checkpoint successor](holm-checkpoint-candidate-20260911/README.md) adds shared
-in-process time/heap budgets and discards partial results on exceedance.
+in-process time/heap budgets and discards partial results on exceedance. Its
+[actual-host integration evidence](../../../review-inputs/r3-holm-checkpoint-review-20260911/README.md)
+is preserved with source identity and hashes.
 
 The [adoption map and restart point](holm-adoption-map-20260911/README.md)
 proposes Requirement allocations, inventories public fields and records the next
