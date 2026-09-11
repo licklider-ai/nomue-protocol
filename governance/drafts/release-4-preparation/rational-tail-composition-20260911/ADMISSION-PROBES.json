@@ -1,0 +1,128 @@
+{
+  "sampling": "CPython random.Random(seed), four cells of n values 10*random(), contrast A",
+  "rows": [
+    {
+      "n": 45,
+      "seed": 0,
+      "width": 118,
+      "admitted": true
+    },
+    {
+      "n": 45,
+      "seed": 1,
+      "width": 119,
+      "admitted": true
+    },
+    {
+      "n": 45,
+      "seed": 2,
+      "width": 123,
+      "admitted": true
+    },
+    {
+      "n": 45,
+      "seed": 3,
+      "width": 121,
+      "admitted": true
+    },
+    {
+      "n": 45,
+      "seed": 4,
+      "width": 120,
+      "admitted": true
+    },
+    {
+      "n": 46,
+      "seed": 0,
+      "width": 119,
+      "admitted": true
+    },
+    {
+      "n": 46,
+      "seed": 1,
+      "width": 120,
+      "admitted": true
+    },
+    {
+      "n": 46,
+      "seed": 2,
+      "width": 118,
+      "admitted": true
+    },
+    {
+      "n": 46,
+      "seed": 3,
+      "width": 122,
+      "admitted": true
+    },
+    {
+      "n": 46,
+      "seed": 4,
+      "width": 120,
+      "admitted": true
+    },
+    {
+      "n": 47,
+      "seed": 0,
+      "width": 122,
+      "admitted": false
+    },
+    {
+      "n": 47,
+      "seed": 1,
+      "width": 120,
+      "admitted": false
+    },
+    {
+      "n": 47,
+      "seed": 2,
+      "width": 118,
+      "admitted": true
+    },
+    {
+      "n": 47,
+      "seed": 3,
+      "width": 120,
+      "admitted": false
+    },
+    {
+      "n": 47,
+      "seed": 4,
+      "width": 117,
+      "admitted": true
+    },
+    {
+      "n": 65,
+      "seed": 0,
+      "width": 122,
+      "admitted": false
+    },
+    {
+      "n": 65,
+      "seed": 1,
+      "width": 119,
+      "admitted": false
+    },
+    {
+      "n": 65,
+      "seed": 2,
+      "width": 119,
+      "admitted": false
+    },
+    {
+      "n": 65,
+      "seed": 3,
+      "width": 120,
+      "admitted": false
+    },
+    {
+      "n": 65,
+      "seed": 4,
+      "width": 123,
+      "admitted": false
+    }
+  ],
+  "width_110_max_n": 48,
+  "width_120_max_n": 46,
+  "n65_max_width": 61
+}

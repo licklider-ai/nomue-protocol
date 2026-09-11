@@ -70,3 +70,11 @@ its evidence, obtain external adversarial review before selecting a support doma
 Review the mathematical target, bindings, error transport and refusal behavior
 jointly. Record all receipts and dispositions. R3/Holm preparation may proceed
 separately; R2 implementation remains later in the agreed priority order.
+
+## First experiment acceptance-row update
+
+Row 14 (widened or falsified submitted tail evidence, including PR #283 O2) is
+**DEFERRED** in the first adapter experiment and its bdc2cc4 repair. See
+[the adapter report](../rational-tail-composition-20260911/REPORT.md). There is no
+submitted probability-evidence entry point; checks of upstream F intervals do
+not implement this acceptance row. No interface freeze is claimed.
