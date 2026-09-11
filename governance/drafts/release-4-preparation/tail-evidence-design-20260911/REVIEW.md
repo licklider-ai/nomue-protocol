@@ -69,3 +69,23 @@ Repair validation: `check_design_witnesses.py` passed with normal Python and
 `python -O`; it imports the sibling wrapper packet, whose dependency hash and
 origin checks run on import. No consumer was implemented and no numerical
 source, wrapper evidence or gate state changed.
+
+## Author intake
+
+The preparation author, OpenAI Codex in the continuing author context,
+fast-forwarded the review repair intact: commit
+`a3c51c02396660f2597ea810b47a4d62ed240171`, sole parent
+`d53030585b3e55f8d8dce431a6023d51ff9c06f1`, tree
+`3120bf3d168bbc3b77b3cd9cbb507f3901d9cc63`. Normal and optimized Python
+3.12.14 runs of the added script produced identical output under individual
+30-second / 256-MiB envelopes. The six endpoint sizes reproduced exactly,
+including the observed maximum 161297 bits; O2 and tighter-interval checks passed.
+
+Two wording limits were clarified without changing the predicate or script:
+strict nesting is the demonstrated n=2, F=4 witness, not a universal claim
+(e.g. an exact zero-F enclosure stays [1,1]); the six frontier fractions are
+measurements, not an exhaustive maximum. The gcd/comparison timing remains a
+reviewer observation not reproduced by this script. No further numerical repair
+was needed. Subject to CI on the final documentation head, this bounded design
+review intake is complete. Consumer implementation remains the next separate
+experiment; no schema, source-gate state, merge or release changes.

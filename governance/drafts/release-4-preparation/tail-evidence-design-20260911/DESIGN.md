@@ -45,10 +45,13 @@ numbers are not introduced into the Protocol's JCS-eligible input surface.
 
 The endpoint bound is a proposed consumer work limit, not a theorem that every
 future producer interval fits it. Reviewer-supplied observation: over the
-admission frontier (maximum admitted width at n=2, 7, 9, 33, 46 and 65) the
-pinned candidate's 512-bit enclosure endpoints need at most 161,297 bits per
+six sampled admission-frontier inputs (maximum admitted width at n=2, 7, 9,
+33, 46 and 65, with F=(2^w-1)/(2^(w-1)+1)), the
+pinned candidate's 512-bit enclosure endpoints needed at most 161,297 bits per
 component, about 62 percent of the cap; a gcd or one comparison at the cap took
-about 0.1 second on that host. See `check_design_witnesses.py`. Twelve bounded endpoint integers total at most
+about 0.1 second on that host. The script reproduces endpoint sizes, not the
+reviewer-reported gcd/comparison timings. This is not an exhaustive maximum over
+all admitted fractions. See `check_design_witnesses.py`. Twelve bounded endpoint integers total at most
 384 KiB of integer magnitude payload, excluding object overhead. Their gcd and
 cross-products require separate measurement. Oversized integers are rejected
 before gcd, Fraction construction or cross-multiplication. Reject numerator
