@@ -1,10 +1,36 @@
 # Release 4 public discussion preparation
 
+Current state: **PUBLIC_DISCUSSION_OPEN**, since 2026-09-09T05:59:47Z.
+See [discussion issue 261](https://github.com/licklider-ai/nomue-protocol/issues/261)
+and the [opening record](public-discussion-opening-2026-09-09.md).
+The minimum 30-day window ends no earlier than 2026-10-09T05:59:47Z.
+Earlier pending/NOT_READY descriptions below are preserved historical states;
+the reviewed candidate is unchanged. Numerical support remains unestablished.
+
+Current repair: [PR 251/252 response](opening-rfc-review-response.md).
+Both full reports are preserved separately:
+[PR 251](../../../review-inputs/r4-opening-rfc/PR-251-REVIEW.md) and
+[PR 252](../../../review-inputs/r4-opening-rfc/PR-252-REVIEW.md).
+The candidate includes author-side repairs; fixed-input confirmation is pending.
+Public discussion is not open.
+
 Status: NOT_READY for public discussion. Bounded programme-audit and scaling
-records are accepted; source, scope and assembled-opening work remain incomplete.
+records and the bounded normal-model evidence/scope are accepted.
+The assembled-opening proposal awaits independent assessment.
 Updated: 2026-09-09.
 The target is a proposal that outsiders can assess, not specification adoption.
 This document records evidence and open decisions rather than a completion percentage.
+
+## Current assembled proposal
+
+Use the [RFC candidate](opening-rfc-candidate.md) for the current proposed
+clauses, identifiers, surfaces, tier, migration and Release 3 reconciliation.
+Main 0abdca8f822d0de3faf35f218f762a951fd75e9e incorporates the
+[normal-model acceptance](normal-model-steward-acceptance-2026-09-09.md),
+PR 240/246 reviews and the repair confirmation. Within that bounded scope,
+source and derivation evidence is accepted; wider holds remain staged.
+Earlier source-review-pending descriptions below are historical and superseded
+only to that extent. P5/P6 are not closed by the new author-side proposal.
 
 ## Evidence baseline
 
@@ -13,7 +39,7 @@ The accepted QR supplement and source-copy addendum are present there.
 The addendum records `COMPLETE_ON_PROVIDED_COPIES`; independent downloading is
 not an additional prerequisite. That acceptance is limited to the supplement.
 
-Current integrated baseline: `ed6e9d9bde691556b99d22e261b31c3b25df338f`.
+Earlier integrated baseline: `ed6e9d9bde691556b99d22e261b31c3b25df338f`.
 PR 229 integrated the accepted programme preparation; PR 234 integrated the
 separately accepted scaling exploration and PR 235 review records. Read the
 [programme acceptance](programme-steward-acceptance-2026-09-09.md) and
@@ -47,7 +73,7 @@ Describe signed sample estimates explicitly. Let `m00, m01, m10, m11` be
 sample cell means in declared cell order, and propose
 `dA=(-m00-m01+m10+m11)/2`, `dB=(-m00+m01-m10+m11)/2`, and
 `dAB=m00-m01-m10+m11`. These estimate population contrasts whose exact
-population/model definition remains under source review. They are not population
+population/model definition is now covered by the bounded normal-model acceptance. They are not population
 values or a causal guarantee merely because they are called effects.
 With factor levels coded -1 and +1 in that declared order and the full model
 `intercept + betaA*xA + betaB*xB + betaAB*xA*xB`, the fitted coded coefficients

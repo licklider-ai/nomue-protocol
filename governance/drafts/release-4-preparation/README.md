@@ -1,5 +1,27 @@
 # Release 4 Research Preparation
 
+Current state: **PUBLIC_DISCUSSION_OPEN**, since 2026-09-09T05:59:47Z.
+See [discussion issue 261](https://github.com/licklider-ai/nomue-protocol/issues/261)
+and the [opening record](public-discussion-opening-2026-09-09.md).
+The minimum 30-day window ends no earlier than 2026-10-09T05:59:47Z.
+Earlier pending/NOT_READY descriptions below are preserved historical states;
+the reviewed candidate is unchanged. Numerical support remains unestablished.
+
+Current boundary repair: [PR 257 response](opening-rfc-boundary-response.md).
+Next: [bounded boundary confirmation](opening-rfc-boundary-confirmation.md).
+This handoff/link is a later addition outside its fixed four-file input.
+The candidate clarifies semantic conformance and the eligibility carrier's
+outcome domain. Fixed-input confirmation remains pending; discussion is not open.
+
+Current repair: [PR 251/252 response](opening-rfc-review-response.md).
+Next: [fixed-input repair confirmation](opening-rfc-repair-confirmation.md).
+This handoff/link is a later delivery addition outside its six-file input.
+Both full reports are preserved separately:
+[PR 251](../../../review-inputs/r4-opening-rfc/PR-251-REVIEW.md) and
+[PR 252](../../../review-inputs/r4-opening-rfc/PR-252-REVIEW.md).
+The candidate includes author-side repairs; fixed-input confirmation is pending.
+Public discussion is not open.
+
 **Status: informative pre-public research work-start record.** Release 4 public
 discussion is not open. This package prepares a bounded factorial and interaction
 question for independent investigation. It creates no Protocol meaning, identifier,
@@ -7,6 +29,17 @@ Requirement ID, supported capability, RFC window, implementation authority, or
 release commitment.
 
 ## Current navigation
+
+Current next work: the [assembled RFC candidate](opening-rfc-candidate.md)
+and [independent opening review handoff](opening-rfc-review-handoff.md).
+The handoff is a later delivery addition, outside its fixed five-file input.
+The [normal-model steward acceptance](normal-model-steward-acceptance-2026-09-09.md)
+and its preserved review/confirmation are integrated in main at
+0abdca8f822d0de3faf35f218f762a951fd75e9e. The candidate proposes concrete
+clauses, additive surfaces and a 30-day minimum discussion window; it awaits
+independent opening assessment. It does not issue identifiers or open discussion.
+The older next-step descriptions below document the sequence leading to that
+acceptance; they are not instructions to repeat accepted reviews.
 
 For the 2026-09-09 programme state, use
 [public-discussion readiness](public-discussion-readiness.md) and the

@@ -1,5 +1,10 @@
 # Release 4 candidate file and requirement impact inventory
 
+Current successor proposal: [assembled RFC candidate](opening-rfc-candidate.md).
+This earlier preparation is retained as review history. Where the successor
+chooses a concrete allocation or surface, assess that proposal; neither document
+issues identifiers or closes the independent opening review.
+
 Status: informative placement proposal. Earlier constraints and audit additions
 were reviewed through PR 225/232 and accepted through PR 229. The revised
 Contract/Profile placement below awaits review; R4-P5 remains open. Current
