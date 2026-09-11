@@ -184,12 +184,20 @@ own dependency-origin, subprocess-failure and malformed-response tests.
 | Numerical limits       | Inherit fixed Holm operand and comparison guards; do not enlarge them                                                                                                                                            |
 | Experiment envelope    | Whole coordinator/worker call <=30 seconds; Python worker address space <=256 MiB; Node old-space cap 256 MiB; measure process-tree RSS with a 512-MiB experimental ceiling                                      |
 
-The submitted budgets are sized for embedding: the submitted evidence carries
-the complete expected D0 and sidecar, so its node and nesting limits must exceed
-the sum of the embedded limits, and a D0 at the expected nesting limit must
-still embed. From the pinned example's per-object costs, a D0 at every count
-limit needs about 23,000 nodes, so the D0 node budget is set above the count
-limits rather than below them; `check_design_witnesses.py` records the estimate.
+The submitted node budget covers every admitted D0 and sidecar together with
+120 adjusted rows and the envelope: 24576+2048+(1+120*4)+3=27108,
+which is below 28672. Count each object, array and scalar value as one node;
+object keys are not extra nodes. Depth is the maximum embedded depth plus two,
+not the sum of document depths. Existing per-string and text-byte limits still
+apply independently, so node/depth fit alone does not imply byte fit.
+
+All admission limits are conjunctive. Individual count maxima do not promise
+that every maximum is admitted simultaneously. The reviewer's original estimate
+omitted growing analysis population-reference arrays and experimental units.
+`check_design_witnesses.py` now materializes the count-max all-pairs document
+from the pinned example and counts its actual nodes: it exceeds 24576 and is
+therefore outside this first bridge's admission. The cap is not raised to fit it.
+The implementation tests both that refusal and large inputs satisfying all caps.
 The strict parser calls `JSON.parse` before its eligibility scan, so the step 1
 raw-size and depth preflight is the only guard that runs before parsing.
 

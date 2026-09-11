@@ -47,7 +47,7 @@ encodings were checked while preparing this design; the bridge is not implemente
 | Added alpha, FWER, interval, URI, method selector or code field                | Closed shape refusal, no execution or dereference                                                     |
 | Excessive raw size, 33-level nesting, nodes or string width                    | Refuse before recursive schema/canonical work; bracket characters inside strings do not inflate depth |
 | Expected D0 at its 32-level nesting limit embedded in submitted evidence       | Submitted nesting limit of 34 admits it; a 35-level submitted text is refused at preflight            |
-| Expected D0 at every count limit (16 analyses/families/slots, 120 members)     | Fits the D0 node budget; the submitted text embedding it fits the submitted budget; measure full call |
+| Expected D0 at every count limit (16 analyses/families/slots, 120 members)     | Exceeds D0 node cap in the materialized witness; refuse before D0 recursive checks or worker launch   |
 | Duplicate member_id within the selected family                                 | D0 stage=relations code DUPLICATE_ID at step 3; zero worker launches                                  |
 | Any malformed response, excess worker stdout or worker crash                   | Experiment failure, never a successful designed evidence refusal                                      |
 | Changed pinned file, wrong module origin or wrong worker executable            | Integrity failure with named dependency; no numerical acceptance                                      |
@@ -64,7 +64,7 @@ preparation. It is an output mutation, not a new p-value rounding policy.
 
 `check_design_witnesses.py` reproduces the three-member vector, the display
 collision and the adjusted-hex width with independent lattice arithmetic, and
-records the node-budget estimate; it is reviewer-side design evidence, not the
+counts the materialized all-count-max D0 and proves the submitted node-budget inequality; it is reviewer-side design evidence, not the
 bridge.
 
 Tests check exact scoped reasons with explicit assertions active under -O. Count

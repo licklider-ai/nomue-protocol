@@ -71,3 +71,33 @@ confirmed, as was the checker's `numeric_domain` stage for non-finite numbers.
 Repair validation: `check_design_witnesses.py` passed with normal Python and
 `python -O`. No bridge was implemented; no pinned input, numerical code or
 historical packet changed.
+
+## Author intake and node-estimate correction
+
+The return `e170cedcd85fe1fae2c777609a4058f8f8891d74` has sole parent
+`517cb7dcfc02556ea8a91b583bbfdce91b7921f0` and tree
+`1bbafbbf20269cce809edfdcac47186f4fa7aac4`. Its review receipt is preserved
+above. OpenAI Codex performed this intake in the continuing author context;
+this is not an independent close review of the repair.
+
+The duplicate-ID and pre-parser clarification are retained. The split node/depth
+budgets are retained, but intake found the count-max estimate omitted growth of
+analysis population references and design units. A materialized, schema-valid
+16-group / 16-analysis / 16-family / 16-slot / 120-member / 1024-observation
+D0 example has **42450** nodes, not about 23000. It is refused by the 24576-node
+cap; the other count caps are not promises of simultaneous admission.
+
+The corrected witness constructs that document from the hash-pinned example and
+counts values iteratively. It also verifies the actual embedding upper bound:
+24576+2048+481+3=27108, below 28672. Numerical witnesses and both normal and
+optimized runs agree. All twenty input commit/blob/byte/hash identities match;
+the count-max witness passes the pinned D0 JSON Schema. No bridge execution or
+full resource benchmark is claimed. The expected refusal remains a design target.
+
+This author correction avoids increasing unmeasured resource admission to fit a
+mistaken estimate. Preserve the reviewer's report as an attributed historical
+finding, with this section superseding the estimate. The next limited check should
+confirm the corrected node definition, embedding arithmetic and conjunctive limits;
+then a disposable implementation can proceed. No new original-source review is
+needed for this counting correction. No schema, numerical algorithm, gate,
+classification, public support or release decision changes.
