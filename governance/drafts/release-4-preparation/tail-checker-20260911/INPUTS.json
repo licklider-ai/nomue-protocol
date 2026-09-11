@@ -1,0 +1,10 @@
+{
+  "parent": "e7ddd16f6d2272cb7c9267f7f2aa8d35103f1c44",
+  "author": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+  "files": {
+    "candidate.py": "4baaf53bc1b75d94d335b539e6e2f9c736bbff93a267f36ca084cfe99f41ee58",
+    "oracle.py": "fda30f7dfb5d765b51a9c24ae6d1458b94c34b828273c65d8f6d74222adea16f",
+    "verify_results.py": "5d39d8917d46e3cf155ebc8fd9095d19fde47ce4d3406213a168dca0799ecf14",
+    "results.json": "a2b00241f24318e2cce19de8fa217957dd934ffee4c9ac8f1cbf8bcf48ee0e7d"
+  }
+}
