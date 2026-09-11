@@ -1,0 +1,151 @@
+{
+  "candidate": "e2c998124078b737d5e0776a7fc0c2094b51fa36",
+  "rows": [
+    {
+      "name": "baseline original bytes",
+      "passed": true,
+      "elapsed_seconds": 0.6076331329968525,
+      "exit": 0,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": true
+    },
+    {
+      "name": "raw duplicate before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.3318430430008448,
+      "exit": 0,
+      "reason": "record_duplicate_member",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "raw UTF8 before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.39470046200585784,
+      "exit": 0,
+      "reason": "record_utf8",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "routing before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.3840321449970361,
+      "exit": 0,
+      "reason": "bundle_missing",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "schema before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.3360947019973537,
+      "exit": 0,
+      "reason": "record_schema",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "storage before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.37210950600274373,
+      "exit": 0,
+      "reason": "stored_bytes_noncanonical",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "digest failure before missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.41355549200670794,
+      "exit": 0,
+      "reason": null,
+      "failed_stage": "integrity",
+      "forwarded": false
+    },
+    {
+      "name": "valid record missing expected",
+      "passed": true,
+      "elapsed_seconds": 0.44080035500519443,
+      "exit": 65,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "expected invalid UTF8",
+      "passed": true,
+      "elapsed_seconds": 0.38897592399735004,
+      "exit": 65,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "expected cap wins over UTF8",
+      "passed": true,
+      "elapsed_seconds": 0.38541711599827977,
+      "exit": 0,
+      "reason": "expected_bytes",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "expected duplicate",
+      "passed": true,
+      "elapsed_seconds": 0.4107090489997063,
+      "exit": 0,
+      "reason": "expected_duplicate_member",
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "context failure",
+      "passed": true,
+      "elapsed_seconds": 0.4343626080008107,
+      "exit": 0,
+      "reason": null,
+      "failed_stage": "context",
+      "forwarded": false
+    },
+    {
+      "name": "expected FIFO",
+      "passed": true,
+      "elapsed_seconds": 0.3602128159982385,
+      "exit": 65,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "expected directory",
+      "passed": true,
+      "elapsed_seconds": 0.3687343499987037,
+      "exit": 65,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "expected symlink",
+      "passed": true,
+      "elapsed_seconds": 0.3231464920027065,
+      "exit": 65,
+      "reason": null,
+      "failed_stage": null,
+      "forwarded": false
+    },
+    {
+      "name": "arithmetic mismatch scoped failure",
+      "passed": true,
+      "elapsed_seconds": 0.3704634440000518,
+      "exit": 0,
+      "reason": null,
+      "failed_stage": "arithmetic",
+      "forwarded": false
+    }
+  ],
+  "passed": 16,
+  "controls": 16
+}

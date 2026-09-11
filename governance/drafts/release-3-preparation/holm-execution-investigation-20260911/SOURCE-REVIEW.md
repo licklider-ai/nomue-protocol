@@ -2,6 +2,13 @@
 
 Review date: 2026-09-11 (UTC).
 
+Historical source-review snapshot: the later
+[repair dispositions](../holm-controlled-execution-20260911/REPAIR.md) and
+[review archive](../../../../review-inputs/r3-controlled-execution-review-20260911/README.md)
+record follow-up source verification, implementation and execution evidence.
+The original observations and provenance below are retained. Hashes of later
+mirror retrievals do not authenticate the earlier HTML retrievals.
+
 Scope: resource control for a trusted Node.js envelope verifier and one trusted Python worker on Linux x64. This is research input before design freeze. It does not authorize public support, alter Protocol meaning, close a release gate, or supply execution evidence.
 
 ## Provenance and independence boundary

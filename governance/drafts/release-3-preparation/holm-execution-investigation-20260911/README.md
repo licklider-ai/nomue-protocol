@@ -4,6 +4,15 @@ Status: source investigation and implementation plan; runtime implementation and
 new resource controls are NOT_RUN. Input main:
 `8149731d9100b7faeae706be80cf37c7d7628dc9`.
 
+Historical status above is retained for this investigation snapshot. The
+[controlled implementation](../holm-controlled-execution-20260911/README.md)
+and its [finding dispositions](../holm-controlled-execution-20260911/REPAIR.md)
+supersede this plan after PR #316 review. The
+[review and execution archive](../../../../review-inputs/r3-controlled-execution-review-20260911/README.md)
+records the repaired candidate, real cgroup v2 observations and remaining
+promotion evidence. These later results do not retroactively change NOT_RUN
+observations in this packet.
+
 This packet continues the
 [full-envelope handoff](../../../../review-inputs/r3-holm-envelope-review-20260911/PROMOTION-HANDOFF.md).
 The [separate source investigation](SOURCE-REVIEW.md) supplies the external
