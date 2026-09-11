@@ -1,0 +1,425 @@
+{
+  "environment": {
+    "kernel": "6.18.44-fc-v24",
+    "machine": "x86_64",
+    "node": "v22.22.2",
+    "python": "Python 3.11.15",
+    "self_cgroup": [
+      "9:name=systemd:/",
+      "8:pids:/",
+      "7:blkio:/",
+      "6:freezer:/",
+      "5:devices:/",
+      "4:memory:/process_api/01a09047-471a-74bd-a9c2-975bc1a68c59/claude-code-bash",
+      "3:cpuset:/",
+      "2:cpuacct:/process_api/01a09047-471a-74bd-a9c2-975bc1a68c59",
+      "1:cpu:/",
+      "0::/"
+    ],
+    "proc_cgroups": [
+      "#subsys_name\thierarchy\tnum_cgroups\tenabled",
+      "cpuset\t3\t1\t1",
+      "cpu\t1\t1\t1",
+      "cpuacct\t2\t4\t1",
+      "blkio\t7\t1\t1",
+      "memory\t4\t7\t1",
+      "devices\t5\t1\t1",
+      "freezer\t6\t1\t1",
+      "net_cls\t0\t1\t1",
+      "perf_event\t0\t1\t1",
+      "net_prio\t0\t1\t1",
+      "hugetlb\t0\t1\t1",
+      "pids\t8\t2\t1"
+    ],
+    "v2_root_controllers": "hugetlb",
+    "started_utc": "2026-09-11T11:58:34Z",
+    "finished_utc": "2026-09-11T11:58:47Z"
+  },
+  "E1a_plain_node": {
+    "args": ["/opt/node22/bin/node", "-e", "setTimeout(()=>{},300)"],
+    "returncode": 0,
+    "wall_s": 0.332,
+    "peak_total_threads": 7,
+    "peak_snapshot": [
+      {
+        "pid": 3016,
+        "ppid": 3013,
+        "threads": 7,
+        "vmrss_kib": 44680,
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node -e setTimeout(()=>{},300) "
+      }
+    ],
+    "distinct_processes": [
+      {
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node -e setTimeout(()=>{},300) ",
+        "max_threads": 7
+      }
+    ],
+    "stdout_head": "",
+    "stderr_head": ""
+  },
+  "E1b_plain_python_isolated": {
+    "args": ["/usr/local/bin/python3", "-I", "-c", "import time; time.sleep(0.3)"],
+    "returncode": 0,
+    "wall_s": 0.314,
+    "peak_total_threads": 1,
+    "peak_snapshot": [
+      {
+        "pid": 3023,
+        "ppid": 3013,
+        "threads": 1,
+        "vmrss_kib": 3172,
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I -c import time; time.sleep(0.3) "
+      }
+    ],
+    "distinct_processes": [
+      {
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I -c import time; time.sleep(0.3) ",
+        "max_threads": 1
+      }
+    ],
+    "stdout_head": "",
+    "stderr_head": ""
+  },
+  "E1c_real_call_native_type_stripping": {
+    "args": [
+      "/opt/node22/bin/node",
+      "<repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs"
+    ],
+    "returncode": 0,
+    "wall_s": 0.502,
+    "peak_total_threads": 8,
+    "peak_snapshot": [
+      {
+        "pid": 3024,
+        "ppid": 3013,
+        "threads": 7,
+        "vmrss_kib": 127224,
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node <repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs "
+      },
+      {
+        "pid": 3031,
+        "ppid": 3024,
+        "threads": 1,
+        "vmrss_kib": 6036,
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/wor"
+      }
+    ],
+    "distinct_processes": [
+      {
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node <repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs ",
+        "max_threads": 7
+      },
+      {
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/wor",
+        "max_threads": 1
+      }
+    ],
+    "stdout_head": "{\"kind\":\"https://example.invalid/nomue-exercise/holm-report/v1\",\"checks\":[[\"integrity\",\"completed\",\"pass\"],[\"context\",\"completed\",\"pass\"],[\"declaration\",\"completed\",\"pass\"],[\"admission\",\"completed\",\"pass\"],[\"arithmetic\",\"completed\",\"pass\"]],\"reason\":null,\"forwarded\":true,\"ms\":410}\n",
+    "stderr_head": ""
+  },
+  "E1d_real_call_import_tsx": {
+    "args": [
+      "/opt/node22/bin/node",
+      "--import",
+      "tsx",
+      "<repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs"
+    ],
+    "returncode": 0,
+    "wall_s": 0.773,
+    "peak_total_threads": 13,
+    "peak_snapshot": [
+      {
+        "pid": 3032,
+        "ppid": 3013,
+        "threads": 12,
+        "vmrss_kib": 137816,
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node --import tsx <repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs "
+      },
+      {
+        "pid": 3044,
+        "ppid": 3032,
+        "threads": 1,
+        "vmrss_kib": 6080,
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/wor"
+      }
+    ],
+    "distinct_processes": [
+      {
+        "comm": "node",
+        "cmd": "/opt/node22/bin/node --import tsx <repository-root>/review-inputs/r3-execution-control-review-539f848/experiments/real_call.mjs ",
+        "max_threads": 12
+      },
+      {
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/wor",
+        "max_threads": 1
+      },
+      {
+        "comm": "node",
+        "cmd": "",
+        "max_threads": 2
+      }
+    ],
+    "stdout_head": "{\"kind\":\"https://example.invalid/nomue-exercise/holm-report/v1\",\"checks\":[[\"integrity\",\"completed\",\"pass\"],[\"context\",\"completed\",\"pass\"],[\"declaration\",\"completed\",\"pass\"],[\"admission\",\"completed\",\"pass\"],[\"arithmetic\",\"completed\",\"pass\"]],\"reason\":null,\"forwarded\":true,\"ms\":470}\n",
+    "stderr_head": ""
+  },
+  "E2_cgroup_v2_lifecycle": {
+    "v2_root": "/sys/fs/cgroup/unified",
+    "root_controllers": "hugetlb",
+    "created_files": [
+      "cgroup.controllers",
+      "cgroup.events",
+      "cgroup.freeze",
+      "cgroup.kill",
+      "cgroup.max.depth",
+      "cgroup.max.descendants",
+      "cgroup.procs",
+      "cgroup.stat",
+      "cgroup.stat.local",
+      "cgroup.subtree_control",
+      "cgroup.threads",
+      "cgroup.type",
+      "cpu.stat",
+      "cpu.stat.local"
+    ],
+    "procs_after_start": ["3046", "3047"],
+    "populated_after_start": "1",
+    "grandchild_v2_cgroup_line": ["0::/nomue-review-e2-3045"],
+    "grandchild_sid_differs_from_leader": true,
+    "leader_unreaped": {
+      "state": "Z",
+      "ppid": 3045
+    },
+    "procs_after_leader_kill_unreaped": ["3047"],
+    "populated_after_leader_kill_unreaped": "1",
+    "pipe_eof_after_leader_kill": "no EOF (TypeError)",
+    "leader_wait_status": -9,
+    "populated_after_leader_reaped": "1",
+    "grandchild_after_leader_reaped": {
+      "state": "S",
+      "ppid": 1
+    },
+    "rmdir_while_populated": "errno 16 Device or resource busy",
+    "cgroup_kill_to_populated0_ms": 1.62,
+    "populated_after_cgroup_kill": "0",
+    "grandchild_immediately_after_populated0": {
+      "state": "Z",
+      "ppid": 1
+    },
+    "grandchild_500ms_later": {
+      "state": "Z",
+      "ppid": 1
+    },
+    "pipe_eof_after_cgroup_kill": true,
+    "rmdir_after_kill": "ok"
+  },
+  "E3_execfile_timeout_with_grandchild_pipe": {
+    "exit_event_ms": 1006,
+    "promise_rejected_ms": 1006,
+    "killed": true,
+    "signal": "SIGKILL",
+    "stdout": "worker 3055 grandchild 3056",
+    "grandchild_alive_after_rejection": true
+  },
+  "E4_oom_partial_kill": {
+    "child": {
+      "limit_readback": 100663296,
+      "leader_returncode": 0,
+      "leader_stdout": "{\"kind\":\"report\",\"arithmetic\":\"error\",\"reasons\":[\"worker_failure\"],\"child_signal\":\"SIGKILL\",\"child_code\":null}",
+      "leader_stderr_tail": "",
+      "wall_s": 0.616,
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 100663296,
+      "procs_left_in_cgroup_right_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "both": {
+      "limit_readback": 100663296,
+      "leader_returncode": -9,
+      "leader_stdout": "",
+      "leader_stderr_tail": "",
+      "wall_s": 0.496,
+      "oom_kill_count": "2",
+      "charged_peak_bytes": 100663296,
+      "procs_left_in_cgroup_right_after_leader_exit": ["3073"],
+      "rmdir_ok": true
+    },
+    "parent": {
+      "limit_readback": 100663296,
+      "leader_returncode": -9,
+      "leader_stdout": "",
+      "leader_stderr_tail": "",
+      "wall_s": 0.465,
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 100663296,
+      "procs_left_in_cgroup_right_after_leader_exit": [],
+      "rmdir_ok": true
+    }
+  },
+  "E4b_real_call_under_memory_limits": {
+    "8MiB": {
+      "limit_readback": 8388608,
+      "outcome": "exited",
+      "wall_s": 0.133,
+      "leader_returncode": -9,
+      "stdout_bytes": 0,
+      "stdout_head": "",
+      "stderr_tail": "",
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 8388608,
+      "failcnt": 99,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "16MiB": {
+      "limit_readback": 16777216,
+      "outcome": "exited",
+      "wall_s": 0.236,
+      "leader_returncode": -9,
+      "stdout_bytes": 0,
+      "stdout_head": "",
+      "stderr_tail": "",
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 16777216,
+      "failcnt": 122,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "32MiB": {
+      "limit_readback": 33554432,
+      "outcome": "exited",
+      "wall_s": 0.407,
+      "leader_returncode": -9,
+      "stdout_bytes": 0,
+      "stdout_head": "",
+      "stderr_tail": "",
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 33554432,
+      "failcnt": 115,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "48MiB": {
+      "limit_readback": 50331648,
+      "outcome": "exited",
+      "wall_s": 0.5,
+      "leader_returncode": -9,
+      "stdout_bytes": 0,
+      "stdout_head": "",
+      "stderr_tail": "",
+      "oom_kill_count": "1",
+      "charged_peak_bytes": 50331648,
+      "failcnt": 126,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "100MiB": {
+      "limit_readback": 104857600,
+      "outcome": "exited",
+      "wall_s": 0.489,
+      "leader_returncode": 0,
+      "stdout_bytes": 282,
+      "stdout_head": "{\"kind\":\"https://example.invalid/nomue-exercise/holm-report/v1\",\"checks\":[[\"integrity\",\"completed\",\"pass\"],[\"context\",\"c",
+      "stderr_tail": "",
+      "oom_kill_count": "0",
+      "charged_peak_bytes": 60510208,
+      "failcnt": 0,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    },
+    "512MiB": {
+      "limit_readback": 536870912,
+      "outcome": "exited",
+      "wall_s": 0.464,
+      "leader_returncode": 0,
+      "stdout_bytes": 282,
+      "stdout_head": "{\"kind\":\"https://example.invalid/nomue-exercise/holm-report/v1\",\"checks\":[[\"integrity\",\"completed\",\"pass\"],[\"context\",\"c",
+      "stderr_tail": "",
+      "oom_kill_count": "0",
+      "charged_peak_bytes": 60665856,
+      "failcnt": 0,
+      "procs_left_after_leader_exit": [],
+      "rmdir_ok": true
+    }
+  },
+  "E5_leader_kill_leftovers": {
+    "worker_found_while_leader_alive": true,
+    "leader_status": -9,
+    "worker_exists_after_leader_kill": true,
+    "worker_state": "Z",
+    "worker_ppid": 1,
+    "worker_exists_after_2s": false,
+    "leaked_tmp_dirs": ["/tmp/holm-worker-uBDqdC"],
+    "leaked_contents": {
+      "/tmp/holm-worker-uBDqdC": ["metrics.json"]
+    }
+  },
+  "E1d_real_call_import_tsx_first_sampling": {
+    "args": ["node", "--import", "tsx", "<real_call.mjs, earlier copy at repository root>"],
+    "returncode": 0,
+    "wall_s": 0.672,
+    "peak_total_threads": 20,
+    "peak_snapshot": [
+      {
+        "pid": 2511,
+        "ppid": 2510,
+        "threads": 12,
+        "vmrss_kib": 136640,
+        "comm": "node",
+        "cmd": "node --import tsx ./.review-real-call.mjs "
+      },
+      {
+        "pid": 2523,
+        "ppid": 2511,
+        "threads": 7,
+        "vmrss_kib": 15444,
+        "comm": "esbuild",
+        "cmd": "<repository-root>/node_modules/.pnpm/@esbuild+linux-x64@0.28.1/node_modules/@esbuild/linux-x64/bin/esbuild --ser"
+      },
+      {
+        "pid": 2530,
+        "ppid": 2511,
+        "threads": 1,
+        "vmrss_kib": 4112,
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-exp"
+      }
+    ],
+    "distinct_processes": [
+      {
+        "comm": "node",
+        "cmd": "node --import tsx ./.review-real-call.mjs ",
+        "max_threads": 12
+      },
+      {
+        "comm": "esbuild",
+        "cmd": "<repository-root>/node_modules/.pnpm/@esbuild+linux-x64@0.28.1/node_modules/@esbuild/linux-x64/bin/esbuild --ser",
+        "max_threads": 7
+      },
+      {
+        "comm": "python3",
+        "cmd": "/usr/local/bin/python3 -I <repository-root>/governance/drafts/release-3-preparation/holm-declaration-binding-exp",
+        "max_threads": 1
+      },
+      {
+        "comm": "esbuild",
+        "cmd": "",
+        "max_threads": 3
+      }
+    ],
+    "stdout_head": "{\"kind\":\"https://example.invalid/nomue-exercise/holm-report/v1\",\"checks\":[[\"integrity\",\"completed\",\"pass\"],[\"context\",\"completed\",\"pass\"],[\"declaration\",\"completed\",\"pass\"],[\"admission\",\"completed\",\"pass\"],[\"arithmetic\",\"completed\",\"pass\"]],\"reason\":null,\"forwarded\":true,\"ms\":388}\n",
+    "stderr_head": "",
+    "note": "Earlier sampling of the same command (ad hoc run before the packet runner existed); the esbuild child was captured in this sampling and missed by the 5 ms sampler in the runner run."
+  }
+}
