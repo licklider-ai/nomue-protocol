@@ -1,0 +1,48 @@
+[
+  {
+    "artifact": 10265661670,
+    "sha256": "c5a59b568053a116d29561b9e5141fab23e168dd4d0a1173521a90de479fa8ae",
+    "members": [
+      {
+        "name": "admission-results.json",
+        "sha256": "392762630c9eb9f382113caa411aa156b57306cd8cb310082def28c8817e1bc2"
+      }
+    ]
+  },
+  {
+    "artifact": 10265852083,
+    "sha256": "f868fe49358e0e76c651728901779a0fc80fd1b3e04a3beb777cb44f35593a83",
+    "members": [
+      {
+        "name": "admission-results.json",
+        "sha256": "d874b406dc72ab397b52b8da552efd6dc5a744adcc8fd633e3f62452d80e8757"
+      }
+    ]
+  },
+  {
+    "artifact": 10265969680,
+    "sha256": "3ac349aac9970e226bb31c4c01dc66d1033bd6bf564a53225846b9f02ef98154",
+    "members": [
+      {
+        "name": "execution-host.json",
+        "sha256": "aa9a2f1b6c7e743c67464e40b9542c7986ecf7c6f48e15077638fc23222e1991"
+      },
+      {
+        "name": "candidate-public-receipts.json",
+        "sha256": "ac4e740abb55f48d353757061672a4740e7be73f7f07cf887d3301a11d17c064"
+      },
+      {
+        "name": "execution-cgroup-results.json",
+        "sha256": "1bac682c0cdda96d8c8a7ccef895289e9d8687fb8e36db34eaf17bac3f75f23a"
+      },
+      {
+        "name": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/RESULTS.json",
+        "sha256": "ef5da3e9d2b0d0fdb1176f05fb5f2f0df676757561bad7defcc5c2cc21ec9c85"
+      },
+      {
+        "name": "governance/drafts/release-3-preparation/holm-public-candidate-20260911/PUBLIC-RESULTS.json",
+        "sha256": "4531cb4c1836d7e9a26907e4e44673f70d753d7a3900802fe205a058805aaa14"
+      }
+    ]
+  }
+]

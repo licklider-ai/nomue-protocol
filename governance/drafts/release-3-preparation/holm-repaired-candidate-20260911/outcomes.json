@@ -1,0 +1,154 @@
+{
+  "status": "unissued proposal; no reason identifiers allocated",
+  "reasons": {
+    "record_malformed_json": "candidate:holm:record_malformed_json",
+    "record_duplicate_member": "candidate:holm:record_duplicate_member",
+    "record_invalid_unicode": "candidate:holm:record_invalid_unicode",
+    "record_negative_zero": "candidate:holm:record_negative_zero",
+    "record_parser_exhaustion": "candidate:holm:record_parser_exhaustion",
+    "record_nodes": "candidate:holm:record_nodes",
+    "record_string": "candidate:holm:record_string",
+    "record_depth": "candidate:holm:record_depth",
+    "record_container": "candidate:holm:record_container",
+    "record_key": "candidate:holm:record_key",
+    "record_bytes": "candidate:holm:record_bytes",
+    "expected_malformed_json": "candidate:holm:expected_malformed_json",
+    "expected_duplicate_member": "candidate:holm:expected_duplicate_member",
+    "expected_invalid_unicode": "candidate:holm:expected_invalid_unicode",
+    "expected_negative_zero": "candidate:holm:expected_negative_zero",
+    "expected_parser_exhaustion": "candidate:holm:expected_parser_exhaustion",
+    "expected_nodes": "candidate:holm:expected_nodes",
+    "expected_string": "candidate:holm:expected_string",
+    "expected_depth": "candidate:holm:expected_depth",
+    "expected_container": "candidate:holm:expected_container",
+    "expected_key": "candidate:holm:expected_key",
+    "expected_bytes": "candidate:holm:expected_bytes",
+    "record_bytes_type": "candidate:holm:record_bytes_type",
+    "record_utf8": "candidate:holm:record_utf8",
+    "bundle_missing": "candidate:holm:bundle_missing",
+    "bundle_type": "candidate:holm:bundle_type",
+    "bundle_unsupported": "candidate:holm:bundle_unsupported",
+    "record_nonfinite": "candidate:holm:record_nonfinite",
+    "record_schema": "candidate:holm:record_schema",
+    "stored_bytes_noncanonical": "candidate:holm:stored_bytes_noncanonical",
+    "projection_disagreement": "candidate:holm:projection_disagreement",
+    "expected_type": "candidate:holm:expected_type",
+    "expected_schema": "candidate:holm:expected_schema",
+    "legacy_admission_limit": "candidate:holm:legacy_admission_limit",
+    "report_invariant": "candidate:holm:report_invariant",
+    "internal_failure": "candidate:holm:internal_failure",
+    "setup_failure": "candidate:holm:setup_failure",
+    "prerequisite_failed": "candidate:holm:prerequisite_failed",
+    "digest_mismatch": "candidate:holm:digest_mismatch",
+    "context_mismatch": "candidate:holm:context_mismatch",
+    "declaration_invalid": "candidate:holm:declaration_invalid",
+    "holm_input_invalid": "candidate:holm:holm_input_invalid",
+    "result_ownership": "candidate:holm:result_ownership",
+    "exact_value_mismatch": "candidate:holm:exact_value_mismatch",
+    "display_value_mismatch": "candidate:holm:display_value_mismatch",
+    "worker_failure": "candidate:holm:worker_failure",
+    "cleanup_failed": "candidate:holm:cleanup_failed",
+    "memory_enforced": "candidate:holm:memory_enforced",
+    "pids_enforced": "candidate:holm:pids_enforced",
+    "cancelled": "candidate:holm:cancelled",
+    "deadline": "candidate:holm:deadline",
+    "output_overflow": "candidate:holm:output_overflow",
+    "unsupported_host": "candidate:holm:unsupported_host",
+    "setup_failed": "candidate:holm:setup_failed",
+    "invalid_input": "candidate:holm:invalid_input",
+    "abnormal_exit": "candidate:holm:abnormal_exit",
+    "completed_invalid_output": "candidate:holm:completed_invalid_output",
+    "processing_timeout": "candidate:holm:processing_timeout",
+    "processing_heap": "candidate:holm:processing_heap",
+    "expected_utf8": "candidate:holm:expected_utf8"
+  },
+  "execution_precedence": [
+    "cleanup_failed",
+    "memory_enforced",
+    "pids_enforced",
+    "cancelled",
+    "deadline",
+    "output_overflow",
+    "unsupported_host",
+    "setup_failed",
+    "invalid_input",
+    "abnormal_exit",
+    "completed_invalid_output"
+  ],
+  "execution": {
+    "cleanup_failed": {
+      "refusal_kind": "internal_error",
+      "reason": "cleanup_failed",
+      "limit_category": null
+    },
+    "memory_enforced": {
+      "refusal_kind": "resource_limit",
+      "reason": "memory_enforced",
+      "limit_category": "memory_limit"
+    },
+    "pids_enforced": {
+      "refusal_kind": "resource_limit",
+      "reason": "pids_enforced",
+      "limit_category": "task_limit"
+    },
+    "cancelled": {
+      "refusal_kind": "execution_cancelled",
+      "reason": "cancelled",
+      "limit_category": null
+    },
+    "deadline": {
+      "refusal_kind": "resource_limit",
+      "reason": "deadline",
+      "limit_category": "processing_timeout"
+    },
+    "output_overflow": {
+      "refusal_kind": "resource_limit",
+      "reason": "output_overflow",
+      "limit_category": "output_size"
+    },
+    "unsupported_host": {
+      "refusal_kind": "unsupported_execution",
+      "reason": "unsupported_host",
+      "limit_category": null
+    },
+    "setup_failed": {
+      "refusal_kind": "internal_error",
+      "reason": "setup_failed",
+      "limit_category": null
+    },
+    "invalid_input": {
+      "refusal_kind": "input_access_error",
+      "reason": "invalid_input",
+      "limit_category": null
+    },
+    "abnormal_exit": {
+      "refusal_kind": "internal_error",
+      "reason": "abnormal_exit",
+      "limit_category": null
+    },
+    "completed_invalid_output": {
+      "refusal_kind": "internal_error",
+      "reason": "completed_invalid_output",
+      "limit_category": null
+    }
+  },
+  "input_limits": {
+    "record_parser_exhaustion": "parser_exhaustion",
+    "record_nodes": "node_count",
+    "record_string": "string_length",
+    "record_depth": "nesting_depth",
+    "record_container": "container_size",
+    "record_key": "string_length",
+    "record_bytes": "file_size",
+    "expected_parser_exhaustion": "parser_exhaustion",
+    "expected_nodes": "node_count",
+    "expected_string": "string_length",
+    "expected_depth": "nesting_depth",
+    "expected_container": "container_size",
+    "expected_key": "string_length",
+    "expected_bytes": "file_size",
+    "legacy_admission_limit": "binding_admission",
+    "processing_timeout": "processing_timeout",
+    "processing_heap": "memory_limit"
+  }
+}

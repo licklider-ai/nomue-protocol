@@ -1,5 +1,8 @@
 # Release 3 Public-Review Preparation
 
+The [R3 review repair and active successors](r3-review-repair-20260911/README.md)
+record corrections to PRs #319–#323, executable checks and historical evidence limits.
+
 **Current status: public discussion opened on 2026-09-09 in [Issue #274](https://github.com/licklider-ai/nomue-protocol/issues/274).**
 See the [actual opening receipt](public-opening-record.md) for PR #273 GO,
 fixed inputs, exclusions and the 30-day window. Earliest decision:
