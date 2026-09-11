@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "review_commit": "fca5094a227422fd2d7d72ed8a7dc64f0f6ddc21",
+  "sole_parent": "829e1050ab35ced87867490c974ea07b6e1545c9",
+  "main_observed": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "changed_paths": [
+    "governance/drafts/release-3-independent-multigroup-rfc.md",
+    "governance/drafts/release-3-preparation/README.md",
+    "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md",
+    "governance/drafts/release-3-preparation/supplied-scope-opening-record.md",
+    "review-inputs/r3-supplied-scope-opening/INDEPENDENT-REVIEW.md"
+  ],
+  "unchanged_previous_paths_and_modes": 1015,
+  "preserved_input_paths_in_return": 1020,
+  "prefix_bytes": 565802,
+  "prefix_sha256": "31d852a1c0e92688c2c1ec2ec1b6fd5f1c34eac3be1282a4f4ae98ab1247d9eb",
+  "catalogue_counts": {
+    "R3-CAND": 15,
+    "RES-ONLY": 27,
+    "TRANSFER": 5,
+    "REJECT": 2
+  },
+  "catalogue": {
+    "OMN-01": {
+      "technique": "Classical equal-variance one-way ANOVA F",
+      "disposition": "R3-CAND"
+    },
+    "OMN-02": {
+      "technique": "Welch heteroscedastic omnibus (Welch 1951)",
+      "disposition": "R3-CAND"
+    },
+    "OMN-03": {
+      "technique": "James first/second-order tests (James 1951)",
+      "disposition": "RES-ONLY"
+    },
+    "OMN-04": {
+      "technique": "Brown-Forsythe modified F (1974)",
+      "disposition": "RES-ONLY"
+    },
+    "OMN-05": {
+      "technique": "Kruskal-Wallis rank omnibus (1952)",
+      "disposition": "TRANSFER"
+    },
+    "OMN-06": {
+      "technique": "Permutation one-way tests (Fisher-Pitman family)",
+      "disposition": "TRANSFER"
+    },
+    "PVL-01": {
+      "technique": "Bonferroni single-step",
+      "disposition": "R3-CAND"
+    },
+    "PVL-02": {
+      "technique": "\u0160id\u00e1k single-step",
+      "disposition": "R3-CAND"
+    },
+    "PVL-03": {
+      "technique": "Holm step-down (Bonferroni thresholds)",
+      "disposition": "R3-CAND"
+    },
+    "PVL-04": {
+      "technique": "Holm product-form (\"Holm-\u0160id\u00e1k\") step-down",
+      "disposition": "R3-CAND"
+    },
+    "PVL-05": {
+      "technique": "Weighted Holm (Scheme 2 / Theorem 2)",
+      "disposition": "RES-ONLY"
+    },
+    "PVL-06": {
+      "technique": "Simes global test (1986)",
+      "disposition": "RES-ONLY"
+    },
+    "PVL-07": {
+      "technique": "Hochberg step-up (1988)",
+      "disposition": "R3-CAND"
+    },
+    "PVL-08": {
+      "technique": "Hommel procedure (1988, closed Simes)",
+      "disposition": "RES-ONLY"
+    },
+    "PVL-09": {
+      "technique": "Shaffer logically-restricted sequential rejection (1986)",
+      "disposition": "RES-ONLY"
+    },
+    "PVL-10": {
+      "technique": "Rom (1990); Holland-Copenhaver (1987) sharpened stepwise",
+      "disposition": "RES-ONLY"
+    },
+    "CLS-01": {
+      "technique": "Closed testing principle (Marcus-Peritz-Gabriel 1976)",
+      "disposition": "R3-CAND"
+    },
+    "CLS-02": {
+      "technique": "Fixed-sequence (hierarchical) testing",
+      "disposition": "RES-ONLY"
+    },
+    "CLS-03": {
+      "technique": "Fallback procedure (Wiens 2003)",
+      "disposition": "RES-ONLY"
+    },
+    "CLS-04": {
+      "technique": "Serial gatekeeping (Maurer-Hothorn-Lehmacher 1995 lineage)",
+      "disposition": "RES-ONLY"
+    },
+    "CLS-05": {
+      "technique": "Parallel gatekeeping (Dmitrienko-Offen-Westfall 2003)",
+      "disposition": "RES-ONLY"
+    },
+    "CLS-06": {
+      "technique": "Graphical weighted-Bonferroni procedures (Bretz et al. 2009)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-01": {
+      "technique": "Balanced Studentized-range all-pairs intervals (\"Tukey\", per SRC-06 (1.1))",
+      "disposition": "R3-CAND"
+    },
+    "APR-02": {
+      "technique": "Tukey-Kramer unequal-size all-pairs intervals",
+      "disposition": "R3-CAND"
+    },
+    "APR-03": {
+      "technique": "Kramer's multiple-range unequal-replication test (as proposed 1956)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-04": {
+      "technique": "Spj\u00f8tvoll-Stoline extended T (max multiplier, augmented range)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-05": {
+      "technique": "Hochberg GT2 (Studentized maximum modulus)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-06": {
+      "technique": "Genizi-Hochberg (1978)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-07": {
+      "technique": "Gabriel (1978)",
+      "disposition": "REJECT"
+    },
+    "APR-08": {
+      "technique": "Harmonic-mean-size substitution into balanced constants",
+      "disposition": "REJECT"
+    },
+    "APR-09": {
+      "technique": "Scheff\u00e9 all-contrasts procedure (1953)",
+      "disposition": "R3-CAND"
+    },
+    "APR-10": {
+      "technique": "Newman-Keuls step-down range (1939/1952)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-11": {
+      "technique": "Duncan multiple range test (1955)",
+      "disposition": "RES-ONLY"
+    },
+    "APR-12": {
+      "technique": "Ryan / Einot-Gabriel / Welsch (REGWQ) corrected range procedures",
+      "disposition": "RES-ONLY"
+    },
+    "APR-13": {
+      "technique": "Fisher (protected) LSD",
+      "disposition": "RES-ONLY"
+    },
+    "APR-14": {
+      "technique": "Hayter's modified LSD (1986)",
+      "disposition": "RES-ONLY"
+    },
+    "HET-01": {
+      "technique": "Games-Howell (1976)",
+      "disposition": "R3-CAND"
+    },
+    "HET-02": {
+      "technique": "Tamhane T2 (1979)",
+      "disposition": "RES-ONLY"
+    },
+    "HET-03": {
+      "technique": "Dunnett T3 and C (1980b, JASA 75:796\u2013800)",
+      "disposition": "RES-ONLY"
+    },
+    "MTO-01": {
+      "technique": "Dunnett many-to-one simultaneous intervals (1955)",
+      "disposition": "R3-CAND"
+    },
+    "MTO-02": {
+      "technique": "Step-down Dunnett (Naik 1975; Dunnett-Tamhane 1991)",
+      "disposition": "RES-ONLY"
+    },
+    "MTO-03": {
+      "technique": "Step-up Dunnett-Tamhane (1992)",
+      "disposition": "RES-ONLY"
+    },
+    "MCB-01": {
+      "technique": "Hsu's multiple comparisons with the best (1984)",
+      "disposition": "RES-ONLY"
+    },
+    "FDR-01": {
+      "technique": "Benjamini-Hochberg linear step-up (1995)",
+      "disposition": "R3-CAND"
+    },
+    "FDR-02": {
+      "technique": "Benjamini-Yekutieli (2001): PRDS and `\u03a31/i` variants",
+      "disposition": "R3-CAND"
+    },
+    "FDR-03": {
+      "technique": "Adaptive / two-stage BH (BKY 2006; adaptive `m0`)",
+      "disposition": "RES-ONLY"
+    },
+    "FDR-04": {
+      "technique": "Storey direct FDR / q-value (2002)",
+      "disposition": "TRANSFER"
+    },
+    "RSM-01": {
+      "technique": "Westfall-Young maxT / minP (1993)",
+      "disposition": "TRANSFER"
+    },
+    "RSM-02": {
+      "technique": "Permutation-based pairwise/step-down families",
+      "disposition": "TRANSFER"
+    }
+  },
+  "guidance_entries": 2,
+  "exclusions": 5,
+  "authority_paths_equal": [
+    "AGENTS.md",
+    "CHARTER.md",
+    "AUTHORITY.md",
+    "authority/authority-manifest.yaml",
+    "registries/requirements.yaml",
+    "governance/ID-POLICY.md",
+    "governance/RFC.md",
+    "registries/stability-tiers.yaml"
+  ],
+  "limits": "Structural checks only; no scientific guarantee or formal independence attestation."
+}

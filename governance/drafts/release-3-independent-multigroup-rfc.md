@@ -10,18 +10,42 @@ No discussion URL, opening timestamp, minimum-window determination, or earliest
 decision timestamp has been assigned. Those fields are recorded only when the
 public-opening gate is satisfied and the discussion issue is actually opened.
 
-**Current evidence reconciliation (2026-09-06):** the semantic programme remains
-`NARROW`; source acquisition remains `INPUT_INCOMPLETE` with SR-L alone closed and
-13 source-completion items open. The numerical result in PR #174 remains an
-unmerged `INPUT_INCOMPLETE` candidate awaiting independent repair closure. The
-[preparation status](release-3-preparation/README.md#current-research-gate-state)
-and [readiness audit](release-3-preparation/readiness-audit-2026-09-06.md)
-record the evidence and remaining tasks. The comprehensive scope below remains a
-proposal; this status update does not approve it or dispose R3-H1 through R3-H7.
+**Approved supplied-source scope (2026-09-09):** the steward has formally adopted
+provided originals as the source boundary of this public RFC, with possible later
+additions and updates. The corpus inventory is 42 numbered originals plus one
+corrigendum, not a claim that every page supports every catalogue entry. The
+[opening evidence and hold map](release-3-preparation/supplied-scope-opening-record.md)
+records immutable inputs, all 49 technique dispositions, two guidance entries,
+exclusions, residual source conditions and R3-H1-H7. Historical source status is
+9 CLOSED / 1 PARTIAL / 4 INPUT_INCOMPLETE; SOURCE_SET_READY remains false.
+The scope decision does not close those historical holds or certify methods.
+
+The Troendle SF-01 repair at `829e1050ab35ced87867490c974ea07b6e1545c9`
+has a received close-only GO with no additional findings. Numerical PR #265 at
+`92bea491e237df6aec08ae1e3c4c52e43ec3593d` withdraws B2/C3/G guarantees;
+those algorithms are not validated truth oracles. Candidate numerical support
+remains held. The September 6 audit is historical and is superseded for current
+scope/status by the opening record, without changing its original bytes.
+
+**Opening remains pending R3-H7 independent review and the actual opening
+record.** Scope adoption is effective; it is not a claim that this newly assembled
+RFC has already passed independent readiness review. The present coordinator
+prepares the review input and does not self-certify that gate.
+
+**Opening-review repair:** PR #271 found H2-H6 satisfied but H1/H7 insufficient.
+The [operative premise exclusions](release-3-preparation/supplied-scope-opening-record.md#21-b-01-operative-premise-exclusion)
+now explicitly withhold OMN-02 Welch model/statistic/df/calibration, APR-09 coverage,
+and SR-K FDR/dependence guarantees as scientific premises enabling opening. Their
+candidate/research/transfer labels remain questions, not asserted valid methods.
+Recent Ge/James/Brown/Troendle findings are comparative context and exclusions.
+This restriction governs all inherited descriptions, including the Summary,
+Research Gate, output classes and development tracks. No historical acceptance
+is revoked; no missing independence determination is presumed. H1/H7 await a
+focused review of this repaired package.
 
 ## Summary
 
-Release 3 is proposed as a bounded but comprehensive successor program for
+Release 3 is proposed as a bounded supplied-source successor program for
 explicitly declared, one-way, independent multi-group continuous data. It would
 define a shared Profile and separately closable Analysis Contracts and Public Checks
 for omnibus inference, contrasts, post-hoc comparisons, simultaneous intervals, and
@@ -33,10 +57,11 @@ FWER and FDR procedures and requires each protected family, criterion, procedure
 ordering, and output guarantee to be explicit. No method would be selected from
 observed values or silently substituted after a refusal.
 
-The exact procedures, population targets, variance assumptions, member sets,
-degrees-of-freedom constructions, result surfaces, and numerical contracts remain
-pre-opening research holds. This draft records where those decisions belong rather
-than filling them from a software default.
+The opening record maps the exact candidate variants and retained research or
+transfer entries. Only source-supported bounded claims are premises of this RFC;
+unverified lineage, wider guarantees and unsupported extensions are explicit holds.
+Numerical contracts remain later candidate decisions. This draft selects no
+software default, operation graph or implementation guarantee.
 
 ## Motivation
 
@@ -87,7 +112,7 @@ selected procedure.
 
 ## Comparison-family and multiplicity program
 
-Release 3 research and public discussion cover at least these member-set classes:
+Release 3 public discussion distinguishes these bounded member-set classes:
 
 - one omnibus hypothesis;
 - all pairwise comparisons;
@@ -105,11 +130,15 @@ weak or strong guarantee, procedure, ordering and tie rules, alpha allocation wh
 relevant, confidence procedure, output relationship, numerical dependencies, and
 refusal behavior.
 
-Comprehensive means that a documented source search and inclusion rule produces a
-finite catalogue and that every in-scope entry receives an explicit disposition. It
-does not mean every historical technique is automatically supported. Release 3 may
-implement the accepted entries as separately reviewed vertical increments, but the
-final Release 3 disposition cannot silently omit an entry from its catalogue.
+Catalogue completeness here means that all 49 entries of the frozen catalogue
+remain visibly dispositioned, including research-only, rejected and transferred
+entries. It does not mean comprehensive coverage of the literature or acceptance
+of every listed technique. The opening record governs the supplied-source overlay;
+old SNIPPET labels and hold markers remain historical in the frozen catalogue.
+Unprovided-source claims and unspecified variants are not opening premises.
+Troendle's two-group multiple-outcome construction is comparative research in the
+transferred resampling lane, not a multi-group all-pairs Contract. Ge does not
+supply a blanket replacement for unread Westfall-Young or Romano-Wolf variants.
 
 An omnibus result never authorizes a follow-up family by implication. Where a
 procedure uses an omnibus gate, that gate and its error-control consequence are part
@@ -143,8 +172,8 @@ The Release 3 RFC does not propose:
 - a general framework covering designs beyond independent one-way groups;
 - factorial, interaction, repeated-measures, mixed-model, or regression support;
 - rank-based or Bayesian primary inference Contracts, and permutation-based omnibus
-  Contracts; resampling used by an explicitly catalogued multiplicity procedure
-  remains in research scope;
+  Contracts; resampling catalogue entries remain comparative research with implementation
+  transferred to the seeded-stochastic program;
 - standardized effect sizes;
 - causal, clinical, regulatory, or domain-specific interpretation;
 - a Record-supplied confidence level, tolerance, method, or algorithm;
@@ -175,8 +204,8 @@ Two independent research lanes are commissioned:
 1. [statistical semantics and comparison-family research](release-3-preparation/semantic-research-commission.md);
 2. [multiplicity numerical and oracle research](release-3-preparation/numerical-research-commission.md).
 
-The statistical result and its independent review must make the comprehensive
-program scope reviewable before public discussion opens. It must provide the search
+The statistical result and its independent review must make the bounded
+supplied-source program scope reviewable before public discussion opens. It must provide the search
 method, finite catalogue, procedure dispositions, dependency order, target and
 member-set distinctions, assumptions, declarations, result classes, and refusal
 conditions, or narrow or defer the proposal.
@@ -269,11 +298,36 @@ not copy or start that duration.
 ## Decision requested after opening
 
 After the applicable public window, the steward would be asked to accept, revise,
-defer, or reject the bounded comprehensive Release 3 program and the disposition of
+defer, or reject the bounded supplied-source Release 3 program and the disposition of
 every catalogued technique. Permanent namespace, identifier, schema,
 numerical-contract, supported-execution, Contract, Public Check, bundle,
 release-candidate, and publication decisions remain separately reviewable
 ratification items.
 
-Until then, this file is only a pre-public draft and no Release 3 decision has been
-requested or made.
+The source scope has been adopted for this proposed public RFC. All procedure,
+implementation, issuance and release decisions above remain unmade. This is still
+a pre-public draft until the independent opening review and actual opening action.
+
+## Later originals and revisions
+
+Additional originals may be supplied later. Each addition receives its own content
+hash, identity/page record, claim mapping and review before changing a conclusion.
+An addition does not retroactively make an unread source inspected or rewrite the
+historical source ledger. Corrected findings retain the earlier immutable version
+and explain the delta. A source addition within the reviewed question is assessed
+for material impact; a new design, target, variant, member-set class, error criterion
+or compatibility boundary requires an explicit scope decision and the applicable
+RFC review/window assessment. No future addition is preapproved scientifically.
+
+## Proposed opening questions
+
+1. Are the supplied-source limits and all catalogue dispositions explicit enough
+   to discuss the program without implying unsupported source or numerical closure?
+2. Do the proposed declarations distinguish design, family, selection, variance,
+   procedure and guarantee without claiming that declarations prove reality?
+3. Are the separate result classes and dependency order coherent, including the
+   transferred resampling lane and unresolved omnibus/numerical claims?
+4. Are the additive identity, compatibility and future-update boundaries adequate?
+
+The evidence/hold map and independent-review handoff are part of the same fixed
+review input. Remaining uncertainties are questions to discuss, not silent defaults.

@@ -1,9 +1,30 @@
 # Release 3 Public-Review Preparation
 
+**Current status: public discussion opened on 2026-09-09 in [Issue #274](https://github.com/licklider-ai/nomue-protocol/issues/274).**
+See the [actual opening receipt](public-opening-record.md) for PR #273 GO,
+fixed inputs, exclusions and the 30-day window. Earliest decision:
+2026-10-09T11:50:18Z. The preparation statuses and sequences below are historical
+and superseded by the receipt for current operational status; they do not request
+another opening review or start a second window. Scientific and numerical holds
+remain unchanged.
+
+## Preserved pre-opening preparation record
+
 **Status: informative pre-public work record.** Release 3 public discussion is not
 open. This package starts the research and scope work needed to make a bounded RFC
 reviewable. It creates no Protocol meaning, identifier, Requirement ID, supported
 capability, RFC window, release commitment, or implementation authority.
+
+## Current supplied-scope opening preparation (2026-09-09)
+
+The steward has adopted provided originals as this RFC's source scope, allowing
+later reviewed additions. The [opening record](supplied-scope-opening-record.md)
+and [updated RFC](../release-3-independent-multigroup-rfc.md) supersede the dated
+September 6 status snapshot below for current scope. Historical ledger: 9 CLOSED /
+1 PARTIAL / 4 INPUT_INCOMPLETE; SOURCE_SET_READY=false. Troendle's bounded review
+and SF-01 repair have received close-only GO. Numerical B2/C3/G guarantees remain
+withdrawn. R3-H1-H6 have proposed explicit treatments; R3-H7 is pending whole-package
+independent review. No public window has started.
 
 ## Objective
 
@@ -174,7 +195,7 @@ That record is evidence reuse, not automatic Release 4 adoption. Factorial targe
 main and simple effects, interactions, design balance, admissibility, and any
 different numerical graph remain separate Release 4 questions.
 
-## Immediate sequence
+## Historical immediate sequence (2026-09-06; superseded)
 
 1. complete and independently review SR-A through SR-K and RSM-01/RSM-02, preserving
    the completed SR-L result and its reopen conditions; resolve X-8 to fix the source
@@ -188,3 +209,18 @@ different numerical graph remain separate Release 4 questions.
 4. perform the pre-opening readiness pass; and
 5. open public discussion without waiting for every procedure implementation to
    close.
+
+## Current immediate sequence (2026-09-09)
+
+1. Review PR #271's B-01 narrower-premise repair and S-01 correction against the
+   fixed repaired package; keep its H2-H6 findings as reused evidence.
+2. Obtain focused H1/H7 reconsideration, including evidence scope and independence
+   boundaries. Do not reacquire originals or require full historical hold closure.
+3. Apply any necessary repair and confirm the final fixed RFC and current authority.
+4. Execute the authorized opening only after readiness is established; record the
+   actual issue, UTC creation time, tier, minimum window and earliest decision.
+5. Continue numerical/implementation research under explicit holds. Future source
+   additions require their own identity, claim review and material-scope assessment.
+
+The historical list above is retained for traceability and is not an instruction
+to obtain missing sources or complete every historical hold before opening.
