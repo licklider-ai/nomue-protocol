@@ -1,0 +1,10 @@
+{
+  "arithmetic_commit": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+  "tail_commit": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+  "parent": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+  "source_sha256": {
+    "upstream_arithmetic.py": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+    "candidate.py": "4baaf53bc1b75d94d335b539e6e2f9c736bbff93a267f36ca084cfe99f41ee58",
+    "oracle.py": "fda30f7dfb5d765b51a9c24ae6d1458b94c34b828273c65d8f6d74222adea16f"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "fixed corpus embedding": 220,
+    "rational oracle overlap": 24,
+    "rational rounded agreement": 24,
+    "exact n4 F4": 1,
+    "exact raw F": 3,
+    "point composition": 3,
+    "binding rejection": 18,
+    "false interval": 3,
+    "wide unresolved": 3,
+    "positive SSE rounded zero": 1,
+    "exact zero effect": 1,
+    "exact zero SSE": 1,
+    "nonfinite": 1,
+    "bool input": 1,
+    "count guard": 1,
+    "rational budget": 1,
+    "interval order": 1,
+    "precision exhaustion": 1,
+    "raw positive F rounded zero": 1,
+    "raw small composition": 1,
+    "raw finite F beyond binary64": 1,
+    "raw huge composition": 1
+  },
+  "total": 312
+}
