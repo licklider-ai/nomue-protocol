@@ -134,3 +134,35 @@ reuses the user-supplied external PR #296 review recorded in that packet; no new
 independent reviewer or model identity is claimed. Runtime environment is captured
 in RESULTS and BENCHMARKS. The immutable content identity is the containing commit
 and SHA256SUMS inventory.
+
+## External implementation review receipt
+
+A user-supplied bounded adversarial implementation review of commit
+`60d62f61eb8bd5bf4c915098b6af50a683122025` found no BLOCKER and no SHOULD-FIX
+code defect. Reviewer/model identity and raw artifacts were not supplied; the
+receipt is attributed to the user. This record was prepared in that reviewer's
+session on 2026-09-11, not by the original author context, and is not an
+independent close review of itself. No consumer, wrapper, test or benchmark
+code was changed; only this section and the inventory hash of this file.
+
+Reported checks on CPython 3.11.15: `run_checks.py` reproduced 124 consumer
+and 318 wrapper checks with parsed results equal to the committed record apart
+from environment fields; `benchmark.py` reproduced all twelve probes with the
+same decisions and a largest elapsed time of 14.62 seconds; all fifteen
+inventory hashes matched and the four numerical modules matched PR #288
+byte-for-byte; the derivative wrapper differs from its pinned predecessor only
+by the snapshot/identity extraction; expected-input validation precedes
+submission validation, identity and df binding precede endpoint gcd work, and
+gcd work precedes the single recomputation; hostile objects, oversized scalars
+and oversized integers at every envelope and row position were refused by the
+intended shape, type, size or range reason within milliseconds and before any
+overloaded comparison; the `target encoding` branch is unreachable because
+containment plus unique endpoint rounding already fix the encoding, so it is
+defensive only; a heavier admitted case than the recorded probes, n=46 raw
+data with all three F widths at 121 bits, cap-size consecutive-Fibonacci
+endpoints on every row and the forced full precision schedule, ended in the
+intended containment refusal after 14.93 seconds with 25,072 KiB peak RSS.
+
+The measured margin against the 30-second envelope is therefore about two on
+this host; a host about two times slower would approach it. This remains an
+observation, not a portable bound, and the envelope is not a supported limit.
