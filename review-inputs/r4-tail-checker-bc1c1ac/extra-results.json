@@ -1,0 +1,144 @@
+{
+  "reviewed_commit": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "cases": [
+    {
+      "case": "fixed corpus independently rerun",
+      "result": "passed"
+    },
+    {
+      "case": "all traps flags and context fields mutated in default and ambient contexts",
+      "result": "passed"
+    },
+    {
+      "case": "null n",
+      "result": "rejected",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "null nu",
+      "result": "rejected",
+      "reason": "degrees"
+    },
+    {
+      "case": "null f_hex",
+      "result": "rejected",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "null family",
+      "result": "rejected",
+      "reason": "fixed roster mismatch"
+    },
+    {
+      "case": "null candidate_bounds",
+      "result": "rejected",
+      "reason": "interval shape"
+    },
+    {
+      "case": "null oracle_bounds",
+      "result": "rejected",
+      "reason": "interval shape"
+    },
+    {
+      "case": "null oracle_route",
+      "result": "rejected",
+      "reason": "oracle provenance"
+    },
+    {
+      "case": "null oracle_work",
+      "result": "rejected",
+      "reason": "oracle provenance"
+    },
+    {
+      "case": "null decimal_80_digits",
+      "result": "rejected",
+      "reason": "Decimal diagnostic"
+    },
+    {
+      "case": "null decimal_abs_error_upper",
+      "result": "rejected",
+      "reason": "dyadic shape"
+    },
+    {
+      "case": "null round_binary64_bits",
+      "result": "rejected",
+      "reason": "rounded bits"
+    },
+    {
+      "case": "null projection_class",
+      "result": "rejected",
+      "reason": "projection class"
+    },
+    {
+      "case": "null mathematical_tail",
+      "result": "rejected",
+      "reason": "mathematical tail"
+    },
+    {
+      "case": "conservative Decimal error upper bound accepted",
+      "result": "passed"
+    },
+    {
+      "case": "disjoint recomputation fault injection",
+      "result": "rejected",
+      "reason": "recomputed intervals disjoint"
+    },
+    {
+      "case": "512-bit oracle enclosure still outside fixed candidate contract",
+      "result": "rejected",
+      "reason": "candidate containment"
+    },
+    {
+      "case": "overflow 1e999",
+      "result": "rejected",
+      "reason": "nonfinite JSON number"
+    },
+    {
+      "case": "overflow -1e999",
+      "result": "rejected",
+      "reason": "nonfinite JSON number"
+    },
+    {
+      "case": "overflow 1.8e308",
+      "result": "rejected",
+      "reason": "nonfinite JSON number"
+    },
+    {
+      "case": "overflow -1.8e308",
+      "result": "rejected",
+      "reason": "nonfinite JSON number"
+    },
+    {
+      "case": "constant NaN",
+      "result": "rejected",
+      "reason": "nonfinite JSON constant"
+    },
+    {
+      "case": "constant Infinity",
+      "result": "rejected",
+      "reason": "nonfinite JSON constant"
+    },
+    {
+      "case": "constant -Infinity",
+      "result": "rejected",
+      "reason": "nonfinite JSON constant"
+    },
+    {
+      "case": "nested duplicate",
+      "result": "rejected",
+      "reason": "duplicate key"
+    },
+    {
+      "case": "largest finite binary64 parses",
+      "result": "passed"
+    },
+    {
+      "case": "finite JSON underflow is permitted at parser level",
+      "result": "passed"
+    }
+  ],
+  "passed": 28,
+  "rejected": 23
+}

@@ -1,0 +1,305 @@
+{
+  "repository": "licklider-ai/nomue-protocol",
+  "author_pr": 278,
+  "commit": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+  "sole_parent": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+  "tree": "9a8d8cb4398747a4fc2fe373cf6f4fef40b5d040",
+  "proposal": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+  "proposal_pr": 249,
+  "discussion_issue": 261,
+  "review_branch": "review/r4-tail-8d1979a",
+  "base_branch": "research/r4-tail-feasibility-20260910",
+  "date": "2026-09-10",
+  "files": [
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/REPORT.md",
+      "blob": "7169890329c1b53b611d2556218157eea591b43f",
+      "bytes": 31503,
+      "sha256": "457eed9cd3ad0071c09741cf267719fe43c75477b67ef517d1aee8252b280aa2"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/SHA256SUMS",
+      "blob": "b9cdcabece12717591ad2b3b1b48a060af07b395",
+      "bytes": 965,
+      "sha256": "e093f20ef66e85062d4c915a0d6c75b3badb41b70c17da259e4ad69ca3c9e8db"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/VALIDATION.md",
+      "blob": "867cb5ac0b05534bbbf2034ed44e30d02aa759a0",
+      "bytes": 4533,
+      "sha256": "237ca9ba55128b48a68e9d5aeb0b820f43e68d420c43db745687bced24fea403"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/candidate.py",
+      "blob": "90d0f21fadc9a8dd8fdf6cd01c2800452d610d6e",
+      "bytes": 2346,
+      "sha256": "4baaf53bc1b75d94d335b539e6e2f9c736bbff93a267f36ca084cfe99f41ee58"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/environment.json",
+      "blob": "81ec6979bfb647b00823c35807680212817a502a",
+      "bytes": 562,
+      "sha256": "3adaf0f8298bece1ea200ba9c3b0914587e0052e468aec69a0225ffdbcf68e4a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/inputs.json",
+      "blob": "e0d60dcf88e99b4ecc3383f7168edac6e14fc2dc",
+      "bytes": 8330,
+      "sha256": "4853d9d6b2af825111152bed3496319ef0f071bcc3184dd8b22a519609bcfd09"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/oracle.py",
+      "blob": "6bbfcd92705cbdcfc5eecf5bdc14b67b48021e50",
+      "bytes": 2915,
+      "sha256": "fda30f7dfb5d765b51a9c24ae6d1458b94c34b828273c65d8f6d74222adea16f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/probe-transcript.txt",
+      "blob": "17f9c71adba052291248650a41c80f2bd2c20e10",
+      "bytes": 799,
+      "sha256": "57fdde9b63861df30081367b9abf4948466aff8d9b48bf2d0833badbb765fc7b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/probe.py",
+      "blob": "bc3dd568fe462c5429891ed3bcdefbb616a303b5",
+      "bytes": 6971,
+      "sha256": "cc9e1f818dd220e5db750c6c93e8598ad0c3b56c7540bc6c685a25e11fffe92b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/results.json",
+      "blob": "0607461b1f06ea2781f88b51990b44df1b44cf32",
+      "bytes": 257067,
+      "sha256": "a2b00241f24318e2cce19de8fa217957dd934ffee4c9ac8f1cbf8bcf48ee0e7d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/source-access.json",
+      "blob": "4f553a2e912ba8da274096862d0d4861113e495f",
+      "bytes": 1109,
+      "sha256": "a80a1f914bbabd17d219796055e1604a416129d0000bc375c1c544f3b1a484ca"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/verify_inputs.py",
+      "blob": "68fd40f8d843dc6c530d3528ebded8534e29de73",
+      "bytes": 1212,
+      "sha256": "8c021516d2612ad49966a33b892669b8c43b872261b79e7af930882a9938f936"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-feasibility-20260910/verify_results.py",
+      "blob": "0965de5ab604ae700776a4fc9d5caf9654185db9",
+      "bytes": 1942,
+      "sha256": "5d39d8917d46e3cf155ebc8fd9095d19fde47ce4d3406213a168dca0799ecf14"
+    }
+  ],
+  "author_input_manifest": {
+    "base": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+    "proposal": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+    "main_observed": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+    "main_observation": "GitHub connector main and git ls-remote agreed during this authoring session",
+    "commits": {
+      "1d493622af970145925f35c8d2cd95f6cbf03cc7": {
+        "tree": "4e3a953b711133b638b46f96d67ffbc150203bb0",
+        "parents": ["58675e66dbf263c94688d47867c731ad4efddbf6"]
+      },
+      "2e3698ba32c0dae6dcd07ab8c71272d990fbaf49": {
+        "tree": "554b3e493f6ba2e5c6bdd500f03a68fc03d9e289",
+        "parents": ["5962cc2def5b1aca7e30d219f12a9a6486ca7b11"]
+      },
+      "dedd26a3e0655001b67e40ccfb741e43ecb07beb": {
+        "tree": "31cade5ea601c896a1841296a3d3aca14bae479d",
+        "parents": ["0abdca8f822d0de3faf35f218f762a951fd75e9e"]
+      },
+      "5962cc2def5b1aca7e30d219f12a9a6486ca7b11": {
+        "tree": "c807e2b583a4d2c5c65706d1bd999b8c69d2d2b7",
+        "parents": ["5bae1f2548a7126c254c51b65b0eda4ae4941343"]
+      },
+      "022c8699befbcba375e3aa6e07c1a8dd8eace483": {
+        "tree": "ea0c0dd13b7af1b1efd6a6c9c42815ca1d45600d",
+        "parents": ["5b2adfb0e350a191a3c8b0d118db67242605ff0b"]
+      }
+    },
+    "files": [
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "AGENTS.md",
+        "blob": "3ed723a20931b70284ea96cb33872bd0b60923fb",
+        "bytes": 9700,
+        "sha256": "db469fa7f0f3b5865103dc71269e6e190b45223cdf427e1bf5ee20bcf1116460"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "CHARTER.md",
+        "blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+        "bytes": 9163,
+        "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "AUTHORITY.md",
+        "blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+        "bytes": 12454,
+        "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "authority/authority-manifest.yaml",
+        "blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+        "bytes": 45801,
+        "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "registries/requirements.yaml",
+        "blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+        "bytes": 83339,
+        "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/ID-POLICY.md",
+        "blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+        "bytes": 9575,
+        "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/RFC.md",
+        "blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+        "bytes": 11571,
+        "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-4-preparation/README.md",
+        "blob": "2e211ffe3527c3f7001ac13aff1d54729dba4e28",
+        "bytes": 15619,
+        "sha256": "bc65b84bb1a49f5e75456b4a398666ceb80241f61bb112815bd4a55de0d0ca71"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-4-preparation/numerical-feasibility-workplan.md",
+        "blob": "69eeb4b7d47a5c611490a560a6374c7134c20df1",
+        "bytes": 6936,
+        "sha256": "0b660b76fc57981104f7903afcff82a5546dca85f3d3d32f46445940280f7916"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-4-preparation/numerical-research-commission.md",
+        "blob": "08bf59bed2629b971af6d6e6365d0c8f235b3922",
+        "bytes": 6766,
+        "sha256": "f96a4f6594b0827a3a9effa50b762850968d2d8e3ef2b79d99f0f00ea687bfdd"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-4-preparation/public-discussion-readiness.md",
+        "blob": "25363f361fea94f0d8a1b72a1ea02d59d582053f",
+        "bytes": 19875,
+        "sha256": "36979309d4c42a19037153b019be8647723af3629b33b6a7f22092065681245b"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-4-preparation/programme-self-audit-2026-09-09.md",
+        "blob": "c983358687d6a1887357ad189ff1a85d7170fe65",
+        "bytes": 12752,
+        "sha256": "bc198116028d0a8ba2ccab1771948af5660da9bbb4b544c087ff1311ad04e294"
+      },
+      {
+        "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+        "path": "governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md",
+        "blob": "4d3ac0a0f0b71b0f6dc37698852cb650f8e9c2b0",
+        "bytes": 4865,
+        "sha256": "aa2c10581368baf262cc44691fe7587cf7bfeb86dd83939112d0534b6e1c73e4"
+      },
+      {
+        "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+        "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+        "blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+        "bytes": 50051,
+        "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4"
+      },
+      {
+        "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+        "path": "governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md",
+        "blob": "b19e39ffe84474f37661ba5839518bd78b5f2cdd",
+        "bytes": 4363,
+        "sha256": "fa5e625a87de357aba0fbd8805e93e93f46fabcc2825faee7d5d7c6d6b16aa96"
+      },
+      {
+        "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+        "path": "governance/drafts/release-4-preparation/numerical-feasibility-workplan.md",
+        "blob": "69eeb4b7d47a5c611490a560a6374c7134c20df1",
+        "bytes": 6936,
+        "sha256": "0b660b76fc57981104f7903afcff82a5546dca85f3d3d32f46445940280f7916"
+      },
+      {
+        "commit": "022c8699befbcba375e3aa6e07c1a8dd8eace483",
+        "path": "governance/drafts/release-4-preparation/numerical-research-commission.md",
+        "blob": "08bf59bed2629b971af6d6e6365d0c8f235b3922",
+        "bytes": 6766,
+        "sha256": "f96a4f6594b0827a3a9effa50b762850968d2d8e3ef2b79d99f0f00ea687bfdd"
+      },
+      {
+        "commit": "5962cc2def5b1aca7e30d219f12a9a6486ca7b11",
+        "path": "governance/drafts/release-4-preparation/numerical-research-result.md",
+        "blob": "200296de5745a3bc7087de4d924e1759f4c0f84e",
+        "bytes": 39806,
+        "sha256": "90736fc6d31490dda78f468bb33f1ce097f3b82c35f10b774cbf6df6a2ea9ca4"
+      },
+      {
+        "commit": "2e3698ba32c0dae6dcd07ab8c71272d990fbaf49",
+        "path": "review-inputs/r4-numerical-degree-guard/REVIEW-RESULT.md",
+        "blob": "8cf64bbe35e4c9f9537dc134f8334f6e5c44178f",
+        "bytes": 43063,
+        "sha256": "8577b9a300f844d696300e90e3f7a2d55732407f81094e3fa439669d1b07c8c7"
+      },
+      {
+        "commit": "1d493622af970145925f35c8d2cd95f6cbf03cc7",
+        "path": "review-inputs/r4-factorial-research-exact-head/REVIEW-RESULT.md",
+        "blob": "f676f8ab32ee009d193c854aee00beb48503ec64",
+        "bytes": 66292,
+        "sha256": "7e77f17b896d71191ecc55b03c70b141ec5852e66a9183b1d20cacc069a77402"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-2-candidate/numerical/numerical-contract-candidate.json",
+        "blob": "6b88617f3d89cc25eee466270226f697ea6f6b06",
+        "bytes": 3753,
+        "sha256": "572681d39c1f41988d9d09305379c8dc31e459e952043109638d8326721f6b39"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-2-candidate/numerical/runtime-numerical-contract-full-trace-candidate.json",
+        "blob": "74885507600f7fcb476af4a52d612415d68229d7",
+        "bytes": 14484,
+        "sha256": "08d2462eebc2941e37ab434e0200294d6006363ef37b614d1cded70d29d4debb"
+      },
+      {
+        "commit": "dedd26a3e0655001b67e40ccfb741e43ecb07beb",
+        "path": "governance/drafts/release-2-candidate/numerical/tail-numerical-selection-candidate.json",
+        "blob": "df57149cc63fc1948950deb9a0fa530a27646e6b",
+        "bytes": 3732,
+        "sha256": "b10189b0ac4cfecf2ca2d36be5484374026bb396ae8b3de9a17f054ac162e5a3"
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "float_info": "sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)",
+    "decimal_context": "Context(prec=28, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999, capitals=1, clamp=0, flags=[], traps=[InvalidOperation, DivisionByZero, Overflow])",
+    "git": "git version 2.51.1",
+    "node": "v24.19.0",
+    "pnpm": "11.19.0; repository request 11.7.0"
+  },
+  "reviewer": {
+    "actor": "OpenAI Codex assistant, Lane 2 review role, current session",
+    "exact_served_model_build": "not independently exposed or attested",
+    "human_review": "not performed or attested in this session",
+    "additional_agents": 0,
+    "prior_involvement": "No authoring or repair action occurs earlier in the visible current-session transcript. Supplied prior-conversation summaries describe earlier R4 numerical authoring/reviews and PR 278 creation; underlying session/person identity cannot be established. No categorical independence from all past work is asserted.",
+    "visible_context": "Current commission, user-provided historical conversation summaries, fixed repository objects and the explicitly inspected public sources. No personal-history retrieval used; no Lane 1 output used.",
+    "independence": "New reviewer code and fresh derivations, but same provider/tool identity as disclosed author; separate LLM/model requirement NOT_ESTABLISHED. Shared Python integers, Fraction and runtime; reviewer square-root bisection avoids author isqrt; projection search differs from author exponent/quotient route. No independent human investigator or hardware claim."
+  },
+  "source_access_record": "source-access.json",
+  "source_pinpoint_record": "SOURCES.md"
+}

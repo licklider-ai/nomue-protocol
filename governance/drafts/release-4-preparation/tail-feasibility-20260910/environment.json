@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "implementation": "CPython",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "node": "v24.19.0",
+  "pnpm": "11.19.0 (lockfile install output); package requests 11.7.0",
+  "git": "git version 2.51.1",
+  "numeric_dependencies": "Python standard library only; no mpmath, SciPy or reference kernel",
+  "process": "OpenAI Codex authoring session; no additional agent; no independent review; prior conversation summaries visible; precise model build not exposed"
+}

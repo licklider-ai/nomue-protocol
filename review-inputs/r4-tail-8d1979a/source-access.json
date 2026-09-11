@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://dlmf.nist.gov/8.17",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 403,
+    "bytes": 17,
+    "response_sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+    "source_bytes_acquired": false
+  },
+  {
+    "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3665.htm",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 403,
+    "bytes": 17,
+    "response_sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+    "source_bytes_acquired": false
+  },
+  {
+    "url": "https://www.mpfr.org/mpfr-4.2.1/mpfr.html",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 200,
+    "bytes": 558879,
+    "sha256": "1f4f4d9022781fd96279e589641ee3038f5a005d1d7f3739d62125a17101ffd1",
+    "source_bytes_acquired": true
+  },
+  {
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Fdist.html",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 200,
+    "bytes": 8726,
+    "sha256": "695306cceb1dc47dfde3df50c8761d1b479a83c2dcdb6ceacc3937a42ddb1ae4",
+    "source_bytes_acquired": true
+  },
+  {
+    "url": "https://www.boost.org/doc/libs/1_88_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 200,
+    "bytes": 52823,
+    "sha256": "6aa5b4aef036620cbd9a1ca15d5864122f1fe654a0b18168eee49482d9926ad2",
+    "source_bytes_acquired": true
+  },
+  {
+    "url": "https://dl.acm.org/doi/10.1145/131766.131776",
+    "date": "2026-09-10",
+    "route": "Python urllib direct HTTPS",
+    "status": 403,
+    "bytes": 5988,
+    "response_sha256": "e6509138716094fe0cf201f180da36823845d0d4f33e96bc1317840ce07e3c7b",
+    "source_bytes_acquired": false
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "independent_tail_cases": 60,
+  "exact_square_witnesses": 15,
+  "rounding_checks": 3626,
+  "midpoint_straddles": 134,
+  "outward_serialization": 5,
+  "relative_width_cases": 12,
+  "additional_rejections": 88,
+  "unchecked_field_mutations_accepted": 5,
+  "non_enclosing_candidate_interval_accepted": 1
+}
