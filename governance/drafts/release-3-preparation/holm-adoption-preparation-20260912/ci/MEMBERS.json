@@ -1,0 +1,74 @@
+{
+  "checkout_sha": "ddfde624cafb09e64a9eff002b7714eee0cc3869",
+  "checkout_tree": "25388544b5f2094c1be497de6d09ab73487ed1ea",
+  "event": "pull_request",
+  "event_head_sha": "c999d8b3bf5ff3b8c58b0f018eb6c85b038c65ca",
+  "event_sha": "ddfde624cafb09e64a9eff002b7714eee0cc3869",
+  "format": "r3-holm-ci-evidence-v1",
+  "run_id": "34726549437",
+  "gzip_sha256": "04001d5db9f104d9f4d883effec9cedd02d7934e6260c2272bff4ec4bc67d337",
+  "transport": "Exact allowlisted bytes emitted by workflow and retrieved through GitHub job-log connector; not the GitHub artifact ZIP",
+  "job_id": 103641555358,
+  "members": [
+    {
+      "bytes": 2837,
+      "name": "host-guard-results.json",
+      "sha256": "8fbdb11a489b2362f78a2538ea8410ec25f503e6222c03fe851e2d03bf94ed5f",
+      "archived_path": "00-host-guard-results.json.txt"
+    },
+    {
+      "bytes": 109,
+      "name": "execution-host.json",
+      "sha256": "291635982a89eeb1ac47be1599fde8c94c4b3d44f61fccd42f3d6cbc2f5bc537",
+      "archived_path": "01-execution-host.json.txt"
+    },
+    {
+      "bytes": 464033,
+      "name": "execution-cgroup-results.json",
+      "sha256": "309d07f158106b4bb4dfc2d3331894be81713009fe975bd7a2fa1a0c26a754af",
+      "archived_path": "02-execution-cgroup-results.json.txt"
+    },
+    {
+      "bytes": 88,
+      "name": "candidate-public-receipts.json",
+      "sha256": "8a44597ada277781afd5b5365887e2ae6650e244c385527931b498aa16917347",
+      "archived_path": "03-candidate-public-receipts.json.txt"
+    },
+    {
+      "bytes": 12429,
+      "name": "adoption-observations/RESULTS.json",
+      "sha256": "c6d80f80f3a23b0ff54e43a303cf4603bbc96db55e56c65fb37be59efdb1b667",
+      "archived_path": "04-RESULTS.json.txt"
+    },
+    {
+      "bytes": 4100,
+      "name": "adoption-observations/PUBLIC-RESULTS.json",
+      "sha256": "983296cbdd1aa50043f7111832bdf48d6da1754a1ada2d19aa50803ce8724197",
+      "archived_path": "05-PUBLIC-RESULTS.json.txt"
+    },
+    {
+      "bytes": 2686,
+      "name": "adoption-observations/BUDGET-RESULTS.json",
+      "sha256": "a44581ae81d4407da8125bbcddef6d0b393e416b085a79c9c4768f98cf0d0018",
+      "archived_path": "06-BUDGET-RESULTS.json.txt"
+    },
+    {
+      "bytes": 955,
+      "name": "adoption-observations/SEPARATION-RESULTS.json",
+      "sha256": "f9409559b3a38d784965d5ff1aabb387eacb9809c3b8721723430ee8edfacac1",
+      "archived_path": "07-SEPARATION-RESULTS.json.txt"
+    },
+    {
+      "bytes": 704,
+      "name": "adoption-observations/FIXTURE-RESULTS.json",
+      "sha256": "19729b0092bb4a652f1170076ed18ca763c6936cde55885b28d08cf94c96b6cc",
+      "archived_path": "08-FIXTURE-RESULTS.json.txt"
+    },
+    {
+      "bytes": 2164,
+      "name": "adoption-observations/ADOPTION-RESULTS.json",
+      "sha256": "a6b3b84783e4ee4d97ca75041ac8d8ee799ccc7d80a4304a624a08c7d4ba6ca4",
+      "archived_path": "09-ADOPTION-RESULTS.json.txt"
+    }
+  ]
+}
