@@ -31,3 +31,14 @@ candidate tests, not complete all future conformance requirements. Prospective
 registry rows remain non-operative and include a new versioned policy choice.
 Current evidence/CI state is recorded in VALIDATION.json and the PR, not inferred
 from old runs. An archive row is not a new execution result.
+
+## Exact CI evidence custody
+
+The initial candidate passed all six workflows at 57e26fb1d00d22c8d3e4fd9c5288f31e44d73158.
+The connector materialized its artifact, but local download returned HTTP 403.
+Service metadata and exact test-summary/Node-22 log lines are preserved; the
+original ZIP bytes were not locally inspected. The follow-up workflow duplicates
+only ten allowlisted public synthetic receipt files as a hash-checked compressed
+log payload. It emits no credentials, arbitrary paths or environment dump. This
+provides exact member-byte custody through the already authorized job-log API;
+it is not reconstruction of the initial ZIP or its unretrieved members.

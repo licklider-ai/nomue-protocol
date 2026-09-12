@@ -44,6 +44,8 @@ jobs:
         run: |
           sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" "NOMUE_UNSUPPORTED_NODE=$NOMUE_UNSUPPORTED_NODE" python3 -I governance/drafts/release-3-preparation/holm-separated-candidate-20260912/ci_host.py
           node governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_receipts.mjs execution-cgroup-results.json
+      - name: Preserve exact public receipt bytes in retrievable log
+        run: python3 governance/drafts/release-3-preparation/holm-adoption-preparation-20260912/emit_ci_evidence.py
       - run: git diff --exit-code
       - name: Retain candidate observations
         if: always()
@@ -59,3 +61,4 @@ jobs:
             ${{ runner.temp }}/holm-observations/PUBLIC-RESULTS.json
             ${{ runner.temp }}/holm-adoption-observations/ADOPTION-RESULTS.json
             ${{ runner.temp }}/holm-adoption-observations/SEPARATION-RESULTS.json
+            ${{ runner.temp }}/holm-adoption-observations/FIXTURE-RESULTS.json

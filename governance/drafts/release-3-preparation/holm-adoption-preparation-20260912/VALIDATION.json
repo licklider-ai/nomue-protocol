@@ -1,5 +1,5 @@
 {
-  "status": "local preparation validation; actual successor CI pending",
+  "status": "initial exact-head CI passed; evidence custody follow-up in progress",
   "base_commit": "4a62f8e1768049560cb0ce8f09ef1676cb42130b",
   "numerical_replay": {
     "original_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
@@ -65,7 +65,18 @@
     "fixed_preexecution_fixtures": 9
   },
   "fixed_preexecution_fixtures": 9,
-  "ci": "PENDING",
+  "ci": {
+    "tested_head": "57e26fb1d00d22c8d3e4fd9c5288f31e44d73158",
+    "standard_run": 34726347456,
+    "successor_run": 34726347493,
+    "all_six_workflows": "success",
+    "actual_cgroup_controls": 33,
+    "public_receipts": 28,
+    "original_byte_forwards": 5,
+    "node22_refusal": "observed exit 78, zero stdout/stderr, unsupported_execution and four cleanup predicates true",
+    "source": "ci-initial/METADATA.json and LOG-EXCERPTS.txt",
+    "full_raw_receipt_custody": "next workflow follow-up; original ZIP locally unavailable"
+  },
   "formal_adoption": false,
   "native_repository_validator": "PASS",
   "local_standard_check": {
@@ -74,6 +85,16 @@
     "format": "PASS",
     "markdownlint": "PASS",
     "typecheck": "PASS",
-    "supplementary_native_tests": "running; exact receipts follow"
+    "supplementary_native_tests": {
+      "vitest_tests": 520,
+      "vitest_files": 55,
+      "generated_views": 19,
+      "compiled_schemas": 13,
+      "canonicalization_vectors": 16,
+      "conformance_fixtures": 132,
+      "phase1_evidence_files": 8,
+      "phase2a_evidence_files": 10,
+      "result": "PASS"
+    }
   }
 }
