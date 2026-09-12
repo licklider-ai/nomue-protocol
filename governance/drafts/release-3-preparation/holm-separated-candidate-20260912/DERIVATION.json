@@ -1,0 +1,162 @@
+{
+  "base_commit": "4a62f8e1768049560cb0ce8f09ef1676cb42130b",
+  "sources": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/BUDGET-RESULTS.json",
+      "sha256": "2eee624d56089ca4185bfb6ef4b19afba97d2b8fd7cefb214eeb91e913a3ef5f"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/PUBLIC-RESULTS.json",
+      "sha256": "8b9cc3d0251c9879410c200d6b318ba3cc38af5466a5b1922d905895f545cca1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/RESULTS.json",
+      "sha256": "1a8800e50746923e893c07a2a5944133cc89ad370209cdc799b0d3a154926089"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/budget.mjs",
+      "sha256": "c4090e2edc16893daa88f30f774d5ea2ad489639f389a2c97cadb2816dfa754e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/bundle.json",
+      "sha256": "364ded0b5f8cbf481a2d84dc6b25382b02950304b838d910667c685b3587f494"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/check-policy.json",
+      "sha256": "c7ec479f1d82478d6f859f9051b5966e664ff0122b5db8ceafbd7a8ed36a8329"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/ci_host.py",
+      "sha256": "2be1af002eeb10a4ffaba84b40aee21a46adfb77a8ce158ea6d6cd6f2b8a9881"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/declaration-shapes.json",
+      "sha256": "46d8c2c3eccc19451cab9e95a5a8fe5dcb82b46d99069ef2edecdcb004fb4f32"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/diagnostics.json",
+      "sha256": "06e30ff5112870172e1e7b29bcd997a1b6ab83868509419e77bbcfa55d9a0fe3"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/entry.mjs",
+      "sha256": "077785d3b2f5e1f46c6127f1fa9e4ea05b3d0dc751d2a013c9b1524b77c04d1e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/envelope.mjs",
+      "sha256": "54d3919c7776ada400b065f785535777d5bf5ea6b621dc84cbaa7d92b6ac00c8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-expected.json",
+      "sha256": "059c5c4b280e81645b06110e8731a61ce8d544f5c452dd5dd444c91ab0ac5208"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-public-refusal.json",
+      "sha256": "b6488d5d87efae09afbc59de0bb56a144e2068dc9da7034ead9c9ec99d26e4e3"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-public-report.json",
+      "sha256": "1cd57b9b1a91da5c2b93d6c3a3b8c9a2f2368b6f985e7e335ccf7c7cc360ef19"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-record.jcs",
+      "sha256": "f4772faac70ddf85496109eaa6dc4bda4b2938a5774a25b745ae0f605a840ef1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/example-report.json",
+      "sha256": "d67f1610f8a564d29235551f2a63f17c82c77b7213a10f26f86ddb24449f05d1"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/expected.schema.json",
+      "sha256": "1dcf3d0efe81e12a585a3fadd1c16119b0c2bf91b7915a9ce8893453053b2cea"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/identities.json",
+      "sha256": "975d93e96f045826e2b86259f4cd424def0ad3861a46c3bee431cc1c180d0658"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/outcomes.json",
+      "sha256": "84aa5675808c5aa5f203c1a4f592ddf92c2ae5c0c05f52a482a836379cdc1dff"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/pin_runtime.py",
+      "sha256": "2e59bc0bfbb570953429b4dc24ed41f2cb2b9bfc9e6ceb41546b5b6fa0fa27ad"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/prepare_cases.mjs",
+      "sha256": "468fd5c638032b0ac3b28a43aa30b5d6571118338c3396ec356849549e37176d"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/present.mjs",
+      "sha256": "3957a055359ddd21a2f85fb48a42cd37e4f6fc80ed7eddc0fdbfe1024f339fc8"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/private-refusal.schema.json",
+      "sha256": "05f37aefc10632b34018e98a7f7e98a09a84cc4e97aefb9d38dfcd9f00873e53"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/private-report.schema.json",
+      "sha256": "9f581c5676636ae97a3c7a189f2c5f90fe4934d625d4185f993d8a6eeabdfa6a"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/probes.mjs",
+      "sha256": "9b7f57e729279eec0a30ab036143c08d085ae31e59be09db046405d06ad726fe"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/public.mjs",
+      "sha256": "4ded270ea596a9c5ca9bc10c8b2d606b69821a5db177435a8a4461aaab6ca3a5"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/record.schema.json",
+      "sha256": "e460f63f2cc2e0663328f1f71929be3da4f38d383ba49f4a9949ef6f7073b28c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/refusal.schema.json",
+      "sha256": "4570d48421edf07c78d2bad3934789256b748ad5084794e905e90b445c1ea357"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/report.schema.json",
+      "sha256": "65c2eed7d5c3d12487dbed6a301af4e334942268c5d90a05bd1270be87d599a9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/supervisor.py",
+      "sha256": "a25997e41dea174f2f6455fd3be7c1eaf977ad28e28b95df01a57a5f2d7d9ded"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test-artifacts.mjs",
+      "sha256": "4e7ef50cc415b78cbc170c25d59e43a7232fe3bb8b3a74ac62765c30ad11d51c"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_budget.mjs",
+      "sha256": "6d8fc42c6dda46dec85831df48cc80ab7fbafd6f50ea55eeb0dd3b6758ebc494"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_envelope.mjs",
+      "sha256": "c3d3dc2bf29f6c4c026046efbd8b8a56c4195ca81fff7e217447c456a296be3e"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_execution.py",
+      "sha256": "4304b11183c3b5a2efb9ca417c41508acd909bd8ea69b346be3ef233b5b5923b"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_host_guard.mjs",
+      "sha256": "ebd7ccb9e19989ccbe88bab670ff69c9199b150b4e590f8d3b607384a67fffb9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs",
+      "sha256": "a4884fe4361d6434807b5b390e7990c10da3358fa0ee6c8e24e5cfe51bba53a4"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_public.mjs",
+      "sha256": "a73c9eb7ad6a053660902dedf7be44a78d7dc4a32de84f762c7c8254f9bbf270"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_receipts.mjs",
+      "sha256": "7488721c6d25cbe7262366a681480d41e7a7dde014cbe2f313af61afd471bcd0"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_repairs.mjs",
+      "sha256": "d5f290e7a109a7bbf7d8c59ae09b793f67e82c5b16657bf514761026790a706c"
+    }
+  ],
+  "change": "Explicit conformance and verification report partition; successor identities. Numerical kernel and private evaluation/gating unchanged."
+}

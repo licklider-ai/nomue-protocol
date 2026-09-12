@@ -1,0 +1,84 @@
+{
+  "status": "unissued schema grammar and explicit dependency-policy preview",
+  "lexical_changes": [
+    {
+      "schema": "public-checks-registry",
+      "pointer": "/properties/check_sets/items/properties/check_ids/items/pattern",
+      "before": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/check/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "public-checks-registry",
+      "pointer": "/$defs/requirementId/pattern",
+      "before": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$",
+      "after": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11})-[0-9]{4}$"
+    },
+    {
+      "schema": "public-checks-registry",
+      "pointer": "/$defs/check/properties/check_id/pattern",
+      "before": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/check/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "public-checks-registry",
+      "pointer": "/$defs/check/properties/depends_on/items/pattern",
+      "before": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/check/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "interpretation-bundles",
+      "pointer": "/properties/verifier_output_contract/properties/verifier_refusal/properties/supersedes/items/properties/schema_id/pattern",
+      "before": "^urn:nomue:schema:",
+      "after": "^(?:urn:nomue:schema:.*|https://nomue\\.ai/id/schema/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "interpretation-bundles",
+      "pointer": "/$defs/requirementId/pattern",
+      "before": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$",
+      "after": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11})-[0-9]{4}$"
+    },
+    {
+      "schema": "interpretation-bundles",
+      "pointer": "/$defs/bundle/properties/bundle_id/pattern",
+      "before": "^urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/bundle/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "interpretation-bundles",
+      "pointer": "/$defs/bundle/properties/profile_id/pattern",
+      "before": "^urn:nomue:profile:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:profile:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/profile/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "interpretation-bundles",
+      "pointer": "/$defs/bundle/properties/allowed_check_ids/items/pattern",
+      "before": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/check/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "public-contract-surfaces",
+      "pointer": "/$defs/requirementId/pattern",
+      "before": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROFILE-ITGC)-[0-9]{4}$",
+      "after": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11})-[0-9]{4}$"
+    },
+    {
+      "schema": "public-contract-surfaces",
+      "pointer": "/$defs/surface/properties/applies_to_bundle_ids/items/pattern",
+      "before": "^urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:bundle:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/bundle/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    },
+    {
+      "schema": "reason-codes-registry",
+      "pointer": "/$defs/requirementId/pattern",
+      "before": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|PROFILE-ITGC)-[0-9]{4}$",
+      "after": "^NRS-(GOV|CORE|VERIFY|CANON|ATTEST|EXT|SEC|VERSION|INTEROP|PROV|EMIT|APPROVE|(CONTRACT|PROFILE)-[A-Z][A-Z0-9]{1,11})-[0-9]{4}$"
+    },
+    {
+      "schema": "reason-codes-registry",
+      "pointer": "/$defs/code/properties/applicable_check_ids/items/pattern",
+      "before": "^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$",
+      "after": "^(?:urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+|https://nomue\\.ai/id/check/[a-z][a-z0-9]*(?:-[a-z0-9]+)*/[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*)$"
+    }
+  ],
+  "additional_change": "public-check dependency propagation adds a distinct named successor policy; old value preserved"
+}

@@ -1,0 +1,61 @@
+name: R3 Holm adoption preparation
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retain unsupported runtime path
+        run: echo "NOMUE_UNSUPPORTED_NODE=$(command -v node)" >> "$GITHUB_ENV"
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.19.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - run: node governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_host_guard.mjs
+      - run: node governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_identity.mjs
+      - name: Candidate semantics and old-bundle regression
+        run: |
+          export NOMUE_TEST_OUTPUT="$RUNNER_TEMP/holm-observations"
+          export NOMUE_EXPERIMENT_PYTHON="$(command -v python3)"
+          node --import tsx governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_envelope.mjs
+          node --import tsx governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_public.mjs
+          node governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_repairs.mjs
+      - name: Adoption packet and separation controls
+        run: |
+          export NOMUE_EXPERIMENT_PYTHON="$(command -v python3)"
+          export NOMUE_TEST_OUTPUT="$RUNNER_TEMP/holm-adoption-observations"
+          node --import tsx governance/drafts/release-3-preparation/holm-adoption-preparation-20260912/check.mjs
+      - name: Actual cgroup enforcement and public outcome conversion
+        run: |
+          sudo env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" "NOMUE_UNSUPPORTED_NODE=$NOMUE_UNSUPPORTED_NODE" python3 -I governance/drafts/release-3-preparation/holm-separated-candidate-20260912/ci_host.py
+          node governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_receipts.mjs execution-cgroup-results.json
+      - run: git diff --exit-code
+      - name: Retain candidate observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r3-holm-adoption-preparation
+          path: |
+            host-guard-results.json
+            execution-host.json
+            execution-cgroup-results.json
+            candidate-public-receipts.json
+            ${{ runner.temp }}/holm-observations/RESULTS.json
+            ${{ runner.temp }}/holm-observations/PUBLIC-RESULTS.json
+            ${{ runner.temp }}/holm-adoption-observations/ADOPTION-RESULTS.json
+            ${{ runner.temp }}/holm-adoption-observations/SEPARATION-RESULTS.json
