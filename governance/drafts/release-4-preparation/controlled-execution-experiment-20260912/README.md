@@ -35,6 +35,8 @@ python3 test_execution.py
 python3 -O test_execution.py
 python3 test_signal_lifecycle.py
 python3 -O test_signal_lifecycle.py
+python3 test_host_boundaries.py
+python3 -O test_host_boundaries.py
 python3 admission.py
 python3 benchmark.py
 ```
@@ -97,10 +99,21 @@ A pidfd wakes exit observation; WNOWAIT retains the child PID until group cleanu
 then wait reaps it. No fixed-interval idle polling or thread-local signal masking
 is used. The supervisor runs on the main thread; additional threads are allowed
 provided they do not change its handlers, wakeup fd, or reap its child. SIGCHLD uses its
-default disposition. Concurrent external child reapers are outside the contract.
+default disposition. SIGPIPE must be ignored (the CPython startup default);
+both run() and direct _launch refuse any other disposition before creating a
+child. The caller must preserve these dispositions throughout the invocation.
+Parent transport/output module origins are checked before use, including cached
+modules; shadow modules found on sys.path are refused before import. This does
+not authenticate malicious in-memory code that forges its origin.
+Concurrent external child reapers are outside the contract.
 After cleanup, SIGINT raises KeyboardInterrupt and SIGTERM raises SystemExit(143),
 with the receipt attached as `receipt`; neither returns ordinary success.
 The `run()` exception receipt includes `environment` and
 `scientific_validity: not_asserted`, like its execution return receipts.
 Handlers, the previous wakeup fd and descriptors are restored before propagation. Callers deliberately
 catching these BaseException subclasses own any decision to continue.
+
+The historical packet review script defaults to target 1caac8d. To check a later
+candidate, pass its immutable commit or tree as the sole argument to
+`review_packet.py`; every runtime file must match that git object. Historical
+PACKET and SEPARATE review records retain their original targets and evidence.

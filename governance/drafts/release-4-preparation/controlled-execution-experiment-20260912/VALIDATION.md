@@ -16,7 +16,7 @@ The five seeded preflights per count all pass through n=46. At n=47 one of
 five passes; at n=48..65 none of these five samples passes. A separate n=65
 zero-contrast example completes, demonstrating that the boundary is data dependent.
 Selected ordinary calls at n=2/32/45/46 complete; n=47/65 seed-zero calls refuse.
-Largest observed benchmark wall interval is 1.347 seconds on this host.
+The current BENCHMARKS.json maximum is 1.618 seconds (ordinary-46) on this host.
 These probes do not force the full precision schedule or establish its worst case;
 the historical roughly 15-second combined stress observation remains separate.
 
@@ -85,3 +85,23 @@ EXECUTION and EXECUTION-OPTIMIZED were recaptured with 67 controls each, plus
 inherited files still match the pinned historical commit. These are author
 observations on CPython 3.12.14; the supplied review's separate execution scope
 is preserved in REVIEW-RESPONSE.md.
+
+## Separate-review intake and parent boundary repairs
+
+SEPARATE-REVIEW.md/json and separate_tail_oracle.py are preserved unchanged from
+47b8803282de83576563e350395a1c13ab683a67. Their target is 1caac8d and their
+runtime reruns used CPython 3.12.3 with the reported version patched, as disclosed
+there; pinned-interpreter evidence was taken from f7be54e CI. No patched host
+report is treated as an actual CPython 3.12.14 execution.
+
+The successor's local captures use actual CPython 3.12.14: 67 execution controls,
+ten lifecycle controls and six parent-host controls in each mode, 320 admission
+rows and seven benchmarks. The new controls refuse path/cached module shadows
+before launch and refuse default/custom SIGPIPE dispositions through both run()
+and _launch, preserving caller state. The dedicated workflow runs both modes.
+
+The separate oracle was rerun over the recaptured evidence; its observed rows
+are saved in HOST-REPAIR-ORACLE.json. This author rerun is not a new independent
+review. The 19 packet controls accept an explicit fixed commit/tree argument for
+successor validation while retaining their historical default. Historical review
+records are not rewritten to claim review of the successor.

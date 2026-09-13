@@ -28,6 +28,8 @@ jobs:
           python -O test_execution.py > /tmp/r4-controlled-results/execution-optimized.json
           python test_signal_lifecycle.py > /tmp/r4-controlled-results/signals.json
           python -O test_signal_lifecycle.py > /tmp/r4-controlled-results/signals-optimized.json
+          python test_host_boundaries.py > /tmp/r4-controlled-results/host-boundaries.json
+          python -O test_host_boundaries.py > /tmp/r4-controlled-results/host-boundaries-optimized.json
           python admission.py > /tmp/r4-controlled-results/admission.json
           python benchmark.py > /tmp/r4-controlled-results/benchmarks.json
       - uses: actions/upload-artifact@v4

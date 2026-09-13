@@ -15,10 +15,11 @@ TARGET = '1caac8df84ba73e73e160e844fcc228fc884f31c'
 
 
 def main():
+    target = sys.argv[1] if len(sys.argv) == 2 else TARGET
     # Review the immutable runtime, even if later commits add review records.
     pins = json.loads((HERE / 'INPUTS.json').read_text())
     for row in pins['runtime']:
-        original = subprocess.check_output(['git', 'show', TARGET + ':' + row['path']], cwd=s.ROOT)
+        original = subprocess.check_output(['git', 'show', target + ':' + row['path']], cwd=s.ROOT)
         if (s.ROOT / row['path']).read_bytes() != original:
             raise RuntimeError('review target runtime changed')
     environment = s.host()
@@ -95,7 +96,7 @@ def main():
             invalid = s.run(cells, 'packet-review')
         check(invalid['category'] == 'invalid_worker_output' and 'outcome' not in invalid,
               label + ' suppresses output')
-    print(json.dumps({'target': TARGET, 'environment': environment,
+    print(json.dumps({'target': target, 'environment': environment,
                       'provenance': 'continuing author context; not independent review',
                       'checks': len(rows), 'rows': rows}, indent=2))
 

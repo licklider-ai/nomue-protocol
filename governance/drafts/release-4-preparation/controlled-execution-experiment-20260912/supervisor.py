@@ -1,5 +1,7 @@
 """Isolated single-worker experiment; no public API or process-tree memory claim."""
 import hashlib
+import importlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -24,6 +26,8 @@ ERR_CAP = 65536
 def host():
     if threading.current_thread() is not threading.main_thread():
         raise ValueError('main-thread supervisor required for cancellation handling')
+    if signal.getsignal(signal.SIGPIPE) != signal.SIG_IGN:
+        raise ValueError('ignored SIGPIPE required for pipe writes')
     if signal.getsignal(signal.SIGCHLD) != signal.SIG_DFL or not hasattr(os, 'pidfd_open'):
         raise ValueError('pidfd and default SIGCHLD required')
     if (platform.system(), platform.machine(), platform.python_implementation(),
@@ -33,6 +37,19 @@ def host():
     for row in pins['runtime']:
         if hashlib.sha256((ROOT / row['path']).read_bytes()).hexdigest() != row['sha256']:
             raise ValueError('runtime source drift')
+    # Resolve before importing: a shadow file must not execute at all. Cached
+    # modules also need their origin checked. The loader and in-memory code are
+    # still trusted, as in the inherited consumer's origin checks.
+    for name in ('transport', 'output'):
+        expected = HERE / (name + '.py')
+        module = sys.modules.get(name)
+        if module is None:
+            spec = importlib.util.find_spec(name)
+            if spec is None or not spec.origin or Path(spec.origin).resolve() != expected:
+                raise ValueError('parent dependency origin: ' + name)
+            module = importlib.import_module(name)
+        if Path(getattr(module, '__file__', '') or '').resolve() != expected:
+            raise ValueError('parent dependency origin: ' + name)
     return {'python': platform.python_version(), 'machine': platform.machine(),
             'kernel': platform.release(),
             'python_sha256': hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest()}
@@ -46,6 +63,8 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
     """
     if threading.current_thread() is not threading.main_thread():
         raise ValueError('main-thread supervisor required')
+    if signal.getsignal(signal.SIGPIPE) != signal.SIG_IGN:
+        raise ValueError('ignored SIGPIPE required for pipe writes')
     if signal.getsignal(signal.SIGCHLD) != signal.SIG_DFL:
         raise ValueError('default SIGCHLD and exclusive child ownership required')
     started = time.monotonic() if started is None else started

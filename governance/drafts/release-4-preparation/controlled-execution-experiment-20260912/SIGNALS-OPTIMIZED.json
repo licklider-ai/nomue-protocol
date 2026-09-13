@@ -7,7 +7,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.021735514001193224,
+        "elapsed_seconds": 0.022272022000834113,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -31,7 +31,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.1520371749975311,
+        "elapsed_seconds": 0.1525498549999611,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -55,7 +55,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.05413438299729023,
+        "elapsed_seconds": 0.056376717000603094,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -86,7 +86,7 @@
       "receipt": {
         "category": "execution_error",
         "causes": ["execution_error"],
-        "elapsed_seconds": 2.8794001991627738e-5,
+        "elapsed_seconds": 4.049600102007389e-5,
         "worker_reaped": false,
         "exit_code": null,
         "bytes_observed": {
@@ -110,7 +110,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.08153669999956037,
+        "elapsed_seconds": 0.08177110599899606,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -134,7 +134,7 @@
       "receipt": {
         "category": "completed_transport",
         "causes": [],
-        "elapsed_seconds": 0.017453558000852354,
+        "elapsed_seconds": 0.021657343000697438,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -173,7 +173,7 @@
       "mode": "event-driven-wait",
       "passed": true,
       "selector_calls": 2,
-      "timeouts": [0.19956189099975746, 0.199518786000408]
+      "timeouts": [0.19949214000116627, 0.19944621400027246]
     },
     {
       "mode": "auto-reap-host-refused",
