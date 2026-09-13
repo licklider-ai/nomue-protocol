@@ -78,7 +78,9 @@ def main():
         check(s.run(same, 'test', bad)['category'] == 'input_refused', 'endpoint cap prelaunch')
     with patch.object(s.platform, 'machine', return_value='aarch64'), patch.object(s, '_launch', side_effect=RuntimeError('launched unsupported host')):
         check(s.run(same, 'test')['category'] == 'unsupported_host_or_source', 'unsupported host prelaunch')
-    cases = [('cpu','cpu_limit',3), ('memory','allocation_failure',3), ('hang','deadline',.15),
+    # CPU time excludes scheduler wait; leave wall headroom on shared CI hosts.
+    # Still require SIGXCPU classification, never accept deadline as a pass.
+    cases = [('cpu','cpu_limit',15), ('memory','allocation_failure',3), ('hang','deadline',.15),
              ('closed-pipes-hang','deadline',.15), ('stdout','output_overflow',3),
              ('stderr','output_overflow',3), ('invalid','invalid_worker_output',3),
              ('crash','abnormal_exit',3), ('early-eof','invalid_worker_output',3),

@@ -47,3 +47,14 @@ Compare against 47b8803, separating preserved review files from the runtime repa
 Return findings and whether F1/F2/F3 are resolved within this scope. Formal
 support, M1 policy decisions, M3 joins, methodological gate acceptance, merge and
 release are outside this close-only request. R3 retains priority at collisions.
+
+## CI scheduling margin correction
+
+R4 run 34758948730 on d05e51f failed in the existing CPU probe: its three-second
+wall deadline arrived before the one-CPU-second SIGXCPU limit. The receipt showed
+deadline, successful reap and no result. This is consistent with scheduling delay
+on a shared runner; the log does not measure its cause. The CPU probe now allows
+15 wall seconds while retaining the one/two-second CPU limits and requiring the
+cpu_limit category. Deadline remains a failure for this control. Production limits
+and the separate short wall-deadline probes are unchanged. This test-only repair
+and fresh execution captures belong to the final successor, not the failed run.
