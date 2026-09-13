@@ -22,6 +22,8 @@ PR #328; no extra identity, source-reading or timing attestation is invented.
 4. [Coupling plan](COUPLING.md), `REQUIREMENTS.json`, `SURFACES.json`, and
    `REGISTRY-PREVIEW.json`: concrete proposed ownership, rows and destinations.
 5. [Self-review](SELF-REVIEW.md), `VALIDATION.json`, and [restart](RESTART.md).
+6. [External review intake](EXTERNAL-REVIEW-INTAKE.md): fixed-head reported
+   findings and unresolved steward design questions, recorded on 2026-09-13.
 
 The executable successor is
 [candidate.4](../holm-separated-candidate-20260912/README.md).

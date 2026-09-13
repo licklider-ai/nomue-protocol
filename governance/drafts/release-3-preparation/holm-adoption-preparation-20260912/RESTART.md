@@ -1,5 +1,12 @@
 # Restart and final review handoff
 
+An owner-supplied external changed-surface review of head 8262f8b is recorded in
+[EXTERNAL-REVIEW-INTAKE.md](EXTERNAL-REVIEW-INTAKE.md). Read its attribution,
+environment limits and three open design questions first. Its conditional
+bounded-readiness verdict does not close adoption or the remaining coupling.
+The review request below is preserved; future reviews target the actual changed
+scope rather than treating the intake as a new numerical or full-gate review.
+
 Read root AGENTS.md and its read-first files, then this packet's README.md,
 CLAIM-REVIEW.md, CONTRACT-PROPOSAL.md, RFC-IMPACT.md, COUPLING.md and SELF-REVIEW.md.
 Resolve the current PR head before review; base is fixed in INPUTS.json.
