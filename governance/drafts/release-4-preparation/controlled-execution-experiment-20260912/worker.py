@@ -1,7 +1,6 @@
 """Trusted single-process experimental worker. Invoked only by supervisor.py."""
 import os
 import resource
-import signal
 import sys
 
 # Apply hard limits before packet loading, transport decoding or numerical imports.
@@ -9,8 +8,6 @@ resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
 memory, cpu = int(sys.argv[1]), int(sys.argv[2])
 resource.setrlimit(resource.RLIMIT_AS, (memory, memory))
 resource.setrlimit(resource.RLIMIT_CPU, (cpu, cpu + 1))
-# The parent blocks cancellation across process creation to retain the handle.
-signal.pthread_sigmask(signal.SIG_UNBLOCK, {signal.SIGINT, signal.SIGTERM})
 
 import hashlib
 import json

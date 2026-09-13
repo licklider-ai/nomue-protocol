@@ -33,6 +33,8 @@ On Linux x86_64 with CPython 3.12.14, from this directory:
 ```sh
 python3 test_execution.py
 python3 -O test_execution.py
+python3 test_signal_lifecycle.py
+python3 -O test_signal_lifecycle.py
 python3 admission.py
 python3 benchmark.py
 ```
@@ -61,7 +63,7 @@ The numerical worker is single-process and creates no children. RLIMIT_AS is
 virtual address space of that worker, not RSS or total process-tree memory.
 Supervisor memory, concurrent calls and caller allocation are outside that limit.
 Group cleanup is not cgroup enforcement; a malicious child that escapes the group
-is outside this trusted-code experiment. SIGINT/SIGTERM cleanup is exercised;
+is outside this trusted-code experiment. SIGINT/SIGTERM cleanup and post-cleanup propagation are exercised;
 SIGKILL of the supervisor and host failure remain outside the claim.
 
 The host guard deliberately refuses other environments before numerical imports.
@@ -81,3 +83,14 @@ requires the applicable RFC Research Gate and changed-implementation review.
 
 The public window remains at its recorded earliest unchanged-scope decision,
 2026-10-09T05:59:47Z in [discussion #261](https://github.com/licklider-ai/nomue-protocol/issues/261).
+
+Signal handlers only record cancellation and write a nonblocking self-pipe.
+A pidfd wakes exit observation; WNOWAIT retains the child PID until group cleanup,
+then wait reaps it. No fixed-interval idle polling or thread-local signal masking
+is used. The supervisor runs on the main thread; additional threads are allowed
+provided they do not change its handlers or reap its child. SIGCHLD uses its
+default disposition. Concurrent external child reapers are outside the contract.
+After cleanup, SIGINT raises KeyboardInterrupt and SIGTERM raises SystemExit(143),
+with the private receipt attached as `receipt`; neither returns ordinary success.
+Handlers and descriptors are restored before propagation. Callers deliberately
+catching these BaseException subclasses own any decision to continue.

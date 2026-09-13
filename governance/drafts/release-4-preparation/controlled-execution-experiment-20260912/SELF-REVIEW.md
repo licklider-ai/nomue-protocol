@@ -3,7 +3,7 @@
 Continuing author context; not an independent investigator. Existing review
 records were inspected, and new behavior was tested against deliberate failures.
 
-## Findings and dispositions
+## Historical author findings (superseded where noted)
 
 1. **Cancellation cleanup gap.** Initial supervision handled Python interruption
    but not SIGTERM, allowing a parent termination to abandon its worker. Added
@@ -14,6 +14,9 @@ records were inspected, and new behavior was tested against deliberate failures.
    retaining the handle, and added a deterministic signal-during-launch control.
    The worker restores its inherited mask and the pre-selector pipe cleanup is
    explicit. This repair changes supervision only, not numerical behavior.
+   The user-supplied review of be2c488 disproved this closure: thread-local
+   masking, repeat-signal cleanup and cancellation propagation were insufficient.
+   This historical assessment is corrected by REVIEW-RESPONSE.md.
    SIGKILL/host failure remains outside scope.
 2. **Incomplete output acceptance.** Initial parent checked only outer result
    fields. Added closed result grammar, identity recomputation from the generated
@@ -44,3 +47,10 @@ schema/report integration remain in COUPLING.md. Final fixed-head independent
 implementation review and claim-to-source applicability decisions are required
 before promotion under governance/RFC.md; archive review and self-review are not
 substitutes. No earlier source acceptance is reopened without a changed claim.
+
+## Correction after supplied code review
+
+The cancellation closure above was premature. REVIEW-RESPONSE.md records all six
+findings, the new flag/self-pipe/pidfd implementation, actual regression evidence,
+and the narrowed admission-check wording. These are author repairs and executed
+controls, not an independent close review of the repaired head.

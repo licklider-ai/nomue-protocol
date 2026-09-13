@@ -35,9 +35,11 @@ def main():
                     admitted = False
                     reasons.append({'axis':axis,'reason':str(error)})
             a = 2*(n-1)
+            # Same policy constants rewritten algebraically: consistency only,
+            # not an independent oracle or evidence that the constants are right.
             ceiling = min(6500, 1000000//(a*a), 10000000//(a*a)-512)
             if admitted != all(w <= ceiling for w in widths):
-                raise RuntimeError('independent inequality disagreement')
+                raise RuntimeError('algebraic restatement disagreement')
             raw = json.dumps([[x.hex() for x in c] for c in cells],separators=(',',':')).encode()
             rows.append({'n_per_cell':n,'seed':seed,'input_sha256':hashlib.sha256(raw).hexdigest(),
                          'F_widths':widths,'width_ceiling':ceiling,'preflight_eligible':admitted,'reasons':reasons})

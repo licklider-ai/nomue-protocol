@@ -114,7 +114,12 @@ def main():
 import supervisor as s
 timer=threading.Timer(.15, lambda: os.kill(os.getpid(), signal.SIGTERM))
 timer.start()
-r=s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)
+try:
+    s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)
+except (KeyboardInterrupt,SystemExit) as error:
+    r=error.receipt
+else:
+    raise RuntimeError('cancellation swallowed')
 timer.join()
 print(json.dumps(r))
 """
@@ -129,7 +134,12 @@ def launching(*args,**kwargs):
     os.kill(os.getpid(),signal.SIGTERM)
     return process
 s.subprocess.Popen=launching
-print(json.dumps(s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)))
+try:
+    s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)
+except (KeyboardInterrupt,SystemExit) as error:
+    print(json.dumps(error.receipt))
+else:
+    raise RuntimeError('launch cancellation swallowed')
 """
     cancelled=json.loads(subprocess.check_output([sys.executable,'-c',launch_cancel_code],cwd=HERE,timeout=5))
     check(cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,

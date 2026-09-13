@@ -33,7 +33,7 @@
     },
     {
       "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
-      "sha256": "1ca31ad986909c7d00bfb2cae5ac53985214e2b346c0641304063f795db18973"
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
     },
     {
       "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
@@ -41,7 +41,7 @@
     },
     {
       "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
-      "sha256": "63dedc25e7909d4d9bf62f443edf6189fbb4983214148fdf1735e180bf7f6285"
+      "sha256": "0e8b68462b0519694200a4463e5fc112a16d6b952b5e2fd895a2eeb85a948a11"
     },
     {
       "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",

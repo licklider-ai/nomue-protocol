@@ -7,7 +7,7 @@ Node 24.19.0 and pnpm 11.19.0 (package launcher declaration 11.7.0).
 | ------------------------ | ---------------------------------------------------------------- |
 | EXECUTION.json           | 67 checks passed                                                 |
 | EXECUTION-OPTIMIZED.json | Same 67 check names passed; optimized parent, fixed normal child |
-| ADMISSION.json           | 320 rows; independent admission inequality agrees for every row  |
+| ADMISSION.json           | 320 rows; algebraic policy restatement agrees for every row      |
 | BENCHMARKS.json          | Seven controlled calls; expected complete/refused dispositions   |
 | Source identity          | Seven inherited files equal the pinned historical commit bytes   |
 | Repository checks        | Markdown lint 605 files, typecheck and direct validator passed   |
@@ -30,8 +30,10 @@ command deliberately uses a fixed non-optimized interpreter invocation in both;
 these are not two independent child builds or a claim to test optimized child
 execution. Historical normal/optimized numerical suites provide their own evidence.
 
-The 320-row admission probe tests all three F values, with an independently
-written integer-inequality ceiling. It does not run probability tails. Benchmarks
+The 320-row admission probe tests all three F values, against an algebraic restatement of the same guard inequalities and constants.
+This is a consistency check, not an independent oracle: a shared wrong constant
+can pass both expressions. It does not establish the policy limits or satisfy
+the Research Gate / independent numerical-oracle requirement. It does not run probability tails. Benchmarks
 then execute selected accepted/refused inputs through the actual worker.
 Seeded synthetic admission is not a scientific or user-population success rate.
 
@@ -50,3 +52,19 @@ after formatting, Markdown lint and typecheck. Direct `node --import tsx` reposi
 validation passed. Full aggregate checks are delegated to actual GitHub CI, not
 reported as a local aggregate pass. The later cancellation-during-launch repair
 has 67 checks and supersedes the initial 66-check checkpoint.
+
+## Supplied-review repair validation (2026-09-13 UTC)
+
+The earlier 67-check checkpoint did not establish safe cancellation or reaping.
+The review findings are accepted in REVIEW-RESPONSE.md. Updated EXECUTION and
+EXECUTION-OPTIMIZED each pass 67 controls; SIGNALS and SIGNALS-OPTIMIZED each
+pass seven additional lifecycle controls, including a signal directed to an
+already-running unmasked thread during Popen, repeated signals during cleanup,
+uncaught caller-loop termination, group-kill-before-reap ordering, event-driven
+waits and rejection of an auto-reap SIGCHLD host. Current saved outputs replace
+prior observations; original bytes remain in commit be2c488.
+
+The 320-row admission result is unchanged in value; it checks an algebraic
+restatement with the same constants and is not an independent oracle. Seven
+benchmarks were rerun against the repaired supervisor. Worker numerical source
+identities are unchanged. Tests and repairs are author-side execution evidence.
