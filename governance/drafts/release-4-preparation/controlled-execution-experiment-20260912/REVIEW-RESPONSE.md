@@ -22,8 +22,9 @@ code-reading, rather than executed-suite, scope.
 | 5. Admission ceiling is not an independent oracle                                              | Describe it as an algebraic restatement with shared constants; correct code comment, validation and PR body                                        | The 320 rows still agree, but only policy-expression consistency is claimed                                                                          |
 | 6. Fixed 10 ms polling wastes wakeups                                                          | Block select for remaining deadline; self-pipe wakes cancellation and pidfd wakes child exit                                                       | A hung invocation uses two selector calls over the 200 ms test, with a remaining-deadline timeout above 100 ms                                       |
 
-The non-raising signal handler handles the multithreaded signal-delivery case
-without claiming general asynchronous-exception safety. The main thread owns
+The non-raising signal handler prevents asynchronous raising during multithreaded
+signal delivery. Its original Python-level pipe write did not establish prompt
+wakeup during a blocked select; the follow-up below supersedes that implication. The main thread owns
 signal handlers and the child. Other threads may not replace handlers or reap
 that child; SIGCHLD has its default disposition. A detected lost child ownership
 suppresses group signaling. Process-group cleanup remains a trusted-code design,
@@ -38,3 +39,38 @@ The separate hand-derived small numerical witnesses retain their actual scope.
 No R3/shared schema/registry changes, formal adoption, merge or release occur.
 The repaired head still needs the applicable fixed-head close review before
 promotion; this response is an author repair receipt, not that independent review.
+
+## Follow-up review of df33b8d: cross-thread wakeup
+
+The user supplied a follow-up on 2026-09-13 UTC confirming the six earlier
+repairs and identifying delayed cancellation when SIGTERM reaches another
+thread while the main thread blocks in select. Their CPython 3.12.3 direct
+_launch probe observed about 6.01 seconds with a six-second wall deadline,
+rather than the intended roughly 0.5-second cancellation. Cleanup/reaping worked.
+They executed three direct lifecycle modes and their own probe; full execution
+and caller-loop conclusions used saved evidence and df33b8d CI because host()
+rejects that interpreter. No additional reviewer identity is inferred.
+
+Accepted repair: install the nonblocking pipe with signal.set_wakeup_fd so the
+C handler wakes select regardless of the receiving thread. The Python handler
+only retains the first signal. Restore the caller's wakeup fd in finally before
+closing the pipe, including failed launch, normal completion and cancellation.
+
+The new thread-select control blocks SIGTERM in main, waits until stdin is
+closed and select is about to block on a quiet worker, then an unmasked thread
+sends pthread_kill to itself after 150 ms. With a three-second deadline it must
+propagate SystemExit(143) in under 1.5 seconds, without a deadline cause; worker
+absence, kill-before-reap, handlers and fd restoration are also required.
+The same control against the previous df33b8d supervisor failed specifically on
+cancellation latency. This timing probe is an observed regression bound, not a
+universal scheduling guarantee.
+
+All direct lifecycle modes now install a pre-existing non-default wakeup fd and
+check its restoration. A launch-failure control covers pre-child cleanup.
+The run-receipt control requires environment and scientific_validity metadata
+on the propagated exception receipt. README documents the pinned interpreter
+requirement for the caller-loop and run-receipt modes.
+
+The updated author evidence has 67 execution controls and ten lifecycle controls
+in each parent mode. The seven inherited numerical files remain unchanged.
+These repairs still need review of their own fixed head before promotion.

@@ -54,3 +54,10 @@ The cancellation closure above was premature. REVIEW-RESPONSE.md records all six
 findings, the new flag/self-pipe/pidfd implementation, actual regression evidence,
 and the narrowed admission-check wording. These are author repairs and executed
 controls, not an independent close review of the repaired head.
+
+The follow-up review of df33b8d found that the Python-level self-pipe write did
+not wake a blocked main-thread select when another thread received the signal.
+The C-level wakeup-fd repair and a regression that fails on that predecessor are
+recorded in REVIEW-RESPONSE.md. A successful Popen-delivery control alone did not
+establish the blocked-select case. This is a further author repair, not an
+independent closure claim.

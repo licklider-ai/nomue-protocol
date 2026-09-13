@@ -9,7 +9,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.06669603399859625,
+        "elapsed_seconds": 0.06513430700215395,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -197,7 +197,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05946198300080141,
+        "elapsed_seconds": 0.060744905000319704,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -391,7 +391,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05075425299946801,
+        "elapsed_seconds": 0.0508850820006046,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -438,7 +438,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05096133400002145,
+        "elapsed_seconds": 0.054607096000836464,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -478,7 +478,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05044721100057359,
+        "elapsed_seconds": 0.057572859001084,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -518,7 +518,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.060104240001237486,
+        "elapsed_seconds": 0.050351949998002965,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -558,7 +558,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.052262510998843936,
+        "elapsed_seconds": 0.08811273899846128,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -599,7 +599,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05068516500250553,
+        "elapsed_seconds": 0.0563389119997737,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -640,7 +640,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05024030500135268,
+        "elapsed_seconds": 0.05406966600276064,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -816,7 +816,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05078047799906926,
+        "elapsed_seconds": 0.057283865000499645,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1036,7 +1036,7 @@
       "receipt": {
         "category": "cpu_limit",
         "causes": ["cpu_limit"],
-        "elapsed_seconds": 1.0198323160002474,
+        "elapsed_seconds": 1.0180452090025938,
         "worker_reaped": true,
         "exit_code": -24,
         "bytes_observed": {
@@ -1059,7 +1059,7 @@
       "receipt": {
         "category": "allocation_failure",
         "causes": ["allocation_failure"],
-        "elapsed_seconds": 0.011829979997855844,
+        "elapsed_seconds": 0.011528866001754068,
         "worker_reaped": true,
         "exit_code": 71,
         "bytes_observed": {
@@ -1082,7 +1082,7 @@
       "receipt": {
         "category": "deadline",
         "causes": ["deadline"],
-        "elapsed_seconds": 0.1518883030003053,
+        "elapsed_seconds": 0.15174288300113403,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1105,7 +1105,7 @@
       "receipt": {
         "category": "deadline",
         "causes": ["deadline"],
-        "elapsed_seconds": 0.1524652439984493,
+        "elapsed_seconds": 0.1534288210023078,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1128,7 +1128,7 @@
       "receipt": {
         "category": "output_overflow",
         "causes": ["output_overflow"],
-        "elapsed_seconds": 0.01066440400245483,
+        "elapsed_seconds": 0.011435819997132057,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1151,7 +1151,7 @@
       "receipt": {
         "category": "output_overflow",
         "causes": ["output_overflow"],
-        "elapsed_seconds": 0.010621929999615531,
+        "elapsed_seconds": 0.01032841799678863,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1174,7 +1174,7 @@
       "receipt": {
         "category": "invalid_worker_output",
         "causes": ["invalid_worker_output"],
-        "elapsed_seconds": 0.011808982999355067,
+        "elapsed_seconds": 0.010420425998745486,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1197,7 +1197,7 @@
       "receipt": {
         "category": "abnormal_exit",
         "causes": ["abnormal_exit"],
-        "elapsed_seconds": 0.010545116001594579,
+        "elapsed_seconds": 0.010192925001319963,
         "worker_reaped": true,
         "exit_code": 7,
         "bytes_observed": {
@@ -1220,7 +1220,7 @@
       "receipt": {
         "category": "invalid_worker_output",
         "causes": ["invalid_worker_output"],
-        "elapsed_seconds": 0.010284944000886753,
+        "elapsed_seconds": 0.010481348999746842,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1243,7 +1243,7 @@
       "receipt": {
         "category": "unexpected_stderr",
         "causes": ["unexpected_stderr"],
-        "elapsed_seconds": 0.01086917299835477,
+        "elapsed_seconds": 0.010069408999697771,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1298,7 +1298,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.15160510699934093,
+        "elapsed_seconds": 0.15152298100292683,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1317,7 +1317,7 @@
       "receipt": {
         "category": "cancelled",
         "causes": ["cancelled"],
-        "elapsed_seconds": 0.0015933790018607397,
+        "elapsed_seconds": 0.0015211299978545867,
         "worker_reaped": true,
         "exit_code": -9,
         "bytes_observed": {
@@ -1340,7 +1340,7 @@
       "receipt": {
         "category": "completed_transport",
         "causes": [],
-        "elapsed_seconds": 0.029924769998615375,
+        "elapsed_seconds": 0.028442557002563262,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1372,7 +1372,7 @@
       "receipt": {
         "category": "allocation_failure",
         "causes": ["allocation_failure"],
-        "elapsed_seconds": 0.02618986399829737,
+        "elapsed_seconds": 0.025543594001646852,
         "worker_reaped": true,
         "exit_code": 71,
         "bytes_observed": {

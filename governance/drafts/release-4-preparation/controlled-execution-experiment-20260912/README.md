@@ -39,6 +39,12 @@ python3 admission.py
 python3 benchmark.py
 ```
 
+`loop-int`, `loop-term` and `run-receipt` call `run()` and its host guard;
+they require CPython 3.12.14. Other versions are refused before launch and the
+loop controls report failure instead of testing cancellation. Direct `_launch`
+modes, including `thread-select`, bypass that guard and do not establish support
+on another interpreter.
+
 Commands print observations and do not overwrite saved evidence or repin files.
 `pin_inputs.py` is an author-only operation, never part of validation. Numerical
 files are read from the preceding packet after SHA-256 checks in both parent
@@ -84,13 +90,17 @@ requires the applicable RFC Research Gate and changed-implementation review.
 The public window remains at its recorded earliest unchanged-scope decision,
 2026-10-09T05:59:47Z in [discussion #261](https://github.com/licklider-ai/nomue-protocol/issues/261).
 
-Signal handlers only record cancellation and write a nonblocking self-pipe.
+Python signal handlers only record cancellation. `signal.set_wakeup_fd` makes
+CPython's C signal handler write the nonblocking self-pipe, including delivery
+to another thread while the main thread is blocked in select.
 A pidfd wakes exit observation; WNOWAIT retains the child PID until group cleanup,
 then wait reaps it. No fixed-interval idle polling or thread-local signal masking
 is used. The supervisor runs on the main thread; additional threads are allowed
-provided they do not change its handlers or reap its child. SIGCHLD uses its
+provided they do not change its handlers, wakeup fd, or reap its child. SIGCHLD uses its
 default disposition. Concurrent external child reapers are outside the contract.
 After cleanup, SIGINT raises KeyboardInterrupt and SIGTERM raises SystemExit(143),
-with the private receipt attached as `receipt`; neither returns ordinary success.
-Handlers and descriptors are restored before propagation. Callers deliberately
+with the receipt attached as `receipt`; neither returns ordinary success.
+The `run()` exception receipt includes `environment` and
+`scientific_validity: not_asserted`, like its execution return receipts.
+Handlers, the previous wakeup fd and descriptors are restored before propagation. Callers deliberately
 catching these BaseException subclasses own any decision to continue.

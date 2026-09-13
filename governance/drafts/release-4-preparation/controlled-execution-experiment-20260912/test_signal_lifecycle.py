@@ -21,20 +21,25 @@ def need(ok, label):
 def child(mode):
     before_handlers = {sig: signal.getsignal(sig) for sig in (signal.SIGINT, signal.SIGTERM)}
     before_mask = signal.pthread_sigmask(signal.SIG_BLOCK, set())
+    caller_read, caller_write = os.pipe2(os.O_NONBLOCK | os.O_CLOEXEC)
+    original_wakeup_fd = signal.set_wakeup_fd(caller_write)
     before_fds = len(os.listdir('/proc/self/fd'))
     original_popen = s.subprocess.Popen
     original_killpg = s.os.killpg
     original_wait = s.subprocess.Popen.wait
+    original_selector = s.selectors.DefaultSelector
     events, children, threads = [], [], []
     killed = set()
     signal_number = signal.SIGINT if mode == 'loop-int' else signal.SIGTERM
     result = None
     fire, delivered, ready = threading.Event(), threading.Event(), threading.Event()
-    if mode in ('thread-launch', 'loop-int', 'loop-term'):
+    if mode in ('thread-launch', 'thread-select', 'run-receipt', 'loop-int', 'loop-term'):
         def sender():
             signal.pthread_sigmask(signal.SIG_UNBLOCK, {signal.SIGINT, signal.SIGTERM})
             ready.set()
             if fire.wait(3):
+                if mode == 'thread-select':
+                    time.sleep(.15)  # Let main enter the blocking OS select.
                 # Target this pre-existing unmasked thread, rather than relying
                 # on the kernel to choose it for a process-directed signal.
                 signal.pthread_kill(threading.get_ident(), signal_number)
@@ -43,9 +48,11 @@ def child(mode):
         threads.append(t); t.start(); ready.wait()
 
     def launch(*args, **kwargs):
+        if mode == 'launch-failure':
+            raise OSError('injected launch failure')
         p = original_popen(*args, **kwargs)
         children.append(p.pid)
-        if mode in ('thread-launch', 'loop-int', 'loop-term'):
+        if mode in ('thread-launch', 'run-receipt', 'loop-int', 'loop-term'):
             # An additional unmasked thread exists while the actual child handle
             # has not yet returned to supervisor._launch. Delivery completes here.
             fire.set(); need(delivered.wait(2), 'thread signal not delivered')
@@ -68,6 +75,16 @@ def child(mode):
         events.append('wait-after-kill')
         return original_wait(p, *args, **kwargs)
 
+    class BlockingSelector(original_selector):
+        def select(self, timeout=None):
+            # No writable stdin or stdout activity can wake this wait.
+            if not any(k.data == 'stdin' for k in self.get_map().values()):
+                fire.set()
+            return super().select(timeout)
+
+    if mode == 'thread-select':
+        signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGTERM})
+        s.selectors.DefaultSelector = BlockingSelector
     s.subprocess.Popen = launch
     # Patch the original class, since the factory is now a function.
     original_popen.wait = wait
@@ -84,14 +101,25 @@ def child(mode):
         timer = threading.Timer(.08, lambda: os.kill(os.getpid(), signal.SIGTERM))
         timer.start()
     try:
-        result = s._launch(command, b'', wall=1)
-        need(mode == 'normal-reap', 'cancellation returned normally')
-        need(result['category'] == 'completed_transport', 'normal completion failed')
+        if mode == 'run-receipt':
+            result = s.run([[0., 1.] for _ in range(4)], 'cancel-receipt')
+        else:
+            result = s._launch(command, b'', wall=3 if mode == 'thread-select' else 1)
+        need(mode in ('normal-reap', 'launch-failure'), 'cancellation returned normally')
+        need(result['category'] == ('execution_error' if mode == 'launch-failure' else
+                                    'completed_transport'), 'completion category')
     except (KeyboardInterrupt, SystemExit) as error:
         need(mode != 'normal-reap', 'unexpected cancellation')
         result = error.receipt
         need(error.signum == signal.SIGTERM, 'first cancellation not retained')
         need(isinstance(error, SystemExit) and error.code == 143, 'TERM termination semantics')
+        if mode == 'thread-select':
+            need(delivered.is_set(), 'target thread did not receive signal')
+            need(result['elapsed_seconds'] < 1.5, 'cancellation waited for wall deadline')
+            need('deadline' not in result['causes'], 'deadline preceded cancellation')
+        if mode == 'run-receipt':
+            need(result['environment'] == s.host(), 'cancellation environment missing')
+            need(result['scientific_validity'] == 'not_asserted', 'cancellation validity missing')
         need('transport' not in result and result['category'] == 'cancelled', 'cancelled output')
     finally:
         if timer: timer.join()
@@ -99,7 +127,9 @@ def child(mode):
         original_popen.wait = original_wait
         s.subprocess.Popen = original_popen
         s.os.killpg = original_killpg
-    need(result['worker_reaped'], 'worker not reaped')
+        s.selectors.DefaultSelector = original_selector
+        observed_mask = signal.pthread_sigmask(signal.SIG_SETMASK, before_mask)
+    need(result['worker_reaped'] == (mode != 'launch-failure'), 'worker reap status')
     for pid in children:
         try:
             os.kill(pid, 0)
@@ -108,15 +138,20 @@ def child(mode):
         else:
             raise RuntimeError('worker still present')
     need(before_handlers == {sig: signal.getsignal(sig) for sig in before_handlers}, 'handler restoration')
-    need(before_mask == signal.pthread_sigmask(signal.SIG_BLOCK, set()), 'mask changed')
+    expected_mask = before_mask | {signal.SIGTERM} if mode == 'thread-select' else before_mask
+    need(expected_mask == observed_mask, 'supervisor changed caller mask')
     need(before_fds == len(os.listdir('/proc/self/fd')), 'fd leak')
+    restored_wakeup_fd = signal.set_wakeup_fd(original_wakeup_fd)
+    need(restored_wakeup_fd == caller_write, 'caller wakeup fd not restored')
+    os.close(caller_read); os.close(caller_write)
     print(json.dumps({'mode':mode,'passed':True,'receipt':result,'events':events,
-                      'handlers_restored':True,'fds_restored':True,'worker_absent':True}))
+                      'handlers_restored':True,'fds_restored':True,'wakeup_fd_restored':True,'worker_absent':True}))
 
 
 def main():
     rows = []
-    for mode in ('thread-launch','repeated-cleanup','normal-reap','loop-int','loop-term'):
+    for mode in ('thread-launch','thread-select','run-receipt','launch-failure',
+                 'repeated-cleanup','normal-reap','loop-int','loop-term'):
         run = subprocess.run([sys.executable, str(HERE/'test_signal_lifecycle.py'), mode],
                              cwd=HERE,capture_output=True,text=True,timeout=5)
         if mode.startswith('loop-'):

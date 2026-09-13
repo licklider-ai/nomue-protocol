@@ -53,6 +53,7 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
     process = selector = None
     pidfd = None
     wake_read = wake_write = None
+    previous_wakeup_fd = None
     stdout, stderr = bytearray(), bytearray()
     counts = {'stdout': 0, 'stderr': 0}
     cleanup = False
@@ -66,12 +67,8 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
         nonlocal cancelled_signal
         if cancelled_signal is None:
             cancelled_signal = signum
-        # Nonblocking: a full pipe already guarantees a wakeup. No exception
-        # escapes, including during Popen assignment or any cleanup instruction.
-        try:
-            os.write(wake_write, b'x')
-        except (OSError, TypeError):
-            pass
+        # CPython's C signal handler writes the wakeup fd even when delivery is
+        # to another thread while this thread is blocked in select.
 
     def mark(reason):
         if reason not in flags:
@@ -86,6 +83,7 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
 
     try:
         wake_read, wake_write = os.pipe2(os.O_NONBLOCK | os.O_CLOEXEC)
+        previous_wakeup_fd = signal.set_wakeup_fd(wake_write, warn_on_full_buffer=False)
         for sig in (signal.SIGINT, signal.SIGTERM):
             previous[sig] = signal.signal(sig, cancel)
         process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
@@ -197,9 +195,13 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
                     if signal.SIGTERM in previous:
                         signal.signal(signal.SIGTERM, previous[signal.SIGTERM])
                 finally:
-                    for fd in (wake_read, wake_write):
-                        if fd is not None:
-                            os.close(fd)
+                    try:
+                        if previous_wakeup_fd is not None:
+                            signal.set_wakeup_fd(previous_wakeup_fd)
+                    finally:
+                        for fd in (wake_read, wake_write):
+                            if fd is not None:
+                                os.close(fd)
     if cancelled_signal is not None:
         mark('cancelled')
     if code == -signal.SIGXCPU:
@@ -246,7 +248,13 @@ def run(cells, revision, submitted=None):
     except ValueError as error:
         return {'category': 'input_refused', 'reason': str(error), 'scientific_validity': 'not_asserted'}
     command = [sys.executable, '-I', '-B', str(HERE / 'worker.py'), str(MEMORY), str(CPU)]
-    receipt = _launch(command, payload, started=started)
+    try:
+        receipt = _launch(command, payload, started=started)
+    except (KeyboardInterrupt, SystemExit) as error:
+        if hasattr(error, 'receipt'):
+            error.receipt['environment'] = environment
+            error.receipt['scientific_validity'] = 'not_asserted'
+        raise
     receipt['environment'] = environment
     receipt['scientific_validity'] = 'not_asserted'
     transport = receipt.pop('transport', None)

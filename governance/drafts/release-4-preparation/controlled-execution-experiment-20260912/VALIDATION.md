@@ -58,7 +58,7 @@ has 67 checks and supersedes the initial 66-check checkpoint.
 The earlier 67-check checkpoint did not establish safe cancellation or reaping.
 The review findings are accepted in REVIEW-RESPONSE.md. Updated EXECUTION and
 EXECUTION-OPTIMIZED each pass 67 controls; SIGNALS and SIGNALS-OPTIMIZED each
-pass seven additional lifecycle controls, including a signal directed to an
+at df33b8d passed seven additional lifecycle controls, including a signal directed to an
 already-running unmasked thread during Popen, repeated signals during cleanup,
 uncaught caller-loop termination, group-kill-before-reap ordering, event-driven
 waits and rejection of an auto-reap SIGCHLD host. Current saved outputs replace
@@ -68,3 +68,20 @@ The 320-row admission result is unchanged in value; it checks an algebraic
 restatement with the same constants and is not an independent oracle. Seven
 benchmarks were rerun against the repaired supervisor. Worker numerical source
 identities are unchanged. Tests and repairs are author-side execution evidence.
+
+## Cross-thread blocked-select repair (2026-09-13 UTC)
+
+Current SIGNALS and SIGNALS-OPTIMIZED replace the seven-control checkpoint with
+ten controls each. Added cases cover select-blocked thread-directed delivery,
+public run() cancellation receipt metadata, and failed-launch restoration.
+A pre-existing non-default wakeup fd is checked after all direct lifecycle modes.
+The blocked-select test sends after 150 ms and requires completion before 1.5 s
+with a three-second deadline; normal and optimized elapsed observations are in
+the respective receipts. Running the new thread-select test against df33b8d's
+supervisor fails on its cancellation-latency assertion.
+
+EXECUTION and EXECUTION-OPTIMIZED were recaptured with 67 controls each, plus
+320 admission rows and seven benchmark calls against the new manifest. All seven
+inherited files still match the pinned historical commit. These are author
+observations on CPython 3.12.14; the supplied review's separate execution scope
+is preserved in REVIEW-RESPONSE.md.
