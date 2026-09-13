@@ -1,0 +1,56 @@
+{
+  "status": "unissued_experiment",
+  "baseline": "4a62f8e1768049560cb0ce8f09ef1676cb42130b",
+  "numerical_directory": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911",
+  "runtime": [
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/consumer.py",
+      "sha256": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "sha256": "b5a186bf39f330d32e3fb01a6a94731d84d3e6b8110f3e26d8a8f4bd8b87c2b8"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e"
+    }
+  ],
+  "inherited_source_commit": "97ef2926dbea7251d9fa611d4ada6513341f9826",
+  "r3_priority": {
+    "observed_pr": 330,
+    "policy": "no R3 or shared authority/runtime changes"
+  }
+}

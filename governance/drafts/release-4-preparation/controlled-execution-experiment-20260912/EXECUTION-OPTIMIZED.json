@@ -1,0 +1,1370 @@
+{
+  "python": "3.12.14",
+  "optimized": true,
+  "checks": 66,
+  "rows": [
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.06794196000009833,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 1864,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 1864,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "outcome": "complete_experiment",
+            "identity": {
+              "revision": "test",
+              "digest": "c72845453c1c4ddf6da25ef52b1e5596b310f0028036517c34293616915b8283"
+            },
+            "df": {
+              "A": ["0x1", "0x4"],
+              "B": ["0x1", "0x4"],
+              "AB": ["0x1", "0x4"]
+            },
+            "exact": {
+              "estimates": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "ss": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "sse": [["0x2", "0x1"]],
+              "f": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ]
+            },
+            "displays": {
+              "estimates": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "ss": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "sse": [
+                {
+                  "lower": "0x1.0000000000000p+1",
+                  "upper": "0x1.0000000000000p+1",
+                  "nearest": "0x1.0000000000000p+1",
+                  "status": "exactly_representable"
+                }
+              ],
+              "f": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ]
+            },
+            "tails": {
+              "A": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "B": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "AB": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              }
+            }
+          }
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "complete outcome",
+      "passed": true
+    },
+    {
+      "name": "hand SSE=2",
+      "passed": true
+    },
+    {
+      "name": "hand all F=0",
+      "passed": true
+    },
+    {
+      "name": "hand p=1",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.059390705999248894,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 3460,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 3460,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "outcome": "complete_experiment",
+            "identity": {
+              "revision": "test",
+              "digest": "cd789b2ca5302d2106c7fdfbec455258d9300b3692833b9e8bfd0f8e5418ca61"
+            },
+            "df": {
+              "A": ["0x1", "0x4"],
+              "B": ["0x1", "0x4"],
+              "AB": ["0x1", "0x4"]
+            },
+            "exact": {
+              "estimates": [
+                ["0x5", "0x2"],
+                ["0x3", "0x2"],
+                ["0x1", "0x1"]
+              ],
+              "ss": [
+                ["0x19", "0x2"],
+                ["0x9", "0x2"],
+                ["0x1", "0x2"]
+              ],
+              "sse": [["0x2", "0x1"]],
+              "f": [
+                ["0x19", "0x1"],
+                ["0x9", "0x1"],
+                ["0x1", "0x1"]
+              ]
+            },
+            "displays": {
+              "estimates": [
+                {
+                  "lower": "0x1.4000000000000p+1",
+                  "upper": "0x1.4000000000000p+1",
+                  "nearest": "0x1.4000000000000p+1",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.8000000000000p+0",
+                  "upper": "0x1.8000000000000p+0",
+                  "nearest": "0x1.8000000000000p+0",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.0000000000000p+0",
+                  "upper": "0x1.0000000000000p+0",
+                  "nearest": "0x1.0000000000000p+0",
+                  "status": "exactly_representable"
+                }
+              ],
+              "ss": [
+                {
+                  "lower": "0x1.9000000000000p+3",
+                  "upper": "0x1.9000000000000p+3",
+                  "nearest": "0x1.9000000000000p+3",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.2000000000000p+2",
+                  "upper": "0x1.2000000000000p+2",
+                  "nearest": "0x1.2000000000000p+2",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.0000000000000p-1",
+                  "upper": "0x1.0000000000000p-1",
+                  "nearest": "0x1.0000000000000p-1",
+                  "status": "exactly_representable"
+                }
+              ],
+              "sse": [
+                {
+                  "lower": "0x1.0000000000000p+1",
+                  "upper": "0x1.0000000000000p+1",
+                  "nearest": "0x1.0000000000000p+1",
+                  "status": "exactly_representable"
+                }
+              ],
+              "f": [
+                {
+                  "lower": "0x1.9000000000000p+4",
+                  "upper": "0x1.9000000000000p+4",
+                  "nearest": "0x1.9000000000000p+4",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.2000000000000p+3",
+                  "upper": "0x1.2000000000000p+3",
+                  "nearest": "0x1.2000000000000p+3",
+                  "status": "exactly_representable"
+                },
+                {
+                  "lower": "0x1.0000000000000p+0",
+                  "upper": "0x1.0000000000000p+0",
+                  "nearest": "0x1.0000000000000p+0",
+                  "status": "exactly_representable"
+                }
+              ]
+            },
+            "tails": {
+              "A": {
+                "bounds": [
+                  {
+                    "rational": [
+                      "0x28f1c21a5e4c541edc7d602446adefbee1cbadfca97c5f89a5966d43f16715a6030000000000000000000000000000000",
+                      "0x155a389c9b2f0478508f9cd32d5d48bda56f3e044afa799b86bf36dda3651b9a583604f10052b0f2c7c8f4580ef8b01d6b7"
+                    ]
+                  },
+                  {
+                    "rational": [
+                      "0x51e38434bc98a83db8fac0488d5bdf7dc3975bf952f8bf134b2cda87e2ce2b4c06000000000000000000000000000000000",
+                      "0x2ab47139365e08f0a11f39a65aba917b086fa0b44610930a5c527d4fb0b182e7a688fa987c4096f7f714523603eb8d2ba0fe3"
+                    ]
+                  }
+                ],
+                "encoding": "0x3f7eae4a08d8c749",
+                "bits": "0x80"
+              },
+              "B": {
+                "bounds": [
+                  {
+                    "rational": [
+                      "0x86e66159db0a639a3d754d23df2422d583f0ccf0efe3f21c65b0fc570fa397831c0000000000000000000000000000000",
+                      "0xd3165e3203f0e1daa3de9d5a4a9ab89ba85f5f4723610512afd8826b161e1328bffed18bd8cca269ee805120d23fe6edf7"
+                    ]
+                  },
+                  {
+                    "rational": [
+                      "0x21b9985676c298e68f5d5348f7c908b560fc333c3bf8fc87196c3f15c3e8e5e0c7000000000000000000000000000000000",
+                      "0x34c5978c80fc3876a8f7a75692a6ae2693adc18d773e6583d963b0ae1738a9cb3be5bd17e7d5adc5bc7e3db2bb3cfab5e7af"
+                    ]
+                  }
+                ],
+                "encoding": "0x3fa473460d3639a5",
+                "bits": "0x80"
+              },
+              "AB": {
+                "bounds": [
+                  {
+                    "rational": [
+                      "0x8daa66d2c7ddf7441dad6412116c9589cffb7764afca7e47750eefa5de9fce8cb800000000000000000000000000000000",
+                      "0x17ae2ac13ef8e8d8db841f83c3a149d224d4e00738c3e890510f2ba3bc18aff1b67373eb98a60ccd4cd7fffde451653e153"
+                    ]
+                  },
+                  {
+                    "rational": [
+                      "0x11b54cda58fbbee883b5ac82422d92b139ff6eec95f94fc8eea1ddf4bbd3f9d19700000000000000000000000000000000",
+                      "0x2f5c55827df1d1b1b7083f07874293a3e77c9fb9c56267f36aeee1195a948b0fc26a729087f5e6f2c63c54c232b5f11e2b"
+                    ]
+                  }
+                ],
+                "encoding": "0x3fd7edfe518ce636",
+                "bits": "0x80"
+              }
+            }
+          }
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "separate contrast derivation F=25,9,1",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.05212738999944122,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 417,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 417,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "outcome": "probability_evidence_consistent_experiment",
+            "identity": {
+              "revision": "test",
+              "digest": "c72845453c1c4ddf6da25ef52b1e5596b310f0028036517c34293616915b8283"
+            },
+            "contrasts": ["A", "B", "AB"],
+            "scientific_validity": "not_asserted"
+          }
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "hand p=1 evidence",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.05187031300010858,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 226,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 226,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "refused",
+          "stage": "evidence",
+          "reason": "endpoint encoding"
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "last row suppresses all success",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.051668870999492356,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 223,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 223,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "refused",
+          "stage": "evidence",
+          "reason": "digest binding"
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "digest mismatch",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.0505210219998844,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 219,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 219,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "refused",
+          "stage": "evidence",
+          "reason": "df binding"
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "df mismatch",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.05005126399919391,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 227,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 227,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "refused",
+          "stage": 4,
+          "quantity": "SSE",
+          "reason": "exact zero"
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "zero SSE refuses",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.05282824599999003,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 240,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 240,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "refused",
+          "stage": 5,
+          "quantity": "SSE",
+          "reason": "positive representation"
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "positive SSE rounds to zero",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.051945186000011745,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 1864,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 1864,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "outcome": "complete_experiment",
+            "identity": {
+              "revision": "test",
+              "digest": "d5508af8aaf5d2adda63a97b886a0f17779e505de65b229c296d79a1da17f2f0"
+            },
+            "df": {
+              "A": ["0x1", "0x4"],
+              "B": ["0x1", "0x4"],
+              "AB": ["0x1", "0x4"]
+            },
+            "exact": {
+              "estimates": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "ss": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "sse": [["0x2", "0x1"]],
+              "f": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ]
+            },
+            "displays": {
+              "estimates": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "ss": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "sse": [
+                {
+                  "lower": "0x1.0000000000000p+1",
+                  "upper": "0x1.0000000000000p+1",
+                  "nearest": "0x1.0000000000000p+1",
+                  "status": "exactly_representable"
+                }
+              ],
+              "f": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ]
+            },
+            "tails": {
+              "A": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "B": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "AB": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              }
+            }
+          }
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "signed zero identity preserved",
+      "passed": true
+    },
+    {
+      "name": "worker completes",
+      "passed": true,
+      "receipt": {
+        "category": "completed_worker",
+        "causes": [],
+        "elapsed_seconds": 0.052208536999387434,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 1860,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 1860,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "outcome": "complete_experiment",
+            "identity": {
+              "revision": "test",
+              "digest": "b7a4596bfe7c0e41d3a8d2f40d75b2aba878801f6bd4965c681586612fb11d89"
+            },
+            "df": {
+              "A": ["0x1", "0x100"],
+              "B": ["0x1", "0x100"],
+              "AB": ["0x1", "0x100"]
+            },
+            "exact": {
+              "estimates": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "ss": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ],
+              "sse": [["0x1080", "0x41"]],
+              "f": [
+                ["0x0", "0x1"],
+                ["0x0", "0x1"],
+                ["0x0", "0x1"]
+              ]
+            },
+            "displays": {
+              "estimates": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "ss": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ],
+              "sse": [
+                {
+                  "lower": "0x1.03f03f03f03f0p+6",
+                  "upper": "0x1.03f03f03f03f1p+6",
+                  "nearest": "0x1.03f03f03f03f0p+6",
+                  "status": "rounded"
+                }
+              ],
+              "f": [
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                },
+                {
+                  "lower": "0x0.0p+0",
+                  "upper": "0x0.0p+0",
+                  "nearest": "0x0.0p+0",
+                  "status": "exact_zero"
+                }
+              ]
+            },
+            "tails": {
+              "A": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "B": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              },
+              "AB": {
+                "bounds": [
+                  {
+                    "rational": ["0x1", "0x1"]
+                  },
+                  {
+                    "rational": ["0x1", "0x1"]
+                  }
+                ],
+                "encoding": "0x3ff0000000000000",
+                "bits": "0x80"
+              }
+            }
+          }
+        },
+        "enforced_limits": {
+          "address_space": [268435456, 268435456],
+          "cpu": [25, 26],
+          "core": [0, 0]
+        }
+      }
+    },
+    {
+      "name": "n=65 zero contrasts",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 0",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 1",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 2",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 3",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 4",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 5",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 6",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 7",
+      "passed": true
+    },
+    {
+      "name": "input early refusal 8",
+      "passed": true
+    },
+    {
+      "name": "endpoint cap prelaunch",
+      "passed": true
+    },
+    {
+      "name": "unsupported host prelaunch",
+      "passed": true
+    },
+    {
+      "name": "actual cpu",
+      "passed": true,
+      "receipt": {
+        "category": "cpu_limit",
+        "causes": ["cpu_limit"],
+        "elapsed_seconds": 1.0319601139999577,
+        "worker_reaped": true,
+        "exit_code": -24,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers cpu",
+      "passed": true
+    },
+    {
+      "name": "actual memory",
+      "passed": true,
+      "receipt": {
+        "category": "allocation_failure",
+        "causes": ["allocation_failure"],
+        "elapsed_seconds": 0.01240216200130817,
+        "worker_reaped": true,
+        "exit_code": 71,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 25
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 25
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers memory",
+      "passed": true
+    },
+    {
+      "name": "actual hang",
+      "passed": true,
+      "receipt": {
+        "category": "deadline",
+        "causes": ["deadline"],
+        "elapsed_seconds": 0.15142593999917153,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers hang",
+      "passed": true
+    },
+    {
+      "name": "actual closed-pipes-hang",
+      "passed": true,
+      "receipt": {
+        "category": "deadline",
+        "causes": ["deadline"],
+        "elapsed_seconds": 0.15138864399887098,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers closed-pipes-hang",
+      "passed": true
+    },
+    {
+      "name": "actual stdout",
+      "passed": true,
+      "receipt": {
+        "category": "output_overflow",
+        "causes": ["output_overflow"],
+        "elapsed_seconds": 0.011211198998353211,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 131072,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 65536,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers stdout",
+      "passed": true
+    },
+    {
+      "name": "actual stderr",
+      "passed": true,
+      "receipt": {
+        "category": "output_overflow",
+        "causes": ["output_overflow"],
+        "elapsed_seconds": 0.010864436999327154,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 131072
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 65536
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers stderr",
+      "passed": true
+    },
+    {
+      "name": "actual invalid",
+      "passed": true,
+      "receipt": {
+        "category": "invalid_worker_output",
+        "causes": ["invalid_worker_output"],
+        "elapsed_seconds": 0.010854142001335276,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 9,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 9,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers invalid",
+      "passed": true
+    },
+    {
+      "name": "actual crash",
+      "passed": true,
+      "receipt": {
+        "category": "abnormal_exit",
+        "causes": ["abnormal_exit"],
+        "elapsed_seconds": 0.010695852999560884,
+        "worker_reaped": true,
+        "exit_code": 7,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers crash",
+      "passed": true
+    },
+    {
+      "name": "actual early-eof",
+      "passed": true,
+      "receipt": {
+        "category": "invalid_worker_output",
+        "causes": ["invalid_worker_output"],
+        "elapsed_seconds": 0.01025627200033341,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers early-eof",
+      "passed": true
+    },
+    {
+      "name": "actual stderr-success",
+      "passed": true,
+      "receipt": {
+        "category": "unexpected_stderr",
+        "causes": ["unexpected_stderr"],
+        "elapsed_seconds": 0.011059640999519615,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 3,
+          "stderr": 11
+        },
+        "bytes_buffered": {
+          "stdout": 3,
+          "stderr": 11
+        }
+      }
+    },
+    {
+      "name": "bounded pipe buffers stderr-success",
+      "passed": true
+    },
+    {
+      "name": "isolated environment",
+      "passed": true
+    },
+    {
+      "name": "malformed worker receipt rejected",
+      "passed": true
+    },
+    {
+      "name": "output mutation 0",
+      "passed": true
+    },
+    {
+      "name": "output mutation 1",
+      "passed": true
+    },
+    {
+      "name": "output mutation 2",
+      "passed": true
+    },
+    {
+      "name": "output mutation 3",
+      "passed": true
+    },
+    {
+      "name": "output mutation 4",
+      "passed": true
+    },
+    {
+      "name": "output mutation 5",
+      "passed": true
+    },
+    {
+      "name": "actual SIGTERM cleanup",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.15151871200032474,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "source mutation refused",
+      "passed": true
+    },
+    {
+      "name": "actual worker unresolved suppresses diagnostics",
+      "passed": true,
+      "receipt": {
+        "category": "completed_transport",
+        "causes": [],
+        "elapsed_seconds": 0.029455977000907296,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 215,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 215,
+          "stderr": 0
+        },
+        "transport": {
+          "kind": "r4-controlled-experiment",
+          "scientific_validity": "not_asserted",
+          "limits": {
+            "address_space": [268435456, 268435456],
+            "cpu": [25, 26],
+            "core": [0, 0]
+          },
+          "outcome": {
+            "state": "unresolved",
+            "reason": "probability_projection"
+          }
+        }
+      }
+    },
+    {
+      "name": "actual worker bootstrap enforces address space",
+      "passed": true,
+      "receipt": {
+        "category": "allocation_failure",
+        "causes": ["allocation_failure"],
+        "elapsed_seconds": 0.025073699998756638,
+        "worker_reaped": true,
+        "exit_code": 71,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    }
+  ]
+}

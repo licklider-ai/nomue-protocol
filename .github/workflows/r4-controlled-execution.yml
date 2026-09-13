@@ -1,0 +1,36 @@
+name: R4 controlled execution experiment
+
+on:
+  pull_request:
+    paths:
+      - "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/**"
+      - "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/**"
+      - ".github/workflows/r4-controlled-execution.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Actual enforcement and bounded numerical controls
+        working-directory: governance/drafts/release-4-preparation/controlled-execution-experiment-20260912
+        run: |
+          mkdir -p /tmp/r4-controlled-results
+          python test_execution.py > /tmp/r4-controlled-results/execution.json
+          python -O test_execution.py > /tmp/r4-controlled-results/execution-optimized.json
+          python admission.py > /tmp/r4-controlled-results/admission.json
+          python benchmark.py > /tmp/r4-controlled-results/benchmarks.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-controlled-execution
+          path: /tmp/r4-controlled-results/
+          if-no-files-found: error
