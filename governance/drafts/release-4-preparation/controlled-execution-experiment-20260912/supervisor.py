@@ -54,10 +54,16 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
     try:
         for sig in (signal.SIGINT, signal.SIGTERM):
             previous[sig] = signal.signal(sig, cancel)
-        process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE, cwd=HERE,
-                                   env={'PATH': '/usr/bin:/bin', 'LANG': 'C.UTF-8'},
-                                   start_new_session=True, close_fds=True)
+        # Do not let a cancellation arrive after the child exists but before
+        # Popen has returned the handle needed for cleanup.
+        mask = signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGINT, signal.SIGTERM})
+        try:
+            process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                       stderr=subprocess.PIPE, cwd=HERE,
+                                       env={'PATH': '/usr/bin:/bin', 'LANG': 'C.UTF-8'},
+                                       start_new_session=True, close_fds=True)
+        finally:
+            signal.pthread_sigmask(signal.SIG_SETMASK, mask)
         selector = selectors.DefaultSelector()
         for stream, name, event in ((process.stdin, 'stdin', selectors.EVENT_WRITE),
                                     (process.stdout, 'stdout', selectors.EVENT_READ),
@@ -126,6 +132,10 @@ def _launch(command, payload, *, wall=WALL, out_cap=OUT_CAP, started=None):
             for key in list(selector.get_map().values()):
                 key.fileobj.close()
             selector.close()
+        elif process is not None:
+            for stream in (process.stdin, process.stdout, process.stderr):
+                if stream is not None:
+                    stream.close()
         for sig, handler in previous.items():
             signal.signal(sig, handler)
     if code == -signal.SIGXCPU:
@@ -156,7 +166,7 @@ def run(cells, revision, submitted=None):
     started = time.monotonic()
     try:
         environment = host()
-    except (ValueError, OSError):
+    except (ValueError, OSError, KeyError, TypeError):
         return {'category': 'unsupported_host_or_source', 'scientific_validity': 'not_asserted'}
     from transport import encode
     try:

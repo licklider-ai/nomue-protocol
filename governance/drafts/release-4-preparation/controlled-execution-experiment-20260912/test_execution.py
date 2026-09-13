@@ -121,6 +121,19 @@ print(json.dumps(r))
     cancelled = json.loads(subprocess.check_output([sys.executable,'-c',cancel_code],cwd=HERE,timeout=5))
     check(cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
           'actual SIGTERM cleanup', cancelled)
+    launch_cancel_code = """import json,os,signal,sys
+import supervisor as s
+original=s.subprocess.Popen
+def launching(*args,**kwargs):
+    process=original(*args,**kwargs)
+    os.kill(os.getpid(),signal.SIGTERM)
+    return process
+s.subprocess.Popen=launching
+print(json.dumps(s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)))
+"""
+    cancelled=json.loads(subprocess.check_output([sys.executable,'-c',launch_cancel_code],cwd=HERE,timeout=5))
+    check(cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
+          'SIGTERM during child creation retains cleanup handle',cancelled)
     # Check an actual corrupted copied dependency without changing historical bytes.
     import tempfile
     with tempfile.TemporaryDirectory() as temp:

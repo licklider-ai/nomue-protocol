@@ -12,7 +12,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.0658526309998706,
+        "elapsed_seconds": 0.06413479299953906,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -339,7 +339,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.522993029000645,
+        "elapsed_seconds": 0.573239024999566,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -718,7 +718,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 1.274148537999281,
+        "elapsed_seconds": 1.2766583519987762,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1101,7 +1101,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 1.3627153529996576,
+        "elapsed_seconds": 1.3473614570011705,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1488,7 +1488,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05166433199883613,
+        "elapsed_seconds": 0.05163545399955183,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1794,7 +1794,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05608871399999771,
+        "elapsed_seconds": 0.053708393999841064,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {
@@ -1831,7 +1831,7 @@
       "receipt": {
         "category": "completed_worker",
         "causes": [],
-        "elapsed_seconds": 0.05337410200081649,
+        "elapsed_seconds": 0.05738078300055349,
         "worker_reaped": true,
         "exit_code": 0,
         "bytes_observed": {

@@ -9,6 +9,11 @@ records were inspected, and new behavior was tested against deliberate failures.
    but not SIGTERM, allowing a parent termination to abandon its worker. Added
    temporary SIGINT/SIGTERM handlers, ignored repeat cancellation during cleanup,
    restored caller handlers, required main-thread use and tested real SIGTERM.
+   A later lifecycle review also found the Popen handle-assignment race: blocked
+   cancellation across creation, restored the parent's signal mask only after
+   retaining the handle, and added a deterministic signal-during-launch control.
+   The worker restores its inherited mask and the pre-selector pipe cleanup is
+   explicit. This repair changes supervision only, not numerical behavior.
    SIGKILL/host failure remains outside scope.
 2. **Incomplete output acceptance.** Initial parent checked only outer result
    fields. Added closed result grammar, identity recomputation from the generated
