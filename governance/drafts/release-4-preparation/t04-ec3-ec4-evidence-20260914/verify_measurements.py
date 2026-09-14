@@ -53,6 +53,8 @@ def main():
                 if independent and independent['gate']=='eligible':
                     require([q['projected'] for q in report['result']['quantities']]==independent['target_codes'],'22 independent target codes')
                 if report['result']['gate']=='supported-domain refusal': require(not report['worker_started'],'cost preflight before worker')
+        require(row['final_outcome']['result']==(report or {}).get('result'),'final delivery binding')
+        if row['final_outcome']['execution']=='execution_refusal': require(row['final_outcome']['result'] is None,'final execution refusal carries no numeric result')
         control=item.get('control')
         if control in failure_causes:
             require(report is not None and report['execution']=='execution_refusal' and report['reason']==failure_causes[control],'actual failure cause '+control)

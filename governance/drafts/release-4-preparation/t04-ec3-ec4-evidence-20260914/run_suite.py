@@ -10,6 +10,7 @@ import subprocess
 import time
 import uuid
 from common import data, sha, require
+from delivery import finalize
 
 HERE=Path(__file__).resolve().parent
 
@@ -105,6 +106,7 @@ def one(image, profile_name, profile, name, item, mode, outputs):
             # Remove only the exact container this invocation created.
             command(['docker','rm',unique])
     result['full_invocation_wall_seconds']=time.monotonic()-start
+    result['final_outcome']=finalize(result)
     if not result.get('cleanup_ok'):
         result['check']='FAIL'
         return result

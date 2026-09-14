@@ -25,6 +25,10 @@ jobs:
           node-version: "24.14.0"
       - uses: pnpm/action-setup@v4
       - run: pnpm install --frozen-lockfile
+      - name: Check failure delivery in both modes
+        run: |
+          python3 -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/check_failure_delivery.py
+          python3 -O -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/check_failure_delivery.py
       - name: Prepare immutable inputs
         run: python3 -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/prepare.py /tmp/r4-ec3-stage
       - name: Build pinned-version research environment
