@@ -1,0 +1,30 @@
+{
+  "candidate_identity": "f14664e1082a7a346e6587a23384552aa543f8f1ec76fca07c402383734a7471",
+  "input_commit": "0562813a2a5b112e73a0d0f0f80160cc3bd08ce7",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "node": "v24.14.0",
+    "pnpm": "11.19.0",
+    "linux_cpython_3_12_14": "not run"
+  },
+  "research_checks": {
+    "write_checks": 1716,
+    "normal_rerun_checks": 1717,
+    "optimized_rerun_checks": 1717,
+    "normal_optimize": 0,
+    "optimized_optimize": 1,
+    "saved_result_byte_equality": true,
+    "result_sha256": "74e073dacf462ebefb66673e74b5c4f29326171820a9683a24cf76d3913ae448"
+  },
+  "scope": "Author execution evidence, not independent review",
+  "repository_checks": {
+    "stage": "complete candidate bytes before commit; rerun on exact committed head separately",
+    "pnpm_validate": "PASS",
+    "markdown_lint": "PASS: 626 files, zero issues",
+    "g5_prettier_check": "PASS",
+    "git_diff_check": "PASS",
+    "input_and_artifact_hashes": "PASS: 67 inputs, 12 artifacts",
+    "historical_tracked_file_delta": "none; only the new G5 directory"
+  }
+}

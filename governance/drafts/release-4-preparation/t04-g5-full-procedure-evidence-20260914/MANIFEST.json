@@ -1,0 +1,20 @@
+{
+  "scope": "G5 author research submission; not independent closure",
+  "input_commit": "0562813a2a5b112e73a0d0f0f80160cc3bd08ce7",
+  "candidate_identity": "f14664e1082a7a346e6587a23384552aa543f8f1ec76fca07c402383734a7471",
+  "working_budget_decimal": "52969003320369754284032",
+  "cost_definition_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "artifacts": {
+    "check_evidence.py": "2beec492d0d43c56304ccf817b022112ec7222e325e47868568bbfdac2ecf80c",
+    "EXPECTED-VECTORS.jsonl": "40546de4013b9db389c8c2e900a93ac0d3355646ac7e9e21563f10960a7e57cb",
+    "INPUTS.json": "0fe4b7f6db4c10b51800026480296a7d63d2c4a021fcaf4ce381620e6743a60c",
+    "procedure.py": "202a7f87b5b7490080a952599b135fed3e2ae450e946630efe8e78cfd37fd840",
+    "README.md": "602fa4a3f7024f6979c17da5577b93a36a0c8ecbd1cef51c3d45beb6e68ca71b",
+    "RECORDS.jsonl": "7b4ecc7f1da62bdbeb1f55efefe8068186a7d8da655f7b000006083b00977a87",
+    "REPORT.md": "26aa236a86179c2db33c3145b6180f772b039b92887e83af37036f9c2d91f1fa",
+    "RESULTS.jsonl": "74e073dacf462ebefb66673e74b5c4f29326171820a9683a24cf76d3913ae448",
+    "strict-ingress.ts": "fca33ddf6768d3e1cf7604f4ac55ee33fab13cb68d9695ded101037246ef0a68",
+    "VALIDATION.json": "c17eb69e171bb844a1e1166cc5c5d21128b81cab3cdd76c6441b7cc234e4059a",
+    "verify_artifacts.py": "11c12319c8c9aba516523d0f12c0758fdc90a8f979a45136050e8a201ac9c1b5"
+  }
+}
