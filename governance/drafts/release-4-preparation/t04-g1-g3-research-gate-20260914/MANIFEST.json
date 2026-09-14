@@ -1,0 +1,44 @@
+{
+  "status": "Author research; independent Research Gate required; no adopted policy",
+  "author": "OpenAI Codex, continuing author context; no independent investigator",
+  "source_base": "663e44a0e632854d740abc26ff0f705db8d87c3f",
+  "research_branch": "research/r4-t04-ec1-ec2-evidence-20260914",
+  "source_binding": "Artifact hashes below; containing Git commit binds manifest. Initial generation on uncommitted new packet at source_base; final containing commit is rerun in handoff.",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python_executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+    "role": "research execution only; not an EC3 supported environment"
+  },
+  "commands": [
+    "python -B governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/check_evidence.py --check",
+    "python -O -B governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/check_evidence.py --check",
+    "python -B governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/verify_artifacts.py",
+    "pnpm validate",
+    "pnpm exec markdownlint-cli2 \"governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/*.md\"",
+    "pnpm exec prettier --check \"governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/*.md\" \"governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/*.json\"",
+    "git diff --check"
+  ],
+  "normal_and_optimized": {
+    "observed_optimize": [0, 1],
+    "deterministic_saved_payload_match": true,
+    "checks": 35227
+  },
+  "results_sha256": "f0ccd239f525e59aa1c579733762a42c839304ed75b23c99c77a6b12b2856a54",
+  "artifacts": {
+    "check_evidence.py": "e9ed5f5dbc17a15ecb2ff6b658745536b804681d9b3c0d2a4074ba599d9d2e22",
+    "INPUTS.json": "d1cf81703bbcc4ad6f60795a07a44790808f461fa146caeddb1dd5cf8f9451b7",
+    "MAIN-DELTA.json": "96d42e4f31dd0ca05acf75b22b136e5acf350d7e12e7401349cf40711602504a",
+    "README.md": "40e0fbd7e190c7b4887498187d22b6248667cba9c839ae053ef38debb192e9ea",
+    "RESULTS.jsonl": "f0ccd239f525e59aa1c579733762a42c839304ed75b23c99c77a6b12b2856a54",
+    "REVIEW-PROMPT.md": "62346e0b0002de8969c1054e23412adc55485ec52c1e3d04818fca9c82c1996d",
+    "RG1-BOUNDEDNESS.md": "cd54693b95cf09a0044cb7596da8fe2a5f44777a4322c50aace9b79825d35b82",
+    "RG2-ZERO-EXACT-SIGN.md": "957c12b6704c93442b2d527ef92b61e089d7d2eb49c89818471f1c9d036e6d21",
+    "RG3-ALTERNATIVES.md": "a81f07b22f2a2e3c81022a2ecbf16d2a67a3a0aa9b8ccc059967ac12b4f517d5",
+    "RG4-MACHINE-EVIDENCE.md": "6a66836d2e203724ae96a6d73a981941138e0e0f2925720ddc0ac1370a75c874",
+    "RG5-CLAIM-BOUNDARY.md": "a9bec7cf34617d7fcc555e7c127a0e0d53073741940fb84c459fec1ea44f10af",
+    "verify_artifacts.py": "90f46586dd098a9c35159036aa8cc8dd750b4ecab4d939a58aee6e044b581634"
+  },
+  "self_hash_policy": "Manifest excluded from its own artifact map; immutable containing commit binds it."
+}
