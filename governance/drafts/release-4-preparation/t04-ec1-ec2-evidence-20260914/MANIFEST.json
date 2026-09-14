@@ -1,0 +1,68 @@
+{
+  "status": "author research; EC1 REMAINS OPEN; EC2 REMAINS OPEN",
+  "input_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+  "execution_repository_head": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+  "execution_source_state": "new research files were uncommitted at execution; exact artifact hashes below bind the executed source; the containing evidence commit binds this manifest",
+  "recorded_at_utc": "2026-09-14T07:08:30.1139338Z",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+  },
+  "commands": [
+    {
+      "command": "python -B governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py --write",
+      "optimize": 0,
+      "exit_code": 0,
+      "checks": 5908,
+      "output_sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7"
+    },
+    {
+      "command": "python -B governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py --check",
+      "optimize": 0,
+      "exit_code": 0,
+      "checks": 5908,
+      "saved_bytes_match": true,
+      "output_sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7"
+    },
+    {
+      "command": "python -O -B governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py --check",
+      "optimize": 1,
+      "exit_code": 0,
+      "checks": 5908,
+      "saved_bytes_match": true,
+      "output_sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7"
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "check_evidence.py",
+      "sha256": "47ec4b5725588b1d3e6917208efa1dd89324d2ce586d13783a64fec7fb27073c",
+      "bytes": 20853
+    },
+    {
+      "path": "INPUTS.json",
+      "sha256": "63672a5ae221a28ec2a9736712c64d813e9f7f2a59de40d9744821e6f4276c1a",
+      "bytes": 5869
+    },
+    {
+      "path": "RESULTS.jsonl",
+      "sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7",
+      "bytes": 185895
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "38e1a74ba8f48d25e4c3d4ef6977cf46a316df7770b6f318e713fd9a5edd3456",
+      "bytes": 42302
+    }
+  ],
+  "limitations": [
+    "No independent investigator review",
+    "Exact-F midpoint witnesses lack raw Record realization",
+    "No EC3/EC4 execution profile or support claim",
+    "No frozen numerical domain, schedule or work parameters",
+    "Research Gate required before promotion of new numerical construction"
+  ]
+}
