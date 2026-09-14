@@ -34,7 +34,7 @@ def one(image, profile_name, profile, name, item, mode, outputs):
     deadline=4 if control in ('parent-timeout','report-timeout','cleanup-escalation','tree-memory') else profile['wall']
     result={'case':name,'profile':profile_name,'mode':mode,'input_sha256':item['raw_sha256'],
             'effective_outer_wall_seconds':deadline,'container_created':False}
-    args=['docker','run','-d','--name',unique,'--network','none','--read-only','--cap-drop','ALL',
+    args=['docker','run','-d','--user',str(os.getuid())+':'+str(os.getgid()),'--name',unique,'--network','none','--read-only','--cap-drop','ALL',
           '--security-opt','no-new-privileges','--pids-limit','32','--cpus','2',
           '--memory',str(profile['tree_mib'])+'m','--memory-swap',str(profile['tree_mib'])+'m',
           '--tmpfs','/tmp:rw,noexec,nosuid,size=8m','--log-driver','json-file','--log-opt','max-size=1m','--log-opt','max-file=1',
@@ -120,7 +120,8 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         if report and report.get('result') and report['result']['gate']=='supported-domain refusal':
             require(report['worker_started'] is False,'C>B rejected before worker launch')
     else:
-        result['check']='PASS' if (report is None and 'outer_failure' in result) or (report is not None and report['execution']=='execution_refusal' and report['result'] is None) else 'FAIL'
+        outer_control=control in ('parent-timeout','report-timeout','cleanup-escalation','tree-memory')
+        result['check']='PASS' if (outer_control and report is None and 'outer_failure' in result) or (not outer_control and report is not None and report['execution']=='execution_refusal' and report['result'] is None) else 'FAIL'
     return result
 
 def main():
@@ -156,6 +157,7 @@ def main():
             rows.append(row); f.write(data(row)); f.flush()
             print(str(i+1)+'/'+str(len(plan)),profile,mode,name,row['check'],flush=True)
             require(row.get('cleanup_ok'), 'cleanup failed: '+json.dumps(row))
+            require(i!=0 or row['check']=='PASS','initial end-to-end canary failed: '+json.dumps(row))
     summary={'runs':len(rows),'checks':dict(Counter(row['check'] for row in rows)),'profiles':profiles}
     (a.output/'SUMMARY.json').write_bytes(data(summary))
     require(all(row['check']=='PASS' for row in rows),'research suite has failed checks; retain evidence')
