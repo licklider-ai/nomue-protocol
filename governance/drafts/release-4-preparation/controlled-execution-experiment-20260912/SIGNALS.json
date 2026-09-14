@@ -1,0 +1,183 @@
+{
+  "checks": 10,
+  "rows": [
+    {
+      "mode": "thread-launch",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.02197148999948695,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "thread-select",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.15225069299958705,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "run-receipt",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.05727808399933565,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.18.44",
+          "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+        },
+        "scientific_validity": "not_asserted"
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "launch-failure",
+      "passed": true,
+      "receipt": {
+        "category": "execution_error",
+        "causes": ["execution_error"],
+        "elapsed_seconds": 4.022599932795856e-5,
+        "worker_reaped": false,
+        "exit_code": null,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": [],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "repeated-cleanup",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.08176799299872073,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "normal-reap",
+      "passed": true,
+      "receipt": {
+        "category": "completed_transport",
+        "causes": [],
+        "elapsed_seconds": 0.022627117001320585,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 167,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 167,
+          "stderr": 0
+        },
+        "transport": {
+          "isolated": 1,
+          "pythonpath": null,
+          "cwd": "/workspace/scratch/953ca43b2bbd/r4-work/governance/drafts/release-4-preparation/controlled-execution-experiment-20260912"
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true
+    },
+    {
+      "mode": "loop-int",
+      "passed": true,
+      "exit_code": -2,
+      "loop_continued": false
+    },
+    {
+      "mode": "loop-term",
+      "passed": true,
+      "exit_code": 143,
+      "loop_continued": false
+    },
+    {
+      "mode": "event-driven-wait",
+      "passed": true,
+      "selector_calls": 2,
+      "timeouts": [0.19956264100001136, 0.19952178499916046]
+    },
+    {
+      "mode": "auto-reap-host-refused",
+      "passed": true
+    }
+  ]
+}

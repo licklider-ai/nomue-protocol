@@ -1,0 +1,50 @@
+name: R4 controlled execution experiment
+
+on:
+  pull_request:
+    paths:
+      - "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/**"
+      - "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/**"
+      - ".github/workflows/r4-controlled-execution.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - name: Actual enforcement and bounded numerical controls
+        working-directory: governance/drafts/release-4-preparation/controlled-execution-experiment-20260912
+        run: |
+          mkdir -p /tmp/r4-controlled-results
+          python -B validate_saved_evidence.py > /tmp/r4-controlled-results/archive-validation.json
+          python -B -m unittest test_evidence_validation
+          python -O -B -m unittest test_evidence_validation
+          python -B test_supervisor_mode.py > /tmp/r4-controlled-results/supervisor-mode.json
+          python test_execution.py > /tmp/r4-controlled-results/execution.json
+          python -O test_execution.py > /tmp/r4-controlled-results/execution-optimized.json
+          python test_signal_lifecycle.py > /tmp/r4-controlled-results/signals.json
+          python -O test_signal_lifecycle.py > /tmp/r4-controlled-results/signals-optimized.json
+          python test_host_boundaries.py > /tmp/r4-controlled-results/host-boundaries.json
+          python -O test_host_boundaries.py > /tmp/r4-controlled-results/host-boundaries-optimized.json
+          python admission.py > /tmp/r4-controlled-results/admission.json
+          python benchmark.py > /tmp/r4-controlled-results/benchmarks.json
+          python review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet.json
+          python -O review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet-optimized.json
+          python -B validate_tail_oracle.py > /tmp/r4-controlled-results/oracle.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-controlled-execution
+          path: /tmp/r4-controlled-results/
+          if-no-files-found: error

@@ -1,0 +1,90 @@
+{
+  "target": "761eb8e00cdfc06c9f3792271b4c384f922669ce",
+  "environment": {
+    "python": "3.12.14",
+    "machine": "x86_64",
+    "kernel": "6.17.0-1022-azure",
+    "python_sha256": "bef88f140b625959f8af25c7b75cce2cd5d4b29cc2f2b079befd7f68eda4dba0"
+  },
+  "provenance": "author-side controls; not independent review",
+  "supervisor_optimize": 1,
+  "checks": 19,
+  "rows": [
+    {
+      "name": "hand-derived SSE=8",
+      "passed": true
+    },
+    {
+      "name": "complete inventory",
+      "passed": true
+    },
+    {
+      "name": "swap A estimates",
+      "passed": true
+    },
+    {
+      "name": "swap A invariants",
+      "passed": true
+    },
+    {
+      "name": "swap B estimates",
+      "passed": true
+    },
+    {
+      "name": "swap B invariants",
+      "passed": true
+    },
+    {
+      "name": "translate estimates",
+      "passed": true
+    },
+    {
+      "name": "translate invariants",
+      "passed": true
+    },
+    {
+      "name": "scale estimates",
+      "passed": true
+    },
+    {
+      "name": "scale invariants",
+      "passed": true
+    },
+    {
+      "name": "outer subclass refused",
+      "passed": true
+    },
+    {
+      "name": "cell subclass refused",
+      "passed": true
+    },
+    {
+      "name": "float subclass refused",
+      "passed": true
+    },
+    {
+      "name": "bool observation refused",
+      "passed": true
+    },
+    {
+      "name": "signed-zero binding without arithmetic difference",
+      "passed": true
+    },
+    {
+      "name": "wrong identity suppresses output",
+      "passed": true
+    },
+    {
+      "name": "missing tail suppresses output",
+      "passed": true
+    },
+    {
+      "name": "extra result key suppresses output",
+      "passed": true
+    },
+    {
+      "name": "partial unresolved suppresses output",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "target": "1caac8df84ba73e73e160e844fcc228fc884f31c",
+  "parent": "df33b8dd27d0a48f6465b7ceb9f492b1e3d0a562",
+  "tree": "e0082be4d2582c8c2fcce0022189ae577e93c786",
+  "rows": [
+    {
+      "script": "test_execution.py",
+      "optimized_parent": false,
+      "exit_code": 0,
+      "checks_or_rows": 67,
+      "stdout_sha256": "0d9f143b6f83bf77c4c77331bda164e4c9c23d4e91bfbec30d7df9cb1d972064"
+    },
+    {
+      "script": "test_execution.py",
+      "optimized_parent": true,
+      "exit_code": 0,
+      "checks_or_rows": 67,
+      "stdout_sha256": "45a4016ce805adbff054aff87bbf64b7dbf0ef9ec559acb0513d583edb7e98c7"
+    },
+    {
+      "script": "test_signal_lifecycle.py",
+      "optimized_parent": false,
+      "exit_code": 0,
+      "checks_or_rows": 10,
+      "stdout_sha256": "1d6a0050e0716cc052d618f1467c2729945ffe7d76ae94ab050e6a75ef97205e"
+    },
+    {
+      "script": "test_signal_lifecycle.py",
+      "optimized_parent": true,
+      "exit_code": 0,
+      "checks_or_rows": 10,
+      "stdout_sha256": "d03bbd10fcf759e80b4ad6ff2c5841bd6d2e2f686f7d8949489545f8ba975d0e"
+    },
+    {
+      "script": "admission.py",
+      "optimized_parent": false,
+      "exit_code": 0,
+      "checks_or_rows": 320,
+      "stdout_sha256": "1c01bf579346e849b3a9efebbe5e7d9f4e1025b24903b80ae91aba2dd72cae77"
+    },
+    {
+      "script": "benchmark.py",
+      "optimized_parent": false,
+      "exit_code": 0,
+      "checks_or_rows": 7,
+      "stdout_sha256": "58076ec73240e39c8e209fe041b6486cc5aa8945fed25eeae7367481b25a0e43"
+    },
+    {
+      "script": "review_packet.py",
+      "optimized_parent": false,
+      "exit_code": 0,
+      "checks_or_rows": 19,
+      "stdout_sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    },
+    {
+      "script": "review_packet.py",
+      "optimized_parent": true,
+      "exit_code": 0,
+      "checks_or_rows": 19,
+      "stdout_sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    }
+  ],
+  "note": "stdout digests identify transient local reruns; only new packet probe outputs are retained here. Prior full-suite captures remain unchanged."
+}

@@ -1,0 +1,50 @@
+{
+  "python": "3.12.14",
+  "optimized_parent": true,
+  "driver_optimize": 1,
+  "checks": 6,
+  "rows": [
+    {
+      "mode": "path-transport",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    },
+    {
+      "mode": "path-output",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    },
+    {
+      "mode": "cached-transport",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    },
+    {
+      "mode": "cached-output",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    },
+    {
+      "mode": "sigpipe-default",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    },
+    {
+      "mode": "sigpipe-custom",
+      "passed": true,
+      "child_started": false,
+      "supervisor_optimize": 1,
+      "expected_supervisor_optimize": 1
+    }
+  ]
+}

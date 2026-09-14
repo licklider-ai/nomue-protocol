@@ -1,0 +1,516 @@
+{
+  "review": "separate whole-packet review",
+  "target": "1caac8df84ba73e73e160e844fcc228fc884f31c",
+  "record_head": "f7be54ea8790d2d3d19a690690ed67e424eae6cb",
+  "parent": "df33b8dd27d0a48f6465b7ceb9f492b1e3d0a562",
+  "tree": "e0082be4d2582c8c2fcce0022189ae577e93c786",
+  "environment": {
+    "kernel": "6.18.44-fc-v24",
+    "machine": "x86_64",
+    "suite_interpreter": "CPython 3.12.3 (/usr/bin/python3.12) with supervisor.platform.python_version patched to report 3.12.14; host() otherwise unchanged",
+    "oracle_interpreters": ["CPython 3.11.15", "CPython 3.12.3"],
+    "pinned_interpreter_3.12.14_available": false
+  },
+  "runtime_pins": [
+    {
+      "path": "consumer.py",
+      "pinned": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "complete.py",
+      "pinned": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "upstream_arithmetic.py",
+      "pinned": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "rational_candidate.py",
+      "pinned": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "rational_oracle.py",
+      "pinned": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "budget.py",
+      "pinned": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "INPUTS.json",
+      "pinned": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "worker.py",
+      "pinned": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "transport.py",
+      "pinned": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "supervisor.py",
+      "pinned": "e357698c0a9408d305b9f34a44fdcd41296d9b4f76b51cbf2c5202ef99365589",
+      "record_head_matches": true,
+      "target_matches": true
+    },
+    {
+      "path": "output.py",
+      "pinned": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e",
+      "record_head_matches": true,
+      "target_matches": true
+    }
+  ],
+  "inherited_files": [
+    {
+      "path": "consumer.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "complete.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "upstream_arithmetic.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "rational_candidate.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "rational_oracle.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "budget.py",
+      "matches_97ef2926": true
+    },
+    {
+      "path": "INPUTS.json",
+      "matches_97ef2926": true
+    }
+  ],
+  "suite_reruns": [
+    {
+      "script": "test_execution.py",
+      "optimized_parent": false,
+      "checks_or_rows": 67,
+      "stdout_sha256": "fbfc55ca5309e81a7e4a939cc470aedc1496b814d909eeb5d2c69a643cbed559"
+    },
+    {
+      "script": "test_execution.py",
+      "optimized_parent": true,
+      "checks_or_rows": 67,
+      "stdout_sha256": "c1acae24cd89b8a14b83080a7a8f653f633e25135b20bb2b62c097e5d5f06689"
+    },
+    {
+      "script": "test_signal_lifecycle.py",
+      "optimized_parent": false,
+      "checks_or_rows": 10,
+      "stdout_sha256": "4c1b9683f4971481ab9a9bca14bb034d71c4cdebe338d82bfffa19d30cc1d07f"
+    },
+    {
+      "script": "test_signal_lifecycle.py",
+      "optimized_parent": true,
+      "checks_or_rows": 10,
+      "stdout_sha256": "b61ad09fa097969715ef0f7e2dcd1a788cf813ed8b7041fb7695aa79f0c737d4"
+    },
+    {
+      "script": "admission.py",
+      "optimized_parent": false,
+      "checks_or_rows": 320,
+      "stdout_sha256": "1c01bf579346e849b3a9efebbe5e7d9f4e1025b24903b80ae91aba2dd72cae77"
+    },
+    {
+      "script": "benchmark.py",
+      "optimized_parent": false,
+      "checks_or_rows": 7,
+      "stdout_sha256": "8303b9f4d5fbcc233534ec60a80d66af4bdcf46492b400ec4c0e0bcf15ab43b6"
+    },
+    {
+      "script": "benchmark.py",
+      "optimized_parent": true,
+      "checks_or_rows": 7,
+      "stdout_sha256": "fa643a7efc7b0c3e5ab42e9f9f0ee9fbe628c2bfa101869fdbbb558b444e2f00"
+    },
+    {
+      "script": "review_packet.py",
+      "optimized_parent": false,
+      "checks_or_rows": 19,
+      "stdout_sha256": "494f7cfaa48e710b589991ee3b04b32c3752df031b68bc18ee612fc669241027"
+    },
+    {
+      "script": "review_packet.py",
+      "optimized_parent": true,
+      "checks_or_rows": 19,
+      "stdout_sha256": "494f7cfaa48e710b589991ee3b04b32c3752df031b68bc18ee612fc669241027"
+    }
+  ],
+  "admission_rows_identical_to_committed": true,
+  "benchmark_rows_identical_modulo_timing_and_environment": true,
+  "tail_oracle": {
+    "values": 17,
+    "all_agree_within_1e-12": true,
+    "max_relative_difference": 4.53999853360201e-14,
+    "rows": [
+      {
+        "source": "EXECUTION.json",
+        "row": "worker completes",
+        "contrast": "A",
+        "n_per_cell": 2,
+        "f": 0.0,
+        "committed_encoding": 1.0,
+        "continued_fraction": 1.0,
+        "closed_form_nu4": null,
+        "relative_difference": 0.0,
+        "enclosure_width": 0.0,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "EXECUTION.json",
+        "row": "worker completes",
+        "contrast": "A",
+        "n_per_cell": 2,
+        "f": 25.0,
+        "committed_encoding": 0.007490433881274524,
+        "continued_fraction": 0.0074904338812745224,
+        "closed_form_nu4": 0.007490433881274524,
+        "relative_difference": 2.3159185482078347e-16,
+        "enclosure_width": 3.424320379756904e-41,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "EXECUTION.json",
+        "row": "worker completes",
+        "contrast": "B",
+        "n_per_cell": 2,
+        "f": 9.0,
+        "committed_encoding": 0.03994196807171883,
+        "continued_fraction": 0.03994196807171883,
+        "closed_form_nu4": 0.03994196807171883,
+        "relative_difference": 0.0,
+        "enclosure_width": 1.9220907024552776e-40,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "EXECUTION.json",
+        "row": "worker completes",
+        "contrast": "AB",
+        "n_per_cell": 2,
+        "f": 1.0,
+        "committed_encoding": 0.37390096630005887,
+        "continued_fraction": 0.373900966300059,
+        "closed_form_nu4": 0.37390096630005887,
+        "relative_difference": 2.969297018971041e-16,
+        "enclosure_width": 2.277748469642157e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "EXECUTION.json",
+        "row": "worker completes",
+        "contrast": "A",
+        "n_per_cell": 65,
+        "f": 0.0,
+        "committed_encoding": 1.0,
+        "continued_fraction": 1.0,
+        "closed_form_nu4": null,
+        "relative_difference": 0.0,
+        "enclosure_width": 0.0,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-2",
+        "contrast": "A",
+        "n_per_cell": 2,
+        "f": 0.2813325672300526,
+        "committed_encoding": 0.6239086491868436,
+        "continued_fraction": 0.6239086491868437,
+        "closed_form_nu4": 0.6239086491868436,
+        "relative_difference": 1.779464070697111e-16,
+        "enclosure_width": 4.378191802530129e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-2",
+        "contrast": "B",
+        "n_per_cell": 2,
+        "f": 2.0504538766281626,
+        "committed_encoding": 0.22542506980798532,
+        "continued_fraction": 0.2254250698079851,
+        "closed_form_nu4": 0.22542506980798532,
+        "relative_difference": 9.850040419824048e-16,
+        "enclosure_width": 1.2561392714834885e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-2",
+        "contrast": "AB",
+        "n_per_cell": 2,
+        "f": 4.338097495248868,
+        "committed_encoding": 0.10568642250701706,
+        "continued_fraction": 0.10568642250701715,
+        "closed_form_nu4": 0.10568642250701706,
+        "relative_difference": 9.191768663401515e-16,
+        "enclosure_width": 5.413078668077355e-40,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-32",
+        "contrast": "A",
+        "n_per_cell": 32,
+        "f": 0.24822536284870445,
+        "committed_encoding": 0.6192099625875364,
+        "continued_fraction": 0.6192099625875253,
+        "closed_form_nu4": null,
+        "relative_difference": 1.7929669929498376e-14,
+        "enclosure_width": 2.1424627064604615e-37,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-32",
+        "contrast": "B",
+        "n_per_cell": 32,
+        "f": 5.81269912293134,
+        "committed_encoding": 0.017377898403965607,
+        "continued_fraction": 0.017377898403965975,
+        "closed_form_nu4": null,
+        "relative_difference": 2.1162592182214656e-14,
+        "enclosure_width": 5.18443094132397e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-32",
+        "contrast": "AB",
+        "n_per_cell": 32,
+        "f": 0.38675227610626023,
+        "committed_encoding": 0.5351532679140544,
+        "continued_fraction": 0.5351532679140365,
+        "closed_form_nu4": null,
+        "relative_difference": 3.340088114595178e-14,
+        "enclosure_width": 1.8322228518836827e-37,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-45",
+        "contrast": "A",
+        "n_per_cell": 45,
+        "f": 5.923459329244775,
+        "committed_encoding": 0.015940015184013417,
+        "continued_fraction": 0.015940015184013223,
+        "closed_form_nu4": null,
+        "relative_difference": 1.218876061700738e-14,
+        "enclosure_width": 6.944513184244948e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-45",
+        "contrast": "B",
+        "n_per_cell": 45,
+        "f": 0.21193431881231514,
+        "committed_encoding": 0.6458237819813342,
+        "continued_fraction": 0.645823781981337,
+        "closed_form_nu4": null,
+        "relative_difference": 4.469609117164465e-15,
+        "enclosure_width": 3.2100104945018782e-37,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-45",
+        "contrast": "AB",
+        "n_per_cell": 45,
+        "f": 0.33849793877580087,
+        "committed_encoding": 0.5614419908927216,
+        "continued_fraction": 0.5614419908927322,
+        "closed_form_nu4": null,
+        "relative_difference": 1.8785767550390248e-14,
+        "enclosure_width": 2.7661818801635393e-37,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-46",
+        "contrast": "A",
+        "n_per_cell": 46,
+        "f": 6.824864143747842,
+        "committed_encoding": 0.009749323250484956,
+        "continued_fraction": 0.009749323250485317,
+        "closed_form_nu4": null,
+        "relative_difference": 3.7010003026130826e-14,
+        "enclosure_width": 4.3055512541435645e-39,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-46",
+        "contrast": "B",
+        "n_per_cell": 46,
+        "f": 0.007902841461796498,
+        "committed_encoding": 0.9292618626086613,
+        "continued_fraction": 0.9292618626086191,
+        "closed_form_nu4": null,
+        "relative_difference": 4.53999853360201e-14,
+        "enclosure_width": 4.856054956420761e-37,
+        "agrees_within_1e-12": true
+      },
+      {
+        "source": "BENCHMARKS.json",
+        "row": "ordinary-46",
+        "contrast": "AB",
+        "n_per_cell": 46,
+        "f": 0.009961172811043471,
+        "committed_encoding": 0.9206096728277748,
+        "continued_fraction": 0.9206096728277628,
+        "closed_form_nu4": null,
+        "relative_difference": 1.3024421771630487e-14,
+        "enclosure_width": 4.806958984107907e-37,
+        "agrees_within_1e-12": true
+      }
+    ]
+  },
+  "reviewer_probes": [
+    {
+      "name": "edge zero denominator -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "endpoint domain",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "edge negative numerator -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "endpoint domain",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "edge lower above upper -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "endpoint order",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "edge unreduced endpoint -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "endpoint reduced",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "edge contrast order -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "contrast binding",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "edge df 0 -> refused in worker",
+      "passed": true,
+      "detail": {
+        "reason": "df range",
+        "stage": "evidence"
+      }
+    },
+    {
+      "name": "deadline with pending stdin",
+      "passed": true,
+      "detail": {
+        "sent_bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      }
+    },
+    {
+      "name": "json then nonzero exit suppressed",
+      "passed": true,
+      "detail": {
+        "exit": 3
+      }
+    },
+    {
+      "name": "external SIGKILL of worker suppressed",
+      "passed": true
+    },
+    {
+      "name": "wakeup fd restored to caller default",
+      "passed": true,
+      "detail": {
+        "before": -1,
+        "after": -1
+      }
+    },
+    {
+      "name": "signal during deadline cleanup propagates",
+      "passed": true,
+      "detail": {
+        "code": 143,
+        "causes": ["deadline", "cancelled"],
+        "category": "cancelled",
+        "reaped": true
+      }
+    },
+    {
+      "name": "SIGPIPE-default caller: supervisor survives EPIPE",
+      "passed": false,
+      "detail": {
+        "supervisor_exit": -13,
+        "stdout_tail": "CHILD 2467\n",
+        "child": 2467,
+        "child_alive_after_supervisor_death": true
+      }
+    },
+    {
+      "name": "shadowed output module is rejected by host()",
+      "passed": false,
+      "detail": {
+        "host_ok": true,
+        "category": "completed_worker",
+        "outcome": {
+          "state": "completed",
+          "result": {
+            "forged": true
+          }
+        }
+      }
+    }
+  ],
+  "ci_check_runs_on_record_head": {
+    "count": 10,
+    "all_success": true,
+    "source": "GitHub check-runs API for PR #331 head"
+  }
+}

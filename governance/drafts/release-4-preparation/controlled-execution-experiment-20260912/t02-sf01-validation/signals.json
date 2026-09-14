@@ -1,0 +1,203 @@
+{
+  "driver_optimize": 0,
+  "checks": 10,
+  "rows": [
+    {
+      "mode": "thread-launch",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.021731563000003007,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "thread-select",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.15196927699999918,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "run-receipt",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.022966556999996612,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "environment": {
+          "python": "3.12.14",
+          "machine": "x86_64",
+          "kernel": "6.17.0-1022-azure",
+          "python_sha256": "bef88f140b625959f8af25c7b75cce2cd5d4b29cc2f2b079befd7f68eda4dba0"
+        },
+        "scientific_validity": "not_asserted"
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "launch-failure",
+      "passed": true,
+      "receipt": {
+        "category": "execution_error",
+        "causes": ["execution_error"],
+        "elapsed_seconds": 2.9415000000199143e-5,
+        "worker_reaped": false,
+        "exit_code": null,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": [],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "repeated-cleanup",
+      "passed": true,
+      "receipt": {
+        "category": "cancelled",
+        "causes": ["cancelled"],
+        "elapsed_seconds": 0.08140302800000399,
+        "worker_reaped": true,
+        "exit_code": -9,
+        "bytes_observed": {
+          "stdout": 0,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 0,
+          "stderr": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "normal-reap",
+      "passed": true,
+      "receipt": {
+        "category": "completed_transport",
+        "causes": [],
+        "elapsed_seconds": 0.015448779999999829,
+        "worker_reaped": true,
+        "exit_code": 0,
+        "bytes_observed": {
+          "stdout": 190,
+          "stderr": 0
+        },
+        "bytes_buffered": {
+          "stdout": 190,
+          "stderr": 0
+        },
+        "transport": {
+          "isolated": 1,
+          "pythonpath": null,
+          "cwd": "<CHECKOUT>/governance/drafts/release-4-preparation/controlled-execution-experiment-20260912",
+          "optimize": 0
+        }
+      },
+      "events": ["kill-before-reap", "wait-after-kill"],
+      "handlers_restored": true,
+      "fds_restored": true,
+      "wakeup_fd_restored": true,
+      "worker_absent": true,
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0
+    },
+    {
+      "mode": "loop-int",
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0,
+      "passed": true,
+      "exit_code": -2,
+      "loop_continued": false
+    },
+    {
+      "mode": "loop-term",
+      "supervisor_optimize": 0,
+      "expected_supervisor_optimize": 0,
+      "passed": true,
+      "exit_code": 143,
+      "loop_continued": false
+    },
+    {
+      "mode": "event-driven-wait",
+      "passed": true,
+      "supervisor_optimize": 0,
+      "selector_calls": 2,
+      "timeouts": [0.19962504900000227, 0.19959107099999757]
+    },
+    {
+      "mode": "auto-reap-host-refused",
+      "passed": true,
+      "supervisor_optimize": 0
+    }
+  ]
+}

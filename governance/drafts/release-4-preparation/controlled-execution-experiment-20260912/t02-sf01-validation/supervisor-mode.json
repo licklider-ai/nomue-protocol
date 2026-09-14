@@ -1,0 +1,36 @@
+{
+  "python": "3.12.14",
+  "checks": 6,
+  "rows": [
+    {
+      "name": "propagate-0",
+      "passed": true,
+      "driver_optimize": 0,
+      "supervisor_optimize": 0
+    },
+    {
+      "name": "reject-mismatch-0",
+      "passed": true
+    },
+    {
+      "name": "propagate-1",
+      "passed": true,
+      "driver_optimize": 1,
+      "supervisor_optimize": 1
+    },
+    {
+      "name": "reject-mismatch-1",
+      "passed": true
+    },
+    {
+      "name": "propagate-2",
+      "passed": true,
+      "driver_optimize": 2,
+      "supervisor_optimize": 2
+    },
+    {
+      "name": "reject-mismatch-2",
+      "passed": true
+    }
+  ]
+}
