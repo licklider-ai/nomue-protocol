@@ -58,7 +58,8 @@
     "check:phase2a": "pnpm regression:phase1 && pnpm conformance:phase2a && pnpm verifier:example:phase2a && pnpm refusal:test && pnpm oracle:phase2a && pnpm evidence:phase2a --check",
     "conformance:phase2a-021": "tsx tooling/src/phase1/conformance-run.ts --include A2-1-",
     "check:phase2a-021": "pnpm conformance:phase2a-021",
-    "check": "pnpm format:check && pnpm lint:markdown && pnpm typecheck && pnpm validate && pnpm test && pnpm check:generated && pnpm check:phase1 && pnpm check:phase2a && pnpm check:phase2a-021"
+    "check": "pnpm check:reference-source && pnpm format:check && pnpm lint:markdown && pnpm typecheck && pnpm validate && pnpm test && pnpm check:generated && pnpm check:phase1 && pnpm check:phase2a && pnpm check:phase2a-021",
+    "check:reference-source": "node tooling/reference-sync/check.mjs && node --test tooling/reference-sync/check.test.mjs"
   },
   "devDependencies": {
     "@stdlib/stats-base-dists-t-cdf": "^0.2.3",
