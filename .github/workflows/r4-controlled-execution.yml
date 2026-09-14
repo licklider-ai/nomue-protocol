@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
@@ -26,6 +27,9 @@ jobs:
         working-directory: governance/drafts/release-4-preparation/controlled-execution-experiment-20260912
         run: |
           mkdir -p /tmp/r4-controlled-results
+          python -B validate_saved_evidence.py > /tmp/r4-controlled-results/archive-validation.json
+          python -B -m unittest test_evidence_validation
+          python -O -B -m unittest test_evidence_validation
           python -B test_supervisor_mode.py > /tmp/r4-controlled-results/supervisor-mode.json
           python test_execution.py > /tmp/r4-controlled-results/execution.json
           python -O test_execution.py > /tmp/r4-controlled-results/execution-optimized.json
@@ -37,7 +41,7 @@ jobs:
           python benchmark.py > /tmp/r4-controlled-results/benchmarks.json
           python review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet.json
           python -O review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet-optimized.json
-          python separate_tail_oracle.py > /tmp/r4-controlled-results/oracle.json
+          python -B validate_tail_oracle.py > /tmp/r4-controlled-results/oracle.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
