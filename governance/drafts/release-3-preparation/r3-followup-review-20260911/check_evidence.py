@@ -3,6 +3,7 @@ import base64
 import hashlib
 import io
 import json
+import subprocess
 from pathlib import Path
 import zipfile
 
@@ -62,7 +63,12 @@ if ci.exists():
             assert sha(b) == member["sha256"] and len(b) == member["bytes"]
             assert (ci / member["archived_path"]).read_bytes() == b
     for source in integration["source_inputs"]:
-        assert sha((ROOT / source["path"]).read_bytes()) == source["sha256"], source["path"]
+        if source["path"] == "AGENTS.md":
+            # Explicit operating-instruction transition; historical inputs stay intact.
+            subprocess.run(["node", str(ROOT / "tooling/maintenance/pinned-contribution-source.mjs"),
+                            str(ROOT), source["path"], source["sha256"]], check=True)
+        else:
+            assert sha((ROOT / source["path"]).read_bytes()) == source["sha256"], source["path"]
     guard = json.loads((ci / "members/host-guard-results.json.txt").read_text())
     assert guard["node"].startswith("v22.")
     receipt = guard["receipt"]
