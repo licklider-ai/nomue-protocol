@@ -1,0 +1,44 @@
+name: reference source consistency
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  source:
+    name: reference source (${{ matrix.os }})
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: protocol
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+      - name: Validate consumer inventory and resolve upstream commit
+        id: pin
+        working-directory: protocol
+        shell: bash
+        run: |
+          node tooling/reference-sync/check.mjs
+          node --input-type=module -e 'import fs from "node:fs"; const p = JSON.parse(fs.readFileSync("reference/SOURCE-PIN.json")); fs.appendFileSync(process.env.GITHUB_OUTPUT, `commit=${p.commit}\n`);'
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: licklider-ai/nomue-verifier
+          ref: ${{ steps.pin.outputs.commit }}
+          path: verifier
+          persist-credentials: false
+      - name: Compare with pinned Verifier source and exercise drift rejection
+        working-directory: protocol
+        run: |
+          node tooling/reference-sync/check.mjs --source ../verifier
+          node --test tooling/reference-sync/check.test.mjs

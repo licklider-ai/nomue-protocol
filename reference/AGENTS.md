@@ -22,3 +22,12 @@ Rules for this directory. Root rules in [../AGENTS.md](../AGENTS.md) also apply.
 - New third-party dependencies require pinning in `pnpm-lock.yaml`, license
   and attribution recording, and - for anything numerical - an explicit note
   on whether it shares lineage with existing dependencies (see ADR-0010).
+
+## Implementation source home
+
+The shared source files listed in [SOURCE-PIN.json](SOURCE-PIN.json) are
+pinned copies from nomue-verifier. Develop changes upstream, then use the
+coordinated intake in [README.md](README.md); do not edit these copies as an
+independent implementation. The Protocol-local resources.ts adapter remains
+separate. Existing scientific/release requirements above still apply; a new
+source pin is not approval of new behavior, methods or support.
