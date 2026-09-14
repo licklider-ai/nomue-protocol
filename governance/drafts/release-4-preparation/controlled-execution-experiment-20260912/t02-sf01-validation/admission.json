@@ -1,0 +1,4092 @@
+{
+  "sampling": "CPython 3.12 random.Random(seed); cell-major 10*random(); seeds 0..4",
+  "claim": "All three F preflights only; not completed computation or population success",
+  "rows": [
+    {
+      "n_per_cell": 2,
+      "seed": 0,
+      "input_sha256": "e825d272dd37a6d092d1d632b8c6c12db6cfb48937aa02a1dd688b5bd6702ff3",
+      "F_widths": [107, 108, 109],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 2,
+      "seed": 1,
+      "input_sha256": "0e437fe2733eaa0360f16f434b2c7903089163c0988d48602d8b8fe8c956aaef",
+      "F_widths": [108, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 2,
+      "seed": 2,
+      "input_sha256": "7e8bf469ce3366806639f29bc4e5e0cd35a25c58edc09eec2e191a40abef839f",
+      "F_widths": [109, 114, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 2,
+      "seed": 3,
+      "input_sha256": "d3a270a664356c82f96fb6dac914cb3bac3106cb53076807a0620c32db7070fb",
+      "F_widths": [108, 105, 105],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 2,
+      "seed": 4,
+      "input_sha256": "940cf40b84297aace9bcb354101f07998d6e2b32a6e19bcb648433cb1eaeedc9",
+      "F_widths": [111, 111, 110],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 3,
+      "seed": 0,
+      "input_sha256": "1facb26b74f2a356d8b0e91c913df4f5ffd0ca956ff298fb3c606bf94d462da9",
+      "F_widths": [108, 108, 110],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 3,
+      "seed": 1,
+      "input_sha256": "45aa7b813910ef7a24dd7bd82e2dad94bc9b724baf4e351233e43f7e20f7269d",
+      "F_widths": [105, 105, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 3,
+      "seed": 2,
+      "input_sha256": "283ad7a6a0179003944af8d5c317642679e21781710b40316fc2aaf660916087",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 3,
+      "seed": 3,
+      "input_sha256": "ba21ca4ec84422c81cdf01fe6bcaf5240032c393f599dc88a47bb9869aba5608",
+      "F_widths": [108, 108, 108],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 3,
+      "seed": 4,
+      "input_sha256": "4426cd74ab65502aa7ebcddde78c94a4ad77895b84a4e20d9f58b592b0a7c6ae",
+      "F_widths": [112, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 4,
+      "seed": 0,
+      "input_sha256": "5cdf7467e5f60cc653f9a7f81a1b45a9c80b419996bc82f7cd0bd6d148ffdb67",
+      "F_widths": [111, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 4,
+      "seed": 1,
+      "input_sha256": "9e6a9bf6384c3ab99a894f968d0233ed3bb19ec26812529b686ca40e2b3e6011",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 4,
+      "seed": 2,
+      "input_sha256": "fa88b6e8709ea24c4e47d9560cf724ee7b0436aff126ae9f2d60320bf5ff8158",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 4,
+      "seed": 3,
+      "input_sha256": "c681ee4691fe38add1b0d8cee0092389ff5207646c5722d70c8cd7403935b12a",
+      "F_widths": [111, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 4,
+      "seed": 4,
+      "input_sha256": "45e35a4b78fcb738a0230bf1f24c3dfd4956502e8f4f821c6a903bc6a7a64b11",
+      "F_widths": [110, 110, 109],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 5,
+      "seed": 0,
+      "input_sha256": "20a1032b6a40980459ab86b6c4c62a5b3a68b180f85d11dafc7b111a6b81e221",
+      "F_widths": [110, 109, 106],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 5,
+      "seed": 1,
+      "input_sha256": "ecdffc40eead60688a626d6dd00ed7850936243bb63b272f89321876eca89ed3",
+      "F_widths": [108, 108, 108],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 5,
+      "seed": 2,
+      "input_sha256": "f7a5603354a08f207e0eddd3f5af1f144d8e9264b483b6bb5ff643d0a7f5a9bd",
+      "F_widths": [111, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 5,
+      "seed": 3,
+      "input_sha256": "a6b31a8aebc7254575fe6db5e0e31b09a9b5737c373f1e77330efc63e07a4a90",
+      "F_widths": [112, 110, 110],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 5,
+      "seed": 4,
+      "input_sha256": "469089d943b4c8af242ac7ee74d90c809035b55566fdff4fb85a0c516c311346",
+      "F_widths": [110, 114, 110],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 6,
+      "seed": 0,
+      "input_sha256": "7cd00a6df063cf4c00aec23327383e61869d3abf6423f22f002580dfb20ff10b",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 6,
+      "seed": 1,
+      "input_sha256": "c2519ddfeeb24f9b2e872ed7ea4377f8db0e89ef9a5ef2495daf5c1a7b64fb75",
+      "F_widths": [115, 115, 115],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 6,
+      "seed": 2,
+      "input_sha256": "8fa4e625e708731de7446590dd2c51e611aa05c1f81c8e37b30bfa4c71663ac9",
+      "F_widths": [113, 116, 113],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 6,
+      "seed": 3,
+      "input_sha256": "8b6c5019e0418d5f0d6d4ec51273d5f65d1942995a98991b6c1c5563f03f18ed",
+      "F_widths": [113, 112, 112],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 6,
+      "seed": 4,
+      "input_sha256": "1fbb75c6288b74b160b9cd5d53ec0470425d508912602e1f6f1213ae55fe7bb1",
+      "F_widths": [113, 114, 113],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 7,
+      "seed": 0,
+      "input_sha256": "6b06f56f0e8681f7da7bab85e6dd8ee3a6ccb166f53118be45b83425f266c7fa",
+      "F_widths": [111, 111, 111],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 7,
+      "seed": 1,
+      "input_sha256": "262abdad86340c54b3f7fd7310490fa9ee9fff3acd4949269a35009e0f4d3dd1",
+      "F_widths": [114, 114, 114],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 7,
+      "seed": 2,
+      "input_sha256": "2cc5ba9aed7ed227c297c6e55a0aac43e9b00cb24472b9e496261baba82cfff9",
+      "F_widths": [113, 114, 113],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 7,
+      "seed": 3,
+      "input_sha256": "209bc89cd48ac90f8c1248ed7b486119767689226e4105aabdadab3a8c7d6022",
+      "F_widths": [109, 114, 116],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 7,
+      "seed": 4,
+      "input_sha256": "6599a7a8dc82e7aa05cc09a00297277787923508e5c2d7d17cc8cf3c56d1ff94",
+      "F_widths": [115, 109, 109],
+      "width_ceiling": 6500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 8,
+      "seed": 0,
+      "input_sha256": "323e379bbd070b1bc78591dd7d2fc67120235beb8ed4fdda4e5e2cd0ee65cafb",
+      "F_widths": [109, 107, 105],
+      "width_ceiling": 5102,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 8,
+      "seed": 1,
+      "input_sha256": "9277649b60a04ec2315c41808188d00f107b71642e6858e10003e88b9f85e923",
+      "F_widths": [115, 117, 115],
+      "width_ceiling": 5102,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 8,
+      "seed": 2,
+      "input_sha256": "f4cfde7686707e990ee08df9ba4e30ca49c995a897f615160aa8d71862203050",
+      "F_widths": [116, 114, 114],
+      "width_ceiling": 5102,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 8,
+      "seed": 3,
+      "input_sha256": "e7d04ca286fd2d96c559fda7e626ac43df103a5815f94f5ccbc47d3c73ab972f",
+      "F_widths": [113, 115, 112],
+      "width_ceiling": 5102,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 8,
+      "seed": 4,
+      "input_sha256": "2302c28bb1ff7b226d3d6e6a72af73f95bfd29520aa992f37cd9722e9e63b693",
+      "F_widths": [112, 111, 111],
+      "width_ceiling": 5102,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 9,
+      "seed": 0,
+      "input_sha256": "3d7ae867004fa8323c6d974e9fd4813d678fbcfe05b7fac841e43da6f5c8826c",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 3906,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 9,
+      "seed": 1,
+      "input_sha256": "e11d364492d1b1de759aee7e31a5f8202df1c53655fc8395ab3090e813d9e4bb",
+      "F_widths": [114, 113, 113],
+      "width_ceiling": 3906,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 9,
+      "seed": 2,
+      "input_sha256": "4b38529743332d608172e266f24497ebad814d46663b5ce1eaf54f8aca0b1d56",
+      "F_widths": [117, 115, 115],
+      "width_ceiling": 3906,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 9,
+      "seed": 3,
+      "input_sha256": "56645bfca802e69af8ce9425727bd21bac7b7db62ffeac70db2a93aca9595273",
+      "F_widths": [113, 115, 113],
+      "width_ceiling": 3906,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 9,
+      "seed": 4,
+      "input_sha256": "06d1c51a5fc50d203d2b0385ba0fa62eaa87fbff6809f5b35e828128a28252ef",
+      "F_widths": [112, 112, 112],
+      "width_ceiling": 3906,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 10,
+      "seed": 0,
+      "input_sha256": "f956b9a36351ca10e81fc978d2585aea96fd37f81f092cb104048c2ab06c1a06",
+      "F_widths": [111, 111, 107],
+      "width_ceiling": 3086,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 10,
+      "seed": 1,
+      "input_sha256": "f8cc91eaafd2bd40911fe190df3b4673381304456e7e8daa9999303d2fa1afd5",
+      "F_widths": [114, 111, 109],
+      "width_ceiling": 3086,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 10,
+      "seed": 2,
+      "input_sha256": "48aff30977f8831552ae8ec7d46865c18b64554151f80dfef53428e08c549fee",
+      "F_widths": [114, 114, 115],
+      "width_ceiling": 3086,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 10,
+      "seed": 3,
+      "input_sha256": "95b19600eaef7371fe6790195334a57c005acb39971e7f3aa1aeebe752d447cc",
+      "F_widths": [116, 115, 114],
+      "width_ceiling": 3086,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 10,
+      "seed": 4,
+      "input_sha256": "a193ac876d41b87d6ea07e6d73dd2e54ea08616d670750556c012eff7c598bc0",
+      "F_widths": [115, 114, 114],
+      "width_ceiling": 3086,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 11,
+      "seed": 0,
+      "input_sha256": "e5eb9e0c73087e70cdb671a54a8b4f7c2119acdae7de2d1e2d952de37a3d191c",
+      "F_widths": [113, 113, 113],
+      "width_ceiling": 2500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 11,
+      "seed": 1,
+      "input_sha256": "7fc8398d5af3ae069ff9c672e8724710b5ef717df7fc68b3df670a74a247dcd2",
+      "F_widths": [114, 116, 116],
+      "width_ceiling": 2500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 11,
+      "seed": 2,
+      "input_sha256": "432af6e644c2ffc7ee5d2176e049b85e59b537b3576eddecd1c9f3142b7d73e8",
+      "F_widths": [115, 112, 118],
+      "width_ceiling": 2500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 11,
+      "seed": 3,
+      "input_sha256": "4e3625d8c2023c8904a8e9c7dc59e38f6b94bbae8d3decdad8fdfaabaf22a20b",
+      "F_widths": [115, 115, 116],
+      "width_ceiling": 2500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 11,
+      "seed": 4,
+      "input_sha256": "aabe9d62eb023a05cf4ec9b1e2b69582333a3133334443fc3d6782957dd7d16f",
+      "F_widths": [115, 115, 114],
+      "width_ceiling": 2500,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 12,
+      "seed": 0,
+      "input_sha256": "ab42785d18a16eb6803755c2e13bb085e0a9d673f015879e57b05259bdfa13bc",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 2066,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 12,
+      "seed": 1,
+      "input_sha256": "140b382e23855f1cdf21e06168a930f6bc6eaac693e49e4bf577207d1f255bcc",
+      "F_widths": [115, 119, 119],
+      "width_ceiling": 2066,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 12,
+      "seed": 2,
+      "input_sha256": "6821e3be4ad34246f6ff08ea4b8f026e4b8b9c77f92a99be6542e8b0538e7708",
+      "F_widths": [116, 116, 118],
+      "width_ceiling": 2066,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 12,
+      "seed": 3,
+      "input_sha256": "34e21d79c8f595ee47335a7c80e88cb6c45d2ff235c44647433c3cc0b16e11b6",
+      "F_widths": [116, 116, 118],
+      "width_ceiling": 2066,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 12,
+      "seed": 4,
+      "input_sha256": "54d5cd323813a374f74646f1c8216ef0f82482c126769c966f2e240b0e45cafa",
+      "F_widths": [117, 114, 117],
+      "width_ceiling": 2066,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 13,
+      "seed": 0,
+      "input_sha256": "c6ccd2378753a751a70e29955e5a0741d25f841727ff115c1081f8a9ac90ad5a",
+      "F_widths": [115, 111, 112],
+      "width_ceiling": 1736,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 13,
+      "seed": 1,
+      "input_sha256": "0c124d648c2248f7513086a8a68ad073f4498ccee3731ea81dfd42ae11f89d18",
+      "F_widths": [107, 107, 112],
+      "width_ceiling": 1736,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 13,
+      "seed": 2,
+      "input_sha256": "63eed1322d6d20a4863f74d0a119197d9de1c9eb7eac5092f274279ebf5da731",
+      "F_widths": [116, 116, 117],
+      "width_ceiling": 1736,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 13,
+      "seed": 3,
+      "input_sha256": "86680b6aff9d3878e4c8f1d07193b3f1558b3f537cc834335c33e3e7cf171838",
+      "F_widths": [115, 114, 114],
+      "width_ceiling": 1736,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 13,
+      "seed": 4,
+      "input_sha256": "c0ded00d334f05dcfc3e2dde41507fb03b5c4f3e6cae23c70da17dbca684206d",
+      "F_widths": [113, 115, 117],
+      "width_ceiling": 1736,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 14,
+      "seed": 0,
+      "input_sha256": "28fd3be142cc28742ad21d189960c3da8e446025822e5b9e7d44fcd864a8fef0",
+      "F_widths": [117, 117, 115],
+      "width_ceiling": 1479,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 14,
+      "seed": 1,
+      "input_sha256": "f390cb739a9425ffcaa6cf03d035306ad368b47966f23f90c9e9b877094e7767",
+      "F_widths": [117, 117, 117],
+      "width_ceiling": 1479,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 14,
+      "seed": 2,
+      "input_sha256": "ec8dce707cdc97d0971ef929ef1ffca78d24247fe45e729bc5b0ac0a16985237",
+      "F_widths": [116, 116, 113],
+      "width_ceiling": 1479,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 14,
+      "seed": 3,
+      "input_sha256": "fbe7f0b1f5c5a70034786500e189dfc4d58cd8027e7a5d95d351a47343ceb04c",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 1479,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 14,
+      "seed": 4,
+      "input_sha256": "c1cb090b906c14078e3ad929d2dcfc1b6b0a8613060301ad473bc1bcadd4d5b9",
+      "F_widths": [117, 113, 120],
+      "width_ceiling": 1479,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 15,
+      "seed": 0,
+      "input_sha256": "2ed581186eefe1f483081b9145f094bff13696eb34924ed50d2ba5e30b71a50e",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 1275,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 15,
+      "seed": 1,
+      "input_sha256": "bb69a3b920ce2fe6d3bd2cc0e99bc1a001aedf9c0ee2ecfa1354fe3ea1b81030",
+      "F_widths": [116, 116, 117],
+      "width_ceiling": 1275,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 15,
+      "seed": 2,
+      "input_sha256": "6531b91c1ceca3892d568a1028447c6bb7c2f7baf6b4842b386aa6f1a907c10d",
+      "F_widths": [118, 116, 116],
+      "width_ceiling": 1275,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 15,
+      "seed": 3,
+      "input_sha256": "0473e88a89b2b140ac262e9da18d297c049366ab0d7a13dc80964a80da7b252c",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 1275,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 15,
+      "seed": 4,
+      "input_sha256": "813050f153bca16b8e1cb50548fdd9d0f1015c8cbd568ad71bc126f84f699c19",
+      "F_widths": [116, 116, 119],
+      "width_ceiling": 1275,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 16,
+      "seed": 0,
+      "input_sha256": "559e7605fcb914ba2b81e2acb4a6d3bff8c96e499bf45000c44e0ef0b0ef6a76",
+      "F_widths": [117, 118, 116],
+      "width_ceiling": 1111,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 16,
+      "seed": 1,
+      "input_sha256": "e05101a58acf67257e2d06673443485aa3b15a98dd2c510aab917ed690b682c6",
+      "F_widths": [116, 115, 115],
+      "width_ceiling": 1111,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 16,
+      "seed": 2,
+      "input_sha256": "9b4e549f8785b5c6a1b839951bd813927b2ec44b5b878e463a0690357b5e9815",
+      "F_widths": [117, 117, 111],
+      "width_ceiling": 1111,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 16,
+      "seed": 3,
+      "input_sha256": "687471631f323120f547517917611100fc4fca649934b66a86f6730c5f484a74",
+      "F_widths": [117, 119, 116],
+      "width_ceiling": 1111,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 16,
+      "seed": 4,
+      "input_sha256": "6ccaafa0141801526cb50696378e51119fa3e808896217f46aa8c72b6e4ab2fe",
+      "F_widths": [117, 117, 119],
+      "width_ceiling": 1111,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 17,
+      "seed": 0,
+      "input_sha256": "4e5dd7214561a21c35e427556e7f3f198c18f8958283c55c41b2a4aabab25459",
+      "F_widths": [113, 111, 112],
+      "width_ceiling": 976,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 17,
+      "seed": 1,
+      "input_sha256": "4003920330ea06f46840bc3fb40ab05c8b7802cf16a592a3d8c696d601e45d03",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 976,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 17,
+      "seed": 2,
+      "input_sha256": "9e6fd900045b38eec1ba6f1ffef4b7a8fd503122a6c017475ca9af89a99fa93f",
+      "F_widths": [119, 116, 117],
+      "width_ceiling": 976,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 17,
+      "seed": 3,
+      "input_sha256": "aa572f3c8c8103ab314c9a1938861c0436064939f6ee3eecb530b5885246b070",
+      "F_widths": [116, 118, 116],
+      "width_ceiling": 976,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 17,
+      "seed": 4,
+      "input_sha256": "cfe19d0af82a592a37a3980d69824c500550c815526fb78baadd69e13f294fa3",
+      "F_widths": [117, 117, 118],
+      "width_ceiling": 976,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 18,
+      "seed": 0,
+      "input_sha256": "c04b30ee014d237559cd599b1788fa220d38a0502c593742cf2a126c969e68dd",
+      "F_widths": [116, 106, 117],
+      "width_ceiling": 865,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 18,
+      "seed": 1,
+      "input_sha256": "65803c2f833556701ece510603972339d28ed36131a9a9a4480922a7279fd03d",
+      "F_widths": [120, 118, 118],
+      "width_ceiling": 865,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 18,
+      "seed": 2,
+      "input_sha256": "aae462a3491402c7c58578eceb4a88fb63c83fb95c9ecc1a697b61e571ef307c",
+      "F_widths": [119, 119, 117],
+      "width_ceiling": 865,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 18,
+      "seed": 3,
+      "input_sha256": "ca098972876e032b02f814c52c71f0e5f51d7065ee62c96b2a28134ae3ac5e8f",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 865,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 18,
+      "seed": 4,
+      "input_sha256": "e391e678b0041239aca8930beba64cea0f799feedbb351b21bb0b7c86b9843c2",
+      "F_widths": [116, 118, 118],
+      "width_ceiling": 865,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 19,
+      "seed": 0,
+      "input_sha256": "2018dc451a182f82862d961aaed268af425c3df8dc4a17b99a9aa569a25aba74",
+      "F_widths": [118, 117, 117],
+      "width_ceiling": 771,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 19,
+      "seed": 1,
+      "input_sha256": "38a10b9bde845c100590966322c1d54be65e8698ce4ba24deed2d99895eee780",
+      "F_widths": [118, 119, 117],
+      "width_ceiling": 771,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 19,
+      "seed": 2,
+      "input_sha256": "743c4acff8ec386dddd3d01d872219a29bf058f6dc544a27f3f31534c11781fa",
+      "F_widths": [119, 119, 117],
+      "width_ceiling": 771,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 19,
+      "seed": 3,
+      "input_sha256": "2f586840a14f4978ae8337db3286e2f6f51d2e503bac4c243f61e8ab4216f3e9",
+      "F_widths": [116, 116, 116],
+      "width_ceiling": 771,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 19,
+      "seed": 4,
+      "input_sha256": "7a06c19409501c6e8db90dad28322621a2ceffa819353be2f5e0cd62ee8db518",
+      "F_widths": [115, 115, 116],
+      "width_ceiling": 771,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 20,
+      "seed": 0,
+      "input_sha256": "d393e915eb20d536fe20da733983a69f49f429054dd906fab90fcb6c7f016ce9",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 692,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 20,
+      "seed": 1,
+      "input_sha256": "52d944b5e0b76a40913c361a85c170200cb32b959fed27f26206341d0b62c933",
+      "F_widths": [120, 118, 118],
+      "width_ceiling": 692,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 20,
+      "seed": 2,
+      "input_sha256": "6a1783bd93fc32bc8178eb2f89e67d9d76b16aad36137986de8f53923b507359",
+      "F_widths": [114, 111, 113],
+      "width_ceiling": 692,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 20,
+      "seed": 3,
+      "input_sha256": "f1cafe05241cbf7badfa45aaa0cb00478a517ade0011a7d8e6555b29e686a292",
+      "F_widths": [118, 118, 120],
+      "width_ceiling": 692,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 20,
+      "seed": 4,
+      "input_sha256": "75baa81af9bc8b6bf7bcf5809f894ee2c5c9fb15eeeac52c15b4699562e6561b",
+      "F_widths": [118, 120, 118],
+      "width_ceiling": 692,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 21,
+      "seed": 0,
+      "input_sha256": "4707a3aaa401eccb31666809859af5a8376d11301443b1f05749aaf37cdb2703",
+      "F_widths": [116, 115, 116],
+      "width_ceiling": 625,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 21,
+      "seed": 1,
+      "input_sha256": "4a688b7d487eecbb129c82b09e474a5e52ca6a6bbfad1ca0ee2c1ae055085f33",
+      "F_widths": [118, 113, 113],
+      "width_ceiling": 625,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 21,
+      "seed": 2,
+      "input_sha256": "081febeb2e88a4a8800c434623e9957e05b9498b930ef77d91b97f490427d7d7",
+      "F_widths": [116, 116, 116],
+      "width_ceiling": 625,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 21,
+      "seed": 3,
+      "input_sha256": "40e59faa7a85f16380e692c11f90a27c357860f7c0f77d14741204d73ce2061b",
+      "F_widths": [116, 116, 117],
+      "width_ceiling": 625,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 21,
+      "seed": 4,
+      "input_sha256": "463bc70241f02e9654f4bc3176862512098516f0f415354a91b3e2edf6f24612",
+      "F_widths": [115, 119, 117],
+      "width_ceiling": 625,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 22,
+      "seed": 0,
+      "input_sha256": "c91e74405d1386c313064cafaa9f0351f490812eb657956abb65e3de3d7ae4ee",
+      "F_widths": [115, 115, 115],
+      "width_ceiling": 566,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 22,
+      "seed": 1,
+      "input_sha256": "3221fda567203070be918f434bdfa93bf0862b046f62e84e8efa419060db4eca",
+      "F_widths": [120, 118, 118],
+      "width_ceiling": 566,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 22,
+      "seed": 2,
+      "input_sha256": "36cb94ed06b586710ff5675aa11b8f65ebeacf56541798495550aef5c19ede02",
+      "F_widths": [112, 115, 115],
+      "width_ceiling": 566,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 22,
+      "seed": 3,
+      "input_sha256": "f442a1e7a9a2009ad267aa2b6c8b9ef6fd18d12e4b364a5ee3b8399cd7435c18",
+      "F_widths": [115, 115, 116],
+      "width_ceiling": 566,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 22,
+      "seed": 4,
+      "input_sha256": "9a7acbb84124ad4c4d3726868c9dbc03bd161f30d6994e88c08a86177b17c1ec",
+      "F_widths": [118, 121, 118],
+      "width_ceiling": 566,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 23,
+      "seed": 0,
+      "input_sha256": "287caa95f52c418529b8c9b55ce9e1bfbb99bec90b37d925d602079b3846a331",
+      "F_widths": [117, 117, 118],
+      "width_ceiling": 516,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 23,
+      "seed": 1,
+      "input_sha256": "d463b2844fe64e620a17098e1930eacc7aadcae390e5fdad7b64cd9bb74b563e",
+      "F_widths": [115, 113, 117],
+      "width_ceiling": 516,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 23,
+      "seed": 2,
+      "input_sha256": "4da0202b2302781aec251a37ba3f8a2b50b7825b563e749e2eb55bcfdd8278e8",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 516,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 23,
+      "seed": 3,
+      "input_sha256": "9e86029fc568cd7ced1d25fc898fc09c0237a4b99df8b77fdfa2ca1c05c9b40d",
+      "F_widths": [112, 112, 116],
+      "width_ceiling": 516,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 23,
+      "seed": 4,
+      "input_sha256": "f279d1c9345cd73a086a029ab80f88842e1263e1bef46907ceef937fc317615a",
+      "F_widths": [118, 119, 118],
+      "width_ceiling": 516,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 24,
+      "seed": 0,
+      "input_sha256": "6c497ec483163118c21f5b95e81f4886da9253c4080d86c8d404d714dbecf220",
+      "F_widths": [118, 118, 121],
+      "width_ceiling": 472,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 24,
+      "seed": 1,
+      "input_sha256": "a7a6e7f68c7c6fb3b70467d760f867574707c68a1c5cb7deea4f7548755a0e92",
+      "F_widths": [119, 118, 118],
+      "width_ceiling": 472,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 24,
+      "seed": 2,
+      "input_sha256": "3a191dcaa34803e6b3f58d636dcb04009de8ecb835f9555a8f2752d92ef319c0",
+      "F_widths": [119, 119, 120],
+      "width_ceiling": 472,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 24,
+      "seed": 3,
+      "input_sha256": "53f18f6df244b8c1c9eb2e044540cebae3b798388c44a63e420cb520db5c6d84",
+      "F_widths": [116, 118, 112],
+      "width_ceiling": 472,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 24,
+      "seed": 4,
+      "input_sha256": "6fc65e283cb731120e73fd57a2394f82ee0c841d41b0dcd168e5b2b6c6a7cce0",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 472,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 25,
+      "seed": 0,
+      "input_sha256": "8e8c36829725c2e050d4b5cff8f0211bb6adadf852ce7d0cda978475425e182d",
+      "F_widths": [115, 115, 117],
+      "width_ceiling": 434,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 25,
+      "seed": 1,
+      "input_sha256": "25a27aa26f0e3fcc6fb6c83d8e6115293a4c15f9f4e321c4b805bd7460102217",
+      "F_widths": [116, 116, 116],
+      "width_ceiling": 434,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 25,
+      "seed": 2,
+      "input_sha256": "9d7c31844272485f2b0ec66e97b47c24a58837e104665f9e9c91be3b36cb8a89",
+      "F_widths": [118, 118, 119],
+      "width_ceiling": 434,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 25,
+      "seed": 3,
+      "input_sha256": "b88fe0c9505241491d8aba0af7fa6359f72761580fd234d8d3f03e5b9f4d03bd",
+      "F_widths": [114, 116, 115],
+      "width_ceiling": 434,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 25,
+      "seed": 4,
+      "input_sha256": "a0a8301983065cde067484b10c91ded7908aa7ed79776d5016bde65d11417cd8",
+      "F_widths": [116, 116, 116],
+      "width_ceiling": 434,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 26,
+      "seed": 0,
+      "input_sha256": "91ef0902ef94ec7f7ced0e7fe9919a5c88eba44c7e5b2ee1e06fda7ebdcca47d",
+      "F_widths": [118, 118, 120],
+      "width_ceiling": 400,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 26,
+      "seed": 1,
+      "input_sha256": "320a9694aab16c05d122f3137cfe1eac563e3d608de78724bd61cd7133e057be",
+      "F_widths": [117, 117, 117],
+      "width_ceiling": 400,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 26,
+      "seed": 2,
+      "input_sha256": "70229a0fb90d4e489d3a58359c330ab2541eca91547e55ef97158b798668568c",
+      "F_widths": [116, 116, 117],
+      "width_ceiling": 400,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 26,
+      "seed": 3,
+      "input_sha256": "fb3817e5b1efc4b7d9af285b34490e4bc16545994fd8c7b32f6c96af47ddaa97",
+      "F_widths": [118, 116, 117],
+      "width_ceiling": 400,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 26,
+      "seed": 4,
+      "input_sha256": "8b0842f062625876d7e23732cd369815ee4549f3d9d4b5b90c11f0d4712616cc",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 400,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 27,
+      "seed": 0,
+      "input_sha256": "2749420c2b12377e0cbce2b63434bbf0957b16effc3c2f9cb12de552ed0df832",
+      "F_widths": [116, 115, 116],
+      "width_ceiling": 369,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 27,
+      "seed": 1,
+      "input_sha256": "72017c48f13b8a007a4f3ac1dadb016a68d86d4aab7029d724c30f48c0f7a4bd",
+      "F_widths": [113, 118, 118],
+      "width_ceiling": 369,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 27,
+      "seed": 2,
+      "input_sha256": "b6f7d7f4c98f507761a492063faad78d1dfb9c97553038a083a2fdefdff8b3f0",
+      "F_widths": [118, 118, 120],
+      "width_ceiling": 369,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 27,
+      "seed": 3,
+      "input_sha256": "a9b7a348ee0c6787eecebf6e517968440a99a336344cbd752d8efbf15f9d6c60",
+      "F_widths": [116, 116, 117],
+      "width_ceiling": 369,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 27,
+      "seed": 4,
+      "input_sha256": "94bcfd5c513367071bf21ec60b0592145d324581059b23c0e9e5b20a613fbfa1",
+      "F_widths": [115, 118, 118],
+      "width_ceiling": 369,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 28,
+      "seed": 0,
+      "input_sha256": "76ee3f364b1afc2dcff2dd4a3be8a62ce00e512eba375509b7ff5c3077f84f9f",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 342,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 28,
+      "seed": 1,
+      "input_sha256": "95170f590075555da63c6b673df6ba8f7d78df126743e7b8b4e495714aee061d",
+      "F_widths": [119, 120, 119],
+      "width_ceiling": 342,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 28,
+      "seed": 2,
+      "input_sha256": "aa7c0c64e7e6b36bce92ffba4efb806278f6254fa5f79659de9fd9ea2d6d0547",
+      "F_widths": [115, 115, 117],
+      "width_ceiling": 342,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 28,
+      "seed": 3,
+      "input_sha256": "54fae123b6038a33d7699766ca1d981e0dead854eb1806163442f9c30f9e4f4e",
+      "F_widths": [117, 117, 119],
+      "width_ceiling": 342,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 28,
+      "seed": 4,
+      "input_sha256": "a288172016b22a5557f186917190be1077ad31c83d1d81d741f1b3eeb7f4a40e",
+      "F_widths": [117, 119, 119],
+      "width_ceiling": 342,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 29,
+      "seed": 0,
+      "input_sha256": "cdc610df7b26df07794737244d4a1c095f642424acd663a3c5d591780c56f900",
+      "F_widths": [117, 117, 117],
+      "width_ceiling": 318,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 29,
+      "seed": 1,
+      "input_sha256": "310e9f737e545a0d3e82d0de2bd810e01cedd19b3f108cbbb4fc3a65160c86ce",
+      "F_widths": [115, 115, 115],
+      "width_ceiling": 318,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 29,
+      "seed": 2,
+      "input_sha256": "7481de6e3785062d8fb0f1536db2bd3a7d8802482d60447bc1fab92ce83752f6",
+      "F_widths": [119, 118, 121],
+      "width_ceiling": 318,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 29,
+      "seed": 3,
+      "input_sha256": "aec2a21c3d484a22238aac6043b7872a7284770c27fc8b56fb2e641c7df453d8",
+      "F_widths": [114, 111, 116],
+      "width_ceiling": 318,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 29,
+      "seed": 4,
+      "input_sha256": "3f7f1cb57a5a56c932b3c192128ccb4a8a536d50b156e80935f5cf9c64f4deeb",
+      "F_widths": [112, 117, 116],
+      "width_ceiling": 318,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 30,
+      "seed": 0,
+      "input_sha256": "a98e9a4433096f342bc94b2920e7d8faa9edcd5669014711b90ce07514e78e23",
+      "F_widths": [119, 121, 119],
+      "width_ceiling": 297,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 30,
+      "seed": 1,
+      "input_sha256": "af90f23716ffb327938a4f1bb0989e621a884c28ddbaf0a21b18d8b2ae6a88f2",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 297,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 30,
+      "seed": 2,
+      "input_sha256": "005febcc0c8c5c607b401c9bccfb9451b7a2b73d04ef30c9bcc4ad76daff76c9",
+      "F_widths": [120, 117, 121],
+      "width_ceiling": 297,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 30,
+      "seed": 3,
+      "input_sha256": "1d95184301751c62fd94c3af597a1be540936fa42639308ce072ca40137a44cd",
+      "F_widths": [118, 118, 117],
+      "width_ceiling": 297,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 30,
+      "seed": 4,
+      "input_sha256": "134f31aaa69a679099f4509552110e9d4eb6797b9ce75f770af05d532ce71ec3",
+      "F_widths": [118, 118, 119],
+      "width_ceiling": 297,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 31,
+      "seed": 0,
+      "input_sha256": "135262f31534c4c0851e7a0d39d2250270d4fbeb6f18f97b736c35087a9a16a3",
+      "F_widths": [116, 117, 116],
+      "width_ceiling": 277,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 31,
+      "seed": 1,
+      "input_sha256": "c3542f2284049a1aff7e46ae808fc16541845002a58606b885a7d00d0ce79f04",
+      "F_widths": [117, 117, 117],
+      "width_ceiling": 277,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 31,
+      "seed": 2,
+      "input_sha256": "e1627bbe433772bea1f957e8e373605f8a8bc35deffd89a92555a1ae1ecc034d",
+      "F_widths": [120, 117, 120],
+      "width_ceiling": 277,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 31,
+      "seed": 3,
+      "input_sha256": "596d1c4637d7bc12e5ff111b2f825c882ac72f033986660a6b0ee1fae4b5e8b7",
+      "F_widths": [118, 118, 117],
+      "width_ceiling": 277,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 31,
+      "seed": 4,
+      "input_sha256": "12ad4197d3ede923afefeae4f01af5a07121eb10ab219bec4c2826ee15e0b728",
+      "F_widths": [119, 119, 119],
+      "width_ceiling": 277,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 32,
+      "seed": 0,
+      "input_sha256": "557e36174536473eafbd948415e755acf647ca78c7857cab72511b217587968a",
+      "F_widths": [118, 121, 118],
+      "width_ceiling": 260,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 32,
+      "seed": 1,
+      "input_sha256": "e46325dd23fe91ac4cb43b14aedcd1fdf9e30800fc996369012a7323e267c4d3",
+      "F_widths": [119, 119, 121],
+      "width_ceiling": 260,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 32,
+      "seed": 2,
+      "input_sha256": "0d5ddbb016bd67058f6147e37194552ed2158e888b80860b1591b5da22f3df70",
+      "F_widths": [120, 119, 122],
+      "width_ceiling": 260,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 32,
+      "seed": 3,
+      "input_sha256": "1c7faf744ed6fd2056f84771f0400df5e4965cbe76435308700a2a527880a5ee",
+      "F_widths": [121, 120, 118],
+      "width_ceiling": 260,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 32,
+      "seed": 4,
+      "input_sha256": "8acd0b1929ec5d9c58549a3f8adced3977837454c29328ec62a3e4c0c1c2dd51",
+      "F_widths": [119, 119, 119],
+      "width_ceiling": 260,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 33,
+      "seed": 0,
+      "input_sha256": "73d1feca896115b99d5225c0d8acf137eeaf80ae2b120be2d5defd3bd9d053b7",
+      "F_widths": [118, 120, 118],
+      "width_ceiling": 244,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 33,
+      "seed": 1,
+      "input_sha256": "050b24c03940528bc4bcbc5f9091f0077a11ab4987eefa1751f656cf57b916d3",
+      "F_widths": [119, 119, 120],
+      "width_ceiling": 244,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 33,
+      "seed": 2,
+      "input_sha256": "2ee950f8cdfb12de4e57b3e0cb47d5681b22972eca11aabbb5e49c6779f69f93",
+      "F_widths": [119, 119, 121],
+      "width_ceiling": 244,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 33,
+      "seed": 3,
+      "input_sha256": "c8d53b0f6b7ae6edd11bebdc49aea9b36e34f188fd5ffedb4b2e315f1fe93c55",
+      "F_widths": [119, 116, 119],
+      "width_ceiling": 244,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 33,
+      "seed": 4,
+      "input_sha256": "c2f34e73d821ee0186d85cc5470ea76cee9cdf71f2dc475dffdcefb0a6d19312",
+      "F_widths": [116, 116, 119],
+      "width_ceiling": 244,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 34,
+      "seed": 0,
+      "input_sha256": "623f968f002f9704aac60bea1240007389ad2a4ffdb8e92639f5dafd0e96b047",
+      "F_widths": [115, 123, 120],
+      "width_ceiling": 229,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 34,
+      "seed": 1,
+      "input_sha256": "c72c1913f752bc29bc4bc4cd5bf4f0bb54b2c36acecb039695be43a6e53d4c93",
+      "F_widths": [117, 117, 120],
+      "width_ceiling": 229,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 34,
+      "seed": 2,
+      "input_sha256": "5948e501919ccd2d1b12e764c7b88402ac6bc2affd8ffb939a54762659147fee",
+      "F_widths": [120, 119, 121],
+      "width_ceiling": 229,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 34,
+      "seed": 3,
+      "input_sha256": "12c9edcf5655c82341eb4964a6f2bd0c51bedc80d26fec306b2dd075f6e5d0cf",
+      "F_widths": [116, 115, 115],
+      "width_ceiling": 229,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 34,
+      "seed": 4,
+      "input_sha256": "f1884cd3a1cdde1da6d73a63968bcea02551c56e9849c9d0685bb708c0a1da8b",
+      "F_widths": [120, 120, 120],
+      "width_ceiling": 229,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 35,
+      "seed": 0,
+      "input_sha256": "58c90c7b224e8510bb700d2c4c3c658197c46748fc5b82d9e3036c6faf8d5976",
+      "F_widths": [119, 122, 119],
+      "width_ceiling": 216,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 35,
+      "seed": 1,
+      "input_sha256": "863d8c6f1b6e656af3fad62588853bbad7501ea208be7e7027d829d16ed9d245",
+      "F_widths": [119, 119, 121],
+      "width_ceiling": 216,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 35,
+      "seed": 2,
+      "input_sha256": "1546d27b363e844f742d78fb91be1b94be80eeafb91cb7fff0904bbfb14a4f29",
+      "F_widths": [118, 117, 118],
+      "width_ceiling": 216,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 35,
+      "seed": 3,
+      "input_sha256": "72cf7f42092a848cc916521479d142d231fdd023a0c4b5cdb1f68de58299bea1",
+      "F_widths": [120, 119, 119],
+      "width_ceiling": 216,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 35,
+      "seed": 4,
+      "input_sha256": "9bf43bedadedb39977c3d1b48a7416ce5da63e50908bb094113b61c9add0c6fa",
+      "F_widths": [119, 116, 117],
+      "width_ceiling": 216,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 36,
+      "seed": 0,
+      "input_sha256": "74dcbd383cd17d256ccfcc087e71e54c23d7e69068cf9294c41d06bf6cac98a1",
+      "F_widths": [117, 120, 118],
+      "width_ceiling": 204,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 36,
+      "seed": 1,
+      "input_sha256": "0dbcb1568360eb953ceb3daf213b4d94e6d24531f1a06f166fed64ab063ef36f",
+      "F_widths": [116, 105, 120],
+      "width_ceiling": 204,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 36,
+      "seed": 2,
+      "input_sha256": "00aec5bb3994bbd6633cbbe85d72633899505c67c1429e90f724b818260381d4",
+      "F_widths": [118, 117, 117],
+      "width_ceiling": 204,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 36,
+      "seed": 3,
+      "input_sha256": "e4054085ebec3dab14531170df2d30d23fe23b343e47a54c6ffdf793ecfba484",
+      "F_widths": [118, 113, 117],
+      "width_ceiling": 204,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 36,
+      "seed": 4,
+      "input_sha256": "30b59be1c260a608564d81d1874192c8dd63394aeb8ebe542fc834aa19cb99f5",
+      "F_widths": [117, 120, 120],
+      "width_ceiling": 204,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 37,
+      "seed": 0,
+      "input_sha256": "4d810dacfc2a52013eca9753eb0d60342ef530dd10b758eb55fcd9dc40e46302",
+      "F_widths": [119, 122, 114],
+      "width_ceiling": 192,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 37,
+      "seed": 1,
+      "input_sha256": "ac735e24dee688460b624a5bb048370430c09f31beecfb188b464816c3a3060f",
+      "F_widths": [117, 117, 120],
+      "width_ceiling": 192,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 37,
+      "seed": 2,
+      "input_sha256": "0b13d1fb5c2ecaa3838f882e35b003de09ce4b8db586219656377ceaa4a1a58a",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 192,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 37,
+      "seed": 3,
+      "input_sha256": "ddaf50733a22aed06dc0c1cc58ec2ca80dbeb30a878a6c1bdc51d9c6b038ed96",
+      "F_widths": [116, 115, 115],
+      "width_ceiling": 192,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 37,
+      "seed": 4,
+      "input_sha256": "a3605bec611a06801397ce60c4a252a91955e20c8c821925ff4a79d4e3f38d4f",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 192,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 38,
+      "seed": 0,
+      "input_sha256": "3797792876cd74862f3e6c30cb5c8a1e232138b5a543d0f5b3be07408e33e180",
+      "F_widths": [119, 122, 119],
+      "width_ceiling": 182,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 38,
+      "seed": 1,
+      "input_sha256": "df5b23b056faaa9727bc00a6584ab83db62c14688d02a68b003af4c9c0a2aafd",
+      "F_widths": [120, 120, 123],
+      "width_ceiling": 182,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 38,
+      "seed": 2,
+      "input_sha256": "1fc2e9b6928a74578164050c98dda229f154162e1b7e52a8fec0d4c4a644dbc3",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 182,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 38,
+      "seed": 3,
+      "input_sha256": "ea29e103604caa03cfc67c11f730ab90b345790f54d5db208f638f0fe5181e74",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 182,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 38,
+      "seed": 4,
+      "input_sha256": "ed01f4e85eb52cd1c7ba9f394126962cf9ff359073099aa188a853bbb5d86502",
+      "F_widths": [120, 120, 121],
+      "width_ceiling": 182,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 39,
+      "seed": 0,
+      "input_sha256": "b461f07c71f7066adb8a1178f1449d9c0ab02f18041188dd0c645054599e9d58",
+      "F_widths": [119, 122, 119],
+      "width_ceiling": 173,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 39,
+      "seed": 1,
+      "input_sha256": "25df1f7d76df26ddcd9d2426f1b554444b7d023fd641b406ab9dba218bfd0fde",
+      "F_widths": [119, 119, 120],
+      "width_ceiling": 173,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 39,
+      "seed": 2,
+      "input_sha256": "1b19c89f3389ae311a21b4a6c294bab99b106c3d1e207fe64625253c527159bd",
+      "F_widths": [122, 119, 120],
+      "width_ceiling": 173,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 39,
+      "seed": 3,
+      "input_sha256": "5c0f933668c07417cb49fa7850d1171387b1047974f8034d3d3728ca68aaa16e",
+      "F_widths": [117, 118, 115],
+      "width_ceiling": 173,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 39,
+      "seed": 4,
+      "input_sha256": "6f4e1cfd3e7d70f66daeb477f225aaf7e2dc2a2ebb1d56745f9299ed05b3849d",
+      "F_widths": [119, 119, 121],
+      "width_ceiling": 173,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 40,
+      "seed": 0,
+      "input_sha256": "856b7857df1906230ed0b1855b7a9ea13017c69e9722a590a43b6ed4fbd4e292",
+      "F_widths": [121, 123, 120],
+      "width_ceiling": 164,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 40,
+      "seed": 1,
+      "input_sha256": "32f61a1f2c486fdf16a92e35c2fbe284f2b4908a92f5d920a70cf1976ff1f577",
+      "F_widths": [119, 119, 122],
+      "width_ceiling": 164,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 40,
+      "seed": 2,
+      "input_sha256": "5f91446f29ef6bfa152e2dcd81b9433d519d366b58e94d43d2c6e897be7667d8",
+      "F_widths": [119, 118, 117],
+      "width_ceiling": 164,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 40,
+      "seed": 3,
+      "input_sha256": "8277c906715bf84235713931341240dba7e5e156a4bdd9a548c9d78857921156",
+      "F_widths": [120, 119, 117],
+      "width_ceiling": 164,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 40,
+      "seed": 4,
+      "input_sha256": "519863ccc4f02a2e5357a8544ab9d000e000f343a5b127524c03dd942cd551f9",
+      "F_widths": [120, 120, 122],
+      "width_ceiling": 164,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 41,
+      "seed": 0,
+      "input_sha256": "b80d38db9b766d0cc773bd50ef6ca67946b1459ac1d22c1542d4ef8d7778ac02",
+      "F_widths": [119, 118, 117],
+      "width_ceiling": 156,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 41,
+      "seed": 1,
+      "input_sha256": "9ec3c4bb0197efc32a36e37e099f4087eabbdd0db917d403627a5a800092ab98",
+      "F_widths": [119, 119, 122],
+      "width_ceiling": 156,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 41,
+      "seed": 2,
+      "input_sha256": "f57340510358781a270e9668e82249883045fa3aedd785d7b1f0751c30c472cc",
+      "F_widths": [120, 117, 117],
+      "width_ceiling": 156,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 41,
+      "seed": 3,
+      "input_sha256": "27f46130aba67a973037148eb30bf2ba669a479772e716917adf4574bfd8837a",
+      "F_widths": [119, 117, 117],
+      "width_ceiling": 156,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 41,
+      "seed": 4,
+      "input_sha256": "161e96ef406fa5894ba3ce1cce5f4a48326f39d2da3e8cceb99bd70e8f8f8e9f",
+      "F_widths": [118, 118, 119],
+      "width_ceiling": 156,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 42,
+      "seed": 0,
+      "input_sha256": "5ad55dc5cac564e55545041a54db3ffa1067a8affb1d1b32273608897a4d8dbd",
+      "F_widths": [122, 121, 120],
+      "width_ceiling": 148,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 42,
+      "seed": 1,
+      "input_sha256": "c6f20ab40676319d3891dbdc7ae493c64b0a3e78fe70482d70d7796ed195e261",
+      "F_widths": [118, 119, 121],
+      "width_ceiling": 148,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 42,
+      "seed": 2,
+      "input_sha256": "2205926d9836e3a32b9f60a2bdf5aef76cfff52dcd0d8c7929895626cbaac130",
+      "F_widths": [123, 122, 120],
+      "width_ceiling": 148,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 42,
+      "seed": 3,
+      "input_sha256": "acc74dd2ebba0088e37c38a8a0aa410b5efe37cb8d3a3db7486625b1b9ad30d6",
+      "F_widths": [123, 119, 121],
+      "width_ceiling": 148,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 42,
+      "seed": 4,
+      "input_sha256": "0f23c0db092415c4938a2bc7bfb3a165a1135c961dd50ef7caaed8b3c2394e41",
+      "F_widths": [120, 121, 119],
+      "width_ceiling": 148,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 43,
+      "seed": 0,
+      "input_sha256": "ae8752506146041da6e9293dd7c6b8a42e06eae23473d1a306de3944ea027bf6",
+      "F_widths": [121, 120, 117],
+      "width_ceiling": 141,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 43,
+      "seed": 1,
+      "input_sha256": "7e0c6eea0a2844c7938aa36fc3bd2e06c7fb7ea8b774dfd7fd0eccbd3abaadf5",
+      "F_widths": [118, 118, 120],
+      "width_ceiling": 141,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 43,
+      "seed": 2,
+      "input_sha256": "1ca973522c9e5791dd3baecf8d57394e27fd36f0cbdb4b1089afec821460d97e",
+      "F_widths": [122, 119, 119],
+      "width_ceiling": 141,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 43,
+      "seed": 3,
+      "input_sha256": "336e0114dfc0c1fe0439fb8a10f8d5a2403e6aa9be641c599b8f2373f40407c7",
+      "F_widths": [121, 119, 117],
+      "width_ceiling": 141,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 43,
+      "seed": 4,
+      "input_sha256": "bbe98ad58864f36906d9b1b7281f120e67ad972be022a1b696b616b59dce4c4d",
+      "F_widths": [120, 120, 122],
+      "width_ceiling": 141,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 44,
+      "seed": 0,
+      "input_sha256": "6194a49e40cc82ef440e522c2af78a6132b2234507924beb0820d0c741c97646",
+      "F_widths": [122, 120, 119],
+      "width_ceiling": 135,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 44,
+      "seed": 1,
+      "input_sha256": "e9dce32206af231cc9a47ddda1740b413795f757b62b2236d8664a08bde75e42",
+      "F_widths": [120, 120, 122],
+      "width_ceiling": 135,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 44,
+      "seed": 2,
+      "input_sha256": "ac7cd19774bd02c8b1c9cfe4eb0442ecc53b3108b7790babd8b36b298923bf2b",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 135,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 44,
+      "seed": 3,
+      "input_sha256": "9855d94da5cb58ec4e6257c14476dcf8a00d53b20570fd7d41918faa691f1c78",
+      "F_widths": [120, 118, 118],
+      "width_ceiling": 135,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 44,
+      "seed": 4,
+      "input_sha256": "107fd5e5f07b2eda27eb64c6e215cd243bf1dd76808d1c20c4e32a1196f27dfe",
+      "F_widths": [120, 122, 123],
+      "width_ceiling": 135,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 45,
+      "seed": 0,
+      "input_sha256": "22b33ac13cc787b6aec0ff256573ef1d858f80a9c8827070d5bf66060c67102a",
+      "F_widths": [118, 118, 116],
+      "width_ceiling": 129,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 45,
+      "seed": 1,
+      "input_sha256": "ee630ab2b4a916e6d7e972b07de68a0033a3a0251f6fdf86a69e496332136679",
+      "F_widths": [119, 119, 120],
+      "width_ceiling": 129,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 45,
+      "seed": 2,
+      "input_sha256": "0dfb111a331bf47b66690d8e598c4e3202bfa1bd2056eb648f5d632da76d3a3c",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 129,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 45,
+      "seed": 3,
+      "input_sha256": "ae75e30cb74fd19c980f7ab2605f178cbe41edf3b3111f28a884a0283cf8acca",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 129,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 45,
+      "seed": 4,
+      "input_sha256": "3192c8c2946876d4501bab7614d68da33641bd8edf9a1c51098e5064b626597d",
+      "F_widths": [120, 122, 122],
+      "width_ceiling": 129,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 46,
+      "seed": 0,
+      "input_sha256": "1945989d259ef742cdd59d4f05b6830bb7bd5e11eef7fe29ceb43a4ee9611e1e",
+      "F_widths": [119, 116, 116],
+      "width_ceiling": 123,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 46,
+      "seed": 1,
+      "input_sha256": "c074431afa03440b46dea4a70dd7d2bc1c20ec6a29e65a1e9fa49bc4febf2b6b",
+      "F_widths": [120, 120, 120],
+      "width_ceiling": 123,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 46,
+      "seed": 2,
+      "input_sha256": "42f80758ed3e9c43eaa3d69631e1ad5fe7d41768f801a672f9a67bce36cd9cd1",
+      "F_widths": [118, 118, 118],
+      "width_ceiling": 123,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 46,
+      "seed": 3,
+      "input_sha256": "9bfa7a7d668d9b8138dbbbd25efef9ca33781c59d19b095bf2fdcaf143e6c2a5",
+      "F_widths": [122, 121, 121],
+      "width_ceiling": 123,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 46,
+      "seed": 4,
+      "input_sha256": "680946192f8b7c0b45e8c8123f2d63a14805b24efc132e06c4c314910ae76729",
+      "F_widths": [120, 122, 122],
+      "width_ceiling": 123,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 47,
+      "seed": 0,
+      "input_sha256": "3faa88ab166896c82e8518693f39dd1906bb49827a3056d969ec6179a8641ce9",
+      "F_widths": [122, 119, 119],
+      "width_ceiling": 118,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 47,
+      "seed": 1,
+      "input_sha256": "9b58bbae3fc6747cf506528135172b442e40f71f2a10a1820d9b9674db3bf3e4",
+      "F_widths": [120, 121, 116],
+      "width_ceiling": 118,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 47,
+      "seed": 2,
+      "input_sha256": "2759677f466f18ece641657aaa0ecfc882f5d1cf36d2f43be2b1f0f8c821f042",
+      "F_widths": [118, 116, 118],
+      "width_ceiling": 118,
+      "preflight_eligible": true,
+      "reasons": []
+    },
+    {
+      "n_per_cell": 47,
+      "seed": 3,
+      "input_sha256": "5d0e40c8569247a1d719567cb988b0d686d6ba20466d5bdee830db0bfe7fcfc7",
+      "F_widths": [120, 120, 120],
+      "width_ceiling": 118,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 47,
+      "seed": 4,
+      "input_sha256": "50a9c5c9b63503b81f865a5e8b327252e815927ae47d29775b534dfb2017d760",
+      "F_widths": [117, 118, 120],
+      "width_ceiling": 118,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 48,
+      "seed": 0,
+      "input_sha256": "662ca61538b0516394cac26827051d7ed5e81d752a0de51d1962e2160e492aac",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 113,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 48,
+      "seed": 1,
+      "input_sha256": "4fe63948bd9ad9ded43cc78d3c1444c9d864af74f0f8f7b311ea349dc58bba43",
+      "F_widths": [118, 123, 121],
+      "width_ceiling": 113,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 48,
+      "seed": 2,
+      "input_sha256": "87c633dadaef17010e42ec12adbd501b12d5a979169e0556c0351ec61a09cedb",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 113,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 48,
+      "seed": 3,
+      "input_sha256": "99da1858d3de20c89a26065be3318e75bff875f12fca92eacd3c462281abaab1",
+      "F_widths": [119, 120, 120],
+      "width_ceiling": 113,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 48,
+      "seed": 4,
+      "input_sha256": "07ead60d29ff7dd36daa2cdd6fea9c0e18206ebbb2fe3ae014bf18957297f870",
+      "F_widths": [113, 114, 115],
+      "width_ceiling": 113,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 49,
+      "seed": 0,
+      "input_sha256": "b55d2af30955ddaea5c444d04f9beba7009025d144ea74daadca5df8f5048f36",
+      "F_widths": [121, 118, 118],
+      "width_ceiling": 108,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 49,
+      "seed": 1,
+      "input_sha256": "1e516ec0e2cb95f314dbb8729d18e4d9c9c3528d2378bd2d10214bad42bd7424",
+      "F_widths": [120, 122, 120],
+      "width_ceiling": 108,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 49,
+      "seed": 2,
+      "input_sha256": "4ab46bd5775409096eab6324d47ccbdc43f9fd740119c5fc680a638ac5c2f5ee",
+      "F_widths": [122, 119, 119],
+      "width_ceiling": 108,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 49,
+      "seed": 3,
+      "input_sha256": "330edf9edc164e3e686a0b031a43c1d315dc721727dcfb6aa3e66ae7ff36881f",
+      "F_widths": [119, 119, 119],
+      "width_ceiling": 108,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 49,
+      "seed": 4,
+      "input_sha256": "0001527d743a4f3f8e66635ba37b2c6a86909703774c804333884ddc2a1b35a5",
+      "F_widths": [118, 119, 120],
+      "width_ceiling": 108,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 50,
+      "seed": 0,
+      "input_sha256": "81ea228d4b6e07c9b877d66d87709a4bd0f320415d9ed70559f5326d53116a29",
+      "F_widths": [121, 118, 118],
+      "width_ceiling": 104,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 50,
+      "seed": 1,
+      "input_sha256": "e68fc3a93846c0a3d259ae9e6ed5f530a028babc6ca0fd8bf35aea7620bac094",
+      "F_widths": [121, 121, 120],
+      "width_ceiling": 104,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 50,
+      "seed": 2,
+      "input_sha256": "ffd6348cada8ff4134c417cb6365887fe9ae184c15778ce2c74200033d6b82b5",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 104,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 50,
+      "seed": 3,
+      "input_sha256": "fc5fa1ba04880d49705dc9b33ca648d3166e65b6c6549042271378e16ca1afa2",
+      "F_widths": [121, 120, 120],
+      "width_ceiling": 104,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 50,
+      "seed": 4,
+      "input_sha256": "c06a4135389a8a32ac0c150adfeceb53ffbdaee359d578a975c2de9850cef049",
+      "F_widths": [112, 115, 116],
+      "width_ceiling": 104,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 51,
+      "seed": 0,
+      "input_sha256": "c0c0d8f7e852821f059e4dd0c456c4482b8f52c6c17bc8cc3a2f09a4f9a489b4",
+      "F_widths": [124, 120, 120],
+      "width_ceiling": 100,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 51,
+      "seed": 1,
+      "input_sha256": "45b03e91a8686221c47d5633275a57d6549d3aa95c441dd0450e8713d19ef097",
+      "F_widths": [117, 119, 117],
+      "width_ceiling": 100,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 51,
+      "seed": 2,
+      "input_sha256": "433255238417277ce4d943740c285ca520b2584050d6fd179d5f766a13e9dd5c",
+      "F_widths": [121, 117, 119],
+      "width_ceiling": 100,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 51,
+      "seed": 3,
+      "input_sha256": "21370974c9e206dd51466fd94e81d26b9cd26dc48cbb1e240d6eb5db2e92f65c",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 100,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 51,
+      "seed": 4,
+      "input_sha256": "df59d7c55b664240255ae56b217172fab5ed9ed4fd70cc7f0b98a5d8eaedf895",
+      "F_widths": [120, 117, 120],
+      "width_ceiling": 100,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 52,
+      "seed": 0,
+      "input_sha256": "785aa75d6e9c872a5230823399ce1c3c7b0748327c56f133369e7f5c54e1fe70",
+      "F_widths": [123, 119, 119],
+      "width_ceiling": 96,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 52,
+      "seed": 1,
+      "input_sha256": "38ea22ece8f781e5ebd2c0a5900b01a785d6ee2e8c7d1e6a81f3af14337f749d",
+      "F_widths": [117, 122, 120],
+      "width_ceiling": 96,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 52,
+      "seed": 2,
+      "input_sha256": "caa844aaf4f81f261b9cc8c2ad86ad2ad8e7f70978735eafbae14ff6408368b7",
+      "F_widths": [124, 121, 121],
+      "width_ceiling": 96,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 52,
+      "seed": 3,
+      "input_sha256": "9b5d0785cfdde04a3d0715a096a83b1f9ba5c60fd5e57044b1b71e8b3a17075d",
+      "F_widths": [121, 120, 120],
+      "width_ceiling": 96,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 52,
+      "seed": 4,
+      "input_sha256": "0d88655d0e870fb31d69976fd463b85d42989bac0e61c197d20ad94cd3c8ebb3",
+      "F_widths": [121, 121, 121],
+      "width_ceiling": 96,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 53,
+      "seed": 0,
+      "input_sha256": "d7b52706101f24e60a72b149fcc81f755008251bda66483a270e83356d0d6f63",
+      "F_widths": [122, 119, 119],
+      "width_ceiling": 92,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 53,
+      "seed": 1,
+      "input_sha256": "e1e962daff09d44610f5ed1e5545a413524779f7aeef2df54234cc4b9d294514",
+      "F_widths": [120, 122, 120],
+      "width_ceiling": 92,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 53,
+      "seed": 2,
+      "input_sha256": "1e58826fdbf3f687950c338ffa6f4aa2dd7b4e05ef0c130c479ad19d5685944a",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 92,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 53,
+      "seed": 3,
+      "input_sha256": "b8ac11a765c2212bf49b6a1b0225827449fb6480ddee6faccc391915f76e6012",
+      "F_widths": [120, 119, 119],
+      "width_ceiling": 92,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 53,
+      "seed": 4,
+      "input_sha256": "216e1ec85268f3a7a7b1f92cc3d746a8db5fdbc6aae3be88c6e45daa6a431888",
+      "F_widths": [120, 120, 120],
+      "width_ceiling": 92,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 54,
+      "seed": 0,
+      "input_sha256": "cfb370a73718daa9b0668746c25cac48a73bfbb818dfdea3b51fb5f89e877b16",
+      "F_widths": [124, 121, 121],
+      "width_ceiling": 88,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 54,
+      "seed": 1,
+      "input_sha256": "a8dd828d46c1a4dc2e035aed0c425c0af871d22ee9e0e7af7f87cac7cde8cf32",
+      "F_widths": [120, 121, 120],
+      "width_ceiling": 88,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 54,
+      "seed": 2,
+      "input_sha256": "ea0be9e5c2a93067be78aff598aac8b6457d0b3470f7223c5924e097afc21053",
+      "F_widths": [120, 120, 120],
+      "width_ceiling": 88,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 54,
+      "seed": 3,
+      "input_sha256": "c5c355db761981823bcfe9c077b8b6bcee5ce6184ea6658d6f89f302c741a7c4",
+      "F_widths": [122, 121, 121],
+      "width_ceiling": 88,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 54,
+      "seed": 4,
+      "input_sha256": "358ef6fc4498f2a148810b488a9b48ec837f81294be40fbe586110133cb21a20",
+      "F_widths": [122, 121, 121],
+      "width_ceiling": 88,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 55,
+      "seed": 0,
+      "input_sha256": "a2da82fded9cf9f1facabdb65a730535a25989d262d865a20cea8aabd7498c6b",
+      "F_widths": [120, 117, 117],
+      "width_ceiling": 85,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 55,
+      "seed": 1,
+      "input_sha256": "d6aeb30a217092e88e1857cab0cd246d00b85cd4b3aed3a42cf42e43143d910d",
+      "F_widths": [119, 120, 119],
+      "width_ceiling": 85,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 55,
+      "seed": 2,
+      "input_sha256": "cedb6532a45d2001fe874c2698db6785c126cf87308774d0bebe96461a20c23d",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 85,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 55,
+      "seed": 3,
+      "input_sha256": "12bd9dedfffe085a3d7889eb0a3cccf6e05c2999e3f94699d025dbe7ca5a7c7f",
+      "F_widths": [121, 120, 121],
+      "width_ceiling": 85,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 55,
+      "seed": 4,
+      "input_sha256": "3b2579cd1cff1dc4f9cb81cd18084b7b915943e3e75e2633352d69ae34c883cf",
+      "F_widths": [118, 118, 117],
+      "width_ceiling": 85,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 56,
+      "seed": 0,
+      "input_sha256": "75729bb16821e84d508047cbd1cfa3ef7244d2e373d4db3cc7497e360127b5c6",
+      "F_widths": [124, 121, 121],
+      "width_ceiling": 82,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 56,
+      "seed": 1,
+      "input_sha256": "64bffa0377a7fda2b0eb728ba83efb142121cc45d710f6e239616f6b5f3c2ca8",
+      "F_widths": [114, 114, 113],
+      "width_ceiling": 82,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 56,
+      "seed": 2,
+      "input_sha256": "0242dce0ddec925fc402b72e9728e32960c9cbe9c26da4c3452f59c8b1e297ec",
+      "F_widths": [124, 122, 121],
+      "width_ceiling": 82,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 56,
+      "seed": 3,
+      "input_sha256": "dd861c09dbaf4c7cfed2cd0f064988c70593a6259c5e7d07635e8ca28e0cf3b4",
+      "F_widths": [122, 121, 122],
+      "width_ceiling": 82,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 56,
+      "seed": 4,
+      "input_sha256": "1d4fc64bd0f0dda523ce1e275fb761796a6549eeb1e1af32d3f007b8ad5a3da0",
+      "F_widths": [122, 121, 120],
+      "width_ceiling": 82,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 57,
+      "seed": 0,
+      "input_sha256": "5fef9c2daad90fa4f040cc1d2722b5e650357a34f6d62f787faa783d938219a2",
+      "F_widths": [123, 120, 120],
+      "width_ceiling": 79,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 57,
+      "seed": 1,
+      "input_sha256": "9dc9a4cd2769ace6f1e2b14ba348a70b45dfa88b72f5617c2869c881b001abdd",
+      "F_widths": [120, 122, 113],
+      "width_ceiling": 79,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 57,
+      "seed": 2,
+      "input_sha256": "0ef75f5efc1f88650312c2a5a144322f3dd09ce61407c8c13aed229ed80d8651",
+      "F_widths": [118, 117, 118],
+      "width_ceiling": 79,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 57,
+      "seed": 3,
+      "input_sha256": "862709af1cce79ccdc2866d552b1e1f8065d7a80e239a0afac5e7b8cb7a02701",
+      "F_widths": [121, 120, 119],
+      "width_ceiling": 79,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 57,
+      "seed": 4,
+      "input_sha256": "e36b1ccaa4e62a853e4637aed32ebfdbcb44464a64ab442aedda4940b804e5c4",
+      "F_widths": [119, 114, 117],
+      "width_ceiling": 79,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 58,
+      "seed": 0,
+      "input_sha256": "8c151bdbaf133d556001a94da36c2d37616fcdea8d71f2dfa9082091f363a3fb",
+      "F_widths": [123, 121, 120],
+      "width_ceiling": 76,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 58,
+      "seed": 1,
+      "input_sha256": "c8bc1f2bd42b669e55251aa0e429a20ba65ac916b5261ec229b86022e5342e2f",
+      "F_widths": [119, 121, 119],
+      "width_ceiling": 76,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 58,
+      "seed": 2,
+      "input_sha256": "6b2977b175a16822ae2964fce05be46e1ecf18356e186f80cf91d670e50364f6",
+      "F_widths": [121, 119, 119],
+      "width_ceiling": 76,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 58,
+      "seed": 3,
+      "input_sha256": "d46fb4e712c5bce42efa874a1cf660badf7220c1183c8a451df2c15d4ba61456",
+      "F_widths": [120, 120, 121],
+      "width_ceiling": 76,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 58,
+      "seed": 4,
+      "input_sha256": "c57a9e485ec9f04bb2972215d486e0406f666bd0dd81acf7ff68094c6a4b5e94",
+      "F_widths": [122, 120, 120],
+      "width_ceiling": 76,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 59,
+      "seed": 0,
+      "input_sha256": "76aff8bb5580c39a13e210c318311bc09a266ce720c6cbc323491a77a00a31ec",
+      "F_widths": [123, 119, 117],
+      "width_ceiling": 74,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 59,
+      "seed": 1,
+      "input_sha256": "a6c3f5ed50c58e6222d90453132f8855156730e6180af0f15542735e557c72b8",
+      "F_widths": [120, 122, 120],
+      "width_ceiling": 74,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 59,
+      "seed": 2,
+      "input_sha256": "75cc59c7d56aafb8ad229ea96e23b29ca7f9c295019e2102830d8649fb88532b",
+      "F_widths": [122, 120, 121],
+      "width_ceiling": 74,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 59,
+      "seed": 3,
+      "input_sha256": "7312723929ca48f5c56ea19cdbf7f53b75ca79fa3a305698b2aa4611b7438a89",
+      "F_widths": [120, 120, 122],
+      "width_ceiling": 74,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 59,
+      "seed": 4,
+      "input_sha256": "1517a30b56df857e973f77ae115c25984965875436ffb625ee2452cedc3f3e94",
+      "F_widths": [117, 116, 116],
+      "width_ceiling": 74,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 60,
+      "seed": 0,
+      "input_sha256": "564a3780703089a37c2ca2b1ed2a1a03bc028f78ac40bd8495265d9869f7566b",
+      "F_widths": [124, 121, 121],
+      "width_ceiling": 71,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 60,
+      "seed": 1,
+      "input_sha256": "ed3deac26563ad76dbe2a513c4aec4e53863b2b5fd7357cc14e47b07d8d82fbd",
+      "F_widths": [119, 121, 119],
+      "width_ceiling": 71,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 60,
+      "seed": 2,
+      "input_sha256": "c8a360135a381a8692978688ae20059792ad76584bcce57b58487851c2214f62",
+      "F_widths": [118, 115, 118],
+      "width_ceiling": 71,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 60,
+      "seed": 3,
+      "input_sha256": "a949092bffa676b636928dbbd3f3dc814bd07dce59b87c61aa86fc4ad2b54df0",
+      "F_widths": [121, 121, 124],
+      "width_ceiling": 71,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 60,
+      "seed": 4,
+      "input_sha256": "166dcff17ee3f75834bfcaf3c3972eec482f346576db752efe1d03a45ecd6dcd",
+      "F_widths": [122, 122, 122],
+      "width_ceiling": 71,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 61,
+      "seed": 0,
+      "input_sha256": "b843d2aaab371b38d6eb3dd5acab726da35f4c1d01ddec9750ddfb53b38cf5bc",
+      "F_widths": [123, 118, 120],
+      "width_ceiling": 69,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 61,
+      "seed": 1,
+      "input_sha256": "a9698a4fa6f9bf2bd76b0cab1a86b7111f75ab0b6b52290d75fb32d3871aa2aa",
+      "F_widths": [115, 119, 117],
+      "width_ceiling": 69,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 61,
+      "seed": 2,
+      "input_sha256": "fbf7eb82cdbd51bf272958645ed456172a677df414289bfd2ef2842fe60d8a98",
+      "F_widths": [114, 116, 118],
+      "width_ceiling": 69,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 61,
+      "seed": 3,
+      "input_sha256": "d20bd2b97d6e7c2fc62ce5474487dd138abfd4efc1e033702c58096303a6fbaf",
+      "F_widths": [108, 118, 118],
+      "width_ceiling": 69,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 61,
+      "seed": 4,
+      "input_sha256": "5fd405e47ca0c192f724e700110b69df1f048517a41f927102618d191de1ea86",
+      "F_widths": [122, 121, 121],
+      "width_ceiling": 69,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 62,
+      "seed": 0,
+      "input_sha256": "02a900c7573b39bafa3eeab9afe5113c376fd8885c911a6a869a49617886c09b",
+      "F_widths": [124, 120, 121],
+      "width_ceiling": 67,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 62,
+      "seed": 1,
+      "input_sha256": "d7cf11e6f350d758835662e3285f7c08533b06a61c116216880f53b1f98e8cfb",
+      "F_widths": [120, 122, 118],
+      "width_ceiling": 67,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 62,
+      "seed": 2,
+      "input_sha256": "e7c0424233a6b45e2e5aa1a70e49af7e0306d0d9419d8da066bf495f16e01a26",
+      "F_widths": [119, 118, 121],
+      "width_ceiling": 67,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 62,
+      "seed": 3,
+      "input_sha256": "a0c4f83d874e40fb3e927f85e22bc73fe32bb24b4e5f3361cbf34dad194bd3ad",
+      "F_widths": [120, 119, 121],
+      "width_ceiling": 67,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 62,
+      "seed": 4,
+      "input_sha256": "39c8fb43437629e0be17e8c0d946ff9f2cab474058df37eb80058e56fe7ab92e",
+      "F_widths": [123, 123, 122],
+      "width_ceiling": 67,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 63,
+      "seed": 0,
+      "input_sha256": "a9e39e2ef810f35d037b2fdcad5e5a8c33c7b1b1c0c0c48121cb793f844ff8e0",
+      "F_widths": [120, 119, 120],
+      "width_ceiling": 65,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 63,
+      "seed": 1,
+      "input_sha256": "7f706b00062969f80c6ee36e58a3e0334f6d087393f05371c0c42a1ad2bbcd54",
+      "F_widths": [118, 120, 120],
+      "width_ceiling": 65,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 63,
+      "seed": 2,
+      "input_sha256": "218f0f2128087d096ba833860e1ccc571a27db54478418b63053765400819f3c",
+      "F_widths": [119, 119, 120],
+      "width_ceiling": 65,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 63,
+      "seed": 3,
+      "input_sha256": "7a2efd488a3639bda4bf13e2d18b318ce932b1c72b721bb1109c73592253c37b",
+      "F_widths": [121, 121, 122],
+      "width_ceiling": 65,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 63,
+      "seed": 4,
+      "input_sha256": "17c58899bdc4b214709191803fcc9d93b8db48447da842fae34ba20994b5ad92",
+      "F_widths": [122, 121, 121],
+      "width_ceiling": 65,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 64,
+      "seed": 0,
+      "input_sha256": "c459719c5558b10c2389fdbe87ad0b5483f4c8ff9ef733e9b9ff23b506bb2682",
+      "F_widths": [120, 118, 119],
+      "width_ceiling": 62,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 64,
+      "seed": 1,
+      "input_sha256": "51c0dfc0c85549b1dbb1f8ba99657f9ba4d3d02a5ab99f5f5b985ee02a1bda1f",
+      "F_widths": [121, 121, 121],
+      "width_ceiling": 62,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 64,
+      "seed": 2,
+      "input_sha256": "6baa679c213697c71a5f0dc5a69307358c2f0c137ea8f46070710659a6462e0f",
+      "F_widths": [120, 120, 117],
+      "width_ceiling": 62,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 64,
+      "seed": 3,
+      "input_sha256": "09646860229d3c0c594a4e2a84e319f4d2179b702f1176adcb861b2ec65079cb",
+      "F_widths": [118, 118, 122],
+      "width_ceiling": 62,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 64,
+      "seed": 4,
+      "input_sha256": "19a1fd32241cae2eb066251e24af602759577657174def6f4f702e3c3ba75d85",
+      "F_widths": [122, 121, 120],
+      "width_ceiling": 62,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 65,
+      "seed": 0,
+      "input_sha256": "243a2e07c25e22af56a3c9d62c6e6c95a581d431886639562bdff69419496a42",
+      "F_widths": [122, 117, 118],
+      "width_ceiling": 61,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 65,
+      "seed": 1,
+      "input_sha256": "1ec1a9d1cd94d39bbe25150aac2236045a781ff64feab3e862637155f31b7879",
+      "F_widths": [119, 121, 119],
+      "width_ceiling": 61,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 65,
+      "seed": 2,
+      "input_sha256": "5a455e094d32d6413a42cf2bab75d40bb5fce3afa5cdd3c27e606acdbf3a0835",
+      "F_widths": [119, 120, 120],
+      "width_ceiling": 61,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 65,
+      "seed": 3,
+      "input_sha256": "6fed587d36271706088b52c250673e94da1d29851bc8bbdaecb7c0ff008dedce",
+      "F_widths": [120, 119, 119],
+      "width_ceiling": 61,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    },
+    {
+      "n_per_cell": 65,
+      "seed": 4,
+      "input_sha256": "a3477601a1c4447e96966db95b605016099f8df0f7e1570ef35d15c489bc1fda",
+      "F_widths": [123, 122, 121],
+      "width_ceiling": 61,
+      "preflight_eligible": false,
+      "reasons": [
+        {
+          "axis": "A",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "B",
+          "reason": "rational work budget"
+        },
+        {
+          "axis": "AB",
+          "reason": "rational work budget"
+        }
+      ]
+    }
+  ]
+}

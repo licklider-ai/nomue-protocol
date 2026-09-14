@@ -1,0 +1,317 @@
+{
+  "finding": "T02-SF01",
+  "status": "author_repair_evidence_not_independent_close",
+  "review_base": "73b1afd7c8405a91730ace272b845bb07a68288d",
+  "executed_head": "761eb8e00cdfc06c9f3792271b4c384f922669ce",
+  "executed_tree": "f6fca69556c512b07b4289d20c7e77ec739373d1",
+  "ci_run_id": 34802483082,
+  "ci_run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34802483082",
+  "ci_artifact_id": 10331778734,
+  "ci_artifact_digest": "sha256:ce3bdd06bbc7cf5c2c3bd25ee43125270c776a08ded8a2570a3173418a07726c",
+  "ci_created_at": "2026-09-14T03:24:30Z",
+  "code_bindings": [
+    {
+      "path": ".github/workflows/r4-controlled-execution.yml",
+      "sha256": "39843baebceddb941751c90d087bdef82d907ecce1b14ef3b09c392c0c5c07bf"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_supervisor_mode.py",
+      "sha256": "4bebd69314a7dfece4b0d7fd97b9bfd3d0ce41295149b2bd0f3941cc36f02f66"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_execution.py",
+      "sha256": "f6513d839088f4e2acb0e916599a58f17409e1b75fc3e58c2755d2515c4e9cc8"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_signal_lifecycle.py",
+      "sha256": "117a536a47d633873c7253a2eb06bc23a5e10fb7a53d2e3d58da20be8e9b2dbb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_host_boundaries.py",
+      "sha256": "8547b36892ce708e5fd3cd6e2eef7900b78bda04e98c9c15c82d7e536eeeb383"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/probe.py",
+      "sha256": "1f988ea7d177d9590392fbd1def128b8c5148683935f0d829280e30af623e683"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/numerical_probe.py",
+      "sha256": "bb0e589544d27fb2b7acfdef4960afcb2adea79d64f43560d67f9268ef69bc0d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/review_packet.py",
+      "sha256": "ffb7bf3b2ffb768960b3a0e2184a43f2bed62a1677f736b62d3aee5c2d468aef"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/admission.py",
+      "sha256": "1a4619a76829c9f72aac4ad615769fc26d09d300a82afaa615b4b784e7101d0b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/benchmark.py",
+      "sha256": "ee3ff4c03df90d0a73cd93edead7096070710a18d620f6f08212183c52dccd15"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/separate_tail_oracle.py",
+      "sha256": "69a3ab44141c1a4de7a8ea90ae5e73fb3f463bf2ebc667355cd095e775081104"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/INPUTS.json",
+      "sha256": "0e22ffce98a4e0de6ba65f7dc6b346bb69fb2c0f50db2245d07042be38d5ba82"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/consumer.py",
+      "sha256": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "sha256": "25992004eea5cd8912722b7ae3af685d405154aca513c58d1af0e1c114a660a2"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e"
+    }
+  ],
+  "files": [
+    {
+      "path": "supervisor-mode.json",
+      "ci_stdout_sha256": "970f716a921f2cd28eb7ff73541b2179bf8d1fe9ba2fcdbc12c4b95a1a1ab141",
+      "repository_sha256": "970f716a921f2cd28eb7ff73541b2179bf8d1fe9ba2fcdbc12c4b95a1a1ab141"
+    },
+    {
+      "path": "execution.json",
+      "ci_stdout_sha256": "1454a0cff30a2178cb9dc5643aca3263dd4f91788cef8be7768b1703e08ca87d",
+      "repository_sha256": "379d1c7a74266c19bc5477a425d158e2613d65d0c373ef2daf636485ebbc054e"
+    },
+    {
+      "path": "execution-optimized.json",
+      "ci_stdout_sha256": "471a3aabb443bdc18485866ad7e88512f951490635e865f68301033088b119d9",
+      "repository_sha256": "034fbd731067f0867b92e84e0e7bff67f760776c3425598073be6d5e57352ef3"
+    },
+    {
+      "path": "signals.json",
+      "ci_stdout_sha256": "02e75c9f92168a4bd25e19c6192b32d2c5d3f5b62cd9766112f6a47255a2c554",
+      "repository_sha256": "5b2d927bf7373f1af83ce094800ebc3daad21e546450533ccd5472e27b1c7e7b",
+      "transformations": [
+        {
+          "json_pointer": "/rows/5/receipt/transport/cwd",
+          "operation": "replace checkout prefix with <CHECKOUT>",
+          "original_value_sha256": "c27eefc4aa613baf1752608c5602b691b1f957f5ff2ec490804ce425f6a06e5f",
+          "saved_value": "<CHECKOUT>/governance/drafts/release-4-preparation/controlled-execution-experiment-20260912"
+        }
+      ]
+    },
+    {
+      "path": "signals-optimized.json",
+      "ci_stdout_sha256": "4486b204d7a21db6c5a4c9fa357441d5789743b2f2d4fb92b5efc280e5cee8ff",
+      "repository_sha256": "af9f42ef2b79d631dc620985d4e7b783d08de5e256ce5750192c80cb2de29232",
+      "transformations": [
+        {
+          "json_pointer": "/rows/5/receipt/transport/cwd",
+          "operation": "replace checkout prefix with <CHECKOUT>",
+          "original_value_sha256": "c27eefc4aa613baf1752608c5602b691b1f957f5ff2ec490804ce425f6a06e5f",
+          "saved_value": "<CHECKOUT>/governance/drafts/release-4-preparation/controlled-execution-experiment-20260912"
+        }
+      ]
+    },
+    {
+      "path": "host-boundaries.json",
+      "ci_stdout_sha256": "21bd90b69c96c53dcbd567b1136200d0b054abb4f6fd8bbe9c6b041ee7744f72",
+      "repository_sha256": "21bd90b69c96c53dcbd567b1136200d0b054abb4f6fd8bbe9c6b041ee7744f72"
+    },
+    {
+      "path": "host-boundaries-optimized.json",
+      "ci_stdout_sha256": "efe3faf6cf5eecfcee16b09af1ff21edabc8de2235f540133ce3c4819306b0c8",
+      "repository_sha256": "efe3faf6cf5eecfcee16b09af1ff21edabc8de2235f540133ce3c4819306b0c8"
+    },
+    {
+      "path": "admission.json",
+      "ci_stdout_sha256": "1c01bf579346e849b3a9efebbe5e7d9f4e1025b24903b80ae91aba2dd72cae77",
+      "repository_sha256": "1dbfb40e146cb1c17826f693873647bb1de4da1e53808c28e4ea29fec56ea9c8"
+    },
+    {
+      "path": "benchmarks.json",
+      "ci_stdout_sha256": "7bd0aa4a930f9c3d3d7b1fef29e9d653fdda0ee96d2a2428e93b4a25353570be",
+      "repository_sha256": "14b399c02f4ec5a91f2598d3e171d3b903e6d7d2ac9ba23263480d3f202b6f5b"
+    },
+    {
+      "path": "packet.json",
+      "ci_stdout_sha256": "799364a581b5a696c001a01f5c1742df81cd2cc4a9d063881477c09ed0cc8455",
+      "repository_sha256": "799364a581b5a696c001a01f5c1742df81cd2cc4a9d063881477c09ed0cc8455"
+    },
+    {
+      "path": "packet-optimized.json",
+      "ci_stdout_sha256": "7d140df5bcf364d3fb907c9cb9cf8319fa44678bd6a63b1abfcbdaf72aec4e7c",
+      "repository_sha256": "7d140df5bcf364d3fb907c9cb9cf8319fa44678bd6a63b1abfcbdaf72aec4e7c"
+    },
+    {
+      "path": "oracle.json",
+      "ci_stdout_sha256": "463bc51331ccd26ac7c14e504d97283a5784bbb9b81916d498a6d213aa422f55",
+      "repository_sha256": "463bc51331ccd26ac7c14e504d97283a5784bbb9b81916d498a6d213aa422f55"
+    }
+  ],
+  "oracle_input_scope": {
+    "note": "The unchanged oracle reads historical root EXECUTION.json and BENCHMARKS.json; these are not the new CI capture files.",
+    "inputs": [
+      {
+        "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EXECUTION.json",
+        "sha256": "04e5a77f93afa2658f61818bb330dfa2e8a33d1b34c883c3230cf223e3dec91d"
+      },
+      {
+        "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/BENCHMARKS.json",
+        "sha256": "d3f4512aa5dfa587d071da2f42d87049aba65018218f5260ba9beda50584ae9c"
+      }
+    ]
+  },
+  "serialization": "Committed JSON is formatted. Only the two declared checkout-specific cwd fields are normalized to <CHECKOUT>; all other JSON values equal the CI artifact. ci_stdout_sha256 binds original artifact bytes, repository_sha256 binds the stored representation.",
+  "reuse_boundary": "Later evidence-only commits can reuse this run only after all code_bindings match; this does not claim execution on that later commit.",
+  "unchanged_from_review_base": [
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/ADMISSION.json",
+      "sha256": "1dbfb40e146cb1c17826f693873647bb1de4da1e53808c28e4ea29fec56ea9c8"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/BENCHMARKS.json",
+      "sha256": "d3f4512aa5dfa587d071da2f42d87049aba65018218f5260ba9beda50584ae9c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/COUPLING.md",
+      "sha256": "bd535f2dd80070405a0a914b7fdccaeaa0cf1f113e707b7e4cc7dd5fcb150f1e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EXECUTION-OPTIMIZED.json",
+      "sha256": "b7a1c4e7c725ed5d2cb9e1e4bac62d86c78bd46b87ac25ccb47ca0c378bc54cf"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EXECUTION.json",
+      "sha256": "04e5a77f93afa2658f61818bb330dfa2e8a33d1b34c883c3230cf223e3dec91d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-BOUNDARIES-OPTIMIZED.json",
+      "sha256": "be92b64ab6b3826fa61abc68753bc6f6b7d7e6a1f2ac97282c5375f35fe0265a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-BOUNDARIES.json",
+      "sha256": "d784a228de5b775dc7b9cb4258a3543bc6d2303fb319ec9054d345406b228b7b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-REPAIR-ORACLE.json",
+      "sha256": "463bc51331ccd26ac7c14e504d97283a5784bbb9b81916d498a6d213aa422f55"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/INPUTS.json",
+      "sha256": "0e22ffce98a4e0de6ba65f7dc6b346bb69fb2c0f50db2245d07042be38d5ba82"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-PROBES-OPTIMIZED.json",
+      "sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-PROBES.json",
+      "sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-REPRODUCTION.json",
+      "sha256": "144b6deff23287fa7ced1a4b37e7cf297791cc66565506b7ae7481010b6cf31e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/POLICY.md",
+      "sha256": "c5349e582d2eb6c7f36f8bb144d1cad8391d3ef1ea298dff3892dd83ee58e1f8"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SEPARATE-REVIEW.json",
+      "sha256": "722db5b4bda7f59c57fa636b05af3f2cdb3f1076599f72540e8af4d16e45b77c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SEPARATE-REVIEW.md",
+      "sha256": "13454aae22dc0cc850498943c65f77f9f6e1a08abf69b5b2cdd69b9dacdb2bd3"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SIGNALS-OPTIMIZED.json",
+      "sha256": "2d54b693ce9da6368ceb3626eefa10a240f9c910aa8150311c06f17baf42421a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SIGNALS.json",
+      "sha256": "e0f8f38e4569e1672afbd5495e152fa5b62ccd46378c6c383f51bfb6ac6b4998"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/separate_tail_oracle.py",
+      "sha256": "69a3ab44141c1a4de7a8ea90ae5e73fb3f463bf2ebc667355cd095e775081104"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "sha256": "25992004eea5cd8912722b7ae3af685d405154aca513c58d1af0e1c114a660a2"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/consumer.py",
+      "sha256": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    }
+  ]
+}
