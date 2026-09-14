@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12.14"
@@ -24,6 +26,7 @@ jobs:
         working-directory: governance/drafts/release-4-preparation/controlled-execution-experiment-20260912
         run: |
           mkdir -p /tmp/r4-controlled-results
+          python -B test_supervisor_mode.py > /tmp/r4-controlled-results/supervisor-mode.json
           python test_execution.py > /tmp/r4-controlled-results/execution.json
           python -O test_execution.py > /tmp/r4-controlled-results/execution-optimized.json
           python test_signal_lifecycle.py > /tmp/r4-controlled-results/signals.json
@@ -32,6 +35,9 @@ jobs:
           python -O test_host_boundaries.py > /tmp/r4-controlled-results/host-boundaries-optimized.json
           python admission.py > /tmp/r4-controlled-results/admission.json
           python benchmark.py > /tmp/r4-controlled-results/benchmarks.json
+          python review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet.json
+          python -O review_packet.py "$(git rev-parse HEAD)" > /tmp/r4-controlled-results/packet-optimized.json
+          python separate_tail_oracle.py > /tmp/r4-controlled-results/oracle.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -97,7 +97,8 @@ def main():
         check(invalid['category'] == 'invalid_worker_output' and 'outcome' not in invalid,
               label + ' suppresses output')
     print(json.dumps({'target': target, 'environment': environment,
-                      'provenance': 'continuing author context; not independent review',
+                      'provenance': 'author-side controls; not independent review',
+                      'supervisor_optimize': sys.flags.optimize,
                       'checks': len(rows), 'rows': rows}, indent=2))
 
 

@@ -10,6 +10,7 @@ import types
 from unittest.mock import patch
 
 import supervisor as s
+from test_supervisor_mode import check_mode, supervisor_command
 
 
 def need(ok, name):
@@ -17,7 +18,8 @@ def need(ok, name):
         raise RuntimeError(name)
 
 
-def child(mode):
+def child(mode, expected_optimize):
+    actual_optimize = check_mode(expected_optimize)
     s.host()
     with tempfile.TemporaryDirectory() as temp:
         path = Path(temp)
@@ -53,19 +55,23 @@ def child(mode):
                 need(signal.getsignal(signal.SIGPIPE) == disposition, 'caller SIGPIPE changed')
             finally:
                 signal.signal(signal.SIGPIPE, previous)
-    print(json.dumps({'mode': mode, 'passed': True, 'child_started': False}))
+    print(json.dumps({'mode': mode, 'passed': True, 'child_started': False,
+                      'supervisor_optimize': actual_optimize, 'expected_supervisor_optimize': expected_optimize}))
 
 
 def main():
     rows = []
     for mode in ('path-transport', 'path-output', 'cached-transport', 'cached-output',
                  'sigpipe-default', 'sigpipe-custom'):
-        result = subprocess.run([sys.executable] + (['-O'] if sys.flags.optimize else []) + ['-B', __file__, mode], capture_output=True,
+        result = subprocess.run(supervisor_command(__file__, mode, sys.flags.optimize), capture_output=True,
                                 text=True, timeout=5, check=True)
-        rows.append(json.loads(result.stdout))
+        observed = json.loads(result.stdout)
+        need(observed['supervisor_optimize'] == sys.flags.optimize and
+             observed['expected_supervisor_optimize'] == sys.flags.optimize, 'host control mode mismatch')
+        rows.append(observed)
     print(json.dumps({'python': sys.version.split()[0], 'optimized_parent': bool(sys.flags.optimize),
-                      'checks': len(rows), 'rows': rows}, indent=2))
+                      'driver_optimize': sys.flags.optimize, 'checks': len(rows), 'rows': rows}, indent=2))
 
 
 if __name__ == '__main__':
-    child(sys.argv[1]) if len(sys.argv) > 1 else main()
+    child(sys.argv[1], int(sys.argv[2])) if len(sys.argv) > 1 else main()

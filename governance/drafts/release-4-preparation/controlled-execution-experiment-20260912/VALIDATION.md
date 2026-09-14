@@ -1,5 +1,10 @@
 # Validation and evidence boundaries
 
+The root-level captures below are historical observations retained from
+`73b1afd7c8405a91730ace272b845bb07a68288d`. Their optimized coverage is
+qualified by the T02-SF01 correction at the end of this document. They are not
+recaptures of the repaired test driver.
+
 Local capture completed 2026-09-13 UTC on Linux x86_64, CPython 3.12.14,
 Node 24.19.0 and pnpm 11.19.0 (package launcher declaration 11.7.0).
 
@@ -105,3 +110,36 @@ are saved in HOST-REPAIR-ORACLE.json. This author rerun is not a new independent
 review. The 19 packet controls accept an explicit fixed commit/tree argument for
 successor validation while retaining their historical default. Historical review
 records are not rewritten to claim review of the successor.
+
+## T02-SF01 supervisor optimization coverage correction
+
+The prior `python -O` lifecycle driver started eight isolated test supervisors
+without `-O`. Only the two controls executed inside that driver used its
+optimization level. The two isolated cancellation controls in test_execution.py
+also started normal-mode supervisors. Consequently, earlier descriptions of all
+67 execution / ten lifecycle controls exercising an optimized supervisor were
+too broad. The saved observations remain historical; their filenames do not
+establish the optimization level of each isolated process.
+
+The repair passes the exact driver level (0, 1 or 2) to each isolated test
+supervisor. Each process compares its own sys.flags.optimize with the explicit
+expected value before invoking the supervisor and emits that observation.
+Uncaught cancellation-loop cases emit it before cancellation, so their exit
+status alone is not evidence of the requested mode. Parent drivers check the
+returned observation. Host-boundary controls use the same test-only helper.
+
+The helper ignores PYTHONOPTIMIZE and explicitly selects the driver level;
+regression controls exercise all three levels with a contradictory environment
+and reject an incorrect expected level. Production worker invocation remains
+`python -I -B worker.py`, without optimization. An additional environment probe
+checks that this interpreter flag combination has optimize=0; it is a probe of
+the fixed launch flags, not an extra optimized worker configuration.
+
+Repaired execution has 68 controls (the previous 67 plus the worker-mode probe).
+Lifecycle still has ten controls, now with per-supervisor mode observations;
+host-boundary controls still number six. Packet controls report their own
+supervisor level and receive the exact checkout commit explicitly in CI.
+
+Current repair status and separately pinned successor evidence belong in
+[T02-SF01-REPAIR.md](T02-SF01-REPAIR.md). This correction is author-side work;
+T02 remains NOT CLOSED pending an independent close review of the successor.

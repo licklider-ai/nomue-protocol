@@ -41,6 +41,6 @@ elif mode == 'early-eof':
 elif mode == 'environment':
     import json
     print(json.dumps({'isolated': sys.flags.isolated, 'pythonpath': os.environ.get('PYTHONPATH'),
-                      'cwd': os.getcwd()}))
+                      'cwd': os.getcwd(), 'optimize': sys.flags.optimize}))
 else:
     raise ValueError('unknown trusted probe')

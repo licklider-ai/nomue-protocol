@@ -31,6 +31,7 @@ moved. Future common integration takes the accepted R3 changes first.
 On Linux x86_64 with CPython 3.12.14, from this directory:
 
 ```sh
+python3 test_supervisor_mode.py
 python3 test_execution.py
 python3 -O test_execution.py
 python3 test_signal_lifecycle.py
@@ -117,3 +118,13 @@ The historical packet review script defaults to target 1caac8d. To check a later
 candidate, pass its immutable commit or tree as the sole argument to
 `review_packet.py`; every runtime file must match that git object. Historical
 PACKET and SEPARATE review records retain their original targets and evidence.
+
+## T02-SF01 repair evidence
+
+The normal/optimized suffix of the old root-level captures identified the test
+driver, not necessarily every isolated supervisor. See the explicit coverage
+correction in [VALIDATION.md](VALIDATION.md). Current isolated lifecycle,
+cancellation and host-boundary controls verify and report sys.flags.optimize
+inside each supervisor process. The production worker remains non-optimized.
+The repair record and immutable evidence bindings are separate in
+[T02-SF01-REPAIR.md](T02-SF01-REPAIR.md); old packet reviews keep their targets.

@@ -9,6 +9,7 @@ import threading
 import time
 
 import supervisor as s
+from test_supervisor_mode import check_mode, supervisor_command
 
 HERE = Path(__file__).resolve().parent
 
@@ -18,7 +19,11 @@ def need(ok, label):
         raise RuntimeError(label)
 
 
-def child(mode):
+def child(mode, expected_optimize):
+    actual_optimize = check_mode(expected_optimize)
+    # Emit before cancellation: uncaught loop exits must retain this observation.
+    print(json.dumps({'mode': mode, 'supervisor_optimize': actual_optimize,
+                      'expected_supervisor_optimize': expected_optimize}), flush=True)
     before_handlers = {sig: signal.getsignal(sig) for sig in (signal.SIGINT, signal.SIGTERM)}
     before_mask = signal.pthread_sigmask(signal.SIG_BLOCK, set())
     caller_read, caller_write = os.pipe2(os.O_NONBLOCK | os.O_CLOEXEC)
@@ -152,15 +157,22 @@ def main():
     rows = []
     for mode in ('thread-launch','thread-select','run-receipt','launch-failure',
                  'repeated-cleanup','normal-reap','loop-int','loop-term'):
-        run = subprocess.run([sys.executable, str(HERE/'test_signal_lifecycle.py'), mode],
+        run = subprocess.run(supervisor_command(HERE/'test_signal_lifecycle.py', mode, sys.flags.optimize),
                              cwd=HERE,capture_output=True,text=True,timeout=5)
+        lines = run.stdout.splitlines()
+        need(bool(lines), 'missing isolated supervisor mode: ' + run.stderr)
+        observed = json.loads(lines[0])
+        need(observed == {'mode': mode, 'supervisor_optimize': sys.flags.optimize,
+                          'expected_supervisor_optimize': sys.flags.optimize}, 'isolated mode mismatch')
         if mode.startswith('loop-'):
             need(run.returncode in ((-2,130) if mode=='loop-int' else (143,)), 'uncaught cancellation exit: '+repr(run))
             need('LOOP-CONTINUED' not in run.stdout, 'loop continued after cancellation')
-            rows.append({'mode':mode,'passed':True,'exit_code':run.returncode,'loop_continued':False})
+            need(len(lines) == 1, 'unexpected loop stdout')
+            rows.append({**observed,'passed':True,'exit_code':run.returncode,'loop_continued':False})
         else:
             need(run.returncode == 0, run.stderr)
-            rows.append(json.loads(run.stdout))
+            need(len(lines) == 2, 'missing lifecycle receipt')
+            rows.append({**json.loads(lines[1]), **observed})
     # Event-driven select should block on the remaining deadline, not 10 ms.
     actual = s.selectors.DefaultSelector
     timeouts = []
@@ -174,16 +186,17 @@ def main():
     finally:
         s.selectors.DefaultSelector = actual
     need(receipt['category']=='deadline' and len(timeouts)<=4 and max(timeouts)>.1, 'polling persists')
-    rows.append({'mode':'event-driven-wait','passed':True,'selector_calls':len(timeouts),'timeouts':timeouts})
+    rows.append({'mode':'event-driven-wait','passed':True,'supervisor_optimize':sys.flags.optimize,
+                 'selector_calls':len(timeouts),'timeouts':timeouts})
     original_chld = signal.signal(signal.SIGCHLD, signal.SIG_IGN)
     try:
         rejected = s.run([[0.,1.] for _ in range(4)], 'ignored-chld')
         need(rejected['category']=='unsupported_host_or_source', 'auto-reap host not refused')
     finally:
         signal.signal(signal.SIGCHLD, original_chld)
-    rows.append({'mode':'auto-reap-host-refused','passed':True})
-    print(json.dumps({'checks':len(rows),'rows':rows},indent=2))
+    rows.append({'mode':'auto-reap-host-refused','passed':True,'supervisor_optimize':sys.flags.optimize})
+    print(json.dumps({'driver_optimize':sys.flags.optimize,'checks':len(rows),'rows':rows},indent=2))
 
 
 if __name__ == '__main__':
-    child(sys.argv[1]) if len(sys.argv)>1 else main()
+    child(sys.argv[1], int(sys.argv[2])) if len(sys.argv)>1 else main()

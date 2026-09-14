@@ -11,15 +11,17 @@ from unittest.mock import patch
 
 import supervisor as s
 from transport import encode
+from test_supervisor_mode import supervisor_command
 
 HERE = Path(__file__).resolve().parent
 rows = []
 
 
-def check(ok, name, receipt=None):
+def check(ok, name, receipt=None, supervisor_optimize=None):
     if not ok:
         raise RuntimeError(name + ': ' + repr(receipt))
-    rows.append({'name': name, 'passed': True, **({'receipt': receipt} if receipt else {})})
+    rows.append({'name': name, 'passed': True, **({'receipt': receipt} if receipt else {}),
+                 **({'supervisor_optimize': supervisor_optimize} if supervisor_optimize is not None else {})})
 
 
 def outcome(cells, revision='test', submitted=None):
@@ -93,6 +95,7 @@ def main():
               'bounded pipe buffers ' + name)
     env = s._launch([sys.executable,'-I','-B',str(HERE/'probe.py'),'environment'], b'')
     check(env['transport']['isolated'] == 1 and env['transport']['pythonpath'] is None, 'isolated environment')
+    check(env['transport']['optimize'] == 0, 'fixed normal worker interpreter')
     # Output may be transport-complete without constituting a valid result.
     with patch.object(s, '_launch', return_value={'category':'completed_transport','transport':{},'causes':[]}):
         check(s.run(same,'test')['category'] == 'invalid_worker_output', 'malformed worker receipt rejected')
@@ -114,6 +117,8 @@ def main():
             raise RuntimeError('accepted malformed output')
     cancel_code = """import json,os,signal,sys,threading
 import supervisor as s
+from test_supervisor_mode import check_mode
+actual_optimize=check_mode(int(sys.argv[1]))
 timer=threading.Timer(.15, lambda: os.kill(os.getpid(), signal.SIGTERM))
 timer.start()
 try:
@@ -123,13 +128,17 @@ except (KeyboardInterrupt,SystemExit) as error:
 else:
     raise RuntimeError('cancellation swallowed')
 timer.join()
-print(json.dumps(r))
+print(json.dumps({'supervisor_optimize':actual_optimize,'receipt':r}))
 """
-    cancelled = json.loads(subprocess.check_output([sys.executable,'-c',cancel_code],cwd=HERE,timeout=5))
-    check(cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
-          'actual SIGTERM cleanup', cancelled)
+    observation = json.loads(subprocess.check_output(supervisor_command('-c',cancel_code,sys.flags.optimize),cwd=HERE,timeout=5))
+    cancelled = observation['receipt']
+    check(observation['supervisor_optimize'] == sys.flags.optimize and
+          cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
+          'actual SIGTERM cleanup', cancelled, observation['supervisor_optimize'])
     launch_cancel_code = """import json,os,signal,sys
 import supervisor as s
+from test_supervisor_mode import check_mode
+actual_optimize=check_mode(int(sys.argv[1]))
 original=s.subprocess.Popen
 def launching(*args,**kwargs):
     process=original(*args,**kwargs)
@@ -139,13 +148,15 @@ s.subprocess.Popen=launching
 try:
     s._launch([sys.executable,'-I','-B',str(s.HERE/'probe.py'),'hang'],b'',wall=3)
 except (KeyboardInterrupt,SystemExit) as error:
-    print(json.dumps(error.receipt))
+    print(json.dumps({'supervisor_optimize':actual_optimize,'receipt':error.receipt}))
 else:
     raise RuntimeError('launch cancellation swallowed')
 """
-    cancelled=json.loads(subprocess.check_output([sys.executable,'-c',launch_cancel_code],cwd=HERE,timeout=5))
-    check(cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
-          'SIGTERM during child creation retains cleanup handle',cancelled)
+    observation=json.loads(subprocess.check_output(supervisor_command('-c',launch_cancel_code,sys.flags.optimize),cwd=HERE,timeout=5))
+    cancelled=observation['receipt']
+    check(observation['supervisor_optimize'] == sys.flags.optimize and
+          cancelled['category']=='cancelled' and cancelled['worker_reaped'] and 'transport' not in cancelled,
+          'SIGTERM during child creation retains cleanup handle',cancelled,observation['supervisor_optimize'])
     # Check an actual corrupted copied dependency without changing historical bytes.
     import tempfile
     with tempfile.TemporaryDirectory() as temp:
@@ -163,6 +174,7 @@ else:
             check(receipt['category']=='allocation_failure' and receipt['worker_reaped'] and 'transport' not in receipt,
                   'actual worker bootstrap enforces address space', receipt)
     print(json.dumps({'python':platform.python_version(), 'optimized':bool(sys.flags.optimize),
+                      'driver_optimize':sys.flags.optimize, 'worker_interpreter_optimize':env['transport']['optimize'],
                       'checks':len(rows), 'rows':rows}, indent=2))
 
 
