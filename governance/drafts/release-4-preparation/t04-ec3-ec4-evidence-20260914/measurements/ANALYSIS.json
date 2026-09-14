@@ -1,0 +1,63 @@
+{
+  "checks": 338,
+  "mode": 0,
+  "profiles": {
+    "small": {
+      "runs": 16,
+      "completed_candidate_results": 14,
+      "max_full_invocation_wall_seconds": 0.8355777239999895,
+      "max_normal_full_invocation_wall_seconds": 0.8355777239999895,
+      "max_cleanup_seconds": 0.07295105800000101,
+      "max_normal_tree_memory_peak_bytes": 39923712,
+      "max_report_bytes": 117667,
+      "max_worker_cpu_seconds": 0.249463,
+      "max_worker_wall_seconds": 0.10154374500000074,
+      "max_worker_rss_kib": 26272,
+      "max_parent_rss_kib": 24816,
+      "max_parent_preparation_seconds": 0.011018247999999176,
+      "max_ingress_seconds": 0.11986377099999856,
+      "max_raw_bytes": 106968,
+      "max_transport_bytes": 107018,
+      "max_worker_stdout_bytes": 116537,
+      "max_rendered_witness_bytes": 115560
+    },
+    "medium": {
+      "runs": 306,
+      "completed_candidate_results": 258,
+      "max_full_invocation_wall_seconds": 6.143929503999999,
+      "max_normal_full_invocation_wall_seconds": 0.9119202820000396,
+      "max_cleanup_seconds": 2.076811655,
+      "max_normal_tree_memory_peak_bytes": 44953600,
+      "max_report_bytes": 117667,
+      "max_worker_cpu_seconds": 0.275766,
+      "max_worker_wall_seconds": 0.12440273600003593,
+      "max_worker_rss_kib": 28144,
+      "max_parent_rss_kib": 28144,
+      "max_parent_preparation_seconds": 0.034142557999985,
+      "max_ingress_seconds": 0.1416782150000131,
+      "max_raw_bytes": 2100401,
+      "max_transport_bytes": 249499,
+      "max_worker_stdout_bytes": 116537,
+      "max_rendered_witness_bytes": 115560
+    },
+    "large": {
+      "runs": 16,
+      "completed_candidate_results": 16,
+      "max_full_invocation_wall_seconds": 0.8561010230000079,
+      "max_normal_full_invocation_wall_seconds": 0.8561010230000079,
+      "max_cleanup_seconds": 0.07328617100000656,
+      "max_normal_tree_memory_peak_bytes": 46317568,
+      "max_report_bytes": 117666,
+      "max_worker_cpu_seconds": 0.254043,
+      "max_worker_wall_seconds": 0.10715573800001721,
+      "max_worker_rss_kib": 27748,
+      "max_parent_rss_kib": 27748,
+      "max_parent_preparation_seconds": 0.010902180000016415,
+      "max_ingress_seconds": 0.12397577799998771,
+      "max_raw_bytes": 2100401,
+      "max_transport_bytes": 107018,
+      "max_worker_stdout_bytes": 116537,
+      "max_rendered_witness_bytes": 115560
+    }
+  }
+}

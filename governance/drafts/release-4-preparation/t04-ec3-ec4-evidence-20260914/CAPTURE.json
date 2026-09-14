@@ -1,0 +1,35 @@
+{
+  "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34830324114",
+  "measured_commit": "a6cddeba659ae2c52e6a7901d3e5a41102080274",
+  "downloaded_files": {
+    "ANALYSIS-OPTIMIZED.json": {
+      "sha256": "b8d0e0a85fbea1152577832cedff1dc75e0590c11ffe1c42421b2390dd7ff1bf",
+      "bytes": 2382
+    },
+    "ANALYSIS.json": {
+      "sha256": "6c0ca1124a1cf3325daf1555ad55f143706fbc548e4d89366a3391e0af258c25",
+      "bytes": 2382
+    },
+    "CASE-MANIFEST.json": {
+      "sha256": "c648eff8dfc12c565efd359ee9016ec43ddb23167126e23e97f8715c670bef81",
+      "bytes": 1785108
+    },
+    "HOST.json": {
+      "sha256": "bf0ee2cb00c121f3a0ed8b4f4b1c70bcd5aa281480a9e477444692370b542210",
+      "bytes": 4163
+    },
+    "MEASUREMENTS.jsonl": {
+      "sha256": "7e676385077bc5158ef5785c5e2cb5e70efbb54d4fe1cef416ff7046378a3f21",
+      "bytes": 9020261
+    },
+    "SOURCE-MANIFEST.json": {
+      "sha256": "9fffc4602c84c08f7e01f9e0748a4a94dfc9f9266f9dea2a0cae0061fc12f307",
+      "bytes": 514976
+    },
+    "SUMMARY.json": {
+      "sha256": "1521a5b9c0faced09a56fd9b379beaac4bd2727cb6aaa89d982c3ead78c4b141",
+      "bytes": 484
+    }
+  },
+  "archive_note": "JSON documents may be formatted for repository style after capture; parsed values are unchanged and checked. MEASUREMENTS.jsonl preserves generated per-invocation bytes. MANIFEST records final archive file bytes."
+}

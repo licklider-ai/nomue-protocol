@@ -1,8 +1,14 @@
 # T04 EC3 / EC4 research evidence
 
-Status: measurement preparation; EC3 and EC4 remain open until the saved evidence
-and combined report are complete. This is author research, not independent review,
-public policy adoption, or an issued reference implementation.
+Status: **T04 EC3/EC4 EVIDENCE READY — READY FOR T04 INDEPENDENT CLOSE REVIEW**.
+This is author research, not independent close approval, public policy adoption,
+or an issued reference implementation. See [REPORT.md](REPORT.md) for the combined
+claim and [SUPPORT-MAPPING.md](SUPPORT-MAPPING.md) for its limits.
+
+Final Linux measurement source: `a6cddeba659ae2c52e6a7901d3e5a41102080274`;
+[run 34830324114](https://github.com/licklider-ai/nomue-protocol/actions/runs/34830324114).
+338 actual invocations pass, with deterministic saved-result checks in both modes.
+Seven controlled final-delivery receipt checks pass in each mode.
 
 The branch starts from execution baseline
 `3880db43a64e1758494f3c78f6850daab0e3e9e9` and reads numerical candidate
@@ -60,3 +66,24 @@ not claim that the historical supervisor alone supplied this boundary.
 
 AI-assisted author preparation is not an independent clearance. The next review
 is the one combined T04 Independent Close Review requested by the steward.
+
+## Saved artifact checks
+
+From the repository root:
+
+```sh
+python -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/verify_measurements.py
+python -O -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/verify_measurements.py
+python -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/check_failure_delivery.py
+python -O -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/check_failure_delivery.py
+pnpm validate
+pnpm lint:markdown
+git diff --check
+```
+
+`MANIFEST.json` records SHA-256 for every final research file and the workflow,
+excluding the manifest itself. Paths are relative to the repository root.
+`CAPTURE.json` retains original downloaded hashes; JSON formatting changes archive
+presentation only. Saved reports remain bound by canonical-byte hashes and exact
+fixed expected results. The source snapshot trees are reproduced from pinned Git
+objects, not by trusting mutable branch names.
