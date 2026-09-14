@@ -1,0 +1,41 @@
+name: R4 EC3 EC4 research measurements
+on:
+  push:
+    branches:
+      - research/r4-t04-ec3-ec4-evidence-20260914
+    paths:
+      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/**.py
+      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/ingress.ts
+      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/profiles.json
+      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/Dockerfile
+      - .github/workflows/r4-ec3-ec4-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  measurements:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.14.0"
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
+      - name: Prepare immutable inputs
+        run: python3 -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/prepare.py /tmp/r4-ec3-stage
+      - name: Build pinned-version research environment
+        run: docker build -t r4-ec3-research /tmp/r4-ec3-stage
+      - name: Measure normal, optimized, and failure invocations
+        run: python3 -B governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/run_suite.py /tmp/r4-ec3-stage /tmp/r4-ec3-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-ec3-ec4-measurements
+          path: |
+            /tmp/r4-ec3-results/*.json
+            /tmp/r4-ec3-results/*.jsonl
+          if-no-files-found: warn
