@@ -1,0 +1,60 @@
+{
+  "status": "WORKING BUDGET - PENDING G5 AND EC1/EC2 CLOSE REVIEW",
+  "author": "OpenAI Codex, continuing author context; no G4 independent review performed",
+  "input_commit": "225eca96d485978ee01cbe08d535387900252bca",
+  "architecture_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+  "branch": "research/r4-t04-ec1-ec2-evidence-20260914",
+  "supplied_disposition": "Commissioning user reports G1-G3 independent Research Gate GO, zero BLOCKER/SHOULD-FIX, and Level 2 working candidate selection; reviewer identity/receipt not invented.",
+  "working_budget_decimal": "52969003320369754284032",
+  "cost_definition_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python_executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+    "role": "Research numerical-component observations, not an EC3 supported host/profile"
+  },
+  "deterministic_modes": {
+    "actual_optimization_flags": [0, 1],
+    "checks": 1800,
+    "saved_bytes_equal": true
+  },
+  "reference_observations": {
+    "cases_per_mode": 60,
+    "completed_processes": 120,
+    "actual_optimization_flags": [0, 1],
+    "role": "Reference practicality evidence only; timing not a membership input"
+  },
+  "commands": {
+    "deterministic_check": [
+      "python -B governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/check_evidence.py --check",
+      "python -O -B governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/check_evidence.py --check",
+      "python -B governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/analyze_results.py --check",
+      "python -B governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/verify_artifacts.py"
+    ],
+    "explicit_new_observation_only": "python -B governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/measure_reference.py --measure",
+    "validation": [
+      "pnpm validate",
+      "pnpm exec markdownlint-cli2 \"governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/*.md\"",
+      "pnpm exec prettier --check \"governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/*.md\" \"governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/*.json\"",
+      "git diff --check"
+    ]
+  },
+  "result_sha256": "addd390d7e43934907641fdc446a1d916de006d5d3b48badd2b8032f085fe88d",
+  "source_binding": "Initial capture on new uncommitted G4 files at input_commit; artifact hashes and containing commit bind source. Exact final containing HEAD reruns are reported in the handoff.",
+  "artifacts": {
+    "ANALYSIS.jsonl": "cec17a7d27e0c168a6f529132e174b76535e94025c9be420ccb0c1160c9fcd3a",
+    "analyze_results.py": "6e9b450b6020bb6a798bbe2cb1d056b73deb0c9415a63e1867230aab07edc45f",
+    "check_evidence.py": "f0b8bf7d4eaa5abc69c848cd60c2e59c971d35ded5c9e2ed86a9ecfcb46552b4",
+    "COST-DEFINITION.json": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+    "DECISION.md": "79d25a59845f9cab96cfd232c567a32cec7bf3898e221874715bb1066856edeb",
+    "INPUTS.json": "ffab722a3e3df8c12265b66b9d4e5ef89bd34ecda44fba954e524fa37dd99fba",
+    "measure_reference.py": "453b73cba317c8c802a93ee387c49235a02257f77f0e35d7fe799cf0992d1795",
+    "PLAN.md": "26bf6f13c797d8559f848afc354a3a6676f8fc5ff75eab1a0dafdffee7a106fb",
+    "REFERENCE-OBSERVATIONS.json": "648dbad70e20f49cba4fd370081087283fba8f67bb1da53ac8ddeb371a0d86ce",
+    "REPORT.md": "3678f9df2f779449109d44a390f128ca90bcacbe02f32f07e5908c395df4890c",
+    "RESULTS.jsonl": "addd390d7e43934907641fdc446a1d916de006d5d3b48badd2b8032f085fe88d",
+    "verify_artifacts.py": "eda166f4e150f800321e546cffd8428c35fed262ca00d9c4e9f6e9276efaa8a6"
+  },
+  "self_hash_policy": "Manifest excluded from its own map; containing immutable Git commit binds it."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "Level 2 working cost definition; not a public identifier or policy",
+  "revision": "G4 cost candidate 1: unchanged reviewed S_C",
+  "input_commit": "225eca96d485978ee01cbe08d535387900252bca",
+  "source": {
+    "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/check_evidence.py",
+    "sha256": "e9ed5f5dbc17a15ecb2ff6b658745536b804681d9b3c0d2a4074ba599d9d2e22",
+    "function": "cost(n,widths)[S_C]"
+  },
+  "derivation": {
+    "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md",
+    "sha256": "cd54693b95cf09a0044cb7596da8fe2a5f44777a4322c50aace9b79825d35b82"
+  },
+  "precomparison_plan_sha256": "26bf6f13c797d8559f848afc354a3a6676f8fc5ff75eab1a0dafdffee7a106fb",
+  "formula": {
+    "r": "ceil(log2(n))",
+    "a": "2(n-1)",
+    "ell": "ceil(log2(2a))",
+    "U(K)": "64(K+1)^3",
+    "K0": "2*2098+4*r+2200",
+    "Cpre": "(128*n+2048)*U(K0)",
+    "Kx_i": "8*a*(w_i+2*ell+6)+8192",
+    "Cx_i": "(32*a+256)*U(Kx_i)",
+    "Ebits": "22*(8*max(K0,Kx_A,Kx_B,Kx_AB)+512)+320",
+    "Ce": "Ebits^2",
+    "C": "Cpre+Cx_A+Cx_B+Cx_AB+Ce",
+    "admit_work": "C <= B"
+  },
+  "width": "max(1,bit_length(abs(reduced exact F numerator)),bit_length(positive reduced denominator))",
+  "semantics": "Charge all 3 tails even if equal or F=0; no staged work charged; no observed machine metrics.",
+  "valid_n": [2, 2251799813685247]
+}
