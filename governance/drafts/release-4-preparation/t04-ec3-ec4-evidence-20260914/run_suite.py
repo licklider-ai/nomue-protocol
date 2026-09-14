@@ -37,7 +37,7 @@ def one(image, profile_name, profile, name, item, mode, outputs):
     args=['docker','run','-d','--name',unique,'--network','none','--read-only','--cap-drop','ALL',
           '--security-opt','no-new-privileges','--pids-limit','32','--cpus','2',
           '--memory',str(profile['tree_mib'])+'m','--memory-swap',str(profile['tree_mib'])+'m',
-          '--tmpfs','/tmp:rw,noexec,nosuid,size=8m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1',
+          '--tmpfs','/tmp:rw,noexec,nosuid,size=8m','--log-driver','json-file','--log-opt','max-size=1m','--log-opt','max-file=1',
           '--mount','type=bind,src='+str(folder.resolve())+',dst=/out',image,
           '/usr/local/bin/python','-B']+(['-O']*mode)+['/harness/parent.py',profile_name,name,str(mode)]
     path=None
@@ -77,6 +77,10 @@ def one(image, profile_name, profile, name, item, mode, outputs):
     except Exception as error:
         result['harness_error']=str(error)[:300]
         if isinstance(error,subprocess.CalledProcessError): result['command_error']=error.output.decode(errors='replace')[:2000]
+        try:
+            inspect(unique)
+            result['container_created']=True
+        except Exception: pass
         result['report']=None
     finally:
         if result['container_created']:
