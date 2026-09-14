@@ -20,4 +20,5 @@ jobs:
         with:
           python-version: "3.12.14"
       - run: pnpm install --frozen-lockfile
+      - run: node --test tooling/maintenance/pinned-contribution-source.test.mjs
       - run: NOMUE_EXPERIMENT_PYTHON="$(command -v python3)" node governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs

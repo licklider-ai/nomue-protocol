@@ -151,3 +151,57 @@ Additional Release 1 commands:
 
 `pnpm check` must be green before any commit that touches authoritative
 artifacts.
+
+## Publication boundary and implementation ownership
+
+Steward direction adopted 2026-09-14. Apply the Charter's open-specification,
+minimum-standardization and proprietary-implementation boundary to every proposed
+public file, commit, PR description, comment, attachment and generated output.
+
+- Continue public specifications and the public reference verifier, including
+  successor releases. Publish the conditions, input/output meaning, limits,
+  version identity and evidence links needed for interoperability and independent
+  checking. Do not introduce undisclosed conditions into a public check.
+- Develop shared public numerical and verification source in the public
+  `licklider-ai/nomue-verifier` repository. This repository owns specification,
+  registries, schemas, conformance, generation and validation tooling. Its pinned
+  reference copies are consumers, not another development home.
+- Existing R3/R4 exploratory candidates and fixed evidence keep their present
+  location and status. Promotion into the shared checker occurs in Verifier;
+  neither a source move nor a pin update grants scientific or release approval.
+- Keep production-specific optimizations, orchestration, session management,
+  deployment techniques and internal operational data outside this public
+  repository when they are unnecessary for the public contract or local checking.
+  Do not standardize an optional implementation technique merely because it exists.
+- Before creating public output, inspect the actual outgoing diff, text and
+  attachments. Work from public sources or explicitly cleared publication
+  artifacts. Do not import private context, paths, identifiers or internal notes;
+  a private artifact does not become publishable by removing its header.
+- Explain expertise through the problem, scoped result, public evidence and
+  necessary methodology. Abstract nonessential production mechanics. Preserve
+  the assumptions, tolerances and evidence needed to assess the actual claim;
+  do not weaken the public verifier to differentiate a commercial implementation.
+- If the requested content would expand disclosure or leave a public claim
+  unverifiable, prepare the bounded question for the steward before publishing
+  that part. Continue unrelated authorized work. Post-push CI cannot undo an
+  already-public disclosure, and a clean identifier scan is not a secrecy proof.
+
+These are contribution instructions applying existing Charter boundaries. They
+do not change licenses, Protocol semantics, review requirements, signed releases,
+supported bundles, numerical expectations or public-discussion windows.
+
+## Requesting adversarial review
+
+Proactively prepare a review request when the Research Gate applies before a
+design or methodology-dependent implementation, before a material candidate is
+promoted, or before a release decision requires its evidence. Reopen only the
+review affected by a material change of scope, method, source or conclusion.
+Reuse valid existing reviews for unchanged scope; ordinary typo and generated
+synchronization work does not require a new independent investigation.
+
+Before asking the steward, save a reviewable target and assemble its exact commit,
+scope, source/evidence links, strongest failure questions, independence limits,
+review prompt and expected return format. Use public inputs only. Self-review is
+not independent clearance. Keep the dependent decision pending while continuing
+authorized work that does not depend on it. Intake returned findings against the
+exact target, repair concrete defects, and record the steward's actual decision.

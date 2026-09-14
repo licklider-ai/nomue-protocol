@@ -7,14 +7,14 @@ import assert from "node:assert/strict";
 import YAML from "yaml";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { checkPinnedSource } from "../../../../tooling/maintenance/pinned-contribution-source.mjs";
 const root = fileURLToPath(new URL("../../../../", import.meta.url));
 const local = (n) => new URL(n, import.meta.url);
 const load = (n) => JSON.parse(fs.readFileSync(local(n)));
 const requirements = load("REQUIREMENTS.json").requirements;
 const surfaces = load("SURFACES.json").schemas;
 const digest = (b) => crypto.createHash("sha256").update(b).digest("hex");
-for (const pin of load("INPUTS.json").files)
-  assert.equal(digest(fs.readFileSync(path.join(root, pin.path))), pin.sha256, pin.path);
+for (const pin of load("INPUTS.json").files) checkPinnedSource(root, pin);
 const allocated = new Set(
   YAML.parse(
     fs.readFileSync(path.join(root, "registries/requirements.yaml"), "utf8"),
