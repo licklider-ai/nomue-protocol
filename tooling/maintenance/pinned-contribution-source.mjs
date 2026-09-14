@@ -18,16 +18,15 @@ export function checkPinnedBytes(bytes, pin) {
       "governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs" &&
     pin.sha256 === "a68d1e995e07c99fb7c7eadd32f661ec21ce1079a2485578b4d0fa331692dfd5"
   ) {
-    assert.equal(digest(bytes), "853b7ec1907fc437daef5e9e18a93f4f32fd7e378f6719aeab427cfb4dc72046");
+    assert.equal(digest(bytes), "9496bd89cbfa4b32082f9ed1a19ea35efbd26a59fec8243f67f908b28e123970");
     const historical = bytes
       .toString("utf8")
+      .split("\n")
+      .filter((line) => !line.startsWith("import { checkPinnedSource }"))
+      .join("\n")
       .replace(
-        'import { checkPinnedSource } from "../../../../tooling/maintenance/pinned-contribution-source.mjs";\n',
-        "",
-      )
-      .replace(
-        "  checkPinnedSource(root, pin);",
-        "  assert.equal(digest(fs.readFileSync(path.join(root, pin.path))), pin.sha256, pin.path);",
+        'for (const pin of load("INPUTS.json").files) checkPinnedSource(root, pin);',
+        'for (const pin of load("INPUTS.json").files)\n  assert.equal(digest(fs.readFileSync(path.join(root, pin.path))), pin.sha256, pin.path);',
       );
     assert.equal(digest(historical), pin.sha256, "historical source check changed");
     return;

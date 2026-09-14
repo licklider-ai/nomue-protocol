@@ -16,7 +16,7 @@ this exact approved append while preserving the original historical source pins:
   publication-boundary section. The entire new file must match the approved hash.
 - The adoption-map checker also pins itself. Its exact delegation-only edit is
   bound to SHA-256
-  `853b7ec1907fc437daef5e9e18a93f4f32fd7e378f6719aeab427cfb4dc72046`;
+  `9496bd89cbfa4b32082f9ed1a19ea35efbd26a59fec8243f67f908b28e123970`;
   reversing that edit must reconstruct its historical SHA-256
   `a68d1e995e07c99fb7c7eadd32f661ec21ce1079a2485578b4d0fa331692dfd5`.
 - Every other pinned source remains subject to exact hash equality. No wildcard,

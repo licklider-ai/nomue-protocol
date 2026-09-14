@@ -14,8 +14,7 @@ const load = (n) => JSON.parse(fs.readFileSync(local(n)));
 const requirements = load("REQUIREMENTS.json").requirements;
 const surfaces = load("SURFACES.json").schemas;
 const digest = (b) => crypto.createHash("sha256").update(b).digest("hex");
-for (const pin of load("INPUTS.json").files)
-  checkPinnedSource(root, pin);
+for (const pin of load("INPUTS.json").files) checkPinnedSource(root, pin);
 const allocated = new Set(
   YAML.parse(
     fs.readFileSync(path.join(root, "registries/requirements.yaml"), "utf8"),
