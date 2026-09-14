@@ -76,9 +76,12 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         result['work_and_delivery_wall_seconds']=time.monotonic()-start
     except Exception as error:
         result['harness_error']=str(error)[:300]
+        if isinstance(error,subprocess.CalledProcessError): result['command_error']=error.output.decode(errors='replace')[:2000]
         result['report']=None
     finally:
         if result['container_created']:
+            try: result['container_diagnostic']=command(['docker','logs','--tail','25',unique]).decode(errors='replace')[:3000]
+            except Exception: pass
             cleanup=time.monotonic()
             try:
                 # SIGTERM, then daemon SIGKILL after two seconds. Control-plane timeout is separate.
@@ -98,7 +101,9 @@ def one(image, profile_name, profile, name, item, mode, outputs):
             # Remove only the exact container this invocation created.
             command(['docker','rm',unique])
     result['full_invocation_wall_seconds']=time.monotonic()-start
-    require(result.get('cleanup_ok'),'cleanup failure recorded; stop the suite')
+    if not result.get('cleanup_ok'):
+        result['check']='FAIL'
+        return result
     report=result.get('report')
     expected=item.get('expected')
     if 'harness_error' in result:
@@ -146,6 +151,7 @@ def main():
             row=one(a.image,profile,profiles[profile],name,index[name],mode,outputs)
             rows.append(row); f.write(data(row)); f.flush()
             print(str(i+1)+'/'+str(len(plan)),profile,mode,name,row['check'],flush=True)
+            require(row.get('cleanup_ok'), 'cleanup failed: '+json.dumps(row))
     summary={'runs':len(rows),'checks':dict(Counter(row['check'] for row in rows)),'profiles':profiles}
     (a.output/'SUMMARY.json').write_bytes(data(summary))
     require(all(row['check']=='PASS' for row in rows),'research suite has failed checks; retain evidence')
