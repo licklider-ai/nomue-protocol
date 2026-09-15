@@ -1,0 +1,42 @@
+name: R4 T11 regression preservation
+
+on:
+  push:
+    branches: [research/r4-t11-regression-preservation-20260915]
+    paths:
+      - "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/run_checks.py"
+      - "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs"
+      - ".github/workflows/r4-t11-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.14.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - name: Existing regression suites and collateral controls
+        run: >-
+          python -B
+          governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/run_checks.py
+          /tmp/nomue-t11-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-t11-regression
+          path: /tmp/nomue-t11-results/
+          if-no-files-found: error
