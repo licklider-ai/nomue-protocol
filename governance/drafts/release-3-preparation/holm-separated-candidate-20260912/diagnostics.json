@@ -1,0 +1,172 @@
+{
+  "status": "unissued exercise vocabulary; not a public reason-code registry",
+  "refusals": {
+    "record_malformed_json": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "record_duplicate_member": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "record_invalid_unicode": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "record_negative_zero": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "record_parser_exhaustion": {
+      "stage": "raw",
+      "refusal_kind": "resource_limit"
+    },
+    "record_nodes": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "record_string": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "record_depth": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "record_container": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "record_key": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "record_bytes": {
+      "stage": "raw",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_malformed_json": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "expected_duplicate_member": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "expected_invalid_unicode": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "expected_negative_zero": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "expected_parser_exhaustion": {
+      "stage": "raw",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_nodes": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_string": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_depth": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_container": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_key": {
+      "stage": "parsed",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_bytes": {
+      "stage": "raw",
+      "refusal_kind": "resource_limit"
+    },
+    "record_bytes_type": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "record_utf8": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    },
+    "bundle_missing": {
+      "stage": "routing",
+      "refusal_kind": "routing_error"
+    },
+    "bundle_type": {
+      "stage": "routing",
+      "refusal_kind": "routing_error"
+    },
+    "bundle_unsupported": {
+      "stage": "routing",
+      "refusal_kind": "unsupported_bundle"
+    },
+    "record_nonfinite": {
+      "stage": "schema",
+      "refusal_kind": "canonicalization_failure"
+    },
+    "record_schema": {
+      "stage": "schema",
+      "refusal_kind": "schema_error"
+    },
+    "stored_bytes_noncanonical": {
+      "stage": "storage",
+      "refusal_kind": "noncanonical_storage"
+    },
+    "projection_disagreement": {
+      "stage": "storage",
+      "refusal_kind": "canonicalization_failure"
+    },
+    "expected_type": {
+      "stage": "expected_context",
+      "refusal_kind": "expected_context_error"
+    },
+    "expected_schema": {
+      "stage": "expected_context",
+      "refusal_kind": "expected_context_error"
+    },
+    "legacy_admission_limit": {
+      "stage": "binding",
+      "refusal_kind": "resource_limit"
+    },
+    "report_invariant": {
+      "stage": "reporting",
+      "refusal_kind": "internal_error"
+    },
+    "internal_failure": {
+      "stage": "reporting",
+      "refusal_kind": "internal_error"
+    },
+    "setup_failure": {
+      "stage": "setup",
+      "refusal_kind": "internal_error"
+    },
+    "processing_timeout": {
+      "stage": "processing",
+      "refusal_kind": "resource_limit"
+    },
+    "processing_heap": {
+      "stage": "processing",
+      "refusal_kind": "resource_limit"
+    },
+    "expected_utf8": {
+      "stage": "raw",
+      "refusal_kind": "parse_error"
+    }
+  },
+  "checks": {
+    "integrity": ["digest_mismatch"],
+    "context": ["context_mismatch"],
+    "declaration": ["declaration_invalid"],
+    "admission": ["holm_input_invalid", "result_ownership"],
+    "arithmetic": ["exact_value_mismatch", "display_value_mismatch", "worker_failure"]
+  }
+}

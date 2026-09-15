@@ -1,0 +1,686 @@
+{
+  "tested_head": "57e26fb1d00d22c8d3e4fd9c5288f31e44d73158",
+  "source_tree": "9e1d71073c3b6d9c8b432c75df42d81c93460b4c",
+  "runs": [
+    {
+      "conclusion": "success",
+      "id": 34726347436,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347436/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347436/logs",
+      "name": "R3 Holm checkpoint candidate",
+      "run_number": 14,
+      "status": "completed",
+      "workflow_id": 356063708
+    },
+    {
+      "conclusion": "success",
+      "id": 34726347504,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347504/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347504/logs",
+      "name": "R3 Holm public candidate",
+      "run_number": 14,
+      "status": "completed",
+      "workflow_id": 355843339
+    },
+    {
+      "conclusion": "success",
+      "id": 34726347493,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347493/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347493/logs",
+      "name": "R3 Holm adoption preparation",
+      "run_number": 1,
+      "status": "completed",
+      "workflow_id": 356807491
+    },
+    {
+      "conclusion": "success",
+      "id": 34726347507,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347507/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347507/logs",
+      "name": "R3 full-invocation admission research",
+      "run_number": 15,
+      "status": "completed",
+      "workflow_id": 355804968
+    },
+    {
+      "conclusion": "success",
+      "id": 34726347456,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347456/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347456/logs",
+      "name": "CI",
+      "run_number": 749,
+      "status": "completed",
+      "workflow_id": 340763308
+    },
+    {
+      "conclusion": "success",
+      "id": 34726347397,
+      "jobs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347397/jobs",
+      "logs_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/runs/34726347397/logs",
+      "name": "R3 Holm adoption map",
+      "run_number": 14,
+      "status": "completed",
+      "workflow_id": 356049757
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 103641015739,
+      "logs_url": null,
+      "name": "Full check (Linux x64, Node 24)",
+      "run_id": 34726347456,
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install (frozen lockfile)",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Environment report (process.versions, arch)",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Full check on Node 24 (V8 version-difference probe against the Node 22 baseline)",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 18,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 19,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "conclusion": "success",
+      "id": 103641015776,
+      "logs_url": null,
+      "name": "Full check (Linux x64)",
+      "run_id": 34726347456,
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install (frozen lockfile)",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Environment report (process.versions, arch)",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Full check (format, lint, typecheck, validate, tests, generated diff, Phase 1 regression, Phase 2A suite, oracle comparison, example and refusal verification, evidence diffs)",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 18,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 19,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "conclusion": "success",
+      "id": 103641015779,
+      "logs_url": null,
+      "name": "Phase 1 + 2A validation (Windows x64)",
+      "run_id": 34726347456,
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install (frozen lockfile)",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Environment report (process.versions, arch)",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Typecheck",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Supported-execution candidate trace and exact-verifier corpus",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Registry, schema, and audit validation",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Canonicalization and digest vectors",
+          "number": 11,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+          "number": 12,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+          "number": 13,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Resource and refusal fixtures",
+          "number": 14,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Examples (Phase 1 and Phase 2A)",
+          "number": 15,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+          "number": 16,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+          "number": 17,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 18,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 34,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 35,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 36,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 37,
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "conclusion": "success",
+      "id": 103641015792,
+      "logs_url": null,
+      "name": "Phase 1 + 2A validation (Linux arm64)",
+      "run_id": 34726347456,
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install (frozen lockfile)",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Environment report (process.versions, arch)",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Typecheck",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Supported-execution candidate trace and exact-verifier corpus",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Registry, schema, and audit validation",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Canonicalization and digest vectors",
+          "number": 11,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+          "number": 12,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+          "number": 13,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Resource and refusal fixtures",
+          "number": 14,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Examples (Phase 1 and Phase 2A)",
+          "number": 15,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+          "number": 16,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+          "number": 17,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 18,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 34,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 35,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 36,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 37,
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "conclusion": null,
+      "id": 103641015868,
+      "logs_url": null,
+      "name": "Phase 1 + 2A validation (macOS arm64)",
+      "run_id": 34726347456,
+      "status": "in_progress",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Install (frozen lockfile)",
+          "number": 5,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Environment report (process.versions, arch)",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 7,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Typecheck",
+          "number": 8,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Supported-execution candidate trace and exact-verifier corpus",
+          "number": 9,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Registry, schema, and audit validation",
+          "number": 10,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Canonicalization and digest vectors",
+          "number": 11,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 1 regression (pinned results, semantic projection hashes)",
+          "number": 12,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Phase 2A conformance (admissibility, mismatches, dispatch, projections)",
+          "number": 13,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Resource and refusal fixtures",
+          "number": 14,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Examples (Phase 1 and Phase 2A)",
+          "number": 15,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle comparison (captured SciPy/mpmath outputs)",
+          "number": 16,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Oracle rel_diff matrix (this environment vs captured oracles)",
+          "number": 17,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 18,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 34,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 35,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 36,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 37,
+          "status": "completed"
+        }
+      ]
+    }
+  ],
+  "artifact_id": 10307778316,
+  "service_reported_digest": "sha256:2d4a9076515f91a2ac4deb2ea97c1d1fde02d548c512f1a9a1371ab8d0dbf3a6",
+  "raw_zip_retrieved": false,
+  "download_limitation": "Materialized connector download returned HTTP 403 in local runtime. No raw ZIP digest verification claimed. Next workflow adds fixed allowlist receipt-byte custody through authenticated job logs."
+}

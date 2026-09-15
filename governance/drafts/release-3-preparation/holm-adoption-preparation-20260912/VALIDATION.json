@@ -1,0 +1,110 @@
+{
+  "status": "exact tested-head CI passed; raw receipt bytes archived; formal adoption and independent wrapper review open",
+  "base_commit": "4a62f8e1768049560cb0ce8f09ef1676cb42130b",
+  "numerical_replay": {
+    "original_commit": "234abcaf256eac491a68b4b4b1593bf3983a8992",
+    "normal_checks": 21763,
+    "optimized_checks": 21763,
+    "outputs_identical": true,
+    "review_independence": "historical script replay in author context; original output provenance is retained verbatim, not claimed for this replay"
+  },
+  "local_packet": {
+    "status": "PASS_FOR_UNISSUED_PREPARATION",
+    "formal_adoption": false,
+    "independent_review_of_new_wrapper": false,
+    "source_pins": 530,
+    "numerical_files_unchanged": 3,
+    "proposed_requirements": 17,
+    "property_declarations": 537,
+    "registry_previews": [
+      {
+        "registry": "public-checks",
+        "legacy_rows_preserved": true,
+        "proposed_rows": 5,
+        "legacy_schema_rejects_successor": true
+      },
+      {
+        "registry": "public-contract-surfaces",
+        "legacy_rows_preserved": true,
+        "proposed_rows": 4,
+        "legacy_schema_rejects_successor": true
+      },
+      {
+        "registry": "reason-codes",
+        "legacy_rows_preserved": true,
+        "proposed_rows": 60,
+        "legacy_schema_rejects_successor": true
+      },
+      {
+        "registry": "interpretation-bundles",
+        "legacy_rows_preserved": true,
+        "proposed_rows": 1,
+        "legacy_schema_rejects_successor": true
+      }
+    ],
+    "negative_controls": [
+      "duplicate proposed requirement",
+      "unowned actual schema field",
+      "missing explicit ownership",
+      "unknown owner",
+      "noncanonical or wrong-family successor https://NOMUE.AI/id/check/holm-integrity/0.3.0-candidate.4",
+      "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4/",
+      "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4?x=1",
+      "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4#x",
+      "noncanonical or wrong-family successor https://nomue.ai:443/id/check/holm-integrity/0.3.0-candidate.4",
+      "noncanonical or wrong-family successor https://nomue.ai/id/check/%68olm-integrity/0.3.0-candidate.4",
+      "noncanonical or wrong-family successor https://nomue.ai/id/check/../check/holm-integrity/0.3.0-candidate.4",
+      "noncanonical or wrong-family successor https://nomue.ai/id/bundle/holm-integrity/0.3.0-candidate.4",
+      "nonzero proposed exact tolerance",
+      "deleted executed separation evidence"
+    ],
+    "envelope_controls": 82,
+    "public_controls": 93,
+    "budget_controls": 38,
+    "separation_controls": 14,
+    "fixed_preexecution_fixtures": 9
+  },
+  "fixed_preexecution_fixtures": 9,
+  "ci": {
+    "tested_head": "57e26fb1d00d22c8d3e4fd9c5288f31e44d73158",
+    "standard_run": 34726347456,
+    "successor_run": 34726347493,
+    "all_six_workflows": "success",
+    "actual_cgroup_controls": 33,
+    "public_receipts": 28,
+    "original_byte_forwards": 5,
+    "node22_refusal": "observed exit 78, zero stdout/stderr, unsupported_execution and four cleanup predicates true",
+    "source": "ci-initial/METADATA.json and LOG-EXCERPTS.txt",
+    "full_raw_receipt_custody": "preserved from second run through authenticated job logs; see ci/MEMBERS.json"
+  },
+  "formal_adoption": false,
+  "native_repository_validator": "PASS",
+  "local_standard_check": {
+    "pnpm_check": "BLOCKED_AFTER_FORMAT_LINT_TYPECHECK_BY_TSX_CLI_IPC_EPERM",
+    "native_validator": "PASS",
+    "format": "PASS",
+    "markdownlint": "PASS",
+    "typecheck": "PASS",
+    "supplementary_native_tests": {
+      "vitest_tests": 520,
+      "vitest_files": 55,
+      "generated_views": 19,
+      "compiled_schemas": 13,
+      "canonicalization_vectors": 16,
+      "conformance_fixtures": 132,
+      "phase1_evidence_files": 8,
+      "phase2a_evidence_files": 10,
+      "result": "PASS"
+    }
+  },
+  "ci_exact_receipts": {
+    "tested_head": "c999d8b3bf5ff3b8c58b0f018eb6c85b038c65ca",
+    "tested_tree": "25388544b5f2094c1be497de6d09ab73487ed1ea",
+    "run_id": 34726549437,
+    "job_id": 103641555358,
+    "all_six_workflows": "success",
+    "exact_byte_members": 10,
+    "offline_check": "check_ci_evidence.py",
+    "artifact_zip_retrieved": false
+  }
+}

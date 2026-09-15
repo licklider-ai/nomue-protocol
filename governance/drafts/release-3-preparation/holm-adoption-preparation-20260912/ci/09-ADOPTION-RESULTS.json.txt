@@ -1,0 +1,56 @@
+{
+  "status": "PASS_FOR_UNISSUED_PREPARATION",
+  "formal_adoption": false,
+  "independent_review_of_new_wrapper": false,
+  "source_pins": 530,
+  "numerical_files_unchanged": 3,
+  "proposed_requirements": 17,
+  "property_declarations": 537,
+  "registry_previews": [
+    {
+      "registry": "public-checks",
+      "legacy_rows_preserved": true,
+      "proposed_rows": 5,
+      "legacy_schema_rejects_successor": true
+    },
+    {
+      "registry": "public-contract-surfaces",
+      "legacy_rows_preserved": true,
+      "proposed_rows": 4,
+      "legacy_schema_rejects_successor": true
+    },
+    {
+      "registry": "reason-codes",
+      "legacy_rows_preserved": true,
+      "proposed_rows": 60,
+      "legacy_schema_rejects_successor": true
+    },
+    {
+      "registry": "interpretation-bundles",
+      "legacy_rows_preserved": true,
+      "proposed_rows": 1,
+      "legacy_schema_rejects_successor": true
+    }
+  ],
+  "negative_controls": [
+    "duplicate proposed requirement",
+    "unowned actual schema field",
+    "missing explicit ownership",
+    "unknown owner",
+    "noncanonical or wrong-family successor https://NOMUE.AI/id/check/holm-integrity/0.3.0-candidate.4",
+    "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4/",
+    "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4?x=1",
+    "noncanonical or wrong-family successor https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4#x",
+    "noncanonical or wrong-family successor https://nomue.ai:443/id/check/holm-integrity/0.3.0-candidate.4",
+    "noncanonical or wrong-family successor https://nomue.ai/id/check/%68olm-integrity/0.3.0-candidate.4",
+    "noncanonical or wrong-family successor https://nomue.ai/id/check/../check/holm-integrity/0.3.0-candidate.4",
+    "noncanonical or wrong-family successor https://nomue.ai/id/bundle/holm-integrity/0.3.0-candidate.4",
+    "nonzero proposed exact tolerance",
+    "deleted executed separation evidence"
+  ],
+  "envelope_controls": 82,
+  "public_controls": 93,
+  "budget_controls": 38,
+  "separation_controls": 14,
+  "fixed_preexecution_fixtures": 9
+}

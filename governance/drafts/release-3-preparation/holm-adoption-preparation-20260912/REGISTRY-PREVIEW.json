@@ -1,0 +1,1052 @@
+{
+  "status": "NON_OPERATIVE; proposed rows have no authority and do not change runtime local reasons",
+  "checks": [
+    {
+      "check_id": "https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4",
+      "title": "Holm integrity",
+      "version": "0.3.0-candidate.4",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "calculation_evidence": "recomputed",
+      "consistency_evidence": "checked",
+      "signature_evidence": "not_checked",
+      "claim_posture": "asserted",
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0010",
+        "NRS-CONTRACT-HOLM-0008",
+        "NRS-CONTRACT-HOLM-0013"
+      ],
+      "tolerance_policy": {
+        "kind": "exact"
+      },
+      "implementation_status": "planned",
+      "notes": "PREVIEW ONLY. Proposed row, not issued support. Full Record/revision/analysis/family/result scope is carried. Scoped verification result."
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/holm-context/0.3.0-candidate.4",
+      "title": "Holm context",
+      "version": "0.3.0-candidate.4",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "calculation_evidence": "not_checked",
+      "consistency_evidence": "checked",
+      "signature_evidence": "not_checked",
+      "claim_posture": "asserted",
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0005",
+        "NRS-CONTRACT-HOLM-0008",
+        "NRS-CONTRACT-HOLM-0013"
+      ],
+      "tolerance_policy": {
+        "kind": "not_applicable"
+      },
+      "implementation_status": "planned",
+      "notes": "PREVIEW ONLY. Proposed row, not issued support. Full Record/revision/analysis/family/result scope is carried. Scoped verification result.",
+      "depends_on": ["https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4"],
+      "dependency_propagation": "not_run_with_prerequisite_reason"
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.4",
+      "title": "Holm declaration",
+      "version": "0.3.0-candidate.4",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "calculation_evidence": "not_checked",
+      "consistency_evidence": "checked",
+      "signature_evidence": "not_checked",
+      "claim_posture": "asserted",
+      "requirement_ids": [
+        "NRS-PROFILE-IMGC-0001",
+        "NRS-PROFILE-IMGC-0002",
+        "NRS-CONTRACT-HOLM-0015",
+        "NRS-CONTRACT-HOLM-0008",
+        "NRS-CONTRACT-HOLM-0013"
+      ],
+      "tolerance_policy": {
+        "kind": "not_applicable"
+      },
+      "implementation_status": "planned",
+      "notes": "PREVIEW ONLY. Proposed row, not issued support. Full Record/revision/analysis/family/result scope is carried. Conformance judgment, separated from verification results.",
+      "depends_on": ["https://nomue.ai/id/check/holm-context/0.3.0-candidate.4"],
+      "dependency_propagation": "not_run_with_prerequisite_reason"
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4",
+      "title": "Holm admission",
+      "version": "0.3.0-candidate.4",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "calculation_evidence": "not_checked",
+      "consistency_evidence": "checked",
+      "signature_evidence": "not_checked",
+      "claim_posture": "asserted",
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0001",
+        "NRS-CONTRACT-HOLM-0002",
+        "NRS-CONTRACT-HOLM-0006",
+        "NRS-CONTRACT-HOLM-0012",
+        "NRS-CONTRACT-HOLM-0015",
+        "NRS-CONTRACT-HOLM-0008",
+        "NRS-CONTRACT-HOLM-0013"
+      ],
+      "tolerance_policy": {
+        "kind": "not_applicable"
+      },
+      "implementation_status": "planned",
+      "notes": "PREVIEW ONLY. Proposed row, not issued support. Full Record/revision/analysis/family/result scope is carried. Conformance judgment, separated from verification results.",
+      "depends_on": ["https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.4"],
+      "dependency_propagation": "not_run_with_prerequisite_reason"
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4",
+      "title": "Holm arithmetic",
+      "version": "0.3.0-candidate.4",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "calculation_evidence": "recomputed",
+      "consistency_evidence": "checked",
+      "signature_evidence": "not_checked",
+      "claim_posture": "asserted",
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0003",
+        "NRS-CONTRACT-HOLM-0004",
+        "NRS-CONTRACT-HOLM-0007",
+        "NRS-CONTRACT-HOLM-0008",
+        "NRS-CONTRACT-HOLM-0013"
+      ],
+      "tolerance_policy": {
+        "kind": "exact"
+      },
+      "implementation_status": "planned",
+      "notes": "PREVIEW ONLY. Proposed row, not issued support. Full Record/revision/analysis/family/result scope is carried. Scoped verification result. Exact denominator 2^1074; zero numerator and display-bit tolerances; nearest/even single projection. Structured check-owned constants are in the proposed comparison_constants.holm_supplied_p member.",
+      "depends_on": ["https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4"],
+      "dependency_propagation": "not_run_with_prerequisite_reason",
+      "comparison_constants": {
+        "holm_supplied_p": {
+          "denominator_power_of_two": 1074,
+          "exact_numerator_tolerance": 0,
+          "display_bits_tolerance": 0,
+          "projection": "binary64_round_ties_to_even",
+          "sort": "exact_p_then_original_index",
+          "alpha_input": false,
+          "groups_min": 3,
+          "groups_max": 16,
+          "members_min": 3,
+          "members_max": 120
+        }
+      }
+    }
+  ],
+  "surfaces": [
+    {
+      "surface_id": "NRS-PCS-0014",
+      "title": "Proposed Holm record",
+      "paths": [
+        "$schema",
+        "record_type",
+        "record_id",
+        "revision_id",
+        "created_at",
+        "interpretation_bundle_id",
+        "profile_id",
+        "payload",
+        "integrity"
+      ],
+      "applies_to_bundle_ids": [
+        "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.4"
+      ],
+      "paths_resolve_in": "schemas/record/holm-record-0.3.schema.json",
+      "stability": "STABLE-INTENT",
+      "status": "candidate",
+      "introduced_in": "release-3-proposal",
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      },
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0010",
+        "NRS-PROFILE-IMGC-0001",
+        "NRS-CONTRACT-HOLM-0002",
+        "NRS-CONTRACT-HOLM-0007",
+        "NRS-CONTRACT-HOLM-0001",
+        "NRS-CONTRACT-HOLM-0003",
+        "NRS-CONTRACT-HOLM-0004",
+        "NRS-PROFILE-IMGC-0002"
+      ],
+      "schema_refs": ["schemas/record/holm-record-0.3.schema.json"],
+      "notes": "PREVIEW ONLY. Exact successor identity, not reinterpretation of any legacy or candidate.3 schema."
+    },
+    {
+      "surface_id": "NRS-PCS-0015",
+      "title": "Proposed Holm expected",
+      "paths": ["record_id", "revision_id", "declaration", "inputs"],
+      "applies_to_bundle_ids": [
+        "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.4"
+      ],
+      "paths_resolve_in": "schemas/reports/holm-expected-0.3.schema.json",
+      "stability": "STABLE-INTENT",
+      "status": "candidate",
+      "introduced_in": "release-3-proposal",
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      },
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0005",
+        "NRS-PROFILE-IMGC-0001",
+        "NRS-CONTRACT-HOLM-0002",
+        "NRS-PROFILE-IMGC-0002"
+      ],
+      "schema_refs": ["schemas/reports/holm-expected-0.3.schema.json"],
+      "notes": "PREVIEW ONLY. Exact successor identity, not reinterpretation of any legacy or candidate.3 schema."
+    },
+    {
+      "surface_id": "NRS-PCS-0016",
+      "title": "Proposed Holm report",
+      "paths": [
+        "record_reference",
+        "interpretation_bundle_id",
+        "verifier",
+        "generated_at",
+        "guarantee_boundary",
+        "$schema",
+        "report_type",
+        "conformance",
+        "verification_results"
+      ],
+      "applies_to_bundle_ids": [
+        "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.4"
+      ],
+      "paths_resolve_in": "schemas/reports/holm-report-0.3.schema.json",
+      "stability": "STABLE-INTENT",
+      "status": "candidate",
+      "introduced_in": "release-3-proposal",
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      },
+      "requirement_ids": [
+        "NRS-CONTRACT-HOLM-0011",
+        "NRS-CONTRACT-HOLM-0013",
+        "NRS-CONTRACT-HOLM-0015",
+        "NRS-CONTRACT-HOLM-0008"
+      ],
+      "schema_refs": ["schemas/reports/holm-report-0.3.schema.json"],
+      "notes": "PREVIEW ONLY. Exact successor identity, not reinterpretation of any legacy or candidate.3 schema."
+    },
+    {
+      "surface_id": "NRS-PCS-0017",
+      "title": "Proposed Holm refusal",
+      "paths": [
+        "$schema",
+        "output_type",
+        "stage",
+        "refusal_kind",
+        "reason_codes",
+        "message",
+        "verifier",
+        "input_evidence",
+        "generated_at",
+        "limit_category",
+        "details"
+      ],
+      "applies_to_bundle_ids": [
+        "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.4"
+      ],
+      "paths_resolve_in": "schemas/reports/holm-refusal-0.3.schema.json",
+      "stability": "STABLE-INTENT",
+      "status": "candidate",
+      "introduced_in": "release-3-proposal",
+      "change_policy": {
+        "breaking_change": "requires a new schema version",
+        "silent_reinterpretation": "prohibited"
+      },
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "schema_refs": ["schemas/reports/holm-refusal-0.3.schema.json"],
+      "notes": "PREVIEW ONLY. Applicability is not selection: this refusal is selected by the invocation output protocol before any Record bundle is read. It covers a verifier that offers the proposed bundle; unknown/malformed bundle inputs use the same output protocol."
+    }
+  ],
+  "reasons": [
+    {
+      "id": "NRS-HOLM-RECORD-MALFORMED-JSON",
+      "title": "Holm record malformed json",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_malformed_json; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-DUPLICATE-MEMBER",
+      "title": "Holm record duplicate member",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_duplicate_member; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-INVALID-UNICODE",
+      "title": "Holm record invalid unicode",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_invalid_unicode; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-NEGATIVE-ZERO",
+      "title": "Holm record negative zero",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_negative_zero; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-PARSER-EXHAUSTION",
+      "title": "Holm record parser exhaustion",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_parser_exhaustion; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-NODES",
+      "title": "Holm record nodes",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_nodes; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-STRING",
+      "title": "Holm record string",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_string; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-DEPTH",
+      "title": "Holm record depth",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_depth; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-CONTAINER",
+      "title": "Holm record container",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_container; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-KEY",
+      "title": "Holm record key",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_key; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-BYTES",
+      "title": "Holm record bytes",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:record_bytes; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-MALFORMED-JSON",
+      "title": "Holm expected malformed json",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_malformed_json; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-DUPLICATE-MEMBER",
+      "title": "Holm expected duplicate member",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_duplicate_member; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-INVALID-UNICODE",
+      "title": "Holm expected invalid unicode",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_invalid_unicode; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-NEGATIVE-ZERO",
+      "title": "Holm expected negative zero",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_negative_zero; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-PARSER-EXHAUSTION",
+      "title": "Holm expected parser exhaustion",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_parser_exhaustion; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-NODES",
+      "title": "Holm expected nodes",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_nodes; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-STRING",
+      "title": "Holm expected string",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_string; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-DEPTH",
+      "title": "Holm expected depth",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_depth; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-CONTAINER",
+      "title": "Holm expected container",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_container; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-KEY",
+      "title": "Holm expected key",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_key; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-BYTES",
+      "title": "Holm expected bytes",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:expected_bytes; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-BYTES-TYPE",
+      "title": "Holm record bytes type",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_bytes_type; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-UTF-EIGHT",
+      "title": "Holm record utf8",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_utf8; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-BUNDLE-MISSING",
+      "title": "Holm bundle missing",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:bundle_missing; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-BUNDLE-TYPE",
+      "title": "Holm bundle type",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:bundle_type; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-BUNDLE-UNSUPPORTED",
+      "title": "Holm bundle unsupported",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:bundle_unsupported; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-NONFINITE",
+      "title": "Holm record nonfinite",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_nonfinite; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RECORD-SCHEMA",
+      "title": "Holm record schema",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:record_schema; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-STORED-BYTES-NONCANONICAL",
+      "title": "Holm stored bytes noncanonical",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:stored_bytes_noncanonical; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-PROJECTION-DISAGREEMENT",
+      "title": "Holm projection disagreement",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:projection_disagreement; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-TYPE",
+      "title": "Holm expected type",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_type; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-SCHEMA",
+      "title": "Holm expected schema",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_schema; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-LEGACY-ADMISSION-LIMIT",
+      "title": "Holm legacy admission limit",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:legacy_admission_limit; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-REPORT-INVARIANT",
+      "title": "Holm report invariant",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:report_invariant; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-INTERNAL-FAILURE",
+      "title": "Holm internal failure",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:internal_failure; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-SETUP-FAILURE",
+      "title": "Holm setup failure",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:setup_failure; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-PREREQUISITE-FAILED",
+      "title": "Holm prerequisite failed",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:prerequisite_failed; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [
+        "https://nomue.ai/id/check/holm-context/0.3.0-candidate.4",
+        "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.4",
+        "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4",
+        "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4"
+      ],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-DIGEST-MISMATCH",
+      "title": "Holm digest mismatch",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:digest_mismatch; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-CONTEXT-MISMATCH",
+      "title": "Holm context mismatch",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:context_mismatch; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-context/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-DECLARATION-INVALID",
+      "title": "Holm declaration invalid",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:declaration_invalid; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-HOLM-INPUT-INVALID",
+      "title": "Holm holm input invalid",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:holm_input_invalid; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-RESULT-OWNERSHIP",
+      "title": "Holm result ownership",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:result_ownership; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXACT-VALUE-MISMATCH",
+      "title": "Holm exact value mismatch",
+      "category": "comparison",
+      "description": "Proposed permanent mapping of candidate:holm:exact_value_mismatch; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-DISPLAY-VALUE-MISMATCH",
+      "title": "Holm display value mismatch",
+      "category": "comparison",
+      "description": "Proposed permanent mapping of candidate:holm:display_value_mismatch; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-WORKER-FAILURE",
+      "title": "Holm worker failure",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:worker_failure; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": ["https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4"],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-CLEANUP-FAILED",
+      "title": "Holm cleanup failed",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:cleanup_failed; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-MEMORY-ENFORCED",
+      "title": "Holm memory enforced",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:memory_enforced; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-PIDS-ENFORCED",
+      "title": "Holm pids enforced",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:pids_enforced; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-CANCELLED",
+      "title": "Holm cancelled",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:cancelled; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-DEADLINE",
+      "title": "Holm deadline",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:deadline; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-OUTPUT-OVERFLOW",
+      "title": "Holm output overflow",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:output_overflow; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-UNSUPPORTED-HOST",
+      "title": "Holm unsupported host",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:unsupported_host; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-SETUP-FAILED",
+      "title": "Holm setup failed",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:setup_failed; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-INVALID-INPUT",
+      "title": "Holm invalid input",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:invalid_input; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-ABNORMAL-EXIT",
+      "title": "Holm abnormal exit",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:abnormal_exit; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-COMPLETED-INVALID-OUTPUT",
+      "title": "Holm completed invalid output",
+      "category": "internal",
+      "description": "Proposed permanent mapping of candidate:holm:completed_invalid_output; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-PROCESSING-TIMEOUT",
+      "title": "Holm processing timeout",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:processing_timeout; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-PROCESSING-HEAP",
+      "title": "Holm processing heap",
+      "category": "resource",
+      "description": "Proposed permanent mapping of candidate:holm:processing_heap; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    },
+    {
+      "id": "NRS-HOLM-EXPECTED-UTF-EIGHT",
+      "title": "Holm expected utf8",
+      "category": "semantic",
+      "description": "Proposed permanent mapping of candidate:holm:expected_utf8; exact kind/stage/limit mapping is pinned in candidate outcomes and diagnostics.",
+      "applicable_check_ids": [],
+      "requirement_ids": ["NRS-CONTRACT-HOLM-0009"],
+      "stability": "EXPERIMENTAL",
+      "remediation_hint": "Use the declared stage and category; do not treat refusal or not-run as numerical disagreement.",
+      "introduced_in": "release-3-proposal"
+    }
+  ],
+  "reason_translation": {
+    "candidate:holm:record_malformed_json": "NRS-HOLM-RECORD-MALFORMED-JSON",
+    "candidate:holm:record_duplicate_member": "NRS-HOLM-RECORD-DUPLICATE-MEMBER",
+    "candidate:holm:record_invalid_unicode": "NRS-HOLM-RECORD-INVALID-UNICODE",
+    "candidate:holm:record_negative_zero": "NRS-HOLM-RECORD-NEGATIVE-ZERO",
+    "candidate:holm:record_parser_exhaustion": "NRS-HOLM-RECORD-PARSER-EXHAUSTION",
+    "candidate:holm:record_nodes": "NRS-HOLM-RECORD-NODES",
+    "candidate:holm:record_string": "NRS-HOLM-RECORD-STRING",
+    "candidate:holm:record_depth": "NRS-HOLM-RECORD-DEPTH",
+    "candidate:holm:record_container": "NRS-HOLM-RECORD-CONTAINER",
+    "candidate:holm:record_key": "NRS-HOLM-RECORD-KEY",
+    "candidate:holm:record_bytes": "NRS-HOLM-RECORD-BYTES",
+    "candidate:holm:expected_malformed_json": "NRS-HOLM-EXPECTED-MALFORMED-JSON",
+    "candidate:holm:expected_duplicate_member": "NRS-HOLM-EXPECTED-DUPLICATE-MEMBER",
+    "candidate:holm:expected_invalid_unicode": "NRS-HOLM-EXPECTED-INVALID-UNICODE",
+    "candidate:holm:expected_negative_zero": "NRS-HOLM-EXPECTED-NEGATIVE-ZERO",
+    "candidate:holm:expected_parser_exhaustion": "NRS-HOLM-EXPECTED-PARSER-EXHAUSTION",
+    "candidate:holm:expected_nodes": "NRS-HOLM-EXPECTED-NODES",
+    "candidate:holm:expected_string": "NRS-HOLM-EXPECTED-STRING",
+    "candidate:holm:expected_depth": "NRS-HOLM-EXPECTED-DEPTH",
+    "candidate:holm:expected_container": "NRS-HOLM-EXPECTED-CONTAINER",
+    "candidate:holm:expected_key": "NRS-HOLM-EXPECTED-KEY",
+    "candidate:holm:expected_bytes": "NRS-HOLM-EXPECTED-BYTES",
+    "candidate:holm:record_bytes_type": "NRS-HOLM-RECORD-BYTES-TYPE",
+    "candidate:holm:record_utf8": "NRS-HOLM-RECORD-UTF-EIGHT",
+    "candidate:holm:bundle_missing": "NRS-HOLM-BUNDLE-MISSING",
+    "candidate:holm:bundle_type": "NRS-HOLM-BUNDLE-TYPE",
+    "candidate:holm:bundle_unsupported": "NRS-HOLM-BUNDLE-UNSUPPORTED",
+    "candidate:holm:record_nonfinite": "NRS-HOLM-RECORD-NONFINITE",
+    "candidate:holm:record_schema": "NRS-HOLM-RECORD-SCHEMA",
+    "candidate:holm:stored_bytes_noncanonical": "NRS-HOLM-STORED-BYTES-NONCANONICAL",
+    "candidate:holm:projection_disagreement": "NRS-HOLM-PROJECTION-DISAGREEMENT",
+    "candidate:holm:expected_type": "NRS-HOLM-EXPECTED-TYPE",
+    "candidate:holm:expected_schema": "NRS-HOLM-EXPECTED-SCHEMA",
+    "candidate:holm:legacy_admission_limit": "NRS-HOLM-LEGACY-ADMISSION-LIMIT",
+    "candidate:holm:report_invariant": "NRS-HOLM-REPORT-INVARIANT",
+    "candidate:holm:internal_failure": "NRS-HOLM-INTERNAL-FAILURE",
+    "candidate:holm:setup_failure": "NRS-HOLM-SETUP-FAILURE",
+    "candidate:holm:prerequisite_failed": "NRS-HOLM-PREREQUISITE-FAILED",
+    "candidate:holm:digest_mismatch": "NRS-HOLM-DIGEST-MISMATCH",
+    "candidate:holm:context_mismatch": "NRS-HOLM-CONTEXT-MISMATCH",
+    "candidate:holm:declaration_invalid": "NRS-HOLM-DECLARATION-INVALID",
+    "candidate:holm:holm_input_invalid": "NRS-HOLM-HOLM-INPUT-INVALID",
+    "candidate:holm:result_ownership": "NRS-HOLM-RESULT-OWNERSHIP",
+    "candidate:holm:exact_value_mismatch": "NRS-HOLM-EXACT-VALUE-MISMATCH",
+    "candidate:holm:display_value_mismatch": "NRS-HOLM-DISPLAY-VALUE-MISMATCH",
+    "candidate:holm:worker_failure": "NRS-HOLM-WORKER-FAILURE",
+    "candidate:holm:cleanup_failed": "NRS-HOLM-CLEANUP-FAILED",
+    "candidate:holm:memory_enforced": "NRS-HOLM-MEMORY-ENFORCED",
+    "candidate:holm:pids_enforced": "NRS-HOLM-PIDS-ENFORCED",
+    "candidate:holm:cancelled": "NRS-HOLM-CANCELLED",
+    "candidate:holm:deadline": "NRS-HOLM-DEADLINE",
+    "candidate:holm:output_overflow": "NRS-HOLM-OUTPUT-OVERFLOW",
+    "candidate:holm:unsupported_host": "NRS-HOLM-UNSUPPORTED-HOST",
+    "candidate:holm:setup_failed": "NRS-HOLM-SETUP-FAILED",
+    "candidate:holm:invalid_input": "NRS-HOLM-INVALID-INPUT",
+    "candidate:holm:abnormal_exit": "NRS-HOLM-ABNORMAL-EXIT",
+    "candidate:holm:completed_invalid_output": "NRS-HOLM-COMPLETED-INVALID-OUTPUT",
+    "candidate:holm:processing_timeout": "NRS-HOLM-PROCESSING-TIMEOUT",
+    "candidate:holm:processing_heap": "NRS-HOLM-PROCESSING-HEAP",
+    "candidate:holm:expected_utf8": "NRS-HOLM-EXPECTED-UTF-EIGHT"
+  },
+  "bundle": {
+    "bundle_id": "https://nomue.ai/id/bundle/holm-supplied-p-bundle/0.3.0-candidate.4",
+    "title": "Bounded ordinary supplied-p Holm proposal",
+    "status": "EXPERIMENTAL",
+    "public_release": false,
+    "spec_version": "0.3.0-candidate.4",
+    "schema_version": "0.3.0-candidate.4",
+    "canonicalization_version": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "profile_id": "https://nomue.ai/id/profile/holm-supplied-p-profile/0.3.0-candidate.4",
+    "public_check_set_version": "0.3.0-candidate.4",
+    "attestation_support": "none",
+    "allowed_check_ids": [
+      "https://nomue.ai/id/check/holm-integrity/0.3.0-candidate.4",
+      "https://nomue.ai/id/check/holm-context/0.3.0-candidate.4",
+      "https://nomue.ai/id/check/holm-declaration/0.3.0-candidate.4",
+      "https://nomue.ai/id/check/holm-admission/0.3.0-candidate.4",
+      "https://nomue.ai/id/check/holm-arithmetic/0.3.0-candidate.4"
+    ],
+    "schema_refs": [
+      "schemas/record/holm-record-0.3.schema.json",
+      "schemas/reports/holm-expected-0.3.schema.json",
+      "schemas/reports/holm-report-0.3.schema.json"
+    ],
+    "conformance_manifest_ref": "conformance/holm-manifest.yaml",
+    "requirement_ids": [
+      "NRS-CONTRACT-HOLM-0001",
+      "NRS-CONTRACT-HOLM-0002",
+      "NRS-CONTRACT-HOLM-0003",
+      "NRS-CONTRACT-HOLM-0004",
+      "NRS-CONTRACT-HOLM-0005",
+      "NRS-CONTRACT-HOLM-0006",
+      "NRS-CONTRACT-HOLM-0007",
+      "NRS-CONTRACT-HOLM-0008",
+      "NRS-CONTRACT-HOLM-0009",
+      "NRS-CONTRACT-HOLM-0010",
+      "NRS-CONTRACT-HOLM-0011",
+      "NRS-CONTRACT-HOLM-0012",
+      "NRS-CONTRACT-HOLM-0013",
+      "NRS-CONTRACT-HOLM-0014",
+      "NRS-PROFILE-IMGC-0001",
+      "NRS-PROFILE-IMGC-0002",
+      "NRS-CONTRACT-HOLM-0015"
+    ],
+    "notes": "PREVIEW ONLY. Exact Contract/check/expected/report joins are explicitly represented. Final conformance-manifest ingestion and independent verifier-level refusal protocol remain integration work.",
+    "contract_id": "https://nomue.ai/id/contract/holm-supplied-p-contract/0.3.0-candidate.4",
+    "expected_context_schema_ref": "schemas/reports/holm-expected-0.3.schema.json",
+    "report_schema_ref": "schemas/reports/holm-report-0.3.schema.json"
+  },
+  "schema_destinations": {
+    "record": "schemas/record/holm-record-0.3.schema.json",
+    "expected": "schemas/reports/holm-expected-0.3.schema.json",
+    "report": "schemas/reports/holm-report-0.3.schema.json",
+    "refusal": "schemas/reports/holm-refusal-0.3.schema.json"
+  }
+}
