@@ -84,7 +84,13 @@ def delivery(row,raw_size):
     if outcome['execution']!='execution_refusal':return outcome['result']
     cause=outcome['reason']  # Preserve the fixed T04 first latched cause.
     retained=(row.get('report') or {}).get('candidate_refusal')
-    if retained and retained.get('execution')=='execution_refusal' and retained.get('refusal',{}).get('reason_codes')==[cause]:return retained
+    if retained and retained.get('execution')=='execution_refusal':
+        refusal=retained.get('refusal',{})
+        reasons=refusal.get('reason_codes')
+        # Most retained refusals expose the same reason that the finalizer
+        # latches. Invalid UTF-8 is the one authority-defined exception: the
+        # internal cause remains distinct from its public parse-refusal code.
+        if reasons==[cause] or (cause=='invalid_utf8' and refusal.get('refusal_kind')=='parse_error' and reasons==['NRS-PARSE-FAILED']):return retained
     if 'deadline' in cause:code='NRS-TIMEOUT-LIMIT-EXCEEDED'
     elif 'memory' in cause or 'allocation' in cause:code='NRS-MEMORY-LIMIT-EXCEEDED'
     elif 'cpu_limit' in cause or 'overflow' in cause or cause in ('transport_bound','report_bound'):code='NRS-RESOURCE-LIMIT-EXCEEDED'
@@ -93,6 +99,11 @@ def delivery(row,raw_size):
     refusal={'$schema':'urn:nomue:schema:verifier-refusal:0.2.0-draft.3','output_type':'nomue-verifier-refusal','refusal_kind':kind,'reason_codes':[code],'message':code,'verifier':{'name':'nomue-r4-t09-research','version':'0.1.0-draft.1'},'input_evidence':{'input_size_bytes':raw_size},'generated_at':'2026-09-15T00:00:00Z'}
     if code in ('NRS-TIMEOUT-LIMIT-EXCEEDED','NRS-MEMORY-LIMIT-EXCEEDED'):refusal['limit_category']={'NRS-TIMEOUT-LIMIT-EXCEEDED':'processing_timeout','NRS-MEMORY-LIMIT-EXCEEDED':'memory_limit'}[code]
     return {'status':'UNISSUED CANDIDATE','execution':'execution_refusal','provenance':{'t07_commit':'fb773cc2092678f8409c2f0d25289028356eeb86','t08_commit':'76542b5d0370fc51d60f22efda2af00cafe33ad1','numerical_commit':'66fa2bc201c86c62f21bb94825479427c24d8522','report_schema_sha256':hashlib.sha256((HERE/'report.schema.json').read_bytes()).hexdigest()},'refusal':refusal}
+
+def exit_code(x):
+    if x['execution']!='completed':return 5 if x['refusal']['refusal_kind']=='internal_error' else 4 if x['refusal']['refusal_kind']=='resource_limit' else 3 if x['refusal']['refusal_kind']=='unsupported_bundle' else 2
+    checks=[x['report']['conformance']]+x['report']['verification_results']
+    return 2 if any(c.get('outcome')=='fail' for c in checks) else 6 if any(c.get('outcome')=='indeterminate' for c in checks) else 3 if any(c['execution']!='completed' for c in checks) else 0
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('record',type=Path);p.add_argument('--image',default='nomue-t09-research');p.add_argument('--optimized',action='store_true');a=p.parse_args()
@@ -110,8 +121,5 @@ def main():
         row.setdefault('execution_failure_reasons',[]).append('output_overflow');row['final_outcome']=FINALIZE(row);delivered=delivery(row,len(raw));encoded=data(delivered)
     require(len(encoded)<=PROFILE['full_report_bytes'],'delivery bound')
     print(encoded.decode(),end='')
-    x=delivered
-    if x['execution']!='completed':raise SystemExit(5 if x['refusal']['refusal_kind']=='internal_error' else 4 if x['refusal']['refusal_kind']=='resource_limit' else 3 if x['refusal']['refusal_kind']=='unsupported_bundle' else 2)
-    checks=[x['report']['conformance']]+x['report']['verification_results']
-    raise SystemExit(2 if any(c.get('outcome')=='fail' for c in checks) else 6 if any(c.get('outcome')=='indeterminate' for c in checks) else 3 if any(c['execution']!='completed' for c in checks) else 0)
+    raise SystemExit(exit_code(delivered))
 if __name__=='__main__':main()

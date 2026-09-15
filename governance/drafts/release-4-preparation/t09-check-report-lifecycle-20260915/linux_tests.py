@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import platform
-from invoke import invoke,delivery,command,data,require
+from invoke import invoke,delivery,command,data,require,exit_code
 HERE=Path(__file__).resolve().parent
 
 def main():
@@ -20,6 +20,7 @@ def main():
     for control in ('cpu','memory','timeout','descendant','escaped-descendant','crash','stdout','stderr','malformed','partial','wrong-identity','transport','report-cap','tree-memory','report-timeout','cleanup-failure','descendant-remains','deadline-late-report'):
         plan.append((1,control,basic,control,None))
     plan.extend([(0,'raw-oversize',basic+b' '*5242880,'normal',None),(0,'malformed-raw',b'{broken','normal',None)])
+    plan.extend((m,'invalid-utf8',b'\xff','normal',None) for m in (0,1))
     host={'status':'UNISSUED CANDIDATE','observer_python':platform.python_version(),'kernel':platform.release(),'machine':platform.machine(),'image':json.loads(command(['docker','image','inspect',a.image]))[0]['Id']}
     (a.output/'HOST.json').write_bytes(data(host));rows=[]
     with (a.output/'RUNS.jsonl').open('wb') as log:
@@ -36,6 +37,15 @@ def main():
                 r=safe.get('report');ok=ok and bool(r) and r['verification_results'][3].get('outcome')==('fail' if name=='fail-unresolved' else 'indeterminate')
             elif name in ('structural','admissibility'):
                 r=safe.get('report');ok=ok and bool(r) and r['conformance']['outcome']==('fail' if name=='structural' else 'pass') and r['profile_eligibility']==('not_evaluated' if name=='structural' else 'ineligible')
+            elif name=='invalid-utf8':
+                audit=row.get('report') or {};receipt=audit.get('candidate_refusal') or {};refusal=receipt.get('refusal') or {}
+                row['numerical_core_invocation_count']=1 if (audit.get('receipts') or {}).get('worker') else 0
+                ok=ok and safe['execution']=='execution_refusal' and 'report' not in safe and safe is receipt
+                ok=ok and refusal.get('refusal_kind')=='parse_error' and refusal.get('reason_codes')==['NRS-PARSE-FAILED'] and exit_code(safe)==2
+                ok=ok and row['numerical_core_invocation_count']==0
+            elif name=='malformed-raw':
+                refusal=safe.get('refusal') or {};ok=ok and safe['execution']=='execution_refusal' and 'report' not in safe
+                ok=ok and refusal.get('refusal_kind')=='parse_error' and refusal.get('reason_codes')==['NRS-PARSE-FAILED'] and exit_code(safe)==2
             else:ok=ok and safe['execution']=='execution_refusal' and 'report' not in safe
             required_causes={'cpu':'worker:cpu_limit','memory':'worker:allocation_failure','timeout':'worker:deadline','descendant':'worker:deadline','escaped-descendant':'worker:deadline','crash':'worker:abnormal_exit','stdout':'worker:output_overflow','stderr':'worker:output_overflow','malformed':'worker:invalid_worker_output','partial':'NRS-INTERNAL-VERIFIER-ERROR','wrong-identity':'NRS-INTERNAL-VERIFIER-ERROR','transport':'transport_bound','report-cap':'report_bound','tree-memory':'tree_memory_limit','report-timeout':'full_invocation_deadline','cleanup-failure':'cleanup_failure','descendant-remains':'cleanup_failure','deadline-late-report':'full_invocation_deadline'}
             if control in required_causes:ok=ok and required_causes[control] in row.get('execution_failure_reasons',[])
