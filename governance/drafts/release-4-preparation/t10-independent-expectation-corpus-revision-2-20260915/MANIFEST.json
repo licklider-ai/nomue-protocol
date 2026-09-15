@@ -1,0 +1,17 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "role": "CORRECTED INDEPENDENT EXPECTATION FREEZE",
+  "original_stop": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+  "candidate_repaired": false,
+  "candidate_reexecuted": false,
+  "sha256": {
+    "AUTHORITY.md": "37f92b15b8dc64dc15d470ac04b625b04d496e2a3a5dcc4845b4e4b9c0b9333a",
+    "build_revision.py": "2c4bd1541e858bd8b0d79f33733a27496669be1e2cdb0cfa35af1f134cc5a57c",
+    "check_revision.py": "0a0911788dc7ade006e3031fcd66e5e8fff9bed142f3f2e73757e42f4d250ab1",
+    "corpus/fixtures.jsonl": "b2f8a622b51a8ef795c6e2ce8d3f84a57cd420e7d4eca5d846f50d6be3986af6",
+    "corpus/projections.jsonl": "1984d653b9d0c41af33c0beeb4c5a57a71bea6d6d61786d2dcb5000a5861cbe3",
+    "corpus/tails.jsonl": "cec84a0df0e3533e887bf35ebaabc8496c6396383b418941b49ec50ba85fffdb",
+    "INPUTS.json": "b4d14090ce5c3ce824b38daeea76e5cf36db5cc49b6ba7af61a1e75addf47693",
+    "NON-CIRCULARITY.json": "a1bceae6cb31bda812e5c5e38f7a3fa9e966dbcfeae4ea14d226720f563e5399"
+  }
+}

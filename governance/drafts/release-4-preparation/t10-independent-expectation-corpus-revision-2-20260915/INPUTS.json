@@ -1,0 +1,111 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "base": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+  "sources": [
+    {
+      "id": "original-corpus",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/fixtures.jsonl",
+      "git_blob": "4396592807cd2a884072f21224108ae1204597de",
+      "sha256": "d93c5e0ea90c23aa59034c7a7c15a44e8487db8d0135554c4753634dab70929c"
+    },
+    {
+      "id": "projection-vectors",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/projections.jsonl",
+      "git_blob": "3f3154a1b3472bb49192c8bd377d04ea80a554fb",
+      "sha256": "1984d653b9d0c41af33c0beeb4c5a57a71bea6d6d61786d2dcb5000a5861cbe3"
+    },
+    {
+      "id": "tail-vectors",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/tails.jsonl",
+      "git_blob": "95239c27c142689781afb2d98274f1b8231f2737",
+      "sha256": "cec84a0df0e3533e887bf35ebaabc8496c6396383b418941b49ec50ba85fffdb"
+    },
+    {
+      "id": "original-freeze",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/EXPECTATIONS-FREEZE.json",
+      "git_blob": "73f60ef1ec373d813e0415659e6c5d782f84b21f",
+      "sha256": "6fe8bb5fd1b4cdcf1d71da9748a6d64fc7d184bfd10a5b2fb17a5e0ca2d8e8a8"
+    },
+    {
+      "id": "original-manifest",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/MANIFEST.json",
+      "git_blob": "f5a5ff2e4c6ca83c46e6fb08a871be94e4001083",
+      "sha256": "0dd97f810c1b90cce018a89bc0f14b1c036a379c5b5c3d8b8fc70d320e495778"
+    },
+    {
+      "id": "original-builder",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/build_corpus.py",
+      "git_blob": "75ef1b82e26407d7b78695a83f526db057bf2444",
+      "sha256": "fa1e2d4268e0f7e8a00131072eeab0d4283e181ea29359572138be307bcc9419"
+    },
+    {
+      "id": "original-selfcheck",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/SELF-CHECK.json",
+      "git_blob": "875680a3aecc0856106ea8236efc61550d448ef6",
+      "sha256": "2af06a255cf519ea1f000316ff589c612dc2c17337ab4a5675250536a50f4dfc"
+    },
+    {
+      "id": "refusal-contract",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "spec/verification/verifier-refusal.md",
+      "git_blob": "188b2a226b8d81e8c1d29b07973d3369539ea160",
+      "sha256": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83"
+    },
+    {
+      "id": "canonicalization",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "canonicalization/record-canonicalization.md",
+      "git_blob": "dc448a7847a12bf0a6484285b91b1619a63cdb55",
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a"
+    },
+    {
+      "id": "exit-contract",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "spec/verification/relying-party-interface.md",
+      "git_blob": "ef0eae8ddffb816551ab1c7515954ce0b73339c5",
+      "sha256": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545"
+    },
+    {
+      "id": "reasons",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "registries/reason-codes.yaml",
+      "git_blob": "083fcb89b542a239ad6e1488c66602089a99491f",
+      "sha256": "1bbe75c9898eb2692a34aafff2b9dba7a5a8de2f48bfde7f0145e3d6e47bbe05"
+    },
+    {
+      "id": "refusal-schema",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "schemas/reports/verifier-refusal-0.2-draft-3.schema.json",
+      "git_blob": "d22d7487f097c2c52551681d2c3ee81edaeeb530",
+      "sha256": "05cdaf9f96889f37b1f51c1d5dd0f1fabafc0bb48924e56abc9f2d1df62a5436"
+    },
+    {
+      "id": "numeric-model",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "canonicalization/phase-1-numeric-model.md",
+      "git_blob": "145294551ad29076be3c8a103212541bc1f5f237",
+      "sha256": "328b1ec418a617be14c3634fb720ab459cadd6892bba2ad615d935e0be7dd4cf"
+    },
+    {
+      "id": "t07-evidence",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/cases.json",
+      "git_blob": "363f47ba3e5697a8dc328432ec970e9b9ed005e3",
+      "sha256": "3c7dd9382c892fd6c128f828e455e0d7534a4dd00e2872ea5480350c90b1dbc3"
+    },
+    {
+      "id": "t07-rules",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/VALIDATION-RULES.md",
+      "git_blob": "d5bf029ab7d2ea4bbde458b59c244263e19d50c3",
+      "sha256": "f1fd6093487080ef684dbeab016b4d5742074f4fef1a91838d2b451bbb505757"
+    }
+  ]
+}
