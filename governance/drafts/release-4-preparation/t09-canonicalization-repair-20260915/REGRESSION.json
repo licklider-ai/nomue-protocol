@@ -1,0 +1,63 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "expectation_commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+  "report_source_sha256": "6d6e8839fc7796b3197accbe109a7ecda39af5ac13880f4ecb6a3890f7030209",
+  "runs": [
+    {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "governance\\drafts\\release-4-preparation\\t09-canonicalization-repair-20260915\\focused.ts"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\":\"UNISSUED CANDIDATE\",\"expectation_commit\":\"c262931584bbdac0018ffdef59a9b5a186b7cc5c\",\"rows\":[{\"id\":\"structure/overflow-number\",\"numerical_calls\":0,\"execution\":\"execution_refusal\",\"refusal_kind\":\"canonicalization_failure\",\"reason_codes\":[\"NRS-CANONICALIZATION-FAILED\"],\"report_present\":false,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/negative-zero\",\"numerical_calls\":0,\"execution\":\"execution_refusal\",\"refusal_kind\":\"parse_error\",\"reason_codes\":[\"NRS-NEGATIVE-ZERO-NUMBER\"],\"report_present\":false,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/duplicate-member\",\"numerical_calls\":0,\"execution\":\"execution_refusal\",\"refusal_kind\":\"parse_error\",\"reason_codes\":[\"NRS-DUPLICATE-JSON-MEMBER\"],\"report_present\":false,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/unpaired-surrogate\",\"numerical_calls\":0,\"execution\":\"execution_refusal\",\"refusal_kind\":\"parse_error\",\"reason_codes\":[\"NRS-INVALID-UNICODE-STRING\"],\"report_present\":false,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/malformed-json\",\"numerical_calls\":0,\"execution\":\"execution_refusal\",\"refusal_kind\":\"parse_error\",\"reason_codes\":[\"NRS-PARSE-FAILED\"],\"report_present\":false,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/missing-n\",\"numerical_calls\":0,\"execution\":\"completed\",\"refusal_kind\":null,\"reason_codes\":null,\"report_present\":true,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"structure/false-model\",\"numerical_calls\":0,\"execution\":\"completed\",\"refusal_kind\":null,\"reason_codes\":null,\"report_present\":true,\"exit_code\":2,\"result\":\"PASS\"},{\"id\":\"transport-Error\",\"numerical_calls\":1,\"report_present\":false,\"refusal_kind\":\"internal_error\",\"result\":\"PASS\"},{\"id\":\"transport-CanonicalizationError\",\"numerical_calls\":1,\"report_present\":false,\"refusal_kind\":\"internal_error\",\"result\":\"PASS\"}],\"result\":\"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "governance\\drafts\\release-4-preparation\\t09-check-report-lifecycle-20260915\\tests.ts"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\":\"UNISSUED CANDIDATE\",\"mode\":0,\"python\":\"3.12.10\",\"node\":\"v24.14.0\",\"assertions\":263,\"t07\":{\"accepted\":8,\"rejected\":41},\"fixtures\":37,\"mutations\":13,\"generic_unresolved_controls\":2,\"result\":\"PASS\",\"boundary\":\"Report integration only; resource enforcement is separately tested in Linux\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "governance\\drafts\\release-4-preparation\\t09-check-report-lifecycle-20260915\\tests.ts",
+        "--optimized"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\":\"UNISSUED CANDIDATE\",\"mode\":1,\"python\":\"3.12.10\",\"node\":\"v24.14.0\",\"assertions\":263,\"t07\":{\"accepted\":8,\"rejected\":41},\"fixtures\":37,\"mutations\":13,\"generic_unresolved_controls\":2,\"result\":\"PASS\",\"boundary\":\"Report integration only; resource enforcement is separately tested in Linux\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "governance\\drafts\\release-4-preparation\\t09-check-report-lifecycle-20260915\\test_f01.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"result\": \"PASS\", \"controls\": 10, \"python_optimize\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-O",
+        "-B",
+        "governance\\drafts\\release-4-preparation\\t09-check-report-lifecycle-20260915\\test_f01.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"result\": \"PASS\", \"controls\": 10, \"python_optimize\": 1}\n",
+      "stderr": ""
+    }
+  ],
+  "result": "PASS"
+}

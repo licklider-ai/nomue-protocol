@@ -14,7 +14,10 @@ import {
 } from "../t07-closed-schemas-validator-20260915/validator.js";
 import { adapt, type Transport } from "../t08-limited-numerical-adapter-20260915/adapter.js";
 import { parseStrictJson } from "../../../../reference/verifier/src/strict-json.js";
-import { recomputeContentDigest } from "../../../../reference/verifier/src/digest.js";
+import {
+  CanonicalizationError,
+  recomputeContentDigest,
+} from "../../../../reference/verifier/src/digest.js";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "../../../..");
 const read = (p: string) => JSON.parse(readFileSync(p, "utf8"));
@@ -434,7 +437,14 @@ export async function evaluate(raw: string, invoke: Transport): Promise<any> {
       });
       if (out.execution === "error") return refusal("NRS-INTERNAL-VERIFIER-ERROR", bytes);
     }
-    const value = assemble(raw, v, out);
+    let value: any;
+    try {
+      value = assemble(raw, v, out);
+    } catch (error) {
+      if (error instanceof CanonicalizationError)
+        return refusal("NRS-CANONICALIZATION-FAILED", bytes);
+      throw error;
+    }
     ensure(validateFinal(value, raw), "constructed report invalid");
     return value;
   } catch {
