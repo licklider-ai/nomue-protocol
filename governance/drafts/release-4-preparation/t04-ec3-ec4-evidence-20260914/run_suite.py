@@ -58,15 +58,18 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         require(state['HostConfig']['MemorySwap']==state['HostConfig']['Memory'],'swap disabled')
         result['cgroup_initial']=initial
         result['runtime_config']={k:state['HostConfig'][k] for k in ('Memory','MemorySwap','PidsLimit','NanoCpus','ReadonlyRootfs','NetworkMode','CapDrop','SecurityOpt')}
-        while not (folder/'ready').exists():
+        while True:
+            # A ready marker cannot bypass the invocation deadline.
             if time.monotonic()-start>=deadline:
-                result['outer_failure']='full_invocation_deadline'; break
+                result.setdefault('outer_failure','full_invocation_deadline'); break
+            if (folder/'ready').exists():
+                break
             if not inspect(unique)['State']['Running']:
                 result['outer_failure']='container_exit'; break
             time.sleep(0.03)
         result['cgroup_before_cleanup']=cg_values(path)
         result['report_ready']=(folder/'ready').exists()
-        if result['report_ready']:
+        if result['report_ready'] and 'outer_failure' not in result:
             with (folder/'report.json').open('rb') as stream: raw=stream.read(profile['report']+1)
             require(len(raw)<=profile['report'],'collected full report cap')
             result['report_sha256']=sha(raw)
@@ -75,6 +78,9 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         else:
             result['report']=None
         result['work_and_delivery_wall_seconds']=time.monotonic()-start
+        # Includes report acquisition/decoding; cleanup has its separate allowance.
+        if result['work_and_delivery_wall_seconds']>=deadline:
+            result.setdefault('outer_failure','full_invocation_deadline')
     except Exception as error:
         result['harness_error']=str(error)[:300]
         if isinstance(error,subprocess.CalledProcessError): result['command_error']=error.output.decode(errors='replace')[:2000]
@@ -111,6 +117,7 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         result['check']='FAIL'
         return result
     report=result.get('report')
+    delivered=result['final_outcome']
     expected=item.get('expected')
     if 'harness_error' in result:
         result['check']='FAIL'
@@ -118,7 +125,7 @@ def one(image, profile_name, profile, name, item, mode, outputs):
         small_padding=profile_name=='small' and name=='padded-two-MiB'
         result['check']='PASS' if (report is not None and
             ((small_padding and report['execution']=='execution_refusal' and report['result'] is None)
-             or (not small_padding and report['result']==expected and report['execution'].startswith('completed_candidate')))) else 'FAIL'
+             or (not small_padding and delivered['result']==expected and delivered['execution'].startswith('completed_candidate')))) else 'FAIL'
         if report and report.get('result') and report['result']['gate']=='supported-domain refusal':
             require(report['worker_started'] is False,'C>B rejected before worker launch')
     else:

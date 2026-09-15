@@ -17,4 +17,6 @@ for reason in ('full_invocation_deadline','container_exit','missing_report'):
     require(out['result'] is None and out['execution']=='execution_refusal','missing report never numerical outcome')
 out=finalize({'cleanup_ok':True,'report':None,'container_final':{'OOMKilled':True}})
 require(out['reason']=='tree_memory_limit' and out['result'] is None,'OOM failure classification')
-print(json.dumps({'checks':7,'optimize':sys.flags.optimize,'scope':'controlled final-delivery receipt faults; real cleanup/termination is measured separately'}))
+from test_f01_delivery import run_controls
+controls=run_controls()
+print(json.dumps({'existing_checks':7,'optimize':sys.flags.optimize,'F01':controls},sort_keys=True))

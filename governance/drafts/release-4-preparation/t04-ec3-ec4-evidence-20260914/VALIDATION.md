@@ -51,3 +51,14 @@ Documentation/capture commits after the measured source do not relabel old tests
 as tests of changed runtime: the measured source SHA, exported source hashes and
 new final artifact hashes are explicit. No independent review is performed here.
 One subsequent combined T04 Independent Close Review remains required.
+
+## F-01 targeted repair validation
+
+The original Linux measurements above remain attached to their old source commit.
+The repaired observer is validated separately by [F01-CONTROLS.json](F01-CONTROLS.json):
+34 targeted cases plus the seven existing checks in each mode, including actual
+`one()` control flow with deterministic failure/report ordering. The old source
+fails the new race/resource regressions. All 338 old receipts and their analyses
+remain unchanged when replayed through the repaired finalizer in both modes.
+Current source hashes, scope and preservation checks are in [F01-REPAIR.md](F01-REPAIR.md)
+and MANIFEST. The repair does not supply independent close approval.

@@ -94,3 +94,12 @@ or that PR #331 alone closed every SEC obligation.
 Primary implementation references:
 [Docker resource constraints](https://docs.docker.com/engine/containers/resource_constraints/)
 and [Docker stop behavior](https://docs.docker.com/reference/cli/docker/container/stop/).
+
+## F-01 precedence correction
+
+Invocation/worker failure state precedes cleanup state, report validity and numerical
+content at final delivery. Once failure is latched, later ready/report arrival or
+successful cleanup cannot remove it. The observer checks the deadline before ready
+and after collection and compares expected numerical success to the final outcome.
+A completed report is suppressed on failure; reasons remain recorded. No resource
+value or public numerical semantics changes. See [F01-REPAIR.md](F01-REPAIR.md).

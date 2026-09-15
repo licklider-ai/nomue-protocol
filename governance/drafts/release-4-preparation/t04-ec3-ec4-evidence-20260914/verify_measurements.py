@@ -1,8 +1,10 @@
 """Verify saved measurement bindings, independent frozen results and actual failure causes."""
 from collections import Counter
+import copy
 import json
 from pathlib import Path
 import sys
+from delivery import finalize
 from common import data, sha, require, EXECUTION, NUMERICAL, IDENTITY
 
 HERE=Path(__file__).resolve().parent
@@ -30,6 +32,7 @@ def main():
     summaries={}
     checks=0
     for row in rows:
+        require(finalize(copy.deepcopy(row))==row['final_outcome'],'current delivery replay of historical receipt')
         profile=profiles[row['profile']]; item=index[row['case']]; report=row.get('report')
         require(row['input_sha256']==item['raw_sha256'],'raw input binding')
         require(row['cleanup_ok'] and row['container_final']['Running'] is False and row['container_final']['Pid']==0,'cleanup complete')

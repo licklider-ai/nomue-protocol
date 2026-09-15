@@ -79,3 +79,12 @@ finite completion witnesses and separately tested refusal/containment behavior.
 The main historical worker has narrower and different numerical capability.
 There is no whole-domain equivalence claim, no promotion of the research harness,
 and no T08 implementation in this work.
+
+## F-01 final-delivery clarification
+
+An established invocation-level execution failure is authoritative over any valid
+or late report. It remains a candidate reference execution failure, separate from
+public numerical membership: no completed numerical result is delivered, and no
+numerical indeterminate is invented. Successful cleanup confirms containment only;
+it cannot restore an earlier failed invocation. The four existing support layers
+and all public/profile definitions are unchanged. See [F01-REPAIR.md](F01-REPAIR.md).

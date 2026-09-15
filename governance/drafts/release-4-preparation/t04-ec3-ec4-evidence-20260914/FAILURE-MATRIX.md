@@ -34,3 +34,12 @@ The cgroup OOM probe records `OOMKilled=true` and container exit 137; worker RLI
 Seven final-delivery receipt-fault checks per mode also establish that an already-computed report is discarded when cleanup confirmation fails. This is explicitly a controlled receipt failure, not a measurement of an unkillable kernel task. An actual cleanup failure stops the suite, quarantines the prior report hash and exposes no completed numerical result.
 
 Four outer-killed cases per mode have no parent report and therefore no returned optimization flag. No flag is invented for them. Other parent receipts carry measured `sys.flags.optimize=0/1`; successfully completed research workers also return and validate their own flag. The historical production worker remains normal-mode by unchanged source.
+
+## F-01 supplement
+
+The matrix above is the unchanged historical Linux capture; it did not exercise
+report/failure races. [F01-CONTROLS.json](F01-CONTROLS.json) adds 34 deterministic
+cases per mode, including three deadline/report orders, OOM/CPU/crash with a valid
+report, malformed reports and cleanup precedence. Established execution failure
+always suppresses the numerical result, even after successful cleanup. These are
+control-flow tests, not additional resource measurements; see [F01-REPAIR.md](F01-REPAIR.md).

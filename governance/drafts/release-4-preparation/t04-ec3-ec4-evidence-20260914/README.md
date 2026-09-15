@@ -1,11 +1,13 @@
 # T04 EC3 / EC4 research evidence
 
-Status: **T04 EC3/EC4 EVIDENCE READY — READY FOR T04 INDEPENDENT CLOSE REVIEW**.
+Status: **F-01 REPAIRED — READY FOR TARGETED T04 CLOSE RE-REVIEW**.
+The independent T04 review reported NOT READY; see [F01-REPAIR.md](F01-REPAIR.md)
+for the targeted repair and current validation boundary.
 This is author research, not independent close approval, public policy adoption,
 or an issued reference implementation. See [REPORT.md](REPORT.md) for the combined
 claim and [SUPPORT-MAPPING.md](SUPPORT-MAPPING.md) for its limits.
 
-Final Linux measurement source: `a6cddeba659ae2c52e6a7901d3e5a41102080274`;
+Historical pre-F-01 Linux measurement source: `a6cddeba659ae2c52e6a7901d3e5a41102080274`;
 [run 34830324114](https://github.com/licklider-ai/nomue-protocol/actions/runs/34830324114).
 338 actual invocations pass, with deterministic saved-result checks in both modes.
 Seven controlled final-delivery receipt checks pass in each mode.

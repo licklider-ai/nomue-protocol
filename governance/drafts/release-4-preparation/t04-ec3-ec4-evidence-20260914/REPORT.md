@@ -1,5 +1,11 @@
 # T04 EC3 / EC4 combined author evidence
 
+Current status: `F-01 REPAIRED — READY FOR TARGETED T04 CLOSE RE-REVIEW`.
+The independent close review rejected the original delivery boundary.
+[F01-REPAIR.md](F01-REPAIR.md) supersedes the readiness/containment claim affected
+by that finding. The original author report below retains its measured-source
+scope; its historical 338 cases did not test the late-report race. T04 is not closed.
+
 ## 1. Executive summary
 
 EC3 and EC4 are ready for the one subsequent T04 Independent Close Review.
