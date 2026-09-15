@@ -16,6 +16,7 @@ controls={
  'malformed':lambda r:r['report']['receipts'].update(worker={'category':'invalid_worker_output','causes':['invalid_worker_output']}),
  'cleanup':lambda r:r.update(cleanup_ok=False),
  'descendant':lambda r:r['container_final'].update(Pid=123),
+ 'inner-refusal':lambda r:r['report'].update(execution='execution_refusal',reason='NRS-INTERNAL-VERIFIER-ERROR',result=None),
  'previous-failure':lambda r:r.update(execution_failure_reasons=['full_invocation_deadline'])}
 rows=[]
 for name,mutate in controls.items():

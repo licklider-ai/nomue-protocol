@@ -83,6 +83,8 @@ def delivery(row,raw_size):
     outcome=row['final_outcome']
     if outcome['execution']!='execution_refusal':return outcome['result']
     cause=outcome['reason']  # Preserve the fixed T04 first latched cause.
+    retained=(row.get('report') or {}).get('candidate_refusal')
+    if retained and retained.get('execution')=='execution_refusal' and retained.get('refusal',{}).get('reason_codes')==[cause]:return retained
     if 'deadline' in cause:code='NRS-TIMEOUT-LIMIT-EXCEEDED'
     elif 'memory' in cause or 'allocation' in cause:code='NRS-MEMORY-LIMIT-EXCEEDED'
     elif 'cpu_limit' in cause or 'overflow' in cause or cause in ('transport_bound','report_bound'):code='NRS-RESOURCE-LIMIT-EXCEEDED'
@@ -94,12 +96,19 @@ def delivery(row,raw_size):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('record',type=Path);p.add_argument('--image',default='nomue-t09-research');p.add_argument('--optimized',action='store_true');a=p.parse_args()
-    start=time.monotonic()
-    with a.record.open('rb') as f:raw=f.read(PROFILE['raw_bytes']+1)
-    row=invoke(a.image,raw,int(a.optimized),started=start)
+    start=time.monotonic();raw=b''
+    try:
+        with a.record.open('rb') as f:raw=f.read(PROFILE['raw_bytes']+1)
+        row=invoke(a.image,raw,int(a.optimized),started=start)
+    except Exception:
+        row={'report':None,'cleanup_ok':False,'harness_error':'invocation_unavailable'}
+        row['final_outcome']=FINALIZE(row)
     # Research envelope; a failed invocation never has a report/result member.
     outcome=row['final_outcome'];delivered=delivery(row,len(raw))
-    encoded=data(delivered);require(len(encoded)<=PROFILE['full_report_bytes'],'delivery bound')
+    encoded=data(delivered)
+    if len(encoded)>min(PROFILE['full_report_bytes'],PROFILE['worker_stdout_bytes']):
+        row.setdefault('execution_failure_reasons',[]).append('output_overflow');row['final_outcome']=FINALIZE(row);delivered=delivery(row,len(raw));encoded=data(delivered)
+    require(len(encoded)<=PROFILE['full_report_bytes'],'delivery bound')
     print(encoded.decode(),end='')
     x=delivered
     if x['execution']!='completed':raise SystemExit(5 if x['refusal']['refusal_kind']=='internal_error' else 4 if x['refusal']['refusal_kind']=='resource_limit' else 3 if x['refusal']['refusal_kind']=='unsupported_bundle' else 2)

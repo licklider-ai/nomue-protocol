@@ -245,6 +245,36 @@
       }
     },
     {
+      "control": "inner-refusal",
+      "latched": true,
+      "no_completed_result": true,
+      "delivery": {
+        "status": "UNISSUED CANDIDATE",
+        "execution": "execution_refusal",
+        "provenance": {
+          "t07_commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+          "t08_commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+          "numerical_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+          "report_schema_sha256": "5a4e9b5194279e0d6515907cb4d3cae874adab60c32fe2459ec005efafe12db8"
+        },
+        "refusal": {
+          "$schema": "urn:nomue:schema:verifier-refusal:0.2.0-draft.3",
+          "output_type": "nomue-verifier-refusal",
+          "refusal_kind": "internal_error",
+          "reason_codes": ["NRS-INTERNAL-VERIFIER-ERROR"],
+          "message": "NRS-INTERNAL-VERIFIER-ERROR",
+          "verifier": {
+            "name": "nomue-r4-t09-research",
+            "version": "0.1.0-draft.1"
+          },
+          "input_evidence": {
+            "input_size_bytes": 100
+          },
+          "generated_at": "2026-09-15T00:00:00Z"
+        }
+      }
+    },
+    {
       "control": "previous-failure",
       "latched": true,
       "no_completed_result": true,

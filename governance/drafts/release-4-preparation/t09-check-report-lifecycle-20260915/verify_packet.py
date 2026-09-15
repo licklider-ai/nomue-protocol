@@ -21,7 +21,7 @@ for e in entries:
 subprocess.run(['python','-B',str(HERE.parent/'t08-limited-numerical-adapter-20260915/verify_packet.py')],check=True)
 n=read(HERE/'RESULTS.json');o=read(HERE/'RESULTS-optimized.json');require(n['result']==o['result']=='PASS' and n['mode']==0 and o['mode']==1,'mode results');require(n['fixtures']==o['fixtures'] and n['assertions']==o['assertions'],'semantic mode agreement')
 for f in ['F01-CONTROLS.json','F01-CONTROLS-optimized.json']:
-    r=read(HERE/f);require(r['result']=='PASS' and len(r['controls'])==9 and all(z['latched'] and z['no_completed_result'] for z in r['controls']),'F01 controls')
+    r=read(HERE/f);require(r['result']=='PASS' and len(r['controls'])==10 and all(z['latched'] and z['no_completed_result'] for z in r['controls']),'F01 controls')
 m=read(HERE/'MANIFEST.json');files={p.relative_to(HERE).as_posix():p for p in HERE.rglob('*') if p.is_file() and p.name!='MANIFEST.json'}
 require(set(files)=={e['path'] for e in m['files']},'manifest complete')
 for e in m['files']:require(sha(files[e['path']].read_bytes().replace(b'\r\n',b'\n'))==e['sha256'],'hash '+e['path'])

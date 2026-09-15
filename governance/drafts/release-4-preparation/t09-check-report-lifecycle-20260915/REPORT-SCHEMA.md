@@ -9,8 +9,9 @@ The generator copies fixed T07 components and tightens reason membership to the 
 inventory. No Record schema or relational rule is copied or changed.
 
 Root names follow existing reports and the opening RFC: record_reference, verifier,
-generated_at, conformance, verification_results, profile_eligibility, guarantee_boundary
-and quantity_evidence. Conformance is reported only in its section. Integrity,
+generated_at, conformance, verification_results, profile_eligibility and guarantee_boundary.
+T09 places the existing T07 quantityEvidence component in quantity_evidence, following
+the T08 handoff field name; this is candidate assembly syntax, not a new Record field. Conformance is reported only in its section. Integrity,
 admissibility, computability and recompute appear exactly once. Digest uses the existing
 record-content domain tag and excludes only root integrity. Existing unidentified
 Record/revision placeholders are retained for unreadable identities on structural failure.

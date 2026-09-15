@@ -29,6 +29,10 @@ encoding follows that finalizer's first latched cause, mapped to the correspondi
 existing timeout, memory, resource or internal-error category. Later causes remain
 in the audit receipt; T09 adds no alternative ordering of coexisting failures.
 
+Generic CPU/output resource refusals omit limit_category when the unchanged refusal
+schema has no corresponding category; they are not mislabeled parser exhaustion.
+The bounded internal receipt retains the exact cause.
+
 ## Research automation
 
 Existing public CLI behavior is unchanged. Internal automation uses 0 for completed

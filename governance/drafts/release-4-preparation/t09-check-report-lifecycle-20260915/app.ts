@@ -132,10 +132,12 @@ try {
     bytes,
   );
 }
+const refused = result.execution === "execution_refusal";
 const audit = {
-  execution: failure ? "execution_refusal" : "completed_candidate",
-  result,
-  reason: failure ?? null,
+  execution: refused || failure ? "execution_refusal" : "completed_candidate",
+  result: refused || failure ? null : result,
+  candidate_refusal: refused ? result : null,
+  reason: failure ?? (refused ? result.refusal.reason_codes[0] : null),
   receipts: Object.fromEntries(Object.entries(receipts).filter(([k]) => k !== "mode")),
   modes: receipts.mode ?? null,
   diagnostic,
@@ -153,7 +155,8 @@ if (control === "report-cap") encoded = Buffer.alloc(profile.full_report_bytes +
 if (encoded.length > profile.full_report_bytes) {
   audit.execution = "execution_refusal";
   audit.reason = "report_bound";
-  audit.result = refusal("NRS-RESOURCE-LIMIT-EXCEEDED", bytes);
+  audit.result = null;
+  audit.candidate_refusal = refusal("NRS-RESOURCE-LIMIT-EXCEEDED", bytes);
   encoded = Buffer.from(JSON.stringify(audit));
 }
 writeFileSync("/out/report.json", encoded);
