@@ -1,0 +1,312 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "mode": "optimized",
+  "python_optimize": 1,
+  "python": "3.12.10",
+  "node": "v24.14.0",
+  "assertions": 344,
+  "fixtures": [
+    {
+      "id": "ordinary_zero_n2",
+      "gate": "eligible",
+      "cost": "74689076828651520",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "db7cdf880676e2cd24fb86ef05c442a8c59676213bc3969e9fc09744fab2f3f0"
+    },
+    {
+      "id": "ordinary_decimal_n2",
+      "gate": "eligible",
+      "cost": "104049459172065280",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "9f29bdcf650826f269db07b052bce01966bff81bc97e7b48fd917ed438c40656"
+    },
+    {
+      "id": "ordinary_dyadic_n3",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "cfaf3ed160d5b05f73e4ee46e4902c04d2b436dc0410453dcb1fe00faa8ff4a0"
+    },
+    {
+      "id": "ordinary_decimal_n128",
+      "gate": "eligible",
+      "cost": "52969003320369754284032",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "56bd199b87b8a1b10b920ab79d1b1852c99930cbb11e0a3fd6d2ea816f5296b8"
+    },
+    {
+      "id": "ordinary_zero_n256",
+      "gate": "eligible",
+      "cost": "5276762515651374063616",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "91a416ca7fcf0278db7f230c704ec3af4d37d847101c7795f8614bc7e2047c91"
+    },
+    {
+      "id": "extreme_finite_n2",
+      "gate": "representation refusal",
+      "cost": "74689076828651520",
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    },
+    {
+      "id": "mismatch-0",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [0],
+      "compact_evidence_sha256": "0af9701fdcb32a57e50730d5f3594b8b0d5b5ea063fd239b9fba63c36a8df69a"
+    },
+    {
+      "id": "mismatch-1",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [1],
+      "compact_evidence_sha256": "b5cf6943d709ced01b0f9c4332fa31f341736a4a501301afffc4fe189b96bf22"
+    },
+    {
+      "id": "mismatch-2",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [2],
+      "compact_evidence_sha256": "960ce4654c6a271e1ae840b3ee12bac4200aba0309ca54a8a4806e410e1491d6"
+    },
+    {
+      "id": "mismatch-3",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [3],
+      "compact_evidence_sha256": "7858e2eb891c75e450385b09ed4504bc280ab969787e148470dd032beed7c1dd"
+    },
+    {
+      "id": "mismatch-4",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [4],
+      "compact_evidence_sha256": "d8f75fffd9f75a30019c1aacdd149a37f6ba68e362f145a0c89e526ade4a3ca3"
+    },
+    {
+      "id": "mismatch-5",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [5],
+      "compact_evidence_sha256": "e3e827fb0e05b25525a1947426f08f4ea80f8e44dd1db29208e4a2cd3ddbb390"
+    },
+    {
+      "id": "mismatch-6",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [6],
+      "compact_evidence_sha256": "104eed519d6c347ecbceb43d4d2e182eababdb8347f653b9cc439310ac216d13"
+    },
+    {
+      "id": "mismatch-7",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [7],
+      "compact_evidence_sha256": "73b44a1392dac2fd9de37d9aeb86cd2aafb719e8fa879cbef5025832fb6d042a"
+    },
+    {
+      "id": "mismatch-8",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [8],
+      "compact_evidence_sha256": "df30e2b17ccdce7687a2a7606e4561007fcf17a01418c1150d2ea3f392b80e07"
+    },
+    {
+      "id": "mismatch-9",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [9],
+      "compact_evidence_sha256": "74247967f076124731645007469546452ab636dbba7662a5495953922c57c2f6"
+    },
+    {
+      "id": "mismatch-10",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [10],
+      "compact_evidence_sha256": "c6032c530b4b35a50324b928960ac2ac2eb1c9972cb1e03e52c9d669e93b5fc7"
+    },
+    {
+      "id": "mismatch-11",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [11],
+      "compact_evidence_sha256": "e071b2dcea7d5dd7e11b48ad9215ef07ec1f5d2ca794a5e5cc7af563a0d3d50f"
+    },
+    {
+      "id": "mismatch-12",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [12],
+      "compact_evidence_sha256": "8d577b34b4de94672b5734eaf0f4158d3587eb0dda0ac8d4b111fdd9b45e7607"
+    },
+    {
+      "id": "mismatch-13",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [13],
+      "compact_evidence_sha256": "018040e93ae8693ba9a7e16a252adc0c75d886ded72848776c727b751976b922"
+    },
+    {
+      "id": "mismatch-14",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [14],
+      "compact_evidence_sha256": "8a287aa46916e5b9a287a6de0eb73b55c53b98fbda255b6613a02f027cd227be"
+    },
+    {
+      "id": "mismatch-15",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [15],
+      "compact_evidence_sha256": "e5f880290bbdc88471bd1c59a01866ff2d95da13d1f7897ecc058fd7df2c96ff"
+    },
+    {
+      "id": "mismatch-16",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [16],
+      "compact_evidence_sha256": "4f213f50887a7cf0b230f965a75fa87c5dc2c583db109b8526850aac327e6266"
+    },
+    {
+      "id": "mismatch-17",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [17],
+      "compact_evidence_sha256": "2d7bdf0047f51fb6fc6fe02e78052b8badebff369e73869e84b67163eb05ad35"
+    },
+    {
+      "id": "mismatch-18",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [18],
+      "compact_evidence_sha256": "4983623e6204441aede3dcc65a6f405e0600a5cfbcf19a5438f17dc1c72e2d92"
+    },
+    {
+      "id": "mismatch-19",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [19],
+      "compact_evidence_sha256": "6cf822928c8061aa5bc42c71c2d6cd6d6a55d1a061feb074d7e6d386da551a01"
+    },
+    {
+      "id": "mismatch-20",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [20],
+      "compact_evidence_sha256": "60bdfb54dead9be16caca9d303dbb69c647fe53d42fdc249b2c947b9638114ea"
+    },
+    {
+      "id": "mismatch-21",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [21],
+      "compact_evidence_sha256": "f6af5f088ab5bcbbe2a0ff6bd4566eaffca899fcd87574e59690be4189aa5f76"
+    },
+    {
+      "id": "multiple-mismatch",
+      "gate": "eligible",
+      "cost": "92825155379040256",
+      "recomputation": "completed/fail",
+      "mismatches": [0, 5, 9, 12, 15, 16, 19],
+      "compact_evidence_sha256": "414a2706816f6d5d415480804a4ff8fc71512dd21548c2334bff340341c7cab5"
+    },
+    {
+      "id": "exact-SSE-zero",
+      "gate": "computability fail",
+      "cost": null,
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    },
+    {
+      "id": "positive-SSE-projects-zero",
+      "gate": "representation refusal",
+      "cost": "74689076828651520",
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    },
+    {
+      "id": "positive-F-projects-zero",
+      "gate": "eligible",
+      "cost": "4850731889578721280",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "074e8436aab499e58c98b77cca2075dec6ef8689a6d4d13e003763a0f8524fa3"
+    },
+    {
+      "id": "negative-effect-projects-zero",
+      "gate": "eligible",
+      "cost": "4850731889578721280",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "92797b2eba4bd1a955407a1935a8e4ebc9065213c0fb5000ec4a8590a977e19a"
+    },
+    {
+      "id": "positive-p-underflow",
+      "gate": "representation refusal",
+      "cost": "163754035677020160",
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    },
+    {
+      "id": "positive-subnormal-p",
+      "gate": "eligible",
+      "cost": "158161445831229440",
+      "recomputation": "completed/pass",
+      "mismatches": [],
+      "compact_evidence_sha256": "32ddff830d4963fd63ebb1c8657380dcac525d269a90e522dc4988fa3175f7f0"
+    },
+    {
+      "id": "adjacent-count-above-anchor",
+      "gate": "supported-domain refusal",
+      "cost": "53933237887908909346816",
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    },
+    {
+      "id": "single-ULP-above-anchor",
+      "gate": "supported-domain refusal",
+      "cost": "52986078318702190862336",
+      "recomputation": "not_run",
+      "mismatches": [],
+      "compact_evidence_sha256": null
+    }
+  ],
+  "t07": {
+    "accepted": 8,
+    "rejected": 41
+  },
+  "result": "PASS",
+  "limits": "Local research bridge only; no Linux/CPython 3.12.14 supervisor or production enforcement claim"
+}

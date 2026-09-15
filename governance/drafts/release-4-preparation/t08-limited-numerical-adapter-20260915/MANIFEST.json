@@ -1,0 +1,82 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "scope": "T08 limited adapter only; containing Git commit identifies the packet",
+  "hash_encoding": "SHA-256 of UTF-8 LF file bytes; manifest excludes itself",
+  "files": [
+    {
+      "path": "ADAPTER-CONTRACT.md",
+      "sha256": "ed3924486b93cb97181b1da5e534e07dc88aecbbdd4da22a4de4885c35183e07",
+      "bytes": 5901
+    },
+    {
+      "path": "adapter.ts",
+      "sha256": "451d8e7adb16398db494256d4fd457a1156d86f5055460bd9246b15a035e448c",
+      "bytes": 7525
+    },
+    {
+      "path": "core_loader.py",
+      "sha256": "629f3c547f67d5b64bcd611ca2a932bda2a86ed558fa8e09b1e695be1e77af06",
+      "bytes": 1996
+    },
+    {
+      "path": "fixtures/cases.json",
+      "sha256": "bc83d6306eee3962438376e9e73b9cbcf1c2ee723a1f3720afd18d8256191baf",
+      "bytes": 759256
+    },
+    {
+      "path": "INPUTS.json",
+      "sha256": "71dfa6e09395c148d14813c47dc9184bae8684d8d5cc1399efb8e74a0187e665",
+      "bytes": 38076
+    },
+    {
+      "path": "numerical_bridge.py",
+      "sha256": "cd7e8504765ac12bc025675f174e2ca2d3221d95c05ab679fd80aeac4e34c54c",
+      "bytes": 3344
+    },
+    {
+      "path": "README.md",
+      "sha256": "949706c4d5f65b15dcb2a71663c7fcc140abbe344a4c11eb239241d83cf8f1ec",
+      "bytes": 2197
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "1f37e462417f9ac03072526da45403536d6cb36c9ff7282e08bb4e6747fed9b2",
+      "bytes": 7584
+    },
+    {
+      "path": "RESPONSIBILITY-MATRIX.md",
+      "sha256": "95234ac093bfdb418fa0fa95c7bfc1d486358fe0062562bcc393ec86dc23ecb2",
+      "bytes": 2483
+    },
+    {
+      "path": "RESULTS-optimized.json",
+      "sha256": "087ae12768c08b3ab0af794b00130ea8a4a515f7fc7c2c4a51b84c00b9a5b2dc",
+      "bytes": 10073
+    },
+    {
+      "path": "RESULTS.json",
+      "sha256": "e66276d9651e63d496e8234b1ef0c5821ddd874c9ffd4af055735fc9f258df31",
+      "bytes": 10070
+    },
+    {
+      "path": "test_core_boundary.py",
+      "sha256": "e6537fd47d5285c08efdc00bddc70ccbac14b4b5f0b03d2d8ad6307f29b9f6ed",
+      "bytes": 1140
+    },
+    {
+      "path": "tests.ts",
+      "sha256": "604b173aa927c17e7b2e9cc1f71e0982ab88179c682518e56bcda9e343534796",
+      "bytes": 9191
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "a8f3d1fb26a22302ae690b156681d8c8e5cb31f13eb3f835c73adda547152802",
+      "bytes": 134
+    },
+    {
+      "path": "verify_packet.py",
+      "sha256": "f3cc482dad674c09608acecf84d98010faeb85fa949ce336f560c7cde28ba4b2",
+      "bytes": 5002
+    }
+  ]
+}

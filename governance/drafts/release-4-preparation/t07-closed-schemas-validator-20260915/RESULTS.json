@@ -1,0 +1,22 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "runtime": "v24.14.0",
+  "mode": "default",
+  "counts": {
+    "fixtures": 69,
+    "valid": 18,
+    "invalid": 51,
+    "requiredRemoval": 266,
+    "unknownInsertion": 55,
+    "enums": 4,
+    "identities": 10,
+    "quantitySet": 66,
+    "references": 15,
+    "determinism": 207,
+    "agreement": 26,
+    "resource": 2
+  },
+  "assertions": 912,
+  "result": "PASS",
+  "scope": "T07 representation only; no numerical truth, integrity digest, worker, supported-domain or final report evaluation"
+}

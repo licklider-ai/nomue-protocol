@@ -1,0 +1,149 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "surfaces": [
+    {
+      "surface": "envelope",
+      "schema_refs": ["https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1"],
+      "boundary": "Exact closed envelope and integrity metadata; digest computation T08"
+    },
+    {
+      "surface": "input",
+      "schema_refs": ["https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1"],
+      "boundary": "Shape, association and structural admissibility facts T07; model truth not asserted"
+    },
+    {
+      "surface": "declarations",
+      "schema_refs": ["https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1"],
+      "boundary": "All 22 declarations, no truth recomputation"
+    },
+    {
+      "surface": "conformance",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1",
+        "https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/violation",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/checkResult"
+      ],
+      "boundary": "Raw/shape/relations implemented; final conformance report T09"
+    },
+    {
+      "surface": "admissibility",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/checkResult"
+      ],
+      "boundary": "T07 supplies model/count/unit facts; T08 consumes, T09 maps lifecycle"
+    },
+    {
+      "surface": "computability",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/checkResult"
+      ],
+      "boundary": "Result grammar only; domain/representation evaluation T08, refusal delivery T09"
+    },
+    {
+      "surface": "comparison",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/quantityResult"
+      ],
+      "boundary": "Represented declarations/results only; recomputation T08"
+    },
+    {
+      "surface": "integrity",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/checkResult"
+      ],
+      "boundary": "Metadata and scoped result shape; digest T08"
+    },
+    {
+      "surface": "evidence",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/quantityEvidence",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/quantityResult"
+      ],
+      "boundary": "Required public evidence boundary; full report T09; audit witness stays pinned research format"
+    },
+    {
+      "surface": "outcomes",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/checkResult",
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/profileEligibility"
+      ],
+      "boundary": "Existing execution/outcome invariant only; final lifecycle/CLI and refusal mapping T09"
+    },
+    {
+      "surface": "guarantee",
+      "schema_refs": [
+        "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1#/$defs/guaranteeBoundary"
+      ],
+      "boundary": "Closed eight-key not_asserted boundary; placement T09"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "NRS-CONTRACT-BTF-0001",
+      "surfaces": ["input"]
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0002",
+      "surfaces": ["input", "declarations"]
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0003",
+      "surfaces": ["input", "admissibility"]
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0004",
+      "surfaces": ["input", "admissibility", "guarantee"]
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0005",
+      "surfaces": ["declarations", "comparison"]
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0001",
+      "surfaces": ["input", "admissibility"]
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0002",
+      "surfaces": ["guarantee"]
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0003",
+      "surfaces": ["declarations", "conformance"]
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0004",
+      "surfaces": ["input", "conformance"]
+    },
+    {
+      "id": "NRS-VERIFY-0029",
+      "surfaces": ["comparison", "evidence"]
+    },
+    {
+      "id": "NRS-VERIFY-0030",
+      "surfaces": ["computability", "comparison"]
+    },
+    {
+      "id": "NRS-VERIFY-0031",
+      "surfaces": ["evidence", "outcomes"]
+    },
+    {
+      "id": "NRS-VERIFY-0032",
+      "surfaces": ["conformance", "integrity", "outcomes"]
+    },
+    {
+      "id": "NRS-CORE-0020",
+      "surfaces": ["envelope", "input"]
+    },
+    {
+      "id": "NRS-CORE-0021",
+      "surfaces": ["envelope", "integrity"]
+    },
+    {
+      "id": "NRS-CORE-0022",
+      "surfaces": ["admissibility", "outcomes"]
+    }
+  ]
+}

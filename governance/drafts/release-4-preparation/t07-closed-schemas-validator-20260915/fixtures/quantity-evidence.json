@@ -1,0 +1,202 @@
+{
+  "record_reference": {
+    "record_id": "urn:example:record-1",
+    "revision_id": "urn:example:revision-1"
+  },
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1",
+  "check_id": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1",
+  "check_version": "0.1.0-draft.1",
+  "scope": {
+    "kind": "result",
+    "id": "result-1"
+  },
+  "quantity_results": [
+    {
+      "quantity": "n",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-0",
+      "declared": 2,
+      "recomputed": 2
+    },
+    {
+      "quantity": "n",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-1",
+      "declared": 2,
+      "recomputed": 2
+    },
+    {
+      "quantity": "n",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-2",
+      "declared": 2,
+      "recomputed": 2
+    },
+    {
+      "quantity": "n",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-3",
+      "declared": 2,
+      "recomputed": 2
+    },
+    {
+      "quantity": "residual_degrees_of_freedom",
+      "outcome": "pass",
+      "reason_codes": [],
+      "declared": 4,
+      "recomputed": 4
+    },
+    {
+      "quantity": "mean",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-0",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "mean",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-1",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "mean",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-2",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "mean",
+      "outcome": "pass",
+      "reason_codes": [],
+      "cell_id": "cell-3",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "signed_estimate",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "A",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "signed_estimate",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "B",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "signed_estimate",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "AB",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "sum_of_squares",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "A",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "sum_of_squares",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "B",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "sum_of_squares",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "AB",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "residual_sum_of_squares",
+      "outcome": "pass",
+      "reason_codes": [],
+      "declared": 1,
+      "recomputed": 1
+    },
+    {
+      "quantity": "f_statistic",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "A",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "f_statistic",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "B",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "f_statistic",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "AB",
+      "declared": 0,
+      "recomputed": 0,
+      "projection_state": "exact_zero"
+    },
+    {
+      "quantity": "p_value",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "A",
+      "declared": 0.5,
+      "recomputed": 0.5
+    },
+    {
+      "quantity": "p_value",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "B",
+      "declared": 0.5,
+      "recomputed": 0.5
+    },
+    {
+      "quantity": "p_value",
+      "outcome": "pass",
+      "reason_codes": [],
+      "contrast_kind": "AB",
+      "declared": 0.5,
+      "recomputed": 0.5
+    }
+  ]
+}
