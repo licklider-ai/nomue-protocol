@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "app.ts",
-      "sha256": "628605ddd69aabf12335aa0c128e9427b7489207d885082d9d7e8f74ec381535"
+      "sha256": "63b204247bebb1cd8b49a5c1480a4661ec7afdecd552e5f4473175c0cb7270f7"
     },
     {
       "path": "build_schema.py",
@@ -20,15 +20,15 @@
     },
     {
       "path": "F01-CONTROLS-optimized.json",
-      "sha256": "9fd2f42d8bed9d4407e69ebe8f429e263853d6e60a63dc0833041adbf969f830"
+      "sha256": "551d625c501203da97d038196c5b44626f7c549fb1e341b6ac74f5c221fb8b86"
     },
     {
       "path": "F01-CONTROLS.json",
-      "sha256": "cc84d2f88d0ecb2b513df355ffa06bef8890c096d25227e9c74dd5129fd6ef30"
+      "sha256": "2b8138084d7d7737595f4c0d20cd38e50b97cb13c344c34600f99077f21981cb"
     },
     {
       "path": "fixed.py",
-      "sha256": "441ccbbaf39aa80cee35cf4acd7514ba33e44db4a0b4831d6cff269a3d95c7e1"
+      "sha256": "824eb37cf4e04e0d02b82868ce3e166e7443c48f6b8736fc0ca58da67ec5c9b6"
     },
     {
       "path": "fixtures/pass-report.json",
@@ -44,7 +44,7 @@
     },
     {
       "path": "invoke.py",
-      "sha256": "76366e005d838ea74debd29af111cb7bdee8f66814a5a78956bb6cea93fe279e"
+      "sha256": "08f8b5a47bab099c5d077e133bc7dfd90c7a462b6e7aeab27d5b0f674fae8309"
     },
     {
       "path": "LIFECYCLE.md",
@@ -88,7 +88,7 @@
     },
     {
       "path": "report.ts",
-      "sha256": "1f29acc109df67c0f0c7db92a772651fce9859051735d7eb0824243d927cca14"
+      "sha256": "7affadb90d646b14dd0037581ca87f77115234cdb42d470682fdf700b127d02f"
     },
     {
       "path": "RESPONSIBILITY-MATRIX.md",

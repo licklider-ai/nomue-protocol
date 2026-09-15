@@ -14,6 +14,6 @@ def load(name,suffix):
     data=subprocess.check_output(['git','-c','safe.directory='+ROOT.as_posix(),'-C',str(ROOT),'cat-file','blob',entry['git_blob']])
     if hashlib.sha256(data).hexdigest()!=entry['sha256']:raise ValueError('fixed execution source hash')
     folder=tempfile.TemporaryDirectory(prefix='nomue-t09-fixed-');_TEMP.append(folder)
-    path=Path(folder.name)/(name+'.py');path.write_bytes(data)
+    path=Path(folder.name)/entry['path'];path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
     spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     return module

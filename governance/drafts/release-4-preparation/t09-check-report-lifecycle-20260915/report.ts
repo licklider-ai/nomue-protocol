@@ -73,8 +73,8 @@ export function refusal(code: string, bytes: number): any {
       verifier,
       input_evidence: { input_size_bytes: bytes },
       generated_at,
-      ...(kind === "resource_limit"
-        ? { limit_category: categories[code] ?? "parser_exhaustion" }
+      ...(kind === "resource_limit" && categories[code]
+        ? { limit_category: categories[code] }
         : {}),
     },
   });

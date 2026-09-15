@@ -90,8 +90,7 @@
           "input_evidence": {
             "input_size_bytes": 100
           },
-          "generated_at": "2026-09-15T00:00:00Z",
-          "limit_category": "parser_exhaustion"
+          "generated_at": "2026-09-15T00:00:00Z"
         }
       }
     },
@@ -151,8 +150,7 @@
           "input_evidence": {
             "input_size_bytes": 100
           },
-          "generated_at": "2026-09-15T00:00:00Z",
-          "limit_category": "parser_exhaustion"
+          "generated_at": "2026-09-15T00:00:00Z"
         }
       }
     },

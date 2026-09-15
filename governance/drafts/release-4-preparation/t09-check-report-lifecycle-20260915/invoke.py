@@ -75,6 +75,7 @@ def invoke(image,raw,mode=0,control='normal',started=None):
     if control=='deadline-late-report':row['outer_failure']='full_invocation_deadline'
     row['elapsed_seconds']=time.monotonic()-start
     if row['elapsed_seconds']>=deadline:row.setdefault('outer_failure','full_invocation_deadline')
+    if isinstance(row.get('report'),dict):row['application_diagnostics']={k:row['report'].get(k) for k in ('reason','receipts','modes','diagnostic')}
     row['final_outcome']=FINALIZE(row)
     return row
 
@@ -88,7 +89,7 @@ def delivery(row,raw_size):
     else:code='NRS-INTERNAL-VERIFIER-ERROR'
     kind='internal_error' if code=='NRS-INTERNAL-VERIFIER-ERROR' else 'resource_limit'
     refusal={'$schema':'urn:nomue:schema:verifier-refusal:0.2.0-draft.3','output_type':'nomue-verifier-refusal','refusal_kind':kind,'reason_codes':[code],'message':code,'verifier':{'name':'nomue-r4-t09-research','version':'0.1.0-draft.1'},'input_evidence':{'input_size_bytes':raw_size},'generated_at':'2026-09-15T00:00:00Z'}
-    if kind=='resource_limit':refusal['limit_category']={'NRS-TIMEOUT-LIMIT-EXCEEDED':'processing_timeout','NRS-MEMORY-LIMIT-EXCEEDED':'memory_limit'}.get(code,'parser_exhaustion')
+    if code in ('NRS-TIMEOUT-LIMIT-EXCEEDED','NRS-MEMORY-LIMIT-EXCEEDED'):refusal['limit_category']={'NRS-TIMEOUT-LIMIT-EXCEEDED':'processing_timeout','NRS-MEMORY-LIMIT-EXCEEDED':'memory_limit'}[code]
     return {'status':'UNISSUED CANDIDATE','execution':'execution_refusal','provenance':{'t07_commit':'fb773cc2092678f8409c2f0d25289028356eeb86','t08_commit':'76542b5d0370fc51d60f22efda2af00cafe33ad1','numerical_commit':'66fa2bc201c86c62f21bb94825479427c24d8522','report_schema_sha256':hashlib.sha256((HERE/'report.schema.json').read_bytes()).hexdigest()},'refusal':refusal}
 
 def main():

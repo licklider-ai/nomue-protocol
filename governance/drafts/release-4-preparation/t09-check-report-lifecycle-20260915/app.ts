@@ -9,8 +9,11 @@ const mode = Number(process.argv[2] ?? 0),
   control = process.argv[3] ?? "normal";
 const receipts: any = {};
 let failure: string | undefined;
+let diagnostic = "";
 async function invoke(packet: string): Promise<any> {
-  if (control === "transport") {
+  const transport =
+    control === "transport" ? packet + " ".repeat(profile.internal_transport_bytes + 1) : packet;
+  if (Buffer.byteLength(transport) > profile.internal_transport_bytes) {
     failure = "transport_bound";
     throw Error(failure);
   }
@@ -34,6 +37,7 @@ async function invoke(packet: string): Promise<any> {
     });
     child.stderr.on("data", (b: Buffer) => {
       errBytes += b.length;
+      diagnostic = (diagnostic + b.toString("utf8")).slice(0, 2000);
       if (errBytes > profile.worker_stderr_bytes) {
         bad = true;
         failure = "output_overflow";
@@ -81,10 +85,11 @@ async function invoke(packet: string): Promise<any> {
         resolveResult(t.result);
       } catch (e) {
         failure ??= "invalid_worker_output";
+        diagnostic = (diagnostic + String(e)).slice(0, 2000);
         reject(e);
       }
     });
-    child.stdin.end(packet + "\n");
+    child.stdin.end(transport + "\n");
   });
 }
 let result: any;
@@ -133,6 +138,7 @@ const audit = {
   reason: failure ?? null,
   receipts: Object.fromEntries(Object.entries(receipts).filter(([k]) => k !== "mode")),
   modes: receipts.mode ?? null,
+  diagnostic,
 };
 if (control === "tree-memory") {
   const blocks: Buffer[] = [];
@@ -143,7 +149,8 @@ if (control === "report-timeout")
     setInterval(() => {}, 1000);
   });
 let encoded = Buffer.from(JSON.stringify(audit));
-if (control === "report-cap" || encoded.length > profile.full_report_bytes) {
+if (control === "report-cap") encoded = Buffer.alloc(profile.full_report_bytes + 1);
+if (encoded.length > profile.full_report_bytes) {
   audit.execution = "execution_refusal";
   audit.reason = "report_bound";
   audit.result = refusal("NRS-RESOURCE-LIMIT-EXCEEDED", bytes);
