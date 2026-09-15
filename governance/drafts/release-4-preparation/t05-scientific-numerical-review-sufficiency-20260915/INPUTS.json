@@ -1,0 +1,488 @@
+{
+  "audit_date": "2026-09-15",
+  "base": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "candidates": {
+    "main": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+    "architecture": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+    "research_gate": "225eca96d485978ee01cbe08d535387900252bca",
+    "numerical": "66fa2bc201c86c62f21bb94825479427c24d8522",
+    "execution": "318955dc260204328ec39acb67925e68c35d0c28"
+  },
+  "branch": "research/r4-t05-review-sufficiency-20260915",
+  "current_remote_matches": true,
+  "opening_rfc_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+  "B": "52969003320369754284032",
+  "cost_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "files": [
+    {
+      "id": "MODEL",
+      "path": "review-inputs/r4-normal-model-source/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "9efcc51a4978b3b539de4424d08c7a265c90e1ab",
+      "sha256": "7414ec57dc81c299900553b44093ea645bd53b4481620d894ccec22c9a400ee5",
+      "bytes": 65673,
+      "reviewed_target": "c78d4d27163ccc6128712e1818dc6a0562695515",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-normal-model-source/REVIEW-RESULT.md"
+    },
+    {
+      "id": "MODEL-REPAIR",
+      "path": "review-inputs/r4-normal-model-source-repair/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "94d21ac71834043bcceb6978588a01c927f8eeea",
+      "sha256": "7c212d4b1c28525670a27f89e31084a294cc9747d18712ef69945730214a93c7",
+      "bytes": 33538,
+      "reviewed_target": "438470501fe39d8f186e06fa3a52eb96adfb3213",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-normal-model-source-repair/REVIEW-RESULT.md"
+    },
+    {
+      "id": "MODEL-ACCEPT",
+      "path": "governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "b19e39ffe84474f37661ba5839518bd78b5f2cdd",
+      "sha256": "fa5e625a87de357aba0fbd8805e93e93f46fabcc2825faee7d5d7c6d6b16aa96",
+      "bytes": 4363,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md"
+    },
+    {
+      "id": "MODEL-SOURCE",
+      "path": "governance/drafts/release-4-preparation/normal-model-source-result.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "1ed68c2e449a29307225a25b495b98ce7a065106",
+      "sha256": "70663487e8a89107b786e543970bb7ebdf0251613c19e3da28b5dc37fe9b36ce",
+      "bytes": 16475,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/normal-model-source-result.md"
+    },
+    {
+      "id": "OPEN-251",
+      "path": "review-inputs/r4-opening-rfc/PR-251-REVIEW.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "08879103e9311648a8d7f136624e16819d22e035",
+      "sha256": "a1889136b52d0793ebb855a5fa6249bf83315c0209f85876a025eab2b6023324",
+      "bytes": 50143,
+      "reviewed_target": "98187a14a48b38c9f2fb41fdd18060d53966a660",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-opening-rfc/PR-251-REVIEW.md"
+    },
+    {
+      "id": "OPEN-252",
+      "path": "review-inputs/r4-opening-rfc/PR-252-REVIEW.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "d399550380de654fe107365349568791dc5b89da",
+      "sha256": "fef67c706cc73a9bfa9f23b6beff01d80ee2da34a585561427bfdf08e0f0c1e6",
+      "bytes": 64771,
+      "reviewed_target": "98187a14a48b38c9f2fb41fdd18060d53966a660",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-opening-rfc/PR-252-REVIEW.md"
+    },
+    {
+      "id": "OPEN-CLOSE",
+      "path": "review-inputs/r4-opening-rfc-boundary/assessment-20260909/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "935995bff4db9800fdc3458bdac4930e959bd8d1",
+      "sha256": "939ff6668d4f8637e0712405b8e841dd3973b1f1cdaa8a216f870f01a90b018f",
+      "bytes": 34699,
+      "reviewed_target": "21453d82109106e9e811571383228dcef8f60fac",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-opening-rfc-boundary/assessment-20260909/REVIEW-RESULT.md"
+    },
+    {
+      "id": "RFC",
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4",
+      "bytes": 50051,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/opening-rfc-candidate.md"
+    },
+    {
+      "id": "ARITH",
+      "path": "review-inputs/r4-arithmetic-2864903/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "d9a1de6a97f825f24fb300d5226742d2d1a4cb42",
+      "sha256": "da793a9a60c64b7260b544514e15d35083cc2019f74862019d19cc3867d316c4",
+      "bytes": 25065,
+      "reviewed_target": "2864903316b4b4b2b219a56b42c535bfec7935b3",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-arithmetic-2864903/REVIEW-RESULT.md"
+    },
+    {
+      "id": "TAIL",
+      "path": "review-inputs/r4-tail-8d1979a/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "def6b6151a54f9e9696249cae416069d4f0a933e",
+      "sha256": "484fb04c9787f962d9c1b00cbfd4d6d291504a5fc8cc2c909ef0caf249eb5582",
+      "bytes": 25784,
+      "reviewed_target": "8d1979a4cf91012d86d57df40e5a847e2f00a358",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-tail-8d1979a/REVIEW-RESULT.md"
+    },
+    {
+      "id": "TAIL-CHECK",
+      "path": "review-inputs/r4-tail-checker-bc1c1ac/REPORT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "7df105795f7e26d929fc04bd48e5fb973dc01c97",
+      "sha256": "d9750e4f7b6ee5871936e2b70b10124629540a5108d0fa1cf05832597a149190",
+      "bytes": 8690,
+      "reviewed_target": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-tail-checker-bc1c1ac/REPORT.md"
+    },
+    {
+      "id": "METHOD",
+      "path": "review-inputs/r4-primary-methods-20260911/REPORT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "97ba0876a8bcbcf1f79c98b82b6567dfd8771f02",
+      "sha256": "8515d79c1f710fba8dfbb6469d43b4b529e3c910121698d37bcd6299a6c6893d",
+      "bytes": 13603,
+      "reviewed_target": "bc1c1ace426d51e55c9551090f6e400af2ac17d2",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-primary-methods-20260911/REPORT.md"
+    },
+    {
+      "id": "METHOD-SOURCES",
+      "path": "review-inputs/r4-primary-methods-20260911/SOURCES.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "7865a3d03986ee85072dcba90fe9b27841008b8e",
+      "sha256": "5ac10e41dc1c4f7d1269b11acf5eaa3a1e6be284530d779b60b3094b8bc915fe",
+      "bytes": 5316,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-primary-methods-20260911/SOURCES.md"
+    },
+    {
+      "id": "IEEE",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64",
+      "bytes": 10264,
+      "reviewed_target": "da1c53dfd70f02169014f5d882aa51aec960a019",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md"
+    },
+    {
+      "id": "IEEE-SOURCES",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/SOURCES.json",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "0e5b3486bd56babd0a56c8c642a98f2bffde9373",
+      "sha256": "f87c2295001b927fcc6c4a983f07fecebfe3bfca5617a8e0c7b34776b8bdaa6f",
+      "bytes": 1351,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r4-ieee-clause-confirmation-20260911/SOURCES.json"
+    },
+    {
+      "id": "COMPOSITION",
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/EXTERNAL-REVIEW.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "d7c517ba83c7c79022d360eb626b771346541ea5",
+      "sha256": "0c82f754e0684b43e06acb67f0ca94e1a24e4b811f5213c2de63b6ace17a3c67",
+      "bytes": 5932,
+      "reviewed_target": "cd121030d40942493d24c104ff87e05070826c42",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/rational-tail-composition-20260911/EXTERNAL-REVIEW.md"
+    },
+    {
+      "id": "COMPLETE",
+      "path": "governance/drafts/release-4-preparation/complete-output-experiment-20260911/REPORT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "073e1f033622b0a8be3b44440f7d8bcfaf838925",
+      "sha256": "c01c16a6814e6c814a6292f3099893d6fe2dd6aa7af27e9fcbd76d49dacbd08b",
+      "bytes": 13164,
+      "reviewed_target": "7993c43abd21e5622b1be34b11ffaa47edda8963",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/complete-output-experiment-20260911/REPORT.md"
+    },
+    {
+      "id": "CONSUMER",
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/REPORT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "50eda1769d29ffe01b4db918750d543757503443",
+      "sha256": "165bbf6fd767a399f83954d811eee96d2377034bc55d61d21f8bed1983745f3a",
+      "bytes": 10712,
+      "reviewed_target": "60d62f61eb8bd5bf4c915098b6af50a683122025",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/REPORT.md"
+    },
+    {
+      "id": "CONSUMER-DESIGN",
+      "path": "governance/drafts/release-4-preparation/tail-evidence-design-20260911/DESIGN.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "554242805838ab35197332804ba1b5872be47c4c",
+      "sha256": "b9b1f8d742a019d12e7142377ed6291baf05f3ec064dbdeba164ee6542da1948",
+      "bytes": 10380,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-4-preparation/tail-evidence-design-20260911/DESIGN.md"
+    },
+    {
+      "id": "T03",
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "artifact_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+      "git_blob": "1a743fac2fce5d2e184f44bf0d1d3c368a257d4e",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0",
+      "bytes": 15538,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cd9d780ac06a3b998ff5d4717429b0177a222fe8/governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md"
+    },
+    {
+      "id": "ARCH",
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "artifact_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+      "git_blob": "bf82051f1bd462a1557a119ba777993871fc691f",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685",
+      "bytes": 18228,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/cd9d780ac06a3b998ff5d4717429b0177a222fe8/governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md"
+    },
+    {
+      "id": "RG1",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md",
+      "artifact_commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "git_blob": "6500d9804c6dd2d9de930b3294ce7ca6f5857ae8",
+      "sha256": "cd54693b95cf09a0044cb7596da8fe2a5f44777a4322c50aace9b79825d35b82",
+      "bytes": 15610,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/225eca96d485978ee01cbe08d535387900252bca/governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md"
+    },
+    {
+      "id": "RG2",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG2-ZERO-EXACT-SIGN.md",
+      "artifact_commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "git_blob": "2291f010ece74a477cfa7c6b6bdd3038c3dc0383",
+      "sha256": "957c12b6704c93442b2d527ef92b61e089d7d2eb49c89818471f1c9d036e6d21",
+      "bytes": 9274,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/225eca96d485978ee01cbe08d535387900252bca/governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG2-ZERO-EXACT-SIGN.md"
+    },
+    {
+      "id": "RG3",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG3-ALTERNATIVES.md",
+      "artifact_commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "git_blob": "0c20f789aa4614d6b3ddac1b1efd8956444d3b25",
+      "sha256": "a81f07b22f2a2e3c81022a2ecbf16d2a67a3a0aa9b8ccc059967ac12b4f517d5",
+      "bytes": 9001,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/225eca96d485978ee01cbe08d535387900252bca/governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG3-ALTERNATIVES.md"
+    },
+    {
+      "id": "RG5",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG5-CLAIM-BOUNDARY.md",
+      "artifact_commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "git_blob": "143667cbb55c454b89bfb8e2ef2286a6b8fdfcd4",
+      "sha256": "a9bec7cf34617d7fcc555e7c127a0e0d53073741940fb84c459fec1ea44f10af",
+      "bytes": 3856,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/225eca96d485978ee01cbe08d535387900252bca/governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG5-CLAIM-BOUNDARY.md"
+    },
+    {
+      "id": "G4",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/DECISION.md",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7e69435738e921078befedc8f5895416def413ef",
+      "sha256": "79d25a59845f9cab96cfd232c567a32cec7bf3898e221874715bb1066856edeb",
+      "bytes": 7814,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/DECISION.md"
+    },
+    {
+      "id": "G4-REPORT",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REPORT.md",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "55f5b218ac5c925b4e4e2107bbe2ffd778751429",
+      "sha256": "3678f9df2f779449109d44a390f128ca90bcacbe02f32f07e5908c395df4890c",
+      "bytes": 18593,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REPORT.md"
+    },
+    {
+      "id": "COST",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "4bb919cb68bd852b0e3fcc0d3f68ea61bbfa3653",
+      "sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+      "bytes": 1409,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json"
+    },
+    {
+      "id": "G5",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "36c13ca9774d4dec1a9344a34a8ec89c14529416",
+      "sha256": "26aa236a86179c2db33c3145b6180f772b039b92887e83af37036f9c2d91f1fa",
+      "bytes": 23091,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md"
+    },
+    {
+      "id": "G5-CODE",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "ec6089bffb82c2d513b323f8f62b9c062faa2612",
+      "sha256": "202a7f87b5b7490080a952599b135fed3e2ae450e946630efe8e78cfd37fd840",
+      "bytes": 19517,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py"
+    },
+    {
+      "id": "G5-VECTORS",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/EXPECTED-VECTORS.jsonl",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "6f50c2722fffe5404c1635d372c4b8aa8520c463",
+      "sha256": "40546de4013b9db389c8c2e900a93ac0d3355646ac7e9e21563f10960a7e57cb",
+      "bytes": 161254,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/EXPECTED-VECTORS.jsonl"
+    },
+    {
+      "id": "G5-RESULTS",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RESULTS.jsonl",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "cc4400029e26cf26949fd145a4534c2a6b870d3e",
+      "sha256": "74e073dacf462ebefb66673e74b5c4f29326171820a9683a24cf76d3913ae448",
+      "bytes": 1633759,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RESULTS.jsonl"
+    },
+    {
+      "id": "G5-INPUTS",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/INPUTS.json",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "1c1276f0b15b740c37a4c3eff0c94a3759303424",
+      "sha256": "0fe4b7f6db4c10b51800026480296a7d63d2c4a021fcaf4ce381620e6743a60c",
+      "bytes": 16768,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/INPUTS.json"
+    },
+    {
+      "id": "G5-MANIFEST",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/MANIFEST.json",
+      "artifact_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "bfd8ee1f77290e1b965f77779974e8878d753d30",
+      "sha256": "f846412428c25d0469da633cc5d8ca4d1b0d4fe7e3ed9c77405d3466a401671a",
+      "bytes": 1391,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/MANIFEST.json"
+    },
+    {
+      "id": "EC34",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/INPUTS.json",
+      "artifact_commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "git_blob": "edee6981c85728831aafd690522a9f35b6ca9e6e",
+      "sha256": "e44ad3f678cd8ac9c14c14e716258dfbe86d6df35c30f46a61607645d84613ea",
+      "bytes": 10508,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/318955dc260204328ec39acb67925e68c35d0c28/governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/INPUTS.json"
+    },
+    {
+      "id": "SUPPORT",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md",
+      "artifact_commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "git_blob": "ebb7fe2bdc7acf3655ded9b87bd981a269bb14a0",
+      "sha256": "b6fd294c5a5fdd8ab8c267994e65366181217d29ce0446ebf8b4b84817c61934",
+      "bytes": 9658,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/318955dc260204328ec39acb67925e68c35d0c28/governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md"
+    },
+    {
+      "id": "F01",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md",
+      "artifact_commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "git_blob": "b02d07e2cc8de3c7d8543fa9acf0621cb5566f69",
+      "sha256": "87ea2a9b225405ff5b090b3dd2ba624ef7225a6aafd0d21672aa596446c5da7a",
+      "bytes": 5447,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/318955dc260204328ec39acb67925e68c35d0c28/governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md"
+    },
+    {
+      "id": "STATUS",
+      "path": "governance/drafts/RELEASE-STATUS.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "98d46383e6e53544a745ebd769548ed066f3fad4",
+      "sha256": "eaf9735e14d90bc0218bf22fb1ca5d81eb808898908015d88c9ad21f8015b5c5",
+      "bytes": 8994,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/RELEASE-STATUS.md"
+    },
+    {
+      "id": "R2-FINAL",
+      "path": "review-inputs/r2-d5-final-review-readiness/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "bdb28e0704ac9c332cea46a973e0b873f4cf7d64",
+      "sha256": "91998038944028e7a65d332ca971b480997093e5636cd816597bdd9235d3f520",
+      "bytes": 14468,
+      "reviewed_target": "35ab094c9106903e6b8e87a144cfbd8cd52ae124",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r2-d5-final-review-readiness/REVIEW-RESULT.md"
+    },
+    {
+      "id": "R2-M2",
+      "path": "review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "9e19c355f544949ea277b786b4ed1a77eb7c1d6a",
+      "sha256": "4d689bff0ed208814a6a3af6684501dcefb21582ad64998d8c6790a7435f9271",
+      "bytes": 8138,
+      "reviewed_target": "764674bdd3f72ac7774ad456854e8e3a05183765",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md"
+    },
+    {
+      "id": "R2-CI",
+      "path": "review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "1cdedef140b9eae1e7ab85502859b147fd79fe10",
+      "sha256": "26987bf69ad3028599c71eab60017ebb52008287b7dc73d3b7cda084a9c52998",
+      "bytes": 10581,
+      "reviewed_target": "ba3d81e62f8f77884628c59c4b27d1c5ff3cb340",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r2-d5-ci-endpoint-truth-error-candidate/REVIEW-RESULT.md"
+    },
+    {
+      "id": "R2-TRUTH",
+      "path": "review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "931874edad6a4a7b41bc5ff5a6ec019131daa9ca",
+      "sha256": "43e8324b4ea19735943957f52a55c03ac27a8c0897ae0d932a8e0c619146382e",
+      "bytes": 10289,
+      "reviewed_target": "78c96328aeeee153aa6df92e01ee45bc1111fe4f",
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r2-d5-truth-boundary-evidence-close/REVIEW-RESULT.md"
+    },
+    {
+      "id": "R2-STRUCT",
+      "path": "review-inputs/r2-d2-d4-structural-candidate-surface/REVIEW-RESULT.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "c32c33ea73b81d687d8cba42b0a24a4b601401f9",
+      "sha256": "b5712ed150c37a2188ec2ec2162a8d3fa6258cbb287b951bb800ee68516d5c58",
+      "bytes": 17332,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/review-inputs/r2-d2-d4-structural-candidate-surface/REVIEW-RESULT.md"
+    },
+    {
+      "id": "R2-RATIFY",
+      "path": "governance/drafts/release-2-steward-ratification-package.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "80ad7729a66a1ae16303d8c3b1da1954629b0315",
+      "sha256": "f8e40812ec3899cc05ef018bb2a2e14df7c59cbe4622b070b74dba233e584fca",
+      "bytes": 12752,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/drafts/release-2-steward-ratification-package.md"
+    },
+    {
+      "id": "CHARTER",
+      "path": "CHARTER.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "bytes": 9163,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/CHARTER.md"
+    },
+    {
+      "id": "AUTHORITY",
+      "path": "AUTHORITY.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "bytes": 12454,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/AUTHORITY.md"
+    },
+    {
+      "id": "RESEARCH-GATE",
+      "path": "governance/RFC.md",
+      "artifact_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "bytes": 11571,
+      "reviewed_target": null,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/3880db43a64e1758494f3c78f6850daab0e3e9e9/governance/RFC.md"
+    }
+  ]
+}

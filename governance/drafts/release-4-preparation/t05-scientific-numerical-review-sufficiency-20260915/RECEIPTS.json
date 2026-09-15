@@ -1,0 +1,54 @@
+[
+  {
+    "id": "GATE-REVIEW",
+    "source_kind": "Existing separate-task final review; English scope transcription in REVIEW-EVIDENCE.md",
+    "task_id": "01a09e1c-b589-7420-a529-40e67ce8fc72",
+    "message_id": "msg_03f0e629f3e08555016aa7a6f0c7e487d09db7f4dd9775dd63",
+    "recorded_at": "2026-09-14T07:51:06.133Z",
+    "reviewed_commit": "225eca96d485978ee01cbe08d535387900252bca",
+    "original_final_message_sha256": "1f904b038f5095c801f6a74f195ac9d144c39c2f4298f28e5dfd64abaebc92a5",
+    "original_final_message_utf8_bytes": 22783,
+    "original_language": "Japanese",
+    "original_repository_receipt": false,
+    "original_preserved_in": "Existing task history; not republished or reissued by this audit"
+  },
+  {
+    "id": "NUMERICAL-CLOSE",
+    "source_kind": "Existing separate-task final review; English scope transcription in REVIEW-EVIDENCE.md",
+    "task_id": "01a09f24-3e9c-7fd0-969e-b00bacde56f3",
+    "message_id": "msg_00b455ad1f741f96016aa7b8994ff487d0b7bbee8fa11092d3",
+    "recorded_at": "2026-09-14T09:05:27.416Z",
+    "reviewed_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+    "original_final_message_sha256": "59e0c9654cbd5332a70d576a159a1923e05b68e5dc7c73c787450781c83d8c16",
+    "original_final_message_utf8_bytes": 13910,
+    "original_language": "Japanese",
+    "original_repository_receipt": false,
+    "original_preserved_in": "Existing task history; not republished or reissued by this audit"
+  },
+  {
+    "id": "T04-INITIAL",
+    "source_kind": "Existing separate-task final review; English scope transcription in REVIEW-EVIDENCE.md",
+    "task_id": "01a0a283-2ffe-7783-a9d2-f6e393f57fb2",
+    "message_id": "msg_0d1b51845a585419016aa895647dec87d0b5cd3287c9d9089d",
+    "recorded_at": "2026-09-15T00:47:04.316Z",
+    "reviewed_commit": "64a9a4aa188fb16077245e8d87503765460a410f",
+    "original_final_message_sha256": "4491e4585496989a3f1719f2a65f9596c0888a3554489f1e43c1273cff611910",
+    "original_final_message_utf8_bytes": 8687,
+    "original_language": "Japanese",
+    "original_repository_receipt": false,
+    "original_preserved_in": "Existing task history; not republished or reissued by this audit"
+  },
+  {
+    "id": "F01-CLOSE",
+    "source_kind": "Existing separate-task final review; English scope transcription in REVIEW-EVIDENCE.md",
+    "task_id": "01a09e1c-b589-7420-a529-40e67ce8fc72",
+    "message_id": "msg_03f0e629f3e08555016aa89f60633487d09a73a2e3cd795fc9",
+    "recorded_at": "2026-09-15T01:29:39.509Z",
+    "reviewed_commit": "318955dc260204328ec39acb67925e68c35d0c28",
+    "original_final_message_sha256": "41eb95c3a7ee2d4d7670063168277ebd0a887d7f2c84817fff9c305dbb0246b3",
+    "original_final_message_utf8_bytes": 4442,
+    "original_language": "Japanese",
+    "original_repository_receipt": false,
+    "original_preserved_in": "Existing task history; not republished or reissued by this audit"
+  }
+]
