@@ -1,0 +1,85 @@
+{
+  "source_commit": "db2efb3e301ba66797c1093f914b2466326e2d81",
+  "files": [
+    {
+      "path": "registries/interpretation-bundles.yaml",
+      "git_sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "reference/SOURCE-PIN.json",
+      "git_sha256": "08b2a8d272d137b892373fcec39f9f06f70acbecb7f2758fa930e7aa1c6eaf44",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "package.json",
+      "git_sha256": "70a3dc0f40048fb6d88191e0c7361ec82efb32dab7f135e0caf63d8deee70463",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "git_sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "tsconfig.json",
+      "git_sha256": "8d2a42d05fa4f1fabe82b859aa03eb0880800f6d9c8f21595d0998277c8030a3",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "vitest.config.ts",
+      "git_sha256": "ec0137acc9a359404490d5e30e924390ac1a394332bf914e60632d6843748dcc",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "reference/verifier/src/verify.ts",
+      "git_sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "git_sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "reference/verifier/src/digest.ts",
+      "git_sha256": "e1a9a8e9399c0a568d4c68c8c1cce7dc446ed313ae77760ba700b76628594b0e",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "reference/verifier/src/refusal.ts",
+      "git_sha256": "897ab84b6a5b2b60cedc0982856c9b7b5743db380b6069dca4789c9292b8e1bd",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "spec/verification/verifier-refusal.md",
+      "git_sha256": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "spec/verification/relying-party-interface.md",
+      "git_sha256": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "conformance/manifest.yaml",
+      "git_sha256": "4a009d86e1616be99fdcd15712818536507ed4c53af1c01f8bba309d97d408f3",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "canonicalization/test-vectors/manifest.yaml",
+      "git_sha256": "bd4ee790eea371bfaebda34bde13de7ff69918eb94b100fda9b5320f50553165",
+      "unchanged_since_T06": true
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/HOST.json",
+      "raw_sha256": "13ddd09bbc46c0f664361843ec45cd976b7a2cbb050ed8265fd28882be1b5f0a",
+      "unchanged_since_T10": true
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/SUMMARY.json",
+      "raw_sha256": "58bac097fa7fccfdd5fd8af82a8813e093a77e9cee97fa715c2aa6cfe523fcc9",
+      "unchanged_since_T10": true
+    }
+  ]
+}
