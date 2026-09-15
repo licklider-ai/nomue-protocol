@@ -1,0 +1,64 @@
+{
+  "status": "PASS_WITH_CLASSIFIED_PLATFORM_TEST_FAILURES",
+  "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+  "environment": {
+    "os": "Windows",
+    "architecture": "AMD64",
+    "node": "v24.14.0",
+    "pnpm": "11.19.0",
+    "python": "3.12.10"
+  },
+  "collector": {
+    "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+    "tracked_diff": "",
+    "node": "v24.14.0",
+    "pnpm": "11.19.0",
+    "python": "3.12.10",
+    "platform": "Windows",
+    "machine": "AMD64",
+    "started_utc": "2026-09-15T09:41:32.234776+00:00",
+    "runs": [
+      {
+        "name": "full-check",
+        "command": ["pnpm", "check"],
+        "exit_code": 1,
+        "seconds": 58.281,
+        "output": "full-check.txt",
+        "sha256": "bd45cfb071364380174de6ee8de75df8c101ffab69b9d5e59e02179a0045d2b5"
+      }
+    ]
+  },
+  "unit_suite": {
+    "passed": 517,
+    "failed": 3,
+    "failed_files": [
+      "tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts",
+      "tooling/tests/paired-t-supported-execution-selection-candidate.test.ts"
+    ],
+    "failed_tests": [
+      "accepts only the exact tuple and permissioned controlled-process shape",
+      "validates the durable reviewed evidence bundle byte-for-byte",
+      "accepts exact cold/hot selection evidence and rejects coherent drift"
+    ],
+    "json_sha256": "1d25c086116782b105dfb723d2394609ad5844dc80c7e74eedb19ea378697221"
+  },
+  "completed_after_expected_stop": {
+    "generated": "PASS: 19 generated files",
+    "phase_1": "PASS: 13 schemas, 16 vectors, 132 fixtures, example, 8 evidence files",
+    "phase_2a": "PASS: 88 Phase 1 fixtures, 44 Phase 2A fixtures, example, 8 refusals, 7 oracle datasets, 10 evidence files",
+    "supported_0_2_1": "PASS: 6 fixtures",
+    "t09_canonicalization": "PASS: 9 controls",
+    "t09_normal": "PASS: 263 assertions; Python optimize 0",
+    "t09_optimized": "PASS: 263 assertions; Python optimize 1",
+    "f01_normal": "PASS: 10 controls plus F13-01; Python optimize 0",
+    "f01_optimized": "PASS: 10 controls plus F13-01; Python optimize 1",
+    "validate": "PASS",
+    "typecheck": "PASS",
+    "format": "PASS",
+    "markdown": "PASS: 652 files, 0 issues"
+  },
+  "classification": "PRE-EXISTING WINDOWS PORTABILITY DEFECT IN R2 CANDIDATE TEST INFRASTRUCTURE",
+  "same_failure_shape_as_t11": true,
+  "old_expectations_changed": false,
+  "new_semantics": false
+}
