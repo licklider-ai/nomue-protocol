@@ -1,0 +1,42 @@
+{
+  "status": "PASS_WITH_CLASSIFIED_PLATFORM_TEST_FAILURES",
+  "source_commit": "ea2cb95356dba3a38850998fa2e322fdff1f471e",
+  "environment": {
+    "os": "Windows",
+    "architecture": "x64",
+    "node": "v24.14.0",
+    "python": "3.12.10"
+  },
+  "checks": {
+    "generated": "PASS: 19 generated files",
+    "phase_1": "PASS: 13 schemas, 16 canonicalization vectors, 132 fixtures, example, 8 evidence files",
+    "phase_2a": "PASS: 88 Phase 1 regression fixtures, 44 Phase 2A fixtures, example, 8 refusals, 7 oracle datasets, 10 evidence files",
+    "phase_2a_0_2_1": "PASS: 6 A2-1 fixtures",
+    "t09_focused": "PASS: 9 controls",
+    "t09_normal": "PASS: 263 assertions; Python optimize 0",
+    "t09_optimized": "PASS: 263 assertions; Python optimize 1",
+    "f01_normal": "PASS: 10 controls; Python optimize 0",
+    "f01_optimized": "PASS: 10 controls; Python optimize 1"
+  },
+  "unit_suite_from_stop_receipt": {
+    "passed": 517,
+    "failed": 3,
+    "failed_files": [
+      "tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts",
+      "tooling/tests/paired-t-supported-execution-selection-candidate.test.ts"
+    ]
+  },
+  "path_observation": {
+    "input_grant": "/candidate/compiled",
+    "input_module": "/candidate/compiled/tooling/src/spikes/candidate.js",
+    "resolved_grant": "C:\\candidate\\compiled",
+    "separator": "\\",
+    "compiled_basename": true,
+    "module_under_grant": false,
+    "posix_control": true
+  },
+  "classification": "PRE-EXISTING WINDOWS PORTABILITY DEFECT IN R2 CANDIDATE TEST INFRASTRUCTURE",
+  "classification_basis": "The unchanged R2 test supplies synthetic Linux paths to host-native path.resolve/path.sep logic. Windows rewrites the grant to a drive path while the module string remains POSIX, so the predicate fails before any saved evidence meaning changes. Linux evidence is recorded separately.",
+  "old_expectations_changed": false,
+  "new_semantics": false
+}

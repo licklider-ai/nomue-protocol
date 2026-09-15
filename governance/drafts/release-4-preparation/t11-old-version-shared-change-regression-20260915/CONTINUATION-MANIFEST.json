@@ -1,0 +1,20 @@
+{
+  "status": "T11 TECHNICAL CLOSURE EVIDENCE",
+  "branch": "research/r4-t11-regression-preservation-20260915",
+  "t11_starting_head": "db2efb3e301ba66797c1093f914b2466326e2d81",
+  "previous_stop_commit": "ea2cb95356dba3a38850998fa2e322fdff1f471e",
+  "previous_manifest_sha256": "6c4d1e3ba7111f8b4b7af11fda2adfc6ec723178828593fd2aeaef840b9b4eef",
+  "linux_source_commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+  "linux_run_id": 34944226774,
+  "hash_semantics": "SHA-256 of Git text content, CRLF normalized to LF",
+  "sha256": {
+    ".github/workflows/r4-t11-regression.yml": "9fc356543e865653e063956e64ed589ad363ce9bb75a87f5d649048777a7b772",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/CONTINUATION-20260915.md": "c518a7240d0c5aa5c46ed6963c48a5c6e28183f07de6e09cb8968128712446b9",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/LINUX-CAPTURE.json": "a3f82821e0f05b911632d799e4e3e245e7ef27f4ae2be1228c7a33cdb3c6b667",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/LINUX-RECEIPT.json": "c942290f756e1fc50bf3a0b60fa5068aed9e3ea0c881a4575a18fa76a2484256",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/WINDOWS-CONTINUATION.json": "25d4dcf765c7433c8414b63288504ed277cf07b8203a977752950495b2277ca5",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs": "c19d6ff335e714f7dc755e7290a0de24c8cc89824aae59e58336c0574f63d88e",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/run_checks.py": "cacbe7243aff9d2c08fe0f3cd4e74e11e7b74f081794c72f38be2c74c70f3c2f",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/verify_continuation.py": "4fcf46f8e3becd9b35781418b3217342e03e26f867b420d5d2b821dc50458885"
+  }
+}
