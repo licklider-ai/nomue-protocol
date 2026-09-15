@@ -1,0 +1,732 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "identifiers": [
+    {
+      "key": "contract",
+      "id": "https://nomue.ai/id/contract/balanced-two-factor/0.1.0-draft.1",
+      "family": "contract",
+      "version": "0.1.0-draft.1",
+      "owner": "Contract specification",
+      "role": "Scientific operation; no method alias",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "profile",
+      "id": "https://nomue.ai/id/profile/balanced-two-factor/0.1.0-draft.1",
+      "family": "profile",
+      "version": "0.1.0-draft.1",
+      "owner": "Profile specification",
+      "role": "Declared applicability and representation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "record",
+      "id": "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1",
+      "family": "schema",
+      "version": "0.1.0-draft.1",
+      "owner": "Record schema owner",
+      "role": "Closed envelope",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "payload",
+      "id": "https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1",
+      "family": "schema",
+      "version": "0.1.0-draft.1",
+      "owner": "Profile schema owner",
+      "role": "Closed analytical payload",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "report",
+      "id": "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1",
+      "family": "schema",
+      "version": "0.1.0-draft.1",
+      "owner": "Report schema owner",
+      "role": "Separate report, local result definitions",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "bundle",
+      "id": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1",
+      "family": "bundle",
+      "version": "0.1.0-draft.1",
+      "owner": "Interpretation-bundle registry",
+      "role": "Exact coherent combination",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "key": "conformance",
+      "id": "https://nomue.ai/id/check/balanced-two-factor-record-conformance/0.1.0-draft.1",
+      "family": "check",
+      "version": "0.1.0-draft.1",
+      "owner": "Public Check registry and bound Requirement owners",
+      "role": "Structural and semantic coherence; report conformance only",
+      "status": "UNISSUED CANDIDATE",
+      "scope": "record_revision",
+      "depends_on": [],
+      "requirements": ["NRS-CORE-0020", "NRS-PROFILE-BTF-0003", "NRS-PROFILE-BTF-0004"]
+    },
+    {
+      "key": "integrity",
+      "id": "https://nomue.ai/id/check/balanced-two-factor-record-integrity/0.1.0-draft.1",
+      "family": "check",
+      "version": "0.1.0-draft.1",
+      "owner": "Public Check registry and bound Requirement owners",
+      "role": "Existing JCS and digest on successor Record; no admissibility dependency",
+      "status": "UNISSUED CANDIDATE",
+      "scope": "record_revision",
+      "depends_on": ["conformance"],
+      "requirements": ["NRS-CORE-0021", "NRS-VERIFY-0032"]
+    },
+    {
+      "key": "admissibility",
+      "id": "https://nomue.ai/id/check/balanced-two-factor-profile-admissibility/0.1.0-draft.1",
+      "family": "check",
+      "version": "0.1.0-draft.1",
+      "owner": "Public Check registry and bound Requirement owners",
+      "role": "Declared design; sole eligibility truth carrier",
+      "status": "UNISSUED CANDIDATE",
+      "scope": "record_revision",
+      "depends_on": ["conformance"],
+      "requirements": [
+        "NRS-CONTRACT-BTF-0003",
+        "NRS-CONTRACT-BTF-0004",
+        "NRS-PROFILE-BTF-0001",
+        "NRS-CORE-0022"
+      ]
+    },
+    {
+      "key": "computability",
+      "id": "https://nomue.ai/id/check/balanced-two-factor-computability/0.1.0-draft.1",
+      "family": "check",
+      "version": "0.1.0-draft.1",
+      "owner": "Public Check registry and bound Requirement owners",
+      "role": "Ordered computability/domain/representation prerequisites before comparison",
+      "status": "UNISSUED CANDIDATE",
+      "scope": "result",
+      "depends_on": ["admissibility"],
+      "requirements": ["NRS-VERIFY-0030"]
+    },
+    {
+      "key": "recompute",
+      "id": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1",
+      "family": "check",
+      "version": "0.1.0-draft.1",
+      "owner": "Public Check registry and bound Requirement owners",
+      "role": "All 22 comparisons and scoped aggregation",
+      "status": "UNISSUED CANDIDATE",
+      "scope": "result",
+      "depends_on": ["computability"],
+      "requirements": [
+        "NRS-CONTRACT-BTF-0005",
+        "NRS-VERIFY-0029",
+        "NRS-VERIFY-0030",
+        "NRS-VERIFY-0031"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "NRS-CONTRACT-BTF-0001",
+      "owner": "spec/contracts/balanced-two-factor/design-and-estimands.md",
+      "title": "Design and directions",
+      "text": "factor_order and level_order determine cells 00,01,10,11; effects use level 1 minus level 0.",
+      "surfaces": ["input"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0002",
+      "owner": "spec/contracts/balanced-two-factor/design-and-estimands.md",
+      "title": "Three marginal contrasts",
+      "text": "Full fixed four-column model and its three A/B/AB own-null contrasts; no joint calibration.",
+      "surfaces": ["input", "declarations"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0003",
+      "owner": "spec/contracts/balanced-two-factor/admissibility.md",
+      "title": "Design admissibility",
+      "text": "Four complete equally replicated cells, n >= 2, finite observed outcomes and distinct declared experimental units.",
+      "surfaces": ["input", "admissibility"],
+      "sources": ["RFC", "G5"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0004",
+      "owner": "spec/contracts/balanced-two-factor/admissibility.md",
+      "title": "Model scope",
+      "text": "Independent normal zero-mean errors, common finite positive variance and fixed means; declaration does not prove these facts.",
+      "surfaces": ["input", "admissibility", "guarantee"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CONTRACT-BTF-0005",
+      "owner": "spec/contracts/balanced-two-factor/calculation.md",
+      "title": "Exact targets",
+      "text": "Use the one exact represented-input graph and three upper F tails; projection is separate.",
+      "surfaces": ["declarations", "comparison"],
+      "sources": ["RFC", "G5"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0001",
+      "owner": "spec/profiles/balanced-two-factor/declarations.md",
+      "title": "Applicability declaration",
+      "text": "Exact bundle Contract and required boolean model_applicability_declared; false is representable but inadmissible.",
+      "surfaces": ["input", "admissibility"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0002",
+      "owner": "spec/profiles/balanced-two-factor/non-claims.md",
+      "title": "Bounded guarantee",
+      "text": "Marginal, scoped claims only; no multiplicity, post-quantization or admission-conditional calibration.",
+      "surfaces": ["guarantee"],
+      "sources": ["RFC", "T03"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0003",
+      "owner": "spec/profiles/balanced-two-factor/representation.md",
+      "title": "Closed numerical representation",
+      "text": "All required finite fields, safe integer ranges and strictly positive declared SSE; no null, undefined, or negative-zero token.",
+      "surfaces": ["declarations", "conformance"],
+      "sources": ["RFC", "T03"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-PROFILE-BTF-0004",
+      "owner": "spec/profiles/balanced-two-factor/representation.md",
+      "title": "Local associations",
+      "text": "Exact unique result/analysis/design/dataset and observation/cell references, factor/level order and Cartesian coverage.",
+      "surfaces": ["input", "conformance"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-VERIFY-0029",
+      "owner": "spec/verification/factorial-recompute.md",
+      "title": "Quantity binding",
+      "text": "Exact result scope, RFC quantity names and applicable cell_id or contrast_kind; each of the 22 compared once.",
+      "surfaces": ["comparison", "evidence"],
+      "sources": ["RFC", "G5"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-VERIFY-0030",
+      "owner": "spec/verification/factorial-recompute.md",
+      "title": "Versioned numerical procedure",
+      "text": "J-cost(B,S-C), Z-B, exact targets, projection gates and strict comparison as specified below; no reference-only caps.",
+      "surfaces": ["computability", "comparison"],
+      "sources": ["T03", "ARCH", "COST", "G5"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-VERIFY-0031",
+      "owner": "spec/verification/factorial-recompute.md",
+      "title": "Results and evidence",
+      "text": "Bind revision/bundle/check version and quantity identity to outcomes, reasons and evidence without inventing projections or partial success.",
+      "surfaces": ["evidence", "outcomes"],
+      "sources": ["RFC", "T03", "ARCH", "G5", "F01"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-VERIFY-0032",
+      "owner": "spec/verification/factorial-recompute.md",
+      "title": "Check separation and execution",
+      "text": "Both conformance stages gate all checks; integrity is independent of admissibility; execute only registered procedures, no Record code.",
+      "surfaces": ["conformance", "integrity", "outcomes"],
+      "sources": ["RFC", "ARCH"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CORE-0020",
+      "owner": "spec/core/balanced-two-factor-envelope.md",
+      "title": "Successor closed Record",
+      "text": "New closed Record/payload, exact opaque Contract identity; no implicit dereference and no historical reinterpretation.",
+      "surfaces": ["envelope", "input"],
+      "sources": ["RFC", "ID-POLICY"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CORE-0021",
+      "owner": "spec/core/balanced-two-factor-envelope.md",
+      "title": "Canonical identity",
+      "text": "Existing strict input, JCS and domain-separated digest excluding exactly root integrity; no normalization or algorithm alias.",
+      "surfaces": ["envelope", "integrity"],
+      "sources": ["RFC", "CANON"],
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "id": "NRS-CORE-0022",
+      "owner": "spec/core/balanced-two-factor-lifecycle.md",
+      "title": "Eligibility carrier",
+      "text": "BTF admissibility completed pass/fail maps to eligible/ineligible; absent/error/not_run maps to not_evaluated.",
+      "surfaces": ["admissibility", "outcomes"],
+      "sources": ["RFC"],
+      "status": "UNISSUED CANDIDATE"
+    }
+  ],
+  "surfaces": [
+    "envelope",
+    "input",
+    "declarations",
+    "conformance",
+    "admissibility",
+    "computability",
+    "comparison",
+    "integrity",
+    "evidence",
+    "outcomes",
+    "guarantee"
+  ],
+  "quantities": [
+    {
+      "ordinal": 0,
+      "quantity": "n",
+      "discriminator": {
+        "cell_id": "cell(00)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(00)].n",
+      "comparison": "exact_integer"
+    },
+    {
+      "ordinal": 1,
+      "quantity": "n",
+      "discriminator": {
+        "cell_id": "cell(01)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(01)].n",
+      "comparison": "exact_integer"
+    },
+    {
+      "ordinal": 2,
+      "quantity": "n",
+      "discriminator": {
+        "cell_id": "cell(10)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(10)].n",
+      "comparison": "exact_integer"
+    },
+    {
+      "ordinal": 3,
+      "quantity": "n",
+      "discriminator": {
+        "cell_id": "cell(11)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(11)].n",
+      "comparison": "exact_integer"
+    },
+    {
+      "ordinal": 4,
+      "quantity": "residual_degrees_of_freedom",
+      "discriminator": {},
+      "declared_path": "result.residual_degrees_of_freedom",
+      "comparison": "exact_integer"
+    },
+    {
+      "ordinal": 5,
+      "quantity": "mean",
+      "discriminator": {
+        "cell_id": "cell(00)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(00)].mean",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 6,
+      "quantity": "mean",
+      "discriminator": {
+        "cell_id": "cell(01)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(01)].mean",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 7,
+      "quantity": "mean",
+      "discriminator": {
+        "cell_id": "cell(10)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(10)].mean",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 8,
+      "quantity": "mean",
+      "discriminator": {
+        "cell_id": "cell(11)"
+      },
+      "declared_path": "result.cell_summaries[cell_id=cell(11)].mean",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 9,
+      "quantity": "signed_estimate",
+      "discriminator": {
+        "contrast_kind": "A"
+      },
+      "declared_path": "result.contrasts[kind=A].signed_estimate",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 10,
+      "quantity": "signed_estimate",
+      "discriminator": {
+        "contrast_kind": "B"
+      },
+      "declared_path": "result.contrasts[kind=B].signed_estimate",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 11,
+      "quantity": "signed_estimate",
+      "discriminator": {
+        "contrast_kind": "AB"
+      },
+      "declared_path": "result.contrasts[kind=AB].signed_estimate",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 12,
+      "quantity": "sum_of_squares",
+      "discriminator": {
+        "contrast_kind": "A"
+      },
+      "declared_path": "result.contrasts[kind=A].sum_of_squares",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 13,
+      "quantity": "sum_of_squares",
+      "discriminator": {
+        "contrast_kind": "B"
+      },
+      "declared_path": "result.contrasts[kind=B].sum_of_squares",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 14,
+      "quantity": "sum_of_squares",
+      "discriminator": {
+        "contrast_kind": "AB"
+      },
+      "declared_path": "result.contrasts[kind=AB].sum_of_squares",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 15,
+      "quantity": "residual_sum_of_squares",
+      "discriminator": {},
+      "declared_path": "result.residual_sum_of_squares",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 16,
+      "quantity": "f_statistic",
+      "discriminator": {
+        "contrast_kind": "A"
+      },
+      "declared_path": "result.contrasts[kind=A].f_statistic",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 17,
+      "quantity": "f_statistic",
+      "discriminator": {
+        "contrast_kind": "B"
+      },
+      "declared_path": "result.contrasts[kind=B].f_statistic",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 18,
+      "quantity": "f_statistic",
+      "discriminator": {
+        "contrast_kind": "AB"
+      },
+      "declared_path": "result.contrasts[kind=AB].f_statistic",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 19,
+      "quantity": "p_value",
+      "discriminator": {
+        "contrast_kind": "A"
+      },
+      "declared_path": "result.contrasts[kind=A].p_value",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 20,
+      "quantity": "p_value",
+      "discriminator": {
+        "contrast_kind": "B"
+      },
+      "declared_path": "result.contrasts[kind=B].p_value",
+      "comparison": "strict_projected_binary64"
+    },
+    {
+      "ordinal": 21,
+      "quantity": "p_value",
+      "discriminator": {
+        "contrast_kind": "AB"
+      },
+      "declared_path": "result.contrasts[kind=AB].p_value",
+      "comparison": "strict_projected_binary64"
+    }
+  ],
+  "bindings": [
+    {
+      "requirement": "NRS-CONTRACT-BTF-0001",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0002",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0002",
+      "surface": "declarations",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0003",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0003",
+      "surface": "admissibility",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0004",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0004",
+      "surface": "admissibility",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0004",
+      "surface": "guarantee",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0005",
+      "surface": "declarations",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CONTRACT-BTF-0005",
+      "surface": "comparison",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0001",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0001",
+      "surface": "admissibility",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0002",
+      "surface": "guarantee",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0003",
+      "surface": "declarations",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0003",
+      "surface": "conformance",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0004",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-PROFILE-BTF-0004",
+      "surface": "conformance",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0029",
+      "surface": "comparison",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0029",
+      "surface": "evidence",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0030",
+      "surface": "computability",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0030",
+      "surface": "comparison",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0031",
+      "surface": "evidence",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0031",
+      "surface": "outcomes",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0032",
+      "surface": "conformance",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0032",
+      "surface": "integrity",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-VERIFY-0032",
+      "surface": "outcomes",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0020",
+      "surface": "envelope",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0020",
+      "surface": "input",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0021",
+      "surface": "envelope",
+      "task": "T07",
+      "responsibility": "Shape and local relationships; no numerical evaluation",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0021",
+      "surface": "integrity",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0022",
+      "surface": "admissibility",
+      "task": "T08",
+      "responsibility": "Evaluate the frozen scoped procedure; return typed results",
+      "status": "UNISSUED CANDIDATE"
+    },
+    {
+      "requirement": "NRS-CORE-0022",
+      "surface": "outcomes",
+      "task": "T09",
+      "responsibility": "Represent and deliver scoped results without changing numerical judgments",
+      "status": "UNISSUED CANDIDATE"
+    }
+  ],
+  "public_numerical": {
+    "domain": "J-cost(B,S-C)",
+    "B": "52969003320369754284032",
+    "cost_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+    "procedure": "S-C",
+    "eligibility": "Z-B",
+    "standalone_n_ceiling": null,
+    "projection": "nearest ties-to-even binary64; strict value equality",
+    "aggregation": "fail > unresolved > all 22 pass; only normally completed eligible scope",
+    "sources": ["T03", "ARCH", "COST", "G5"]
+  },
+  "bundle_binding": {
+    "bundle": "bundle",
+    "contract": "contract",
+    "profile": "profile",
+    "schemas": ["record", "payload", "report"],
+    "checks": ["conformance", "integrity", "admissibility", "computability", "recompute"],
+    "check_set_version": "0.1.0-draft.1",
+    "canonicalization": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "supported": false
+  },
+  "surface_ids": ["NRS-PCS-0014", "NRS-PCS-0015", "NRS-PCS-0016"]
+}
