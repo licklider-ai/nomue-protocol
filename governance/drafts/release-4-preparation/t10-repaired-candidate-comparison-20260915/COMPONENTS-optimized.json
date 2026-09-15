@@ -1,0 +1,187 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "python": "3.12.10",
+  "system": "Windows",
+  "machine": "AMD64",
+  "optimize": 1,
+  "expectation_commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+  "rows": [
+    {
+      "id": "exact-0x0",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "0",
+      "actual_code": "0",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0x1",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "1",
+      "actual_code": "1",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0x2",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "2",
+      "actual_code": "2",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0xfffffffffffff",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4503599627370495",
+      "actual_code": "4503599627370495",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0x10000000000000",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4503599627370496",
+      "actual_code": "4503599627370496",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0x3ff0000000000000",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4607182418800017408",
+      "actual_code": "4607182418800017408",
+      "result": "PASS"
+    },
+    {
+      "id": "exact-0x7fefffffffffffff",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "9218868437227405311",
+      "actual_code": "9218868437227405311",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-0x0",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "0",
+      "actual_code": "0",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-0x1",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "2",
+      "actual_code": "2",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-0xfffffffffffff",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4503599627370496",
+      "actual_code": "4503599627370496",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-0x3ff0000000000000",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4607182418800017408",
+      "actual_code": "4607182418800017408",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-0x3ff0000000000001",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4607182418800017410",
+      "actual_code": "4607182418800017410",
+      "result": "PASS"
+    },
+    {
+      "id": "ordinary-inexact",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "4607182418800017408",
+      "actual_code": "4607182418800017408",
+      "result": "PASS"
+    },
+    {
+      "id": "negative-permitted-zero",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": "0",
+      "actual_code": "0",
+      "result": "PASS"
+    },
+    {
+      "id": "above-finite-D04",
+      "scope": "component-only; not whole-Record admission",
+      "group": "projection",
+      "expected_code": null,
+      "actual_code": null,
+      "result": "PASS"
+    },
+    {
+      "id": "F-zero",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "4607182418800017408",
+      "actual_code": "4607182418800017408",
+      "result": "PASS"
+    },
+    {
+      "id": "rational-ordinary",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "4599301119452119040",
+      "actual_code": "4599301119452119040",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-near-above",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "4599301119452119040",
+      "actual_code": "4599301119452119040",
+      "result": "PASS"
+    },
+    {
+      "id": "midpoint-near-below",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "4599301119452119039",
+      "actual_code": "4599301119452119039",
+      "result": "PASS"
+    },
+    {
+      "id": "positive-small-normal",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "105834591243206656",
+      "actual_code": "105834591243206656",
+      "result": "PASS"
+    },
+    {
+      "id": "positive-subnormal",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "25769803776",
+      "actual_code": "25769803776",
+      "result": "PASS"
+    },
+    {
+      "id": "positive-underflow",
+      "scope": "component-only exact F; no raw realization or J-cost admission claim",
+      "group": "tail",
+      "expected_code": "0",
+      "actual_code": "0",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}
