@@ -1,0 +1,724 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "base": "fb773cc2092678f8409c2f0d25289028356eeb86",
+  "main": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "numerical_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+  "B": "52969003320369754284032",
+  "cost_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "procedure_path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py",
+  "core_files": [
+    {
+      "path": "AGENTS.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "a77c203e08467b6c036440dda9b629991f606560",
+      "sha256": "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3"
+    },
+    {
+      "path": "CHARTER.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb"
+    },
+    {
+      "path": "authority/authority-manifest.yaml",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74"
+    },
+    {
+      "path": "governance/ID-POLICY.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314"
+    },
+    {
+      "path": "governance/RFC.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    },
+    {
+      "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7d6572db31f40fb63619edadd9a2b76ff2b35d1e",
+      "sha256": "7bc6480527c25cc08cefb023f7f6b84b2514a78d1fd071fc688d717c53837415"
+    },
+    {
+      "path": "governance/drafts/release-2-candidate/reviews/d5-candidate-supported-scope-resource-bounds-adversarial-review-protocol.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7dc80528a4562ddbbf82404f867a215d02b332f5",
+      "sha256": "de48124f4e07252432c890a92d72424d815d460647d5d5b829e492e31e7d67d9"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/arithmetic-candidate-20260910/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "c1ce0d5319237837bce0c1e6dbe86b528d0332de",
+      "sha256": "d5924382050f0e10faa12213297656f9b2cc0c720de076d8f072731c4c82691e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/COUPLING.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "6ec980e488310d3b4b4559f7706f12f5fc92d8a2",
+      "sha256": "9703643f07ecba284becb472c72ff4216447bc447480aa1d0207d45a10af7c23"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "201cf12a5a34f9390177260fe0c6b53302e0d81e",
+      "sha256": "0e22ffce98a4e0de6ba65f7dc6b346bb69fb2c0f50db2245d07042be38d5ba82"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/POLICY.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "078b513fc43da055b2d88e4b21f5f06f6389d651",
+      "sha256": "bb50b3fb1631704d4e1a42d4d1e466ed9d9fed921442a9a7b82bb4967a4f77bc"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/EXTERNAL-REVIEW.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d7c517ba83c7c79022d360eb626b771346541ea5",
+      "sha256": "0c82f754e0684b43e06acb67f0ca94e1a24e4b811f5213c2de63b6ace17a3c67"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "4b196ea708d422e880b2d81da461e719263f46ca",
+      "sha256": "2c38a21c344ee193ee3f7d59512798fcb609eeec6d001b0735d13518ebaf5b79"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "1a743fac2fce5d2e184f44bf0d1d3c368a257d4e",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "bf82051f1bd462a1557a119ba777993871fc691f",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d0b953ca576a90bd26f2330c5ddd6ac3b169e8e8",
+      "sha256": "63672a5ae221a28ec2a9736712c64d813e9f7f2a59de40d9744821e6f4276c1a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/MANIFEST.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "bf7cd90871eacbb40fba50a8d1e28ac2902476e5",
+      "sha256": "c551dd4c49b479dbf89b35e2df179ff91093540a6895c89d4e2729fb13fefb89"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "de3339ec1d09f6ebf3b6fc3adffff9a418c58482",
+      "sha256": "38e1a74ba8f48d25e4c3d4ef6977cf46a316df7770b6f318e713fd9a5edd3456"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/RESULTS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "28ecd01caf745c798a2a2f6e5d328b1d0e59f0a6",
+      "sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "9da307d9e4da0ac9e79e858cf7dca23676048f2a",
+      "sha256": "47ec4b5725588b1d3e6917208efa1dd89324d2ce586d13783a64fec7fb27073c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "c4c37c3d552099365f0bf7fb00fc8f9964488a9e",
+      "sha256": "d1cf81703bbcc4ad6f60795a07a44790808f461fa146caeddb1dd5cf8f9451b7"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/MAIN-DELTA.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "64c21f71ab8116684a92901d481edf3801eb850a",
+      "sha256": "96d42e4f31dd0ca05acf75b22b136e5acf350d7e12e7401349cf40711602504a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/MANIFEST.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "12347d50772d0a0c112aa8f589ce89c97359d15f",
+      "sha256": "01ab0b59526b8176ff2a8256bafdffbc0bd48813813bb85c2c651c482e221ba0"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/README.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d8b08b18d1067a06916306852f0924a50d334ce9",
+      "sha256": "40e0fbd7e190c7b4887498187d22b6248667cba9c839ae053ef38debb192e9ea"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RESULTS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "8ad7ef48ab40713446ca1223c5d8479aa439f898",
+      "sha256": "f0ccd239f525e59aa1c579733762a42c839304ed75b23c99c77a6b12b2856a54"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/REVIEW-PROMPT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "dec6e38278295c34844ca3a93f12d94eedb38d00",
+      "sha256": "62346e0b0002de8969c1054e23412adc55485ec52c1e3d04818fca9c82c1996d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "6500d9804c6dd2d9de930b3294ce7ca6f5857ae8",
+      "sha256": "cd54693b95cf09a0044cb7596da8fe2a5f44777a4322c50aace9b79825d35b82"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG2-ZERO-EXACT-SIGN.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "2291f010ece74a477cfa7c6b6bdd3038c3dc0383",
+      "sha256": "957c12b6704c93442b2d527ef92b61e089d7d2eb49c89818471f1c9d036e6d21"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG3-ALTERNATIVES.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "0c20f789aa4614d6b3ddac1b1efd8956444d3b25",
+      "sha256": "a81f07b22f2a2e3c81022a2ecbf16d2a67a3a0aa9b8ccc059967ac12b4f517d5"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG4-MACHINE-EVIDENCE.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "e09a600065139984d0770f202832967535238e8b",
+      "sha256": "6a66836d2e203724ae96a6d73a981941138e0e0f2925720ddc0ac1370a75c874"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG5-CLAIM-BOUNDARY.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "143667cbb55c454b89bfb8e2ef2286a6b8fdfcd4",
+      "sha256": "a9bec7cf34617d7fcc555e7c127a0e0d53073741940fb84c459fec1ea44f10af"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/check_evidence.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "a59b85cbfc4698cfc1d32774acf43c9d65b5ae45",
+      "sha256": "e9ed5f5dbc17a15ecb2ff6b658745536b804681d9b3c0d2a4074ba599d9d2e22"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/verify_artifacts.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "43934fa1141513c7646d50f17085582be853fe9b",
+      "sha256": "90f46586dd098a9c35159036aa8cc8dd750b4ecab4d939a58aee6e044b581634"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/ANALYSIS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "5eb6ba2aa94938bfb3e2891579470a321660c7db",
+      "sha256": "cec17a7d27e0c168a6f529132e174b76535e94025c9be420ccb0c1160c9fcd3a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "4bb919cb68bd852b0e3fcc0d3f68ea61bbfa3653",
+      "sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/DECISION.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7e69435738e921078befedc8f5895416def413ef",
+      "sha256": "79d25a59845f9cab96cfd232c567a32cec7bf3898e221874715bb1066856edeb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d12411996e3f52c4ad8aba6f1c734073faca3455",
+      "sha256": "ffab722a3e3df8c12265b66b9d4e5ef89bd34ecda44fba954e524fa37dd99fba"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/MANIFEST.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "8a55e1ad55d62b408ffa4a00c4f6752097f7bda7",
+      "sha256": "718f0f1f96c24744bf62f60eb6c180b91cd5ba3e940e4155f984b66e216be8a8"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/PLAN.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "30f367cf8461aeb4f536d994322d36c30aaf1734",
+      "sha256": "26bf6f13c797d8559f848afc354a3a6676f8fc5ff75eab1a0dafdffee7a106fb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REFERENCE-OBSERVATIONS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "dbe4967f5e3019cc1d0f7fa7e0ea91503f74bc0f",
+      "sha256": "648dbad70e20f49cba4fd370081087283fba8f67bb1da53ac8ddeb371a0d86ce"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "55f5b218ac5c925b4e4e2107bbe2ffd778751429",
+      "sha256": "3678f9df2f779449109d44a390f128ca90bcacbe02f32f07e5908c395df4890c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/RESULTS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "cbdf11d4bbc756296194c1eae2e19b550195fe77",
+      "sha256": "addd390d7e43934907641fdc446a1d916de006d5d3b48badd2b8032f085fe88d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/analyze_results.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7c0e8632e1ab176d2288d934d00534463b90da60",
+      "sha256": "6e9b450b6020bb6a798bbe2cb1d056b73deb0c9415a63e1867230aab07edc45f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/check_evidence.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "faea965c998302b13816a14dab9fc92e4549df80",
+      "sha256": "f0b8bf7d4eaa5abc69c848cd60c2e59c971d35ded5c9e2ed86a9ecfcb46552b4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/measure_reference.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "3d19d1516be0ad2f7af719510d008e18f9b1f57f",
+      "sha256": "453b73cba317c8c802a93ee387c49235a02257f77f0e35d7fe799cf0992d1795"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/verify_artifacts.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "dd3bc4bdeafd13723518ecef53dfad6e59ca1acc",
+      "sha256": "eda166f4e150f800321e546cffd8428c35fed262ca00d9c4e9f6e9276efaa8a6"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "0ec411c35e9ba515d8a763e572c8297c8ed3e6f3",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "50eda1769d29ffe01b4db918750d543757503443",
+      "sha256": "165bbf6fd767a399f83954d811eee96d2377034bc55d61d21f8bed1983745f3a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "c4700ec344332a7c7363d169e22bfca236d11634",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d250482d47bd5f1479fc865864cef7ea482ab511",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "7793207a8637203bfdda2ee2fa016344f4efb4fe",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "ce1d64cb2148e70e217a0790c20086ed9484e55b",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "1c986ddcb20abb11502157e398add909e63e046e",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    },
+    {
+      "path": "package.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "6e8934994badcfb4ae4a3e13cd4b8f53a114d4e3",
+      "sha256": "7175bf0cb413516d15ff756960e65b3dc1bf5b60321cc7c776344b8d3a599250"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "683674c55ce9da94b1aa8358d9941ea892785304",
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c"
+    },
+    {
+      "path": "reference/verifier/src/digest.ts",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "863ea26a936353d089f560b4b5fb8ff1dbbd2c93",
+      "sha256": "e1a9a8e9399c0a568d4c68c8c1cce7dc446ed313ae77760ba700b76628594b0e"
+    },
+    {
+      "path": "reference/verifier/src/jcs.ts",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "0819abf08a3a2ba44cd7c0d6bfc558e749b47ebc",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    },
+    {
+      "path": "reference/verifier/src/strict-json.ts",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "c3c0bc16050f10def9ed9171fca307f305338c73",
+      "sha256": "e7ed609f7e3b754f484e0f07b9ba0b3c33e63d5869de082a2583a0bc26a8dd56"
+    },
+    {
+      "path": "registries/requirements.yaml",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead"
+    },
+    {
+      "path": "review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "9e19c355f544949ea277b786b4ed1a77eb7c1d6a",
+      "sha256": "4d689bff0ed208814a6a3af6684501dcefb21582ad64998d8c6790a7435f9271"
+    },
+    {
+      "path": "review-inputs/r4-arithmetic-2864903/REVIEW-RESULT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "d9a1de6a97f825f24fb300d5226742d2d1a4cb42",
+      "sha256": "da793a9a60c64b7260b544514e15d35083cc2019f74862019d19cc3867d316c4"
+    },
+    {
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "path": "review-inputs/r4-primary-methods-20260911/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "97ba0876a8bcbcf1f79c98b82b6567dfd8771f02",
+      "sha256": "8515d79c1f710fba8dfbb6469d43b4b529e3c910121698d37bcd6299a6c6893d"
+    },
+    {
+      "path": "schemas/common/identifier.schema.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "9d219f0d1786f2da194a1e7bca7e360c63e9f64c",
+      "sha256": "230796eae2baf7e3ebf5f75c9dcfe5b6afba3e320b152e7c848e38d06047b75c"
+    },
+    {
+      "path": "schemas/record/record-0.2.schema.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "457004baf1aaf529d1e7574f50710f4ff9560316",
+      "sha256": "78edefca1af368637f22051fbec4898df932f4378b912cd91c19ad8cc8a8cc9c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "ec6089bffb82c2d513b323f8f62b9c062faa2612",
+      "sha256": "202a7f87b5b7490080a952599b135fed3e2ae450e946630efe8e78cfd37fd840"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "36c13ca9774d4dec1a9344a34a8ec89c14529416",
+      "sha256": "26aa236a86179c2db33c3145b6180f772b039b92887e83af37036f9c2d91f1fa"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/strict-ingress.ts",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "38dffef8bef7d2392a78d2ae4b575bd763785097",
+      "sha256": "fca33ddf6768d3e1cf7604f4ac55ee33fab13cb68d9695ded101037246ef0a68"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/INPUTS.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "1c1276f0b15b740c37a4c3eff0c94a3759303424",
+      "sha256": "0fe4b7f6db4c10b51800026480296a7d63d2c4a021fcaf4ce381620e6743a60c"
+    }
+  ],
+  "direct_files": [
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/BINDING-MATRIX.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "74d7e638d1b4f9769b3ce0148ab92ab6e013a444",
+      "sha256": "fd8eaed3742ad8171715fde983fee34762ae8df0c0f0efde5b494ab135be48b3"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "c6819a003b4f0d46e71568c0dfdbf962c3431348",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/IDENTIFIERS.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "8cd2d515affc74c58351bb412488a805fd14d6e3",
+      "sha256": "84b7de779ad35880a3b595f6e07da99f813e6d3f30b0ef847d8121bba4069f2d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/INPUTS.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "fb4ff0528a90fec014cf927e6e51067e90808df0",
+      "sha256": "aa2225600a2e88795aea54b5533de6fbdcf7411a3bb25390a3d016af5c95436d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/MANIFEST.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "4f10ea53680cebd2d8e014e8399612c9668b695e",
+      "sha256": "800ca4440341a7557559f9a942284ae51152481298d35dc4ec98112bc99273e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/README.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "8424bc7026744dc4b6a4a682110dc266ad5341d3",
+      "sha256": "1974a8beb4a10a3085507b1342fc34f3521fb20c42a7017835acd6088c35f521"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REPORT.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "93fb261f2198e82793781a44c0baa8f973f73e2a",
+      "sha256": "81ef8d1076cf0a6db1ef88ac2eec26616fe6e1ef7bcb5bbe1c32df8cc043d4c4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "c72fc3423ab05fe976424196269c93ae26585266",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/SURFACE-INVENTORY.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "d9963425fe44dc4be1b7030ed8ae203e435d8a89",
+      "sha256": "d0f073500e5569b6db44edcc0055467967866c7d38059ad13aa9a4af0bf5eb71"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VALIDATION.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "2659af34af500fe17728f456d8006463f7c6fa15",
+      "sha256": "aae1494397f210e03dc260488f45bba87dd7d6827f74c1f0f0ca1c823256d8d0"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/verify_candidate.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "36eb3d0b915b425d97de86a052ee455a8dcb4e15",
+      "sha256": "a6eafb1c952f8683648ab10526b6f789e1957fa42d430c3be40e993b933aafec"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VERSIONING-MATRIX.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "68127028884aa91e72fc05509f793ddc2c95e4f1",
+      "sha256": "85e5e68d86083a701fb9adfac2c8ac71180e5ece8c0b9a995102a1569befb160"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/COVERAGE.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "c18ef1681e78439e315e94beaa21c76300e8ad2a",
+      "sha256": "9539ff8f4392b14af511df66d0589131bbbcd3c7474ac59d54ea344cb65b17fb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/cases.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "363f47ba3e5697a8dc328432ec970e9b9ed005e3",
+      "sha256": "3c7dd9382c892fd6c128f828e455e0d7534a4dd00e2872ea5480350c90b1dbc3"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/check-result.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "3f6befc7a06282167076cd9b7fc32c8877c888a8",
+      "sha256": "dd5a969e4cfef9c828f5f348433b36869179428b4bfeafdc5742819a33d3d6eb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/minimal-record.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "e2583c87b006688533e9b3b54783be7fd47bd62c",
+      "sha256": "10dac50c2e34ab413b91377aa38647911219131db7b341b64327e6c5754a728a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/quantity-evidence.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "df88e3b2394461900fd4ab98dcd8b19cc18e3aaf",
+      "sha256": "90ae5b7ece656c64716925bbed2ca187fa0f5a66cf3d9f88c1898ce24ad1421e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/INPUTS.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "7a22aabdb66f4fd6deb9394779a9cbec9b82485f",
+      "sha256": "d4a6b1a9431d965ae4be2dad31d22a695fa40626d223345f4780da0b67157f99"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/MANIFEST.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "e76a8459eefd83775a81c00a3b07fd90fb625ace",
+      "sha256": "29acd1a777c52661f40316526d6a434cb94d927a6b02a9e8e9eacb23e09a3043"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/README.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "029fa744239d6e73576db1acb2ae130c0116be35",
+      "sha256": "a08eddbfd1c00f3ce3fb6f29474050b9afb3202f1f02549bfd52b58e87088f63"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/REPORT.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "65ac1c703b8f068c904da2ea11ca165cb4308a87",
+      "sha256": "b952f3515dd7cf8907d77437435fd5e01545edae4e9e9622b2bcb4a7182206ea"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESPONSIBILITY-MATRIX.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "9ebbf9247ebb41a5e20f79742c265ac2549575ee",
+      "sha256": "71b3d8aa0935da7722be8cb8fce848d79d42dc031e2adfe361739f2a18f9ccd9"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS-jitless.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "cd571001b4b3b1b57d3cce294e625ae8361849ba",
+      "sha256": "9025320cc42821c0c3fc3b4ffb8908f612180b241b15ce6bab5a5f1f7e121499"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "1d85f1b11a84b821beed93275db4a96c1e5de6ca",
+      "sha256": "28fac977bd5230ca2aec466fb06e405c7a5c9d116771b06d7daee45c7162367d"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/SCHEMA-COVERAGE.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "380dfff45c0e0e308cf87df23efbd6ad10f8eae0",
+      "sha256": "ba1db0a57f9043075d18df5de4676c5ad76742cd77c412ee5da2286156fa2e04"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/balanced-two-factor-0.1-draft-1.schema.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "e886525b974582612328004da7ba5698b84361e7",
+      "sha256": "e42f3ef4de24516c89ba876d41500a30b6d437df5ae9293486f527184d2fa4fc"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/record-balanced-two-factor-0.1-draft-1.schema.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "1b7d92d7c8c4502481e8dfc92c3f309a742a8701",
+      "sha256": "4e622fa9464e4bcc222ede1238ff9d20a7b6f576e90b07f3fd5cb0bf3803c6d9"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/verification-report-balanced-two-factor-0.1-draft-1.schema.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "c7f8e0e953e54513b1f77b25c51accf4ef9600f6",
+      "sha256": "fc92db65a7c5625a23f0a35726efbce46b78f9e2555ed1038a51c5f113f1f6f0"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tests.ts",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "819b3043c3f020b82da98eb9e90298935d936d1b",
+      "sha256": "273204609e165f8d524cc0d82edbab131e1a5be894646ca4bd04d749654b2be7"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tsconfig.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "97c9aa6c12d4efefca05a2cecd0b6de260ff9c77",
+      "sha256": "a8f3d1fb26a22302ae690b156681d8c8e5cb31f13eb3f835c73adda547152802"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/VALIDATION-RULES.md",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "d5bf029ab7d2ea4bbde458b59c244263e19d50c3",
+      "sha256": "f1fd6093487080ef684dbeab016b4d5742074f4fef1a91838d2b451bbb505757"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/validator.ts",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "11a65c73a628b547c1b525e45b7d53f690361a2c",
+      "sha256": "45624dd8b37b5fab5ee4e40a270024797e0325c4e99d1f387200f782051214a6"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/verify_packet.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "git_blob": "4b68123a4b97346cd67d24788e049a96b2c88dab",
+      "sha256": "2033f3f325f219de60d8e9cae0bd7d9675e5bdffddf7ed13bb4c7626c9a599af"
+    }
+  ],
+  "fixture_sources": [
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RECORDS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "95a4d68ce61e9f8a72eb04305391efd49044617c",
+      "sha256": "7b4ecc7f1da62bdbeb1f55efefe8068186a7d8da655f7b000006083b00977a87"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/EXPECTED-VECTORS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "6f50c2722fffe5404c1635d372c4b8aa8520c463",
+      "sha256": "40546de4013b9db389c8c2e900a93ac0d3355646ac7e9e21563f10960a7e57cb"
+    }
+  ],
+  "preserved_runtime": [
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/consumer.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f",
+      "git_blob": "ded94d95cfe7551d3b0d341786e9123db70b2f7f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501",
+      "git_blob": "d250482d47bd5f1479fc865864cef7ea482ab511"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b",
+      "git_blob": "1c986ddcb20abb11502157e398add909e63e046e"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712",
+      "git_blob": "7793207a8637203bfdda2ee2fa016344f4efb4fe"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c",
+      "git_blob": "ce1d64cb2148e70e217a0790c20086ed9484e55b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38",
+      "git_blob": "c4700ec344332a7c7363d169e22bfca236d11634"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4",
+      "git_blob": "0ec411c35e9ba515d8a763e572c8297c8ed3e6f3"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f",
+      "git_blob": "110f6486f684e4b0c05d1359acf19b60fe4938cb"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318",
+      "git_blob": "22beb8b071360c12d66106efda53ae885fbcdda9"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "25992004eea5cd8912722b7ae3af685d405154aca513c58d1af0e1c114a660a2",
+      "git_blob": "614aaa00fac761e75b7402aefbacc0587e5fdd75"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e",
+      "git_blob": "7ab1f7b3589af182a7852dfa250c6802d36773c2"
+    }
+  ],
+  "pr331": {
+    "state": "MERGED",
+    "head": "98bea06dd649949ed2f62a2e7fbe25ed4337a4aa",
+    "merge_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9"
+  }
+}
