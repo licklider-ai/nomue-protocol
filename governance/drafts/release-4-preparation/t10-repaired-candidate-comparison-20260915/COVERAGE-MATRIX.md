@@ -1,0 +1,29 @@
+# Corrected T10 coverage matrix
+
+Status: **UNISSUED CANDIDATE**. The current execution results are bound by CAPTURE
+and REPORT. This matrix describes fixed semantic claims, not a whole-domain proof.
+
+| Area                         | Required cases / fixture IDs                                                                    | Independent provenance                                                      | Comparison scope                                                                       |
+| ---------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| 22 quantities / PASS         | 70 truth Records; ordinary_zero_n2, ordinary_dyadic_n3, ordinary_decimal_n2                     | Original G5 independent vectors and T05 NUMERICAL-CLOSE                     | All 22 declared/recomputed codes and outcomes                                          |
+| Scientific contrasts         | ordinary_dyadic_n2, ordinary_decimal_n2: nonzero A/B/AB, simultaneous effects                   | Reviewed exact means, signed contrasts, SS and residual-square calculations | Four n, df, four means, three effects, SS, SSE, F and p                                |
+| Cancellation / dynamic range | cancellation_moments_n128, scaled_-400_n2, scaled_400_n2, mixed_exponents_n16                   | Reviewed independent residual-route vectors                                 | Exact public projections and comparisons                                               |
+| Single FAIL                  | mismatch-0 through mismatch-21                                                                  | Reviewed truth with one deliberate declaration mutation                     | Exact sole mismatch identity; remaining quantities continue                            |
+| Multiple FAIL                | multiple-mismatch; multi/two-mismatches, multiple-nontail, tail-and-nontail, three-effects      | Frozen Level D changes to reviewed truth                                    | Exact sets and aggregate fail, no first-error shortcut                                 |
+| J-cost boundary              | ordinary_dyadic_n3; ordinary_decimal_n128; adjacent-count-above-anchor; single-ULP-above-anchor | Reviewed boundary witness and direct frozen ledger calculation              | C<B, C=B, C>B membership/gate behavior                                                 |
+| SSE gates                    | declared-SSE-zero, exact-SSE-zero, positive-SSE-projects-zero                                   | Closed RFC / exact residual and projection evidence                         | Structural failure vs computability failure vs representation refusal                  |
+| D04                          | extreme_finite_n2 and analytic above-finite-D04                                                 | Reviewed vector / fixed conservative policy                                 | Record refusal plus standalone projector boundary                                      |
+| Projection / zero            | 15 analytic vectors; negative-effect-projects-zero                                              | IEEE field/midpoint evidence and fixed D02/D04                              | Exact/inexact, ties-even, zero, subnormal/normal, max finite                           |
+| Tail                         | positive-subnormal-p, positive-p-underflow, ordinary_zero_n2; seven analytic tails              | Reviewed independent tail cells plus exact rational n=2 identity            | Normal/subnormal/underflow, F=0, near-midpoint, all three contrast paths               |
+| Dependency                   | model-false, exact-SSE-zero, supported/representation gates                                     | Fixed clauses / original independent provenance                             | Correct blocker/reasons; no fabricated quantity evidence; independent integrity        |
+| INDETERMINATE                | No real eligible S-C input claimed                                                              | Exact terminal decision in fixed G5 and prior review                        | Generic synthetic controls remain references, not fabricated corpus Records            |
+| Conformance / admissibility  | 49 category D constructions                                                                     | Original structural inputs plus existing external refusal authority         | Missing/wrong/duplicate properties and quantities, references, model, cells, units     |
+| Canonicalization correction  | structure/overflow-number, raw 1e400                                                            | B authority: NRS-CANON-0005, CORE-0011, VERIFY-0018/0025                    | Reportless canonicalization refusal, required reason, exit 2; internal core count zero |
+| Parse neighbors              | negative-zero, duplicate-member, nan-token, unpaired-surrogate, malformed-json                  | Existing strict input rules and fixed expected corpus                       | Reportless refusal and exact frozen reason                                             |
+| Lifecycle                    | Fixed T09 per-invocation boundary; original F controls                                          | C focused/F-01 regressions; fresh Linux cleanup receipts                    | Actual full delivery after cleanup; no new resource-stress suite                       |
+
+All 174 raw fixtures are rerun from the beginning per platform/mode. Component-only
+vectors are separate from raw-Record realization or J-cost membership claims. Source
+pins and derivation limits remain in the original provenance packet and B authority.
+A structural fixture's local reason is not used as final-output authority when the
+existing reportless refusal contract applies.
