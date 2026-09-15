@@ -1,0 +1,37 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "reasons": {
+    "NRS-PARSE-FAILED": "parse_error",
+    "NRS-DUPLICATE-JSON-MEMBER": "parse_error",
+    "NRS-INVALID-UNICODE-STRING": "parse_error",
+    "NRS-NEGATIVE-ZERO-NUMBER": "parse_error",
+    "NRS-UNSUPPORTED-BUNDLE": "unsupported_bundle",
+    "NRS-SCHEMA-INVALID": "conformance",
+    "NRS-BTF-LOCAL-REFERENCE-INVALID": "conformance",
+    "NRS-BTF-IDENTITY-AMBIGUOUS": "conformance",
+    "NRS-BTF-CELL-COVERAGE-INVALID": "conformance",
+    "NRS-BTF-MODEL-NOT-DECLARED": "admissibility",
+    "NRS-BTF-CELL-COUNTS-UNSUPPORTED": "admissibility",
+    "NRS-BTF-UNIT-NOT-UNIQUE": "admissibility",
+    "NRS-BTF-ZERO-RESIDUAL": "computability",
+    "NRS-DIGEST-MISMATCH": "integrity",
+    "NRS-DECLARED-RESULT-MISMATCH": "mismatch",
+    "NRS-BTF-SUPPORTED-DOMAIN-EXCLUDED": "supported_domain",
+    "NRS-BTF-REPRESENTATION-UNSUPPORTED": "representation",
+    "NRS-BTF-PROJECTION-UNRESOLVED": "unresolved",
+    "NRS-FILE-SIZE-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-NESTING-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-STRING-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-OBSERVATION-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-RESOURCE-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-TIMEOUT-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-MEMORY-LIMIT-EXCEEDED": "resource_limit",
+    "NRS-INTERNAL-VERIFIER-ERROR": "internal_error",
+    "NRS-CANONICALIZATION-FAILED": "canonicalization_failure"
+  },
+  "new_spellings": [
+    "NRS-BTF-SUPPORTED-DOMAIN-EXCLUDED",
+    "NRS-BTF-REPRESENTATION-UNSUPPORTED",
+    "NRS-BTF-PROJECTION-UNRESOLVED"
+  ]
+}

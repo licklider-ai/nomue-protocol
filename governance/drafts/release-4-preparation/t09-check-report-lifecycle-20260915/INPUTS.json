@@ -1,0 +1,687 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "base": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+  "main": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "execution": "318955dc260204328ec39acb67925e68c35d0c28",
+  "numerical": "66fa2bc201c86c62f21bb94825479427c24d8522",
+  "files": [
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/ADMISSION.json",
+      "git_blob": "a3d6c571c95fadad3164918a236986edcd9170ef",
+      "sha256": "1dbfb40e146cb1c17826f693873647bb1de4da1e53808c28e4ea29fec56ea9c8"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/BENCHMARKS.json",
+      "git_blob": "67bb9989b5a47a54f2e7b68237d1a94723ffc9c4",
+      "sha256": "d3f4512aa5dfa587d071da2f42d87049aba65018218f5260ba9beda50584ae9c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/COUPLING.md",
+      "git_blob": "1063af2586fd323149217a523418fd39772d7ea9",
+      "sha256": "bd535f2dd80070405a0a914b7fdccaeaa0cf1f113e707b7e4cc7dd5fcb150f1e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EVIDENCE-VALIDATION-REPAIR.md",
+      "git_blob": "5aea65be6bf29aefb24b7e6c993e64ae62da82ef",
+      "sha256": "21e1d5281d52195d705a50fd43977a15a9e43fe50b28665616a95710708d042c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EXECUTION-OPTIMIZED.json",
+      "git_blob": "ac207d7f94d28f6ad7a59ce60778a258fc8617be",
+      "sha256": "b7a1c4e7c725ed5d2cb9e1e4bac62d86c78bd46b87ac25ccb47ca0c378bc54cf"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EXECUTION.json",
+      "git_blob": "a108ee885f83d2dc4b3821af88d27f25a50d58b0",
+      "sha256": "04e5a77f93afa2658f61818bb330dfa2e8a33d1b34c883c3230cf223e3dec91d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-BOUNDARIES-OPTIMIZED.json",
+      "git_blob": "c54ecdb8cfc29acc9ef0929a41f1abd241041895",
+      "sha256": "be92b64ab6b3826fa61abc68753bc6f6b7d7e6a1f2ac97282c5375f35fe0265a"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-BOUNDARIES.json",
+      "git_blob": "bf7ac86e3c86f128b86b64ebb8d097bd8a095ef9",
+      "sha256": "d784a228de5b775dc7b9cb4258a3543bc6d2303fb319ec9054d345406b228b7b"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-REPAIR-ORACLE.json",
+      "git_blob": "93259cce920925164d15065c4eab4d1a6a570dc3",
+      "sha256": "463bc51331ccd26ac7c14e504d97283a5784bbb9b81916d498a6d213aa422f55"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/HOST-REPAIR-RESPONSE.md",
+      "git_blob": "61f4110503b63acd11c7dfaf4ac8776fece44e60",
+      "sha256": "af01d4f027ca53a8a443d08819c9487415213e5850511c4893e42d32a1ed3f12"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/INPUTS.json",
+      "git_blob": "201cf12a5a34f9390177260fe0c6b53302e0d81e",
+      "sha256": "0e22ffce98a4e0de6ba65f7dc6b346bb69fb2c0f50db2245d07042be38d5ba82"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-PROBES-OPTIMIZED.json",
+      "git_blob": "bb89e69ce7aff4390e227f90e62f181f2df6b270",
+      "sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-PROBES.json",
+      "git_blob": "bb89e69ce7aff4390e227f90e62f181f2df6b270",
+      "sha256": "2b430f693cd25b5cda9a6e7a658902dfd7abb94a4ac74f9c385c1c372fadc2ec"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-REPRODUCTION.json",
+      "git_blob": "2ef7b8b6c84502f748fa413e92050c7722007dac",
+      "sha256": "144b6deff23287fa7ced1a4b37e7cf297791cc66565506b7ae7481010b6cf31e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/PACKET-REVIEW.md",
+      "git_blob": "2e508d9b36d546b2a5311b205b026657ed9ae579",
+      "sha256": "8fd6ef5212de71a872f4523995ad7bfad7108c50a837f93a555c21a072cb27fd"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/POLICY.md",
+      "git_blob": "8c1e81f357a1e3bc8faf3fb5a056c0b094d8c4d9",
+      "sha256": "c5349e582d2eb6c7f36f8bb144d1cad8391d3ef1ea298dff3892dd83ee58e1f8"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/README.md",
+      "git_blob": "855508f0c7397ac742e101688f8e91018ecc2405",
+      "sha256": "db4b2ec06b7711c2b21a899242ef89ac66ed76aad457f598e6614e7617c95747"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/REVIEW-COMMISSION.md",
+      "git_blob": "82005973912756b32b5f8952ecaaa17c0f43b868",
+      "sha256": "8c241fb8d9bcaf2b0cc000f46877a5c437508adb8354b3d602c24d57620f7226"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/REVIEW-RESPONSE.md",
+      "git_blob": "a9525f7ed875b35eff54e05a71c3b7843baa15b7",
+      "sha256": "4ecd0584f017d0f0412950f8ac74e44334e7919930f2b8b9bfa65714d9ee09f5"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SELF-REVIEW.md",
+      "git_blob": "1a4fd821255434b490474e96b0c61cb9415fdd71",
+      "sha256": "85e66a26950b421cdc1eec5f4e6ae0a86bd70cd0d928c23fecefadc7b8d31c35"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SEPARATE-REVIEW.json",
+      "git_blob": "8f2821130f1f4df7030cff9dbfb3eae16c8a9af9",
+      "sha256": "722db5b4bda7f59c57fa636b05af3f2cdb3f1076599f72540e8af4d16e45b77c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SEPARATE-REVIEW.md",
+      "git_blob": "750ab28e1eea6ff9f7162ef9296cec4823047732",
+      "sha256": "13454aae22dc0cc850498943c65f77f9f6e1a08abf69b5b2cdd69b9dacdb2bd3"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SIGNALS-OPTIMIZED.json",
+      "git_blob": "3b3314b6f05d01434151cf6974fa03b94077e66e",
+      "sha256": "2d54b693ce9da6368ceb3626eefa10a240f9c910aa8150311c06f17baf42421a"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/SIGNALS.json",
+      "git_blob": "01ed2c1f99dc0a776282d2323cccff3d035c4fbd",
+      "sha256": "e0f8f38e4569e1672afbd5495e152fa5b62ccd46378c6c383f51bfb6ac6b4998"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/T02-SF01-REPAIR.md",
+      "git_blob": "e2cd3fbaec83ab48f78a5063f94bfdf4b4b252e0",
+      "sha256": "7f7486f044f9e11108b38194c9e3ad2905030578da6cd954fb51ab355e43d68f"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/VALIDATION.md",
+      "git_blob": "28676fa991b7e42a06025cb57501de1f97f95456",
+      "sha256": "85d6cae223ae66a859bf225204c5a32fd0e68d5a4f6a503b986f4ee14de7098d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/admission.py",
+      "git_blob": "e0e7a41b10068df486cb08a2476681f5ae3e04ba",
+      "sha256": "1a4619a76829c9f72aac4ad615769fc26d09d300a82afaa615b4b784e7101d0b"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/benchmark.py",
+      "git_blob": "8cec0d02a1c1a24da299d0458c43ff2b3b9da57e",
+      "sha256": "ee3ff4c03df90d0a73cd93edead7096070710a18d620f6f08212183c52dccd15"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/numerical_probe.py",
+      "git_blob": "33fb618a2fa86f8c3aec89cdc375c0b25abb18f5",
+      "sha256": "bb0e589544d27fb2b7acfdef4960afcb2adea79d64f43560d67f9268ef69bc0d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "git_blob": "7ab1f7b3589af182a7852dfa250c6802d36773c2",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/pin_inputs.py",
+      "git_blob": "d5861cc9c67ddb212fd42cb6743ba32b6e50d83a",
+      "sha256": "06a3d2ed4a61d36c2b668ba23900e3d48e88d5ee0d55245bc5798283f105a81e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/probe.py",
+      "git_blob": "fbd1ea6ff6ab825d34ad746446172804b661995e",
+      "sha256": "1f988ea7d177d9590392fbd1def128b8c5148683935f0d829280e30af623e683"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/review_packet.py",
+      "git_blob": "782879c45e0263e629690f7b484f557a6ab6ee43",
+      "sha256": "ffb7bf3b2ffb768960b3a0e2184a43f2bed62a1677f736b62d3aee5c2d468aef"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/separate_tail_oracle.py",
+      "git_blob": "b4cb3c0f32f8f778c659993fe488d5788469372f",
+      "sha256": "69a3ab44141c1a4de7a8ea90ae5e73fb3f463bf2ebc667355cd095e775081104"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "git_blob": "614aaa00fac761e75b7402aefbacc0587e5fdd75",
+      "sha256": "25992004eea5cd8912722b7ae3af685d405154aca513c58d1af0e1c114a660a2"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/MANIFEST.json",
+      "git_blob": "8154961e33d0b91284bcc30aefa4c11f5c791bb6",
+      "sha256": "1cf029c56b4cd016e687060324c57fc174e73f1ebc6d2332772988cd64c114ad"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/admission.json",
+      "git_blob": "a3d6c571c95fadad3164918a236986edcd9170ef",
+      "sha256": "1dbfb40e146cb1c17826f693873647bb1de4da1e53808c28e4ea29fec56ea9c8"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/benchmarks.json",
+      "git_blob": "77b39021d04537d76afc2799c6da4a8963879878",
+      "sha256": "14b399c02f4ec5a91f2598d3e171d3b903e6d7d2ac9ba23263480d3f202b6f5b"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/execution-optimized.json",
+      "git_blob": "aff0f3eac775803fd5b6fd310917c048f25c72aa",
+      "sha256": "034fbd731067f0867b92e84e0e7bff67f760776c3425598073be6d5e57352ef3"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/execution.json",
+      "git_blob": "008d895d49200484fd85dc5bfa735eefce64c991",
+      "sha256": "379d1c7a74266c19bc5477a425d158e2613d65d0c373ef2daf636485ebbc054e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/host-boundaries-optimized.json",
+      "git_blob": "fbb477ba16f710cdf0d022009a206ca412c5e8e5",
+      "sha256": "efe3faf6cf5eecfcee16b09af1ff21edabc8de2235f540133ce3c4819306b0c8"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/host-boundaries.json",
+      "git_blob": "75a67afff72160457ecfb98c759828458036beb1",
+      "sha256": "21bd90b69c96c53dcbd567b1136200d0b054abb4f6fd8bbe9c6b041ee7744f72"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/oracle.json",
+      "git_blob": "93259cce920925164d15065c4eab4d1a6a570dc3",
+      "sha256": "463bc51331ccd26ac7c14e504d97283a5784bbb9b81916d498a6d213aa422f55"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/packet-optimized.json",
+      "git_blob": "cd4644f12f7c0dd78d5fe244d41ed3b76d2b053c",
+      "sha256": "7d140df5bcf364d3fb907c9cb9cf8319fa44678bd6a63b1abfcbdaf72aec4e7c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/packet.json",
+      "git_blob": "59e985987485e1d519c0f64c9858dbc8d904199c",
+      "sha256": "799364a581b5a696c001a01f5c1742df81cd2cc4a9d063881477c09ed0cc8455"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/signals-optimized.json",
+      "git_blob": "4a6fdfa21ccba8cc2bda07e9d4f72b300196b428",
+      "sha256": "af9f42ef2b79d631dc620985d4e7b783d08de5e256ce5750192c80cb2de29232"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/signals.json",
+      "git_blob": "1b462a4e7a789e33de3d74685205e3396f0fa7d4",
+      "sha256": "5b2d927bf7373f1af83ce094800ebc3daad21e546450533ccd5472e27b1c7e7b"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/t02-sf01-validation/supervisor-mode.json",
+      "git_blob": "abd4960c860a4219fc6987d4006dd2ca06cc99c2",
+      "sha256": "970f716a921f2cd28eb7ff73541b2179bf8d1fe9ba2fcdbc12c4b95a1a1ab141"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_evidence_validation.py",
+      "git_blob": "c738a148473e47cfecfac1420c7f8867dfba0b98",
+      "sha256": "cabeef3b31fdf31dfb1a51845a9bd518fc4c8a2b65b6aeb6242c6a5878cfbcc6"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_execution.py",
+      "git_blob": "5c82b16b78808570a87b1453ba7351cc45028e36",
+      "sha256": "f6513d839088f4e2acb0e916599a58f17409e1b75fc3e58c2755d2515c4e9cc8"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_host_boundaries.py",
+      "git_blob": "4b1f51ff206ad5c28398e7879d0c4f94b39cfa44",
+      "sha256": "8547b36892ce708e5fd3cd6e2eef7900b78bda04e98c9c15c82d7e536eeeb383"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_signal_lifecycle.py",
+      "git_blob": "288626ee7c4dbdf827b7509d0cd2f4fbcb207c18",
+      "sha256": "117a536a47d633873c7253a2eb06bc23a5e10fb7a53d2e3d58da20be8e9b2dbb"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_supervisor_mode.py",
+      "git_blob": "2f720bde1177b8e3318d2d41aa6da0c81f101b7c",
+      "sha256": "4bebd69314a7dfece4b0d7fd97b9bfd3d0ce41295149b2bd0f3941cc36f02f66"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "git_blob": "22beb8b071360c12d66106efda53ae885fbcdda9",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/validate_saved_evidence.py",
+      "git_blob": "345918f7c5b3f9bb142da81acb1650ff5908b582",
+      "sha256": "9ed09e42ebeddf8546b854b659b7cfe484c8af32dc9bf7f079a9669983dcdf3c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/validate_tail_oracle.py",
+      "git_blob": "392ae85fa0f81f4c0d80d0148ba60eac64606125",
+      "sha256": "144c03be4efe4ad9efafeabfd736a10d03da32070a6b3b5617bd4f1e89390f74"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "git_blob": "110f6486f684e4b0c05d1359acf19b60fe4938cb",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/BINDING-MATRIX.md",
+      "git_blob": "74d7e638d1b4f9769b3ce0148ab92ab6e013a444",
+      "sha256": "fd8eaed3742ad8171715fde983fee34762ae8df0c0f0efde5b494ab135be48b3"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "git_blob": "c6819a003b4f0d46e71568c0dfdbf962c3431348",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/IDENTIFIERS.md",
+      "git_blob": "8cd2d515affc74c58351bb412488a805fd14d6e3",
+      "sha256": "84b7de779ad35880a3b595f6e07da99f813e6d3f30b0ef847d8121bba4069f2d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/INPUTS.json",
+      "git_blob": "fb4ff0528a90fec014cf927e6e51067e90808df0",
+      "sha256": "aa2225600a2e88795aea54b5533de6fbdcf7411a3bb25390a3d016af5c95436d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/MANIFEST.json",
+      "git_blob": "4f10ea53680cebd2d8e014e8399612c9668b695e",
+      "sha256": "800ca4440341a7557559f9a942284ae51152481298d35dc4ec98112bc99273e4"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/README.md",
+      "git_blob": "8424bc7026744dc4b6a4a682110dc266ad5341d3",
+      "sha256": "1974a8beb4a10a3085507b1342fc34f3521fb20c42a7017835acd6088c35f521"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REPORT.md",
+      "git_blob": "93fb261f2198e82793781a44c0baa8f973f73e2a",
+      "sha256": "81ef8d1076cf0a6db1ef88ac2eec26616fe6e1ef7bcb5bbe1c32df8cc043d4c4"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "git_blob": "c72fc3423ab05fe976424196269c93ae26585266",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/SURFACE-INVENTORY.md",
+      "git_blob": "d9963425fe44dc4be1b7030ed8ae203e435d8a89",
+      "sha256": "d0f073500e5569b6db44edcc0055467967866c7d38059ad13aa9a4af0bf5eb71"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VALIDATION.md",
+      "git_blob": "2659af34af500fe17728f456d8006463f7c6fa15",
+      "sha256": "aae1494397f210e03dc260488f45bba87dd7d6827f74c1f0f0ca1c823256d8d0"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VERSIONING-MATRIX.md",
+      "git_blob": "68127028884aa91e72fc05509f793ddc2c95e4f1",
+      "sha256": "85e5e68d86083a701fb9adfac2c8ac71180e5ece8c0b9a995102a1569befb160"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/verify_candidate.py",
+      "git_blob": "36eb3d0b915b425d97de86a052ee455a8dcb4e15",
+      "sha256": "a6eafb1c952f8683648ab10526b6f789e1957fa42d430c3be40e993b933aafec"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/COVERAGE.json",
+      "git_blob": "c18ef1681e78439e315e94beaa21c76300e8ad2a",
+      "sha256": "9539ff8f4392b14af511df66d0589131bbbcd3c7474ac59d54ea344cb65b17fb"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/INPUTS.json",
+      "git_blob": "7a22aabdb66f4fd6deb9394779a9cbec9b82485f",
+      "sha256": "d4a6b1a9431d965ae4be2dad31d22a695fa40626d223345f4780da0b67157f99"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/MANIFEST.json",
+      "git_blob": "e76a8459eefd83775a81c00a3b07fd90fb625ace",
+      "sha256": "29acd1a777c52661f40316526d6a434cb94d927a6b02a9e8e9eacb23e09a3043"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/README.md",
+      "git_blob": "029fa744239d6e73576db1acb2ae130c0116be35",
+      "sha256": "a08eddbfd1c00f3ce3fb6f29474050b9afb3202f1f02549bfd52b58e87088f63"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/REPORT.md",
+      "git_blob": "65ac1c703b8f068c904da2ea11ca165cb4308a87",
+      "sha256": "b952f3515dd7cf8907d77437435fd5e01545edae4e9e9622b2bcb4a7182206ea"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESPONSIBILITY-MATRIX.md",
+      "git_blob": "9ebbf9247ebb41a5e20f79742c265ac2549575ee",
+      "sha256": "71b3d8aa0935da7722be8cb8fce848d79d42dc031e2adfe361739f2a18f9ccd9"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS-jitless.json",
+      "git_blob": "cd571001b4b3b1b57d3cce294e625ae8361849ba",
+      "sha256": "9025320cc42821c0c3fc3b4ffb8908f612180b241b15ce6bab5a5f1f7e121499"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS.json",
+      "git_blob": "1d85f1b11a84b821beed93275db4a96c1e5de6ca",
+      "sha256": "28fac977bd5230ca2aec466fb06e405c7a5c9d116771b06d7daee45c7162367d"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/SCHEMA-COVERAGE.md",
+      "git_blob": "380dfff45c0e0e308cf87df23efbd6ad10f8eae0",
+      "sha256": "ba1db0a57f9043075d18df5de4676c5ad76742cd77c412ee5da2286156fa2e04"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/VALIDATION-RULES.md",
+      "git_blob": "d5bf029ab7d2ea4bbde458b59c244263e19d50c3",
+      "sha256": "f1fd6093487080ef684dbeab016b4d5742074f4fef1a91838d2b451bbb505757"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/cases.json",
+      "git_blob": "363f47ba3e5697a8dc328432ec970e9b9ed005e3",
+      "sha256": "3c7dd9382c892fd6c128f828e455e0d7534a4dd00e2872ea5480350c90b1dbc3"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/check-result.json",
+      "git_blob": "3f6befc7a06282167076cd9b7fc32c8877c888a8",
+      "sha256": "dd5a969e4cfef9c828f5f348433b36869179428b4bfeafdc5742819a33d3d6eb"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/minimal-record.json",
+      "git_blob": "e2583c87b006688533e9b3b54783be7fd47bd62c",
+      "sha256": "10dac50c2e34ab413b91377aa38647911219131db7b341b64327e6c5754a728a"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/quantity-evidence.json",
+      "git_blob": "df88e3b2394461900fd4ab98dcd8b19cc18e3aaf",
+      "sha256": "90ae5b7ece656c64716925bbed2ca187fa0f5a66cf3d9f88c1898ce24ad1421e"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/balanced-two-factor-0.1-draft-1.schema.json",
+      "git_blob": "e886525b974582612328004da7ba5698b84361e7",
+      "sha256": "e42f3ef4de24516c89ba876d41500a30b6d437df5ae9293486f527184d2fa4fc"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/record-balanced-two-factor-0.1-draft-1.schema.json",
+      "git_blob": "1b7d92d7c8c4502481e8dfc92c3f309a742a8701",
+      "sha256": "4e622fa9464e4bcc222ede1238ff9d20a7b6f576e90b07f3fd5cb0bf3803c6d9"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/verification-report-balanced-two-factor-0.1-draft-1.schema.json",
+      "git_blob": "c7f8e0e953e54513b1f77b25c51accf4ef9600f6",
+      "sha256": "fc92db65a7c5625a23f0a35726efbce46b78f9e2555ed1038a51c5f113f1f6f0"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tests.ts",
+      "git_blob": "819b3043c3f020b82da98eb9e90298935d936d1b",
+      "sha256": "273204609e165f8d524cc0d82edbab131e1a5be894646ca4bd04d749654b2be7"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tsconfig.json",
+      "git_blob": "97c9aa6c12d4efefca05a2cecd0b6de260ff9c77",
+      "sha256": "a8f3d1fb26a22302ae690b156681d8c8e5cb31f13eb3f835c73adda547152802"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/validator.ts",
+      "git_blob": "11a65c73a628b547c1b525e45b7d53f690361a2c",
+      "sha256": "45624dd8b37b5fab5ee4e40a270024797e0325c4e99d1f387200f782051214a6"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/verify_packet.py",
+      "git_blob": "4b68123a4b97346cd67d24788e049a96b2c88dab",
+      "sha256": "2033f3f325f219de60d8e9cae0bd7d9675e5bdffddf7ed13bb4c7626c9a599af"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/ADAPTER-CONTRACT.md",
+      "git_blob": "b6de97f52f5299a48b90a21b7e70df6c3c7eb42d",
+      "sha256": "ed3924486b93cb97181b1da5e534e07dc88aecbbdd4da22a4de4885c35183e07"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/INPUTS.json",
+      "git_blob": "1f60abac185fe458ce15358e823d2daba81897e3",
+      "sha256": "71dfa6e09395c148d14813c47dc9184bae8684d8d5cc1399efb8e74a0187e665"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/MANIFEST.json",
+      "git_blob": "270a10ea8148bea66e77bee4235b528d7d8f4ffc",
+      "sha256": "8ed5ca3bd0660f0921188ac06a75b95da84225751f5a452625d5ecbe7919e662"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/README.md",
+      "git_blob": "36113d0d778b65dcef613455500bf79bc782697e",
+      "sha256": "949706c4d5f65b15dcb2a71663c7fcc140abbe344a4c11eb239241d83cf8f1ec"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/REPORT.md",
+      "git_blob": "bf9da9569da52b1ee433ecea749da1a32be96d41",
+      "sha256": "1f37e462417f9ac03072526da45403536d6cb36c9ff7282e08bb4e6747fed9b2"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESPONSIBILITY-MATRIX.md",
+      "git_blob": "de14932e029d716442f5558b8535720c4ef199c5",
+      "sha256": "95234ac093bfdb418fa0fa95c7bfc1d486358fe0062562bcc393ec86dc23ecb2"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESULTS-optimized.json",
+      "git_blob": "0323121148cb451f90bdd7b77ed5c350342b241e",
+      "sha256": "087ae12768c08b3ab0af794b00130ea8a4a515f7fc7c2c4a51b84c00b9a5b2dc"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESULTS.json",
+      "git_blob": "331af6a95be614a5a4b95ae02e4d62b020cd92ba",
+      "sha256": "e66276d9651e63d496e8234b1ef0c5821ddd874c9ffd4af055735fc9f258df31"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/adapter.ts",
+      "git_blob": "a0962d03f0251c3f6fcb702ecf72f7b72b236848",
+      "sha256": "451d8e7adb16398db494256d4fd457a1156d86f5055460bd9246b15a035e448c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/core_loader.py",
+      "git_blob": "c9103864a566dcf88fdbf1e0dd357f5fadbd09e0",
+      "sha256": "629f3c547f67d5b64bcd611ca2a932bda2a86ed558fa8e09b1e695be1e77af06"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/fixtures/cases.json",
+      "git_blob": "827ce93358d1cb875832eb2ad57cc7c0053e38d6",
+      "sha256": "bc83d6306eee3962438376e9e73b9cbcf1c2ee723a1f3720afd18d8256191baf"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/numerical_bridge.py",
+      "git_blob": "a6b8411029f3fe794de6beda6cf4c1f13d4df61b",
+      "sha256": "cd7e8504765ac12bc025675f174e2ca2d3221d95c05ab679fd80aeac4e34c54c"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/test_core_boundary.py",
+      "git_blob": "6da82d730654a965d1ab2e2b8c5eb00bfa4b7cb1",
+      "sha256": "e6537fd47d5285c08efdc00bddc70ccbac14b4b5f0b03d2d8ad6307f29b9f6ed"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/tests.ts",
+      "git_blob": "a3f3ca79be7b2050787e5055a3eafad84f888bd2",
+      "sha256": "604b173aa927c17e7b2e9cc1f71e0982ab88179c682518e56bcda9e343534796"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/tsconfig.json",
+      "git_blob": "97c9aa6c12d4efefca05a2cecd0b6de260ff9c77",
+      "sha256": "a8f3d1fb26a22302ae690b156681d8c8e5cb31f13eb3f835c73adda547152802"
+    },
+    {
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/verify_packet.py",
+      "git_blob": "146f06774ba5877e292e72abbfb86a0d0bd4b99e",
+      "sha256": "f3cc482dad674c09608acecf84d98010faeb85fa949ce336f560c7cde28ba4b2"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/delivery.py",
+      "git_blob": "e02cdc4a63dd48e5fe7af3f438b47bc8f6c8e895",
+      "sha256": "4a67e20214d4c5d3e69950facf050b8623ec99b6868a4ade7c35b943e308ff6d"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/CANDIDATE-PROFILE.json",
+      "git_blob": "05b3f34743c8b7d4d7dafcaefb1098486db85bac",
+      "sha256": "a74e63a0584f4a3becce6a63f23a1b63beb496d422e657c56508c6702a01c5f8"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md",
+      "git_blob": "ebb7fe2bdc7acf3655ded9b87bd981a269bb14a0",
+      "sha256": "b6fd294c5a5fdd8ab8c267994e65366181217d29ce0446ebf8b4b84817c61934"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md",
+      "git_blob": "b02d07e2cc8de3c7d8543fa9acf0621cb5566f69",
+      "sha256": "87ea2a9b225405ff5b090b3dd2ba624ef7225a6aafd0d21672aa596446c5da7a"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/run_suite.py",
+      "git_blob": "b465265a9c874b99292d4ba6ad13bac1942443c6",
+      "sha256": "c5e276059935ecb0802758a1239d5c64ee132c634f82753d6cd6be98e293d40f"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/parent.py",
+      "git_blob": "97ccd810d86363beac9720509efc7eab94cd5aa4",
+      "sha256": "e47e4f979028aff4e555949670f5d8b072178037687230c5d86e80a760c1a934"
+    },
+    {
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/worker.py",
+      "git_blob": "0fc605621658a2c459ef5f0bbb47e62f645c6ac7",
+      "sha256": "dcc0aaf84a79b97f3207345041db30c5c4774ba680fc7829dbd767ee3e515674"
+    }
+  ]
+}
