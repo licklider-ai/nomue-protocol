@@ -1,0 +1,41 @@
+{
+  "scope": "T05 audit artifacts only; original reviews retain their exact earlier targets; self excluded",
+  "files": {
+    "CLAIM-REVIEW-MATRIX.md": {
+      "sha256": "fe653b62f2089de4e4522d9045456ae7314a3ed96e4f6b381af5f638638e60f6",
+      "bytes": 33554
+    },
+    "DECISION.md": {
+      "sha256": "3cf5c78e98b0ea3c6a8226f3980caaf7ddb5953e230c97b412b7004d33dca8ba",
+      "bytes": 1201
+    },
+    "INPUTS.json": {
+      "sha256": "b559fca30ba7047eb9feff9e9058cf6e4b06ef664a38c1d76434691527ec6c1b",
+      "bytes": 28199
+    },
+    "README.md": {
+      "sha256": "0219e4c076e91ad1d79ba8f6a545fae33ff1f9e29c0a1a1c93a67914a69fcf1c",
+      "bytes": 1005
+    },
+    "RECEIPTS.json": {
+      "sha256": "400e6245576b562e8d40ac149f07de16f8761b42a204ca717b3747969516c75e",
+      "bytes": 2867
+    },
+    "REPORT.md": {
+      "sha256": "a109574ec392010b8af38e2b9444a82919dca4ca2f03e11716a3aaaff6dc8aa1",
+      "bytes": 11521
+    },
+    "REVIEW-EVIDENCE.md": {
+      "sha256": "f2006a584d64f2561628b752667ffdcc47c201841d4e42a47a1d07afdff663a2",
+      "bytes": 25152
+    },
+    "VALIDATION.md": {
+      "sha256": "da4c7f9d699506bd74d46bda32b4a8c8df5911c19a26ae233af6d26994408b0f",
+      "bytes": 1336
+    },
+    "verify_inputs.py": {
+      "sha256": "5c5c69c29e99aa4458233da385871c11cd268d2e9eeea8459f0eb51b2371a0d6",
+      "bytes": 5533
+    }
+  }
+}
