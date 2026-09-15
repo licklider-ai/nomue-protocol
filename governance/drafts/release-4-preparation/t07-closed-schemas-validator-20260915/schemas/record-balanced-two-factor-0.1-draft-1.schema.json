@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1",
+  "title": "Balanced two-factor Record candidate",
+  "description": "UNISSUED CANDIDATE; NRS-CORE-0020/0021. Closed Record shape only; not supported bundle registration.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "record_type",
+    "record_id",
+    "revision_id",
+    "created_at",
+    "interpretation_bundle_id",
+    "profile_id",
+    "payload",
+    "integrity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1"
+    },
+    "record_type": {
+      "const": "nomue-record"
+    },
+    "record_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "revision_id": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+    },
+    "created_at": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ"
+    },
+    "interpretation_bundle_id": {
+      "const": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1"
+    },
+    "profile_id": {
+      "const": "https://nomue.ai/id/profile/balanced-two-factor/0.1.0-draft.1"
+    },
+    "payload": {
+      "$ref": "https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1"
+    },
+    "integrity": {
+      "$ref": "#/$defs/integrity"
+    }
+  },
+  "$defs": {
+    "integrity": {
+      "type": "object",
+      "required": ["canonicalization_id", "digest_algorithm", "digest_scope", "content_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "canonicalization_id": {
+          "const": "urn:nomue:canonicalization:jcs:0.2.0-draft.1"
+        },
+        "digest_algorithm": {
+          "const": "sha-256"
+        },
+        "digest_scope": {
+          "const": "record_without_integrity"
+        },
+        "content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        }
+      }
+    }
+  }
+}

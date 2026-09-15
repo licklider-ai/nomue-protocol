@@ -1,0 +1,107 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "hash_algorithm": "sha256",
+  "excludes": ["MANIFEST.json"],
+  "files": [
+    {
+      "path": "COVERAGE.json",
+      "sha256": "9539ff8f4392b14af511df66d0589131bbbcd3c7474ac59d54ea344cb65b17fb",
+      "bytes": 4949
+    },
+    {
+      "path": "fixtures/cases.json",
+      "sha256": "3c7dd9382c892fd6c128f828e455e0d7534a4dd00e2872ea5480350c90b1dbc3",
+      "bytes": 194131
+    },
+    {
+      "path": "fixtures/check-result.json",
+      "sha256": "dd5a969e4cfef9c828f5f348433b36869179428b4bfeafdc5742819a33d3d6eb",
+      "bytes": 258
+    },
+    {
+      "path": "fixtures/minimal-record.json",
+      "sha256": "10dac50c2e34ab413b91377aa38647911219131db7b341b64327e6c5754a728a",
+      "bytes": 4103
+    },
+    {
+      "path": "fixtures/quantity-evidence.json",
+      "sha256": "90ae5b7ece656c64716925bbed2ca187fa0f5a66cf3d9f88c1898ce24ad1421e",
+      "bytes": 4560
+    },
+    {
+      "path": "INPUTS.json",
+      "sha256": "d4a6b1a9431d965ae4be2dad31d22a695fa40626d223345f4780da0b67157f99",
+      "bytes": 8113
+    },
+    {
+      "path": "README.md",
+      "sha256": "a08eddbfd1c00f3ce3fb6f29474050b9afb3202f1f02549bfd52b58e87088f63",
+      "bytes": 2181
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "b952f3515dd7cf8907d77437435fd5e01545edae4e9e9622b2bcb4a7182206ea",
+      "bytes": 8591
+    },
+    {
+      "path": "RESPONSIBILITY-MATRIX.md",
+      "sha256": "71b3d8aa0935da7722be8cb8fce848d79d42dc031e2adfe361739f2a18f9ccd9",
+      "bytes": 3773
+    },
+    {
+      "path": "RESULTS-jitless.json",
+      "sha256": "9025320cc42821c0c3fc3b4ffb8908f612180b241b15ce6bab5a5f1f7e121499",
+      "bytes": 530
+    },
+    {
+      "path": "RESULTS.json",
+      "sha256": "28fac977bd5230ca2aec466fb06e405c7a5c9d116771b06d7daee45c7162367d",
+      "bytes": 530
+    },
+    {
+      "path": "SCHEMA-COVERAGE.md",
+      "sha256": "ba1db0a57f9043075d18df5de4676c5ad76742cd77c412ee5da2286156fa2e04",
+      "bytes": 6780
+    },
+    {
+      "path": "schemas/balanced-two-factor-0.1-draft-1.schema.json",
+      "sha256": "e42f3ef4de24516c89ba876d41500a30b6d437df5ae9293486f527184d2fa4fc",
+      "bytes": 6694
+    },
+    {
+      "path": "schemas/record-balanced-two-factor-0.1-draft-1.schema.json",
+      "sha256": "4e622fa9464e4bcc222ede1238ff9d20a7b6f576e90b07f3fd5cb0bf3803c6d9",
+      "bytes": 2080
+    },
+    {
+      "path": "schemas/verification-report-balanced-two-factor-0.1-draft-1.schema.json",
+      "sha256": "fc92db65a7c5625a23f0a35726efbce46b78f9e2555ed1038a51c5f113f1f6f0",
+      "bytes": 31097
+    },
+    {
+      "path": "tests.ts",
+      "sha256": "273204609e165f8d524cc0d82edbab131e1a5be894646ca4bd04d749654b2be7",
+      "bytes": 8962
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "a8f3d1fb26a22302ae690b156681d8c8e5cb31f13eb3f835c73adda547152802",
+      "bytes": 134
+    },
+    {
+      "path": "VALIDATION-RULES.md",
+      "sha256": "f1fd6093487080ef684dbeab016b4d5742074f4fef1a91838d2b451bbb505757",
+      "bytes": 7075
+    },
+    {
+      "path": "validator.ts",
+      "sha256": "45624dd8b37b5fab5ee4e40a270024797e0325c4e99d1f387200f782051214a6",
+      "bytes": 13942
+    },
+    {
+      "path": "verify_packet.py",
+      "sha256": "2033f3f325f219de60d8e9cae0bd7d9675e5bdffddf7ed13bb4c7626c9a599af",
+      "bytes": 5693
+    }
+  ]
+}

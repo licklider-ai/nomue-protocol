@@ -1,0 +1,247 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataset", "design", "analysis", "result"],
+  "properties": {
+    "dataset": {
+      "$ref": "#/$defs/dataset"
+    },
+    "design": {
+      "$ref": "#/$defs/design"
+    },
+    "analysis": {
+      "$ref": "#/$defs/analysis"
+    },
+    "result": {
+      "$ref": "#/$defs/result"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/profile-balanced-two-factor/0.1.0-draft.1",
+  "$comment": "UNISSUED CANDIDATE; T06 NRS-PROFILE-BTF-0003/0004 and NRS-CONTRACT-BTF-0001/0003. No registry entry or numerical evaluator.",
+  "$defs": {
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_id", "observations"],
+      "properties": {
+        "dataset_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/observation"
+          }
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observation_id", "experimental_unit_id", "cell_id", "outcome_value"],
+      "properties": {
+        "observation_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "experimental_unit_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "cell_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "outcome_value": {
+          "type": "number"
+        }
+      }
+    },
+    "design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design_id",
+        "dataset_id",
+        "factor_order",
+        "factors",
+        "cells",
+        "model_applicability_declared"
+      ],
+      "properties": {
+        "design_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "dataset_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "factor_order": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "factors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/factor"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cell"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "model_applicability_declared": {
+          "type": "boolean"
+        }
+      }
+    },
+    "factor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["factor_id", "level_order"],
+      "properties": {
+        "factor_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "level_order": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cell_id", "levels"],
+      "properties": {
+        "cell_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analysis_id", "design_id", "contract_id"],
+      "properties": {
+        "analysis_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "design_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "contract_id": {
+          "const": "https://nomue.ai/id/contract/balanced-two-factor/0.1.0-draft.1"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result_id",
+        "analysis_id",
+        "cell_summaries",
+        "residual_sum_of_squares",
+        "residual_degrees_of_freedom",
+        "contrasts"
+      ],
+      "properties": {
+        "result_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "analysis_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "cell_summaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cellSummary"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "residual_sum_of_squares": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "residual_degrees_of_freedom": {
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 9007199254740984
+        },
+        "contrasts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contrast"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "cellSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cell_id", "n", "mean"],
+      "properties": {
+        "cell_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 2251799813685247
+        },
+        "mean": {
+          "type": "number"
+        }
+      }
+    },
+    "contrast": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "signed_estimate", "sum_of_squares", "f_statistic", "p_value"],
+      "properties": {
+        "kind": {
+          "enum": ["A", "B", "AB"]
+        },
+        "signed_estimate": {
+          "type": "number"
+        },
+        "sum_of_squares": {
+          "type": "number",
+          "minimum": 0
+        },
+        "f_statistic": {
+          "type": "number",
+          "minimum": 0
+        },
+        "p_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

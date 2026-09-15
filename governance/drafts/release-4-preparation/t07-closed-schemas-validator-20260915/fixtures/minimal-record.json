@@ -1,0 +1,160 @@
+{
+  "$schema": "https://nomue.ai/id/schema/record-balanced-two-factor/0.1.0-draft.1",
+  "record_type": "nomue-record",
+  "record_id": "urn:example:record-1",
+  "revision_id": "urn:example:revision-1",
+  "created_at": "2026-09-15T00:00:00Z",
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1",
+  "profile_id": "https://nomue.ai/id/profile/balanced-two-factor/0.1.0-draft.1",
+  "integrity": {
+    "canonicalization_id": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "digest_algorithm": "sha-256",
+    "digest_scope": "record_without_integrity",
+    "content_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "payload": {
+    "dataset": {
+      "dataset_id": "data-1",
+      "observations": [
+        {
+          "observation_id": "o-0-0",
+          "experimental_unit_id": "u-0-0",
+          "cell_id": "cell-0",
+          "outcome_value": 0
+        },
+        {
+          "observation_id": "o-0-1",
+          "experimental_unit_id": "u-0-1",
+          "cell_id": "cell-0",
+          "outcome_value": 1
+        },
+        {
+          "observation_id": "o-1-0",
+          "experimental_unit_id": "u-1-0",
+          "cell_id": "cell-1",
+          "outcome_value": 0
+        },
+        {
+          "observation_id": "o-1-1",
+          "experimental_unit_id": "u-1-1",
+          "cell_id": "cell-1",
+          "outcome_value": 1
+        },
+        {
+          "observation_id": "o-2-0",
+          "experimental_unit_id": "u-2-0",
+          "cell_id": "cell-2",
+          "outcome_value": 0
+        },
+        {
+          "observation_id": "o-2-1",
+          "experimental_unit_id": "u-2-1",
+          "cell_id": "cell-2",
+          "outcome_value": 1
+        },
+        {
+          "observation_id": "o-3-0",
+          "experimental_unit_id": "u-3-0",
+          "cell_id": "cell-3",
+          "outcome_value": 0
+        },
+        {
+          "observation_id": "o-3-1",
+          "experimental_unit_id": "u-3-1",
+          "cell_id": "cell-3",
+          "outcome_value": 1
+        }
+      ]
+    },
+    "design": {
+      "design_id": "design-1",
+      "dataset_id": "data-1",
+      "factor_order": ["factor-A", "factor-B"],
+      "factors": [
+        {
+          "factor_id": "factor-A",
+          "level_order": ["low", "high"]
+        },
+        {
+          "factor_id": "factor-B",
+          "level_order": ["low", "high"]
+        }
+      ],
+      "cells": [
+        {
+          "cell_id": "cell-0",
+          "levels": ["low", "low"]
+        },
+        {
+          "cell_id": "cell-1",
+          "levels": ["low", "high"]
+        },
+        {
+          "cell_id": "cell-2",
+          "levels": ["high", "low"]
+        },
+        {
+          "cell_id": "cell-3",
+          "levels": ["high", "high"]
+        }
+      ],
+      "model_applicability_declared": true
+    },
+    "analysis": {
+      "analysis_id": "analysis-1",
+      "design_id": "design-1",
+      "contract_id": "https://nomue.ai/id/contract/balanced-two-factor/0.1.0-draft.1"
+    },
+    "result": {
+      "result_id": "result-1",
+      "analysis_id": "analysis-1",
+      "cell_summaries": [
+        {
+          "cell_id": "cell-0",
+          "n": 2,
+          "mean": 0
+        },
+        {
+          "cell_id": "cell-1",
+          "n": 2,
+          "mean": 0
+        },
+        {
+          "cell_id": "cell-2",
+          "n": 2,
+          "mean": 0
+        },
+        {
+          "cell_id": "cell-3",
+          "n": 2,
+          "mean": 0
+        }
+      ],
+      "residual_sum_of_squares": 1,
+      "residual_degrees_of_freedom": 4,
+      "contrasts": [
+        {
+          "kind": "A",
+          "signed_estimate": 0,
+          "sum_of_squares": 0,
+          "f_statistic": 0,
+          "p_value": 0.5
+        },
+        {
+          "kind": "B",
+          "signed_estimate": 0,
+          "sum_of_squares": 0,
+          "f_statistic": 0,
+          "p_value": 0.5
+        },
+        {
+          "kind": "AB",
+          "signed_estimate": 0,
+          "sum_of_squares": 0,
+          "f_statistic": 0,
+          "p_value": 0.5
+        }
+      ]
+    }
+  }
+}

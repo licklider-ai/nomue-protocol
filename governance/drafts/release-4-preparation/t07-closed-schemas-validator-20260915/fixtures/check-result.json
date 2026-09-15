@@ -1,0 +1,11 @@
+{
+  "check_id": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1",
+  "check_version": "0.1.0-draft.1",
+  "execution": "completed",
+  "outcome": "pass",
+  "reason_codes": [],
+  "scope": {
+    "kind": "result",
+    "id": "result-1"
+  }
+}

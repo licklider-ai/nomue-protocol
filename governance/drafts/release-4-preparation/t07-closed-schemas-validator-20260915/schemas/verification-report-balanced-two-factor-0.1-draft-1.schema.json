@@ -1,0 +1,1145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1",
+  "$comment": "UNISSUED CANDIDATE; NRS-VERIFY-0029/0031/0032 and NRS-CORE-0022. Definitions-only T07 boundary. Root intentionally rejects: full report assembly/CLI/eligibility mapping is T09. Select an explicit $defs entry.",
+  "not": {},
+  "$defs": {
+    "scope": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": {
+            "kind": {
+              "const": "record_revision"
+            },
+            "id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": {
+            "kind": {
+              "const": "result"
+            },
+            "id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+            }
+          }
+        }
+      ]
+    },
+    "errorObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["error_type", "message"],
+      "properties": {
+        "error_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        }
+      }
+    },
+    "quantityResult": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "cell_id"],
+          "properties": {
+            "quantity": {
+              "const": "n"
+            },
+            "declared": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 2251799813685247
+            },
+            "recomputed": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 2251799813685247
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "cell_id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "cell_id"],
+          "properties": {
+            "quantity": {
+              "const": "mean"
+            },
+            "declared": {
+              "type": "number"
+            },
+            "recomputed": {
+              "type": "number"
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "cell_id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "contrast_kind"],
+          "properties": {
+            "quantity": {
+              "const": "signed_estimate"
+            },
+            "declared": {
+              "type": "number"
+            },
+            "recomputed": {
+              "type": "number"
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "contrast_kind": {
+              "enum": ["A", "B", "AB"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "contrast_kind"],
+          "properties": {
+            "quantity": {
+              "const": "sum_of_squares"
+            },
+            "declared": {
+              "type": "number",
+              "minimum": 0
+            },
+            "recomputed": {
+              "type": "number",
+              "minimum": 0
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "contrast_kind": {
+              "enum": ["A", "B", "AB"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes"],
+          "properties": {
+            "quantity": {
+              "const": "residual_sum_of_squares"
+            },
+            "declared": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "recomputed": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes"],
+          "properties": {
+            "quantity": {
+              "const": "residual_degrees_of_freedom"
+            },
+            "declared": {
+              "type": "integer",
+              "minimum": 4,
+              "maximum": 9007199254740984
+            },
+            "recomputed": {
+              "type": "integer",
+              "minimum": 4,
+              "maximum": 9007199254740984
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "contrast_kind"],
+          "properties": {
+            "quantity": {
+              "const": "f_statistic"
+            },
+            "declared": {
+              "type": "number",
+              "minimum": 0
+            },
+            "recomputed": {
+              "type": "number",
+              "minimum": 0
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "contrast_kind": {
+              "enum": ["A", "B", "AB"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quantity", "declared", "outcome", "reason_codes", "contrast_kind"],
+          "properties": {
+            "quantity": {
+              "const": "p_value"
+            },
+            "declared": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recomputed": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "outcome": {
+              "enum": ["pass", "fail", "indeterminate"]
+            },
+            "reason_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+              },
+              "uniqueItems": true
+            },
+            "projection_state": {
+              "enum": ["exact_zero", "nonzero_rounded_to_zero"]
+            },
+            "contrast_kind": {
+              "enum": ["A", "B", "AB"]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "pass"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "required": ["recomputed"]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "const": "indeterminate"
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "not": {
+                  "required": ["recomputed"]
+                }
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "outcome": {
+                    "enum": ["fail", "indeterminate"]
+                  }
+                },
+                "required": ["outcome"]
+              },
+              "then": {
+                "properties": {
+                  "reason_codes": {
+                    "minItems": 1
+                  }
+                }
+              }
+            },
+            {
+              "if": {
+                "required": ["recomputed"],
+                "properties": {
+                  "recomputed": {
+                    "const": 0
+                  }
+                }
+              },
+              "then": {
+                "required": ["projection_state"]
+              },
+              "else": {
+                "not": {
+                  "required": ["projection_state"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "checkResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "check_version", "execution", "scope", "reason_codes"],
+      "properties": {
+        "check_id": {
+          "enum": [
+            "https://nomue.ai/id/check/balanced-two-factor-record-conformance/0.1.0-draft.1",
+            "https://nomue.ai/id/check/balanced-two-factor-record-integrity/0.1.0-draft.1",
+            "https://nomue.ai/id/check/balanced-two-factor-profile-admissibility/0.1.0-draft.1",
+            "https://nomue.ai/id/check/balanced-two-factor-computability/0.1.0-draft.1",
+            "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1"
+          ]
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "execution": {
+          "enum": ["completed", "not_run", "error"]
+        },
+        "outcome": {
+          "enum": ["pass", "fail", "indeterminate"]
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+          },
+          "uniqueItems": true
+        },
+        "error": {
+          "$ref": "#/$defs/errorObject"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution": {
+                "const": "completed"
+              }
+            }
+          },
+          "then": {
+            "required": ["outcome"],
+            "not": {
+              "required": ["error"]
+            }
+          },
+          "else": {
+            "not": {
+              "required": ["outcome"]
+            },
+            "properties": {
+              "reason_codes": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": ["error"]
+          },
+          "else": {
+            "not": {
+              "required": ["error"]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution": {
+                "const": "completed"
+              },
+              "outcome": {
+                "enum": ["fail", "indeterminate"]
+              }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "reason_codes": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "check_id": {
+                "const": "https://nomue.ai/id/check/balanced-two-factor-profile-admissibility/0.1.0-draft.1"
+              },
+              "execution": {
+                "const": "completed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "outcome": {
+                "enum": ["pass", "fail"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "check_id": {
+                "enum": [
+                  "https://nomue.ai/id/check/balanced-two-factor-record-conformance/0.1.0-draft.1",
+                  "https://nomue.ai/id/check/balanced-two-factor-record-integrity/0.1.0-draft.1",
+                  "https://nomue.ai/id/check/balanced-two-factor-profile-admissibility/0.1.0-draft.1"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "properties": {
+                  "kind": {
+                    "const": "record_revision"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "check_id": {
+                "enum": [
+                  "https://nomue.ai/id/check/balanced-two-factor-computability/0.1.0-draft.1",
+                  "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1"
+                ]
+              },
+              "execution": {
+                "enum": ["completed", "error"]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scope": {
+                "properties": {
+                  "kind": {
+                    "const": "result"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quantityEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_reference",
+        "interpretation_bundle_id",
+        "check_id",
+        "check_version",
+        "scope",
+        "quantity_results"
+      ],
+      "properties": {
+        "record_reference": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["record_id", "revision_id"],
+          "properties": {
+            "record_id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+            },
+            "revision_id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+            }
+          }
+        },
+        "interpretation_bundle_id": {
+          "const": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1"
+        },
+        "check_id": {
+          "const": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": {
+            "kind": {
+              "const": "result"
+            },
+            "id": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+            }
+          }
+        },
+        "quantity_results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantityResult"
+          },
+          "minItems": 22,
+          "maxItems": 22
+        }
+      }
+    },
+    "guaranteeBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_validity",
+        "declaration_truth",
+        "distributional_model_validity",
+        "causal_interpretation",
+        "standardized_effect_size",
+        "multiplicity_control",
+        "post_quantization_calibration",
+        "admission_conditional_calibration"
+      ],
+      "properties": {
+        "scientific_validity": {
+          "const": "not_asserted"
+        },
+        "declaration_truth": {
+          "const": "not_asserted"
+        },
+        "distributional_model_validity": {
+          "const": "not_asserted"
+        },
+        "causal_interpretation": {
+          "const": "not_asserted"
+        },
+        "standardized_effect_size": {
+          "const": "not_asserted"
+        },
+        "multiplicity_control": {
+          "const": "not_asserted"
+        },
+        "post_quantization_calibration": {
+          "const": "not_asserted"
+        },
+        "admission_conditional_calibration": {
+          "const": "not_asserted"
+        }
+      }
+    },
+    "violation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "reason_code", "path"],
+      "properties": {
+        "stage": {
+          "enum": ["structural", "semantic"]
+        },
+        "reason_code": {
+          "type": "string",
+          "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+        }
+      }
+    },
+    "profileEligibility": {
+      "enum": ["eligible", "ineligible", "not_evaluated"]
+    }
+  }
+}
