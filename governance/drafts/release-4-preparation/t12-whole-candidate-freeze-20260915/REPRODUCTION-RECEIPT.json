@@ -1,0 +1,148 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "result": "PASS",
+  "recorded_utc": "2026-09-15T08:48:36.4475652Z",
+  "branch": "research/r4-t12-candidate-freeze-20260915",
+  "candidate_source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+  "freeze_commit_binding": "containing Git commit",
+  "environment": {
+    "os": "Microsoft Windows 10.0.26200",
+    "architecture": "X64",
+    "node": "v24.14.0",
+    "pnpm": "11.19.0",
+    "python": "3.12.10"
+  },
+  "freeze_manifest": {
+    "path": "governance/drafts/release-4-preparation/t12-whole-candidate-freeze-20260915/FREEZE-MANIFEST.json",
+    "sha256": "f43cd0d1b3ba0042425139e77975199ba24a0e1db96aa65d18bf8bf997bfe3fb",
+    "bytes": 30994,
+    "hash_semantics": "UTF-8 text with CRLF normalized to LF"
+  },
+  "verification": [
+    {
+      "name": "t12-deep-freeze-check",
+      "command": "python -B governance/drafts/release-4-preparation/t12-whole-candidate-freeze-20260915/verify_freeze.py --deep",
+      "result": "PASS",
+      "inventory_items": 46,
+      "package_files": 4,
+      "chronology_commits": 24,
+      "protected_trees": 10
+    },
+    {
+      "name": "t07-structural-smoke",
+      "command": "tsx governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tests.ts",
+      "result": "PASS",
+      "assertions": 912
+    },
+    {
+      "name": "t08-adapter-smoke",
+      "command": "tsx governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/tests.ts",
+      "result": "PASS",
+      "assertions": 344,
+      "python_optimize": 0
+    },
+    {
+      "name": "t08-core-boundary-smoke",
+      "command": "python -B governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/test_core_boundary.py",
+      "result": "PASS",
+      "controls": 7
+    },
+    {
+      "name": "t09-canonicalization-focused",
+      "command": "tsx governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/focused.ts",
+      "result": "PASS",
+      "controls": 9
+    },
+    {
+      "name": "t09-lifecycle-normal",
+      "command": "tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts",
+      "result": "PASS",
+      "assertions": 263,
+      "python_optimize": 0
+    },
+    {
+      "name": "t09-lifecycle-optimized",
+      "command": "tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts --optimized",
+      "result": "PASS",
+      "assertions": 263,
+      "python_optimize": 1
+    },
+    {
+      "name": "f01-normal",
+      "command": "python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "result": "PASS",
+      "controls": 10,
+      "python_optimize": 0
+    },
+    {
+      "name": "f01-optimized",
+      "command": "python -O -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "result": "PASS",
+      "controls": 10,
+      "python_optimize": 1
+    },
+    {
+      "name": "validate",
+      "command": "pnpm validate",
+      "result": "PASS"
+    },
+    {
+      "name": "typecheck",
+      "command": "pnpm typecheck",
+      "result": "PASS"
+    },
+    {
+      "name": "markdown",
+      "command": "pnpm lint:markdown",
+      "result": "PASS",
+      "files": 652,
+      "issues": 0
+    },
+    {
+      "name": "format",
+      "command": "pnpm format:check",
+      "result": "PASS"
+    },
+    {
+      "name": "generated",
+      "command": "pnpm check:generated",
+      "result": "PASS",
+      "generated_files": 19
+    },
+    {
+      "name": "diff-check",
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "historical_checker_scope": [
+    {
+      "task": "T09",
+      "checker_commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "reason": "The historical packet checker requires the original report.ts; current behavior includes the separately frozen C repair."
+    },
+    {
+      "task": "T10",
+      "checker_commit": "db2efb3e301ba66797c1093f914b2466326e2d81",
+      "reason": "The final T10 checker intentionally rejects later T11/T12 additions when run outside its exact stage checkout."
+    }
+  ],
+  "reused_linux_evidence": [
+    {
+      "task": "T10",
+      "run_id": 34939107292,
+      "source_commit": "98052127e51efbed12580077c3a6e4e002af3a11",
+      "result": "PASS"
+    },
+    {
+      "task": "T11",
+      "run_id": 34944226774,
+      "source_commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+      "result": "PASS"
+    }
+  ],
+  "new_numerical_truth_generated": false,
+  "new_semantics_introduced": false,
+  "formal_surfaces_changed": false,
+  "release_4_issued": false
+}
