@@ -1,0 +1,43 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "measured_commit": "b7627d53c53e22fe998f7f7e8f86f714ca877620",
+  "run_id": 34934534883,
+  "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34934534883",
+  "conclusion": "success",
+  "downloaded_sha256": {
+    "nomue-t09-results/HOST.json": "c52b04ec582880060850fc81f2b40db65a0888760a7bf1d8a912fac9b786f39c",
+    "nomue-t09-results/RUNS.jsonl": "5aa85268cf17847d66061a7c9e7b629b07c2cbdec712787dee4c2a3fee00d207",
+    "nomue-t09-results/SUMMARY.json": "531579bac70c7239738b355b70e04db1f3f818478e22ee4c511bdb91e47eed68",
+    "nomue-t09-stage/SOURCE-MANIFEST.json": "19226aedce8c6a1ce4a9920e6585d6946f33687f08e15b1157f38cc0af57f9fb"
+  },
+  "normal_report_assertions": 263,
+  "optimized_report_assertions": 263,
+  "f01_controls_per_mode": 10,
+  "linux_invocations": 52,
+  "mode_pairs": 16,
+  "closed_delivery_recheck": {
+    "completed_reports": 32,
+    "refusals": 20,
+    "result": "PASS"
+  },
+  "attempts": [
+    {
+      "commit": "b1fba49e30dc42125afb11982b39f294d48640e2",
+      "run_id": 34934048191,
+      "result": "FAIL",
+      "finding": "Fixed supervisor materialization did not preserve original relative path depth; canary safely refused and cleaned up."
+    },
+    {
+      "commit": "0aa94afbacee7e13e0923c62d7739b591d536071",
+      "run_id": 34934272409,
+      "result": "PASS",
+      "scope": "Earlier integration; superseded by explicit internal-refusal latch and cause-specific assertions."
+    },
+    {
+      "commit": "b7627d53c53e22fe998f7f7e8f86f714ca877620",
+      "run_id": 34934534883,
+      "result": "PASS",
+      "scope": "Final runtime source; 52 invocations including cause-specific assertions and inner-refusal propagation."
+    }
+  ]
+}

@@ -15,6 +15,10 @@
       "sha256": "094fe0699dfbf7da97749e631a9cfd2e614ae3499be4cd7ef0cbf29b9251c635"
     },
     {
+      "path": "CAPTURE.json",
+      "sha256": "ec8f947d7875746e6538ac2a9bad07aec644f2e3c9ec10ec6dc21c476d427d8d"
+    },
+    {
       "path": "Dockerfile",
       "sha256": "a9fa9c3ec97161039211e9df0e7c58a6ab7392702764a06ee7b5f4c569808b1f"
     },
@@ -55,6 +59,26 @@
       "sha256": "9373946a8551e691edc2f5ed13ed9321ed979fa20e693a28e51888ea6f765880"
     },
     {
+      "path": "measurements/nomue-t09-results/HOST.json",
+      "sha256": "ab230c9ff553328b35857f022cd33228b5b2805ff89ee6dedf18a390eaf08052"
+    },
+    {
+      "path": "measurements/nomue-t09-results/RUNS.jsonl",
+      "sha256": "5aa85268cf17847d66061a7c9e7b629b07c2cbdec712787dee4c2a3fee00d207"
+    },
+    {
+      "path": "measurements/nomue-t09-results/SUMMARY.json",
+      "sha256": "acb2ec0de632cecc7ca03e6987597169d0459e7c057d48d7c0ea9a577af44028"
+    },
+    {
+      "path": "measurements/nomue-t09-stage/SOURCE-MANIFEST.json",
+      "sha256": "19226aedce8c6a1ce4a9920e6585d6946f33687f08e15b1157f38cc0af57f9fb"
+    },
+    {
+      "path": "MEASUREMENTS.md",
+      "sha256": "3579ce5492caa522a13aba81b9adcd8014a032902ec2d316d9d96c5812cf1ffb"
+    },
+    {
       "path": "prepare.py",
       "sha256": "5901e94893aeeae85fa338b3035c9034f2026bc502edac1adf01d975f5a9e9a7"
     },
@@ -64,7 +88,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "43a54dfcae318af9201aa4602a7b86741f758d9e67dfb3c26a8a97aa35f4d1f4"
+      "sha256": "3fce23cbfd97153fe87f5f9f7fbcd879a7c9ccfa6f1cbb152681818978340850"
     },
     {
       "path": "REASONS.json",
@@ -80,7 +104,7 @@
     },
     {
       "path": "REPORT.md",
-      "sha256": "9eb7fc4b4522827726be0ec86439ef60df5d7b4f62fde36fb6865fea9a81ec5b"
+      "sha256": "be95ed85fb89a5b10ea5eb7dca6ceb8c4a93402dc50b57dacb2492a16c25ad85"
     },
     {
       "path": "report.schema.json",
@@ -119,8 +143,12 @@
       "sha256": "7af66249133c6d040dc58a357830296823277446d4044cf0d04dd43475b2e9be"
     },
     {
+      "path": "verify_measurements.ts",
+      "sha256": "e39caa94acfeb7e96e7d482cc14505156fc783bd84a063aa506cda7b7453e49d"
+    },
+    {
       "path": "verify_packet.py",
-      "sha256": "a47ef95a8b915bd771cd58af831701bad1297fb3d79552390d7857554a71d02a"
+      "sha256": "d811fbe937758c1d99a8bd9c6569e7b04888d969842944cb23cbc692357f8abc"
     },
     {
       "path": "worker.py",

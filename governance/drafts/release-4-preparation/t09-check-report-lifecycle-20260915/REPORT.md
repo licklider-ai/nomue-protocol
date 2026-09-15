@@ -1,6 +1,7 @@
 # T09 assessment
 
-Status: **UNISSUED CANDIDATE**. Linux integrated validation pending in this snapshot.
+Status: **UNISSUED CANDIDATE**. T09 CHECK / REASON / REPORT / LIFECYCLE — GO.
+T09 COMPLETE applies only to this research candidate, not production or issuance.
 
 ## Fixed scope
 
@@ -45,3 +46,20 @@ T09 workflow; Windows report/control tests are supplemental only.
 Prepared by the task's Codex assistant from public sources. Existing independent
 T02/T04/T07/T08 dispositions are reused within unchanged scope. This is integration
 author evidence, not a new independent review or Release 4 approval.
+
+## Final validation and gaps
+
+[Linux evidence](MEASUREMENTS.md) records the exact measured source commit, 52 successful
+integrated invocations, 16 mode pairs, actual resource/cleanup observations and 52 closed
+contextual delivery rechecks. Report tests passed 263 assertions in each mode; ten F-01
+controls per mode retain refusal after a fresh late report and successful cleanup.
+TypeScript, repository validation, Markdown lint, formatting, diff and manifest checks pass.
+
+Representation and lifecycle integration gaps are resolved. No material scientific,
+numerical, public-admission or reason-precedence decision was added. Full production
+routing, supported publication and later maturity tasks remain out of scope. The finite
+corpus does not establish completion for all public-domain members or a real-time SLA.
+
+The measured runtime source remains unchanged in the final evidence packet. All fixed
+T07/T08/T04 sources and current-main artifacts retain their original bytes. Main, PR #331,
+formal authorities and the runtime eleven are not written. T10 and later tasks are not started.

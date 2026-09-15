@@ -22,6 +22,14 @@ subprocess.run(['python','-B',str(HERE.parent/'t08-limited-numerical-adapter-202
 n=read(HERE/'RESULTS.json');o=read(HERE/'RESULTS-optimized.json');require(n['result']==o['result']=='PASS' and n['mode']==0 and o['mode']==1,'mode results');require(n['fixtures']==o['fixtures'] and n['assertions']==o['assertions'],'semantic mode agreement')
 for f in ['F01-CONTROLS.json','F01-CONTROLS-optimized.json']:
     r=read(HERE/f);require(r['result']=='PASS' and len(r['controls'])==10 and all(z['latched'] and z['no_completed_result'] for z in r['controls']),'F01 controls')
+capture=read(HERE/'CAPTURE.json');source=read(HERE/'measurements/nomue-t09-stage/SOURCE-MANIFEST.json')
+require(source['source_commit']==capture['measured_commit'],'measured commit')
+for name in ['app.ts','report.ts','worker.py','supervise.py','fixed.py','invoke.py','prepare.py','bundle.mjs','report.schema.json','invocation.schema.json','REASONS.json','PROFILE.json','INPUTS.json','tests.ts','test_f01.py','linux_tests.py']:
+    rel=(HERE/name).relative_to(ROOT).as_posix()
+    require(sha((HERE/name).read_bytes().replace(b'\r\n',b'\n'))==source['files'][rel],'measured runtime unchanged: '+name)
+summary=read(HERE/'measurements/nomue-t09-results/SUMMARY.json')
+require(summary['result']=='PASS' and summary['passed']==summary['runs']==52 and summary['mode_pairs']==16,'Linux summary')
+require(sha((HERE/'measurements/nomue-t09-results/RUNS.jsonl').read_bytes())==capture['downloaded_sha256']['nomue-t09-results/RUNS.jsonl'],'raw captured runs')
 m=read(HERE/'MANIFEST.json');files={p.relative_to(HERE).as_posix():p for p in HERE.rglob('*') if p.is_file() and p.name!='MANIFEST.json'}
 require(set(files)=={e['path'] for e in m['files']},'manifest complete')
 for e in m['files']:require(sha(files[e['path']].read_bytes().replace(b'\r\n',b'\n'))==e['sha256'],'hash '+e['path'])

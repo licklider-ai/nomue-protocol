@@ -11,6 +11,7 @@ check/report -> fixed T04 failure latch -> cleanup-gated bounded delivery.
 - [Application](app.ts), [supervisor wrapper](supervise.py), [worker wrapper](worker.py)
 - [Linux invocation](invoke.py), [image preparation](prepare.py), [Linux suite](linux_tests.py)
 - [Report tests](tests.ts), [failure latch controls](test_f01.py)
+- [Linux evidence](MEASUREMENTS.md), [capture](CAPTURE.json), [artifact manifest](MANIFEST.json)
 - [Input pins](INPUTS.json), [Medium profile](PROFILE.json), [packet checker](verify_packet.py)
 
 ## Reproduce
@@ -23,6 +24,8 @@ pnpm exec tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle
 pnpm exec tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts --optimized
 python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py
 python -O -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py
+pnpm exec tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/verify_measurements.ts
+python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/verify_packet.py
 pnpm exec tsc -p governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tsconfig.json
 ```
 
