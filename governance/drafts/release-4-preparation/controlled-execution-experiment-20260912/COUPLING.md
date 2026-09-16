@@ -3,15 +3,31 @@
 The new entry takes trusted in-memory cells and revision; it is not a Record
 verifier. This boundary is intentional and leaves the following concrete joins.
 
+## T03 disposition of these joins (2026-09-14)
+
+The [T03 decision record](../t03-candidate-numerical-policy-decision-20260914.md)
+fixes the candidate choices for later integration. D05=A follows the current
+closed RFC payload: the producer declares p_value and verifier/check-owned
+evidence supplies the numerical justification. The earlier optional/required
+carrier question does not authorize a new mandatory producer interval.
+D06 remains outside this public candidate; both acceptance alternatives stay
+undecided for any future optional evidence proposal.
+
+D07=A requires sound candidate-set decisions, same-check fail precedence,
+honest unresolved evidence and a nonzero CLI indeterminate bucket. This document
+records downstream joins only; authoritative CLI/report contracts and runtime
+implementations are unchanged. The original coupling input is preserved at
+`2732a26fd61d4e726fbd95b4d7622574cfcd9d82`.
+
 | Join                   | Required work                                                                             | Acceptance control                                                                     |
 | ---------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Raw ingress            | Existing parseStrictJson before Record interpretation; bounded byte/depth ingress         | Duplicate keys, unpaired surrogates, malformed UTF-8/JSON and over-cap input           |
 | Design identity        | Exact factor/level/cell/unit identity and independent expected context                    | Reordered labels, duplicated units, wrong design, missing references                   |
 | Envelope and integrity | Schema/bundle/instance revision binding plus JCS digest                                   | Wrong bundle, tamper, changed observation, identity mismatch                           |
 | Semantics              | Separate conformance from design admissibility and verification                           | Broken local reference does not collapse judgments into one overall status             |
-| Arithmetic results     | Bind all 13 submitted quantities and df to expected input                                 | Final quantity mutation suppresses its claimed consistency; no partial overall success |
-| Probability evidence   | Explicit optional/required carrier decision, source scope, exact containment policy       | False singleton, tighter valid interval, widened interval, zero encoding               |
-| Execution report       | Map worker failures and unavailable observations to the owned output vocabulary           | Cancellation, before-input failure, no invented observed size, cleanup failure         |
+| Arithmetic results     | Bind all 13 real quantities, four means, four counts and residual df to expected input    | Final quantity mutation suppresses its claimed consistency; no partial overall success |
+| Probability evidence   | D05: verifier/check-owned evidence; no required producer interval; D06 deferred           | No public underflow match; sound projection evidence; consumer experiments retained    |
+| Execution report       | D07 scoped decisions and aggregation; later CLI/report contract coupling                  | Cancellation, before-input failure, no invented observed size, cleanup failure         |
 | Authority allocation   | Coordinated Contract/Profile, requirements, schemas, checks, reasons, bundle and fixtures | Complete ownership map; no unregistered permanent identifiers                          |
 
 The in-memory `revision` and numeric digest are experimental bindings, not a

@@ -12,6 +12,28 @@ claims, unequal/missing cells, repeated/clustered units, random factors and wide
 factorial designs remain excluded. Probability enclosures here are numerical
 error carriers, not confidence intervals for effects.
 
+## T03 candidate follow-up (2026-09-14)
+
+The [T03 decision record](../t03-candidate-numerical-policy-decision-20260914.md)
+selects the later public-candidate policy. The tables and execution order below
+describe this experiment; they are not an implemented public comparison contract.
+Their pre-T03 form is preserved at PR #331 input
+`2732a26fd61d4e726fbd95b4d7622574cfcd9d82`.
+
+In particular, retaining a positive tail's zero encoding and enclosure is internal
+experimental evidence only. It does not permit a public declared p=0 comparison
+pass. Internal complete output is not a complete matching public BTF result in
+that case. Positive subnormal p is assessed under R4's own projection contract,
+without importing R2's normal-only policy.
+
+D01 selects correctly rounded public-value equality without empirical tolerance;
+D02 distinguishes arithmetic rounded zero, with SSE handled as a separate
+representation/computability refusal. D04 retains the conservative finite boundary
+as a project convention. D05 adds no required producer interval; D06's acceptance
+alternatives stay outside the public candidate. D07 selects sound-set comparison
+and scoped aggregation, with CLI/report changes deferred to later integration.
+The current runtime is unchanged and does not implement those public judgments.
+
 ## Complete output inventory
 
 | Quantity                 | Count   | Meaning / rule                                                                                        |
