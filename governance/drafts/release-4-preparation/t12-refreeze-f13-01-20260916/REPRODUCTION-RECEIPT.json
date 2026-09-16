@@ -1,0 +1,98 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "result": "PASS",
+  "recorded_utc": "2026-09-16T07:46:06.781254Z",
+  "branch": "research/r4-t12-refreeze-f13-01-20260916",
+  "candidate_source_commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
+  "freeze_commit_binding": "containing Git commit",
+  "original_t12_frozen_target": "752a3ef876f27595cca31c4a106e70ffc7bd04df",
+  "f13_01_repair_commits": [
+    "84627967352206e9d1ecc54c5ca6a735319d9785",
+    "e449956c705133445d947187c14efa82e5590032",
+    "12bf1b767963fbfc5382ba9734d595f6da428832"
+  ],
+  "freeze_manifest": {
+    "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/FREEZE-MANIFEST.json",
+    "sha256": "38ce675426a87d7a0ad2e2345294f07832d8ab367b8aa243ab768b1b69a6c9cb",
+    "bytes": 37015,
+    "hash_semantics": "UTF-8 text with CRLF normalized to LF"
+  },
+  "verification": [
+    {
+      "name": "f13-01-repair-binding",
+      "command": "python -B governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/verify_repair.py",
+      "result": "PASS"
+    },
+    {
+      "name": "t06-candidate",
+      "command": "python -B governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/verify_candidate.py",
+      "result": "PASS"
+    },
+    {
+      "name": "t07-packet",
+      "command": "python -B governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/verify_packet.py",
+      "result": "PASS"
+    },
+    {
+      "name": "t08-packet",
+      "command": "python -B governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/verify_packet.py",
+      "result": "PASS"
+    },
+    {
+      "name": "t10-original-corpus",
+      "command": "python -B governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/check_corpus.py",
+      "result": "PASS"
+    },
+    {
+      "name": "t10-corrected-revision",
+      "command": "python -B governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/check_revision.py",
+      "result": "PASS"
+    },
+    {
+      "name": "f01-normal",
+      "command": "python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "result": "PASS",
+      "controls": 10,
+      "f13_01": "PASS",
+      "python_optimize": 0
+    },
+    {
+      "name": "f01-optimized",
+      "command": "python -O -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "result": "PASS",
+      "controls": 10,
+      "f13_01": "PASS",
+      "python_optimize": 1
+    },
+    {
+      "name": "diff-check",
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "reused_evidence": [
+    {
+      "name": "f13-linux-t09",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "run_id": 34953342130,
+      "result": "PASS",
+      "coverage": "54 integrated cases; invalid UTF-8 normal and optimized; F-01/resource/cleanup neighbors"
+    },
+    {
+      "name": "f13-linux-t11",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "run_id": 34953329312,
+      "result": "PASS",
+      "coverage": "pnpm check, generated, Phase 1, Phase 2A, supported 0.2.1, T09 and F-01"
+    },
+    {
+      "name": "f13-windows",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "result": "PASS_WITH_CLASSIFIED_PLATFORM_TEST_FAILURES",
+      "coverage": "517 unit passes; same three classified pre-existing platform-path failures"
+    }
+  ],
+  "new_semantics_introduced": false,
+  "formal_surfaces_changed": false,
+  "release_4_issued": false
+}
