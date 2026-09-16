@@ -4,6 +4,11 @@ Status: informative Research Gate commission. This document authorizes evidence
 collection and review only. It does not freeze design, issue Protocol meaning or
 open public discussion.
 
+The companion `research-result.md` is an independent result against the original
+commission. It remains partial because its full-text source-access hold is open and
+its proposed narrowing of Selection Policy meaning has not been adopted. This
+repaired commission records the additional questions needed for close-only review.
+
 ## Research question
 
 For the bounded family set of independent two-group, paired two-condition and
@@ -46,6 +51,17 @@ Do not treat an additional pass in the authoring context as independent research
    remain Contract-specific?
 10. What facts would require reopening this research when rank, repeated, clustered
     or other families are later added?
+11. After Profile admissibility and exact bundle dispatch are accounted for, what
+    independently checkable selection fact remains for the Selection Policy to own?
+12. How should the policy distinguish the two-group/multi-group boundary and avoid
+    misclassifying structures such as a four-group factorial design as a one-way
+    family?
+13. Does the proposed policy meaning remain coherent when a family gains a second
+    valid Contract, and which explicit method or estimand preference may resolve an
+    otherwise multiple match?
+14. What is the strongest claim an independent verifier can make about a stored
+    `pre_outcome`, `post_outcome` or `unknown` timing declaration without external
+    timestamp or lineage evidence?
 
 ## Source requirements
 
@@ -64,7 +80,7 @@ Return an English report containing:
 
 1. exact target commit and files reviewed;
 2. source inventory with stable identities and inspected locations;
-3. answers to the ten questions above;
+3. answers to the fourteen questions above;
 4. a proposed minimal declaration set and counterexamples;
 5. a matrix separating conformance, selection, admissibility, computability and
    numerical verification;
@@ -76,3 +92,7 @@ Return an English report containing:
 The report does not allocate Requirement IDs or design schema fields unless the
 evidence clearly supports their meaning. A coherent report is not itself steward
 acceptance or public-opening authority.
+
+The existing result may be repaired by a close-only addendum rather than repeated
+from scratch, provided the reviewer obtains the missing full text, addresses
+questions 11 through 14 and records whether any earlier conclusion changes.

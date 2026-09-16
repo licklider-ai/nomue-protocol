@@ -6,9 +6,10 @@ capability, implementation authority, release commitment or discussion clock.
 
 ## Objective
 
-Prepare a bounded public question about whether a nomue Record should carry
-versioned evidence of the declared-design analysis-selection decision that
-preceded one exact Contract, Profile and interpretation-bundle choice.
+Prepare a bounded public question about whether a nomue Record should carry a
+common Design Declaration Envelope and versioned evidence that a registered
+Selection Policy mapped that envelope to exactly one Contract, Profile and
+interpretation bundle.
 
 The intended product outcome is portable, independently checkable verification
 across more than one scientific capability family. The Protocol question is
@@ -26,9 +27,11 @@ continuous-outcome families:
 - independent multi-group analysis.
 
 Only exact Contracts and bundles that have been issued through their own release
-decisions can enter a supported Release 5 combination. Release 2 and Release 3
-dependencies remain conditional. Release 4 factorial work is independent and is
-not silently imported into this proposal.
+decisions can enter a supported Release 5 combination. All three family members
+remain conditional: the Release 1 legacy method binding is not an independent
+two-group Analysis Contract, and the Release 2 and Release 3 dependencies are not
+yet silently adopted. Release 4 factorial work is independent and is not silently
+imported into this proposal.
 
 Rank-based, permutation, repeated-measures, clustered, regression, categorical,
 survival, count and nonlinear families remain outside the first slice. Their
@@ -51,23 +54,41 @@ conformance artifacts. It does not specify:
 Those are Layer 2 or product-operation concerns. A product may use them to create
 a conforming Record, but they do not become Protocol meaning through this RFC.
 
+## Reviewed direction
+
+- The Selection Policy is stored, registered Protocol policy. It is not a product
+  router, agent prompt or preference inferred from an implementation.
+- A successful selection requires exactly one policy result. Zero or multiple
+  matches are not successful selections.
+- The Protocol defines no hidden priority or tie-break. If a choice among otherwise
+  eligible analyses is necessary, it must be an explicit, declared method or
+  estimand preference owned by the policy.
+- The common Design Declaration Envelope owns only cross-family structural facts.
+  Family-specific analytical details remain owned by the selected Profile.
+- Selection timing is disclosed as a bounded declaration. The first slice neither
+  authenticates nor proves its truth.
+
 ## Work products
 
 - [Opening RFC candidate](opening-rfc-candidate.md)
 - [Research Gate commission](research-commission.md)
+- [Research Gate result](research-result.md)
 - [Public-discussion readiness](public-discussion-readiness.md)
+- [Authority and surface impact](authority-and-surface-impact.md)
+- [Historical-preservation plan](historical-preservation-plan.md)
 - [Independent opening-review handoff](opening-review-handoff.md)
+- [Independent opening-review result](opening-review-result.md)
 
 ## Immediate sequence
 
-1. Complete the independent primary-source research commissioned here.
-2. Reconcile the result against the exact accepted Release 2 and Release 3
-   declaration and Contract surfaces available at that time.
-3. Replace the candidate clause subjects with an exact file, Requirement-ID,
-   schema, public-surface and migration impact inventory.
-4. Obtain an independent fixed-input pre-opening review.
-5. Repair any findings and obtain steward authorization for the exact reviewed
-   proposal.
+1. Complete the exact authority, surface and migration inventory, including the
+   separately accepted Contract dependency for every family.
+2. Arrange full-text access for the named Research Gate source hold and obtain a
+   methodological close-only review of the repaired result.
+3. Freeze the repaired opening candidate at immutable file and commit identities.
+4. Obtain an independent fixed-input close-only opening review.
+5. Repair or explicitly hold remaining findings and obtain steward authorization
+   for the exact reviewed proposal.
 6. Open a public RFC issue and record its actual UTC creation time, highest tier,
    minimum window and earliest decision time.
 
