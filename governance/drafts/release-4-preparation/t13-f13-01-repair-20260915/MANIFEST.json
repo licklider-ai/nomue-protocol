@@ -51,8 +51,8 @@
     },
     {
       "path": "LINUX-T11-RECEIPT.json",
-      "bytes": 3362,
-      "sha256": "3edf4204665bb6cbaadb0e8d0127ec27f0925af2a19cfa864f5cd7020f6279de"
+      "bytes": 3338,
+      "sha256": "21d0a1d0ae19c8429119136946a3b55bfbe36b1e79c2b658383371296b90b19c"
     },
     {
       "path": "WINDOWS-RECEIPT.json",
@@ -69,6 +69,7 @@
     "receipt": "LINUX-T11-RECEIPT.json",
     "scope": "host workspace path representation only",
     "result_semantics_changed": false,
-    "original_t12_manifest_changed": false
+    "original_t12_manifest_changed": false,
+    "format": "repository Prettier formatting; values unchanged"
   }
 }

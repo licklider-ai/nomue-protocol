@@ -10,10 +10,7 @@
   "runs": [
     {
       "name": "full-check",
-      "command": [
-        "pnpm",
-        "check"
-      ],
+      "command": ["pnpm", "check"],
       "exit_code": 0,
       "seconds": 117.645,
       "output": "full-check.txt",
