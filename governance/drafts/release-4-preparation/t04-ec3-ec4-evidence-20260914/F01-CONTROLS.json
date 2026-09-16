@@ -1,0 +1,657 @@
+{
+  "repair_base": "64a9a4aa188fb16077245e8d87503765460a410f",
+  "host": {
+    "system": "Windows",
+    "python": "3.12.10"
+  },
+  "historical_receipts_replayed_per_mode": 338,
+  "0": {
+    "F01": {
+      "case_count": 34,
+      "direct_cases": [
+        {
+          "case": "report + full_invocation_deadline",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report + container_exit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "container_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + OOM",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "tree_memory_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + harness failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "collected full report cap",
+            "result": null
+          }
+        },
+        {
+          "case": "report + empty harness diagnostic",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "execution_error",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cpu_limit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cpu_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker allocation_failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:allocation_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker abnormal_exit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:abnormal_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker invalid_worker_output",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker output_overflow",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:output_overflow",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker deadline",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cancelled",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cancelled",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cleanup_failed",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cleanup_failed",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker child_ownership_lost",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:child_ownership_lost",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker execution_error",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:execution_error",
+            "result": null
+          }
+        },
+        {
+          "case": "report + cleanup failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "report + surviving descendants",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 17",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 18",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 19",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 20",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "concurrent failure reasons",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          },
+          "reasons": ["full_invocation_deadline", "tree_memory_limit", "cleanup_failure"]
+        },
+        {
+          "case": "normal completed_candidate",
+          "outcome": {
+            "execution": "completed_candidate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        },
+        {
+          "case": "normal completed_candidate_gate",
+          "outcome": {
+            "execution": "completed_candidate_gate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        },
+        {
+          "case": "existing safe refusal",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:abnormal_exit",
+            "result": null
+          }
+        }
+      ],
+      "observer_cases": [
+        {
+          "case": "deadline_then_report",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["deadline_detectable", "report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report_then_deadline",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "deadline_detectable", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "deadline_during_collection",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "deadline_detectable", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "oom",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "tree_memory_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "cpu",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cpu_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "crash",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "container_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "cleanup_failure",
+          "check": "FAIL",
+          "cleanup_ok": false,
+          "events": ["report_arrival", "fallback_kill"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "normal",
+          "check": "PASS",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "completed_candidate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        }
+      ],
+      "scope": "Deterministic generated receipt and actual one() control-flow tests with fake Docker/clock; not new resource measurements"
+    },
+    "existing_checks": 7,
+    "optimize": 0
+  },
+  "1": {
+    "F01": {
+      "case_count": 34,
+      "direct_cases": [
+        {
+          "case": "report + full_invocation_deadline",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report + container_exit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "container_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + OOM",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "tree_memory_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + harness failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "collected full report cap",
+            "result": null
+          }
+        },
+        {
+          "case": "report + empty harness diagnostic",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "execution_error",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cpu_limit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cpu_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker allocation_failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:allocation_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker abnormal_exit",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:abnormal_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker invalid_worker_output",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker output_overflow",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:output_overflow",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker deadline",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cancelled",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cancelled",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker cleanup_failed",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cleanup_failed",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker child_ownership_lost",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:child_ownership_lost",
+            "result": null
+          }
+        },
+        {
+          "case": "report + worker execution_error",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:execution_error",
+            "result": null
+          }
+        },
+        {
+          "case": "report + cleanup failure",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "report + surviving descendants",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 17",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 18",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 19",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed report 20",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "concurrent failure reasons",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          },
+          "reasons": ["full_invocation_deadline", "tree_memory_limit", "cleanup_failure"]
+        },
+        {
+          "case": "normal completed_candidate",
+          "outcome": {
+            "execution": "completed_candidate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        },
+        {
+          "case": "normal completed_candidate_gate",
+          "outcome": {
+            "execution": "completed_candidate_gate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        },
+        {
+          "case": "existing safe refusal",
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:abnormal_exit",
+            "result": null
+          }
+        }
+      ],
+      "observer_cases": [
+        {
+          "case": "deadline_then_report",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["deadline_detectable", "report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "report_then_deadline",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "deadline_detectable", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "deadline_during_collection",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "deadline_detectable", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "full_invocation_deadline",
+            "result": null
+          }
+        },
+        {
+          "case": "oom",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "tree_memory_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "cpu",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "worker:cpu_limit",
+            "result": null
+          }
+        },
+        {
+          "case": "crash",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "container_exit",
+            "result": null
+          }
+        },
+        {
+          "case": "cleanup_failure",
+          "check": "FAIL",
+          "cleanup_ok": false,
+          "events": ["report_arrival", "fallback_kill"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "cleanup_failure",
+            "result": null
+          }
+        },
+        {
+          "case": "malformed",
+          "check": "FAIL",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "execution_refusal",
+            "reason": "invalid_worker_output",
+            "result": null
+          }
+        },
+        {
+          "case": "normal",
+          "check": "PASS",
+          "cleanup_ok": true,
+          "events": ["report_arrival", "cleanup_success"],
+          "outcome": {
+            "execution": "completed_candidate",
+            "reason": null,
+            "result": {
+              "gate": "eligible",
+              "sentinel": "valid numerical result"
+            }
+          }
+        }
+      ],
+      "scope": "Deterministic generated receipt and actual one() control-flow tests with fake Docker/clock; not new resource measurements"
+    },
+    "existing_checks": 7,
+    "optimize": 1
+  },
+  "source_sha256": {
+    "delivery.py": "4a67e20214d4c5d3e69950facf050b8623ec99b6868a4ade7c35b943e308ff6d",
+    "run_suite.py": "c5e276059935ecb0802758a1239d5c64ee132c634f82753d6cd6be98e293d40f",
+    "test_f01_delivery.py": "104cdee1815718378f5b076e4ecfbe09d308a6b5f2e25e3a61457e780c151c54",
+    "check_failure_delivery.py": "ebb47132a85cb37607225c14987d00c821d3bdd2e4283e1563fc1f61ea429515",
+    "verify_measurements.py": "3b51c4467f83d70b72ee1de9f0d351062a7ae033de045c010bc06158290466e1"
+  }
+}
