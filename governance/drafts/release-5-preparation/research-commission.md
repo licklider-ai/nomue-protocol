@@ -5,9 +5,10 @@ collection and review only. It does not freeze design, issue Protocol meaning or
 open public discussion.
 
 The companion `research-result.md` is an independent result against the original
-commission. It remains partial because its full-text source-access hold is open and
-its proposed narrowing of Selection Policy meaning has not been adopted. This
-repaired commission records the additional questions needed for close-only review.
+commission. It remains partial because its full-text source-access hold is open. The
+steward has adopted its recommended product/Protocol boundary: Release 5 binds the
+finalized selected tuple but does not standardize or verify the selection policy.
+This repaired commission records the questions needed for close-only review.
 
 ## Research question
 
@@ -32,9 +33,10 @@ Do not treat an additional pass in the authoring context as independent research
    multi-group designs without relying on observed outcome values?
 2. Which facts must be declarations because they cannot be established from the
    Record values alone?
-3. Can successful selection be defined without conflating scientific assumptions,
-   structural conformance and numerical computability, and is any separate portable
-   negative-selection artifact necessary in the first slice?
+3. Can a successful selected-tuple binding be defined without conflating scientific
+   assumptions, Profile admissibility, selection quality, structural conformance and
+   numerical computability, and is any separate portable negative-selection artifact
+   necessary in the first slice?
 4. What timing declarations are necessary to prevent silent data-dependent family
    selection, and is access to observed outcome values for the declared analysis
    population the correct reference event?
@@ -52,15 +54,15 @@ Do not treat an additional pass in the authoring context as independent research
    remain Contract-specific?
 10. What facts would require reopening this research when rank, repeated, clustered
     or other families are later added?
-11. After Profile admissibility and exact bundle dispatch are accounted for, what
-    independently checkable selection fact remains for the Selection Policy to own?
-12. How should the policy distinguish the two-group/multi-group boundary and avoid
-    misclassifying structures such as a four-group factorial design as a one-way
-    family?
-13. Does the proposed policy meaning remain coherent when a family gains a second
-    valid Contract, and can an exact Contract identifier inside the closed candidate
-    set resolve an otherwise multiple match without introducing a new scientific
-    preference vocabulary?
+11. After Profile admissibility and exact bundle dispatch are accounted for, which
+    independently checkable facts remain in declaration completeness, selected-tuple
+    identity, revision binding, timing evidence and non-claims?
+12. How should the declaration projection expose the two-group/multi-group boundary
+    without claiming that it selects a method or misclassifying structures such as a
+    four-group factorial design as a one-way family?
+13. When a family has more than one valid Contract, are exact selected-Contract
+    identity and explicit non-claims sufficient to prevent a passing binding check
+    from being read as endorsement of the product's private choice?
 14. What is the strongest claim an independent verifier can make about a stored
     `pre_outcome`, `post_outcome` or `unknown` timing declaration without external
     timestamp or lineage evidence?

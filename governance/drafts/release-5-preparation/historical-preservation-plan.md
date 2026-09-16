@@ -21,33 +21,31 @@ evidence required to prepare and eventually close the gate; it is not that evide
 
 ## Fixed evidence plan
 
-| Evidence                            | Required comparison                                                                                                 |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Repository drift checks             | Generated artifacts and registries before and after the additive R5 change                                          |
-| Historical conformance suite        | Byte-for-byte or pinned semantic results for every pre-R5 fixture                                                   |
-| Existing bundle inventory           | Exact identifier, schema, Contract/Profile references and `allowed_check_ids`                                       |
-| Legacy Record verification          | Same bundle dispatch, checks, report schema and result as the historical pin                                        |
-| Unsupported R5 combination fixtures | Deterministic failure before bundle-specific interpretation, with no fallback                                       |
-| R5 successor fixtures               | Positive exact-one selection plus zero-result, multiple-result, missing-declaration and identity-mismatch negatives |
-| Cross-version report fixtures       | Old reports remain valid under their schema; new reason codes occur only in the successor report schema             |
+| Evidence                            | Required comparison                                                                                                                             |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repository drift checks             | Generated artifacts and registries before and after the additive R5 change                                                                      |
+| Historical conformance suite        | Byte-for-byte or pinned semantic results for every pre-R5 fixture                                                                               |
+| Existing bundle inventory           | Exact identifier, schema, Contract/Profile references and `allowed_check_ids`                                                                   |
+| Legacy Record verification          | Same bundle dispatch, checks, report schema and result as the historical pin                                                                    |
+| Unsupported R5 combination fixtures | Deterministic failure before bundle-specific interpretation, with no fallback                                                                   |
+| R5 successor fixtures               | Positive exact-one tuple binding plus missing declaration, duplicate tuple identity, inadmissibility dependency and identity-mismatch negatives |
+| Cross-version report fixtures       | Old reports remain valid under their schema; new reason codes occur only in the successor report schema                                         |
 
 Each comparison must name immutable before/after commits, the invoked command, the
 fixture identity and the expected result. A newly generated snapshot without a
 reviewed historical reference is insufficient.
 
 The Release 1 preservation run must include `release-1-history.ts` and
-`pnpm regression:phase1`, with their exact historical pins recorded. Because the
-first production policy may make a multiple match structurally impossible, that
-negative path uses an explicitly test-only registered policy fixture containing two
-candidate predicates that match the same projected declarations. The fixture never
-enters a production registry or bundle.
+`pnpm regression:phase1`, with their exact historical pins recorded. A negative
+fixture with zero or two selected tuple identities must fail the successor schema or
+binding check. No policy registry or test-only policy fixture is introduced.
 
 ## Required implementation constraints
 
 - Use new identifiers for R5-aware bundles, checks, schemas and reason codes.
 - Do not add the new check to an existing bundle's allowed-check set.
-- Do not default absent projection inputs, policy identity, timing status or policy
-  result into a legacy Record.
+- Do not default absent projection inputs, selected-tuple binding or timing status
+  into a legacy Record.
 - Do not reinterpret a Release 1 method identifier as an independent-two-group
   Analysis Contract.
 - Do not edit historical expected outputs merely to make the new implementation

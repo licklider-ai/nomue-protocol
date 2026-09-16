@@ -13,7 +13,8 @@ commit, parent, tree and blobs for:
 - `governance/drafts/release-5-preparation/authority-and-surface-impact.md`;
 - `governance/drafts/release-5-preparation/historical-preservation-plan.md`;
 - `governance/drafts/release-5-preparation/opening-review-result.md`;
-- `governance/drafts/release-5-preparation/opening-close-review-result.md`; and
+- `governance/drafts/release-5-preparation/opening-close-review-result.md`;
+- `governance/drafts/release-5-preparation/steward-publication-boundary-decision.md`;
 - `governance/drafts/release-horizon-r3-r20.md`.
 
 Stop on identity drift. Review the fixed target rather than a moving branch. This is
@@ -22,16 +23,17 @@ new evidence materially changes it.
 
 ## Review questions
 
-1. Does treating Selection Policy as explicit Layer 1 Protocol policy remain within
-   the Charter boundary by specifying a stored, registered and verifiable mapping
-   without standardizing product or agent routing?
+1. Does the revised proposal keep method-selection policy, recommendation logic and
+   question sequencing outside the Protocol while preserving a useful portable
+   selected-tuple binding?
 2. Is the Design Declaration Envelope now unambiguously a deterministic projection
    of Profile-owned truth carriers, with no duplicate store, circular admissibility
    or conflicting declaration authority?
-3. Is a successful selection defined unambiguously as exactly one result, with zero
-   or multiple matches failing without an implicit priority, fallback or tie-break?
-4. Is a first-slice preference limited to an exact Contract identifier inside the
-   closed candidate set, without importing an unreviewed scientific preference?
+3. Is a successful binding defined unambiguously as one selected tuple without
+   implying that the tuple was uniquely eligible, optimal or selected by a public
+   policy?
+4. Do the non-claims prevent a passed check from endorsing the product's private
+   selection process, especially when multiple Contracts could be admissible?
 5. Does the timing status use access to observed outcome values as a clear reference
    event, appear in every check's evidence and remain bounded by a successor
    non-claim?
@@ -48,11 +50,10 @@ new evidence materially changes it.
     required repair necessarily alter CORE meaning?
 11. Which issues must close before opening, which may remain named during public
     discussion and which must close before design freeze?
-12. Do policy candidate predicates reference Profile-owned cross-family conditions,
-    fail inconsistency at registry admission and avoid repeating admissibility at
-    runtime?
-13. Are the identifier ADR, `vocabulary.yaml` term, authority-manifest target and
-    steward Charter publication decision correctly identified as pre-opening work?
+12. Does the binding check depend on the selected Profile's admissibility result
+    without repeating or overruling it?
+13. Have all Selection Policy registry, identifier, ADR, vocabulary and
+    authority-manifest proposals been removed consistently?
 
 ## Return format
 
