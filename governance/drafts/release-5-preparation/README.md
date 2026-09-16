@@ -58,8 +58,9 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 
 - The method-selection policy, recommendation logic and question sequence remain
   Layer 2 product technology. Release 5 neither registers nor verifies them.
-- Existing conformance supplies one selected tuple; R5 consumes those identity
-  carriers rather than creating a second tuple-binding rule.
+- Issued conformance supplies bundle and Profile identities. Contract identity is
+  conditional on each family's separately accepted successor schema; the two-group
+  family has no issued Contract carrier. R5 consumes those carriers once accepted.
 - The Design Declaration Envelope is a logical projection, not a second store. Each
   design fact has one Profile-owned truth carrier and one explicit, versioned
   per-Profile mapping.
@@ -67,8 +68,10 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
   and does not re-adjudicate it.
 - Selection timing is the sole non-Profile projection input, is disclosed as a
   bounded successor-Record declaration and is repeated in the check evidence.
-- Every result exposes its projection sources, mapping version, timing, consumed
-  tuple identities, admissibility dependency and non-claim boundary.
+- Executed results expose projection sources, mapping version, timing, consumed
+  tuple identities, admissibility dependency and the RFC's eleven-item non-claim
+  boundary. Blocked and errored results preserve only available evidence under the
+  RFC's report rules.
 
 ## Work products
 
@@ -83,6 +86,8 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 - [Repaired-opening close-only review result](opening-close-review-result.md)
 - [Steward publication-boundary decision](steward-publication-boundary-decision.md)
 - [Fixed-input opening review result](opening-final-review-result.md)
+- [Fresh-context opening review result](opening-fresh-context-review-result.md)
+- [Fresh-context review repair disposition](opening-fresh-context-repair-disposition.md)
 
 ## Immediate sequence
 
@@ -91,7 +96,8 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 2. Arrange full-text access for the named Research Gate source hold and obtain a
    methodological close-only review of the repaired result.
 3. Freeze the repaired opening candidate at immutable file and commit identities.
-4. Obtain an independent fixed-input close-only opening review.
+4. Obtain one close-only diff confirmation of the fresh-context review repairs;
+   retain the existing independent review for unchanged scope.
 5. Repair or explicitly hold remaining findings and obtain steward authorization
    for the exact reviewed proposal.
 6. Open a public RFC issue and record its actual UTC creation time, highest tier,

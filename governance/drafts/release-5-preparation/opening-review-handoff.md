@@ -15,12 +15,17 @@ commit, parent, tree and blobs for:
 - `governance/drafts/release-5-preparation/opening-review-result.md`;
 - `governance/drafts/release-5-preparation/opening-close-review-result.md`;
 - `governance/drafts/release-5-preparation/opening-final-review-result.md`;
+- `governance/drafts/release-5-preparation/opening-fresh-context-review-result.md`;
+- `governance/drafts/release-5-preparation/opening-fresh-context-repair-disposition.md`;
 - `governance/drafts/release-5-preparation/steward-publication-boundary-decision.md`;
 - `governance/drafts/release-horizon-r3-r20.md`.
 
 Stop on identity drift. Review the fixed target rather than a moving branch. This is
-a close-only review of the repaired proposal; do not repeat settled background unless
-new evidence materially changes it.
+a close-only diff confirmation of the fresh-context review repairs. Use
+`0d6265f6fee059d8f8f8650600483b3a1b5e2090` as the reviewed baseline and read the
+repair disposition first. Confirm S-1 through S-4 and adjacent N-1 through N-6
+repairs; do not repeat the full review of unchanged scope. The reviewer who supplied
+the fresh-context review may confirm the repair diff, disclosing continuity.
 
 ## Review questions
 
@@ -30,18 +35,17 @@ new evidence materially changes it.
 2. Is the Design Declaration Envelope unambiguously an unstored projection of
    Profile-owned truth carriers through explicit, versioned per-Profile mappings,
    with no generic name matching, duplicate store or circular admissibility?
-3. Is selection timing clearly the projection's sole non-Profile input, owned by a
-   successor Record surface, and does system input context count as access to
-   observed outcomes?
-4. Are the nine non-claims consolidated and strong enough to prevent a passed check
+3. Does timing cover all selected identities and all projected design declarations,
+   with any post-access change excluding `pre_outcome`? Are dataset-wide outcome
+   access and selector input context covered? Is timing the sole non-Profile input?
+4. Are the eleven non-claims consolidated and strong enough to prevent a passed check
    from endorsing the product's private selection process?
-5. Does every result expose projected values and source paths, mapping version,
-   timing, consumed tuple identities, depended-on admissibility result and the
-   applicable non-claim boundary?
+5. Do executed results expose the required evidence, and do conformance failures,
+   blocked dependencies and errors avoid fabricating projections or missing facts?
 6. Are all three family members genuinely conditional on separately accepted
    Contracts and bundles, including independent two-group analysis?
-7. Does the check consume existing Contract, Profile and bundle identity carriers
-   without introducing competing identity fields or a second binding rule?
+7. Does the check distinguish issued bundle/Profile carriers from unissued Contract
+   carriers supplied by separately accepted family successors, without aliases?
 8. Does the proposal exclude only a producer-side pre-Record negative workflow
    artifact while preserving existing conformance, inadmissibility and report
    semantics?

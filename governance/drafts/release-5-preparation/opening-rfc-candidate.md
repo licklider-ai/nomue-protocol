@@ -14,10 +14,11 @@ Open public discussion of an additive Protocol increment that defines:
 3. a successor non-claim boundary; and
 4. a common, inspectable verification-report view.
 
-The increment consumes the already-conformant Record's selected Analysis Contract,
-Profile and interpretation-bundle identities, integrity binding and Profile
-admissibility result. It does not create a second tuple-binding rule or standardize
-the selection policy.
+The increment consumes the selected identities from the applicable family schema,
+Record integrity binding and Profile admissibility result. Issued schemas supply
+bundle and Profile identities; each family's separately accepted successor schema
+must supply its Contract identity before that family can participate in R5. R5
+does not create a second tuple-binding rule or standardize the selection policy.
 
 The first slice considers only three continuous-outcome design families:
 
@@ -30,10 +31,13 @@ proposal does not adopt, accelerate or reinterpret an owning release.
 
 ## Problem
 
-Each issued or candidate Profile already requires its own design declarations,
-existing closed schemas and identity rules already require one selected tuple, and
-the Record integrity mechanism already binds those fields. R5 does not repair a
-missing-declaration or tuple-uniqueness gap.
+Each issued or candidate Profile already requires its own design declarations.
+Issued schemas carry single bundle and Profile identities plus `analysis.method_id`;
+the Record integrity mechanism binds those fields. An explicit `analysis.contract_id`
+exists only in the unissued Release 2 candidate. The independent-two-group family
+has no issued Contract carrier. R5 therefore depends on separately accepted family
+successor schemas for Contract identity; it neither aliases a legacy method ID nor
+adds a competing identity field.
 
 The residual interoperability gap is cross-family. Equivalent design facts occupy
 different Profile-owned fields and vocabularies, so a relying party has no
@@ -53,7 +57,8 @@ The proposed increment would require:
 - a required, non-defaulted selection-timing status as the projection's sole
   non-Profile input;
 - the check to depend on the selected Profile's existing admissibility result and to
-  consume the existing tuple identities without re-adjudicating either; and
+  consume the applicable family's accepted tuple identities without re-adjudicating
+  either; and
 - every result, including a passed result, to emit the common evidence view defined
   below.
 
@@ -73,8 +78,9 @@ their existing owners.
 1. The Record uses explicit declarations; pairing, independence, group membership
    and analysis population are not inferred from row order, timestamps, labels or
    numerical values.
-2. Existing conformance supplies exactly one Contract, Profile and bundle tuple
-   through the existing identity carriers; R5 consumes rather than redefines it.
+2. Issued conformance supplies bundle and Profile identities. Each family's
+   separately accepted successor schema supplies its Contract carrier; only then
+   can R5 consume one complete tuple. Legacy `method_id` is not a Contract alias.
 3. Missing or contradictory declarations do not become successful through defaults.
 4. The Design Declaration Envelope is an unstored projection over one Profile-owned
    truth carrier per design fact, plus exactly one non-Profile input: the
@@ -82,13 +88,32 @@ their existing owners.
 5. The selection-evidence check declares `depends_on` for the selected Profile's
    admissibility result. It verifies cross-family evidence consistency and does not
    repeat the Profile's judgment or numerical recomputation.
-6. A passing check does not establish uniqueness, optimality, fairness or absence of
-   bias, preregistration, declaration truth, assumption truth, numerical correctness,
-   whole-project validity or use of any particular private policy.
+6. A passing check establishes none of the eleven claims listed in
+   [Non-claim boundary](#non-claim-boundary).
 7. Existing bundle identifiers, Record meanings and pinned conformance results are
    not reinterpreted.
 8. An unsupported bundle still fails exact dispatch before bundle-specific Record
    interpretation; selection evidence never creates fallback routing.
+
+## Non-claim boundary
+
+A conforming Record or passing R5 check does not establish:
+
+1. uniqueness of the selected tuple among eligible alternatives;
+2. optimality of the selection;
+3. fairness or absence of bias in the selection;
+4. preregistration;
+5. truth of the declarations;
+6. truth of scientific assumptions;
+7. numerical correctness;
+8. whole-project validity;
+9. use of any particular private policy;
+10. the declarant's identity, authentication or authorization; or
+11. that Protocol family boundaries are a scientific classification.
+
+This is the single eleven-item list referenced by the preparation package.
+Family boundaries are bounded Protocol conventions. A separate numerical check
+retains its own scoped meaning; a passed R5 check adds no numerical guarantee.
 
 ## Product selection and Protocol evidence boundary
 
@@ -111,10 +136,10 @@ mechanism requires its own Research Gate, Charter review and public decision.
 
 The Design Declaration Envelope is a deterministic logical projection, not an
 independently stored declaration object. Every projected design fact has exactly one
-truth carrier in its owning Profile or separately accepted successor declaration
-schema. The cross-cutting specification owns an explicit, versioned mapping table
-for each participating Profile version; there is no inference by field-name
-similarity.
+truth carrier in its owning Profile's versioned declaration surface, including any
+separately accepted successor of that same Profile-owned surface. The cross-cutting
+specification owns an explicit, versioned mapping table for each participating
+Profile version; there is no inference by field-name similarity.
 
 The projection exposes only facts whose meaning is shared across the candidate
 family set:
@@ -125,25 +150,48 @@ family set:
 - declared group or condition count;
 - presence of an explicit pairing identity when pairing is declared;
 - presence of repeated or clustered structure;
-- analysis-population identity.
+- analysis-population status.
 
-The selection-timing status is the projection's sole non-Profile input and is owned
-by the R5 successor Record surface.
+The projected analysis-population fact is a status, not a population identifier.
+For ITGC 0.2 it comes from the Profile's `analysis_population` enumeration;
+`all_record_observations` and `subset_or_exclusions_present` do not identify a
+population. Admissibility continues to decide which status is supported.
+
+The selection-timing status is the projection's sole non-Profile input. The
+R5-specific addition to the successor Record surface contains only that timing
+status and references to identity carriers owned by the applicable family schema.
+It owns no design-fact carrier. Any missing design fact belongs in a separately
+accepted, versioned successor of the owning Profile's declaration surface and in
+that Profile version's mapping table.
 
 The projection does not absorb family-specific analysis meaning or create duplicate
 JSON fields. The selected Profile continues to own variance structure, detailed pair
 admissibility, flattened-design restrictions, multiplicity, missingness, numerical
-preconditions and other family-specific declarations. R5-aware successor schemas
-are needed only where an owning family lacks a required truth carrier.
+preconditions and other family-specific declarations. Each participating family
+needs a successor Record representation for timing. A missing design-fact carrier
+separately requires a successor of the owning Profile's declaration surface.
 
 ## Timing declaration boundary
+
+The selection decision comprises the selected Contract, Profile and bundle
+identities and every declaration that is a projected design fact's truth carrier.
+Completion means that all those identities and declarations are finalized for the
+Record revision being checked. If any changes after outcome access, that revision
+cannot declare `pre_outcome`, even if an earlier value is later restored.
+
+The access event covers any observed outcome value in the supplied dataset,
+including values outside a subsequently declared analysis subset. A system's
+selector input context counts as access. This is a proposed Protocol convention
+to avoid a subset exclusion hiding earlier outcome access; it is not proof of
+preregistration or a claim to detect access to other datasets. Its methodological
+assessment remains part of the Research Gate addendum.
 
 The first slice proposes a required, non-defaulted timing status with candidate
 values `pre_outcome`, `post_outcome` and `unknown`:
 
 - `pre_outcome`: the selection decision was completed before the selecting person or
   system, including any selector input context, had access to observed outcome
-  values for the declared analysis population;
+  values in the supplied dataset;
 - `post_outcome`: that person or system had access to at least one such value before
   the selection decision was completed; and
 - `unknown`: the producer cannot attribute either of the preceding states.
@@ -152,23 +200,35 @@ values `pre_outcome`, `post_outcome` and `unknown`:
 The status does not prove when access or selection occurred. Neither `post_outcome`
 nor `unknown` is automatically a structural failure in the first slice.
 
-Every selection-check result carries the exact timing status in its evidence,
-including a passed result, so a bare `passed` status cannot conceal a post-outcome or
-unknown declaration. A Profile may impose a narrower condition only if that meaning
-is expressly owned and reviewed.
+Every R5 result emitted after successful Record conformance carries the exact
+timing status in its evidence, including a passed result, so a bare `passed` status
+cannot conceal a post-outcome or unknown declaration. A Profile may impose a narrower
+condition only if that meaning is expressly owned and reviewed.
 
 ## Common verification-report view
 
-Every check result emits inspectable evidence containing:
+Every executed R5 check, including a passed result, emits inspectable evidence
+containing:
 
 - the selected Profile identifier and version;
 - the applicable projection-mapping identifier and version;
 - each projected fact, its emitted value and its exact Profile source path;
 - the selection-timing status;
-- the existing Contract, Profile and bundle identities consumed by the check;
+- the Contract, Profile and bundle identities from the applicable accepted family
+  schema consumed by the check;
 - the exact Profile-admissibility result identity and outcome on which the check
   depends; and
-- the applicable nine-item non-claim boundary.
+- the applicable eleven-item non-claim boundary.
+
+If Record conformance fails, no R5 projection is emitted; existing refusal or
+conformance-report behavior applies. If conformance passes but Profile
+admissibility blocks R5, the R5 result is `not_run`: it carries the dependency's
+check identity, version, scope and outcome, its blocking reason codes under
+NRS-VERIFY-0017, the readable timing status and the non-claim boundary. It does not
+emit a computed projection or claim projection success. Errored results retain
+only evidence actually obtained, include registered reason codes under
+NRS-VERIFY-0012, and never invent missing dependency outcomes or projection values.
+Exact schema encoding remains an R5-P5 hold.
 
 The view is derived verifier output, not a second declaration store. Report-schema
 design may encode the non-claim boundary by a stable clause reference rather than
@@ -181,6 +241,9 @@ copying prose, but a relying party must be able to identify it from the result.
 | Independent two-group   | Exactly two declared independent groups and the admitted analysis population | Conditional on a separately accepted successor independent-two-group Contract and bundle; the Release 1 legacy method binding is not treated as that Contract |
 | Paired two-condition    | Explicit pair identity and two declared conditions                           | Conditional on the Release 2 decision and issued surfaces                                                                                                     |
 | Independent multi-group | At least three explicitly declared independent groups                        | Conditional on the Release 3 decision and selected vertical increment                                                                                         |
+
+Group-count boundaries in this table are Protocol conventions, not a scientific
+classification or proof that a design belongs to a scientific family.
 
 The table does not itself decide variance assumptions, omnibus or post-hoc
 procedure, multiplicity family, missingness policy or numerical algorithm. Those
@@ -210,18 +273,18 @@ remain owned by the selected Contract, Profile and Public Checks.
 The exact path and Requirement-ID inventory remains open. The anticipated additive
 owners are:
 
-| Subject                          | Candidate owner                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------------------ |
-| Common projection and non-claims | One new cross-cutting STABLE-INTENT specification under `spec/`                      |
-| Per-Profile projection mappings  | Versioned tables owned by that cross-cutting specification                           |
-| Family-specific declarations     | Existing or separately accepted Profile specifications                               |
-| JSON representation              | Additive closed successor Record schema referencing existing tuple identity carriers |
-| Cross-family verification        | New `consistency_only` Public Check specification and registry entry                 |
-| Exact supported combinations     | Additive interpretation-bundle entries                                               |
-| Scoped verification failures     | Additive report-schema version and registered reason codes                           |
-| Common report evidence view      | The same additive report-schema version                                              |
-| Non-claims                       | New additive successor clause; no edit to `NRS-CORE-0009` is proposed                |
-| Interoperability                 | Positive, negative, ambiguity and historical-preservation conformance fixtures       |
+| Subject                          | Candidate owner                                                                             |
+| -------------------------------- | ------------------------------------------------------------------------------------------- |
+| Common projection and non-claims | One new cross-cutting STABLE-INTENT specification under `spec/`                             |
+| Per-Profile projection mappings  | Versioned tables owned by that cross-cutting specification                                  |
+| Family-specific declarations     | Existing or separately accepted Profile specifications                                      |
+| JSON representation              | R5-specific timing addition and identity references only; design facts remain Profile-owned |
+| Cross-family verification        | New Public Check whose calculation evidence is `consistency_only`                           |
+| Exact supported combinations     | Additive interpretation-bundle entries                                                      |
+| Scoped verification failures     | Additive report-schema version and registered reason codes                                  |
+| Common report evidence view      | The same additive report-schema version                                                     |
+| Non-claims                       | New additive successor clause; no edit to `NRS-CORE-0009` is proposed                       |
+| Interoperability                 | Positive, negative, ambiguity and historical-preservation conformance fixtures              |
 
 There is no `selection-policy` identifier family, policy registry, policy ADR,
 policy vocabulary term or policy authority-manifest target in this proposal. The

@@ -28,6 +28,11 @@ stably linked work record, but it has no release-style minimum window or quorum.
 consuming release RFC states explicitly what it adopts, does not adopt, or leaves
 unresolved.
 
+Frozen research records may retain an earlier rank-based Release 5 horizon. Current
+sequencing moves that work to Releases 6–10; see the
+[canonical release horizon](release-horizon-r3-r20.md). Historical records remain
+unchanged.
+
 ## Operating model
 
 1. **Investigate broadly, decide narrowly.** Early work may survey a large domain,

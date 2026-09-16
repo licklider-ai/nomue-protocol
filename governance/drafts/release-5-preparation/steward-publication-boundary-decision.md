@@ -17,8 +17,8 @@ after selection:
 
 - the Profile-owned design declarations and their defined common projection;
 - explicit, versioned projection mappings for each participating Profile version;
-- the existing selected Contract, Profile and interpretation-bundle identities,
-  consumed without creating a second tuple-binding rule;
+- the selected identities supplied by the applicable accepted family schema;
+  Contract carriers remain conditional on separately accepted successors;
 - the selected Profile's admissibility result;
 - selection-timing evidence;
 - revision and integrity binding;
@@ -27,10 +27,10 @@ after selection:
 
 ## Claims excluded from Release 5
 
-A conforming Record or passing check does not establish uniqueness, optimality,
-fairness or absence of bias, preregistration, declaration truth, assumption truth,
-numerical correctness, whole-project validity or use of any particular private
-policy.
+The proposal uses the RFC's single
+[eleven-item non-claim boundary](opening-rfc-candidate.md#non-claim-boundary).
+It includes no claim to declarant identity, authentication or authorization, and
+no claim that Protocol family boundaries are a scientific classification.
 
 The Protocol verifies what was declared and selected, and whether the selected
 Profile admits that declaration. It does not verify how the product decided what to
@@ -53,8 +53,8 @@ Contracts; this proposal does not imply a hidden first-slice selection mechanism
 
 - Remove the proposed `selection-policy` identifier family, registry, ADR,
   `vocabulary.yaml` term and authority-manifest target.
-- Consume existing selected-tuple identities rather than adding a second binding
-  rule.
+- Consume the applicable accepted family identity carriers; keep unissued Contract
+  carriers conditional and never reinterpret a legacy method identifier.
 - Remove multiple-policy-match semantics and fixtures from the first slice.
 - Keep the Design Declaration Envelope as a projection rather than a duplicate
   declaration store.

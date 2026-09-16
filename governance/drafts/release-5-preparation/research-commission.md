@@ -7,8 +7,8 @@ open public discussion.
 The companion `research-result.md` is an independent result against the original
 commission. It remains partial because its full-text source-access hold is open. The
 steward has adopted its recommended product/Protocol boundary: Release 5 does not
-standardize or verify the selection policy. Existing conformance supplies the
-selected tuple; the repaired scope addresses cross-family projection, timing,
+standardize or verify the selection policy. Issued conformance supplies bundle and
+Profile identities, while Contract carriers depend on accepted family successors; the repaired scope addresses cross-family projection, timing,
 non-claims and report evidence. This commission records the questions needed for
 close-only review.
 
@@ -40,8 +40,9 @@ Do not treat an additional pass in the authoring context as independent research
    structural conformance and numerical computability, and is any separate portable
    negative-selection artifact necessary in the first slice?
 4. What timing declarations are necessary to prevent silent data-dependent family
-   selection, and is access to observed outcome values for the declared analysis
-   population the correct reference event?
+   selection, and is access to any observed outcome value in the supplied dataset
+   an appropriate reference event? Assess the repaired convention covering all
+   selected identities and projected declarations, including changes after access.
 5. What ambiguity or overlap remains when exactly two groups are present, pairing is
    absent or contradictory, units appear more than once, or the analysis population
    differs from the supplied dataset?
@@ -55,7 +56,7 @@ Do not treat an additional pass in the authoring context as independent research
    remain Contract-specific?
 10. What facts would require reopening this research when rank, repeated, clustered
     or other families are later added?
-11. After existing tuple conformance, Profile admissibility and exact bundle dispatch
+11. After applicable family-schema conformance, Profile admissibility and exact bundle dispatch
     are accounted for, which independently checkable facts remain in declaration
     completeness, explicit projection mappings, timing evidence, report evidence and
     non-claims?
