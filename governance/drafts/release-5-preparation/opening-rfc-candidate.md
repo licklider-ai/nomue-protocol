@@ -7,9 +7,10 @@ supported capability is issued by this document.
 ## Decision requested
 
 Open public discussion of an additive Protocol increment in which a common Design
-Declaration Envelope is evaluated by an exact registered Selection Policy to select
-exactly one Analysis Contract, Profile and interpretation bundle, and the finalized
-decision is recorded for independent verification.
+Declaration Envelope is projected from Profile-owned declarations and evaluated by
+an exact registered Selection Policy to select exactly one Analysis Contract,
+Profile and interpretation bundle, and the finalized decision is recorded for
+independent verification.
 
 The first slice considers only three continuous-outcome design families:
 
@@ -37,8 +38,8 @@ conversation, a product router or an implementation-specific decision log.
 
 The proposed increment would require a successor Record surface to bind:
 
-- a complete, non-contradictory Design Declaration Envelope bound to the Record
-  revision;
+- a complete, non-contradictory Design Declaration Envelope projected from the
+  Record revision's Profile-owned declaration truth carriers;
 - the exact registered Selection Policy and its closed candidate set;
 - exactly one policy result identifying a Contract, Profile and interpretation
   bundle;
@@ -53,9 +54,11 @@ The proposed increment would require a successor Record surface to bind:
 
 A successful selection exists only when all of those conditions hold. A policy
 evaluation yielding zero or more than one result is not successful. The Protocol
-defines no implicit priority or tie-break. When a choice among otherwise eligible
-analyses is scientifically intended, the relevant method or estimand preference
-must be explicit, declared and owned by the registered policy.
+defines no implicit priority or tie-break. In the first slice, a preference can name
+only an exact Contract identifier inside the policy's closed candidate set. It does
+not express an abstract goal such as robustness, power or a preferred estimand. A
+broader preference vocabulary would require its own Research Gate and scope
+decision.
 
 The first slice standardizes only evidence of a successful selection. It does not
 create a producer-side, pre-Record negative-selection workflow artifact for
@@ -75,8 +78,9 @@ Adding another portable artifact later requires an explicit scope decision.
    declarations do not become successful through defaults or hidden precedence.
 5. Existing tuple identities are referenced rather than restated in new competing
    fields.
-6. A selection-evidence check is scoped and separate from Profile admissibility and
-   numerical recomputation.
+6. A selection-evidence check declares `depends_on` for the selected Profile's
+   admissibility result. It verifies policy consistency and does not repeat the
+   Profile's admissibility judgment or numerical recomputation.
 7. A passing selection-evidence check does not establish that declarations are
    truthful, that the policy is scientifically optimal, that assumptions hold in
    the world or that the research project is valid.
@@ -93,15 +97,28 @@ tuples. Its stored identity and result are independently checkable. The policy d
 not prescribe how a product gathers declarations, sequences questions or presents
 choices.
 
+Each registered candidate predicate is composed by reference to the applicable
+Profile's published cross-family conditions. It does not copy or redefine those
+conditions. Registry admission validates that the references are complete and
+consistent; a disagreement is a policy-registration failure, not a verifier-time
+priority rule. At runtime, the selection check depends on the selected Profile's
+admissibility result and does not decide admissibility a second time.
+
 A Layer 2 implementation may ask questions, authenticate a principal and call a
 verification service. The Protocol does not standardize that dialogue, command API,
 agent session, authentication flow, transport or user interface. It does not execute
 a language model and does not accept model reasoning as evidence.
 
-## Declaration ownership
+## Declaration ownership and projection
 
-The Design Declaration Envelope owns only facts whose meaning is shared across the
-candidate family set:
+The Design Declaration Envelope is a deterministic logical projection, not an
+independently stored declaration object. Every source declaration has exactly one
+truth carrier in its owning Profile or separately accepted successor declaration
+schema. Each candidate Profile defines how its owned fields project into the common
+terms used by Selection Policy.
+
+The projection exposes only facts whose meaning is shared across the candidate
+family set:
 
 - outcome type;
 - experimental-unit structure;
@@ -111,21 +128,36 @@ candidate family set:
 - presence of repeated or clustered structure;
 - analysis-population identity;
 - selection-timing status; and
-- an optional reference to an explicit method or estimand preference.
+- an optional exact Contract preference inside the closed candidate set.
 
-The envelope does not absorb family-specific analysis meaning. The selected Profile
-continues to own such matters as variance structure, detailed pair admissibility,
-flattened-design restrictions, multiplicity, missingness, numerical preconditions
-and other family-specific declarations. A cross-family fact is referenced from the
-Profile when needed; it is not redefined with a second meaning.
+The projection does not absorb family-specific analysis meaning or create duplicate
+JSON fields. The selected Profile continues to own such matters as variance
+structure, detailed pair admissibility, flattened-design restrictions,
+multiplicity, missingness, numerical preconditions and other family-specific
+declarations. R5-aware successor schemas are needed only where an owning family
+lacks a required truth carrier; they do not store a second envelope copy.
 
 ## Timing declaration and attribution boundary
 
 The first slice proposes a required, non-defaulted timing status with candidate
-values `pre_outcome`, `post_outcome` and `unknown`. These values disclose the
-producer's attributed timing claim; they do not prove when the decision occurred.
-Neither `post_outcome` nor `unknown` is automatically a structural failure in the
-first slice. A registered policy or Profile may impose a narrower condition only if
+values `pre_outcome`, `post_outcome` and `unknown`:
+
+- `pre_outcome`: the selection decision was completed before the selecting person
+  or system had access to observed outcome values for the declared analysis
+  population;
+- `post_outcome`: that person or system had access to at least one such value before
+  the selection decision was completed; and
+- `unknown`: the producer cannot attribute either of the preceding states.
+
+`pre_outcome` does not by itself mean before data collection or before unblinding;
+those are separate events unless they determine access to the observed outcome
+values. The status discloses the producer's attributed timing claim and does not
+prove when access or selection occurred. Neither `post_outcome` nor `unknown` is
+automatically a structural failure in the first slice.
+
+Every selection-check result carries the exact timing status in its evidence,
+including a passed result, so a bare status cannot conceal a post-outcome or unknown
+declaration. A registered policy or Profile may impose a narrower condition only if
 that meaning is expressly owned and reviewed.
 
 Revision lineage or an external timestamp attestation may provide stronger evidence
@@ -170,6 +202,8 @@ owners are:
 | Common declaration-envelope meaning | New cross-cutting STABLE-INTENT specification under `spec/`                          |
 | Selection Policy meaning            | New Layer 1 STABLE-INTENT specification under `spec/`                                |
 | Exact registered policies           | New registry authority target                                                        |
+| Selection Policy identifier family  | New ADR-adopted identifier family and `vocabulary.yaml` terminology                  |
+| Authority discovery                 | Additive authority-manifest target                                                   |
 | Family-specific declarations        | Existing or separately accepted Profile specifications                               |
 | JSON representation                 | Additive closed successor Record schema referencing existing tuple identity carriers |
 | Selection verification              | New `consistency_only` Public Check specification and registry entry                 |
@@ -201,6 +235,8 @@ The following remain open before design freeze:
   candidate family;
 - exact clause, Requirement-ID, schema and public-surface inventory;
 - selection-policy representation and registry mechanics;
+- steward decision, before public opening, on whether registered policies enter the
+  Charter's irrevocable royalty-free public Protocol surface;
 - independent fixed-input close-only opening review; and
 - steward authorization for the exact candidate.
 

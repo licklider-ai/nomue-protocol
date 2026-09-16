@@ -6,10 +6,10 @@ capability, implementation authority, release commitment or discussion clock.
 
 ## Objective
 
-Prepare a bounded public question about whether a nomue Record should carry a
-common Design Declaration Envelope and versioned evidence that a registered
-Selection Policy mapped that envelope to exactly one Contract, Profile and
-interpretation bundle.
+Prepare a bounded public question about whether a nomue Record should expose a
+common Design Declaration Envelope as a defined projection of Profile-owned
+declarations and carry versioned evidence that a registered Selection Policy mapped
+that projection to exactly one Contract, Profile and interpretation bundle.
 
 The intended product outcome is portable, independently checkable verification
 across more than one scientific capability family. The Protocol question is
@@ -60,13 +60,16 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
   router, agent prompt or preference inferred from an implementation.
 - A successful selection requires exactly one policy result. Zero or multiple
   matches are not successful selections.
-- The Protocol defines no hidden priority or tie-break. If a choice among otherwise
-  eligible analyses is necessary, it must be an explicit, declared method or
-  estimand preference owned by the policy.
-- The common Design Declaration Envelope owns only cross-family structural facts.
-  Family-specific analytical details remain owned by the selected Profile.
-- Selection timing is disclosed as a bounded declaration. The first slice neither
-  authenticates nor proves its truth.
+- The Protocol defines no hidden priority or tie-break. In the first slice, an
+  explicit preference can name only an exact Contract inside the policy's closed
+  candidate set.
+- The Design Declaration Envelope is a logical projection, not a second store. Each
+  underlying declaration has one Profile-owned truth carrier.
+- Policy candidate predicates reference Profile-owned cross-family conditions.
+  Registration rejects inconsistent definitions; runtime selection does not
+  re-adjudicate Profile admissibility.
+- Selection timing is disclosed as a bounded declaration and repeated in the check
+  evidence. The first slice neither authenticates nor proves its truth.
 
 ## Work products
 
@@ -78,18 +81,21 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 - [Historical-preservation plan](historical-preservation-plan.md)
 - [Independent opening-review handoff](opening-review-handoff.md)
 - [Independent opening-review result](opening-review-result.md)
+- [Repaired-opening close-only review result](opening-close-review-result.md)
 
 ## Immediate sequence
 
 1. Complete the exact authority, surface and migration inventory, including the
    separately accepted Contract dependency for every family.
-2. Arrange full-text access for the named Research Gate source hold and obtain a
+2. Obtain a steward decision on whether registered Selection Policies enter the
+   irrevocable royalty-free public Protocol surface.
+3. Arrange full-text access for the named Research Gate source hold and obtain a
    methodological close-only review of the repaired result.
-3. Freeze the repaired opening candidate at immutable file and commit identities.
-4. Obtain an independent fixed-input close-only opening review.
-5. Repair or explicitly hold remaining findings and obtain steward authorization
+4. Freeze the repaired opening candidate at immutable file and commit identities.
+5. Obtain an independent fixed-input close-only opening review.
+6. Repair or explicitly hold remaining findings and obtain steward authorization
    for the exact reviewed proposal.
-6. Open a public RFC issue and record its actual UTC creation time, highest tier,
+7. Open a public RFC issue and record its actual UTC creation time, highest tier,
    minimum window and earliest decision time.
 
 No step above authorizes implementation support or publication of Release 5.

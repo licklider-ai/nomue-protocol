@@ -35,12 +35,19 @@ Each comparison must name immutable before/after commits, the invoked command, t
 fixture identity and the expected result. A newly generated snapshot without a
 reviewed historical reference is insufficient.
 
+The Release 1 preservation run must include `release-1-history.ts` and
+`pnpm regression:phase1`, with their exact historical pins recorded. Because the
+first production policy may make a multiple match structurally impossible, that
+negative path uses an explicitly test-only registered policy fixture containing two
+candidate predicates that match the same projected declarations. The fixture never
+enters a production registry or bundle.
+
 ## Required implementation constraints
 
 - Use new identifiers for R5-aware bundles, checks, schemas and reason codes.
 - Do not add the new check to an existing bundle's allowed-check set.
-- Do not default an absent envelope, policy identity, timing status or policy result
-  into a legacy Record.
+- Do not default absent projection inputs, policy identity, timing status or policy
+  result into a legacy Record.
 - Do not reinterpret a Release 1 method identifier as an independent-two-group
   Analysis Contract.
 - Do not edit historical expected outputs merely to make the new implementation

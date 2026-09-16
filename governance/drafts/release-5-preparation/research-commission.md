@@ -35,8 +35,9 @@ Do not treat an additional pass in the authoring context as independent research
 3. Can successful selection be defined without conflating scientific assumptions,
    structural conformance and numerical computability, and is any separate portable
    negative-selection artifact necessary in the first slice?
-4. What pre-data or pre-analysis timing declarations are necessary to prevent silent
-   data-dependent family selection?
+4. What timing declarations are necessary to prevent silent data-dependent family
+   selection, and is access to observed outcome values for the declared analysis
+   population the correct reference event?
 5. What ambiguity or overlap remains when exactly two groups are present, pairing is
    absent or contradictory, units appear more than once, or the analysis population
    differs from the supplied dataset?
@@ -57,8 +58,9 @@ Do not treat an additional pass in the authoring context as independent research
     misclassifying structures such as a four-group factorial design as a one-way
     family?
 13. Does the proposed policy meaning remain coherent when a family gains a second
-    valid Contract, and which explicit method or estimand preference may resolve an
-    otherwise multiple match?
+    valid Contract, and can an exact Contract identifier inside the closed candidate
+    set resolve an otherwise multiple match without introducing a new scientific
+    preference vocabulary?
 14. What is the strongest claim an independent verifier can make about a stored
     `pre_outcome`, `post_outcome` or `unknown` timing declaration without external
     timestamp or lineage evidence?
