@@ -27,6 +27,14 @@ Supported-domain/resource selection, research sufficiency and Record/schema/chec
 integration remain later work. Opening preparation and completed experiments need
 not be repeated merely because their historical requests still say pending.
 
+The [T04 candidate execution architecture decision](t04-candidate-execution-architecture-decision-20260914.md)
+records the user-authorized, reviewed E01/E02/E04 architecture and E03/E05/E06
+compatibility boundaries, directly based on the completed T03 commit. It freezes
+architecture invariants only. Concrete numerical semantics and reference
+parameters remain unselected; public support, reference full-invocation coverage
+and EC1-EC4 Evidence Closure remain open. This is an informative, unissued record,
+not T04 completion or retrospective approval of the historical experiments.
+
 ## Preserved preparation chronology
 
 The earlier navigation and pre-opening statements below describe their historical
