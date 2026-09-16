@@ -2,7 +2,7 @@
 
 Status: **UNISSUED CANDIDATE**.
 
-Checkout the exact containing re-freeze commit. Confirm that its parent is candidate source `12bf1b767963fbfc5382ba9734d595f6da428832`, whose ancestry contains original target `752a3ef876f27595cca31c4a106e70ffc7bd04df` and repair `84627967352206e9d1ecc54c5ca6a735319d9785`.
+Checkout the exact containing re-freeze commit. Confirm that its parent is candidate source `c62ba0f4ffe0e7a1992968f84adc81bd4546b217`, whose ancestry contains original target `752a3ef876f27595cca31c4a106e70ffc7bd04df` and repair `84627967352206e9d1ecc54c5ca6a735319d9785`.
 
 Run the binding checker:
 

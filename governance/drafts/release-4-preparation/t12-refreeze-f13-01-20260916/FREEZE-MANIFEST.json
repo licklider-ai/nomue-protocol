@@ -3,8 +3,8 @@
   "status": "UNISSUED CANDIDATE",
   "repository": "licklider-ai/nomue-protocol",
   "branch": "research/r4-t12-refreeze-f13-01-20260916",
-  "candidate_source_commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
-  "t12_parent_commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
+  "candidate_source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+  "t12_parent_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
   "formal_baseline_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
   "freeze_commit_binding": "The containing Git commit binds this manifest and T12 package; the exact commit is the T13 review target.",
   "hash_algorithm": "sha256",
@@ -28,7 +28,8 @@
     "752a3ef876f27595cca31c4a106e70ffc7bd04df",
     "84627967352206e9d1ecc54c5ca6a735319d9785",
     "e449956c705133445d947187c14efa82e5590032",
-    "12bf1b767963fbfc5382ba9734d595f6da428832"
+    "12bf1b767963fbfc5382ba9734d595f6da428832",
+    "c62ba0f4ffe0e7a1992968f84adc81bd4546b217"
   ],
   "chronology": [
     {
@@ -142,6 +143,10 @@
     {
       "stage": "F13-01 evidence path normalization",
       "commit": "12bf1b767963fbfc5382ba9734d595f6da428832"
+    },
+    {
+      "stage": "F13-01 evidence receipt formatting",
+      "commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217"
     }
   ],
   "evidence_categories": [
@@ -702,9 +707,9 @@
       "provenance": "reused",
       "status": "UNISSUED CANDIDATE",
       "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/MANIFEST.json",
-      "source_commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
-      "sha256": "2d52df4ce5673e6734347fc7ae981d6faa920656928c7c15ccd3153eb1261f20",
-      "bytes": 2808
+      "source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "sha256": "8574a829a9ec909310acb8e5cd77f615dfb5920dd3515f5269db7ef17bebf8a3",
+      "bytes": 2874
     },
     {
       "id": "f13-linux-t09",
@@ -724,9 +729,9 @@
       "provenance": "reused",
       "status": "UNISSUED CANDIDATE",
       "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/LINUX-T11-RECEIPT.json",
-      "source_commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
-      "sha256": "3edf4204665bb6cbaadb0e8d0127ec27f0925af2a19cfa864f5cd7020f6279de",
-      "bytes": 3362
+      "source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "sha256": "21d0a1d0ae19c8429119136946a3b55bfbe36b1e79c2b658383371296b90b19c",
+      "bytes": 3338
     },
     {
       "id": "f13-windows",
@@ -757,7 +762,7 @@
       "role": "package index",
       "category": "reproducibility metadata",
       "provenance": "newly frozen",
-      "sha256": "5804f0acf3d14730e9e6344b09fe646377f8f465bb49292168223f4774ed015b",
+      "sha256": "12016414478c17a44a32b7458805ec3896eecaf3c184414262fbff788428afc5",
       "bytes": 893
     },
     {
@@ -765,7 +770,7 @@
       "role": "re-freeze report",
       "category": "reproducibility metadata",
       "provenance": "newly frozen",
-      "sha256": "d37634fb83f3a9178e60f3ae97e60b4989bea7def4d7ac313365da12fe87cb18",
+      "sha256": "a6895387844bcabf6612bc575090edd033238e1c3ba1f0ecd6e28fc5193b5b02",
       "bytes": 2527
     },
     {
@@ -773,7 +778,7 @@
       "role": "reproduction instructions",
       "category": "reproducibility metadata",
       "provenance": "newly frozen",
-      "sha256": "4ec0b9d8b3939b7ac237c218c970186dd77ec8e592e896fdb973a1d167f7d78c",
+      "sha256": "ceefa58492e29040fa1381b902d375604c054c6889854798dc8b6accbfa422e8",
       "bytes": 1245
     },
     {
@@ -781,7 +786,7 @@
       "role": "manifest and preservation checker",
       "category": "reproducibility metadata",
       "provenance": "newly frozen",
-      "sha256": "db87a215edc86e0ad1bd74fab4039f329a5a58f3405f5971095a1ddb0a68fb5a",
+      "sha256": "b5d9a2d3bfd4de273e10c0dddc0ff570c6fa25a5b010b1d95181b3f73c073d2e",
       "bytes": 3964
     }
   ],
@@ -894,6 +899,10 @@
     {
       "commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
       "role": "nonsemantic F13-01 evidence-path normalization"
+    },
+    {
+      "commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "role": "formatter-only F13-01 evidence normalization"
     }
   ],
   "evidence_path_normalization": {
