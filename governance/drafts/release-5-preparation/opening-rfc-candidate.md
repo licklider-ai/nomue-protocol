@@ -94,10 +94,10 @@ Research Gate question; it is not silently required by this draft.
 
 ## Conditional family set
 
-| Family | Proposed selection fact | Dependency boundary |
-| --- | --- | --- |
-| Independent two-group | exactly two declared independent groups and the exact admitted analysis population | Reuse only an issued independent-two-group Contract and bundle |
-| Paired two-condition | explicit pair identity and two declared conditions with no inferred pairing | Conditional on the Release 2 decision and issued surfaces |
+| Family                  | Proposed selection fact                                                                          | Dependency boundary                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| Independent two-group   | exactly two declared independent groups and the exact admitted analysis population               | Reuse only an issued independent-two-group Contract and bundle            |
+| Paired two-condition    | explicit pair identity and two declared conditions with no inferred pairing                      | Conditional on the Release 2 decision and issued surfaces                 |
 | Independent multi-group | at least three explicitly declared independent groups and an exact selected multi-group Contract | Conditional on the Release 3 decision and the selected vertical increment |
 
 The table does not decide variance assumptions, omnibus/post-hoc procedure,
@@ -121,15 +121,15 @@ by the selected Contract, Profile and Public Checks.
 The exact path and Requirement-ID inventory remains open. The anticipated additive
 owners are:
 
-| Subject | Candidate owner |
-| --- | --- |
+| Subject                              | Candidate owner                                                                 |
+| ------------------------------------ | ------------------------------------------------------------------------------- |
 | Finalized selection-decision meaning | a new Contract or cross-cutting analytical-decision specification under `spec/` |
-| Contextual design declarations | the applicable Profile specifications |
-| JSON representation | additive closed successor Record schemas |
-| Selection-evidence verification | a new versioned Public Check specification and registry entry |
-| Exact supported combinations | additive interpretation-bundle entries |
-| Scoped verification failures | report schema plus registered reason codes |
-| Interoperability | positive, negative, ambiguity and historical-preservation conformance fixtures |
+| Contextual design declarations       | the applicable Profile specifications                                           |
+| JSON representation                  | additive closed successor Record schemas                                        |
+| Selection-evidence verification      | a new versioned Public Check specification and registry entry                   |
+| Exact supported combinations         | additive interpretation-bundle entries                                          |
+| Scoped verification failures         | report schema plus registered reason codes                                      |
+| Interoperability                     | positive, negative, ambiguity and historical-preservation conformance fixtures  |
 
 Existing exact bundle dispatch remains owned by `NRS-VERSION-0005`,
 `NRS-VERSION-0007` and `NRS-VERSION-0008`; this proposal does not amend their

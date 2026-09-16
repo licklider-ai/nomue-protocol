@@ -11,16 +11,16 @@ continuous-outcome families?
 
 ## Readiness gates
 
-| Gate | Current state | Required closure evidence |
-| --- | --- | --- |
-| R5-P1 bounded question and exclusions | PREPARED | Independent review confirms that the question is Protocol-scoped and does not standardize Layer 2 routing |
-| R5-P2 Research Gate evidence | OPEN | Primary-source report and independent methodological review from `research-commission.md` |
-| R5-P3 predecessor reconciliation | OPEN | Exact mapping to the accepted Release 1, Release 2 and Release 3 Contracts, Profiles, declarations and bundles; unresolved predecessors remain conditional |
-| R5-P4 decision semantics | OPEN | Reviewed successful-selection meaning, negative-artifact exclusion and distinction from conformance, computability and numerical verification |
-| R5-P5 authority and surface impact | OPEN | Exact proposed clauses, existing/new Requirement-ID treatment, schemas, public surfaces, bundle/check/reason-code impact and migration analysis |
-| R5-P6 historical preservation | PREPARED | Fixed tests or reviewed plan proving no change to earlier bundle meaning, exact dispatch or pinned conformance results |
-| R5-P7 tier and window | PROVISIONAL | Complete impact assessment; STABLE-INTENT/30 days unless a CORE change is identified |
-| R5-P8 independent opening review | OPEN | Fixed-input review with findings repaired or explicitly held, followed by steward opening authorization |
+| Gate                                  | Current state | Required closure evidence                                                                                                                                  |
+| ------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| R5-P1 bounded question and exclusions | PREPARED      | Independent review confirms that the question is Protocol-scoped and does not standardize Layer 2 routing                                                  |
+| R5-P2 Research Gate evidence          | OPEN          | Primary-source report and independent methodological review from `research-commission.md`                                                                  |
+| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to the accepted Release 1, Release 2 and Release 3 Contracts, Profiles, declarations and bundles; unresolved predecessors remain conditional |
+| R5-P4 decision semantics              | OPEN          | Reviewed successful-selection meaning, negative-artifact exclusion and distinction from conformance, computability and numerical verification              |
+| R5-P5 authority and surface impact    | OPEN          | Exact proposed clauses, existing/new Requirement-ID treatment, schemas, public surfaces, bundle/check/reason-code impact and migration analysis            |
+| R5-P6 historical preservation         | PREPARED      | Fixed tests or reviewed plan proving no change to earlier bundle meaning, exact dispatch or pinned conformance results                                     |
+| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days unless a CORE change is identified                                                                       |
+| R5-P8 independent opening review      | OPEN          | Fixed-input review with findings repaired or explicitly held, followed by steward opening authorization                                                    |
 
 ## Existing reusable foundation
 
