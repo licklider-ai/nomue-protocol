@@ -16,10 +16,16 @@ That report's appended review receipt supersedes its earlier review-pending
 introduction. Archive GO preserves the experiments; it is not numerical support
 or formal implementation approval.
 
-The next round prepares supported-domain/output policy, real resource enforcement,
-and Record/schema/check/conformance integration with the applicable bounded
-reviews. Opening preparation and the completed small experiments need not be
-repeated merely because their original requests still say pending.
+The [T03 candidate numerical policy decision](t03-candidate-numerical-policy-decision-20260914.md)
+records the user-selected D01-D07 dispositions, scoped aggregation and the required
+downstream CLI/report changes. It is an unissued follow-up to the preserved opening
+RFC, not formal adoption or an implementation of the public comparison contract.
+Its discussion-impact assessment applies to the later delta; the opening receipt's
+unchanged-scope date is not automatically the adoption date for that delta.
+
+Supported-domain/resource selection, research sufficiency and Record/schema/check
+integration remain later work. Opening preparation and completed experiments need
+not be repeated merely because their historical requests still say pending.
 
 ## Preserved preparation chronology
 
