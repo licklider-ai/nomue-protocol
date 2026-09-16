@@ -1,0 +1,150 @@
+{
+  "scope": "Final additive EC3/EC4 research artifact including targeted F-01 repair; excludes this manifest to avoid self-reference",
+  "paths_relative_to": "repository root",
+  "files": {
+    ".github/workflows/r4-ec3-ec4-evidence.yml": {
+      "sha256": "f1daf213d532092f4341d476eb5743e82ed329d6f7265f7b7683781df4d7fe3b",
+      "bytes": 2363
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/ATTEMPTS.json": {
+      "sha256": "13ae497e348525b356b26bdf49916da49a0defdc2dd4fd6aa2a36e51f90de42f",
+      "bytes": 1728
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/BOUNDARY.md": {
+      "sha256": "e25bdcc2cf1fb5e96c87d7470bf2e3538f51ecb06164ac67307240491001bc2c",
+      "bytes": 11647
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/CANDIDATE-PROFILE.json": {
+      "sha256": "a74e63a0584f4a3becce6a63f23a1b63beb496d422e657c56508c6702a01c5f8",
+      "bytes": 1563
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/CAPTURE.json": {
+      "sha256": "a7c2990d9a31c8e63d2240d2b0d2ff2c74c0c8711be94fd36ef287763d3d6839",
+      "bytes": 1385
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/check_failure_delivery.py": {
+      "sha256": "ebb47132a85cb37607225c14987d00c821d3bdd2e4283e1563fc1f61ea429515",
+      "bytes": 1419
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/common.py": {
+      "sha256": "3f45dc1845aa889a5c38206b01e40d0f38456ffa949ebf25e5b2263fb794dbaa",
+      "bytes": 1042
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/delivery.py": {
+      "sha256": "4a67e20214d4c5d3e69950facf050b8623ec99b6868a4ade7c35b943e308ff6d",
+      "bytes": 2898
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/Dockerfile": {
+      "sha256": "b79ebadc8409facc8133e5980914f8d61d021a6c6f3ea6a024247b5ae154be09",
+      "bytes": 379
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/EXECUTION-EVIDENCE.md": {
+      "sha256": "cc6c6766ad2f27bc2862839a0fabdc78f8f197dbb70874a2e77ff3b294a78159",
+      "bytes": 6729
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-BASELINE-REPRODUCTION.json": {
+      "sha256": "e4755585bba7367c50157e3e1cc2e187e6c5380ffa537326aa24a8c22a1a9cd0",
+      "bytes": 1556
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-CONTROLS.json": {
+      "sha256": "99d125014617f2c184b707ba73860fd77b7fcc55c09fa604ae402a1e5f8b7e5d",
+      "bytes": 19115
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md": {
+      "sha256": "87ea2a9b225405ff5b090b3dd2ba624ef7225a6aafd0d21672aa596446c5da7a",
+      "bytes": 5447
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/FAILURE-MATRIX.md": {
+      "sha256": "ce99f90ea05c26c231e918a92d7051b522440c71731221b4ffbe01c5d8da1e7c",
+      "bytes": 5513
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/ingress.ts": {
+      "sha256": "a389e19f4a48b3a560b13b0099dd668ab7c3803848ec86d7b0769b511d281a59",
+      "bytes": 2400
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/INPUTS.json": {
+      "sha256": "e44ad3f678cd8ac9c14c14e716258dfbe86d6df35c30f46a61607645d84613ea",
+      "bytes": 10508
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/ANALYSIS-OPTIMIZED.json": {
+      "sha256": "b8d0e0a85fbea1152577832cedff1dc75e0590c11ffe1c42421b2390dd7ff1bf",
+      "bytes": 2382
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/ANALYSIS.json": {
+      "sha256": "6c0ca1124a1cf3325daf1555ad55f143706fbc548e4d89366a3391e0af258c25",
+      "bytes": 2382
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/CASE-MANIFEST.json": {
+      "sha256": "bd47ef2766a61fe1ab3071df9c162631467494184333c362eaaef1a2a0487411",
+      "bytes": 2196594
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/HOST.json": {
+      "sha256": "53776bc0cefe176e9c0845bda5b335af603b513789b0b7a94ef30866fd36de4d",
+      "bytes": 5334
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/MEASUREMENTS.jsonl": {
+      "sha256": "7e676385077bc5158ef5785c5e2cb5e70efbb54d4fe1cef416ff7046378a3f21",
+      "bytes": 9020261
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/SOURCE-MANIFEST.json": {
+      "sha256": "953ea35eb3f893afe8e73cc7e91f25332435865a0a8a8b0e2a17145c64affa93",
+      "bytes": 552193
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/measurements/SUMMARY.json": {
+      "sha256": "0dc21d0328e3bf220df43966dbc68461244484039dea5b6ba5cd68a8c6cb968e",
+      "bytes": 752
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/parent.py": {
+      "sha256": "e47e4f979028aff4e555949670f5d8b072178037687230c5d86e80a760c1a934",
+      "bytes": 7355
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/prepare.py": {
+      "sha256": "8e69d26a3e01100fea494c6d94fed85fb4d2208ae314847eb2b3b4b2bb42d1b0",
+      "bytes": 3645
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/PROFILE-RATIONALE.md": {
+      "sha256": "d1125aa757fdb60c943833bd11713ad98406a886cfd085401a43cee721178d3d",
+      "bytes": 6122
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/profiles.json": {
+      "sha256": "31982118d44903c03671d5a3f4517ca351381c9454179362003b6182e58bc53a",
+      "bytes": 622
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/README.md": {
+      "sha256": "f4e800fc5016561a17529ba148b823b8b655edf5d5f4b18baa8cf95b615a0fbf",
+      "bytes": 5131
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/REPORT.md": {
+      "sha256": "b2703f5b7b2190c1129af0dd7553525f22f520f274eb15f2b8f98df3e90beb22",
+      "bytes": 9802
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/RESOURCE-MEASUREMENTS.md": {
+      "sha256": "5ec2727d4ee888f06c08719a6cabe396f4f80a368a490941c41e7046e51a19b9",
+      "bytes": 3335
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/run_suite.py": {
+      "sha256": "c5e276059935ecb0802758a1239d5c64ee132c634f82753d6cd6be98e293d40f",
+      "bytes": 10331
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md": {
+      "sha256": "b6fd294c5a5fdd8ab8c267994e65366181217d29ce0446ebf8b4b84817c61934",
+      "bytes": 9658
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/test_f01_delivery.py": {
+      "sha256": "104cdee1815718378f5b076e4ecfbe09d308a6b5f2e25e3a61457e780c151c54",
+      "bytes": 9820
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/VALIDATION.md": {
+      "sha256": "148d5053c9a1001160c6f7ed7395373407cf121361e0927a828a9d80759abcd2",
+      "bytes": 3622
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/verify_measurements.py": {
+      "sha256": "3b51c4467f83d70b72ee1de9f0d351062a7ae033de045c010bc06158290466e1",
+      "bytes": 7476
+    },
+    "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/worker.py": {
+      "sha256": "dcc0aaf84a79b97f3207345041db30c5c4774ba680fc7829dbd767ee3e515674",
+      "bytes": 2464
+    }
+  }
+}

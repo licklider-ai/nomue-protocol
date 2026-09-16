@@ -1,0 +1,58 @@
+{
+  "base": "64a9a4aa188fb16077245e8d87503765460a410f",
+  "scope": "Read-only original source loaded in memory; deterministic fake-clock/Docker controls",
+  "cases": [
+    {
+      "case": "deadline_then_report",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "deadline_then_report final refusal"
+    },
+    {
+      "case": "report_then_deadline",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "report_then_deadline final refusal"
+    },
+    {
+      "case": "deadline_during_collection",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "deadline_during_collection final refusal"
+    },
+    {
+      "case": "oom",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "oom final refusal"
+    },
+    {
+      "case": "cpu",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "cpu final refusal"
+    },
+    {
+      "case": "crash",
+      "baseline_rejected_by_regression_test": true,
+      "diagnostic": "crash final refusal"
+    },
+    {
+      "case": "direct deadline",
+      "baseline_outcome": {
+        "execution": "completed_candidate",
+        "reason": null,
+        "result": {
+          "gate": "eligible",
+          "sentinel": "valid numerical result"
+        }
+      }
+    },
+    {
+      "case": "direct OOM",
+      "baseline_outcome": {
+        "execution": "completed_candidate",
+        "reason": null,
+        "result": {
+          "gate": "eligible",
+          "sentinel": "valid numerical result"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "Author measurement development history; none of these attempts is an independent review",
+  "attempts": [
+    {
+      "run": 34829278016,
+      "commit": "8721219e7b18e6ed58f56c03616d080ba30380e3",
+      "result": "setup failed before numerical measurements",
+      "cause": "Docker local logging driver rejects compression with max-file=1; first observer did not retain failed row",
+      "reuse": "No completion claim"
+    },
+    {
+      "run": 34829414727,
+      "commit_prefix": "049e3c5",
+      "result": "same setup failure, now diagnosed and retained",
+      "cause": "Unsupported local logging options",
+      "reuse": "No completion claim"
+    },
+    {
+      "run": 34829517605,
+      "commit_prefix": "4e74732",
+      "result": "338 attempts, 290 checks failed; not an acceptance run",
+      "cause": "Dropped capabilities prevented root from writing runner-owned report directory; corrected by using owner UID/GID rather than restoring capabilities",
+      "reuse": "Only failure-development history; 48 broad negative assertions are not accepted as cause-specific evidence"
+    },
+    {
+      "run": 34830105447,
+      "commit_prefix": "f53d2c1",
+      "result": "338 cases plus normal/optimized saved-result checks passed; superseded by final delivery-aware run",
+      "cause": "Report ownership fixed; final cleanup-dependent delivery added next",
+      "reuse": "Historical intermediate run; final acceptance is bound to later source"
+    },
+    {
+      "run": 34830324114,
+      "commit": "a6cddeba659ae2c52e6a7901d3e5a41102080274",
+      "result": "338/338 plus both verification modes and 7 delivery checks per mode passed",
+      "reuse": "Final measurement source for this packet"
+    }
+  ]
+}

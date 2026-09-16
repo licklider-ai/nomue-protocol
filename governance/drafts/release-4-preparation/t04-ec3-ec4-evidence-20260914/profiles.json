@@ -1,0 +1,35 @@
+{
+  "small": {
+    "raw": 1048576,
+    "transport": 2097152,
+    "stdout": 1048576,
+    "report": 2097152,
+    "tree_mib": 128,
+    "worker_mib": 128,
+    "node_mib": 64,
+    "cpu": 10,
+    "wall": 15
+  },
+  "medium": {
+    "raw": 5242880,
+    "transport": 8388608,
+    "stdout": 4194304,
+    "report": 8388608,
+    "tree_mib": 512,
+    "worker_mib": 256,
+    "node_mib": 128,
+    "cpu": 25,
+    "wall": 30
+  },
+  "large": {
+    "raw": 5242880,
+    "transport": 16777216,
+    "stdout": 16777216,
+    "report": 33554432,
+    "tree_mib": 1024,
+    "worker_mib": 512,
+    "node_mib": 256,
+    "cpu": 50,
+    "wall": 60
+  }
+}

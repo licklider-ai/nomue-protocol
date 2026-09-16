@@ -1,0 +1,145 @@
+{
+  "execution_baseline": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "PR_331_merge": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "numerical_candidate": "66fa2bc201c86c62f21bb94825479427c24d8522",
+  "architecture": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+  "merge_base": "2732a26fd61d4e726fbd95b4d7622574cfcd9d82",
+  "B": "52969003320369754284032",
+  "domain": "J-cost(B,S-C)",
+  "eligibility": "Z-B",
+  "procedure": "S-C",
+  "cost_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "runtime_11": [
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/consumer.py",
+      "sha256": "64045d1dc9060d0d4c838c7f7b39f0cd37109f77c72079073b12e885dd6c8c5f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/worker.py",
+      "sha256": "d107e32a5d3ccbad8d299749d964c3677c5ea25ae3ed4550945bb5c0e5fa839f"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/transport.py",
+      "sha256": "bd3725ddc6320596df75dacbd0dbf6705fcd75ef570453dba4fe599b0dbb6318"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/supervisor.py",
+      "sha256": "25992004eea5cd8912722b7ae3af685d405154aca513c58d1af0e1c114a660a2"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/output.py",
+      "sha256": "ade13d62b53d9491927bb41488389a6252bdea57f90f4903bfd1a514d5a0697e"
+    }
+  ],
+  "numerical_side_commits": [
+    "66fa2bc201c86c62f21bb94825479427c24d8522 Record R4 G5 integrated numerical procedure evidence",
+    "0562813a2a5b112e73a0d0f0f80160cc3bd08ce7 Record R4 G4 working budget and domain evidence",
+    "225eca96d485978ee01cbe08d535387900252bca Record R4 G1-G3 research gate evidence",
+    "663e44a0e632854d740abc26ff0f705db8d87c3f Record R4 T04 EC1 and EC2 numerical boundary evidence",
+    "cd9d780ac06a3b998ff5d4717429b0177a222fe8 Record R4 T04 candidate execution architecture",
+    "d9ec6984f55f09caa2f65d7714af72190d63c6d4 Record R4 T03 candidate numerical policy decisions"
+  ],
+  "execution_side_commits": [
+    "3880db43a64e1758494f3c78f6850daab0e3e9e9 Merge pull request #331 from licklider-ai/research/r4-controlled-execution-20260912",
+    "98bea06dd649949ed2f62a2e7fbe25ed4337a4aa Validate saved R4 evidence and reject unsuccessful oracle checks (#334)",
+    "6e81be182d936ad01d736ea3a665abc02a4934bd Clarify publication boundaries and review preparation (#333)",
+    "b0946163aed30a39119336434e2029b96096fd57 Merge pull request #332 from licklider-ai/maintenance/reference-source-home",
+    "651282244d22bf4c991f898c6d48dc8fe3cebc3b Consume pinned Verifier sources and check reference mirror consistency"
+  ],
+  "endpoint_diff_direction": "numerical candidate -> execution baseline, not a history of deletions",
+  "endpoint_name_status": [
+    "M\t.github/workflows/r3-holm-adoption-map.yml",
+    "M\t.github/workflows/r4-controlled-execution.yml",
+    "A\t.github/workflows/reference-source.yml",
+    "M\tAGENTS.md",
+    "A\tgovernance/2026-09-14-contribution-policy-continuity.md",
+    "M\tgovernance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs",
+    "M\tgovernance/drafts/release-3-preparation/r3-followup-review-20260911/SHA256SUMS.txt",
+    "M\tgovernance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py",
+    "M\tgovernance/drafts/release-4-preparation/README.md",
+    "M\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/COUPLING.md",
+    "A\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/EVIDENCE-VALIDATION-REPAIR.md",
+    "M\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/POLICY.md",
+    "A\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/test_evidence_validation.py",
+    "A\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/validate_saved_evidence.py",
+    "A\tgovernance/drafts/release-4-preparation/controlled-execution-experiment-20260912/validate_tail_oracle.py",
+    "D\tgovernance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/INPUTS.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/MANIFEST.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/REPORT.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/RESULTS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/INPUTS.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/MAIN-DELTA.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/MANIFEST.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/README.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RESULTS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/REVIEW-PROMPT.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG2-ZERO-EXACT-SIGN.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG3-ALTERNATIVES.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG4-MACHINE-EVIDENCE.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG5-CLAIM-BOUNDARY.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/check_evidence.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/verify_artifacts.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/ANALYSIS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/DECISION.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/INPUTS.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/MANIFEST.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/PLAN.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REFERENCE-OBSERVATIONS.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REPORT.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/RESULTS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/analyze_results.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/check_evidence.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/measure_reference.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/verify_artifacts.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/EXPECTED-VECTORS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/INPUTS.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/MANIFEST.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/README.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RECORDS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RESULTS.jsonl",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/VALIDATION.json",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/check_evidence.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/strict-ingress.ts",
+    "D\tgovernance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/verify_artifacts.py",
+    "M\tpackage.json",
+    "M\treference/AGENTS.md",
+    "M\treference/README.md",
+    "A\treference/SOURCE-PIN.json",
+    "A\ttooling/maintenance/pinned-contribution-source.mjs",
+    "A\ttooling/maintenance/pinned-contribution-source.test.mjs",
+    "A\ttooling/reference-sync/check.mjs",
+    "A\ttooling/reference-sync/check.test.mjs"
+  ],
+  "review_status_source": "Steward task intake reports Architecture CLOSED, EC1 CLOSE GO, EC2 CLOSE GO, independent numerical close review GO. These author artifacts do not independently reissue those verdicts."
+}

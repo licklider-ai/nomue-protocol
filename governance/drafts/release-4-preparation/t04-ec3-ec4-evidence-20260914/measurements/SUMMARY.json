@@ -1,0 +1,39 @@
+{
+  "checks": { "PASS": 338 },
+  "profiles": {
+    "large": {
+      "cpu": 50,
+      "node_mib": 256,
+      "raw": 5242880,
+      "report": 33554432,
+      "stdout": 16777216,
+      "transport": 16777216,
+      "tree_mib": 1024,
+      "wall": 60,
+      "worker_mib": 512
+    },
+    "medium": {
+      "cpu": 25,
+      "node_mib": 128,
+      "raw": 5242880,
+      "report": 8388608,
+      "stdout": 4194304,
+      "transport": 8388608,
+      "tree_mib": 512,
+      "wall": 30,
+      "worker_mib": 256
+    },
+    "small": {
+      "cpu": 10,
+      "node_mib": 64,
+      "raw": 1048576,
+      "report": 2097152,
+      "stdout": 1048576,
+      "transport": 2097152,
+      "tree_mib": 128,
+      "wall": 15,
+      "worker_mib": 128
+    }
+  },
+  "runs": 338
+}

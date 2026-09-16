@@ -1,0 +1,128 @@
+{
+  "docker_version": {
+    "Client": {
+      "ApiVersion": "1.48",
+      "Arch": "amd64",
+      "BuildTime": "Tue Mar 25 15:07:16 2025",
+      "Context": "default",
+      "DefaultAPIVersion": "1.48",
+      "GitCommit": "b8034c0",
+      "GoVersion": "go1.23.7",
+      "Os": "linux",
+      "Platform": { "Name": "Docker Engine - Community" },
+      "Version": "28.0.4"
+    },
+    "Server": {
+      "ApiVersion": "1.48",
+      "Arch": "amd64",
+      "BuildTime": "2025-03-25T15:07:16.000000000+00:00",
+      "Components": [
+        {
+          "Details": {
+            "ApiVersion": "1.48",
+            "Arch": "amd64",
+            "BuildTime": "Tue Mar 25 15:07:16 2025",
+            "Experimental": "false",
+            "GitCommit": "6430e49",
+            "GoVersion": "go1.23.7",
+            "KernelVersion": "6.17.0-1022-azure",
+            "MinAPIVersion": "1.24",
+            "Os": "linux"
+          },
+          "Name": "Engine",
+          "Version": "28.0.4"
+        },
+        {
+          "Details": { "GitCommit": "db8809540e1a7a9da5d518876894933ff55692ab" },
+          "Name": "containerd",
+          "Version": "v2.3.4"
+        },
+        { "Details": { "GitCommit": "v1.5.1-0-g8f2685a4" }, "Name": "runc", "Version": "1.5.1" },
+        { "Details": { "GitCommit": "de40ad0" }, "Name": "docker-init", "Version": "0.19.0" }
+      ],
+      "GitCommit": "6430e49",
+      "GoVersion": "go1.23.7",
+      "KernelVersion": "6.17.0-1022-azure",
+      "MinAPIVersion": "1.24",
+      "Os": "linux",
+      "Platform": { "Name": "Docker Engine - Community" },
+      "Version": "28.0.4"
+    }
+  },
+  "image": [
+    {
+      "Architecture": "amd64",
+      "Author": "",
+      "Comment": "buildkit.dockerfile.v0",
+      "Config": {
+        "AttachStderr": false,
+        "AttachStdin": false,
+        "AttachStdout": false,
+        "Cmd": ["python3"],
+        "Domainname": "",
+        "Entrypoint": null,
+        "Env": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.12.14",
+          "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+          "PYTHONDONTWRITEBYTECODE=1"
+        ],
+        "Hostname": "",
+        "Image": "",
+        "Labels": null,
+        "OnBuild": null,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Tty": false,
+        "User": "",
+        "Volumes": null,
+        "WorkingDir": "/numerical"
+      },
+      "Created": "2026-09-14T09:54:02.1535884Z",
+      "DockerVersion": "",
+      "GraphDriver": {
+        "Data": {
+          "LowerDir": "/var/lib/docker/overlay2/3bfa2yjl462uqvr1p9gi85rl5/diff:/var/lib/docker/overlay2/aplhc8naapquayrmbbutqcce1/diff:/var/lib/docker/overlay2/n3aeyk88lew134jaq23s4zxer/diff:/var/lib/docker/overlay2/twgr1cnjacjf8n20juzvurinx/diff:/var/lib/docker/overlay2/c9llnhwwtbiltouhvdyhezgpz/diff:/var/lib/docker/overlay2/beiwdvbacm84u1vvcoid6q807/diff:/var/lib/docker/overlay2/c4c89068a2a0bbd8af1df5d5b7e4efd16ea284bf09525041d5b702f101f857db/diff:/var/lib/docker/overlay2/bbcef9b20bb1c0964558850bc89791c4928f72eb1d3e7d02ba1cfe6141eeb1cd/diff:/var/lib/docker/overlay2/e370e8d59da4a774c8b7eaab4b55afb0f03d86efa98792d591057ab3c90d4ea8/diff:/var/lib/docker/overlay2/9dd4b220fecf4d90c7bc58910f010ab5f4fa10b7a54f39e78af4958f280d4835/diff",
+          "MergedDir": "/var/lib/docker/overlay2/l47lrxfwwqpugc90vupzpj7n3/merged",
+          "UpperDir": "/var/lib/docker/overlay2/l47lrxfwwqpugc90vupzpj7n3/diff",
+          "WorkDir": "/var/lib/docker/overlay2/l47lrxfwwqpugc90vupzpj7n3/work"
+        },
+        "Name": "overlay2"
+      },
+      "Id": "sha256:4ea86a365ca8c66c7be8e5ba8406fb1482901f64326435f80bffa2205ba2f205",
+      "Metadata": { "LastTagTime": "2026-09-14T09:54:03.32497848Z" },
+      "Os": "linux",
+      "Parent": "",
+      "RepoDigests": [],
+      "RepoTags": ["r4-ec3-research:latest"],
+      "RootFS": {
+        "Layers": [
+          "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+          "sha256:32488c65fb2595aaf67371142ffe3ffdc39660ab83b4cfb35ebd9fdf751997ff",
+          "sha256:4a3d4f8d9fbb21dbb593489962d9f6a77bb0086315a5d3c66e67738fdf27029b",
+          "sha256:38ed9d88ee80c1d99e220af90592650b2b4126bd5bcfa2612df3fdeb42e8844c",
+          "sha256:5c189558def8fee378ddd8640591feb633fe2bdefe3182b2befed94689fbe378",
+          "sha256:f0471e8b92300bea9f2978ca67aad2791e8115938e29cfe12a015b681371f56d",
+          "sha256:5f3acd49c3102253277b5805f448a9529e215ec0bf54d2177eaa1ca74bd79d0a",
+          "sha256:cee1de627791d9b8cd511d508dbdac687f496356c33025f9da30ea7a58d1b17a",
+          "sha256:c4fe500ebd5fc0eb5c514be905b6c0742a460093cb13dfa24928fa2f775f047e",
+          "sha256:1314dc35afe4a2b2ef0236104d093f2a4f10b11f42e6dae56a596678a10d58b5",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+        ],
+        "Type": "layers"
+      },
+      "Size": 351528494
+    }
+  ],
+  "image_runtime": {
+    "machine": "x86_64",
+    "python": "3.12.14",
+    "python_sha256": "4dbf3143240288fb2170257ffaa7bd030cdda5d2703d1f5f30b627042267e2e3"
+  },
+  "kernel": "6.17.0-1022-azure",
+  "observer_python": "3.12.3",
+  "workflow_commit": "a6cddeba659ae2c52e6a7901d3e5a41102080274",
+  "workflow_run": "34830324114"
+}
