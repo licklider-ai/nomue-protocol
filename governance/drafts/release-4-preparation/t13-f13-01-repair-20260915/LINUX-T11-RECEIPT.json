@@ -10,7 +10,10 @@
   "runs": [
     {
       "name": "full-check",
-      "command": ["pnpm", "check"],
+      "command": [
+        "pnpm",
+        "check"
+      ],
       "exit_code": 0,
       "seconds": 117.645,
       "output": "full-check.txt",
@@ -20,7 +23,7 @@
       "name": "path-observation",
       "command": [
         "node",
-        "/home/runner/work/nomue-protocol/nomue-protocol/governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs"
+        "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs"
       ],
       "exit_code": 0,
       "seconds": 0.027,
@@ -92,5 +95,11 @@
       "output": "f01-optimized.txt",
       "sha256": "63847f30287eb0332eec0de0dbc1ce07dd70a307743057fae28c44e2414c6c13"
     }
-  ]
+  ],
+  "evidence_path_normalization": {
+    "field": "runs[name=path-observation].command[1]",
+    "original_path_class": "GitHub Actions workspace absolute path",
+    "normalized_repository_path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs",
+    "reason": "Preserve the executed repository script identity while removing a non-semantic host-home path rejected by private-dependency audit. Script output hash, exit code, source commit, and all result assertions are unchanged."
+  }
 }

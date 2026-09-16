@@ -51,8 +51,8 @@
     },
     {
       "path": "LINUX-T11-RECEIPT.json",
-      "bytes": 2839,
-      "sha256": "f139b3687016f6667f2210941114a355bd04a17e298ecae76a1270b160c333f2"
+      "bytes": 3362,
+      "sha256": "3edf4204665bb6cbaadb0e8d0127ec27f0925af2a19cfa864f5cd7020f6279de"
     },
     {
       "path": "WINDOWS-RECEIPT.json",
@@ -64,5 +64,11 @@
       "bytes": 4790,
       "sha256": "bf1154775552d932b02368f8a8c7f1c6949cd25434ff470b12823e2f8b2bd5f6"
     }
-  ]
+  ],
+  "evidence_path_normalization": {
+    "receipt": "LINUX-T11-RECEIPT.json",
+    "scope": "host workspace path representation only",
+    "result_semantics_changed": false,
+    "original_t12_manifest_changed": false
+  }
 }
