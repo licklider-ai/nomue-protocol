@@ -27,8 +27,9 @@ independent reviews. No T05 research-sufficiency judgment is made here.
   [opening receipt](public-discussion-opening-2026-09-09.md) retain their bytes.
 - The experimental policy and coupling input are the versions of
   `controlled-execution-experiment-20260912/POLICY.md` and `COUPLING.md`
-  at P. The explicit T03 follow-up notes now linked from those documents do not
-  rewrite the meaning of their historical captures or reviews.
+  at P. They remain immutable historical captures; this decision record and the
+  Release 4 preparation README carry the later T03 candidate explanation without
+  rewriting the meaning of those captures or their reviews.
 
 This separate informative decision record follows the preparation's
 [acceptance-record convention](normal-model-steward-acceptance-2026-09-09.md).
