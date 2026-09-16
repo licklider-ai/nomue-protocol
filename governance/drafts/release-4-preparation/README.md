@@ -35,6 +35,18 @@ parameters remain unselected; public support, reference full-invocation coverage
 and EC1-EC4 Evidence Closure remain open. This is an informative, unissued record,
 not T04 completion or retrospective approval of the historical experiments.
 
+The [T04 EC1/EC2 integration-lineage record](t04-ec1-ec2-integration-lineage-20260916/REPORT.md)
+separates the immutable historical T03 input used by the EC1/EC2 research from
+the semantics-preserving T03 integration representation on main. It replays the
+historical checker from its pinned blobs and does not promote the evidence,
+select a numerical parameter, or alter a public surface.
+
+The [T04 EC1/EC2 integration-lineage record](t04-ec1-ec2-integration-lineage-20260916/REPORT.md)
+separates the immutable historical T03 input used by the EC1/EC2 research from
+the semantics-preserving T03 integration representation on main. It replays the
+historical checker from its pinned blobs and does not promote the evidence,
+select a numerical parameter, or alter a public surface.
+
 ## Preserved preparation chronology
 
 The earlier navigation and pre-opening statements below describe their historical
