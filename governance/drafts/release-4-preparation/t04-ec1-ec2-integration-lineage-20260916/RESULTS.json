@@ -1,0 +1,13 @@
+{
+  "current_t03": {
+    "classification": "preservation-location-only",
+    "current_sha256": "bb739c0ec70595443e8c0ce41223a724bb6275ad6afbb5fad009db839c2c2f47",
+    "historical_sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0"
+  },
+  "historical_replay": {
+    "checks": 5908,
+    "saved_result_sha256": "b78e1912e0b3856434a82aec0168646e152e747439fd67a18d6ccfd95fe8e4d7"
+  },
+  "historical_source_pins": 22,
+  "status": "integration_lineage_verified_not_ec_closure"
+}

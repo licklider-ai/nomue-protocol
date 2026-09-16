@@ -1,0 +1,116 @@
+{
+  "input_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+  "scope": "EC1/EC2 only; no support or Research Gate closure",
+  "files": [
+    {
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "git_blob": "1a743fac2fce5d2e184f44bf0d1d3c368a257d4e",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "git_blob": "bf82051f1bd462a1557a119ba777993871fc691f",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/arithmetic-candidate-20260910/REPORT.md",
+      "git_blob": "c1ce0d5319237837bce0c1e6dbe86b528d0332de",
+      "sha256": "d5924382050f0e10faa12213297656f9b2cc0c720de076d8f072731c4c82691e"
+    },
+    {
+      "path": "review-inputs/r4-arithmetic-2864903/REVIEW-RESULT.md",
+      "git_blob": "d9a1de6a97f825f24fb300d5226742d2d1a4cb42",
+      "sha256": "da793a9a60c64b7260b544514e15d35083cc2019f74862019d19cc3867d316c4"
+    },
+    {
+      "path": "review-inputs/r4-primary-methods-20260911/REPORT.md",
+      "git_blob": "97ba0876a8bcbcf1f79c98b82b6567dfd8771f02",
+      "sha256": "8515d79c1f710fba8dfbb6469d43b4b529e3c910121698d37bcd6299a6c6893d"
+    },
+    {
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/REPORT.md",
+      "git_blob": "4b196ea708d422e880b2d81da461e719263f46ca",
+      "sha256": "2c38a21c344ee193ee3f7d59512798fcb609eeec6d001b0735d13518ebaf5b79"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/rational-tail-composition-20260911/EXTERNAL-REVIEW.md",
+      "git_blob": "d7c517ba83c7c79022d360eb626b771346541ea5",
+      "sha256": "0c82f754e0684b43e06acb67f0ca94e1a24e4b811f5213c2de63b6ace17a3c67"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/REPORT.md",
+      "git_blob": "50eda1769d29ffe01b4db918750d543757503443",
+      "sha256": "165bbf6fd767a399f83954d811eee96d2377034bc55d61d21f8bed1983745f3a"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/INPUTS.json",
+      "git_blob": "0ec411c35e9ba515d8a763e572c8297c8ed3e6f3",
+      "sha256": "d72339a3721988cb757267d25ce8a3b01e0ec75061cec52d4a89d65c81eb39e4"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/upstream_arithmetic.py",
+      "git_blob": "1c986ddcb20abb11502157e398add909e63e046e",
+      "sha256": "320e96a02fcf3d5a281ec2d0f1c0d4358f0f339eee44c969abc11fad6c55949b"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_candidate.py",
+      "git_blob": "7793207a8637203bfdda2ee2fa016344f4efb4fe",
+      "sha256": "ac50aafda3b8a1655b883cf046b64cd57e716bdddb485aa767a2110232e6e712"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/rational_oracle.py",
+      "git_blob": "ce1d64cb2148e70e217a0790c20086ed9484e55b",
+      "sha256": "ef3a1b79cb759c956190380b293d70e36ee24e3320378d8693e7ff7597d6449c"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/budget.py",
+      "git_blob": "c4700ec344332a7c7363d169e22bfca236d11634",
+      "sha256": "af253282d0abb1c24a1ea6522636bf38c54249d711b3bce9a621b4039bd1cc38"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/complete.py",
+      "git_blob": "d250482d47bd5f1479fc865864cef7ea482ab511",
+      "sha256": "187314ef572b9db41b2a42fe16bad07325e5413de7ae011de34d4e146f3be501"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/POLICY.md",
+      "git_blob": "078b513fc43da055b2d88e4b21f5f06f6389d651",
+      "sha256": "bb50b3fb1631704d4e1a42d4d1e466ed9d9fed921442a9a7b82bb4967a4f77bc"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/COUPLING.md",
+      "git_blob": "6ec980e488310d3b4b4559f7706f12f5fc92d8a2",
+      "sha256": "9703643f07ecba284becb472c72ff4216447bc447480aa1d0207d45a10af7c23"
+    },
+    {
+      "path": "governance/drafts/release-4-preparation/controlled-execution-experiment-20260912/INPUTS.json",
+      "git_blob": "201cf12a5a34f9390177260fe0c6b53302e0d81e",
+      "sha256": "0e22ffce98a4e0de6ba65f7dc6b346bb69fb2c0f50db2245d07042be38d5ba82"
+    },
+    {
+      "path": "governance/drafts/release-2-candidate/numerical/candidate-supported-scope-resource-bounds-candidate.json",
+      "git_blob": "7d6572db31f40fb63619edadd9a2b76ff2b35d1e",
+      "sha256": "7bc6480527c25cc08cefb023f7f6b84b2514a78d1fd071fc688d717c53837415"
+    },
+    {
+      "path": "governance/drafts/release-2-candidate/reviews/d5-candidate-supported-scope-resource-bounds-adversarial-review-protocol.md",
+      "git_blob": "7dc80528a4562ddbbf82404f867a215d02b332f5",
+      "sha256": "de48124f4e07252432c890a92d72424d815d460647d5d5b829e492e31e7d67d9"
+    },
+    {
+      "path": "review-inputs/r2-d5-m2-tail-numerical-closure/REVIEW-RESULT.md",
+      "git_blob": "9e19c355f544949ea277b786b4ed1a77eb7c1d6a",
+      "sha256": "4d689bff0ed208814a6a3af6684501dcefb21582ad64998d8c6790a7435f9271"
+    }
+  ]
+}

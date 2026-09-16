@@ -1,0 +1,25 @@
+{
+  "status": "integration-lineage repair; manifest excludes itself",
+  "files": [
+    {
+      "path": "INPUTS.json",
+      "sha256": "fa9960330d2dea3bbe2e4002ce287dd698972874d3936b5a99d7d0e19c9a7cef",
+      "bytes": 2290
+    },
+    {
+      "path": "RESULTS.json",
+      "sha256": "d4dfc6bd6a62ae7fde41ef43b4696e49bd697b3a95bd003c251e9a0ff5e560ba",
+      "bytes": 496
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "26f5e0d7de949afac42945a6441e599081eb30ab538973de9d647a5b5481909e",
+      "bytes": 2867
+    },
+    {
+      "path": "check_lineage.py",
+      "sha256": "08bd4157306080976bfe641aaf40a07d6d2a0f859454e757e8a2919ec1edd36c",
+      "bytes": 7927
+    }
+  ]
+}
