@@ -6,16 +6,16 @@ capability, implementation authority, release commitment or discussion clock.
 
 ## Objective
 
-Prepare a bounded public question about whether a nomue Record should expose a
-common Design Declaration Envelope as a defined projection of Profile-owned
-declarations and bind it to exactly one selected Contract, Profile and interpretation
-bundle with versioned, independently checkable evidence.
+Prepare a bounded public question about whether nomue should define a versioned
+cross-family projection over Profile-owned declarations, a successor-Record-owned
+selection-timing status, a scoped non-claim boundary and a common independently
+inspectable verification-report view.
 
 The intended product outcome is portable, independently checkable verification
 across more than one scientific capability family. The Protocol question is
-narrower: what finalized declaration and selection evidence belongs in a Record,
-and what can an independent verifier check without becoming the interactive
-selector or trusting the producer's narrative.
+narrower: how equivalent Profile-owned declarations become portable verifier
+evidence, what timing fact belongs in a successor Record, and what a passed result
+must not be read to claim.
 
 ## Proposed first slice
 
@@ -58,14 +58,17 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 
 - The method-selection policy, recommendation logic and question sequence remain
   Layer 2 product technology. Release 5 neither registers nor verifies them.
-- The Record binds exactly one selected tuple. It does not claim that the tuple was
-  uniquely implied, optimal or selected by a Protocol-owned policy.
+- Existing conformance supplies one selected tuple; R5 consumes those identity
+  carriers rather than creating a second tuple-binding rule.
 - The Design Declaration Envelope is a logical projection, not a second store. Each
-  underlying declaration has one Profile-owned truth carrier.
+  design fact has one Profile-owned truth carrier and one explicit, versioned
+  per-Profile mapping.
 - The selection-evidence check depends on the selected Profile's admissibility result
   and does not re-adjudicate it.
-- Selection timing is disclosed as a bounded declaration and repeated in the check
-  evidence. The first slice neither authenticates nor proves its truth.
+- Selection timing is the sole non-Profile projection input, is disclosed as a
+  bounded successor-Record declaration and is repeated in the check evidence.
+- Every result exposes its projection sources, mapping version, timing, consumed
+  tuple identities, admissibility dependency and non-claim boundary.
 
 ## Work products
 
@@ -79,6 +82,7 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 - [Independent opening-review result](opening-review-result.md)
 - [Repaired-opening close-only review result](opening-close-review-result.md)
 - [Steward publication-boundary decision](steward-publication-boundary-decision.md)
+- [Fixed-input opening review result](opening-final-review-result.md)
 
 ## Immediate sequence
 

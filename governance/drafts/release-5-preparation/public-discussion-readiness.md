@@ -4,43 +4,48 @@ Current state: **NOT_READY**. Public discussion is not open. Updated 2026-09-16.
 
 ## Proposed question
 
-Should the Protocol define a common Design Declaration Envelope as a projection of
-Profile-owned declarations and bind it to exactly one finalized selected Analysis
-Contract, Profile and interpretation bundle for a bounded initial set of
-continuous-outcome families?
+Should the Protocol define, for a bounded initial set of continuous-outcome
+families, explicit versioned mappings from Profile-owned declarations to a common
+cross-family evidence view, one successor-Record-owned selection-timing status, and
+a scoped nine-item non-claim boundary?
 
 ## Reviewed decision direction
 
 - Method-selection policy and recommendation logic remain Layer 2 product
   technology. Release 5 does not register, disclose or verify them.
-- The Record identifies exactly one finalized selected tuple without claiming that
-  it was uniquely implied or optimal.
+- Existing conformance identifies one finalized selected tuple; R5 consumes those
+  identities without creating a second binding rule or claiming unique eligibility.
 - The common envelope is a deterministic projection of Profile-owned truth
-  carriers, not a second declaration store.
-- The binding check depends on Profile admissibility and does not re-adjudicate it.
+  carriers through explicit versioned per-Profile mappings, not a second store.
+- The cross-family check depends on Profile admissibility and does not re-adjudicate
+  it.
 - Existing Record tuple identities are referenced, not duplicated.
 - Timing status is required and non-defaulted, uses access to observed outcome values
   as its reference event, and is repeated in check evidence. It remains an attributed
   declaration, not proof of preregistration or truth.
 - No producer-side pre-Record negative workflow artifact enters the first slice.
+- No opaque extra-Record provenance, attribution or attestation enters the first
+  slice.
+- Passed results expose the projection, source paths, mapping version, timing,
+  consumed identities, admissibility dependency and non-claim boundary.
 - Every family dependency is conditional, including an independent-two-group
   successor Contract.
 
 ## Readiness gates
 
-| Gate                                  | Current state | Required closure evidence                                                                                                                |
-| ------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| R5-P1 bounded question and exclusions | PREPARED      | Close-only review confirms that the revised question remains Protocol-scoped and does not standardize Layer 2 selection                  |
-| R5-P2 Research Gate evidence          | PARTIAL       | Existing independent result plus full-text closure of `R5-RH-1` and methodological close-only review of the revised questions            |
-| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                |
-| R5-P4 decision semantics              | PREPARED      | Close-only review confirms the selected-tuple binding, product/Protocol boundary, declaration ownership, non-claims and timing semantics |
-| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                       |
-| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results       |
-| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                         |
-| R5-P8 independent opening review      | OPEN          | Fixed-input fresh-context review with findings repaired or explicitly held, followed by steward opening authorization                    |
+| Gate                                  | Current state | Required closure evidence                                                                                                            |
+| ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| R5-P1 bounded question and exclusions | OPEN          | Fresh-context close-only review confirms that the repaired question states the four genuine R5 additions and remains Protocol-scoped |
+| R5-P2 Research Gate evidence          | PARTIAL       | Existing independent result plus full-text closure of `R5-RH-1` and methodological close-only review of the revised questions        |
+| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                            |
+| R5-P4 decision semantics              | OPEN          | Fresh-context review confirms projection mapping ownership, timing input, nine non-claims and the inspectable report-evidence view   |
+| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                   |
+| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results   |
+| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                     |
+| R5-P8 independent opening review      | OPEN          | Fixed-input fresh-context review with findings repaired or explicitly held, followed by steward opening authorization                |
 
-`PREPARED` means the revised draft contains a concrete direction. It is not
-independent clearance or steward closure.
+`PREPARED` means a reviewed draft contains a concrete direction. Author-side repair
+does not itself move an `OPEN` gate to `PREPARED`.
 
 ## Existing reusable foundation
 
@@ -53,7 +58,7 @@ independent clearance or steward closure.
 
 Reuse of these foundations does not prove that the product selected the best method.
 Release 5 needs its own research closure, authority inventory and preservation
-evidence for the narrower binding claim.
+evidence for the narrower cross-family evidence claim.
 
 ## Holds allowed during a future public window
 
@@ -63,9 +68,11 @@ freeze and any adoption decision.
 
 Procedure-specific numerical algorithms, supported execution predicates, resource
 bounds, tolerances and independent numerical oracles may also remain held if the
-opening proposal names them and issues no operational check or bundle. Binding
-meaning, declaration ownership, non-claims and separation from Layer 2 may not remain
-implicit because they are the subject of the public question.
+opening proposal names them and issues no operational check or bundle. Exact
+per-Profile mapping tables and report-schema encoding may remain explicit holds
+during discussion but must close before design freeze. Projection meaning, timing
+ownership, non-claims and separation from Layer 2 may not remain implicit because
+they are the subject of the public question.
 
 ## Opening sequence
 

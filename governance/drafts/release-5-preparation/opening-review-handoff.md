@@ -14,6 +14,7 @@ commit, parent, tree and blobs for:
 - `governance/drafts/release-5-preparation/historical-preservation-plan.md`;
 - `governance/drafts/release-5-preparation/opening-review-result.md`;
 - `governance/drafts/release-5-preparation/opening-close-review-result.md`;
+- `governance/drafts/release-5-preparation/opening-final-review-result.md`;
 - `governance/drafts/release-5-preparation/steward-publication-boundary-decision.md`;
 - `governance/drafts/release-horizon-r3-r20.md`.
 
@@ -23,24 +24,24 @@ new evidence materially changes it.
 
 ## Review questions
 
-1. Does the revised proposal keep method-selection policy, recommendation logic and
-   question sequencing outside the Protocol while preserving a useful portable
-   selected-tuple binding?
-2. Is the Design Declaration Envelope now unambiguously a deterministic projection
-   of Profile-owned truth carriers, with no duplicate store, circular admissibility
-   or conflicting declaration authority?
-3. Is a successful binding defined unambiguously as one selected tuple without
-   implying that the tuple was uniquely eligible, optimal or selected by a public
-   policy?
-4. Do the non-claims prevent a passed check from endorsing the product's private
-   selection process, especially when multiple Contracts could be admissible?
-5. Does the timing status use access to observed outcome values as a clear reference
-   event, appear in every check's evidence and remain bounded by a successor
-   non-claim?
+1. Does the revised proposal state the four genuine R5 additions without presenting
+   existing declaration requirements, tuple conformance, integrity or admissibility
+   as new R5 meaning?
+2. Is the Design Declaration Envelope unambiguously an unstored projection of
+   Profile-owned truth carriers through explicit, versioned per-Profile mappings,
+   with no generic name matching, duplicate store or circular admissibility?
+3. Is selection timing clearly the projection's sole non-Profile input, owned by a
+   successor Record surface, and does system input context count as access to
+   observed outcomes?
+4. Are the nine non-claims consolidated and strong enough to prevent a passed check
+   from endorsing the product's private selection process?
+5. Does every result expose projected values and source paths, mapping version,
+   timing, consumed tuple identities, depended-on admissibility result and the
+   applicable non-claim boundary?
 6. Are all three family members genuinely conditional on separately accepted
    Contracts and bundles, including independent two-group analysis?
-7. Does the successor Record reference existing Contract, Profile and bundle
-   identity carriers without introducing competing identity fields?
+7. Does the check consume existing Contract, Profile and bundle identity carriers
+   without introducing competing identity fields or a second binding rule?
 8. Does the proposal exclude only a producer-side pre-Record negative workflow
    artifact while preserving existing conformance, inadmissibility and report
    semantics?
@@ -50,10 +51,11 @@ new evidence materially changes it.
     required repair necessarily alter CORE meaning?
 11. Which issues must close before opening, which may remain named during public
     discussion and which must close before design freeze?
-12. Does the binding check depend on the selected Profile's admissibility result
+12. Does the cross-family check depend on the selected Profile's admissibility result
     without repeating or overruling it?
 13. Have all Selection Policy registry, identifier, ADR, vocabulary and
-    authority-manifest proposals been removed consistently?
+    authority-manifest proposals, plus opaque extra-Record provenance and
+    attribution, been removed consistently?
 
 ## Return format
 
