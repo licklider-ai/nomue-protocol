@@ -1,0 +1,266 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "authority": "NON-AUTHORITATIVE",
+  "base_main": "554818683d037d378ef3c11f1758b848adca1ec3",
+  "original_equivalence_review_target": "554818683d037d378ef3c11f1758b848adca1ec3",
+  "preservation_date": "2026-09-17",
+  "source_hash_semantics": "Repository sources: raw Git blob bytes. New substitute-review artifact: formatted English repository text. All stored artifact hashes/lengths concern those files, never original chat-native receipt metadata.",
+  "reviewed_frozen_target": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+  "candidate_source": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+  "repository_sources": {
+    "charter": {
+      "path": "CHARTER.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "bytes": 9163
+    },
+    "authority": {
+      "path": "AUTHORITY.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "bytes": 12454
+    },
+    "authority_manifest": {
+      "path": "authority/authority-manifest.yaml",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "bytes": 45801
+    },
+    "requirements": {
+      "path": "registries/requirements.yaml",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "bytes": 83339
+    },
+    "id_policy": {
+      "path": "governance/ID-POLICY.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314",
+      "bytes": 9575
+    },
+    "rfc_process": {
+      "path": "governance/RFC.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "bytes": 11571
+    },
+    "stability_tiers": {
+      "path": "registries/stability-tiers.yaml",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "3b6325125d8871b428ab48a8f206632bfcda9b16",
+      "sha256": "9236a7850860bde92159a91d3c3d405283b0b6aabf3ef60aa4342c71532b0b5b",
+      "bytes": 2042
+    },
+    "public_contract_surfaces": {
+      "path": "registries/public-contract-surfaces.yaml",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "cf4f740f1cbec6ae7b4a9a915bc6f830444c86cb",
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a",
+      "bytes": 16351
+    },
+    "legacy_cli": {
+      "path": "spec/verification/relying-party-interface.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "ef0eae8ddffb816551ab1c7515954ce0b73339c5",
+      "sha256": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545",
+      "bytes": 11289
+    },
+    "supported_bundles": {
+      "path": "registries/interpretation-bundles.yaml",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "3caaa381e220520de8fa9ee50415ee0510df0050",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "bytes": 8425
+    },
+    "production_dispatcher": {
+      "path": "reference/verifier/src/verify.ts",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "97325d24da5f3ee9a4c197811ee7a09907cf7e35",
+      "sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+      "bytes": 13236
+    },
+    "T03": {
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "5eac93c224e818779a6538dd45ff583bc5488d3b",
+      "sha256": "bb739c0ec70595443e8c0ce41223a724bb6275ad6afbb5fad009db839c2c2f47",
+      "bytes": 15616
+    },
+    "T06_inventory": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "c6819a003b4f0d46e71568c0dfdbf962c3431348",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f",
+      "bytes": 24790
+    },
+    "T06_clauses": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "c72fc3423ab05fe976424196269c93ae26585266",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6",
+      "bytes": 27002
+    },
+    "T09_report": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/report.ts",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "d2bb0e24c66f3361a0fc0d099ea7feb603ac57f8",
+      "sha256": "6d6e8839fc7796b3197accbe109a7ecda39af5ac13880f4ecb6a3890f7030209",
+      "bytes": 17708
+    },
+    "T09_reasons": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "f1295dbf52e7fd44918621fb3732297dc1e65588",
+      "sha256": "67bd3956a24e3fd79e5d14ff8ba14dbf5144a80d7d1a9981161180e26201d3ab",
+      "bytes": 2404
+    },
+    "A1_T13_intake": {
+      "path": "governance/drafts/release-4-preparation/r4-adoption-readiness-a1-20260917/T13-RESULT-INTAKE.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "b3f423409faed6ea3a5e701816a690b96d49fe20",
+      "sha256": "0a2ab991f37838b2a5bc3d9b07a464ac2a32437e17e36ed0169c27f5ebcd2847",
+      "bytes": 5015
+    },
+    "A1_T14_intake": {
+      "path": "governance/drafts/release-4-preparation/r4-adoption-readiness-a1-20260917/T14-RESULT-INTAKE.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "dea95b892531c448aa4fb794c709533a46bf6dde",
+      "sha256": "79e37cccb3c9102db2335b27bcb5e5cbbea6347405552a459eb336f34021bc6d",
+      "bytes": 4540
+    },
+    "A1_close": {
+      "path": "governance/drafts/release-4-preparation/r4-adoption-readiness-a1-20260917/A1-CLOSE-REVIEW-RESULT-INTAKE.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "9eb74d5be9fabd566391a8f352bde420f8761de7",
+      "sha256": "50fb58c407265324f30a5c29012b7dca0c2838fc03b55b41b1f364b7d5218390",
+      "bytes": 4016
+    },
+    "A1_rfc_impact": {
+      "path": "governance/drafts/release-4-preparation/r4-adoption-readiness-a1-20260917/RFC-261-DISPOSITION.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "fe070f0240a3ce5916c47d461143a1a169d405be",
+      "sha256": "47c6ea7e2d7989db61a875771cb36bf45609402fd38f6665610cc47ddcd54b41",
+      "bytes": 12525
+    },
+    "opening_rfc": {
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4",
+      "bytes": 50051
+    },
+    "opening_record": {
+      "path": "governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md",
+      "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+      "git_blob": "4d3ac0a0f0b71b0f6dc37698852cb650f8e9c2b0",
+      "sha256": "aa2c10581368baf262cc44691fe7587cf7bfeb86dd83939112d0534b6e1c73e4",
+      "bytes": 4865
+    },
+    "frozen_report": {
+      "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/REPORT.md",
+      "commit": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "git_blob": "15f1efc4f38cdc7fde37d183fb3b338d74cebd57",
+      "sha256": "a6895387844bcabf6612bc575090edd033238e1c3ba1f0ecd6e28fc5193b5b02",
+      "bytes": 2527
+    },
+    "freeze_manifest": {
+      "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/FREEZE-MANIFEST.json",
+      "commit": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "git_blob": "9353c8bae26dfd31bfeea39feb8596519945fa53",
+      "sha256": "9542edc5d2fc316d0f370f9e40504dd3a47eee1085e9628b9db04fb4ff8f7c1f",
+      "bytes": 37322
+    }
+  },
+  "candidate_collision_check": {
+    "candidate": "NRS-VERIFY-0033",
+    "commit": "554818683d037d378ef3c11f1758b848adca1ec3",
+    "command": "git grep -n -F NRS-VERIFY-0033 554818683d037d378ef3c11f1758b848adca1ec3 -- .",
+    "exit_code": 1,
+    "matches": 0,
+    "meaning": "Absent from tracked base; proposal only, not allocation or reservation."
+  },
+  "provenance_sources": {
+    "T13_historical": {
+      "source_class": "reported historical T13 review result",
+      "reported_verdict": "T13 FULL FROZEN-CANDIDATE REVIEW — GO",
+      "original_receipt": "unavailable as authenticated public evidence; not recreated",
+      "supplied_timestamp": "2026-09-17T00:50:10Z"
+    },
+    "T13_existing_intake": {
+      "source_class": "maintainer/user-provided structured transcription",
+      "repository_source_key": "A1_T13_intake",
+      "original_receipt": false
+    },
+    "T13_substitute": {
+      "source_class": "independent substitute provenance review",
+      "review_date": "2026-09-17 UTC",
+      "thread_id": "01a0ae76-a8e6-7d43-923d-de0ce3404dc0",
+      "message_id": "msg_09da7209c96358d5016aaba614056487d0b095ba1557a6dd7c",
+      "path": "T13-SUBSTITUTE-PROVENANCE-REVIEW.md",
+      "verdict": "R4 T13 SUBSTITUTE PROVENANCE REVIEW — GO",
+      "BLOCKER": 0,
+      "SHOULD_FIX": 0,
+      "NOTES": ["SP-01", "SP-02"],
+      "reuse": "Replacement evidence for narrowly specified EQ-01 T13 provenance gap; not original-receipt authentication or EQ-01 closure.",
+      "sha256": "d5fdf7ae978cdef3387ab2ab56bc41f7e2a7fc409ba67685db3823b7dde9da4f",
+      "bytes": 7591,
+      "hash_scope": "new repository artifact only, not original receipt metadata"
+    },
+    "T14": {
+      "source_class": "maintainer/user-provided existing final-readiness result",
+      "repository_source_key": "A1_T14_intake",
+      "supplied_timestamp": "2026-09-17T01:09:42Z",
+      "independent_scientific_review": false,
+      "original_receipt_metadata": "not asserted; existing limitations retained"
+    }
+  },
+  "actions_metadata": {
+    "source_class": "GitHub artifact metadata rechecked by repair author; archive digest matching reported in substitute review",
+    "observed_date": "2026-09-17",
+    "retention": "NOTE only; archive bytes not downloaded or permanently retained by this repair",
+    "artifacts": [
+      {
+        "task": "T09",
+        "run_id": 35079144095,
+        "artifact_id": 10439317356,
+        "name": "r4-t09-linux",
+        "size_in_bytes": 111737,
+        "digest": "sha256:cca8a8e962bea5341194f618e8a2131f608a224b8e1e737612fb4053eba38a26",
+        "expires_at": "2026-12-15T09:23:33Z",
+        "head_sha": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+        "metadata_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10439317356",
+        "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/35079144095"
+      },
+      {
+        "task": "T10",
+        "run_id": 35079148074,
+        "artifact_id": 10439881203,
+        "name": "r4-t10-corrected-corpus",
+        "size_in_bytes": 280645,
+        "digest": "sha256:acbd21b2e8ec8406a07f149c9c2b306121e394cbb3f534f7ea6d4dae8fd68b6a",
+        "expires_at": "2026-12-15T09:23:35Z",
+        "head_sha": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+        "metadata_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10439881203",
+        "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/35079148074"
+      },
+      {
+        "task": "T11",
+        "run_id": 35079150779,
+        "artifact_id": 10439571353,
+        "name": "r4-t11-regression",
+        "size_in_bytes": 6073,
+        "digest": "sha256:83bd1378a37432095efe4ae824c6c76535d5c4b6feb5d4b144804fbffa205a12",
+        "expires_at": "2026-12-15T09:23:37Z",
+        "head_sha": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+        "metadata_url": "https://api.github.com/repos/licklider-ai/nomue-protocol/actions/artifacts/10439571353",
+        "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/35079150779"
+      }
+    ]
+  }
+}

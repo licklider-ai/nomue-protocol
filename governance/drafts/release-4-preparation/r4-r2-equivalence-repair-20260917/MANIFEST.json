@@ -1,0 +1,36 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "authority": "NON-AUTHORITATIVE",
+  "hash_semantics": "SHA-256 of newly stored UTF-8 LF Git file bytes; substitute-review artifact metadata is not original chat-native receipt metadata.",
+  "self_excluded": "MANIFEST.json",
+  "files": {
+    "CLOSE-REVIEW-REQUEST.md": {
+      "sha256": "16a5b1eef5448609318745f50a11403e2e751781f263ec4010e60c481c3bbcb8",
+      "bytes": 2055
+    },
+    "INPUTS.json": {
+      "sha256": "e0cf6c8a960d7801e5463e9cefafbf7a1e75f3bacf51bd42673149c9f321c9f1",
+      "bytes": 12794
+    },
+    "PUBLIC-CLI-CONTRACT-CANDIDATE.md": {
+      "sha256": "7ab2fa9e49cb53c9af3a40dbf07c5e1cf7ed2f18a4de6600b52660191e851931",
+      "bytes": 12065
+    },
+    "README.md": {
+      "sha256": "38d617a481e2c6460667d3824fdb2b192a32385c4d157aa5b9c3fe03bff103fc",
+      "bytes": 4626
+    },
+    "T13-REVIEW-PROVENANCE-CONFIRMATION.md": {
+      "sha256": "b1d799b01fc7270d6ec08489a43b9b0ee61ee424276b6e2b72c404134322aa06",
+      "bytes": 4475
+    },
+    "T13-SUBSTITUTE-PROVENANCE-REVIEW.md": {
+      "sha256": "d5fdf7ae978cdef3387ab2ab56bc41f7e2a7fc409ba67685db3823b7dde9da4f",
+      "bytes": 7591
+    },
+    "T14-REVIEW-PROVENANCE-CONFIRMATION.md": {
+      "sha256": "c846b3306aa4aff63226798c56835e52adc488af026c0e4ad3df2c248dae57ea",
+      "bytes": 3314
+    }
+  }
+}
