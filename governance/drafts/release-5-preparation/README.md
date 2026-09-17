@@ -76,6 +76,14 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
   boundary. Blocked and errored results preserve only available evidence under the
   RFC's report rules.
 
+## Current preparation increment
+
+The [projection source inventory](projection-inventory-20260917/README.md) pins
+24 family/fact cells, exposes the unresolved mapping and predecessor questions,
+and supplies a planned verification-case inventory and independent research
+addendum handoff. Its executable audit checks source identity and schema pointers,
+not R5 semantics or runtime support. R5-P2/P3/P5/P6 remain held.
+
 ## Work products
 
 - [Public opening record](public-opening-record.md)

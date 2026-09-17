@@ -59,6 +59,15 @@ after the prescribed S-2a repair. P8 is closed for opening only on the recorded
 steward authorization and actual issue creation. No research, family-acceptance,
 implementation or adoption hold is closed by this bookkeeping.
 
+## Concrete preparation since opening
+
+The [projection inventory](projection-inventory-20260917/README.md) records exact
+source locations for the three proposed families and highlights repetition,
+pairing, population and legacy-timing mapping questions. Its source audit passes;
+its acceptance cases remain planned rather than executed. The independent
+research-addendum handoff is ready. This advances preparation for P3/P5/P6 without
+closing their gates or the P2 source-access hold.
+
 ## Existing reusable foundation
 
 - exact registered bundle dispatch with no fallback;
