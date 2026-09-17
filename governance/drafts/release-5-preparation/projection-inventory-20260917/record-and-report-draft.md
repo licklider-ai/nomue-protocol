@@ -23,14 +23,12 @@ review, not a claim that current family schemas already permit such a property.
 | Timing                           | One non-defaulted status for each covered selected decision, owned by the successor Record composition | Owner-reviewed composition site, cardinality and exact selected-analysis binding |
 | Mapping choice                   | Comes from accepted bundle/check configuration                                                         | Not chosen by a producer field and never dereferenced over the network           |
 
-For a family allowing multiple analyses, the successor must decide whether it
-covers one explicitly selected analysis or several individually scoped decisions.
-This draft recommends per-covered-decision timing bound through the existing
-analysis occurrence. It does not infer one common timing value for all analyses or
-select the first/last entry. Timing cardinality is a named owner-review condition;
-a schema that cannot resolve it remains ineligible. This proposal treats one
-non-Profile input as one timing value per projected decision; that interpretation
-and composition still need confirmation against the frozen RFC.
+The [decision-binding proposal](decision-binding-proposal.md) makes the author-side
+choice concrete: one status per existing covered analysis occurrence, with coverage
+fixed by the accepted family/bundle rather than producer omission. Shared facts
+remain part of every consuming decision; dataset-wide outcome access is unchanged.
+It supplies the RFC compatibility argument and the owner acceptance conditions.
+This is now a specific proposal awaiting acceptance, not an adopted cardinality.
 
 The candidate status meanings remain the RFC's `pre_outcome`, `post_outcome` and
 `unknown`. The complete decision includes Contract, Profile and bundle identities
@@ -59,13 +57,14 @@ applicable family admissibility check. Its definition and accepted bundle fix it
 mapping revision and allowed family versions. This fits the current static dependency
 model without introducing conditional dependency semantics into old check entries.
 
-This is a candidate registry design, not identifier issuance. Names and version
-numbers remain unallocated. Mapping identity could use a versioned specification
-reference; this draft does not assume an already recognized mapping identifier
-family. The exact reference grammar and any required identifier-policy decision
-remain part of R5-P5. If a shared check is chosen instead, its bundle-specific
-dependency resolution requires separate explicit specification and review; a list
-of all three family dependencies is not an acceptable substitute.
+This is a candidate registry design, not identifier issuance. The
+[reference proposal](decision-binding-proposal.md#mapping-reference-qualified-table-within-a-check-version)
+uses a qualified pair of existing check identity and local table key, versioned
+with the check. It defines exact local resolution without a new identifier family
+or producer-selected mapping. Acceptance and schema encoding remain R5-P5 work.
+If a shared check is chosen instead, its bundle-specific dependency resolution
+requires separate explicit specification and review; a list of all three family
+dependencies is not an acceptable substitute.
 
 Each check instance retains exact Record revision and covered analysis identity.
 The consumed dependency retains its actual check ID, version, scope, execution and,

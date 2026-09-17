@@ -118,6 +118,17 @@ prioritizes full-text review of the two unread Zimmerman works, followed by
 reproducible copies of three already-read sources. It is ready to give to a
 researcher and does not require a ResearchGate account from the steward.
 
+## Bounded design follow-up while sources are pending
+
+[The decision-binding proposal](decision-binding-proposal.md) specifies the
+proposed per-analysis timing unit and a mapping reference qualified by an existing
+check identity and local table key. [The case specifications](case-specifications.md)
+expand all 37 existing cases into controlled inputs, expected boundaries, evidence
+and outstanding prerequisites. These are proposed designs and handwritten plans,
+not accepted schemas or executed R5 tests. After the bounded diff review and
+repairs, this work pauses for source findings and the already named owner decisions;
+no further schema or runtime work is authorized by this packet.
+
 ## Review and gate effect
 
 The source inventory has 12 pinned inputs, 24 family/fact cells and 36 schema
