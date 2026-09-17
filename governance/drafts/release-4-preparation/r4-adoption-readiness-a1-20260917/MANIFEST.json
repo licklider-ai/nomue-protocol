@@ -3,11 +3,16 @@
   "packet": "R4 A1 Steward Ratification / Adoption Decision Packet v1",
   "base_main": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
   "author_preparation": "COMPLETE",
-  "independent_review": "PENDING",
+  "independent_review": "REPAIR",
   "main_integration_decision": "HOLD",
   "commit_binding": "Containing Git commit; full exact SHA supplied outside the commit in the final author handoff",
   "hash_semantics": "UTF-8 file content with CRLF normalized to LF; manifest excluded to avoid self-reference",
   "files": [
+    {
+      "path": "A1-LIMITED-REVIEW-RESULT-INTAKE.md",
+      "bytes": 4501,
+      "sha256": "db15a897aa69efe12f02885644c30e1e1ae549bbbf8c644459bce446212e9b73"
+    },
     {
       "path": "DECISION-INVENTORY.md",
       "bytes": 25474,
@@ -15,8 +20,8 @@
     },
     {
       "path": "INPUTS.json",
-      "bytes": 32856,
-      "sha256": "b4cb80d160b4941a8770dfde5ce9d935258562402406b1669acc7d4c740a35bc"
+      "bytes": 37012,
+      "sha256": "62937ff96c2d884bab0616eece56ce848e8cf8cfd5a113572c588dcb3ecf8c5c"
     },
     {
       "path": "R2-R4-BENCHMARK.md",
@@ -25,23 +30,23 @@
     },
     {
       "path": "RATIFICATION-PACKET.md",
-      "bytes": 13965,
-      "sha256": "39f599364b1b8044702c2b3acefa7a318376307c3d5e0640b6eef519a0b596be"
+      "bytes": 14222,
+      "sha256": "f360c31eed1b3cef89ec04c91db840ea1d3b0c3d5636f8b0238892ce81e7fad2"
     },
     {
       "path": "README.md",
-      "bytes": 2321,
-      "sha256": "5d357d6b9bb823c761926a19e346bfbdb411a1ab5c94f8321611d529109ee48f"
+      "bytes": 2760,
+      "sha256": "09bd1abb2acc05399e30001943f2141dee5b4d8f7a8cf18654725a8035664311"
     },
     {
       "path": "REMAINING-WORK.md",
-      "bytes": 9392,
-      "sha256": "d8e877e75af18513e32f1604c599ceedc1ca960b6f9ded2700e42bbc2c2a1785"
+      "bytes": 9002,
+      "sha256": "71c11e8cbe46d3552c3278b6d887d1ea341def5b4db4bed97664f94a01284a7d"
     },
     {
       "path": "REVIEW-EVIDENCE-MAP.md",
-      "bytes": 20010,
-      "sha256": "60fbbb0041a5d8fb839709b54628ec556e5b1141b63955e68568dad066c9010f"
+      "bytes": 20275,
+      "sha256": "e699eeda9f57b3a27c4795745ab13583352d54ac29aa5be686bc92dd1cb4bb3c"
     },
     {
       "path": "REVIEW-REQUEST.md",
@@ -52,6 +57,16 @@
       "path": "RFC-261-DISPOSITION.md",
       "bytes": 12525,
       "sha256": "47c6ea7e2d7989db61a875771cb36bf45609402fd38f6665610cc47ddcd54b41"
+    },
+    {
+      "path": "T13-RESULT-INTAKE.md",
+      "bytes": 5015,
+      "sha256": "0a2ab991f37838b2a5bc3d9b07a464ac2a32437e17e36ed0169c27f5ebcd2847"
+    },
+    {
+      "path": "T14-RESULT-INTAKE.md",
+      "bytes": 4540,
+      "sha256": "79e37cccb3c9102db2335b27bcb5e5cbbea6347405552a459eb336f34021bc6d"
     }
   ],
   "formal_public_surface_changed": false,
@@ -59,5 +74,9 @@
   "numerical_semantics_changed": false,
   "release_4_issued": false,
   "T13_T14_reopened": false,
-  "A2_A5_mandatory_for_benchmark": false
+  "A2_A5_mandatory_for_benchmark": false,
+  "close_review": "PENDING",
+  "original_reviewed_target": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+  "provenance_repair": "A1-01 IMPLEMENTED; BR-02 AUTHOR INTAKE COMPLETE; REVIEWER CLOSURE PENDING",
+  "repair_diff_base": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c"
 }

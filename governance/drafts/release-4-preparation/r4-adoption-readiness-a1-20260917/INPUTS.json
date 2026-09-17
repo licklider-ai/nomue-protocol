@@ -558,18 +558,47 @@
       "observation_date": "2026-09-17",
       "historical_earliest_unchanged_scope_decision": "2026-10-09T05:59:47Z",
       "new_clock_decision_made": false
+    },
+    "intake_verification": {
+      "date": "2026-09-17",
+      "pr_348_reconfirmed": true,
+      "exact_target_workflow_metadata": [
+        {
+          "run_id": 35079144095,
+          "head": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 35079148074,
+          "head": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "run_id": 35079150779,
+          "head": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "new_execution": false
     }
   },
   "reported_closures": {
-    "source_class": "maintainer supplied A1 task-state instruction dated 2026-09-17; scope transcription, not original reviewer receipt",
+    "source_class": "maintainer/user-provided existing results; new structured intakes, not original receipts",
     "T01_T14": "COMPLETE",
-    "T13": "FULL FROZEN-CANDIDATE REVIEW — GO",
-    "T14": "FINAL READINESS — GO",
+    "T13": "T13 FULL FROZEN-CANDIDATE REVIEW — GO",
+    "T14": "T14 FINAL READINESS — GO",
     "F13_01": "CLOSED",
     "F13_02": "CLOSED",
     "frozen_target": "88a5f488db8a777c691afbf85282f9be99fb00d4",
     "original_T13_T14_receipt_embedded": false,
-    "new_independent_review_performed": false
+    "new_independent_review_performed": false,
+    "result_intake_artifacts": {
+      "T13": "T13-RESULT-INTAKE.md",
+      "T14": "T14-RESULT-INTAKE.md"
+    }
   },
   "closed_candidate_decisions": {
     "D01 = A": "existing selection; not reselected by A1",
@@ -587,5 +616,72 @@
   },
   "new_implementation_authorized": false,
   "formal_adoption": false,
-  "release_4_issued": false
+  "release_4_issued": false,
+  "review_result_intakes": [
+    {
+      "path": "T13-RESULT-INTAKE.md",
+      "source_class": "maintainer/user-provided existing independent-review result",
+      "supplied_timestamp": "2026-09-17T00:50:10Z",
+      "verdict": "T13 FULL FROZEN-CANDIDATE REVIEW — GO",
+      "target": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "candidate_source": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "representation": "new English structured intake of supplied facts; not verbatim original receipt",
+      "hash_scope": "new stored intake artifact, UTF-8 Git bytes (LF); not original receipt",
+      "original_receipt_sha256": null,
+      "original_receipt_bytes": null,
+      "original_receipt_path": null,
+      "reviewer_identity": null,
+      "served_model_attestation": null,
+      "bytes": 5015,
+      "sha256": "0a2ab991f37838b2a5bc3d9b07a464ac2a32437e17e36ed0169c27f5ebcd2847"
+    },
+    {
+      "path": "T14-RESULT-INTAKE.md",
+      "source_class": "maintainer/user-provided existing final-readiness result",
+      "supplied_timestamp": "2026-09-17T01:09:42Z",
+      "verdict": "T14 FINAL READINESS — GO",
+      "target": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "candidate_source": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "representation": "new English structured intake of supplied facts; not verbatim original receipt",
+      "hash_scope": "new stored intake artifact, UTF-8 Git bytes (LF); not original receipt",
+      "original_receipt_sha256": null,
+      "original_receipt_bytes": null,
+      "original_receipt_path": null,
+      "reviewer_identity": null,
+      "served_model_attestation": null,
+      "bytes": 4540,
+      "sha256": "79e37cccb3c9102db2335b27bcb5e5cbbea6347405552a459eb336f34021bc6d"
+    },
+    {
+      "path": "A1-LIMITED-REVIEW-RESULT-INTAKE.md",
+      "source_class": "maintainer/user-provided limited independent review result",
+      "supplied_date": "2026-09-17",
+      "verdict": "R4-A1 LIMITED INDEPENDENT REVIEW — REPAIR",
+      "target": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+      "base": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "representation": "new English structured intake of supplied facts; not verbatim original receipt",
+      "hash_scope": "new stored intake artifact, UTF-8 Git bytes (LF); not original receipt",
+      "original_receipt_sha256": null,
+      "original_receipt_bytes": null,
+      "original_receipt_path": null,
+      "reviewer_identity": null,
+      "served_model_attestation": null,
+      "bytes": 4501,
+      "sha256": "db15a897aa69efe12f02885644c30e1e1ae549bbbf8c644459bce446212e9b73"
+    }
+  ],
+  "a1_review_disposition": {
+    "original_reviewed_target": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+    "verdict": "R4-A1 LIMITED INDEPENDENT REVIEW — REPAIR",
+    "blockers": 0,
+    "should_fix": 1,
+    "finding": "A1-01",
+    "BR_01": "REPAIR IMPLEMENTED; CLOSE-ONLY CONFIRMATION PENDING",
+    "BR_02": "EXISTING RESULT INTAKE COMPLETE; AUTHOR-SIDE",
+    "BR_03": "ORIGINAL REVIEW INTAKE PRESERVED; CLOSE REVIEW PENDING",
+    "repaired_target_binding": "Containing repair commit that first adds A1-LIMITED-REVIEW-RESULT-INTAKE.md; full SHA in final author handoff",
+    "repair_diff_base": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+    "close_review_result": null,
+    "main_integration_decision": "HOLD"
+  }
 }

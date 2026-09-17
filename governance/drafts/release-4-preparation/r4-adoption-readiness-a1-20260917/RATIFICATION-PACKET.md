@@ -1,6 +1,7 @@
 # R4 Steward Ratification / Adoption Decision Packet v1
 
-Status: **UNISSUED CANDIDATE**. Informative; A1 independent review pending.
+Status: **UNISSUED CANDIDATE**. Informative; A1 review returned REPAIR.
+[Provenance intake repair](A1-LIMITED-REVIEW-RESULT-INTAKE.md) is ready for close-only confirmation.
 Main Integration Decision: **HOLD**. This package makes no stewardship decision.
 
 ## Decision requested later
@@ -8,7 +9,8 @@ Main Integration Decision: **HOLD**. This package makes no stewardship decision.
 Consider the already closed balanced two-factor candidate for final adoption,
 using the bounded support, non-claims and evidence below. Do not reselect T03
 D01-D07, reopen T01-T14, or infer that candidate completion issues Protocol support.
-The immediate request is only the limited independent A1 review.
+The immediate request is close-only A1-01 / BR-02 / BR-03 verification by the
+existing A1 reviewer; no new full review is requested.
 
 Management's R2 85% and R4 approximately 50% are supplied operational estimates,
 not values calculated here. R2-like readiness means comparable reviewed candidate
@@ -28,8 +30,9 @@ The distinction is fixed in [the benchmark](R2-R4-BENCHMARK.md).
 | F13-02 correction                    | `9ec48f29aebbd46b327e8693efb3be2bf6606193`; report lineage wording plus dependent package hashes only                      |
 | Numerical research dependency        | `66fa2bc201c86c62f21bb94825479427c24d8522`; fixed G5 source objects, not a claim that its whole divergent branch is merged |
 
-T13/T14 closure provenance and the distinction between original receipts and
-maintainer reports appear in [the evidence map](REVIEW-EVIDENCE-MAP.md).
+T13/T14 closure provenance appears in the [T13 intake](T13-RESULT-INTAKE.md),
+[T14 intake](T14-RESULT-INTAKE.md) and [evidence map](REVIEW-EVIDENCE-MAP.md). These
+newly stored, user-provided existing-result intakes are not original receipts.
 Source/frozen/correction commits are ancestors of the integrated main. The A1
 packet's containing commit identifies the new documentation; it is not substituted
 for any historical reviewed numerical target.

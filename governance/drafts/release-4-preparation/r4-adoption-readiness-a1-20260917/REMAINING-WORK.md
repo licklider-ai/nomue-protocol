@@ -1,6 +1,6 @@
 # Remaining work and benchmark boundary
 
-Status: A1 author preparation COMPLETE; limited independent review pending.
+Status: A1 provenance repair COMPLETE; limited review REPAIR; close-only confirmation PENDING.
 Main Integration Decision: **HOLD**. No implementation phase is started.
 
 ## Classification rule
@@ -19,11 +19,11 @@ not mislabeled as remaining implementation. Comparison evidence is
 
 ## BENCHMARK-REQUIRED
 
-| Item                                                          | Current state                                                                                                                                                               | Completion / justification                                                                                                                                                                                                               |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BR-01: one decision-ready scope/contract/evidence/RFC packet  | Supplied by A1; independent review pending                                                                                                                                  | R2 has D1-D6 ratification inputs and durable structural/final numerical review. Close only concrete A1 completeness/authority/RFC/benchmark findings; do not introduce new numerical work                                                |
-| BR-02: traceable intake of existing closure provenance        | T05 original task hashes are already durable; T13/T14 reported GO intake and exact frozen target are recorded here; original result access is not independently established | A1 reviewer verifies provenance sufficiency. If it requires original T13/T14 receipts, preserve existing results and their scope/target, without rerunning or reopening them. No fabricated original-text hash or claimed receipt exists |
-| BR-03: preserve limited A1 independent review and disposition | Not performed                                                                                                                                                               | Save exact reviewed packet commit, findings and resolution. Only then consider informative main integration and a steward determination of benchmark parity                                                                              |
+| Item                                                          | Current state                                                                                               | Completion / justification                                                                                                                                                                                     |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BR-01: one decision-ready scope/contract/evidence/RFC packet  | A1-01 repair implemented; close-only reviewer confirmation pending                                          | Existing limited review found only provenance intake missing. Candidate choices and benchmark classification remain unchanged                                                                                  |
+| BR-02: traceable intake of existing closure provenance        | Existing T13/T14 result intake COMPLETE on the author side                                                  | Stable [T13](T13-RESULT-INTAKE.md) and [T14](T14-RESULT-INTAKE.md) intakes distinguish supplied results, verified repository facts and unknown original receipt details. Reviewer closure is not self-declared |
+| BR-03: preserve limited A1 independent review and disposition | Original target, REPAIR verdict and A1-01 preserved; repaired target/diff bound; later close review PENDING | [A1 result intake and close-only handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md) preserves the historical review and defines the new exact target. No later GO fabricated                                         |
 
 There is no current evidence-backed mandatory numerical implementation milestone
 after BR-01 through BR-03. If the limited review identifies a real missing candidate
@@ -58,12 +58,13 @@ required when the corresponding final action is actually taken.
 
 ## Next milestone and stop
 
-**Next: limited independent A1 decision-packet review.** Scope: completeness,
-authority boundary, RFC traceability and R2 benchmark fidelity. Exact handoff is
-[REVIEW-REQUEST.md](REVIEW-REQUEST.md). It is not T15, another numerical research
-gate, or T13/T14 re-review. The author does not grant GO.
+**Next: return to the existing R4-A1 limited independent review thread for
+close-only review of A1-01, BR-02 and BR-03 bindings/hashes against the repaired
+exact target.** The [repair handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md) binds the
+original target and repair range. Do not request another full A1 review or
+repeat numerical/T13/T14 reviews. The author does not grant GO.
 
-After its GO, assess only concrete residual benchmark items (including BR-02 if
-required by that review), preserve the result, and decide informative integration.
-A2/A3 implementation and A4/A5 upgrades need separate instructions. Main remains
-HOLD now. No new manager percentage is assigned by closing the author package.
+Preserve the later close result when actually received. Main integration stays
+HOLD until the limited review is closed and integration is separately decided.
+A2/A3 implementation and A4/A5 upgrades remain outside this repair. No manager
+percentage or final adoption status is changed.
