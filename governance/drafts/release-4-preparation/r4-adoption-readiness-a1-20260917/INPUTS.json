@@ -1,0 +1,591 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "base_main": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+  "observed_date": "2026-09-17",
+  "source_hash_semantics": "Raw Git object bytes; not working-tree newline encoding",
+  "sources": {
+    "CHARTER": {
+      "path": "CHARTER.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "1dead95488bae31f80f25424bb3a5515fda119fb",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "bytes": 9163,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/CHARTER.md"
+    },
+    "AUTHORITY": {
+      "path": "AUTHORITY.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "7b55e8ba6698d69431d952945a9253c2331122d0",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "bytes": 12454,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/AUTHORITY.md"
+    },
+    "AUTHORITY-MANIFEST": {
+      "path": "authority/authority-manifest.yaml",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "66e88f8322defd12e9a5f9ce34b576a87110fdce",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "bytes": 45801,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/authority/authority-manifest.yaml"
+    },
+    "CONTRIBUTION": {
+      "path": "AGENTS.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "55e0a95a48e72e4f1533d04d1078faa150c5e8fb",
+      "sha256": "09c531ae764648caffd186970d5d9a5c5080aad7311f0644827f6ca4230abb19",
+      "bytes": 14363,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/AGENTS.md"
+    },
+    "ID-POLICY": {
+      "path": "governance/ID-POLICY.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "2bb2fe4613d156bb7ddab81d9a24a2e29f4ccdce",
+      "sha256": "fbda7596fe635be9e8071671e91f28be3894e9a7e1ee5f576f0639e44cc02314",
+      "bytes": 9575,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/ID-POLICY.md"
+    },
+    "RFC-PROCESS": {
+      "path": "governance/RFC.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af",
+      "bytes": 11571,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/RFC.md"
+    },
+    "RELEASE-POLICY": {
+      "path": "governance/RELEASE-POLICY.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "8e15af635bd97fab85f8a698b7978ca1b687da4c",
+      "sha256": "df6f65e2700c7b09f0b1e1d39be044d129cc339524d6f4f8f09db78418432387",
+      "bytes": 10970,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/RELEASE-POLICY.md"
+    },
+    "REQUIREMENTS": {
+      "path": "registries/requirements.yaml",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "52bdd7483c7f043376e30d2e78028ff749f49528",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "bytes": 83339,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/registries/requirements.yaml"
+    },
+    "BUNDLES": {
+      "path": "registries/interpretation-bundles.yaml",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "3caaa381e220520de8fa9ee50415ee0510df0050",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "bytes": 8425,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/registries/interpretation-bundles.yaml"
+    },
+    "PUBLIC-CHECKS": {
+      "path": "registries/public-checks.yaml",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "1d155cf2c31835ee33d2700ab7d3663e58bf7a44",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9",
+      "bytes": 15439,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/registries/public-checks.yaml"
+    },
+    "CLI-CONTRACT": {
+      "path": "spec/verification/relying-party-interface.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "ef0eae8ddffb816551ab1c7515954ce0b73339c5",
+      "sha256": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545",
+      "bytes": 11289,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/spec/verification/relying-party-interface.md"
+    },
+    "DISPATCH": {
+      "path": "reference/verifier/src/verify.ts",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "97325d24da5f3ee9a4c197811ee7a09907cf7e35",
+      "sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+      "bytes": 13236,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/reference/verifier/src/verify.ts"
+    },
+    "SOURCE-PIN": {
+      "path": "reference/SOURCE-PIN.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "edbed74ac887af821b279b6c254643ab05e7328f",
+      "sha256": "08b2a8d272d137b892373fcec39f9f06f70acbecb7f2758fa930e7aa1c6eaf44",
+      "bytes": 4068,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/reference/SOURCE-PIN.json"
+    },
+    "R2-RATIFICATION": {
+      "path": "governance/drafts/release-2-steward-ratification-package.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "80ad7729a66a1ae16303d8c3b1da1954629b0315",
+      "sha256": "f8e40812ec3899cc05ef018bb2a2e14df7c59cbe4622b070b74dba233e584fca",
+      "bytes": 12752,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-steward-ratification-package.md"
+    },
+    "R2-README": {
+      "path": "governance/drafts/release-2-candidate/README.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "9c133cef03ff126780008ece0bc26d6898f80f82",
+      "sha256": "3f84472e1ee7c6c653622ac5ceae88cb217beb3fd89444e75c0d9235972c42d9",
+      "bytes": 9052,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/README.md"
+    },
+    "R2-NAMESPACES": {
+      "path": "governance/drafts/release-2-candidate/requirement-namespaces.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "a5cf66d5e22045f7892df444cc38632b6eac3d12",
+      "sha256": "24b6317de72d747220cc1cba09d436e7e5ecf599395cbf32ecd5bcd59dc548f3",
+      "bytes": 4517,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/requirement-namespaces.json"
+    },
+    "R2-IDS": {
+      "path": "governance/drafts/release-2-candidate/protocol-identifiers.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "fb1c27d919c670dc89f59e14ffea0d8d3b33da55",
+      "sha256": "bfe74bd5638f3261ce776fd01b8ec03befa06ba070dc8c02505e07bd3673bef6",
+      "bytes": 10127,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/protocol-identifiers.json"
+    },
+    "R2-MIGRATION": {
+      "path": "governance/drafts/release-2-candidate/exact-dispatch-migration-matrix.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "35c191c03cd251a91c50aef4277686ab1cfb2e32",
+      "sha256": "7b021a9f78c50f57f3fa81321ae65bda3397082c98ae4ac924f946d11b41c9d2",
+      "bytes": 3730,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/exact-dispatch-migration-matrix.json"
+    },
+    "R2-SURFACES": {
+      "path": "governance/drafts/release-2-candidate/public-contract-surface-impact.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "fc3ad9396264358d9e9140ce4d7de1edbdca8ffe",
+      "sha256": "35e339d35fad23afb84a3a8be81e8362c39f11b0e4427a97f40e98cbc3836fd1",
+      "bytes": 9873,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/public-contract-surface-impact.json"
+    },
+    "R2-D5": {
+      "path": "governance/drafts/release-2-candidate/numerical/final-r2-d5-review-readiness-candidate.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "3c54ecf0e1f43ac1d437baec2795e3edb5b8e743",
+      "sha256": "1bd3e2eb38e06eb679f14e9282806a6322e538c6f40092ba51ab23a7586f1f95",
+      "bytes": 16336,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-2-candidate/numerical/final-r2-d5-review-readiness-candidate.json"
+    },
+    "R2-STRUCTURAL-REVIEW": {
+      "path": "review-inputs/r2-d2-d4-structural-candidate-surface/REVIEW-RESULT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "c32c33ea73b81d687d8cba42b0a24a4b601401f9",
+      "sha256": "b5712ed150c37a2188ec2ec2162a8d3fa6258cbb287b951bb800ee68516d5c58",
+      "bytes": 17332,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/review-inputs/r2-d2-d4-structural-candidate-surface/REVIEW-RESULT.md"
+    },
+    "R2-D5-REVIEW": {
+      "path": "review-inputs/r2-d5-final-review-readiness/REVIEW-RESULT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "bdb28e0704ac9c332cea46a973e0b873f4cf7d64",
+      "sha256": "91998038944028e7a65d332ca971b480997093e5636cd816597bdd9235d3f520",
+      "bytes": 14468,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/review-inputs/r2-d5-final-review-readiness/REVIEW-RESULT.md"
+    },
+    "OPENING-RFC": {
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4",
+      "bytes": 50051,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/opening-rfc-candidate.md"
+    },
+    "OPENING-RECORD": {
+      "path": "governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "4d3ac0a0f0b71b0f6dc37698852cb650f8e9c2b0",
+      "sha256": "aa2c10581368baf262cc44691fe7587cf7bfeb86dd83939112d0534b6e1c73e4",
+      "bytes": 4865,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/public-discussion-opening-2026-09-09.md"
+    },
+    "MODEL-ACCEPTANCE": {
+      "path": "governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "b19e39ffe84474f37661ba5839518bd78b5f2cdd",
+      "sha256": "fa5e625a87de357aba0fbd8805e93e93f46fabcc2825faee7d5d7c6d6b16aa96",
+      "bytes": 4363,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/normal-model-steward-acceptance-2026-09-09.md"
+    },
+    "T03": {
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "5eac93c224e818779a6538dd45ff583bc5488d3b",
+      "sha256": "bb739c0ec70595443e8c0ce41223a724bb6275ad6afbb5fad009db839c2c2f47",
+      "bytes": 15616,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md"
+    },
+    "T04-ARCH": {
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "bf82051f1bd462a1557a119ba777993871fc691f",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685",
+      "bytes": 18228,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md"
+    },
+    "T04-SUPPORT": {
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "ebb7fe2bdc7acf3655ded9b87bd981a269bb14a0",
+      "sha256": "b6fd294c5a5fdd8ab8c267994e65366181217d29ce0446ebf8b4b84817c61934",
+      "bytes": 9658,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/SUPPORT-MAPPING.md"
+    },
+    "T04-F01": {
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "b02d07e2cc8de3c7d8543fa9acf0621cb5566f69",
+      "sha256": "87ea2a9b225405ff5b090b3dd2ba624ef7225a6aafd0d21672aa596446c5da7a",
+      "bytes": 5447,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/F01-REPAIR.md"
+    },
+    "T05": {
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/DECISION.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "16c2759a0486073f3e2a44eac8a416d513400633",
+      "sha256": "3cf5c78e98b0ea3c6a8226f3980caaf7ddb5953e230c97b412b7004d33dca8ba",
+      "bytes": 1201,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/DECISION.md"
+    },
+    "T05-REVIEWS": {
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/REVIEW-EVIDENCE.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "97fb6f9206fdd11e50b132a0d71881664ef848ab",
+      "sha256": "f2006a584d64f2561628b752667ffdcc47c201841d4e42a47a1d07afdff663a2",
+      "bytes": 25152,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/REVIEW-EVIDENCE.md"
+    },
+    "T05-RECEIPTS": {
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/RECEIPTS.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "dea98495fc1ed12ae15220b85257761d760afcb7",
+      "sha256": "400e6245576b562e8d40ac149f07de16f8761b42a204ca717b3747969516c75e",
+      "bytes": 2867,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/RECEIPTS.json"
+    },
+    "T06": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "c6819a003b4f0d46e71568c0dfdbf962c3431348",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f",
+      "bytes": 24790,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json"
+    },
+    "T06-CLAUSES": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "c72fc3423ab05fe976424196269c93ae26585266",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6",
+      "bytes": 27002,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md"
+    },
+    "T06-IDS": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/IDENTIFIERS.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "8cd2d515affc74c58351bb412488a805fd14d6e3",
+      "sha256": "84b7de779ad35880a3b595f6e07da99f813e6d3f30b0ef847d8121bba4069f2d",
+      "bytes": 7048,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/IDENTIFIERS.md"
+    },
+    "T06-VERSIONING": {
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VERSIONING-MATRIX.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "68127028884aa91e72fc05509f793ddc2c95e4f1",
+      "sha256": "85e5e68d86083a701fb9adfac2c8ac71180e5ece8c0b9a995102a1569befb160",
+      "bytes": 5613,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/VERSIONING-MATRIX.md"
+    },
+    "T07": {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "65ac1c703b8f068c904da2ea11ca165cb4308a87",
+      "sha256": "b952f3515dd7cf8907d77437435fd5e01545edae4e9e9622b2bcb4a7182206ea",
+      "bytes": 8591,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/REPORT.md"
+    },
+    "T07-COVERAGE": {
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/SCHEMA-COVERAGE.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "380dfff45c0e0e308cf87df23efbd6ad10f8eae0",
+      "sha256": "ba1db0a57f9043075d18df5de4676c5ad76742cd77c412ee5da2286156fa2e04",
+      "bytes": 6780,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/SCHEMA-COVERAGE.md"
+    },
+    "T08": {
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/README.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "36113d0d778b65dcef613455500bf79bc782697e",
+      "sha256": "949706c4d5f65b15dcb2a71663c7fcc140abbe344a4c11eb239241d83cf8f1ec",
+      "bytes": 2197,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/README.md"
+    },
+    "T09": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "ec014516923fe067329ba5436492a56d2f3dd968",
+      "sha256": "be95ed85fb89a5b10ea5eb7dca6ceb8c4a93402dc50b57dacb2492a16c25ad85",
+      "bytes": 6083,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT.md"
+    },
+    "T09-REPORT": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT-SCHEMA.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "41c8dfe9bbbfc621bdd8280e869760791f7b4e18",
+      "sha256": "2a620adbdac330f73500faaf2580a00714fe039daa5853cdc506b9cb7687a402",
+      "bytes": 2706,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT-SCHEMA.md"
+    },
+    "T09-REASONS": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "e6ce7fe25ccc7167574e654c8ba5ca8a150aac01",
+      "sha256": "6abe6e4d2d6dcfd25cba4598158541a79f0da01d7b1e8ea7f7f8e3c57dfaf9f0",
+      "bytes": 1578,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.json"
+    },
+    "T09-INTERFACE": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "f1295dbf52e7fd44918621fb3732297dc1e65588",
+      "sha256": "67bd3956a24e3fd79e5d14ff8ba14dbf5144a80d7d1a9981161180e26201d3ab",
+      "bytes": 2404,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.md"
+    },
+    "T09-PROFILE": {
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/PROFILE.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "05b3f34743c8b7d4d7dafcaefb1098486db85bac",
+      "sha256": "a74e63a0584f4a3becce6a63f23a1b63beb496d422e657c56508c6702a01c5f8",
+      "bytes": 1563,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/PROFILE.json"
+    },
+    "T10": {
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "4bc9f8cb85f3861dcaf6f67e2d6dc7f353a0207f",
+      "sha256": "bdef9de4a7226e927293d9bb34351c85b3f7acebcc446cd0f694422a9db3e5f7",
+      "bytes": 6450,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/REPORT.md"
+    },
+    "T11": {
+      "path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/CONTINUATION-20260915.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "0f36a889eef486730755a2931ad99503b974b2f6",
+      "sha256": "c518a7240d0c5aa5c46ed6963c48a5c6e28183f07de6e09cb8968128712446b9",
+      "bytes": 3799,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/CONTINUATION-20260915.md"
+    },
+    "T12-ORIGINAL": {
+      "path": "governance/drafts/release-4-preparation/t12-whole-candidate-freeze-20260915/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "7cddd5c03abf074eed2aff63e5324f87d7964347",
+      "sha256": "a46ef9890de5f9ad9fe9371280c1b049b3c903a2042a959229fdd1a00364efe0",
+      "bytes": 5070,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t12-whole-candidate-freeze-20260915/REPORT.md"
+    },
+    "T12-REFREEZE": {
+      "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "22e12696f71971835b3b1c7b290b9b6ba92eb0ea",
+      "sha256": "7dd11a6ab8bce83eb2125132140ac5655f99e43455ebc8b9fff7d6bdf004d30e",
+      "bytes": 2609,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/REPORT.md"
+    },
+    "T12-MANIFEST": {
+      "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/FREEZE-MANIFEST.json",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "c6ce4ec752a9a43aef794bbecf74da27345b4a3f",
+      "sha256": "09b864a98dcdcb1c6f8cba4f806843827b0dc97b5db448c70585ae93443814d1",
+      "bytes": 37322,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/FREEZE-MANIFEST.json"
+    },
+    "F13-01": {
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/REPORT.md",
+      "commit": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "git_blob": "3f15ac2fd60a56cb137b23e0e6985a428fa61df5",
+      "sha256": "020912b74b573d6ca36eb3629e219d0debac2758ce6ff1bdc4227c8a105534d9",
+      "bytes": 3761,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/f1c77b743f655a8c37f323794a4ebdcb820927ab/governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/REPORT.md"
+    },
+    "G5": {
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "36c13ca9774d4dec1a9344a34a8ec89c14529416",
+      "sha256": "26aa236a86179c2db33c3145b6180f772b039b92887e83af37036f9c2d91f1fa",
+      "bytes": 23091,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/REPORT.md"
+    },
+    "COST": {
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "git_blob": "4bb919cb68bd852b0e3fcc0d3f68ea61bbfa3653",
+      "sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+      "bytes": 1409,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/66fa2bc201c86c62f21bb94825479427c24d8522/governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json"
+    },
+    "T03-ORIGINAL": {
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "commit": "d9ec6984f55f09caa2f65d7714af72190d63c6d4",
+      "git_blob": "1a743fac2fce5d2e184f44bf0d1d3c368a257d4e",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0",
+      "bytes": 15538,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/d9ec6984f55f09caa2f65d7714af72190d63c6d4/governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md"
+    },
+    "FROZEN-REPORT": {
+      "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/REPORT.md",
+      "commit": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "git_blob": "15f1efc4f38cdc7fde37d183fb3b338d74cebd57",
+      "sha256": "a6895387844bcabf6612bc575090edd033238e1c3ba1f0ecd6e28fc5193b5b02",
+      "bytes": 2527,
+      "url": "https://github.com/licklider-ai/nomue-protocol/blob/88a5f488db8a777c691afbf85282f9be99fb00d4/governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/REPORT.md"
+    }
+  },
+  "referenced_git_objects": [
+    {
+      "oid": "07b373655110afb34ab4bcc3933f83c69fba6f2c",
+      "type": "commit"
+    },
+    {
+      "oid": "21453d82109106e9e811571383228dcef8f60fac",
+      "type": "commit"
+    },
+    {
+      "oid": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+      "type": "commit"
+    },
+    {
+      "oid": "318955dc260204328ec39acb67925e68c35d0c28",
+      "type": "commit"
+    },
+    {
+      "oid": "35ab094c9106903e6b8e87a144cfbd8cd52ae124",
+      "type": "commit"
+    },
+    {
+      "oid": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+      "type": "commit"
+    },
+    {
+      "oid": "4dea1b0735b37d4f0e1cecf5a8eb733278c40ad8",
+      "type": "commit"
+    },
+    {
+      "oid": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "type": "commit"
+    },
+    {
+      "oid": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "type": "commit"
+    },
+    {
+      "oid": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "type": "commit"
+    },
+    {
+      "oid": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "type": "blob"
+    },
+    {
+      "oid": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "type": "commit"
+    },
+    {
+      "oid": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+      "type": "commit"
+    },
+    {
+      "oid": "98052127e51efbed12580077c3a6e4e002af3a11",
+      "type": "commit"
+    },
+    {
+      "oid": "9ec48f29aebbd46b327e8693efb3be2bf6606193",
+      "type": "commit"
+    },
+    {
+      "oid": "a6cddeba659ae2c52e6a7901d3e5a41102080274",
+      "type": "commit"
+    },
+    {
+      "oid": "b094f69aedacb3f85e0e5d30df86a789d810024b",
+      "type": "commit"
+    },
+    {
+      "oid": "ba7f2e1052d6b5ccd71d8f06d029c61cc854cd04",
+      "type": "commit"
+    },
+    {
+      "oid": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "type": "commit"
+    },
+    {
+      "oid": "cd0c6b6dcdcbf4e605a587a66c11e5ef7787fe9a",
+      "type": "commit"
+    },
+    {
+      "oid": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "type": "commit"
+    },
+    {
+      "oid": "d4058691eb79440e1791ebbf2c7a61cafd6f6002",
+      "type": "commit"
+    },
+    {
+      "oid": "d9ec6984f55f09caa2f65d7714af72190d63c6d4",
+      "type": "commit"
+    },
+    {
+      "oid": "e5ee16b7f2b8c4e4f67defa4965b6934faae678c",
+      "type": "commit"
+    },
+    {
+      "oid": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "type": "commit"
+    },
+    {
+      "oid": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "type": "commit"
+    }
+  ],
+  "github_observations": {
+    "pr_348": {
+      "state": "MERGED",
+      "head": "9ec48f29aebbd46b327e8693efb3be2bf6606193",
+      "merge": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "merged_at": "2026-09-17T01:27:06Z"
+    },
+    "rfc_261": {
+      "state": "OPEN",
+      "comments": 0,
+      "created_at": "2026-09-09T05:59:47Z",
+      "updated_at": "2026-09-09T06:00:42Z",
+      "observation_date": "2026-09-17",
+      "historical_earliest_unchanged_scope_decision": "2026-10-09T05:59:47Z",
+      "new_clock_decision_made": false
+    }
+  },
+  "reported_closures": {
+    "source_class": "maintainer supplied A1 task-state instruction dated 2026-09-17; scope transcription, not original reviewer receipt",
+    "T01_T14": "COMPLETE",
+    "T13": "FULL FROZEN-CANDIDATE REVIEW — GO",
+    "T14": "FINAL READINESS — GO",
+    "F13_01": "CLOSED",
+    "F13_02": "CLOSED",
+    "frozen_target": "88a5f488db8a777c691afbf85282f9be99fb00d4",
+    "original_T13_T14_receipt_embedded": false,
+    "new_independent_review_performed": false
+  },
+  "closed_candidate_decisions": {
+    "D01 = A": "existing selection; not reselected by A1",
+    "D02 = A": "existing selection; not reselected by A1",
+    "D03 = A": "existing selection; not reselected by A1",
+    "D04 = A": "existing selection; not reselected by A1",
+    "D05 = A": "existing selection; not reselected by A1",
+    "D06 = out of scope": "existing selection; not reselected by A1",
+    "D07 = A": "existing selection; not reselected by A1",
+    "T04 domain/procedure": "existing selection; not reselected by A1",
+    "EC3/EC4 reference scope": "existing selection; not reselected by A1",
+    "F-01": "existing selection; not reselected by A1",
+    "F13-01": "existing selection; not reselected by A1",
+    "F13-02": "existing selection; not reselected by A1"
+  },
+  "new_implementation_authorized": false,
+  "formal_adoption": false,
+  "release_4_issued": false
+}
