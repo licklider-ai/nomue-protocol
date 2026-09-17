@@ -70,6 +70,12 @@ now supplies a bounded research recommendation;
 directions from remaining content, byte-pin and mapping holds. The
 [report follow-up](projection-inventory-20260917/report-surface-followup.md) adds
 six planned integration cases and identifies successor result/report dependencies.
+The [conditional mapping draft](projection-inventory-20260917/conditional-mapping-draft.md)
+now supplies all 24 proposed cell transformations, while the
+[Record/report draft](projection-inventory-20260917/record-and-report-draft.md)
+records composition and evidence choices for review. The
+[source completion request](projection-inventory-20260917/primary-source-completion-request.md)
+separates the two unread works from three raw-artifact acquisition tasks.
 This advances preparation for P2/P3/P5/P6 without closing their gates.
 
 ## Existing reusable foundation

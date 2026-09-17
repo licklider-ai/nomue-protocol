@@ -104,6 +104,20 @@ identifier-validator migration and family-specific dependency binding work.
 It adds six planned integration cases to the original 31; none is an executed
 R5 conformance fixture. Its observations are author-side technical inspection.
 
+## Conditional design drafts and source completion
+
+[The conditional mapping draft](conditional-mapping-draft.md) supplies per-family
+source and transformation tables for all 24 cells, including explicit R3 carrier
+gaps. [The Record/report draft](record-and-report-draft.md) proposes composition,
+family-specific dependency entries and outcome-dependent evidence. Both are
+unissued prose designs, with timing cardinality and other new choices reserved
+for review; neither is an executable mapping or accepted schema.
+
+[The primary-source completion request](primary-source-completion-request.md)
+prioritizes full-text review of the two unread Zimmerman works, followed by
+reproducible copies of three already-read sources. It is ready to give to a
+researcher and does not require a ResearchGate account from the steward.
+
 ## Review and gate effect
 
 The source inventory has 12 pinned inputs, 24 family/fact cells and 36 schema

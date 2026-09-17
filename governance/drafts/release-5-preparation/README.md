@@ -90,6 +90,13 @@ identifies concrete successor-schema dependencies. The inventory audit checks
 source identity and schema pointers, not R5 semantics or runtime support.
 R5-P2/P3/P5/P6 remain held.
 
+The next concrete materials are the
+[conditional mapping draft](projection-inventory-20260917/conditional-mapping-draft.md),
+[Record/report draft](projection-inventory-20260917/record-and-report-draft.md) and
+[bounded primary-source request](projection-inventory-20260917/primary-source-completion-request.md).
+They advance conditional design and source completion without issuing schemas or
+encoding verifier behavior.
+
 ## Work products
 
 - [Public opening record](public-opening-record.md)
