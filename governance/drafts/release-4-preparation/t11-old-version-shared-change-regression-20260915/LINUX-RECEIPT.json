@@ -1,0 +1,96 @@
+{
+  "source_commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+  "tracked_diff": "",
+  "node": "v24.14.0",
+  "pnpm": "11.7.0",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "started_utc": "2026-09-15T07:56:08.465782+00:00",
+  "runs": [
+    {
+      "name": "full-check",
+      "command": ["pnpm", "check"],
+      "exit_code": 0,
+      "seconds": 115.157,
+      "output": "full-check.txt",
+      "sha256": "6bb3151db6e86e5277293f2a1a37f0279f5608e52bd49dfc1b56bde436450b02"
+    },
+    {
+      "name": "path-observation",
+      "command": [
+        "node",
+        "<repository>/governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.027,
+      "output": "path-observation.txt",
+      "sha256": "c4e5906c75bf5d0bff68761650d7cc51f0da6e9f40d0b49af0a455da319b6a7c"
+    },
+    {
+      "name": "t09-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/focused.ts"
+      ],
+      "exit_code": 0,
+      "seconds": 1.007,
+      "output": "t09-focused.txt",
+      "sha256": "8c2563ead99ac234bf595d060a9f1cc34911832a56da41ade80ed32b79dc829b"
+    },
+    {
+      "name": "t09-normal",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts"
+      ],
+      "exit_code": 0,
+      "seconds": 1.91,
+      "output": "t09-normal.txt",
+      "sha256": "cae4ac94c5c16f72cf5272c8b43ca6040bd310d4bbd1616c9ffdba81b7c33dda"
+    },
+    {
+      "name": "f01-normal",
+      "command": [
+        "python",
+        "-B",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.102,
+      "output": "f01-normal.txt",
+      "sha256": "a5cb23e971a694b88a88b2949a4b95f72028eb32ea9a47887a6da1671d174e5b"
+    },
+    {
+      "name": "t09-optimized",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts",
+        "--optimized"
+      ],
+      "exit_code": 0,
+      "seconds": 3.666,
+      "output": "t09-optimized.txt",
+      "sha256": "f04fef23ceed4eade58c1235a0a14759a0454184bcb6c5ae5e6da422542fd987"
+    },
+    {
+      "name": "f01-optimized",
+      "command": [
+        "python",
+        "-O",
+        "-B",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.364,
+      "output": "f01-optimized.txt",
+      "sha256": "5a7f99809deb351d58e0e1427318dfeb6b2f342743109b333aa4ae9c9840e932"
+    }
+  ]
+}

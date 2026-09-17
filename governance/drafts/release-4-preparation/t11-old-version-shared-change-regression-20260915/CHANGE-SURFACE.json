@@ -1,0 +1,829 @@
+{
+  "baseline": "ae1ad029179f31ae463882e8467e9367398263c9",
+  "target": "db2efb3e301ba66797c1093f914b2466326e2d81",
+  "all_net_additions": true,
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/r4-t09-candidate.yml",
+      "group": ".github/workflows",
+      "blob": "4546139c3687ae661f156c952fba01b0b7ec3631"
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/r4-t10-corrected-corpus.yml",
+      "group": ".github/workflows",
+      "blob": "08ab438360f3f69079da7835037562f8f874e907"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/COVERAGE.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "c18ef1681e78439e315e94beaa21c76300e8ad2a"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/INPUTS.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "7a22aabdb66f4fd6deb9394779a9cbec9b82485f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/MANIFEST.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "e76a8459eefd83775a81c00a3b07fd90fb625ace"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/README.md",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "029fa744239d6e73576db1acb2ae130c0116be35"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/REPORT.md",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "65ac1c703b8f068c904da2ea11ca165cb4308a87"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESPONSIBILITY-MATRIX.md",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "9ebbf9247ebb41a5e20f79742c265ac2549575ee"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS-jitless.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "cd571001b4b3b1b57d3cce294e625ae8361849ba"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/RESULTS.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "1d85f1b11a84b821beed93275db4a96c1e5de6ca"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/SCHEMA-COVERAGE.md",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "380dfff45c0e0e308cf87df23efbd6ad10f8eae0"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/VALIDATION-RULES.md",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "d5bf029ab7d2ea4bbde458b59c244263e19d50c3"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/cases.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "363f47ba3e5697a8dc328432ec970e9b9ed005e3"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/check-result.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "3f6befc7a06282167076cd9b7fc32c8877c888a8"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/minimal-record.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "e2583c87b006688533e9b3b54783be7fd47bd62c"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/quantity-evidence.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "df88e3b2394461900fd4ab98dcd8b19cc18e3aaf"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/balanced-two-factor-0.1-draft-1.schema.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "e886525b974582612328004da7ba5698b84361e7"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/record-balanced-two-factor-0.1-draft-1.schema.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "1b7d92d7c8c4502481e8dfc92c3f309a742a8701"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/verification-report-balanced-two-factor-0.1-draft-1.schema.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "c7f8e0e953e54513b1f77b25c51accf4ef9600f6"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tests.ts",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "819b3043c3f020b82da98eb9e90298935d936d1b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/tsconfig.json",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "97c9aa6c12d4efefca05a2cecd0b6de260ff9c77"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/validator.ts",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "11a65c73a628b547c1b525e45b7d53f690361a2c"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/verify_packet.py",
+      "group": "t07-closed-schemas-validator-20260915",
+      "blob": "4b68123a4b97346cd67d24788e049a96b2c88dab"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/ADAPTER-CONTRACT.md",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "b6de97f52f5299a48b90a21b7e70df6c3c7eb42d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/INPUTS.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "1f60abac185fe458ce15358e823d2daba81897e3"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/MANIFEST.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "270a10ea8148bea66e77bee4235b528d7d8f4ffc"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/README.md",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "36113d0d778b65dcef613455500bf79bc782697e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/REPORT.md",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "bf9da9569da52b1ee433ecea749da1a32be96d41"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESPONSIBILITY-MATRIX.md",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "de14932e029d716442f5558b8535720c4ef199c5"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESULTS-optimized.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "0323121148cb451f90bdd7b77ed5c350342b241e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/RESULTS.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "331af6a95be614a5a4b95ae02e4d62b020cd92ba"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/adapter.ts",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "a0962d03f0251c3f6fcb702ecf72f7b72b236848"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/core_loader.py",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "c9103864a566dcf88fdbf1e0dd357f5fadbd09e0"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/fixtures/cases.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "827ce93358d1cb875832eb2ad57cc7c0053e38d6"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/numerical_bridge.py",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "a6b8411029f3fe794de6beda6cf4c1f13d4df61b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/test_core_boundary.py",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "6da82d730654a965d1ab2e2b8c5eb00bfa4b7cb1"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/tests.ts",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "a3f3ca79be7b2050787e5055a3eafad84f888bd2"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/tsconfig.json",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "97c9aa6c12d4efefca05a2cecd0b6de260ff9c77"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/verify_packet.py",
+      "group": "t08-limited-numerical-adapter-20260915",
+      "blob": "146f06774ba5877e292e72abbfb86a0d0bd4b99e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/MANIFEST.json",
+      "group": "t09-canonicalization-repair-20260915",
+      "blob": "3bdc175aa118e1e57a0ba03e9da9d25249c6002a"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/README.md",
+      "group": "t09-canonicalization-repair-20260915",
+      "blob": "981cfdd3da7f88e75dbfeb6a3a0c880e203d6a9e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/REGRESSION.json",
+      "group": "t09-canonicalization-repair-20260915",
+      "blob": "5e4d714b1bed73fabb5d267b5c333d7e842afa0e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/focused.ts",
+      "group": "t09-canonicalization-repair-20260915",
+      "blob": "ed2a8e707c21f33a3f4ca256e1b40f3a5218c135"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/tsconfig.json",
+      "group": "t09-canonicalization-repair-20260915",
+      "blob": "b33ac9720df7034fae07d28efded540e5963891e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/CAPTURE.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "a5d465cc567ddee9bbb6cc6e4e5c2cf28bd8396c"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/Dockerfile",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "5180cb2128ab1ca1408659ab1aa490cf6d900bb2"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/F01-CONTROLS-optimized.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "5d44c226ac24bb3f24a0fc730abf5d0a27776810"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/F01-CONTROLS.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "703afded0d107b09377ec6e023bb3024731da894"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/INPUTS.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "9efb80b6ed7cf3b6a230431a782e099676ffc731"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/LIFECYCLE.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "527b4b8e0475bf879b4b67ea6013ab83a1cac7aa"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/MANIFEST.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "5139b5cc1e0397e3efdffd72be6ad4cb111022f3"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/MEASUREMENTS.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "cc1165f423c7ac57276f3cb152fdf857787cfd50"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/PROFILE.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "05b3f34743c8b7d4d7dafcaefb1098486db85bac"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/README.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "f60f6af66c73cbcd12f8344ebb0b5edfc92b95bf"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "e6ce7fe25ccc7167574e654c8ba5ca8a150aac01"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "f1295dbf52e7fd44918621fb3732297dc1e65588"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT-SCHEMA.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "41c8dfe9bbbfc621bdd8280e869760791f7b4e18"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "ec014516923fe067329ba5436492a56d2f3dd968"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/RESPONSIBILITY-MATRIX.md",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "0c525f97238ed9fe95875915804162c13a8cc050"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/RESULTS-optimized.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "b9b27fa2982f4aa8671b596f412590f4a64b5603"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/RESULTS.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "58472f37500be1026d11046a117d5ee808ea9656"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/app.ts",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "d7c672ff3085e310fafdd318b219826a0243812d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/build_schema.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "3fed88fa3e7eda50df42e6bb09285d04db7b46ac"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/bundle.mjs",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "65e7a7de914c926ab7c3205aaf7f0e48548eff96"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/fixed.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "d86bcb0c52d09d46d33969d01984b3f63537efe0"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/fixtures/pass-report.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "db8d27eaf1195b02951e367e999f7319588d8fbd"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/invocation.schema.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "a704339fa08d91fc0ec307796c4070e67db6874d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/invoke.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "07271931505f8357e25b84d4e57f7fe91f25702d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/linux_tests.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "ce4ad46c6490976802ee473ea6aa7a688f22bb00"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/measurements/nomue-t09-results/HOST.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "3945bb51dedc8e781d64d8ec335fe98617059cf3"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/measurements/nomue-t09-results/RUNS.jsonl",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "da8875512b9837b5467b0de6f76a957e0ab8cbdc"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/measurements/nomue-t09-results/SUMMARY.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "4f28ff5a33bc2231a5da9b147bc40926f752947f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/measurements/nomue-t09-stage/SOURCE-MANIFEST.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "31ef47880596ede4411f6591f4a61df34d9fbb3b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/prepare.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "dccdbdeb283b7ebf59d7bfaf9ebd86705d8d8767"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/report.schema.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "361e708ad8349d05888b4f0b4f677f3c883ef084"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/report.ts",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "d2bb0e24c66f3361a0fc0d099ea7feb603ac57f8"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/supervise.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "4c1ce34ad495f310a29a18164207b36323e82cf7"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "68bd1f69c62e7d79bd081ae18188c5d282be8a74"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "cd12e68b8a19663d7b0ba4e2928ed9aeda31d20d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tsconfig.json",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "b33ac9720df7034fae07d28efded540e5963891e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/verify_measurements.ts",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "954f683fca81d85c0926c141e6e4ad2ed4fc8811"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/verify_packet.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "6c2a9344d4abcce921bd45e15f2f1d6e05549cec"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/worker.py",
+      "group": "t09-check-report-lifecycle-20260915",
+      "blob": "665b0e5da22bb6513adcb193c027e4d2c5462969"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/COVERAGE-MATRIX.md",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "19d6c81fbee79b10035a28f0f8254638581a2766"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/DIAGNOSIS.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "f0b980393e35dc1e3e09910b5a2d5fe25bd62997"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/EXPECTATION-PROVENANCE.md",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "992653a237c09184d0768d6f9cf3ce1aade158d9"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/EXPECTATIONS-FREEZE.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "73f60ef1ec373d813e0415659e6c5d782f84b21f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/INPUTS.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "61ba3376f8ceba2f738f871525aea318371f2946"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/LIFECYCLE-REFERENCES.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "8a5376637666faee458b6e6857a9eaa505c365be"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/MANIFEST.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "f5a5ff2e4c6ca83c46e6fb08a871be94e4001083"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/NORMAL.jsonl",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "768e4ad64839b5e60fd316568b4d313448d5255d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/README.md",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "ad9741ab866a8596e4c94a5633fd33d28bd18e3f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/REPORT.md",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "5d5f8e131c8e58e2b13980942df03411aa572002"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/SELF-CHECK.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "875680a3aecc0856106ea8236efc61550d448ef6"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/VALIDATION.md",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "5a043b1521ee810a39fea5bececfdb7dddcd4789"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/build_corpus.py",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "75ef1b82e26407d7b78695a83f526db057bf2444"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/check_corpus.py",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "042a2b328dab2325abc82d22c10c4c2e778b3115"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/compare.ts",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "f8b78556e4cc57660bbed8499f76f62e9d894e16"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/fixtures.jsonl",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "4396592807cd2a884072f21224108ae1204597de"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/projections.jsonl",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "3f3154a1b3472bb49192c8bd377d04ea80a554fb"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/corpus/tails.jsonl",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "95239c27c142689781afb2d98274f1b8231f2737"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/diagnose.ts",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "89297d1e1e7d921a5309c92310beadfccd56750b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/seal.mjs",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "526610ad14661b373d0011060e285729e1b6bf89"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/tsconfig.json",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "b33ac9720df7034fae07d28efded540e5963891e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/verify_packet.py",
+      "group": "t10-independent-expectation-corpus-20260915",
+      "blob": "af9dce705605e178fa019a1591e9141e5f5084f2"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/AUTHORITY.md",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "7b09565da1c07b48cb32f8d5116065a5aa383ee4"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/INPUTS.json",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "c0ad64c317ee50228b32db892a833579c75151c1"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/MANIFEST.json",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "8705fa0f947d533b309bd3f17a31f96ac8fb49f9"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/NON-CIRCULARITY.json",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "98bb10a67a6f6d921600dec92bd856aea0b6402f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/build_revision.py",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "b8d4f0179ab870e962e4027cf44f3ba5c184d422"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/check_revision.py",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "be6222ee6c998e5486b5802319e90d47378c805a"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/corpus/fixtures.jsonl",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "ae44139aa63b234fa8254b902c035fc5654a9719"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/corpus/projections.jsonl",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "3f3154a1b3472bb49192c8bd377d04ea80a554fb"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/corpus/tails.jsonl",
+      "group": "t10-independent-expectation-corpus-revision-2-20260915",
+      "blob": "95239c27c142689781afb2d98274f1b8231f2737"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/CAPTURE.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "d55441539585a93fccca09045585320834bdd202"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/COMPONENTS-optimized.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "39c342fd68c264dc6cb0565ed974c04e61ac252a"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/COMPONENTS.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "1631797df6dd543e8c89e639824dfdca84ca96b6"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/COVERAGE-MATRIX.md",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "7729c11d19f3b6d2002df39107cdccc30fb500ad"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/MANIFEST.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "6774c420f14b2d706bc3fb21af1468b68ab9bc15"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/NORMAL.jsonl",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "ecef77923d4079a9f5107ba83d74eb0c8e34aa2d"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/OPTIMIZED.jsonl",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "1f0357230634684dda4f6e175db8054a9b689e27"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/README.md",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "a138b624a98a903156d5181c0965c865b92745f1"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/REPORT.md",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "4bc9f8cb85f3861dcaf6f67e2d6dc7f353a0207f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/T09-LIMITED-CLOSE.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "1ba9e6af334c30f170ea0d2468ac217906b25a96"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/VALIDATION.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "949423f89a4727054980abae7dbbb092a9d9cd79"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/compare.ts",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "7045ad797ba1ae8f3b1bf6573fe33a481db17f8b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/compare_result.py",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "1ff01e5c5d151c65a1cdf7879f9e27c88e0c318f"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/components.py",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "f903657b5ec49ee45b77b6c05d20e3a4ddf57dd9"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/linux_compare.py",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "0780547a8d2124e8d4d28603565a02ba997625aa"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-components/normal.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "30754617f9d3f184f62068c4014befe4f591d496"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-components/optimized.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "db4645b154c6187834cb3a32bf7fc23fc588185b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/HOST.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "8fe7b315a0f15a4c530967ff11070c13596ce277"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/RUNS.jsonl",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "d977f797a8efa04b7e83b6f181292bfcdec8e794"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/SUMMARY.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "34608e63a0d2994a00b2b881f6bfdb5decc5ea4b"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-stage/SOURCE-MANIFEST.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "1355bb9eca9459fb87b1af3c7410d588f86b343e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/tsconfig.json",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "b33ac9720df7034fae07d28efded540e5963891e"
+    },
+    {
+      "status": "A",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/verify_packet.py",
+      "group": "t10-repaired-candidate-comparison-20260915",
+      "blob": "d20833f94a9a09484755d08a0613634fe630f72d"
+    }
+  ]
+}

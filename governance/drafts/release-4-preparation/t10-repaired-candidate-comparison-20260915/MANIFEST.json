@@ -1,0 +1,32 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "stage": "D final comparison evidence",
+  "expectation_commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+  "repair_commit": "083c292090c2d921022af954888b9a74418f1237",
+  "measured_commit": "98052127e51efbed12580077c3a6e4e002af3a11",
+  "workflow_sha256": "ac06b6008c50ac819c978b36bf0da71da9d79f942fc8e741d2cbd4d2982bb620",
+  "sha256": {
+    "CAPTURE.json": "c8324bcd8bf11a4fc992b7d1bb5c817bd0c7cefd96baf2a50f5c060bdf9f8d2f",
+    "compare.ts": "73e37091f982fce67e1662dc6f694ca67543df69e38abf258e04f19781010f39",
+    "compare_result.py": "119f7ea1054a2bea20512b98774545b85589086cbe259ac96dd6366de92c0aac",
+    "COMPONENTS-optimized.json": "6093d2ab36fd824a24f62c8ec85d51f581a35477595decbe99f75bee68b38691",
+    "COMPONENTS.json": "e80f636e485dd382529bfef360154c7c75d4b865f35b2a7111e42310e42ed9fc",
+    "components.py": "5c2d8edc559fc01c4153456878d01411160bb90905d549c9c33eda67d36351bf",
+    "COVERAGE-MATRIX.md": "c1d9bc35acdb906ad452d3bae6bd224a50618c9fba7ee824d936ee60afe065d4",
+    "linux_compare.py": "4866dd5c737694c1000de5a0bf8f1200141556cc8bf60a8d12c9044921ec6d36",
+    "measurements/nomue-t10-components/normal.json": "c01ae4c336935e490e2ea28a44f7eb7ccf230ea2c4bff842ec307c8db92652a8",
+    "measurements/nomue-t10-components/optimized.json": "40541397426a903373cdd4a15ea76ed5c8c4f5078052d010f098f3fff80098d4",
+    "measurements/nomue-t10-results/HOST.json": "13ddd09bbc46c0f664361843ec45cd976b7a2cbb050ed8265fd28882be1b5f0a",
+    "measurements/nomue-t10-results/RUNS.jsonl": "980f359c141c8e2fd8052f881ae4455b2667dc0eb475d894f3be32b33f9cde2f",
+    "measurements/nomue-t10-results/SUMMARY.json": "58bac097fa7fccfdd5fd8af82a8813e093a77e9cee97fa715c2aa6cfe523fcc9",
+    "measurements/nomue-t10-stage/SOURCE-MANIFEST.json": "d3d8bfa504ab10a0360d386aeb16fab6c45619b768e9a81a4ca35111a7e5af9c",
+    "NORMAL.jsonl": "054a6c1167dce4e4c064d7a49179d69a1ad8b4c75c3dc6d7e1e6c0adc3c77272",
+    "OPTIMIZED.jsonl": "f3aabded45794e6b46b8883831b2a5b4ea891b7468311d4f5d5f9cbf6eeacb32",
+    "README.md": "eb8f319e2d50166edca01f7ad746f66610d8ee9b6db675ce56d4d176ffe4b792",
+    "REPORT.md": "bdef9de4a7226e927293d9bb34351c85b3f7acebcc446cd0f694422a9db3e5f7",
+    "T09-LIMITED-CLOSE.json": "9fcaa13099c54bc147651d13d66158e98c984377181dce9d29546ddcdffefa4a",
+    "tsconfig.json": "7af66249133c6d040dc58a357830296823277446d4044cf0d04dd43475b2e9be",
+    "VALIDATION.json": "f8c956474d5485194c97e2e340469a0967a199c297a3ffd4969318f78fc00291",
+    "verify_packet.py": "70e197f8b3ce347d04482cbd2d25e69298efaa51ab83e20b56a842db0614944e"
+  }
+}

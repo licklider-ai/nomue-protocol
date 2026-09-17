@@ -1,0 +1,29 @@
+{
+  "builder_external_calls": [
+    "subprocess.check_output(GIT + ['show', pin['commit'] + ':' + pin['path']], cwd=ROOT)",
+    "subprocess.check_output(['node', str(HERE / 'seal.mjs')], input=data(records), cwd=ROOT)"
+  ],
+  "builder_imports": [
+    "copy",
+    "fractions",
+    "hashlib",
+    "json",
+    "math",
+    "pathlib",
+    "struct",
+    "subprocess",
+    "sys"
+  ],
+  "candidate_executed": false,
+  "categories": { "A": 70, "B": 23, "C": 28, "D": 49, "E": 4 },
+  "component_projections": 15,
+  "component_tails": 7,
+  "limitations": "Static allowlist plus source review; not a general sandbox or proof of reviewer independence.",
+  "records": 174,
+  "result": "PASS",
+  "reviewed_numeric_path": "C: G5 frozen independent vectors, tied to T05 NUMERICAL-CLOSE; not G5 results",
+  "sealer_imports": ["canonicalize", "node:crypto"],
+  "single_mismatch_slots": 22,
+  "source_pins": 33,
+  "status": "UNISSUED CANDIDATE"
+}

@@ -1,0 +1,22 @@
+$ pnpm check:reference-source && pnpm format:check && pnpm lint:markdown && pnpm typecheck && pnpm validate && pnpm test && pnpm check:generated && pnpm check:phase1 && pnpm check:phase2a && pnpm check:phase2a-021
+$ node tooling/reference-sync/check.mjs && node --test tooling/reference-sync/check.test.mjs
+{"source_commit":"ebcb3a37ef721dd8c350a451d65381098757ef44","mirrored_files":24,"local_adapters":1}
+✔ accepts the pinned upstream and detects a changed local calculator (20.8465ms)
+✔ rejects stale upstream and changed upstream bytes (12.7173ms)
+✔ rejects added source, duplicate entries and path traversal (11.6114ms)
+✔ sync never overwrites the local resource adapter (11.0346ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 123.0308
+$ prettier --check .
+Checking formatting...
+[warn] governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/HOST.json
+[warn] governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/SUMMARY.json
+[warn] Code style issues found in 2 files. Run Prettier with --write to fix.
+[ELIFECYCLE] Command failed with exit code 1.
+[ELIFECYCLE] Command failed with exit code 1.

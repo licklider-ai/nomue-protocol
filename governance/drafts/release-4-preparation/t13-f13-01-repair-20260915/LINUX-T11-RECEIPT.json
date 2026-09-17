@@ -1,0 +1,102 @@
+{
+  "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+  "tracked_diff": "",
+  "node": "v24.14.0",
+  "pnpm": "11.7.0",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "started_utc": "2026-09-15T09:35:47.711645+00:00",
+  "runs": [
+    {
+      "name": "full-check",
+      "command": ["pnpm", "check"],
+      "exit_code": 0,
+      "seconds": 117.645,
+      "output": "full-check.txt",
+      "sha256": "c69d95780564bb9792f58dc6c6942e0bd38fba2efc95241fdbbcd1c6c4b9cf6b"
+    },
+    {
+      "name": "path-observation",
+      "command": [
+        "node",
+        "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.027,
+      "output": "path-observation.txt",
+      "sha256": "c4e5906c75bf5d0bff68761650d7cc51f0da6e9f40d0b49af0a455da319b6a7c"
+    },
+    {
+      "name": "t09-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/focused.ts"
+      ],
+      "exit_code": 0,
+      "seconds": 0.997,
+      "output": "t09-focused.txt",
+      "sha256": "8c2563ead99ac234bf595d060a9f1cc34911832a56da41ade80ed32b79dc829b"
+    },
+    {
+      "name": "t09-normal",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts"
+      ],
+      "exit_code": 0,
+      "seconds": 1.777,
+      "output": "t09-normal.txt",
+      "sha256": "cae4ac94c5c16f72cf5272c8b43ca6040bd310d4bbd1616c9ffdba81b7c33dda"
+    },
+    {
+      "name": "f01-normal",
+      "command": [
+        "python",
+        "-B",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.063,
+      "output": "f01-normal.txt",
+      "sha256": "92d30b072f3b4caca5ea6e3e5c4084330535d172a400a9695b363be06ab8a3aa"
+    },
+    {
+      "name": "t09-optimized",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts",
+        "--optimized"
+      ],
+      "exit_code": 0,
+      "seconds": 2.548,
+      "output": "t09-optimized.txt",
+      "sha256": "f04fef23ceed4eade58c1235a0a14759a0454184bcb6c5ae5e6da422542fd987"
+    },
+    {
+      "name": "f01-optimized",
+      "command": [
+        "python",
+        "-O",
+        "-B",
+        "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.267,
+      "output": "f01-optimized.txt",
+      "sha256": "63847f30287eb0332eec0de0dbc1ce07dd70a307743057fae28c44e2414c6c13"
+    }
+  ],
+  "evidence_path_normalization": {
+    "field": "runs[name=path-observation].command[1]",
+    "original_path_class": "GitHub Actions workspace absolute path",
+    "normalized_repository_path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/path_observation.mjs",
+    "reason": "Preserve the executed repository script identity while removing a non-semantic host-home path rejected by private-dependency audit. Script output hash, exit code, source commit, and all result assertions are unchanged."
+  }
+}

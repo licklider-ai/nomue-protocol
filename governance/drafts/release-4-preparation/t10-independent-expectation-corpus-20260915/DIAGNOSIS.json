@@ -1,0 +1,123 @@
+{
+  "id": "structure/overflow-number",
+  "input_sha256": "a1f676db5dbe751ebcc0ffcc684890c48f98b9dc0c7815a341d610ff14c999e1",
+  "input_contains_1e400": true,
+  "t07": {
+    "category": "conformance_failure",
+    "stage": "structural",
+    "reason": "NRS-SCHEMA-INVALID",
+    "path": "/payload/result/cell_summaries/0/mean"
+  },
+  "canonicalization_error": "non-finite number is outside the Phase 1 numeric model",
+  "numerical_calls": 0,
+  "actual": {
+    "status": "UNISSUED CANDIDATE",
+    "provenance": {
+      "t07_commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+      "t08_commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+      "numerical_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "report_schema_sha256": "5a4e9b5194279e0d6515907cb4d3cae874adab60c32fe2459ec005efafe12db8"
+    },
+    "execution": "execution_refusal",
+    "refusal": {
+      "$schema": "urn:nomue:schema:verifier-refusal:0.2.0-draft.3",
+      "output_type": "nomue-verifier-refusal",
+      "refusal_kind": "internal_error",
+      "reason_codes": ["NRS-INTERNAL-VERIFIER-ERROR"],
+      "message": "NRS-INTERNAL-VERIFIER-ERROR",
+      "verifier": {
+        "name": "nomue-r4-t09-research",
+        "version": "0.1.0-draft.1"
+      },
+      "input_evidence": {
+        "input_size_bytes": 2587
+      },
+      "generated_at": "2026-09-15T00:00:00Z"
+    }
+  },
+  "expected": {
+    "checks": ["not_run", "not_run", "not_run", "not_run"],
+    "conformance": "fail",
+    "conformance_reason": "NRS-SCHEMA-INVALID",
+    "execution": "completed",
+    "profile_eligibility": "not_evaluated",
+    "quantities": [],
+    "reasons": [
+      ["NRS-SCHEMA-INVALID"],
+      ["NRS-SCHEMA-INVALID"],
+      ["NRS-SCHEMA-INVALID"],
+      ["NRS-SCHEMA-INVALID"]
+    ]
+  },
+  "diagnosis": "Structural rejection precedes report assembly; reportBase recomputes a JCS digest of the rejected nonfinite input; the exception becomes internal verifier error. No numerical core or mode-dependent arithmetic is reached.",
+  "status": "UNISSUED CANDIDATE",
+  "expectation_freeze_commit": "d7fcb703da0aa15a78e0d1594b24fc3d34bf622e",
+  "candidate_commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+  "classification": [
+    "fixture/provenance defect: T07 local conformance result incorrectly lifted to final report for noncanonicalizable input",
+    "candidate reporting defect: caught canonicalization failure mapped to unexpected internal verifier error"
+  ],
+  "authority_derived_resolution": "canonicalization_failure refusal, no verification report; existing reference bucket exit 2. This post-detection authority finding is not a replacement frozen expectation or a green rerun.",
+  "diagnosis_sources": [
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "spec/verification/verifier-refusal.md",
+      "git_blob": "188b2a226b8d81e8c1d29b07973d3369539ea160",
+      "sha256": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "spec/verification/relying-party-interface.md",
+      "git_blob": "ef0eae8ddffb816551ab1c7515954ce0b73339c5",
+      "sha256": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "canonicalization/phase-1-numeric-model.md",
+      "git_blob": "145294551ad29076be3c8a103212541bc1f5f237",
+      "sha256": "328b1ec418a617be14c3634fb720ab459cadd6892bba2ad615d935e0be7dd4cf"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "reference/verifier/src/jcs.ts",
+      "git_blob": "0819abf08a3a2ba44cd7c0d6bfc558e749b47ebc",
+      "sha256": "47503c50dbd009bae33807aac1994d26c6adb8e1cfadb90d711347ab8f2198a7"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "reference/verifier/src/verify-phase2a-021.ts",
+      "git_blob": "38e4b9cb0caf4d50819471876952257b2305ad3c",
+      "sha256": "dd79e60e7928bf0c8fbc4a4d53f497cd9f89bb20ecbe45469454e3d8b7989cf2"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "reference/verifier/src/verify.ts",
+      "git_blob": "97325d24da5f3ee9a4c197811ee7a09907cf7e35",
+      "sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "registries/reason-codes.yaml",
+      "git_blob": "083fcb89b542a239ad6e1488c66602089a99491f",
+      "sha256": "1bbe75c9898eb2692a34aafff2b9dba7a5a8de2f48bfde7f0145e3d6e47bbe05"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/report.ts",
+      "git_blob": "153f5f088d2e7b5332c73f4f8fa4e2d1d489fb0a",
+      "sha256": "7affadb90d646b14dd0037581ca87f77115234cdb42d470682fdf700b127d02f"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REASONS.json",
+      "git_blob": "e6ce7fe25ccc7167574e654c8ba5ca8a150aac01",
+      "sha256": "6abe6e4d2d6dcfd25cba4598158541a79f0da01d7b1e8ea7f7f8e3c57dfaf9f0"
+    },
+    {
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts",
+      "git_blob": "cd12e68b8a19663d7b0ba4e2928ed9aeda31d20d",
+      "sha256": "1e83f023eb5d4ee785dfb07a5b5b1e434497868059bf28d7bd2ec5e6bdffd243"
+    }
+  ]
+}

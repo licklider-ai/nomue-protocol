@@ -1,0 +1,24 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "scope": "canonicalization failure classification / refusal handling only",
+  "expectation_commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+  "repair_commit": "083c292090c2d921022af954888b9a74418f1237",
+  "local_head_at_gate": "083c292090c2d921022af954888b9a74418f1237",
+  "remote_head_at_gate": "083c292090c2d921022af954888b9a74418f1237",
+  "push_completed": true,
+  "working_tree_clean_at_gate": true,
+  "focused_regression": "9 PASS",
+  "t09_report_controls": {
+    "normal": 263,
+    "optimized": 263
+  },
+  "F01": {
+    "normal": 10,
+    "optimized": 10
+  },
+  "verdict": [
+    "T09 CANONICALIZATION FAILURE CLASSIFICATION REPAIR \u2014 GO",
+    "T09 LIMITED REPAIR COMPLETE"
+  ],
+  "full_t10_comparison_started_at_gate": false
+}

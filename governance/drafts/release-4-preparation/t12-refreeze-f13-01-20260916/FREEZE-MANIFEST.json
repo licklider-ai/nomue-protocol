@@ -1,0 +1,914 @@
+{
+  "schema_version": 2,
+  "status": "UNISSUED CANDIDATE",
+  "repository": "licklider-ai/nomue-protocol",
+  "branch": "research/r4-t12-refreeze-f13-01-20260916",
+  "candidate_source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+  "t12_parent_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+  "formal_baseline_commit": "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+  "freeze_commit_binding": "The containing Git commit binds this manifest and T12 package; the exact commit is the T13 review target.",
+  "hash_algorithm": "sha256",
+  "hash_semantics": "Git object content bytes; T12 package text normalizes CRLF to LF",
+  "release_4_issued": false,
+  "candidate_ancestry": [
+    "3880db43a64e1758494f3c78f6850daab0e3e9e9",
+    "ae1ad029179f31ae463882e8467e9367398263c9",
+    "fb773cc2092678f8409c2f0d25289028356eeb86",
+    "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+    "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+    "d7fcb703da0aa15a78e0d1594b24fc3d34bf622e",
+    "f18712ac5b9ca0a1facd60cb0d04184e5994c398",
+    "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+    "083c292090c2d921022af954888b9a74418f1237",
+    "98052127e51efbed12580077c3a6e4e002af3a11",
+    "db2efb3e301ba66797c1093f914b2466326e2d81",
+    "ea2cb95356dba3a38850998fa2e322fdff1f471e",
+    "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+    "5478f30981da04faded03eaa0d15419a6665210d",
+    "752a3ef876f27595cca31c4a106e70ffc7bd04df",
+    "84627967352206e9d1ecc54c5ca6a735319d9785",
+    "e449956c705133445d947187c14efa82e5590032",
+    "12bf1b767963fbfc5382ba9734d595f6da428832",
+    "c62ba0f4ffe0e7a1992968f84adc81bd4546b217"
+  ],
+  "chronology": [
+    {
+      "stage": "T03 fixed policy",
+      "commit": "d9ec6984f55f09caa2f65d7714af72190d63c6d4"
+    },
+    {
+      "stage": "T04 architecture",
+      "commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8"
+    },
+    {
+      "stage": "T04 G1-G3",
+      "commit": "225eca96d485978ee01cbe08d535387900252bca"
+    },
+    {
+      "stage": "T04 G4",
+      "commit": "0562813a2a5b112e73a0d0f0f80160cc3bd08ce7"
+    },
+    {
+      "stage": "T04 G5 numerical candidate",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522"
+    },
+    {
+      "stage": "T04 F-01 repair",
+      "commit": "318955dc260204328ec39acb67925e68c35d0c28"
+    },
+    {
+      "stage": "T05 review sufficiency",
+      "commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288"
+    },
+    {
+      "stage": "T06 candidate surfaces",
+      "commit": "ae1ad029179f31ae463882e8467e9367398263c9"
+    },
+    {
+      "stage": "T07 schema and validator",
+      "commit": "fb773cc2092678f8409c2f0d25289028356eeb86"
+    },
+    {
+      "stage": "T08 adapter",
+      "commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1"
+    },
+    {
+      "stage": "T09 initial integration",
+      "commit": "b1fba49e30dc42125afb11982b39f294d48640e2"
+    },
+    {
+      "stage": "T09 supervisor paths",
+      "commit": "0aa94afbacee7e13e0923c62d7739b591d536071"
+    },
+    {
+      "stage": "T09 refusal latch",
+      "commit": "b7627d53c53e22fe998f7f7e8f86f714ca877620"
+    },
+    {
+      "stage": "T09 historical final",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10"
+    },
+    {
+      "stage": "T10 original freeze",
+      "commit": "d7fcb703da0aa15a78e0d1594b24fc3d34bf622e"
+    },
+    {
+      "stage": "T10 mismatch stop A",
+      "commit": "f18712ac5b9ca0a1facd60cb0d04184e5994c398"
+    },
+    {
+      "stage": "T10 corrected freeze B",
+      "commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c"
+    },
+    {
+      "stage": "T09 limited repair C",
+      "commit": "083c292090c2d921022af954888b9a74418f1237"
+    },
+    {
+      "stage": "T10 measurement D",
+      "commit": "98052127e51efbed12580077c3a6e4e002af3a11"
+    },
+    {
+      "stage": "T10 final",
+      "commit": "db2efb3e301ba66797c1093f914b2466326e2d81"
+    },
+    {
+      "stage": "T11 inventory",
+      "commit": "1edca1b631dec8f2efa41830c0540122d7cadc41"
+    },
+    {
+      "stage": "T11 stop evidence",
+      "commit": "ea2cb95356dba3a38850998fa2e322fdff1f471e"
+    },
+    {
+      "stage": "T11 Linux source",
+      "commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a"
+    },
+    {
+      "stage": "T11 final",
+      "commit": "5478f30981da04faded03eaa0d15419a6665210d"
+    },
+    {
+      "stage": "T12 original frozen target (historical)",
+      "commit": "752a3ef876f27595cca31c4a106e70ffc7bd04df"
+    },
+    {
+      "stage": "F13-01 authority-determined repair",
+      "commit": "84627967352206e9d1ecc54c5ca6a735319d9785"
+    },
+    {
+      "stage": "F13-01 repair evidence and regression preservation",
+      "commit": "e449956c705133445d947187c14efa82e5590032"
+    },
+    {
+      "stage": "F13-01 evidence path normalization",
+      "commit": "12bf1b767963fbfc5382ba9734d595f6da428832"
+    },
+    {
+      "stage": "F13-01 evidence receipt formatting",
+      "commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217"
+    }
+  ],
+  "evidence_categories": [
+    "independently reviewed historical evidence",
+    "independently generated expected evidence",
+    "implementation regression evidence",
+    "Linux execution evidence",
+    "Windows execution evidence",
+    "structural/schema evidence",
+    "reproducibility metadata",
+    "formal authority reference",
+    "unissued candidate artifact"
+  ],
+  "inventory": [
+    {
+      "id": "release-status",
+      "logical_role": "Release 4 preparation status",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/RELEASE-STATUS.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "eaf9735e14d90bc0218bf22fb1ca5d81eb808898908015d88c9ad21f8015b5c5",
+      "bytes": 8994
+    },
+    {
+      "id": "opening-rfc",
+      "logical_role": "Release 4 opening RFC candidate",
+      "category": "independently reviewed historical evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4",
+      "bytes": 50051
+    },
+    {
+      "id": "t03-policy",
+      "logical_role": "fixed numerical policy decisions",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "source_commit": "d9ec6984f55f09caa2f65d7714af72190d63c6d4",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0",
+      "bytes": 15538
+    },
+    {
+      "id": "t04-architecture",
+      "logical_role": "candidate execution architecture",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "source_commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685",
+      "bytes": 18228
+    },
+    {
+      "id": "t04-g1-g3",
+      "logical_role": "G1-G3 research gate evidence manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/MANIFEST.json",
+      "source_commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "sha256": "01ab0b59526b8176ff2a8256bafdffbc0bd48813813bb85c2c651c482e221ba0",
+      "bytes": 3047
+    },
+    {
+      "id": "t04-g4",
+      "logical_role": "G4 budget and domain evidence manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/MANIFEST.json",
+      "source_commit": "0562813a2a5b112e73a0d0f0f80160cc3bd08ce7",
+      "sha256": "718f0f1f96c24744bf62f60eb6c180b91cd5ba3e940e4155f984b66e216be8a8",
+      "bytes": 3997
+    },
+    {
+      "id": "t04-g5-manifest",
+      "logical_role": "reviewed integrated numerical evidence manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/MANIFEST.json",
+      "source_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "sha256": "f846412428c25d0469da633cc5d8ca4d1b0d4fe7e3ed9c77405d3466a401671a",
+      "bytes": 1391
+    },
+    {
+      "id": "t04-g5-procedure",
+      "logical_role": "reviewed numerical candidate procedure",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/procedure.py",
+      "source_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "sha256": "202a7f87b5b7490080a952599b135fed3e2ae450e946630efe8e78cfd37fd840",
+      "bytes": 19517
+    },
+    {
+      "id": "t04-f01",
+      "logical_role": "execution and F-01 evidence manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/MANIFEST.json",
+      "source_commit": "318955dc260204328ec39acb67925e68c35d0c28",
+      "sha256": "9cb03abf4665a8e6768dd539a586704f45fbf150931ffb6d7fe149d98ffba53b",
+      "bytes": 7676
+    },
+    {
+      "id": "t05-review",
+      "logical_role": "scientific and numerical review sufficiency manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/MANIFEST.json",
+      "source_commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "sha256": "76138a4b8236ed200b426c4e87926ce5866495b0a331b941629efb898c70df22",
+      "bytes": 1342
+    },
+    {
+      "id": "t06-manifest",
+      "logical_role": "candidate identity and surface packet manifest",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "800ca4440341a7557559f9a942284ae51152481298d35dc4ec98112bc99273e4",
+      "bytes": 1777
+    },
+    {
+      "id": "t06-candidate",
+      "logical_role": "machine-readable candidate identities and bindings",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f",
+      "bytes": 24790
+    },
+    {
+      "id": "t06-requirements",
+      "logical_role": "16 unissued Requirement candidates",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6",
+      "bytes": 27002
+    },
+    {
+      "id": "t06-surfaces",
+      "logical_role": "candidate public surface inventory",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/SURFACE-INVENTORY.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "d0f073500e5569b6db44edcc0055467967866c7d38059ad13aa9a4af0bf5eb71",
+      "bytes": 18272
+    },
+    {
+      "id": "t07-manifest",
+      "logical_role": "closed schema and validator packet manifest",
+      "category": "structural/schema evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "29acd1a777c52661f40316526d6a434cb94d927a6b02a9e8e9eacb23e09a3043",
+      "bytes": 3285
+    },
+    {
+      "id": "t07-validator",
+      "logical_role": "relational validator candidate",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/validator.ts",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "45624dd8b37b5fab5ee4e40a270024797e0325c4e99d1f387200f782051214a6",
+      "bytes": 13942
+    },
+    {
+      "id": "t07-payload-schema",
+      "logical_role": "closed payload schema candidate",
+      "category": "structural/schema evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/balanced-two-factor-0.1-draft-1.schema.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "e42f3ef4de24516c89ba876d41500a30b6d437df5ae9293486f527184d2fa4fc",
+      "bytes": 6694
+    },
+    {
+      "id": "t07-record-schema",
+      "logical_role": "closed Record schema candidate",
+      "category": "structural/schema evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/record-balanced-two-factor-0.1-draft-1.schema.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "4e622fa9464e4bcc222ede1238ff9d20a7b6f576e90b07f3fd5cb0bf3803c6d9",
+      "bytes": 2080
+    },
+    {
+      "id": "t07-report-schema",
+      "logical_role": "closed verification-report schema candidate",
+      "category": "structural/schema evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/schemas/verification-report-balanced-two-factor-0.1-draft-1.schema.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "fc92db65a7c5625a23f0a35726efbce46b78f9e2555ed1038a51c5f113f1f6f0",
+      "bytes": 31097
+    },
+    {
+      "id": "t08-manifest",
+      "logical_role": "limited adapter packet manifest",
+      "category": "structural/schema evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "8ed5ca3bd0660f0921188ac06a75b95da84225751f5a452625d5ecbe7919e662",
+      "bytes": 2472
+    },
+    {
+      "id": "t08-adapter",
+      "logical_role": "limited TypeScript adapter candidate",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/adapter.ts",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "451d8e7adb16398db494256d4fd457a1156d86f5055460bd9246b15a035e448c",
+      "bytes": 7525
+    },
+    {
+      "id": "t08-bridge",
+      "logical_role": "limited Python numerical bridge",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t08-limited-numerical-adapter-20260915/numerical_bridge.py",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "cd7e8504765ac12bc025675f174e2ca2d3221d95c05ab679fd80aeac4e34c54c",
+      "bytes": 3344
+    },
+    {
+      "id": "t09-historical-manifest",
+      "logical_role": "original T09 integrated packet manifest",
+      "category": "independently reviewed historical evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/MANIFEST.json",
+      "source_commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "sha256": "3d3edd4c1074cf4aa903f16f55fa5156fc2cfd3fa01e610afaf0af494a8605a3",
+      "bytes": 5115
+    },
+    {
+      "id": "t09-repaired-report",
+      "logical_role": "current repaired report assembly candidate",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/report.ts",
+      "source_commit": "083c292090c2d921022af954888b9a74418f1237",
+      "sha256": "6d6e8839fc7796b3197accbe109a7ecda39af5ac13880f4ecb6a3890f7030209",
+      "bytes": 17708
+    },
+    {
+      "id": "t09-repair-manifest",
+      "logical_role": "limited canonicalization repair evidence",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "e7b9ba77307b5d1f4b801f631320a9e18a2cac3758cb207150620d152f748eee",
+      "bytes": 570
+    },
+    {
+      "id": "t10-original-manifest",
+      "logical_role": "original failed expectation packet manifest",
+      "category": "independently generated expected evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "0dd97f810c1b90cce018a89bc0f14b1c036a379c5b5c3d8b8fc70d320e495778",
+      "bytes": 2144
+    },
+    {
+      "id": "t10-original-freeze",
+      "logical_role": "original failed expectation freeze",
+      "category": "independently generated expected evidence",
+      "provenance": "historical",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-20260915/EXPECTATIONS-FREEZE.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "6fe8bb5fd1b4cdcf1d71da9748a6d64fc7d184bfd10a5b2fb17a5e0ca2d8e8a8",
+      "bytes": 1013
+    },
+    {
+      "id": "t10-corrected-manifest",
+      "logical_role": "corrected independent expectation freeze manifest",
+      "category": "independently generated expected evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "f7cea5d114c764f273006f2a0cc6f160d9ea6086c85b707e8eb39980fd916923",
+      "bytes": 984
+    },
+    {
+      "id": "t10-non-circularity",
+      "logical_role": "corrected freeze independence receipt",
+      "category": "independently generated expected evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/NON-CIRCULARITY.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "a1bceae6cb31bda812e5c5e38f7a3fa9e966dbcfeae4ea14d226720f563e5399",
+      "bytes": 532
+    },
+    {
+      "id": "t10-comparison-manifest",
+      "logical_role": "corrected candidate comparison packet manifest",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "4d1b61661fa5a304b4d6c2b8c1f5f29c00cd0596730a140aff6e5b024e24fe3e",
+      "bytes": 2557
+    },
+    {
+      "id": "t10-linux-host",
+      "logical_role": "T10 Linux host receipt",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/HOST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "13ddd09bbc46c0f664361843ec45cd976b7a2cbb050ed8265fd28882be1b5f0a",
+      "bytes": 387
+    },
+    {
+      "id": "t10-linux-runs",
+      "logical_role": "T10 Linux raw comparison runs",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/RUNS.jsonl",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "980f359c141c8e2fd8052f881ae4455b2667dc0eb475d894f3be32b33f9cde2f",
+      "bytes": 5843857
+    },
+    {
+      "id": "t10-linux-summary",
+      "logical_role": "T10 Linux comparison summary",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/SUMMARY.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "58bac097fa7fccfdd5fd8af82a8813e093a77e9cee97fa715c2aa6cfe523fcc9",
+      "bytes": 159
+    },
+    {
+      "id": "t11-continuation-manifest",
+      "logical_role": "T11 final continuation manifest",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/CONTINUATION-MANIFEST.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "6518814a50cb54da10fa09dda475b0d81378739cff283deb8926d22a5255b201",
+      "bytes": 1957
+    },
+    {
+      "id": "t11-linux-receipt",
+      "logical_role": "T11 Linux full-check and collateral receipt",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/LINUX-RECEIPT.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "c942290f756e1fc50bf3a0b60fa5068aed9e3ea0c881a4575a18fa76a2484256",
+      "bytes": 2803
+    },
+    {
+      "id": "t11-windows-receipt",
+      "logical_role": "T11 Windows execution and portability classification",
+      "category": "Windows execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/WINDOWS-CONTINUATION.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "25d4dcf765c7433c8414b63288504ed277cf07b8203a977752950495b2277ca5",
+      "bytes": 1936
+    },
+    {
+      "id": "charter",
+      "logical_role": "Protocol Charter",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "CHARTER.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "1123cd73836ea3ebfce7e7259ec159479b846e8e90a1fca0bf2acb9e075abefb",
+      "bytes": 9163
+    },
+    {
+      "id": "authority",
+      "logical_role": "Protocol authority order",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "AUTHORITY.md",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "2c7c4dd35fc86a2a87354ca40ea0ca08834998d1136d7b65de9850c007cf6ea3",
+      "bytes": 12454
+    },
+    {
+      "id": "authority-manifest",
+      "logical_role": "authority manifest",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "authority/authority-manifest.yaml",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74",
+      "bytes": 45801
+    },
+    {
+      "id": "requirements-registry",
+      "logical_role": "issued Requirement registry",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "registries/requirements.yaml",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead",
+      "bytes": 83339
+    },
+    {
+      "id": "checks-registry",
+      "logical_role": "current public check registry",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "registries/public-checks.yaml",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9",
+      "bytes": 15439
+    },
+    {
+      "id": "surfaces-registry",
+      "logical_role": "current public contract surface registry",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "registries/public-contract-surfaces.yaml",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "362f12e80ca5826c105e7a475ddb3ca9242505c7363dfa21b25774a46a9c168a",
+      "bytes": 16351
+    },
+    {
+      "id": "bundle-registry",
+      "logical_role": "current supported interpretation bundle registry",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "registries/interpretation-bundles.yaml",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290",
+      "bytes": 8425
+    },
+    {
+      "id": "public-cli",
+      "logical_role": "production reference CLI entry",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "reference/verifier/src/cli.ts",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "d12f5c233a2cd72fad8f3c284834b42eb5075e6acc0722f915a92148a25f8483",
+      "bytes": 7424
+    },
+    {
+      "id": "dispatcher",
+      "logical_role": "production reference verifier dispatcher",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "reference/verifier/src/verify.ts",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+      "bytes": 13236
+    },
+    {
+      "id": "identifier-schema",
+      "logical_role": "current formal identifier schema",
+      "category": "formal authority reference",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "schemas/common/identifier.schema.json",
+      "source_commit": "5478f30981da04faded03eaa0d15419a6665210d",
+      "sha256": "230796eae2baf7e3ebf5f75c9dcfe5b6afba3e320b152e7c848e38d06047b75c",
+      "bytes": 1674
+    },
+    {
+      "id": "f13-invoke",
+      "logical_role": "F13-01 delivery repair source",
+      "category": "unissued candidate artifact",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/invoke.py",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "sha256": "daaf615d08754a2db15fe6dd1aa28809b63cff60b990614212d2efd50b6c1db8",
+      "bytes": 9586
+    },
+    {
+      "id": "f13-linux-tests",
+      "logical_role": "F13-01 integrated parse controls",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/linux_tests.py",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "sha256": "c25b840a5cd0f9a633c49004596d0404d3b8228afb61da0a9b08964e80fb5b5b",
+      "bytes": 6804
+    },
+    {
+      "id": "f13-f01-controls",
+      "logical_role": "F13-01 and F-01 precedence controls",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py",
+      "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "sha256": "de62b25deeb554d75b9692021a2051ebe919c05119198c65ac51e845afaac5c1",
+      "bytes": 5405
+    },
+    {
+      "id": "f13-manifest",
+      "logical_role": "F13-01 repair package manifest",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/MANIFEST.json",
+      "source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "sha256": "8574a829a9ec909310acb8e5cd77f615dfb5920dd3515f5269db7ef17bebf8a3",
+      "bytes": 2874
+    },
+    {
+      "id": "f13-linux-t09",
+      "logical_role": "F13-01 Linux integrated receipt",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/LINUX-T09-RECEIPT.json",
+      "source_commit": "e449956c705133445d947187c14efa82e5590032",
+      "sha256": "fd93ef745ad9027f7678e8db642a020e3f721203997b39682b6a962101d7e2b2",
+      "bytes": 3961
+    },
+    {
+      "id": "f13-linux-t11",
+      "logical_role": "F13-01 Linux regression preservation receipt",
+      "category": "Linux execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/LINUX-T11-RECEIPT.json",
+      "source_commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "sha256": "21d0a1d0ae19c8429119136946a3b55bfbe36b1e79c2b658383371296b90b19c",
+      "bytes": 3338
+    },
+    {
+      "id": "f13-windows",
+      "logical_role": "F13-01 Windows classified regression receipt",
+      "category": "Windows execution evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/WINDOWS-RECEIPT.json",
+      "source_commit": "e449956c705133445d947187c14efa82e5590032",
+      "sha256": "bc759ad8e47ca6f918b40f70f1d15db85078dd1c32febd6e28b3475e1cbe92b7",
+      "bytes": 2407
+    },
+    {
+      "id": "f13-report",
+      "logical_role": "F13-01 authority and closure report",
+      "category": "implementation regression evidence",
+      "provenance": "reused",
+      "status": "UNISSUED CANDIDATE",
+      "path": "governance/drafts/release-4-preparation/t13-f13-01-repair-20260915/REPORT.md",
+      "source_commit": "e449956c705133445d947187c14efa82e5590032",
+      "sha256": "020912b74b573d6ca36eb3629e219d0debac2758ce6ff1bdc4227c8a105534d9",
+      "bytes": 3761
+    }
+  ],
+  "package_files": [
+    {
+      "path": "README.md",
+      "role": "package index",
+      "category": "reproducibility metadata",
+      "provenance": "newly frozen",
+      "sha256": "12016414478c17a44a32b7458805ec3896eecaf3c184414262fbff788428afc5",
+      "bytes": 893
+    },
+    {
+      "path": "REPORT.md",
+      "role": "re-freeze report",
+      "category": "reproducibility metadata",
+      "provenance": "newly frozen",
+      "sha256": "7dd11a6ab8bce83eb2125132140ac5655f99e43455ebc8b9fff7d6bdf004d30e",
+      "bytes": 2609
+    },
+    {
+      "path": "REPRODUCIBILITY.md",
+      "role": "reproduction instructions",
+      "category": "reproducibility metadata",
+      "provenance": "newly frozen",
+      "sha256": "ceefa58492e29040fa1381b902d375604c054c6889854798dc8b6accbfa422e8",
+      "bytes": 1245
+    },
+    {
+      "path": "verify_refreeze.py",
+      "role": "manifest and preservation checker",
+      "category": "reproducibility metadata",
+      "provenance": "newly frozen",
+      "sha256": "b5d9a2d3bfd4de273e10c0dddc0ff570c6fa25a5b010b1d95181b3f73c073d2e",
+      "bytes": 3964
+    }
+  ],
+  "receipt_binding": "REPRODUCTION-RECEIPT.json records this manifest hash and is bound by the containing Git commit; it is excluded to avoid a hash cycle.",
+  "protected_trees": [
+    "CHARTER.md",
+    "AUTHORITY.md",
+    "authority",
+    "registries",
+    "schemas",
+    "spec",
+    "conformance",
+    "canonicalization",
+    "reference/verifier/src",
+    "generated"
+  ],
+  "linux_run_bindings": [
+    {
+      "task": "T10",
+      "run_id": 34939107292,
+      "source_commit": "98052127e51efbed12580077c3a6e4e002af3a11",
+      "platform": "Linux",
+      "machine": "x86_64",
+      "python": "3.12.14",
+      "invocations": 348,
+      "mode_pairs": 174,
+      "result": "PASS"
+    },
+    {
+      "task": "T11",
+      "run_id": 34944226774,
+      "source_commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+      "platform": "Linux",
+      "machine": "x86_64",
+      "node": "24.14.0",
+      "pnpm": "11.7.0",
+      "python": "3.12.14",
+      "unit_pass": 520,
+      "unit_fail": 0,
+      "result": "PASS"
+    }
+  ],
+  "semantic_boundaries": [
+    {
+      "id": "support-scope",
+      "witness": "Public-supported and reference-supported remain distinct."
+    },
+    {
+      "id": "finite-evidence",
+      "witness": "A finite corpus is not an all-domain guarantee."
+    },
+    {
+      "id": "candidate-status",
+      "witness": "A research candidate is not production support."
+    },
+    {
+      "id": "failure-separation",
+      "witness": "Execution failure is distinct from numerical indeterminate."
+    },
+    {
+      "id": "declared-input",
+      "witness": "A declared result is comparison input, not a truth input."
+    },
+    {
+      "id": "numerical-stages",
+      "witness": "Evaluation remains exact truth, then projection, then comparison."
+    },
+    {
+      "id": "positive-p-underflow",
+      "witness": "A positive p-value projected to zero is not a Public comparison pass."
+    },
+    {
+      "id": "f01-precedence",
+      "witness": "F-01 execution-failure precedence remains fixed."
+    },
+    {
+      "id": "expectation-independence",
+      "witness": "T10 expected values remain independent of candidate output."
+    },
+    {
+      "id": "f13-parse-delivery",
+      "witness": "Invalid UTF-8 retains the authority-defined external parse refusal without weakening F-01 precedence."
+    }
+  ],
+  "publication_guards": {
+    "formal_requirement_published": false,
+    "authoritative_schema_published": false,
+    "registry_registration": false,
+    "supported_bundle_registration": false,
+    "production_dispatcher_connection": false,
+    "public_cli_admission": false
+  },
+  "original_t12_frozen_target": "752a3ef876f27595cca31c4a106e70ffc7bd04df",
+  "original_t12_candidate_source": "5478f30981da04faded03eaa0d15419a6665210d",
+  "original_t12_manifest_sha256": "f43cd0d1b3ba0042425139e77975199ba24a0e1db96aa65d18bf8bf997bfe3fb",
+  "re_freeze_commit_binding": "The containing Git commit binds this separate re-freeze package and is the exact T13 review target.",
+  "repair_lineage": [
+    {
+      "commit": "752a3ef876f27595cca31c4a106e70ffc7bd04df",
+      "role": "historical original T12 frozen target"
+    },
+    {
+      "commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+      "role": "limited F13-01 source repair"
+    },
+    {
+      "commit": "e449956c705133445d947187c14efa82e5590032",
+      "role": "F13-01 repair evidence and regression-preservation record"
+    },
+    {
+      "commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
+      "role": "nonsemantic F13-01 evidence-path normalization"
+    },
+    {
+      "commit": "c62ba0f4ffe0e7a1992968f84adc81bd4546b217",
+      "role": "formatter-only F13-01 evidence normalization"
+    }
+  ],
+  "evidence_path_normalization": {
+    "commit": "12bf1b767963fbfc5382ba9734d595f6da428832",
+    "scope": "host workspace path representation only",
+    "result_semantics_changed": false,
+    "original_t12_manifest_changed": false
+  }
+}

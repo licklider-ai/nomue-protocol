@@ -1,0 +1,122 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "result": "PASS",
+  "source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+  "run_id": 34953342130,
+  "run_url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34953342130",
+  "workflow": "R4 T09 candidate integration",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "python": "3.12.14",
+  "summary": {
+    "mode_pairs": 17,
+    "passed": 54,
+    "result": "PASS",
+    "runs": 54,
+    "status": "UNISSUED CANDIDATE"
+  },
+  "selected_runs": [
+    {
+      "case": "transport",
+      "mode": 1,
+      "check": "PASS",
+      "input_sha256": "cb3b6c7c433b377c86bc1748054d10f354d4139c08ec9a2e06265df6dc47b0c6",
+      "final_internal_cause": "transport_bound",
+      "execution": "execution_refusal",
+      "refusal_kind": "resource_limit",
+      "reason_codes": ["NRS-RESOURCE-LIMIT-EXCEEDED"],
+      "exit_code": 4,
+      "final_report_present": false,
+      "numerical_core_invocation_count": null,
+      "cleanup_ok": true
+    },
+    {
+      "case": "cleanup-failure",
+      "mode": 1,
+      "check": "PASS",
+      "input_sha256": "cb3b6c7c433b377c86bc1748054d10f354d4139c08ec9a2e06265df6dc47b0c6",
+      "final_internal_cause": "cleanup_failure",
+      "execution": "execution_refusal",
+      "refusal_kind": "internal_error",
+      "reason_codes": ["NRS-INTERNAL-VERIFIER-ERROR"],
+      "exit_code": 5,
+      "final_report_present": false,
+      "numerical_core_invocation_count": null,
+      "cleanup_ok": false
+    },
+    {
+      "case": "deadline-late-report",
+      "mode": 1,
+      "check": "PASS",
+      "input_sha256": "cb3b6c7c433b377c86bc1748054d10f354d4139c08ec9a2e06265df6dc47b0c6",
+      "final_internal_cause": "full_invocation_deadline",
+      "execution": "execution_refusal",
+      "refusal_kind": "resource_limit",
+      "reason_codes": ["NRS-TIMEOUT-LIMIT-EXCEEDED"],
+      "exit_code": 4,
+      "final_report_present": false,
+      "numerical_core_invocation_count": null,
+      "cleanup_ok": true
+    },
+    {
+      "case": "malformed-raw",
+      "mode": 0,
+      "check": "PASS",
+      "input_sha256": "be302461cda285db3ed2d45fb767b23e08ca8808b35a638009937df22b332d73",
+      "final_internal_cause": "NRS-PARSE-FAILED",
+      "execution": "execution_refusal",
+      "refusal_kind": "parse_error",
+      "reason_codes": ["NRS-PARSE-FAILED"],
+      "exit_code": 2,
+      "final_report_present": false,
+      "numerical_core_invocation_count": null,
+      "cleanup_ok": true
+    },
+    {
+      "case": "invalid-utf8",
+      "mode": 0,
+      "check": "PASS",
+      "input_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "final_internal_cause": "invalid_utf8",
+      "execution": "execution_refusal",
+      "refusal_kind": "parse_error",
+      "reason_codes": ["NRS-PARSE-FAILED"],
+      "exit_code": 2,
+      "final_report_present": false,
+      "numerical_core_invocation_count": 0,
+      "cleanup_ok": true
+    },
+    {
+      "case": "invalid-utf8",
+      "mode": 1,
+      "check": "PASS",
+      "input_sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "final_internal_cause": "invalid_utf8",
+      "execution": "execution_refusal",
+      "refusal_kind": "parse_error",
+      "reason_codes": ["NRS-PARSE-FAILED"],
+      "exit_code": 2,
+      "final_report_present": false,
+      "numerical_core_invocation_count": 0,
+      "cleanup_ok": true
+    }
+  ],
+  "artifact_files": {
+    "HOST.json": {
+      "bytes": 190,
+      "sha256": "e92e67daeca3c7872f8551fad591119a26a89cc959db9e969beebbeb3fac673c"
+    },
+    "RUNS.jsonl": {
+      "bytes": 559041,
+      "sha256": "39c8c1170329cc55becd5ba3ddc23377263c314744fc16c3dc86c7aff71e8294"
+    },
+    "SUMMARY.json": {
+      "bytes": 86,
+      "sha256": "6796956927422703b3664a4956a74789e1dab570d0e6fd354a031dc1e17b9c7d"
+    },
+    "SOURCE-MANIFEST.json": {
+      "bytes": 280701,
+      "sha256": "2fa340e26221c66c4cb8508454872d09dfafc7eb11770248aed0e2aaadab1c9e"
+    }
+  }
+}
