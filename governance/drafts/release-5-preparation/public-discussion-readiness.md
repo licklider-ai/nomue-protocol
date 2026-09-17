@@ -1,6 +1,8 @@
 # Release 5 public-discussion readiness
 
-Current state: **AWAITING_OPENING_AUTHORIZATION**. Public discussion is not open.
+Current state: **PUBLIC_DISCUSSION_OPEN**. [Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346)
+opened at 2026-09-17T00:38:15Z; earliest decision at 2026-10-17T00:38:15Z under
+the provisional additive 30-day assessment. See [the opening record](public-opening-record.md).
 Updated 2026-09-17.
 
 ## Proposed question
@@ -40,24 +42,22 @@ a scoped eleven-item non-claim boundary?
 
 ## Readiness gates
 
-| Gate                                  | Current state | Required closure evidence                                                                                                                  |
-| ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| R5-P1 bounded question and exclusions | PREPARED      | Retained fresh-context review and PROCEED diff confirmation establish the bounded question; opening authorization remains pending          |
-| R5-P2 Research Gate evidence          | PARTIAL       | Full-text closure of `R5-RH-1` and a methodological addendum; Q11 to Q14 remain unanswered, and the repaired timing scope needs assessment |
-| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                  |
-| R5-P4 decision semantics              | PREPARED      | PROCEED diff confirmation retained; the prescribed S-2a sentence is applied at opening-candidate freeze                                    |
-| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                         |
-| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results         |
-| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                           |
-| R5-P8 independent opening review      | OPEN          | Reviewer-side work complete; only steward authorization of the fixed opening candidate remains                                             |
+| Gate                                  | Current state | Required closure evidence                                                                                                                   |
+| ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| R5-P1 bounded question and exclusions | PREPARED      | Retained fresh-context review and PROCEED diff confirmation establish the bounded question; opening authorized in the linked opening record |
+| R5-P2 Research Gate evidence          | PARTIAL       | Full-text closure of `R5-RH-1` and a methodological addendum; Q11 to Q14 remain unanswered, and the repaired timing scope needs assessment  |
+| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                   |
+| R5-P4 decision semantics              | PREPARED      | PROCEED diff confirmation retained; the prescribed S-2a sentence is applied at opening-candidate freeze                                     |
+| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                          |
+| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results          |
+| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                            |
+| R5-P8 independent opening review      | CLOSED        | Retained fresh-context review and confirmation; steward authorized the fixed candidate; issue #346 opened                                   |
 
-`PREPARED` means reviewed preparation is complete for opening; it is neither
-adoption nor an opening authorization. P1 and P4 now record the recommendation of
-[the retained PROCEED confirmation](opening-fresh-context-diff-confirmation.md),
-after applying its prescribed S-2a sentence. This is coordination under the delegated
-preparation scope, not a new independent review or an approval on the steward's
-behalf. The reviewer expressly requires no additional review of that sentence;
-the steward can inspect it in the fixed candidate before authorizing opening.
+`PREPARED` means reviewed preparation is complete for opening, not adoption.
+P1 and P4 retain the finding of the [PROCEED confirmation](opening-fresh-context-diff-confirmation.md)
+after the prescribed S-2a repair. P8 is closed for opening only on the recorded
+steward authorization and actual issue creation. No research, family-acceptance,
+implementation or adoption hold is closed by this bookkeeping.
 
 ## Existing reusable foundation
 
@@ -72,7 +72,7 @@ Reuse of these foundations does not prove that the product selected the best met
 Release 5 needs its own research closure, authority inventory and preservation
 evidence for the narrower cross-family evidence claim.
 
-## Holds allowed during a future public window
+## Holds retained during the public window
 
 The named full-text source hold may remain visible during public discussion so that
 the public can inspect the unresolved evidence boundary. It must close before design
@@ -86,25 +86,20 @@ during discussion but must close before design freeze. Projection meaning, timin
 ownership, non-claims and separation from Layer 2 may not remain implicit because
 they are the subject of the public question.
 
-## Opening sequence
+## Opening completed and next work
 
-1. Present the fixed candidate and
-   [opening authorization request](opening-authorization-request.md) to the steward,
-   including the applied S-2a sentence and all named holds.
-2. After explicit authorization, integrate the informative package and create the
-   public RFC issue from the approved candidate, with the named holds visible.
-3. Record the actual issue creation time in UTC, the applicable tier and minimum
-   window, and the earliest decision time. Do not predate the clock.
-4. During discussion, close the methodological addendum, predecessor acceptance,
-   exact authority/surface inventory and fixture holds before design freeze or
-   adoption. Opening-candidate freeze is not normative design freeze.
+[The opening record](public-opening-record.md) preserves the approved candidate,
+authorization source, actual UTC clock and complete named holds. PR #342 is
+integrated and the public issue is open. Continue the methodological addendum,
+predecessor reconciliation, exact authority/surface inventory and fixture evidence
+before normative design freeze or adoption.
 
-Reviewer-side work for the opening scope is complete. Reuse the retained review
-and diff confirmation; reopen only scope affected by a new material change.
-
-The end of a future minimum window would not automatically adopt the proposal.
+Reuse the retained independent review and diff confirmation; reopen only scope
+affected by a new material change. The minimum window does not automatically adopt
+the proposal. Any higher-tier impact requires reassessing the applicable process
+and window.
 
 ## Independence disclosure
 
 This readiness record is an author-side coordination artifact. It incorporates
-independent findings and a steward scope decision but does not itself close a gate.
+independent findings and records the steward opening authorization; it supplies no new independent scientific review.

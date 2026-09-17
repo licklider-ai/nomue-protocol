@@ -47,6 +47,9 @@ Release 5's earlier rank-based direction moves into the Releases 6–10 candidat
 range. This is a sequencing change, not a scientific rejection or a change to the
 existing research handoffs. The current pre-opening work is in the
 [Release 5 preparation package](release-5-preparation/README.md).
+Public discussion is open in [Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346);
+the [opening record](release-5-preparation/public-opening-record.md) preserves the
+clock, conditional family scope and retained holds.
 
 This table fixes neither one capability per release nor the listed order inside a
 range. Splitting, combining, or reordering a future release updates this planning
