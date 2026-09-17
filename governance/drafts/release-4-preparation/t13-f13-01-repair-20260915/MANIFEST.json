@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "status": "UNISSUED CANDIDATE",
+  "repository": "licklider-ai/nomue-protocol",
+  "branch": "research/r4-t13-f13-01-repair-20260915",
+  "finding": "F13-01",
+  "original_t13_frozen_target": "752a3ef876f27595cca31c4a106e70ffc7bd04df",
+  "original_t12_manifest_sha256": "f43cd0d1b3ba0042425139e77975199ba24a0e1db96aa65d18bf8bf997bfe3fb",
+  "repair_source_commit": "84627967352206e9d1ecc54c5ca6a735319d9785",
+  "repair_changed_files": [
+    "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/invoke.py",
+    "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/linux_tests.py",
+    "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py"
+  ],
+  "authority": {
+    "reference/verifier/src/verify.ts": "19700f2138ca367c04b65b5b41fb83651bd4fa6e0070a092c0999b79af776e80",
+    "reference/verifier/src/cli.ts": "d12f5c233a2cd72fad8f3c284834b42eb5075e6acc0722f915a92148a25f8483",
+    "spec/verification/relying-party-interface.md": "50f5afec56b64826327f69bc672356862487a14508896c5c6aac8352dafc1545",
+    "spec/verification/verifier-refusal.md": "c5569b48514fdcfeb998bd67f7438a9a8e3c3d9aebefef9125caacbb9d1d0d83"
+  },
+  "t10_impact": "NONE",
+  "t10_tree_objects": {
+    "original": "90afcfc7e4c4ed48bb5e000d7b74604e1fef1792",
+    "revision_2": "e230a60269473fe65a184b52da2ef589b2b05f22"
+  },
+  "linux_runs": {
+    "t09": 34953342130,
+    "t11": 34953329312
+  },
+  "historical_evidence_preserved": true,
+  "old_expected_changed": false,
+  "new_semantics": false,
+  "authority_changed": false,
+  "semantic_review_required": false,
+  "release_4_issued": false,
+  "package_files": [
+    {
+      "path": "README.md",
+      "bytes": 614,
+      "sha256": "347acfffe5a6523621c8486acbbfc301b68b052b9803abe55da897d10c96b9bf"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 3761,
+      "sha256": "020912b74b573d6ca36eb3629e219d0debac2758ce6ff1bdc4227c8a105534d9"
+    },
+    {
+      "path": "LINUX-T09-RECEIPT.json",
+      "bytes": 3961,
+      "sha256": "fd93ef745ad9027f7678e8db642a020e3f721203997b39682b6a962101d7e2b2"
+    },
+    {
+      "path": "LINUX-T11-RECEIPT.json",
+      "bytes": 3338,
+      "sha256": "21d0a1d0ae19c8429119136946a3b55bfbe36b1e79c2b658383371296b90b19c"
+    },
+    {
+      "path": "WINDOWS-RECEIPT.json",
+      "bytes": 2407,
+      "sha256": "bc759ad8e47ca6f918b40f70f1d15db85078dd1c32febd6e28b3475e1cbe92b7"
+    },
+    {
+      "path": "verify_repair.py",
+      "bytes": 4790,
+      "sha256": "bf1154775552d932b02368f8a8c7f1c6949cd25434ff470b12823e2f8b2bd5f6"
+    }
+  ],
+  "evidence_path_normalization": {
+    "receipt": "LINUX-T11-RECEIPT.json",
+    "scope": "host workspace path representation only",
+    "result_semantics_changed": false,
+    "original_t12_manifest_changed": false,
+    "format": "repository Prettier formatting; values unchanged"
+  }
+}

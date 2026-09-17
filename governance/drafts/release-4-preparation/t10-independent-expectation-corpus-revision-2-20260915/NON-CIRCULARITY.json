@@ -1,0 +1,15 @@
+{
+  "candidate_imported": false,
+  "candidate_invoked": false,
+  "candidate_output_used": false,
+  "changed": ["structure/overflow-number"],
+  "external_calls": [
+    "subprocess.check_output(['git', '-c', 'safe.directory=' + ROOT.as_posix(), '-C', str(ROOT), 'show', x['commit'] + ':' + x['path']])"
+  ],
+  "imports": ["hashlib", "json", "pathlib", "subprocess"],
+  "records": 174,
+  "result": "PASS",
+  "source_pins": 15,
+  "source_reads": ["read_source('original-corpus')", "read_source(id)"],
+  "status": "UNISSUED CANDIDATE"
+}

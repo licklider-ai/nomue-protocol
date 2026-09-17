@@ -1,0 +1,11 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "expectation_commit": "c262931584bbdac0018ffdef59a9b5a186b7cc5c",
+  "repaired_report_sha256": "6d6e8839fc7796b3197accbe109a7ecda39af5ac13880f4ecb6a3890f7030209",
+  "sha256": {
+    "focused.ts": "fcfcd6f8d5d14fed9f20e003af5450a5e22dde3ed2416c94e852b7b88dfde556",
+    "README.md": "175037701876ef85d0ec17b5e64a16e9e310fc569c14ec780147a8be846aa739",
+    "REGRESSION.json": "ba995ee04d825cec42245a05d376502d560445962193894d27d9e0ab6bd6a10b",
+    "tsconfig.json": "7af66249133c6d040dc58a357830296823277446d4044cf0d04dd43475b2e9be"
+  }
+}

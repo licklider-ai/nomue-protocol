@@ -1,0 +1,7 @@
+{
+  "image": "sha256:916954dbeb697e66419f4368779e5869f7370c51da03b3a9423428f7417c986e",
+  "kernel": "6.17.0-1022-azure",
+  "machine": "x86_64",
+  "observer_python": "3.12.14",
+  "status": "UNISSUED CANDIDATE"
+}

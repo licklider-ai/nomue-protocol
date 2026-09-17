@@ -1,0 +1,47 @@
+name: R4 T09 candidate integration
+on:
+  push:
+    branches: [research/r4-t09-check-report-lifecycle-20260915]
+    paths:
+      - "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/**"
+      - ".github/workflows/r4-t09-candidate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrated:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.14.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - name: Report and fixed failure controls
+        run: |
+          pnpm exec tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts
+          pnpm exec tsx governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/tests.ts --optimized
+          python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py
+          python -O -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/test_f01.py
+      - name: Build fixed candidate image
+        run: |
+          python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/prepare.py /tmp/nomue-t09-stage
+          docker build -t nomue-t09-research /tmp/nomue-t09-stage
+      - name: Integrated Linux x86_64 candidate
+        run: python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/linux_tests.py /tmp/nomue-t09-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-t09-linux
+          path: |
+            /tmp/nomue-t09-results/
+            /tmp/nomue-t09-stage/SOURCE-MANIFEST.json
+          if-no-files-found: warn

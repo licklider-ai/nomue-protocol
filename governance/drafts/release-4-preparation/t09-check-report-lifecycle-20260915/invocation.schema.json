@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "UNISSUED CANDIDATE. Internal envelope, no public identity allocated.",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "provenance", "execution", "report"],
+      "properties": {
+        "status": {
+          "const": "UNISSUED CANDIDATE"
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["t07_commit", "t08_commit", "numerical_commit", "report_schema_sha256"],
+          "properties": {
+            "t07_commit": {
+              "const": "fb773cc2092678f8409c2f0d25289028356eeb86"
+            },
+            "t08_commit": {
+              "const": "76542b5d0370fc51d60f22efda2af00cafe33ad1"
+            },
+            "numerical_commit": {
+              "const": "66fa2bc201c86c62f21bb94825479427c24d8522"
+            },
+            "report_schema_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "execution": {
+          "const": "completed"
+        },
+        "report": {
+          "$ref": "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "provenance", "execution", "refusal"],
+      "properties": {
+        "status": {
+          "const": "UNISSUED CANDIDATE"
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["t07_commit", "t08_commit", "numerical_commit", "report_schema_sha256"],
+          "properties": {
+            "t07_commit": {
+              "const": "fb773cc2092678f8409c2f0d25289028356eeb86"
+            },
+            "t08_commit": {
+              "const": "76542b5d0370fc51d60f22efda2af00cafe33ad1"
+            },
+            "numerical_commit": {
+              "const": "66fa2bc201c86c62f21bb94825479427c24d8522"
+            },
+            "report_schema_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "execution": {
+          "const": "execution_refusal"
+        },
+        "refusal": {
+          "$ref": "urn:nomue:schema:verifier-refusal:0.2.0-draft.3"
+        }
+      }
+    }
+  ]
+}

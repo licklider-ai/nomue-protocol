@@ -1,0 +1,16 @@
+{
+  "base": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+  "candidate_executed_before_freeze": false,
+  "order": "independent construction -> source/import/self checks -> this immutable hash manifest -> candidate comparison",
+  "sha256": {
+    "INPUTS.json": "d39ef0bfa9175f9164bdc5f0fcd2ac55d07eb2c83e2c17e2fb1bfd052a7c3b66",
+    "SELF-CHECK.json": "2af06a255cf519ea1f000316ff589c612dc2c17337ab4a5675250536a50f4dfc",
+    "build_corpus.py": "fa1e2d4268e0f7e8a00131072eeab0d4283e181ea29359572138be307bcc9419",
+    "check_corpus.py": "9612f1f851d20e949e107e7e4810d3fb75f7fb67952d5379fcd129029142b6e4",
+    "corpus/fixtures.jsonl": "d93c5e0ea90c23aa59034c7a7c15a44e8487db8d0135554c4753634dab70929c",
+    "corpus/projections.jsonl": "1984d653b9d0c41af33c0beeb4c5a57a71bea6d6d61786d2dcb5000a5861cbe3",
+    "corpus/tails.jsonl": "cec84a0df0e3533e887bf35ebaabc8496c6396383b418941b49ec50ba85fffdb",
+    "seal.mjs": "406c96336df9f4d11f9e674d0520f956f4fd20dfa5000834caf9268798b16e55"
+  },
+  "status": "UNISSUED CANDIDATE"
+}

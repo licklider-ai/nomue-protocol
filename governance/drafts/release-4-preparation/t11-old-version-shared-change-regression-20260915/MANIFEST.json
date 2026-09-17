@@ -1,0 +1,13 @@
+{
+  "status": "T11 NOT READY",
+  "source_commit": "db2efb3e301ba66797c1093f914b2466326e2d81",
+  "hash_semantics": "SHA-256 of Git text content, CRLF normalized to LF",
+  "files": {
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/CHANGE-SURFACE.json": "aea402215c24a64a369b30c794fb802f0f9b3abda0e1f70865f80d43688d8008",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/check-after-exclusions.log": "bd09d7a4f734af0caa3d9391812abcf0b3f7159d2f051af7b610997cf0a49c64",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/check-initial.log": "8d00768520c59caa2ec1c645765d1f7da796d759f57b2153da5684d05cb0330b",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/PRESERVATION.json": "c0813eee8a21a89b0f12359979969c3c3bf313fb5730b5efcc99d53aa8aec470",
+    "governance/drafts/release-4-preparation/t11-old-version-shared-change-regression-20260915/REPORT.md": "1678a4352a7fae11004cc6e17303a8a8d1298bbd50aee42d0b88cb9e7a4db0d0",
+    ".prettierignore": "1f3e60a88f03001b7e63faf08ae712151ee0de8f2b76bc399009d62443ca0e37"
+  }
+}

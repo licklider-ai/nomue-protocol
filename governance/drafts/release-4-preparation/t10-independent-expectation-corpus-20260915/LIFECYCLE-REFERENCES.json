@@ -1,0 +1,21 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "role": "reference only; not independent numerical truth",
+  "source_commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+  "measured_runtime_source": "b7627d53c53e22fe998f7f7e8f86f714ca877620",
+  "source_keys": ["T09-LIFECYCLE", "T09-CAPTURE", "T09-RESULTS"],
+  "controls": [
+    "timeout",
+    "cpu",
+    "tree-memory",
+    "stdout",
+    "stderr",
+    "crash",
+    "malformed",
+    "cleanup-failure",
+    "descendant-remains"
+  ],
+  "generic_controls": ["unresolved", "fail-unresolved"],
+  "generic_controls_are_raw_reachable": false,
+  "new_T10_resource_runs": 0
+}

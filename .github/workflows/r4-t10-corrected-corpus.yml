@@ -1,0 +1,51 @@
+name: R4 T10 corrected independent corpus
+on:
+  push:
+    branches: [research/r4-t10-independent-expectations-20260915]
+    paths:
+      - "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/**"
+      - ".github/workflows/r4-t10-corrected-corpus.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-corpus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.14.0"
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.14"
+      - run: pnpm install --frozen-lockfile
+      - name: Frozen inputs and focused repair regression
+        run: |
+          python -B governance/drafts/release-4-preparation/t10-independent-expectation-corpus-revision-2-20260915/check_revision.py
+          pnpm exec tsx governance/drafts/release-4-preparation/t09-canonicalization-repair-20260915/focused.ts
+      - name: Independent analytic component comparison
+        run: |
+          mkdir -p /tmp/nomue-t10-components
+          python -B governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/components.py --output /tmp/nomue-t10-components/normal.json
+          python -O -B governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/components.py --output /tmp/nomue-t10-components/optimized.json
+      - name: Build repaired candidate image
+        run: |
+          python -B governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/prepare.py /tmp/nomue-t10-stage
+          docker build -t nomue-t10-repaired /tmp/nomue-t10-stage
+      - name: Full Linux normal and optimized corpus
+        run: python -B governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/linux_compare.py /tmp/nomue-t10-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r4-t10-corrected-corpus
+          path: |
+            /tmp/nomue-t10-results/
+            /tmp/nomue-t10-components/
+            /tmp/nomue-t10-stage/SOURCE-MANIFEST.json
+          if-no-files-found: warn

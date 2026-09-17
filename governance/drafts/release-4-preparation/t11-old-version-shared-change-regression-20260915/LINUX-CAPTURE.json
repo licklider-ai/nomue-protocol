@@ -1,0 +1,61 @@
+{
+  "status": "SUCCESS",
+  "run_id": 34944226774,
+  "url": "https://github.com/licklider-ai/nomue-protocol/actions/runs/34944226774",
+  "source_commit": "2dcb4255cfbfefa2f22ad9c35b0717281cae563a",
+  "workflow": ".github/workflows/r4-t11-regression.yml",
+  "environment": {
+    "os": "Linux",
+    "architecture": "x86_64",
+    "node": "v24.14.0",
+    "pnpm": "11.7.0",
+    "python": "3.12.14"
+  },
+  "downloaded_receipt_sha256": "85e7a458df33f973ea5ebd6b261a73d58c54329f0de907e64e01a3a9b28ad036",
+  "runs": [
+    {
+      "name": "full-check",
+      "exit_code": 0,
+      "sha256": "6bb3151db6e86e5277293f2a1a37f0279f5608e52bd49dfc1b56bde436450b02",
+      "result": "55 test files and 520 tests PASS; format, Markdown, typecheck, validation, generated, Phase 1, Phase 2A and 0.2.1 PASS"
+    },
+    {
+      "name": "path-observation",
+      "exit_code": 0,
+      "sha256": "c4e5906c75bf5d0bff68761650d7cc51f0da6e9f40d0b49af0a455da319b6a7c",
+      "result": "resolved=/candidate/compiled; separator=/; compiled_basename=true; module_under_grant=true; posix_control=true"
+    },
+    {
+      "name": "t09-focused",
+      "exit_code": 0,
+      "sha256": "8c2563ead99ac234bf595d060a9f1cc34911832a56da41ade80ed32b79dc829b",
+      "result": "9 controls PASS"
+    },
+    {
+      "name": "t09-normal",
+      "exit_code": 0,
+      "sha256": "cae4ac94c5c16f72cf5272c8b43ca6040bd310d4bbd1616c9ffdba81b7c33dda",
+      "result": "263 assertions PASS; Python optimize 0"
+    },
+    {
+      "name": "t09-optimized",
+      "exit_code": 0,
+      "sha256": "f04fef23ceed4eade58c1235a0a14759a0454184bcb6c5ae5e6da422542fd987",
+      "result": "263 assertions PASS; Python optimize 1"
+    },
+    {
+      "name": "f01-normal",
+      "exit_code": 0,
+      "sha256": "a5cb23e971a694b88a88b2949a4b95f72028eb32ea9a47887a6da1671d174e5b",
+      "result": "10 controls PASS; Python optimize 0"
+    },
+    {
+      "name": "f01-optimized",
+      "exit_code": 0,
+      "sha256": "5a7f99809deb351d58e0e1427318dfeb6b2f342743109b333aa4ae9c9840e932",
+      "result": "10 controls PASS; Python optimize 1"
+    }
+  ],
+  "three_windows_failures_on_linux": "PASS",
+  "unexplained_regression": false
+}

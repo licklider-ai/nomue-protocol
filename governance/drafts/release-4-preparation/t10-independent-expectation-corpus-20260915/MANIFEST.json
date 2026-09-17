@@ -1,0 +1,29 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "verdict": "NOT READY",
+  "expectation_freeze_commit": "d7fcb703da0aa15a78e0d1594b24fc3d34bf622e",
+  "candidate_commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+  "sha256": {
+    "build_corpus.py": "fa1e2d4268e0f7e8a00131072eeab0d4283e181ea29359572138be307bcc9419",
+    "check_corpus.py": "9612f1f851d20e949e107e7e4810d3fb75f7fb67952d5379fcd129029142b6e4",
+    "compare.ts": "5a4251d989fc81098798f304410c46379872431def07d041a1f7c0180ace559f",
+    "corpus/fixtures.jsonl": "d93c5e0ea90c23aa59034c7a7c15a44e8487db8d0135554c4753634dab70929c",
+    "corpus/projections.jsonl": "1984d653b9d0c41af33c0beeb4c5a57a71bea6d6d61786d2dcb5000a5861cbe3",
+    "corpus/tails.jsonl": "cec84a0df0e3533e887bf35ebaabc8496c6396383b418941b49ec50ba85fffdb",
+    "COVERAGE-MATRIX.md": "be116adf997c5f948365ccd8e402728bd8ca7a5891491efd112d7b06c2444a63",
+    "diagnose.ts": "28b69067701969add1954c540fb2898cc07dfbb8160a6f78c9425c53a5f61cb4",
+    "DIAGNOSIS.json": "0a7bcfb3b02a97b9f90b18955a8729898346c3ebf4d728e1a878586a0c71b36b",
+    "EXPECTATION-PROVENANCE.md": "fdd4418148f734b8ba74074312b325f30a5dba17be45495c58d5329b4d1a0c3f",
+    "EXPECTATIONS-FREEZE.json": "6fe8bb5fd1b4cdcf1d71da9748a6d64fc7d184bfd10a5b2fb17a5e0ca2d8e8a8",
+    "INPUTS.json": "d39ef0bfa9175f9164bdc5f0fcd2ac55d07eb2c83e2c17e2fb1bfd052a7c3b66",
+    "LIFECYCLE-REFERENCES.json": "af1ae715b29e946e5993863257c1cbdcf1a5b0b1dd3b033536b0f09bc08cb086",
+    "NORMAL.jsonl": "0e9a5282d86c5e1245849fab1aaf507ba322ecdc0808a3e5e0e6e703c8ec2c5f",
+    "README.md": "9b4795e917fdb031564a88f9e0777cc58bf8309ad39b1c81cceb29ff5131dec2",
+    "REPORT.md": "1350fb30434f61da5f16714d0bfec33676c1977ff06ce42d0f2ecabe3d7e62af",
+    "seal.mjs": "406c96336df9f4d11f9e674d0520f956f4fd20dfa5000834caf9268798b16e55",
+    "SELF-CHECK.json": "2af06a255cf519ea1f000316ff589c612dc2c17337ab4a5675250536a50f4dfc",
+    "tsconfig.json": "7af66249133c6d040dc58a357830296823277446d4044cf0d04dd43475b2e9be",
+    "VALIDATION.md": "f3e369f117f5cc69bece598a64cdb635368eae4e871e87f43745c173cdf9b1a3",
+    "verify_packet.py": "dccd7141e53d051ce774b963672686b2d358fdeacdaa01425a9abf0ee1955723"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "provenance": {
+    "t07_commit": "fb773cc2092678f8409c2f0d25289028356eeb86",
+    "t08_commit": "76542b5d0370fc51d60f22efda2af00cafe33ad1",
+    "numerical_commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+    "report_schema_sha256": "5a4e9b5194279e0d6515907cb4d3cae874adab60c32fe2459ec005efafe12db8"
+  },
+  "execution": "completed",
+  "report": {
+    "$schema": "https://nomue.ai/id/schema/report-balanced-two-factor/0.1.0-draft.1",
+    "report_type": "nomue-verification-report",
+    "record_reference": {
+      "record_id": "urn:g5:record:ordinary_dyadic_n3",
+      "revision_id": "urn:g5:revision:ordinary_dyadic_n3",
+      "content_digest": "sha256:c5368dbb96673f3c054e663c122cc15f2e46cbf4567418d7f48e5a4c8ff89bdd"
+    },
+    "interpretation_bundle_id": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1",
+    "verifier": {
+      "name": "nomue-r4-t09-research",
+      "version": "0.1.0-draft.1"
+    },
+    "generated_at": "2026-09-15T00:00:00Z",
+    "conformance": {
+      "check_id": "https://nomue.ai/id/check/balanced-two-factor-record-conformance/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "execution": "completed",
+      "outcome": "pass",
+      "scope": {
+        "kind": "record_revision",
+        "id": "urn:g5:revision:ordinary_dyadic_n3"
+      },
+      "reason_codes": [],
+      "violations": []
+    },
+    "verification_results": [
+      {
+        "check_id": "https://nomue.ai/id/check/balanced-two-factor-record-integrity/0.1.0-draft.1",
+        "check_version": "0.1.0-draft.1",
+        "execution": "completed",
+        "scope": {
+          "kind": "record_revision",
+          "id": "urn:g5:revision:ordinary_dyadic_n3"
+        },
+        "reason_codes": [],
+        "outcome": "pass"
+      },
+      {
+        "check_id": "https://nomue.ai/id/check/balanced-two-factor-profile-admissibility/0.1.0-draft.1",
+        "check_version": "0.1.0-draft.1",
+        "execution": "completed",
+        "scope": {
+          "kind": "record_revision",
+          "id": "urn:g5:revision:ordinary_dyadic_n3"
+        },
+        "reason_codes": [],
+        "outcome": "pass"
+      },
+      {
+        "check_id": "https://nomue.ai/id/check/balanced-two-factor-computability/0.1.0-draft.1",
+        "check_version": "0.1.0-draft.1",
+        "execution": "completed",
+        "scope": {
+          "kind": "result",
+          "id": "result"
+        },
+        "reason_codes": [],
+        "outcome": "pass"
+      },
+      {
+        "check_id": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1",
+        "check_version": "0.1.0-draft.1",
+        "execution": "completed",
+        "scope": {
+          "kind": "result",
+          "id": "result"
+        },
+        "reason_codes": [],
+        "outcome": "pass"
+      }
+    ],
+    "profile_eligibility": "eligible",
+    "guarantee_boundary": {
+      "scientific_validity": "not_asserted",
+      "declaration_truth": "not_asserted",
+      "distributional_model_validity": "not_asserted",
+      "causal_interpretation": "not_asserted",
+      "standardized_effect_size": "not_asserted",
+      "multiplicity_control": "not_asserted",
+      "post_quantization_calibration": "not_asserted",
+      "admission_conditional_calibration": "not_asserted"
+    },
+    "quantity_evidence": {
+      "record_reference": {
+        "record_id": "urn:g5:record:ordinary_dyadic_n3",
+        "revision_id": "urn:g5:revision:ordinary_dyadic_n3"
+      },
+      "interpretation_bundle_id": "https://nomue.ai/id/bundle/balanced-two-factor/0.1.0-draft.1",
+      "check_id": "https://nomue.ai/id/check/balanced-two-factor-recompute/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "scope": {
+        "kind": "result",
+        "id": "result"
+      },
+      "quantity_results": [
+        {
+          "quantity": "n",
+          "declared": 3,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-00",
+          "recomputed": 3
+        },
+        {
+          "quantity": "n",
+          "declared": 3,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-01",
+          "recomputed": 3
+        },
+        {
+          "quantity": "n",
+          "declared": 3,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-10",
+          "recomputed": 3
+        },
+        {
+          "quantity": "n",
+          "declared": 3,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-11",
+          "recomputed": 3
+        },
+        {
+          "quantity": "residual_degrees_of_freedom",
+          "declared": 8,
+          "outcome": "pass",
+          "reason_codes": [],
+          "recomputed": 8
+        },
+        {
+          "quantity": "mean",
+          "declared": -1,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-00",
+          "recomputed": -1
+        },
+        {
+          "quantity": "mean",
+          "declared": 0.625,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-01",
+          "recomputed": 0.625
+        },
+        {
+          "quantity": "mean",
+          "declared": 0.9583333333333334,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-10",
+          "recomputed": 0.9583333333333334
+        },
+        {
+          "quantity": "mean",
+          "declared": 0.25,
+          "outcome": "pass",
+          "reason_codes": [],
+          "cell_id": "cell-11",
+          "recomputed": 0.25
+        },
+        {
+          "quantity": "signed_estimate",
+          "declared": 0.7916666666666666,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "A",
+          "recomputed": 0.7916666666666666
+        },
+        {
+          "quantity": "signed_estimate",
+          "declared": 0.4583333333333333,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "B",
+          "recomputed": 0.4583333333333333
+        },
+        {
+          "quantity": "signed_estimate",
+          "declared": -2.3333333333333335,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "AB",
+          "recomputed": -2.3333333333333335
+        },
+        {
+          "quantity": "sum_of_squares",
+          "declared": 1.8802083333333333,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "A",
+          "recomputed": 1.8802083333333333
+        },
+        {
+          "quantity": "sum_of_squares",
+          "declared": 0.6302083333333334,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "B",
+          "recomputed": 0.6302083333333334
+        },
+        {
+          "quantity": "sum_of_squares",
+          "declared": 4.083333333333333,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "AB",
+          "recomputed": 4.083333333333333
+        },
+        {
+          "quantity": "residual_sum_of_squares",
+          "declared": 9.354166666666666,
+          "outcome": "pass",
+          "reason_codes": [],
+          "recomputed": 9.354166666666666
+        },
+        {
+          "quantity": "f_statistic",
+          "declared": 1.6080178173719377,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "A",
+          "recomputed": 1.6080178173719377
+        },
+        {
+          "quantity": "f_statistic",
+          "declared": 0.5389755011135857,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "B",
+          "recomputed": 0.5389755011135857
+        },
+        {
+          "quantity": "f_statistic",
+          "declared": 3.492204899777283,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "AB",
+          "recomputed": 3.492204899777283
+        },
+        {
+          "quantity": "p_value",
+          "declared": 0.2404282617227959,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "A",
+          "recomputed": 0.2404282617227959
+        },
+        {
+          "quantity": "p_value",
+          "declared": 0.4838166582399909,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "B",
+          "recomputed": 0.4838166582399909
+        },
+        {
+          "quantity": "p_value",
+          "declared": 0.09859711018063899,
+          "outcome": "pass",
+          "reason_codes": [],
+          "contrast_kind": "AB",
+          "recomputed": 0.09859711018063899
+        }
+      ]
+    }
+  }
+}

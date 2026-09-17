@@ -1,0 +1,119 @@
+$ pnpm check:reference-source && pnpm format:check && pnpm lint:markdown && pnpm typecheck && pnpm validate && pnpm test && pnpm check:generated && pnpm check:phase1 && pnpm check:phase2a && pnpm check:phase2a-021
+$ node tooling/reference-sync/check.mjs && node --test tooling/reference-sync/check.test.mjs
+{"source_commit":"ebcb3a37ef721dd8c350a451d65381098757ef44","mirrored_files":24,"local_adapters":1}
+✔ accepts the pinned upstream and detects a changed local calculator (19.7689ms)
+✔ rejects stale upstream and changed upstream bytes (12.8749ms)
+✔ rejects added source, duplicate entries and path traversal (11.4926ms)
+✔ sync never overwrites the local resource adapter (10.8328ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.6553
+$ prettier --check .
+Checking formatting...
+All matched files use Prettier code style!
+$ markdownlint-cli2
+markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)
+Finding: **/*.md !node_modules/** !generated/** !LICENSE.md !evidence/research/foundation-identity/fnd-1/2026-08-30-genspark-primary-source-result.md
+Linting: 647 files
+Summary: 0 issues in 0 files
+$ tsc --noEmit
+$ tsx tooling/src/validate.ts
+validate: OK - registries, traceability, normative lint, authority,
+gates, conformance manifest, links, private-dependency and language audits,
+phase-1 schemas, cross-checks, code-path audits, and the snapshot
+manifest mechanism are clean.
+$ vitest run
+
+ RUN  v4.1.10 C:/nomue-protocol
+
+ ❯ tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts (5 tests | 1 failed) 166ms
+     × accepts only the exact tuple and permissioned controlled-process shape 15ms
+ ❯ tooling/tests/paired-t-supported-execution-selection-candidate.test.ts (6 tests | 2 failed) 225ms
+     × validates the durable reviewed evidence bundle byte-for-byte 24ms
+     × accepts exact cold/hot selection evidence and rejects coherent drift 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts > R2-D5 Group 3 admission-evidence infrastructure candidate > accepts only the exact tuple and permissioned controlled-process shape
+AssertionError: expected { ok: false, tupleMatches: true, …(2) } to deeply equal { ok: true, tupleMatches: true, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "errors": [],
+-   "ok": true,
+-   "profileEstablished": true,
++   "errors": [
++     "filesystem-read grants do not bind the executable and compiled candidate tree",
++   ],
++   "ok": false,
++   "profileEstablished": false,
+    "tupleMatches": true,
+  }
+
+ ❯ tooling/tests/paired-t-supported-execution-admission-evidence-candidate.test.ts:137:78
+    135|
+    136|   it("accepts only the exact tuple and permissioned controlled-process…
+    137|     expect(validatePairedTAdmissionEnvironmentCandidate(validEnvironme…
+       |                                                                              ^
+    138|       ok: true,
+    139|       tupleMatches: true,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tooling/tests/paired-t-supported-execution-selection-candidate.test.ts > R2-D5 Group 3 supported-execution selection candidate > validates the durable reviewed evidence bundle byte-for-byte
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "supported-execution selection evidence differs from the exact candidate",
++ ]
+
+ ❯ tooling/tests/paired-t-supported-execution-selection-candidate.test.ts:213:61
+    211|
+    212|   it("validates the durable reviewed evidence bundle byte-for-byte", (…
+    213|     expect(validateDurablePairedTAdmissionEvidenceBundle()).toEqual([]…
+       |                                                             ^
+    214|   });
+    215|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tooling/tests/paired-t-supported-execution-selection-candidate.test.ts > R2-D5 Group 3 supported-execution selection candidate > accepts exact cold/hot selection evidence and rejects coherent drift
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "supported-execution selection evidence differs from the exact candidate",
++ ]
+
+ ❯ tooling/tests/paired-t-supported-execution-selection-candidate.test.ts:222:7
+    220|     expect(
+    221|       validatePairedTSupportedExecutionSelectionEvidenceManifests(cold…
+    222|     ).toEqual([]);
+       |       ^
+    223|
+    224|     const attacks: Array<(value: MutableJson) => void> = [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 53 passed (55)
+      Tests  3 failed | 517 passed (520)
+   Start at  16:25:47
+   Duration  32.65s (transform 5.81s, setup 0ms, import 27.01s, tests 89.05s, environment 9ms)
+
+[ELIFECYCLE] Test failed. See above for more details.
+[ELIFECYCLE] Command failed with exit code 1.

@@ -1,0 +1,273 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "base": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+  "numerical": "66fa2bc201c86c62f21bb94825479427c24d8522",
+  "B": "52969003320369754284032",
+  "cost_sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+  "sources": [
+    {
+      "id": "T05-REPORT.md",
+      "commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/REPORT.md",
+      "git_blob": "655ae12e6b53d2965b3d24842fb03bb38d5e9d1b",
+      "sha256": "a109574ec392010b8af38e2b9444a82919dca4ca2f03e11716a3aaaff6dc8aa1",
+      "role": "review scope and immutable receipt identity"
+    },
+    {
+      "id": "T05-REVIEW-EVIDENCE.md",
+      "commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/REVIEW-EVIDENCE.md",
+      "git_blob": "97fb6f9206fdd11e50b132a0d71881664ef848ab",
+      "sha256": "f2006a584d64f2561628b752667ffdcc47c201841d4e42a47a1d07afdff663a2",
+      "role": "review scope and immutable receipt identity"
+    },
+    {
+      "id": "T05-RECEIPTS.json",
+      "commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/RECEIPTS.json",
+      "git_blob": "dea98495fc1ed12ae15220b85257761d760afcb7",
+      "sha256": "400e6245576b562e8d40ac149f07de16f8761b42a204ca717b3747969516c75e",
+      "role": "review scope and immutable receipt identity"
+    },
+    {
+      "id": "T05-CLAIM-REVIEW-MATRIX.md",
+      "commit": "cf1cbbe4cc087057302ab3144d643fa055f9e288",
+      "path": "governance/drafts/release-4-preparation/t05-scientific-numerical-review-sufficiency-20260915/CLAIM-REVIEW-MATRIX.md",
+      "git_blob": "21744b0f7075d397c6bc311b8f1492256befabc7",
+      "sha256": "fe653b62f2089de4e4522d9045456ae7314a3ed96e4f6b381af5f638638e60f6",
+      "role": "review scope and immutable receipt identity"
+    },
+    {
+      "id": "G5-EXPECTED-VECTORS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/EXPECTED-VECTORS.jsonl",
+      "git_blob": "6f50c2722fffe5404c1635d372c4b8aa8520c463",
+      "sha256": "40546de4013b9db389c8c2e900a93ac0d3355646ac7e9e21563f10960a7e57cb",
+      "role": "reviewed independent vector"
+    },
+    {
+      "id": "G5-RECORDS.jsonl",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/RECORDS.jsonl",
+      "git_blob": "95a4d68ce61e9f8a72eb04305391efd49044617c",
+      "sha256": "7b4ecc7f1da62bdbeb1f55efefe8068186a7d8da655f7b000006083b00977a87",
+      "role": "source input or provenance only; never executed by builder"
+    },
+    {
+      "id": "G5-check_evidence.py",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g5-full-procedure-evidence-20260914/check_evidence.py",
+      "git_blob": "54d08f3d2c1e951ea78970957ee4034739ed4e3e",
+      "sha256": "2beec492d0d43c56304ccf817b022112ec7222e325e47868568bbfdac2ecf80c",
+      "role": "source input or provenance only; never executed by builder"
+    },
+    {
+      "id": "G4-COST-DEFINITION.json",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/COST-DEFINITION.json",
+      "git_blob": "4bb919cb68bd852b0e3fcc0d3f68ea61bbfa3653",
+      "sha256": "f1eb1fd866d3a48589c3e7d37b3536f700e4d5271f9a85834fa3575f034512d2",
+      "role": "reviewed cost definition / boundary witness"
+    },
+    {
+      "id": "G4-DECISION.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/DECISION.md",
+      "git_blob": "7e69435738e921078befedc8f5895416def413ef",
+      "sha256": "79d25a59845f9cab96cfd232c567a32cec7bf3898e221874715bb1066856edeb",
+      "role": "reviewed cost definition / boundary witness"
+    },
+    {
+      "id": "G4-REPORT.md",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-g4-budget-evidence-20260914/REPORT.md",
+      "git_blob": "55f5b218ac5c925b4e4e2107bbe2ffd778751429",
+      "sha256": "3678f9df2f779449109d44a390f128ca90bcacbe02f32f07e5908c395df4890c",
+      "role": "reviewed cost definition / boundary witness"
+    },
+    {
+      "id": "OLD-ORACLE",
+      "commit": "66fa2bc201c86c62f21bb94825479427c24d8522",
+      "path": "governance/drafts/release-4-preparation/t04-ec1-ec2-evidence-20260914/check_evidence.py",
+      "git_blob": "9da307d9e4da0ac9e79e858cf7dca23676048f2a",
+      "sha256": "47ec4b5725588b1d3e6917208efa1dd89324d2ce586d13783a64fec7fb27073c",
+      "role": "original residual / quotient oracle provenance only; not imported"
+    },
+    {
+      "id": "T06",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/CANDIDATE.json",
+      "git_blob": "c6819a003b4f0d46e71568c0dfdbf962c3431348",
+      "sha256": "240f4daa2098c0462d2fe55d221633aea07c440fe3a7fbe6c074c92b3a9a6a9f",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "CLAUSES",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/REQUIREMENT-CANDIDATE.md",
+      "git_blob": "c72fc3423ab05fe976424196269c93ae26585266",
+      "sha256": "0d0bacbb2caa2bff88e1a82f9dbe740e5042a46767e1f23408dbe7a465928ed6",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "SURFACE",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t06-candidate-requirement-surfaces-20260915/SURFACE-INVENTORY.md",
+      "git_blob": "d9963425fe44dc4be1b7030ed8ae203e435d8a89",
+      "sha256": "d0f073500e5569b6db44edcc0055467967866c7d38059ad13aa9a4af0bf5eb71",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "T07",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/fixtures/cases.json",
+      "git_blob": "363f47ba3e5697a8dc328432ec970e9b9ed005e3",
+      "sha256": "3c7dd9382c892fd6c128f828e455e0d7534a4dd00e2872ea5480350c90b1dbc3",
+      "role": "structural semantic construction"
+    },
+    {
+      "id": "T09-REPORT",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/REPORT.md",
+      "git_blob": "ec014516923fe067329ba5436492a56d2f3dd968",
+      "sha256": "be95ed85fb89a5b10ea5eb7dca6ceb8c4a93402dc50b57dacb2492a16c25ad85",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "T09-LIFECYCLE",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/linux_tests.py",
+      "git_blob": "ce4ad46c6490976802ee473ea6aa7a688f22bb00",
+      "sha256": "9373946a8551e691edc2f5ed13ed9321ed979fa20e693a28e51888ea6f765880",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "T09-CAPTURE",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/CAPTURE.json",
+      "git_blob": "a5d465cc567ddee9bbb6cc6e4e5c2cf28bd8396c",
+      "sha256": "ec8f947d7875746e6538ac2a9bad07aec644f2e3c9ec10ec6dc21c476d427d8d",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "T09-RESULTS",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/measurements/nomue-t09-results/SUMMARY.json",
+      "git_blob": "4f28ff5a33bc2231a5da9b147bc40926f752947f",
+      "sha256": "acb2ec0de632cecc7ca03e6987597169d0459e7c057d48d7c0ea9a577af44028",
+      "role": "contract or lifecycle reference; not numerical oracle"
+    },
+    {
+      "id": "IEEE",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "IEEE-VECTORS",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/independent_checks.py",
+      "git_blob": "f73e5ebfaf4370d2d5996f7a346da3e56a51e616",
+      "sha256": "9879dee58cbdfef54ec0f2e53121dcfef65716db69ec8d92f6b376c173a0e59a",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "METHOD",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "review-inputs/r4-primary-methods-20260911/REPORT.md",
+      "git_blob": "97ba0876a8bcbcf1f79c98b82b6567dfd8771f02",
+      "sha256": "8515d79c1f710fba8dfbb6469d43b4b529e3c910121698d37bcd6299a6c6893d",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "METHOD-VECTORS",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "review-inputs/r4-primary-methods-20260911/independent_checks.py",
+      "git_blob": "11e01d9fe5537a86efd87a9cbb9e9b82d077f821",
+      "sha256": "478d888c00c6f500ea840c6a85b142da32a76670080957247ea7165ed0ca4dff",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "ARITH",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "review-inputs/r4-arithmetic-2864903/REVIEW-RESULT.md",
+      "git_blob": "d9a1de6a97f825f24fb300d5226742d2d1a4cb42",
+      "sha256": "da793a9a60c64b7260b544514e15d35083cc2019f74862019d19cc3867d316c4",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "OPEN",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/opening-rfc-candidate.md",
+      "git_blob": "807e4bf0c22e5270b8fc15824329d04b5c37b146",
+      "sha256": "40dc57fcd26db68b49bbf808912d4821a23d0b926cf9197307355c39d928b3a4",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "CONSUMER",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/tail-evidence-experiment-20260911/REPORT.md",
+      "git_blob": "50eda1769d29ffe01b4db918750d543757503443",
+      "sha256": "165bbf6fd767a399f83954d811eee96d2377034bc55d61d21f8bed1983745f3a",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "CANON",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "canonicalization/record-canonicalization.md",
+      "git_blob": "dc448a7847a12bf0a6484285b91b1619a63cdb55",
+      "sha256": "2757c03bed1e6848cdb3061634b17a1dfc47723d590a093401e0d726077ae77a",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "LOCK",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "pnpm-lock.yaml",
+      "git_blob": "683674c55ce9da94b1aa8358d9941ea892785304",
+      "sha256": "439f0f5c5782c227795a9687cc7612b06aea3c3bad03e5343e5b1be0df12f82c",
+      "role": "reviewed method, structural contract or dependency pin"
+    },
+    {
+      "id": "T03",
+      "commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+      "path": "governance/drafts/release-4-preparation/t03-candidate-numerical-policy-decision-20260914.md",
+      "git_blob": "1a743fac2fce5d2e184f44bf0d1d3c368a257d4e",
+      "sha256": "5cfc7a5ba8d60c30b886a429385db04742fcf0b7054837ecba5935a12a29dbf0",
+      "role": "fixed candidate semantics / reviewed derivation"
+    },
+    {
+      "id": "ARCH",
+      "commit": "cd9d780ac06a3b998ff5d4717429b0177a222fe8",
+      "path": "governance/drafts/release-4-preparation/t04-candidate-execution-architecture-decision-20260914.md",
+      "git_blob": "bf82051f1bd462a1557a119ba777993871fc691f",
+      "sha256": "c0f77ec0f8d4b912c2ecb35f2e9416dd25fdea735c6b51a04de8a07e9d7cb685",
+      "role": "fixed candidate semantics / reviewed derivation"
+    },
+    {
+      "id": "RG1",
+      "commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG1-BOUNDEDNESS.md",
+      "git_blob": "6500d9804c6dd2d9de930b3294ce7ca6f5857ae8",
+      "sha256": "cd54693b95cf09a0044cb7596da8fe2a5f44777a4322c50aace9b79825d35b82",
+      "role": "fixed candidate semantics / reviewed derivation"
+    },
+    {
+      "id": "RG2",
+      "commit": "225eca96d485978ee01cbe08d535387900252bca",
+      "path": "governance/drafts/release-4-preparation/t04-g1-g3-research-gate-20260914/RG2-ZERO-EXACT-SIGN.md",
+      "git_blob": "2291f010ece74a477cfa7c6b6bdd3038c3dc0383",
+      "sha256": "957c12b6704c93442b2d527ef92b61e089d7d2eb49c89818471f1c9d036e6d21",
+      "role": "fixed candidate semantics / reviewed derivation"
+    },
+    {
+      "id": "T07-RULES",
+      "commit": "60ce3a41770edde6e3cf6dc67ff470cd6207af10",
+      "path": "governance/drafts/release-4-preparation/t07-closed-schemas-validator-20260915/VALIDATION-RULES.md",
+      "git_blob": "d5bf029ab7d2ea4bbde458b59c244263e19d50c3",
+      "sha256": "f1fd6093487080ef684dbeab016b4d5742074f4fef1a91838d2b451bbb505757",
+      "role": "candidate diagnostic ordering and structural rules"
+    }
+  ]
+}

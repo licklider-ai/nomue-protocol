@@ -35,3 +35,6 @@ examples/canonical-case-release1-wetlab-01/record.json
 examples/canonical-case-release1-wetlab-01/expected-verification.json
 examples/canonical-case-release1-wetlab-01/canonical-content.json
 examples/canonical-case-release1-wetlab-01/hashes.sha256
+# Raw T10 Linux receipts: preserve CAPTURE.json SHA-256 evidence bytes.
+governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/HOST.json
+governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/measurements/nomue-t10-results/SUMMARY.json
