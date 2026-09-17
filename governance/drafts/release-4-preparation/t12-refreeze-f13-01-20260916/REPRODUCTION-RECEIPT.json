@@ -14,7 +14,7 @@
   ],
   "freeze_manifest": {
     "path": "governance/drafts/release-4-preparation/t12-refreeze-f13-01-20260916/FREEZE-MANIFEST.json",
-    "sha256": "9542edc5d2fc316d0f370f9e40504dd3a47eee1085e9628b9db04fb4ff8f7c1f",
+    "sha256": "09b864a98dcdcb1c6f8cba4f806843827b0dc97b5db448c70585ae93443814d1",
     "bytes": 37322,
     "hash_semantics": "UTF-8 text with CRLF normalized to LF"
   },

@@ -770,8 +770,8 @@
       "role": "re-freeze report",
       "category": "reproducibility metadata",
       "provenance": "newly frozen",
-      "sha256": "a6895387844bcabf6612bc575090edd033238e1c3ba1f0ecd6e28fc5193b5b02",
-      "bytes": 2527
+      "sha256": "7dd11a6ab8bce83eb2125132140ac5655f99e43455ebc8b9fff7d6bdf004d30e",
+      "bytes": 2609
     },
     {
       "path": "REPRODUCIBILITY.md",

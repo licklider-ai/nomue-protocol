@@ -6,7 +6,7 @@ Status: **UNISSUED CANDIDATE**.
 
 The original frozen target `752a3ef876f27595cca31c4a106e70ffc7bd04df` remains a historical record. Its manifest SHA-256 is `f43cd0d1b3ba0042425139e77975199ba24a0e1db96aa65d18bf8bf997bfe3fb`. This directory is a separate re-freeze record; it does not rewrite the original package.
 
-The re-frozen candidate source is `c62ba0f4ffe0e7a1992968f84adc81bd4546b217`. Its direct repair parent is `84627967352206e9d1ecc54c5ca6a735319d9785`; its repair evidence is included at the source commit. Current main integration commits are not ancestors of this source and are not part of this candidate lineage.
+The re-frozen candidate source is `c62ba0f4ffe0e7a1992968f84adc81bd4546b217`. Its immediate Git parent is `4dea1b0735b37d4f0e1cecf5a8eb733278c40ad8`; `84627967352206e9d1ecc54c5ca6a735319d9785` is the limited F13-01 repair ancestor. The repair evidence is included at the source commit. Current main integration commits are not ancestors of this source and are not part of this candidate lineage.
 
 ## F13-01 closure
 
