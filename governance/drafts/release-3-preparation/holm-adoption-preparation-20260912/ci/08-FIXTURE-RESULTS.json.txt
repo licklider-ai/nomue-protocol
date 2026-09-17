@@ -1,0 +1,42 @@
+{
+  "status": "PASS_FOR_FIXED_PREEXECUTION_EXPECTATIONS",
+  "fixtures": 9,
+  "rows": [
+    {
+      "fixture_id": "R3-HOLM-P001",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-P002",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-P003",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N001",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N002",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N003",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N004",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N005",
+      "pass": true
+    },
+    {
+      "fixture_id": "R3-HOLM-N006",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "author-context controls; no independent approval",
+  "controls": 14,
+  "rows": [
+    { "name": "structural and semantic conformance separated from verification" },
+    { "name": "context failure never manufactures semantic conformance" },
+    { "name": "relation failure belongs to conformance and gates arithmetic" },
+    { "name": "arithmetic disagreement does not invert conformance" },
+    { "name": "worker error remains distinct from disagreement" },
+    { "name": "reject merged checks" },
+    { "name": "reject swapped roles" },
+    { "name": "reject missing conformance" },
+    { "name": "reject missing semantic row" },
+    { "name": "reject wrong structural schema" },
+    { "name": "reject invented structural failure in report" },
+    { "name": "reject aggregate conformance claim" },
+    { "name": "reject erased semantic failure" },
+    { "name": "schema failure produces refusal without conformance or verification" }
+  ]
+}

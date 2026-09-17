@@ -1,5 +1,18 @@
 # Release 3 Public-Review Preparation
 
+## Current adoption-preparation work
+
+The [bounded Holm adoption packet](holm-adoption-preparation-20260912/README.md)
+connects claim/review applicability, a concrete Contract and RFC impact assessment,
+registry migration previews and fixed conformance expectations. Its
+[candidate.4 successor](holm-separated-candidate-20260912/README.md) explicitly
+separates conformance from verification under NRS-VERIFY-0005.
+The packet records actual validation and remaining authoritative joins; it does
+not close B-2 or issue support. The candidate.3 checkpoint below remains the
+preceding completed round.
+
+## Preserved candidate.3 checkpoint
+
 **Current status: public discussion open; first Holm implementation round saved
 and repaired through PR #328; no formal adoption.** See the
 [current R2/R3/R4 status and next tasks](../RELEASE-STATUS.md).

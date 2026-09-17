@@ -1,0 +1,139 @@
+{
+  "status": "unissued proposed fixture IDs; expectations authored before candidate execution; not conformance registry authority",
+  "numerical_basis": "Fixed rational families and exact lattice integers, independently stated in author_fixtures.mjs. Existing declaration shape reused, numerical result overwritten without candidate execution.",
+  "fixtures": [
+    {
+      "fixture_id": "R3-HOLM-P001",
+      "record": "conformance/R3-HOLM-P001.jcs",
+      "expected_context": "conformance/R3-HOLM-P001-expected.json",
+      "record_sha256": "d4d63f478fe38767c089a9731259b287e1b4f010beb503884772356133c9e3fc",
+      "expected_context_sha256": "9d8131f9cc178c6411e8a77eb51ea3e3308ddda1cc2117dd1bcca3af6c587d57",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "pass", "pass", "pass"],
+        "reasons": [[], [], [], [], []],
+        "forward": true
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-P002",
+      "record": "conformance/R3-HOLM-P002.jcs",
+      "expected_context": "conformance/R3-HOLM-P002-expected.json",
+      "record_sha256": "3c74ff5c2b8f6eb8f8dba92f45680a027479ebbdad1865df7df0d6b4489dc4de",
+      "expected_context_sha256": "68d722d87873b110de1f3c0197a556a8075b5ac415921e4b701df03854e30bba",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "pass", "pass", "pass"],
+        "reasons": [[], [], [], [], []],
+        "forward": true
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-P003",
+      "record": "conformance/R3-HOLM-P003.jcs",
+      "expected_context": "conformance/R3-HOLM-P003-expected.json",
+      "record_sha256": "9f6fc41eb29ca99ec0bfc158b50ad99ee7b45d366dc6ef28e4d841be1aae4eda",
+      "expected_context_sha256": "4d342fa8d9938085f7ff3045ae8ddc2733f132859745ac208200872dea6935f6",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "pass", "pass", "pass"],
+        "reasons": [[], [], [], [], []],
+        "forward": true
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N001",
+      "record": "conformance/R3-HOLM-N001.jcs",
+      "expected_context": "conformance/R3-HOLM-N001-expected.json",
+      "record_sha256": "936d1ac0c64b31ec0da98d2146f3409b5c427b5e9414c73124aea7a98e9659c9",
+      "expected_context_sha256": "9d8131f9cc178c6411e8a77eb51ea3e3308ddda1cc2117dd1bcca3af6c587d57",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "pass", "pass", "fail"],
+        "reasons": [[], [], [], [], ["candidate:holm:exact_value_mismatch"]],
+        "forward": false
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N002",
+      "record": "conformance/R3-HOLM-N002.jcs",
+      "expected_context": "conformance/R3-HOLM-N002-expected.json",
+      "record_sha256": "d4d63f478fe38767c089a9731259b287e1b4f010beb503884772356133c9e3fc",
+      "expected_context_sha256": "be621b94fd232391143c9ba7448be042db0a6f72f68ab5111f1a13d97aa4a00c",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "fail", "not_run", "not_run", "not_run"],
+        "reasons": [
+          [],
+          ["candidate:holm:context_mismatch"],
+          ["candidate:holm:prerequisite_failed"],
+          ["candidate:holm:prerequisite_failed"],
+          ["candidate:holm:prerequisite_failed"]
+        ],
+        "forward": false
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N003",
+      "record": "conformance/R3-HOLM-N003.jcs",
+      "expected_context": "conformance/R3-HOLM-N003-expected.json",
+      "record_sha256": "835286549c3fc0926853a0f409c4a3a5af304cebcecf8ec76a42ace938c01a3b",
+      "expected_context_sha256": "907647c4e6eebbe25a48fcc81627c5d88d337b22e941554d2c299ba74b07a3b5",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "fail", "not_run", "not_run"],
+        "reasons": [
+          [],
+          [],
+          ["candidate:holm:declaration_invalid"],
+          ["candidate:holm:prerequisite_failed"],
+          ["candidate:holm:prerequisite_failed"]
+        ],
+        "forward": false
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N004",
+      "record": "conformance/R3-HOLM-N004.jcs",
+      "expected_context": "conformance/R3-HOLM-N004-expected.json",
+      "record_sha256": "22ec910e0c7c53241da7b53e5ca9c43343296d5492078986c30d0d0120f8015c",
+      "expected_context_sha256": "8c5c0f8fa9ee15dd97a71958f2156c9722757d2533a2ac53f076248e04d9997f",
+      "expected": {
+        "kind": "report",
+        "stages": ["pass", "pass", "pass", "fail", "not_run"],
+        "reasons": [
+          [],
+          [],
+          [],
+          ["candidate:holm:holm_input_invalid"],
+          ["candidate:holm:prerequisite_failed"]
+        ],
+        "forward": false
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N005",
+      "record": "conformance/R3-HOLM-N005.jcs",
+      "expected_context": "conformance/R3-HOLM-N005-expected.json",
+      "record_sha256": "b61d950d0bc2ceafa36e9e3b8ea97b4432fb95c8f95ed774979c8bfdb0821552",
+      "expected_context_sha256": "9d8131f9cc178c6411e8a77eb51ea3e3308ddda1cc2117dd1bcca3af6c587d57",
+      "expected": {
+        "kind": "refusal",
+        "reason": "candidate:holm:bundle_unsupported",
+        "forward": false
+      }
+    },
+    {
+      "fixture_id": "R3-HOLM-N006",
+      "record": "conformance/R3-HOLM-N006.jcs",
+      "expected_context": "conformance/R3-HOLM-N006-expected.json",
+      "record_sha256": "d38245cfdb5d2239d67fe2a719312768b668a6928d8d97d04fbce83215e50b44",
+      "expected_context_sha256": "9d8131f9cc178c6411e8a77eb51ea3e3308ddda1cc2117dd1bcca3af6c587d57",
+      "expected": {
+        "kind": "refusal",
+        "reason": "candidate:holm:record_duplicate_member",
+        "forward": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "status": "coordinator applicability only; no gate closure",
+  "unchanged_numerical_inputs": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "reviewed_sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+      "reviewed_sha256": "d6dff0e19f8647157d55ac3d6ba37ddaeaa7ce192ba25313d921d53298607fa9"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "reviewed_sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "ordinary unweighted supplied-p arithmetic",
+      "evidence": [
+        "review-inputs/r3-holm-public-candidate-review-20260911/b2-closing/REPORT.md.txt",
+        "review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md"
+      ],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+        "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/worker.py",
+        "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs"
+      ],
+      "disposition": "REUSE_UNCHANGED_BOUNDED_NUMERICAL_RECOMMENDATION",
+      "remaining_action": "Formal steward B-2 disposition; no new broad source search indicated"
+    },
+    {
+      "claim": "binary64 lattice and nearest-even projection",
+      "evidence": [
+        "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+        "review-inputs/r3-holm-public-candidate-review-20260911/numerical-applicability/REPORT.md.txt"
+      ],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py"
+      ],
+      "disposition": "REUSE_UNCHANGED_SCOPE",
+      "remaining_action": "No p-generator validity or rounded-input FWER inference"
+    },
+    {
+      "claim": "full expected-context and D0 relationships",
+      "evidence": [
+        "review-inputs/r3-holm-envelope-review-20260911/REVIEW.md",
+        "review-inputs/r3-holm-public-candidate-review-20260911/b2-closing/ADDENDUM.md.txt"
+      ],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/envelope.mjs",
+        "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs"
+      ],
+      "disposition": "PRIVATE_BEHAVIOR_PRESERVED",
+      "remaining_action": "Review final public partition and exact new identities"
+    },
+    {
+      "claim": "conformance is separate from verification",
+      "evidence": ["spec/verification/public-checks.md"],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/public.mjs",
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/report.schema.json",
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/test_separation.mjs"
+      ],
+      "disposition": "IMPLEMENTED_NEW_PROPOSAL",
+      "remaining_action": "Independent changed-surface review before promotion"
+    },
+    {
+      "claim": "single in-process and outer execution budgets",
+      "evidence": [
+        "governance/drafts/release-3-preparation/r3-followup-review-20260911/README.md",
+        "review-inputs/r3-admission-method-review-20260911/REVIEW.md"
+      ],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/budget.mjs",
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/supervisor.py"
+      ],
+      "disposition": "REUSE_METHOD_NEW_SOURCE_BOUND_EXECUTION_REQUIRED",
+      "remaining_action": "Candidate.4 actual-host CI and selected support decision"
+    },
+    {
+      "claim": "truthful input-size evidence",
+      "evidence": [
+        "review-inputs/r3-holm-public-candidate-review-20260911/b2-closing/ADDENDUM.md.txt"
+      ],
+      "implementation": [
+        "governance/drafts/release-3-preparation/holm-separated-candidate-20260912/refusal.schema.json"
+      ],
+      "disposition": "NOT_OBSERVED_SELECTED_FOR_PROPOSAL",
+      "remaining_action": "Known-size capability deferred; final output-contract disposition"
+    },
+    {
+      "claim": "permanent registry compatibility",
+      "evidence": ["governance/ID-POLICY.md", "registries/requirements.yaml"],
+      "implementation": [
+        "schemas/meta/public-checks-registry.schema.json",
+        "schemas/meta/interpretation-bundles.schema.json",
+        "schemas/meta/public-contract-surfaces.schema.json",
+        "schemas/meta/reason-codes-registry.schema.json"
+      ],
+      "disposition": "INCOMPATIBILITY_IDENTIFIED_PREVIEW_TESTED",
+      "remaining_action": "Complete authoritative meta-schema, registry, dispatch and conformance joins"
+    }
+  ]
+}
