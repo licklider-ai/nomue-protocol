@@ -1,8 +1,8 @@
 # R4 A1 adoption decision preparation
 
-Status: **UNISSUED CANDIDATE**. A1 author preparation is COMPLETE; limited
-independent A1 review returned REPAIR. A1-01 intake repair is complete on the
-author side; close-only confirmation is PENDING. Main Integration Decision: **HOLD**.
+Status: **UNISSUED CANDIDATE**. A1 is **CLOSED** following the supplied
+**R4-A1 CLOSE-ONLY REVIEW — GO**. A1-01, BR-02 and BR-03 are CLOSED.
+Main Integration Decision: **MERGE NOW**, subject to integration checks.
 This is an informative navigation and decision-preparation package, not adoption,
 new scientific review, public support, or a new numerical freeze.
 
@@ -14,14 +14,16 @@ new scientific review, public support, or a new numerical freeze.
 - [Remaining work](REMAINING-WORK.md): mandatory benchmark preparation versus additional quality.
 - [T13 result intake](T13-RESULT-INTAKE.md): existing full frozen-candidate GO.
 - [T14 result intake](T14-RESULT-INTAKE.md): existing final-readiness GO.
-- [A1 result and repair handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md): REPAIR and next close-only review.
+- [Original A1 result and repair handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md): historical REPAIR.
+- [A1 close-only result intake](A1-CLOSE-REVIEW-RESULT-INTAKE.md): GO, closed findings and post-review provenance.
 - [Original limited review request](REVIEW-REQUEST.md): historical initial request; not a new full-review request.
 - [Inputs](INPUTS.json): immutable Git object and SHA-256 bindings.
 - [Manifest](MANIFEST.json): packet integrity and status axes.
 
 Read the packet first, then the benchmark and remaining-work classification.
-The next milestone is close-only review in the existing A1 reviewer thread for
-A1-01, BR-02 and BR-03 bindings/hashes. The previous A2-A5 plan
+The limited review is closed; the immediate authorized action is informative
+main integration after validation and CI. The next phase is decided separately.
+The previous A2-A5 plan
 is not a mandatory checklist for attaining the management R2-like 85% benchmark.
 Completion of this author package does not assign a new percentage or grant GO.
 

@@ -668,6 +668,23 @@
       "served_model_attestation": null,
       "bytes": 4501,
       "sha256": "db15a897aa69efe12f02885644c30e1e1ae549bbbf8c644459bce446212e9b73"
+    },
+    {
+      "path": "A1-CLOSE-REVIEW-RESULT-INTAKE.md",
+      "source_class": "maintainer/user-provided limited independent close-review result",
+      "supplied_date": "2026-09-17",
+      "verdict": "R4-A1 CLOSE-ONLY REVIEW — GO",
+      "target": "c36c8496f98cbbb4481f85a56750f5683201778c",
+      "original_reviewed_target": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+      "base": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+      "representation": "new English structured intake of supplied result; not verbatim original receipt",
+      "hash_scope": "new stored intake artifact, UTF-8 Git bytes (LF); not original receipt",
+      "original_receipt_sha256": null,
+      "original_receipt_path": null,
+      "reviewer_identity": null,
+      "served_model_attestation": null,
+      "bytes": 4016,
+      "sha256": "50fb58c407265324f30a5c29012b7dca0c2838fc03b55b41b1f364b7d5218390"
     }
   ],
   "a1_review_disposition": {
@@ -682,6 +699,26 @@
     "repaired_target_binding": "Containing repair commit that first adds A1-LIMITED-REVIEW-RESULT-INTAKE.md; full SHA in final author handoff",
     "repair_diff_base": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
     "close_review_result": null,
-    "main_integration_decision": "HOLD"
+    "main_integration_decision": "HOLD",
+    "historical_state_note": "Original repair-stage disposition preserved; superseded for current status by current_a1_disposition and the close-result intake."
+  },
+  "current_a1_disposition": {
+    "status": "CLOSED",
+    "close_review_verdict": "R4-A1 CLOSE-ONLY REVIEW — GO",
+    "reviewed_target": "c36c8496f98cbbb4481f85a56750f5683201778c",
+    "A1_01": "CLOSED",
+    "BR_02": "CLOSED",
+    "BR_03": "CLOSED",
+    "lineage_hash_source_class_integrity": "PASS",
+    "findings": {
+      "BLOCKER": 0,
+      "SHOULD_FIX": 0,
+      "NICE_TO_HAVE": 0,
+      "NOTE": 0
+    },
+    "intake_path": "A1-CLOSE-REVIEW-RESULT-INTAKE.md",
+    "main_integration_decision": "MERGE NOW",
+    "integration_conditions": "exact head/base/scope verification and passing CI",
+    "new_implementation_authorized": false
   }
 }

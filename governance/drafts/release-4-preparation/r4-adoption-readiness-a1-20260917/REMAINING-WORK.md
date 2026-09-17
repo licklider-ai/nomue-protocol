@@ -1,7 +1,8 @@
 # Remaining work and benchmark boundary
 
-Status: A1 provenance repair COMPLETE; limited review REPAIR; close-only confirmation PENDING.
-Main Integration Decision: **HOLD**. No implementation phase is started.
+Status: A1 CLOSED; limited close-only review GO; A1-01 / BR-02 / BR-03 CLOSED.
+Main Integration Decision: **MERGE NOW**, subject to integration checks.
+No implementation phase is started.
 
 ## Classification rule
 
@@ -19,11 +20,11 @@ not mislabeled as remaining implementation. Comparison evidence is
 
 ## BENCHMARK-REQUIRED
 
-| Item                                                          | Current state                                                                                               | Completion / justification                                                                                                                                                                                     |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BR-01: one decision-ready scope/contract/evidence/RFC packet  | A1-01 repair implemented; close-only reviewer confirmation pending                                          | Existing limited review found only provenance intake missing. Candidate choices and benchmark classification remain unchanged                                                                                  |
-| BR-02: traceable intake of existing closure provenance        | Existing T13/T14 result intake COMPLETE on the author side                                                  | Stable [T13](T13-RESULT-INTAKE.md) and [T14](T14-RESULT-INTAKE.md) intakes distinguish supplied results, verified repository facts and unknown original receipt details. Reviewer closure is not self-declared |
-| BR-03: preserve limited A1 independent review and disposition | Original target, REPAIR verdict and A1-01 preserved; repaired target/diff bound; later close review PENDING | [A1 result intake and close-only handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md) preserves the historical review and defines the new exact target. No later GO fabricated                                         |
+| Item                                                          | Current state                                             | Completion / justification                                                                                                             |
+| ------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| BR-01: one decision-ready scope/contract/evidence/RFC packet  | COMPLETE; A1-01 CLOSED by close-only GO                   | Existing packet and provenance repair accepted; technical choices and benchmark classification unchanged                               |
+| BR-02: traceable intake of existing closure provenance        | CLOSED by close-only GO                                   | Existing T13/T14 result intakes and their source-class/hash boundaries confirmed at the repaired target                                |
+| BR-03: preserve limited A1 independent review and disposition | CLOSED; close-only GO now preserved as post-review intake | [Close-result intake](A1-CLOSE-REVIEW-RESULT-INTAKE.md) binds the reviewed repair target; original REPAIR and intake records unchanged |
 
 There is no current evidence-backed mandatory numerical implementation milestone
 after BR-01 through BR-03. If the limited review identifies a real missing candidate
@@ -58,13 +59,11 @@ required when the corresponding final action is actually taken.
 
 ## Next milestone and stop
 
-**Next: return to the existing R4-A1 limited independent review thread for
-close-only review of A1-01, BR-02 and BR-03 bindings/hashes against the repaired
-exact target.** The [repair handoff](A1-LIMITED-REVIEW-RESULT-INTAKE.md) binds the
-original target and repair range. Do not request another full A1 review or
-repeat numerical/T13/T14 reviews. The author does not grant GO.
+A1-01, BR-02 and BR-03 are CLOSED by the existing limited close-only GO, preserved
+in [the post-review intake](A1-CLOSE-REVIEW-RESULT-INTAKE.md). Main integration of
+the informative packet and result intake is authorized subject to validation,
+CI and unchanged scope. No additional full A1 or T13/T14 review is requested.
 
-Preserve the later close result when actually received. Main integration stays
-HOLD until the limited review is closed and integration is separately decided.
-A2/A3 implementation and A4/A5 upgrades remain outside this repair. No manager
-percentage or final adoption status is changed.
+After integration, stop. Decide the next phase separately using the unchanged
+BENCHMARK-REQUIRED / STRONGER-THAN-R2 distinction above. No A2/A3 implementation,
+new manager percentage or formal adoption is authorized by this record.

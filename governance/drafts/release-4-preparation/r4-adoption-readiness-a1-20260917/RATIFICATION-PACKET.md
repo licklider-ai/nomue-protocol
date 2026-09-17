@@ -1,16 +1,17 @@
 # R4 Steward Ratification / Adoption Decision Packet v1
 
-Status: **UNISSUED CANDIDATE**. Informative; A1 review returned REPAIR.
-[Provenance intake repair](A1-LIMITED-REVIEW-RESULT-INTAKE.md) is ready for close-only confirmation.
-Main Integration Decision: **HOLD**. This package makes no stewardship decision.
+Status: **UNISSUED CANDIDATE**. Informative; A1 is CLOSED following the
+[existing close-only GO](A1-CLOSE-REVIEW-RESULT-INTAKE.md).
+Main Integration Decision: **MERGE NOW**, subject to integration checks.
+This package makes no formal-adoption decision.
 
 ## Decision requested later
 
 Consider the already closed balanced two-factor candidate for final adoption,
 using the bounded support, non-claims and evidence below. Do not reselect T03
 D01-D07, reopen T01-T14, or infer that candidate completion issues Protocol support.
-The immediate request is close-only A1-01 / BR-02 / BR-03 verification by the
-existing A1 reviewer; no new full review is requested.
+A1-01 / BR-02 / BR-03 are independently CLOSED. The immediate authorized
+action is informative main integration, not further implementation.
 
 Management's R2 85% and R4 approximately 50% are supplied operational estimates,
 not values calculated here. R2-like readiness means comparable reviewed candidate

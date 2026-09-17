@@ -1,6 +1,6 @@
 # Evidence and review provenance
 
-Status: existing closures retained; A1 limited review REPAIR; close-only confirmation PENDING.
+Status: existing closures retained; A1 close-only review GO; A1-01 / BR-02 / BR-03 CLOSED.
 This author intake is not a new independent review. Passing tests, an author
 assessment, an externally reported GO and an original independent receipt are
 different source classes. No reviewer identity or served-model attestation is
@@ -41,7 +41,9 @@ distinct from repository lineage and GitHub workflow/merge metadata verified
 during this intake. New intake hash/byte bindings are in INPUTS and MANIFEST;
 they are not hashes of original chat receipts.
 
-BR-02 is complete on the author side; reviewer closure is still pending. See
+The [post-review close-result intake](A1-CLOSE-REVIEW-RESULT-INTAKE.md) records
+GO and A1-01 / BR-02 / BR-03 CLOSED at the repaired exact target. The original
+REPAIR intake remains unchanged as a historical result. See
 [REMAINING-WORK.md](REMAINING-WORK.md). R2's durable original result files and
 R4's newly stored user-provided result intakes retain their different source
 classes. No new correctness finding or numerical review is introduced.
@@ -55,5 +57,6 @@ classes. No new correctness finding or numerical review is introduced.
 - A future material method/scope/contract change reopens only affected review.
 - Pure packet intake or the F13-02 wording correction needs no fresh numerical review.
 
-The next review is close-only for A1-01, BR-02 and BR-03 bindings/hashes in
-the existing limited-review thread. It does not issue another T13/T14 verdict.
+The close-only review is complete. This subsequent result intake is not a
+new T13/T14 verdict or a numerical re-review. Its stored hash binds the new intake,
+not an unknown original receipt. Main integration remains conditional on checks.
