@@ -1,9 +1,11 @@
 # Release 5 public-discussion preparation
 
-Status: informative pre-opening work awaiting opening authorization. Independent
-review and its close-only confirmation are complete. Public discussion is not open. This
-package creates no Protocol meaning, identifier, Requirement ID, supported
-capability, implementation authority, release commitment or discussion clock.
+Status: **PUBLIC_DISCUSSION_OPEN**. [Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346)
+opened at **2026-09-17T00:38:15Z**. The minimum 30-day window reaches its earliest
+decision time at **2026-10-17T00:38:15Z**, subject to the final tier assessment.
+The [opening record](public-opening-record.md) records steward authorization,
+fixed inputs and retained holds. Opening creates no adopted Protocol meaning,
+identifier, supported capability or release commitment.
 
 ## Objective
 
@@ -76,6 +78,7 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 
 ## Work products
 
+- [Public opening record](public-opening-record.md)
 - [Opening RFC candidate](opening-rfc-candidate.md)
 - [Research Gate commission](research-commission.md)
 - [Research Gate result](research-result.md)
@@ -92,21 +95,18 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 - [Fresh-context repair diff confirmation](opening-fresh-context-diff-confirmation.md)
 - [Fixed opening authorization request](opening-authorization-request.md)
 
-## Immediate sequence
+## Current sequence
 
-1. Obtain steward opening authorization for the fixed candidate and the named holds
-   in [the authorization request](opening-authorization-request.md).
-2. On authorization, integrate the informative preparation package and open the
-   public RFC issue, recording its actual UTC creation time, applicable tier,
-   minimum window and earliest decision time.
-3. During public discussion, complete the independent full-text addendum,
-   predecessor reconciliation, exact authority/surface inventory and fixture
-   evidence. These holds remain prerequisites to design freeze and adoption.
+1. Public discussion is open. Submit clause-specific feedback and counterexamples
+   on [Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346).
+2. Complete the independent full-text addendum, predecessor reconciliation, exact
+   authority/surface inventory and historical-preservation fixture evidence.
+3. Reassess the complete impact tier and consider a separately authorized decision
+   only after the applicable window and all required holds close.
 
-The retained PROCEED diff confirmation completes reviewer-side opening work.
-S-2a, N-7 and N-8 have been applied; no additional review round is commissioned.
-
-No step above authorizes implementation support or publication of Release 5.
+The retained PROCEED confirmation and applied S-2a, N-7 and N-8 repairs support
+opening. Reviewer-side opening work is complete; no new review round is commissioned.
+Elapsed time alone does not adopt or release Release 5.
 
 ## Independence disclosure
 

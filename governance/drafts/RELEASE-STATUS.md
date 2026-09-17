@@ -1,6 +1,6 @@
-# Current Release 2, 3 and 4 status
+# Release 2, 3, 4 and 5 coordination status
 
-Updated 2026-09-11 UTC after PR #328; informative coordination only. This page
+R5 opening added 2026-09-17 UTC; R2–R4 summaries retain their 2026-09-11 snapshot after PR #328; informative coordination only. This page
 summarizes recorded work and directs the next task. It does not replace the RFC,
 Research Gate, authoritative registries or a steward decision. Older fixed
 checkpoints and review requests describe their own dates, not the latest state.
@@ -12,6 +12,16 @@ checkpoints and review requests describe their own dates, not the latest state.
 | R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed                               | Prepare exact final decision and coordinated authoritative change candidates                              | Public review open; unissued                                                  |
 | R3 independent-group programme     | First supplied-p Holm candidate.3 implementation and reported repairs are complete for this development round | Connect final candidate claims to accepted reviews and close the remaining adoption-preparation decisions | Public discussion open; no adopted Holm support or whole-programme completion |
 | R4 balanced 2-by-2 factorial scope | Arithmetic, tails, complete-output and submitted-evidence experiments are integrated with review receipts     | Prepare supported-domain/output policy and the public implementation connection                           | Public discussion open; numerical support not established                     |
+
+## R5: public discussion open
+
+[Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346) opened at
+2026-09-17T00:38:15Z for cross-family declared-design evidence. The proposed four
+additions are versioned Profile projection mappings, selection timing, an eleven-item
+non-claim boundary and a common report view. All three families remain conditional.
+The earliest decision under the provisional 30-day assessment is
+2026-10-17T00:38:15Z. See the [opening record](release-5-preparation/public-opening-record.md)
+for fixed inputs, authorization and research/design holds. No capability is adopted.
 
 ## R2: candidate round at a stopping point
 
