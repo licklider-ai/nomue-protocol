@@ -62,7 +62,9 @@ outcome type, experimental-unit structure, independent/paired relationship, grou
 condition count, pairing-identity presence, repeated/clustered presence and
 analysis-population status, not a population identifier. Timing status is its sole non-Profile input and is
 owned by the successor Record schema. The R5-specific Record addition contains
-only timing and identity references. Missing design-fact carriers go into the owning
+only timing and references to the composed family identity carriers; it stores no
+identity values of its own. The family carriers remain the sole identity carriers.
+Missing design-fact carriers go into the owning
 Profile's versioned declaration surface and its version-specific projection table.
 
 A Profile continues to own the source facts and family-specific semantics, including

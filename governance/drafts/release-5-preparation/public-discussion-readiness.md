@@ -1,6 +1,7 @@
 # Release 5 public-discussion readiness
 
-Current state: **NOT_READY**. Public discussion is not open. Updated 2026-09-16.
+Current state: **AWAITING_OPENING_AUTHORIZATION**. Public discussion is not open.
+Updated 2026-09-17.
 
 ## Proposed question
 
@@ -22,7 +23,8 @@ a scoped eleven-item non-claim boundary?
   it.
 - Accepted family identity carriers are referenced, not duplicated. Design-fact
   carriers remain in the owning Profile's versioned declaration surface; the R5
-  Record addition owns only timing and identity references.
+  Record addition owns timing and references the composed family identity carriers;
+  it stores no identity values of its own.
 - Timing covers finalization of the Contract, Profile and bundle identities and all
   projected design-fact declarations. Any later change after access to any observed
   outcome value in the supplied dataset excludes `pre_outcome`, including values
@@ -40,17 +42,22 @@ a scoped eleven-item non-claim boundary?
 
 | Gate                                  | Current state | Required closure evidence                                                                                                                  |
 | ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| R5-P1 bounded question and exclusions | OPEN          | Fresh-context close-only review confirms that the repaired question states the four genuine R5 additions and remains Protocol-scoped       |
+| R5-P1 bounded question and exclusions | PREPARED      | Retained fresh-context review and PROCEED diff confirmation establish the bounded question; opening authorization remains pending          |
 | R5-P2 Research Gate evidence          | PARTIAL       | Full-text closure of `R5-RH-1` and a methodological addendum; Q11 to Q14 remain unanswered, and the repaired timing scope needs assessment |
 | R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                  |
-| R5-P4 decision semantics              | OPEN          | Fresh-context review confirms projection mapping ownership, timing input, eleven non-claims and the inspectable report-evidence view       |
+| R5-P4 decision semantics              | PREPARED      | PROCEED diff confirmation retained; the prescribed S-2a sentence is applied at opening-candidate freeze                                    |
 | R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                         |
 | R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results         |
 | R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                           |
-| R5-P8 independent opening review      | OPEN          | Fresh-context review retained; one close-only diff confirmation of its repairs, then steward opening authorization                         |
+| R5-P8 independent opening review      | OPEN          | Reviewer-side work complete; only steward authorization of the fixed opening candidate remains                                             |
 
-`PREPARED` means a reviewed draft contains a concrete direction. Author-side repair
-does not itself move an `OPEN` gate to `PREPARED`.
+`PREPARED` means reviewed preparation is complete for opening; it is neither
+adoption nor an opening authorization. P1 and P4 now record the recommendation of
+[the retained PROCEED confirmation](opening-fresh-context-diff-confirmation.md),
+after applying its prescribed S-2a sentence. This is coordination under the delegated
+preparation scope, not a new independent review or an approval on the steward's
+behalf. The reviewer expressly requires no additional review of that sentence;
+the steward can inspect it in the fixed candidate before authorizing opening.
 
 ## Existing reusable foundation
 
@@ -81,18 +88,19 @@ they are the subject of the public question.
 
 ## Opening sequence
 
-1. Complete the exact authority, schema, check, bundle, reason-code, non-claim and
-   migration inventory for R5-P5.
-2. Record how full-text access and methodological close-only review will close
-   `R5-RH-1` before design freeze.
-3. Freeze the revised opening candidate and evidence map at immutable file and
-   commit identities.
-4. Obtain one fixed-input close-only diff confirmation of the fresh-context review
-   repairs for R5-P8; unchanged scope retains the existing independent evidence.
-5. Repair material findings, reassess the highest stability tier and obtain explicit
-   steward authorization for that exact candidate.
-6. Create the public issue, then record the actual opening UTC timestamp and earliest
-   decision time. Do not predate the clock.
+1. Present the fixed candidate and
+   [opening authorization request](opening-authorization-request.md) to the steward,
+   including the applied S-2a sentence and all named holds.
+2. After explicit authorization, integrate the informative package and create the
+   public RFC issue from the approved candidate, with the named holds visible.
+3. Record the actual issue creation time in UTC, the applicable tier and minimum
+   window, and the earliest decision time. Do not predate the clock.
+4. During discussion, close the methodological addendum, predecessor acceptance,
+   exact authority/surface inventory and fixture holds before design freeze or
+   adoption. Opening-candidate freeze is not normative design freeze.
+
+Reviewer-side work for the opening scope is complete. Reuse the retained review
+and diff confirmation; reopen only scope affected by a new material change.
 
 The end of a future minimum window would not automatically adopt the proposal.
 

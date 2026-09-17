@@ -1,5 +1,12 @@
 # Release 5 opening-proposal independent close-only review handoff
 
+Status: completed for the retained opening scope. The
+[fresh-context review](opening-fresh-context-review-result.md) and
+[PROCEED diff confirmation](opening-fresh-context-diff-confirmation.md) are retained.
+The prescribed S-2a wording and N-7/N-8 clarifications are applied at the
+opening-candidate freeze. No additional review is commissioned by this historical
+handoff; steward opening authorization remains pending.
+
 Read the repository `AGENTS.md` and its required governance documents first.
 
 Resolve the target branch once. Record the pull-request base and the target's full

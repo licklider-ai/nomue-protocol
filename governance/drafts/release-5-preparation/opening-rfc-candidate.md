@@ -160,7 +160,9 @@ population. Admissibility continues to decide which status is supported.
 The selection-timing status is the projection's sole non-Profile input. The
 R5-specific addition to the successor Record surface contains only that timing
 status and references to identity carriers owned by the applicable family schema.
-It owns no design-fact carrier. Any missing design fact belongs in a separately
+The R5 addition stores no identity value: the successor Record schema composes the
+applicable family schema's existing identity carriers, which remain the sole
+carriers. It owns no design-fact carrier. Any missing design fact belongs in a separately
 accepted, versioned successor of the owning Profile's declaration surface and in
 that Profile version's mapping table.
 
@@ -200,8 +202,10 @@ values `pre_outcome`, `post_outcome` and `unknown`:
 The status does not prove when access or selection occurred. Neither `post_outcome`
 nor `unknown` is automatically a structural failure in the first slice.
 
-Every R5 result emitted after successful Record conformance carries the exact
-timing status in its evidence, including a passed result, so a bare `passed` status
+The timing status has already been obtained and schema-validated when Record
+conformance succeeds. Every subsequent R5 result, including an errored result,
+therefore carries that obtained timing status in its evidence. A passed result
+also carries it, so a bare `passed` status
 cannot conceal a post-outcome or unknown declaration. A Profile may impose a narrower
 condition only if that meaning is expressly owned and reviewed.
 
@@ -314,9 +318,13 @@ The following remain open before design freeze:
   candidate family;
 - exact clause, Requirement-ID, schema and public-surface inventory;
 - exact per-Profile version projection tables;
-- successor timing representation, common report view and check mechanics;
-- independent fixed-input close-only opening review; and
-- steward authorization for the exact candidate.
+- successor timing representation, common report view and check mechanics; and
+- exact historical-preservation fixture inventory and evidence.
+
+The independent opening review and its close-only diff confirmation are complete;
+the prescribed S-2a wording has been applied. Steward authorization to open the
+fixed candidate remains pending. Freezing this discussion text is not a normative
+design freeze and does not close the research or implementation holds.
 
 Numerical algorithms and tolerances remain owned by each selected procedure. Release
 5 does not create a universal numerical tolerance or certify an implementation by

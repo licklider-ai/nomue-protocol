@@ -1,6 +1,7 @@
 # Release 5 public-discussion preparation
 
-Status: informative pre-opening work. Public discussion is not open. This
+Status: informative pre-opening work awaiting opening authorization. Independent
+review and its close-only confirmation are complete. Public discussion is not open. This
 package creates no Protocol meaning, identifier, Requirement ID, supported
 capability, implementation authority, release commitment or discussion clock.
 
@@ -88,20 +89,22 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 - [Fixed-input opening review result](opening-final-review-result.md)
 - [Fresh-context opening review result](opening-fresh-context-review-result.md)
 - [Fresh-context review repair disposition](opening-fresh-context-repair-disposition.md)
+- [Fresh-context repair diff confirmation](opening-fresh-context-diff-confirmation.md)
+- [Fixed opening authorization request](opening-authorization-request.md)
 
 ## Immediate sequence
 
-1. Complete the exact authority, surface and migration inventory, including the
-   separately accepted Contract dependency for every family.
-2. Arrange full-text access for the named Research Gate source hold and obtain a
-   methodological close-only review of the repaired result.
-3. Freeze the repaired opening candidate at immutable file and commit identities.
-4. Obtain one close-only diff confirmation of the fresh-context review repairs;
-   retain the existing independent review for unchanged scope.
-5. Repair or explicitly hold remaining findings and obtain steward authorization
-   for the exact reviewed proposal.
-6. Open a public RFC issue and record its actual UTC creation time, highest tier,
+1. Obtain steward opening authorization for the fixed candidate and the named holds
+   in [the authorization request](opening-authorization-request.md).
+2. On authorization, integrate the informative preparation package and open the
+   public RFC issue, recording its actual UTC creation time, applicable tier,
    minimum window and earliest decision time.
+3. During public discussion, complete the independent full-text addendum,
+   predecessor reconciliation, exact authority/surface inventory and fixture
+   evidence. These holds remain prerequisites to design freeze and adoption.
+
+The retained PROCEED diff confirmation completes reviewer-side opening work.
+S-2a, N-7 and N-8 have been applied; no additional review round is commissioned.
 
 No step above authorizes implementation support or publication of Release 5.
 
