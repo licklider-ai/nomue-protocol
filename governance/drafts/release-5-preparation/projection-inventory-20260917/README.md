@@ -88,6 +88,22 @@ investigation to the open source hold, Q11–Q14 and the mapping questions expos
 here. Existing independent results remain immutable; the author does not claim to
 close their source-access hold.
 
+## Independent addendum received
+
+[The separate-model research addendum](independent-research-addendum.md) answers
+Q11–Q14 and the seven inventory questions against the fixed inventory commit.
+[The coordination intake](research-intake.md) records preparation directions and
+remaining source/mapping holds. R5-P2 remains PARTIAL; the source audit and this
+research recommendation do not issue a mapping or admit a family.
+
+## Report integration follow-up
+
+[The report and registry follow-up](report-surface-followup.md) locates the
+closed result-evidence definitions, the four-result R2 candidate report,
+identifier-validator migration and family-specific dependency binding work.
+It adds six planned integration cases to the original 31; none is an executed
+R5 conformance fixture. Its observations are author-side technical inspection.
+
 ## Review and gate effect
 
 The source inventory has 12 pinned inputs, 24 family/fact cells and 36 schema

@@ -42,16 +42,16 @@ a scoped eleven-item non-claim boundary?
 
 ## Readiness gates
 
-| Gate                                  | Current state | Required closure evidence                                                                                                                   |
-| ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| R5-P1 bounded question and exclusions | PREPARED      | Retained fresh-context review and PROCEED diff confirmation establish the bounded question; opening authorized in the linked opening record |
-| R5-P2 Research Gate evidence          | PARTIAL       | Full-text closure of `R5-RH-1` and a methodological addendum; Q11 to Q14 remain unanswered, and the repaired timing scope needs assessment  |
-| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                   |
-| R5-P4 decision semantics              | PREPARED      | PROCEED diff confirmation retained; the prescribed S-2a sentence is applied at opening-candidate freeze                                     |
-| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                          |
-| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results          |
-| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                            |
-| R5-P8 independent opening review      | CLOSED        | Retained fresh-context review and confirmation; steward authorized the fixed candidate; issue #346 opened                                   |
+| Gate                                  | Current state | Required closure evidence                                                                                                                                    |
+| ------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| R5-P1 bounded question and exclusions | PREPARED      | Retained fresh-context review and PROCEED diff confirmation establish the bounded question; opening authorized in the linked opening record                  |
+| R5-P2 Research Gate evidence          | PARTIAL       | Independent addendum now answers Q11 to Q14 and assesses timing; remaining source-content/byte-pin holds and explicit research acceptance are still required |
+| R5-P3 predecessor reconciliation      | OPEN          | Exact mapping to separately accepted Contracts, Profiles, declarations and bundles for all three families                                                    |
+| R5-P4 decision semantics              | PREPARED      | PROCEED diff confirmation retained; the prescribed S-2a sentence is applied at opening-candidate freeze                                                      |
+| R5-P5 authority and surface impact    | OPEN          | Exact clauses, Requirement-ID treatment, schemas, checks, bundles, reason codes, non-claims and migration analysis                                           |
+| R5-P6 historical preservation         | OPEN          | Reviewed plan followed by fixed tests proving no change to earlier bundle meaning, dispatch, reports or pinned conformance results                           |
+| R5-P7 tier and window                 | PROVISIONAL   | Complete impact assessment; STABLE-INTENT/30 days if additive, CORE/60 days if existing CORE meaning must change                                             |
+| R5-P8 independent opening review      | CLOSED        | Retained fresh-context review and confirmation; steward authorized the fixed candidate; issue #346 opened                                                    |
 
 `PREPARED` means reviewed preparation is complete for opening, not adoption.
 P1 and P4 retain the finding of the [PROCEED confirmation](opening-fresh-context-diff-confirmation.md)
@@ -64,9 +64,13 @@ implementation or adoption hold is closed by this bookkeeping.
 The [projection inventory](projection-inventory-20260917/README.md) records exact
 source locations for the three proposed families and highlights repetition,
 pairing, population and legacy-timing mapping questions. Its source audit passes;
-its acceptance cases remain planned rather than executed. The independent
-research-addendum handoff is ready. This advances preparation for P3/P5/P6 without
-closing their gates or the P2 source-access hold.
+its acceptance cases remain planned rather than executed. The [independent addendum](projection-inventory-20260917/independent-research-addendum.md)
+now supplies a bounded research recommendation;
+[the intake](projection-inventory-20260917/research-intake.md) separates preparation
+directions from remaining content, byte-pin and mapping holds. The
+[report follow-up](projection-inventory-20260917/report-surface-followup.md) adds
+six planned integration cases and identifies successor result/report dependencies.
+This advances preparation for P2/P3/P5/P6 without closing their gates.
 
 ## Existing reusable foundation
 
