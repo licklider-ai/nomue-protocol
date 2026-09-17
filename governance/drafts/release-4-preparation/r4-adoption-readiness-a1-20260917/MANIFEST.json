@@ -1,0 +1,90 @@
+{
+  "status": "UNISSUED CANDIDATE",
+  "packet": "R4 A1 Steward Ratification / Adoption Decision Packet v1",
+  "base_main": "f1c77b743f655a8c37f323794a4ebdcb820927ab",
+  "author_preparation": "COMPLETE",
+  "independent_review": "GO",
+  "main_integration_decision": "MERGE NOW",
+  "commit_binding": "Containing Git commit; full exact SHA supplied outside the commit in the final author handoff",
+  "hash_semantics": "UTF-8 file content with CRLF normalized to LF; manifest excluded to avoid self-reference",
+  "files": [
+    {
+      "path": "A1-CLOSE-REVIEW-RESULT-INTAKE.md",
+      "bytes": 4016,
+      "sha256": "50fb58c407265324f30a5c29012b7dca0c2838fc03b55b41b1f364b7d5218390"
+    },
+    {
+      "path": "A1-LIMITED-REVIEW-RESULT-INTAKE.md",
+      "bytes": 4501,
+      "sha256": "db15a897aa69efe12f02885644c30e1e1ae549bbbf8c644459bce446212e9b73"
+    },
+    {
+      "path": "DECISION-INVENTORY.md",
+      "bytes": 25474,
+      "sha256": "f8c6fc60eeda5807604077d3b0919502f9656351637ef14584d5999e1be1f0fa"
+    },
+    {
+      "path": "INPUTS.json",
+      "bytes": 38709,
+      "sha256": "f0e5497daf421a9ebe908e871837acd88e5efae1e619e8cf90b26ca152b452ff"
+    },
+    {
+      "path": "R2-R4-BENCHMARK.md",
+      "bytes": 20626,
+      "sha256": "4ab46ca9eae64ee908f0b9a61f2c4241525bbaad2cd6fc253e3ff90acf365b24"
+    },
+    {
+      "path": "RATIFICATION-PACKET.md",
+      "bytes": 14229,
+      "sha256": "a8c6004cc59d7a07cb4749d05c4c0d9de26d89dbd0d845d772cb431fb4eac470"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2883,
+      "sha256": "4c9850dbf2e552aacb09ea40c828626661be73487ba4ed00e8de51559f4d5f12"
+    },
+    {
+      "path": "REMAINING-WORK.md",
+      "bytes": 8303,
+      "sha256": "96ada8df43380f340a0703740c69e4666e810073553f2a89dba606246d748f6f"
+    },
+    {
+      "path": "REVIEW-EVIDENCE-MAP.md",
+      "bytes": 20497,
+      "sha256": "457fb4d7ffabf408473af5df50e8d5e841715b5131449453eff0722f05eb72e8"
+    },
+    {
+      "path": "REVIEW-REQUEST.md",
+      "bytes": 2622,
+      "sha256": "b37d8e47b99f6a4840a71fd16dda8ff0d729ff44274387001c76844ea8a0edae"
+    },
+    {
+      "path": "RFC-261-DISPOSITION.md",
+      "bytes": 12525,
+      "sha256": "47c6ea7e2d7989db61a875771cb36bf45609402fd38f6665610cc47ddcd54b41"
+    },
+    {
+      "path": "T13-RESULT-INTAKE.md",
+      "bytes": 5015,
+      "sha256": "0a2ab991f37838b2a5bc3d9b07a464ac2a32437e17e36ed0169c27f5ebcd2847"
+    },
+    {
+      "path": "T14-RESULT-INTAKE.md",
+      "bytes": 4540,
+      "sha256": "79e37cccb3c9102db2335b27bcb5e5cbbea6347405552a459eb336f34021bc6d"
+    }
+  ],
+  "formal_public_surface_changed": false,
+  "historical_evidence_changed": false,
+  "numerical_semantics_changed": false,
+  "release_4_issued": false,
+  "T13_T14_reopened": false,
+  "A2_A5_mandatory_for_benchmark": false,
+  "close_review": "GO",
+  "original_reviewed_target": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+  "provenance_repair": "A1-01 / BR-02 / BR-03 CLOSED by supplied close-only GO",
+  "repair_diff_base": "dea4a9f3e7c4847f93eebab57b4a730d3c023f9c",
+  "a1_status": "CLOSED",
+  "close_reviewed_target": "c36c8496f98cbbb4481f85a56750f5683201778c",
+  "close_review_intake": "A1-CLOSE-REVIEW-RESULT-INTAKE.md"
+}
