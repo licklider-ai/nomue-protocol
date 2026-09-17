@@ -125,9 +125,12 @@ proposed per-analysis timing unit and a mapping reference qualified by an existi
 check identity and local table key. [The case specifications](case-specifications.md)
 expand all 37 existing cases into controlled inputs, expected boundaries, evidence
 and outstanding prerequisites. These are proposed designs and handwritten plans,
-not accepted schemas or executed R5 tests. After the bounded diff review and
-repairs, this work pauses for source findings and the already named owner decisions;
-no further schema or runtime work is authorized by this packet.
+not accepted schemas or executed R5 tests. The retained
+[independent diff review and repair confirmation](bounded-design-diff-review.md)
+resolved two case-definition findings and one coverage improvement. No outstanding
+blocker or should-fix remains for retaining this informative increment. This work
+now pauses for source findings and the already named owner decisions; no further
+schema or runtime work is authorized by this packet.
 
 ## Review and gate effect
 
