@@ -1,7 +1,7 @@
 {
   "schema_version": "reference-source-pin.v1",
   "repository": "licklider-ai/nomue-verifier",
-  "commit": "ebcb3a37ef721dd8c350a451d65381098757ef44",
+  "commit": "731d5a4fcd3ee67f7690d8087948e44239cbb165",
   "files": [
     {
       "path": "reference/spikes/paired-t.ts",
@@ -13,7 +13,7 @@
     },
     {
       "path": "reference/stats-kernel/src/t-distribution.ts",
-      "sha256": "dea980acb7687382305d5467ece7db0758041f41f2cd1f3daa33f69bf6177089"
+      "sha256": "696a92c6c7aa433647f0d2968c6e60eb3f9c648865965b2c622424a9998718d7"
     },
     {
       "path": "reference/verifier/src/approval.ts",

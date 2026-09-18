@@ -6,6 +6,8 @@ import {
   welchTwoSampleTTest,
   welchTwoSampleTTestWithCi,
 } from "../../reference/stats-kernel/src/kernel.js";
+import { studentTCdf, twoSidedPValue } from "../../reference/stats-kernel/src/t-distribution.js";
+import { withinPValueTolerance021 } from "../../reference/verifier/src/numerical-comparison.js";
 
 // Pinned expectations for the V-001 dataset, cross-checked against SciPy and
 // mpmath (evidence/development/phase-1/oracle/oracle-matrix.json).
@@ -22,6 +24,19 @@ const closeTo = (actual: number, expected: number, relTol: number): void => {
 };
 
 describe("stats kernel: Welch two-sample t-test", () => {
+  it("preserves df=1 center precision using the exact Cauchy oracle", () => {
+    // Exact identity for one degree of freedom: F(t) = 1/2 + atan(t)/pi.
+    // These binary64 expectations are independent of the CDF dependency.
+    const t = 7.45e-9;
+    const expectedCdf = 0.5000000023714086;
+    const expectedPValue = 0.9999999952571827;
+
+    expect(studentTCdf(t, 1)).toBe(expectedCdf);
+    expect(studentTCdf(-t, 1)).toBe(1 - expectedCdf);
+    expect(twoSidedPValue(t, 1)).toEqual({ p_value: expectedPValue, clamped: false });
+    expect(withinPValueTolerance021(expectedPValue, 1, 1e-10)).toBe(false);
+  });
+
   it("reproduces the oracle-checked V-001 values", () => {
     const result = welchTwoSampleTTest(
       { group_id: "a", values: [1, 2, 3] },
