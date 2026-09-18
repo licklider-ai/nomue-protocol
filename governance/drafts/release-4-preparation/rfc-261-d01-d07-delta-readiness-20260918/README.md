@@ -15,10 +15,12 @@ The authoritative RFC 261 opening input remains commit
 `807e4bf0c22e5270b8fc15824329d04b5c37b146`. Its unchanged-scope earliest
 decision time remains historical context only: `2026-10-09T05:59:47Z`.
 
-The separate D01/D07 amendment window opened at `2026-09-18T01:50:49Z` under
-STABLE-INTENT. Its earliest formal decision time is
-`2026-10-18T01:50:49Z`. The original opening clock cannot shorten this later
-window.
+The separate D01/D07 amendment comment body declared an opening at
+`2026-09-18T01:50:49Z` under STABLE-INTENT. GitHub recorded the comment's
+`created_at` as `2026-09-18T01:51:08Z`. Consistent with the original RFC clock's
+platform timestamp, the later value controls conservatively; the earliest formal
+decision time is `2026-10-18T01:51:08Z`. The original opening clock cannot
+shorten this later window.
 
 Read in this order:
 
