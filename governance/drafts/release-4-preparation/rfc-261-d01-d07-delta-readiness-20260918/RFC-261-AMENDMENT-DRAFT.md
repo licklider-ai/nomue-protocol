@@ -1,7 +1,7 @@
 # Draft RFC 261 amendment: D01/D07 candidate delta
 
-**Do not post this text until the independent review commission is GO and a steward
-has selected the tier and discussion window.**
+**This draft is preparation material only. The posted RFC 261 comment, with its
+exact commit and timestamps, is the discussion record.**
 
 ## Proposed amendment scope
 
@@ -14,7 +14,7 @@ later candidate decisions that were not part of that opening input:
 - D07: sound candidate-set comparison, including pass, proved mismatch, and
   completed indeterminate outcomes without fabricating a recomputed point.
 
-The exact delta, preservation boundary, and unresolved CLI decision are recorded in
+The exact delta, preservation boundary, and selected CLI treatment are recorded in
 the reviewable package at `[COMMIT TO INSERT]/governance/drafts/release-4-preparation/rfc-261-d01-d07-delta-readiness-20260918/`.
 
 ## Affected surfaces and compatibility
@@ -23,7 +23,10 @@ D01 affects only a new Release 4 check-owned comparison procedure and its succes
 Bundle; it does not reinterpret an existing bundle. D07 affects Release 4 quantity
 evidence and reason/report handling. Its public CLI treatment is explicitly:
 
-**[STEWARD MUST INSERT ONE SELECTED, REVIEWED PATH HERE.]**
+Release 4 excludes CLI exit-code semantics for a completed indeterminate result.
+NRS-VERIFY-0025 remains unmodified, including its five existing exit-code meanings.
+Relying parties that need the D07 distinction use the detailed verification report;
+no new code or reinterpretation of success is proposed.
 
 No existing identifier, schema, Public Check, Bundle, or CLI behavior is changed by
 this discussion post. Any eventual authoritative change will be separately coupled,
@@ -31,12 +34,15 @@ versioned, reviewed, and implemented after RFC decision.
 
 ## Tier and discussion window
 
-**[STEWARD MUST INSERT INDEPENDENT REVIEW FINDING.]**
+The bounded exact-head review found this scope suitable for discussion as an
+additive STABLE-INTENT candidate, provided that the authoritative eventual change
+remains a new Release 4 procedure rather than an in-place change to existing CORE
+semantics.
 
-Highest affected tier: **[TIER]**. This amendment opens at
-**[UTC TIMESTAMP]**. Earliest decision time: **[UTC TIMESTAMP]**. The original
-RFC 261 unchanged-scope timestamp is not used as a substitute for this delta's
-discussion period.
+Highest affected tier for this discussion: **STABLE-INTENT**. The posted amendment
+comment supplies its own UTC opening timestamp and a new minimum 30-day discussion
+window. The original RFC 261 unchanged-scope timestamp is not used as a substitute
+for this delta's discussion period.
 
 ## Requested feedback
 
