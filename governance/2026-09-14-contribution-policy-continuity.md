@@ -1,7 +1,8 @@
 # Contribution-policy continuity — 2026-09-14
 
-The steward approved the publication-boundary and adversarial-review preparation
-instructions and their integration. They append to the existing AGENTS.md;
+The steward approved the publication-boundary, adversarial-review preparation,
+and informative development-checkpoint instructions and their integration. They
+append to the existing AGENTS.md;
 no earlier instruction, scientific source, input contract or numerical method is
 changed. This is operating maintenance, not a new R3 review, adoption or release.
 
@@ -11,7 +12,7 @@ this exact approved append while preserving the original historical source pins:
 - Historical AGENTS.md SHA-256:
   `059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed`.
 - Current approved AGENTS.md SHA-256:
-  `09c531ae764648caffd186970d5d9a5c5080aad7311f0644827f6ca4230abb19`.
+  `7cbc579ef13cd2845fba79c1e74a5eb0655719956f11d51ce20a17b09d1715a5`.
 - The original bytes must remain an exact prefix, ending before the new
   publication-boundary section. The entire new file must match the approved hash.
 - The adoption-map checker also pins itself. Its exact delegation-only edit is

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 
 const previous = "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed";
-const approved = "09c531ae764648caffd186970d5d9a5c5080aad7311f0644827f6ca4230abb19";
+const approved = "7cbc579ef13cd2845fba79c1e74a5eb0655719956f11d51ce20a17b09d1715a5";
 const marker = Buffer.from("\n## Publication boundary and implementation ownership\n");
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 
