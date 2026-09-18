@@ -1,0 +1,24 @@
+{
+  "status": "contributor intake; independent review applies only to its fixed targets",
+  "review_source_commit": "4bc89252e0cd248462c0799ccac369cc3c61f795",
+  "review_path": "review-inputs/r3-holm-d1-b2-integration-20260918/REVIEW-RESULT.md",
+  "review_blob": "56f93e8032f5b11d2b85a63066940d88e50de173",
+  "review_sha256": "7e59e123868af38c6af5e8b67f477d64b764cefce3316d560ee0e47a12b88a66",
+  "intake_commit": "06782434150ee6ebdf026f1b694d4dc9ff8b3e96",
+  "reviewed_verifier": "eda3ba9354429baf936212bc68572af94a5e20f6",
+  "reviewed_protocol": "3233522a1062167b2ef9b8dd9d0e09a2153e169c",
+  "verdict": "GO_FOR_D1_CONTINUATION",
+  "findings": {
+    "blocker": 0,
+    "major": 0,
+    "minor": 1
+  },
+  "prior_m2_m3": "independently closed in this receipt",
+  "m1": "author repaired by preserved-result pin and strict non-environment equality; independent closure pending",
+  "repair_results": {
+    "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/RESULTS.json",
+    "blob": "e4802b3f2d96d74276e05d6db659b43d732af447",
+    "sha256": "7eeb3725adca06f99e75997d275e67e6f84f434ccd813c5de804b2443491db45"
+  },
+  "independence": "Continuing Claude D0/D1 reviewer, separate from B2 author and implementation author; retains its shared-trust-base and NOT_RUN disclosures"
+}

@@ -1,0 +1,203 @@
+{
+  "status": "author hosted evidence; not independent review, D1 completion or host qualification",
+  "verifier_head": "3c51172a66d2c13ebec99e2dbe7c4ab892888af9",
+  "verifier_parent": "f4b07868db999b282126b3a1c5620ee01a5252a4",
+  "verifier_tree": "e3d7cc3da06ca2fccca5900c561a150c0da762ec",
+  "ci_checkout": "532eea84fd6505e81a7128f9064f9916415144f1",
+  "ci_checkout_tree": "e3d7cc3da06ca2fccca5900c561a150c0da762ec",
+  "checkout_note": "GitHub synthetic PR merge checkout; git tree equality with fixed head verified, not an actual merge into main.",
+  "run_id": 35318802381,
+  "job_id": 105516361635,
+  "job_conclusion": "success",
+  "artifact_id": 10536226484,
+  "artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35318802381/artifacts/10536226484",
+  "archive": "controlled-host-3c51172.zip",
+  "archive_bytes": 127935,
+  "archive_sha256": "8e08314c2b18ed66fcc88170848c87fbaf55e8f34e5cee3a31b63f335f088fe9",
+  "archive_files": 117,
+  "archive_content": "Unmodified downloaded ZIP; synthetic inputs, predetermined expectations, result and receipt JSON. No runtime source or credentials.",
+  "runtime_manifest_sha256": "6dd9b7c50a58be625030744e26be32f06082d0bdd1716fbe25aae0e242062ba0",
+  "environment": {
+    "os": "Ubuntu 24.04.5",
+    "architecture": "x86_64",
+    "kernel": "6.17.0-1022-azure",
+    "node": "v24.19.0",
+    "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]"
+  },
+  "checks": {
+    "pass": 39,
+    "total": 39,
+    "representative_call_variants": 26,
+    "host_fault_controls": 13,
+    "archive_sha256_matches_github": true,
+    "all_input_bytes_match_local_predetermined_inputs": true,
+    "all_call_receipts_match_runtime_manifest": true,
+    "all_call_receipts_have_complete_cleanup": true,
+    "forwarded_bytes_equal_original_archived_input": true
+  },
+  "cases": [
+    {
+      "name": "R3D-01",
+      "pass": true
+    },
+    {
+      "name": "R3D-02",
+      "pass": true
+    },
+    {
+      "name": "R3D-03",
+      "pass": true
+    },
+    {
+      "name": "R3D-04",
+      "pass": true
+    },
+    {
+      "name": "R3D-05",
+      "pass": true
+    },
+    {
+      "name": "R3D-06",
+      "pass": true
+    },
+    {
+      "name": "R3D-07",
+      "pass": true
+    },
+    {
+      "name": "R3D-08",
+      "pass": true
+    },
+    {
+      "name": "R3D-09",
+      "pass": true
+    },
+    {
+      "name": "R3D-10",
+      "pass": true
+    },
+    {
+      "name": "R3D-11",
+      "pass": true
+    },
+    {
+      "name": "R3D-12",
+      "pass": true
+    },
+    {
+      "name": "R3D-13",
+      "pass": true
+    },
+    {
+      "name": "R3D-14",
+      "pass": true
+    },
+    {
+      "name": "R3D-15",
+      "pass": true
+    },
+    {
+      "name": "R3D-16",
+      "pass": true
+    },
+    {
+      "name": "R3D-17",
+      "pass": true
+    },
+    {
+      "name": "R3D-18",
+      "pass": true
+    },
+    {
+      "name": "R3D-20",
+      "pass": true
+    },
+    {
+      "name": "R3D-22",
+      "pass": true
+    },
+    {
+      "name": "R3D-24",
+      "pass": true
+    },
+    {
+      "name": "R3D-32",
+      "pass": true
+    },
+    {
+      "name": "R3D-34",
+      "pass": true
+    },
+    {
+      "name": "R3D-38",
+      "pass": true
+    },
+    {
+      "name": "R3D-39",
+      "pass": true
+    },
+    {
+      "name": "R3D-40",
+      "pass": true
+    },
+    {
+      "name": "host-node-memory",
+      "pass": true
+    },
+    {
+      "name": "host-worker-memory",
+      "pass": true
+    },
+    {
+      "name": "host-cpu",
+      "pass": true
+    },
+    {
+      "name": "host-pids",
+      "pass": true
+    },
+    {
+      "name": "host-descendant",
+      "pass": true
+    },
+    {
+      "name": "host-stdout",
+      "pass": true
+    },
+    {
+      "name": "host-stderr",
+      "pass": true
+    },
+    {
+      "name": "host-hang",
+      "pass": true
+    },
+    {
+      "name": "host-valid-then-hang",
+      "pass": true
+    },
+    {
+      "name": "host-wrong-nonce",
+      "pass": true
+    },
+    {
+      "name": "host-corrupt-output",
+      "pass": true
+    },
+    {
+      "name": "host-invalid",
+      "pass": true
+    },
+    {
+      "name": "host-cancellation",
+      "pass": true
+    }
+  ],
+  "remaining": [
+    "Independent changed-scope review",
+    "Expanded 44-case matrix and full-path fault injection",
+    "Supervisor-loss external owner and cleanup-failure evidence",
+    "D2 dispatcher/legacy compatibility",
+    "D3 authority integration"
+  ]
+}

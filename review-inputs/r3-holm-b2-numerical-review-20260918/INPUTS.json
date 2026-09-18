@@ -1,0 +1,69 @@
+{
+  "execution_environment": {
+    "note": "The candidate pins CPython 3.12.14 and Node 24.19.0. Checks C1-C9 are exact integer and rational comparisons and do not depend on the interpreter version. C10 counts comparisons made by this interpreter sort. The controlled-execution suite was not run; see the review scope section.",
+    "python": "3.11.15"
+  },
+  "inspected_repository_files": [
+    {
+      "git_blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "git_blob": "69fa6c33e6d34ccb890ac0d6268c79474df22213",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/oracle.py",
+      "sha256": "c136af873eee3d29fa4c9a8746879e8ca0f125db2afd3bf32daabcfb8d7a6390"
+    },
+    {
+      "git_blob": "a0a441789805348790f9d1a7cb37617951d3dd6d",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/REPORT.md",
+      "sha256": "5711bdf7f53184235a0b9d5ba49580011c629c784d87d273ea6539d623b92e1c"
+    },
+    {
+      "git_blob": "6c7ef2fdbbbd1019f136cb28c601c3b5a91a1c4c",
+      "path": "governance/drafts/release-3-preparation/holm-candidate-design-20260911/DESIGN.md",
+      "sha256": "1cf388c69a1458a7d1656e56cf37948391f3c3267d40ecd08e3f4a5aad0fe553"
+    },
+    {
+      "git_blob": "813e22836b1dc73a324e185f89c217777a8ba076",
+      "path": "governance/drafts/release-3-preparation/holm-declaration-binding-experiment-20260911/bridge.mjs",
+      "sha256": "0d650987bac5343c28a303655afc0c02c2eec8a383e8abe2388f27ce74b66262"
+    },
+    {
+      "git_blob": "6f98fb1b72f2e9e1897a157fb67ccb2110f0ea66",
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/envelope.mjs",
+      "sha256": "54d3919c7776ada400b065f785535777d5bf5ea6b621dc84cbaa7d92b6ac00c8"
+    },
+    {
+      "git_blob": "e8e6f3010bac912ae24f7a7f26715ea8c623bf18",
+      "path": "governance/drafts/release-3-preparation/holm-envelope-coupling-plan-20260911/COUPLING.md",
+      "sha256": "16063f62a992c0726a10b5f4d4e0f2b2d7398be3aea06c371aa7ec5ecb020172"
+    },
+    {
+      "git_blob": "735940298eafcf523c7b40e4a87adeb050a8cdf4",
+      "path": "governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/PROMOTION-CONDITIONS.md",
+      "sha256": "bfe4ad71e8f113308a70dd88effaffdeae99685f470659095cd64fe45115f164"
+    },
+    {
+      "git_blob": "70bb9c09fd787be7a7319a30eaeb6ade9b519246",
+      "path": "review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md",
+      "sha256": "c4714d7a0f8881712886fa72ab9da633bdf532134e5e7c458b0bebd0561cae64"
+    },
+    {
+      "git_blob": "9fa3bdd2e273ed9569385e34bce0bbef2559b131",
+      "path": "governance/RFC.md",
+      "sha256": "d6b23f79baaf0dea96070f71d0539d77d373f359307371d82a40431aafcbc4af"
+    }
+  ],
+  "primary_source": {
+    "citation": "Sture Holm, A Simple Sequentially Rejective Multiple Test Procedure, Scandinavian Journal of Statistics 6(2), 1979, pp. 65-70",
+    "note": "Licensed PDF supplied by the steward for this review; it is not copied into this repository. Sections 1-3, Scheme 1 and the Theorem 1 proof were read in full from the supplied copy.",
+    "pages": 7,
+    "supplied_copy_sha256": "43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af"
+  },
+  "repository": "licklider-ai/nomue-protocol",
+  "review": "r3-holm-b2-numerical-review-20260918",
+  "reviewed_commit": "0c7a685a1ea6b2b2d0dbe8966c572be95b82755a",
+  "reviewed_tree": "32604585180c9e7159eb33c54a64a77649f25b7f",
+  "scope": "B-2 mathematical and numerical design review of the ordinary supplied-p Holm candidate"
+}

@@ -1,0 +1,370 @@
+{
+  "scope": "author execution and continuing-author archive verification; not independent host qualification or D1 completion",
+  "verifier_head": "f040f1428a204b90b9745afb90ffa547bfe9d0e6",
+  "verifier_tree": "2eb5a853d85a35b0ed5c3c9a21eb432561c90047",
+  "base_main": "421756e69e9911858a79f1f9314aa883b466c6ac",
+  "synthetic_merge": "708de6b100a36f719b9d6eb246d1cf173f04652e",
+  "synthetic_merge_tree_matches_head": true,
+  "workflow_run": 35342377714,
+  "host_job": 105591013886,
+  "artifact_id": 10544809586,
+  "archive": "controlled-host-f040f14.zip",
+  "prior_failed_run": 35341982290,
+  "repair": "incorporate main; refresh exactly package.json/package-lock.json pins, retain other 30 source pins",
+  "archive_sha256": "dccd3787ed2c785c42791527f44ceb77da730298d32cee853875128c10feece2",
+  "archive_bytes": 330937,
+  "archive_files": 256,
+  "runtime_manifest_sha256": "b5c9fa18eee6381d319e1302a124b8375e12fa18feb8faf56729ef0cfb1d35ca",
+  "matched_input_files": 110,
+  "ordinary_calls": 58,
+  "distinct_normal_nonces": 58,
+  "original_byte_forwards": 6,
+  "passed": 85,
+  "total": 85,
+  "kernel": "6.17.0-1022-azure",
+  "architecture": "x86_64",
+  "node": "v24.19.0",
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "cases": [
+    {
+      "name": "R3D-01",
+      "pass": true
+    },
+    {
+      "name": "R3D-02",
+      "pass": true
+    },
+    {
+      "name": "R3D-03",
+      "pass": true
+    },
+    {
+      "name": "R3D-04",
+      "pass": true
+    },
+    {
+      "name": "R3D-05",
+      "pass": true
+    },
+    {
+      "name": "R3D-06",
+      "pass": true
+    },
+    {
+      "name": "R3D-07",
+      "pass": true
+    },
+    {
+      "name": "R3D-08",
+      "pass": true
+    },
+    {
+      "name": "R3D-09",
+      "pass": true
+    },
+    {
+      "name": "R3D-10",
+      "pass": true
+    },
+    {
+      "name": "R3D-11",
+      "pass": true
+    },
+    {
+      "name": "R3D-12",
+      "pass": true
+    },
+    {
+      "name": "R3D-13",
+      "pass": true
+    },
+    {
+      "name": "R3D-14",
+      "pass": true
+    },
+    {
+      "name": "R3D-15",
+      "pass": true
+    },
+    {
+      "name": "R3D-16",
+      "pass": true
+    },
+    {
+      "name": "R3D-17",
+      "pass": true
+    },
+    {
+      "name": "R3D-18",
+      "pass": true
+    },
+    {
+      "name": "R3D-20",
+      "pass": true
+    },
+    {
+      "name": "R3D-22",
+      "pass": true
+    },
+    {
+      "name": "R3D-24",
+      "pass": true
+    },
+    {
+      "name": "R3D-32",
+      "pass": true
+    },
+    {
+      "name": "R3D-34",
+      "pass": true
+    },
+    {
+      "name": "R3D-38",
+      "pass": true
+    },
+    {
+      "name": "R3D-39",
+      "pass": true
+    },
+    {
+      "name": "R3D-40",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-missing-file",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-directory",
+      "pass": true
+    },
+    {
+      "name": "R3D-20-unread",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-record_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-revision_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-unselected",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-order",
+      "pass": true
+    },
+    {
+      "name": "R3D-21",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-zero",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-subnormal-tie",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-one",
+      "pass": true
+    },
+    {
+      "name": "R3D-11-utf8",
+      "pass": true
+    },
+    {
+      "name": "R3D-10-missing",
+      "pass": true
+    },
+    {
+      "name": "R3D-09-oversized",
+      "pass": true
+    },
+    {
+      "name": "R3D-24-expected-bytes",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-raw",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-parsed",
+      "pass": true
+    },
+    {
+      "name": "R3D-42",
+      "pass": true
+    },
+    {
+      "name": "R3D-43",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-loop",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-overlong",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-maximum-family",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-canonical",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-first",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-last",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-whitespace",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-escaped-key",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-newline",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-absent",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-nested-unicode",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-number-spelling",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-declared-digest",
+      "pass": true
+    },
+    {
+      "name": "fault-a-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-s-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-swap",
+      "pass": true
+    },
+    {
+      "name": "fault-duplicate",
+      "pass": true
+    },
+    {
+      "name": "fault-omit",
+      "pass": true
+    },
+    {
+      "name": "fault-error-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-notrun-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-generic-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-unrelated-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-late-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-schema-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-worker-output",
+      "pass": true
+    },
+    {
+      "name": "host-node-memory",
+      "pass": true
+    },
+    {
+      "name": "host-worker-memory",
+      "pass": true
+    },
+    {
+      "name": "host-cpu",
+      "pass": true
+    },
+    {
+      "name": "host-pids",
+      "pass": true
+    },
+    {
+      "name": "host-descendant",
+      "pass": true
+    },
+    {
+      "name": "host-stdout",
+      "pass": true
+    },
+    {
+      "name": "host-stderr",
+      "pass": true
+    },
+    {
+      "name": "host-hang",
+      "pass": true
+    },
+    {
+      "name": "host-valid-then-hang",
+      "pass": true
+    },
+    {
+      "name": "host-wrong-nonce",
+      "pass": true
+    },
+    {
+      "name": "host-corrupt-output",
+      "pass": true
+    },
+    {
+      "name": "host-invalid",
+      "pass": true
+    },
+    {
+      "name": "host-cancellation",
+      "pass": true
+    }
+  ]
+}
