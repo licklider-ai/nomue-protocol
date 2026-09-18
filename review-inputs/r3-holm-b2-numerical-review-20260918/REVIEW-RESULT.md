@@ -2,14 +2,43 @@
 
 **Status: informative independent review; non-normative; not adopted.**
 
+## 0. Correction, 2026-09-18
+
+This document originally carried a second `SHOULD-FIX` stating that the
+envelope's expected declaration and input context were reconstructed from the
+Record under check, so that its suites established internal consistency rather
+than agreement with an independently supplied target.
+
+**That finding was wrong and is withdrawn.** It was reached by reading
+`envelope.mjs:legacyTexts` without tracing its caller. `verify()` compares
+`{record_id, revision_id, declaration, inputs}` taken from the Record against a
+separately supplied `expectedText` by JCS equality, fails the `context` stage on
+any difference, and only then calls `legacyTexts`. `entry.mjs:run` reads the
+Record and the expected context from two different file paths, and the
+candidate's own `context_binding` cases mutate the Record while leaving
+`p.expected` alone and assert `context:fail` — one case re-synchronises
+`p.expected.declaration` precisely in order to get past that stage.
+
+The requirement `COUPLING.md` step 4 states, comparison "with an independently
+supplied context, including exact actual record/revision IDs", is therefore
+already implemented in candidate.3. The `submitted` evidence
+(`record.payload.result.adjusted`) is correctly the one part not covered by that
+equality, because it is what the recomputation checks.
+
+The withdrawal is recorded rather than deleted. It does not affect any other
+finding or any check result: no `C1`-`C10` outcome depended on it. Verified by
+reading `envelope.mjs`, `entry.mjs` and `test_envelope.mjs`; the envelope suite
+itself could not be executed here, for the runtime reason given in section 2.
+
 ## 1. Verdict
 
 **`GO`** for the B-2 mathematical and numerical design scope at the exact head
 recorded in [INPUTS.json](INPUTS.json).
 
 - `BLOCKER`: 0
-- `SHOULD-FIX`: 2
+- `SHOULD-FIX`: 1 (repaired; see section 5)
 - `OPTIONAL`: 2
+- withdrawn after re-verification: 1 (see section 0)
 
 The candidate's adjusted-value arithmetic reproduces Holm (1979) Scheme 1 exactly
 on the paper's own level domain, its representation and projection agree with an
@@ -19,9 +48,8 @@ preserves the displayed encoding. No defect was found in the derivation, the
 lattice arithmetic, the cap-and-scan, the inverse mapping, the tie rule or the
 refusal of the admitted domain.
 
-The two `SHOULD-FIX` items concern what the candidate's evidence can be said to
-establish, not whether its numbers are right. Both should be dispositioned before
-an adoption packet freezes the output and admission contract.
+The one surviving `SHOULD-FIX` item concerned portability of admission, not
+whether the numbers are right, and is closed by the repair recorded in section 5.
 
 This review supplies the separate-model pass that
 [PROMOTION-CONDITIONS.md](../../governance/drafts/release-3-preparation/holm-promotion-proposal-20260911/PROMOTION-CONDITIONS.md)
@@ -182,27 +210,25 @@ over swap, segment-reversal and segment-shuffle moves, seeded from the best of
 six structured starts. `C10` in the committed script runs a shorter search and
 reports what that budget of iterations finds.
 
-### SHOULD-FIX-2 — the envelope's expected context is reconstructed from the Record under check
+**Repaired, 2026-09-18.**
+[holm-b2-repair-20260918](../../governance/drafts/release-3-preparation/holm-b2-repair-20260918/README.md)
+replaces the counted runtime sort with a stable bottom-up merge sort whose merge
+schedule is fixed by the item count. Comparisons are bounded by
+`comparison_bound(n)`, which is 9217 at the admitted maximum of 1024 members and
+therefore below the previous fixed ceiling, so the guard cannot fire for an
+admissible family on any conforming Python. The repair leaves `transform`
+byte-identical to the predecessor and is checked against it over 6000 carriers,
+2385 of them malformed, with no divergence in any result or refusal reason. The
+predecessor is not modified, so the packets that pin its bytes stay valid. This
+closes the finding for the arithmetic module; wiring the successor into the
+declaration bridge remains a separate decision.
 
-`envelope.mjs:legacyTexts` builds the expected declaration from
-`record.payload.declaration`, the expected inputs from `record.payload.inputs`,
-and the submitted evidence from `record.payload.result.adjusted`. All three
-arguments to the bridge therefore originate in the Record being checked.
+### SHOULD-FIX-2 — withdrawn
 
-What the passing suites establish is that a Record's declared adjusted values are
-the exact Holm transform of that same Record's declared inputs, with the
-declaration and inputs internally consistent. That is a real and useful property.
-It is **not** agreement with an independently supplied target, and it does not
-prevent a submitter from choosing both its own target and the evidence for that
-target.
-
-This confirms rather than creates an open item: `COUPLING.md` step 4 already
-plans to compare the declaration and input context "with an independently
-supplied context, including exact actual record/revision IDs", and
-`PROMOTION-CONDITIONS.md` keeps the `independent expected-context entry` row
-open. The finding is recorded so that candidate.3's green suites are not later
-cited for a property they do not establish, and so that the adoption packet's
-wording distinguishes the two.
+Withdrawn on re-verification. See [section 0](#0-correction-2026-09-18). The
+envelope compares the Record's declaration and input context against an
+independently supplied expected context before any binding work, so the property
+this finding claimed was missing is present.
 
 ### OPTIONAL-1 — a malformed p field is detected after a full identity sort
 
@@ -258,4 +284,6 @@ if the decode, cap-and-scan, projection, tie rule, admitted domain or evidence
 comparator changes; if the family-size admission changes; if an `alpha` input,
 rejection output or significance boolean is added; if the expected-context entry
 is redesigned; or if the claimed equivalence is extended beyond `0 < alpha < 1`.
-Ordinary typo and generated-file synchronisation work does not reopen it.
+Ordinary typo and generated-file synchronisation work does not reopen it. The
+`SHOULD-FIX-1` repair is checked against this exact predecessor; adopting it in
+place of the pinned module is a separate wiring decision, not a reopen.
