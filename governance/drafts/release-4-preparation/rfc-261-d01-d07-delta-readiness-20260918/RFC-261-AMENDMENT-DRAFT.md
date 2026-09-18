@@ -15,7 +15,7 @@ later candidate decisions that were not part of that opening input:
   completed indeterminate outcomes without fabricating a recomputed point.
 
 The exact delta, preservation boundary, and selected CLI treatment are recorded in
-the reviewable package at `[COMMIT TO INSERT]/governance/drafts/release-4-preparation/rfc-261-d01-d07-delta-readiness-20260918/`.
+the [reviewed discussion input at `5996da5a7869f2b21ae8f73407c434285c9862bb`](https://github.com/licklider-ai/nomue-protocol/tree/5996da5a7869f2b21ae8f73407c434285c9862bb/governance/drafts/release-4-preparation/rfc-261-d01-d07-delta-readiness-20260918).
 
 ## Affected surfaces and compatibility
 

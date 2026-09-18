@@ -1,0 +1,390 @@
+{
+  "status": "author hosted evidence, not independent review, D1 completion or host qualification",
+  "verifier_head": "37bf9faa1b802bb41b0441e1ff23ee15374e4a60",
+  "verifier_tree": "473bd4afea08adff0fd13a5800c53dbf4e2da434",
+  "intake": "06782434150ee6ebdf026f1b694d4dc9ff8b3e96",
+  "verifier_parent": "eda3ba9354429baf936212bc68572af94a5e20f6",
+  "run_id": 35339649977,
+  "job_id": 105582390238,
+  "job_conclusion": "success",
+  "artifact_id": 10544526904,
+  "artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35339649977/artifacts/10544526904",
+  "archive": "controlled-host-37bf9fa.zip",
+  "archive_sha256": "8744625dea4705e1034976a0de57da5ccc04478cba25283fe484ae3c5ce5ebba",
+  "archive_bytes": 331427,
+  "archive_files": 256,
+  "runtime_manifest_sha256": "f2a2811eb595b633f2b55b4b221d0d51a1e888570d555b5e789397cc4d78a260",
+  "matched_input_files": 110,
+  "ordinary_calls": 58,
+  "distinct_normal_nonces": 58,
+  "original_byte_forwards": 6,
+  "passed": 85,
+  "total": 85,
+  "kernel": "6.17.0-1022-azure",
+  "architecture": "x86_64",
+  "node": "v24.19.0",
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "cases": [
+    {
+      "name": "R3D-01",
+      "pass": true
+    },
+    {
+      "name": "R3D-02",
+      "pass": true
+    },
+    {
+      "name": "R3D-03",
+      "pass": true
+    },
+    {
+      "name": "R3D-04",
+      "pass": true
+    },
+    {
+      "name": "R3D-05",
+      "pass": true
+    },
+    {
+      "name": "R3D-06",
+      "pass": true
+    },
+    {
+      "name": "R3D-07",
+      "pass": true
+    },
+    {
+      "name": "R3D-08",
+      "pass": true
+    },
+    {
+      "name": "R3D-09",
+      "pass": true
+    },
+    {
+      "name": "R3D-10",
+      "pass": true
+    },
+    {
+      "name": "R3D-11",
+      "pass": true
+    },
+    {
+      "name": "R3D-12",
+      "pass": true
+    },
+    {
+      "name": "R3D-13",
+      "pass": true
+    },
+    {
+      "name": "R3D-14",
+      "pass": true
+    },
+    {
+      "name": "R3D-15",
+      "pass": true
+    },
+    {
+      "name": "R3D-16",
+      "pass": true
+    },
+    {
+      "name": "R3D-17",
+      "pass": true
+    },
+    {
+      "name": "R3D-18",
+      "pass": true
+    },
+    {
+      "name": "R3D-20",
+      "pass": true
+    },
+    {
+      "name": "R3D-22",
+      "pass": true
+    },
+    {
+      "name": "R3D-24",
+      "pass": true
+    },
+    {
+      "name": "R3D-32",
+      "pass": true
+    },
+    {
+      "name": "R3D-34",
+      "pass": true
+    },
+    {
+      "name": "R3D-38",
+      "pass": true
+    },
+    {
+      "name": "R3D-39",
+      "pass": true
+    },
+    {
+      "name": "R3D-40",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-missing-file",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-directory",
+      "pass": true
+    },
+    {
+      "name": "R3D-20-unread",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-record_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-revision_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-unselected",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-order",
+      "pass": true
+    },
+    {
+      "name": "R3D-21",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-zero",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-subnormal-tie",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-one",
+      "pass": true
+    },
+    {
+      "name": "R3D-11-utf8",
+      "pass": true
+    },
+    {
+      "name": "R3D-10-missing",
+      "pass": true
+    },
+    {
+      "name": "R3D-09-oversized",
+      "pass": true
+    },
+    {
+      "name": "R3D-24-expected-bytes",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-raw",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-parsed",
+      "pass": true
+    },
+    {
+      "name": "R3D-42",
+      "pass": true
+    },
+    {
+      "name": "R3D-43",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-loop",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-overlong",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-maximum-family",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-canonical",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-first",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-last",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-whitespace",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-escaped-key",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-newline",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-absent",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-nested-unicode",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-number-spelling",
+      "pass": true
+    },
+    {
+      "name": "ORACLE-declared-digest",
+      "pass": true
+    },
+    {
+      "name": "fault-a-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-s-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-swap",
+      "pass": true
+    },
+    {
+      "name": "fault-duplicate",
+      "pass": true
+    },
+    {
+      "name": "fault-omit",
+      "pass": true
+    },
+    {
+      "name": "fault-error-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-notrun-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-generic-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-unrelated-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-late-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-schema-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-worker-output",
+      "pass": true
+    },
+    {
+      "name": "host-node-memory",
+      "pass": true
+    },
+    {
+      "name": "host-worker-memory",
+      "pass": true
+    },
+    {
+      "name": "host-cpu",
+      "pass": true
+    },
+    {
+      "name": "host-pids",
+      "pass": true
+    },
+    {
+      "name": "host-descendant",
+      "pass": true
+    },
+    {
+      "name": "host-stdout",
+      "pass": true
+    },
+    {
+      "name": "host-stderr",
+      "pass": true
+    },
+    {
+      "name": "host-hang",
+      "pass": true
+    },
+    {
+      "name": "host-valid-then-hang",
+      "pass": true
+    },
+    {
+      "name": "host-wrong-nonce",
+      "pass": true
+    },
+    {
+      "name": "host-corrupt-output",
+      "pass": true
+    },
+    {
+      "name": "host-invalid",
+      "pass": true
+    },
+    {
+      "name": "host-cancellation",
+      "pass": true
+    }
+  ],
+  "archive_sha256_matches_github": true,
+  "expectations_equal_after_only_input_root_path_normalization": true,
+  "all_receipts_match_unchanged_runtime_manifest": true,
+  "all_receipts_have_complete_cleanup": true,
+  "all_forwards_equal_original_input": true,
+  "fixed_reference_digest_calls": 10,
+  "fixed_reference_digests_match_reports": true,
+  "controlled_fault_entries": 14,
+  "host_controls": 13,
+  "archive_content": "Unmodified ZIP: synthetic input bytes and predetermined expectations, results and receipts. Cyclic fixture removed before upload; two unused ACCESS-loop/overlong regular files remain in the 110-file input count.",
+  "remaining": [
+    "Independent m-1 close-only and new oracle/runner review",
+    "Remaining parameterized D1 matrices",
+    "Full-call helper corruption",
+    "Actual failed setup/cleanup and supervisor-loss/external-owner evidence",
+    "D2/D3 pending"
+  ],
+  "ci_checkout": "fa146669d68b5a8ae88e5ba69962d003d3cd017b",
+  "ci_checkout_tree": "473bd4afea08adff0fd13a5800c53dbf4e2da434",
+  "checkout_note": "Synthetic PR merge tree equals fixed head; no merge into main.",
+  "all_verifier_jobs": "9/9 success"
+}

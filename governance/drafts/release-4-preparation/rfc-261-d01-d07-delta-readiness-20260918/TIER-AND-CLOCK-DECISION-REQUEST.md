@@ -1,13 +1,19 @@
 # RFC 261 D01/D07 tier and clock decision request
 
-Status: **DRAFT — no tier or clock is selected here**.
+Status: **HISTORICAL DECISION REQUEST — resolved for the amendment discussion**.
+
+The RFC 261 amendment comment selected **STABLE-INTENT**, opened the separate
+D01/D07 discussion window at `2026-09-18T01:50:49Z`, and fixed the earliest
+decision time at `2026-10-18T01:50:49Z`. That selection governs only the posted
+discussion scope. It is not formal Release 4 adoption, issuance, implementation,
+or publication approval.
 
 ## Decision to be made
 
-Before posting an RFC 261 amendment, an independent reviewer and then a steward
-must determine the highest tier affected by the exact D01/D07 delta in
-[DELTA-MAP.md](DELTA-MAP.md). The result must identify the amendment's public input,
-its opening timestamp, and its earliest decision time.
+Before posting the RFC 261 amendment, an independent reviewer and then a steward
+had to determine the highest tier affected by the exact D01/D07 delta in
+[DELTA-MAP.md](DELTA-MAP.md). The posted amendment comment records that result,
+the public input, the opening timestamp, and the earliest decision time.
 
 The existing RFC 261 date (`2026-10-09T05:59:47Z`) applies only to the unchanged
 opening input. It is neither automatically reset nor automatically extended to this

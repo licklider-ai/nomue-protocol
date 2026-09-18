@@ -1,0 +1,348 @@
+{
+  "status": "author hosted evidence; not independent review, D1 completion or host qualification",
+  "verifier_head": "eda3ba9354429baf936212bc68572af94a5e20f6",
+  "verifier_tree": "17868936e057b20e763013b9285e5363b3ea97b4",
+  "intake_commit": "21264758deac7372a00e9907883c38467ab4bd4e",
+  "verifier_parent": "5ee62cdb98dde2b32b7910560bc85d1ad54b16c8",
+  "ci_checkout": "d3730adf8f65e6ba70e445016f0ba7955ffd7e13",
+  "ci_checkout_tree": "17868936e057b20e763013b9285e5363b3ea97b4",
+  "checkout_note": "Synthetic PR merge; tree equality checked. No merge into main.",
+  "run_id": 35324192158,
+  "job_id": 105533340662,
+  "job_conclusion": "success",
+  "artifact_id": 10538821191,
+  "artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35324192158/artifacts/10538821191",
+  "archive": "controlled-host-eda3ba9.zip",
+  "archive_sha256": "ca20d25db8fd542999cf4f446e8cec29037cf1c7f24320fed975d52c37cbf80e",
+  "archive_bytes": 273257,
+  "archive_files": 216,
+  "runtime_manifest_sha256": "f2a2811eb595b633f2b55b4b221d0d51a1e888570d555b5e789397cc4d78a260",
+  "matched_input_files": 90,
+  "ordinary_calls": 48,
+  "distinct_normal_nonces": 48,
+  "original_byte_forwards": 5,
+  "passed": 75,
+  "total": 75,
+  "kernel": "6.17.0-1022-azure",
+  "architecture": "x86_64",
+  "node": "v24.19.0",
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "cases": [
+    {
+      "name": "R3D-01",
+      "pass": true
+    },
+    {
+      "name": "R3D-02",
+      "pass": true
+    },
+    {
+      "name": "R3D-03",
+      "pass": true
+    },
+    {
+      "name": "R3D-04",
+      "pass": true
+    },
+    {
+      "name": "R3D-05",
+      "pass": true
+    },
+    {
+      "name": "R3D-06",
+      "pass": true
+    },
+    {
+      "name": "R3D-07",
+      "pass": true
+    },
+    {
+      "name": "R3D-08",
+      "pass": true
+    },
+    {
+      "name": "R3D-09",
+      "pass": true
+    },
+    {
+      "name": "R3D-10",
+      "pass": true
+    },
+    {
+      "name": "R3D-11",
+      "pass": true
+    },
+    {
+      "name": "R3D-12",
+      "pass": true
+    },
+    {
+      "name": "R3D-13",
+      "pass": true
+    },
+    {
+      "name": "R3D-14",
+      "pass": true
+    },
+    {
+      "name": "R3D-15",
+      "pass": true
+    },
+    {
+      "name": "R3D-16",
+      "pass": true
+    },
+    {
+      "name": "R3D-17",
+      "pass": true
+    },
+    {
+      "name": "R3D-18",
+      "pass": true
+    },
+    {
+      "name": "R3D-20",
+      "pass": true
+    },
+    {
+      "name": "R3D-22",
+      "pass": true
+    },
+    {
+      "name": "R3D-24",
+      "pass": true
+    },
+    {
+      "name": "R3D-32",
+      "pass": true
+    },
+    {
+      "name": "R3D-34",
+      "pass": true
+    },
+    {
+      "name": "R3D-38",
+      "pass": true
+    },
+    {
+      "name": "R3D-39",
+      "pass": true
+    },
+    {
+      "name": "R3D-40",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-missing-file",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-directory",
+      "pass": true
+    },
+    {
+      "name": "R3D-20-unread",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-record_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-revision_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-unselected",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-order",
+      "pass": true
+    },
+    {
+      "name": "R3D-21",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-zero",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-subnormal-tie",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-one",
+      "pass": true
+    },
+    {
+      "name": "R3D-11-utf8",
+      "pass": true
+    },
+    {
+      "name": "R3D-10-missing",
+      "pass": true
+    },
+    {
+      "name": "R3D-09-oversized",
+      "pass": true
+    },
+    {
+      "name": "R3D-24-expected-bytes",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-raw",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-parsed",
+      "pass": true
+    },
+    {
+      "name": "R3D-42",
+      "pass": true
+    },
+    {
+      "name": "R3D-43",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-loop",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-overlong",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-maximum-family",
+      "pass": true
+    },
+    {
+      "name": "fault-a-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-s-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-swap",
+      "pass": true
+    },
+    {
+      "name": "fault-duplicate",
+      "pass": true
+    },
+    {
+      "name": "fault-omit",
+      "pass": true
+    },
+    {
+      "name": "fault-error-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-notrun-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-generic-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-unrelated-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-late-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-schema-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-worker-output",
+      "pass": true
+    },
+    {
+      "name": "host-node-memory",
+      "pass": true
+    },
+    {
+      "name": "host-worker-memory",
+      "pass": true
+    },
+    {
+      "name": "host-cpu",
+      "pass": true
+    },
+    {
+      "name": "host-pids",
+      "pass": true
+    },
+    {
+      "name": "host-descendant",
+      "pass": true
+    },
+    {
+      "name": "host-stdout",
+      "pass": true
+    },
+    {
+      "name": "host-stderr",
+      "pass": true
+    },
+    {
+      "name": "host-hang",
+      "pass": true
+    },
+    {
+      "name": "host-valid-then-hang",
+      "pass": true
+    },
+    {
+      "name": "host-wrong-nonce",
+      "pass": true
+    },
+    {
+      "name": "host-corrupt-output",
+      "pass": true
+    },
+    {
+      "name": "host-invalid",
+      "pass": true
+    },
+    {
+      "name": "host-cancellation",
+      "pass": true
+    }
+  ],
+  "archive_sha256_matches_github": true,
+  "expectations_equal_after_only_input_root_path_normalization": true,
+  "all_receipts_match_runtime_manifest": true,
+  "all_receipts_have_complete_cleanup": true,
+  "all_forwards_equal_original_input": true,
+  "controlled_fault_entries": 14,
+  "host_enforcement_lifecycle_controls": 13,
+  "maximum_family": "R3D-23-maximum-family: 16 groups, 120 comparisons, seven passes, original-byte forward",
+  "archive_content": "Unmodified ZIP, synthetic inputs and plans, output and receipt JSON; cyclic path fixture removed before upload; no runtime source or credentials.",
+  "remaining": [
+    "Independent expansion plus successor wiring review",
+    "Complete parameterized 44-locator acceptance",
+    "Helper corruption, failed cleanup and supervisor-loss evidence",
+    "D2 dispatch/legacy and D3 authority integration"
+  ],
+  "all_verifier_jobs": "9/9 success"
+}

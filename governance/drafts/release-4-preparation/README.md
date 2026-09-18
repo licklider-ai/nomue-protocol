@@ -2,12 +2,22 @@
 
 ## Current status and next work
 
-**PUBLIC_DISCUSSION_OPEN; numerical experiments integrated with review receipts;
-public implementation and support decisions remain open.** Use the
+**PUBLIC_DISCUSSION_OPEN; numerical experiments and adoption-readiness evidence
+integrated; formal adoption, implementation and support decisions remain open.** Use the
 [current R2/R3/R4 status](../RELEASE-STATUS.md) for the operative next tasks.
-The unchanged earliest decision is 2026-10-09T05:59:47Z under
+The unchanged opening proposal's earliest decision is 2026-10-09T05:59:47Z under
 [discussion #261](https://github.com/licklider-ai/nomue-protocol/issues/261) and its
 [opening receipt](public-discussion-opening-2026-09-09.md).
+
+The later [D01/D07 delta package](rfc-261-d01-d07-delta-readiness-20260918/README.md)
+is separately under discussion. Its STABLE-INTENT clock opened at
+`2026-09-18T01:50:49Z`; the unified Release 4 decision must therefore occur no
+earlier than `2026-10-18T01:50:49Z`. The package preserves the existing five-code
+CLI contract and places the D07 distinction in the detailed report.
+
+The [A1 adoption-readiness packet](r4-adoption-readiness-a1-20260917/RATIFICATION-PACKET.md)
+is closed for its reviewed candidate scope. It is decision input, not adoption or
+authority to land public surfaces.
 
 The [integrated asset record](../research-asset-integration-20260911/README.md)
 connects arithmetic, tails, source supplements, complete outputs and the
@@ -34,12 +44,6 @@ architecture invariants only. Concrete numerical semantics and reference
 parameters remain unselected; public support, reference full-invocation coverage
 and EC1-EC4 Evidence Closure remain open. This is an informative, unissued record,
 not T04 completion or retrospective approval of the historical experiments.
-
-The [T04 EC1/EC2 integration-lineage record](t04-ec1-ec2-integration-lineage-20260916/REPORT.md)
-separates the immutable historical T03 input used by the EC1/EC2 research from
-the semantics-preserving T03 integration representation on main. It replays the
-historical checker from its pinned blobs and does not promote the evidence,
-select a numerical parameter, or alter a public surface.
 
 The [T04 EC1/EC2 integration-lineage record](t04-ec1-ec2-integration-lineage-20260916/REPORT.md)
 separates the immutable historical T03 input used by the EC1/EC2 research from

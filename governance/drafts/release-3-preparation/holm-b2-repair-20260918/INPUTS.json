@@ -1,0 +1,42 @@
+{
+  "base_commit": "6502ad3f94b407253b0fe50fb3545a54138b998b",
+  "changed": ["ordered", "comparison_bound (new)"],
+  "inspected_inputs": [
+    {
+      "git_blob": "fbebc6e4c33d2de6dac3557e8f8f60548ff2dc64",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+      "sha256": "70924d2b7ac40367e9ae4abaee624dd6c0b85796a62c5445b0694f2240fac606"
+    },
+    {
+      "git_blob": "69fa6c33e6d34ccb890ac0d6268c79474df22213",
+      "path": "governance/drafts/release-3-preparation/holm-experiment-20260911/oracle.py",
+      "sha256": "c136af873eee3d29fa4c9a8746879e8ca0f125db2afd3bf32daabcfb8d7a6390"
+    },
+    {
+      "git_blob": "6c7ef2fdbbbd1019f136cb28c601c3b5a91a1c4c",
+      "path": "governance/drafts/release-3-preparation/holm-candidate-design-20260911/DESIGN.md",
+      "sha256": "1cf388c69a1458a7d1656e56cf37948391f3c3267d40ecd08e3f4a5aad0fe553"
+    },
+    {
+      "git_blob": "29714a1cc55b65588d4a73bc26aacc935465d503",
+      "path": "review-inputs/r3-holm-b2-numerical-review-20260918/REVIEW-RESULT.md",
+      "sha256": "abdce54b2fde174480d21e3539396a6060c90c3b7f5faf149cd2ff4553bd8be1"
+    }
+  ],
+  "note": "The predecessor is imported read-only by the tests and is not modified. Every packet that pins its bytes stays valid.",
+  "packet": "holm-b2-repair-20260918",
+  "predecessor": "governance/drafts/release-3-preparation/holm-experiment-20260911/candidate.py",
+  "scope": "Repair of the B-2 review SHOULD-FIX-1 comparison-guard finding",
+  "unchanged": [
+    "decode",
+    "project",
+    "transform",
+    "identical",
+    "evidence_view",
+    "check_evidence",
+    "admitted domain",
+    "refusal order",
+    "LIMIT",
+    "ALPHABET"
+  ]
+}

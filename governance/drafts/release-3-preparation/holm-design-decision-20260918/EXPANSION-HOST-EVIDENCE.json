@@ -1,0 +1,352 @@
+{
+  "status": "author hosted evidence; not independent review, D1 completion or host qualification",
+  "verifier_head": "5ee62cdb98dde2b32b7910560bc85d1ad54b16c8",
+  "verifier_parent": "3c51172a66d2c13ebec99e2dbe7c4ab892888af9",
+  "verifier_tree": "2e7fa03210abac459b10ef781e194a68f64592c1",
+  "ci_checkout": "e899187c53ecfb753be3206b910c2acee3471009",
+  "ci_checkout_tree": "2e7fa03210abac459b10ef781e194a68f64592c1",
+  "checkout_note": "Synthetic PR merge checkout; tree equality verified. No merge into main.",
+  "run_id": 35321867056,
+  "job_id": 105525931226,
+  "job_conclusion": "success",
+  "all_verifier_jobs": "9/9 success",
+  "artifact_id": 10537741689,
+  "artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35321867056/artifacts/10537741689",
+  "archive": "controlled-host-5ee62cd.zip",
+  "archive_sha256": "400160b5807194a8610a5e517cbc28559c25eac353fa65be8e6551d4bd0fdc3c",
+  "archive_bytes": 248473,
+  "archive_files": 212,
+  "runtime_manifest_sha256": "916f57d17cd445128b067dbf52cd70a71b14e34313de56591cea0e9469631886",
+  "archive_content": "Unmodified ZIP; synthetic input bytes, predetermined plans, output and receipt JSON. Cyclic path fixture removed before upload; path_setup remains in cases.json. No runtime source or credentials.",
+  "environment": {
+    "architecture": "x86_64",
+    "kernel": "6.17.0-1022-azure",
+    "node": "v24.19.0",
+    "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]"
+  },
+  "checks": {
+    "pass": 74,
+    "total": 74,
+    "ordinary_calls": 47,
+    "controlled_fault_entries": 14,
+    "host_enforcement_lifecycle_controls": 13,
+    "archive_sha256_matches_github": true,
+    "matched_input_files": 88,
+    "expectations_equal_after_only_input_root_path_normalization": true,
+    "all_receipts_match_runtime_manifest": true,
+    "all_receipts_have_complete_cleanup": true,
+    "distinct_normal_nonces": 47,
+    "original_byte_forwards": 4,
+    "all_forwarded_bytes_equal_original_archived_input": true,
+    "m2_record_loop_and_overlong": "input_access_error",
+    "m3_expected_argument_absent": "C error expected_missing",
+    "missing_file_variant": "C error expected_unreadable",
+    "all_fault_entries": "refusal only; no proposed Record bytes; explicit non-null probe provenance"
+  },
+  "cases": [
+    {
+      "name": "R3D-01",
+      "pass": true
+    },
+    {
+      "name": "R3D-02",
+      "pass": true
+    },
+    {
+      "name": "R3D-03",
+      "pass": true
+    },
+    {
+      "name": "R3D-04",
+      "pass": true
+    },
+    {
+      "name": "R3D-05",
+      "pass": true
+    },
+    {
+      "name": "R3D-06",
+      "pass": true
+    },
+    {
+      "name": "R3D-07",
+      "pass": true
+    },
+    {
+      "name": "R3D-08",
+      "pass": true
+    },
+    {
+      "name": "R3D-09",
+      "pass": true
+    },
+    {
+      "name": "R3D-10",
+      "pass": true
+    },
+    {
+      "name": "R3D-11",
+      "pass": true
+    },
+    {
+      "name": "R3D-12",
+      "pass": true
+    },
+    {
+      "name": "R3D-13",
+      "pass": true
+    },
+    {
+      "name": "R3D-14",
+      "pass": true
+    },
+    {
+      "name": "R3D-15",
+      "pass": true
+    },
+    {
+      "name": "R3D-16",
+      "pass": true
+    },
+    {
+      "name": "R3D-17",
+      "pass": true
+    },
+    {
+      "name": "R3D-18",
+      "pass": true
+    },
+    {
+      "name": "R3D-20",
+      "pass": true
+    },
+    {
+      "name": "R3D-22",
+      "pass": true
+    },
+    {
+      "name": "R3D-24",
+      "pass": true
+    },
+    {
+      "name": "R3D-32",
+      "pass": true
+    },
+    {
+      "name": "R3D-34",
+      "pass": true
+    },
+    {
+      "name": "R3D-38",
+      "pass": true
+    },
+    {
+      "name": "R3D-39",
+      "pass": true
+    },
+    {
+      "name": "R3D-40",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-missing-file",
+      "pass": true
+    },
+    {
+      "name": "R3D-17-directory",
+      "pass": true
+    },
+    {
+      "name": "R3D-20-unread",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-record_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-40-revision_id",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-unselected",
+      "pass": true
+    },
+    {
+      "name": "R3D-19-order",
+      "pass": true
+    },
+    {
+      "name": "R3D-21",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-zero",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-subnormal-tie",
+      "pass": true
+    },
+    {
+      "name": "R3D-23-one",
+      "pass": true
+    },
+    {
+      "name": "R3D-11-utf8",
+      "pass": true
+    },
+    {
+      "name": "R3D-10-missing",
+      "pass": true
+    },
+    {
+      "name": "R3D-09-oversized",
+      "pass": true
+    },
+    {
+      "name": "R3D-24-expected-bytes",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-raw",
+      "pass": true
+    },
+    {
+      "name": "R3D-37-parsed",
+      "pass": true
+    },
+    {
+      "name": "R3D-42",
+      "pass": true
+    },
+    {
+      "name": "R3D-43",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-loop",
+      "pass": true
+    },
+    {
+      "name": "ACCESS-overlong",
+      "pass": true
+    },
+    {
+      "name": "fault-a-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-s-pass",
+      "pass": true
+    },
+    {
+      "name": "fault-swap",
+      "pass": true
+    },
+    {
+      "name": "fault-duplicate",
+      "pass": true
+    },
+    {
+      "name": "fault-omit",
+      "pass": true
+    },
+    {
+      "name": "fault-error-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-notrun-outcome",
+      "pass": true
+    },
+    {
+      "name": "fault-generic-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-unrelated-blocker",
+      "pass": true
+    },
+    {
+      "name": "fault-missing-reason",
+      "pass": true
+    },
+    {
+      "name": "fault-late-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-schema-budget",
+      "pass": true
+    },
+    {
+      "name": "fault-worker-output",
+      "pass": true
+    },
+    {
+      "name": "host-node-memory",
+      "pass": true
+    },
+    {
+      "name": "host-worker-memory",
+      "pass": true
+    },
+    {
+      "name": "host-cpu",
+      "pass": true
+    },
+    {
+      "name": "host-pids",
+      "pass": true
+    },
+    {
+      "name": "host-descendant",
+      "pass": true
+    },
+    {
+      "name": "host-stdout",
+      "pass": true
+    },
+    {
+      "name": "host-stderr",
+      "pass": true
+    },
+    {
+      "name": "host-hang",
+      "pass": true
+    },
+    {
+      "name": "host-valid-then-hang",
+      "pass": true
+    },
+    {
+      "name": "host-wrong-nonce",
+      "pass": true
+    },
+    {
+      "name": "host-corrupt-output",
+      "pass": true
+    },
+    {
+      "name": "host-invalid",
+      "pass": true
+    },
+    {
+      "name": "host-cancellation",
+      "pass": true
+    }
+  ],
+  "remaining": [
+    "Independent changed-scope review and m-2/m-3 closure",
+    "Full parameterized 44-locator acceptance, including raw-byte and rounding oracles",
+    "Actual cleanup/setup failure and supervisor-loss external-owner evidence",
+    "Full-path projection/digest helper corruption",
+    "D2 dispatcher and legacy expected argument behavior",
+    "D3 schema/reason/authority integration"
+  ]
+}

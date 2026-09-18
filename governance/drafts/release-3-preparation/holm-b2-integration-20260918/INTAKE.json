@@ -1,0 +1,81 @@
+{
+  "status": "contributor intake; bounded review reuse, not adoption or independent repair clearance",
+  "source_commit": "7ac803a1b9fa71a5a0064a0e81d02b9321cf86d9",
+  "initial_review_commit": "6502ad3f94b407253b0fe50fb3545a54138b998b",
+  "intake_commit": "21264758deac7372a00e9907883c38467ab4bd4e",
+  "assets": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/INPUTS.json",
+      "git_blob": "eee418bb006b0571b6c51d294ace73842e841575",
+      "sha256": "24ea249aa2ae304b11a27fae4130ab8503c59a8bee265e0fe3480f90e7f4228f",
+      "bytes": 1691
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/README.md",
+      "git_blob": "f43885c70f2968fac3f4fbb0d6c40616580b132e",
+      "sha256": "b4e4bc06c900f12ffdc7114450c34d1ddbe8146a3a8fc20a8e822afa3b53c678",
+      "bytes": 4508
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/RESULTS.json",
+      "git_blob": "e4802b3f2d96d74276e05d6db659b43d732af447",
+      "sha256": "7eeb3725adca06f99e75997d275e67e6f84f434ccd813c5de804b2443491db45",
+      "bytes": 1858
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/candidate.py",
+      "git_blob": "a10a57c89caefee5c370a7a1e882009b13d08982",
+      "sha256": "a1b0bf801096fa35ce7ac159193ecfae7f66373cb51b69f6caf9728cc935a694",
+      "bytes": 6623
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-b2-repair-20260918/test_repair.py",
+      "git_blob": "21fbc299a6905735abf043c2f0753cb1b66d081b",
+      "sha256": "225ddf129a25d5a5fe2e7fe37e94885318ca7ebcb3ac5c48001cd6e0040e5153",
+      "bytes": 8311
+    },
+    {
+      "path": "review-inputs/r3-holm-b2-numerical-review-20260918/INPUTS.json",
+      "git_blob": "64b7ae0fcea5f819cde91956eeea762aa480fd07",
+      "sha256": "44eb724dd7ef9286acd3713b196c748ed64bfe77278c726b8874412611bd0525",
+      "bytes": 3711
+    },
+    {
+      "path": "review-inputs/r3-holm-b2-numerical-review-20260918/RESULTS.json",
+      "git_blob": "f9649ace46fda4653a2786052feab34de48424ac",
+      "sha256": "748cd7e352aee2ef395a38505f6bc5feae473afbd199d591e0127fd87c6d1475",
+      "bytes": 2749
+    },
+    {
+      "path": "review-inputs/r3-holm-b2-numerical-review-20260918/REVIEW-RESULT.md",
+      "git_blob": "a294c3e1c297563416b79c1e99aca7e940763436",
+      "sha256": "85b9747c2093fc9fa193f19c6d5c4701d13ff55e793cecde4ed40d79b28ff236",
+      "bytes": 21086
+    },
+    {
+      "path": "review-inputs/r3-holm-b2-numerical-review-20260918/independent_checks.py",
+      "git_blob": "ba74efbf25bd25236540ca2e29fa3c57c40f31e9",
+      "sha256": "df61ffc3031c2decdcc54f625a77ce66704b211c3de1209e8dced3d2a430aaf0",
+      "bytes": 13101
+    }
+  ],
+  "licensed_source": {
+    "citation": "Holm, S. (1979). A Simple Sequentially Rejective Multiple Test Procedure. Scandinavian Journal of Statistics 6(2), 65-70.",
+    "sha256": "43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af",
+    "pages": 7,
+    "bytes": 2270343,
+    "redistributed": false
+  },
+  "verifier": {
+    "verifier_head": "eda3ba9354429baf936212bc68572af94a5e20f6",
+    "verifier_tree": "17868936e057b20e763013b9285e5363b3ea97b4",
+    "intake_commit": "21264758deac7372a00e9907883c38467ab4bd4e"
+  },
+  "dispositions": {
+    "B2": "retain bounded numerical/source GO",
+    "SHOULD-FIX-1": "repair author-validated and wired; independent successor wiring review open",
+    "SHOULD-FIX-2": "withdrawn by original reviewer; no defect remains",
+    "OPTIONAL-1": "preserve refusal priority",
+    "OPTIONAL-2": "Holm refuses negative zero; R4 zero projection statement is R4-specific"
+  }
+}

@@ -1,7 +1,8 @@
 # Release 3 Public-Review Preparation
 
-**Current status: public discussion open; first Holm implementation round saved
-and repaired through PR #328; no formal adoption.** See the
+**Current status (2026-09-18): public discussion open; candidate.4 and adoption
+preparation are preserved in open PR #330; D0 output-design review is complete
+and permits D1 unissued implementation; no formal adoption.** See the
 [current R2/R3/R4 status and next tasks](../RELEASE-STATUS.md).
 
 Discussion [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) opened
@@ -10,18 +11,47 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 
 Use these active entry points:
 
+The owner-requested [merge self-review](holm-d1-oracles-20260918/MERGE-SELF-REVIEW.md)
+records adversarial checks and documentation repairs for PRs #20/#355. This is
+a continuing-author self-review, not independent clearance or R3 adoption.
+
+- [D1 byte-oracle continuation](holm-d1-oracles-20260918/README.md): independent
+  review accepted through `eda3ba9`; its one MINOR is author-repaired. The next
+  fixed target adds independent byte/digest targets and component bound matrices.
+  D1 remains open; this is the current implementation handoff.
+
+- [B-2 numerical/source intake and successor wiring](holm-b2-integration-20260918/README.md):
+  bounded GO, preserved withdrawal and stable-sort repair; Verifier `eda3ba9`
+  adds a 120-comparison full-call target and author replay. The 75-check hosted
+  suite passes; the later independent receipt accepts expansion/wiring through
+  that head. Full D1 evidence remains open.
+
+- [Output-design decision preparation](holm-design-decision-20260918/README.md):
+  Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
+  and retained review/repair/confirmation records. D0 GO; not a tested successor.
+- [D1 component checkpoint](https://github.com/licklider-ai/nomue-verifier/pull/20):
+  byte/dependency, local-check, inner-call and controlled-call checkpoints received
+  GO_FOR_D1_CONTINUATION. The subsequent B-2 integration receipt independently
+  closes the controlled-call path-error and omitted-argument findings through
+  `eda3ba9`. The current oracle checkpoint follows that receipt; all 44 locator
+  rows and full D1 completion remain open. See the
+  [receipt and continuation](holm-design-decision-20260918/D0-COMPLETION.md).
+- [Fixed PR #330 preparation](https://github.com/licklider-ai/nomue-protocol/tree/b52389fd3efc6b8968613f59f147a578d5bbb55d/governance/drafts/release-3-preparation/holm-adoption-preparation-20260912):
+  candidate.4, claim applicability, concrete Contract/coupling proposals and
+  conditional changed-surface review. Not yet integrated into main.
 - [Holm candidate.3](holm-repaired-candidate-20260911/README.md): declaration,
-  arithmetic, output binding and controlled-execution implementation.
+  arithmetic, output binding and controlled-execution implementation on main.
 - [Repaired adoption map](holm-adoption-map-repair-20260911/README.md): exact
   field ownership, executed test references and conservative source closure.
 - [Review repairs](r3-review-repair-20260911/README.md) and
   [additional findings / actual CI evidence](r3-followup-review-20260911/README.md):
   recorded dispositions, human-review clarification and remaining evidence limits.
 
-Next is the bounded Holm adoption-preparation packet: connect final claims to
-covered reviews, explicitly dispose remaining B-2 applicability, settle the
-formal output/input-size and authority allocations, and assess RFC impact. This
-is not another broad source search or automatic approval of all fifteen methods.
+Next is a tested unissued successor in nomue-verifier, followed by complete conformance/dispatcher/output-protocol
+integration. Reuse PR #330's bounded numerical/source applicability; do not redo
+its preparation merely because its open branch is absent from main. Formal
+authority and RFC dispositions remain separate. This is not another broad source
+search or automatic approval of all fifteen methods.
 
 Historical candidate.1, candidate.2, maps and exact review packets remain available
 at their original paths and commits. The earlier research and pre-opening account
