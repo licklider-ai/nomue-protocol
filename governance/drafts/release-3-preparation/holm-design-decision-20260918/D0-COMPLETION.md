@@ -241,6 +241,34 @@ supervisor-loss/external-owner evidence remain. D2 still owns final dispatcher a
 legacy expected-argument behavior; D3 owns normative/schema/authority integration.
 The next decision is independent review of this bounded delta, not D1 completion.
 
+## B-2 source review intake and numerical successor
+
+The [B-2 intake packet](../holm-b2-integration-20260918/README.md) preserves all nine
+review/withdrawal/repair files from `7ac803a` in intake `21264758deac7372a00e9907883c38467ab4bd4e`.
+B-2 numerical/source GO is retained within its stated claim; SHOULD-FIX-2 is
+withdrawn. The reviewer-authored stable merge-sort repair resolves runtime-sort
+admission dependence and is now wired in Verifier head `eda3ba9354429baf936212bc68572af94a5e20f6`,
+tree `17868936e057b20e763013b9285e5363b3ea97b4`, parent `5ee62cd`, same base `940b8fb`.
+The original numerical/worker/oracle evidence remains preserved in Protocol;
+only the unissued Verifier source/pins advance.
+
+Author replay matches all retained C1-C9 expectations and the 13088-check repair
+suite. All 1024 size bounds and 46233 small permutations pass. Local 91 TypeScript
+tests, strict typecheck, npm/package checks, worker and supervisor tests pass.
+A new maximum-family case fixes 120 least-subnormal inputs and literal adjusted
+numerator 120. [Hosted evidence](../holm-b2-integration-20260918/HOST-EVIDENCE.json)
+records 75/75 passes, 90 byte-matched input files, 48 distinct normal nonces and
+five original-byte forwards, including the maximum-family case. The original
+216-file ZIP is preserved with SHA-256
+`ca20d25db8fd542999cf4f446e8cec29037cf1c7f24320fed975d52c37cbf80e`.
+
+The current implementation handoff requests independent review against `3c51172`,
+including the preceding expansion: neither the author's replay nor the reviewer's
+own repair is a new independent clearance. D1's 44-locator matrix remains partial;
+D2/D3 and other Research Gate/promotion rows remain open. The intake also corrects
+the erroneous unpublished-R1 premise: R1 was published on August 24, its historical
+integrity check passes, and no signed artifact or gate is reset.
+
 ## Continuing engineering boundary
 
 Develop in the public nomue-verifier repository, outside its npm runtime and

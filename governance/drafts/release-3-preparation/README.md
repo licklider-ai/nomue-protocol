@@ -11,6 +11,11 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 
 Use these active entry points:
 
+- [B-2 numerical/source intake and successor wiring](holm-b2-integration-20260918/README.md):
+  bounded GO, preserved withdrawal and stable-sort repair; Verifier `eda3ba9`
+  adds a 120-comparison full-call target and author replay. The 75-check hosted
+  suite passes; independent expansion/wiring review and D1 completion remain open.
+
 - [Output-design decision preparation](holm-design-decision-20260918/README.md):
   Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
   and retained review/repair/confirmation records. D0 GO; not a tested successor.

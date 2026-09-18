@@ -83,6 +83,16 @@ See the [receipts and fixed handoff](release-3-preparation/holm-design-decision-
 D1's expanded 44-case evidence and D2/D3 remain open. A tested development path
 is not host qualification, adopted support or release permission.
 
+The later [B-2 intake](release-3-preparation/holm-b2-integration-20260918/README.md)
+retains bounded numerical/source GO and the reviewer's SHOULD-FIX-2 withdrawal.
+Verifier `eda3ba9` wires the separately preserved stable-sort repair, replays the
+independent expectations and adds a maximum 120-member full-call target. Its
+actual-host suite passes 75/75 (48 ordinary, 14 fault entries, 13 host controls).
+The repair was reviewer-authored; author reruns do not independently clear it.
+Review the expansion plus this delta against `3c51172` before dependent promotion.
+R1 is already published; its preserved-history audit passes and no R1 refreeze
+or resigning is needed for this R3 continuation.
+
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),
 and [follow-up repair and exact CI evidence](release-3-preparation/r3-followup-review-20260911/README.md).
