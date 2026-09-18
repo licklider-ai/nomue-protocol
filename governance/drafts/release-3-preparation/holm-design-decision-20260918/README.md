@@ -1,7 +1,11 @@
 # Holm output-design decision preparation
 
-Date: 2026-09-18 UTC. Informative, unissued, and **pending independent design
-review**. This is a continuation of PR #330, not a replacement implementation or
+Date: 2026-09-18 UTC. Informative, unissued, and **pending independent
+close-only review after repair**. The initial independent verdict was
+REPAIR_REQUIRED (2 MAJOR, 4 MINOR); see the
+[unaltered review](../../../../review-inputs/r3-holm-design-decision-20260918/REVIEW-RESULT.md)
+and [repair disposition / close-only handoff](REPAIR-DISPOSITION.md).
+This is a continuation of PR #330, not a replacement implementation or
 a formal Release 3 decision packet. No candidate, registry, RFC, support flag,
 research disposition or public snapshot is changed.
 
@@ -16,12 +20,13 @@ formal steward adoption record.
 
 1. [Design dispositions](DESIGN.md) turn the three recorded questions into an
    explicit proposed dependency policy and report/refusal boundary.
-2. [Acceptance matrix](ACCEPTANCE.md) specifies 36 required cases, not executed
+2. [Acceptance matrix](ACCEPTANCE.md) specifies 44 required cases, not executed
    test evidence or registered conformance fixtures.
 3. [Landing and milestones](LANDING.md) separates successor engineering,
    shared-verifier integration, authoritative coupling and adoption.
-4. [Independent review commission](REVIEW-COMMISSION.md) fixes the review scope,
-   failure questions and return format before dependent implementation begins.
+4. [Original independent review commission](REVIEW-COMMISSION.md) preserves the
+   initial 36-case review scope. The repair handoff narrows the next review to
+   changed text, including eight added cases, before dependent implementation.
 
 The constant schema-admission row becomes a genuine versioned schema result in
 the proposed successor. Its exact wire representation and the added storage

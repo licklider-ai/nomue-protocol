@@ -65,8 +65,9 @@ from main.
 The [design continuation](release-3-preparation/holm-design-decision-20260918/README.md)
 proposes Record-local results independent of caller mismatch, faithful failure
 reports versus invocation refusals, and genuine versioned schema/storage results.
-It supplies 36 planned cases and a fixed-scope review commission, not a tested
-successor or formal steward disposition.
+It supplies 44 planned cases, the initial REPAIR_REQUIRED review and a repair
+disposition awaiting close-only review, not a tested successor or formal steward
+disposition.
 
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),

@@ -12,8 +12,8 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 Use these active entry points:
 
 - [Output-design decision preparation](holm-design-decision-20260918/README.md):
-  Q1-Q3 proposed dispositions, 36 planned acceptance cases, staged integration
-  and an independent design-review commission. Not a tested successor.
+  Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
+  and retained review/repair records. Close-only review pending; not a tested successor.
 - [Fixed PR #330 preparation](https://github.com/licklider-ai/nomue-protocol/tree/b52389fd3efc6b8968613f59f147a578d5bbb55d/governance/drafts/release-3-preparation/holm-adoption-preparation-20260912):
   candidate.4, claim applicability, concrete Contract/coupling proposals and
   conditional changed-surface review. Not yet integrated into main.
