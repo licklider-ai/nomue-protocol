@@ -19,6 +19,11 @@ The [A1 adoption-readiness packet](r4-adoption-readiness-a1-20260917/RATIFICATIO
 is closed for its reviewed candidate scope. It is decision input, not adoption or
 authority to land public surfaces.
 
+The [formal decision packet](../release-4-formal-decision-packet-20260918/README.md)
+assembles A1, the original RFC input, and the D01/D07 amendment for exact-target
+independent review. A unified steward decision remains time-gated until
+`2026-10-18T01:50:49Z`; the packet does not itself adopt or issue anything.
+
 The [integrated asset record](../research-asset-integration-20260911/README.md)
 connects arithmetic, tails, source supplements, complete outputs and the
 [submitted-evidence consumer](tail-evidence-experiment-20260911/REPORT.md).

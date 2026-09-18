@@ -9,11 +9,11 @@ checkpoints and review requests describe their own dates, not the latest state.
 
 ## At a glance
 
-| Release                            | Current bounded milestone                                                                                 | Next substantive work                                                                                | Formal state                                                                  |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed                           | Prepare exact final decision and coordinated authoritative change candidates                         | Public review open; unissued                                                  |
-| R3 independent-group programme     | Candidate.4 saved in open PR #330; D0 design review complete at PR #355 head 1eb6b93                      | Implement/test the D1 unissued successor in nomue-verifier, then complete integrated output protocol | Public discussion open; no adopted Holm support or whole-programme completion |
-| R4 balanced 2-by-2 factorial scope | Arithmetic, tails, complete-output and submitted-evidence experiments are integrated with review receipts | Prepare supported-domain/output policy and the public implementation connection                      | Public discussion open; numerical support not established                     |
+| Release                            | Current bounded milestone                                                            | Next substantive work                                                                                                | Formal state                                                                  |
+| ---------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed      | Prepare exact final decision and coordinated authoritative change candidates                                         | Public review open; unissued                                                  |
+| R3 independent-group programme     | Candidate.4 saved in open PR #330; D0 design review complete at PR #355 head 1eb6b93 | Implement/test the D1 unissued successor in nomue-verifier, then complete integrated output protocol                 | Public discussion open; no adopted Holm support or whole-programme completion |
+| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open  | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing | Public discussion open; unissued and unsupported                              |
 
 ## R5: public discussion open
 
@@ -128,7 +128,26 @@ dispositions and other fourteen R3 candidates remain in the programme. They do
 not all have to complete before this bounded capability can advance. Naik/MTO-02
 source follow-up and R4 completion are not dependencies of this slice.
 
-## R4: experiments integrated, public implementation remains
+## R4: candidate decision packet prepared; formal decision time-gated
+
+T01-T14 and the [A1 adoption-readiness packet](release-4-preparation/r4-adoption-readiness-a1-20260917/RATIFICATION-PACKET.md)
+close the reviewed unissued candidate to the R2-equivalent decision-input
+benchmark. The A1 close-only review records A1-01, BR-02 and BR-03 as closed. This
+does not adopt Release 4 or establish Public support.
+
+The later [D01/D07 amendment package](release-4-preparation/rfc-261-d01-d07-delta-readiness-20260918/README.md)
+is fixed at `5996da5a7869f2b21ae8f73407c434285c9862bb`. Its STABLE-INTENT
+window opened at `2026-09-18T01:50:49Z`; a unified decision is therefore no
+earlier than `2026-10-18T01:50:49Z`. D07 retains the existing five-code CLI
+contract and places its distinction in the detailed report.
+
+Next, submit the [formal decision packet](release-4-formal-decision-packet-20260918/README.md)
+for exact-target independent review. After repairs and the controlling window,
+record the steward dispositions before preparing the authoritative Protocol and
+shared-verifier landing. Implementation, compatibility, freeze and publication
+remain subsequent evidence gates.
+
+### Preserved experiment history
 
 The [integration audit](research-asset-integration-20260911/README.md) preserves
 the arithmetic/tail chain, bounded primary-method and IEEE supplement, composition,
@@ -141,7 +160,10 @@ confirms safe experimental preservation, not supported behavior or whole-gate cl
 The experiment round can remain parked; its observed tests are not a portable
 runtime or mathematical-truth guarantee for every future public implementation.
 
-Next bounded task:
+The older bounded-task list below describes the work that led to T01-T14 and A1;
+it is retained as history, not as an instruction to repeat closed work.
+
+Next historical bounded task:
 
 1. Produce the final integrated output/representation and admission proposal,
    connecting the existing reviews to the exact adapter/wrapper/consumer scope.
@@ -160,11 +182,12 @@ designs remain excluded. This slice has no Release 3 calendar prerequisite.
 
 ## Public windows and operational cleanup
 
-| Release | Discussion                                                        | Earliest unchanged-scope decision, UTC | Japan time          |
-| ------- | ----------------------------------------------------------------- | -------------------------------------- | ------------------- |
-| R2      | [#25](https://github.com/licklider-ai/nomue-protocol/issues/25)   | 2026-09-25 20:52:54                    | 2026-09-26 05:52:54 |
-| R3      | [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) | 2026-10-09 11:50:18                    | 2026-10-09 20:50:18 |
-| R4      | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-09 05:59:47                    | 2026-10-09 14:59:47 |
+| Release              | Discussion                                                        | Earliest unchanged-scope decision, UTC | Japan time          |
+| -------------------- | ----------------------------------------------------------------- | -------------------------------------- | ------------------- |
+| R2                   | [#25](https://github.com/licklider-ai/nomue-protocol/issues/25)   | 2026-09-25 20:52:54                    | 2026-09-26 05:52:54 |
+| R3                   | [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) | 2026-10-09 11:50:18                    | 2026-10-09 20:50:18 |
+| R4 opening           | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-09 05:59:47                    | 2026-10-09 14:59:47 |
+| R4 D01/D07 amendment | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-18 01:50:49                    | 2026-10-18 10:50:49 |
 
 These are earliest consideration times, not automatic adoption dates. Source
 scope decisions already made are not reopened by this cleanup. Material changes
