@@ -1,17 +1,19 @@
 # Release 2, 3, 4 and 5 coordination status
 
-R5 opening added 2026-09-17 UTC; R2–R4 summaries retain their 2026-09-11 snapshot after PR #328; informative coordination only. This page
+R3 reconciled 2026-09-18 UTC; R5 opening added 2026-09-17 UTC. R2/R4 summaries
+retain their 2026-09-11 snapshot after PR #328 and are not a fresh status audit.
+Informative coordination only. This page
 summarizes recorded work and directs the next task. It does not replace the RFC,
 Research Gate, authoritative registries or a steward decision. Older fixed
 checkpoints and review requests describe their own dates, not the latest state.
 
 ## At a glance
 
-| Release                            | Current bounded milestone                                                                                     | Next substantive work                                                                                     | Formal state                                                                  |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed                               | Prepare exact final decision and coordinated authoritative change candidates                              | Public review open; unissued                                                  |
-| R3 independent-group programme     | First supplied-p Holm candidate.3 implementation and reported repairs are complete for this development round | Connect final candidate claims to accepted reviews and close the remaining adoption-preparation decisions | Public discussion open; no adopted Holm support or whole-programme completion |
-| R4 balanced 2-by-2 factorial scope | Arithmetic, tails, complete-output and submitted-evidence experiments are integrated with review receipts     | Prepare supported-domain/output policy and the public implementation connection                           | Public discussion open; numerical support not established                     |
+| Release                            | Current bounded milestone                                                                                 | Next substantive work                                                                                | Formal state                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed                           | Prepare exact final decision and coordinated authoritative change candidates                         | Public review open; unissued                                                  |
+| R3 independent-group programme     | Candidate.4 and adoption proposals saved in open PR #330; output-design continuation prepared             | Review Q1-Q3 dispositions, then implement/test the unissued successor and integrated output protocol | Public discussion open; no adopted Holm support or whole-programme completion |
+| R4 balanced 2-by-2 factorial scope | Arithmetic, tails, complete-output and submitted-evidence experiments are integrated with review receipts | Prepare supported-domain/output policy and the public implementation connection                      | Public discussion open; numerical support not established                     |
 
 ## R5: public discussion open
 
@@ -50,7 +52,21 @@ It does not newly attest the entire codebase or make the final numerical selecti
 Current candidate support evidence covers one exact Node/Linux/x64 tuple; the
 multi-platform repository CI is not a claim of broad paired-t runtime support.
 
-## R3: first Holm implementation round at a stopping point
+## R3: output-design checkpoint before successor integration
+
+The main-only candidate.3 account below is historical implementation context.
+[PR #330](https://github.com/licklider-ai/nomue-protocol/pull/330), fixed at
+`b52389fd3efc6b8968613f59f147a578d5bbb55d`, already preserves candidate.4,
+claim applicability, a concrete Contract proposal and coupling previews.
+Its conditional changed-surface review is not adoption or complete M4 closure.
+The branch is open/unmerged; its work is not missing merely because it is absent
+from main.
+
+The [design continuation](release-3-preparation/holm-design-decision-20260918/README.md)
+proposes Record-local results independent of caller mismatch, faithful failure
+reports versus invocation refusals, and genuine versioned schema/storage results.
+It supplies 36 planned cases and a fixed-scope review commission, not a tested
+successor or formal steward disposition.
 
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),
@@ -62,15 +78,13 @@ no new implementation repair is required merely to reconcile its status.
 
 Next bounded task:
 
-1. Prepare a claim-to-review applicability disposition for the exact final
-   candidate, including B-2. Reflect the user's joint human/Claude review of
-   #318–#325 and obtain only actually missing bounded evidence.
-2. Resolve the formal output and input-size reporting contract, selected execution
-   boundary, Requirement ownership, identifiers, schemas, check/bundle/reason
-   allocations and conformance expectations in one unissued adoption proposal.
-3. Assess the exact delta against the open RFC, including output/guarantee,
-   compatibility and stability-tier impact; no automatic window exemption is
-   assumed. Prepare the later coordinated authoritative change and release gates.
+1. Obtain independent review of the Q1-Q3 design continuation, preserving the
+   prior numerical/source evidence within its exact claim and byte scope.
+2. Implement and test the unissued successor; complete conformance/dispatcher/
+   output-protocol joins through the shared-verifier source and pinned consumer.
+3. Assemble the full authoritative overlay and exact RFC/tier/window impact
+   disposition, then the formal decision inputs. Neither candidate.4 review nor
+   this design packet closes those substantive engineering and governance steps.
 
 The first capability is ordinary unweighted Holm over supplied p-values with
 D0 declarations: arithmetic and identity consistency, not scientific validity
@@ -125,6 +139,6 @@ The [PR cleanup ledger](release-status-cleanup-20260911/README.md) distinguishes
 44 integrated heads, seven preserved/superseded predecessors and one obsolete
 unactivated tooling proposal. Old delivery PRs are not missing implementation.
 Their closure does not delete branches or close the three RFC discussions.
-The recommended next substantive work is R3's bounded Holm adoption-preparation
-packet, while R2 decision preparation and R4 public-implementation work remain
-separate. This status update itself does not perform those next tasks.
+For the reconciled R3 scope, the next checkpoint is the bounded Holm output-design
+review, followed by successor implementation and complete integration. This page
+does not update the historical R2/R4 next-task assessments or perform adoption.
