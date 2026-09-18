@@ -18,7 +18,7 @@ review of this packet, and every disposition in the decision ledger.
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RFC 261 opening              | Issue #261; proposal commit `21453d82109106e9e811571383228dcef8f60fac`; candidate blob `807e4bf0c22e5270b8fc15824329d04b5c37b146`; opened `2026-09-09T05:59:47Z` |
 | Closed candidate             | T03-T14 and frozen target `88a5f488db8a777c691afbf85282f9be99fb00d4`; candidate source `c62ba0f4ffe0e7a1992968f84adc81bd4546b217`                                |
-| A1 adoption-readiness packet | Repaired reviewed target `c36c8496f98cbbb4481f85a56750f5683201778c`; integrated by PR #350 at `5548186`                                                          |
+| A1 adoption-readiness packet | Repaired reviewed target `c36c8496f98cbbb4481f85a56750f5683201778c`; integrated by PR #350 at `554818683d037d378ef3c11f1758b848adca1ec3`                         |
 | D01/D07 amendment            | Reviewable input `5996da5a7869f2b21ae8f73407c434285c9862bb`; opened `2026-09-18T01:50:49Z` as STABLE-INTENT                                                      |
 
 The containing pull request fixes the exact packet head and base. The identities
@@ -45,6 +45,8 @@ above remain the source evidence even if this packet receives review-only repair
   pass/proved-mismatch/completed-indeterminate distinction.
 - Existing Release 1 meanings, identifiers, schemas, bundles, and signed release
   evidence remain immutable.
+- The candidate Bundle remains `supported: false`; this packet does not flip or
+  authorize a support flag.
 - Any material semantic or scope change requires a fresh impact assessment and,
   where applicable, a new public discussion window.
 

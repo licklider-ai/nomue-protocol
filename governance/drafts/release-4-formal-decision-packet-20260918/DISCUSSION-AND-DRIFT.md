@@ -31,13 +31,15 @@ snapshot, not a conclusion about feedback at the eventual decision time.
 
 ## Post-A1 drift
 
-From the A1 integration commit `5548186` through the M0 tree used to prepare this
-packet:
+From the A1 integration commit
+`554818683d037d378ef3c11f1758b848adca1ec3` through the M0 tree used to
+prepare this packet:
 
 - no T03-T14 candidate artifact or A1 packet file changed;
 - the RFC 261 D01/D07 discussion package and Release 4 navigation were added;
-- PR #351 changed the shared Release 1 reference Student-t kernel at df=1 and
-  advanced `reference/SOURCE-PIN.json`; and
+- PR #351 at `0536b66f6b76721134d12296d7422034c71aebcc` changed the shared
+  Release 1 reference Student-t kernel at df=1 and advanced
+  `reference/SOURCE-PIN.json`; and
 - no authoritative Release 4 Requirement, identifier, schema, Check, reason,
   Bundle, or support registration was added.
 
