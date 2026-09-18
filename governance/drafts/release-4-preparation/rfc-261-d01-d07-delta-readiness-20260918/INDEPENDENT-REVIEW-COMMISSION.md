@@ -1,12 +1,16 @@
 # Independent review commission: RFC 261 D01/D07 delta
 
-Status: **REQUEST — review has not yet occurred**.
+Status: **COMMISSION — bounded review completed for the introduced package**.
 
 ## Purpose
 
 Review the bounded RFC-governance and public-interface impact of later Release 4
 candidate decisions D01 and D07. This is not a numerical-method review, a new
 selection of D01/D07, an implementation review, or a Release 4 adoption decision.
+
+The commission text remains the fixed scope of the completed review. Its result is
+recorded in the RFC 261 amendment comment; that result is limited to the discussion
+scope and does not itself adopt, issue, or implement anything.
 
 ## Fixed review target
 

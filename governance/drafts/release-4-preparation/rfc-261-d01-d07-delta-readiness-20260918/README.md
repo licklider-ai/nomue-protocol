@@ -2,10 +2,11 @@
 
 Status: **DRAFT — NOT AN RFC AMENDMENT OR DECISION**.
 
-This bounded preparation package makes the later D01 and D07 candidate decisions
-reviewable for an RFC 261 amendment decision. It neither changes the RFC issue nor
-starts a new discussion clock. It does not issue an identifier, change an
-authoritative artifact, adopt Release 4, or authorize implementation.
+This bounded preparation package made the later D01 and D07 candidate decisions
+reviewable for an RFC 261 amendment discussion. The separate RFC 261 amendment
+comment records that discussion's timestamp and window. This package itself does
+not issue an identifier, change an authoritative artifact, adopt Release 4, or
+authorize implementation.
 
 The authoritative RFC 261 opening input remains commit
 `21453d82109106e9e811571383228dcef8f60fac` and its candidate blob
