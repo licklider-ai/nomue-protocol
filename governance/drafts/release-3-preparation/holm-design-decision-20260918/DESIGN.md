@@ -25,7 +25,7 @@ the input and every reported state. Then apply this proposed dependency graph:
 | Result                      | Section      | Preconditions to evaluate                              | Meaning of a completed failure                                            |
 | --------------------------- | ------------ | ------------------------------------------------------ | ------------------------------------------------------------------------- |
 | S: Record schema            | Conformance  | Safe parse, selected schema, faithful report reference | Input fails the selected Record schema                                    |
-| K: stored-byte canonicality | Conformance  | S passes; canonical projection is available            | Original stored bytes differ from their required canonical representation |
+| K: stored-byte canonicality | Conformance  | S passes                                               | Original stored bytes differ from their required canonical representation |
 | D: D0 relationships         | Conformance  | S passes                                               | Represented declarations violate the D0 relationships                     |
 | H: selected Holm admission  | Conformance  | D passes                                               | Selected family/input/ownership violates the bounded Contract domain      |
 | I: digest agreement         | Verification | S and K pass; stored-byte projection is available      | Stored-byte projection digest disagrees with the declared digest          |

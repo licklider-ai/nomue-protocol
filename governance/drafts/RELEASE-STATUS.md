@@ -12,7 +12,7 @@ checkpoints and review requests describe their own dates, not the latest state.
 | Release                            | Current bounded milestone                                                                                 | Next substantive work                                                                                | Formal state                                                                  |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed                           | Prepare exact final decision and coordinated authoritative change candidates                         | Public review open; unissued                                                  |
-| R3 independent-group programme     | Candidate.4 and adoption proposals saved in open PR #330; output-design continuation prepared             | Review Q1-Q3 dispositions, then implement/test the unissued successor and integrated output protocol | Public discussion open; no adopted Holm support or whole-programme completion |
+| R3 independent-group programme     | Candidate.4 saved in open PR #330; D0 design review complete at PR #355 head 1eb6b93                      | Implement/test the D1 unissued successor in nomue-verifier, then complete integrated output protocol | Public discussion open; no adopted Holm support or whole-programme completion |
 | R4 balanced 2-by-2 factorial scope | Arithmetic, tails, complete-output and submitted-evidence experiments are integrated with review receipts | Prepare supported-domain/output policy and the public implementation connection                      | Public discussion open; numerical support not established                     |
 
 ## R5: public discussion open
@@ -65,9 +65,9 @@ from main.
 The [design continuation](release-3-preparation/holm-design-decision-20260918/README.md)
 proposes Record-local results independent of caller mismatch, faithful failure
 reports versus invocation refusals, and genuine versioned schema/storage results.
-It supplies 44 planned cases, the initial REPAIR_REQUIRED review and a repair
-disposition awaiting close-only review, not a tested successor or formal steward
-disposition.
+It supplies 44 planned cases and the retained review/repair/confirmation chain.
+D0 returned GO_FOR_UNISSUED_IMPLEMENTATION at `1eb6b93`; D1 may proceed in
+nomue-verifier. This is not a tested successor or formal steward disposition.
 
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),
@@ -79,8 +79,8 @@ no new implementation repair is required merely to reconcile its status.
 
 Next bounded task:
 
-1. Obtain independent review of the Q1-Q3 design continuation, preserving the
-   prior numerical/source evidence within its exact claim and byte scope.
+1. Use the completed Q1-Q3 design review, preserving the prior numerical/source
+   evidence within its exact claim and byte scope.
 2. Implement and test the unissued successor; complete conformance/dispatcher/
    output-protocol joins through the shared-verifier source and pinned consumer.
 3. Assemble the full authoritative overlay and exact RFC/tier/window impact
@@ -140,6 +140,6 @@ The [PR cleanup ledger](release-status-cleanup-20260911/README.md) distinguishes
 44 integrated heads, seven preserved/superseded predecessors and one obsolete
 unactivated tooling proposal. Old delivery PRs are not missing implementation.
 Their closure does not delete branches or close the three RFC discussions.
-For the reconciled R3 scope, the next checkpoint is the bounded Holm output-design
-review, followed by successor implementation and complete integration. This page
+For the reconciled R3 scope, D0 design review is complete; next are the unissued
+successor implementation and complete integration. This page
 does not update the historical R2/R4 next-task assessments or perform adoption.

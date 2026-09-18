@@ -1,8 +1,8 @@
 # Release 3 Public-Review Preparation
 
 **Current status (2026-09-18): public discussion open; candidate.4 and adoption
-preparation are preserved in open PR #330; output-design continuation awaits
-independent review; no formal adoption.** See the
+preparation are preserved in open PR #330; D0 output-design review is complete
+and permits D1 unissued implementation; no formal adoption.** See the
 [current R2/R3/R4 status and next tasks](../RELEASE-STATUS.md).
 
 Discussion [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) opened
@@ -13,7 +13,10 @@ Use these active entry points:
 
 - [Output-design decision preparation](holm-design-decision-20260918/README.md):
   Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
-  and retained review/repair records. Close-only review pending; not a tested successor.
+  and retained review/repair/confirmation records. D0 GO; not a tested successor.
+- [D1 component checkpoint](https://github.com/licklider-ai/nomue-verifier/pull/20):
+  raw-byte projection and result dependencies implemented outside the npm runtime;
+  component review pending, full D1 and its 44 full-call cases remain open.
 - [Fixed PR #330 preparation](https://github.com/licklider-ai/nomue-protocol/tree/b52389fd3efc6b8968613f59f147a578d5bbb55d/governance/drafts/release-3-preparation/holm-adoption-preparation-20260912):
   candidate.4, claim applicability, concrete Contract/coupling proposals and
   conditional changed-surface review. Not yet integrated into main.
@@ -25,8 +28,7 @@ Use these active entry points:
   [additional findings / actual CI evidence](r3-followup-review-20260911/README.md):
   recorded dispositions, human-review clarification and remaining evidence limits.
 
-Next is independent review of the proposed output-design dispositions, followed
-by a tested unissued successor and complete conformance/dispatcher/output-protocol
+Next is a tested unissued successor in nomue-verifier, followed by complete conformance/dispatcher/output-protocol
 integration. Reuse PR #330's bounded numerical/source applicability; do not redo
 its preparation merely because its open branch is absent from main. Formal
 authority and RFC dispositions remain separate. This is not another broad source

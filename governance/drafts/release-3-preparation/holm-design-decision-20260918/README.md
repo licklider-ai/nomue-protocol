@@ -1,10 +1,15 @@
 # Holm output-design decision preparation
 
-Date: 2026-09-18 UTC. Informative, unissued, and **pending independent
-close-only review after repair**. The initial independent verdict was
-REPAIR_REQUIRED (2 MAJOR, 4 MINOR); see the
+Date: 2026-09-18 UTC. Informative and unissued. **D0 is complete:
+GO_FOR_UNISSUED_IMPLEMENTATION** at reviewed head `1eb6b93`; see the
+[close-only confirmation](../../../../review-inputs/r3-holm-design-decision-20260918/REPAIR-CONFIRMATION.md).
+The initial independent verdict was REPAIR_REQUIRED (2 MAJOR, 4 MINOR); see the
 [unaltered review](../../../../review-inputs/r3-holm-design-decision-20260918/REVIEW-RESULT.md)
-and [repair disposition / close-only handoff](REPAIR-DISPOSITION.md).
+and [repair disposition / historical close-only handoff](REPAIR-DISPOSITION.md).
+All six findings are closed. The confirmation's editorial E-1 is corrected by
+removing the redundant K-table projection-availability condition; the reviewed
+refusal rule is unchanged. [D0 completion and D1 handoff](D0-COMPLETION.md)
+records custody and the next engineering boundary.
 This is a continuation of PR #330, not a replacement implementation or
 a formal Release 3 decision packet. No candidate, registry, RFC, support flag,
 research disposition or public snapshot is changed.
@@ -25,8 +30,8 @@ formal steward adoption record.
 3. [Landing and milestones](LANDING.md) separates successor engineering,
    shared-verifier integration, authoritative coupling and adoption.
 4. [Original independent review commission](REVIEW-COMMISSION.md) preserves the
-   initial 36-case review scope. The repair handoff narrows the next review to
-   changed text, including eight added cases, before dependent implementation.
+   initial 36-case review scope. The subsequent close-only confirmation covers
+   the repaired text and eight added cases and permits dependent implementation.
 
 The constant schema-admission row becomes a genuine versioned schema result in
 the proposed successor. Its exact wire representation and the added storage
@@ -66,8 +71,8 @@ source-access attestations. No unpublished successor implementation is relied on
 
 ## Completion boundary
 
-This checkpoint prepares a reviewable design, not M4 closure. The next milestone
-is a fixed-head independent design disposition, then a tested unissued successor.
+This checkpoint supplies reviewed design permission, not M4 closure. The next
+milestone is a tested unissued successor in nomue-verifier (D1).
 The full 49-technique inventory and the other fourteen R3 candidates remain in
 scope with their existing dispositions. A first Holm capability is not completion
 or narrowing of the comprehensive R3 programme. R2 dependencies remain conditional

@@ -1,8 +1,10 @@
 # Design-review repair disposition and close-only handoff
 
-Date: 2026-09-18 UTC. Author/coordinator repair, not independent closure. All six
-findings are addressed in the proposed text; **close-only confirmation pending**.
-Dependent D1 implementation remains paused. No candidate, numerical source,
+Date: 2026-09-18 UTC. Author/coordinator repair record. The subsequent
+[independent confirmation](../../../../review-inputs/r3-holm-design-decision-20260918/REPAIR-CONFIRMATION.md)
+closes all six findings at `1eb6b93` with GO_FOR_UNISSUED_IMPLEMENTATION.
+The historical request below remains for traceability; D1 may now proceed.
+No candidate, numerical source,
 registry, schema, fixture, authority assignment or RFC is changed.
 
 ## Review custody
