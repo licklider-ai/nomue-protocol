@@ -75,7 +75,7 @@ development/r3-holm/dependencies.test.ts development/r3-holm/stored-bytes.test.t
   of the value when it is last; key through value when sole; bytes untouched when
   absent. The 14 hand vectors match. An independent probe generated 8,000 random
   objects (3,758 with `integrity` at first, middle, last or sole position; escaped
-  key spellings `integrity` and `integrity`; nested and string
+  key spellings using unicode escapes for the letters i and t; nested and string
   lookalikes; multibyte text; random whitespace including CRLF and tabs; trailing
   newline) and compared bytes against an expectation built from the DESIGN rule on
   the generated pieces, not from either implementation: all byte-exact, and every
