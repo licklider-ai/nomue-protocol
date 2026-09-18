@@ -27,7 +27,9 @@ Protocol retains specification, registered check and conformance authority.
 offline conformance checks and candidate imports continue to work. They are
 not a second implementation-development location. The local resources.ts
 adapter is separately pinned and retains this repository's existing resource
-and source-identity behavior. No numerical bytes or supported bundles change.
+and source-identity behavior. The ownership migration itself changed no
+numerical bytes or supported bundles; later reviewed source-pin intakes may
+update these non-authoritative copies without changing Protocol meaning.
 
 Make shared-source changes in Verifier first. Run
 `pnpm check:reference-source` to detect local drift. With the exact upstream
