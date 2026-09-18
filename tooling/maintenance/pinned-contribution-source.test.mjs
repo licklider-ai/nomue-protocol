@@ -10,7 +10,7 @@ const pin = {
   sha256: "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed",
 };
 
-test("accepts exactly the approved append while retaining historical instructions", () => {
+test("accepts exactly the approved instructions while retaining historical instructions", () => {
   checkPinnedBytes(current, pin);
 });
 test("rejects changes to either old instructions or the approved append", () => {

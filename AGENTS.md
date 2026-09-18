@@ -199,6 +199,22 @@ review affected by a material change of scope, method, source or conclusion.
 Reuse valid existing reviews for unchanged scope; ordinary typo and generated
 synchronization work does not require a new independent investigation.
 
+## Review checkpoints during development (informative)
+
+For a change that is becoming broad, materially changes behavior or authority,
+crosses several coupled artifacts, or creates a later decision that would be
+costly to reverse, contributors should pause at a bounded implementation
+checkpoint and seek an independent review before continuing into dependent work.
+The checkpoint should identify the exact commit, the change scope, the principal
+failure questions, the independence limits, and the next decision or work that
+depends on the result. Record the review outcome and any repair in the relevant
+work record when one exists.
+
+This is an operating practice for timely course correction. It does not create a
+GitHub approval requirement, a mandatory pull-request gate, or a substitute for
+the Research Gate, release decisions, or the validation suite. Small, isolated,
+readily reversible work normally does not need a separate checkpoint review.
+
 Before asking the steward, save a reviewable target and assemble its exact commit,
 scope, source/evidence links, strongest failure questions, independence limits,
 review prompt and expected return format. Use public inputs only. Self-review is
