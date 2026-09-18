@@ -31,12 +31,55 @@ smoke/exclusion checks on Node 24.19.0 / Linux x64. Hosted CI and independent
 implementation review are separate. D1 overall and all 44 full-call cases remain
 open; no package runtime or Protocol source pin is advanced.
 
+## D1 component receipt and local-check continuation
+
+The first checkpoint received GO_FOR_D1_CONTINUATION, 0 BLOCKER, 0 MAJOR,
+2 MINOR, in the [independent review](../../../../review-inputs/r3-holm-d1-component-20260918/REVIEW-RESULT.md).
+It is preserved verbatim from reviewer commit `7b057d5`, blob
+`3cb3514573d15427c1d4b95a90c3a8d8aab2966c`, SHA-256
+`86dcb30d32c7d16519d549bc23471693e29d6649ed6904282695e1a57e592d36`.
+Intake commit `3494e2d99c3f0bd9c54fc65bf971fcce98372eda` adds only that record.
+The review applies to `a829970`, not to the new code below. That reviewed head's
+hosted CI run 35309941826 completed successfully, separately from the reviewer's
+local executions. Reviewer/model/environment disclosures remain in the original.
+
+Verifier PR #20 now fixes the next checkpoint at head
+`77bb4ebaac5eca37390b8b23aede90f3d25702c0`, parent `a82997073b17277f85d524f61efb7bc9249192a5`,
+tree `b16cb336d83454adb0d0360de3ee8308c7e53f26`, still based on
+`940b8fb6990632029bcebd2ebdf6ce9dca8e9244`. The incremental delta is 20 files,
++4789/-38, including eight unchanged schema/fixture copies from candidate.4 and
+its D0 inputs. Source paths/blobs/hashes are recorded in the Verifier provenance
+manifest; Protocol's historical candidate and review bytes are untouched.
+
+The MINOR repairs add strict CI typechecking and typed graph invariant errors
+with the required future `internal_error` invocation-refusal mapping. The new
+component connects actual Record schema, D0 relationships, bounded Holm domain,
+independent expected context and declared-digest comparison to the reviewed
+storage/dependency foundations. It freezes the private parsed Record and keeps
+unexpected/resource failures outside scoped evaluations. It does not compute A,
+emit a public report/refusal or forward bytes.
+
+Author validation passed 55/55 component tests, including all 50 retained D0
+relation-stage vectors, strict typechecking, existing npm tests, actual tarball
+exclusion/installed CLI checks and eight source-copy hashes on Linux x64 / Node
+24.19.0. The published tree matches the locally validated tree. New-head hosted
+CI is separate. Numerical/real-host/full-call suites are not claimed.
+
+The [current handoff and independent review request](https://github.com/licklider-ai/nomue-verifier/blob/77bb4ebaac5eca37390b8b23aede90f3d25702c0/development/r3-holm/LOCAL-CHECKS-HANDOFF.md)
+contains the repair disposition, exact extraction scope, case-to-evidence map,
+failure questions and review-record destination. This new checkpoint awaits its
+own independent review; author tests do not supply that clearance. D1 and all 44
+full-call cases remain open. Next dependent work is the versioned output/refusal
+protocol, numerical worker and controlled full-call lifecycle, then D2/D3.
+
+## Continuing engineering boundary
+
 Develop in the public nomue-verifier repository, outside its npm runtime and
 supported dispatch until the coordinated adoption/integration permits promotion.
-Start with the two newly reviewed foundations: raw-preserving stored-byte
-projection and explicit seven-result dependency/reason propagation. Test these
-directly with independently specified byte vectors and crossed graph states before
-connecting schema admission, D0/Holm validators, caller input and execution controls.
+Retain the reviewed raw-byte and dependency foundations while reviewing the new
+actual schema/D0/Holm/context checks at their fixed checkpoint. Next connect the
+versioned output contract, arithmetic and execution controls with evidence at
+each boundary; do not substitute component tests for full-call acceptance.
 
 This sequencing does not declare D1 complete or narrow its acceptance matrix.
 Maintain a case-to-test map distinguishing component evidence from full-call
