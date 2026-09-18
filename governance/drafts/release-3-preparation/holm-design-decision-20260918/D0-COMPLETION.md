@@ -269,6 +269,27 @@ D2/D3 and other Research Gate/promotion rows remain open. The intake also correc
 the erroneous unpublished-R1 premise: R1 was published on August 24, its historical
 integrity check passes, and no signed artifact or gate is reset.
 
+## Independent B-2 integration receipt and D1 byte-oracle continuation
+
+The [original independent review](../../../../review-inputs/r3-holm-d1-b2-integration-20260918/REVIEW-RESULT.md)
+is preserved in single-file intake `06782434150ee6ebdf026f1b694d4dc9ff8b3e96`, from reviewer
+`4bc89252e0cd248462c0799ccac369cc3c61f795`, blob
+`56f93e8032f5b11d2b85a63066940d88e50de173`, SHA-256
+`7e59e123868af38c6af5e8b67f477d64b764cefce3316d560ee0e47a12b88a66`.
+It covers `3c51172..eda3ba9`, independently closes m-2/m-3, and returns bounded
+GO_FOR_D1_CONTINUATION with one MINOR. B-2 arithmetic reuse, independent sort
+repair/wiring review and R1 correction are accepted within the receipt's scope.
+Its own cgroup and Python 3.12.14 executions remain NOT_RUN.
+
+The [next checkpoint](../holm-d1-oracles-20260918/README.md) fixes Verifier head
+`37bf9faa1b802bb41b0441e1ff23ee15374e4a60`, tree `473bd4afea08adff0fd13a5800c53dbf4e2da434`, parent `eda3ba9`.
+It author-repairs the retained repair-results comparison gap, including an
+end-to-end repinned-expectation rejection, and adds independent byte/digest targets
+plus below/equal/above component bounds. Runtime code and pins are unchanged.
+Local 121 tests, strict typecheck and package checks pass. The packet links exact
+host evidence and the new review request. All 44 locators, remaining D1 fault
+paths and D2/D3 stay open. No old evidence is relabelled as new-head evidence.
+
 ## Continuing engineering boundary
 
 Develop in the public nomue-verifier repository, outside its npm runtime and

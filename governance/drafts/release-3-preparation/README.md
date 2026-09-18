@@ -11,6 +11,11 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 
 Use these active entry points:
 
+- [D1 byte-oracle continuation](holm-d1-oracles-20260918/README.md): independent
+  review accepted through `eda3ba9`; its one MINOR is author-repaired. The next
+  fixed target adds independent byte/digest targets and component bound matrices.
+  D1 remains open; this is the current implementation handoff.
+
 - [B-2 numerical/source intake and successor wiring](holm-b2-integration-20260918/README.md):
   bounded GO, preserved withdrawal and stable-sort repair; Verifier `eda3ba9`
   adds a 120-comparison full-call target and author replay. The 75-check hosted

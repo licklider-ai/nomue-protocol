@@ -93,6 +93,16 @@ Review the expansion plus this delta against `3c51172` before dependent promotio
 R1 is already published; its preserved-history audit passes and no R1 refreeze
 or resigning is needed for this R3 continuation.
 
+The [subsequent independent receipt and oracle checkpoint](release-3-preparation/holm-d1-oracles-20260918/README.md)
+accept the expansion/B-2 wiring through `eda3ba9`, close prior m-2/m-3, and
+record author repair of the new retained-result comparison MINOR. The successor
+adds 324 constructed byte vectors, ten fixed-digest Record variants and 18
+component limit boundaries. Local 121 tests pass without skips. All 44 locators
+remain partial; helper corruption, narrower matrices, failed cleanup and supervisor
+loss remain D1 work. D2/D3 remain pending. The linked packet fixes the new target,
+host evidence and independent-review request; earlier head descriptions above are
+retained checkpoint chronology.
+
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),
 and [follow-up repair and exact CI evidence](release-3-preparation/r3-followup-review-20260911/README.md).
