@@ -9,11 +9,11 @@ checkpoints and review requests describe their own dates, not the latest state.
 
 ## At a glance
 
-| Release                            | Current bounded milestone                                                            | Next substantive work                                                                                                | Formal state                                                                  |
-| ---------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed      | Prepare exact final decision and coordinated authoritative change candidates                                         | Public review open; unissued                                                  |
-| R3 independent-group programme     | Candidate.4 saved in open PR #330; D0 design review complete at PR #355 head 1eb6b93 | Implement/test the D1 unissued successor in nomue-verifier, then complete integrated output protocol                 | Public discussion open; no adopted Holm support or whole-programme completion |
-| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open  | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing | Public discussion open; unissued and unsupported                              |
+| Release                            | Current bounded milestone                                                           | Next substantive work                                                                                                | Formal state                                                                  |
+| ---------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed     | Prepare exact final decision and coordinated authoritative change candidates                                         | Public review open; unissued                                                  |
+| R3 independent-group programme     | D1 context/helper checkpoint merged and preserved; work paused                      | Resume actual failed cleanup/supervisor loss and remaining D1 evidence/review                                        | Public discussion open; no adopted Holm support or whole-programme completion |
+| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing | Public discussion open; unissued and unsupported                              |
 
 ## R5: public discussion open
 
@@ -53,6 +53,16 @@ Current candidate support evidence covers one exact Node/Linux/x64 tuple; the
 multi-platform repository CI is not a claim of broad paired-t runtime support.
 
 ## R3: output-design checkpoint before successor integration
+
+**Latest checkpoint (2026-09-18 UTC):** Verifier PRs #22/#23 are merged into
+main at `43a2ddc6933c62eecc05007081f50454acf5b459`. Context-matrix and helper-failure
+repairs are complete for this work session; the supplied continuing review
+confirmed all five helper findings closed, without independent-investigator or
+Research Gate clearance. [Closeout, retained CI ZIPs and restart instructions](release-3-preparation/holm-d1-checkpoint-close-20260918/README.md)
+preserve the 245-test local result and 211-check host evidence. Work is paused;
+D1 and all 44 locator dispositions remain open/partial. Next is actual failed
+cleanup/supervisor-loss evidence, then the listed residuals. D2/D3 remain pending.
+Earlier head descriptions below are checkpoint chronology, not restart instructions.
 
 The main-only candidate.3 account below is historical implementation context.
 [PR #330](https://github.com/licklider-ai/nomue-protocol/pull/330), fixed at
