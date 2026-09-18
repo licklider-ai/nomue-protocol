@@ -2,11 +2,13 @@
 
 Status: **HISTORICAL DECISION REQUEST — resolved for the amendment discussion**.
 
-The RFC 261 amendment comment selected **STABLE-INTENT**, opened the separate
-D01/D07 discussion window at `2026-09-18T01:50:49Z`, and fixed the earliest
-decision time at `2026-10-18T01:50:49Z`. That selection governs only the posted
-discussion scope. It is not formal Release 4 adoption, issuance, implementation,
-or publication approval.
+The RFC 261 amendment comment selected **STABLE-INTENT** and its body declared the
+separate D01/D07 discussion opening at `2026-09-18T01:50:49Z`. GitHub recorded
+the comment's `created_at` as `2026-09-18T01:51:08Z`; the later platform value
+controls conservatively and fixes the earliest decision time at
+`2026-10-18T01:51:08Z`. That selection governs only the posted discussion scope.
+It is not formal Release 4 adoption, issuance, implementation, or publication
+approval.
 
 ## Decision to be made
 

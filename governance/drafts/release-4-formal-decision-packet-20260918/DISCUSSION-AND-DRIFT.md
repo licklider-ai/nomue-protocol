@@ -4,14 +4,17 @@ Status: **Decision-input chronology and drift assessment; not an RFC disposition
 
 ## Public clocks
 
-| Scope                     | Fixed input                                                                                                  | Opening                | Minimum window         | Earliest decision      |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------- | ---------------------- | ---------------------- |
-| Original RFC 261 proposal | Commit `21453d82109106e9e811571383228dcef8f60fac`, candidate blob `807e4bf0c22e5270b8fc15824329d04b5c37b146` | `2026-09-09T05:59:47Z` | 30 days                | `2026-10-09T05:59:47Z` |
-| Later D01/D07 amendment   | Package at `5996da5a7869f2b21ae8f73407c434285c9862bb`                                                        | `2026-09-18T01:50:49Z` | 30 days, STABLE-INTENT | `2026-10-18T01:50:49Z` |
+| Scope                     | Fixed input                                                                                                  | Opening                                                                          | Minimum window         | Earliest decision                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------- | ---------------------------------- |
+| Original RFC 261 proposal | Commit `21453d82109106e9e811571383228dcef8f60fac`, candidate blob `807e4bf0c22e5270b8fc15824329d04b5c37b146` | `2026-09-09T05:59:47Z`                                                           | 30 days                | `2026-10-09T05:59:47Z`             |
+| Later D01/D07 amendment   | Package at `5996da5a7869f2b21ae8f73407c434285c9862bb`                                                        | Body-declared `2026-09-18T01:50:49Z`; GitHub `created_at` `2026-09-18T01:51:08Z` | 30 days, STABLE-INTENT | `2026-10-18T01:51:08Z` controlling |
 
 The original clock applies only to its unchanged input. This packet chooses a
-single coupled Release 4 decision, so the later timestamp is controlling. Neither
-date is an automatic adoption date.
+single coupled Release 4 decision, so the later amendment clock controls. The
+comment body declared `2026-09-18T01:50:49Z`, while the platform recorded its
+creation 19 seconds later at `2026-09-18T01:51:08Z`. Consistent with the original
+RFC clock's platform timestamp, the later platform time controls conservatively.
+Neither date is an automatic adoption date.
 
 ## Amendment boundary
 

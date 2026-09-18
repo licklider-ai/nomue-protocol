@@ -10,10 +10,12 @@ The unchanged opening proposal's earliest decision is 2026-10-09T05:59:47Z under
 [opening receipt](public-discussion-opening-2026-09-09.md).
 
 The later [D01/D07 delta package](rfc-261-d01-d07-delta-readiness-20260918/README.md)
-is separately under discussion. Its STABLE-INTENT clock opened at
-`2026-09-18T01:50:49Z`; the unified Release 4 decision must therefore occur no
-earlier than `2026-10-18T01:50:49Z`. The package preserves the existing five-code
-CLI contract and places the D07 distinction in the detailed report.
+is separately under discussion. Its comment body declared an opening at
+`2026-09-18T01:50:49Z`, while GitHub recorded `created_at` as
+`2026-09-18T01:51:08Z`; the later platform timestamp controls conservatively, so
+the unified Release 4 decision must occur no earlier than
+`2026-10-18T01:51:08Z`. The package preserves the existing five-code CLI contract
+and places the D07 distinction in the detailed report.
 
 The [A1 adoption-readiness packet](r4-adoption-readiness-a1-20260917/RATIFICATION-PACKET.md)
 is closed for its reviewed candidate scope. It is decision input, not adoption or
@@ -22,7 +24,7 @@ authority to land public surfaces.
 The [formal decision packet](../release-4-formal-decision-packet-20260918/README.md)
 assembles A1, the original RFC input, and the D01/D07 amendment for exact-target
 independent review. A unified steward decision remains time-gated until
-`2026-10-18T01:50:49Z`; the packet does not itself adopt or issue anything.
+`2026-10-18T01:51:08Z`; the packet does not itself adopt or issue anything.
 
 The [integrated asset record](../research-asset-integration-20260911/README.md)
 connects arithmetic, tails, source supplements, complete outputs and the

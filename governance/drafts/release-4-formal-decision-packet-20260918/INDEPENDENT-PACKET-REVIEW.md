@@ -37,8 +37,10 @@ state, RFC clocks or authoritative artifacts.
 2. Does the packet omit any scientific, numerical, execution, output, identity,
    schema, reason, Bundle, compatibility or publication disposition required for
    a coupled Release 4 decision?
-3. Are both RFC clocks and fixed inputs accurate, and does the unified decision
-   correctly wait for `2026-10-18T01:50:49Z`?
+3. Are both RFC clocks and fixed inputs accurate, are the amendment body's
+   `2026-09-18T01:50:49Z` declaration and GitHub's `2026-09-18T01:51:08Z`
+   `created_at` distinguished, and does the unified decision conservatively wait
+   for `2026-10-18T01:51:08Z`?
 4. Does any path silently issue a draft identifier, reinterpret an existing schema
    or Bundle, promote finite observations to a supported-domain claim, or turn a
    review receipt into adoption?

@@ -7,7 +7,7 @@ Status: **Informative index; no listed review is a formal adoption decision**.
 | Area                                 | Fixed evidence                                                                                    | Recorded result                                            | Decision use and limit                                                                                        |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | D01-D07 candidate policy             | `t03-candidate-numerical-policy-decision-20260914.md`                                             | Candidate choices selected and retained                    | Supplies FD3/FD5 inputs; it is unissued and the later D01/D07 public delta has its own RFC clock              |
-| Execution architecture/procedure     | T04 decision, EC1-EC4, G4/G5 and F-01 records                                                     | Bounded execution and all-22 procedure assembled           | Supports FD3 within J-cost/Z-B and reference boundaries; finite host evidence is not a universal guarantee    |
+| Execution architecture/procedure     | T04 decision; A1 `REVIEW-EVIDENCE-MAP.md` rows EC1-EC4, G4/G5 and F-01 and their linked records   | Bounded execution and all-22 procedure assembled           | Supports FD3 within J-cost/Z-B and reference boundaries; finite host evidence is not a universal guarantee    |
 | Scientific and numerical sufficiency | `t05-scientific-numerical-review-sufficiency-20260915/`                                           | Candidate sufficiency closed                               | Supports FD2/FD3 within the balanced 2-by-2 normal-model scope; does not prove model truth or broader designs |
 | Requirement and identity surface     | `t06-candidate-requirement-surfaces-20260915/`                                                    | Candidate meanings, IDs, versioning and bindings assembled | Supports FD4; every ID remains unissued and must pass current collision/authority checks at landing           |
 | Closed schemas and validator         | `t07-closed-schemas-validator-20260915/`                                                          | Candidate structural surface tested                        | Definitions-only report root is not the final report root; no authoritative schema exists yet                 |
@@ -35,7 +35,16 @@ The steward record must state, rather than infer, all of the following:
   profile and finite observed evidence;
 - the accepted Requirement meanings and final, non-draft identifier versions;
 - the successor Record, payload, report, refusal, Check, reason and Bundle surfaces;
-- D07 ownership in the detailed report and preservation of the five-code CLI;
+- D07 ownership in the detailed report and preservation of the five-code CLI,
+  including either a terminal-only Release 4 supported procedure or deferral of
+  the indeterminate-only completed-report state to a separately versioned
+  NRS-VERIFY-0025 successor outside this decision; code `0` must never represent
+  an indeterminate-only report, and current reference aggregation is not a
+  permitted precedent;
+- the NRS-CORE-0022 lifecycle-carrier binding in
+  `spec/core/balanced-two-factor-lifecycle.md`, including carrier-domain fixtures,
+  the reference `lifecycle.ts` mapping, and confirmation that no new
+  state-invariant entry is introduced;
 - the implementation, conformance, independent-oracle, compatibility and source-pin
   evidence required before support activation; and
 - excluded intervals, multiplicity, wider/unbalanced designs, causal claims,

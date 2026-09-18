@@ -8,21 +8,22 @@ Only after recorded FD1-FD6 dispositions may an authoritative landing be prepare
 It must be one reviewable change set, or an explicitly linked atomic sequence,
 containing the selected versions of every affected surface below.
 
-| Surface                           | Required action                                                                                                                                                                                                    |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Normative specification           | Add the accepted balanced 2-by-2 Contract, Profile, declarations, model prerequisites, estimands, all-22 numerical procedure, D01-D07, result aggregation, refusal ordering, and non-claims                        |
-| Requirement registry              | Allocate final Requirement IDs and bind each to one normative anchor, stability tier, schema, conformance evidence and public-surface entry                                                                        |
-| Identifier and surface registries | Register final Contract, Profile, schema, Check and Bundle HTTPS identifiers; update `registries/public-contract-surfaces.yaml` with explicit schema-version impact                                                |
-| Schemas                           | Add successor Record/payload/report/refusal schemas; preserve historical schemas and load exactly one final report root                                                                                            |
-| Public checks                     | Register ordered conformance, integrity, admissibility, computability and recompute checks; keep comparison semantics and any tolerances solely in `registries/public-checks.yaml` with rationale and test vectors |
-| Reasons and report                | Register accepted reason ownership and precedence; represent D07 in the detailed report without adding or reinterpreting a CLI exit code                                                                           |
-| Interpretation Bundle             | Add an exact successor Bundle binding Contract, Profile, schemas, ordered checks, check-set revision and canonicalization; do not modify existing Bundle dispatch                                                  |
-| Authority and generated views     | Assign every new authoritative path in `authority/authority-manifest.yaml`, then run generation and generated-view checks                                                                                          |
-| Shared verifier                   | Implement and review the selected procedure in `licklider-ai/nomue-verifier` with exact Bundle dispatch, bounded controlled execution, fail-closed refusal, and no fallback                                        |
-| Reference consumer                | Advance `reference/SOURCE-PIN.json` only to an exact reviewed shared-verifier source and retain the consumer boundary; no duplicate Protocol-local verifier authority                                              |
-| Conformance and oracles           | Add hand-authored positive/negative fixtures, independent exact/numerical expectations, boundary and metamorphic cases, malformed-byte cases, and failure-precedence tests                                         |
-| Compatibility                     | Rerun Release 1 history, canonicalization, dispatch, report, refusal and conformance evidence; demonstrate that every existing identifier and CLI meaning is unchanged                                             |
-| Release state                     | Keep all new surfaces unsupported and unpublished until exact-target implementation, compatibility, freeze and publication reviews pass                                                                            |
+| Surface                           | Required action                                                                                                                                                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Normative specification           | Add the accepted balanced 2-by-2 Contract, Profile, declarations, model prerequisites, estimands, all-22 numerical procedure, D01-D07, result aggregation, refusal ordering, and non-claims                                      |
+| Requirement registry              | Allocate final Requirement IDs and bind each to one normative anchor, stability tier, schema, conformance evidence and public-surface entry                                                                                      |
+| Identifier and surface registries | Register final Contract, Profile, schema, Check and Bundle HTTPS identifiers; update `registries/public-contract-surfaces.yaml` with explicit schema-version impact                                                              |
+| Schemas                           | Add successor Record/payload/report/refusal schemas; preserve historical schemas and load exactly one final report root                                                                                                          |
+| Public checks                     | Register ordered conformance, integrity, admissibility, computability and recompute checks; keep comparison semantics and any tolerances solely in `registries/public-checks.yaml` with rationale and test vectors               |
+| Reasons and report                | Register accepted reason ownership and precedence; represent D07 in the detailed report; implement the FD5 terminal-only or separately-versioned-successor disposition without adding or reinterpreting a CLI exit code          |
+| Lifecycle carrier                 | Land NRS-CORE-0022 in `spec/core/balanced-two-factor-lifecycle.md`; bind completed pass/fail and absent/error/not-run states, add carrier-domain fixtures, update reference `lifecycle.ts`, and add no new state-invariant entry |
+| Interpretation Bundle             | Add an exact successor Bundle binding Contract, Profile, schemas, ordered checks, check-set revision and canonicalization; do not modify existing Bundle dispatch                                                                |
+| Authority and generated views     | Assign every new authoritative path in `authority/authority-manifest.yaml`, then run generation and generated-view checks                                                                                                        |
+| Shared verifier                   | Implement and review the selected procedure in `licklider-ai/nomue-verifier` with exact Bundle dispatch, bounded controlled execution, fail-closed refusal, and no fallback                                                      |
+| Reference consumer                | Advance `reference/SOURCE-PIN.json` only to an exact reviewed shared-verifier source and retain the consumer boundary; no duplicate Protocol-local verifier authority                                                            |
+| Conformance and oracles           | Add hand-authored positive/negative fixtures, independent exact/numerical expectations, boundary and metamorphic cases, malformed-byte cases, and failure-precedence tests                                                       |
+| Compatibility                     | Rerun Release 1 history, canonicalization, dispatch, report, refusal and conformance evidence; demonstrate that every existing identifier and CLI meaning is unchanged                                                           |
+| Release state                     | Keep all new surfaces unsupported and unpublished until exact-target implementation, compatibility, freeze and publication reviews pass                                                                                          |
 
 ## Sequencing
 
@@ -52,7 +53,11 @@ The landing review must show that:
 5. independent expectations cover the selected domain and claimed boundaries;
 6. unsupported bundles, platforms and out-of-domain inputs fail closed;
 7. invocation failure cannot produce a completed or partial numerical report;
-8. NRS-VERIFY-0025 retains exactly its existing five meanings; and
+8. NRS-VERIFY-0025 retains exactly its existing five meanings; the selected FD5
+   disposition either makes completed mandatory Release 4 outcomes terminal or
+   leaves the indeterminate-only report state unsupported pending a separately
+   versioned successor, and a compatibility/drift test proves that an
+   indeterminate-only completed report never exits `0`; and
 9. Release 1 signed history and issued behavior remain intact.
 
 ## Explicitly excluded

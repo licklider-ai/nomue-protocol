@@ -137,9 +137,11 @@ does not adopt Release 4 or establish Public support.
 
 The later [D01/D07 amendment package](release-4-preparation/rfc-261-d01-d07-delta-readiness-20260918/README.md)
 is fixed at `5996da5a7869f2b21ae8f73407c434285c9862bb`. Its STABLE-INTENT
-window opened at `2026-09-18T01:50:49Z`; a unified decision is therefore no
-earlier than `2026-10-18T01:50:49Z`. D07 retains the existing five-code CLI
-contract and places its distinction in the detailed report.
+comment body declared `2026-09-18T01:50:49Z`, while GitHub recorded
+`created_at` as `2026-09-18T01:51:08Z`; the later platform value controls, so a
+unified decision is no earlier than `2026-10-18T01:51:08Z`. D07 retains the
+existing five-code CLI contract and places its distinction in the detailed
+report.
 
 Next, submit the [formal decision packet](release-4-formal-decision-packet-20260918/README.md)
 for exact-target independent review. After repairs and the controlling window,
@@ -187,7 +189,7 @@ designs remain excluded. This slice has no Release 3 calendar prerequisite.
 | R2                   | [#25](https://github.com/licklider-ai/nomue-protocol/issues/25)   | 2026-09-25 20:52:54                    | 2026-09-26 05:52:54 |
 | R3                   | [#274](https://github.com/licklider-ai/nomue-protocol/issues/274) | 2026-10-09 11:50:18                    | 2026-10-09 20:50:18 |
 | R4 opening           | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-09 05:59:47                    | 2026-10-09 14:59:47 |
-| R4 D01/D07 amendment | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-18 01:50:49                    | 2026-10-18 10:50:49 |
+| R4 D01/D07 amendment | [#261](https://github.com/licklider-ai/nomue-protocol/issues/261) | 2026-10-18 01:51:08                    | 2026-10-18 10:51:08 |
 
 These are earliest consideration times, not automatic adoption dates. Source
 scope decisions already made are not reopened by this cleanup. Material changes
