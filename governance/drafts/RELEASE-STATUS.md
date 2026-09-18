@@ -69,14 +69,18 @@ It supplies 44 planned cases and the retained review/repair/confirmation chain.
 D0 returned GO_FOR_UNISSUED_IMPLEMENTATION at `1eb6b93`; D1 may proceed in
 nomue-verifier. This is not a tested successor or formal steward disposition.
 
-The first D1 byte/dependency checkpoint received GO_FOR_D1_CONTINUATION at
-Verifier `a829970`; local checks at `77bb4eb` also received that verdict, with
-one order-repair MINOR. [Verifier PR #20](https://github.com/licklider-ai/nomue-verifier/pull/20)
-now saves the repair and candidate.5 output/numerical inner call at `f4b0786`:
-66 passing TypeScript tests and 86 independent worker comparisons. This new
-checkpoint awaits review. See the [receipts and fixed handoff](release-3-preparation/holm-design-decision-20260918/D0-COMPLETION.md).
-Full D1, outer supervisor/cleanup/forwarding, all 44 full-call cases and D2/D3
-remain open; inner-call evidence does not imply adoption or release permission.
+The byte/dependency, local-check and inner-call checkpoints received
+GO_FOR_D1_CONTINUATION at Verifier `a829970`, `77bb4eb` and `f4b0786` respectively.
+The latest review closes the routing-order finding and leaves one expected-access
+MINOR. [Verifier PR #20](https://github.com/licklider-ai/nomue-verifier/pull/20)
+now saves that repair and the controlled lifecycle/original-byte forwarding
+checkpoint at `3c51172`. Author checks pass 75 TypeScript tests, five supervisor
+contract tests; the fixed-tree actual-host job passes 26 representative call
+variants and 13 lifecycle/enforcement controls (39/39), with its original artifact
+retained. This new checkpoint awaits independent review.
+See the [receipts and fixed handoff](release-3-preparation/holm-design-decision-20260918/D0-COMPLETION.md).
+D1's expanded 44-case evidence and D2/D3 remain open. A tested development path
+is not host qualification, adopted support or release permission.
 
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),

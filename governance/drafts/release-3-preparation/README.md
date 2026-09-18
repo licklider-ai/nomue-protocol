@@ -15,9 +15,10 @@ Use these active entry points:
   Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
   and retained review/repair/confirmation records. D0 GO; not a tested successor.
 - [D1 component checkpoint](https://github.com/licklider-ai/nomue-verifier/pull/20):
-  byte/dependency and local-check checkpoints received GO_FOR_D1_CONTINUATION.
-  The next output/numerical inner-call checkpoint is saved at `f4b0786`, awaiting
-  its own review. Full D1 and its 44 full-call cases remain open; see the
+  byte/dependency, local-check and inner-call checkpoints received
+  GO_FOR_D1_CONTINUATION. The next controlled-call checkpoint is saved at
+  `3c51172`, with the expected-access repair and original-byte forwarding,
+  awaiting its own review. Expanded D1 evidence remains open; see the
   [receipt and continuation](holm-design-decision-20260918/D0-COMPLETION.md).
 - [Fixed PR #330 preparation](https://github.com/licklider-ai/nomue-protocol/tree/b52389fd3efc6b8968613f59f147a578d5bbb55d/governance/drafts/release-3-preparation/holm-adoption-preparation-20260912):
   candidate.4, claim applicability, concrete Contract/coupling proposals and

@@ -105,20 +105,81 @@ raw logs and source hashes are saved in Verifier. Hosted CI is a separate result
 
 The [inner-call handoff and independent review request](https://github.com/licklider-ai/nomue-verifier/blob/f4b07868db999b282126b3a1c5620ee01a5252a4/development/r3-holm/INNER-CALL-HANDOFF.md)
 fixes the changed output contract, order repair, numerical reuse, execution scope,
-failure questions and review-record path. This new target awaits its own review.
-The outer cgroup supervisor, whole-process-tree cleanup, trusted completion,
-original-byte forwarding and full 44-case evidence remain unimplemented or
-unproven for this successor. None is inferred from an all-pass inner report.
-D1 and all 44 full-call obligations remain open; D2/D3 follow afterward.
+failure questions and review-record path. That target subsequently received the independent review recorded below.
+At that inner checkpoint, the outer cgroup supervisor, whole-process-tree cleanup,
+trusted completion, original-byte forwarding and full 44-case evidence remained
+unimplemented or unproven. None was inferred from an all-pass inner report.
+The subsequent controlled-call checkpoint is recorded below; D1 remains open.
+
+## D1 inner-call receipt and controlled-call continuation
+
+The [inner-call review](../../../../review-inputs/r3-holm-d1-inner-call-20260918/REVIEW-RESULT.md)
+returned GO_FOR_D1_CONTINUATION for `f4b0786`, with zero BLOCKER, zero MAJOR and
+one MINOR; the routing-order MINOR is independently closed. The original is
+preserved from reviewer commit `bcb723b`, blob
+`dfc1d31a17ce46654f966862ecf7187625649341`, SHA-256
+`13500839415e60825cfd499dbec3b5ba91daef1050ea2dee3cf8a4311917d4d0`.
+Intake `a477d40fbc945d11947b2429e15905b1969e2d6f` adds only that record. Prior reviews,
+confirmation and original commission bytes are unchanged.
+
+The reviewer ran 65 TypeScript tests and skipped the actual-child test because
+its host had Python 3.11.15; 86 worker vectors ran under that interpreter. The
+pinned Node/Python tuple and hosted CI were NOT_RUN by the reviewer. Preserve
+that distinction from the author's successful pinned-tuple run and the later
+Verifier CI run 35315604170. This is not an independent host qualification.
+
+The next Verifier checkpoint is head `3c51172a66d2c13ebec99e2dbe7c4ab892888af9`,
+parent `f4b07868db999b282126b3a1c5620ee01a5252a4`, tree
+`e3d7cc3da06ca2fccca5900c561a150c0da762ec`, based on
+`940b8fb6990632029bcebd2ebdf6ce9dca8e9244`. Increment: 25 files, +2789/-21.
+Its [controlled-call handoff and review request](https://github.com/licklider-ai/nomue-verifier/blob/3c51172a66d2c13ebec99e2dbe7c4ab892888af9/development/r3-holm/OUTER-CALL-HANDOFF.md)
+fixes the new code, exact review scope, source provenance and remaining cases.
+
+The expected-access MINOR is author-repaired: directories, symlink loops and
+other expected-only path failures return C error `expected_unreadable`, keeping
+S/K/D/H/I results; expected resource limits and unexpected host failures still
+refuse the whole invocation. The exact directory regression passes. Symlink
+following and candidate.5's `p_generation: not_asserted` vocabulary are documented;
+the latter still needs D3 public-surface/schema disposition.
+
+The new controlled call launches a fresh pinned supervisor directly, applies the
+historical cgroup memory/swap/tasks/CPU policy before Node startup, retains fixed
+failure precedence and complete descendant cleanup, and validates direct trusted
+completion before releasing the retained original bytes. It accepts no saved
+receipt as an invocation. Nonces and payload hashes frame local completion;
+they are not a new authentication claim or Protocol identifier scheme. Supervisor
+loss still requires external delegation cleanup. The released CLI is unchanged.
+
+Author validation: 75/75 TypeScript tests with no skips, five Python supervisor
+contract tests, strict typecheck, existing npm tests and actual package checks.
+Twenty-six predetermined case variants pass through the inner file adapter. The
+local cgroup mount is read-only, so local enforcement is NOT_RUN. The dedicated
+[exact-head CI run 35318802381](https://github.com/licklider-ai/nomue-verifier/actions/runs/35318802381)
+completed its controlled-host job successfully: 26 real controlled-call variants
+and 13 actual-host fault controls, 39/39 passing. The unmodified 117-file artifact
+is retained as [controlled-host-3c51172.zip](controlled-host-3c51172.zip), SHA-256
+`8e08314c2b18ed66fcc88170848c87fbaf55e8f34e5cee3a31b63f335f088fe9`.
+[Evidence metadata](CONTROLLED-HOST-EVIDENCE.json) fixes the job/artifact IDs,
+source-manifest hash, checks and remaining scope. The CI checkout was synthetic
+merge `532eea84fd6505e81a7128f9064f9916415144f1`; its tree equals the fixed head.
+Archive hashes match GitHub, all archived input bytes match the predetermined
+local inputs, all normal receipts bind the pinned source inventory and complete
+cleanup, and forwarded bytes equal the archived original. Other CI jobs are
+reported separately in the PR; this author host run is not independent clearance.
+
+D1 remains open. First independently review this bounded changed scope, then
+expand the missing/parameterized 44-case obligations and full-path fault injection.
+D2 dispatcher/legacy compatibility and D3 authority integration remain separate.
+No full acceptance row is closed merely by one representative passing variant.
 
 ## Continuing engineering boundary
 
 Develop in the public nomue-verifier repository, outside its npm runtime and
 supported dispatch until the coordinated adoption/integration permits promotion.
-Retain the reviewed local foundations while reviewing the new versioned output,
-numerical inner call and its controls. Next connect the outer supervisor and
-trusted completion with original-byte forwarding and full acceptance evidence;
-do not substitute inner tests for the full controlled invocation.
+Retain the reviewed inner foundations while independently reviewing the new
+controlled lifecycle, completion and original-byte forwarding. Expand full
+acceptance evidence next; do not substitute pure receipt/inner tests for actual
+controlled invocation and host evidence.
 
 This sequencing does not declare D1 complete or narrow its acceptance matrix.
 Maintain a case-to-test map distinguishing component evidence from full-call
