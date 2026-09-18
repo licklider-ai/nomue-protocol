@@ -172,6 +172,75 @@ expand the missing/parameterized 44-case obligations and full-path fault injecti
 D2 dispatcher/legacy compatibility and D3 authority integration remain separate.
 No full acceptance row is closed merely by one representative passing variant.
 
+## D1 controlled-call receipt and expanded checkpoint
+
+The [controlled-call review](../../../../review-inputs/r3-holm-d1-controlled-call-20260918/REVIEW-RESULT.md)
+returned GO_FOR_D1_CONTINUATION for `3c51172`, zero BLOCKER/MAJOR and two MINOR
+findings. Expected-access m-1 is independently closed. The review original is
+preserved from reviewer commit `310c4cf`, blob
+`4694d74889a3bb69eaed07b1b2a566e392ba07ec`, SHA-256
+`ecf6888d660c1ea37dbb37195e576886cecf76f10ff604d63e880daf132b039b`.
+Intake `3e338d098d62e6c131a0c9910249106ac1fa9118` adds only that file. Earlier
+reviews, the commission and historical evidence archives are unchanged.
+
+The reviewer independently verified the previous 39-receipt archive and source
+hashes but could not execute actual cgroup enforcement, Python 3.12.14 or the
+all-pass supervisor path on its own host. These NOT_RUN limits and the continuing
+language-model reviewer disclosure are preserved; this is not human-expert or
+host-qualification clearance.
+
+The next Verifier target is head `5ee62cdb98dde2b32b7910560bc85d1ad54b16c8`,
+parent `3c51172a66d2c13ebec99e2dbe7c4ab892888af9`, tree
+`2e7fa03210abac459b10ef781e194a68f64592c1`, base
+`940b8fb6990632029bcebd2ebdf6ce9dca8e9244`. Increment: 19 files, +1569/-30.
+The [expansion handoff and independent review request](https://github.com/licklider-ai/nomue-verifier/blob/5ee62cdb98dde2b32b7910560bc85d1ad54b16c8/development/r3-holm/EXPANSION-HANDOFF.md)
+fixes scope, failure questions and return path
+`review-inputs/r3-holm-d1-expansion-20260918/REVIEW-RESULT.md`.
+
+m-2 author repair shares seven path-error codes and regular-file failure between
+Record and expected adapters. Record symlink loops/overlong paths now refuse as
+input_access_error. m-3 supplies a genuinely absent expected argument through the
+supervisor and entry; R3D-16 fixes expected_missing separately from R3D-17's
+missing-file expected_unreadable. Both repairs require independent closure.
+
+The successor suite expands from 26 to 47 ordinary call variants. Three elementary
+numeric endpoint/subnormal-tie targets are specified independently of the worker;
+its numerical sources and oracle are unchanged. Fourteen fixed trusted fault-entry
+runs challenge private-evidence/output validation, including structurally valid
+fabricated S pass. Their receipts retain probe provenance; they cannot be selected
+or accepted as ordinary controlledCall results. Thirteen existing host controls
+remain. tsconfig and the two fault-entry runtime files join the source inventory.
+
+Author local validation: 91/91 TypeScript tests, zero skips; 47 actual numerical
+inner-file cases; 14 native fault entries; five Python supervisor tests and 86
+independent numerical vectors; strict typecheck, npm tests and package checks.
+Local cgroup enforcement remains NOT_RUN because the mount is read-only.
+
+The [fixed-tree CI run 35321867056](https://github.com/licklider-ai/nomue-verifier/actions/runs/35321867056)
+passes all nine jobs. Its actual-host suite passes 74/74: 47 ordinary calls,
+14 controlled fault-entry runs and 13 enforcement/lifecycle controls. The original
+212-file archive is [controlled-host-5ee62cd.zip](controlled-host-5ee62cd.zip),
+SHA-256 `400160b5807194a8610a5e517cbc28559c25eac353fa65be8e6551d4bd0fdc3c`.
+[Exact evidence metadata](EXPANSION-HOST-EVIDENCE.json) records source/runtime pins,
+job/artifact identities, checks and limits. Synthetic CI merge
+`e899187c53ecfb753be3206b910c2acee3471009` has the same tree as the fixed head.
+
+Archive verification matches all 88 saved input byte files to locally regenerated
+predetermined fixtures and compares expectations after input-root path normalization.
+All receipts match the source inventory and complete cleanup. The 47 normal calls
+have distinct nonces; all four forwards equal original archived bytes. R3D-16's
+actual supervisor receipt reports expected_missing; the separate missing-file
+variant reports expected_unreadable. Record loop and overlong probes both refuse
+as input_access_error. All fourteen controlled fault entries return only refusal
+output, never provisional Record bytes. This is author evidence awaiting review.
+
+The [44-locator accounting](https://github.com/licklider-ai/nomue-verifier/blob/5ee62cdb98dde2b32b7910560bc85d1ad54b16c8/development/r3-holm/ACCEPTANCE-COVERAGE.json)
+keeps every locator partial. Complete limit/reason/rounding matrices, independent
+raw-byte oracles, helper-corruption paths, actual setup/cleanup failure and
+supervisor-loss/external-owner evidence remain. D2 still owns final dispatcher and
+legacy expected-argument behavior; D3 owns normative/schema/authority integration.
+The next decision is independent review of this bounded delta, not D1 completion.
+
 ## Continuing engineering boundary
 
 Develop in the public nomue-verifier repository, outside its npm runtime and
