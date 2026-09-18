@@ -1,0 +1,121 @@
+{
+  "status": "retained author CI observations; not independent clearance, host qualification or D1 completion",
+  "date_utc": "2026-09-18",
+  "verifier_repository": "licklider-ai/nomue-verifier",
+  "protocol_base": "0d302a6adad8dd0274a5b55abb1e2952f07d27b6",
+  "merges": [
+    {
+      "pr": 22,
+      "head": "735e62046e84a90197e2aa44aba59f75141c7ba8",
+      "tree": "52f484c4ec46ff5786453cfd4523c3dfef153daa",
+      "merge": "f5128cbf568f1713b12f0c26a47ff5e48560d4c1"
+    },
+    {
+      "pr": 23,
+      "head": "7f97a58c27cfb92d268c7eb03519bc5dc8cd0e00",
+      "tree": "fda9487e5a8c93c4a0bb0b3b5c2c78f28461c635",
+      "merge": "43a2ddc6933c62eecc05007081f50454acf5b459",
+      "merge_tree_equals_head": true
+    }
+  ],
+  "custody": "Original ZIP bytes downloaded through GitHub artifact API and hashes checked against GitHub digest; committed without repacking. No reviewer-origin blob was supplied.",
+  "artifacts": [
+    {
+      "file": "context-host-735e620.zip",
+      "run_id": 35359227949,
+      "artifact_id": 10553527601,
+      "head": "735e62046e84a90197e2aa44aba59f75141c7ba8",
+      "bytes": 815346,
+      "members": 669,
+      "sha256": "23920a5a895a00209fdceab8dc7562901d88501b2fb817749a44a50488c1b8cc",
+      "total": 190,
+      "ordinary_calls": 163,
+      "fault_entry_cases": 14,
+      "host_controls": 13,
+      "runtime_manifest_sha256": "b5c9fa18eee6381d319e1302a124b8375e12fa18feb8faf56729ef0cfb1d35ca",
+      "github_artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35359227949/artifacts/10553527601",
+      "hosted_expires_utc": "2026-12-17"
+    },
+    {
+      "file": "helper-inner-7f97a58.zip",
+      "run_id": 35363640369,
+      "artifact_id": 10554429929,
+      "head": "7f97a58c27cfb92d268c7eb03519bc5dc8cd0e00",
+      "bytes": 124734,
+      "members": 89,
+      "sha256": "29d175b3d2d9aefdc81687f78794a6965468abf82e797ec710a866d1636ffa1c",
+      "total": 20,
+      "lane": "inner source copies; not host execution",
+      "runtime_manifest_sha256": "45dcc97032a70c48d91dca041207e4db88aa1dac0ac482d90f4fffb0f3a98b9a",
+      "github_artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35363640369/artifacts/10554429929",
+      "hosted_expires_utc": "2026-12-17"
+    },
+    {
+      "file": "helper-host-7f97a58.zip",
+      "run_id": 35363640369,
+      "artifact_id": 10556060291,
+      "head": "7f97a58c27cfb92d268c7eb03519bc5dc8cd0e00",
+      "bytes": 980480,
+      "members": 783,
+      "sha256": "a97d07d71fea5b620e32712905c4bb5ea4f15c7546d51601fa893397feb95f89",
+      "total": 211,
+      "ordinary_calls": 163,
+      "fault_entry_cases": 14,
+      "host_controls": 13,
+      "helper_cases": 21,
+      "helper_completed_lifecycles": 20,
+      "helper_preflight_only": 1,
+      "runtime_manifest_sha256": "45dcc97032a70c48d91dca041207e4db88aa1dac0ac482d90f4fffb0f3a98b9a",
+      "github_artifact_url": "https://github.com/licklider-ai/nomue-verifier/actions/runs/35363640369/artifacts/10556060291",
+      "hosted_expires_utc": "2026-12-17"
+    }
+  ],
+  "author_checks": {
+    "head": "7f97a58c27cfb92d268c7eb03519bc5dc8cd0e00",
+    "node": "24.19.0",
+    "python": "3.12.14",
+    "component_pass": 245,
+    "component_skip": 0,
+    "inner_helper_pass": 20,
+    "ci_jobs_pass": 9,
+    "ci_jobs_total": 9,
+    "strict_types": "pass",
+    "npm_test": "pass including 96 Welch rows",
+    "package_smoke": "pass",
+    "local_cgroup": "NOT_RUN; read-only mount",
+    "host_command_seconds": 309.943,
+    "host_command_start_utc": "2026-09-18T15:38:30.884Z",
+    "host_command_end_utc": "2026-09-18T15:43:40.827Z",
+    "archive_inspection": "Every helper replacement reconstructed from fixed source; every test-copy inventory entry and receipt identity checked. 21 unique helper nonces; 163 ordinary receipts separately checked for inventory, nonce uniqueness and cleanup. Forward and negative-control claims checked in source-copy results."
+  },
+  "review": {
+    "verdict": "CLOSED",
+    "scope": "five supplied implementation findings at 7f97a58; close-only",
+    "source": "user-supplied conversation report; author summary in REVIEW-DISPOSITION.md",
+    "independence": "same-session continuing PR #22/#23 reviewer; explicitly not an independent Research Gate investigator",
+    "reviewer_node": "22",
+    "reviewer_python": "3.11",
+    "reviewer_components": {
+      "tests": 245,
+      "fail": 0,
+      "skip": 5
+    },
+    "reviewer_inner": {
+      "pass": 19,
+      "total": 20,
+      "remaining": "valid baseline refuses unsupported Python runtime"
+    },
+    "reviewer_actual_cgroup": "NOT_RUN",
+    "reviewer_repository_blob": null
+  },
+  "remaining": [
+    "all 44 locator dispositions partial",
+    "D1 completion",
+    "R3 Research Gate closure",
+    "D2/D3",
+    "earlier oracle/runner and B-2 replay repair independent review",
+    "actual setup/cleanup failure and supervisor loss",
+    "narrower whole-call boundary matrices",
+    "correctly typed corrupted projection on noncanonical input"
+  ]
+}

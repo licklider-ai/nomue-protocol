@@ -11,6 +11,12 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 
 Use these active entry points:
 
+- [D1 context/helper checkpoint closeout and restart](holm-d1-checkpoint-close-20260918/README.md):
+  Verifier PRs #22/#23 merged; all five helper review findings confirmed closed
+  by the continuing implementation reviewer. Original CI ZIPs are retained here.
+  Work is paused at this checkpoint; D1, Research Gate and D2/D3 remain open.
+  Resume with actual cleanup failure/supervisor loss and the listed review residuals.
+
 The owner-requested [merge self-review](holm-d1-oracles-20260918/MERGE-SELF-REVIEW.md)
 records adversarial checks and documentation repairs for PRs #20/#355. This is
 a continuing-author self-review, not independent clearance or R3 adoption.
@@ -18,7 +24,7 @@ a continuing-author self-review, not independent clearance or R3 adoption.
 - [D1 byte-oracle continuation](holm-d1-oracles-20260918/README.md): independent
   review accepted through `eda3ba9`; its one MINOR is author-repaired. The next
   fixed target adds independent byte/digest targets and component bound matrices.
-  D1 remains open; this is the current implementation handoff.
+  D1 remains open; its pending oracle review is carried into the closeout above.
 
 - [B-2 numerical/source intake and successor wiring](holm-b2-integration-20260918/README.md):
   bounded GO, preserved withdrawal and stable-sort repair; Verifier `eda3ba9`
