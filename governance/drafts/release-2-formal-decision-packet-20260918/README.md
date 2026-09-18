@@ -26,6 +26,9 @@ support, authorize an authoritative landing, or alter Release 1.
 4. [Independent packet review commission](INDEPENDENT-PACKET-REVIEW.md) — the
    bounded review to perform against the exact packet head before asking for the
    steward decision.
+5. [Independent packet review result](../../../review-inputs/r2-formal-decision-packet-20260918/REVIEW-RESULT.md)
+   — the preserved `REPAIR_REQUIRED` review of the original packet head and the
+   required close-only repair confirmation.
 
 ## Scope
 

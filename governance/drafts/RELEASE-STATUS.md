@@ -36,6 +36,8 @@ pre-review state; the preserved later review supplies the current receipt.
 That GO is readiness for the final decision, not the final R2-D5 decision itself.
 
 Next, use the [ratification sequence](release-2-steward-ratification-package.md):
+the [formal decision packet](release-2-formal-decision-packet-20260918/README.md)
+assembles its current D2-D6 inputs and retains its independent packet review.
 
 1. Assemble the exact current D2-D6 decision inputs and assess deltas from the
    reviewed candidate. Reuse unchanged evidence; rerun or review affected parts.
