@@ -65,6 +65,12 @@ All 110 saved input byte files match local regeneration; all ten fixed reference
 hashes match reports; 58 ordinary nonces are distinct; six forwards equal their
 original bytes. These are author executions, not independent host qualification.
 
+The later [owner-requested merge self-review](MERGE-SELF-REVIEW.md) records
+additional adversarial probes and the disposition for merging these unissued
+development assets. Main advanced during that review; the [new host evidence](MERGE-HOST-EVIDENCE.json)
+records 85/85 passes after explicitly refreshing two package inventory pins. It does not replace the pending independent changed-scope
+review or close D1.
+
 ## Remaining D1 work and next decision
 
 All 44 locator rows remain partial. The map distinguishes the new component

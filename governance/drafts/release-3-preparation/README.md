@@ -11,6 +11,10 @@ on 2026-09-09. The [opening receipt](public-opening-record.md) fixes the unchang
 
 Use these active entry points:
 
+The owner-requested [merge self-review](holm-d1-oracles-20260918/MERGE-SELF-REVIEW.md)
+records adversarial checks and documentation repairs for PRs #20/#355. This is
+a continuing-author self-review, not independent clearance or R3 adoption.
+
 - [D1 byte-oracle continuation](holm-d1-oracles-20260918/README.md): independent
   review accepted through `eda3ba9`; its one MINOR is author-repaired. The next
   fixed target adds independent byte/digest targets and component bound matrices.
@@ -19,17 +23,18 @@ Use these active entry points:
 - [B-2 numerical/source intake and successor wiring](holm-b2-integration-20260918/README.md):
   bounded GO, preserved withdrawal and stable-sort repair; Verifier `eda3ba9`
   adds a 120-comparison full-call target and author replay. The 75-check hosted
-  suite passes; independent expansion/wiring review and D1 completion remain open.
+  suite passes; the later independent receipt accepts expansion/wiring through
+  that head. Full D1 evidence remains open.
 
 - [Output-design decision preparation](holm-design-decision-20260918/README.md):
   Q1-Q3 proposed dispositions, 44 planned acceptance cases, staged integration
   and retained review/repair/confirmation records. D0 GO; not a tested successor.
 - [D1 component checkpoint](https://github.com/licklider-ai/nomue-verifier/pull/20):
   byte/dependency, local-check, inner-call and controlled-call checkpoints received
-  GO_FOR_D1_CONTINUATION. The latest original review is preserved; its two MINOR
-  findings are author-repaired at `5ee62cd`. This next checkpoint expands ordinary
-  cases and controlled output fault injection, with a 44-locator partial-coverage
-  map. Its independent review and full D1 evidence remain open; see the
+  GO_FOR_D1_CONTINUATION. The subsequent B-2 integration receipt independently
+  closes the controlled-call path-error and omitted-argument findings through
+  `eda3ba9`. The current oracle checkpoint follows that receipt; all 44 locator
+  rows and full D1 completion remain open. See the
   [receipt and continuation](holm-design-decision-20260918/D0-COMPLETION.md).
 - [Fixed PR #330 preparation](https://github.com/licklider-ai/nomue-protocol/tree/b52389fd3efc6b8968613f59f147a578d5bbb55d/governance/drafts/release-3-preparation/holm-adoption-preparation-20260912):
   candidate.4, claim applicability, concrete Contract/coupling proposals and
