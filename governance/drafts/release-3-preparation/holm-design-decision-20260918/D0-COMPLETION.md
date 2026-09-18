@@ -43,7 +43,7 @@ The review applies to `a829970`, not to the new code below. That reviewed head's
 hosted CI run 35309941826 completed successfully, separately from the reviewer's
 local executions. Reviewer/model/environment disclosures remain in the original.
 
-Verifier PR #20 now fixes the next checkpoint at head
+The local-check continuation checkpoint was fixed at head
 `77bb4ebaac5eca37390b8b23aede90f3d25702c0`, parent `a82997073b17277f85d524f61efb7bc9249192a5`,
 tree `b16cb336d83454adb0d0360de3ee8308c7e53f26`, still based on
 `940b8fb6990632029bcebd2ebdf6ce9dca8e9244`. The incremental delta is 20 files,
@@ -66,20 +66,59 @@ exclusion/installed CLI checks and eight source-copy hashes on Linux x64 / Node
 CI is separate. Numerical/real-host/full-call suites are not claimed.
 
 The [current handoff and independent review request](https://github.com/licklider-ai/nomue-verifier/blob/77bb4ebaac5eca37390b8b23aede90f3d25702c0/development/r3-holm/LOCAL-CHECKS-HANDOFF.md)
-contains the repair disposition, exact extraction scope, case-to-evidence map,
-failure questions and review-record destination. This new checkpoint awaits its
-own independent review; author tests do not supply that clearance. D1 and all 44
-full-call cases remain open. Next dependent work is the versioned output/refusal
-protocol, numerical worker and controlled full-call lifecycle, then D2/D3.
+contains that checkpoint's repair disposition, exact extraction scope and case
+map. Its subsequent independent receipt and the next checkpoint are below.
+
+## D1 local-check receipt and successor inner call
+
+The [local-check review](../../../../review-inputs/r3-holm-d1-local-checks-20260918/REVIEW-RESULT.md)
+returned GO_FOR_D1_CONTINUATION for `77bb4eb`, with 0 BLOCKER, 0 MAJOR, 1 MINOR;
+the prior two MINOR findings are independently closed. Preserve its scope and
+reviewer disclosure: this is not D1 completion or adoption. The original comes
+from reviewer commit `9d69da5`, blob `11039218c1167e4e8632f45fa68f908eee794407`,
+SHA-256 `453c40ddf25a5684ff525a9450dd00135faca9fc236fa570cdd892cc8d5bee29`.
+Intake commit `d40d61bf7a1b47ad650988cdc67033a14e7023f3` adds only that file.
+
+Verifier PR #20's next checkpoint is head
+`f4b07868db999b282126b3a1c5620ee01a5252a4`, parent
+`77bb4ebaac5eca37390b8b23aede90f3d25702c0`, tree
+`967e008a553cba51fe02d1c03d5dcffc2e96a121`, base
+`940b8fb6990632029bcebd2ebdf6ce9dca8e9244`. Incremental delta: 26 files,
++4805/-29. This includes versioned draft schemas, exact numerical-source copies,
+test evidence and documentation; it is not a numerical-method change.
+
+The m-1 repair puts strict parse/bounds first, then exact bundle and separately
+validated Record/revision identities, then canonicalization/projection/digest.
+Crossed tests fix unsupported/missing bundle plus nonfinite input precedence.
+The successor inner call explicitly selects candidate.5, connects the unchanged
+Python numerical worker A, and produces versioned separated report/refusal output.
+Schema/graph checks plus private evaluation evidence reject fabricated rows.
+Bounded file acquisition, shared time/heap checkpoints, direct-child deadline,
+cancellation and close-before-return are implemented. Graph and unexpected errors
+map to invocation internal_error, not reported check errors.
+
+Author validation on Linux x64 / Node 24.19.0 / Python 3.12.14: 66/66 TypeScript
+tests, strict typecheck, existing npm tests and actual package checks passed.
+Eighty-six actual worker vectors match the retained independent closed-testing
+oracle. Numerical worker/kernel/oracle bytes match the fixed Protocol sources;
+raw logs and source hashes are saved in Verifier. Hosted CI is a separate result.
+
+The [inner-call handoff and independent review request](https://github.com/licklider-ai/nomue-verifier/blob/f4b07868db999b282126b3a1c5620ee01a5252a4/development/r3-holm/INNER-CALL-HANDOFF.md)
+fixes the changed output contract, order repair, numerical reuse, execution scope,
+failure questions and review-record path. This new target awaits its own review.
+The outer cgroup supervisor, whole-process-tree cleanup, trusted completion,
+original-byte forwarding and full 44-case evidence remain unimplemented or
+unproven for this successor. None is inferred from an all-pass inner report.
+D1 and all 44 full-call obligations remain open; D2/D3 follow afterward.
 
 ## Continuing engineering boundary
 
 Develop in the public nomue-verifier repository, outside its npm runtime and
 supported dispatch until the coordinated adoption/integration permits promotion.
-Retain the reviewed raw-byte and dependency foundations while reviewing the new
-actual schema/D0/Holm/context checks at their fixed checkpoint. Next connect the
-versioned output contract, arithmetic and execution controls with evidence at
-each boundary; do not substitute component tests for full-call acceptance.
+Retain the reviewed local foundations while reviewing the new versioned output,
+numerical inner call and its controls. Next connect the outer supervisor and
+trusted completion with original-byte forwarding and full acceptance evidence;
+do not substitute inner tests for the full controlled invocation.
 
 This sequencing does not declare D1 complete or narrow its acceptance matrix.
 Maintain a case-to-test map distinguishing component evidence from full-call

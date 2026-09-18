@@ -70,12 +70,13 @@ D0 returned GO_FOR_UNISSUED_IMPLEMENTATION at `1eb6b93`; D1 may proceed in
 nomue-verifier. This is not a tested successor or formal steward disposition.
 
 The first D1 byte/dependency checkpoint received GO_FOR_D1_CONTINUATION at
-Verifier `a829970`. Its two MINOR repairs and actual local S/K/D/H/I/C checks are
-saved in [Verifier PR #20](https://github.com/licklider-ai/nomue-verifier/pull/20)
-at `77bb4eb`, with 55 passing component tests. This new checkpoint awaits its own
-review. See the [receipt and fixed handoff](release-3-preparation/holm-design-decision-20260918/D0-COMPLETION.md).
-Full D1, all 44 full-call cases, numerical/output/lifecycle integration and D2/D3
-remain open; component review does not imply adoption or release permission.
+Verifier `a829970`; local checks at `77bb4eb` also received that verdict, with
+one order-repair MINOR. [Verifier PR #20](https://github.com/licklider-ai/nomue-verifier/pull/20)
+now saves the repair and candidate.5 output/numerical inner call at `f4b0786`:
+66 passing TypeScript tests and 86 independent worker comparisons. This new
+checkpoint awaits review. See the [receipts and fixed handoff](release-3-preparation/holm-design-decision-20260918/D0-COMPLETION.md).
+Full D1, outer supervisor/cleanup/forwarding, all 44 full-call cases and D2/D3
+remain open; inner-call evidence does not imply adoption or release permission.
 
 Use [candidate.3](release-3-preparation/holm-repaired-candidate-20260911/README.md),
 the [active adoption map](release-3-preparation/holm-adoption-map-repair-20260911/README.md),
