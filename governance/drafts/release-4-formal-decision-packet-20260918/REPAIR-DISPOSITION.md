@@ -1,6 +1,6 @@
 # Release 4 packet-review repair disposition
 
-Status: **AUTHOR-SIDE REPAIR; CLOSE-ONLY CONFIRMATION REQUIRED**.
+Status: **AUTHOR-SIDE REPAIR; CLOSE-ONLY CONFIRMED `GO`**.
 
 ## Reviewed target and preserved review
 

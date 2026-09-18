@@ -1,6 +1,6 @@
 # Release 4 formal decision packet
 
-Status: **REVIEW REPAIRED; CLOSE-ONLY CONFIRMATION REQUIRED; FORMAL DECISION TIME-GATED**.
+Status: **PACKET REVIEW CLOSED; FORMAL DECISION TIME-GATED**.
 
 This packet assembles the already reviewed, unissued balanced two-factor Release 4
 candidate for an eventual steward decision. It does not repeat T01-T14 research,
@@ -38,6 +38,8 @@ above remain the source evidence even if this packet receives review-only repair
    commission for this packet.
 6. [Repair disposition](REPAIR-DISPOSITION.md) — review findings, bounded
    repairs, and the close-only confirmation scope.
+7. [Repair confirmation](../../../review-inputs/r4-formal-decision-packet-20260918/REPAIR-CONFIRMATION.md) —
+   close-only `GO` for the repaired target.
 
 ## Packet boundary
 
