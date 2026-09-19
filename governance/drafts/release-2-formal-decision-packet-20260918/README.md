@@ -21,12 +21,15 @@ support, authorize an authoritative landing, or alter Release 1.
    their current state, and the evidence required for each disposition.
 2. [Evidence and disposition index](EVIDENCE-AND-DISPOSITION.md) — bounded review
    receipts and the claims they do and do not establish.
-3. [Authoritative landing outline](AUTHORITATIVE-LANDING-OUTLINE.md) — the single
+3. [D5 final selection record](D5-FINAL-SELECTION-RECORD.md) — the exact candidate
+   selection put forward for every required R2-D5 item, its evidence identity, its
+   residual gap, and the remaining open hold.
+4. [Authoritative landing outline](AUTHORITATIVE-LANDING-OUTLINE.md) — the single
    coupled change set that may be prepared only after the required decisions.
-4. [Independent packet review commission](INDEPENDENT-PACKET-REVIEW.md) — the
+5. [Independent packet review commission](INDEPENDENT-PACKET-REVIEW.md) — the
    bounded review to perform against the exact packet head before asking for the
    steward decision.
-5. [Independent packet review result](../../../review-inputs/r2-formal-decision-packet-20260918/REVIEW-RESULT.md)
+6. [Independent packet review result](../../../review-inputs/r2-formal-decision-packet-20260918/REVIEW-RESULT.md)
    — the preserved `REPAIR_REQUIRED` review of the original packet head and the
    required close-only repair confirmation.
 

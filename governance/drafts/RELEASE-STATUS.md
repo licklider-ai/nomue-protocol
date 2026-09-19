@@ -9,11 +9,11 @@ checkpoints and review requests describe their own dates, not the latest state.
 
 ## At a glance
 
-| Release                            | Current bounded milestone                                                           | Next substantive work                                                                                                | Formal state                                                                  |
-| ---------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed     | Prepare exact final decision and coordinated authoritative change candidates                                         | Public review open; unissued                                                  |
-| R3 independent-group programme     | D1 context/helper checkpoint merged and preserved; work paused                      | Resume actual failed cleanup/supervisor loss and remaining D1 evidence/review                                        | Public discussion open; no adopted Holm support or whole-programme completion |
-| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing | Public discussion open; unissued and unsupported                              |
+| Release                            | Current bounded milestone                                                                 | Next substantive work                                                                                                  | Formal state                                                                  |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| R2 paired-t                        | Candidate evidence, review-readiness work and the D5 final selection record are assembled | Commission the exact-head independent numerical review, repair oracle-bundle custody, then prepare the coupled landing | Public review open; unissued                                                  |
+| R3 independent-group programme     | D1 context/helper checkpoint merged and preserved; work paused                            | Resume actual failed cleanup/supervisor loss and remaining D1 evidence/review                                          | Public discussion open; no adopted Holm support or whole-programme completion |
+| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open       | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing   | Public discussion open; unissued and unsupported                              |
 
 ## R5: public discussion open
 
@@ -39,7 +39,11 @@ That GO is readiness for the final decision, not the final R2-D5 decision itself
 
 Next, use the [ratification sequence](release-2-steward-ratification-package.md):
 the [formal decision packet](release-2-formal-decision-packet-20260918/README.md)
-assembles its current D2-D6 inputs and retains its independent packet review.
+assembles its current D2-D6 inputs and retains its independent packet review. Its
+[D5 final selection record](release-2-formal-decision-packet-20260918/D5-FINAL-SELECTION-RECORD.md)
+now states the exact candidate selection put forward for each required D5 item and
+records one open hold, the exact-head independent numerical review, plus a bounded
+oracle-custody repair. Neither is blocked by the discussion window.
 
 1. Assemble the exact current D2-D6 decision inputs and assess deltas from the
    reviewed candidate. Reuse unchanged evidence; rerun or review affected parts.
