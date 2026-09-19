@@ -4,7 +4,7 @@
   "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
   "groups": 24,
   "controls": 82,
-  "legacy_fixtures": 132,
+  "legacy_fixtures": 134,
   "rows": [
     {
       "group": "valid_baseline",
@@ -432,7 +432,7 @@
       "group": "legacy_regression",
       "name": "all existing registered conformance fixtures",
       "expected": "no change",
-      "fixtures": 132
+      "fixtures": 134
     },
     {
       "group": "storage_variants",

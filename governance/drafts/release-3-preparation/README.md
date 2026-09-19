@@ -1,7 +1,7 @@
 # Release 3 Public-Review Preparation
 
-**Current status (2026-09-18): public discussion open; candidate.4 and adoption
-preparation are preserved in open PR #330; D0 output-design review is complete
+**Current status (2026-09-19): public discussion open; candidate.4 and adoption
+preparation are preserved at the fixed PR #330 head; D0 output-design review is complete
 and permits D1 unissued implementation; no formal adoption.** See the
 [current R2/R3/R4 status and next tasks](../RELEASE-STATUS.md).
 
@@ -55,7 +55,7 @@ a continuing-author self-review, not independent clearance or R3 adoption.
 
 Next is a tested unissued successor in nomue-verifier, followed by complete conformance/dispatcher/output-protocol
 integration. Reuse PR #330's bounded numerical/source applicability; do not redo
-its preparation merely because its open branch is absent from main. Formal
+its preparation merely because the fixed packet is absent from main. Formal
 authority and RFC dispositions remain separate. This is not another broad source
 search or automatic approval of all fifteen methods.
 
