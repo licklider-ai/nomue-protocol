@@ -210,11 +210,29 @@ Evidence: `…/numerical/runtime-numerical-contract-full-trace-candidate.json` (
 [Group 2 closure review](../../../review-inputs/r2-d5-group-2-runtime-numerical-contract-closure/REVIEW-RESULT.md)
 at head `ef62d8a047026eb7226a0fa38ef27dbd1a49b017`.
 
-Residual gap: if the eventual Public Check needs any cross-implementation tolerance, no
-value is selected, and `quantity_comparison_tolerance` is on the list of claims
-prohibited before final R2-D5. Any tolerance that is later adopted belongs in
-[`registries/public-checks.yaml`](../../../registries/public-checks.yaml) under a check
-version, never in a Record.
+Residual gaps:
+
+- If the eventual Public Check needs any cross-implementation tolerance, no value is
+  selected, and `quantity_comparison_tolerance` is on the list of claims prohibited
+  before final R2-D5. Any tolerance that is later adopted belongs in
+  [`registries/public-checks.yaml`](../../../registries/public-checks.yaml) under a check
+  version, never in a Record. That registry currently carries no paired-t check and no
+  paired-t tolerance stanza, so the ownership rule here is policy, not an existing entry.
+- **Selected for the candidate contract is not activated for runtime, and the record does
+  not collapse the two.** The tail selection checkpoint records
+  `input_specific_bound_selected_for_tail_numerical_contract: true`, while the proof
+  checkpoint records `truth_error_bound_selected: false` and
+  `input_specific_bound_selected_for_runtime: false`, and the projection contract records
+  `projection_margin_runtime_activated: false`. The bound form is selected for the
+  candidate numerical contract; runtime activation is a separate, open step.
+- No global truth-error constant exists in ULP or any other unit:
+  `global_bound_ulp` and `future_bound_ulp` are `null`. The only nearby numbers are the
+  finite observations listed under D5-S10, each marked
+  `eligible_as_global_or_supported_bound: false`.
+- Held decisions recorded at the earlier draft checkpoint — the one-cell
+  projection-boundary refusal margin, the confidence-interval sign-stability bound, and
+  the kappa-gate question — are not restated as discharged by the later Group 2 closure.
+  The steward disposition either discharges them explicitly or carries them forward.
 
 ### D5-S04 — Student-t tail and fixed-95 critical-value table identities
 
@@ -284,8 +302,11 @@ not refused, while a subnormal proof-tracked intermediate or a subnormal p-value
 Evidence: `…/numerical/support-domain-boundary-cases.json` for the ordered corpus and
 the Group 2 contract for the stage policies.
 
-Residual gap: each class maps to an unissued candidate reason code (D5-S06); nothing in
-this ordering is frozen.
+Residual gaps: each class maps to an unissued candidate reason code (D5-S06), and nothing
+in this ordering is frozen. The earlier draft checkpoint also lists
+`subnormal_intermediate_first_failure_order_and_activation` among its held decisions; the
+Group 2 closure selects the stage policies, but runtime activation of that ordering is the
+same open step recorded under D5-S03.
 
 ### D5-S06 — Final scoped reason-code set and report propagation
 
