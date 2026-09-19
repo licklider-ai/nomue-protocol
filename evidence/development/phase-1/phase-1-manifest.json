@@ -124,7 +124,7 @@
     },
     {
       "path": "conformance/manifest.yaml",
-      "sha256": "4a009d86e1616be99fdcd15712818536507ed4c53af1c01f8bba309d97d408f3"
+      "sha256": "b5868b9db1884b21d0fab21f26d632ece4613af61d3d97d4893ac7d85077e15d"
     },
     {
       "path": "canonicalization/test-vectors/manifest.yaml",

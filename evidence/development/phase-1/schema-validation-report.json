@@ -16,5 +16,5 @@
   ],
   "compiled": true,
   "reference_resolution": "all $refs resolved locally at compile time; nothing fetched",
-  "fixture_count": 132
+  "fixture_count": 134
 }

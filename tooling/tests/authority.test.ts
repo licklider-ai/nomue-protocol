@@ -305,7 +305,7 @@ describe("conformance manifest (Phase 1)", () => {
     expect(counts.get("strict_json")).toBe(19);
     expect(counts.get("routing")).toBe(9);
     expect(counts.get("verifier_behavior")).toBe(23);
-    expect(counts.get("numerical_contract")).toBe(6);
+    expect(counts.get("numerical_contract")).toBe(8);
     expect(counts.get("emitter")).toBe(5);
     expect(counts.get("approval")).toBe(3);
     expect(counts.get("lifecycle")).toBe(12);

@@ -2180,6 +2180,85 @@ families:
                 - NRS-P-VALUE-UNDERFLOW
                 - NRS-NUMERICAL-COMPUTABILITY-FAILED
           semantic_projection_hash: sha256:bda1bef71805515abf72190c0d89d4054e91368bb10dd847744627224efde397
+      - fixture_id: A2-1-V-004
+        classification: valid
+        purpose: Welch-Satterthwaite df=1 with a near-zero test statistic passes; the
+          declared p-value is derived from the exact Cauchy identity
+          F(t;1)=1/2+atan(t)/pi rather than from the reference kernel
+          (P021-V-004).
+        input: conformance/fixtures/numerical_contract/A2-1-V-004.json
+        input_sha256: a51898839de75248c2afa5f646925011a72d29dd58f0415993ace9399b74e9ff
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0011
+          - NRS-VERIFY-0014
+          - NRS-VERIFY-0019
+          - NRS-VERIFY-0020
+        expected:
+          kind: record
+          cli_exit_code: 0
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+          semantic_projection_hash: sha256:2af87c9bd215c36287c81e9cd768151134fa02292eea1060f2f1ad3a58e592ad
+      - fixture_id: A2-1-P-005
+        classification: invalid_declared_result
+        purpose: Declared p=1 on the same df=1 near-zero-statistic data fails recompute.
+          This is the exact value a verifier reports when its t-CDF quantizes to
+          0.5 at the distribution centre, so the pair A2-1-V-004/A2-1-P-005
+          discriminates a correct df=1 implementation from a centre-quantizing
+          one (P021-P-005).
+        input: conformance/fixtures/numerical_contract/A2-1-P-005.json
+        input_sha256: d27fcb9524ed21f9479715d2629e020cadc4dc12e8402d14496fc26620bce052
+        requirement_ids:
+          - NRS-PROFILE-ITGC-0011
+          - NRS-VERIFY-0020
+          - NRS-VERIFY-0014
+        expected:
+          kind: record
+          cli_exit_code: 2
+          conformance_check_id: urn:nomue:check:record-conformance:0.2.0-draft.1
+          conformance:
+            execution: completed
+            outcome: pass
+            reason_codes: []
+          checks:
+            - check_id: urn:nomue:check:record-integrity:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:itgc-profile-admissibility:0.2.0-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-computability:0.2.1-draft.1
+              execution: completed
+              outcome: pass
+              reason_codes: []
+            - check_id: urn:nomue:check:welch-recompute:0.2.1-draft.1
+              execution: completed
+              outcome: fail
+              reason_codes:
+                - NRS-DECLARED-RESULT-MISMATCH
+          semantic_projection_hash: sha256:3fc815daeefea75eabb5569925f724763133f622adcaaad2c5590c09e2a6a569
     requirement_ids:
       - NRS-CANON-0009
       - NRS-CANON-0010

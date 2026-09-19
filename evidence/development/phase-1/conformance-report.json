@@ -1,5 +1,5 @@
 {
-  "executed_fixtures": 132,
+  "executed_fixtures": 134,
   "all_expectations_match": true,
   "by_classification": {
     "admissibility_failure": 9,
@@ -14,7 +14,7 @@
     "emitter_invalid_unknown_field": 1,
     "emitter_valid": 1,
     "integrity_invalid": 2,
-    "invalid_declared_result": 3,
+    "invalid_declared_result": 4,
     "lifecycle_operation": 4,
     "lifecycle_projection": 8,
     "mismatch": 9,
@@ -28,7 +28,7 @@
     "strict_json_refusal": 15,
     "strict_json_valid": 4,
     "structural_invalid": 3,
-    "valid": 12,
+    "valid": 13,
     "version_dispatch": 4
   }
 }

@@ -115,15 +115,26 @@ this repository.
   steward release-gate decision recorded under the Release Policy. Do not create
   a public release or release tag unless all applicable gates are validly closed
   against the pinned Release Candidate.
-- Once a Release 1 candidate-freeze manifest and release-control pin exist,
-  candidate-frozen files do not change. Until publication, only
-  `authority/release-1-gates.yaml`, `evidence/release-1/**`, and
-  `generated/RELEASE-1-GATES.md` may evolve, and gate-registry edits are limited
-  to release-state bookkeeping (`updated`, `state`, `decision`, `notes`). Any
-  other content or gate-definition change requires a new candidate freeze and
-  invalidates dependent evidence. Run
+- While a release candidate is frozen and unpublished, candidate-frozen files do
+  not change. In that state only `authority/release-1-gates.yaml`,
+  `evidence/release-1/**`, and `generated/RELEASE-1-GATES.md` may evolve, and
+  gate-registry edits are limited to release-state bookkeeping (`updated`,
+  `state`, `decision`, `notes`). Any other content or gate-definition change
+  requires a new candidate freeze and invalidates dependent evidence. Run
   `pnpm snapshot:manifest --check-candidate` before gate review continues and
   again before release.
+- **Release 1 is published** (tag `release-1`, 2026-08-24, Protocol snapshot
+  `sha256:fc26c770538abe3598fc27a571ca6e99cc29763e0a25859a80c267ee2d80ab06`), so
+  its candidate-freeze window is closed and the preceding rule no longer
+  constrains `main`. `pnpm snapshot:manifest --check-candidate` is expected to
+  report a changed frozen file set on current `main` and is not a health check
+  for ordinary development; run it only inside a future candidate-freeze cycle,
+  against that candidate. The enduring guard for published Release 1 content is
+  the historical-integrity check in `pnpm validate`
+  (`tooling/src/release/release-1-history.ts`), which protects the signed
+  snapshot hash, the release key fingerprint, the stored candidate-freeze
+  manifest hash, and already-issued registry identifiers. For ordinary work use
+  `pnpm snapshot:manifest --check` (mechanism sanity) or `--hash-only`.
 
 ## Commands
 
@@ -142,12 +153,17 @@ this repository.
 | `pnpm test` / `pnpm typecheck`                             | Tests / TypeScript                                                                                           |
 | `pnpm format` / `pnpm format:check` / `pnpm lint:markdown` | Formatting and markdown lint                                                                                 |
 
-Additional Release 1 commands:
+Additional release-candidate commands. These belong to an open candidate-freeze
+cycle, not to ordinary development on `main`; see the published-Release-1 rule
+above before running either:
 
 - `pnpm snapshot:manifest --candidate-freeze` emits the frozen candidate
   inventory from the current candidate content commit.
 - `pnpm snapshot:manifest --check-candidate` proves that current frozen content
-  and gate definitions still match the stored candidate freeze.
+  and gate definitions still match the stored candidate freeze. Against current
+  `main` it reports a changed frozen file set, because Release 1 is published
+  and development has continued past its freeze; that result is expected and is
+  not a defect.
 
 `pnpm check` must be green before any commit that touches authoritative
 artifacts.
