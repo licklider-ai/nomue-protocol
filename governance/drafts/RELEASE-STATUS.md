@@ -1,19 +1,25 @@
 # Release 2, 3, 4 and 5 coordination status
 
-R3 reconciled 2026-09-18 UTC; R5 opening added 2026-09-17 UTC. R2/R4 summaries
-retain their 2026-09-11 snapshot after PR #328 and are not a fresh status audit.
-Informative coordination only. This page
+R2 and R4 reconciled 2026-09-19 UTC after their formal decision packets were
+integrated (PR #354, PR #356); R3 reconciled 2026-09-18 UTC; R5 opening added
+2026-09-17 UTC. Informative coordination only. This page
 summarizes recorded work and directs the next task. It does not replace the RFC,
 Research Gate, authoritative registries or a steward decision. Older fixed
 checkpoints and review requests describe their own dates, not the latest state.
 
+The concurrent edits to this page flagged by the R3 design-decision
+[repair disposition](release-3-preparation/holm-design-decision-20260918/REPAIR-DISPOSITION.md)
+are reconciled here: both branches are integrated (PR #355/#357 for R3, PR #354
+for R2) and their statements coexist without conflict. That disposition is a
+fixed dated record and is left unchanged.
+
 ## At a glance
 
-| Release                            | Current bounded milestone                                                           | Next substantive work                                                                                                | Formal state                                                                  |
-| ---------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| R2 paired-t                        | Candidate evidence and bounded review-readiness work are assembled and reviewed     | Prepare exact final decision and coordinated authoritative change candidates                                         | Public review open; unissued                                                  |
-| R3 independent-group programme     | D1 context/helper checkpoint merged and preserved; work paused                      | Resume actual failed cleanup/supervisor loss and remaining D1 evidence/review                                        | Public discussion open; no adopted Holm support or whole-programme completion |
-| R4 balanced 2-by-2 factorial scope | T01-T14 and A1 candidate readiness are closed; D01/D07 amendment discussion is open | Independently review the formal decision packet; decide no earlier than 2026-10-18, then prepare the coupled landing | Public discussion open; unissued and unsupported                              |
+| Release                            | Current bounded milestone                                                                                          | Next substantive work                                                                                 | Formal state                                                                  |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| R2 paired-t                        | Candidate evidence, review-readiness work and the reviewed formal decision packet are integrated                   | Record D1-D6 no earlier than 2026-09-25, then prepare the coordinated authoritative change candidates | Public review open; unissued                                                  |
+| R3 independent-group programme     | D1 context/helper checkpoint merged and preserved; work paused                                                     | Resume actual failed cleanup/supervisor loss and remaining D1 evidence/review                         | Public discussion open; no adopted Holm support or whole-programme completion |
+| R4 balanced 2-by-2 factorial scope | T01-T14, A1 and the independently reviewed formal decision packet are closed; D01/D07 amendment discussion is open | Record FD1-FD6 no earlier than 2026-10-18, then prepare the coupled landing                           | Public discussion open; unissued and unsupported                              |
 
 ## R5: public discussion open
 
@@ -38,6 +44,8 @@ pre-review state; the preserved later review supplies the current receipt.
 That GO is readiness for the final decision, not the final R2-D5 decision itself.
 
 Next, use the [ratification sequence](release-2-steward-ratification-package.md):
+the [formal decision packet](release-2-formal-decision-packet-20260918/README.md)
+assembles its current D2-D6 inputs and retains its independent packet review.
 
 1. Assemble the exact current D2-D6 decision inputs and assess deltas from the
    reviewed candidate. Reuse unchanged evidence; rerun or review affected parts.
@@ -153,11 +161,17 @@ unified decision is no earlier than `2026-10-18T01:51:08Z`. D07 retains the
 existing five-code CLI contract and places its distinction in the detailed
 report.
 
-Next, submit the [formal decision packet](release-4-formal-decision-packet-20260918/README.md)
-for exact-target independent review. After repairs and the controlling window,
-record the steward dispositions before preparing the authoritative Protocol and
-shared-verifier landing. Implementation, compatibility, freeze and publication
-remain subsequent evidence gates.
+The [formal decision packet](release-4-formal-decision-packet-20260918/README.md)
+has completed its exact-target independent review: the review returned
+`REPAIR_REQUIRED`, the findings were repaired, and the
+[close-only confirmation](../../review-inputs/r4-formal-decision-packet-20260918/REPAIR-CONFIRMATION.md)
+returned `GO` for target `ab5607be20abbe6077e935cfbb5c6bdd8420a81c`, integrated by
+PR #356. Do not repeat that review.
+
+Next, at or after the controlling `2026-10-18T01:51:08Z`, record the FD1-FD6
+steward dispositions, then prepare the authoritative Protocol and shared-verifier
+landing. Implementation, compatibility, freeze and publication remain subsequent
+evidence gates.
 
 ### Preserved experiment history
 

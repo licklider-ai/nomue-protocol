@@ -6,7 +6,8 @@ Candidate development and its bounded review-readiness round are at a stopping
 point. D2-D4 structural review and the final D5 review-readiness review have GO
 receipts. The final D2-D6 decisions, authoritative landing and publication remain
 open. Use [current release status](../RELEASE-STATUS.md) and the
-[ratification sequence](../release-2-steward-ratification-package.md).
+[ratification sequence](../release-2-steward-ratification-package.md), including
+the [formal decision packet](../release-2-formal-decision-packet-20260918/README.md).
 Pending wording in the chronology below describes earlier checkpoints; it is not
 an instruction to repeat completed reviews or proof of final adoption.
 
