@@ -67,7 +67,7 @@
     "@types/node": "^26.2.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
-    "canonicalize": "^3.0.0",
+    "canonicalize": "^5.0.0",
     "json-schema-to-typescript": "^15.0.4",
     "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.9.6",
