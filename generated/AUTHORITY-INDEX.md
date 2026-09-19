@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74)
+- authority/authority-manifest.yaml (sha256:338f951dd273db1d1a44f7a49fa1667d1ead1ef8fa8642f63c0108ba6861715e)
 
 Generation command: pnpm generate
 -->
@@ -147,6 +147,7 @@ Non-authoritative view of the authority manifest.
 | `README.md` | informative |
 | `AGENTS.md` | informative |
 | `PROTOCOL-ARCHITECTURE.md` | informative |
+| `ERRATA.md` | informative |
 | `spec/README.md` | informative |
 | `spec/AGENTS.md` | informative |
 | `spec/consuming-layer-1.md` | informative |

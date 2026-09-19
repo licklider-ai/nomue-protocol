@@ -191,6 +191,43 @@ function buildRecord021(opts: {
 const UNDERFLOW_A = Array.from({ length: 70 }, (_, i) => 10 + (i % 5) * 0.01);
 const UNDERFLOW_B = Array.from({ length: 70 }, (_, i) => (i % 5) * 0.01);
 
+// Welch-Satterthwaite lower bound: group B has zero sample variance, so the
+// denominator reduces to group A's term alone and df is EXACTLY 1. With
+// group A = {-1, 1} the pooled standard error is sqrt(2/2 + 0/2) = 1 exactly,
+// so the test statistic is exactly -DF1_CENTER_OFFSET. This is the smallest
+// degrees-of-freedom the supported slice admits (conformance requires two
+// observations per group; welch-computability requires only a finite df and a
+// positive standard error).
+const DF1_CENTER_OFFSET = 7.45e-9;
+const DF1_CENTER_A = [-1, 1];
+const DF1_CENTER_B = [DF1_CENTER_OFFSET, DF1_CENTER_OFFSET];
+
+// INDEPENDENT ANALYTIC ORACLE - deliberately not reference-kernel output.
+// For one degree of freedom the Student-t distribution is the standard Cauchy
+// distribution, whose CDF is the closed form F(t; 1) = 1/2 + atan(t)/pi. The
+// exact two-sided p-value is therefore 1 + 2*atan(-|t|)/pi, evaluated here
+// through atan rather than through the incomplete-beta t-CDF dependency that
+// the verifier recomputes with. This breaks the circularity disclosed in the
+// header of conformance/expectations/phase-2a-021-expectations.yaml for this
+// fixture: the declared p-value is derived from the mathematical definition in
+// spec/profiles/independent-two-group-continuous/welch-calculation.md, not
+// from the implementation under test.
+//
+// A verifier whose t-CDF loses representable precision near zero at df=1
+// quantizes F to 0.5 and reports a two-sided p-value of exactly 1. That is a
+// 4.74e-9 relative error, ~47x the 0.2.1 p_value relative tolerance of 1e-10,
+// and A2-1-P-005 pins its rejection.
+const DF1_CENTER_P_VALUE = 1 + (2 * Math.atan(-Math.abs(DF1_CENTER_OFFSET))) / Math.PI;
+const DF1_CENTER_P_VALUE_PINNED = 0.9999999952571827;
+// The p-value a df=1 center-quantizing implementation reports instead.
+const DF1_CENTER_P_VALUE_QUANTIZED = 1;
+
+if (!Object.is(DF1_CENTER_P_VALUE, DF1_CENTER_P_VALUE_PINNED)) {
+  throw new Error(
+    `df=1 analytic Cauchy oracle drifted: expected ${DF1_CENTER_P_VALUE_PINNED}, got ${DF1_CENTER_P_VALUE}`,
+  );
+}
+
 function buildInputs(): Map<string, Json> {
   const inputs = new Map<string, Json>();
   const ts1 = A2_DATASETS["A2-V-002"] as { groupA: number[]; groupB: number[] };
@@ -231,6 +268,31 @@ function buildInputs(): Map<string, Json> {
       groupB: UNDERFLOW_B,
       mutateResult: (r) => {
         (r["test"] as Json)["p_value"] = 0.05;
+      },
+    }),
+  );
+  inputs.set(
+    "A2-1-V-004",
+    buildRecord021({
+      serial: 2107,
+      groupA: DF1_CENTER_A,
+      groupB: DF1_CENTER_B,
+      mutateResult: (r) => {
+        // Overwrite the kernel's p-value with the analytically derived one.
+        // They are bit-identical on a correct implementation; writing the
+        // analytic value is what makes this fixture independent of the kernel.
+        (r["test"] as Json)["p_value"] = DF1_CENTER_P_VALUE;
+      },
+    }),
+  );
+  inputs.set(
+    "A2-1-P-005",
+    buildRecord021({
+      serial: 2108,
+      groupA: DF1_CENTER_A,
+      groupB: DF1_CENTER_B,
+      mutateResult: (r) => {
+        (r["test"] as Json)["p_value"] = DF1_CENTER_P_VALUE_QUANTIZED;
       },
     }),
   );

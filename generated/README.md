@@ -2,7 +2,7 @@
 GENERATED FILE - DO NOT EDIT.
 
 Source artifacts:
-- authority/authority-manifest.yaml (sha256:c4d103fda174ffdf8e6a54674f79573629a6628295d09b64144c54b7a1844d74)
+- authority/authority-manifest.yaml (sha256:338f951dd273db1d1a44f7a49fa1667d1ead1ef8fa8642f63c0108ba6861715e)
 - registries/requirements.yaml (sha256:5d73fc7faebe0fad07c9f099c5856b54ec41953df8e90f794da8e0a06e78dead)
 - registries/vocabulary.yaml (sha256:8349db89f37ba3b8436faa3b53ff8fc1737d57b7769d2c5e679552a402938ebc)
 - registries/public-checks.yaml (sha256:522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9)

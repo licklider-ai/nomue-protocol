@@ -62,6 +62,19 @@ final release decision are governed by
 [evidence/release-1/gate-index.json](evidence/release-1/gate-index.json), and
 [governance/RELEASE-POLICY.md](governance/RELEASE-POLICY.md).
 
+### Known defects in published releases
+
+Defects found after publication are recorded in [ERRATA.md](ERRATA.md). Read it
+before relying on a verification outcome from a published release.
+
+Release 1 currently carries one entry, **ER-1**: its reference verifier computes
+an incorrect two-sided p-value when the Welch-Satterthwaite degrees of freedom
+equal one and the test statistic is near zero. In that region it both accepts a
+Record declaring the wrong value and **rejects a Record declaring the correct
+one**. The defect is in the non-normative reference implementation, not in the
+specification; the published snapshot, its signature and its gate decisions are
+unchanged, and no public check version is renumbered.
+
 ## What the Protocol does and does not guarantee
 
 The Protocol aims to make specific, scoped properties of a Record checkable by

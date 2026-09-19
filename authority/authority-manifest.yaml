@@ -488,6 +488,12 @@ artifacts:
   - path: PROTOCOL-ARCHITECTURE.md
     class: informative
     notes: Architecture map; no independent semantic authority.
+  - path: ERRATA.md
+    class: informative
+    notes: Post-publication defect record for published releases. Reports observed
+      implementation defects and their effect on scoped verification outcomes. It
+      defines no Protocol meaning, withdraws no published snapshot, reopens no gate
+      and renumbers no check version.
   - path: spec/README.md
     class: informative
   - path: spec/AGENTS.md

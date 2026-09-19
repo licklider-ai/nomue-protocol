@@ -120,3 +120,43 @@ fixtures:
           execution: not_run
           outcome: null
           reason_codes: [NRS-P-VALUE-UNDERFLOW, NRS-NUMERICAL-COMPUTABILITY-FAILED]
+
+  A2-1-V-004:
+    family: numerical_contract
+    classification: valid
+    purpose: >-
+      Welch-Satterthwaite df=1 with a near-zero test statistic passes; the declared
+      p-value is derived from the exact Cauchy identity F(t;1)=1/2+atan(t)/pi rather
+      than from the reference kernel (P021-V-004).
+    requirement_ids: [NRS-PROFILE-ITGC-0011, NRS-VERIFY-0014, NRS-VERIFY-0019, NRS-VERIFY-0020]
+    expected:
+      kind: record
+      cli_exit_code: 0
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute: { execution: completed, outcome: pass, reason_codes: [] }
+
+  A2-1-P-005:
+    family: numerical_contract
+    classification: invalid_declared_result
+    purpose: >-
+      Declared p=1 on the same df=1 near-zero-statistic data fails recompute. This is
+      the exact value a verifier reports when its t-CDF quantizes to 0.5 at the
+      distribution centre, so the pair A2-1-V-004/A2-1-P-005 discriminates a correct
+      df=1 implementation from a centre-quantizing one (P021-P-005).
+    requirement_ids: [NRS-PROFILE-ITGC-0011, NRS-VERIFY-0020, NRS-VERIFY-0014]
+    expected:
+      kind: record
+      cli_exit_code: 2
+      conformance: { execution: completed, outcome: pass, reason_codes: [] }
+      checks:
+        record-integrity: { execution: completed, outcome: pass, reason_codes: [] }
+        itgc-profile-admissibility: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-computability: { execution: completed, outcome: pass, reason_codes: [] }
+        welch-recompute:
+          execution: completed
+          outcome: fail
+          reason_codes: [NRS-DECLARED-RESULT-MISMATCH]

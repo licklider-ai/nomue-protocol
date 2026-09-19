@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  AUTHORITY_COVERAGE_SCOPES,
+  checkAuthorityCoverage,
   checkAuthorityManifest,
   checkConformanceManifest,
   checkGateIndex,
@@ -30,6 +32,11 @@ const realCtx: AuthorityCtx = {
   specDocs: () => [...markdownFiles("spec"), ...markdownFiles("canonicalization")],
 };
 
+const realFilesUnder = (prefix: string): string[] =>
+  walkFiles(prefix)
+    .filter((f) => !f.isSymlink)
+    .map((f) => f.rel);
+
 const specDocs = (): Map<string, string> =>
   new Map(
     [...markdownFiles("spec"), ...markdownFiles("canonicalization")].map((rel) => [
@@ -45,6 +52,39 @@ describe("authority manifest (repository state)", () => {
 
   it("keeps requirement anchors only in authoritative spec documents", () => {
     expect(checkSpecClassification(loadAuthorityManifest(), specDocs())).toEqual([]);
+  });
+
+  it("classifies every artifact inside an authority-bearing scope", () => {
+    expect(checkAuthorityCoverage(loadAuthorityManifest(), realFilesUnder)).toEqual([]);
+  });
+
+  it("reports an unclassified document added to an authority-bearing scope", () => {
+    // Guards against the coverage check silently becoming a no-op: an
+    // unclassified markdown file under spec/ must be reported.
+    const issues = checkAuthorityCoverage(loadAuthorityManifest(), (prefix) =>
+      prefix === "spec/" ? [...realFilesUnder(prefix), "spec/core/unclassified-note.md"] : [],
+    );
+    expect(issues).toHaveLength(1);
+    expect(issues[0]?.check).toBe("authority-coverage");
+    expect(issues[0]?.file).toBe("spec/core/unclassified-note.md");
+  });
+
+  it("ignores non-markdown files in markdown-only coverage scopes", () => {
+    // reference/ holds unclassified implementation sources by design; only its
+    // documents are covered.
+    const issues = checkAuthorityCoverage(loadAuthorityManifest(), (prefix) =>
+      prefix === "reference/" ? ["reference/verifier/src/brand-new-module.ts"] : [],
+    );
+    expect(issues).toEqual([]);
+  });
+
+  it("covers markdown-only and whole-tree scopes as documented", () => {
+    const byPrefix = new Map(AUTHORITY_COVERAGE_SCOPES.map((s) => [s.prefix, s.markdownOnly]));
+    expect(byPrefix.get("spec/")).toBe(true);
+    expect(byPrefix.get("reference/")).toBe(true);
+    expect(byPrefix.get("registries/")).toBe(false);
+    expect(byPrefix.get("schemas/")).toBe(false);
+    expect(byPrefix.get("authority/")).toBe(false);
   });
 
   it("classifies every requirement document as authoritative", () => {
@@ -305,7 +345,7 @@ describe("conformance manifest (Phase 1)", () => {
     expect(counts.get("strict_json")).toBe(19);
     expect(counts.get("routing")).toBe(9);
     expect(counts.get("verifier_behavior")).toBe(23);
-    expect(counts.get("numerical_contract")).toBe(6);
+    expect(counts.get("numerical_contract")).toBe(8);
     expect(counts.get("emitter")).toBe(5);
     expect(counts.get("approval")).toBe(3);
     expect(counts.get("lifecycle")).toBe(12);
