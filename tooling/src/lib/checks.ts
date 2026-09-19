@@ -325,6 +325,72 @@ export function checkSpecClassification(
   return issues;
 }
 
+/**
+ * Scopes in which every artifact must carry an explicit manifest
+ * classification.
+ *
+ * The manifest does not classify every tracked file, and deliberately so:
+ * research evidence, fixtures, vectors and implementation sources are either
+ * non-authoritative by construction or reached through a classified index
+ * (conformance/manifest.yaml, the canonicalization vector manifests). The
+ * safe default in AUTHORITY.md - an unclassified artifact has no authority -
+ * covers those.
+ *
+ * What that default cannot do is tell an unclassified file apart from one
+ * whose classification was forgotten inside a tree that does carry authority.
+ * These scopes are where that distinction matters, so coverage there is an
+ * enforced invariant rather than a convention. Adding a document to one of
+ * them requires classifying it in the same change set.
+ */
+export const AUTHORITY_COVERAGE_SCOPES: ReadonlyArray<{
+  prefix: string;
+  markdownOnly: boolean;
+  subject: string;
+}> = [
+  { prefix: "spec/", markdownOnly: true, subject: "specification document" },
+  { prefix: "canonicalization/", markdownOnly: true, subject: "canonicalization document" },
+  { prefix: "conformance/", markdownOnly: true, subject: "conformance document" },
+  { prefix: "reference/", markdownOnly: true, subject: "reference-implementation document" },
+  { prefix: "registries/", markdownOnly: false, subject: "registry artifact" },
+  { prefix: "schemas/", markdownOnly: false, subject: "schema artifact" },
+  { prefix: "authority/", markdownOnly: false, subject: "authority artifact" },
+  { prefix: "generated/", markdownOnly: false, subject: "generated view" },
+  {
+    prefix: "bindings/typescript/generated/",
+    markdownOnly: false,
+    subject: "generated binding",
+  },
+];
+
+/**
+ * Every artifact inside an authority-bearing scope is classified in the
+ * manifest. This turns AUTHORITY.md's coverage statement into a checked
+ * invariant over a bounded scope instead of a claim about all tracked files.
+ */
+export function checkAuthorityCoverage(
+  manifest: AuthorityManifest,
+  filesUnder: (prefix: string) => string[],
+): Issue[] {
+  const check = "authority-coverage";
+  const issues: Issue[] = [];
+  const classified = new Set(manifest.artifacts.map((a) => a.path));
+
+  for (const scope of AUTHORITY_COVERAGE_SCOPES) {
+    for (const rel of filesUnder(scope.prefix)) {
+      if (scope.markdownOnly && !rel.endsWith(".md")) continue;
+      if (classified.has(rel)) continue;
+      issues.push({
+        check,
+        file: rel,
+        message:
+          `${scope.subject} in an authority-bearing scope is not classified in ` +
+          `authority/authority-manifest.yaml; classify it in this change set`,
+      });
+    }
+  }
+  return issues;
+}
+
 export function checkGatesRegistry(
   gates: GatesRegistry,
   knownRequirementIds: Set<string>,

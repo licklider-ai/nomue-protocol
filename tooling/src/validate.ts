@@ -17,6 +17,7 @@ import addFormatsModule from "ajv-formats";
 // `default` member of the imported module object.
 const addFormats = addFormatsModule.default;
 import {
+  checkAuthorityCoverage,
   checkAuthorityManifest,
   checkConformanceManifest,
   checkGateIndex,
@@ -182,6 +183,13 @@ function main(): void {
     }),
   );
   issues.push(...checkSpecClassification(manifest, specDocs));
+  issues.push(
+    ...checkAuthorityCoverage(manifest, (prefix) =>
+      walkFiles(prefix)
+        .filter((f) => !f.isSymlink)
+        .map((f) => f.rel),
+    ),
+  );
   issues.push(...checkGatesRegistry(gates, knownIds));
   issues.push(...checkGateIndex(gates, gateIndex));
   issues.push(...checkConformanceManifest(conformance, knownIds));

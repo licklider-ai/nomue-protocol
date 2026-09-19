@@ -1,0 +1,60 @@
+# Dependency update and vulnerability surveillance.
+#
+# Deliberately NOT wired into the `pnpm check` required-check path. Every
+# dependency in this repository is a devDependency (13 direct, 455 lockfile
+# entries); nothing here is redistributed to relying parties, and the shipped
+# reference verifier is offline by construction. Making an advisory feed a
+# blocking CI gate would let an upstream publication turn `main` red without
+# any change to this repository, which the release and gate discipline treats
+# as a defect rather than a feature. Dependabot raises pull requests instead,
+# so a maintainer assesses each advisory against the pinned lockfile.
+#
+# A green run here is not a "no known vulnerabilities" statement: it means no
+# advisory was matched at the time of the scan, against the ecosystems and
+# versions listed below.
+version: 2
+
+updates:
+  - package-ecosystem: npm # resolves pnpm-lock.yaml
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "03:00"
+      timezone: Etc/UTC
+    allow:
+      # Every dependency here is a devDependency; stated explicitly so that a
+      # future runtime dependency is a visible configuration decision.
+      - dependency-type: development
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps
+    labels:
+      - dependencies
+    groups:
+      # One pull request per weekly run for routine patch/minor movement keeps
+      # the lockfile churn reviewable; majors stay separate so a breaking
+      # upgrade is never bundled with routine updates.
+      dev-minor-and-patch:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # The numerical dependencies are the ones ADR-0010 keeps behind a wrapper
+      # boundary and deliberately does NOT treat as independent oracles. A
+      # version move changes computed results, so it goes through the intake in
+      # reference/README.md and the independent-oracle comparison - never
+      # through an automatic version-update pull request. Security advisories
+      # for them are still reported, because `ignore` does not suppress those.
+      - dependency-name: "@stdlib/stats-base-dists-t-cdf"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+          - version-update:semver-patch
+      - dependency-name: "@stdlib/stats-base-dists-t-quantile"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+          - version-update:semver-patch

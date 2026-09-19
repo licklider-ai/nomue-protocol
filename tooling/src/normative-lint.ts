@@ -3,9 +3,13 @@
  * uppercase requirement keyword binds to exactly one Requirement ID anchor.
  *
  * Scope is spec/ and canonicalization/ - the two trees AUTHORITY.md names as
- * carrying normative clauses. Requirement traceability (tooling/src/validate.ts)
- * already scans both; this lint closes the other direction, so a MUST/SHOULD/MAY
- * paragraph in canonicalization/ cannot stay unbound to a Requirement ID.
+ * carrying normative clauses.
+ *
+ * The enforced path is tooling/src/validate.ts, which runs the same lint over
+ * normativeDocPaths() (both trees) as part of `pnpm validate`. This file is a
+ * standalone CLI for linting the trees on their own; it is not wired into
+ * `pnpm check`. It previously scanned spec/ only, which made it disagree with
+ * the enforced scope - kept aligned here so the two cannot drift.
  */
 
 import { lintNormativeMarkdown } from "./lib/markdown.js";

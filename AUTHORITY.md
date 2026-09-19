@@ -48,9 +48,16 @@ assigned target.
 
 ## Artifact classes
 
-The authority manifest classifies every tracked artifact using the machine
-model below. These are artifact-authority classifications, not semantic
-normative status.
+The authority manifest classifies artifacts using the machine model below.
+These are artifact-authority classifications, not semantic normative status.
+
+The manifest does not classify every tracked file, and is not meant to. It
+classifies the artifacts that carry authority, or that sit in a tree where
+authority lives and could therefore be mistaken for it. Everything else -
+research evidence, conformance fixtures, canonicalization vectors,
+implementation sources - is either non-authoritative by construction or is
+reached through a classified index, and is covered by the default below: an
+unclassified artifact has no authority.
 
 | Class             | Meaning                                                                                                                                                                                                                         |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -72,6 +79,24 @@ In the manifest:
 
 There is no parallel authority: no second artifact may claim authority over a
 target already assigned in the manifest, inside or outside this repository.
+
+### Enforced classification coverage
+
+The "no authority by default" rule is safe for a file that was never meant to
+be classified. It cannot, on its own, tell that file apart from one whose
+classification was forgotten inside a tree that does carry authority. Coverage
+is therefore an enforced invariant in the scopes where that distinction
+matters, checked by `pnpm validate` (`authority-coverage`):
+
+| Scope                                                      | Covered artifacts  |
+| ---------------------------------------------------------- | ------------------ |
+| `spec/`, `canonicalization/`, `conformance/`, `reference/` | Markdown documents |
+| `registries/`, `schemas/`, `authority/`                    | Every file         |
+| `generated/`, `bindings/typescript/generated/`             | Every file         |
+
+Adding a document to one of those scopes requires classifying it in the same
+change set. The scope list is `AUTHORITY_COVERAGE_SCOPES` in
+`tooling/src/lib/checks.ts`; outside these scopes the default rule governs.
 
 ## Authoritative versus Normative
 
