@@ -1,0 +1,11 @@
+{
+  "status": "PROPOSED_NOT_APPROVED",
+  "old_file_sha256": "7cbc579ef13cd2845fba79c1e74a5eb0655719956f11d51ce20a17b09d1715a5",
+  "proposed_file_sha256": "b8bc9787160877ca180423a05afa4127de1b04ad49a90257592071960c53799f",
+  "old_prefix_sha256": "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed",
+  "proposed_prefix_sha256": "b216f852cb07c674023cb293a9c5a87698ef0107a1c9a541097e6d92996244bf",
+  "historical_inventory_pin_unchanged": "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed",
+  "guard_old_sha256": "7d745abad717f7ff52eb86e3a9e4614a0421886fd06e25e8ca830364948d57ec",
+  "guard_proposed_sha256": "828acd26adf8fdadd4b4ee6cf93bcb7f23f6040e682fa9bb8779b7d5600f7530",
+  "replacement": "- During the Release 1 pre-publication candidate-freeze window, candidate-frozen\n  files do not change. Only `authority/release-1-gates.yaml`,\n  `evidence/release-1/**`, and `generated/RELEASE-1-GATES.md` may evolve, and\n  gate-registry edits are limited to release-state bookkeeping (`updated`,\n  `state`, `decision`, `notes`). Any other content or gate-definition change\n  requires a new candidate freeze and invalidates dependent evidence. Run\n  `pnpm snapshot:manifest --check-candidate` before gate review continues and\n  again before release, against that candidate checkout.\n- After Release 1 publication, preserve the published tag, signed artifacts,\n  candidate freeze and gate decisions. Successor development is checked by\n  `pnpm validate`, including the `release-1-history` audit. A candidate-freeze\n  mismatch on a successor checkout is not authority to re-freeze, re-sign or\n  reopen the published release. Use the fixed candidate checkout when replaying\n  its historical candidate-equivalence check."
+}

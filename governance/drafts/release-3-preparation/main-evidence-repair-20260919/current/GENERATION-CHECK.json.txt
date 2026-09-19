@@ -1,0 +1,10 @@
+{
+  "historical_tested_head": "634abfa0bc4055c7615df433b5942d412fb49747",
+  "historical_fixture_count": 132,
+  "current_fixture_count": 134,
+  "current_inputs_sha256": "a1d2a887a434761d05449b42981494c6a28e2dc8175cb72c6db5413bc49b6918",
+  "current_results_sha256": "84c17a5bc71bd705ba39feb7540bef2625b1824de5d496bb0650530f4d19cd8d",
+  "current_workflow_sha256": "91c91949170c40db65411e5dc6686a0058976f0b00ee926b3651e4422d5a51cc",
+  "scope": "source generations and archived evidence; current execution is checked separately",
+  "historical_archive_check": "pass"
+}

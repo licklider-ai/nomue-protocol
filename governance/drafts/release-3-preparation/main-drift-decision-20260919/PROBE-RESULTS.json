@@ -1,0 +1,54 @@
+{
+  "node": "v24.19.0",
+  "python": "Python 3.12.14",
+  "candidate_patch_only": true,
+  "commands": [
+    {
+      "command": ["node", "--test", "tooling/maintenance/pinned-contribution-source.test.mjs"],
+      "exit_code": 0,
+      "output": "\u2714 accepts exactly the approved instructions while retaining historical instructions (1.074712ms)\n\u2714 rejects changes to either old instructions or the approved append (1.26079ms)\n\u2714 never exempts another source or an unknown historical pin (0.411016ms)\n\u2714 binds the self-pinned checker's exact delegation change only (0.40705ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 83.046979\n"
+    },
+    {
+      "command": [
+        "node",
+        "governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/check.mjs"
+      ],
+      "exit_code": 0,
+      "output": "82 controls in 24 groups passed; 134 legacy fixtures passed\n93 public candidate controls passed\n38 checkpoint controls passed\n{\"proposed_requirements\":16,\"property_declarations\":531,\"source_pins\":424,\"negative_controls\":[\"new real-schema field\",\"removed real ownership\",\"unknown owner\",\"actual duplicate requirement\",\"removed executed evidence\",\"import text is not executed evidence\"],\"readiness\":\"NOT_READY_FOR_ADOPTION\"}\n"
+    },
+    {
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_repairs.mjs"
+      ],
+      "exit_code": 0,
+      "output": "UTF-8, schema combination and local vocabulary checks passed\nLate routing and ingress transport precedence checked\n"
+    },
+    {
+      "command": [
+        "node",
+        "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_identity.mjs"
+      ],
+      "exit_code": 0,
+      "output": "Candidate identities and 5 rejecting mutations passed\n"
+    },
+    {
+      "command": [
+        "node",
+        "governance/drafts/release-3-preparation/r3-review-repair-20260911/audit.mjs"
+      ],
+      "exit_code": 0,
+      "output": "candidate source lint passed; four inserted violations rejected\n"
+    },
+    {
+      "command": [
+        "python3",
+        "governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py"
+      ],
+      "exit_code": 1,
+      "output": "{\"archives\": 3, \"exact_member_mappings\": 10, \"service_head_joins\": 3}\nTraceback (most recent call last):\n  File \"/workspace/scratch/561fbb95d782/r3-pin-probe/governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py\", line 71, in <module>\n    assert sha((ROOT / source[\"path\"]).read_bytes()) == source[\"sha256\"], source[\"path\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/INPUTS.json\n"
+    }
+  ]
+}

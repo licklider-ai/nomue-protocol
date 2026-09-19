@@ -1,0 +1,63 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -115,15 +115,20 @@
+   steward release-gate decision recorded under the Release Policy. Do not create
+   a public release or release tag unless all applicable gates are validly closed
+   against the pinned Release Candidate.
+-- Once a Release 1 candidate-freeze manifest and release-control pin exist,
+-  candidate-frozen files do not change. Until publication, only
+-  `authority/release-1-gates.yaml`, `evidence/release-1/**`, and
+-  `generated/RELEASE-1-GATES.md` may evolve, and gate-registry edits are limited
+-  to release-state bookkeeping (`updated`, `state`, `decision`, `notes`). Any
+-  other content or gate-definition change requires a new candidate freeze and
+-  invalidates dependent evidence. Run
++- During the Release 1 pre-publication candidate-freeze window, candidate-frozen
++  files do not change. Only `authority/release-1-gates.yaml`,
++  `evidence/release-1/**`, and `generated/RELEASE-1-GATES.md` may evolve, and
++  gate-registry edits are limited to release-state bookkeeping (`updated`,
++  `state`, `decision`, `notes`). Any other content or gate-definition change
++  requires a new candidate freeze and invalidates dependent evidence. Run
+   `pnpm snapshot:manifest --check-candidate` before gate review continues and
+-  again before release.
++  again before release, against that candidate checkout.
++- After Release 1 publication, preserve the published tag, signed artifacts,
++  candidate freeze and gate decisions. Successor development is checked by
++  `pnpm validate`, including the `release-1-history` audit. A candidate-freeze
++  mismatch on a successor checkout is not authority to re-freeze, re-sign or
++  reopen the published release. Use the fixed candidate checkout when replaying
++  its historical candidate-equivalence check.
+
+ ## Commands
+
+--- a/tooling/maintenance/pinned-contribution-source.mjs
++++ b/tooling/maintenance/pinned-contribution-source.mjs
+@@ -6,7 +6,8 @@
+ import assert from "node:assert/strict";
+
+ const previous = "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed";
+-const approved = "7cbc579ef13cd2845fba79c1e74a5eb0655719956f11d51ce20a17b09d1715a5";
++const approved = "b8bc9787160877ca180423a05afa4127de1b04ad49a90257592071960c53799f";
++const approvedPrefix = "b216f852cb07c674023cb293a9c5a87698ef0107a1c9a541097e6d92996244bf";
+ const marker = Buffer.from("\n## Publication boundary and implementation ownership\n");
+ const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
+
+@@ -38,7 +39,7 @@
+   assert.equal(digest(bytes), approved, "unapproved contribution-instruction revision");
+   const boundary = bytes.indexOf(marker);
+   assert.ok(boundary > 0, "missing approved append boundary");
+-  assert.equal(digest(bytes.subarray(0, boundary)), previous, "historical instructions changed");
++  assert.equal(digest(bytes.subarray(0, boundary)), approvedPrefix, "approved instructions prefix changed");
+ }
+
+ export function checkPinnedSource(root, pin) {
+--- a/tooling/maintenance/pinned-contribution-source.test.mjs
++++ b/tooling/maintenance/pinned-contribution-source.test.mjs
+@@ -10,7 +10,7 @@
+   sha256: "059d84ddbd634f42178810a53d9db1e9886a8a07ae15d5269b6090191dca68ed",
+ };
+
+-test("accepts exactly the approved instructions while retaining historical instructions", () => {
++test("accepts exactly the approved instructions and prefix", () => {
+   checkPinnedBytes(current, pin);
+ });
+ test("rejects changes to either old instructions or the approved append", () => {
