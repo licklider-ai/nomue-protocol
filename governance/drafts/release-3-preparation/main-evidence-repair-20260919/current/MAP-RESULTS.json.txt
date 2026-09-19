@@ -1,0 +1,14 @@
+{
+  "proposed_requirements": 16,
+  "property_declarations": 531,
+  "source_pins": 424,
+  "negative_controls": [
+    "new real-schema field",
+    "removed real ownership",
+    "unknown owner",
+    "actual duplicate requirement",
+    "removed executed evidence",
+    "import text is not executed evidence"
+  ],
+  "readiness": "NOT_READY_FOR_ADOPTION"
+}

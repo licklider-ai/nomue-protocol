@@ -1,0 +1,108 @@
+{
+  "scope": "Every pnpm check leaf command; only tsx CLI launcher replaced by node --import tsx because IPC socket creation is unavailable",
+  "package_json_sha256": "70a3dc0f40048fb6d88191e0c7361ec82efb32dab7f135e0caf63d8deee70463",
+  "commands_expected": 20,
+  "commands_completed": 20,
+  "commands": [
+    {
+      "script_command": "node tooling/reference-sync/check.mjs",
+      "executed_command": "node tooling/reference-sync/check.mjs",
+      "exit_code": 0
+    },
+    {
+      "script_command": "node --test tooling/reference-sync/check.test.mjs",
+      "executed_command": "node --test tooling/reference-sync/check.test.mjs",
+      "exit_code": 0
+    },
+    {
+      "script_command": "prettier --check .",
+      "executed_command": "prettier --check .",
+      "exit_code": 0
+    },
+    {
+      "script_command": "markdownlint-cli2",
+      "executed_command": "markdownlint-cli2",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsc --noEmit",
+      "executed_command": "tsc --noEmit",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/validate.ts",
+      "executed_command": "node --import tsx tooling/src/validate.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "vitest run",
+      "executed_command": "vitest run",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/generate.ts --check",
+      "executed_command": "node --import tsx tooling/src/generate.ts --check",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/schema-validate.ts",
+      "executed_command": "node --import tsx tooling/src/phase1/schema-validate.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/canonicalization-test.ts",
+      "executed_command": "node --import tsx tooling/src/phase1/canonicalization-test.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/conformance-run.ts",
+      "executed_command": "node --import tsx tooling/src/phase1/conformance-run.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/verifier-example.ts",
+      "executed_command": "node --import tsx tooling/src/phase1/verifier-example.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/evidence-phase1.ts --check",
+      "executed_command": "node --import tsx tooling/src/phase1/evidence-phase1.ts --check",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/conformance-run.ts --exclude A2-",
+      "executed_command": "node --import tsx tooling/src/phase1/conformance-run.ts --exclude A2-",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/conformance-run.ts --include A2-",
+      "executed_command": "node --import tsx tooling/src/phase1/conformance-run.ts --include A2-",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase2a/verifier-example-2a.ts",
+      "executed_command": "node --import tsx tooling/src/phase2a/verifier-example-2a.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/conformance-run.ts --include A2-R",
+      "executed_command": "node --import tsx tooling/src/phase1/conformance-run.ts --include A2-R",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase2a/oracle-check.ts",
+      "executed_command": "node --import tsx tooling/src/phase2a/oracle-check.ts",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase2a/evidence-phase2a.ts --check",
+      "executed_command": "node --import tsx tooling/src/phase2a/evidence-phase2a.ts --check",
+      "exit_code": 0
+    },
+    {
+      "script_command": "tsx tooling/src/phase1/conformance-run.ts --include A2-1-",
+      "executed_command": "node --import tsx tooling/src/phase1/conformance-run.ts --include A2-1-",
+      "exit_code": 0
+    }
+  ]
+}

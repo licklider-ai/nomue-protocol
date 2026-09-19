@@ -1,0 +1,39 @@
+{
+  "scope": "Approved separation of historical archive validation and current candidate replay; no Research Gate clearance",
+  "inspected_main": "9c597d42e1c22ca908f3f7e1485d88378c049ae7",
+  "historical_tested_head": "634abfa0bc4055c7615df433b5942d412fb49747",
+  "transitions": [
+    {
+      "path": "governance/drafts/release-3-preparation/holm-adoption-map-repair-20260911/INPUTS.json",
+      "historical_copy": "historical/adoption-inputs.json.txt",
+      "old_sha256": "8188b3c2b07cb62a5c93b1f8c7f37a193029ba414a403e0ffbc0306098be71d7",
+      "new_sha256": "a1d2a887a434761d05449b42981494c6a28e2dc8175cb72c6db5413bc49b6918"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/RESULTS.json",
+      "historical_copy": "historical/candidate-results.json.txt",
+      "old_sha256": "1a8800e50746923e893c07a2a5944133cc89ad370209cdc799b0d3a154926089",
+      "new_sha256": "84c17a5bc71bd705ba39feb7540bef2625b1824de5d496bb0650530f4d19cd8d"
+    },
+    {
+      "path": ".github/workflows/r3-holm-checkpoint-candidate.yml",
+      "historical_copy": "historical/checkpoint-workflow.yml.txt",
+      "old_sha256": "c21ce5f4ae8e889cb5c2c32c2ceef6630a8b404b662e4bda234900579e780b98",
+      "new_sha256": "91c91949170c40db65411e5dc6686a0058976f0b00ee926b3651e4422d5a51cc"
+    }
+  ],
+  "preserved_controls": [
+    {
+      "path": "governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py",
+      "sha256": "5524a21f4b3aebe2cce4287255c78636ae9140af0f326a7b1bb11405ca8a70ed"
+    },
+    {
+      "path": "governance/drafts/release-3-preparation/r3-followup-review-20260911/SHA256SUMS.txt",
+      "sha256": "5c8d9f5188cdaf8fb9d9f2f1f3f8bcfa53306b73e84992a30921e6abdaad3fbd"
+    },
+    {
+      "path": "tooling/maintenance/pinned-contribution-source.mjs",
+      "sha256": "7d745abad717f7ff52eb86e3a9e4614a0421886fd06e25e8ca830364948d57ec"
+    }
+  ]
+}

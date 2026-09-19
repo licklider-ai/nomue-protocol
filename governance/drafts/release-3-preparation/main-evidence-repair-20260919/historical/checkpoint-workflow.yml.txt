@@ -29,10 +29,7 @@ jobs:
           node --import tsx governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_public.mjs
           node governance/drafts/release-3-preparation/holm-repaired-candidate-20260911/test_budget.mjs
       - run: node governance/drafts/release-3-preparation/r3-review-repair-20260911/audit.mjs
-      - name: Historical archive and current source generations
-        run: |
-          python3 -I governance/drafts/release-3-preparation/main-evidence-repair-20260919/test_generations.py
-          python3 -I governance/drafts/release-3-preparation/main-evidence-repair-20260919/check_generations.py --output "$RUNNER_TEMP/holm-observations/GENERATION-CHECK.json"
+      - run: python3 governance/drafts/release-3-preparation/r3-followup-review-20260911/check_evidence.py
       - run: git diff --exit-code
       - name: Retain candidate observations
         if: always()
@@ -43,4 +40,3 @@ jobs:
             ${{ runner.temp }}/holm-observations/RESULTS.json
             ${{ runner.temp }}/holm-observations/PUBLIC-RESULTS.json
             ${{ runner.temp }}/holm-observations/BUDGET-RESULTS.json
-            ${{ runner.temp }}/holm-observations/GENERATION-CHECK.json
