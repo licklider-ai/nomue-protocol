@@ -81,13 +81,16 @@ for row in drift:
 PY
 ```
 
-Two content hashes carried by the selections were recomputed from the committed bytes
-rather than copied:
+Three content hashes carried by the selections were recomputed from the committed bytes
+rather than copied. None of the three is self-declared by the file it pins; each is
+declared by a consuming checkpoint, which is why recomputation rather than transcription
+is the check that matters:
 
-| Quantity                             | Recomputation                                                                                                                        | Result                       |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| Tail inverse-beta table content hash | `sha256` of the raw committed file `tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json`                    | matches `ba1f9921…fdd76c08`  |
-| Fixed-95 ordered-cell content hash   | `sha256` of `tableContent()` in `tooling/src/spikes/validate-paired-t-critical-value-table-evidence.ts` over the 200 committed cells | matches `24ccc86d…7e7dea3c0` |
+| Quantity                                       | Recomputation                                                                                                                                     | Result                       |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| Tail inverse-beta table content hash           | `sha256` of the raw committed file `tooling/r2-paired-t-runtime-series/runtime-inverse-beta-table.candidate.json`                                 | matches `ba1f9921…fdd76c08`  |
+| Fixed-95 ordered-cell content hash             | `sha256` of `tableContent()` in `tooling/src/spikes/validate-paired-t-critical-value-table-evidence.ts` over the 200 committed cells              | matches `24ccc86d…7e7dea3c0` |
+| Boundary and metamorphic corpus canonical hash | `sha256` of the corpus under `recursive_lexicographic_object_keys_compact_json_utf8` (`json.dumps(sort_keys=True, separators=(",", ":"))`, UTF-8) | matches `19349e5e…c82d46a7`  |
 
 Post-snapshot drift, from the aggregate's snapshot `c1fc998` to the record target:
 
@@ -110,7 +113,8 @@ Disposition values used below:
   steward as written.
 - **OPEN_HOLD** — no selection can be put forward yet; a named prerequisite is missing.
 
-No item carries an authoritative selection. Every value below is unissued.
+No item carries an authoritative selection. Every value below is unissued. Eleven items
+carry a proposed selection; D5-S08 and D5-S11 are open holds.
 
 ### D5-S01 — Supported input and output domain
 
@@ -127,6 +131,21 @@ No item carries an authoritative selection. Every value below is unissued.
 | Scope form                  | `operation_stage_predicate_conjunction_not_rectangular_magnitude_box` |
 | Guarantee form              | `predicate_bounded_per_input_not_corpus_membership`                   |
 | Test-statistic tail input   | `absolute_value_after_negative_zero_rejection`                        |
+
+The item covers the output domain as well as the input domain. The returned values are
+disposed of as follows:
+
+| Returned quantity    | Proposed output domain                                                              |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| Test statistic       | finite binary64, taken from the same verified G4 trace                              |
+| p-value              | eligible projection classes `positive_normal` and `rounded_one` only                |
+| p-value, other cases | zero, subnormal, invalid class or insufficient margin are `outside_candidate_scope` |
+| Interval endpoints   | finite binary64 and strictly ordered                                                |
+| Interval collapse    | `fail_closed_outside_candidate_scope`                                               |
+
+A p-value that is mathematically positive but not representable in an eligible class is
+refused rather than reported as zero; `zero_p_for_a_positive_mathematical_tail` is on the
+list of claims prohibited before final R2-D5.
 
 The df extent is derived from the joined extents of the two reviewed tables under the
 paired-t df relation, with `finite_evidence_maximum_alone_is_selection_basis: false`.
@@ -182,9 +201,17 @@ at head `32549c855a3ecbdfb8761a617b1a3753cb7caa01`. It does not establish broad
 cross-platform support, an authoritative allowlist, an authoritative controlled-process
 profile, or an issued supported-execution predicate.
 
-Residual gap: Windows and macOS are not admitted. The repository's multi-platform CI is
-not admission evidence for this tuple set, and the record puts a one-entry matrix to the
-steward deliberately.
+Residual gaps:
+
+- Windows and macOS are not admitted. The repository's multi-platform CI is not admission
+  evidence for this tuple set, and the record puts a one-entry matrix to the steward
+  deliberately.
+- The proposed predicate is a composition of two further unissued candidates: it binds
+  `paired-t-runtime-numerical-contract-full-trace-v1` from Group 2 (D5-S12) and
+  `paired-t-d5-candidate-supported-scope-resource-bounds-1` from Group 1 (D5-S13).
+  Accepting D5-S02 without those two is not available.
+- The Group 5 review requirement `controlled_process_evidence_replayed_for_every_candidate_tuple`
+  is specific to this item and is unmet (D5-S11).
 
 ### D5-S03 — Quantity-specific numerical error and comparison tolerance policy
 
@@ -347,9 +374,26 @@ Evidence: `…/numerical/final-reason-code-inventory-candidate.json` (blob
 [Group 4 closure review](../../../review-inputs/r2-d5-group-4-final-reason-code-inventory-closure/REVIEW-RESULT.md)
 at head `8909d31cce3d36303e403103f459b10127e87a1b`.
 
-Residual gap: `reason_codes_frozen: false` and `public_checks_issued: false`. Freezing
-and issuance happen only in the final authoritative change set, together with the
-identifiers decided under R2-D3 and R2-D4.
+Report propagation. The reason codes and check results reach the report through the
+candidate public-contract surface `NRS-PCS-0019`, "Release 2 scoped Public Check result
+object", whose paths are `verification_results[].check_id`, `.check_version`,
+`.execution`, `.outcome`, `.scope`, `.reason_codes`, `.evidence` and `.error` on the
+successor `verification-report-0.3.candidate.schema.json`, bound to `NRS-VERIFY-0005`,
+`NRS-VERIFY-0010` and `NRS-VERIFY-0012`. The enclosing report is `NRS-PCS-0018`.
+
+That propagation depends on a grammar change decided outside D5. The successor
+`execution-outcome-0.3.candidate.schema.json` pins the five HTTPS check identifiers as
+`const` values, whereas the Release 1 schemas constrain `check_id` to
+`^urn:nomue:check:[a-z0-9-]+:[A-Za-z0-9.-]+$`. The change is deliberate and inventoried in
+the candidate surface-impact table; it is not a defect. It does mean the D5 reason-code
+outcome cannot land without the identifier and schema decisions taken under R2-D3 and
+R2-D4, and it is why the decision ledger couples D2 through D4 as one selection.
+
+Residual gaps: `reason_codes_frozen: false` and `public_checks_issued: false`; freezing
+and issuance happen only in the final authoritative change set. None of the candidate
+spellings appears in [`registries/reason-codes.yaml`](../../../registries/reason-codes.yaml)
+or [`registries/public-checks.yaml`](../../../registries/public-checks.yaml) yet, which is
+the expected state for an unissued candidate and is the work the landing performs.
 
 ### D5-S07 — Corpus coverage versus the supported-domain claim
 
@@ -357,9 +401,11 @@ identifiers decided under R2-D3 and R2-D4.
 
 The explicit guarantee statement put forward:
 
-- corpus artifact `…/numerical/candidate-supported-scope-resource-corpus.json`,
+- corpus artifact `…/numerical/candidate-supported-scope-resource-corpus.json`, pinned at
   canonical `sha256:19349e5ed5e4ebbe582abe426a6024398940915da04f5c1085f797b4c82d46a7`
-  under `recursive_lexicographic_object_keys_compact_json_utf8`;
+  under `recursive_lexicographic_object_keys_compact_json_utf8`. The corpus does not
+  declare that digest; it is declared by the Group 1 checkpoint at
+  `corpus_and_guarantee_boundary.canonical_sha256` and recomputed in section 3;
 - `finite_corpus_defines_domain: false`;
 - `finite_corpus_maximum_is_error_or_resource_bound: false`;
 - `candidate_guarantee_form: predicate_bounded_per_input_not_corpus_membership`;
@@ -371,11 +417,28 @@ subject to the same per-input predicates rather than being refused for absence.
 
 Residual gap: none specific to the statement. Its force depends on D5-S11.
 
-### D5-S08 — Reproducible environment record for the independent oracle corpus
+### D5-S08 — Independent oracle corpus and its reproducible environment record
 
-**Disposition: SELECTION_PROPOSED, with a material custody gap.**
+**Disposition: OPEN_HOLD.** One of the two items that cannot be put to the steward as
+written. The packet's list names the environment record; the ratification package names
+the independent high-precision oracle corpus and its environment record together, so both
+halves are disposed of here.
 
-Environment of the p-value enclosure oracle:
+**Corpus half — selection available.** The p-value enclosure oracle runs a primary
+`arb_regularized_incomplete_beta_exact_rational_input` route against a secondary
+`rigorous_density_quadrature_with_analytic_tail_bound` route, and the fixed-95 table runs
+a primary `arb_forward_probability_midpoint_bracketing` route against a secondary
+rigorous density quadrature or executed low-df closed form. Both closures are recorded
+`reviewed_complete`, with `tooling/src/spikes/paired-t-certificate-candidate.ts` as the
+certificate validator. The route-independence limit is explicit and constrains what the
+corpus can be claimed to show: the routes are
+`method_distinct_shared_arb_flint_common_cause`, and
+`cross_library_agreement_as_oracle` is listed among the claims prohibited before final
+R2-D5. The corpus is an independent high-precision oracle relative to the reference
+implementation, not two independent libraries.
+
+**Environment-record half — the hold.** What exists: The p-value enclosure oracle bundle carries a repository-resident
+environment block:
 
 | Field               | Value                                                                     |
 | ------------------- | ------------------------------------------------------------------------- |
@@ -389,24 +452,51 @@ Environment of the p-value enclosure oracle:
 | Workflow run        | `33452181213`, artifact `9780152851`                                      |
 | Artifact zip sha256 | `sha256:cf092f0b3bfd4cdb8a32e5fb9864f564390dd0027f847b591be1262c134d1299` |
 
-Internal file hashes are recorded for `MANIFEST.sha256`, `cases.json`,
-`certificates.json`, `critical-value-table-manifest.json`, `environment.json`,
-`generator.py`, `raw-oracle-output.json` and `requirements.txt`. A missing oracle
-dependency exits non-zero and there is no fallback oracle path
+Internal file hashes are recorded for all eight bundle members, including
+`environment.json`, `raw-oracle-output.json` and `critical-value-table-manifest.json`. A
+missing oracle dependency exits non-zero and there is no fallback oracle path
 (`fallback_oracle_path: false`), so the evidence run cannot silently degrade.
 
-**Residual gap (material).** The hosted artifact records
-`artifact_expires_at: 2026-11-29T23:47:55Z`, and the oracle bundle bytes — including
-`raw-oracle-output.json` and `environment.json` — are not committed to this repository.
-After that date, custody of the oracle corpus rests on recorded hashes alone, with no
-retained bytes to hash. The Group 3 admission evidence solves the same problem by
-committing normalized evidence files, and the Release 3 programme solves it by committing
-the CI archives. Committing the oracle bundle, or an equivalent retained form, before the
-authoritative landing is the bounded repair this record identifies; it is not performed
-here, and it is a prerequisite for the landing rather than for the steward decision.
+Three defects stand between that and the required record.
 
-A second boundary belongs with this item: the two certificate routes are method-distinct
-but share an arb/FLINT common cause, so they are not independent implementations.
+**1. The repository-resident block is a subset of the emitted record.** The generator
+emits eleven fields — `status`, `artifact_kind`, `generator_commit`, `python`,
+`python_implementation`, `python_flint`, `flint`, `platform_system`, `platform_machine`,
+`requirements_sha256`, `arb_threads`. The checkpoint's `environment` block records eight
+of them, omitting `status`, `artifact_kind` and `generator_commit`. The generator commit
+survives separately under `source_evidence.generator_commit`, so no information is lost,
+but the committed block cannot be re-serialized and rehashed to the recorded
+`environment.json` digest. Verification of the environment record therefore still
+requires the artifact.
+
+**2. No other Release 2 oracle corpus has a repository-resident environment record at
+all.** The corpora behind the two selected tables — the runtime series and inverse-beta
+table corpus behind `sha256:ba1f9921…`, and the fixed-95 critical-value corpus behind
+`sha256:24ccc86d…` — carry none, and neither does the Group 1 boundary and metamorphic
+corpus. Their generators each emit an `environment.json` into the CI output directory, and
+no `environment.json` for any Release 2 corpus is committed to this repository. Their
+toolchain identity survives only as a semantic pin inside validator source: the
+inverse-beta validator requires exactly the keys `status`, `python`, `python_flint`,
+`flint`, `platform`, with `python` matching `/^3\.12(?:\.|$)/`, `python_flint` equal to
+`"0.9.0"` and `flint` equal to `"3.6.0"`. That constrains a re-run; it is not a record of
+what actually ran, and it does not pin the exact patch version or the platform string.
+
+**3. Custody expires.** The p-value bundle's hosted artifact records
+`artifact_expires_at: 2026-11-29T23:47:55Z`, and its bytes — including
+`raw-oracle-output.json` and `environment.json` — are not committed. After that date,
+custody rests on recorded hashes with no retained bytes to hash against. The Group 3
+admission evidence solves the same problem by committing normalized evidence files, and
+the Release 3 programme solves it by committing its CI archives.
+
+A fourth boundary belongs with this item: the two certificate routes are method-distinct
+but share an arb/FLINT common cause
+(`two_route_independence: "method_distinct_shared_arb_flint_common_cause"`), so they are
+not two independent implementations.
+
+Bounded repair, independent of the discussion window: commit the oracle bundles — or an
+equivalent retained form — for every corpus that backs a selected value, and record the
+complete emitted environment block for each, so that the environment digest can be
+reproduced from repository content alone.
 
 ### D5-S09 — Boundary and metamorphic tests
 
@@ -460,7 +550,7 @@ filling a hole. `global_student_t_truth_error_constant` and
 
 ### D5-S11 — Independent numerical review disposition
 
-**Disposition: OPEN_HOLD. This is the gating item.**
+**Disposition: OPEN_HOLD. This is the gating item for the decision itself.**
 
 Independent reviews that do exist, each in its own bounded scope with zero unresolved
 findings: Group 1 scope/resources, Group 2 runtime numerical contract, Group 3 supported
@@ -544,27 +634,29 @@ Residual gap: the public reason code for resource exhaustion is unissued, and
 Every bullet of the packet's required list and of the ratification package's R2-D5 inputs
 maps to an item above.
 
-| Required item (source)                                                         | Item   | Disposition        |
-| ------------------------------------------------------------------------------ | ------ | ------------------ |
-| Supported input/output domain incl. sample-size and df boundaries (packet)     | D5-S01 | SELECTION_PROPOSED |
-| Supported execution tuple and controlled-process enforcement (packet)          | D5-S02 | SELECTION_PROPOSED |
-| Quantity-specific error and comparison tolerance policy (packet)               | D5-S03 | SELECTION_PROPOSED |
-| Student-t tail and fixed-95 table identities (packet)                          | D5-S04 | SELECTION_PROPOSED |
-| Subnormal/non-finite/nonrepresentable/certificate-failure ordering (packet)    | D5-S05 | SELECTION_PROPOSED |
-| Final scoped reason-code set and report propagation (packet)                   | D5-S06 | SELECTION_PROPOSED |
-| Corpus coverage versus the supported-domain claim (packet)                     | D5-S07 | SELECTION_PROPOSED |
-| Reproducible environment record for the independent oracle corpus (packet)     | D5-S08 | SELECTION_PROPOSED |
-| Boundary and metamorphic tests (packet)                                        | D5-S09 | SELECTION_PROPOSED |
-| Separate maximum-error ledgers (packet)                                        | D5-S10 | SELECTION_PROPOSED |
-| Numerical-review disposition independent of authoring (packet)                 | D5-S11 | OPEN_HOLD          |
-| Independent high-precision oracle corpus and environment record (ratification) | D5-S08 | SELECTION_PROPOSED |
-| Certified critical-value table evidence (ratification)                         | D5-S04 | SELECTION_PROPOSED |
-| Separate maximum-error ledgers (ratification)                                  | D5-S10 | SELECTION_PROPOSED |
-| Boundary and metamorphic tests (ratification)                                  | D5-S09 | SELECTION_PROPOSED |
-| Validated-corpus versus domain-bounded guarantee statement (ratification)      | D5-S07 | SELECTION_PROPOSED |
-| Numerical reviewer disposition independent of authoring (ratification)         | D5-S11 | OPEN_HOLD          |
+| Required item (source)                                                         | Item   | Disposition                                                                 |
+| ------------------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------- |
+| Supported input/output domain incl. sample-size and df boundaries (packet)     | D5-S01 | SELECTION_PROPOSED                                                          |
+| Supported execution tuple and controlled-process enforcement (packet)          | D5-S02 | SELECTION_PROPOSED                                                          |
+| Quantity-specific error and comparison tolerance policy (packet)               | D5-S03 | SELECTION_PROPOSED                                                          |
+| Student-t tail and fixed-95 table identities (packet)                          | D5-S04 | SELECTION_PROPOSED                                                          |
+| Subnormal/non-finite/nonrepresentable/certificate-failure ordering (packet)    | D5-S05 | SELECTION_PROPOSED                                                          |
+| Final scoped reason-code set and report propagation (packet)                   | D5-S06 | SELECTION_PROPOSED                                                          |
+| Corpus coverage versus the supported-domain claim (packet)                     | D5-S07 | SELECTION_PROPOSED                                                          |
+| Reproducible environment record for the independent oracle corpus (packet)     | D5-S08 | OPEN_HOLD                                                                   |
+| Boundary and metamorphic tests (packet)                                        | D5-S09 | SELECTION_PROPOSED                                                          |
+| Separate maximum-error ledgers (packet)                                        | D5-S10 | SELECTION_PROPOSED                                                          |
+| Numerical-review disposition independent of authoring (packet)                 | D5-S11 | OPEN_HOLD                                                                   |
+| Independent high-precision oracle corpus and environment record (ratification) | D5-S08 | OPEN_HOLD (corpus half has a selection; the environment record is the hold) |
+| Certified critical-value table evidence (ratification)                         | D5-S04 | SELECTION_PROPOSED                                                          |
+| Separate maximum-error ledgers (ratification)                                  | D5-S10 | SELECTION_PROPOSED                                                          |
+| Boundary and metamorphic tests (ratification)                                  | D5-S09 | SELECTION_PROPOSED                                                          |
+| Validated-corpus versus domain-bounded guarantee statement (ratification)      | D5-S07 | SELECTION_PROPOSED                                                          |
+| Numerical reviewer disposition independent of authoring (ratification)         | D5-S11 | OPEN_HOLD                                                                   |
 
-The ledger's decision rule 2 names six dimensions. They map to D5-S01 (supported domain),
+The ledger's R2-D5 row adds a third governing phrase, "independent oracle/evidence
+disposition"; it is the corpus half of D5-S08. The ledger's decision rule 2 names six
+dimensions. They map to D5-S01 (supported domain),
 D5-S02 (execution tuple), D5-S03 with D5-S10 (error/tolerance boundary), D5-S04 (fixed-95
 table), D5-S05 (failure ordering) and D5-S06 (reason-code outcome). D5-S12 and D5-S13 are
 supplementary items carrying Group 1 and Group 2 outputs that the two lists do not name
@@ -577,6 +669,7 @@ groups and the decision.
 | --------------------------------------- | ----------------------------------------------------------------------------- |
 | RFC #25 minimum window                  | Open until `2026-09-25T20:52:54Z`; elapse alone adopts nothing                |
 | Exact-head independent numerical review | Not commissioned for `b02b3bc` (D5-S11)                                       |
+| Oracle environment record               | Repository-resident for one corpus only, and as an 8-of-11 subset (D5-S08)    |
 | Oracle bundle custody                   | Hosted artifact expires `2026-11-29T23:47:55Z`; bytes not committed (D5-S08)  |
 | Corpus re-execution at the final head   | Not performed (D5-S09)                                                        |
 | Controlled-process replay per tuple     | Not performed at the final head (D5-S02, D5-S11)                              |
@@ -584,14 +677,15 @@ groups and the decision.
 | Discussion feedback                     | RFC #25 feedback has to be considered in the disposition                      |
 
 Two of these are independent of the window and can proceed now: commissioning the
-exact-head independent numerical review, and repairing the oracle bundle custody.
+exact-head independent numerical review, and repairing the oracle environment record and
+bundle custody together.
 
 ## 7. Steward disposition sheet
 
 Deliberately unfilled. A disposition increment records, per item, one of accept as
 written, accept with a stated revision, defer out of Release 2, or reject — together with
 the deciding date and the head the decision is taken against. Accepting D5 as a whole is
-not available while D5-S11 is an open hold.
+not available while D5-S08 and D5-S11 are open holds.
 
 | Item   | Disposition | Stated revision | Date |
 | ------ | ----------- | --------------- | ---- |

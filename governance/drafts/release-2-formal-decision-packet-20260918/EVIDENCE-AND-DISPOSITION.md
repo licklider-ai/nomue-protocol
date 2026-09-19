@@ -22,8 +22,9 @@ an earlier candidate review is insufficient when the item is still unselected.
 
 That record is prepared in [D5 final selection record](D5-FINAL-SELECTION-RECORD.md),
 which states the exact candidate selection put forward for each item, its evidence
-identity, and its residual gap. It records one open hold: the exact-head independent
-numerical review. It is decision input, not a disposition.
+identity, and its residual gap. It records two open holds: the reproducible oracle
+environment record, and the exact-head independent numerical review. It is decision
+input, not a disposition.
 
 - supported input and output domain, including sample-size and degrees-of-freedom
   boundaries;

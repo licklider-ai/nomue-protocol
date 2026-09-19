@@ -23,7 +23,7 @@ support, authorize an authoritative landing, or alter Release 1.
    receipts and the claims they do and do not establish.
 3. [D5 final selection record](D5-FINAL-SELECTION-RECORD.md) — the exact candidate
    selection put forward for every required R2-D5 item, its evidence identity, its
-   residual gap, and the remaining open hold.
+   residual gap, and the two remaining open holds.
 4. [Authoritative landing outline](AUTHORITATIVE-LANDING-OUTLINE.md) — the single
    coupled change set that may be prepared only after the required decisions.
 5. [Independent packet review commission](INDEPENDENT-PACKET-REVIEW.md) — the
