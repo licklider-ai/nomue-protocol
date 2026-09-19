@@ -371,7 +371,11 @@ describe("R2-D5 candidate supported scope and resource bounds", () => {
       ok: true,
       iterations: 5_182,
     });
-  }, 30_000);
+    // 60s to match the sibling replay above. The body's real work is roughly
+    // 36s on a slower container, so the previous 30s budget failed there while
+    // passing on GitHub runners - a harness deadline, not an assertion change.
+    // No assertion, tolerance or expected value is relaxed by this.
+  }, 60_000);
 
   it("checks permutation, direction, sign, scale, and translation metamorphisms", () => {
     const baseInput = inputFromPairs([

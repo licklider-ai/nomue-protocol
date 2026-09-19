@@ -1,10 +1,14 @@
 # Release 1 df=1 centre-precision disclosure: bounded steward question
 
-Status: **DRAFT DECISION REQUEST; NOT A PUBLICATION.** This packet prepares a
-bounded question for the steward about disclosing a known numerical defect in
-the published Release 1 reference verifier. It publishes nothing, changes no
-Protocol meaning, alters no registry, gate, bundle or signed release artifact,
-and does not by itself constitute an erratum.
+Status: **RESOLVED — DISCLOSURE AUTHORIZED AND PUBLISHED.** The steward
+authorized publication on 2026-09-19, directing that the false-reject direction
+be included. The erratum is published as entry **ER-1** in
+[`ERRATA.md`](../../../ERRATA.md) at the repository root, linked from
+[`README.md`](../../../README.md). See "Steward disposition" below for what was
+and was not done. This packet is retained as the decision record; it changes no
+Protocol meaning and alters no registry, gate, bundle or signed release artifact.
+
+Original status when prepared: draft decision request, not a publication.
 
 Prepared 2026-09-19 UTC against Protocol `main` at
 `cbf65da86519359ef6e39a738ccf44bb18ae62cb`.
@@ -134,6 +138,37 @@ surface today.
 > `A2-1-V-004` (positive) and `A2-1-P-005` (negative) pin the corrected
 > behaviour, with the expected value derived from the exact Cauchy identity
 > `F(t; 1) = 1/2 + atan(t)/pi` rather than from the reference implementation.
+
+## Steward disposition (2026-09-19)
+
+The steward authorized publication and directed that the false-reject direction
+be included in what relying parties are told. Answers to the four bounded
+questions, as carried out:
+
+1. **Publish an erratum?** Yes.
+2. **Where?** Root [`ERRATA.md`](../../../ERRATA.md), entry ER-1, linked from a
+   new "Known defects in published releases" subsection in
+   [`README.md`](../../../README.md). The root file was chosen over the other
+   candidates because it is the surface a relying party reaches without knowing
+   the repository layout, and it can carry later entries.
+   The GitHub Release page for tag `release-1` was **not** annotated:
+   [`governance/RELEASE-POLICY.md`](../../RELEASE-POLICY.md) treats the
+   annotated tag message and GitHub Release notes as immutable publication
+   metadata, so editing them to add an erratum is not available.
+   `SECURITY.md` was left unchanged; ER-1 is a correctness defect, not a
+   vulnerability, and the reporting flow there is unaffected.
+3. **What may it assert?** The published text follows the draft below, extended
+   with the false-reject direction and a closed-form self-check. It does not
+   claim withdrawal, gate reopening, resigning, or a check-version change.
+4. **Reopen a Release 1 gate?** No gate was reopened. The signed snapshot, key
+   fingerprint, stored candidate-freeze manifest hash and issued registry
+   identifiers are unchanged and `pnpm validate`'s Release 1 historical-integrity
+   check passes. Whether R1-01 or R1-08 warrant later review on the strength of a
+   disclosed in-support numerical defect is left open for the steward; publishing
+   ER-1 does not decide it.
+
+`ERRATA.md` is classified `informative` in the authority manifest. It carries no
+Protocol authority.
 
 ## What this draft already did, and did not do
 
