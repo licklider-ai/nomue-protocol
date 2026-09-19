@@ -76,6 +76,27 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
   boundary. Blocked and errored results preserve only available evidence under the
   RFC's report rules.
 
+## Current preparation increment
+
+The [projection source inventory](projection-inventory-20260917/README.md) pins
+24 family/fact cells, exposes the unresolved mapping and predecessor questions,
+and supplies a planned verification-case inventory. A separately attributed
+[independent research addendum](projection-inventory-20260917/independent-research-addendum.md)
+now answers the repaired-scope and mapping questions.
+[Its coordination intake](projection-inventory-20260917/research-intake.md) records
+preparation decisions and remaining source holds; the
+[report integration follow-up](projection-inventory-20260917/report-surface-followup.md)
+identifies concrete successor-schema dependencies. The inventory audit checks
+source identity and schema pointers, not R5 semantics or runtime support.
+R5-P2/P3/P5/P6 remain held.
+
+The next concrete materials are the
+[conditional mapping draft](projection-inventory-20260917/conditional-mapping-draft.md),
+[Record/report draft](projection-inventory-20260917/record-and-report-draft.md) and
+[bounded primary-source request](projection-inventory-20260917/primary-source-completion-request.md).
+They advance conditional design and source completion without issuing schemas or
+encoding verifier behavior.
+
 ## Work products
 
 - [Public opening record](public-opening-record.md)
@@ -99,13 +120,14 @@ a conforming Record, but they do not become Protocol meaning through this RFC.
 
 1. Public discussion is open. Submit clause-specific feedback and counterexamples
    on [Issue #346](https://github.com/licklider-ai/nomue-protocol/issues/346).
-2. Complete the independent full-text addendum, predecessor reconciliation, exact
-   authority/surface inventory and historical-preservation fixture evidence.
+2. Resolve the independent addendum's remaining source and mapping holds, then
+   complete predecessor reconciliation, exact authority/surface inventory and
+   historical-preservation fixture evidence.
 3. Reassess the complete impact tier and consider a separately authorized decision
    only after the applicable window and all required holds close.
 
 The retained PROCEED confirmation and applied S-2a, N-7 and N-8 repairs support
-opening. Reviewer-side opening work is complete; no new review round is commissioned.
+opening. Reviewer-side opening work is complete; no new opening-review round is commissioned.
 Elapsed time alone does not adopt or release Release 5.
 
 ## Independence disclosure

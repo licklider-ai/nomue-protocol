@@ -1,0 +1,608 @@
+{
+  "status": "informative_source_inventory_not_executable_projection",
+  "base_commit": "a24958e1107cc75ecf189eb0176691357812a6ba",
+  "sources": {
+    "itgc": {
+      "path": "schemas/profiles/itgc-guarantee-0.2.schema.json",
+      "sha256": "60144b2c6c85009231a8d055aba2142b372c0f788f793b356a42c469c1de8510"
+    },
+    "r2": {
+      "path": "governance/drafts/release-2-candidate/schemas/paired-two-condition-continuous-0.1.candidate.schema.json",
+      "sha256": "3e256ffcf033df861700ed02f3825109e53cdb445378c0b6747d438227116315"
+    },
+    "r3": {
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/candidate.schema.json",
+      "sha256": "dc6da9f1e9d7b915c7273d6d23897fba4467cbdb2a7173fc246871a356e8366b"
+    },
+    "r1_record": {
+      "path": "schemas/record/record-0.2.schema.json",
+      "sha256": "78edefca1af368637f22051fbec4898df932f4378b912cd91c19ad8cc8a8cc9c"
+    },
+    "r2_record": {
+      "path": "governance/drafts/release-2-candidate/schemas/record-0.3.candidate.schema.json",
+      "sha256": "b275df4c31dc43cf2aa238e1b48166174161bc6e678a7dc65b7fc6f9da59d6a7"
+    },
+    "bundles": {
+      "path": "registries/interpretation-bundles.yaml",
+      "sha256": "fe019d7be977e5f8a6e63508616fef1efef6a400b5449ab386f9b26625d8d290"
+    },
+    "checks": {
+      "path": "registries/public-checks.yaml",
+      "sha256": "522ddfdb910f6c935baf33d93d7c5130d36227b371e22852fa46f6308713f6f9"
+    },
+    "history": {
+      "path": "tooling/src/release/release-1-history.ts",
+      "sha256": "9127250d435143224fea13a8e8418a62c647c3602dc5df18bb02046ff77f8483"
+    },
+    "rfc": {
+      "path": "governance/drafts/release-5-preparation/opening-rfc-candidate.md",
+      "sha256": "ab6b7d5b1a244d7ef946389dc1e79564fedf138998db84aa73b800900851c8bf"
+    },
+    "research": {
+      "path": "governance/drafts/release-5-preparation/research-result.md",
+      "sha256": "be40481c5995c5f14a91fcae2f383f531ff66ffc5624ecfc322c9529386734f6"
+    },
+    "r3_report": {
+      "path": "governance/drafts/release-3-preparation/declaration-surface-20260910/REPORT.md",
+      "sha256": "446a76515ea096b687d7068a029bb57c478032daa6e449cb06ea1b8fd9f97bc3"
+    },
+    "r3_rfc": {
+      "path": "governance/drafts/release-3-independent-multigroup-rfc.md",
+      "sha256": "e369752358cd67cc7bc665693db00115f05a63ecf0c7914ecd139d32dcf7b5c3"
+    }
+  },
+  "families": [
+    {
+      "family": "independent_two_group",
+      "source": "itgc",
+      "r5_admission": "blocked_pending_separately_accepted_successors",
+      "rows": [
+        {
+          "fact": "outcome_type",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/outcome/properties/scale",
+              "instance_path_notation": "payload.design.outcome.scale",
+              "expected_schema_fragment": {
+                "const": "continuous"
+              }
+            }
+          ],
+          "review_question": "Locate continuous scale; output vocabulary remains unissued."
+        },
+        {
+          "fact": "experimental_unit_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/design/properties/experimental_unit_type",
+              "instance_path_notation": "payload.design.experimental_unit_type",
+              "expected_schema_fragment": {
+                "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/label"
+              }
+            },
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/observation/properties/experimental_unit_id",
+              "instance_path_notation": "payload.dataset.observations[].experimental_unit_id",
+              "expected_schema_fragment": {
+                "$ref": "#/$defs/localId"
+              }
+            }
+          ],
+          "review_question": "Unit label and declared observation linkage have different roles; no label parsing or independence inference."
+        },
+        {
+          "fact": "relationship",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/admissibilityDeclarations/properties/grouping_structure",
+              "instance_path_notation": "payload.design.declarations.grouping_structure",
+              "expected_schema_fragment": {
+                "enum": ["independent_groups"]
+              }
+            },
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/admissibilityDeclarations/properties/pairing",
+              "instance_path_notation": "payload.design.declarations.pairing",
+              "expected_schema_fragment": {
+                "enum": ["none", "present"],
+                "$comment": "present is structurally readable but fails admissibility (NRS-PROFILE-ITGC-0019)."
+              }
+            }
+          ],
+          "review_question": "Preserve independent grouping and pairing declaration separately; contradiction remains Profile-owned."
+        },
+        {
+          "fact": "group_or_condition_count",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/design/properties/groups",
+              "instance_path_notation": "payload.design.groups",
+              "expected_schema_fragment": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/$defs/group"
+                }
+              }
+            }
+          ],
+          "review_question": "Count declared design groups, not distinct labels or observed outcome values."
+        },
+        {
+          "fact": "pair_identity_presence",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/admissibilityDeclarations/properties/pairing",
+              "instance_path_notation": "payload.design.declarations.pairing",
+              "expected_schema_fragment": {
+                "enum": ["none", "present"],
+                "$comment": "present is structurally readable but fails admissibility (NRS-PROFILE-ITGC-0019)."
+              }
+            }
+          ],
+          "review_question": "No pair-ID carrier in this schema. Pairing none is a declaration, not a fabricated pair identifier. Treatment requires explicit mapping review."
+        },
+        {
+          "fact": "repeated_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/admissibilityDeclarations/properties/repeated_measurements",
+              "instance_path_notation": "payload.design.declarations.repeated_measurements",
+              "expected_schema_fragment": {
+                "enum": ["none", "present"],
+                "$comment": "present fails admissibility (NRS-PROFILE-ITGC-0020)."
+              }
+            }
+          ],
+          "review_question": "Preserve the declared enum; do not collapse it with the R2 within_pair_only enum."
+        },
+        {
+          "fact": "clustered_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/admissibilityDeclarations/properties/clustering",
+              "instance_path_notation": "payload.design.declarations.clustering",
+              "expected_schema_fragment": {
+                "enum": ["none_declared", "present"],
+                "$comment": "present fails admissibility (NRS-PROFILE-ITGC-0021)."
+              }
+            }
+          ],
+          "review_question": "none_declared is not proof of no clustering."
+        },
+        {
+          "fact": "analysis_population_status",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "itgc",
+              "schema_pointer": "/$defs/dataHandlingDeclarations/properties/analysis_population",
+              "instance_path_notation": "payload.design.data_handling.analysis_population",
+              "expected_schema_fragment": {
+                "enum": ["all_record_observations", "subset_or_exclusions_present"],
+                "$comment": "subset_or_exclusions_present fails admissibility (NRS-PROFILE-ITGC-0024)."
+              }
+            }
+          ],
+          "review_question": "Status enum, not population identity."
+        }
+      ]
+    },
+    {
+      "family": "paired_two_condition",
+      "source": "r2",
+      "r5_admission": "blocked_pending_separately_accepted_successors",
+      "rows": [
+        {
+          "fact": "outcome_type",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/outcome/properties/scale",
+              "instance_path_notation": "payload.design.outcome.scale",
+              "expected_schema_fragment": {
+                "const": "continuous"
+              }
+            }
+          ],
+          "review_question": "Candidate carrier only; R2 acceptance is still required."
+        },
+        {
+          "fact": "experimental_unit_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/design/properties/experimental_unit_type",
+              "instance_path_notation": "payload.design.experimental_unit_type",
+              "expected_schema_fragment": {
+                "$ref": "#/$defs/label"
+              }
+            },
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/observation/properties/experimental_unit_id",
+              "instance_path_notation": "payload.dataset.observations[].experimental_unit_id",
+              "expected_schema_fragment": {
+                "$ref": "#/$defs/localId"
+              }
+            }
+          ],
+          "review_question": "Retain experimental-unit and pair identities as different concepts."
+        },
+        {
+          "fact": "relationship",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/declarations/properties/grouping_structure",
+              "instance_path_notation": "payload.design.declarations.grouping_structure",
+              "expected_schema_fragment": {
+                "const": "paired_two_condition"
+              }
+            },
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/declarations/properties/pair_independence",
+              "instance_path_notation": "payload.design.declarations.pair_independence",
+              "expected_schema_fragment": {
+                "enum": ["declared", "not_declared"]
+              }
+            }
+          ],
+          "review_question": "Pair independence is distinct from independent observations; preserve both declared meanings."
+        },
+        {
+          "fact": "group_or_condition_count",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/design/properties/conditions",
+              "instance_path_notation": "payload.design.conditions",
+              "expected_schema_fragment": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/$defs/condition"
+                }
+              }
+            }
+          ],
+          "review_question": "Count declared conditions; do not count pair IDs as groups."
+        },
+        {
+          "fact": "pair_identity_presence",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/observation/properties/pair_id",
+              "instance_path_notation": "payload.dataset.observations[].pair_id",
+              "expected_schema_fragment": {
+                "$ref": "#/$defs/localId"
+              }
+            }
+          ],
+          "review_question": "Presence derives from the Profile pair carrier; complete-pair admissibility remains the Profile check."
+        },
+        {
+          "fact": "repeated_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/declarations/properties/repeated_measurements",
+              "instance_path_notation": "payload.design.declarations.repeated_measurements",
+              "expected_schema_fragment": {
+                "enum": ["none", "within_pair_only"]
+              }
+            }
+          ],
+          "review_question": "within_pair_only cannot become a generic forbidden repeated-design claim. Common vocabulary needs research and Profile-owner review."
+        },
+        {
+          "fact": "clustered_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/declarations/properties/clustering",
+              "instance_path_notation": "payload.design.declarations.clustering",
+              "expected_schema_fragment": {
+                "enum": ["none_declared", "present"]
+              }
+            }
+          ],
+          "review_question": "Declared clustering remains separate from pair independence."
+        },
+        {
+          "fact": "analysis_population_status",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r2",
+              "schema_pointer": "/$defs/dataHandling/properties/analysis_population",
+              "instance_path_notation": "payload.design.data_handling.analysis_population",
+              "expected_schema_fragment": {
+                "enum": ["all_record_observations", "subset_or_exclusions_present"]
+              }
+            }
+          ],
+          "review_question": "Candidate status enum is not a population identity."
+        }
+      ]
+    },
+    {
+      "family": "independent_multi_group",
+      "source": "r3",
+      "r5_admission": "blocked_pending_separately_accepted_successors",
+      "rows": [
+        {
+          "fact": "outcome_type",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/dataset/properties/scale_declaration",
+              "instance_path_notation": "dataset.scale_declaration",
+              "expected_schema_fragment": {
+                "const": "continuous"
+              }
+            }
+          ],
+          "review_question": "D0 is a structural exercise, not an issued Profile or Record."
+        },
+        {
+          "fact": "experimental_unit_structure",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/experimental_unit_definition",
+              "instance_path_notation": "design.experimental_unit_definition",
+              "expected_schema_fragment": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/units",
+              "instance_path_notation": "design.units",
+              "expected_schema_fragment": {
+                "type": "array",
+                "minItems": 3,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["experimental_unit_id", "group_id"],
+                  "properties": {
+                    "experimental_unit_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "group_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "review_question": "Text definition and unit membership are separate sources; do not derive scientific meaning from free text."
+        },
+        {
+          "fact": "relationship",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/kind",
+              "instance_path_notation": "design.kind",
+              "expected_schema_fragment": {
+                "const": "independent_one_way"
+              }
+            },
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/independence_declared",
+              "instance_path_notation": "design.independence_declared",
+              "expected_schema_fragment": {
+                "const": true
+              }
+            },
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/not_flattened_declared",
+              "instance_path_notation": "design.not_flattened_declared",
+              "expected_schema_fragment": {
+                "const": true
+              }
+            }
+          ],
+          "review_question": "Independent one-way and not-flattened declarations do not supply a new R5 classifier; preserve Profile ownership."
+        },
+        {
+          "fact": "group_or_condition_count",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/design/properties/groups",
+              "instance_path_notation": "design.groups",
+              "expected_schema_fragment": {
+                "type": "array",
+                "minItems": 3,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["group_id"],
+                  "properties": {
+                    "group_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "review_question": "Count declared design groups after owning checks; k=4 never by itself classifies a one-way versus factorial design."
+        },
+        {
+          "fact": "pair_identity_presence",
+          "disposition": "carrier_gap",
+          "evidence": [],
+          "review_question": "No dedicated pair-ID or pairing-status carrier. Do not default absent fields to none. Owning successor or justified explicit mapping required."
+        },
+        {
+          "fact": "repeated_structure",
+          "disposition": "carrier_gap",
+          "evidence": [],
+          "review_question": "No dedicated repeated-structure enum. Whether compound D0 declarations suffice needs owner review; no silent false default."
+        },
+        {
+          "fact": "clustered_structure",
+          "disposition": "carrier_gap",
+          "evidence": [],
+          "review_question": "No dedicated clustering enum. Do not derive none from independence text or absent fields."
+        },
+        {
+          "fact": "analysis_population_status",
+          "disposition": "mapping_open",
+          "evidence": [
+            {
+              "source": "r3",
+              "schema_pointer": "/properties/analyses/items/properties/population",
+              "instance_path_notation": "analyses[].population",
+              "expected_schema_fragment": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["definition", "observation_ids"],
+                "properties": {
+                  "definition": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "observation_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              }
+            }
+          ],
+          "review_question": "D0 lists population members per analysis, not an ITGC-style status. Exact set-comparison mapping and analysis binding remain undecided."
+        }
+      ]
+    }
+  ],
+  "extra_evidence": [
+    {
+      "source": "itgc",
+      "schema_pointer": "/$defs/analysis/properties/method_id",
+      "instance_path_notation": "payload.analysis.method_id",
+      "expected_schema_fragment": {
+        "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri",
+        "$comment": "Admissibility requires the Welch method (NRS-PROFILE-ITGC-0007); other methods fail with NRS-UNSUPPORTED-METHOD."
+      }
+    },
+    {
+      "source": "r2",
+      "schema_pointer": "/$defs/analysis/properties/contract_id",
+      "instance_path_notation": "payload.analysis.contract_id",
+      "expected_schema_fragment": {
+        "const": "https://nomue.ai/id/contract/paired-t/0.1.0-draft.1"
+      }
+    },
+    {
+      "source": "r1_record",
+      "schema_pointer": "/properties/profile_id",
+      "instance_path_notation": "profile_id",
+      "expected_schema_fragment": {
+        "const": "urn:nomue:profile:itgc:0.2.0-draft.1"
+      }
+    },
+    {
+      "source": "r1_record",
+      "schema_pointer": "/properties/interpretation_bundle_id",
+      "instance_path_notation": "interpretation_bundle_id",
+      "expected_schema_fragment": {
+        "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri",
+        "$comment": "Not a schema constant: an unknown bundle is refused before schema validation (fail closed, NRS-VERSION-0002, NRS-VERSION-0005)."
+      }
+    },
+    {
+      "source": "r2_record",
+      "schema_pointer": "/properties/profile_id",
+      "instance_path_notation": "profile_id",
+      "expected_schema_fragment": {
+        "const": "https://nomue.ai/id/profile/paired-two-condition-continuous/0.1.0-draft.1"
+      }
+    },
+    {
+      "source": "r2_record",
+      "schema_pointer": "/properties/interpretation_bundle_id",
+      "instance_path_notation": "interpretation_bundle_id",
+      "expected_schema_fragment": {
+        "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri",
+        "$comment": "Exact supported-bundle dispatch remains a pre-schema operation; this candidate does not register its bundle identifier."
+      }
+    },
+    {
+      "source": "r3",
+      "schema_pointer": "/properties/analyses/items/properties/contract_ref",
+      "instance_path_notation": "analyses[].contract_ref",
+      "expected_schema_fragment": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    {
+      "source": "r3",
+      "schema_pointer": "/$defs/timing",
+      "instance_path_notation": "analyses[].procedure_selection and other D0 selection objects",
+      "expected_schema_fragment": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["relative_to_outcome_inspection", "statement"],
+        "properties": {
+          "relative_to_outcome_inspection": {
+            "enum": ["before", "after", "not_declared"]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}
