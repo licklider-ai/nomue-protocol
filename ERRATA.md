@@ -97,7 +97,8 @@ its gate decisions are unchanged.
 ### Correction and how to check it
 
 The correction evaluates the exact Cauchy form for `|t| <= 1`. It is available
-in this repository's `main` branch and in nomue-verifier commit
+to users as `@licklider/nomue-verifier@0.2.1-rc.1` or later, and in this
+repository's `main` branch and nomue-verifier commit
 `731d5a4fcd3ee67f7690d8087948e44239cbb165`; the intake record is
 [`evidence/development/student-t-df1-center-reference-intake.md`](evidence/development/student-t-df1-center-reference-intake.md).
 
