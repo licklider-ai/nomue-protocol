@@ -18,9 +18,7 @@ test("rejects changes to either old instructions or the approved append", () => 
   oldChanged[0] ^= 1;
   assert.throws(() => checkPinnedBytes(oldChanged, pin));
   assert.throws(() => checkPinnedBytes(Buffer.concat([current, Buffer.from("extra")]), pin));
-  const marker = current.indexOf(
-    Buffer.from("\n## Publication boundary and implementation ownership\n"),
-  );
+  const marker = current.indexOf(Buffer.from("\n## Requesting adversarial review\n"));
   assert.throws(() => checkPinnedBytes(current.subarray(0, marker), pin));
 });
 test("never exempts another source or an unknown historical pin", () => {
