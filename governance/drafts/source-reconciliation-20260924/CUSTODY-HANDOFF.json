@@ -1,5 +1,5 @@
 {
-  "purpose": "informative private custody handoff; not a new Protocol status enum or an archive receipt",
+  "purpose": "informative private custody handoff with owner/operator attestation; not a new Protocol status enum or independent storage audit",
   "sources_manifest": "SOURCES.json",
   "sources_manifest_sha256": "dbe0c7335ca9ee8027aa87444d77ba05f65d576449e8bfffdc0f970c5d449bc4",
   "received_archive": {
@@ -25,8 +25,8 @@
         "member_basename": "Kramer_1956.pdf",
         "archive_member_ordinal": 1
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Zimmerman_2004.pdf",
@@ -45,8 +45,8 @@
         "member_basename": "Zimmerman_2004.pdf",
         "archive_member_ordinal": 2
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Rubin_1974.pdf",
@@ -65,8 +65,8 @@
         "member_basename": "Rubin_1974.pdf",
         "archive_member_ordinal": 3
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Hayter_1984.pdf",
@@ -85,8 +85,8 @@
         "member_basename": "Hayter_1984.pdf",
         "archive_member_ordinal": 4
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Rasch_2011.pdf",
@@ -105,8 +105,8 @@
         "member_basename": "Rasch_2011.pdf",
         "archive_member_ordinal": 5
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Lazic_2010.pdf",
@@ -125,8 +125,8 @@
         "member_basename": "Lazic_2010.pdf",
         "archive_member_ordinal": 6
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Holm_1979.pdf",
@@ -145,8 +145,8 @@
         "member_basename": "Holm_1979.pdf",
         "archive_member_ordinal": 7
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Zimmerman_1997.pdf",
@@ -165,8 +165,8 @@
         "member_basename": "Zimmerman_1997.pdf",
         "archive_member_ordinal": 8
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Nosek_2018.pdf",
@@ -185,8 +185,8 @@
         "member_basename": "Nosek_2018.pdf",
         "archive_member_ordinal": 9
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Corrigenda_1979.pdf",
@@ -205,8 +205,8 @@
         "member_basename": "Corrigenda_1979.pdf",
         "archive_member_ordinal": 10
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Benjamini_1995.pdf",
@@ -225,8 +225,8 @@
         "member_basename": "Benjamini_1995.pdf",
         "archive_member_ordinal": 11
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Spjotvoll_1973.pdf",
@@ -245,8 +245,8 @@
         "member_basename": "Spjotvoll_1973.pdf",
         "archive_member_ordinal": 12
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Dunnett_1980.pdf",
@@ -265,8 +265,8 @@
         "member_basename": "Dunnett_1980.pdf",
         "archive_member_ordinal": 13
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Tukey_1949.pdf",
@@ -285,8 +285,8 @@
         "member_basename": "Tukey_1949.pdf",
         "archive_member_ordinal": 14
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Dunnett_1955.pdf",
@@ -305,8 +305,8 @@
         "member_basename": "Dunnett_1955.pdf",
         "archive_member_ordinal": 15
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "Naik_1975.pdf",
@@ -325,8 +325,8 @@
         "member_basename": "Naik_1975.pdf",
         "archive_member_ordinal": 16
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     },
     {
       "original_filename": "IEEE_754-2019.pdf",
@@ -345,8 +345,8 @@
         "member_basename": "IEEE_754-2019.pdf",
         "archive_member_ordinal": 17
       },
-      "canonical_private_storage_location": "PENDING",
-      "custody_receipt": "PENDING"
+      "canonical_private_storage_location": "CONFIRMED - Licklider company-managed shared Google Drive (private locator withheld)",
+      "custody_receipt": "CONFIRMED - owner/operator attestation supplied in the task conversation; see pdf_custody_confirmation"
     }
   ],
   "historical_raw_reviewer_return": {
@@ -355,5 +355,14 @@
     "identity_basis": "r5-completion-review-original.md.txt; original filename and original raw bytes not recovered in this packet",
     "canonical_private_storage_location": "PENDING",
     "custody_receipt": "PENDING"
+  },
+  "pdf_custody_confirmation": {
+    "status": "CONFIRMED",
+    "basis": "Owner/operator custody confirmation supplied in the task conversation",
+    "scope": "All 17 PDF originals identified in SOURCES.json",
+    "storage_description": "Licklider company-managed shared Google Drive; company shared area, not personal My Drive or temporary storage",
+    "private_locators": "Not included in the public repository",
+    "independent_drive_inspection_performed": false,
+    "historical_raw_reviewer_return_included": false
   }
 }

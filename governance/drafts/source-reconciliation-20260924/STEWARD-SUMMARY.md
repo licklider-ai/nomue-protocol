@@ -10,17 +10,20 @@ findings. The evidence is self-contained for R5 prior-record verification withou
 the historical local-only commit. Validation results and existing baseline failures
 are retained in [VALIDATION.md](VALIDATION.md).
 
-The steward is asked only to:
+The remaining steward decision is to accept this bounded additive evidence packet
+or record a specific acceptance condition. No acceptance has yet been recorded.
 
-1. Accept this bounded additive evidence packet, or record a specific acceptance
-   condition. No acceptance has yet been recorded.
-2. Designate or confirm authorized private durable storage and custody receipts
-   for the 17 source originals, and arrange recovery/verified preservation of the
-   separately identified historical raw reviewer return.
+Storage designation and custody receipts for all 17 PDF originals are CONFIRMED
+by owner/operator attestation: they are held in Licklider's company-managed shared
+Google Drive, not personal My Drive or temporary storage. Their custody blocker is
+resolved. No private locator is published and no independent Drive audit is claimed.
+The separate 18,810-byte historical raw reviewer return was not covered by this
+confirmation; its recovery/private preservation and custody receipt remain PENDING
+as a separate preservation action, not a new PDF storage designation request.
 
 See [CLOSE-HANDOFF.md](CLOSE-HANDOFF.md) for exact Git identity and condition
-classification, and [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) for the storage
-handoff manifest. All currently unknown locations and receipts remain PENDING.
+classification, and [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) for the owner/operator
+attestation and the separately pending raw-return custody.
 
 Accepting this packet does not close the existing R5 cross-model condition,
 adopt any Release, close any gate, end discussion or authorize implementation.

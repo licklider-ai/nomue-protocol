@@ -1,6 +1,7 @@
 # Source reconciliation close and handoff
 
-Scientific reconciliation is COMPLETE; custody and steward acceptance are PENDING.
+Scientific reconciliation is COMPLETE; 17 PDF custody is CONFIRMED by owner/operator
+attestation. Historical raw-return custody and steward acceptance remain PENDING.
 These are descriptive work states using the packet's existing vocabulary, not
 new registered status values, a Research Gate decision or release authority.
 
@@ -41,23 +42,31 @@ The branch is to be pushed for review without merging or modifying main.
 
 ### Source custody and preservation
 
-The 17 PDF originals require canonical private durable storage and verified custody
-receipts. The earlier 18,810-byte raw reviewer return separately requires recovery
-or verified access and formal private preservation; its recorded hash is not proof
-that its bytes have been retained. The preserved 24,011-byte completion record is
-not that raw return. Both custody conditions remain PENDING.
+The owner/operator confirms that all 17 PDF originals are already retained in
+Licklider's company-managed shared Google Drive: a company shared area, not
+personal My Drive or temporary storage. Private durable storage and the custody
+receipt for those 17 PDFs are CONFIRMED on that attestation. Their custody blocker
+is resolved. No private URL, folder ID or other sensitive locator is published.
+No Drive inspection, new storage location or independent stored-byte verification
+was performed or required for recording this owner/operator confirmation.
+
+The earlier 18,810-byte historical raw reviewer return is separate. This
+confirmation does not cover it; its private custody remains PENDING. Its recorded
+hash is not proof that its bytes have been retained. The preserved 24,011-byte
+completion record is not that raw return.
 
 [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) supplements the unchanged
-[SOURCES.json](SOURCES.json) with explicit per-source private-location and receipt
-fields marked PENDING. It includes the raw-return identity separately. No destination,
-custodian decision or receipt is invented. A custodian must provide an authorized
-private location, retention responsibility, access/retrieval scope and exact-byte
-hash-verification receipt. Sensitive locators need not be published in public Git.
+[SOURCES.json](SOURCES.json) with explicit per-PDF confirmed location descriptions
+and owner/operator attestation receipts. Earlier PDF-storage PENDING statements
+in the frozen evidence records describe their historical state; this close update
+supersedes them only for those 17 PDFs. The separately listed raw-return location
+and receipt remain PENDING. No scientific or Release decision is changed.
 
 ### Additive evidence acceptance
 
 Steward acceptance: PENDING. The requested decision is whether to accept this
-bounded additive evidence packet and designate or confirm private durable storage.
+bounded additive evidence packet. Storage designation for the 17 PDFs is resolved;
+no further designation decision is requested for them.
 [STEWARD-SUMMARY.md](STEWARD-SUMMARY.md) supplies the bounded decision summary.
 Scientific completion and repair confirmation do not substitute for that decision.
 

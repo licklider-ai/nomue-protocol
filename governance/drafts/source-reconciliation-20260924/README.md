@@ -5,7 +5,8 @@ No normative meaning, identifier, supported bundle, adoption, discussion clock,
 release gate or prior steward closure changes in this packet.
 
 [Close and handoff record](CLOSE-HANDOFF.md): scientific reconciliation and
-bounded repairs are complete; custody and steward acceptance remain pending.
+bounded repairs are complete; 17 PDF custody is confirmed by owner/operator
+attestation. Historical raw-return custody and steward acceptance remain pending.
 These are descriptive task states, not new Protocol status values.
 
 ## Fixed inputs and scope
@@ -46,15 +47,14 @@ download-address watermarks are excluded from this repository. The public
 manifest contains bibliographic metadata and digests only. Local scratch copies
 are disposable inspection material, not a durable archive.
 
-**PRIVATE DURABLE STORAGE PENDING:** no accountable, authorized archive location,
-retention receipt or exact-byte retrieval service has been designated for this
-packet. No new canonical storage rule is established. The received ZIP remains
-with the supplier; its local presence is not a durable-storage attestation. The
-custodian can complete this one custody action by retaining these exact bytes in
-an authorized private archive and returning its retrieval identity, access scope,
-retention responsibility and a hash-verification receipt through an approved
-private channel. Public evidence needs only an appropriate non-sensitive receipt.
-This custody gap does not block the completed mapping and comparison work.
+**17 PDF PRIVATE DURABLE STORAGE CONFIRMED:** the owner/operator reports that
+the originals are retained in Licklider's company-managed shared Google Drive,
+not personal My Drive or temporary storage. Their custody blocker is resolved on
+that attestation; no Drive inspection or private locator publication occurred.
+See [the current close record](CLOSE-HANDOFF.md) and
+[custody handoff](CUSTODY-HANDOFF.json). The separate historical raw reviewer
+return remains PENDING; steward acceptance also remains PENDING. Earlier frozen
+evidence statements about PDF storage describe the state before this confirmation.
 
 ## Release effects
 
