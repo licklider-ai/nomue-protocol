@@ -134,3 +134,26 @@ above describe their historical state and are superseded only for packet accepta
 The historical raw-return custody remains PENDING; the R5 cross-model condition
 and other existing Release conditions remain OPEN or retain their existing states.
 No scientific review, test result, Research Gate or Release decision is changed.
+
+## Historical raw-return durable preservation
+
+The owner/operator selected public Git preservation for the recovered historical
+raw return, following content inspection and the existing original-review practice.
+[RAW-RETURN-RECOVERY.md](RAW-RETURN-RECOVERY.md) records the completed preservation
+receipt; earlier raw-return private-custody PENDING statements are superseded by
+this authorized storage method, not by a claim of private Drive upload.
+
+- **PASS:** recovered transfer copy, packet file and staged Git blob are identical:
+  18,810 bytes, SHA-256
+  `5b5a41500b7284cc10a8902e69209af83226472bdc01bdd8cba3100ae160a253`.
+- **PASS:** existing `*-original.md.txt -text` attribute applies; the original was
+  excluded from formatting and no encoding or newline conversion was performed.
+- **PASS:** packet checker now also checks this exact raw return and its receipt;
+  `--commit` additionally compares its stored Git bytes. Existing TARGET files
+  and the 17 PDF identities/custody attestations remain unchanged.
+- **PASS:** Markdown lint (783 files), `pnpm validate`, and change-local whitespace
+  checks. Historical full-range original-byte whitespace findings remain intact.
+
+No raw-return preservation condition remains after the preserved blob is pushed.
+The existing baseline failures, steward acceptance and R5 cross-model condition
+are unchanged. This is preservation validation, not a new scientific review.

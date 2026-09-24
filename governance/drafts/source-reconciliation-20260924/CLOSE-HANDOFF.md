@@ -2,7 +2,7 @@
 
 Scientific reconciliation is COMPLETE; 17 PDF custody is CONFIRMED by owner/operator
 attestation. Steward acceptance is ACCEPTED as bounded additive evidence;
-historical raw-return custody remains PENDING.
+historical raw-return durable preservation is CONFIRMED in public Git.
 These are descriptive work states using the packet's existing vocabulary, not
 new registered status values, a Research Gate decision or release authority.
 
@@ -51,20 +51,21 @@ is resolved. No private URL, folder ID or other sensitive locator is published.
 No Drive inspection, new storage location or independent stored-byte verification
 was performed or required for recording this owner/operator confirmation.
 
-The earlier 18,810-byte historical raw reviewer return is separate. This
-confirmation does not cover it; its private custody remains PENDING. The raw
-return has now been RECOVERED from the retained original task attachment and
-verified against the exact 18,810-byte size and historical SHA-256; see
-[recovery record](RAW-RETURN-RECOVERY.md). The local recovery copy is not a
-company-managed durable-storage receipt. The preserved 24,011-byte completion
-record is not that raw return.
+The 18,810-byte historical raw reviewer return is separate from those PDFs.
+Its exact recovered bytes are now [preserved in public Git](r5-historical-raw-review-original.md.txt)
+at the owner/operator's explicit direction. Its preservation and receipt are
+CONFIRMED; private Google Drive storage is no longer required for this artifact.
+The [recovery and preservation record](RAW-RETURN-RECOVERY.md) identifies its
+exact SHA-256 and Git blob. The 24,011-byte completion record remains a separate
+coordinator-structured record, not a substitute for the raw return.
 
 [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) supplements the unchanged
-[SOURCES.json](SOURCES.json) with explicit per-PDF confirmed location descriptions
-and owner/operator attestation receipts. Earlier PDF-storage PENDING statements
-in the frozen evidence records describe their historical state; this close update
-supersedes them only for those 17 PDFs. The separately listed raw-return location
-and receipt remain PENDING. No scientific or Release decision is changed.
+[SOURCES.json](SOURCES.json) with the distinct custody methods: owner/operator
+attestation for the 17 privately held PDFs, byte-exact public Git preservation
+for the historical raw return. Earlier pending statements in frozen evidence
+are historical and superseded by these later receipts only. No packet-specific
+preservation or acceptance condition remains; no scientific or Release decision
+is changed.
 
 ### Additive evidence acceptance
 

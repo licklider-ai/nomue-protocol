@@ -59,6 +59,23 @@ for artifact in sources["artifacts"]:
         require((repo / evidence).is_file(), "missing evidence: " + evidence)
 require(matched == 16, "expected 16 previous matches")
 require(packet_matches == 5, "expected five self-contained R5 prior matches")
+custody = json.loads((packet / "CUSTODY-HANDOFF.json").read_text(encoding="utf-8"))
+require(custody["sources_manifest_sha256"] == sha((packet / "SOURCES.json").read_bytes()),
+        "custody source-manifest binding changed")
+raw_receipt = custody["historical_raw_reviewer_return"]
+raw_path = packet / "r5-historical-raw-review-original.md.txt"
+raw_bytes = raw_path.read_bytes()
+require(len(raw_bytes) == raw_receipt["byte_size"] == 18810, "raw return size mismatch")
+require(sha(raw_bytes) == raw_receipt["sha256"] ==
+        "5b5a41500b7284cc10a8902e69209af83226472bdc01bdd8cba3100ae160a253",
+        "raw return digest mismatch")
+raw_oid = subprocess.check_output(["git", "hash-object", "--stdin"],
+                                  input=raw_bytes, cwd=repo).decode().strip()
+require(raw_oid == raw_receipt["git_blob_oid"], "raw return blob identity mismatch")
+if args.commit:
+    raw_relative = raw_path.relative_to(repo).as_posix()
+    stored_raw = subprocess.check_output(["git", "show", args.commit + ":" + raw_relative], cwd=repo)
+    require(stored_raw == raw_bytes, "raw return Git bytes differ")
 archive_result = "NOT_RUN - provide --archive to check original bytes"
 if args.archive:
     raw = args.archive.read_bytes()
@@ -82,6 +99,7 @@ if args.archive:
 require(not args.extracted_dir or args.archive, "--extracted-dir requires --archive")
 print(json.dumps({"packet_identity": "PASS", "prior_sha256_matches": matched,
                   "self_contained_r5_prior_matches": packet_matches,
+                  "historical_raw_return": "PASS - exact 18810-byte original and receipt",
                   "sources": 17, "archive": archive_result,
                   "extracted_copies": "PASS" if args.extracted_dir else "NOT_RUN",
                   "git_target": "PASS" if args.commit else "NOT_RUN",

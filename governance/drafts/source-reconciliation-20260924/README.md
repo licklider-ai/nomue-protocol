@@ -7,8 +7,8 @@ release gate or prior steward closure changes in this packet.
 [Close and handoff record](CLOSE-HANDOFF.md): scientific reconciliation and
 bounded repairs are complete; 17 PDF custody is confirmed by owner/operator
 attestation. Steward acceptance is **ACCEPTED** as bounded additive evidence;
-the historical raw return is [recovered and hash-verified](RAW-RETURN-RECOVERY.md),
-with private durable custody still pending. See the
+the historical raw return is [preserved byte-exactly in public Git](RAW-RETURN-RECOVERY.md).
+No packet-specific acceptance or preservation condition remains. See the
 [steward disposition](2026-09-24-source-reconciliation-steward-disposition.md).
 These are descriptive task states, not new Protocol status values.
 
@@ -56,8 +56,8 @@ not personal My Drive or temporary storage. Their custody blocker is resolved on
 that attestation; no Drive inspection or private locator publication occurred.
 See [the current close record](CLOSE-HANDOFF.md) and
 [custody handoff](CUSTODY-HANDOFF.json). The separate historical raw reviewer
-return remains PENDING; steward acceptance is now ACCEPTED for this bounded
-packet. Earlier frozen
+return is now preserved byte-exactly in public Git at the owner/operator's direction;
+its preservation receipt is CONFIRMED and steward acceptance is ACCEPTED. Earlier frozen
 evidence statements about PDF storage describe the state before this confirmation.
 
 ## Release effects
@@ -94,7 +94,9 @@ specific R2-R5 work item in this receipt. No broader Research programme is reope
 New files under this packet:
 
 - `RAW-RETURN-RECOVERY.md`: exact historical raw-return recovery, verification
-  and the separately pending private durable custody receipt.
+  and the completed public Git preservation receipt.
+- `r5-historical-raw-review-original.md.txt`: the original 18,810-byte reviewer
+  return, preserved without editing, encoding conversion or newline normalization.
 
 - `2026-09-24-source-reconciliation-steward-disposition.md`: append-only explicit
   steward acceptance of the fixed packet, with exclusions and separate residuals.

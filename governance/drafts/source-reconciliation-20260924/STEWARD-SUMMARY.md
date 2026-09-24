@@ -22,13 +22,14 @@ by owner/operator attestation: they are held in Licklider's company-managed shar
 Google Drive, not personal My Drive or temporary storage. Their custody blocker is
 resolved. No private locator is published and no independent Drive audit is claimed.
 The separate 18,810-byte historical raw reviewer return was not covered by this
-confirmation. Its exact bytes are now [RECOVERED and hash-verified](RAW-RETURN-RECOVERY.md);
-private durable preservation and its custody receipt remain PENDING as a separate
-preservation action, not a new PDF storage designation or acceptance request.
+confirmation. Its exact bytes are now [preserved and hash-verified in public Git](RAW-RETURN-RECOVERY.md)
+under the owner/operator-selected review-preservation method. Its preservation
+and receipt are CONFIRMED; no private-storage action is required. No conditions
+specific to this accepted reconciliation packet remain.
 
 See [CLOSE-HANDOFF.md](CLOSE-HANDOFF.md) for exact Git identity and condition
 classification, and [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) for the owner/operator
-attestation and the separately pending raw-return custody.
+attestation and the separate public-Git raw-return preservation receipt.
 
 Accepting this packet does not close the existing R5 cross-model condition,
 adopt any Release, close any gate, end discussion or authorize implementation.

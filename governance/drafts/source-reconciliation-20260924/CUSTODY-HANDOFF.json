@@ -353,12 +353,16 @@
     "byte_size": 18810,
     "sha256": "5b5a41500b7284cc10a8902e69209af83226472bdc01bdd8cba3100ae160a253",
     "identity_basis": "Exact original retained task attachment recovered and matched to the size and SHA-256 recorded in r5-completion-review-original.md.txt; see RAW-RETURN-RECOVERY.md",
-    "canonical_private_storage_location": "PENDING",
-    "custody_receipt": "PENDING",
+    "canonical_private_storage_location": "NOT REQUIRED - public Git preservation selected by owner/operator",
+    "custody_receipt": "CONFIRMED - byte-exact public Git review preservation; see RAW-RETURN-RECOVERY.md",
     "original_attachment_basename": "pasted-text.txt",
     "recovery_status": "RECOVERED",
     "exact_byte_verification": "PASS",
-    "recovery_record": "RAW-RETURN-RECOVERY.md"
+    "recovery_record": "RAW-RETURN-RECOVERY.md",
+    "preservation_status": "COMPLETE",
+    "canonical_storage_location": "governance/drafts/source-reconciliation-20260924/r5-historical-raw-review-original.md.txt",
+    "preservation_method": "Public Git original review record; no content, newline or encoding changes",
+    "git_blob_oid": "ff354be1d0c75efba7d6b5fb3d24b021106ae79e"
   },
   "pdf_custody_confirmation": {
     "status": "CONFIRMED",

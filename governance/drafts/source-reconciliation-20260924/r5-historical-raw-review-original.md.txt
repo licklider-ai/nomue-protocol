@@ -1,0 +1,236 @@
+Independent primary-source completion review
+
+Review date: 2026-09-17 UTC
+Scope: the five supplied primary-source artifacts identified in the completion-review handoff.
+Repository/design decisions: not reviewed or changed beyond the bounded source-claim comparison requested by the handoff.
+
+Independence disclosure
+
+This review was performed in a separate ChatGPT conversation/context from the Codex coordinator context. I personally inspected the supplied full-text PDFs and did not rely on the coordinator's substantive paper summaries as evidence for the conclusions below.
+
+The reviewing model is GPT-5.6 Sol. The existing R5 independent addendum reports that its earlier investigation used an OpenAI Codex agent with gpt-5.6-sol. Therefore, this review is contextually independent but not a different model family. If the steward interprets the RFC phrase “separate LLM/model” as requiring a different underlying model rather than a separate reviewer/context, an additional cross-model pass remains necessary before treating this review as satisfying that procedural requirement. No human-expert review is asserted.
+
+No repository files, branches, commits, gates, specifications, implementations, identifiers, or planned cases were changed or executed.
+
+1. Artifact identity
+
+I inspected the five exact artifacts identified by the handoff. The handoff records the retained byte sizes and SHA-256 values as follows: Zimmerman 1997 fbd188...b37b74, Zimmerman 2004 24f673...a4a7d3, Lazic 2010 5553cc...939535f, Rasch 2011 7aa4b1...4746655, and Nosek 2018 162fb9...48f6c1.
+
+All five were personally inspected as full-text artifacts in this review.
+
+2. Zimmerman 1997 claim table
+Claim Z97-1 — simulation scope
+
+Exact bounded claim: The paper's simulation compares independent-samples Student t tests and paired-samples t tests using normally distributed data with induced correlation between the paired observations. Correlations range from −0.50 to +0.50; sample sizes range from 10 to 80 pairs; one- and two-tailed tests are run at α=.05; each data point uses 10,000 simulation replications. The author expressly describes the simulations as illustrative rather than exhaustive.
+
+Inspected location: article pp. 351–355, especially “Paired Data and Nonindependence of Observations,” Figures 1–2, and Table 1.
+
+Assumptions/scope: normal-population simulation; induced pairwise correlation; Student t procedures; specified sample sizes and correlations.
+
+Limitation: This is not a theorem covering arbitrary dependence structures, hierarchical clustering, arbitrary distributions, or every correlated-data problem.
+
+Effect on earlier R5 claim: Any R5 claim that generalized these numeric Type I/power results to “dependence in general” needs narrowing to the source's studied paired/correlated two-sample setting.
+
+Claim Z97-2 — pairing is a design relationship, not a correlation classifier
+
+Exact bounded claim: The paper treats pairing as a correspondence in the design: repeated observations on the same subjects, deliberate matching, naturally paired subjects, or other known correspondence. Correlation is a statistical consequence/property of that paired structure and affects efficiency/error behavior; the paper does not establish that an observed sample correlation by itself creates or proves the pairing relationship.
+
+Later, the paper explicitly distinguishes “subjects explicitly matched or paired by the experimenter” from two groups that are “unquestionably independent,” and separately discusses “subjects naturally paired,” such as pretest/posttest measurements on the same subjects.
+
+Inspected location: pp. 349–350 and 359–360.
+
+Assumptions/scope: pairing/matching already exists as part of the data-generating or experimental structure.
+
+Limitation: A sample statistic such as r=.10, .15, .30, etc. is not an identifier of experimental-unit structure.
+
+Effect on earlier R5 claim: Supports keeping pair identity / repeated structure declarative and source-qualified rather than classifying it from observed values. It does not support an R5 verifier inferring pairing merely because two columns are correlated.
+
+Claim Z97-3 — incorrect independence assumptions can distort significance level
+
+Exact bounded claim: Within the paper's paired-data setup, applying an independent-samples t test to correlated observations changes the test's Type I error behavior. The paired test stays close to nominal .05 in the reported simulation while the independent-samples test changes materially as correlation changes.
+
+The direction is not a single universal “inflation” rule. The paper describes the significance function as being spuriously elevated or depressed, with the effect depending on the correlation, including different behavior for positive and negative correlation.
+
+Limitation: The source does not justify replacing this with a generic claim that “any within-cluster correlation always inflates Type I error.”
+
+Effect on earlier R5 claim: A generic correlation/nonindependence claim must retain structure and direction qualifications.
+
+Claim Z97-4 — deliberate matching threshold is not universal
+
+The paper says that, for the sample sizes studied, deliberate matching would need correlations roughly in the .30–.40 range or higher to offset lost degrees of freedom, while even much smaller correlation can matter when data are already naturally paired. It explicitly ties those numerical ranges to the sample sizes in the present study.
+
+Limitation: .30, .40, .05, .15 are not protocol-level universal thresholds.
+
+Effect on R5: Do not encode a correlation cutoff for deciding pairing, independence, repetition, or admissibility from this source.
+
+Claim Z97-5 — observed low correlation does not establish independence
+
+The paper warns that even .10 or .15 correlation is not sufficient evidence of independence in its investigated setup.
+
+However, that does not invert into a rule that a measured correlation can establish dependence structure. The paper's Table 2 example starts from a hidden known correspondence of values; the correlation is a property of that pairing, not the mechanism by which the pairing itself is discovered.
+
+Disposition for Zimmerman 1997: narrower claim required if the prior R5 wording implied that observed correlation can declare pairing/independence or generalized the simulation to arbitrary clustered data. With that qualification, there is sufficient bounded evidence for the narrower paired-data claim.
+
+3. Zimmerman 2004 claim table
+Claim Z04-1 — exact two-stage procedure
+
+The simulated compound procedure is specific: first perform a Levene equality-of-variance test; if Levene does not reject, use the pooled-variance Student two-sample t test; if Levene rejects, use the Welch–Satterthwaite separate-variance t test. Tests are non-directional.
+
+This is not a study of arbitrary method selection based on arbitrary observed outcomes.
+
+Claim Z04-2 — simulation conditions
+
+The simulations use normally generated observations from two independent samples. Population standard-deviation ratios range from 1 to 3; total sample size is 30 or 60; n1/n2 ranges from 0.2 to 5. There are 50,000 replications per condition, except Table 2 uses 200,000. Levene and the location test are generally applied at .01 or .05; Table 3 varies the preliminary-test significance level while holding the location-test level fixed.
+
+Effect on scope: the empirical claims must stay tied to this variance-pretest → Student/Welch setting.
+
+Claim Z04-3 — compound procedure can damage nominal Type I control
+
+Under the simulated conditions, unconditional Welch stays near nominal while the Levene-conditioned procedure can inherit distortion from Student and can also spoil Welch's otherwise favorable behavior. The distortion depends on sample-size imbalance, population variance ratio, and the preliminary-test threshold.
+
+The paper reports especially severe distortion in some unequal-n/unequal-variance configurations, and notes that distortion can be greater when variance inequality is only slight.
+
+Claim Z04-4 — no universal theorem about all outcome-dependent method choice
+
+The paper does not support the universal proposition:
+
+every outcome-dependent method choice invalidates its nominal error rate.
+
+Its empirical work is about a particular preliminary Levene test coupled to Student/Welch selection. The author extends the reasoning to other preliminary variance tests as an argument, but does not establish a theorem covering all possible data-dependent procedures.
+
+There are also explicit boundary cases inconsistent with a universal “always invalid” reading. When variances are equal, observed error rates in Table 1 are close to nominal; when a preliminary test's power approaches 1 under unequal variances, the procedure approaches unconditional use of Welch and the preliminary test becomes merely pointless.
+
+Effect on earlier R5 claim: replace any universal statement with a narrower one: same-data preliminary testing can make the final compound procedure's operating characteristics differ from the nominal properties of its component tests; Zimmerman 2004 establishes this for the studied Levene→Student/Welch procedure.
+
+Claim Z04-5 — unconditional Welch recommendation is contextual
+
+The paper recommends unconditional separate-variance testing, particularly with unequal sample sizes, and reports that Welch remains near nominal in its simulations.
+
+That is a methodological recommendation for the studied two-sample means problem. It does not become a universal Protocol rule or authorize R5 to choose statistical methods.
+
+Disposition for Zimmerman 2004: sufficient bounded evidence, with narrower claim required for any previous universal “all outcome-dependent choices” language.
+
+4. Lazic 2010 comparison
+
+The supplied BMC article agrees with the existing bounded addendum claims.
+
+Lazic defines the experimental unit as the smallest entity assignable to a different treatment condition, distinguishes sample size from the number of individual observations, and explicitly states that multiple measurements from one experimental unit do not become independent samples merely because there are more rows.
+
+For repeated measures, the paper states that observations across subjects may be independent while observations within a subject are not; for hierarchical data, cells within a rat cannot simply be counted as independent n.
+
+This therefore supports:
+
+experimental unit ≠ arbitrary observation row;
+repeated measurements inside one unit ≠ independent replication;
+nested/hierarchical observations can require dependence-aware treatment.
+
+It does not establish a universal Protocol vocabulary or allow a verifier to deduce the real experimental unit solely from a string label or row count.
+
+One nuance: the supplied 17-page PDF contains later signed responses by other authors. Those responses include disagreement about how statistical independence should be interpreted in particular neuroscience examples. They are not claims authored by Lazic and should not silently be merged into Lazic's own position.
+
+Material difference from existing bounded summary: none identified.
+
+Disposition: sufficient bounded evidence.
+
+5. Rasch, Kubinger & Moder 2011 comparison
+
+The supplied Springer journal paper agrees with the existing addendum's bounded claim and provides stronger reproducible support than the previously inspected presentation.
+
+The paper explicitly frames the problem as applying assumption pretests and the main test to the same observations, creating dependence among the statistics and making overall error behavior nontrivial.
+
+The actual procedure is more specific than a generic “outcome-dependent method choice”:
+
+KS tests normality in each sample;
+if normality is rejected, Wilcoxon U is selected;
+otherwise Levene tests variance homogeneity;
+if homogeneity is accepted, Student t is used;
+otherwise Welch is used.
+
+The simulation covers several equal and unequal sample-size combinations, Fleishman nonnormal distributions, skewness up to 3 and kurtosis 15, heterogeneous variances, mean differences δ=0...5, and 100,000 generated sample pairs per condition.
+
+The authors conclude that, in their examined context, pretesting does not improve error behavior and recommend Welch as the default comparison test; they also report exceptions where Welch performs worse than desired, particularly the extreme type-5 distribution and some very small-sample mixed-distribution cases.
+
+That exception is important: the paper itself therefore does not support an unqualified universal theorem about all same-data choices.
+
+Publisher PDF vs previously inspected author presentation
+
+The previous 11-page presentation itself is not part of this supplied review package, so I cannot perform byte- or paragraph-level artifact equivalence. Against the documented bounded claims from the existing addendum, however, I found no material contradiction. The publisher article confirms the same core procedure, simulation logic, bounded recommendation, and limitations, while giving substantially fuller method and result detail.
+
+Disposition: sufficient bounded evidence for the documented R5 claim. Exact presentation-to-journal textual equivalence remains untested, but there is no identified decision-bearing discrepancy.
+
+6. Nosek et al. 2018 comparison
+
+The supplied PNAS paper also agrees with the bounded addendum when the source claim is kept separate from the R5 convention.
+
+The authors define preregistration as committing to analytic steps without advance knowledge of research outcomes, commonly by posting the plan to an independent registry that preserves the registration.
+
+They also explicitly recognize deviations. A deviation made before outcomes are observed can be documented without the same diagnosticity concern; deviations after outcomes are seen introduce greater risk, but transparent reporting still allows readers to assess them.
+
+For preexisting data, the article directly discusses both direct and indirect prior exposure: who has seen the data, what summaries have been communicated, advice from previous analysts, and knowledge about related variables can all weaken blinding.
+
+This supports the narrower source distinction:
+
+a plan fixed without relevant outcome knowledge differs from one formed after such knowledge;
+prior exposure is not limited to literally opening the exact target column;
+transparent preregistration/recording gives evidence that a bare after-the-fact assertion does not.
+
+But several R5 statements remain deductions or proposed conventions, not Nosek claims:
+
+the exact pre_outcome enum;
+“supplied-dataset-wide” as the universal boundary;
+dataset revision identity;
+restoration/edit-history semantics;
+trusted timestamps;
+authorship or access-history proof;
+access to other datasets.
+
+The paper does not say that a bare enum proves those facts. Conversely, it does not prescribe the exact R5 dataset/revision rule either.
+
+Material difference from existing bounded summary: none identified.
+
+Disposition: sufficient bounded evidence, provided the R5 timing boundary continues to be described as a Protocol convention/non-claim rather than a literature-standardized rule.
+
+7. Source-hold dispositions
+Source	Independent disposition
+Zimmerman 1997	NARROWER CLAIM REQUIRED, then sufficient bounded evidence. Pairing must not be inferred from observed correlation; numeric findings remain tied to the paired normal-data simulations.
+Zimmerman 2004	NARROWER CLAIM REQUIRED, then sufficient bounded evidence. Supports the studied Levene→Student/Welch compound-procedure conclusion, not a theorem about every outcome-dependent method choice.
+Lazic 2010	SUFFICIENT BOUNDED EVIDENCE. Existing experimental-unit / repeated / hierarchical distinction is supported.
+Rasch et al. 2011	SUFFICIENT BOUNDED EVIDENCE. Publisher paper supports the documented bounded claim; no decision-bearing discrepancy identified against the prior summary.
+Nosek et al. 2018	SUFFICIENT BOUNDED EVIDENCE. Existing preregistration/prior-exposure distinction is supported; exact R5 timing semantics remain project convention.
+
+Therefore, the previous “full text unavailable / reproducible raw artifact unavailable” holds for these five artifacts can now be retired as source-access problems, subject to preserving the exact artifacts/hashes. What should not be retired are the semantic qualifications uncovered by the review.
+
+8. Effect on R5 semantics
+
+The five papers do not resolve the remaining design questions listed in the handoff. In particular, they do not determine:
+
+the R3 repetition/clustering carrier;
+selected-analysis binding and population-set semantics;
+common mapping representation for repetition;
+pair-identity applicability representation;
+R5's exact timing schema or dataset/revision/history boundary;
+report behavior for pass/block/error/conformance-failure cases;
+family successor admission;
+multiple-Contract consistency/no-endorsement wording.
+
+Those remain Protocol/owner/steward decisions, consistent with the handoff's explicit remaining-matters list.
+
+No basis exists here for changing R5-P2, P3, P5, P6, or P7, running the 37 cases, freezing specifications, implementing behavior, issuing IDs, or merging. Those remain explicit stop conditions.
+
+9. Overall completion result
+
+Primary-source access: complete for all five supplied artifacts.
+
+Substantive result: the three previously inspected sources are materially consistent with the bounded addendum summaries. The two previously unavailable Zimmerman sources require claim narrowing rather than rejection of the R5 preparation direction.
+
+The key corrections are:
+
+Zimmerman 1997 does not make observed correlation a reliable classifier of pairing or independence.
+Its quantitative Type I/power observations are specific to the simulated paired/correlated two-sample setup and should not be generalized into a universal clustering rule.
+Zimmerman 2004 does not prove that every outcome-dependent method-selection process necessarily destroys nominal error control.
+Rasch 2011 likewise supports a specific family of same-data pretest-and-select procedures, not a universal method-selection theorem.
+Nosek 2018 supports the epistemic distinction behind timing but does not standardize the exact R5 timing enum or prove history/access from a declaration alone.
+
+Research Gate closure: not assessed / not authorized by this review.
+
+Recommended research intake action: preserve this as an additive completion result, narrow the two overbroad Zimmerman-dependent claims, mark the five source-access/byte-pin subholds as resolved for these exact artifacts, and leave the semantic/owner/steward holds and gate states unchanged.
