@@ -39,11 +39,18 @@ for entry in target["files"]:
         stored = subprocess.check_output(["git", "show", args.commit + ":" + relative], cwd=repo)
         require(stored == data, "Git target bytes differ: " + entry["path"])
 matched = 0
+packet_matches = 0
 for artifact in sources["artifacts"]:
     previous = artifact["prior_match"]
     if previous:
-        data = subprocess.check_output(
-            ["git", "show", previous["commit"] + ":" + previous["path"]], cwd=repo)
+        if previous.get("verification") == "packet_copy":
+            require(previous["packet_path"] == "r5-completion-review-original.md.txt",
+                    "unexpected packet prior record")
+            data = (packet / previous["packet_path"]).read_bytes()
+            packet_matches += 1
+        else:
+            data = subprocess.check_output(
+                ["git", "show", previous["commit"] + ":" + previous["path"]], cwd=repo)
         require(sha(data) == previous["record_sha256"], "prior record changed")
         require(artifact["sha256"].encode() in data, "prior hash not recorded")
         matched += 1
@@ -51,6 +58,7 @@ for artifact in sources["artifacts"]:
     for evidence in artifact["mapping"]["repository_evidence"]:
         require((repo / evidence).is_file(), "missing evidence: " + evidence)
 require(matched == 16, "expected 16 previous matches")
+require(packet_matches == 5, "expected five self-contained R5 prior matches")
 archive_result = "NOT_RUN - provide --archive to check original bytes"
 if args.archive:
     raw = args.archive.read_bytes()
@@ -73,6 +81,7 @@ if args.archive:
     archive_result = "PASS - 17 exact original byte streams; archive unchanged"
 require(not args.extracted_dir or args.archive, "--extracted-dir requires --archive")
 print(json.dumps({"packet_identity": "PASS", "prior_sha256_matches": matched,
+                  "self_contained_r5_prior_matches": packet_matches,
                   "sources": 17, "archive": archive_result,
                   "extracted_copies": "PASS" if args.extracted_dir else "NOT_RUN",
                   "git_target": "PASS" if args.commit else "NOT_RUN",

@@ -21,7 +21,7 @@ R2-R5, not a new release plan. Sources can have no new release work.
   separate; previous review is reused rather than treated as missing.
 - [Naik intake](NAIK-INTAKE.md): additive MTO-02 comparison, not an SR-J reset.
 - [Validation](VALIDATION.md): executed checks and explicit limitations.
-- [Review intake](REVIEW-INTAKE.md): distinct-model recommendation and remaining
+- [Review intake](REVIEW-INTAKE.md): separate-context recommendation and remaining
   acceptance boundaries, with the unchanged original return.
 
 ## Receipt and custody
@@ -91,9 +91,11 @@ New files under this packet:
   reused review and pinpoint/precision addendum; original return preserved.
 - `NAIK-INTAKE.md`, `naik-review-original.md.txt`: Naik's original formulation,
   variant comparison and bounded original reviewer return.
+- `R5-PRIOR-EVIDENCE.md`, `r5-completion-review-original.md.txt`: provenance and
+  exact historical completion-record bytes, without publishing the source branch.
 - `TARGET.json`, `REVIEW-COMMISSION.md`: frozen scientific inputs and the exact
   bounded review question, without extending any release scope.
-- `REVIEW-INTAKE.md`, `distinct-model-review-original.md.txt`: received independent
+- `REVIEW-INTAKE.md`, `bounded-review-original.md.txt`: received independent
   recommendation, immutable return and explicit remaining acceptance conditions.
 - `check.py`, `VALIDATION.md`: repeatable identity verification and actual check
   results, including failures and custody limitations.
@@ -114,5 +116,7 @@ Prepared with OpenAI Codex assistance in the continuing coordinator context on
 Windows, using Git, Python/pypdf for byte inventory/text navigation and Poppler
 page rendering for visual source checks. Material claims, reuse boundaries and
 separate-context reviewer limitations are retained in the individual records.
-No human review or steward decision is invented. This packet is a local candidate
+For R5, the bounded reviewer used the same requested model as the prior R5
+review; the cross-model condition remains unmet. See the corrected
+[review intake](REVIEW-INTAKE.md). No human review or steward decision is invented. This packet is a local candidate
 for review, not evidence of merge, publication or final Research Gate clearance.

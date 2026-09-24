@@ -10,11 +10,13 @@ Review this packet's content-addressed scientific target in
 [TARGET.json](TARGET.json). It fixes current Protocol base
 `9146a342ce40881b16aad198c80dbf94d7e24332`, every source artifact in SOURCES.json,
 the mapping and intake texts, and both unmodified reviewer returns. Compare
-against the listed prior immutable inputs, including the R5 completion review at
-`a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf`. A changed target needs an explicit
+against the listed prior inputs, including the R5 completion review preserved as
+[r5-completion-review-original.md.txt](r5-completion-review-original.md.txt). Its
+source `a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf` is historical local-only
+provenance; verification uses the packet copy, not that commit. A changed target needs an explicit
 impact assessment or a new review; never silently transfer acceptance.
 
-Saved scientific target commit: `00031b52c748b48aefb11684929909816eac9b83`.
+Original reviewed scientific target commit (before bounded metadata repair): `00031b52c748b48aefb11684929909816eac9b83`.
 TARGET.json SHA-256:
 `4b9a648a1dbee33c664733be6b52729951202d08530b0cd2ab7de147a2a934c1`.
 Original reviewer-return Git blobs were explicitly verified against their
@@ -34,6 +36,14 @@ contexts within the same GPT-6 family; they do not attest a distinct model or
 human review. Record actual provider/model, prior involvement, read order and
 independence limits. Review acceptance and an actual steward disposition remain
 separate from this commissioning document. Reuse unchanged accepted reviews.
+
+For R5, the requested `gpt-5.6-sol` reviewer is the same model/model family as
+the prior R5 addendum and completion review. This is a bounded independent review
+context; the cross-model condition remains unmet. For Naik/R3 only, its requested
+model differs from the immediately preceding GPT-6 packet investigator; no broader
+claim about all historical R3 reviewers or actual served builds is made.
+The original prompt below is preserved as scope history; see
+[review intake](REVIEW-INTAKE.md) for the bounded repair impact and current target.
 
 ## Review prompt
 

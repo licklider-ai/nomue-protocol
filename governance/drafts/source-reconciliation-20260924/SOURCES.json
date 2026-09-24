@@ -74,7 +74,10 @@
         "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
         "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
         "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
-        "result": "EXACT_SHA256_MATCH"
+        "result": "EXACT_SHA256_MATCH",
+        "verification": "packet_copy",
+        "packet_path": "r5-completion-review-original.md.txt",
+        "historical_source_status": "local-only provenance; not a remote retrieval dependency"
       },
       "mapping": {
         "candidate_releases": ["R5"],
@@ -187,7 +190,7 @@
       "byte_size": 297782,
       "sha256": "7aa4b1bc0693e96cbbf3fc7e85fabd49d8e6f9d5afb96bf74842c568f4746655",
       "source_identity": {
-        "authors": "Dieter Rasch, Klaus D. Kubinger and Karin Moder",
+        "authors": "Dieter Rasch, Klaus D. Kubinger and Karl Moder",
         "title": "The two-sample t test: pre-testing its assumptions does not pay off",
         "publication": "Statistical Papers 52:219-231",
         "identifier": "10.1007/s00362-009-0224-x",
@@ -204,7 +207,10 @@
         "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
         "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
         "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
-        "result": "EXACT_SHA256_MATCH"
+        "result": "EXACT_SHA256_MATCH",
+        "verification": "packet_copy",
+        "packet_path": "r5-completion-review-original.md.txt",
+        "historical_source_status": "local-only provenance; not a remote retrieval dependency"
       },
       "mapping": {
         "candidate_releases": ["R5"],
@@ -248,7 +254,10 @@
         "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
         "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
         "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
-        "result": "EXACT_SHA256_MATCH"
+        "result": "EXACT_SHA256_MATCH",
+        "verification": "packet_copy",
+        "packet_path": "r5-completion-review-original.md.txt",
+        "historical_source_status": "local-only provenance; not a remote retrieval dependency"
       },
       "mapping": {
         "candidate_releases": ["R5"],
@@ -333,11 +342,14 @@
         "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
         "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
         "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
-        "result": "EXACT_SHA256_MATCH"
+        "result": "EXACT_SHA256_MATCH",
+        "verification": "packet_copy",
+        "packet_path": "r5-completion-review-original.md.txt",
+        "historical_source_status": "local-only provenance; not a remote retrieval dependency"
       },
       "mapping": {
-        "candidate_releases": ["R2", "R5"],
-        "exact_target": "R5 Priority 1 / R5-RH-1 / P2; R2 already explicit pairing boundary",
+        "candidate_releases": ["R5"],
+        "exact_target": "R5 Priority 1 / R5-RH-1 / P2",
         "existing_status": "main source-content hold; separate branch bounded completion with narrowing; custody/independence open",
         "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
         "required_action": [
@@ -352,7 +364,8 @@
           "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
         ],
         "inspection": "Complete article text; pinpoint reconciliation of Z97-1..5; actual Table 1 is printed 356 / PDF 9",
-        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending",
+        "contextual_consistency_note": "R2 existing pairing boundary only; not an action target; contract, decisions and status unchanged"
       }
     },
     {
@@ -377,7 +390,10 @@
         "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
         "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
         "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
-        "result": "EXACT_SHA256_MATCH"
+        "result": "EXACT_SHA256_MATCH",
+        "verification": "packet_copy",
+        "packet_path": "r5-completion-review-original.md.txt",
+        "historical_source_status": "local-only provenance; not a remote retrieval dependency"
       },
       "mapping": {
         "candidate_releases": ["R5"],

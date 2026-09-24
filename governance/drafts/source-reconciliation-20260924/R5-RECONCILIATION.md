@@ -10,8 +10,10 @@ reviewed target `52e39c7a6cda4a2fdee89d0b8b22e068854f4852`.
 The later completion review exists at
 `a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf`, path
 `governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md`.
-It is not in current main. Its [immutable source](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md)
-and Git-blob byte digest are retained in [SOURCES.json](SOURCES.json).
+That commit is a historical local-only source, not a remote-verifiable locator.
+The [exact packet copy](r5-completion-review-original.md.txt) and its
+[provenance](R5-PRIOR-EVIDENCE.md) make the needed completion-review evidence
+self-contained. Its Git-blob byte digest is retained in [SOURCES.json](SOURCES.json).
 All five currently received PDFs exactly match that review's hashes and sizes,
 despite differences in decorative filename prefixes. No edition substitution
 occurred. This intake does not silently merge or rewrite that branch.
@@ -75,10 +77,12 @@ within the reported scope. It does not authenticate original downloads or supply
 an accountable durable archive. The earlier raw reviewer return remains absent;
 this new original return does not retroactively recreate it.
 
-The new reviewers used separate contexts but the same inherited GPT-6 model
-family as the coordinator. No different-model attestation or human review is
-claimed. The earlier completion review's independence qualification is not
-silently closed. [The review commission](REVIEW-COMMISSION.md) limits any further
+The first packet investigators used separate GPT-6 contexts. The later bounded
+review used requested model `gpt-5.6-sol`, the same model/model family as the
+prior R5 addendum and completion review. For R5 this is a separate context, not
+cross-model independence: the cross-model condition remains unmet. No human
+review or served-build attestation is claimed. The earlier completion review's
+independence qualification remains open. [The review commission](REVIEW-COMMISSION.md) limits any further
 decision review to these remaining questions and the exact changes, rather than
 repeating the full research programme.
 

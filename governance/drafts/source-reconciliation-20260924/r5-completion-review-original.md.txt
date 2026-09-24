@@ -1,0 +1,456 @@
+# Independent primary-source completion review
+
+Review date: 2026-09-17 UTC
+
+Status: additive Research Gate evidence only. This review does not close the
+Research Gate, establish that the independence requirement has been satisfied,
+adopt Release 5 semantics, or authorize specification, implementation,
+identifier issuance, case execution or merge.
+
+## Fixed points and scope
+
+- Recovery and preservation pin:
+  `c00b5b55971af8227a52a4c3c618acf14be26738`.
+- Primary-source-completion request fixed research input:
+  `2b8b6a829b4bc25d7cb8bed75d63af602360eaa6`.
+- Existing independent addendum reviewed target:
+  `52e39c7a6cda4a2fdee89d0b8b22e068854f4852`.
+- Raw review-return text: `18810` bytes; SHA-256
+  `5b5a41500b7284cc10a8902e69209af83226472bdc01bdd8cba3100ae160a253`.
+  This digest identifies the raw bytes of the unedited review-return text
+  received by the coordinator. It is not the digest of this Markdown file.
+  A durable archive identity for those raw return bytes was not recorded and
+  remains **OPEN**.
+- Scope: the five supplied full-text artifacts identified below and the bounded
+  source-claim comparisons commissioned by
+  `primary-source-completion-request.md`.
+- Repository and design decisions were not reviewed or changed beyond those
+  bounded comparisons.
+
+This Markdown file is a coordinator-structured and edited additive record, not
+a verbatim byte-preserving copy of the raw return. The raw-return digest does
+not prove reviewer identity, inspection of the PDFs or Research Gate
+independence. The artifact identity data below came from the coordinator
+handoff and the later exact-byte verification described below. The substantive
+findings are a structured record of the independent reviewer's return. Keeping
+those functions distinct avoids treating coordinator-side source observations
+as the independent review.
+
+## Independence disclosure and open qualification
+
+The review was performed in a separate ChatGPT conversation and context from
+the Codex coordinator context. The reviewer reported personally inspecting all
+five supplied full-text PDFs and not relying on the coordinator's substantive
+paper summaries as evidence for the conclusions below.
+
+The reviewing model was GPT-5.6 Sol. The existing Release 5 independent
+addendum reports that its earlier investigation used an OpenAI Codex agent with
+`gpt-5.6-sol`. The completion review is therefore **contextually independent
+but in the same model family**. This qualification remains **OPEN**. If the
+steward interprets the RFC phrase "separate LLM/model" as requiring a different
+underlying model rather than a separate reviewer and context, an additional
+cross-model review remains necessary. This document does not decide that
+interpretive question and does not assert that the Research Gate independence
+requirement has been satisfied. No human-expert review is asserted.
+
+The raw return did not separately disclose whether the reviewer had contributed
+to the Release 5 proposal or implementation before this review. Prior Release 5
+contribution is therefore unconfirmed and is not evidence supporting an
+independence finding. The reviewer did report that no repository files,
+branches, commits, gates, specifications, implementations, identifiers or
+planned cases were changed or executed during the review.
+
+## Exact artifact ledger
+
+The five DOI links below identify the works; they are not asserted to be the
+retrieval URLs for the supplied PDF bytes. The reviewer reported accessing and
+inspecting the supplied PDFs on 2026-09-17 UTC. The original acquisition dates
+are not recorded and must not be inferred from that inspection date.
+
+A later byte-verification report from a separate ChatGPT context states that it
+reacquired the five supplied attachments and recalculated each byte size and
+SHA-256, with all five matching the values below. That follow-up confirms the
+reported supplied bytes and byte pins. It does not establish a publicly
+reproducible retrieval route or durable retention. For every artifact below,
+the exact-PDF retrieval URL and durable private retention/archive identity were
+not recorded and remain **OPEN**. Filenames are recorded exactly as supplied.
+The copyrighted PDFs are not stored in this repository.
+
+### Zimmerman 1997
+
+- Title: *Teacher's Corner: A Note on Interpretation of the Paired-Samples t
+  Test*.
+- DOI: `10.3102/10769986022003349`.
+- Edition/version: *Journal of Educational and Behavioral Statistics* 22(3),
+  349-360; JSTOR stable item `1165289`; full-text PDF.
+- Stable work identity: DOI
+  <https://doi.org/10.3102/10769986022003349> and JSTOR stable item `1165289`.
+- Supplied exact PDF: filename `① Zimmerman_1997.pdf`; media type
+  `application/pdf`; `479943` bytes; SHA-256
+  `fbd188fe3db73014eb5414a123c70adb0114dff0c67667dc0b4436e4b6b37b74`.
+- Exact-PDF retrieval URL: not recorded / **OPEN**.
+- Reviewer access/inspection date: 2026-09-17 UTC.
+- Original acquisition date: not recorded / **OPEN**.
+- Durable private retention/archive identity: not recorded / **OPEN**.
+
+### Zimmerman 2004
+
+- Title: *A Note on Preliminary Tests of Equality of Variances*.
+- DOI: `10.1348/000711004849222`.
+- Edition/version: *British Journal of Mathematical and Statistical
+  Psychology* 57(1), 173-181; Wiley/British Psychological Society
+  publisher-formatted full-text PDF.
+- Stable work identity: DOI
+  <https://doi.org/10.1348/000711004849222>.
+- Supplied exact PDF: filename `②Zimmerman_2004.pdf`; media type
+  `application/pdf`; `393079` bytes; SHA-256
+  `24f673bf26a74344e138b8c3a8927b7f1e1faba847aea201fa65080626a4a7d3`.
+- Exact-PDF retrieval URL: not recorded / **OPEN**.
+- Reviewer access/inspection date: 2026-09-17 UTC.
+- Original acquisition date: not recorded / **OPEN**.
+- Durable private retention/archive identity: not recorded / **OPEN**.
+
+### Lazic 2010
+
+- Title: *The problem of pseudoreplication in neuroscientific studies: is it
+  affecting your analysis?*.
+- DOI: `10.1186/1471-2202-11-5`.
+- Edition/version: *BMC Neuroscience* 11, article 5; publisher open-access
+  full-text PDF, 17 pages, including later signed responses.
+- Stable work identity: DOI
+  <https://doi.org/10.1186/1471-2202-11-5>.
+- Supplied exact PDF: filename `③ Lazic_2010.pdf`; media type
+  `application/pdf`; `431015` bytes; SHA-256
+  `5553cc2975a46610aad33f7ca0b76f3d7c21052fda56d1ccd7b0cb743939535f`.
+- Exact-PDF retrieval URL: not recorded / **OPEN**.
+- Reviewer access/inspection date: 2026-09-17 UTC.
+- Original acquisition date: not recorded / **OPEN**.
+- Durable private retention/archive identity: not recorded / **OPEN**.
+
+### Rasch, Kubinger and Moder 2011
+
+- Title: *The two-sample t test: pre-testing its assumptions does not pay
+  off*.
+- DOI: `10.1007/s00362-009-0224-x`.
+- Edition/version: *Statistical Papers* 52, 219-231; Springer
+  publisher-formatted full-text PDF, 13 pages.
+- Stable work identity: DOI
+  <https://doi.org/10.1007/s00362-009-0224-x>.
+- Supplied exact PDF: filename `④Rasch_2011.pdf`; media type
+  `application/pdf`; `297782` bytes; SHA-256
+  `7aa4b1bc0693e96cbbf3fc7e85fabd49d8e6f9d5afb96bf74842c568f4746655`.
+- Exact-PDF retrieval URL: not recorded / **OPEN**.
+- Reviewer access/inspection date: 2026-09-17 UTC.
+- Original acquisition date: not recorded / **OPEN**.
+- Durable private retention/archive identity: not recorded / **OPEN**.
+
+### Nosek et al. 2018
+
+- Title: *The preregistration revolution*.
+- DOI: `10.1073/pnas.1708274114`.
+- Edition/version: *Proceedings of the National Academy of Sciences* 115(11),
+  2600-2606; PNAS publisher-formatted full-text PDF, 7 pages.
+- Stable work identity: DOI
+  <https://doi.org/10.1073/pnas.1708274114>.
+- Supplied exact PDF: filename `⑤ Nosek_2018.pdf`; media type
+  `application/pdf`; `543040` bytes; SHA-256
+  `162fb9b13811288e03738b45e8b585219f361000016cba4a3f2f7162b748f6c1`.
+- Exact-PDF retrieval URL: not recorded / **OPEN**.
+- Reviewer access/inspection date: 2026-09-17 UTC.
+- Original acquisition date: not recorded / **OPEN**.
+- Durable private retention/archive identity: not recorded / **OPEN**.
+
+## Zimmerman 1997: bounded completion findings
+
+### Z97-1: simulation scope
+
+The paper's simulation compares independent-samples Student t tests and
+paired-samples t tests using normally distributed data with induced correlation
+between paired observations. Correlations range from -0.50 to +0.50, sample
+sizes range from 10 to 80 pairs, one- and two-tailed tests use alpha .05, and
+each reported simulation point uses 10,000 replications. The paper describes
+the simulations as illustrative rather than exhaustive.
+
+The reviewer inspected article pages 351-355, especially “Paired Data and
+Nonindependence of Observations,” Figures 1-2 and Table 1. The quantitative
+findings are bounded to the studied normal-population, induced-pairwise-
+correlation and Student-t conditions. They are not a theorem about arbitrary
+dependence, hierarchical clustering, arbitrary distributions or every
+correlated-data problem. Any Release 5 claim that generalized these Type I
+error or power results to dependence in general requires narrowing to the
+studied paired and correlated two-sample setting.
+
+### Z97-2: pairing is a design relationship, not a correlation classifier
+
+The paper treats pairing as an existing correspondence in the design: repeated
+observations on the same subjects, deliberate matching, natural pairing or
+another known correspondence. Correlation is a property or consequence of that
+paired structure and affects efficiency and error behavior. The paper does not
+establish that an observed sample correlation by itself creates or proves the
+pairing relationship.
+
+The reviewer inspected pages 349-350 and 359-360. The source supports keeping
+pair identity and repeated structure declarative and source-qualified. It does
+not support a verifier inferring pairing merely because two columns are
+correlated, nor does a low observed correlation establish independence.
+
+### Z97-3: incorrect independence assumptions have qualified effects
+
+Pinpoint: the reviewer return did not provide a more specific page, section,
+figure or table pinpoint for this claim.
+
+Within the paper's paired-data setup, applying an independent-samples t test to
+correlated observations changes Type I error behavior. The reported paired test
+remains near nominal .05, while the independent-samples test changes materially
+as correlation changes. The direction is not a universal inflation rule: the
+paper describes the significance function as spuriously elevated or depressed,
+depending on correlation. The source does not support a generic claim that any
+within-cluster correlation always inflates Type I error.
+
+### Z97-4: reported matching ranges are not universal thresholds
+
+Pinpoint: the reviewer return did not provide a more specific page, section,
+figure or table pinpoint for this claim.
+
+For the sample sizes studied, the paper reports that deliberate matching would
+need correlations roughly in the .30-.40 range or higher to offset lost degrees
+of freedom, while much smaller correlation can matter when observations are
+already naturally paired. Those ranges are expressly tied to the investigated
+sample sizes. They are not Protocol-level thresholds and must not be encoded as
+cutoffs for deciding pairing, independence, repetition or admissibility.
+
+### Z97-5: observed low correlation does not establish independence
+
+Pinpoint: Table 2. The reviewer return did not provide a page or section
+pinpoint for this claim.
+
+The paper warns that even .10 or .15 correlation is not sufficient evidence of
+independence in the investigated setup. That does not invert into a rule that a
+measured correlation can establish dependence structure. The Table 2 example
+starts from a hidden known correspondence of values; correlation is a property
+of that pairing rather than the means by which pairing is discovered.
+
+### Zimmerman 1997 disposition
+
+**NARROWER CLAIM REQUIRED, then sufficient bounded evidence.** Pairing must not
+be inferred from observed correlation, and the quantitative findings remain
+tied to the paper's paired normal-data simulations. This finding supports a
+narrower paired-data claim; it does not establish a universal clustering rule.
+
+## Zimmerman 2004: bounded completion findings
+
+### Z04-1: exact compound procedure
+
+Pinpoint: the reviewer return did not provide a specific page, section, figure
+or table pinpoint for this claim.
+
+The simulated compound procedure first applies a Levene equality-of-variance
+test. If Levene does not reject, it applies the pooled-variance Student
+two-sample t test; if Levene rejects, it applies the Welch-Satterthwaite
+separate-variance t test. The tests are non-directional. The study is not an
+investigation of every method-selection process based on observed data.
+
+### Z04-2: simulation conditions
+
+Pinpoint: Tables 2 and 3 for the replication-count exception and the varied
+preliminary-test significance level, respectively. The reviewer return did not
+provide a page or section pinpoint for the remaining conditions.
+
+The simulations use normally generated observations from two independent
+samples. Population standard-deviation ratios range from 1 to 3; total sample
+size is 30 or 60; and the `n1/n2` ratio ranges from 0.2 to 5. There are 50,000
+replications per condition, except Table 2, which uses 200,000. Levene and the
+location test are generally applied at .01 or .05; Table 3 varies the
+preliminary-test significance level while holding the location-test level
+fixed. The empirical claims must remain tied to this variance-pretest followed
+by Student-or-Welch setting.
+
+### Z04-3: bounded error-control finding
+
+Pinpoint: the reviewer return did not provide a specific page, section, figure
+or table pinpoint for this claim.
+
+Under the simulated conditions, unconditional Welch stays near nominal while
+the Levene-conditioned procedure can inherit distortion from Student and can
+spoil Welch's otherwise favorable behavior. The result depends on sample-size
+imbalance, population variance ratio and the preliminary-test threshold. The
+paper reports severe distortion in some unequal-sample-size and unequal-
+variance configurations and notes that distortion can be greater when variance
+inequality is slight.
+
+### Z04-4: no universal theorem
+
+Pinpoint: Table 1 for the equal-variance boundary case. The reviewer return did
+not provide a page or section pinpoint for the remaining limitations and
+boundary cases.
+
+The paper does not support the proposition that every outcome-dependent method
+choice invalidates its nominal error rate. Its empirical analysis concerns the
+specific Levene-to-Student-or-Welch procedure. Boundary cases also preclude an
+“always invalid” reading: when variances are equal, Table 1 error rates are near
+nominal; as a preliminary test's power approaches one under unequal variances,
+the procedure approaches unconditional Welch use and the preliminary test
+becomes pointless rather than necessarily distorting the result.
+
+The bounded replacement claim is: same-data preliminary testing can make a
+compound procedure's operating characteristics differ from the nominal
+properties of its component tests, and Zimmerman 2004 demonstrates that result
+for the studied Levene-to-Student-or-Welch procedure.
+
+### Z04-5: unconditional Welch recommendation is contextual
+
+Pinpoint: the reviewer return did not provide a specific page, section, figure
+or table pinpoint for this claim.
+
+The paper recommends unconditional separate-variance testing, particularly
+with unequal sample sizes, and reports that Welch remains near nominal in its
+simulations. That recommendation is bounded to the studied two-sample means
+problem. It does not become a universal Protocol rule or authorize Release 5 to
+choose statistical methods.
+
+### Zimmerman 2004 disposition
+
+**NARROWER CLAIM REQUIRED, then sufficient bounded evidence.** The paper's
+recommendation for unconditional separate-variance testing is contextual to the
+studied two-sample means problem. It does not become a universal Protocol rule,
+does not authorize Release 5 to choose statistical methods, and does not prove a
+theorem about all outcome-dependent method selection.
+
+## Lazic 2010: comparison with the existing bounded claim
+
+The supplied BMC article agrees with the existing addendum's bounded claims.
+It defines the experimental unit as the smallest entity assignable to a
+different treatment condition, distinguishes sample size from the number of
+individual observations, and states that multiple measurements from one
+experimental unit do not become independent samples because there are more
+rows. It also distinguishes independence across subjects from nonindependence
+within a subject and explains why cells within one rat cannot simply be counted
+as independent replication.
+
+This supports the bounded distinctions that an experimental unit is not an
+arbitrary observation row, repeated measurements within one unit are not
+independent replication, and nested or hierarchical observations can require
+dependence-aware treatment. It does not establish universal Protocol vocabulary
+or authorize a verifier to deduce the real experimental unit solely from a
+string label or row count.
+
+The 17-page PDF contains later signed responses by other authors. Their views
+must not be silently merged into Lazic's claims. No material difference from
+the existing bounded summary was identified. Disposition: **SUFFICIENT BOUNDED
+EVIDENCE**.
+
+## Rasch, Kubinger and Moder 2011: comparison with the existing bounded claim
+
+The supplied Springer journal paper agrees with the existing addendum's bounded
+claim and provides stronger reproducible support than the previously inspected
+author presentation. It studies applying assumption pretests and a main test to
+the same observations, which creates dependence among the statistics and makes
+overall error behavior nontrivial.
+
+The procedure is specific: Kolmogorov-Smirnov tests normality in each sample;
+rejection selects Wilcoxon U; otherwise Levene tests variance homogeneity;
+acceptance selects Student t and rejection selects Welch. The simulation
+includes equal and unequal sample sizes, Fleishman nonnormal distributions,
+skewness up to 3, kurtosis up to 15, heterogeneous variances, mean differences
+from 0 to 5, and 100,000 generated sample pairs per condition.
+
+The authors conclude that pretesting does not improve error behavior in the
+examined context and recommend Welch as the default comparison test. They also
+report exceptions where Welch performs worse than desired, especially the
+extreme type-5 distribution and some very small-sample mixed-distribution
+cases. The paper therefore does not support an unqualified theorem about all
+same-data choices.
+
+The earlier 11-page author presentation was not part of this completion-review
+package, so byte- or paragraph-level equivalence was not tested. No material or
+decision-bearing contradiction was identified between the publisher article
+and the existing addendum's documented bounded summary. Disposition:
+**SUFFICIENT BOUNDED EVIDENCE** for that documented claim; exact
+presentation-to-journal textual equivalence remains untested.
+
+## Nosek et al. 2018: comparison with the existing bounded claim
+
+The supplied PNAS paper agrees with the existing bounded addendum when the
+literature claim remains distinct from the proposed Release 5 convention. It
+describes preregistration as committing to analytic steps without advance
+knowledge of research outcomes and discusses direct and indirect prior exposure
+for preexisting data, including who has seen the data, communicated summaries,
+advice from previous analysts and knowledge about related variables.
+
+This supports the bounded distinctions that a plan fixed without relevant
+outcome knowledge differs from one formed after such knowledge, prior exposure
+is not limited to opening the exact target column, and a preserved transparent
+registration provides evidence unavailable from a bare after-the-fact
+assertion. The paper does not standardize the exact Release 5 `pre_outcome`
+enum, a universal supplied-dataset-wide boundary, dataset revision identity,
+restoration or edit-history semantics, trusted timestamps, authorship or access
+history proof, or access to other datasets. A bare enum does not prove those
+facts.
+
+No material difference from the existing bounded summary was identified.
+Disposition: **SUFFICIENT BOUNDED EVIDENCE**, provided the exact Release 5
+timing boundary remains identified as a Protocol convention and non-claim
+rather than a literature-standardized rule.
+
+## Source acquisition, byte-pin and retention dispositions
+
+The completion status has three separate dimensions. Each exact supplied
+artifact was acquired and hash-pinned, and the later separate-context
+recalculation matched its recorded byte size and SHA-256. The independent
+reviewer reported completing the bounded substantive review. Durable retention
+and an exact-byte reacquisition identity remain **OPEN** for all five artifacts.
+
+- Zimmerman 1997: exact supplied artifact acquired and hash-pinned; bounded
+  substantive review completed with the claim narrowing recorded above; durable
+  retention and exact-byte reacquisition identity **OPEN**.
+- Zimmerman 2004: exact supplied artifact acquired and hash-pinned; bounded
+  substantive review completed with the claim narrowing recorded above; durable
+  retention and exact-byte reacquisition identity **OPEN**.
+- Lazic 2010: exact supplied artifact acquired and hash-pinned; bounded
+  substantive comparison completed with no material difference identified;
+  durable retention and exact-byte reacquisition identity **OPEN**.
+- Rasch, Kubinger and Moder 2011: exact supplied artifact acquired and
+  hash-pinned; bounded substantive comparison completed with no decision-bearing
+  discrepancy identified and presentation-to-journal textual equivalence still
+  untested; durable retention and exact-byte reacquisition identity **OPEN**.
+- Nosek et al. 2018: exact supplied artifact acquired and hash-pinned; bounded
+  substantive comparison completed with no material difference identified;
+  durable retention and exact-byte reacquisition identity **OPEN**.
+
+These acquisition and review results do not resolve any semantic, owner,
+steward or Research Gate hold. They do not generalize to another edition,
+source copy or byte sequence, and they do not turn document acquisition into
+methodological approval. The earlier reproducible-artifact holds cannot be
+described as fully resolved until durable retention or an exact-byte
+reacquisition identity is recorded.
+
+## Matters that remain open
+
+The five papers do not determine:
+
+- the Release 3 repetition or clustering carrier;
+- selected-analysis binding and population-set semantics;
+- a common mapping representation for repetition;
+- pair-identity applicability representation;
+- the exact Release 5 timing schema or dataset, revision and history boundary;
+- report behavior for pass, block, error and conformance-failure cases;
+- family-successor admission; or
+- multiple-Contract consistency and no-endorsement wording.
+
+Those remain semantic, owner or steward matters. The same-model-family
+independence qualification also remains open. This review supplies no basis for
+changing `R5-P2`, `R5-P3`, `R5-P5`, `R5-P6` or `R5-P7`; running the planned 37
+cases; freezing specifications; implementing behavior; issuing identifiers;
+merging; or closing the Research Gate.
+
+## Overall completion result
+
+The five exact supplied artifacts were acquired, hash-pinned and inspected for
+the bounded completion review. Durable retention and an exact-byte
+reacquisition identity remain open. The three previously inspected sources are
+materially consistent with the bounded addendum summaries. The two previously
+unavailable Zimmerman sources require claim narrowing rather than rejection of
+the Release 5 preparation direction.
+
+The completion result is additive evidence only. Research Gate closure was not
+assessed and is not authorized by this review.

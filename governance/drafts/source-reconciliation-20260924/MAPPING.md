@@ -32,7 +32,7 @@ and the specifically listed body spot checks, not another full methodological re
 - Inspected scope: Complete article text; Z04-1..5; p.174 exact pretest definition, p.175 Table 1 and p.178 Tables 2/3.
 - Result: **BOUNDED REVIEW RECONCILED; custody and review acceptance pending**.
 - Repository reason: [fixed input](https://github.com/licklider-ai/nomue-protocol/blob/9146a342ce40881b16aad198c80dbf94d7e24332/governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md).
-- Prior exact-byte evidence: [source record](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md).
+- Prior exact-byte evidence: [verifiable packet copy](r5-completion-review-original.md.txt), preserved from the historical local-only source described in [provenance](R5-PRIOR-EVIDENCE.md).
 
 ## 3. Rubin_1974.pdf
 
@@ -64,7 +64,7 @@ and the specifically listed body spot checks, not another full methodological re
 
 ## 5. Rasch_2011.pdf
 
-- Source: Dieter Rasch, Klaus D. Kubinger and Karin Moder; The two-sample t test: pre-testing its assumptions does not pay off. Statistical Papers 52:219-231.
+- Source: Dieter Rasch, Klaus D. Kubinger and Karl Moder; The two-sample t test: pre-testing its assumptions does not pay off. Statistical Papers 52:219-231.
 - Candidate release: R5.
 - Exact target: R5 Priority 2 / P2; specific pretest-chain scope.
 - Existing status: prior bounded full-text review; reproducible-copy hold; branch journal comparison complete.
@@ -74,7 +74,7 @@ and the specifically listed body spot checks, not another full methodological re
 - Inspected scope: Printed 219-224,229-231; Table 1 p.223: excess kurtosis; old presentation equivalence not tested.
 - Result: **BOUNDED REVIEW RECONCILED; custody and review acceptance pending**.
 - Repository reason: [fixed input](https://github.com/licklider-ai/nomue-protocol/blob/9146a342ce40881b16aad198c80dbf94d7e24332/governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md).
-- Prior exact-byte evidence: [source record](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md).
+- Prior exact-byte evidence: [verifiable packet copy](r5-completion-review-original.md.txt), preserved from the historical local-only source described in [provenance](R5-PRIOR-EVIDENCE.md).
 
 ## 6. Lazic_2010.pdf
 
@@ -88,7 +88,7 @@ and the specifically listed body spot checks, not another full methodological re
 - Inspected scope: PDF 1-5 bounded comparison; definition p.2, repetition pp.4-5; later responses excluded.
 - Result: **BOUNDED REVIEW RECONCILED; custody and review acceptance pending**.
 - Repository reason: [fixed input](https://github.com/licklider-ai/nomue-protocol/blob/9146a342ce40881b16aad198c80dbf94d7e24332/governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md).
-- Prior exact-byte evidence: [source record](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md).
+- Prior exact-byte evidence: [verifiable packet copy](r5-completion-review-original.md.txt), preserved from the historical local-only source described in [provenance](R5-PRIOR-EVIDENCE.md).
 
 ## 7. Holm_1979.pdf
 
@@ -107,8 +107,8 @@ and the specifically listed body spot checks, not another full methodological re
 ## 8. Zimmerman_1997.pdf
 
 - Source: Donald W. Zimmerman; A Note on Interpretation of the Paired-Samples t Test. JEBS 22(3):349-360.
-- Candidate release: R2, R5.
-- Exact target: R5 Priority 1 / R5-RH-1 / P2; R2 already explicit pairing boundary.
+- Candidate release: R5. R2 is contextual consistency only, not an action target.
+- Exact target: R5 Priority 1 / R5-RH-1 / P2. R2 existing pairing boundary is a contextual consistency note only; its contract, decisions and status are unchanged.
 - Existing status: main source-content hold; separate branch bounded completion with narrowing; custody/independence open.
 - New PDF value: Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody.
 - Required action: preserve_manifest, hash_reconciliation, existing_review_reconciliation, claim_pinpoint_addendum.
@@ -116,7 +116,7 @@ and the specifically listed body spot checks, not another full methodological re
 - Inspected scope: Complete article text; pinpoint reconciliation of Z97-1..5; actual Table 1 is printed 356 / PDF 9.
 - Result: **BOUNDED REVIEW RECONCILED; custody and review acceptance pending**.
 - Repository reason: [fixed input](https://github.com/licklider-ai/nomue-protocol/blob/9146a342ce40881b16aad198c80dbf94d7e24332/governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md).
-- Prior exact-byte evidence: [source record](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md).
+- Prior exact-byte evidence: [verifiable packet copy](r5-completion-review-original.md.txt), preserved from the historical local-only source described in [provenance](R5-PRIOR-EVIDENCE.md).
 
 ## 9. Nosek_2018.pdf
 
@@ -130,7 +130,7 @@ and the specifically listed body spot checks, not another full methodological re
 - Inspected scope: Printed 2601-2603 / PDF 2-4: plans, deviations and preexisting-data knowledge; not an enum standard.
 - Result: **BOUNDED REVIEW RECONCILED; custody and review acceptance pending**.
 - Repository reason: [fixed input](https://github.com/licklider-ai/nomue-protocol/blob/9146a342ce40881b16aad198c80dbf94d7e24332/governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md).
-- Prior exact-byte evidence: [source record](https://github.com/licklider-ai/nomue-protocol/blob/a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf/governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md).
+- Prior exact-byte evidence: [verifiable packet copy](r5-completion-review-original.md.txt), preserved from the historical local-only source described in [provenance](R5-PRIOR-EVIDENCE.md).
 
 ## 10. Corrigenda_1979.pdf
 

@@ -28,13 +28,20 @@ then used. Those infrastructure failures are not scientific test results.
   fixtures and pinned evidence), `pnpm check:phase2a` (including 7 datasets
   against captured SciPy/mpmath output), and `pnpm check:phase2a-021` (8 fixtures).
   The oracle check explicitly reports R unavailable; it is not a fresh R run.
-- **PASS:** `git diff --check`; outgoing packet scan for local/private repository
-  paths, download addresses and source licensee identities; no PDFs, rendered
-  pages or extracted source full text added. Original reviewer prose is retained.
-- **GO_FOR_ADDITIVE_EVIDENCE:** the distinct requested-model primary-source review
+- **PASS:** outgoing packet scan for local/private repository paths, download
+  addresses and source licensee identities; no PDFs, rendered pages or extracted
+  source full text added. Original reviewer prose is retained.
+- **FAIL, intentionally preserved original bytes:** the full base-to-packet
+  `git diff --check` reports three trailing-whitespace findings in the original
+  reviewer-return files. Repository-authored files are clean when those original
+  byte files are excluded. The earlier working-tree-only PASS did not establish
+  a clean full range; no original byte was cleaned up to suppress these findings.
+- **GO_FOR_ADDITIVE_EVIDENCE:** the separate-context bounded primary-source review
   found no repair-level scientific defect in the fixed target. See
   [review intake](REVIEW-INTAKE.md) for exact identity, scope and limitations.
-  This recommendation is not a release gate PASS or steward acceptance.
+  For R5 it uses the same model/model family as the earlier R5 review; the
+  cross-model condition remains unmet. This recommendation is not a release
+  gate PASS or steward acceptance.
 
 ## Unchanged-main comparison
 

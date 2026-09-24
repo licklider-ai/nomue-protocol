@@ -1,21 +1,21 @@
 {
-  "purpose": "content-addressed scientific review target; not gate approval",
+  "purpose": "content-addressed bounded-repair target; prior scientific conclusions and release states unchanged; not gate approval",
   "protocol_base_commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
   "files": [
     {
       "path": "SOURCES.json",
-      "bytes": 39497,
-      "sha256": "9aaa906f00efc97b772cb16d7793431a63add254efa22a99a34c5c57d5969075"
+      "bytes": 40582,
+      "sha256": "dbe0c7335ca9ee8027aa87444d77ba05f65d576449e8bfffdc0f970c5d449bc4"
     },
     {
       "path": "MAPPING.md",
-      "bytes": 23729,
-      "sha256": "a877ba9d536d3a7896487165276b80bb79c7e4b3c4d934eeb12f3b6824d89caf"
+      "bytes": 23521,
+      "sha256": "0587a24baa78805a4946725e072eff7aa312994b471efe559ff9c7f0eef5b199"
     },
     {
       "path": "R5-RECONCILIATION.md",
-      "bytes": 5466,
-      "sha256": "fac5648bcadb344b00354f14a310f8923657bb327a6748b48bad60ee45c6e6d8"
+      "bytes": 5635,
+      "sha256": "2764cfe4f1da3125c41a90dcb9c112ff3ba332740fdbe4b9e736bcf2d99d84fd"
     },
     {
       "path": "NAIK-INTAKE.md",
@@ -31,6 +31,25 @@
       "path": "naik-review-original.md.txt",
       "bytes": 13325,
       "sha256": "a3aec46970f91a7b19f40c035314492143e7fa45b5cd7de386be772b4d09ae1a"
+    },
+    {
+      "path": "r5-completion-review-original.md.txt",
+      "bytes": 24011,
+      "sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722"
+    },
+    {
+      "path": "R5-PRIOR-EVIDENCE.md",
+      "bytes": 2123,
+      "sha256": "1755e8560ab2b48a6109e25c185392615f54ad9315af67c6cb854525f43aa790"
+    },
+    {
+      "path": "bounded-review-original.md.txt",
+      "bytes": 13968,
+      "sha256": "94eb3d042cd39aa3405a5dda200a6917077da3a44a7899b1aef8ee250433b000"
     }
-  ]
+  ],
+  "previous_review_target": {
+    "commit": "00031b52c748b48aefb11684929909816eac9b83",
+    "target_sha256": "4b9a648a1dbee33c664733be6b52729951202d08530b0cd2ab7de147a2a934c1"
+  }
 }
