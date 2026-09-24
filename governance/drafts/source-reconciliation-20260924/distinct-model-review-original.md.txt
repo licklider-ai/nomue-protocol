@@ -1,0 +1,237 @@
+# Distinct-model primary-source review of the bounded source-reconciliation packet
+
+Review date: 2026-09-24 UTC  
+Verdict: **GO_FOR_ADDITIVE_EVIDENCE**
+
+This verdict means that the additive Naik follow-up and the R5 pinpoint/precision
+reconciliation are scientifically supportable within their stated limits. It is not
+a Protocol decision, Research Gate closure, source-custody acceptance, release-gate
+decision, method adoption, or authorization to change any supported bundle,
+identifier, numerical expectation, public clock, or prior closure.
+
+## 1. Exact target reviewed
+
+- Scientific target commit: `00031b52c748b48aefb11684929909816eac9b83`.
+- Protocol base fixed by that target: `9146a342ce40881b16aad198c80dbf94d7e24332`.
+- `TARGET.json` SHA-256:
+  `4b9a648a1dbee33c664733be6b52729951202d08530b0cd2ab7de147a2a934c1`.
+- The packet checker reported `packet_identity: PASS`, 16 prior-source-record
+  matches, and `git_target: PASS` for the scientific target commit. The six fixed
+  files were also checked against the byte sizes and SHA-256 values in
+  `TARGET.json`:
+  - `SOURCES.json`: 39497 bytes,
+    `9aaa906f00efc97b772cb16d7793431a63add254efa22a99a34c5c57d5969075`.
+  - `MAPPING.md`: 23729 bytes,
+    `a877ba9d536d3a7896487165276b80bb79c7e4b3c4d934eeb12f3b6824d89caf`.
+  - `R5-RECONCILIATION.md`: 5466 bytes,
+    `fac5648bcadb344b00354f14a310f8923657bb327a6748b48bad60ee45c6e6d8`.
+  - `NAIK-INTAKE.md`: 4714 bytes,
+    `2d5210db8c975e8f40a18f2ff5e78fc13f14eff4921a5dc4e8b1c3c3079651c3`.
+  - `r5-review-original.md.txt`: 14300 bytes,
+    `fb1bb9697f26bca93eba5ac545157f1937ad85a868951b95fcb27d7f71a66f22`.
+  - `naik-review-original.md.txt`: 13325 bytes,
+    `a3aec46970f91a7b19f40c035314492143e7fa45b5cd7de386be772b4d09ae1a`.
+
+The review also read the bounded commission, the current RFC Research Gate, the
+accepted SR-J Parts W/X, the retained SR-J primary-source review, and the earlier
+R5 completion review at `a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf`.
+Those earlier records were used only for their fixed accepted scope and history;
+their conclusions were not treated as commands.
+
+## 2. Reviewer identity, read order, and independence
+
+The requested reviewer model was `gpt-5.6-sol`. This was a separate reviewer
+context from the reported GPT-6-based author/coordinator context. No runtime
+served-build attestation, signed backend model identity, or provider-independent
+model audit was available, so the exact served model/build is not independently
+attested here. No human review is asserted.
+
+The reviewer did not author the packet, either original reviewer return, the prior
+R5 completion review, or the accepted SR-J record. The review was not blind: it
+read the commission and packet texts before or alongside the primary-source pages,
+and the two prior reviewer returns were provided. Its independence claim is a
+separate requested-model/context pass with fresh direct source inspection, subject
+to the stated lack of served-build attestation.
+
+Read order was: repository contribution and Research Gate instructions; target
+identity and commission; the six fixed target files; accepted SR-J and prior R5
+records; recalculation of the six supplied PDF hashes; then direct visual inspection
+of the decision-bearing pages. Extracted text was used for navigation, not as a
+substitute where formulas, inequalities, figures, or tables controlled the finding.
+
+## 3. Primary artifacts and actual coverage
+
+All six supplied PDFs named below were accessible and independently hash-checked:
+
+- Naik 1975: 650370 bytes,
+  `04808b830a5fad05a669b907d6cf6da97ef417bb02084724eea788fd2eb3132a`.
+  Fresh visual inspection covered printed pp.519-524 and 529-534, including the
+  Property-I statement, Rules A/B, Theorem 1, the p.524 preference sentence,
+  equal-count known/unknown-standard formulas, the exact versus conservative and
+  large-sample calibrations, unequal-count B3, and Rule C. The unchanged original
+  reviewer return supplies the wider full-paper inspection record.
+- Zimmerman 1997: 479943 bytes,
+  `fbd188fe3db73014eb5414a123c70adb0114dff0c67667dc0b4436e4b6b37b74`.
+  Fresh visual inspection covered pp.351-354 and 356-360, including Figures 1-2,
+  Tables 1-2, the methods, the hidden-pairing example, the tentative matching
+  ranges, and the conclusions.
+- Zimmerman 2004: 393079 bytes,
+  `24f673bf26a74344e138b8c3a8927b7f1e1faba847aea201fa65080626a4a7d3`.
+  Fresh visual inspection covered pp.174-180, including the exact preliminary-test
+  definition, Tables 1-3, Figure 1, conditional/unconditional distinctions, the
+  limiting argument, and recommendations.
+- Rasch, Kubinger and Moder 2011: 297782 bytes,
+  `7aa4b1bc0693e96cbbf3fc7e85fabd49d8e6f9d5afb96bf74842c568f4746655`.
+  Fresh visual inspection covered pp.222-223 for the moment definition and Table 1.
+  The accepted exact-byte review is reused for unchanged pp.219-224 and 229-231.
+- Lazic 2010: 431015 bytes,
+  `5553cc2975a46610aad33f7ca0b76f3d7c21052fda56d1ccd7b0cb743939535f`.
+  The artifact identity was freshly checked. Its unchanged experimental-unit and
+  repeated/nested-observation scope was reused from the accepted exact-byte review;
+  no new substantive Lazic claim was introduced by this packet.
+- Nosek et al. 2018: 543040 bytes,
+  `162fb9b13811288e03738b45e8b585219f361000016cba4a3f2f7162b748f6c1`.
+  The artifact identity was freshly checked. Its unchanged plan/deviation/prior-
+  knowledge scope was reused from the accepted exact-byte review; no new claim that
+  the paper standardizes the R5 enum or proves access history was introduced.
+
+Access limitations are material and explicit. The Dunnett-Tamhane 1991 original
+was not supplied to this reviewer and was not reread. Its narrowed characterization
+is reused from the accepted exact-source record. The earlier Rasch presentation was
+also unavailable, so presentation-to-journal textual equivalence remains
+NOT-ASSESSED. No live publisher retrieval, original-download authentication, or
+durable archive receipt was performed in this review.
+
+## 4. Claim-by-claim findings
+
+### 4.1 Naik Property I and rule variants — PASS
+
+Printed p.520 defines Property I as probability at least `1-alpha` that the
+selected-as-superior subset contains every actually superior process. Pages
+521-524 provide the common-family, independence and stochastic-order premises,
+Rules A/B, continuous and discrete calibrations, and Theorem 1's retention bound.
+This is not complete correct classification and does not establish that every
+retained process is superior. The packet preserves that distinction.
+
+Pages 529-530 treat a known standard and equal counts using independent
+exponential-ratio/F statistics. Pages 530-531 treat an unknown standard and equal
+treatment counts with a shared random control denominator: the exact joint
+calibration, the Jensen-based conservative marginal replacement, and a further
+large-sample approximation are visibly different objects. Pages 532-533 treat a
+known standard with unequal counts and label/distribution-dependent remaining-set
+thresholds. Pages 533-534 explicitly replace the unavailable A/B construction for
+an unknown standard with unequal counts by the separate single-step Rule C. The
+packet separates all four variants correctly and derives no numerical oracle from
+them.
+
+The strongest source-local problem is p.524. After defining the larger `P_I` as
+preferred, the text says A is preferable while immediately stating
+`P_I(B) > P_I(A)`; the following event inclusion supports B for that metric. The
+packet records this inconsistency and confines it to the local preference wording.
+It does not affect Theorem 1's retention proof or justify a universal complete-
+classification ordering. No repair is required.
+
+### 4.2 Relation to accepted 1991 MTO-02 basis — PASS, with exact equivalence NOT-ASSESSED
+
+Nothing in the inspected Naik pages concretely contradicts the accepted narrowed
+MTO-02 characterization. Naik's general Section 2 uses independent scalar
+statistics against a known standard, and its detailed Section 3 uses exponential
+mean ratios and F laws. The accepted record describes the 1991 construction as
+independent normal groups with a common unknown variance, an independent pooled
+chi-square scale, labelled remaining-subset joint-t calibration, unequal sizes,
+and suffix-maximum adjusted p-values. Naik provides relevant historical and
+structural antecedents, but these are different premises and calibrations.
+
+The packet does not claim equivalence, a reconstruction of the 1991 method, or the
+absence of every distinct Naik variant. Exact formula-level equivalence or a new
+priority/lineage adjudication is NOT-ASSESSED because the 1991 original was not
+available in this review. That original would be required only if the project later
+wants to assert such a stronger relationship, transfer a Naik proof to the 1991
+model, or alter the accepted variant/priority account. It is not needed to accept
+the present additive finding that no inspected Naik statement contradicts the
+already bounded 1991 basis.
+
+### 4.3 R5 pinpoints and precision repairs — PASS
+
+For Zimmerman 1997, p.351 gives the simulation design and explicitly says it is
+illustrative rather than exhaustive. Figure 1 is p.353, Figure 2 p.354, Table 1
+p.356, and Table 2 p.358. Pages 359-360 give the `.30-.40` and `.05-.15` ranges as
+different setup-dependent questions, not universal cutoffs. The hidden-pairing
+example on p.358 starts from a specified correspondence and cannot be turned into
+a sample-correlation pairing classifier. The packet's pinpoints and tentative,
+limited wording are accurate.
+
+The source itself has p.352 inconsistencies: it refers to an upper section of
+Figure 2 where the Type-I plot is actually Figure 1, and says 20 pairs while the
+printed 9 and 18 degrees of freedom correspond to a smaller paired/independent
+comparison. The packet records this warning and does not derive a numerical
+contract from the inconsistent text.
+
+For Zimmerman 2004, p.174 defines the named Levene pretest as a two-sample Student
+test on squared deviations from the respective sample means. It is therefore
+correct to preserve the exact studied definition rather than silently substitute
+every implementation carrying the Levene label. Tables 1-3 and pp.175-179 keep
+unconditional Student, unconditional Welch, conditional component errors and the
+compound procedure separate. Approximate proximity to nominal is not represented
+as equality. Table 1's equal-variance rows and p.179's limiting case, where pretest
+power approaches one and the compound procedure approaches Welch, are concrete
+counterexamples to an “every outcome-dependent choice always invalidates nominal
+error” theorem. The contextual recommendation on pp.179-180 is not promoted into
+a Protocol method-selection rule.
+
+For Rasch et al., p.222 explicitly defines `gamma_2` as the standardized fourth
+moment minus 3. Thus Table 1's value 15 is excess kurtosis 15. The packet's precision
+repair is correct. It still refuses to assert equivalence to the unavailable earlier
+presentation or a universal Welch policy.
+
+The Lazic and Nosek statements are unchanged, bounded reuse: experimental unit is
+not inferred from row count, and preregistration literature does not standardize or
+prove the exact R5 timing/access-history representation. No new universal claim is
+introduced.
+
+### 4.4 Evidence, custody, independence, and acceptance — PASS
+
+The packet consistently separates these dimensions:
+
+- Scientific/content evidence: the six exact supplied PDFs support the bounded
+  statements above, with the disclosed reuse and access limits.
+- Byte identity and receipt: the six supplied copies match the recorded sizes and
+  SHA-256 values. This establishes the bytes inspected in this review, not original
+  publisher-download provenance or durable retention.
+- Custody: durable authorized storage remains unestablished. This review does not
+  close that condition and did not verify a durable archive receipt.
+- Investigator independence: this is a separate requested-model/context pass, with
+  prior reports supplied and no served-build attestation. It is not described as
+  blind or human review.
+- Acceptance and authority: reviewer findings do not approve a Research Gate,
+  change Protocol meaning, or make a release decision.
+
+No remaining condition is incorrectly reported as closed. `R5-P2` remains partial;
+`P3`, `P5`, and `P6` remain open; `P7` remains provisional; `R5-RH-1` is not closed
+as a whole. For Naik, content acquisition and bounded comparison are complete, but
+custody and an actual additive disposition remain separate.
+
+### 4.5 Protocol and release impact — PASS
+
+The packet changes no supported bundle, Requirement or Protocol identifier, schema,
+Public Check, tolerance, numerical expectation, conformance result, closure meaning,
+public-discussion clock, candidate freeze, or release decision. It does not reopen
+SR-J, MTO-03, MCB-01, ordinary Holm, or the eleven unchanged source closures. The
+R5 common check is not converted into a method selector and no planned R5 case is
+represented as executed.
+
+## 5. Recommendation and required disposition
+
+**GO_FOR_ADDITIVE_EVIDENCE.** The source-follow-up evidence can be accepted as an
+additive record while preserving every prior closure, narrowing, non-claim and
+implementation limit. No scientific repair to the frozen six-file target is
+required.
+
+The required steward disposition is separate: decide whether to accept this exact
+target and review as additive evidence, record the unclosed durable-custody and
+served-build-attestation limits, and preserve the existing SR-J and R5 states. That
+decision must not be phrased as a new source or release gate closure. Any later claim
+of Naik/1991 equivalence, transferred proof, priority, broader model coverage,
+step-down-compatible intervals, universal method selection, or numerical
+implementation correctness requires its own bounded primary-source target and
+review.

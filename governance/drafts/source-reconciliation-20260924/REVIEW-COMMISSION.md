@@ -1,7 +1,8 @@
 # Bounded source-reconciliation review commission
 
-Status: prepared commission; not sent to an external service or accepted by a
-steward. No reviewer identity or future GO is presumed.
+Status: commissioned to a separate requested-model investigator on 2026-09-24;
+return received and recorded in [REVIEW-INTAKE.md](REVIEW-INTAKE.md). This document
+preserves the review scope. No steward acceptance is asserted.
 
 ## Exact target and inputs
 
@@ -12,6 +13,12 @@ the mapping and intake texts, and both unmodified reviewer returns. Compare
 against the listed prior immutable inputs, including the R5 completion review at
 `a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf`. A changed target needs an explicit
 impact assessment or a new review; never silently transfer acceptance.
+
+Saved scientific target commit: `00031b52c748b48aefb11684929909816eac9b83`.
+TARGET.json SHA-256:
+`4b9a648a1dbee33c664733be6b52729951202d08530b0cd2ab7de147a2a934c1`.
+Original reviewer-return Git blobs were explicitly verified against their
+received hashes after disabling line-ending conversion for those files.
 
 Obtain licensed originals through an authorized source-access channel using
 their exact hashes; no PDF or private locator is part of this public commission.

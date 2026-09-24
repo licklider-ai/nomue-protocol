@@ -22,6 +22,7 @@ repo = packet.parents[2]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--archive", type=Path)
 parser.add_argument("--extracted-dir", type=Path)
+parser.add_argument("--commit", help="Also verify scientific target bytes stored in Git")
 args = parser.parse_args()
 sources = json.loads((packet / "SOURCES.json").read_text(encoding="utf-8"))
 target = json.loads((packet / "TARGET.json").read_text(encoding="utf-8"))
@@ -33,6 +34,10 @@ for entry in target["files"]:
     data = (packet / entry["path"]).read_bytes()
     require(len(data) == entry["bytes"] and sha(data) == entry["sha256"],
             "target changed: " + entry["path"])
+    if args.commit:
+        relative = (packet / entry["path"]).relative_to(repo).as_posix()
+        stored = subprocess.check_output(["git", "show", args.commit + ":" + relative], cwd=repo)
+        require(stored == data, "Git target bytes differ: " + entry["path"])
 matched = 0
 for artifact in sources["artifacts"]:
     previous = artifact["prior_match"]
@@ -70,4 +75,5 @@ require(not args.extracted_dir or args.archive, "--extracted-dir requires --arch
 print(json.dumps({"packet_identity": "PASS", "prior_sha256_matches": matched,
                   "sources": 17, "archive": archive_result,
                   "extracted_copies": "PASS" if args.extracted_dir else "NOT_RUN",
+                  "git_target": "PASS" if args.commit else "NOT_RUN",
                   "scientific_or_release_gate": "NOT_ASSESSED"}, indent=2))

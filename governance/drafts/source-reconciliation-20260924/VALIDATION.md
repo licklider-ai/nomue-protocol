@@ -31,8 +31,19 @@ then used. Those infrastructure failures are not scientific test results.
 - **PASS:** `git diff --check`; outgoing packet scan for local/private repository
   paths, download addresses and source licensee identities; no PDFs, rendered
   pages or extracted source full text added. Original reviewer prose is retained.
+- **GO_FOR_ADDITIVE_EVIDENCE:** the distinct requested-model primary-source review
+  found no repair-level scientific defect in the fixed target. See
+  [review intake](REVIEW-INTAKE.md) for exact identity, scope and limitations.
+  This recommendation is not a release gate PASS or steward acceptance.
 
 ## Unchanged-main comparison
+
+The six scientific target files also match their exact Git bytes at commit
+`00031b52c748b48aefb11684929909816eac9b83`. Git's initial newline conversion of
+two reviewer returns was caught and repaired using packet-local `-text`
+attributes; both stored Git-blob digests now match the original received returns.
+The ZIP and all 17 extracted copies were compared byte-for-byte again after
+reading. Neither the original ZIP nor any extracted PDF changed.
 
 A separate clean detached checkout of
 `9146a342ce40881b16aad198c80dbf94d7e24332` reproduced the same three failures in
@@ -60,7 +71,7 @@ This packet is not conducting a new Release 1 candidate review or publication.
 ## Unresolved conditions
 
 - Authorized private durable storage and its verified retrieval/retention receipt.
-- Qualified review intake and any accountable final source-task disposition;
+- Accountable acceptance of the received review and final source-task disposition;
   no source receipt or reviewer recommendation is a steward decision.
 - R5 owner/semantic prerequisites and the existing release-level decisions and
   discussion windows, all unchanged.

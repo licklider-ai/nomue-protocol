@@ -21,6 +21,8 @@ R2-R5, not a new release plan. Sources can have no new release work.
   separate; previous review is reused rather than treated as missing.
 - [Naik intake](NAIK-INTAKE.md): additive MTO-02 comparison, not an SR-J reset.
 - [Validation](VALIDATION.md): executed checks and explicit limitations.
+- [Review intake](REVIEW-INTAKE.md): distinct-model recommendation and remaining
+  acceptance boundaries, with the unchanged original return.
 
 ## Receipt and custody
 
@@ -90,9 +92,13 @@ New files under this packet:
 - `NAIK-INTAKE.md`, `naik-review-original.md.txt`: Naik's original formulation,
   variant comparison and bounded original reviewer return.
 - `TARGET.json`, `REVIEW-COMMISSION.md`: frozen scientific inputs and the exact
-  remaining review question, without extending any release scope.
+  bounded review question, without extending any release scope.
+- `REVIEW-INTAKE.md`, `distinct-model-review-original.md.txt`: received independent
+  recommendation, immutable return and explicit remaining acceptance conditions.
 - `check.py`, `VALIDATION.md`: repeatable identity verification and actual check
   results, including failures and custody limitations.
+- `.gitattributes`: preserve reviewer-return bytes without Git line-ending
+  conversion; this is not a PDF storage rule.
 - `README.md`: entry point, custody boundary and before/after release status.
 
 Three existing documents receive only a five-line navigation addendum:
