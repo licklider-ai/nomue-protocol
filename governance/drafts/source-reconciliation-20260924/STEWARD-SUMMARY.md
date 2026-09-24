@@ -22,8 +22,9 @@ by owner/operator attestation: they are held in Licklider's company-managed shar
 Google Drive, not personal My Drive or temporary storage. Their custody blocker is
 resolved. No private locator is published and no independent Drive audit is claimed.
 The separate 18,810-byte historical raw reviewer return was not covered by this
-confirmation; its recovery/private preservation and custody receipt remain PENDING
-as a separate preservation action, not a new PDF storage designation request.
+confirmation. Its exact bytes are now [RECOVERED and hash-verified](RAW-RETURN-RECOVERY.md);
+private durable preservation and its custody receipt remain PENDING as a separate
+preservation action, not a new PDF storage designation or acceptance request.
 
 See [CLOSE-HANDOFF.md](CLOSE-HANDOFF.md) for exact Git identity and condition
 classification, and [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) for the owner/operator

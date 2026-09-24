@@ -7,7 +7,8 @@ release gate or prior steward closure changes in this packet.
 [Close and handoff record](CLOSE-HANDOFF.md): scientific reconciliation and
 bounded repairs are complete; 17 PDF custody is confirmed by owner/operator
 attestation. Steward acceptance is **ACCEPTED** as bounded additive evidence;
-historical raw-return custody remains pending. See the
+the historical raw return is [recovered and hash-verified](RAW-RETURN-RECOVERY.md),
+with private durable custody still pending. See the
 [steward disposition](2026-09-24-source-reconciliation-steward-disposition.md).
 These are descriptive task states, not new Protocol status values.
 
@@ -91,6 +92,9 @@ specific R2-R5 work item in this receipt. No broader Research programme is reope
 ## File changes and their purpose
 
 New files under this packet:
+
+- `RAW-RETURN-RECOVERY.md`: exact historical raw-return recovery, verification
+  and the separately pending private durable custody receipt.
 
 - `2026-09-24-source-reconciliation-steward-disposition.md`: append-only explicit
   steward acceptance of the fixed packet, with exclusions and separate residuals.

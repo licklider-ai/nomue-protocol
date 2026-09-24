@@ -52,9 +52,12 @@ No Drive inspection, new storage location or independent stored-byte verificatio
 was performed or required for recording this owner/operator confirmation.
 
 The earlier 18,810-byte historical raw reviewer return is separate. This
-confirmation does not cover it; its private custody remains PENDING. Its recorded
-hash is not proof that its bytes have been retained. The preserved 24,011-byte
-completion record is not that raw return.
+confirmation does not cover it; its private custody remains PENDING. The raw
+return has now been RECOVERED from the retained original task attachment and
+verified against the exact 18,810-byte size and historical SHA-256; see
+[recovery record](RAW-RETURN-RECOVERY.md). The local recovery copy is not a
+company-managed durable-storage receipt. The preserved 24,011-byte completion
+record is not that raw return.
 
 [CUSTODY-HANDOFF.json](CUSTODY-HANDOFF.json) supplements the unchanged
 [SOURCES.json](SOURCES.json) with explicit per-PDF confirmed location descriptions
