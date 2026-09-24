@@ -93,3 +93,13 @@ not repeated by that reviewer; the coordinator's separate archive check is
 recorded in VALIDATION.md. The confirmation did not repeat scientific review,
 change the target, meet the R5 cross-model condition or grant steward acceptance.
 This receipt and its navigation links are subsequent recordkeeping only.
+
+## Subsequent bounded steward acceptance
+
+The [2026-09-24 steward disposition](2026-09-24-source-reconciliation-steward-disposition.md)
+records explicit acceptance of this additive evidence packet at commit
+`85e0430c0a8e4615f4a911deea160de10bf7867b`. Earlier acceptance-pending statements
+above describe their historical state and are superseded only for packet acceptance.
+The historical raw-return custody remains PENDING; the R5 cross-model condition
+and other existing Release conditions remain OPEN or retain their existing states.
+No scientific review, test result, Research Gate or Release decision is changed.

@@ -1,4 +1,4 @@
-# Additive source evidence: steward acceptance request
+# Additive source evidence: steward acceptance
 
 The 17-source R2-R5 mapping and necessary additive evidence are complete. Existing
 NO CHANGE judgments and closures are preserved. No Protocol semantics, implementation,
@@ -10,8 +10,12 @@ findings. The evidence is self-contained for R5 prior-record verification withou
 the historical local-only commit. Validation results and existing baseline failures
 are retained in [VALIDATION.md](VALIDATION.md).
 
-The remaining steward decision is to accept this bounded additive evidence packet
-or record a specific acceptance condition. No acceptance has yet been recorded.
+Steward acceptance: **ACCEPTED** as bounded additive evidence at commit
+`85e0430c0a8e4615f4a911deea160de10bf7867b`. The steward explicitly approved the
+packet in the task conversation. The append-only
+[steward disposition](2026-09-24-source-reconciliation-steward-disposition.md)
+records the exact target, scope and exclusions. No further packet acceptance
+decision is pending.
 
 Storage designation and custody receipts for all 17 PDF originals are CONFIRMED
 by owner/operator attestation: they are held in Licklider's company-managed shared

@@ -79,3 +79,13 @@ and a bounded recommendation. State whether the source-follow-up evidence can
 be accepted while preserving all prior closures and limits. Name any required
 steward disposition separately. Preserve the original return unchanged and pin
 its hash before intake. No review response alone issues Protocol meaning.
+
+## Subsequent bounded steward acceptance
+
+The [2026-09-24 steward disposition](2026-09-24-source-reconciliation-steward-disposition.md)
+records explicit acceptance of this additive evidence packet at commit
+`85e0430c0a8e4615f4a911deea160de10bf7867b`. Earlier acceptance-pending statements
+above describe their historical state and are superseded only for packet acceptance.
+The historical raw-return custody remains PENDING; the R5 cross-model condition
+and other existing Release conditions remain OPEN or retain their existing states.
+No scientific review, test result, Research Gate or Release decision is changed.

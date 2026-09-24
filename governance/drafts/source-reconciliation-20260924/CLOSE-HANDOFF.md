@@ -1,7 +1,8 @@
 # Source reconciliation close and handoff
 
 Scientific reconciliation is COMPLETE; 17 PDF custody is CONFIRMED by owner/operator
-attestation. Historical raw-return custody and steward acceptance remain PENDING.
+attestation. Steward acceptance is ACCEPTED as bounded additive evidence;
+historical raw-return custody remains PENDING.
 These are descriptive work states using the packet's existing vocabulary, not
 new registered status values, a Research Gate decision or release authority.
 
@@ -64,11 +65,14 @@ and receipt remain PENDING. No scientific or Release decision is changed.
 
 ### Additive evidence acceptance
 
-Steward acceptance: PENDING. The requested decision is whether to accept this
-bounded additive evidence packet. Storage designation for the 17 PDFs is resolved;
-no further designation decision is requested for them.
+Steward acceptance: **ACCEPTED** for the packet at
+`85e0430c0a8e4615f4a911deea160de10bf7867b`, as bounded additive evidence only.
+The [append-only disposition](2026-09-24-source-reconciliation-steward-disposition.md)
+records the steward's explicit decision and supersedes earlier packet-acceptance
+PENDING statements. Storage designation for the 17 PDFs is already resolved.
 [STEWARD-SUMMARY.md](STEWARD-SUMMARY.md) supplies the bounded decision summary.
-Scientific completion and repair confirmation do not substitute for that decision.
+This is an explicit steward decision, not an inference from scientific completion
+or repair confirmation. It does not close a Research Gate or authorize implementation.
 
 ### Existing Release conditions outside this packet
 
