@@ -4,6 +4,10 @@ Status: informative source receipt and bounded reconciliation, 2026-09-24.
 No normative meaning, identifier, supported bundle, adoption, discussion clock,
 release gate or prior steward closure changes in this packet.
 
+[Close and handoff record](CLOSE-HANDOFF.md): scientific reconciliation and
+bounded repairs are complete; custody and steward acceptance remain pending.
+These are descriptive task states, not new Protocol status values.
+
 ## Fixed inputs and scope
 
 The current main input is commit
@@ -42,7 +46,7 @@ download-address watermarks are excluded from this repository. The public
 manifest contains bibliographic metadata and digests only. Local scratch copies
 are disposable inspection material, not a durable archive.
 
-**PRIVATE DURABLE STORAGE BLOCKED:** no accountable, authorized archive location,
+**PRIVATE DURABLE STORAGE PENDING:** no accountable, authorized archive location,
 retention receipt or exact-byte retrieval service has been designated for this
 packet. No new canonical storage rule is established. The received ZIP remains
 with the supplier; its local presence is not a durable-storage attestation. The
@@ -84,6 +88,9 @@ specific R2-R5 work item in this receipt. No broader Research programme is reope
 ## File changes and their purpose
 
 New files under this packet:
+
+- `CLOSE-HANDOFF.md`, `STEWARD-SUMMARY.md`, `CUSTODY-HANDOFF.json`: completed-work
+  handoff, bounded acceptance question and private-storage manifest supplement.
 
 - `SOURCES.json`, `MAPPING.md`: all 17 receipts, source identities, assignments
   and explicit no-change outcomes.

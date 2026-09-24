@@ -1,0 +1,359 @@
+{
+  "purpose": "informative private custody handoff; not a new Protocol status enum or an archive receipt",
+  "sources_manifest": "SOURCES.json",
+  "sources_manifest_sha256": "dbe0c7335ca9ee8027aa87444d77ba05f65d576449e8bfffdc0f970c5d449bc4",
+  "received_archive": {
+    "byte_size": 12468925,
+    "sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+    "mutated": false
+  },
+  "artifacts": [
+    {
+      "original_filename": "Kramer_1956.pdf",
+      "byte_size": 465636,
+      "sha256": "6640f49f3e33db76b7ee3bfcea356b54cc2e39a87e6149f1c1c13b2005b9ff0c",
+      "source_identity": {
+        "authors": "Clyde Young Kramer",
+        "title": "Extension of Multiple Range Tests to Group Means with Unequal Numbers of Replications",
+        "publication": "Biometrics 12(3):307-310",
+        "identifier": "JSTOR 3001469",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Kramer_1956.pdf",
+        "archive_member_ordinal": 1
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Zimmerman_2004.pdf",
+      "byte_size": 393079,
+      "sha256": "24f673bf26a74344e138b8c3a8927b7f1e1faba847aea201fa65080626a4a7d3",
+      "source_identity": {
+        "authors": "Donald W. Zimmerman",
+        "title": "A Note on Preliminary Tests of Equality of Variances",
+        "publication": "BJMSP 57(1):173-181",
+        "identifier": "10.1348/000711004849222",
+        "edition_version": "Publisher-formatted journal PDF",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Zimmerman_2004.pdf",
+        "archive_member_ordinal": 2
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Rubin_1974.pdf",
+      "byte_size": 1274918,
+      "sha256": "e0fa8701ba613f01a0de321775e9793597aae5c9084fcbd8b9539cd8272321fa",
+      "source_identity": {
+        "authors": "Donald B. Rubin",
+        "title": "Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies",
+        "publication": "Journal of Educational Psychology 66(5):688-701",
+        "identifier": "10.1037/h0037350",
+        "edition_version": "Publisher rendition; prior ARTIFACT_VARIANT classification retained",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Rubin_1974.pdf",
+        "archive_member_ordinal": 3
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Hayter_1984.pdf",
+      "byte_size": 959438,
+      "sha256": "755a1cd250fd50e13f444d00a630e356c0dd679daeaebc0554b62782e49d98b4",
+      "source_identity": {
+        "authors": "Anthony J. Hayter",
+        "title": "A Proof of the Conjecture that the Tukey-Kramer Multiple Comparisons Procedure is Conservative",
+        "publication": "Annals of Statistics 12(1):61-75",
+        "identifier": "10.1214/aos/1176346392",
+        "edition_version": "JSTOR image scan; no separate cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Hayter_1984.pdf",
+        "archive_member_ordinal": 4
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Rasch_2011.pdf",
+      "byte_size": 297782,
+      "sha256": "7aa4b1bc0693e96cbbf3fc7e85fabd49d8e6f9d5afb96bf74842c568f4746655",
+      "source_identity": {
+        "authors": "Dieter Rasch, Klaus D. Kubinger and Karl Moder",
+        "title": "The two-sample t test: pre-testing its assumptions does not pay off",
+        "publication": "Statistical Papers 52:219-231",
+        "identifier": "10.1007/s00362-009-0224-x",
+        "edition_version": "13-page publisher journal paper, not earlier 11-page presentation",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Rasch_2011.pdf",
+        "archive_member_ordinal": 5
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Lazic_2010.pdf",
+      "byte_size": 431015,
+      "sha256": "5553cc2975a46610aad33f7ca0b76f3d7c21052fda56d1ccd7b0cb743939535f",
+      "source_identity": {
+        "authors": "Stanley E. Lazic",
+        "title": "The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?",
+        "publication": "BMC Neuroscience 11:5",
+        "identifier": "10.1186/1471-2202-11-5",
+        "edition_version": "Publisher PDF including later signed responses; not all 17 pages are Lazic article",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Lazic_2010.pdf",
+        "archive_member_ordinal": 6
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Holm_1979.pdf",
+      "byte_size": 2270343,
+      "sha256": "43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af",
+      "source_identity": {
+        "authors": "Sture Holm",
+        "title": "A Simple Sequentially Rejective Multiple Test Procedure",
+        "publication": "Scandinavian Journal of Statistics 6(2):65-70",
+        "identifier": "JSTOR 4615733; DOI not asserted",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Holm_1979.pdf",
+        "archive_member_ordinal": 7
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Zimmerman_1997.pdf",
+      "byte_size": 479943,
+      "sha256": "fbd188fe3db73014eb5414a123c70adb0114dff0c67667dc0b4436e4b6b37b74",
+      "source_identity": {
+        "authors": "Donald W. Zimmerman",
+        "title": "A Note on Interpretation of the Paired-Samples t Test",
+        "publication": "JEBS 22(3):349-360",
+        "identifier": "10.3102/10769986022003349",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Zimmerman_1997.pdf",
+        "archive_member_ordinal": 8
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Nosek_2018.pdf",
+      "byte_size": 543040,
+      "sha256": "162fb9b13811288e03738b45e8b585219f361000016cba4a3f2f7162b748f6c1",
+      "source_identity": {
+        "authors": "Brian A. Nosek et al.",
+        "title": "The preregistration revolution",
+        "publication": "PNAS 115(11):2600-2606",
+        "identifier": "10.1073/pnas.1708274114",
+        "edition_version": "Publisher-formatted journal PDF",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Nosek_2018.pdf",
+        "archive_member_ordinal": 9
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Corrigenda_1979.pdf",
+      "byte_size": 256229,
+      "sha256": "07a6c3433f77e85f2ce5034e0068e7421a7f5041679705755cbfabec7493653a",
+      "source_identity": {
+        "authors": "Journal corrigenda; relevant item Abraham Genizi and Yosef Hochberg",
+        "title": "Corrigenda",
+        "publication": "JASA 74(367):744",
+        "identifier": "10.1080/01621459.1979.10481678",
+        "edition_version": "Publisher cover plus single journal page containing multiple corrections",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Corrigenda_1979.pdf",
+        "archive_member_ordinal": 10
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Benjamini_1995.pdf",
+      "byte_size": 1612435,
+      "sha256": "e56ee4150d8924fc85ecb3f41a0bd59987864a3ada57308ddce0cfb3c6f5ae13",
+      "source_identity": {
+        "authors": "Yoav Benjamini and Yosef Hochberg",
+        "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+        "publication": "JRSS B 57(1):289-300",
+        "identifier": "10.1111/j.2517-6161.1995.tb02031.x",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Benjamini_1995.pdf",
+        "archive_member_ordinal": 11
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Spjotvoll_1973.pdf",
+      "byte_size": 533428,
+      "sha256": "66fb02dd75c038fccc7fc76238e4dddf64911cd3ccd2197dc7b9ff582fd81418",
+      "source_identity": {
+        "authors": "Emil Spjotvoll and Michael R. Stoline",
+        "title": "An Extension of the T-Method of Multiple Comparison to Include the Cases with Unequal Sample Sizes",
+        "publication": "JASA 68(344):975-978",
+        "identifier": "10.1080/01621459.1973.10481458",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Spjotvoll_1973.pdf",
+        "archive_member_ordinal": 12
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Dunnett_1980.pdf",
+      "byte_size": 937384,
+      "sha256": "8c5b9b7a13db3dcd9091fe31844a7b9eebeae56ee2dd9c866330f8fdb8f3dcb1",
+      "source_identity": {
+        "authors": "Charles W. Dunnett",
+        "title": "Pairwise Multiple Comparisons in the Homogeneous Variance, Unequal Sample Size Case",
+        "publication": "JASA 75(372):789-795",
+        "identifier": "10.1080/01621459.1980.10477551",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Dunnett_1980.pdf",
+        "archive_member_ordinal": 13
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Tukey_1949.pdf",
+      "byte_size": 1534510,
+      "sha256": "e109637fa772b8936e0f1bb452afa742f98684962278414cf358ce729f509fe1",
+      "source_identity": {
+        "authors": "John W. Tukey",
+        "title": "Comparing Individual Means in the Analysis of Variance",
+        "publication": "Biometrics 5(2):99-114",
+        "identifier": "10.2307/3001913",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Tukey_1949.pdf",
+        "archive_member_ordinal": 14
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Dunnett_1955.pdf",
+      "byte_size": 1077072,
+      "sha256": "1f5dcf567e9649618c0e330e1b97e954d17229c66d463d9a0801312497b32da0",
+      "source_identity": {
+        "authors": "Charles W. Dunnett",
+        "title": "A Multiple Comparison Procedure for Comparing Several Treatments with a Control",
+        "publication": "JASA 50(272):1096-1121",
+        "identifier": "10.1080/01621459.1955.10501294",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Dunnett_1955.pdf",
+        "archive_member_ordinal": 15
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "Naik_1975.pdf",
+      "byte_size": 650370,
+      "sha256": "04808b830a5fad05a669b907d6cf6da97ef417bb02084724eea788fd2eb3132a",
+      "source_identity": {
+        "authors": "Umesh D. Naik",
+        "title": "Some Selection Rules for Comparing p Processes with a Standard",
+        "publication": "Communications in Statistics 4(6):519-535",
+        "identifier": "10.1080/03610927508827267",
+        "edition_version": "Publisher cover plus complete original 17-page scan; later online date is not article year",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Naik_1975.pdf",
+        "archive_member_ordinal": 16
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    },
+    {
+      "original_filename": "IEEE_754-2019.pdf",
+      "byte_size": 4085164,
+      "sha256": "d6f6fef52ae93cdf8c8524451d144e00172555f008bf01a6f81da03aeff80e7a",
+      "source_identity": {
+        "authors": "IEEE",
+        "title": "IEEE Standard for Floating-Point Arithmetic",
+        "publication": "IEEE Std 754-2019, revision of 754-2008",
+        "identifier": "ISBN PDF 978-1-5044-5924-2",
+        "edition_version": "2019 licensed PDF; 84 pages; publisher download not independently authenticated",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "IEEE_754-2019.pdf",
+        "archive_member_ordinal": 17
+      },
+      "canonical_private_storage_location": "PENDING",
+      "custody_receipt": "PENDING"
+    }
+  ],
+  "historical_raw_reviewer_return": {
+    "byte_size": 18810,
+    "sha256": "5b5a41500b7284cc10a8902e69209af83226472bdc01bdd8cba3100ae160a253",
+    "identity_basis": "r5-completion-review-original.md.txt; original filename and original raw bytes not recovered in this packet",
+    "canonical_private_storage_location": "PENDING",
+    "custody_receipt": "PENDING"
+  }
+}
