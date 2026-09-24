@@ -13,6 +13,11 @@ are reconciled here: both branches are integrated (PR #355/#357 for R3, PR #354
 for R2) and their statements coexist without conflict. That disposition is a
 fixed dated record and is left unchanged.
 
+Source-receipt addendum, 2026-09-24: [the 17-source reconciliation](source-reconciliation-20260924/README.md)
+records exact-artifact matches, bounded R5 claim reconciliation and the Naik
+MTO-02 follow-up. It changes no release state, discussion clock or accepted
+closure. Custody and qualified review/disposition remain explicit limitations.
+
 ## At a glance
 
 | Release                            | Current bounded milestone                                                                                          | Next substantive work                                                                                 | Formal state                                                                  |

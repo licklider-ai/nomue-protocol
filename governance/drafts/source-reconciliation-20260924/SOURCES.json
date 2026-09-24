@@ -1,0 +1,741 @@
+{
+  "status": "informative receipt; no authority or gate decision",
+  "receipt_date": "2026-09-24",
+  "protocol_main_commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+  "archive": {
+    "byte_size": 12468925,
+    "sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+    "mutated": false
+  },
+  "private_durable_storage": "BLOCKED - authorized destination and retention receipt not established",
+  "artifacts": [
+    {
+      "original_filename": "Kramer_1956.pdf",
+      "byte_size": 465636,
+      "sha256": "6640f49f3e33db76b7ee3bfcea356b54cc2e39a87e6149f1c1c13b2005b9ff0c",
+      "source_identity": {
+        "authors": "Clyde Young Kramer",
+        "title": "Extension of Multiple Range Tests to Group Means with Unequal Numbers of Replications",
+        "publication": "Biometrics 12(3):307-310",
+        "identifier": "JSTOR 3001469",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 5,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Kramer_1956.pdf",
+        "archive_member_ordinal": 1
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+        "record_sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "APR-02/APR-03; FND1-H03 successor-source subclaims",
+        "existing_status": "narrow-closed; proposal, not general proof",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md"
+        ],
+        "inspection": "PDF 3 / printed 308: reciprocal-sample-size multiplier; prior full review reused",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Zimmerman_2004.pdf",
+      "byte_size": 393079,
+      "sha256": "24f673bf26a74344e138b8c3a8927b7f1e1faba847aea201fa65080626a4a7d3",
+      "source_identity": {
+        "authors": "Donald W. Zimmerman",
+        "title": "A Note on Preliminary Tests of Equality of Variances",
+        "publication": "BJMSP 57(1):173-181",
+        "identifier": "10.1348/000711004849222",
+        "edition_version": "Publisher-formatted journal PDF",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 9,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Zimmerman_2004.pdf",
+        "archive_member_ordinal": 2
+      },
+      "prior_match": {
+        "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
+        "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
+        "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R5"],
+        "exact_target": "R5 Priority 1 / R5-RH-1 / P2; bounded same-data pretest claim",
+        "existing_status": "main source-content hold; separate branch bounded completion with narrowing; custody/independence open",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation",
+          "claim_pinpoint_addendum"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
+        ],
+        "inspection": "Complete article text; Z04-1..5; p.174 exact pretest definition, p.175 Table 1 and p.178 Tables 2/3",
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+      }
+    },
+    {
+      "original_filename": "Rubin_1974.pdf",
+      "byte_size": 1274918,
+      "sha256": "e0fa8701ba613f01a0de321775e9793597aae5c9084fcbd8b9539cd8272321fa",
+      "source_identity": {
+        "authors": "Donald B. Rubin",
+        "title": "Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies",
+        "publication": "Journal of Educational Psychology 66(5):688-701",
+        "identifier": "10.1037/h0037350",
+        "edition_version": "Publisher rendition; prior ARTIFACT_VARIANT classification retained",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 14,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Rubin_1974.pdf",
+        "archive_member_ordinal": 3
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-09-02-nonclinical-estimand-potential-outcomes-lineage-result.md",
+        "record_sha256": "b928ebf2f53ef0f5338a0561f8a89bcdd8024f0101ef60f5465e2ab2088daee7",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": [],
+        "exact_target": "FND1-H04/PO-02 shared foundation; no new release-specific target",
+        "existing_status": "FND1-H04 narrow-closed on 2026-09-03",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-residual-steward-disposition.md"
+        ],
+        "inspection": "PDF 2 / printed 689: unit, treatment and assessment-time target; no automatic causal-validity claim",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Hayter_1984.pdf",
+      "byte_size": 959438,
+      "sha256": "755a1cd250fd50e13f444d00a630e356c0dd679daeaebc0554b62782e49d98b4",
+      "source_identity": {
+        "authors": "Anthony J. Hayter",
+        "title": "A Proof of the Conjecture that the Tukey-Kramer Multiple Comparisons Procedure is Conservative",
+        "publication": "Annals of Statistics 12(1):61-75",
+        "identifier": "10.1214/aos/1176346392",
+        "edition_version": "JSTOR image scan; no separate cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 15,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Hayter_1984.pdf",
+        "archive_member_ordinal": 4
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+        "record_sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "APR-01/APR-02; FND1-H03 later-primary mathematical support",
+        "existing_status": "named mathematical subclaims narrow-closed; Tukey 1953 attribution residual open",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md"
+        ],
+        "inspection": "PDF 2 / printed 62: equation (1.2), proof attribution and theorem opening; prior proof review reused",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Rasch_2011.pdf",
+      "byte_size": 297782,
+      "sha256": "7aa4b1bc0693e96cbbf3fc7e85fabd49d8e6f9d5afb96bf74842c568f4746655",
+      "source_identity": {
+        "authors": "Dieter Rasch, Klaus D. Kubinger and Karin Moder",
+        "title": "The two-sample t test: pre-testing its assumptions does not pay off",
+        "publication": "Statistical Papers 52:219-231",
+        "identifier": "10.1007/s00362-009-0224-x",
+        "edition_version": "13-page publisher journal paper, not earlier 11-page presentation",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 13,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Rasch_2011.pdf",
+        "archive_member_ordinal": 5
+      },
+      "prior_match": {
+        "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
+        "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
+        "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R5"],
+        "exact_target": "R5 Priority 2 / P2; specific pretest-chain scope",
+        "existing_status": "prior bounded full-text review; reproducible-copy hold; branch journal comparison complete",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation",
+          "claim_pinpoint_addendum"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
+        ],
+        "inspection": "Printed 219-224,229-231; Table 1 p.223: excess kurtosis; old presentation equivalence not tested",
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+      }
+    },
+    {
+      "original_filename": "Lazic_2010.pdf",
+      "byte_size": 431015,
+      "sha256": "5553cc2975a46610aad33f7ca0b76f3d7c21052fda56d1ccd7b0cb743939535f",
+      "source_identity": {
+        "authors": "Stanley E. Lazic",
+        "title": "The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?",
+        "publication": "BMC Neuroscience 11:5",
+        "identifier": "10.1186/1471-2202-11-5",
+        "edition_version": "Publisher PDF including later signed responses; not all 17 pages are Lazic article",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 17,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Lazic_2010.pdf",
+        "archive_member_ordinal": 6
+      },
+      "prior_match": {
+        "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
+        "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
+        "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R5"],
+        "exact_target": "R5 Priority 2 / P2; experimental-unit and repeated/nested structure projections",
+        "existing_status": "full text previously read; artifact retention hold; separate branch comparison complete",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation",
+          "claim_pinpoint_addendum"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
+        ],
+        "inspection": "PDF 1-5 bounded comparison; definition p.2, repetition pp.4-5; later responses excluded",
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+      }
+    },
+    {
+      "original_filename": "Holm_1979.pdf",
+      "byte_size": 2270343,
+      "sha256": "43a5a10279f8bf1752a3e8d4a8407f9717579f8f903be4bcd62d969e82d573af",
+      "source_identity": {
+        "authors": "Sture Holm",
+        "title": "A Simple Sequentially Rejective Multiple Test Procedure",
+        "publication": "Scandinavian Journal of Statistics 6(2):65-70",
+        "identifier": "JSTOR 4615733; DOI not asserted",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 7,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Holm_1979.pdf",
+        "archive_member_ordinal": 7
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+        "record_sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "PVL-03 ordinary unweighted Holm; FND1-H01; existing bounded source-review connection",
+        "existing_status": "source narrow-closed; current engineering D1 remains partial",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": ["review-inputs/r3-holm-welch-source-connection-20260911/REPORT.md"],
+        "inspection": "PDF 3 / printed 66: obtained levels and Bonferroni basis; theorem/variants reused from prior exact-byte review",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Zimmerman_1997.pdf",
+      "byte_size": 479943,
+      "sha256": "fbd188fe3db73014eb5414a123c70adb0114dff0c67667dc0b4436e4b6b37b74",
+      "source_identity": {
+        "authors": "Donald W. Zimmerman",
+        "title": "A Note on Interpretation of the Paired-Samples t Test",
+        "publication": "JEBS 22(3):349-360",
+        "identifier": "10.3102/10769986022003349",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 13,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Zimmerman_1997.pdf",
+        "archive_member_ordinal": 8
+      },
+      "prior_match": {
+        "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
+        "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
+        "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R2", "R5"],
+        "exact_target": "R5 Priority 1 / R5-RH-1 / P2; R2 already explicit pairing boundary",
+        "existing_status": "main source-content hold; separate branch bounded completion with narrowing; custody/independence open",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation",
+          "claim_pinpoint_addendum"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
+        ],
+        "inspection": "Complete article text; pinpoint reconciliation of Z97-1..5; actual Table 1 is printed 356 / PDF 9",
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+      }
+    },
+    {
+      "original_filename": "Nosek_2018.pdf",
+      "byte_size": 543040,
+      "sha256": "162fb9b13811288e03738b45e8b585219f361000016cba4a3f2f7162b748f6c1",
+      "source_identity": {
+        "authors": "Brian A. Nosek et al.",
+        "title": "The preregistration revolution",
+        "publication": "PNAS 115(11):2600-2606",
+        "identifier": "10.1073/pnas.1708274114",
+        "edition_version": "Publisher-formatted journal PDF",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 7,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Nosek_2018.pdf",
+        "archive_member_ordinal": 9
+      },
+      "prior_match": {
+        "commit": "a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf",
+        "path": "governance/drafts/release-5-preparation/projection-inventory-20260917/independent-primary-source-completion-review.md",
+        "record_sha256": "77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R5"],
+        "exact_target": "R5 Priority 2 / P2; timing convention and non-claim boundary",
+        "existing_status": "prior bounded full-text review; artifact retention hold; branch comparison complete",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; fills missing claim pinpoints and version/identity linkage, not durable custody",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation",
+          "claim_pinpoint_addendum"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-5-preparation/projection-inventory-20260917/primary-source-completion-request.md"
+        ],
+        "inspection": "Printed 2601-2603 / PDF 2-4: plans, deviations and preexisting-data knowledge; not an enum standard",
+        "result": "BOUNDED REVIEW RECONCILED; custody and review acceptance pending"
+      }
+    },
+    {
+      "original_filename": "Corrigenda_1979.pdf",
+      "byte_size": 256229,
+      "sha256": "07a6c3433f77e85f2ce5034e0068e7421a7f5041679705755cbfabec7493653a",
+      "source_identity": {
+        "authors": "Journal corrigenda; relevant item Abraham Genizi and Yosef Hochberg",
+        "title": "Corrigenda",
+        "publication": "JASA 74(367):744",
+        "identifier": "10.1080/01621459.1979.10481678",
+        "edition_version": "Publisher cover plus single journal page containing multiple corrections",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 2,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Corrigenda_1979.pdf",
+        "archive_member_ordinal": 10
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "review-inputs/r3-srf-primary-research/REVIEW-RESULT.md",
+        "record_sha256": "cd819183d13ea970893d066e39c3c9e65482e3845f0fd076f61fdabd55e2fe1c",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "SR-F / SRC-36; Genizi-Hochberg pairwise versus all-contrast correction",
+        "existing_status": "SR-F accepted closed in later Part Q; prior Part O incompleteness superseded",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "governance/drafts/release-3-preparation/semantic-source-acquisition-result.md"
+        ],
+        "inspection": "PDF 2 / printed 744: relevant Genizi-Hochberg item only; other corrections not reassigned",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Benjamini_1995.pdf",
+      "byte_size": 1612435,
+      "sha256": "e56ee4150d8924fc85ecb3f41a0bd59987864a3ada57308ddce0cfb3c6f5ae13",
+      "source_identity": {
+        "authors": "Yoav Benjamini and Yosef Hochberg",
+        "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+        "publication": "JRSS B 57(1):289-300",
+        "identifier": "10.1111/j.2517-6161.1995.tb02031.x",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 13,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Benjamini_1995.pdf",
+        "archive_member_ordinal": 11
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+        "record_sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "FND1-H02; SRC-02 original FDR guarantee/variant boundary",
+        "existing_status": "original-source narrow closure; no new method adoption",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-residual-steward-disposition.md"
+        ],
+        "inspection": "PDF 3 / printed 290: FDR object versus FWER; original independence theorem scope reused",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Spjotvoll_1973.pdf",
+      "byte_size": 533428,
+      "sha256": "66fb02dd75c038fccc7fc76238e4dddf64911cd3ccd2197dc7b9ff582fd81418",
+      "source_identity": {
+        "authors": "Emil Spjotvoll and Michael R. Stoline",
+        "title": "An Extension of the T-Method of Multiple Comparison to Include the Cases with Unequal Sample Sizes",
+        "publication": "JASA 68(344):975-978",
+        "identifier": "10.1080/01621459.1973.10481458",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 5,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Spjotvoll_1973.pdf",
+        "archive_member_ordinal": 12
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+        "record_sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "APR-04; FND1-H03 variant separation",
+        "existing_status": "source reconciliation accepted; RES-ONLY retained",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md"
+        ],
+        "inspection": "PDF 3 / printed 976: augmented range theorem and max multiplier; not Tukey-Kramer",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Dunnett_1980.pdf",
+      "byte_size": 937384,
+      "sha256": "8c5b9b7a13db3dcd9091fe31844a7b9eebeae56ee2dd9c866330f8fdb8f3dcb1",
+      "source_identity": {
+        "authors": "Charles W. Dunnett",
+        "title": "Pairwise Multiple Comparisons in the Homogeneous Variance, Unequal Sample Size Case",
+        "publication": "JASA 75(372):789-795",
+        "identifier": "10.1080/01621459.1980.10477551",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 8,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Dunnett_1980.pdf",
+        "archive_member_ordinal": 13
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-supplied-completion-result.md",
+        "record_sha256": "026fd91dfa200d1f35ef6c3a636ea4a69db24b82763c54c1ce16d1abb9aed0e5",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "SRC-08 / APR-02 evidence; homogeneous-variance simulation role",
+        "existing_status": "source reconciliation accepted; simulation not general proof",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md"
+        ],
+        "inspection": "PDF 2 / printed 789: common-variance model and simulation role; not 1980b unequal-variance article",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Tukey_1949.pdf",
+      "byte_size": 1534510,
+      "sha256": "e109637fa772b8936e0f1bb452afa742f98684962278414cf358ce729f509fe1",
+      "source_identity": {
+        "authors": "John W. Tukey",
+        "title": "Comparing Individual Means in the Analysis of Variance",
+        "publication": "Biometrics 5(2):99-114",
+        "identifier": "10.2307/3001913",
+        "edition_version": "JSTOR journal scan with cover",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 17,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Tukey_1949.pdf",
+        "archive_member_ordinal": 14
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+        "record_sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "SRC-04 / FND1-H03 historical object; not SRC-34 Tukey 1953",
+        "existing_status": "source narrow-closed; separate 1953 historical residual remains open",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-01-all-pairs-successor-source-steward-disposition.md"
+        ],
+        "inspection": "PDF 4 / printed 101: grouping and gap-test object; not the missing 1953 manuscript",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Dunnett_1955.pdf",
+      "byte_size": 1077072,
+      "sha256": "1f5dcf567e9649618c0e330e1b97e954d17229c66d463d9a0801312497b32da0",
+      "source_identity": {
+        "authors": "Charles W. Dunnett",
+        "title": "A Multiple Comparison Procedure for Comparing Several Treatments with a Control",
+        "publication": "JASA 50(272):1096-1121",
+        "identifier": "10.1080/01621459.1955.10501294",
+        "edition_version": "Publisher cover plus journal scan",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 27,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Dunnett_1955.pdf",
+        "archive_member_ordinal": 15
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "evidence/research/foundation-identity/fnd-1/2026-08-30-multiplicity-primary-text-closure-result.md",
+        "record_sha256": "703fd97f75e4c49def3b21db99324a78692511fa512cc6c1731099b5ff5e10da",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "SRC-03 / MTO-01 specified-control family; FND1-H03",
+        "existing_status": "source-bounded confirmation complete; not new MTO-02 support",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": [
+          "evidence/research/foundation-identity/fnd-1/2026-09-03-nonclinical-estimand-residual-steward-disposition.md"
+        ],
+        "inspection": "PDF 4 / printed 1098: control comparison, common pooled variance and simultaneous allowances; prior guarantee review reused",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    },
+    {
+      "original_filename": "Naik_1975.pdf",
+      "byte_size": 650370,
+      "sha256": "04808b830a5fad05a669b907d6cf6da97ef417bb02084724eea788fd2eb3132a",
+      "source_identity": {
+        "authors": "Umesh D. Naik",
+        "title": "Some Selection Rules for Comparing p Processes with a Standard",
+        "publication": "Communications in Statistics 4(6):519-535",
+        "identifier": "10.1080/03610927508827267",
+        "edition_version": "Publisher cover plus complete original 17-page scan; later online date is not article year",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 18,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "Naik_1975.pdf",
+        "archive_member_ordinal": 16
+      },
+      "prior_match": null,
+      "mapping": {
+        "candidate_releases": ["R3"],
+        "exact_target": "MTO-02 / SRC-28; NAIK-INTAKE received-source follow-up",
+        "existing_status": "SR-J already narrowed/accepted CLOSED; Naik original unread at prior checkpoint",
+        "new_pdf_value": "New original rule/model/variant inspection possible; no presumption of joint-t equivalence",
+        "required_action": [
+          "preserve_manifest",
+          "content_review",
+          "bounded_comparison",
+          "review_commission"
+        ],
+        "reopen": "no",
+        "reason": "Continue the explicitly commissioned receipt follow-up; do not reopen accepted SR-J",
+        "repository_evidence": [
+          "governance/drafts/release-3-preparation/next-work-plan-20260911/NAIK-INTAKE.md"
+        ],
+        "inspection": "Complete PDF 1-18 including every formula visually inspected by separate-context investigator; original variants now distinguished",
+        "result": "ADDITIVE SOURCE FOLLOW-UP; review qualification, custody and final disposition pending"
+      }
+    },
+    {
+      "original_filename": "IEEE_754-2019.pdf",
+      "byte_size": 4085164,
+      "sha256": "d6f6fef52ae93cdf8c8524451d144e00172555f008bf01a6f81da03aeff80e7a",
+      "source_identity": {
+        "authors": "IEEE",
+        "title": "IEEE Standard for Floating-Point Arithmetic",
+        "publication": "IEEE Std 754-2019, revision of 754-2008",
+        "identifier": "ISBN PDF 978-1-5044-5924-2",
+        "edition_version": "2019 licensed PDF; 84 pages; publisher download not independently authenticated",
+        "identity_basis": "supplied imprint plus the identified prior repository source record; no new publisher-download authentication"
+      },
+      "pdf_pages": 84,
+      "received_artifact": {
+        "archive_sha256": "ab29506cb668524987a02d1e74eb1a4e7d2734e4498aaeeb2ece18e901e3921e",
+        "member_basename": "IEEE_754-2019.pdf",
+        "archive_member_ordinal": 17
+      },
+      "prior_match": {
+        "commit": "9146a342ce40881b16aad198c80dbf94d7e24332",
+        "path": "review-inputs/r4-ieee-clause-confirmation-20260911/SOURCES.json",
+        "record_sha256": "f87c2295001b927fcc6c4a983f07fecebfe3bfca5617a8e0c7b34776b8bdaa6f",
+        "result": "EXACT_SHA256_MATCH"
+      },
+      "mapping": {
+        "candidate_releases": ["R3", "R4"],
+        "exact_target": "R4 IEEE supplement / T05; R3 Holm numerical-applicability boundary; R2 rounding context only",
+        "existing_status": "bounded source leg confirmed with signed-zero/range qualifications",
+        "new_pdf_value": "Reproduces the exact reviewed bytes locally; no source-version delta; no new substantive investigation needed",
+        "required_action": [
+          "preserve_manifest",
+          "hash_reconciliation",
+          "existing_review_reconciliation"
+        ],
+        "reopen": "no",
+        "reason": "No material conflicting evidence or changed scope justifies reopening; same bytes as reviewed record",
+        "repository_evidence": ["review-inputs/r4-ieee-clause-confirmation-20260911/REPORT.md"],
+        "inspection": "PDF 28 / printed 27: 4.3/4.3.1; prior complete scoped clause review reused",
+        "result": "NO CHANGE - original artifact received and reconciled with existing evidence"
+      }
+    }
+  ]
+}

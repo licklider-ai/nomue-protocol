@@ -134,6 +134,11 @@ schema or runtime work is authorized by this packet.
 
 ## Review and gate effect
 
+The [2026-09-24 source-receipt reconciliation](../../source-reconciliation-20260924/R5-RECONCILIATION.md)
+matches all five supplied artifacts to the retained completion-review branch and
+provides bounded claim pinpoints. Read it alongside the historical access holds;
+custody, review qualification and acceptance remain pending. No gate changes.
+
 The source inventory has 12 pinned inputs, 24 family/fact cells and 36 schema
 fragments. Source validation succeeds. An author-side review checked that no new
 authority asset or old bundle changes; every family remains blocked; no R3 timing

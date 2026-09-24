@@ -2,6 +2,11 @@
 
 ## What has and has not arrived
 
+Dated follow-up: [the 2026-09-24 receipt and comparison](../../source-reconciliation-20260924/NAIK-INTAKE.md)
+now records the supplied original and its bounded MTO-02 comparison. The account
+below remains the historical prospective instruction; accepted SR-J is preserved.
+Custody and qualified review/disposition remain explicit completion conditions.
+
 The user reports likely access to:
 
 Naik (1975), “Some Selection Rules for Comparing p Processes with a Standard”,
