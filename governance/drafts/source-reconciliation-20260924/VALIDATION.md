@@ -119,3 +119,8 @@ The requested bounded confirmation is limited to evidence portability,
 independence wording, author metadata, validation accuracy and absence of changes
 to scientific judgments or Release state. It cannot close the outstanding R5
 cross-model condition, custody or steward acceptance.
+
+The separate-context [bounded confirmation](bounded-repair-confirmation-original.md.txt)
+returned PASS, independently reproducing the isolated-clone, identity, whitespace,
+Markdown lint and repository validation checks. The receipt in REVIEW-INTAKE.md
+records its exact bytes and scope; no target or scientific result changed afterward.

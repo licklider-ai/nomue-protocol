@@ -95,6 +95,8 @@ New files under this packet:
   exact historical completion-record bytes, without publishing the source branch.
 - `TARGET.json`, `REVIEW-COMMISSION.md`: frozen scientific inputs and the exact
   bounded review question, without extending any release scope.
+- `bounded-repair-confirmation-original.md.txt`: separate-context confirmation of
+  the bounded evidence-portability and metadata repairs, with no scientific re-review.
 - `REVIEW-INTAKE.md`, `bounded-review-original.md.txt`: received independent
   recommendation, immutable return and explicit remaining acceptance conditions.
 - `check.py`, `VALIDATION.md`: repeatable identity verification and actual check

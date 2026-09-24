@@ -1,0 +1,61 @@
+# Bounded repair confirmation
+
+Date: 2026-09-24.
+Verdict: PASS FOR THE REQUESTED BOUNDED REPAIRS.
+
+## Scope and independence
+
+This is a separate review context requested only to confirm the supplied MAJOR-1, MAJOR-2, MINOR-1, MINOR-2 findings and the Zimmerman 1997 contextual note. It is not a fresh review of the seventeen papers, a Research Gate decision, steward acceptance, release approval or a claim of cross-model independence. The reviewer did not edit the repository. The coordinator supplied the repair target and expected checks; this was not a blind review. No served-model attestation or human review is claimed.
+
+Inspected coordinator HEAD: 66f90ff, containing repair target 1448286f10dcd2c1948a411f7b5b5f8c3a5c3e3c and its validation record. Comparison baseline for this repair: e1a29c7. Protocol base for the full whitespace range: 9146a342ce40881b16aad198c80dbf94d7e24332.
+
+Current TARGET.json SHA-256: 5fc1740bb76d6208168d02da317af8579f0e4857bed79de741ed6ae4363bd7bd.
+
+The prior scientific review target 00031b52c748b48aefb11684929909816eac9b83 and digest 4b9a648a1dbee33c664733be6b52729951202d08530b0cd2ab7de147a2a934c1 are explicitly retained as historical pins. Their approval is not transferred to the repaired bytes.
+
+## Finding confirmation
+
+### MAJOR-1: PASS
+
+I ran the packet checker with --commit HEAD in the provided isolated single-branch clone at repair commit 1448286. git cat-file -e for a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf returned exit 1; the objects/info/alternates file was absent. The checker passed packet identity, all sixteen prior matches, all five self-contained R5 matches, and current Git target bytes despite the missing historical commit. No licensed PDF was required for that check. The archive and extracted-copy checks were explicitly NOT_RUN in this confirmation.
+
+In the original checkout I independently compared the preserved completion-record copy byte-for-byte against the historical Git blob. They match exactly: 24,011 bytes, SHA-256 77e8a4a2ade0de95f3cd83f83d76ad8ec44e9f8ea123e4e76b483f3facd49722. The checker selects the in-packet copy for all five R5 sources. MAPPING, SOURCES, R5-RECONCILIATION, provenance and commission distinguish the local-only provenance commit from the verifiable copy.
+
+The copy is the exact coordinator-structured completion record, not the unavailable earlier 18,810-byte raw reviewer return. R5-PRIOR-EVIDENCE explicitly records that distinction and the unresolved raw-return archive identity. This is an honest preservation limit, not an unreported substitute. The transferable branch is reproducible without the old commit; this review does not claim that the repair branch has already been published to a remote.
+
+### MAJOR-2: PASS
+
+Current repository-authored intake, README, validation, R5 reconciliation and commissioning wording correctly say that R5's gpt-5.6-sol reviewer uses the same model/model family as the prior R5 review, in a separate context, and that the cross-model condition remains unmet. R3's model distinction is limited to the immediately preceding GPT-6 packet investigator, with no assertion about all historical reviewers or actual served builds.
+
+The neutral bounded-review-original.md.txt is byte-for-byte identical to the former distinct-model-review-original.md.txt at e1a29c7. Its SHA-256 remains 94eb3d042cd39aa3405a5dda200a6917077da3a44a7899b1aef8ee250433b000. REVIEW-INTAKE explicitly disavows its historical title and cross-model implications as current endorsed characterizations while preserving the return unchanged.
+
+### MINOR-1: PASS
+
+SOURCES.json and MAPPING.md now name Karl Moder. The current authored packet contains no Karin Moder occurrence. The checker verifies the updated target byte sizes and hashes; I separately calculated TARGET.json's digest quoted above. REVIEW-INTAKE documents bounded impact and retains the original review pins rather than silently transferring approval.
+
+### MINOR-2: PASS
+
+I ran git diff --check from Protocol base 9146a342ce40881b16aad198c80dbf94d7e24332 through coordinator HEAD. It returned exit 2 with exactly three trailing-whitespace findings: bounded-review-original.md.txt:3, naik-review-original.md.txt:55, and r5-review-original.md.txt:61. The same range excluding packet *-original.md.txt returned exit 0. This matches VALIDATION.md. The preserved original bytes were not cleaned up.
+
+### Scope preservation and Zimmerman note: PASS
+
+The repair diff affects only the source-reconciliation packet. I compared all seventeen SOURCES entries programmatically against e1a29c7: every PDF byte size and digest is unchanged, as are every mapping's existing_status, new_pdf_value, required_action, reopen, inspection and result fields. The only release targeting clarification is the user-requested Zimmerman 1997 change: R5 is the action target and R2 is contextual consistency with its existing pairing boundary. It does not alter the R2 contract or status. The remaining metadata differences are the requested provenance selection and author correction.
+
+No release state, closure, gate, implementation, requirement, supported bundle or PDF changed in this repair. I did not reassess any paper's scientific conclusion.
+
+## Validation observed
+
+- PASS: isolated-clone packet checker and all five self-contained R5 prior checks, with the old commit absent.
+- PASS: exact historical completion-record bytes and exact neutral-renamed reviewer bytes.
+- PASS: updated target digest, manifest invariants and Git target bytes.
+- PASS: pnpm lint:markdown, 779 files, zero issues.
+- PASS: pnpm validate, including registries, traceability, authority, gates, links and audits.
+- EXPECTED FAIL: full-range git diff --check, three preserved original-byte findings; authored subset PASS.
+
+The first sandboxed lint/validation attempts failed to read existing dependency-store entries. The authorized rerun with the same checkout and dependencies passed both commands. Those initial failures are infrastructure access failures, not scientific test results.
+
+I inspected the explicit baseline failure account. The existing three unit-test failures and historical R1 candidate-check failure remain failures and are not classified as new regressions. I did not rerun those broad tests or reproduce their baseline comparison in this bounded confirmation; no executable code or expectations changed.
+
+## Remaining limits
+
+Private durable custody and retention/retrieval evidence, the prior raw-review archive identity, the R5 cross-model condition, accountable steward acceptance, and existing release prerequisites remain unresolved. No confirmation in this return closes them. I found no further repair-level defect within the requested scope.
