@@ -86,3 +86,36 @@ This packet is not conducting a new Release 1 candidate review or publication.
 
 No R2-R5 candidate runtime, new numerical oracle, statistical simulation or R5
 planned conformance case was executed as a consequence of receiving these PDFs.
+
+## Bounded repair verification, 2026-09-24
+
+Repair target commit: `1448286f10dcd2c1948a411f7b5b5f8c3a5c3e3c`.
+Current target digest and impact are recorded in [REVIEW-INTAKE.md](REVIEW-INTAKE.md).
+
+- **PASS:** packet checker against the received archive; 17 original byte streams,
+  16 prior matches and five self-contained R5 prior matches. No PDF digest changed.
+- **PASS:** fresh-clone-equivalent check using `git clone --no-local --single-branch`
+  of only the repair branch. No object sharing or alternates are used.
+  `git cat-file -e a79d0d7900ceaa88a8a73cae2bac6dc36f83d9cf` exits 1:
+  the historical local-only commit is absent. `check.py --commit HEAD` nevertheless
+  passes all packet/Git target checks and all five R5 prior matches. Licensed PDFs
+  are not in that clone; the archive check above is a separate local operation.
+  This tests a transferable branch without the old branch, not a published remote
+  URL: no push or publication has occurred.
+- **PASS:** original reviewer-return byte digests unchanged, including the neutral
+  filename rename; source-completion copy matches its original Git-blob digest.
+- **PASS:** Prettier, Markdown lint (779 files), and `pnpm validate` after repair.
+- **FAIL as expected:** full range `git diff --check` from base
+  `9146a342ce40881b16aad198c80dbf94d7e24332` to the repair target exits 2 with
+  exactly three trailing-whitespace findings: `bounded-review-original.md.txt:3`,
+  `naik-review-original.md.txt:55`, and `r5-review-original.md.txt:61`.
+  **PASS:** the same range with packet `*-original.md.txt` excluded exits 0.
+  These findings are preserved original bytes, not silently repaired text.
+- **UNCHANGED BASELINE FAILURES:** the earlier three test failures and historical
+  R1 candidate-check failure remain documented above. This documentation/identity
+  repair does not classify them as new regressions or rerun broad scientific tests.
+
+The requested bounded confirmation is limited to evidence portability,
+independence wording, author metadata, validation accuracy and absence of changes
+to scientific judgments or Release state. It cannot close the outstanding R5
+cross-model condition, custody or steward acceptance.
