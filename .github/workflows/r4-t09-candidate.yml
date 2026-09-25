@@ -1,10 +1,5 @@
 name: R4 T09 candidate integration
 on:
-  push:
-    branches: [research/r4-t09-check-report-lifecycle-20260915]
-    paths:
-      - "governance/drafts/release-4-preparation/t09-check-report-lifecycle-20260915/**"
-      - ".github/workflows/r4-t09-candidate.yml"
   workflow_dispatch:
 permissions:
   contents: read
