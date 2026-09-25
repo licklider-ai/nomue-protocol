@@ -64,16 +64,16 @@
   "devDependencies": {
     "@stdlib/stats-base-dists-t-cdf": "^0.2.3",
     "@stdlib/stats-base-dists-t-quantile": "^0.2.3",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.6.1",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "canonicalize": "^3.0.0",
     "json-schema-to-typescript": "^15.0.4",
     "markdownlint-cli2": "^0.23.2",
-    "prettier": "^3.9.6",
-    "tsx": "^4.23.11",
+    "prettier": "^3.9.8",
+    "tsx": "^4.23.13",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.1"
   }
 }
