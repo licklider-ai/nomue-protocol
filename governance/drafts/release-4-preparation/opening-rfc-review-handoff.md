@@ -6,7 +6,8 @@ This handoff is delivered after the fixed input; it supplies no verdict.
 ## Fixed input and retrieval
 
 Repository: licklider-ai/nomue-protocol.
-Branch locator: research/r4-opening-rfc-candidate (mutable; use pins below).
+Former branch locator: `research/r4-opening-rfc-candidate` (retired). Use the
+fixed input commit below; do not resolve the former branch name.
 Review input: `98187a14a48b38c9f2fb41fdd18060d53966a660`.
 Sole parent/main baseline: `0abdca8f822d0de3faf35f218f762a951fd75e9e`.
 Input tree: `2f9286c107b64b59940269af98122d469639f0de`.
@@ -107,16 +108,16 @@ No numerical rerun is required unless it resolves a concrete finding about this
 new proposal. Expected-value evidence cannot come from reference code alone.
 
 Create review-inputs/r4-opening-rfc/REVIEW-RESULT.md only, on a fresh review
-branch based on the delivery branch. Report date, inspected pins, actual tools,
+branch based on the fixed input commit. Report date, inspected pins, actual tools,
 source access, model/provider/context metadata as available, independence limits,
 checks, prioritized findings and per-gate dispositions. Unknown metadata stays
 unknown; model separation does not establish human-investigator independence.
 Do not edit accepted reviews, specs, registries, source PDFs or numerical inputs.
 
-Push the review and create a draft PR targeting
-research/r4-opening-rfc-candidate. Keep review claims and concrete requested
-repairs distinct. Do not merge, issue identifiers, ratify, start a discussion
-clock or change Release 3. Return the PR URL, commit and review blob.
+For a historical replay, retain the review record with the fixed input commit as
+its base and do not create a PR against the retired branch. Keep review claims and
+concrete requested repairs distinct. Do not merge, issue identifiers, ratify,
+start a discussion clock or change Release 3. Return the commit and review blob.
 
 Author: OpenAI Codex in the existing authoring context. This handoff and its
 candidate are author-side proposals, not an independent review.
