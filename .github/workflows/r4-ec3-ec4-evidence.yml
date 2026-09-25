@@ -1,14 +1,5 @@
 name: R4 EC3 EC4 research measurements
 on:
-  push:
-    branches:
-      - research/r4-t04-ec3-ec4-evidence-20260914
-    paths:
-      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/**.py
-      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/ingress.ts
-      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/profiles.json
-      - governance/drafts/release-4-preparation/t04-ec3-ec4-evidence-20260914/Dockerfile
-      - .github/workflows/r4-ec3-ec4-evidence.yml
   workflow_dispatch:
 permissions:
   contents: read
