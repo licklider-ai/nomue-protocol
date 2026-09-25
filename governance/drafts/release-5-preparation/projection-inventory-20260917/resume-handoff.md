@@ -8,7 +8,8 @@ worktrees, temporary authoring scripts or a cached dependency installation.
 
 - Repository: [licklider-ai/nomue-protocol](https://github.com/licklider-ai/nomue-protocol).
 - Draft PR: [#349](https://github.com/licklider-ai/nomue-protocol/pull/349).
-- Remote branch: `preparation/r5-projection-inventory`.
+- Former remote branch: `preparation/r5-projection-inventory` (retired after
+  its head became reachable from `main`).
 - Public discussion: [#346](https://github.com/licklider-ai/nomue-protocol/issues/346).
 - Completed work checkpoint: `2599375d876bd09b09be33e2f99da9fbc6dec40a`.
 - Checkpoint tree: `d588603722e10a39e2a22539053164b47c3f2321`.
@@ -24,9 +25,9 @@ intervening work or silently retarget a retained review.
 
 ## Recover and verify
 
-Clone the public repository into a new directory, fetch the PR branch and check
-out the exact recovery commit in a task-named work branch. No prior scratch path
-is required. From the repository root run:
+Clone the public repository into a new directory and check out the exact recovery
+commit `2599375d876bd09b09be33e2f99da9fbc6dec40a` in a task-named work branch.
+No PR branch fetch or prior scratch path is required. From the repository root run:
 
 ```sh
 sha256sum -c governance/drafts/release-5-preparation/projection-inventory-20260917/preservation-sha256.txt
