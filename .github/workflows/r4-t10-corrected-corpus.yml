@@ -1,10 +1,5 @@
 name: R4 T10 corrected independent corpus
 on:
-  push:
-    branches: [research/r4-t10-independent-expectations-20260915]
-    paths:
-      - "governance/drafts/release-4-preparation/t10-repaired-candidate-comparison-20260915/**"
-      - ".github/workflows/r4-t10-corrected-corpus.yml"
   workflow_dispatch:
 permissions:
   contents: read
