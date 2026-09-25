@@ -5,7 +5,8 @@ Status: author-side confirmation commission; no verdict or opening authority.
 ## Fixed input
 
 Repository: licklider-ai/nomue-protocol.
-Locator: research/r4-opening-rfc-candidate; PR 249.
+Former branch locator: `research/r4-opening-rfc-candidate`; PR 249. The branch
+is retired; the repaired input commit below is the reproduction target.
 Repaired input: `60a7caf05ebb4812e367a48c70621f092c26fedb`.
 Sole parent: `6adfc8a0080e30ce7634a5912c4dbb32e97ecd17`.
 Tree: `d21f634c7964581fad2bbc1f3bacc4b6eb4f8135`.
@@ -109,8 +110,8 @@ involvement, source access and independence limits. Same-session repair
 confirmation may be reported as such; it is not a second independent scientific
 investigator. Do not infer human independence from model separation.
 
-Push and create a draft PR targeting research/r4-opening-rfc-candidate.
-Return its URL, commit, tree, review blob, checks, findings and opening
+For a historical replay, do not create a PR against the retired branch. Return the
+commit, tree, review blob, checks, findings and opening
 disposition. Do not edit candidate/spec/registry/numerical/source artifacts,
 allocate identifiers, merge, ratify or start a public discussion clock.
 An eventual opening action separately records its exact proposal, URL,
