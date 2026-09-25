@@ -5,7 +5,8 @@ Status: author-side bounded confirmation commission; public opening NOT_READY.
 ## Fixed input
 
 Repository: licklider-ai/nomue-protocol.
-Locator: research/r4-opening-rfc-candidate, PR 249.
+Former branch locator: `research/r4-opening-rfc-candidate`, PR 249. The branch
+is retired; the fixed input commit below is the reproduction target.
 Input: `21453d82109106e9e811571383228dcef8f60fac`.
 Sole parent: `40e723d30c1e235591b0795d8c4535639ff4fc32`.
 Tree: `0194cdc31aa4e8463776cdb6d86863586d4981a3`.
@@ -88,8 +89,8 @@ evidence and limits. Same-conversation confirmation is permitted but is not
 another independent investigator; author-context self-review is not an
 independent confirmation. Preserve PR 252's different-context disclosure.
 
-Push and create a draft PR targeting research/r4-opening-rfc-candidate.
-Return URL, commit, tree, blob, checks and verdict. Do not edit the candidate,
+For a historical replay, do not create a PR against the retired branch. Return the
+commit, tree, blob, checks and verdict. Do not edit the candidate,
 specs, registries or other reviews; do not merge, issue identifiers, ratify,
 open discussion or change Release 3. A later opening action separately records
 its exact input, URL, timestamp, tier and earliest decision date.
