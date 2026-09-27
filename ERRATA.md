@@ -16,6 +16,7 @@ Protocol meaning.
 | ID   | Release   | Subject                                             | Status                    |
 | ---- | --------- | --------------------------------------------------- | ------------------------- |
 | ER-1 | Release 1 | Student-t centre precision at one degree of freedom | Corrected after Release 1 |
+| ER-2 | Release 1 | Fixed Welch recompute tolerances on large-offset data | Open; successor check version planned |
 
 ---
 
@@ -120,3 +121,59 @@ two-sided p  = 1 + 2 * atan(-|t|) / pi
 
 A conforming implementation reproduces `0.9999999952571827` at
 `t = 7.45e-9`, `df = 1`.
+
+---
+
+## ER-2: Fixed Welch recompute tolerances on large-offset data
+
+- **Affected release:** Release 1 (tag
+  [`release-1`](https://github.com/licklider-ai/nomue-protocol/releases/tag/release-1)).
+- **Affected checks:** `urn:nomue:check:welch-recompute:0.1.0-draft.1`,
+  `urn:nomue:check:welch-recompute:0.2.0-draft.1` and
+  `urn:nomue:check:welch-recompute:0.2.1-draft.1`.
+- **Class:** limit of the specification's comparison rule, reproduced with an
+  independent implementation of the reference kernel's documented arithmetic.
+  It compares a declared value with a recomputed value under fixed tolerances (absolute `1e-12`; relative `1e-12`,
+  or `1e-10` for the p-value and interval endpoints), and does not require the
+  recomputation to be accurate enough for that tolerance on every input.
+- **Reported:** 2026-09-27, by internal numerical study; reproduced by an
+  independent review.
+
+### What is wrong
+
+When the values in each group share a large common offset compared with the
+difference between the group means, a binary64 recomputation of the Welch
+statistic loses accuracy in the group means. Two-pass procedures with ordinary
+or compensated summation, including an independent reproduction of the reference kernel's documented
+algorithm, can differ from the exact value by far more than the tolerance.
+Example: observations `1.7e9 + k * 1e-6` against `1.7e9 + k * 2e-6`,
+`k = 0, ..., n - 1`:
+
+| n per group | Exact t | Compensated two-pass t | Relative error |
+| --- | --- | --- | --- |
+| 3 | -0.7985836518841365 | -0.7364596943186588 | 7.8% |
+| 10 | -2.0942101745867383 | -2.116343116932037 | 1.06% |
+| 30 | -4.034477696583975 | -4.047687547540484 | 0.33% |
+
+A binary64 procedure can avoid this (for example by forming the difference of
+the group sums as one correctly rounded sum), so whether a Record passes
+depends on how the verifier computes.
+
+### Which Records are affected
+
+Records whose group means are large compared with the difference of the means
+can be affected. In the example above, at the scale of raw epoch timestamps
+with microsecond differences, the observed error reaches whole percent.
+The examples do not establish a universal offset threshold or prevalence.
+
+### What it changes for a relying party
+
+The outcome can move in both directions on affected Records:
+
+- a declaration that is correct for the exact values can **fail**;
+- a declaration that matches the verifier's own rounding can **pass** while
+  being about 0.3 to 10 percent from the exact value.
+
+On such Records, a Release 1 recompute result alone cannot establish that
+the declared values are close to the exact mathematical values. A successor
+check version that compares with exact values under a documented domain is planned; Release 1 itself does not change.
