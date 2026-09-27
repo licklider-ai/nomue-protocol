@@ -1,0 +1,82 @@
+{
+  "$schema": "https://nomue.ai/id/schema/independent-two-group-verification-report/0.1.0-draft.1",
+  "report_type": "nomue-verification-report",
+  "record_reference": {
+    "record_id": "urn:example:record:welch-rec-one-sided-p",
+    "revision_id": "urn:example:revision:welch-rec-one-sided-p:composition-1",
+    "content_digest": "sha256:71d6c35af7853b2e36f027472f9fdc70aa27580457232f3ee468766767abed0e"
+  },
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1",
+  "verifier": {
+    "name": "Synthetic format example; not a verifier execution",
+    "version": "rfc-example-1",
+    "source_commit": "not-applicable-synthetic-example"
+  },
+  "generated_at": "2026-09-28T00:00:00Z",
+  "conformance": {
+    "check_id": "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+    "check_version": "0.1.0-draft.1",
+    "scope": {
+      "kind": "record",
+      "id": "urn:example:record:welch-rec-one-sided-p"
+    },
+    "execution": "completed",
+    "outcome": "pass",
+    "reason_codes": []
+  },
+  "verification_results": [
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "scope": {
+        "kind": "record_revision",
+        "id": "urn:example:revision:welch-rec-one-sided-p:composition-1"
+      },
+      "execution": "completed",
+      "outcome": "pass",
+      "reason_codes": []
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "scope": {
+        "kind": "record",
+        "id": "urn:example:record:welch-rec-one-sided-p"
+      },
+      "execution": "completed",
+      "outcome": "pass",
+      "reason_codes": []
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "scope": {
+        "kind": "analysis",
+        "id": "urn:example:analysis:analysis-1"
+      },
+      "execution": "completed",
+      "outcome": "pass",
+      "reason_codes": []
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1",
+      "check_version": "0.1.0-draft.1",
+      "scope": {
+        "kind": "result",
+        "id": "urn:example:result:result-1"
+      },
+      "execution": "completed",
+      "outcome": "fail",
+      "reason_codes": [
+        "NRS-DECLARED-RESULT-MISMATCH"
+      ]
+    }
+  ],
+  "guarantee_boundary": {
+    "scientific_validity": "not_asserted",
+    "declaration_truth": "not_asserted",
+    "distributional_model_validity": "not_asserted",
+    "causal_interpretation": "not_asserted",
+    "standardized_effect_size": "not_asserted"
+  }
+}

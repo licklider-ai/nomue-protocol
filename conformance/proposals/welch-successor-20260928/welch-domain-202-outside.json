@@ -1,0 +1,2521 @@
+{
+  "$schema": "https://nomue.ai/id/schema/independent-two-group-record/0.1.0-draft.1",
+  "record_type": "nomue-record",
+  "record_id": "urn:example:record:welch-domain-202-outside",
+  "revision_id": "urn:example:revision:welch-domain-202-outside:composition-1",
+  "created_at": "2026-09-27T00:00:00Z",
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1",
+  "profile_id": "https://nomue.ai/id/profile/independent-two-group-continuous/0.1.0-draft.1",
+  "payload": {
+    "dataset": {
+      "dataset_id": "dataset-1",
+      "observations": [
+        {
+          "observation_id": "observation-1",
+          "experimental_unit_id": "unit-1",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-2",
+          "experimental_unit_id": "unit-2",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-3",
+          "experimental_unit_id": "unit-3",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-4",
+          "experimental_unit_id": "unit-4",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-5",
+          "experimental_unit_id": "unit-5",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-6",
+          "experimental_unit_id": "unit-6",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-7",
+          "experimental_unit_id": "unit-7",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-8",
+          "experimental_unit_id": "unit-8",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-9",
+          "experimental_unit_id": "unit-9",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-10",
+          "experimental_unit_id": "unit-10",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-11",
+          "experimental_unit_id": "unit-11",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-12",
+          "experimental_unit_id": "unit-12",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-13",
+          "experimental_unit_id": "unit-13",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-14",
+          "experimental_unit_id": "unit-14",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-15",
+          "experimental_unit_id": "unit-15",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-16",
+          "experimental_unit_id": "unit-16",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-17",
+          "experimental_unit_id": "unit-17",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-18",
+          "experimental_unit_id": "unit-18",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-19",
+          "experimental_unit_id": "unit-19",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-20",
+          "experimental_unit_id": "unit-20",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-21",
+          "experimental_unit_id": "unit-21",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-22",
+          "experimental_unit_id": "unit-22",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-23",
+          "experimental_unit_id": "unit-23",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-24",
+          "experimental_unit_id": "unit-24",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-25",
+          "experimental_unit_id": "unit-25",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-26",
+          "experimental_unit_id": "unit-26",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-27",
+          "experimental_unit_id": "unit-27",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-28",
+          "experimental_unit_id": "unit-28",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-29",
+          "experimental_unit_id": "unit-29",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-30",
+          "experimental_unit_id": "unit-30",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-31",
+          "experimental_unit_id": "unit-31",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-32",
+          "experimental_unit_id": "unit-32",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-33",
+          "experimental_unit_id": "unit-33",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-34",
+          "experimental_unit_id": "unit-34",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-35",
+          "experimental_unit_id": "unit-35",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-36",
+          "experimental_unit_id": "unit-36",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-37",
+          "experimental_unit_id": "unit-37",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-38",
+          "experimental_unit_id": "unit-38",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-39",
+          "experimental_unit_id": "unit-39",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-40",
+          "experimental_unit_id": "unit-40",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-41",
+          "experimental_unit_id": "unit-41",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-42",
+          "experimental_unit_id": "unit-42",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-43",
+          "experimental_unit_id": "unit-43",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-44",
+          "experimental_unit_id": "unit-44",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-45",
+          "experimental_unit_id": "unit-45",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-46",
+          "experimental_unit_id": "unit-46",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-47",
+          "experimental_unit_id": "unit-47",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-48",
+          "experimental_unit_id": "unit-48",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-49",
+          "experimental_unit_id": "unit-49",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-50",
+          "experimental_unit_id": "unit-50",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-51",
+          "experimental_unit_id": "unit-51",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-52",
+          "experimental_unit_id": "unit-52",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-53",
+          "experimental_unit_id": "unit-53",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-54",
+          "experimental_unit_id": "unit-54",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-55",
+          "experimental_unit_id": "unit-55",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-56",
+          "experimental_unit_id": "unit-56",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-57",
+          "experimental_unit_id": "unit-57",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-58",
+          "experimental_unit_id": "unit-58",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-59",
+          "experimental_unit_id": "unit-59",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-60",
+          "experimental_unit_id": "unit-60",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-61",
+          "experimental_unit_id": "unit-61",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-62",
+          "experimental_unit_id": "unit-62",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-63",
+          "experimental_unit_id": "unit-63",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-64",
+          "experimental_unit_id": "unit-64",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-65",
+          "experimental_unit_id": "unit-65",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-66",
+          "experimental_unit_id": "unit-66",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-67",
+          "experimental_unit_id": "unit-67",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-68",
+          "experimental_unit_id": "unit-68",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-69",
+          "experimental_unit_id": "unit-69",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-70",
+          "experimental_unit_id": "unit-70",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-71",
+          "experimental_unit_id": "unit-71",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-72",
+          "experimental_unit_id": "unit-72",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-73",
+          "experimental_unit_id": "unit-73",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-74",
+          "experimental_unit_id": "unit-74",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-75",
+          "experimental_unit_id": "unit-75",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-76",
+          "experimental_unit_id": "unit-76",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-77",
+          "experimental_unit_id": "unit-77",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-78",
+          "experimental_unit_id": "unit-78",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-79",
+          "experimental_unit_id": "unit-79",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-80",
+          "experimental_unit_id": "unit-80",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-81",
+          "experimental_unit_id": "unit-81",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-82",
+          "experimental_unit_id": "unit-82",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-83",
+          "experimental_unit_id": "unit-83",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-84",
+          "experimental_unit_id": "unit-84",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-85",
+          "experimental_unit_id": "unit-85",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-86",
+          "experimental_unit_id": "unit-86",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-87",
+          "experimental_unit_id": "unit-87",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-88",
+          "experimental_unit_id": "unit-88",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-89",
+          "experimental_unit_id": "unit-89",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-90",
+          "experimental_unit_id": "unit-90",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-91",
+          "experimental_unit_id": "unit-91",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-92",
+          "experimental_unit_id": "unit-92",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-93",
+          "experimental_unit_id": "unit-93",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-94",
+          "experimental_unit_id": "unit-94",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-95",
+          "experimental_unit_id": "unit-95",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-96",
+          "experimental_unit_id": "unit-96",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-97",
+          "experimental_unit_id": "unit-97",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-98",
+          "experimental_unit_id": "unit-98",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-99",
+          "experimental_unit_id": "unit-99",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-100",
+          "experimental_unit_id": "unit-100",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-101",
+          "experimental_unit_id": "unit-101",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-102",
+          "experimental_unit_id": "unit-102",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-103",
+          "experimental_unit_id": "unit-103",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-104",
+          "experimental_unit_id": "unit-104",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-105",
+          "experimental_unit_id": "unit-105",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-106",
+          "experimental_unit_id": "unit-106",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-107",
+          "experimental_unit_id": "unit-107",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-108",
+          "experimental_unit_id": "unit-108",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-109",
+          "experimental_unit_id": "unit-109",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-110",
+          "experimental_unit_id": "unit-110",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-111",
+          "experimental_unit_id": "unit-111",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-112",
+          "experimental_unit_id": "unit-112",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-113",
+          "experimental_unit_id": "unit-113",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-114",
+          "experimental_unit_id": "unit-114",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-115",
+          "experimental_unit_id": "unit-115",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-116",
+          "experimental_unit_id": "unit-116",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-117",
+          "experimental_unit_id": "unit-117",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-118",
+          "experimental_unit_id": "unit-118",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-119",
+          "experimental_unit_id": "unit-119",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-120",
+          "experimental_unit_id": "unit-120",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-121",
+          "experimental_unit_id": "unit-121",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-122",
+          "experimental_unit_id": "unit-122",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-123",
+          "experimental_unit_id": "unit-123",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-124",
+          "experimental_unit_id": "unit-124",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-125",
+          "experimental_unit_id": "unit-125",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-126",
+          "experimental_unit_id": "unit-126",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-127",
+          "experimental_unit_id": "unit-127",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-128",
+          "experimental_unit_id": "unit-128",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-129",
+          "experimental_unit_id": "unit-129",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-130",
+          "experimental_unit_id": "unit-130",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-131",
+          "experimental_unit_id": "unit-131",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-132",
+          "experimental_unit_id": "unit-132",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-133",
+          "experimental_unit_id": "unit-133",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-134",
+          "experimental_unit_id": "unit-134",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-135",
+          "experimental_unit_id": "unit-135",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-136",
+          "experimental_unit_id": "unit-136",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-137",
+          "experimental_unit_id": "unit-137",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-138",
+          "experimental_unit_id": "unit-138",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-139",
+          "experimental_unit_id": "unit-139",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-140",
+          "experimental_unit_id": "unit-140",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-141",
+          "experimental_unit_id": "unit-141",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-142",
+          "experimental_unit_id": "unit-142",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-143",
+          "experimental_unit_id": "unit-143",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-144",
+          "experimental_unit_id": "unit-144",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-145",
+          "experimental_unit_id": "unit-145",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-146",
+          "experimental_unit_id": "unit-146",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-147",
+          "experimental_unit_id": "unit-147",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-148",
+          "experimental_unit_id": "unit-148",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-149",
+          "experimental_unit_id": "unit-149",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-150",
+          "experimental_unit_id": "unit-150",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-151",
+          "experimental_unit_id": "unit-151",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-152",
+          "experimental_unit_id": "unit-152",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-153",
+          "experimental_unit_id": "unit-153",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-154",
+          "experimental_unit_id": "unit-154",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-155",
+          "experimental_unit_id": "unit-155",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-156",
+          "experimental_unit_id": "unit-156",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-157",
+          "experimental_unit_id": "unit-157",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-158",
+          "experimental_unit_id": "unit-158",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-159",
+          "experimental_unit_id": "unit-159",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-160",
+          "experimental_unit_id": "unit-160",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-161",
+          "experimental_unit_id": "unit-161",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-162",
+          "experimental_unit_id": "unit-162",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-163",
+          "experimental_unit_id": "unit-163",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-164",
+          "experimental_unit_id": "unit-164",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-165",
+          "experimental_unit_id": "unit-165",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-166",
+          "experimental_unit_id": "unit-166",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-167",
+          "experimental_unit_id": "unit-167",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-168",
+          "experimental_unit_id": "unit-168",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-169",
+          "experimental_unit_id": "unit-169",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-170",
+          "experimental_unit_id": "unit-170",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-171",
+          "experimental_unit_id": "unit-171",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-172",
+          "experimental_unit_id": "unit-172",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-173",
+          "experimental_unit_id": "unit-173",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-174",
+          "experimental_unit_id": "unit-174",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-175",
+          "experimental_unit_id": "unit-175",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-176",
+          "experimental_unit_id": "unit-176",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-177",
+          "experimental_unit_id": "unit-177",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-178",
+          "experimental_unit_id": "unit-178",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-179",
+          "experimental_unit_id": "unit-179",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-180",
+          "experimental_unit_id": "unit-180",
+          "group_id": "group-a",
+          "outcome_value": 105.5
+        },
+        {
+          "observation_id": "observation-181",
+          "experimental_unit_id": "unit-181",
+          "group_id": "group-a",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-182",
+          "experimental_unit_id": "unit-182",
+          "group_id": "group-a",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-183",
+          "experimental_unit_id": "unit-183",
+          "group_id": "group-a",
+          "outcome_value": 104.5
+        },
+        {
+          "observation_id": "observation-184",
+          "experimental_unit_id": "unit-184",
+          "group_id": "group-a",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-185",
+          "experimental_unit_id": "unit-185",
+          "group_id": "group-a",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-186",
+          "experimental_unit_id": "unit-186",
+          "group_id": "group-a",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-187",
+          "experimental_unit_id": "unit-187",
+          "group_id": "group-a",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-188",
+          "experimental_unit_id": "unit-188",
+          "group_id": "group-a",
+          "outcome_value": 104.75
+        },
+        {
+          "observation_id": "observation-189",
+          "experimental_unit_id": "unit-189",
+          "group_id": "group-a",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-190",
+          "experimental_unit_id": "unit-190",
+          "group_id": "group-a",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-191",
+          "experimental_unit_id": "unit-191",
+          "group_id": "group-a",
+          "outcome_value": 103.75
+        },
+        {
+          "observation_id": "observation-192",
+          "experimental_unit_id": "unit-192",
+          "group_id": "group-a",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-193",
+          "experimental_unit_id": "unit-193",
+          "group_id": "group-a",
+          "outcome_value": 105.0
+        },
+        {
+          "observation_id": "observation-194",
+          "experimental_unit_id": "unit-194",
+          "group_id": "group-a",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-195",
+          "experimental_unit_id": "unit-195",
+          "group_id": "group-a",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-196",
+          "experimental_unit_id": "unit-196",
+          "group_id": "group-a",
+          "outcome_value": 104.0
+        },
+        {
+          "observation_id": "observation-197",
+          "experimental_unit_id": "unit-197",
+          "group_id": "group-a",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-198",
+          "experimental_unit_id": "unit-198",
+          "group_id": "group-a",
+          "outcome_value": 105.25
+        },
+        {
+          "observation_id": "observation-199",
+          "experimental_unit_id": "unit-199",
+          "group_id": "group-a",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-200",
+          "experimental_unit_id": "unit-200",
+          "group_id": "group-a",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-201",
+          "experimental_unit_id": "unit-201",
+          "group_id": "group-a",
+          "outcome_value": 104.25
+        },
+        {
+          "observation_id": "observation-202",
+          "experimental_unit_id": "unit-202",
+          "group_id": "group-a",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-203",
+          "experimental_unit_id": "unit-203",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-204",
+          "experimental_unit_id": "unit-204",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-205",
+          "experimental_unit_id": "unit-205",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-206",
+          "experimental_unit_id": "unit-206",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-207",
+          "experimental_unit_id": "unit-207",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-208",
+          "experimental_unit_id": "unit-208",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-209",
+          "experimental_unit_id": "unit-209",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-210",
+          "experimental_unit_id": "unit-210",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-211",
+          "experimental_unit_id": "unit-211",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-212",
+          "experimental_unit_id": "unit-212",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-213",
+          "experimental_unit_id": "unit-213",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-214",
+          "experimental_unit_id": "unit-214",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-215",
+          "experimental_unit_id": "unit-215",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-216",
+          "experimental_unit_id": "unit-216",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-217",
+          "experimental_unit_id": "unit-217",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-218",
+          "experimental_unit_id": "unit-218",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-219",
+          "experimental_unit_id": "unit-219",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-220",
+          "experimental_unit_id": "unit-220",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-221",
+          "experimental_unit_id": "unit-221",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-222",
+          "experimental_unit_id": "unit-222",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-223",
+          "experimental_unit_id": "unit-223",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-224",
+          "experimental_unit_id": "unit-224",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-225",
+          "experimental_unit_id": "unit-225",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-226",
+          "experimental_unit_id": "unit-226",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-227",
+          "experimental_unit_id": "unit-227",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-228",
+          "experimental_unit_id": "unit-228",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-229",
+          "experimental_unit_id": "unit-229",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-230",
+          "experimental_unit_id": "unit-230",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-231",
+          "experimental_unit_id": "unit-231",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-232",
+          "experimental_unit_id": "unit-232",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-233",
+          "experimental_unit_id": "unit-233",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-234",
+          "experimental_unit_id": "unit-234",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-235",
+          "experimental_unit_id": "unit-235",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-236",
+          "experimental_unit_id": "unit-236",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-237",
+          "experimental_unit_id": "unit-237",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-238",
+          "experimental_unit_id": "unit-238",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-239",
+          "experimental_unit_id": "unit-239",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-240",
+          "experimental_unit_id": "unit-240",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-241",
+          "experimental_unit_id": "unit-241",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-242",
+          "experimental_unit_id": "unit-242",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-243",
+          "experimental_unit_id": "unit-243",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-244",
+          "experimental_unit_id": "unit-244",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-245",
+          "experimental_unit_id": "unit-245",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-246",
+          "experimental_unit_id": "unit-246",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-247",
+          "experimental_unit_id": "unit-247",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-248",
+          "experimental_unit_id": "unit-248",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-249",
+          "experimental_unit_id": "unit-249",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-250",
+          "experimental_unit_id": "unit-250",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-251",
+          "experimental_unit_id": "unit-251",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-252",
+          "experimental_unit_id": "unit-252",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-253",
+          "experimental_unit_id": "unit-253",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-254",
+          "experimental_unit_id": "unit-254",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-255",
+          "experimental_unit_id": "unit-255",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-256",
+          "experimental_unit_id": "unit-256",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-257",
+          "experimental_unit_id": "unit-257",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-258",
+          "experimental_unit_id": "unit-258",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-259",
+          "experimental_unit_id": "unit-259",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-260",
+          "experimental_unit_id": "unit-260",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-261",
+          "experimental_unit_id": "unit-261",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-262",
+          "experimental_unit_id": "unit-262",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-263",
+          "experimental_unit_id": "unit-263",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-264",
+          "experimental_unit_id": "unit-264",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-265",
+          "experimental_unit_id": "unit-265",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-266",
+          "experimental_unit_id": "unit-266",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-267",
+          "experimental_unit_id": "unit-267",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-268",
+          "experimental_unit_id": "unit-268",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-269",
+          "experimental_unit_id": "unit-269",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-270",
+          "experimental_unit_id": "unit-270",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-271",
+          "experimental_unit_id": "unit-271",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-272",
+          "experimental_unit_id": "unit-272",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-273",
+          "experimental_unit_id": "unit-273",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-274",
+          "experimental_unit_id": "unit-274",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-275",
+          "experimental_unit_id": "unit-275",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-276",
+          "experimental_unit_id": "unit-276",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-277",
+          "experimental_unit_id": "unit-277",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-278",
+          "experimental_unit_id": "unit-278",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-279",
+          "experimental_unit_id": "unit-279",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-280",
+          "experimental_unit_id": "unit-280",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-281",
+          "experimental_unit_id": "unit-281",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-282",
+          "experimental_unit_id": "unit-282",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-283",
+          "experimental_unit_id": "unit-283",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-284",
+          "experimental_unit_id": "unit-284",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-285",
+          "experimental_unit_id": "unit-285",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-286",
+          "experimental_unit_id": "unit-286",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-287",
+          "experimental_unit_id": "unit-287",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-288",
+          "experimental_unit_id": "unit-288",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-289",
+          "experimental_unit_id": "unit-289",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-290",
+          "experimental_unit_id": "unit-290",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-291",
+          "experimental_unit_id": "unit-291",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-292",
+          "experimental_unit_id": "unit-292",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-293",
+          "experimental_unit_id": "unit-293",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-294",
+          "experimental_unit_id": "unit-294",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-295",
+          "experimental_unit_id": "unit-295",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-296",
+          "experimental_unit_id": "unit-296",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-297",
+          "experimental_unit_id": "unit-297",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-298",
+          "experimental_unit_id": "unit-298",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-299",
+          "experimental_unit_id": "unit-299",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-300",
+          "experimental_unit_id": "unit-300",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-301",
+          "experimental_unit_id": "unit-301",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-302",
+          "experimental_unit_id": "unit-302",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-303",
+          "experimental_unit_id": "unit-303",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-304",
+          "experimental_unit_id": "unit-304",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-305",
+          "experimental_unit_id": "unit-305",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-306",
+          "experimental_unit_id": "unit-306",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-307",
+          "experimental_unit_id": "unit-307",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-308",
+          "experimental_unit_id": "unit-308",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-309",
+          "experimental_unit_id": "unit-309",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-310",
+          "experimental_unit_id": "unit-310",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-311",
+          "experimental_unit_id": "unit-311",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-312",
+          "experimental_unit_id": "unit-312",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-313",
+          "experimental_unit_id": "unit-313",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-314",
+          "experimental_unit_id": "unit-314",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-315",
+          "experimental_unit_id": "unit-315",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-316",
+          "experimental_unit_id": "unit-316",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-317",
+          "experimental_unit_id": "unit-317",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-318",
+          "experimental_unit_id": "unit-318",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-319",
+          "experimental_unit_id": "unit-319",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-320",
+          "experimental_unit_id": "unit-320",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-321",
+          "experimental_unit_id": "unit-321",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-322",
+          "experimental_unit_id": "unit-322",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-323",
+          "experimental_unit_id": "unit-323",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-324",
+          "experimental_unit_id": "unit-324",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-325",
+          "experimental_unit_id": "unit-325",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-326",
+          "experimental_unit_id": "unit-326",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-327",
+          "experimental_unit_id": "unit-327",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-328",
+          "experimental_unit_id": "unit-328",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-329",
+          "experimental_unit_id": "unit-329",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-330",
+          "experimental_unit_id": "unit-330",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-331",
+          "experimental_unit_id": "unit-331",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-332",
+          "experimental_unit_id": "unit-332",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-333",
+          "experimental_unit_id": "unit-333",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-334",
+          "experimental_unit_id": "unit-334",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-335",
+          "experimental_unit_id": "unit-335",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-336",
+          "experimental_unit_id": "unit-336",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-337",
+          "experimental_unit_id": "unit-337",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-338",
+          "experimental_unit_id": "unit-338",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-339",
+          "experimental_unit_id": "unit-339",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-340",
+          "experimental_unit_id": "unit-340",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-341",
+          "experimental_unit_id": "unit-341",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-342",
+          "experimental_unit_id": "unit-342",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-343",
+          "experimental_unit_id": "unit-343",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-344",
+          "experimental_unit_id": "unit-344",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-345",
+          "experimental_unit_id": "unit-345",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-346",
+          "experimental_unit_id": "unit-346",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-347",
+          "experimental_unit_id": "unit-347",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-348",
+          "experimental_unit_id": "unit-348",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-349",
+          "experimental_unit_id": "unit-349",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-350",
+          "experimental_unit_id": "unit-350",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-351",
+          "experimental_unit_id": "unit-351",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-352",
+          "experimental_unit_id": "unit-352",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-353",
+          "experimental_unit_id": "unit-353",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-354",
+          "experimental_unit_id": "unit-354",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-355",
+          "experimental_unit_id": "unit-355",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-356",
+          "experimental_unit_id": "unit-356",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-357",
+          "experimental_unit_id": "unit-357",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-358",
+          "experimental_unit_id": "unit-358",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-359",
+          "experimental_unit_id": "unit-359",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-360",
+          "experimental_unit_id": "unit-360",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-361",
+          "experimental_unit_id": "unit-361",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-362",
+          "experimental_unit_id": "unit-362",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-363",
+          "experimental_unit_id": "unit-363",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-364",
+          "experimental_unit_id": "unit-364",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-365",
+          "experimental_unit_id": "unit-365",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-366",
+          "experimental_unit_id": "unit-366",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-367",
+          "experimental_unit_id": "unit-367",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-368",
+          "experimental_unit_id": "unit-368",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-369",
+          "experimental_unit_id": "unit-369",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-370",
+          "experimental_unit_id": "unit-370",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-371",
+          "experimental_unit_id": "unit-371",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-372",
+          "experimental_unit_id": "unit-372",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-373",
+          "experimental_unit_id": "unit-373",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-374",
+          "experimental_unit_id": "unit-374",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-375",
+          "experimental_unit_id": "unit-375",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-376",
+          "experimental_unit_id": "unit-376",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-377",
+          "experimental_unit_id": "unit-377",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-378",
+          "experimental_unit_id": "unit-378",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-379",
+          "experimental_unit_id": "unit-379",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-380",
+          "experimental_unit_id": "unit-380",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-381",
+          "experimental_unit_id": "unit-381",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-382",
+          "experimental_unit_id": "unit-382",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-383",
+          "experimental_unit_id": "unit-383",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-384",
+          "experimental_unit_id": "unit-384",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        },
+        {
+          "observation_id": "observation-385",
+          "experimental_unit_id": "unit-385",
+          "group_id": "group-b",
+          "outcome_value": 100.75
+        },
+        {
+          "observation_id": "observation-386",
+          "experimental_unit_id": "unit-386",
+          "group_id": "group-b",
+          "outcome_value": 103.5
+        },
+        {
+          "observation_id": "observation-387",
+          "experimental_unit_id": "unit-387",
+          "group_id": "group-b",
+          "outcome_value": 101.5
+        },
+        {
+          "observation_id": "observation-388",
+          "experimental_unit_id": "unit-388",
+          "group_id": "group-b",
+          "outcome_value": 99.5
+        },
+        {
+          "observation_id": "observation-389",
+          "experimental_unit_id": "unit-389",
+          "group_id": "group-b",
+          "outcome_value": 102.25
+        },
+        {
+          "observation_id": "observation-390",
+          "experimental_unit_id": "unit-390",
+          "group_id": "group-b",
+          "outcome_value": 100.25
+        },
+        {
+          "observation_id": "observation-391",
+          "experimental_unit_id": "unit-391",
+          "group_id": "group-b",
+          "outcome_value": 103.0
+        },
+        {
+          "observation_id": "observation-392",
+          "experimental_unit_id": "unit-392",
+          "group_id": "group-b",
+          "outcome_value": 101.0
+        },
+        {
+          "observation_id": "observation-393",
+          "experimental_unit_id": "unit-393",
+          "group_id": "group-b",
+          "outcome_value": 99.0
+        },
+        {
+          "observation_id": "observation-394",
+          "experimental_unit_id": "unit-394",
+          "group_id": "group-b",
+          "outcome_value": 101.75
+        },
+        {
+          "observation_id": "observation-395",
+          "experimental_unit_id": "unit-395",
+          "group_id": "group-b",
+          "outcome_value": 99.75
+        },
+        {
+          "observation_id": "observation-396",
+          "experimental_unit_id": "unit-396",
+          "group_id": "group-b",
+          "outcome_value": 102.5
+        },
+        {
+          "observation_id": "observation-397",
+          "experimental_unit_id": "unit-397",
+          "group_id": "group-b",
+          "outcome_value": 100.5
+        },
+        {
+          "observation_id": "observation-398",
+          "experimental_unit_id": "unit-398",
+          "group_id": "group-b",
+          "outcome_value": 103.25
+        },
+        {
+          "observation_id": "observation-399",
+          "experimental_unit_id": "unit-399",
+          "group_id": "group-b",
+          "outcome_value": 101.25
+        },
+        {
+          "observation_id": "observation-400",
+          "experimental_unit_id": "unit-400",
+          "group_id": "group-b",
+          "outcome_value": 99.25
+        },
+        {
+          "observation_id": "observation-401",
+          "experimental_unit_id": "unit-401",
+          "group_id": "group-b",
+          "outcome_value": 102.0
+        },
+        {
+          "observation_id": "observation-402",
+          "experimental_unit_id": "unit-402",
+          "group_id": "group-b",
+          "outcome_value": 100.0
+        },
+        {
+          "observation_id": "observation-403",
+          "experimental_unit_id": "unit-403",
+          "group_id": "group-b",
+          "outcome_value": 102.75
+        }
+      ]
+    },
+    "design": {
+      "design_id": "design-1",
+      "dataset_id": "dataset-1",
+      "experimental_unit_type": "biological replicate",
+      "groups": [
+        {
+          "group_id": "group-a",
+          "label": "Control"
+        },
+        {
+          "group_id": "group-b",
+          "label": "Treatment"
+        }
+      ],
+      "group_order": [
+        "group-a",
+        "group-b"
+      ],
+      "outcome": {
+        "outcome_id": "outcome-1",
+        "label": "Synthetic continuous outcome",
+        "scale": "continuous"
+      },
+      "declarations": {
+        "grouping_structure": "independent_groups",
+        "pairing": "none",
+        "repeated_measurements": "none",
+        "clustering": "none_declared"
+      },
+      "data_handling": {
+        "analysis_population": "all_record_observations",
+        "missing_outcomes": "none",
+        "transformation": "none",
+        "weighting": "none"
+      }
+    },
+    "analysis": {
+      "analysis_id": "analysis-1",
+      "design_id": "design-1",
+      "contract_id": "https://nomue.ai/id/contract/independent-two-group/0.1.0-draft.1",
+      "alternative": "two_sided",
+      "estimand": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "direction": "group_order_first_minus_second"
+      },
+      "confidence_level": 0.95
+    },
+    "result": {
+      "result_id": "result-1",
+      "analysis_id": "analysis-1",
+      "group_summaries": [
+        {
+          "group_id": "group-a",
+          "n": 202,
+          "mean": 1.0,
+          "sample_variance": 1.0
+        },
+        {
+          "group_id": "group-b",
+          "n": 201,
+          "mean": 1.0,
+          "sample_variance": 1.0
+        }
+      ],
+      "effect_estimate": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "estimate": 0.0,
+        "standard_error": 1.0,
+        "confidence_interval": {
+          "method_id": "urn:nomue:method:welch-satterthwaite-mean-difference-ci:1",
+          "confidence_level": 0.95,
+          "lower": -12.706204736174705,
+          "upper": 12.706204736174705
+        }
+      },
+      "test": {
+        "test_statistic": 0.0,
+        "degrees_of_freedom": 1.0,
+        "p_value": 1.0
+      }
+    }
+  },
+  "integrity": {
+    "canonicalization_id": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "digest_algorithm": "sha-256",
+    "digest_scope": "record_without_integrity",
+    "content_digest": "sha256:28a04bf405f4c6a1fcd4be0809baf9b236ac582297c58cdc3e07e5a689a1d7f9"
+  }
+}

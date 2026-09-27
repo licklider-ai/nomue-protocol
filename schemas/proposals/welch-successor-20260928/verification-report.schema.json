@@ -1,0 +1,685 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nomue.ai/id/schema/independent-two-group-verification-report/0.1.0-draft.1",
+  "$comment": "RFC discussion snapshot, not issued. Only this closed Welch report is an entry point.",
+  "title": "Proposed Welch successor closed report schema",
+  "description": "Closed bundle-selected report candidate. It has no overall status, VERIFIED value, whole-record validity boolean, significance boolean, or attestation member. Every result remains scoped to an exact candidate Public Check identity and version.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "report_type",
+    "record_reference",
+    "interpretation_bundle_id",
+    "verifier",
+    "generated_at",
+    "conformance",
+    "verification_results",
+    "guarantee_boundary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "https://nomue.ai/id/schema/independent-two-group-verification-report/0.1.0-draft.1"
+    },
+    "report_type": {
+      "const": "nomue-verification-report"
+    },
+    "record_reference": {
+      "$ref": "#/$defs/recordReference"
+    },
+    "interpretation_bundle_id": {
+      "const": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1"
+    },
+    "verifier": {
+      "$ref": "#/$defs/verifier"
+    },
+    "generated_at": {
+      "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/rfc3339UtcZ",
+      "$comment": "Excluded from the verification semantic projection."
+    },
+    "conformance": {
+      "$ref": "#/$defs/record-conformance"
+    },
+    "verification_results": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/record-integrity"
+        },
+        {
+          "$ref": "#/$defs/profile-admissibility"
+        },
+        {
+          "$ref": "#/$defs/welch-computability"
+        },
+        {
+          "$ref": "#/$defs/welch-recompute"
+        }
+      ],
+      "items": false
+    },
+    "guarantee_boundary": {
+      "$ref": "#/$defs/guaranteeBoundary"
+    }
+  },
+  "$defs": {
+    "recordReference": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "revision_id",
+        "content_digest"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "revision_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        },
+        "content_digest": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+        }
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "source_commit"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "source_commit": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      }
+    },
+    "guaranteeBoundary": {
+      "type": "object",
+      "required": [
+        "scientific_validity",
+        "declaration_truth",
+        "distributional_model_validity",
+        "causal_interpretation",
+        "standardized_effect_size"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scientific_validity": {
+          "const": "not_asserted"
+        },
+        "declaration_truth": {
+          "const": "not_asserted"
+        },
+        "distributional_model_validity": {
+          "const": "not_asserted"
+        },
+        "causal_interpretation": {
+          "const": "not_asserted"
+        },
+        "standardized_effect_size": {
+          "const": "not_asserted"
+        }
+      }
+    },
+    "groupSummary": {
+      "type": "object",
+      "required": [
+        "group_id",
+        "n",
+        "mean",
+        "sample_variance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "group_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 9007199254740991
+        },
+        "mean": {
+          "type": "number"
+        },
+        "sample_variance": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "recomputedGuaranteeResult": {
+      "type": "object",
+      "required": [
+        "group_summaries",
+        "effect_estimate",
+        "test"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "group_summaries": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/groupSummary"
+          }
+        },
+        "effect_estimate": {
+          "type": "object",
+          "required": [
+            "estimate",
+            "standard_error",
+            "confidence_interval"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "estimate": {
+              "type": "number"
+            },
+            "standard_error": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "confidence_interval": {
+              "type": "object",
+              "required": [
+                "confidence_level",
+                "critical_value",
+                "lower",
+                "upper"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "confidence_level": {
+                  "const": 0.95
+                },
+                "critical_value": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "lower": {
+                  "type": "number"
+                },
+                "upper": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "type": "object",
+          "required": [
+            "test_statistic",
+            "degrees_of_freedom",
+            "p_value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "test_statistic": {
+              "type": "number"
+            },
+            "degrees_of_freedom": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "p_value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "mismatch": {
+      "type": "object",
+      "required": [
+        "quantity",
+        "declared",
+        "recomputed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "quantity": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "group_id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/localId"
+        },
+        "declared": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "recomputed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "unsupportedDeclaration": {
+      "type": "object",
+      "required": [
+        "declaration",
+        "declared",
+        "supported"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "declaration": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "declared": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 1024
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "supported": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        }
+      }
+    },
+    "reasonCode": {
+      "type": "string",
+      "pattern": "^NRS-[A-Z][A-Z-]*[A-Z]$"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "kind",
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "record",
+            "record_revision",
+            "analysis",
+            "result"
+          ]
+        },
+        "id": {
+          "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/uri"
+        }
+      }
+    },
+    "errorObject": {
+      "type": "object",
+      "required": [
+        "error_type",
+        "message"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "error_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        }
+      }
+    },
+    "executionOutcomeInvariant": {
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "execution": {
+                "const": "completed"
+              }
+            },
+            "required": [
+              "execution"
+            ]
+          },
+          "then": {
+            "type": "object",
+            "required": [
+              "outcome"
+            ],
+            "not": {
+              "type": "object",
+              "required": [
+                "error"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "execution": {
+                "const": "not_run"
+              }
+            },
+            "required": [
+              "execution"
+            ]
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "reason_codes": {
+                "type": "array",
+                "minItems": 1
+              }
+            },
+            "not": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "outcome"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "error"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "execution": {
+                "const": "error"
+              }
+            },
+            "required": [
+              "execution"
+            ]
+          },
+          "then": {
+            "type": "object",
+            "required": [
+              "error"
+            ],
+            "properties": {
+              "reason_codes": {
+                "type": "array",
+                "minItems": 1
+              }
+            },
+            "not": {
+              "type": "object",
+              "required": [
+                "outcome"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "execution": {
+                "const": "completed"
+              },
+              "outcome": {
+                "enum": [
+                  "fail",
+                  "indeterminate"
+                ]
+              }
+            },
+            "required": [
+              "execution",
+              "outcome"
+            ]
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "reason_codes": {
+                "type": "array",
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "noEvidence": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "record-conformance": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/checkResult"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "record-integrity": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/checkResult"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "declared_content_digest": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+            },
+            "recomputed_content_digest": {
+              "$ref": "urn:nomue:schema:common:identifier:0.1.0-draft.1#/$defs/sha256Digest"
+            }
+          }
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "profile-admissibility": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/checkResult"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "unsupported_declarations": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/unsupportedDeclaration"
+              }
+            }
+          }
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "welch-computability": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/checkResult"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "welch-recompute": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/checkResult"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "const": "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        },
+        "check_version": {
+          "const": "0.1.0-draft.1"
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "recomputed": {
+              "$ref": "#/$defs/recomputedGuaranteeResult"
+            },
+            "mismatches": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/mismatch"
+              }
+            }
+          }
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "checkResult": {
+      "type": "object",
+      "required": [
+        "check_id",
+        "check_version",
+        "execution",
+        "scope",
+        "reason_codes"
+      ],
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "pattern": "^https://nomue\\.ai/id/check/[a-z][a-z0-9-]*/[0-9]+\\.[0-9]+\\.[0-9]+-draft\\.[1-9][0-9]*$"
+        },
+        "check_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+-draft\\.[1-9][0-9]*$"
+        },
+        "execution": {
+          "enum": [
+            "completed",
+            "not_run",
+            "error"
+          ]
+        },
+        "outcome": {
+          "enum": [
+            "pass",
+            "fail",
+            "indeterminate"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/reasonCode"
+          }
+        },
+        "error": {
+          "$ref": "#/$defs/errorObject"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/executionOutcomeInvariant"
+        }
+      ]
+    }
+  }
+}

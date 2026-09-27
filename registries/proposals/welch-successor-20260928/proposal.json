@@ -1,0 +1,445 @@
+{
+  "status": "proposed only; no IDs issued by this RFC",
+  "schema_version_impact": "additive successor identities; incompatible carrier selected only by its new bundle",
+  "identifiers": {
+    "contract": "https://nomue.ai/id/contract/independent-two-group/0.1.0-draft.1",
+    "profile": "https://nomue.ai/id/profile/independent-two-group-continuous/0.1.0-draft.1",
+    "bundle": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1",
+    "record_schema": "https://nomue.ai/id/schema/independent-two-group-record/0.1.0-draft.1",
+    "payload_schema": "https://nomue.ai/id/schema/independent-two-group-continuous/0.1.0-draft.1",
+    "canonicalization": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "common_schema": "urn:nomue:schema:common:identifier:0.1.0-draft.1",
+    "ci_method": "urn:nomue:method:welch-satterthwaite-mean-difference-ci:1",
+    "verification_report_schema": "https://nomue.ai/id/schema/independent-two-group-verification-report/0.1.0-draft.1"
+  },
+  "no_aliases": true,
+  "schema_locations": {
+    "https://nomue.ai/id/schema/independent-two-group-record/0.1.0-draft.1": "../../../schemas/proposals/welch-successor-20260928/record.schema.json",
+    "https://nomue.ai/id/schema/independent-two-group-continuous/0.1.0-draft.1": "../../../schemas/proposals/welch-successor-20260928/payload.schema.json",
+    "https://nomue.ai/id/schema/independent-two-group-verification-report/0.1.0-draft.1": "../../../schemas/proposals/welch-successor-20260928/verification-report.schema.json"
+  },
+  "existing_common_schema": "../../../schemas/common/identifier.schema.json",
+  "checks": [
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+      "title": "Record structural and semantic conformance (Phase 2A)",
+      "version": "0.1.0-draft.1",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "record",
+      "requirement_ids": [
+        "NRS-CORE-0003",
+        "NRS-CORE-0007",
+        "NRS-PROFILE-ITGC-0001",
+        "NRS-PROFILE-ITGC-0002",
+        "NRS-PROFILE-ITGC-0003",
+        "NRS-PROFILE-ITGC-0004",
+        "NRS-PROFILE-ITGC-0006"
+      ]
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+      "title": "Content digest recomputation (Phase 2A)",
+      "version": "0.1.0-draft.1",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "record_revision",
+      "depends_on": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1"
+      ],
+      "dependency_propagation": "not_run_with_blocking_reason_codes",
+      "requirement_ids": [
+        "NRS-VERIFY-0006",
+        "NRS-CANON-0001",
+        "NRS-CANON-0022",
+        "NRS-CANON-0005",
+        "NRS-CORE-0006"
+      ]
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1",
+      "title": "ITGC profile admissibility",
+      "version": "0.1.0-draft.1",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "record",
+      "depends_on": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1"
+      ],
+      "dependency_propagation": "not_run_with_blocking_reason_codes",
+      "requirement_ids": [
+        "NRS-VERIFY-0013",
+        "NRS-CORE-0009",
+        "NRS-PROFILE-ITGC-0005",
+        "NRS-PROFILE-ITGC-0007",
+        "NRS-PROFILE-ITGC-0015",
+        "NRS-PROFILE-ITGC-0016",
+        "NRS-PROFILE-ITGC-0019",
+        "NRS-PROFILE-ITGC-0020",
+        "NRS-PROFILE-ITGC-0021",
+        "NRS-PROFILE-ITGC-0022",
+        "NRS-PROFILE-ITGC-0023",
+        "NRS-PROFILE-ITGC-0024",
+        "NRS-PROFILE-ITGC-0025"
+      ]
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+      "title": "Welch computability (sensitivity-scaled successor)",
+      "version": "0.1.0-draft.1",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "analysis",
+      "depends_on": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ],
+      "dependency_propagation": "not_run_with_blocking_reason_codes",
+      "requirement_ids": [
+        "NRS-VERIFY-0010",
+        "NRS-VERIFY-0013",
+        "NRS-VERIFY-0017",
+        "NRS-VERIFY-0021",
+        "NRS-VERIFY-0037",
+        "NRS-VERIFY-0038",
+        "NRS-VERIFY-0040"
+      ]
+    },
+    {
+      "check_id": "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1",
+      "title": "Welch result recomputation (sensitivity-scaled successor)",
+      "version": "0.1.0-draft.1",
+      "stability": "EXPERIMENTAL",
+      "scope_kind": "result",
+      "depends_on": [
+        "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1"
+      ],
+      "dependency_propagation": "not_run_with_blocking_reason_codes",
+      "requirement_ids": [
+        "NRS-VERIFY-0014",
+        "NRS-VERIFY-0015",
+        "NRS-VERIFY-0016",
+        "NRS-VERIFY-0017",
+        "NRS-VERIFY-0020",
+        "NRS-VERIFY-0037",
+        "NRS-VERIFY-0039",
+        "NRS-VERIFY-0040",
+        "NRS-PROFILE-ITGC-0006",
+        "NRS-PROFILE-ITGC-0008",
+        "NRS-PROFILE-ITGC-0009",
+        "NRS-PROFILE-ITGC-0010",
+        "NRS-PROFILE-ITGC-0011",
+        "NRS-PROFILE-ITGC-0017",
+        "NRS-PROFILE-ITGC-0018",
+        "NRS-PROFILE-ITGC-0026",
+        "NRS-CANON-0006",
+        "NRS-VERSION-0009"
+      ]
+    }
+  ],
+  "numerical_semantics": "../../../spec/proposals/welch-successor-20260928.md",
+  "new_reason_codes": [
+    {
+      "id": "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN",
+      "title": "Record outside the successor Welch public-check domain",
+      "category": "computability",
+      "applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-WELCH-P-VALUE-SUBNORMAL",
+      "title": "Welch p-value rounds to a subnormal binary64 number",
+      "category": "computability",
+      "applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-UNSUPPORTED-CONTRACT",
+      "title": "Unsupported analysis Contract",
+      "category": "admissibility",
+      "applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+      ]
+    }
+  ],
+  "reused_numerical_reason_codes": {
+    "emitted": [
+      {
+        "id": "NRS-GROUP-SIZE-BELOW-TWO",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0038"
+        ]
+      },
+      {
+        "id": "NRS-ZERO-STANDARD-ERROR",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0038"
+        ]
+      },
+      {
+        "id": "NRS-P-VALUE-UNDERFLOW",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0038"
+        ]
+      },
+      {
+        "id": "NRS-NUMERICAL-COMPUTABILITY-FAILED",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0038"
+        ]
+      },
+      {
+        "id": "NRS-DECLARED-RESULT-MISMATCH",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0039"
+        ]
+      },
+      {
+        "id": "NRS-STANDARD-ERROR-MISMATCH",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0039"
+        ]
+      },
+      {
+        "id": "NRS-CONFIDENCE-LEVEL-MISMATCH",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0039"
+        ]
+      },
+      {
+        "id": "NRS-CONFIDENCE-INTERVAL-MISMATCH",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0039"
+        ]
+      },
+      {
+        "id": "NRS-CONFIDENCE-INTERVAL-ORDER-INVALID",
+        "add_applicable_check_ids": [
+          "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+        ],
+        "add_requirement_ids": [
+          "NRS-VERIFY-0039"
+        ]
+      }
+    ],
+    "propagated": {
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+      ],
+      "ids": [
+        "NRS-SCHEMA-INVALID",
+        "NRS-SEMANTIC-CONFORMANCE-FAILED",
+        "NRS-GROUP-COUNT-NOT-TWO",
+        "NRS-DUPLICATE-OBSERVATION-ID",
+        "NRS-DUPLICATE-EXPERIMENTAL-UNIT",
+        "NRS-UNKNOWN-GROUP",
+        "NRS-UNSUPPORTED-ALTERNATIVE",
+        "NRS-UNSUPPORTED-ESTIMAND",
+        "NRS-NON-FINITE-NUMERIC-VALUE",
+        "NRS-PAIRING-NOT-SUPPORTED",
+        "NRS-REPEATED-MEASURES-NOT-SUPPORTED",
+        "NRS-CLUSTERING-NOT-SUPPORTED",
+        "NRS-WEIGHTING-NOT-SUPPORTED",
+        "NRS-TRANSFORMATION-NOT-SUPPORTED",
+        "NRS-SUBSET-ANALYSIS-NOT-SUPPORTED",
+        "NRS-MISSING-OUTCOMES-NOT-SUPPORTED"
+      ]
+    },
+    "excluded": [
+      "NRS-UNSUPPORTED-METHOD",
+      "NRS-CRITICAL-VALUE-CALCULATION-FAILED",
+      "NRS-T-SQUARED-OVERFLOW"
+    ]
+  },
+  "admission_reason_applicability": [
+    {
+      "id": "NRS-SCHEMA-INVALID",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-SEMANTIC-CONFORMANCE-FAILED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-DIGEST-MISMATCH",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-GROUP-COUNT-NOT-TWO",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-DUPLICATE-OBSERVATION-ID",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-DUPLICATE-EXPERIMENTAL-UNIT",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-UNKNOWN-GROUP",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-GROUP-SIZE-BELOW-TWO",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-UNSUPPORTED-ALTERNATIVE",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-NON-FINITE-NUMERIC-VALUE",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-PAIRING-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-REPEATED-MEASURES-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-CLUSTERING-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-WEIGHTING-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-TRANSFORMATION-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-SUBSET-ANALYSIS-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-MISSING-OUTCOMES-NOT-SUPPORTED",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-UNSUPPORTED-ESTIMAND",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    },
+    {
+      "id": "NRS-CONFIDENCE-LEVEL-MISMATCH",
+      "add_applicable_check_ids": [
+        "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1"
+      ]
+    }
+  ],
+  "proposed_requirements": [
+    {
+      "id": "NRS-VERIFY-0037",
+      "stability": "EXPERIMENTAL",
+      "status": "proposed, not registered"
+    },
+    {
+      "id": "NRS-VERIFY-0038",
+      "stability": "EXPERIMENTAL",
+      "status": "proposed, not registered"
+    },
+    {
+      "id": "NRS-VERIFY-0039",
+      "stability": "EXPERIMENTAL",
+      "status": "proposed, not registered"
+    },
+    {
+      "id": "NRS-VERIFY-0040",
+      "stability": "EXPERIMENTAL",
+      "status": "proposed, not registered"
+    }
+  ],
+  "release_prerequisites": [
+    "Allocate and bind carrier/admission/report requirement clauses without altering legacy meaning.",
+    "Resolve report local-ID to scope-URI mapping and failure propagation fixtures.",
+    "Update live registries, meta-schemas, conformance manifest, contract-surface registry and generated views together after the RFC decision.",
+    "Coordinate shared surfaces with the paired-t proposal without changing its public draft silently."
+  ]
+}

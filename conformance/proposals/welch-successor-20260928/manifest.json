@@ -1,0 +1,667 @@
+{
+  "status": "RFC proposal examples; not registered conformance or implementation certification",
+  "bundle_id": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1",
+  "check_ids": {
+    "record-conformance": "https://nomue.ai/id/check/independent-two-group-record-conformance/0.1.0-draft.1",
+    "record-integrity": "https://nomue.ai/id/check/independent-two-group-record-integrity/0.1.0-draft.1",
+    "profile-admissibility": "https://nomue.ai/id/check/independent-two-group-profile-admissibility/0.1.0-draft.1",
+    "welch-computability": "https://nomue.ai/id/check/independent-two-group-welch-computability/0.1.0-draft.1",
+    "welch-recompute": "https://nomue.ai/id/check/independent-two-group-welch-recompute/0.1.0-draft.1"
+  },
+  "semantics": "../../../spec/proposals/welch-successor-20260928.md",
+  "fixtures": [
+    {
+      "fixture_id": "welch-pass-small-integers",
+      "input": "welch-pass-small-integers.json",
+      "input_sha256": "48b544031d804914b1893ff63ea39de1a2e7fd89cd619960d197a5e3441ce1c4",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-rec-one-sided-p",
+      "input": "welch-rec-one-sided-p.json",
+      "input_sha256": "291a3a1791f1e52be2ef61f584869b94cdc80cbcc3ea2e4663c4ec727fb6895f",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-DECLARED-RESULT-MISMATCH"
+          ],
+          "mismatched_quantities": [
+            "test.p_value"
+          ]
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-comp-zero-standard-error",
+      "input": "welch-comp-zero-standard-error.json",
+      "input_sha256": "c7b3f56151a7f79847b47c5029d6562b9c911ccaafb7342571ca4e8752db14bb",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-ZERO-STANDARD-ERROR",
+            "NRS-NUMERICAL-COMPUTABILITY-FAILED"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-ZERO-STANDARD-ERROR",
+            "NRS-NUMERICAL-COMPUTABILITY-FAILED"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-comp-p-underflow",
+      "input": "welch-comp-p-underflow.json",
+      "input_sha256": "67c0250bfffba2e7088515dd374f15fa384bbc614a53aabad074cbbae2059f62",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-P-VALUE-UNDERFLOW",
+            "NRS-NUMERICAL-COMPUTABILITY-FAILED"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-P-VALUE-UNDERFLOW",
+            "NRS-NUMERICAL-COMPUTABILITY-FAILED"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-comp-p-subnormal",
+      "input": "welch-comp-p-subnormal.json",
+      "input_sha256": "f9a250364ccaf5c38d26c99b72d3434218f1e92efc9ae05ee41675c02bc1a181",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-P-VALUE-SUBNORMAL"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-P-VALUE-SUBNORMAL"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-pass-p-just-above-min-normal",
+      "input": "welch-pass-p-just-above-min-normal.json",
+      "input_sha256": "8dfdecc65d4186e3e02ad4aa38da39f7cfa34fe806fc5c07210c1bab3e075150",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-201-inside",
+      "input": "welch-domain-201-inside.json",
+      "input_sha256": "fef44931450c417cc09a1108578758312fb0b4658c1c2b34c072b44e701b91b0",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-202-outside",
+      "input": "welch-domain-202-outside.json",
+      "input_sha256": "e745d4845187e51652d0edf236d1a969aa28e10474ce1a956dc6756cd0124dae",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-magnitude-inside",
+      "input": "welch-domain-magnitude-inside.json",
+      "input_sha256": "987eb6ad56b07102e1f7fadb6a28175c22cfa6ce1e27779aea6d55a25b8b9f6b",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-magnitude-outside",
+      "input": "welch-domain-magnitude-outside.json",
+      "input_sha256": "5013348e20972aa340293adf07d304015983788d1239c473f40f7a699a8e67a9",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-kappa-v-inside",
+      "input": "welch-domain-kappa-v-inside.json",
+      "input_sha256": "4ff2673a0eda9921da7cd8caaba8dbf50675bf9ee1fa1f8d93c4cad21dd026c9",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-kappa-v-outside",
+      "input": "welch-domain-kappa-v-outside.json",
+      "input_sha256": "1f0994a0efa209447fe4f8d173413fd26fb6581355310e1e3949b821f880b6c6",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-kappa-d-inside",
+      "input": "welch-domain-kappa-d-inside.json",
+      "input_sha256": "68696869e31d0338e5bed07638abef6ab7567408f10f8e92fe7d6f881281be81",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-kappa-d-outside",
+      "input": "welch-domain-kappa-d-outside.json",
+      "input_sha256": "7647b74ed5392a3e19ea90f716e8920b51444ba76eeae26ab36994386eda1151",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-variance-scale-inside",
+      "input": "welch-domain-variance-scale-inside.json",
+      "input_sha256": "426c03489ece5396d97e0f305f7ae41a556c1c95579c6ec1b7de59de2d88b6cf",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-domain-variance-scale-outside",
+      "input": "welch-domain-variance-scale-outside.json",
+      "input_sha256": "d74d20a610124bf967125637665a215325331929861d603a8e0a2daa0b509133",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ]
+        },
+        "welch-recompute": {
+          "execution": "not_run",
+          "reason_codes": [
+            "NRS-WELCH-OUTSIDE-PUBLIC-CHECK-DOMAIN"
+          ],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-pass-mean-at-exact-tolerance-boundary",
+      "input": "welch-pass-mean-at-exact-tolerance-boundary.json",
+      "input_sha256": "42ecb649635b512229e6a229a2e0b1bd08abb40a1f0654ecc013eeef14e88df4",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": [],
+          "mismatched_quantities": []
+        }
+      }
+    },
+    {
+      "fixture_id": "welch-rec-mean-one-ulp-beyond-tolerance",
+      "input": "welch-rec-mean-one-ulp-beyond-tolerance.json",
+      "input_sha256": "eb778c88702678e6115f04deaf8afa13e558b793f525d1538f12f6944df65ebe",
+      "checks": {
+        "record-conformance": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "record-integrity": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "profile-admissibility": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-computability": {
+          "execution": "completed",
+          "outcome": "pass",
+          "reason_codes": []
+        },
+        "welch-recompute": {
+          "execution": "completed",
+          "outcome": "fail",
+          "reason_codes": [
+            "NRS-DECLARED-RESULT-MISMATCH"
+          ],
+          "mismatched_quantities": [
+            "group_1.mean"
+          ]
+        }
+      }
+    }
+  ],
+  "reason_order": "Arrays are ordered, not sets. Preserve the displayed order.",
+  "schema_negative_cases": [
+    {
+      "base": "welch-pass-small-integers.json",
+      "operation": "remove /payload/analysis/contract_id",
+      "expected": "record schema rejection"
+    },
+    {
+      "base": "welch-pass-small-integers.json",
+      "operation": "add /payload/analysis/method_id with the legacy Welch method ID",
+      "expected": "record schema rejection"
+    },
+    {
+      "base": "welch-pass-small-integers.report.json",
+      "operation": "remove the final verification_results slot",
+      "expected": "report schema rejection"
+    },
+    {
+      "base": "welch-pass-small-integers.report.json",
+      "operation": "set /interpretation_bundle_id to an unrecognized bundle URI",
+      "expected": "report schema rejection"
+    }
+  ]
+}

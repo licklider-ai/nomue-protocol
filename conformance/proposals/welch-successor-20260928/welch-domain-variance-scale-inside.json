@@ -1,0 +1,139 @@
+{
+  "$schema": "https://nomue.ai/id/schema/independent-two-group-record/0.1.0-draft.1",
+  "record_type": "nomue-record",
+  "record_id": "urn:example:record:welch-domain-variance-scale-inside",
+  "revision_id": "urn:example:revision:welch-domain-variance-scale-inside:composition-1",
+  "created_at": "2026-09-27T00:00:00Z",
+  "interpretation_bundle_id": "https://nomue.ai/id/bundle/independent-two-group/0.1.0-draft.1",
+  "profile_id": "https://nomue.ai/id/profile/independent-two-group-continuous/0.1.0-draft.1",
+  "payload": {
+    "dataset": {
+      "dataset_id": "dataset-1",
+      "observations": [
+        {
+          "observation_id": "observation-1",
+          "experimental_unit_id": "unit-1",
+          "group_id": "group-a",
+          "outcome_value": 1.6979398272800086e-72
+        },
+        {
+          "observation_id": "observation-2",
+          "experimental_unit_id": "unit-2",
+          "group_id": "group-a",
+          "outcome_value": 1.131959884853339e-72
+        },
+        {
+          "observation_id": "observation-3",
+          "experimental_unit_id": "unit-3",
+          "group_id": "group-a",
+          "outcome_value": 5.659799424266695e-73
+        },
+        {
+          "observation_id": "observation-4",
+          "experimental_unit_id": "unit-4",
+          "group_id": "group-b",
+          "outcome_value": 0.0
+        },
+        {
+          "observation_id": "observation-5",
+          "experimental_unit_id": "unit-5",
+          "group_id": "group-b",
+          "outcome_value": 5.659799424266695e-73
+        },
+        {
+          "observation_id": "observation-6",
+          "experimental_unit_id": "unit-6",
+          "group_id": "group-b",
+          "outcome_value": 1.131959884853339e-72
+        }
+      ]
+    },
+    "design": {
+      "design_id": "design-1",
+      "dataset_id": "dataset-1",
+      "experimental_unit_type": "biological replicate",
+      "groups": [
+        {
+          "group_id": "group-a",
+          "label": "Control"
+        },
+        {
+          "group_id": "group-b",
+          "label": "Treatment"
+        }
+      ],
+      "group_order": [
+        "group-a",
+        "group-b"
+      ],
+      "outcome": {
+        "outcome_id": "outcome-1",
+        "label": "Synthetic continuous outcome",
+        "scale": "continuous"
+      },
+      "declarations": {
+        "grouping_structure": "independent_groups",
+        "pairing": "none",
+        "repeated_measurements": "none",
+        "clustering": "none_declared"
+      },
+      "data_handling": {
+        "analysis_population": "all_record_observations",
+        "missing_outcomes": "none",
+        "transformation": "none",
+        "weighting": "none"
+      }
+    },
+    "analysis": {
+      "analysis_id": "analysis-1",
+      "design_id": "design-1",
+      "contract_id": "https://nomue.ai/id/contract/independent-two-group/0.1.0-draft.1",
+      "alternative": "two_sided",
+      "estimand": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "direction": "group_order_first_minus_second"
+      },
+      "confidence_level": 0.95
+    },
+    "result": {
+      "result_id": "result-1",
+      "analysis_id": "analysis-1",
+      "group_summaries": [
+        {
+          "group_id": "group-a",
+          "n": 3,
+          "mean": 1.131959884853339e-72,
+          "sample_variance": 3.2033329522929615e-145
+        },
+        {
+          "group_id": "group-b",
+          "n": 3,
+          "mean": 5.659799424266695e-73,
+          "sample_variance": 3.2033329522929615e-145
+        }
+      ],
+      "effect_estimate": {
+        "kind": "unstandardized_arithmetic_mean_difference",
+        "estimate": 5.659799424266695e-73,
+        "standard_error": 4.621206878650469e-73,
+        "confidence_interval": {
+          "method_id": "urn:nomue:method:welch-satterthwaite-mean-difference-ci:1",
+          "confidence_level": 0.95,
+          "lower": -7.170727794068777e-73,
+          "upper": 1.8490326642602166e-72
+        }
+      },
+      "test": {
+        "test_statistic": 1.224744871391589,
+        "degrees_of_freedom": 4.0,
+        "p_value": 0.28786413472669065
+      }
+    }
+  },
+  "integrity": {
+    "canonicalization_id": "urn:nomue:canonicalization:jcs:0.2.0-draft.1",
+    "digest_algorithm": "sha-256",
+    "digest_scope": "record_without_integrity",
+    "content_digest": "sha256:26e18a79c1e0c000d74c2d56ac672019f6868a060dae357cefe91cba1047d13f"
+  }
+}
