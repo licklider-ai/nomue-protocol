@@ -13,9 +13,9 @@ specification already required.
 This file is informative. It carries no Protocol authority and defines no
 Protocol meaning.
 
-| ID   | Release   | Subject                                             | Status                    |
-| ---- | --------- | --------------------------------------------------- | ------------------------- |
-| ER-1 | Release 1 | Student-t centre precision at one degree of freedom | Corrected after Release 1 |
+| ID   | Release   | Subject                                               | Status                                |
+| ---- | --------- | ----------------------------------------------------- | ------------------------------------- |
+| ER-1 | Release 1 | Student-t centre precision at one degree of freedom   | Corrected after Release 1             |
 | ER-2 | Release 1 | Fixed Welch recompute tolerances on large-offset data | Open; successor check version planned |
 
 ---
@@ -149,11 +149,11 @@ algorithm, can differ from the exact value by far more than the tolerance.
 Example: observations `1.7e9 + k * 1e-6` against `1.7e9 + k * 2e-6`,
 `k = 0, ..., n - 1`:
 
-| n per group | Exact t | Compensated two-pass t | Relative error |
-| --- | --- | --- | --- |
-| 3 | -0.7985836518841365 | -0.7364596943186588 | 7.8% |
-| 10 | -2.0942101745867383 | -2.116343116932037 | 1.06% |
-| 30 | -4.034477696583975 | -4.047687547540484 | 0.33% |
+| n per group | Exact t             | Compensated two-pass t | Relative error |
+| ----------- | ------------------- | ---------------------- | -------------- |
+| 3           | -0.7985836518841365 | -0.7364596943186588    | 7.8%           |
+| 10          | -2.0942101745867383 | -2.116343116932037     | 1.06%          |
+| 30          | -4.034477696583975  | -4.047687547540484     | 0.33%          |
 
 A binary64 procedure can avoid this (for example by forming the difference of
 the group sums as one correctly rounded sum), so whether a Record passes
